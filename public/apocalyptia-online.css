@@ -1,10 +1,10 @@
 .screen.svelte-138r0ca{height:100vh;overflow-x:hidden;overflow-y:auto;width:100vw}.screen.svelte-138r0ca:before{animation:svelte-138r0ca-hline 10s linear infinite;background:rgb(100, 250, 100, .1);content:'';font-size:1px;height:1px;position:absolute;width:100vw;z-index:1000}@keyframes svelte-138r0ca-hline{0%{top:0}100%{top:99%}}.display.svelte-138r0ca{margin-top:40px}
 .title-bar.svelte-8t0adb{height:40px;position:fixed;text-align:center;top:0;width:100vw;z-index:1}.title.svelte-8t0adb{font-size:2rem}.beta.svelte-8t0adb{color:lightcoral;border:1px dotted lightcoral;padding:3px}
-.creator-steps.svelte-qcmuc{padding:20px;width:calc(100vw - 40px)}.nav-bar.svelte-qcmuc{display:flex;flex-direction:row;position:fixed;left:0;bottom:1px;height:40px;width:100vw}.nav-button.svelte-qcmuc{border:1px solid;width:50vw}
 .home-page.svelte-hz0e23{text-align:center}button.svelte-hz0e23{padding:2rem;width:70%;margin:1rem auto}
+.creator-steps.svelte-qcmuc{padding:20px;width:calc(100vw - 40px)}.nav-bar.svelte-qcmuc{display:flex;flex-direction:row;position:fixed;left:0;bottom:1px;height:40px;width:100vw}.nav-button.svelte-qcmuc{border:1px solid;width:50vw}
 .nav-bar.svelte-18puduf{display:flex;flex-direction:row;position:fixed;left:0;bottom:1px;height:50px;width:100%}.nav-button.svelte-18puduf{border:1px solid;width:25%}
-.skill-section.svelte-wj9h86{border:1px dashed var(--char-color);margin:20px 5px 20px 5px;padding:0 10px 10px 10px}.parent-trait-title.svelte-wj9h86{margin-bottom:10px}.remaining.svelte-wj9h86{margin-left:2rem}
 .remaining.svelte-slj60w{margin-left:2rem}
+.skill-section.svelte-wj9h86{border:1px dashed var(--char-color);margin:20px 5px 20px 5px;padding:0 10px 10px 10px}.parent-trait-title.svelte-wj9h86{margin-bottom:10px}.remaining.svelte-wj9h86{margin-left:2rem}
 .abilities-table.svelte-gq5ok3{width:100%}.ability-row.svelte-gq5ok3{width:inherit}.header-row.svelte-gq5ok3{font-size:1.25em}.large-column.svelte-gq5ok3{display:inline-block;width:37.5%}.medium-column.svelte-gq5ok3{display:inline-block;width:25%}.small-column.svelte-gq5ok3{display:inline-block;text-align:center;width:10%}.separator.svelte-gq5ok3{border-bottom:1px solid;margin-bottom:10px;padding-bottom:10px}
 
-/*# sourceMappingURL=bundle.css.map */
+/*# sourceMappingURL=apocalyptia-online.css.map */

@@ -44,4 +44,15 @@ node_modules/
 # Serverless directories
 .serverless/
 
+# Dropbox
 .DS_Store
+
+# Svelte
+public/bundle*
+
+# File types
+*.gif
+*.jpeg
+*.jpg
+*.png
+*.ttf

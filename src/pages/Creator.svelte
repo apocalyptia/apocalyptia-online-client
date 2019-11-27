@@ -1,6 +1,5 @@
 <script>
     import router from '../routes'
-    import NavBar from '../layout/NavBar.svelte'
     import Description from '../components/creator/Description.svelte'
     import Traits from '../components/creator/Traits.svelte'
     import Skills from '../components/creator/Skills.svelte'
@@ -17,8 +16,7 @@
 </script>
 
 <div class="creator-steps">
-    <Abilities />
-    <!-- {#if step_number === 0}
+    {#if step_number === 0}
         <Traits />
     {:else if step_number === 1}
         <Description />
@@ -28,7 +26,7 @@
         <Properties />
     {:else if step_number === 4}
         <Abilities />
-    {/if} -->
+    {/if}
 </div>
 <div class="nav-bar">
     <button class="nav-button" on:click={back}>Back</button>
