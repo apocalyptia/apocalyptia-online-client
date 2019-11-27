@@ -1,5 +1,5 @@
 <script>
-    import { CharacterStore } from '../../stores.js'
+    import { CharacterStore } from '../../stores'
 
     let char
     let visible = false

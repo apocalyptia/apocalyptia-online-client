@@ -1,14 +1,20 @@
-<a href="http://www.apocalyptiarpg.com">
-    <div class="title-bar">
-        <span class="title">APOCALYPTIA ONLINE</span>
-        <span class="beta">beta</span>
-    </div>
-</a>
+<script>
+    import router from "../routes"
+</script>
+
+<button class="title-bar" on:click={router.Home}>
+    <span class="title">Apocalyptia Online</span>
+    <span class="beta">beta</span>
+</button>
 
 <style>
     .title-bar {
+        height: 40px;
+        position: fixed;
         text-align: center;
-        padding-top: 10px;
+        top: 0;
+        width: 100vw;
+        z-index: 1;
     }
     .title {
         font-size: 2rem;
@@ -16,6 +22,6 @@
     .beta {
         color: lightcoral;
         border: 1px dotted lightcoral;
-        padding: 2px;
+        padding: 3px;
     }
 </style>

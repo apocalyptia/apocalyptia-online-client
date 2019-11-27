@@ -1,5 +1,5 @@
 <script>
-    import router from '../routes.js'
+    import router from '../routes'
     import Combat from '../components/rules/Combat.svelte'
     import Creation from '../components/rules/Creation.svelte'
     import Dice from '../components/rules/Dice.svelte'
@@ -13,7 +13,7 @@
 <div class="page rules-page">
     <Combat />
     <div class="nav-bar">
-        <button class="nav-button" on:click={router.goHome}>Home</button>
+        <button class="nav-button" on:click={router.Home}>Home</button>
     </div>
 </div>
 

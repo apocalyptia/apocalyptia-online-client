@@ -1,46 +1,44 @@
 <script>
 	import { Route, Router } from 'svelte-routing'
 	import TitleBar from './layout/TitleBar.svelte'
-	import NavBar from './layout/NavBar.svelte'
 	import Home from './pages/Home.svelte'
-	import Character from './pages/Character.svelte'
+	import Creator from './pages/Creator.svelte'
 	import Rules from './pages/Rules.svelte'
 </script>
 
-<main>
-	<div class="console">
-		<div class="screen">
-			<div class="display">
-				<TitleBar />
-				<Router>
-					<Route path="/" component="{Home}" />
-					<Route path="/character" component="{Character}" />
-					<Route path="/rules" component="{Rules}" />
-				</Router>
-				<NavBar />
-			</div>
-		</div>
+<div class="screen">
+	<div class="display">
+		<TitleBar />
+		<Router>
+			<Route path="/" component="{Home}" />
+			<Route path="/creator" component="{Creator}" />
+			<Route path="/rules" component="{Rules}" />
+		</Router>
 	</div>
-</main>
+</div>
 
 <style>
-	main, .console, .screen, .display {
+	.screen {
 		height: 100vh;
-		margin: 0;
-		padding: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
 		width: 100vw;
 	}
 	.screen:before {
 		animation: hline 10s linear infinite;
-		background: rgb(100, 247, 100, .1);
+		background: rgb(100, 250, 100, .1);
 		content: '';
 		font-size: 1px;
 		height: 1px;
 		position: absolute;
 		width: 100vw;
+		z-index: 1000;
 	}
 	@keyframes hline {
-		0%   { top: 1%; }
+		0%   { top: 0; }
 		100% { top: 99%; }
+	}
+	.display {
+		margin-top: 40px;
 	}
 </style>

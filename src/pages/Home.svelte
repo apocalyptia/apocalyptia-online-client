@@ -1,12 +1,12 @@
 <script>
-    import router from '../routes.js'
-	import Character from './Character.svelte'
+    import router from '../routes'
+	import Creator from './Creator.svelte'
 	import Rules from './Rules.svelte'
 </script>
 
 <div class="page home-page">
-    <button on:click={router.goCharacter}>Character</button>
-    <button on:click={router.goRules}>Rules</button>
+    <button on:click={router.Creator}>Character Creator</button>
+    <button on:click={router.Rules}>Rules</button>
 </div>
 
 <style>
