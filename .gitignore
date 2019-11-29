@@ -59,7 +59,8 @@ public/*
 *.odt#
 *.png
 *.ttf
+.~lock.*
 
 # Project specific rules
-documentation/
+book/
 old_code.js

@@ -1,22 +1,28 @@
-    //ELECTRONICS
-    function Electronic(type, notes, sz){
-        this.type = type;
-        this.notes = notes;
-        this.sz = sz;
+class Electronic {
+    constuctor (type, hours, notes, sz) {
+        this.type = type
+        this.hours = hours
+        this.notes = notes
+        this.sz = sz
     }
-    const iCellphone = new Gear('Cellphone','1yd light, camera, remote control. 3hr use.',1);
-    const iEmergencyRadio = new Gear('Emergency Radio','AM/FM/Shortwave. 1yd light. 6hr use.',1);
-    const iFlashlight = new Gear('Flashlight','50yd light, . 3hr use. -3 RATK to Blind 1rnd.',1);
-    const iGeigerCounter = new Gear('Geiger Counter','Science 6# to detect Radiation in 1yd.',2);
-    const iHandRadio = new Gear('Hand Radio','9-channel 2-way radio. 3 mile range. 9hr use.',1);
-    const iHeadlamp = new Gear('Headlamp','3yd light. Hands free. 3hr use.',0);
-    const iLantern = new Gear('Lantern','3yd light radius. 6hr use.',2);
-    const iMegaphone = new Gear('Megaphone','+1 Leadership when speaking to a crowd.',2);
-    const iMultimeter = new Gear('Multimeter','+3 Science((Tech)). Detect electricity.',1);
-    const iNightvisionGoggles = new Gear('Nightvision Goggles','Ignore Visibility penalties from darkness.',1);
-    const iQuadcopterDrone = new Gear('Quadcopter Drone','Science 6#. Camera. 90yd Speed. 15min use.',2);
-    const iRadioJammer = new Gear('Radio Jammer','No radio signal within 100yds. 3hr use.',1);
-    const iRCCar = new Gear('RC Car','Science 3#. 45yd Speed. 15min use.',3);
-    const iSolarLamp = new Gear('Solar Lamp','1yd light radius. 1day charge is 9hr use.',1);
-    const iStunGun = new Gear('Stun Gun','MATK. C9# or Stun for 1rnd. 10 uses.',1);
-    const iElectronicsList = [iCellphone,iEmergencyRadio,iFlashlight,iGeigerCounter,iHandRadio,iHeadlamp,iLantern,iMegaphone,iMultimeter,iNightvisionGoggles,iQuadcopterDrone,iRadioJammer,iRCCar,iSolarLamp,iStunGun];
+}
+
+export const ElectronicsList = [
+    new Electronic('Cellphone',             3,      '1yd light, camera, remote control.',       1),
+    new Electronic('Emergency Radio',       6,      'AM/FM/Shortwave. 1yd light.',              1),
+    new Electronic('Flashlight',            3,      '10yd light. -3 RATK to Blind 1rnd.',       1),
+    new Electronic('Geiger Counter',        24,     'Science 6# to detect Radiation in 1yd.',   2),
+    new Electronic('Hand Radio',            9,      '9-channel 2-way radio. 3 mile range.',     1),
+    new Electronic('Headlamp',              3,      '3yd light. Hands free.',                   0),
+    new Electronic('Lantern',               6,      '3yd light radius.',                        2),
+    new Electronic('Megaphone',             12,     '+1 Leadership when speaking to a crowd.',  2),
+    new Electronic('Multimeter',            48,     '+3 Science(Technology). Detect voltage.',  1),
+    new Electronic('Nightvision Goggles',   36,     'Ignore Visibility penalties in darkness.', 1),
+    new Electronic('Quadcopter Drone',      .25,    'Science 6# to use. Camera. 90yd Speed.',   2),
+    new Electronic('RC Car',                .5,     'Science 3# to use. 45yd Speed.',           3),
+    new Electronic('Solar Lamp',            9,      '1yd light radius. 1day charge.',           1),
+    new Electronic('Stun Gun',              .25,    'MATK. C9# or Stun for 1rnd.',              1)
+]
+
+// OLD
+//  new Electronic('Radio Jammer',          3,      'Blocks radio signal within 100yds.',       1)
