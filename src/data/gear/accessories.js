@@ -1,16 +1,17 @@
 function Accessory(type, notes, sz){
-    this.type = type;
-    this.notes = notes;
-    this.sz = sz;
+    this.type = type
+    this.notes = notes
+    this.sz = sz
 }
-//GUN ACCESSORIES
-const iBayonet = new Gear('Bayonet','Knife. +2 DMG for MATKs with a Gun.',1);
-const iBipod = new Gear('Bipod','-3 Size requirement. 1rnd setup.',1);
-const iDrumMagazine = new Gear('Drum Magazine','Gun specific. 3x Ammo magazine capacity.',1);
-const iForegrip = new Gear('Foregrip','-1 Size requirement for 2h Guns.',0);
-const iHolosight = new Gear('Holosight','+1 RATK.',0);
-const iLaser = new Gear('Laser','+1 RATK. -6 RATK to Blind d6rnds.',0);
-const iScope = new Gear('Scope','+3 Aimed RATKs and Perception(See).',1);
-const iSinglePointSling = new Gear('Single-Point Sling','Draw or stow a 2h Gun as a Fast action.',0);
-const iSuppressor = new Gear('Suppressor','Removes the Loud Attribute from a Gun.',0);
-const iGunAccessoryList = [iBayonet,iBipod,iDrumMagazine,iForegrip,iHolosight,iLaser,iScope,iSinglePointSling,iSuppressor];
+
+export const AccessoryList = [
+    new Accessory('Bayonet',             'Knife. +1 DMG and Pierce for MATKs.',      1),
+    new Accessory('Bipod',               'Ignore Size requirement. 1rnd setup.',     1),
+    new Accessory('Drum Magazine',       'Gun specific. 3x Ammo magazine capacity.', 1),
+    new Accessory('Foregrip',            '-1 Size requirement for 2h Gun.',          0),
+    new Accessory('Holosight',           '+1 RATK.',                                 0),
+    new Accessory('Laser',               '+1 RATK. -6 RATK to Blind for d6rnds.',    0),
+    new Accessory('Scope',               '+3 Aimed RATKs and Perception(See).',      1),
+    new Accessory('Single-Point Sling',  'Draw or stow a 2h Gun as one action.',     0),
+    new Accessory('Suppressor',          'Firing a Gun does not break Concealment.', 0)
+]

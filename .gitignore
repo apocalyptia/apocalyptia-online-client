@@ -55,6 +55,8 @@ public/*
 *.gif
 *.jpeg
 *.jpg
+*.odt
+*.odt#
 *.png
 *.ttf
 
