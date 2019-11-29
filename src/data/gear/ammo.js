@@ -1,8 +1,10 @@
-function Ammo(cal, type, notes, sz) {
-    this.cal = cal
-    this.type = type
-    this.notes = notes
-    this.sz = sz
+class Ammo {
+    constuctor(cal, type, notes, sz) {
+        this.cal = cal
+        this.type = type
+        this.notes = notes
+        this.sz = sz
+    }
 }
 
 export const AmmoList = [

@@ -1,11 +1,13 @@
-function Bomb(type, mix, dmg, blast, duration, effects, sz){
-    this.type = type
-    this.mix = mix
-    this.dmg = dmg
-    this.blast = blast
-    this.duration = duration
-    this.effects = effects
-    this.sz = sz
+class Bomb {
+    constuctor(type, mix, dmg, blast, duration, effects, sz) {
+        this.type = type
+        this.mix = mix
+        this.dmg = dmg
+        this.blast = blast
+        this.duration = duration
+        this.effects = effects
+        this.sz = sz
+    }
 }
 
 export const BombList = [

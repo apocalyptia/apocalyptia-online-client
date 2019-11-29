@@ -1,7 +1,9 @@
-function Accessory(type, notes, sz){
-    this.type = type
-    this.notes = notes
-    this.sz = sz
+class Accessory {
+    constuctor(type, notes, sz) {
+        this.type = type
+        this.notes = notes
+        this.sz = sz
+    }
 }
 
 export const AccessoryList = [

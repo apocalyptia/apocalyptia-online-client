@@ -23,14 +23,14 @@ export const AbilityList = [
     new Ability('Fleet Footed',         '+1 Speed.',                                    3, 6, 0, ""),
     new Ability('Multilingual*',        'Learn a different form of communication.',     9, 6, 0, ""),
     new Ability('Practice*',            '+1 to a Skill (up to the parent Trait).',      1, 6, 0, ""),
-
+    // OPEN SLOT FOR NEW ABILITY
     // 9 XP Abilities
     new Ability('Danger Sense',         '+1 Reflex.',                                   1, 9, 0, ""),
     new Ability('Discipline',           'Ignore 1 Pain penalty.',                       3, 9, 0, ""),
     new Ability('Fortunate',            '+1 Luck.',                                     1, 9, 0, ""),
     new Ability('Free Running',         'Climb at [Speed] for 2AP.',                    1, 9, 0, ""),
     new Ability('Unorthodox*',          'Pick a new parent Trait for a Skill.',         1, 9, 0, ""),
-
+    // OPEN SLOT FOR NEW ABILITY
     // 12 XP Abilities
     new Ability('Fencing',              'Free Block roll once per rnd.',                1, 12, 0, ""),
     new Ability('Side-step',            'Free Dodge roll once per rnd.',                1, 12, 0, ""),
