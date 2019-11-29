@@ -21,8 +21,7 @@ export const MeleeList = [
     new MeleeWeapon('Shield',           1, 1, 1, ['Cover 3DR', '+3 Block'], 4),
     new MeleeWeapon('Sledgehammer',     5, 2, 2, ['Slow'],                  5),
     new MeleeWeapon('Spear',            4, 2, 3, ['Pierce'],                3),
-    new MeleeWeapon('Staff',            2, 2, 3, [],                        3),
-    
+    new MeleeWeapon('Staff',            2, 2, 3, [],                        3)
 ]
 
 // RARE
