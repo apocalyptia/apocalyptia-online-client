@@ -9,21 +9,29 @@ class Armor {
 }
 
 export const ArmorList = [
-    new Armor('Athletic Helmet',    1, 'Head',              '',                 2),
-    new Armor('Athletic Pads',      1, 'Torso',             '',                 2),
-    new Armor('Combat Helmet',      3, 'Head',              'Camo.',            2),
-    new Armor('Coveralls',          1, 'Arms, Torso, Legs', 'Camo. CR.',        3),
-    new Armor('Firefighter Suit',   2, 'Full Body',         'CR. FR. Mask.',    5),
-    new Armor('Flak Jacket',        2, 'Torso',             'Camo',             4),
-    new Armor('Ghillie Suit',       1, 'Full Body',         'Camo. CR.',        4),
-    new Armor('Hiking Boots',       1, 'Legs',              'CR. FR.',          2),
-    new Armor('Kevlar Vest',        3, 'Torso',             'CR. FR.',          4),
-    new Armor('Leather Jacket',     1, 'Arms, Torso',       '',                 2),
-    new Armor('Motorcycle Helmet',  1, 'Head',              'FR. Mask.',        2),
-    new Armor('NBC Suit',           0, 'Full Body',         'Ignore toxins.',   2),
-    new Armor('Plate Carrier',      4, 'Torso',             'Camo. CR. FR.',    4),
-    new Armor('Winter Coat',        1, 'Arms, Torso',       'CR.',              2),
-    new Armor('Work Gloves',        1, 'Arms',              'FR.',              1)
+    new Armor('Athletic Helmet',    1, 'Head',              [],                         2),
+    new Armor('Athletic Pads',      1, 'Torso',             [],                         2),
+    new Armor('Combat Helmet',      3, 'Head',              ['Camo'],                   2),
+    new Armor('Coveralls',          1, 'Arms, Torso, Legs', ['Camo', 'CR'],             3),
+    new Armor('Firefighter Suit',   2, 'Full Body',         ['CR', 'FR', 'Mask'],       5),
+    new Armor('Flak Jacket',        2, 'Torso',             ['Camo'],                   4),
+    new Armor('Ghillie Suit',       1, 'Full Body',         ['Camo', 'CR'],             4),
+    new Armor('Hiking Boots',       1, 'Legs',              ['CR', 'FR'],               2),
+    new Armor('Kevlar Vest',        3, 'Torso',             ['CR', 'FR'],               4),
+    new Armor('Leather Jacket',     1, 'Arms, Torso',       [],                         2),
+    new Armor('Motorcycle Helmet',  1, 'Head',              ['FR', 'Mask'],             2),
+    new Armor('Hazmat Suit',        0, 'Full Body',         ['Mask', 'Impermeable'],    2),
+    new Armor('Plate Carrier',      4, 'Torso',             ['Camo', 'CR', 'FR'],       4),
+    new Armor('Winter Coat',        1, 'Arms, Torso',       ['CR'],                     2),
+    new Armor('Work Gloves',        1, 'Arms',              ['FR'],                     1)
+]
+
+export const ArmorAttributes = [
+    { "Camo":           "+1 Stealth per Location when in a given Biome." },
+    { "CR":             "Delay Hypothermia for 1 hour per Location." },
+    { "FR":             "Armor DR reduces FDMG." },
+    { "Impermeable":    "Automatic Success to resist Diseases and Toxins." },
+    { "Mask":           "Obscures identity and protects face. -1 Perception." }
 ]
 
 // OLD ARMOR
