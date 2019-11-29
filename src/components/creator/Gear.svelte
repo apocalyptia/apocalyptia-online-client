@@ -105,47 +105,6 @@
         document.getElementById('RollResultsLog').innerHTML = oldLog;
     }
 
-    // Split ar into head, arms, torso, and legs for Character Creator
-    function Armor(type, ar, loc, notes, sz){
-        this.type = type;
-        this.ar = ar;
-        this.loc = loc;
-        this.notes = notes;
-        this.sz = sz;
-    }
-    const iArmyHelmet = new Armor('Army Helmet', '4', 'Head', 'Camo.', 2);
-    const iAthleticPads = new Armor('Athletic Pads', '1,2,1', 'Arms, Torso, Legs', '', 3);
-    const iCoveralls = new Armor('Coveralls', '1,1,1', 'Arms, Torso, Legs', 'Camo. CR.', 3);
-    const iDenimJacket = new Armor('Denim Jacket', '1,1', 'Arms, Torso', '', 2);
-    const iFirefighterSuit = new Armor('Firefighter Suit', '2,2,2,2', 'Head, Arms, Torso, Legs', 'CR. FR. Mask. -1 Speed.', 5);
-    const iFlakJacket = new Armor('Flak Jacket', '2', 'Torso', 'Camo', 4);
-    const iGhillieSuit = new Armor('Ghillie Suit', '1,1,1,1', 'Head, Arms, Torso, Legs', 'Camo. CR.', 4);
-    const iHikingBoots = new Armor('Hiking Boots', '1', 'Legs', 'CR. FR. Tread 3.', 2);
-    const iInterceptorArmor = new Armor('Interceptor Armor', '3,6', 'Arms, Torso', 'Camo. CR. FR.', 5);
-    const iKevlarGloves = new Armor('Kevlar Gloves', '2', 'Arms', 'FR.', 1);
-    const iKevlarVest = new Armor('Kevlar Vest', '4', 'Torso', 'CR. FR.', 4);
-    const iKneePads = new Armor('Knee Pads', '1', 'Legs', '', 1);
-    const iLeatherJacket = new Armor('Leather Jacket', '1,1', 'Arms, Torso', 'CR.', 2);
-    const iMotorcycleHelmet = new Armor('Motorcycle Helmet', '3', 'Head', 'FR. Mask.', 2);
-    const iNBCSuit = new Armor('NBC Suit', '-', 'Head, Arms, Torso, Legs', '+6 C vs toxins.', 2);
-    const iPaintballMask = new Armor('Paintball Mask', '1', 'Head', 'Mask.', 1);
-    const iPlateCarrier = new Armor('Plate Carrier', '5', 'Torso', '', 4);
-    const iRiotHelmet = new Armor('Riot Helmet', '4', 'Head', 'FR. Mask.', 2);
-    const iSportsHelmet = new Armor('Sports Helmet', '2', 'Head', 'Mask.', 2);
-    const iSteelToeBoots = new Armor('Steel-Toe Boots', '2', 'Legs', 'Blunt. FR. Kick 3BDMG', 2);
-    const iTacticalVest = new Armor('Tactical Vest', '1', 'Torso', '6 Storage.', 1);
-    const iUndercoverVest = new Armor('Undercover Vest', '3', 'Torso', 'FR.', 3);
-    const iWinterCoat = new Armor('Winter Coat', '1,1', 'Arms, Torso', '+3 CR.', 2);
-    const iWorkGloves = new Armor('Work Gloves', '1', 'Arms', 'FR.', 1);
-    const iArmorList = [iArmyHelmet,iAthleticPads,iCoveralls,iDenimJacket,iFirefighterSuit,iFlakJacket,iGhillieSuit,iHikingBoots,iInterceptorArmor,iKevlarGloves,iKevlarVest,iLeatherJacket,iMotorcycleHelmet,iNBCSuit,iPaintballMask,iPlateCarrier,iRiotHelmet,iSportsHelmet,iSteelToeBoots,iTacticalVest,iUndercoverVest,iWinterCoat,iWorkGloves];
-
-    const iBlackRobe = new Armor('Black Robe', '1,1,1,1', 'Head, Torso, Arms, Legs', 'CR. +1 Stealth.', 1);
-    const iChainmailShirt = new Armor('Chainmail Shirt', '3,3,3', 'Head, Torso, Arms', 'Ignore Chop.', 6);
-    const iDragonskinVest = new Armor('Dragonskin Vest', '8', 'Torso', 'CR. FR.', 3);
-    const iKnuckleGloves = new Armor('Knuckle Gloves', '2', 'Arms', '2DMG Punch. Blunt. FR.', 1);
-    const iLandWarriorHelmet = new Armor('Land Warrior Helmet', '4', 'Head', 'FR. Nightvision Goggles. Radio.', 2);
-    const iSpikedJacket = new Armor('Spiked Jacket', '2, 2', 'Torso, Arms', '+1 DMG Grab.', 3);
-    const iRareArmorList = [iBlackRobe,iChainmailShirt,iDragonskinVest,iKnuckleGloves,iLandWarriorHelmet,iSpikedJacket];
 
     function MeleeWeapon(type, dmg, hands, notes, sz){
         this.type = type;

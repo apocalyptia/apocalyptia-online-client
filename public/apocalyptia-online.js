@@ -1734,11 +1734,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Next";
     			attr_dev(button0, "class", "svelte-mz0ikb");
-    			add_location(button0, file$2, 12, 4, 281);
+    			add_location(button0, file$2, 12, 4, 257);
     			attr_dev(button1, "class", "svelte-mz0ikb");
-    			add_location(button1, file$2, 13, 4, 323);
+    			add_location(button1, file$2, 13, 4, 299);
     			attr_dev(div, "class", "svelte-mz0ikb");
-    			add_location(div, file$2, 11, 0, 271);
+    			add_location(div, file$2, 11, 0, 247);
 
     			dispose = [
     				listen_dev(button0, "click", ctx.back, false, false, false),
@@ -1776,14 +1776,14 @@ var app = (function () {
 
     function instance$3($$self, $$props, $$invalidate) {
     	let { step } = $$props;
-    	const dispatch = createEventDispatcher();
+    	const d = createEventDispatcher();
 
     	function back() {
-    		dispatch("message", { number: $$invalidate("step", --step) });
+    		d("message", { number: $$invalidate("step", --step) });
     	}
 
     	function next() {
-    		dispatch("message", { number: $$invalidate("step", ++step) });
+    		d("message", { number: $$invalidate("step", ++step) });
     	}
 
     	const writable_props = ["step"];
@@ -1900,47 +1900,47 @@ var app = (function () {
                 actions: { name: "Actions",    base: 1, score: 1, setActions: () => {
                     let actions = Math.floor((this.traits["agility"].score + this.traits["brains"].score) / 2);
                     this.props.actions.base = actions;
-                    return actions;
+                    return actions
                 } },
                 block: {   name: "Block",      base: 0, score: 0, setBlock: () => {
                     let block = this.skills["melee"].score;
                     this.props.block.base = block;
-                    return block;
+                    return block
                 } },
                 dodge: {   name: "Dodge",      base: 0, score: 0, setDodge: () => {
                     let dodge = this.skills["acrobatics"].score;
                     this.props.dodge.base = dodge;
-                    return dodge;
+                    return dodge
                 } },
                 health: {  name: "Health",     base: 3, score: 3, setHealth: () => {
                     let health = this.traits["constitution"].score * 3;
                     this.props.health.base = health;
-                    return health;
+                    return health
                 } },
                 luck: {    name: "Luck",       base: 1, score: 1, setLuck: () => {
                     let luck = this.traits["demeanor"].score;
                     this.props.luck.base = luck;
-                    return luck;
+                    return luck
                 } },
                 psyche: {  name: "Psyche",     base: 1, score: 1, setPsyche: () => {
                     let psyche = this.traits["demeanor"].score * 3;
                     this.props.psyche.base = psyche;
-                    return psyche;
+                    return psyche
                 }},
                 reflex: {  name: "Reflex",     base: 0, score: 0, setReflex: () => {
                     let reflex = Math.floor(this.traits["brains"].score / 2);
                     this.props.reflex.base = reflex;
-                    return reflex;
+                    return reflex
                 } },
                 speed: {   name: "Speed",      base: 2, score: 2, setSpeed: () => {
                     let speed = this.traits["agility"].score + this.traits["constitution"].score;
                     this.props.speed.base = speed;
-                    return speed;
+                    return speed
                 } },
                 xp: {      name: "Experience", base: 6, score: 6, setXP: () => {
                     let xp = this.traits["brains"].score * 6;
                     this.props.xp.base = xp;
-                    return xp;
+                    return xp
                 } },
             },
             this.abilities = [],
@@ -3425,43 +3425,43 @@ var app = (function () {
 
     const AbilityList = [
         // 3 XP Abilities
-        new Ability('Favorite Weapon', 'Botch is only a Fail with this one weapon.', 1, 3, 0, ""),
-        new Ability('Hyper Immunity', '+1 to resist Diseases.', 3, 3, 0, ""),
-        new Ability('Pack Mentality', '+1 ATK at same target a Comrade ATKs.', 1, 3, 0, ""),
-        new Ability('Quick Reload', 'Free Reload once per rnd.', 1, 3, 0, ""),
-        new Ability('Specialize*', '+1 to a Skill Specialty.', 1, 3, 0, ""),
-        new Ability('Weapon Training*', '+1 ATK for a specific weapon.', 1, 3, 0, ""),
+        new Ability('Favorite Weapon',      'Botch is only a Fail with this one weapon.',   1, 3, 0, ""),
+        new Ability('Hyper Immunity',       '+1 to resist Diseases.',                       3, 3, 0, ""),
+        new Ability('Pack Mentality',       '+1 ATK at same target a Comrade ATKs.',        1, 3, 0, ""),
+        new Ability('Quick Reload',         'Free Reload once per rnd.',                    1, 3, 0, ""),
+        new Ability('Specialize*',          '+1 to a Skill Specialty.',                     1, 3, 0, ""),
+        new Ability('Weapon Training*',     '+1 ATK for a specific weapon.',                1, 3, 0, ""),
         // 6 XP Abilities
-        new Ability('Efficient Work*', '[Time / 2] for a Skill (minimum 1 action).', 1, 6, 0, ""),
-        new Ability('Fast Draw', 'Free item draw once per rnd.', 1, 6, 0, ""),
-        new Ability('Fleet Footed', '+1 Speed.', 3, 6, 0, ""),
-        new Ability('Multilingual*', 'Learn a different form of communication.', 9, 6, 0, ""),
-        new Ability('Practice*', '+1 to a Skill (up to the parent Trait).', 1, 6, 0, ""),
+        new Ability('Efficient Work*',      '[Time / 2] for a Skill (minimum 1 action).',   1, 6, 0, ""),
+        new Ability('Fast Draw',            'Free item draw once per rnd.',                 1, 6, 0, ""),
+        new Ability('Fleet Footed',         '+1 Speed.',                                    3, 6, 0, ""),
+        new Ability('Multilingual*',        'Learn a different form of communication.',     9, 6, 0, ""),
+        new Ability('Practice*',            '+1 to a Skill (up to the parent Trait).',      1, 6, 0, ""),
 
         // 9 XP Abilities
-        new Ability('Danger Sense', '+1 Reflex.', 1, 9, 0, ""),
-        new Ability('Discipline', 'Ignore 1 Pain penalty.', 3, 9, 0, ""),
-        new Ability('Fortunate', '+1 Luck.', 1, 9, 0, ""),
-        new Ability('Free Running', 'Climb at [Speed] for 2AP.', 1, 9, 0, ""),
-        new Ability('Unorthodox*', 'Pick a new parent Trait for a Skill.', 1, 9, 0, ""),
+        new Ability('Danger Sense',         '+1 Reflex.',                                   1, 9, 0, ""),
+        new Ability('Discipline',           'Ignore 1 Pain penalty.',                       3, 9, 0, ""),
+        new Ability('Fortunate',            '+1 Luck.',                                     1, 9, 0, ""),
+        new Ability('Free Running',         'Climb at [Speed] for 2AP.',                    1, 9, 0, ""),
+        new Ability('Unorthodox*',          'Pick a new parent Trait for a Skill.',         1, 9, 0, ""),
 
         // 12 XP Abilities
-        new Ability('Fencing', 'Free Block roll once per rnd.', 1, 12, 0, ""),
-        new Ability('Side-step', 'Free Dodge roll once per rnd.', 1, 12, 0, ""),
-        new Ability('Wrestling', 'Free Grab roll once per rnd.', 1, 12, 0, ""),
+        new Ability('Fencing',              'Free Block roll once per rnd.',                1, 12, 0, ""),
+        new Ability('Side-step',            'Free Dodge roll once per rnd.',                1, 12, 0, ""),
+        new Ability('Wrestling',            'Free Grab roll once per rnd.',                 1, 12, 0, ""),
         // 15 XP Abilities
-        new Ability('Firm Grip', 'Use 2h weapons in 1h, up to Size 3.', 1, 15, 0, ""),
-        new Ability('Hard Headed', 'Ignore Stun from Head DMG.', 1, 15, 0, ""),
-        new Ability('Powerful Strike*', '+1 DMG for a specific Melee weapon.', 1, 15, 0, ""),
+        new Ability('Firm Grip',            'Use 2h weapons in 1h, up to Size 3.',          1, 15, 0, ""),
+        new Ability('Hard Headed',          'Ignore Stun from Head DMG.',                   1, 15, 0, ""),
+        new Ability('Powerful Strike*',     '+1 DMG for a specific Melee weapon.',          1, 15, 0, ""),
         // 18 XP Abilities
-        new Ability('Assassin', '+3 DMG to ATKs from Concealment.', 1, 18, 0, ""),
-        new Ability('Vehicle Operation*', 'Proficiently operate a class of vehicle.', 1, 18, 0, ""),
+        new Ability('Assassin',             '+3 DMG to ATKs from Concealment.',             1, 18, 0, ""),
+        new Ability('Vehicle Operation*',   'Proficiently operate a class of vehicle.',     1, 18, 0, ""),
         // 24 XP Abilities
-        new Ability('Ambidextrous', 'Off-hand penalty is -1 instead of -3.', 1, 24, 0, ""),
-        new Ability('Tough', '+1 HP.', 3, 24, 0, ""),
+        new Ability('Ambidextrous',         'Off-hand penalty is -1 instead of -3.',        1, 24, 0, ""),
+        new Ability('Tough',                '+1 Health.',                                   3, 24, 0, ""),
         // 30 XP Abilities
-        new Ability('Self Improvement*', '+1 to a Trait (max 6).', 3, 30, 0, ""),
-        new Ability('Second Chance', 'Spend this Ability to avoid Death once.', 9, 30, 0, "")
+        new Ability('Self Improvement*',    '+1 to a Trait (max 6).',                       3, 30, 0, ""),
+        new Ability('Second Chance',        'Spend this Ability to avoid Death once.',      9, 30, 0, "")
     ];
 
     /* src/components/creator/Abilities.svelte generated by Svelte v3.15.0 */
@@ -3482,8 +3482,8 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "separator svelte-gq5ok3");
-    			add_location(div, file$7, 32, 20, 1137);
+    			attr_dev(div, "class", "separator svelte-maszxs");
+    			add_location(div, file$7, 32, 20, 1098);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3557,23 +3557,23 @@ var app = (function () {
     			div4 = element("div");
     			input = element("input");
     			t9 = space();
-    			attr_dev(div0, "class", "medium-column svelte-gq5ok3");
-    			add_location(div0, file$7, 35, 20, 1251);
-    			attr_dev(div1, "class", "large-column svelte-gq5ok3");
-    			add_location(div1, file$7, 36, 20, 1319);
-    			attr_dev(div2, "class", "small-column svelte-gq5ok3");
-    			add_location(div2, file$7, 37, 20, 1393);
-    			attr_dev(div3, "class", "small-column svelte-gq5ok3");
-    			add_location(div3, file$7, 38, 20, 1459);
+    			attr_dev(div0, "class", "m-col svelte-maszxs");
+    			add_location(div0, file$7, 35, 20, 1212);
+    			attr_dev(div1, "class", "l-col svelte-maszxs");
+    			add_location(div1, file$7, 36, 20, 1272);
+    			attr_dev(div2, "class", "s-col svelte-maszxs");
+    			add_location(div2, file$7, 37, 20, 1339);
+    			attr_dev(div3, "class", "s-col svelte-maszxs");
+    			add_location(div3, file$7, 38, 20, 1398);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "class", "taken-number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = ctx.ability.max);
-    			add_location(input, file$7, 40, 24, 1575);
-    			attr_dev(div4, "class", "small-column svelte-gq5ok3");
-    			add_location(div4, file$7, 39, 20, 1524);
-    			attr_dev(div5, "class", "ability-row svelte-gq5ok3");
-    			add_location(div5, file$7, 34, 16, 1205);
+    			add_location(input, file$7, 40, 24, 1500);
+    			attr_dev(div4, "class", "s-col svelte-maszxs");
+    			add_location(div4, file$7, 39, 20, 1456);
+    			attr_dev(div5, "class", "ability-row svelte-maszxs");
+    			add_location(div5, file$7, 34, 16, 1166);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -3704,27 +3704,27 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$7, 19, 8, 513);
+    			add_location(h2, file$7, 19, 8, 510);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$7, 18, 4, 480);
-    			attr_dev(div1, "class", "medium-column svelte-gq5ok3");
-    			add_location(div1, file$7, 24, 16, 685);
-    			attr_dev(div2, "class", "large-column svelte-gq5ok3");
-    			add_location(div2, file$7, 25, 16, 739);
-    			attr_dev(div3, "class", "small-column svelte-gq5ok3");
-    			add_location(div3, file$7, 26, 16, 799);
-    			attr_dev(div4, "class", "small-column svelte-gq5ok3");
-    			add_location(div4, file$7, 27, 16, 851);
-    			attr_dev(div5, "class", "small-column svelte-gq5ok3");
-    			add_location(div5, file$7, 28, 16, 902);
-    			attr_dev(div6, "class", "ability-row header-row separator svelte-gq5ok3");
-    			add_location(div6, file$7, 23, 12, 622);
-    			attr_dev(div7, "class", "abilities-table svelte-gq5ok3");
-    			add_location(div7, file$7, 22, 8, 580);
+    			add_location(div0, file$7, 18, 4, 477);
+    			attr_dev(div1, "class", "m-col svelte-maszxs");
+    			add_location(div1, file$7, 24, 16, 682);
+    			attr_dev(div2, "class", "l-col svelte-maszxs");
+    			add_location(div2, file$7, 25, 16, 728);
+    			attr_dev(div3, "class", "s-col svelte-maszxs");
+    			add_location(div3, file$7, 26, 16, 781);
+    			attr_dev(div4, "class", "s-col svelte-maszxs");
+    			add_location(div4, file$7, 27, 16, 826);
+    			attr_dev(div5, "class", "s-col svelte-maszxs");
+    			add_location(div5, file$7, 28, 16, 870);
+    			attr_dev(div6, "class", "ability-row header-row separator svelte-maszxs");
+    			add_location(div6, file$7, 23, 12, 619);
+    			attr_dev(div7, "class", "abilities-table svelte-maszxs");
+    			add_location(div7, file$7, 22, 8, 577);
     			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$7, 21, 4, 547);
+    			add_location(div8, file$7, 21, 4, 544);
     			attr_dev(div9, "class", "step");
-    			add_location(div9, file$7, 17, 0, 457);
+    			add_location(div9, file$7, 17, 0, 454);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3842,10 +3842,1182 @@ var app = (function () {
     	}
     }
 
+    /* src/components/creator/Gear.svelte generated by Svelte v3.15.0 */
+
+    function create_fragment$a(ctx) {
+    	const block = {
+    		c: noop,
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$a.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function MeleeWeapon(type, dmg, hands, notes, sz) {
+    	this.type = type;
+    	this.dmg = dmg;
+    	this.hands = hands;
+    	this.notes = notes;
+    	this.sz = sz;
+    }
+
+    function RangedWeapon(type, dmg, rng, cal, mag, hands, notes, sz) {
+    	this.type = type;
+    	this.dmg = dmg;
+    	this.rng = rng;
+    	this.cal = cal;
+    	this.mag = mag;
+    	this.hands = hands;
+    	this.notes = notes;
+    	this.sz = sz;
+    }
+
+    function Bomb(type, mix, dmg, blast, duration, effects, sz) {
+    	this.type = type;
+    	this.mix = mix;
+    	this.dmg = dmg;
+    	this.blast = blast;
+    	this.duration = duration;
+    	this.effects = effects;
+    	this.sz = sz;
+    }
+
+    function Gear(type, notes, sz) {
+    	this.type = type;
+    	this.notes = notes;
+    	this.sz = sz;
+    }
+
+    function Vehicle(type, hp, dr, dmg, spd, mph, han, mpg, fuel, occ, car, area, sz) {
+    	this.type = type;
+    	this.hp = hp;
+    	this.dr = dr;
+    	this.dmg = dmg;
+    	this.spd = spd;
+    	this.mph = mph;
+    	this.han = han;
+    	this.mpg = mpg;
+    	this.fuel = fuel;
+    	this.occ = occ;
+    	this.car = car;
+    	this.area = area;
+    	this.sz = sz;
+    }
+
+    function instance$9($$self) {
+
+    	const iAx = new MeleeWeapon("Ax", 5, 2, "Chop.", 4);
+    	const iBaseballBat = new MeleeWeapon("Baseball Bat", 3, 2, "Blunt.", 3);
+    	const iBrassKnuckles = new MeleeWeapon("Brass Knuckles", 2, 1, "Blunt.", 1);
+    	const iBaton = new MeleeWeapon("Baton", 2, 1, "Blunt. Rapid.", 2);
+    	const iCane = new MeleeWeapon("Cane", 1, 1, "Blunt. +1 Trip. Can be used as a Crutch.", 3);
+    	const iCleaver = new MeleeWeapon("Cleaver", 2, 1, "Chop.", 1);
+    	const iCrowbar = new MeleeWeapon("Crowbar", 3, 1, "Lever.", 3);
+    	const iFirepoker = new MeleeWeapon("Firepoker", 3, 1, "Lever. Pierce.", 3);
+    	const iGarrote = new MeleeWeapon("Garrote", 1, 2, "Blunt. +3 to Grab(Lock) Head.", 1);
+    	const iHammer = new MeleeWeapon("Hammer", 2, 1, "Lever.", 2);
+    	const iHatchet = new MeleeWeapon("Hatchet", 2, 1, "Chop.", 2);
+    	const iKnife = new MeleeWeapon("Knife", 2, 1, "Rapid.", 1);
+    	const iMachete = new MeleeWeapon("Machete", 3, 1, "Chop.", 2);
+    	const iMetalClub = new MeleeWeapon("Metal Club", 3, 2, "Blunt.", 3);
+    	const iPickax = new MeleeWeapon("Pickax", 6, 2, "Lever. Pierce.", 5);
+    	const iPitchfork = new MeleeWeapon("Pitchfork", 3, 2, "+1 Block. Pierce.", 4);
+    	const iRiotShield = new MeleeWeapon("Riot Shield", 1, 1, "+3 Block. Blunt. Cover 3DR.", 4);
+    	const iScrewdriver = new MeleeWeapon("Screwdriver", 1, 1, "Lever. Pierce. Rapid.", 1);
+    	const iShovel = new MeleeWeapon("Shovel", 3, 2, "+1 Block", 4);
+    	const iSledgehammer = new MeleeWeapon("Sledgehammer", 5, 2, "Blunt.", 5);
+    	const iSpear = new MeleeWeapon("Spear", 4, 2, "+1 Block. Pierce.", 3);
+    	const iStaff = new MeleeWeapon("Staff", 2, 2, "+1 Block. Blunt.", 3);
+    	const iTireIron = new MeleeWeapon("Tire Iron", 2, 1, "Lever.", 2);
+    	const iTorch = new MeleeWeapon("Torch", 1, 1, "Blunt. +1 FDMG. 5yd light radius 1hr.", 2);
+
+    	const iMeleeWeaponsList = [
+    		iAx,
+    		iBaseballBat,
+    		iBaton,
+    		iBrassKnuckles,
+    		iCane,
+    		iCleaver,
+    		iCrowbar,
+    		iFirepoker,
+    		iGarrote,
+    		iHammer,
+    		iHatchet,
+    		iKnife,
+    		iMachete,
+    		iMetalClub,
+    		iPickax,
+    		iPitchfork,
+    		iRiotShield,
+    		iScrewdriver,
+    		iShovel,
+    		iSledgehammer,
+    		iSpear,
+    		iStaff,
+    		iTireIron,
+    		iTorch
+    	];
+
+    	const iAK47 = new RangedWeapon("AK-47", 4, 50, "7.62", "30mag", 2, "Auto. Rapid.", 4);
+    	const iAR15 = new RangedWeapon("AR-15", 4, 100, "5.56", "30mag", 2, "Rapid.", 3);
+    	const iBenelliM4 = new RangedWeapon("Benelli M4", 6, 15, "12g", 7, 2, "Rapid. Scatter.", 4);
+    	const iBrowningABolt = new RangedWeapon("Browning A-Bolt", 4, 100, "5.56", "5mag", 2, "+1 RATK. Scope.", 3);
+    	const iColtPython = new RangedWeapon("Colt Python", 3, 25, ".357", "6cyl", 1, "Revolver.", 2);
+    	const iCompoundBow = new RangedWeapon("Compound Bow", 1, 25, "Arrow", 1, 2, "DMG Mod. -1 RATK.", 4);
+    	const iCrossbow = new RangedWeapon("Crossbow", 6, 50, "Arrow", 1, 2, "1rnd Reload.", 4);
+    	const iGlock17 = new RangedWeapon("Glock 17", 2, 25, "9mm", "17mag", 1, "Rapid.", 1);
+    	const iHKMP5 = new RangedWeapon("H&ampK MP5", 2, 50, "9mm", "30mag", 2, "Auto. Rapid.", 2);
+    	const iHenryGoldenBoy = new RangedWeapon("Henry Golden Boy", 1, 50, ".22", 16, 2, "+1 RATK.", 3);
+    	const iKimber1911 = new RangedWeapon("Kimber 1911", 2, 25, ".45", 7, 1, "Rapid.", 1);
+    	const iMAC10 = new RangedWeapon("MAC-10", 2, 5, ".45", 30, 2, "Auto. Rapid. -1 RATK", 2);
+    	const iMarlin1894C = new RangedWeapon("Marlin 1894C", 3, 50, ".357", 9, 2, "+1 RATK.", 3);
+    	const iMossberg500 = new RangedWeapon("Mossberg 500", 6, 10, "12g", 5, 2, "Scatter.", 2);
+    	const iNorincoSKS = new RangedWeapon("Norinco SKS", 4, 50, "7.62", 10, 2, "Rapid. Bayonet.", 4);
+    	const iRemington700 = new RangedWeapon("Remington 700", 5, 100, ".308", 6, 2, "+1 RATK. Scope.", 4);
+    	const iRemington870 = new RangedWeapon("Remington 870", "var", 15, "12g", 7, 2, "Scatter.", 4);
+    	const iRuger1022 = new RangedWeapon("Ruger 10/22", 1, 50, ".22", "10mag", 2, "Rapid.", 3);
+    	const iRugerMkIII = new RangedWeapon("Ruger Mk.III", 1, 25, ".22", "10mag", 1, "Rapid.", 1);
+    	const iSIGSauerP290 = new RangedWeapon("SIG Sauer P290", 2, 10, "9mm", "6mag", 1, "Rapid.", 1);
+    	const iSavageMkII = new RangedWeapon("Savage Mk.II", 1, 50, ".22", "10mag", 2, "+1 RATK.", 3);
+    	const iSpringfieldM1A = new RangedWeapon("Springfield M1A", 5, 100, ".308", "20mag", 2, "Rapid.", 4);
+    	const iSWSnubnose = new RangedWeapon("S&ampW Snubnose", 3, 5, ".357", "5cyl", 1, "Revolver.", 1);
+    	const iWinchesterSawnoff = new RangedWeapon("Winchester Sawn-off", 6, 5, "12g", 2, 2, "Rapid. Scatter.", 2);
+
+    	const iRangedWeaponsList = [
+    		iAK47,
+    		iAR15,
+    		iBenelliM4,
+    		iBrowningABolt,
+    		iColtPython,
+    		iCompoundBow,
+    		iCrossbow,
+    		iGlock17,
+    		iHKMP5,
+    		iHenryGoldenBoy,
+    		iKimber1911,
+    		iMAC10,
+    		iMarlin1894C,
+    		iMossberg500,
+    		iNorincoSKS,
+    		iRemington700,
+    		iRemington870,
+    		iRuger1022,
+    		iRugerMkIII,
+    		iSIGSauerP290,
+    		iSavageMkII,
+    		iSpringfieldM1A,
+    		iSWSnubnose,
+    		iWinchesterSawnoff
+    	];
+
+    	const iBarbwireClub = new MeleeWeapon("Barbwire Club", 3, 1, "", 2);
+    	const iBlowgun = new RangedWeapon("Blowgun", 0, "Cx2", "Dart", 1, 2, "Pierce. DMG Mod.", 1);
+    	const iBolas = new RangedWeapon("Bolas", 0, "Cx2", "-", "-", 1, "Blunt. DMG Mod. Trip. Throw.", 1);
+    	const iBowieKnife = new MeleeWeapon("Bowie Knife", 2, 1, "Chop. Rapid.", 1);
+    	const iBroadsword = new MeleeWeapon("Broadsword", 4, 2, "Chop or Pierce.", 4);
+    	const iCatchPole = new MeleeWeapon("Catch Pole", 0, 2, "+1 Block. Blunt. +1 Grab.", 3);
+    	const iChainsaw = new MeleeWeapon("Chainsaw", 6, 2, ".5gal Fuel. d6rnd start. 1: Empty. Loud.", 4);
+    	const iDerringer = new RangedWeapon("Derringer", 1, 3, ".22", 2, 1, "-1 RATK.", 0);
+    	const iFlamethrower = new RangedWeapon("Flamethrower", "d6x3", 5, "Fuel", 7, "Auto. 3yd Blast. FDMG.", 6);
+    	const iIceAx = new MeleeWeapon("Ice Ax", 3, 1, "Lever. Pierce.", 2);
+    	const iKatana = new MeleeWeapon("Katana", 5, 2, "Chop or Pierce. Rapid.", 3);
+    	const iKukri = new MeleeWeapon("Kukri", 3, 1, "Chop", 2);
+    	const iLasso = new MeleeWeapon("Lasso", 0, 2, "Blunt. +1 Grab. Throw (RNG:3)", 2);
+    	const iLongbow = new RangedWeapon("Longbow", 1, 20, "Arrow", 1, 2, "DMG Mod. -1 RATK.", 3);
+    	const iM2Browning = new RangedWeapon("M2 Browning", 12, 200, ".50BMG", "belt", 2, "Auto. Mounted.", 16);
+    	const iM4A1Carbine = new RangedWeapon("M4A1 Carbine", 4, 50, "5.56", "30mag", 2, "Auto. Rapid.", 3);
+    	const iM32Launcher = new RangedWeapon("M32 Launcher", "varies", 25, "40mm", 6, 2, "Rapid.", 4);
+    	const iM60Machinegun = new RangedWeapon("M60 Machinegun", 5, 100, ".308", 300, 2, "Auto. Rapid. Bipod.", 6);
+    	const iM72LAW = new RangedWeapon("M72 LAW", "d6x9", 50, "Rocket", 1, 2, "12yd Blast. Pierce.", 3);
+    	const iM82Barrett = new RangedWeapon("M82 Barret", 12, 200, ".50BMG", "10mag", 2, "Rapid. Bipod. Scope.", 6);
+    	const iM134Minigun = new RangedWeapon("M134 Minigun", 5, 100, ".308", 1000, 2, "Auto only. Rapid. Mounted.", 8);
+    	const iM203Launcher = new RangedWeapon("M203 Launcher", "varies", 25, "40mm", 1, 2, "2h GUN ACCESSORY.", 2);
+    	const iM249SAW = new RangedWeapon("M249 SAW", 4, 100, "5.56", 100, 2, "Auto. Rapid.", 5);
+    	const iMedusa47 = new RangedWeapon("Medusa 47", "2, 3", "9mm, .357", "6cyl", 1, "Revolver. Multi-Caliber.", 2);
+    	const iNet = new MeleeWeapon("Net", 0, 2, "+6 Grab.", 3);
+    	const iRapier = new MeleeWeapon("Rapier", 3, 1, "Pierce. Rapid.", 2);
+    	const iSaiga12 = new RangedWeapon("Saiga-12", 6, 15, "12g", "12mag", 2, "Rapid. Scatter.", 4);
+    	const iScythe = new MeleeWeapon("Scythe", 6, 2, "Chop. Pierce.", 4);
+    	const iSignShield = new MeleeWeapon("Sign Shield", 2, 1, "+3 Block. Cover 6DR.", 4);
+    	const iSlingshot = new RangedWeapon("Slingshot", 1, 5, "Rocks", 1, 2, "Blunt. DMG Mod.", 1);
+    	const iSpeargun = new RangedWeapon("Speargun", 4, 5, "Arrow + Rope", 1, 2, "Pierce. 2rnd Reload.", 4);
+    	const iSwitchblade = new MeleeWeapon("Switchblade", 1, 1, "Pierce. Rapid.", 0);
+    	const iTrenchKnife = new MeleeWeapon("Trench Knife", 2, 1, "Blunt Punch. Pierce. Rapid.", 1);
+    	const iUzi = new RangedWeapon("Uzi", 2, 10, "9mm", "30mag", 2, "Auto. Rapid. -1 RATK.", 3);
+    	const iWhip = new MeleeWeapon("Whip", 0, 1, "Blunt. +1 Disarm. +1 Grab. RNG:3.", 1);
+    	const iWPGrenade = new RangedWeapon("W. P. Grenade", "d6x3", 3, "Grenade", 1, 1, "6yd Blast. Blind. d6rnds.", 1);
+
+    	const iRareWeaponsList = [
+    		iBarbwireClub,
+    		iBlowgun,
+    		iBolas,
+    		iBowieKnife,
+    		iBroadsword,
+    		iCatchPole,
+    		iChainsaw,
+    		iDerringer,
+    		iFlamethrower,
+    		iIceAx,
+    		iKatana,
+    		iKukri,
+    		iLasso,
+    		iLongbow,
+    		iM2Browning,
+    		iM4A1Carbine,
+    		iM32Launcher,
+    		iM60Machinegun,
+    		iM72LAW,
+    		iM82Barrett,
+    		iM134Minigun,
+    		iM203Launcher,
+    		iM249SAW,
+    		iMedusa47,
+    		iNet,
+    		iRapier,
+    		iSaiga12,
+    		iScythe,
+    		iSignShield,
+    		iSlingshot,
+    		iSpeargun,
+    		iSwitchblade,
+    		iTrenchKnife,
+    		iUzi,
+    		iWhip,
+    		iWPGrenade
+    	];
+
+    	const iChlorine = new Bomb("Chlorine*", "18#", "toxin", "1yd/rnd", "d6+3mins", "Blind. Suffocation x2. Stun.", 1);
+    	const iClaymore = new Bomb("Claymore", "18#", "d6x9", "30yd", "instant", "30yd 90° Blast. Loud.", 2);
+    	const iDynamite = new Bomb("Dynamite", "12#", "d6x6", "30yd", "instant", "10rnd fuse.", 1);
+    	const iFirecracker = new Bomb("Firecracker", "6#", "0", "0yd", "d6+3rnds", "Mimics sound of gunfire.", 0);
+    	const iFlashbang = new Bomb("Flashbang*", "9#", "0", "6yd", "d6+2rnds", "1rnd fuse. Blind. Loud. Stun.", 1);
+    	const iFrag = new Bomb("Frag*", "9#", "d6x3", "15yd", "instant", "1rnd fuse. Loud.", 1);
+    	const iLandmine = new Bomb("Landmine", "15#", "d6x6", "3yd", "instant", "Loud.", 2);
+    	const iMolotov = new Bomb("Molotov", "1#", "d6", "3yd", "1min", "1FDMG/rnd. Requires 1 Fuel.", 2);
+    	const iSkyRocket = new Bomb("Sky Rocket", "12#", "d6x3", "60yd", "instant", "-1 RATK. RNG:50. Blind. Loud.", 1);
+    	const iSmoke = new Bomb("Smoke*", "3#", "1yd/rnd", "d6mins", "Blind.", 1);
+    	const iTeargas = new Bomb("Teargas*", "15#", "toxin", "1yd/rnd", "d6mins", "Blind.", 1);
+    	const iThermite = new Bomb("Thermite*", "6#", "d6x6", "1yd", "6rnds", "d6x6FDMG/rnd.", 1);
+
+    	const iBombsList = [
+    		iChlorine,
+    		iClaymore,
+    		iDynamite,
+    		iFirecracker,
+    		iFlashbang,
+    		iFrag,
+    		iLandmine,
+    		iMolotov,
+    		iSkyRocket,
+    		iSmoke,
+    		iTeargas,
+    		iThermite
+    	];
+
+    	const iBayonet = new Gear("Bayonet", "Knife. +2 DMG for MATKs with a Gun.", 1);
+    	const iBipod = new Gear("Bipod", "-3 Size requirement. 1rnd setup.", 1);
+    	const iDrumMagazine = new Gear("Drum Magazine", "Gun specific. 3x Ammo magazine capacity.", 1);
+    	const iForegrip = new Gear("Foregrip", "-1 Size requirement for 2h Guns.", 0);
+    	const iHolosight = new Gear("Holosight", "+1 RATK.", 0);
+    	const iLaser = new Gear("Laser", "+1 RATK. -6 RATK to Blind d6rnds.", 0);
+    	const iScope = new Gear("Scope", "+3 Aimed RATKs and Perception(See).", 1);
+    	const iSinglePointSling = new Gear("Single-Point Sling", "Draw or stow a 2h Gun as a Fast action.", 0);
+    	const iSuppressor = new Gear("Suppressor", "Removes the Loud Attribute from a Gun.", 0);
+
+    	const iGunAccessoryList = [
+    		iBayonet,
+    		iBipod,
+    		iDrumMagazine,
+    		iForegrip,
+    		iHolosight,
+    		iLaser,
+    		iScope,
+    		iSinglePointSling,
+    		iSuppressor
+    	];
+
+    	const i22FMJ = new Gear(".22 FMJ", "Basic ammo.", 0.005);
+    	const i22JHP = new Gear(".22 JHP", "+1 DMG.", 0.005);
+    	const i22Match = new Gear(".22 Match", "+1 RATK.", 0.005);
+    	const i22Tracer = new Gear(".22 Tracer", "+1 Auto RATK.", 0.005);
+    	const i9mmFMJ = new Gear("9mm FMJ", "Basic ammo.", 0.01);
+    	const i9mmJHP = new Gear("9mm JHP", "+1 DMG.", 0.01);
+    	const i9mmMatch = new Gear("9mm Match", "+1 RATK.", 0.01);
+    	const i45FMJ = new Gear(".45 FMJ", "Basic ammo.", 0.01);
+    	const i45JHP = new Gear(".45 JHP", "+1 DMG.", 0.01);
+    	const i45Match = new Gear(".45 Match", "+1 RATK.", 0.01);
+    	const i357FMJ = new Gear(".357 FMJ", "Basic ammo.", 0.01);
+    	const i357JHP = new Gear(".357 JHP", "+1 DMG.", 0.01);
+    	const i556AP = new Gear("5.56 AP", "Pierce.", 0.02);
+    	const i556FMJ = new Gear("5.56 FMJ", "Basic ammo.", 0.02);
+    	const i556JHP = new Gear("5.56 JHP", "+1 DMG.", 0.02);
+    	const i556Match = new Gear("5.56 Match", "+1 RATK.", 0.02);
+    	const i556Tracer = new Gear("5.56 Tracer", "+1 Auto RATK.", 0.02);
+    	const i762FMJ = new Gear("7.62 FMJ", "Basic ammo.", 0.02);
+    	const i762JHP = new Gear("7.62 JHP", "+1 DMG.", 0.02);
+    	const i308AP = new Gear(".308 AP", "Pierce.", 0.02);
+    	const i308FMJ = new Gear(".308 FMJ", "Basic ammo.", 0.02);
+    	const i308JHP = new Gear(".308 JHP", "+1 DMG.", 0.02);
+    	const i308Match = new Gear(".308 Match", "+1 RATK.", 0.02);
+    	const i12gBirdshot = new Gear("12g Birdshot", "Basic ammo. Scatter.", 0.05);
+    	const i12gBuckshot = new Gear("12g Buckshot", "+3 DMG. Scatter.", 0.05);
+    	const i12gFlare = new Gear("12g Flare", "3FDMG/rnd for 3rnds. 50yd light radius.", 0.05);
+    	const i12gRubber = new Gear("12g Rubber", "Blunt.", 0.05);
+    	const i12gSlug = new Gear("12g Slug", "+1 DMG. RNG x3.", 0.05);
+    	const iArrowBroadhead = new Gear("Broadhead Arrow", "+3 DMG. d6DMG on removal.", 0.1);
+    	const iArrowTarget = new Gear("Target Arrow", "Basic ammo. 1DMG on removal.", 0.1);
+    	const i12gAmmoList = [i12gBirdshot, i12gBuckshot, i12gFlare, i12gRubber, i12gSlug];
+    	const i22AmmoList = [i22FMJ, i22JHP, i22Match, i22Tracer];
+    	const i45AmmoList = [i45FMJ, i45JHP, i45Match];
+    	const i357AmmoList = [i357FMJ, i357JHP];
+    	const i556AmmoList = [i556AP, i556FMJ, i556JHP, i556Match, i556Tracer];
+    	const i762AmmoList = [i762FMJ, i762JHP];
+    	const i308AmmoList = [i308AP, i308FMJ, i308JHP, i308Match];
+    	const iArrowAmmoList = [iArrowBroadhead, iArrowTarget];
+
+    	const iAmmoList = [
+    		i22FMJ,
+    		i22JHP,
+    		i22Match,
+    		i22Tracer,
+    		i9mmFMJ,
+    		i9mmJHP,
+    		i9mmMatch,
+    		i45FMJ,
+    		i45JHP,
+    		i45Match,
+    		i357FMJ,
+    		i357JHP,
+    		iArrowBroadhead,
+    		iArrowTarget,
+    		i556AP,
+    		i556FMJ,
+    		i556JHP,
+    		i556Match,
+    		i556Tracer,
+    		i762FMJ,
+    		i762JHP,
+    		i308AP,
+    		i308FMJ,
+    		i308JHP,
+    		i308Match,
+    		i12gBirdshot,
+    		i12gBuckshot,
+    		i12gFlare,
+    		i12gRubber,
+    		i12gSlug
+    	];
+
+    	const iAlcohol = new Gear("Alcohol&sup1", "Mix 9#. Liquid. Antibiotic or Fuel. Unstable.", 1);
+    	const iAntibiotic = new Gear("Antibiotic*", "Mix 12#. Prevents infection for Recovery 1/day.", 0);
+    	const iChloroform = new Gear("Chloroform&sup1", "Mix 15#. Liquid. C#12 or Unconscious. Takes d6rnds.", 0);
+    	const iCyanide = new Gear("Cyanide&sup1*", "Mix 18#. Pill. d6 Torso DMG/rnd for 5rnds.", 0);
+    	const iEpinephrine = new Gear("Epinephrine&sup1", "Mix 15#. Injection. Rescuscitate within C+3mins.", 0);
+    	const iHallucinogen = new Gear("Hallucinogen*", "Mix 15#. +1 Entertain and Tame. -3 all else. -1 Psyche.", 0);
+    	const iIodine = new Gear("Iodine*", "Mix 6#. Purify 1gal of Water. Prevents Radiation.", 0);
+    	const iPainkiller = new Gear("Painkiller&sup1*", "Mix 9#. Reduce Pain by 1.", 0);
+    	const iPotassiumChloride = new Gear("Potassium Chloride&sup1", "Injection. d6 Torso DMG/min for 5mins.", 0);
+    	const iSedative = new Gear("Sedative&sup1*", "Mix 12#. D#6/rnd to move. Prevents PSYCHOTIC BREAK.", 0);
+    	const iSodiumPentothal = new Gear("Sodium Pentothal&sup1", "Mix 15#. Injection. -6 Entertain(Lie).", 0);
+    	const iStimulant = new Gear("Stimulant&sup1*", "Mix 9#. Reduce Exhaustion by 1.", 0);
+
+    	const iDrugsList = [
+    		iAlcohol,
+    		iAntibiotic,
+    		iChloroform,
+    		iCyanide,
+    		iEpinephrine,
+    		iHallucinogen,
+    		iIodine,
+    		iPainkiller,
+    		iPotassiumChloride,
+    		iSedative,
+    		iSodiumPentothal,
+    		iStimulant
+    	];
+
+    	const iBandage = new Gear("Bandage*", "Required for Medicine(First-Aid). 1 use.", 0);
+    	const iCrutch = new Gear("Crutch*", "Halves Leg DMG penalty to Speed.", 3);
+    	const iEMTBag = new Gear("EMT Bag", "+3 Medicine(First-Aid). 30 uses.", 5);
+    	const iFirstAidKit = new Gear("First-Aid Kit", "+1 Medicine(First-Aid). 5 uses.", 1);
+    	const iPressureCuff = new Gear("Pressure Cuff", "+1 Medicine.", 1);
+    	const iStethoscope = new Gear("Stethoscope", "+1 Medicine. Perception(Hear) 6# through doors.", 1);
+    	const iSurgeryKit = new Gear("Surgery Kit", "+3 Medicine(Surgery).", 3);
+    	const iThermometer = new Gear("Thermometer", "+1 Medicine. Accurately reads temperature.", 0);
+    	const iTransfusionKit = new Gear("Transfusion Kit", "Medicine 9#. 1HP/15mins. Heal to 1HP max.", 1);
+
+    	const iMedicalList = [
+    		iBandage,
+    		iCrutch,
+    		iEMTBag,
+    		iFirstAidKit,
+    		iPressureCuff,
+    		iStethoscope,
+    		iSurgeryKit,
+    		iThermometer,
+    		iTransfusionKit
+    	];
+
+    	const iCellphone = new Gear("Cellphone", "1yd light, camera, remote control. 3hr use.", 1);
+    	const iEmergencyRadio = new Gear("Emergency Radio", "AM/FM/Shortwave. 1yd light. 6hr use.", 1);
+    	const iFlashlight = new Gear("Flashlight", "50yd light, . 3hr use. -3 RATK to Blind 1rnd.", 1);
+    	const iGeigerCounter = new Gear("Geiger Counter", "Science 6# to detect Radiation in 1yd.", 2);
+    	const iHandRadio = new Gear("Hand Radio", "9-channel 2-way radio. 3 mile range. 9hr use.", 1);
+    	const iHeadlamp = new Gear("Headlamp", "3yd light. Hands free. 3hr use.", 0);
+    	const iLantern = new Gear("Lantern", "3yd light radius. 6hr use.", 2);
+    	const iMegaphone = new Gear("Megaphone", "+1 Leadership when speaking to a crowd.", 2);
+    	const iMultimeter = new Gear("Multimeter", "+3 Science((Tech)). Detect electricity.", 1);
+    	const iNightvisionGoggles = new Gear("Nightvision Goggles", "Ignore Visibility penalties from darkness.", 1);
+    	const iQuadcopterDrone = new Gear("Quadcopter Drone", "Science 6#. Camera. 90yd Speed. 15min use.", 2);
+    	const iRadioJammer = new Gear("Radio Jammer", "No radio signal within 100yds. 3hr use.", 1);
+    	const iRCCar = new Gear("RC Car", "Science 3#. 45yd Speed. 15min use.", 3);
+    	const iSolarLamp = new Gear("Solar Lamp", "1yd light radius. 1day charge is 9hr use.", 1);
+    	const iStunGun = new Gear("Stun Gun", "MATK. C9# or Stun for 1rnd. 10 uses.", 1);
+
+    	const iElectronicsList = [
+    		iCellphone,
+    		iEmergencyRadio,
+    		iFlashlight,
+    		iGeigerCounter,
+    		iHandRadio,
+    		iHeadlamp,
+    		iLantern,
+    		iMegaphone,
+    		iMultimeter,
+    		iNightvisionGoggles,
+    		iQuadcopterDrone,
+    		iRadioJammer,
+    		iRCCar,
+    		iSolarLamp,
+    		iStunGun
+    	];
+
+    	const iBodyInBalance = new Gear("\"Body in Balance\"", "+1 Athletics", 1);
+    	const iBookOfNinja = new Gear("\"Book of Ninja\"", "+1 Stealth", 1);
+    	const iGeneralScienceKnowledge = new Gear("\"General Science Knowledge\"", "+1 Science", 1);
+    	const iDefensiveDriving = new Gear("\"Defensive Driving\"", "+1 Drive", 1);
+    	const iDogTricks = new Gear("\"Dog Tricks\"", "+1 Tame", 1);
+    	const iEffectiveHabits = new Gear("\"Effective Habits\"", "+1 to any one Skill", 1);
+    	const iEngineeringConcepts = new Gear("\"Engineering Concepts\"", "+1 Build", 1);
+    	const iGraysAnatomy = new Gear("\"Gray's Anatomy\"", "+1 Medicine", 1);
+    	const iHolyBook = new Gear("Holy Book", "-1 Psyche", 1);
+    	const iHomeSecurity = new Gear("\"Home Security\"", "+1 Larceny", 1);
+    	const iHowToWinFriends = new Gear("\"How to Win Friends\"", "+1 Socialize", 1);
+    	const iHowYogaWorks = new Gear("\"How Yoga Works\"", "+1 Acrobatics", 1);
+    	const iLeadershipBasics = new Gear("\"Leadership Basics\"", "+1 Leadership", 1);
+    	const iPersonalDefense = new Gear("\"Personal Defense\"", "+1 Ranged", 1);
+    	const iSASSurvivalGuide = new Gear("\"SAS Survival Guide\"", "+1 Survival", 1);
+    	const iStandupComedy = new Gear("\"Stand-up Comedy\"", "+1 Entertain", 1);
+    	const iTaoOfJeetKuneDo = new Gear("\"Tao of Jeet Kune Do\"", "+1 Melee", 1);
+    	const iYellowPages = new Gear("\"Yellow Pages\"", "Regional. +1 Scavenging.", 1);
+    	const iZenMind = new Gear("\"Zen Mind\"", "+1 Perception", 1);
+    	const iClassicNovel = new Gear("Classic Novel", "+1 Psyche", 1);
+    	const iEnglishSpanishDictionary = new Gear("English-Spanish Dictionary", "English-Spanish translation.", 1);
+    	const iMapAtlas = new Gear("Map (Atlas)", "+1 Survival(Navigate)", 1);
+    	const iMapLocal = new Gear("Map (Local)", "Regional. +1 Survival(Navigate).", 0);
+    	const iMapTopographic = new Gear("Map (Topographic)", "Regional. +3 Survival(Navigate).", 0);
+
+    	const iDocumentsList = [
+    		iBodyInBalance,
+    		iBookOfNinja,
+    		iGeneralScienceKnowledge,
+    		iDefensiveDriving,
+    		iDogTricks,
+    		iEffectiveHabits,
+    		iEngineeringConcepts,
+    		iGraysAnatomy,
+    		iHolyBook,
+    		iHomeSecurity,
+    		iHowToWinFriends,
+    		iHowYogaWorks,
+    		iLeadershipBasics,
+    		iPersonalDefense,
+    		iSASSurvivalGuide,
+    		iStandupComedy,
+    		iTaoOfJeetKuneDo,
+    		iYellowPages,
+    		iZenMind,
+    		iClassicNovel,
+    		iEnglishSpanishDictionary,
+    		iMapAtlas,
+    		iMapLocal,
+    		iMapTopographic
+    	];
+
+    	const iBackpack = new Gear("Backpack", "30 Slots. 2rnds to access.", 1);
+    	const iBandoleer = new Gear("Bandoleer", "Holds 50 bullets of any caliber.", 0);
+    	const iBDUJacket = new Gear("BDU Jacket", "4x 1 Slots. Camo +1.", 0);
+    	const iCargoPants = new Gear("Cargo Pants", "6x 1 Slots. Camo +1.", 1);
+    	const iCanteen = new Gear("Canteen", "Holds 1 unit (.5gal) of liquid. Metal.", 1);
+    	const iConcealedHolster = new Gear("Concealed Holster", "1 Slot. Perception 12# to spot a Size 1 Gun.", 0);
+    	const iCooler = new Gear("Cooler", "30 Slots. Hunted or Foraged Food lasts 6 days.", 4);
+    	const iDuffelBag = new Gear("Duffel Bag", "40 Slots. 2rnds to access.", 3);
+    	const iFuelCan = new Gear("Fuel Can", "5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.", 2);
+    	const iHoody = new Gear("Hoody", "2x 1 Slots. CR.", 0);
+    	const iHydrationPack = new Gear("Hydration Pack", "Holds 4 units (2gal) of liquid.", 1);
+    	const iLockbox = new Gear("Lockbox", "1 Slot. 10HP. 6DR. FR. Larceny(Disable) 9#.", 2);
+    	const iMessengerBag = new Gear("Messenger Bag", "4 Slots. 1rnd to access.", 2);
+    	const iPlasticJug = new Gear("Plastic Jug", "Holds 2 units (1gal) of liquid.", 1);
+    	const iPurse = new Gear("Purse", "3 Slots. 1rnd to access.", 1);
+    	const iSpeedloader = new Gear("Speed-loader", "Reload a revolver cylinder as 1 action.", 0);
+    	const iToolBelt = new Gear("Tool Belt", "6x 1 Slots. +1 Build. Miscellaneous small tools.", 2);
+    	const iTrenchCoat = new Gear("Trench Coat", "2x 2 Slots. CR. +1 Stealth.", 1);
+    	const iWaterBottle = new Gear("Water Bottle", "Holds 1 unit (.5gal) of liquid.", 1);
+
+    	const iStorageList = [
+    		iBackpack,
+    		iBandoleer,
+    		iBDUJacket,
+    		iCargoPants,
+    		iCanteen,
+    		iConcealedHolster,
+    		iCooler,
+    		iDuffelBag,
+    		iFuelCan,
+    		iHoody,
+    		iHydrationPack,
+    		iLockbox,
+    		iMessengerBag,
+    		iPlasticJug,
+    		iPurse,
+    		iSpeedloader,
+    		iToolBelt,
+    		iTrenchCoat,
+    		iWaterBottle
+    	];
+
+    	const iAirHorn = new Gear("Air Horn", "Emits a loud shriek up to a 1 mile radius.", 1);
+    	const iBalaclava = new Gear("Balaclava", "+1 Stealth. Mask. CR.", 0);
+    	const iBandanna = new Gear("Bandanna", "+1 C vs airborne toxins. Can use as Bandage.", 0);
+    	const iBaseballCap = new Gear("Baseball Cap", "Reduce Visibility(Rain and Sun) penalty by 1.", 0);
+    	const iBicycle = new Gear("Bicycle", "Athletics 3#. Speed x3yds (x.7mph). 2h.", 8);
+    	const iBinoculars = new Gear("Binoculars", "+3 Perception(See) at 50+yds.", 1);
+    	const iBobbyPin = new Gear("Bobby Pin", "Allows Larceny(Disable) roll on key locks.", 0);
+    	const iBoltCutters = new Gear("Bolt Cutters", "C9# to cut metal (Handcuffs, Padlocks, etc).", 3);
+    	const iCageTrap = new Gear("Cage Trap", "+3 Survival(Forage). Takes 1day.", 6);
+    	const iCandle = new Gear("Candle", "1yd light radius for 6hrs.", 0);
+    	const iCandy = new Gear("Candy", "Restores 1 Luck point. 1/day.", 0);
+    	const iCarabiner = new Gear("Carabiner", "+1 Athletics(Climb and Rappel). Holds 50Sz.", 0);
+    	const iCompass = new Gear("Compass", "+3 Survival(Navigate). Always points North.", 0);
+    	const iCowboyHat = new Gear("Cowboy Hat", "Reduce Visibility(Rain and Sun) penalty by 3.", 0);
+    	const iChalk = new Gear("Chalk", "Used to temporarily write on any surface.", 0);
+    	const iChemical = new Gear("Chemical", "Substances used for Science(Chemistry).", 1);
+    	const iChokerLeash = new Gear("Choker Leash", "+3 Tame. Grabbed. C +3 vs C to control.", 1);
+    	const iDuctTape = new Gear("Duct Tape", "+1 Build/1yd or use 2yds as Handcuffs. 60yds.", 1);
+    	const iDustMask = new Gear("Dust Mask", "+3 C vs airborne toxins. Mask.", 1);
+    	const iEarPlugs = new Gear("Ear Plugs", "No Deafness from noise. -3 Perception(Hear).", 9);
+    	const iEggTimer = new Gear("Egg Timer", "Set up to 60mins. Loud ringing for 1min.", 1);
+    	const iFirestick = new Gear("Fire-stick", "+3 Survival(Camp). Magnesium rod and steel.", 0);
+    	const iFishingPole = new Gear("Fishing Pole", "+1 Survival(Forage) at river, lake, or ocean.", 2);
+    	const iFlareGun = new Gear("Flare Gun", "Pistol. RNG:3. Ammo: 12g Flares or 1 use 12g.", 1);
+    	const iFlippers = new Gear("Flippers", "+3 Athletics(Swim). -6 walking Speed.", 2);
+    	const iFood = new Gear("Food", "Contains 1 Food to feed a person for a day.", 1);
+    	const iGasMask = new Gear("Gas Mask", "+6 C vs airborne toxins. Mask. -1 Perception.", 1);
+    	const iGlassCutter = new Gear("Glass Cutter", "Cuts glass quietly.", 0);
+    	const iGoggles = new Gear("Goggles", "+3 C to resist toxins in eyes.", 1);
+    	const iGrapplingHook = new Gear("Grappling Hook", "+3 Athletics(Climb and Rappel). Holds 100Sz.", 2);
+    	const iGunCleaningKit = new Gear("Gun Cleaning Kit", "Gun gets +1 RATK for 1day. Takes 1hr/gun.", 1);
+    	const iHacksaw = new Gear("Hacksaw", "1DMG/rnd of sawing to almost any material.", 2);
+    	const iHammock = new Gear("Hammock", "Suspended sleeping device for 1 person.", 1);
+    	const iHandcuffs = new Gear("Handcuffs", "Grabbed. A15# to escape. Larceny(Disable) 12#.", 1);
+    	const iLeatherBelt = new Gear("Leather Belt", "1yd strap. Stops Limb Bleeding. Holds 50Sz.", 1);
+    	const iLifejacket = new Gear("Lifejacket", "+6 Athletics(Swim). Prevents drowning.", 2);
+    	const iLighter = new Gear("Lighter", "Makes a small fire. 1yd radius light.", 0);
+    	const iLockpicks = new Gear("Lockpicks", "+3 Larceny(Disable) key locks. 6 picks.", 1);
+    	const iLuxuryItem = new Gear("Luxury Item", "Toilet paper, cigarette, etc. +1 Psyche 1/wk.", 0);
+    	const iMagnifyingGlass = new Gear("Magnifying Glass", "+6 Perception(See) to inspect tiny details.", 1);
+    	const iMakeup = new Gear("Makeup", "+1 Socialize and Entertain for 6hrs. 30 uses.", 0);
+    	const iMarbles = new Gear("Marbles", "30/bag. 2sqyd area. A12# or fall Prone.", 1);
+    	const iMarker = new Gear("Marker", "Used to permanently write on any surface.", 0);
+    	const iMatchbook = new Gear("Matchbook", "+1 Survival(Camp). 1yd light radius, 3rnds.", 0);
+    	const iMeasuringCup = new Gear("Measuring Cup", "+3 Science(Chemistry). Marked glass cup.", 1);
+    	const iMonocular = new Gear("Monocular", "+1 Perception(See) at 25+yds.", 1);
+    	const iMultiTool = new Gear("Multi-Tool", "+1 Larceny(Disable), Build, Science((Tech)).", 1);
+    	const iMusicalInstrument = new Gear("Musical Instrument", "+1 Entertain(Distract and Inspire).", 1);
+    	const iMylarBlanket = new Gear("Mylar Blanket", "CR. 1yd x 2yd reflective foil sheet.", 0);
+    	const iNotebook = new Gear("Notebook", "100 pages of paper with a wire binding.", 1);
+    	const iPadlock = new Gear("Padlock", "10HP. 6DR. Larceny(Disable) 9#.", 1);
+    	const iParacord = new Gear("Paracord", "60yd coil. Holds 50Sz.", 1);
+    	const iPart = new Gear("Part", "Scrap used for Build and Science((Tech)).", 1);
+    	const iPepperSpray = new Gear("Pepper Spray", "+1 Ranged(Gun). RNG:1. 3 Pain. 3 uses. Toxin.", 0);
+    	const iPocketMirror = new Gear("Pocket Mirror", "Perception(See) 6# to see from behind Cover.", 0);
+    	const iPoncho = new Gear("Poncho", "CR. Waterproof.", 0);
+    	const iRatTrap = new Gear("Rat Trap", "+1 Survival(Forage). Takes 1day.", 1);
+    	const iRoadFlare = new Gear("Road Flare", "3FDMG. 10yd light radius for 20mins.", 1);
+    	const iRollerblades = new Gear("Rollerblades", "Athletics 6#. Speed x3. 1rnd equip. Fail:Prone.", 2);
+    	const iRope = new Gear("Rope", "30yd nylon coil. Holds 100Sz.", 2);
+    	const iRunningShoes = new Gear("Running Shoes", "+1 mile of Jogging distance.", 2);
+    	const iSkateboard = new Gear("Skateboard", "Athletics 6#. Speed x3. Fail:Prone.", 3);
+    	const iSleepingBag = new Gear("Sleeping Bag", "Insulated bag for up to 2 people. CR +3hrs.", 3);
+    	const iSnorkel = new Gear("Snorkel", "Breathe while just beneath water's surface.", 1);
+    	const iSpottingScope = new Gear("Spotting Scope", "+6 Perception(See) at 100+yds.", 2);
+    	const iSprayPaint = new Gear("Spray Paint", "RATK Called Shot:Head. Blind d6rnds. 10 uses.", 1);
+    	const iSunglasses = new Gear("Sunglasses", "No Visibility(Sun) penalty. +1 C vs light.", 0);
+    	const iSwissArmyKnife = new Gear("Swiss Army Knife", "+1 Build and Survival.", 1);
+    	const iTapeMeasure = new Gear("Tape Measure", "+1 Build. 10yd long wind-up metal tape.", 2);
+    	const iTarp = new Gear("Tarp", "3yd x 3yd plastic sheet. CR. Waterproof.", 1);
+    	const iTent = new Gear("Tent", "4 person. 5min setup/take-down. CR +3hrs.", 6);
+    	const iThermalUnderwear = new Gear("Thermal Underwear", "CR. Can use as 6 Bandages.", 1);
+    	const iToolBag = new Gear("Tool Bag", "+3 Build. Pliers, wrenches, level, etc.", 3);
+    	const iWaterFilter = new Gear("Water Filter", "Purifies 1 Water ration (.5gal) per minute.", 1);
+    	const iWhetstone = new Gear("Whetstone", "Blade gets +1 DMG for 1day. Takes 1hr/blade.", 1);
+    	const iWhistle = new Gear("Whistle", "+1 Tame(Train). Loud shriek 500yd radius.", 0);
+    	const iWireSaw = new Gear("Wire Saw", "1DMG/rnd of sawing to wood or bone.", 1);
+    	const iWristwatch = new Gear("Wristwatch", "Tells time and +1 Survival(Navigate).", 0);
+    	const iZipTie = new Gear("Zip Tie", "Grabbed. C9# to escape. Use for +1 Build.", 0);
+
+    	const iEquipmentList = [
+    		iAirHorn,
+    		iBalaclava,
+    		iBandanna,
+    		iBaseballCap,
+    		iBicycle,
+    		iBinoculars,
+    		iBobbyPin,
+    		iBoltCutters,
+    		iCageTrap,
+    		iCandle,
+    		iCandy,
+    		iCarabiner,
+    		iCompass,
+    		iCowboyHat,
+    		iChalk,
+    		iChemical,
+    		iChokerLeash,
+    		iDuctTape,
+    		iDustMask,
+    		iEarPlugs,
+    		iEggTimer,
+    		iFirestick,
+    		iFishingPole,
+    		iFlareGun,
+    		iFlippers,
+    		iFood,
+    		iGasMask,
+    		iGlassCutter,
+    		iGoggles,
+    		iGrapplingHook,
+    		iGunCleaningKit,
+    		iHacksaw,
+    		iHammock,
+    		iHandcuffs,
+    		iLeatherBelt,
+    		iLifejacket,
+    		iLighter,
+    		iLockpicks,
+    		iLuxuryItem,
+    		iMagnifyingGlass,
+    		iMakeup,
+    		iMarbles,
+    		iMarker,
+    		iMatchbook,
+    		iMeasuringCup,
+    		iMonocular,
+    		iMultiTool,
+    		iMusicalInstrument,
+    		iMylarBlanket,
+    		iNotebook,
+    		iPadlock,
+    		iParacord,
+    		iPart,
+    		iPepperSpray,
+    		iPocketMirror,
+    		iPoncho,
+    		iRatTrap,
+    		iRoadFlare,
+    		iRollerblades,
+    		iRope,
+    		iRunningShoes,
+    		iSkateboard,
+    		iSleepingBag,
+    		iSnorkel,
+    		iSpottingScope,
+    		iSprayPaint,
+    		iSunglasses,
+    		iSwissArmyKnife,
+    		iTapeMeasure,
+    		iTarp,
+    		iTent,
+    		iThermalUnderwear,
+    		iToolBag,
+    		iWaterFilter,
+    		iWhetstone,
+    		iWhistle,
+    		iWireSaw,
+    		iWristwatch,
+    		iZipTie
+    	];
+
+    	const iAmbulance = new Vehicle("Ambulance", 40, 1, 10, 120, 80, "-3", 10, 35, 4, 200, "7x3");
+    	const iBoxTruck = new Vehicle("Box Truck", 40, 1, 10, 90, 60, "-3", 10, 40, 2, 1600, "10x3");
+    	const iBus = new Vehicle("Bus", 50, 3, 12, 90, 60, "-6", 15, 100, 60, 1200, "12x4");
+    	const iMotorcycle = new Vehicle("Motorcycle", 20, 0, 4, 150, 100, "+1", 40, 5, 2, 30, "3x1");
+    	const iMuscleCar = new Vehicle("Muscle Car", 40, 1, 6, 180, 120, "+1", 10, 20, 4, 80, "5x2");
+    	const iPickupTruck = new Vehicle("Pickup Truck", 40, 1, 8, 150, 100, "-1", 20, 20, 2, 400, "6x2");
+    	const iPoliceCruiser = new Vehicle("Police Cruiser", 40, 1, 6, 180, 120, "+1", 10, 20, 4, 100, "5x2");
+    	const iSedan = new Vehicle("Sedan", 30, 1, 6, 150, 100, "+0", 30, 12, 4, 100, "5x2");
+    	const iSemitruck = new Vehicle("Semi-truck", 50, 3, 12, 90, 60, "-6", 5, 120, 2, 16000, "25x4");
+    	const iStreetBike = new Vehicle("Street Bike", 20, 0, 4, 180, 120, "+3", 50, 5, 2, 10, "3x1");
+    	const iSUV = new Vehicle("SUV", 40, 1, 8, 150, 100, "-1", 15, 25, 6, 200, "6x2");
+    	const iVan = new Vehicle("Van", 40, 1, 10, 120, 80, "-3", 10, 35, 12, 1200, "7x3");
+
+    	const iLandVehiclesList = [
+    		iAmbulance,
+    		iBoxTruck,
+    		iBus,
+    		iMotorcycle,
+    		iMuscleCar,
+    		iPickupTruck,
+    		iPoliceCruiser,
+    		iSedan,
+    		iSemitruck,
+    		iStreetBike,
+    		iSUV,
+    		iVan
+    	];
+
+    	const iAirliner = new Vehicle("Airliner", 150, 3, "", 900, 600, "-6", 0.5, 5300, 150, 6000, "34x32", 14000);
+    	const iAirplane = new Vehicle("Airplane", 40, 0, "", 240, 160, "-3", 15, 55, 4, 200, "9x13", 340);
+    	const iChinook = new Vehicle("Chinook", 120, 9, "", 240, 160, "-6", 0.1, 9000, 40, 1000, "33x22");
+    	const iFighterJet = new Vehicle("Fighter Jet", 80, 6, "", 1800, 1200, "-6", 1, 2200, 1, 5, "19x13", 4600);
+    	const iGyrocopter = new Vehicle("Gyrocopter", 10, 0, "", 180, 120, "+0", 16, 20, 1, 30, "9x9");
+    	const iHelicopter = new Vehicle("Helicopter", 50, 0, "", 210, 140, "+3", 5, 30, 8, 500, "13x11");
+    	const iAircraftList = [iAirliner, iAirplane, iChinook, iFighterJet, iGyrocopter, iHelicopter];
+    	const iAirboat = new Vehicle("Airboat", 20, 0, "", 90, 60, "+1", 5, 50, 6, 500, "3x2");
+    	const iCanoe = new Vehicle("Canoe*", 10, 0, "", "C x3", "C x2", "-6", 0, 0, 4, 50, "3x1");
+    	const iCatamaran = new Vehicle("Catamaran", 40, 1, "", 90, 60, "-3", 15, 200, 4, 500, "6x4");
+    	const iInflatableRaft = new Vehicle("Inflatable Raft*", 4, 0, "", "C x1.5", "C ", "+0", 0, 0, 6, 50, "4x2");
+    	const iJetSki = new Vehicle("Jet Ski", 20, 0, "", 90, 60, "+3", 5, 15, 3, 0, "3x1");
+    	const iKayak = new Vehicle("Kayak*", 6, 0, "", "C x1.5", "C ", "+1", 0, 0, 1, 20, "1x2");
+    	const iMotorboat = new Vehicle("Motorboat", 20, 0, "", 60, 40, "+1", 10, 10, 6, 100, "6x2");
+    	const iRowboat = new Vehicle("Rowboat*", 12, 0, "", "C x1.5", "C ", "-1", 0, 0, 4, 100, "3x1");
+    	const iSloop = new Vehicle("Sloop", 50, 3, "", 60, 40, "-6", 0, 0, 10, 1000, "20x4");
+    	const iSpeedboat = new Vehicle("Speedboat", 30, 1, "", 90, 60, "+1", 5, 100, 4, 200, "8x3");
+    	const iTrawler = new Vehicle("Trawler", 60, 6, "", 30, 20, "-6", 1.5, 1000, 8, 10000, "12x6");
+    	const iYacht = new Vehicle("Yacht", 100, 3, "", 60, 40, "-6", 1, 1500, 25, 5000, "30x8");
+
+    	const iWatercraftList = [
+    		iAirboat,
+    		iCanoe,
+    		iCatamaran,
+    		iInflatableRaft,
+    		iJetSki,
+    		iKayak,
+    		iMotorboat,
+    		iRowboat,
+    		iSloop,
+    		iSpeedboat,
+    		iTrawler,
+    		iYacht
+    	];
+
+    	const cAirBag = new Gear("Air Bag**", "Build 12#. -3 Wreck BDMG to the Head for 1 occupant.", 6);
+    	const cAirFilter = new Gear("Air Filter", "Build 9#. +6C vs airborne toxins for occupants.", 3);
+    	const cBackupFuelTank = new Gear("Backup Fuel Tank", "Build # varies. +1 Fuel per 2 Size, 1 Part and 1#.", "varies");
+    	const cBallisticGlass = new Gear("Ballistic Glass", "Build 9#. 3 DR for windows.", 6);
+    	const cBodySpines = new Gear("Body Spines", "Build 3#. Dodge 9# to jump on or take 6DMG (Pierce).", 9);
+    	const cBrushGuard = new Gear("Brush Guard", "Build 9#. +1 DR vs front collisions.", 12);
+    	const cCargoRack = new Gear("Cargo Rack**", "Build 9#. +25% Carry capacity (round down).", 6);
+    	const cCBRadio = new Gear("CB Radio", "Build 12#. 40-channel 2-way radio. 6 mile range.", 3);
+    	const cEjectorSeat = new Gear("Ejector Seat**", "Build 12#. Throw occupant out of vehicle. See Wreck.", 12);
+    	const cEnhancedBrakes = new Gear("Enhanced Brakes", "Build 6#. Brake at -20mph/rnd.", 3);
+    	const cExoCage = new Gear("Exo-Cage", "Build 15#. Get one extra Prestine Condition level.", 18);
+    	const cFireSuppression = new Gear("Fire Suppression", "Build 9#. Puts out any fires on/in vehicle.", 6);
+    	const cFixedGun = new Gear("Fixed Gun**", "Build 3#*. Driver uses Drive(Combat) for RATK rolls.", 3);
+    	const cFloodLights = new Gear("Flood Lights", "Build 9#. No Visibility penalty in darkness. 10yds.", 3);
+    	const cFrameJack = new Gear("Frame Jack**", "Build 9#. Tire change time is halved on one side.", 6);
+    	const cFuelCapLock = new Gear("Fuel Cap Lock", "Build 3#. 10HP. Larceny(Disable) 9# takes d6mins.", 0);
+    	const cHiddenCompartment = new Gear("Hidden Compartment", "Build 9#. Perception 12# to find. Holds 2Sz.", 0);
+    	const cHighFlowExhaust = new Gear("High-Flow Exhaust", "Build 6#. Accelerate at +20mph/rnd.", 3);
+    	const cHubcapBlades = new Gear("Hubcap Blades", "Build 6#. +1 DR for side collisions.", 9);
+    	const cIntakeSnorkel = new Gear("Intake Snorkel", "Build 6#. Drive through water up to the windows.", 3);
+    	const cKeypadIgnition = new Gear("Keypad Ignition", "Build 12#. Coded starter. Science(Tech) 12# to break.", 0);
+    	const cLuxurySuspension = new Gear("Luxury Suspension", "Build 18#. Reduces Unstable penalty to -1.", 12);
+    	const cNitrousBooster = new Gear("Nitrous Booster**", "Build 15#. +20mph Speed and -3 Han for 1rnd. 3 uses.", 3);
+    	const cParachute = new Gear("Parachute", "Build 12#. Stops vehicle in 1rnd. 10rnds to repack.", 6);
+    	const cPayloadDropper = new Gear("Payload Dropper**", "Build 6#. Bomb or Jacks (Drive 12# or d6 flats).", 3);
+    	const cRackAndPinion = new Gear("Rack and Pinion", "Build 12#. +1 Han. Requires driver Constitution 3+.", 6);
+    	const cRamPlow = new Gear("Ram Plow", "Build 12#. +3 DR for front collisions. -25% MPG.", 15);
+    	const cRunFlatTires = new Gear("Run-Flat Tires", "Build 6#. +3 HP for Tires. Sz = 1 per Tire.", "varies");
+    	const cSafetyHarness = new Gear("Safety Harness**", "Build 6#. -1 Wreck BDMG for 1 occupant. Takes 3rnds.", 1);
+    	const cSlickDispenser = new Gear("Slick Dispenser**", "Build 3#. 1 Fuel, Drive vs Drive to Wreck pursuer.", 6);
+    	const cSteelPlates = new Gear("Steel Plates", "Build 15#. +3 DR for entire Vehicle. Sz = [Carry /2].", "varies");
+    	const cStrutBraces = new Gear("Strut Braces", "Build 6#. +1 Drive(Stunt).", 6);
+    	const cSupercharger = new Gear("Supercharger", "Build 18#. +20mph (+30yd) maximum Speed.", 9);
+    	const cTireChains = new Gear("Tire Chains", "Build 3#. Ignore Terrain penalties. -25% Speed.", 9);
+    	const cTurretGun = new Gear("Turret Gun**", "Build 6#*. Passenger uses Ranged for RATK rolls.", 9);
+    	const cWinch = new Gear("Winch**", "Build 9#. 30yd cable. 1yd/min. Hauls 2000Sz.", 15);
+
+    	const iVehicleCustomizationsList = [
+    		cAirBag,
+    		cAirFilter,
+    		cBackupFuelTank,
+    		cBallisticGlass,
+    		cBodySpines,
+    		cBrushGuard,
+    		cCargoRack,
+    		cCBRadio,
+    		cEjectorSeat,
+    		cEnhancedBrakes,
+    		cExoCage,
+    		cFireSuppression,
+    		cFixedGun,
+    		cFloodLights,
+    		cFrameJack,
+    		cFuelCapLock,
+    		cHiddenCompartment,
+    		cHighFlowExhaust,
+    		cHubcapBlades,
+    		cIntakeSnorkel,
+    		cKeypadIgnition,
+    		cLuxurySuspension,
+    		cNitrousBooster,
+    		cParachute,
+    		cPayloadDropper,
+    		cRackAndPinion,
+    		cRamPlow,
+    		cRunFlatTires,
+    		cSafetyHarness,
+    		cSlickDispenser,
+    		cSteelPlates,
+    		cStrutBraces,
+    		cSupercharger,
+    		cTireChains,
+    		cTurretGun,
+    		cWinch
+    	];
+
+    	const iMasterGearList = [
+    		iArmyHelmet,
+    		iAthleticPads,
+    		iCoveralls,
+    		iDenimJacket,
+    		iFirefighterSuit,
+    		iFlakJacket,
+    		iGhillieSuit,
+    		iHikingBoots,
+    		iInterceptorArmor,
+    		iKevlarGloves,
+    		iKevlarVest,
+    		iKneePads,
+    		iLeatherJacket,
+    		iMotorcycleHelmet,
+    		iNBCSuit,
+    		iPaintballMask,
+    		iPlateCarrier,
+    		iRiotHelmet,
+    		iSportsHelmet,
+    		iSteelToeBoots,
+    		iTacticalVest,
+    		iUndercoverVest,
+    		iWinterCoat,
+    		iWorkGloves,
+    		iAx,
+    		iBaseballBat,
+    		iBrassKnuckles,
+    		iBaton,
+    		iCane,
+    		iCleaver,
+    		iCrowbar,
+    		iFirepoker,
+    		iGarrote,
+    		iHammer,
+    		iHatchet,
+    		iKnife,
+    		iMachete,
+    		iMetalClub,
+    		iPickax,
+    		iPitchfork,
+    		iRiotShield,
+    		iScrewdriver,
+    		iShovel,
+    		iSledgehammer,
+    		iSpear,
+    		iStaff,
+    		iTireIron,
+    		iTorch,
+    		iAK47,
+    		iAR15,
+    		iBenelliM4,
+    		iBrowningABolt,
+    		iColtPython,
+    		iCompoundBow,
+    		iCrossbow,
+    		iGlock17,
+    		iHKMP5,
+    		iHenryGoldenBoy,
+    		iKimber1911,
+    		iMAC10,
+    		iMarlin1894C,
+    		iMossberg500,
+    		iNorincoSKS,
+    		iRemington700,
+    		iRemington870,
+    		iRuger1022,
+    		iRugerMkIII,
+    		iSIGSauerP290,
+    		iSavageMkII,
+    		iSpringfieldM1A,
+    		iSWSnubnose,
+    		iWinchesterSawnoff,
+    		iCellphone,
+    		iEmergencyRadio,
+    		iFlashlight,
+    		iGeigerCounter,
+    		iHandRadio,
+    		iHeadlamp,
+    		iLantern,
+    		iMegaphone,
+    		iMultimeter,
+    		iNightvisionGoggles,
+    		iQuadcopterDrone,
+    		iRadioJammer,
+    		iRCCar,
+    		iSolarLamp,
+    		iStunGun,
+    		iBackpack,
+    		iBandoleer,
+    		iBDUJacket,
+    		iCargoPants,
+    		iCanteen,
+    		iConcealedHolster,
+    		iCooler,
+    		iDuffelBag,
+    		iFuelCan,
+    		iHoody,
+    		iHydrationPack,
+    		iLockbox,
+    		iMessengerBag,
+    		iPlasticJug,
+    		iPurse,
+    		iSpeedloader,
+    		iToolBelt,
+    		iTrenchCoat,
+    		iWaterBottle,
+    		iAirHorn,
+    		iBalaclava,
+    		iBandanna,
+    		iBaseballCap,
+    		iBicycle,
+    		iBinoculars,
+    		iBobbyPin,
+    		iBoltCutters,
+    		iCageTrap,
+    		iCandle,
+    		iCandy,
+    		iCarabiner,
+    		iCompass,
+    		iCowboyHat,
+    		iChalk,
+    		iChemical,
+    		iChokerLeash,
+    		iDuctTape,
+    		iDustMask,
+    		iEarPlugs,
+    		iEggTimer,
+    		iFirestick,
+    		iFishingPole,
+    		iFlareGun,
+    		iFlippers,
+    		iFood,
+    		iGasMask,
+    		iGlassCutter,
+    		iGoggles,
+    		iGrapplingHook,
+    		iGunCleaningKit,
+    		iHacksaw,
+    		iHammock,
+    		iHandcuffs,
+    		iLeatherBelt,
+    		iLifejacket,
+    		iLighter,
+    		iLockpicks,
+    		iLuxuryItem,
+    		iMagnifyingGlass,
+    		iMakeup,
+    		iMarbles,
+    		iMarker,
+    		iMatchbook,
+    		iMeasuringCup,
+    		iMonocular,
+    		iMultiTool,
+    		iMusicalInstrument,
+    		iMylarBlanket,
+    		iNotebook,
+    		iPadlock,
+    		iParacord,
+    		iPart,
+    		iPepperSpray,
+    		iPocketMirror,
+    		iPoncho,
+    		iRatTrap,
+    		iRoadFlare,
+    		iRollerblades,
+    		iRope,
+    		iRunningShoes,
+    		iSkateboard,
+    		iSleepingBag,
+    		iSnorkel,
+    		iSpottingScope,
+    		iSprayPaint,
+    		iSunglasses,
+    		iSwissArmyKnife,
+    		iTapeMeasure,
+    		iTarp,
+    		iTent,
+    		iThermalUnderwear,
+    		iToolBag,
+    		iWaterFilter,
+    		iWhetstone,
+    		iWhistle,
+    		iWireSaw,
+    		iWristwatch,
+    		iZipTie,
+    		i22AmmoList,
+    		i45AmmoList,
+    		i357AmmoList,
+    		i556AmmoList,
+    		i762AmmoList,
+    		i308AmmoList,
+    		i12gAmmoList,
+    		iArrowAmmoList,
+    		iBombsList,
+    		iDocumentsList,
+    		iDrugsList,
+    		iGunAccessoryList,
+    		iMedicalList,
+    		iAircraftList,
+    		iLandVehiclesList,
+    		iWatercraftList,
+    		iRareArmorList,
+    		iRareWeaponsList,
+    		"REROLL + BONUS ROLL"
+    	];
+
+    	(function () {
+    		let armorTable = "";
+
+    		for (let i in iArmorList) {
+    			const thisArmor = iArmorList[i];
+    			armorTable += "<button id=\"GearArmor" + thisArmor.type + "Btn\" class=\"Btn\">" + thisArmor.type.toUpperCase() + "</button><button id=\"GearArmor" + thisArmor.type + "Sec\" class=\"Sec4\"><p>AR: " + thisArmor.ar + "</p><p>Location(s): " + thisArmor.loc + "</p><p>Notes: " + thisArmor.notes + "</p><p>Size: " + iArmorList[i].sz + "</p></button>";
+    		}
+
+    		armorTable += "</div>";
+    		document.getElementById("GearArmorTableSec").innerHTML += armorTable;
+    		let meleeTable = "";
+
+    		for (let i in iMeleeWeaponsList) {
+    			const thisMelee = iMeleeWeaponsList[i];
+    			meleeTable += "<button id=\"GearMelee" + thisMelee.type + "Btn\" class=\"Btn\">" + thisMelee.type.toUpperCase() + "</button><button id=\"GearMelee" + thisMelee.type + "Sec\" class=\"Sec4\"><p>DMG: " + thisMelee.dmg + "</p><p>Hands: " + thisMelee.hands + "</p><p>Notes: " + thisMelee.notes + "</p><p>Size: " + thisMelee.sz + "</p></button>";
+    		}
+
+    		meleeTable += "</div>";
+    		document.getElementById("GearMeleeTableSec").innerHTML += meleeTable;
+    		let rangedTable = "";
+
+    		for (let i in iRangedWeaponsList) {
+    			const thisRanged = iRangedWeaponsList[i];
+    			rangedTable += "<button id=\"GearRanged" + thisRanged.type + "Btn\" class=\"Btn\">" + thisRanged.type.toUpperCase() + "</button><button id=\"GearRanged" + thisRanged.type + "Sec\" class=\"Sec4\"><p>DMG: " + thisRanged.dmg + "</p><p>Range: " + thisRanged.rng + "</p><p>Caliber: " + thisRanged.cal + "</p><p>Ammo: " + thisRanged.mag + "</p><p>Hands: " + thisRanged.hands + "</p><p>Notes: " + thisRanged.notes + "</p><p>Size: " + thisRanged.sz + "</p></button>";
+    		}
+
+    		rangedTable += "</div>";
+    		document.getElementById("GearRangedTableSec").innerHTML += rangedTable;
+    		let bombTable = "";
+
+    		for (let i in iBombsList) {
+    			const thisBomb = iBombsList[i];
+    			bombTable += "<button id=\"GearBombs" + thisBomb.type + "Btn\" class=\"Btn\">" + thisBomb.type.toUpperCase() + "</button><button id=\"GearBombs" + thisBomb.type + "Sec\" class=\"Sec4\"><p>DMG: " + thisBomb.dmg + "</p><p>Blast: " + thisBomb.blast + "</p><p>Duration: " + thisBomb.duration + "</p><p>Effects: " + thisBomb.effects + "</p><p>Mix: " + thisBomb.mix + "</p><p>Size: " + thisBomb.sz + "</p></button>";
+    		}
+
+    		bombTable += "</div>";
+    		document.getElementById("GearBombsTableSec").innerHTML += bombTable;
+
+    		function fillTable(list, name) {
+    			let existing = document.getElementById("Gear" + name + "TableSec").innerHTML;
+    			let entry = "";
+
+    			for (let i in list) {
+    				entry += "<button id=\"Gear" + name + list[i].type + "Btn\" class=\"Btn\">" + list[i].type.toUpperCase() + "</button><button id=\"Gear" + name + list[i].type + "Sec\" class=\"Sec4\"><p>Notes: " + list[i].notes + "</p><p>Size: " + list[i].sz + "</p></button>";
+    			}
+
+    			entry += "</div>";
+    			document.getElementById("Gear" + name + "TableSec").innerHTML = entry + existing;
+    		}
+
+    		function fillVehicleTable(list, name) {
+    			let existing = document.getElementById("Gear" + name + "Sec").innerHTML;
+    			let entry = "";
+
+    			for (let i in list) {
+    				entry += "<button id=\"Gear" + name + list[i].type + "Btn\" class=\"Btn\">" + list[i].type.toUpperCase() + "</button><button id=\"Gear" + name + list[i].type + "Sec\" class=\"Sec4\"><p>HP: " + list[i].hp + "</p><p>DR: " + list[i].dr + "</p><p>DMG: " + list[i].dmg + "</p><p>Tactical Speed: " + list[i].spd + " yds/rnd</p><p>Travel Speed: " + list[i].mph + "mph</p><p>Handle: " + list[i].han + "</p><p>Area: " + list[i].area + " yds</p><p>MPG: " + list[i].mpg + "</p><p>Fuel: " + list[i].fuel + " gal</p><p>Occupants: " + list[i].occ + "</p><p>Cargo: " + list[i].car + " Size</p></button>";
+    			}
+
+    			if (list === iWatercraftList) {
+    				entry += "<p>* Use the average Constitution of all Occupants (not just rowers) when determining Speed.</p>";
+    			}
+
+    			entry += "</div><p>HP: Health Points. Disabled at 50% HP and destroyed at 0HP.</p><p>DR: Damage Reduction. Reduces DMG to vehicles.</p><p>Tactical Speed (yds/rnd). Travel Speed (mph).</p><p>Handle: Modifier to all Drive rolls.</p><p>Area: Length and width dimensions in yards. Area x60 = LAND VEHICLE Size.</p><p>Cargo: -1 Handle per 10% over. 40 Size = 1 Occupant.</p>";
+    			document.getElementById("Gear" + name + "Sec").innerHTML = existing + entry;
+    		}
+
+    		fillTable(iGunAccessoryList, "GunAccessories");
+    		fillTable(iAmmoList, "Ammo");
+    		fillTable(iDrugsList, "Drugs");
+    		fillTable(iMedicalList, "Medical");
+    		fillTable(iElectronicsList, "Electronics");
+    		fillTable(iDocumentsList, "Documents");
+    		fillTable(iStorageList, "Storage");
+    		fillTable(iEquipmentList, "Equipment");
+    		fillTable(iVehicleCustomizationsList, "VehicleCustomizations");
+    		fillVehicleTable(iLandVehiclesList, "LandVehicles");
+    		fillVehicleTable(iAircraftList, "Aircraft");
+    		fillVehicleTable(iWatercraftList, "Watercraft");
+    	})();
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		
+    	};
+
+    	return {};
+    }
+
+    class Gear_1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$a, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Gear_1",
+    			options,
+    			id: create_fragment$a.name
+    		});
+    	}
+    }
+
     /* src/pages/Creator.svelte generated by Svelte v3.15.0 */
     const file$8 = "src/pages/Creator.svelte";
 
-    function create_fragment$a(ctx) {
+    function create_fragment$b(ctx) {
     	let div;
     	let t;
     	let current;
@@ -3864,7 +5036,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	backnextbuttons.$on("message", ctx.handleChange);
+    	backnextbuttons.$on("message", ctx.nav);
 
     	const block = {
     		c: function create() {
@@ -3873,7 +5045,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "svelte-1sye5nq");
-    			add_location(div, file$8, 20, 0, 767);
+    			add_location(div, file$8, 22, 0, 817);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3937,7 +5109,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$a.name,
+    		id: create_fragment$b.name,
     		type: "component",
     		source: "",
     		ctx
@@ -3946,12 +5118,12 @@ var app = (function () {
     	return block;
     }
 
-    function instance$9($$self, $$props, $$invalidate) {
+    function instance$a($$self, $$props, $$invalidate) {
     	let step = 0;
-    	const options = [Traits, Description, Skills, Properties, Abilities];
+    	const options = [Traits, Description, Skills, Properties, Abilities, Gear_1];
     	let selected = options[step];
 
-    	function handleChange(event) {
+    	function nav(event) {
     		$$invalidate("step", step = event.detail.number);
 
     		if (step == options.length || step < 0) {
@@ -3970,19 +5142,19 @@ var app = (function () {
     		if ("selected" in $$props) $$invalidate("selected", selected = $$props.selected);
     	};
 
-    	return { step, selected, handleChange };
+    	return { step, selected, nav };
     }
 
     class Creator extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$9, create_fragment$a, safe_not_equal, {});
+    		init(this, options, instance$a, create_fragment$b, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Creator",
     			options,
-    			id: create_fragment$a.name
+    			id: create_fragment$b.name
     		});
     	}
     }
@@ -4792,7 +5964,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$b(ctx) {
+    function create_fragment$c(ctx) {
     	let div1;
     	let label;
     	let input;
@@ -4895,7 +6067,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$b.name,
+    		id: create_fragment$c.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4906,7 +6078,7 @@ var app = (function () {
 
     let action_visible = false;
 
-    function instance$a($$self, $$props, $$invalidate) {
+    function instance$b($$self, $$props, $$invalidate) {
     	let visible = false;
 
     	function input_change_handler() {
@@ -4929,28 +6101,8762 @@ var app = (function () {
     class Combat extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$b, safe_not_equal, {});
+    		init(this, options, instance$b, create_fragment$c, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Combat",
     			options,
-    			id: create_fragment$b.name
+    			id: create_fragment$c.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Creation.svelte generated by Svelte v3.15.0 */
+
+    const file$a = "src/components/rules/Creation.svelte";
+
+    function create_fragment$d(ctx) {
+    	let div102;
+    	let h2;
+    	let t1;
+    	let button0;
+    	let t3;
+    	let div101;
+    	let button1;
+    	let t5;
+    	let div0;
+    	let p0;
+    	let t7;
+    	let button2;
+    	let t9;
+    	let div1;
+    	let p1;
+    	let t11;
+    	let ul0;
+    	let li0;
+    	let t13;
+    	let li1;
+    	let t15;
+    	let li2;
+    	let t17;
+    	let li3;
+    	let t19;
+    	let button3;
+    	let t21;
+    	let div2;
+    	let p2;
+    	let t23;
+    	let ul1;
+    	let li4;
+    	let t25;
+    	let li5;
+    	let t27;
+    	let li6;
+    	let t29;
+    	let li7;
+    	let t31;
+    	let button4;
+    	let t33;
+    	let div3;
+    	let p3;
+    	let t35;
+    	let ul4;
+    	let li8;
+    	let t37;
+    	let li9;
+    	let t39;
+    	let li10;
+    	let t41;
+    	let li11;
+    	let t43;
+    	let li12;
+    	let t45;
+    	let li13;
+    	let t47;
+    	let li14;
+    	let t49;
+    	let li15;
+    	let t51;
+    	let li16;
+    	let t53;
+    	let li20;
+    	let ul2;
+    	let li17;
+    	let t55;
+    	let li18;
+    	let t57;
+    	let li19;
+    	let t59;
+    	let li21;
+    	let t61;
+    	let li22;
+    	let t63;
+    	let li25;
+    	let ul3;
+    	let li23;
+    	let t65;
+    	let li24;
+    	let t67;
+    	let button5;
+    	let t69;
+    	let div8;
+    	let p4;
+    	let t71;
+    	let button6;
+    	let t73;
+    	let div4;
+    	let button7;
+    	let t75;
+    	let p5;
+    	let t76;
+    	let button8;
+    	let t78;
+    	let div5;
+    	let button9;
+    	let t80;
+    	let p6;
+    	let t81;
+    	let button10;
+    	let t83;
+    	let div6;
+    	let button11;
+    	let t85;
+    	let p7;
+    	let t86;
+    	let button12;
+    	let t88;
+    	let div7;
+    	let p8;
+    	let t90;
+    	let p9;
+    	let t92;
+    	let button13;
+    	let t94;
+    	let p10;
+    	let t95;
+    	let button14;
+    	let t97;
+    	let div9;
+    	let p11;
+    	let t99;
+    	let button15;
+    	let t101;
+    	let div100;
+    	let p12;
+    	let t103;
+    	let button16;
+    	let t105;
+    	let div16;
+    	let p13;
+    	let t107;
+    	let button17;
+    	let t109;
+    	let div10;
+    	let p14;
+    	let t111;
+    	let p15;
+    	let t113;
+    	let button18;
+    	let t115;
+    	let div11;
+    	let p16;
+    	let t117;
+    	let p17;
+    	let t119;
+    	let button19;
+    	let t121;
+    	let div12;
+    	let p18;
+    	let t123;
+    	let p19;
+    	let t125;
+    	let button20;
+    	let t127;
+    	let div13;
+    	let p20;
+    	let t129;
+    	let p21;
+    	let t131;
+    	let button21;
+    	let t133;
+    	let div14;
+    	let p22;
+    	let t135;
+    	let p23;
+    	let t137;
+    	let button22;
+    	let t139;
+    	let div15;
+    	let p24;
+    	let t141;
+    	let p25;
+    	let t143;
+    	let button23;
+    	let t145;
+    	let div23;
+    	let p26;
+    	let t147;
+    	let button24;
+    	let t149;
+    	let div17;
+    	let p27;
+    	let t151;
+    	let p28;
+    	let t153;
+    	let button25;
+    	let t155;
+    	let div18;
+    	let p29;
+    	let t157;
+    	let p30;
+    	let t159;
+    	let button26;
+    	let t161;
+    	let div19;
+    	let p31;
+    	let t163;
+    	let p32;
+    	let t165;
+    	let button27;
+    	let t167;
+    	let div20;
+    	let p33;
+    	let t169;
+    	let p34;
+    	let t171;
+    	let button28;
+    	let t173;
+    	let div21;
+    	let p35;
+    	let t175;
+    	let p36;
+    	let t177;
+    	let button29;
+    	let t179;
+    	let div22;
+    	let p37;
+    	let t181;
+    	let p38;
+    	let t183;
+    	let button30;
+    	let t185;
+    	let div60;
+    	let p39;
+    	let t187;
+    	let button31;
+    	let t189;
+    	let div24;
+    	let p40;
+    	let t191;
+    	let button32;
+    	let t193;
+    	let div25;
+    	let p41;
+    	let t195;
+    	let button33;
+    	let t197;
+    	let div26;
+    	let p42;
+    	let t199;
+    	let button34;
+    	let t201;
+    	let div27;
+    	let p43;
+    	let t203;
+    	let button35;
+    	let t205;
+    	let div28;
+    	let p44;
+    	let t207;
+    	let button36;
+    	let t209;
+    	let div29;
+    	let p45;
+    	let t211;
+    	let button37;
+    	let t213;
+    	let div30;
+    	let p46;
+    	let t215;
+    	let button38;
+    	let t217;
+    	let div31;
+    	let p47;
+    	let t219;
+    	let button39;
+    	let t221;
+    	let div32;
+    	let p48;
+    	let t223;
+    	let button40;
+    	let t225;
+    	let div33;
+    	let p49;
+    	let t227;
+    	let button41;
+    	let t229;
+    	let div34;
+    	let p50;
+    	let t231;
+    	let button42;
+    	let t233;
+    	let div35;
+    	let p51;
+    	let t235;
+    	let button43;
+    	let t237;
+    	let div36;
+    	let p52;
+    	let t239;
+    	let button44;
+    	let t241;
+    	let div37;
+    	let p53;
+    	let t243;
+    	let button45;
+    	let t245;
+    	let div38;
+    	let p54;
+    	let t247;
+    	let button46;
+    	let t249;
+    	let div39;
+    	let p55;
+    	let t251;
+    	let button47;
+    	let t253;
+    	let div40;
+    	let p56;
+    	let t255;
+    	let button48;
+    	let t257;
+    	let div41;
+    	let p57;
+    	let t259;
+    	let button49;
+    	let t261;
+    	let div42;
+    	let p58;
+    	let t263;
+    	let button50;
+    	let t265;
+    	let div43;
+    	let p59;
+    	let t267;
+    	let button51;
+    	let t269;
+    	let div44;
+    	let p60;
+    	let t271;
+    	let button52;
+    	let t273;
+    	let div45;
+    	let p61;
+    	let t275;
+    	let button53;
+    	let t277;
+    	let div46;
+    	let p62;
+    	let t279;
+    	let button54;
+    	let t281;
+    	let div47;
+    	let p63;
+    	let t283;
+    	let button55;
+    	let t285;
+    	let div48;
+    	let p64;
+    	let t287;
+    	let button56;
+    	let t289;
+    	let div49;
+    	let p65;
+    	let t291;
+    	let button57;
+    	let t293;
+    	let div50;
+    	let p66;
+    	let t295;
+    	let button58;
+    	let t297;
+    	let div51;
+    	let p67;
+    	let t299;
+    	let button59;
+    	let t301;
+    	let div52;
+    	let p68;
+    	let t303;
+    	let button60;
+    	let t305;
+    	let div53;
+    	let p69;
+    	let t307;
+    	let button61;
+    	let t309;
+    	let div54;
+    	let p70;
+    	let t311;
+    	let button62;
+    	let t313;
+    	let div55;
+    	let p71;
+    	let t315;
+    	let button63;
+    	let t317;
+    	let div56;
+    	let p72;
+    	let t319;
+    	let button64;
+    	let t321;
+    	let div57;
+    	let p73;
+    	let t323;
+    	let button65;
+    	let t325;
+    	let div58;
+    	let p74;
+    	let t327;
+    	let button66;
+    	let t329;
+    	let div59;
+    	let p75;
+    	let t331;
+    	let button67;
+    	let t333;
+    	let div61;
+    	let p76;
+    	let t335;
+    	let ol0;
+    	let li26;
+    	let t337;
+    	let li27;
+    	let t339;
+    	let li28;
+    	let t341;
+    	let li29;
+    	let t343;
+    	let li30;
+    	let t345;
+    	let li31;
+    	let t347;
+    	let li32;
+    	let t349;
+    	let li33;
+    	let t351;
+    	let li34;
+    	let t353;
+    	let li35;
+    	let t355;
+    	let li36;
+    	let t357;
+    	let li37;
+    	let t359;
+    	let li38;
+    	let t361;
+    	let li39;
+    	let t363;
+    	let li40;
+    	let t365;
+    	let li41;
+    	let t367;
+    	let li42;
+    	let t369;
+    	let li43;
+    	let t371;
+    	let li44;
+    	let t373;
+    	let li45;
+    	let t375;
+    	let li46;
+    	let t377;
+    	let li47;
+    	let t379;
+    	let li48;
+    	let t381;
+    	let li49;
+    	let t383;
+    	let li50;
+    	let t385;
+    	let li51;
+    	let t387;
+    	let li52;
+    	let t389;
+    	let li53;
+    	let t391;
+    	let li54;
+    	let t393;
+    	let li55;
+    	let t395;
+    	let li56;
+    	let t397;
+    	let li57;
+    	let t399;
+    	let li58;
+    	let t401;
+    	let li59;
+    	let t403;
+    	let li60;
+    	let t405;
+    	let li61;
+    	let t407;
+    	let button68;
+    	let t409;
+    	let div98;
+    	let p77;
+    	let t411;
+    	let button69;
+    	let t413;
+    	let div62;
+    	let p78;
+    	let t415;
+    	let p79;
+    	let t417;
+    	let button70;
+    	let t419;
+    	let div63;
+    	let p80;
+    	let t421;
+    	let p81;
+    	let t423;
+    	let button71;
+    	let t425;
+    	let div64;
+    	let p82;
+    	let t427;
+    	let p83;
+    	let t429;
+    	let button72;
+    	let t431;
+    	let div65;
+    	let p84;
+    	let t433;
+    	let p85;
+    	let t435;
+    	let button73;
+    	let t437;
+    	let div66;
+    	let p86;
+    	let t439;
+    	let p87;
+    	let t441;
+    	let button74;
+    	let t443;
+    	let div67;
+    	let p88;
+    	let t445;
+    	let p89;
+    	let t447;
+    	let button75;
+    	let t449;
+    	let div68;
+    	let p90;
+    	let t451;
+    	let p91;
+    	let t453;
+    	let button76;
+    	let t455;
+    	let div69;
+    	let p92;
+    	let t457;
+    	let p93;
+    	let t459;
+    	let button77;
+    	let t461;
+    	let div70;
+    	let p94;
+    	let t463;
+    	let p95;
+    	let t465;
+    	let button78;
+    	let t467;
+    	let div71;
+    	let p96;
+    	let t469;
+    	let p97;
+    	let t471;
+    	let button79;
+    	let t473;
+    	let div72;
+    	let p98;
+    	let t475;
+    	let p99;
+    	let t477;
+    	let button80;
+    	let t479;
+    	let div73;
+    	let p100;
+    	let t481;
+    	let p101;
+    	let t483;
+    	let button81;
+    	let t485;
+    	let div74;
+    	let p102;
+    	let t487;
+    	let p103;
+    	let t489;
+    	let button82;
+    	let t491;
+    	let div75;
+    	let p104;
+    	let t493;
+    	let p105;
+    	let t495;
+    	let button83;
+    	let t497;
+    	let div76;
+    	let p106;
+    	let t499;
+    	let p107;
+    	let t501;
+    	let button84;
+    	let t503;
+    	let div77;
+    	let p108;
+    	let t505;
+    	let p109;
+    	let t507;
+    	let button85;
+    	let t509;
+    	let div78;
+    	let p110;
+    	let t511;
+    	let p111;
+    	let t513;
+    	let button86;
+    	let t515;
+    	let div79;
+    	let p112;
+    	let t517;
+    	let p113;
+    	let t519;
+    	let button87;
+    	let t521;
+    	let div80;
+    	let p114;
+    	let t523;
+    	let p115;
+    	let t525;
+    	let button88;
+    	let t527;
+    	let div81;
+    	let p116;
+    	let t529;
+    	let p117;
+    	let t531;
+    	let button89;
+    	let t533;
+    	let div82;
+    	let p118;
+    	let t535;
+    	let p119;
+    	let t537;
+    	let button90;
+    	let t539;
+    	let div83;
+    	let p120;
+    	let t541;
+    	let p121;
+    	let t543;
+    	let button91;
+    	let t545;
+    	let div84;
+    	let p122;
+    	let t547;
+    	let p123;
+    	let t549;
+    	let button92;
+    	let t551;
+    	let div85;
+    	let p124;
+    	let t553;
+    	let p125;
+    	let t555;
+    	let button93;
+    	let t557;
+    	let div86;
+    	let p126;
+    	let t559;
+    	let p127;
+    	let t561;
+    	let button94;
+    	let t563;
+    	let div87;
+    	let p128;
+    	let t565;
+    	let p129;
+    	let t567;
+    	let button95;
+    	let t569;
+    	let div88;
+    	let p130;
+    	let t571;
+    	let p131;
+    	let t573;
+    	let button96;
+    	let t575;
+    	let div89;
+    	let p132;
+    	let t577;
+    	let p133;
+    	let t579;
+    	let button97;
+    	let t581;
+    	let div90;
+    	let p134;
+    	let t583;
+    	let p135;
+    	let t585;
+    	let button98;
+    	let t587;
+    	let div91;
+    	let p136;
+    	let t589;
+    	let p137;
+    	let t591;
+    	let button99;
+    	let t593;
+    	let div92;
+    	let p138;
+    	let t595;
+    	let p139;
+    	let t597;
+    	let button100;
+    	let t599;
+    	let div93;
+    	let p140;
+    	let t601;
+    	let p141;
+    	let t603;
+    	let button101;
+    	let t605;
+    	let div94;
+    	let p142;
+    	let t607;
+    	let p143;
+    	let t609;
+    	let button102;
+    	let t611;
+    	let div95;
+    	let p144;
+    	let t613;
+    	let p145;
+    	let t615;
+    	let button103;
+    	let t617;
+    	let div96;
+    	let p146;
+    	let t619;
+    	let p147;
+    	let t621;
+    	let button104;
+    	let t623;
+    	let div97;
+    	let p148;
+    	let t625;
+    	let p149;
+    	let t627;
+    	let button105;
+    	let t629;
+    	let div99;
+    	let p150;
+    	let t631;
+    	let ol1;
+    	let li62;
+    	let t633;
+    	let li63;
+    	let t635;
+    	let li64;
+    	let t637;
+    	let li65;
+    	let t639;
+    	let li66;
+    	let t641;
+    	let li67;
+    	let t643;
+    	let li68;
+    	let t645;
+    	let li69;
+    	let t647;
+    	let li70;
+    	let t649;
+    	let li71;
+    	let t651;
+    	let li72;
+    	let t653;
+    	let li73;
+    	let t655;
+    	let li74;
+    	let t657;
+    	let li75;
+    	let t659;
+    	let li76;
+    	let t661;
+    	let li77;
+    	let t663;
+    	let li78;
+    	let t665;
+    	let li79;
+
+    	const block = {
+    		c: function create() {
+    			div102 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Character Creation";
+    			t1 = space();
+    			button0 = element("button");
+    			button0.textContent = "CHARACTER CREATION";
+    			t3 = space();
+    			div101 = element("div");
+    			button1 = element("button");
+    			button1.textContent = "STEP 1: DESCRIPTION";
+    			t5 = space();
+    			div0 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "Decide on your name, measurements, appearance, gender and age.";
+    			t7 = space();
+    			button2 = element("button");
+    			button2.textContent = "STEP 2: TRAITS AND INSTINCTS";
+    			t9 = space();
+    			div1 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "There are four Traits: Agility, Brains, Constitution, and Demeanor. Traits range from 1 to 6. You have either 12 Trait points to assign or d6 per Trait (ask your GN). Instincts equal their parent Traits.";
+    			t11 = space();
+    			ul0 = element("ul");
+    			li0 = element("li");
+    			li0.textContent = "Stealth = Agility";
+    			t13 = space();
+    			li1 = element("li");
+    			li1.textContent = "Perception = Brains";
+    			t15 = space();
+    			li2 = element("li");
+    			li2.textContent = "Athletics = Constitution";
+    			t17 = space();
+    			li3 = element("li");
+    			li3.textContent = "Socialize = Demeanor";
+    			t19 = space();
+    			button3 = element("button");
+    			button3.textContent = "STEP 3: SKILLS";
+    			t21 = space();
+    			div2 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "You get [Brains x6] Skill points to divide among your Skills. Maximum Skill rating is equal to a Skill's parent Trait.";
+    			t23 = space();
+    			ul1 = element("ul");
+    			li4 = element("li");
+    			li4.textContent = "Agility Skills: Acrobatics, Ranged, Larceny";
+    			t25 = space();
+    			li5 = element("li");
+    			li5.textContent = "Brains Skills: Medicine, Science, Survival";
+    			t27 = space();
+    			li6 = element("li");
+    			li6.textContent = "Constitution Skills: Build, Drive, Melee";
+    			t29 = space();
+    			li7 = element("li");
+    			li7.textContent = "Demeanor Skills: Entertain, Leadership, Tame";
+    			t31 = space();
+    			button4 = element("button");
+    			button4.textContent = "STEP 4: PROPERTIES";
+    			t33 = space();
+    			div3 = element("div");
+    			p3 = element("p");
+    			p3.textContent = "Calculate your Properties. Always round down.";
+    			t35 = space();
+    			ul4 = element("ul");
+    			li8 = element("li");
+    			li8.textContent = "Psyche = [Demeanor] dots away from Crazy";
+    			t37 = space();
+    			li9 = element("li");
+    			li9.textContent = "Speed = [Agility + Constitution] yds";
+    			t39 = space();
+    			li10 = element("li");
+    			li10.textContent = "Fast = [Agility] actions";
+    			t41 = space();
+    			li11 = element("li");
+    			li11.textContent = "XP (Experience) = [Brains x6] Unspent and Total";
+    			t43 = space();
+    			li12 = element("li");
+    			li12.textContent = "DMG Mod = [(Constitution /3) –1] to Melee and Throw DMG";
+    			t45 = space();
+    			li13 = element("li");
+    			li13.textContent = "Carry = current Gear Size left / max [Constitution x6] right";
+    			t47 = space();
+    			li14 = element("li");
+    			li14.textContent = "Luck = [Demeanor] current left / max right";
+    			t49 = space();
+    			li15 = element("li");
+    			li15.textContent = "Threshold = [Constitution + Demeanor]";
+    			t51 = space();
+    			li16 = element("li");
+    			li16.textContent = "Defenses";
+    			t53 = space();
+    			li20 = element("li");
+    			ul2 = element("ul");
+    			li17 = element("li");
+    			li17.textContent = "Block = Melee(Block)";
+    			t55 = space();
+    			li18 = element("li");
+    			li18.textContent = "Dodge = Acrobatics(Dodge)";
+    			t57 = space();
+    			li19 = element("li");
+    			li19.textContent = "Reflex = Perception";
+    			t59 = space();
+    			li21 = element("li");
+    			li21.textContent = "Pain = 0";
+    			t61 = space();
+    			li22 = element("li");
+    			li22.textContent = "Health";
+    			t63 = space();
+    			li25 = element("li");
+    			ul3 = element("ul");
+    			li23 = element("li");
+    			li23.textContent = "Head, Arms, Legs = [Constitution] current left / max right";
+    			t65 = space();
+    			li24 = element("li");
+    			li24.textContent = "Torso = [Constitution x2] current left / max right";
+    			t67 = space();
+    			button5 = element("button");
+    			button5.textContent = "STEP 5: GEAR";
+    			t69 = space();
+    			div8 = element("div");
+    			p4 = element("p");
+    			p4.textContent = "You start with plain clothes, a Backpack, Food, and Water. Roll d66  on the tables below for Gear: 1 piece of ARMOR, 1 MELEE WEAPON, 1 RANGED WEAPON and d6 common AMMO (FMJ, Birdshot, or Target Arrow) for that weapon. Then roll d666 on the MASTER GEAR LIST.";
+    			t71 = space();
+    			button6 = element("button");
+    			button6.textContent = "STARTING ARMOR";
+    			t73 = space();
+    			div4 = element("div");
+    			button7 = element("button");
+    			button7.textContent = "ROLL ARMOR";
+    			t75 = space();
+    			p5 = element("p");
+    			t76 = space();
+    			button8 = element("button");
+    			button8.textContent = "STARTING MELEE WEAPON";
+    			t78 = space();
+    			div5 = element("div");
+    			button9 = element("button");
+    			button9.textContent = "ROLL MELEE WEAPON";
+    			t80 = space();
+    			p6 = element("p");
+    			t81 = space();
+    			button10 = element("button");
+    			button10.textContent = "STARTING RANGED WEAPON";
+    			t83 = space();
+    			div6 = element("div");
+    			button11 = element("button");
+    			button11.textContent = "ROLL RANGED WEAPON";
+    			t85 = space();
+    			p7 = element("p");
+    			t86 = space();
+    			button12 = element("button");
+    			button12.textContent = "STARTING GEAR";
+    			t88 = space();
+    			div7 = element("div");
+    			p8 = element("p");
+    			p8.textContent = "MGL Rolls: Roll once per Luck to get a random MGL item. Vehicles come with d6-1gal Fuel. Guns are empty. Re-roll repeats.";
+    			t90 = space();
+    			p9 = element("p");
+    			p9.textContent = "Spend XP: For 1XP you can get: 1 extra MGL roll, or 1 Resource (Water/Food/Chemical/Part/Fuel), or 1 round of common AMMO.";
+    			t92 = space();
+    			button13 = element("button");
+    			button13.textContent = "ROLL MGL";
+    			t94 = space();
+    			p10 = element("p");
+    			t95 = space();
+    			button14 = element("button");
+    			button14.textContent = "STEP 6: ABILITIES";
+    			t97 = space();
+    			div9 = element("div");
+    			p11 = element("p");
+    			p11.textContent = "You may buy Abilities with XP (Brains x6).";
+    			t99 = space();
+    			button15 = element("button");
+    			button15.textContent = "CHARACTER OPTIONS";
+    			t101 = space();
+    			div100 = element("div");
+    			p12 = element("p");
+    			p12.textContent = "These are optional rules that the GN may ignore or include in the Character creation process. The GN may have Players roll randomly or just select an option. Players should record any of these details under Notes on the back of their Character Sheets.";
+    			t103 = space();
+    			button16 = element("button");
+    			button16.textContent = "EXPERIENCED CHARACTERS:";
+    			t105 = space();
+    			div16 = element("div");
+    			p13 = element("p");
+    			p13.textContent = "Some games may take place well after The End, when nearly everyone who is left alive is a hardened survivor. To make a highly proficient Character, roll randomly or select an appropriate Experience Level and use those Starting XP and MGL Rolls values in place of the standard starting values.";
+    			t107 = space();
+    			button17 = element("button");
+    			button17.textContent = "1. CAPABLE";
+    			t109 = space();
+    			div10 = element("div");
+    			p14 = element("p");
+    			p14.textContent = "Starting XP: Brains x6";
+    			t111 = space();
+    			p15 = element("p");
+    			p15.textContent = "MGL Rolls: Luck x1";
+    			t113 = space();
+    			button18 = element("button");
+    			button18.textContent = "2. ADVANCED";
+    			t115 = space();
+    			div11 = element("div");
+    			p16 = element("p");
+    			p16.textContent = "Starting XP: Brains x12";
+    			t117 = space();
+    			p17 = element("p");
+    			p17.textContent = "MGL Rolls: Luck x3";
+    			t119 = space();
+    			button19 = element("button");
+    			button19.textContent = "3. SEASONED";
+    			t121 = space();
+    			div12 = element("div");
+    			p18 = element("p");
+    			p18.textContent = "Starting XP: Brains x18";
+    			t123 = space();
+    			p19 = element("p");
+    			p19.textContent = "MGL Rolls: Luck x6";
+    			t125 = space();
+    			button20 = element("button");
+    			button20.textContent = "4. VETERAN";
+    			t127 = space();
+    			div13 = element("div");
+    			p20 = element("p");
+    			p20.textContent = "Starting XP: Brains x24";
+    			t129 = space();
+    			p21 = element("p");
+    			p21.textContent = "MGL Rolls: Luck x9";
+    			t131 = space();
+    			button21 = element("button");
+    			button21.textContent = "5. ELITE";
+    			t133 = space();
+    			div14 = element("div");
+    			p22 = element("p");
+    			p22.textContent = "Starting XP: Brains x30";
+    			t135 = space();
+    			p23 = element("p");
+    			p23.textContent = "MGL Rolls: Luck x12";
+    			t137 = space();
+    			button22 = element("button");
+    			button22.textContent = "6. MASTER";
+    			t139 = space();
+    			div15 = element("div");
+    			p24 = element("p");
+    			p24.textContent = "Starting XP: Brains x36";
+    			t141 = space();
+    			p25 = element("p");
+    			p25.textContent = "MGL Rolls: Luck x15";
+    			t143 = space();
+    			button23 = element("button");
+    			button23.textContent = "AGE:";
+    			t145 = space();
+    			div23 = element("div");
+    			p26 = element("p");
+    			p26.textContent = "Character creation rules assume a starting age from 18 to 50. For older or younger Characters, consult the table below before assigning any Trait points to a very young or very old Character:";
+    			t147 = space();
+    			button24 = element("button");
+    			button24.textContent = "8-13";
+    			t149 = space();
+    			div17 = element("div");
+    			p27 = element("p");
+    			p27.textContent = "Trait Points: 4";
+    			t151 = space();
+    			p28 = element("p");
+    			p28.textContent = "Max Trait Score: 1";
+    			t153 = space();
+    			button25 = element("button");
+    			button25.textContent = "14-17";
+    			t155 = space();
+    			div18 = element("div");
+    			p29 = element("p");
+    			p29.textContent = "Trait Points: 8";
+    			t157 = space();
+    			p30 = element("p");
+    			p30.textContent = "Max Trait Score: 8";
+    			t159 = space();
+    			button26 = element("button");
+    			button26.textContent = "18-50";
+    			t161 = space();
+    			div19 = element("div");
+    			p31 = element("p");
+    			p31.textContent = "Trait Points: 12";
+    			t163 = space();
+    			p32 = element("p");
+    			p32.textContent = "Max Trait Score: 6";
+    			t165 = space();
+    			button27 = element("button");
+    			button27.textContent = "51-70";
+    			t167 = space();
+    			div20 = element("div");
+    			p33 = element("p");
+    			p33.textContent = "Trait Points: 11";
+    			t169 = space();
+    			p34 = element("p");
+    			p34.textContent = "Max Trait Score: 5";
+    			t171 = space();
+    			button28 = element("button");
+    			button28.textContent = "71-80";
+    			t173 = space();
+    			div21 = element("div");
+    			p35 = element("p");
+    			p35.textContent = "Trait Points: 9";
+    			t175 = space();
+    			p36 = element("p");
+    			p36.textContent = "Max Trait Score: 4";
+    			t177 = space();
+    			button29 = element("button");
+    			button29.textContent = "80+";
+    			t179 = space();
+    			div22 = element("div");
+    			p37 = element("p");
+    			p37.textContent = "Trait Points: 6";
+    			t181 = space();
+    			p38 = element("p");
+    			p38.textContent = "Max Trait Score: 2";
+    			t183 = space();
+    			button30 = element("button");
+    			button30.textContent = "FLAW:";
+    			t185 = space();
+    			div60 = element("div");
+    			p39 = element("p");
+    			p39.textContent = "Serious problems for Characters. Roll a d6. If the result is a 1, roll a random Flaw. +1XP each session where you overcome a Flaw. Flaws marked * are permanent. Others can be removed for 36XP.";
+    			t187 = space();
+    			button31 = element("button");
+    			button31.textContent = "ADDICTION";
+    			t189 = space();
+    			div24 = element("div");
+    			p40 = element("p");
+    			p40.textContent = "Cumulative 1 Pain per day without your substance.";
+    			t191 = space();
+    			button32 = element("button");
+    			button32.textContent = "ALLERGY";
+    			t193 = space();
+    			div25 = element("div");
+    			p41 = element("p");
+    			p41.textContent = "d6 Pain while exposed to a certain irritant.";
+    			t195 = space();
+    			button33 = element("button");
+    			button33.textContent = "AMNESIA";
+    			t197 = space();
+    			div26 = element("div");
+    			p42 = element("p");
+    			p42.textContent = "No memory prior to a few days ago. Half starting XP.";
+    			t199 = space();
+    			button34 = element("button");
+    			button34.textContent = "AMPUTEE";
+    			t201 = space();
+    			div27 = element("div");
+    			p43 = element("p");
+    			p43.textContent = "Cannot use 2h items, or Speed /2 and require a Crutch.";
+    			t203 = space();
+    			button35 = element("button");
+    			button35.textContent = "ANEMIA*";
+    			t205 = space();
+    			div28 = element("div");
+    			p44 = element("p");
+    			p44.textContent = "-3 Constitution or Medicine rolls to stop Bleeding.";
+    			t207 = space();
+    			button36 = element("button");
+    			button36.textContent = "ANXIETY";
+    			t209 = space();
+    			div29 = element("div");
+    			p45 = element("p");
+    			p45.textContent = "Demeanor 9# or be Stunned d6rnds in stressful ENCOUNTERS.";
+    			t211 = space();
+    			button37 = element("button");
+    			button37.textContent = "ASTHMA*";
+    			t213 = space();
+    			div30 = element("div");
+    			p46 = element("p");
+    			p46.textContent = "When you Botch Athletics, Suffocation for d6mins.";
+    			t215 = space();
+    			button38 = element("button");
+    			button38.textContent = "BAD BACK*";
+    			t217 = space();
+    			div31 = element("div");
+    			p47 = element("p");
+    			p47.textContent = "Your Carry is halved. -3 Constitution rolls to lift.";
+    			t219 = space();
+    			button39 = element("button");
+    			button39.textContent = "BLIND*";
+    			t221 = space();
+    			div32 = element("div");
+    			p48 = element("p");
+    			p48.textContent = "Fail Perception(See). -6 all sight-dependent rolls.";
+    			t223 = space();
+    			button40 = element("button");
+    			button40.textContent = "CANCER";
+    			t225 = space();
+    			div33 = element("div");
+    			p49 = element("p");
+    			p49.textContent = "Roll d6 every month. -1 Constitution on a Botch.";
+    			t227 = space();
+    			button41 = element("button");
+    			button41.textContent = "COWARD";
+    			t229 = space();
+    			div34 = element("div");
+    			p50 = element("p");
+    			p50.textContent = "Demeanor 9# to intentionally risk danger to yourself.";
+    			t231 = space();
+    			button42 = element("button");
+    			button42.textContent = "CRIPPLED*";
+    			t233 = space();
+    			div35 = element("div");
+    			p51 = element("p");
+    			p51.textContent = "Your Legs do not work. You need a wheelchair to move.";
+    			t235 = space();
+    			button43 = element("button");
+    			button43.textContent = "CRUEL";
+    			t237 = space();
+    			div36 = element("div");
+    			p52 = element("p");
+    			p52.textContent = "You will never show mercy to enemies. You like killing.";
+    			t239 = space();
+    			button44 = element("button");
+    			button44.textContent = "DEAF*";
+    			t241 = space();
+    			div37 = element("div");
+    			p53 = element("p");
+    			p53.textContent = "Fail Perception(Hear) rolls.";
+    			t243 = space();
+    			button45 = element("button");
+    			button45.textContent = "DEBT";
+    			t245 = space();
+    			div38 = element("div");
+    			p54 = element("p");
+    			p54.textContent = "You owe a lot to someone, and repayment is overdue.";
+    			t247 = space();
+    			button46 = element("button");
+    			button46.textContent = "DEFORMED*";
+    			t249 = space();
+    			div39 = element("div");
+    			p55 = element("p");
+    			p55.textContent = "-3 Socialize rolls when your Deformity is visible.";
+    			t251 = space();
+    			button47 = element("button");
+    			button47.textContent = "DIABETES";
+    			t253 = space();
+    			div40 = element("div");
+    			p56 = element("p");
+    			p56.textContent = "Die from Starvation (diabetic shock) in half the time.";
+    			t255 = space();
+    			button48 = element("button");
+    			button48.textContent = "DYSLEXIA*";
+    			t257 = space();
+    			div41 = element("div");
+    			p57 = element("p");
+    			p57.textContent = "You get no bonuses from reading DOCUMENTS.";
+    			t259 = space();
+    			button49 = element("button");
+    			button49.textContent = "FORGETFUL";
+    			t261 = space();
+    			div42 = element("div");
+    			p58 = element("p");
+    			p58.textContent = "-3 Brains rolls to remember something in detail.";
+    			t263 = space();
+    			button50 = element("button");
+    			button50.textContent = "GAMBLER";
+    			t265 = space();
+    			div43 = element("div");
+    			p59 = element("p");
+    			p59.textContent = "Demeanor 9# to resist a wager, regardless of odds.";
+    			t267 = space();
+    			button51 = element("button");
+    			button51.textContent = "KLEPTOMANIA";
+    			t269 = space();
+    			div44 = element("div");
+    			p60 = element("p");
+    			p60.textContent = "Demeanor 9# to resist stealing at any opportunity.";
+    			t271 = space();
+    			button52 = element("button");
+    			button52.textContent = "LAZY";
+    			t273 = space();
+    			div45 = element("div");
+    			p61 = element("p");
+    			p61.textContent = "Demeanor 9# to wake up before you’ve had 8hrs of sleep.";
+    			t275 = space();
+    			button53 = element("button");
+    			button53.textContent = "MEEK";
+    			t277 = space();
+    			div46 = element("div");
+    			p62 = element("p");
+    			p62.textContent = "-3 Leadership rolls. -3 vs Leadership(Taunt).";
+    			t279 = space();
+    			button54 = element("button");
+    			button54.textContent = "MUTE*";
+    			t281 = space();
+    			div47 = element("div");
+    			p63 = element("p");
+    			p63.textContent = "You are unable to communicate verbally.";
+    			t283 = space();
+    			button55 = element("button");
+    			button55.textContent = "MYOPIA*";
+    			t285 = space();
+    			div48 = element("div");
+    			p64 = element("p");
+    			p64.textContent = "-3 Visibility penalty beyond 3yds without glasses.";
+    			t287 = space();
+    			button56 = element("button");
+    			button56.textContent = "NAIVE";
+    			t289 = space();
+    			div49 = element("div");
+    			p65 = element("p");
+    			p65.textContent = "-3 Perception vs Entertain(Lie).";
+    			t291 = space();
+    			button57 = element("button");
+    			button57.textContent = "NIGHTMARES";
+    			t293 = space();
+    			div50 = element("div");
+    			p66 = element("p");
+    			p66.textContent = "Roll d6 each night. On 1, no sleep and wake screaming.";
+    			t295 = space();
+    			button58 = element("button");
+    			button58.textContent = "NOISY";
+    			t297 = space();
+    			div51 = element("div");
+    			p67 = element("p");
+    			p67.textContent = "-3 Stealth rolls.";
+    			t299 = space();
+    			button59 = element("button");
+    			button59.textContent = "OBESE";
+    			t301 = space();
+    			div52 = element("div");
+    			p68 = element("p");
+    			p68.textContent = "-3 Athletics rolls. You are significantly overweight.";
+    			t303 = space();
+    			button60 = element("button");
+    			button60.textContent = "PACIFIST";
+    			t305 = space();
+    			div53 = element("div");
+    			p69 = element("p");
+    			p69.textContent = "You refuse to kill people for any reason.";
+    			t307 = space();
+    			button61 = element("button");
+    			button61.textContent = "PARANOIA";
+    			t309 = space();
+    			div54 = element("div");
+    			p70 = element("p");
+    			p70.textContent = "You cannot have Comrades.";
+    			t311 = space();
+    			button62 = element("button");
+    			button62.textContent = "PHOBIA";
+    			t313 = space();
+    			div55 = element("div");
+    			p71 = element("p");
+    			p71.textContent = "Demeanor 9# to not be paralyzed with fear of something.";
+    			t315 = space();
+    			button63 = element("button");
+    			button63.textContent = "RACIST";
+    			t317 = space();
+    			div56 = element("div");
+    			p72 = element("p");
+    			p72.textContent = "-3 Socialize rolls with anyone of different Skin color.";
+    			t319 = space();
+    			button64 = element("button");
+    			button64.textContent = "SEXIST";
+    			t321 = space();
+    			div57 = element("div");
+    			p73 = element("p");
+    			p73.textContent = "-3 Socialize rolls with anyone of different Gender.";
+    			t323 = space();
+    			button65 = element("button");
+    			button65.textContent = "SPEECH IMPEDIMENT";
+    			t325 = space();
+    			div58 = element("div");
+    			p74 = element("p");
+    			p74.textContent = "-1 Socialize and Leadership rolls using speech.";
+    			t327 = space();
+    			button66 = element("button");
+    			button66.textContent = "SUPERSTITIOUS";
+    			t329 = space();
+    			div59 = element("div");
+    			p75 = element("p");
+    			p75.textContent = "-3 Science. You believe in supernatural forces.";
+    			t331 = space();
+    			button67 = element("button");
+    			button67.textContent = "HISTORY:";
+    			t333 = space();
+    			div61 = element("div");
+    			p76 = element("p");
+    			p76.textContent = "These are idea seeds for some formative factors in a Character's background that influence their personality and may shape their future goals. Work with the GN to integrate your Character’s History into the overall story of the game.";
+    			t335 = space();
+    			ol0 = element("ol");
+    			li26 = element("li");
+    			li26.textContent = "Assassinated a leader";
+    			t337 = space();
+    			li27 = element("li");
+    			li27.textContent = "Betrayed by friend(s)";
+    			t339 = space();
+    			li28 = element("li");
+    			li28.textContent = "Bounty for your capture";
+    			t341 = space();
+    			li29 = element("li");
+    			li29.textContent = "Carrying stolen goods";
+    			t343 = space();
+    			li30 = element("li");
+    			li30.textContent = "Committed an atrocity";
+    			t345 = space();
+    			li31 = element("li");
+    			li31.textContent = "Death mark on your head";
+    			t347 = space();
+    			li32 = element("li");
+    			li32.textContent = "Former Bandit";
+    			t349 = space();
+    			li33 = element("li");
+    			li33.textContent = "Former Cannibal";
+    			t351 = space();
+    			li34 = element("li");
+    			li34.textContent = "Former Cultist";
+    			t353 = space();
+    			li35 = element("li");
+    			li35.textContent = "Former Guerrilla";
+    			t355 = space();
+    			li36 = element("li");
+    			li36.textContent = "Former Hooker";
+    			t357 = space();
+    			li37 = element("li");
+    			li37.textContent = "Former Junky";
+    			t359 = space();
+    			li38 = element("li");
+    			li38.textContent = "Former Mercenary";
+    			t361 = space();
+    			li39 = element("li");
+    			li39.textContent = "Former Pirate";
+    			t363 = space();
+    			li40 = element("li");
+    			li40.textContent = "Former Preacher";
+    			t365 = space();
+    			li41 = element("li");
+    			li41.textContent = "Former Raider";
+    			t367 = space();
+    			li42 = element("li");
+    			li42.textContent = "Former Slave";
+    			t369 = space();
+    			li43 = element("li");
+    			li43.textContent = "Former Wrangler";
+    			t371 = space();
+    			li44 = element("li");
+    			li44.textContent = "Friend was kidnapped";
+    			t373 = space();
+    			li45 = element("li");
+    			li45.textContent = "Guarding a big secret";
+    			t375 = space();
+    			li46 = element("li");
+    			li46.textContent = "Had a wise mentor";
+    			t377 = space();
+    			li47 = element("li");
+    			li47.textContent = "Hatred for one Faction";
+    			t379 = space();
+    			li48 = element("li");
+    			li48.textContent = "Hunting a monster";
+    			t381 = space();
+    			li49 = element("li");
+    			li49.textContent = "Left your family";
+    			t383 = space();
+    			li50 = element("li");
+    			li50.textContent = "Looking for lost lover";
+    			t385 = space();
+    			li51 = element("li");
+    			li51.textContent = "Mentoring a protégé";
+    			t387 = space();
+    			li52 = element("li");
+    			li52.textContent = "Murdered an innocent";
+    			t389 = space();
+    			li53 = element("li");
+    			li53.textContent = "Near-death experience";
+    			t391 = space();
+    			li54 = element("li");
+    			li54.textContent = "Outcast from Settlement";
+    			t393 = space();
+    			li55 = element("li");
+    			li55.textContent = "Parent, child d6yrs old";
+    			t395 = space();
+    			li56 = element("li");
+    			li56.textContent = "Recovered from plague";
+    			t397 = space();
+    			li57 = element("li");
+    			li57.textContent = "Saved by a hero";
+    			t399 = space();
+    			li58 = element("li");
+    			li58.textContent = "Still seeking revenge";
+    			t401 = space();
+    			li59 = element("li");
+    			li59.textContent = "Survived under a tyrant";
+    			t403 = space();
+    			li60 = element("li");
+    			li60.textContent = "Told of hidden paradise";
+    			t405 = space();
+    			li61 = element("li");
+    			li61.textContent = "Worshiped as a savior";
+    			t407 = space();
+    			button68 = element("button");
+    			button68.textContent = "PROFESSION:";
+    			t409 = space();
+    			div98 = element("div");
+    			p77 = element("p");
+    			p77.textContent = "Roll or select during Step 1 to make a Character who benefits now from their old job before The End. Characters get a Specialty (+1) and a free starting item related to their old job.";
+    			t411 = space();
+    			button69 = element("button");
+    			button69.textContent = "ACTOR";
+    			t413 = space();
+    			div62 = element("div");
+    			p78 = element("p");
+    			p78.textContent = "Free Specialty: Entertain(Distract) +1";
+    			t415 = space();
+    			p79 = element("p");
+    			p79.textContent = "Free Gear: Makeup";
+    			t417 = space();
+    			button70 = element("button");
+    			button70.textContent = "ARCHITECT";
+    			t419 = space();
+    			div63 = element("div");
+    			p80 = element("p");
+    			p80.textContent = "Free Specialty: Science(Physics) +1";
+    			t421 = space();
+    			p81 = element("p");
+    			p81.textContent = "Free Gear: Tape Measure";
+    			t423 = space();
+    			button71 = element("button");
+    			button71.textContent = "BASEBALL PLAYER";
+    			t425 = space();
+    			div64 = element("div");
+    			p82 = element("p");
+    			p82.textContent = "Free Specialty: Melee(Weaponry) +1";
+    			t427 = space();
+    			p83 = element("p");
+    			p83.textContent = "Free Gear: Baseball Bat";
+    			t429 = space();
+    			button72 = element("button");
+    			button72.textContent = "BASKETBALL PLAYER";
+    			t431 = space();
+    			div65 = element("div");
+    			p84 = element("p");
+    			p84.textContent = "Free Specialty: Acrobatics(Jump) +1";
+    			t433 = space();
+    			p85 = element("p");
+    			p85.textContent = "Free Gear: Running Shoes";
+    			t435 = space();
+    			button73 = element("button");
+    			button73.textContent = "BURGLAR";
+    			t437 = space();
+    			div66 = element("div");
+    			p86 = element("p");
+    			p86.textContent = "Free Specialty: Larceny(Disable) +1";
+    			t439 = space();
+    			p87 = element("p");
+    			p87.textContent = "Free Gear: Balaclava";
+    			t441 = space();
+    			button74 = element("button");
+    			button74.textContent = "CAMP COUNSELOR";
+    			t443 = space();
+    			div67 = element("div");
+    			p88 = element("p");
+    			p88.textContent = "Free Specialty: Ranged(Archery) +1";
+    			t445 = space();
+    			p89 = element("p");
+    			p89.textContent = "Free Gear: Compound Bow";
+    			t447 = space();
+    			button75 = element("button");
+    			button75.textContent = "CARPENTER";
+    			t449 = space();
+    			div68 = element("div");
+    			p90 = element("p");
+    			p90.textContent = "Free Specialty: Build(Repair) +1";
+    			t451 = space();
+    			p91 = element("p");
+    			p91.textContent = "Free Gear: Tool Box";
+    			t453 = space();
+    			button76 = element("button");
+    			button76.textContent = "CONVICT";
+    			t455 = space();
+    			div69 = element("div");
+    			p92 = element("p");
+    			p92.textContent = "Free Specialty: Larceny(Conceal) +1";
+    			t457 = space();
+    			p93 = element("p");
+    			p93.textContent = "Free Gear: Handcuffs";
+    			t459 = space();
+    			button77 = element("button");
+    			button77.textContent = "COP";
+    			t461 = space();
+    			div70 = element("div");
+    			p94 = element("p");
+    			p94.textContent = "Free Specialty: Leadership(Taunt) +1";
+    			t463 = space();
+    			p95 = element("p");
+    			p95.textContent = "Free Gear: Glock 17 (+d6 9mmFMJ)";
+    			t465 = space();
+    			button78 = element("button");
+    			button78.textContent = "COURIER";
+    			t467 = space();
+    			div71 = element("div");
+    			p96 = element("p");
+    			p96.textContent = "Free Specialty: Survival(Navigate) +1";
+    			t469 = space();
+    			p97 = element("p");
+    			p97.textContent = "Free Gear: Bicycle";
+    			t471 = space();
+    			button79 = element("button");
+    			button79.textContent = "DOG TRAINER";
+    			t473 = space();
+    			div72 = element("div");
+    			p98 = element("p");
+    			p98.textContent = "Free Specialty: Tame(Train) +1";
+    			t475 = space();
+    			p99 = element("p");
+    			p99.textContent = "Free Gear: Choker Leash";
+    			t477 = space();
+    			button80 = element("button");
+    			button80.textContent = "ELECTRICIAN";
+    			t479 = space();
+    			div73 = element("div");
+    			p100 = element("p");
+    			p100.textContent = "Free Specialty: Science((Tech)) +1";
+    			t481 = space();
+    			p101 = element("p");
+    			p101.textContent = "Free Gear: Multimeter";
+    			t483 = space();
+    			button81 = element("button");
+    			button81.textContent = "FOOTBALL PLAYER";
+    			t485 = space();
+    			div74 = element("div");
+    			p102 = element("p");
+    			p102.textContent = "Free Specialty: Ranged(Throw) +1";
+    			t487 = space();
+    			p103 = element("p");
+    			p103.textContent = "Free Gear: Athletic Pads";
+    			t489 = space();
+    			button82 = element("button");
+    			button82.textContent = "GYMNAST";
+    			t491 = space();
+    			div75 = element("div");
+    			p104 = element("p");
+    			p104.textContent = "Free Specialty: Acrobatics(Tumble) +1";
+    			t493 = space();
+    			p105 = element("p");
+    			p105.textContent = "Free Gear: Duffel Bag";
+    			t495 = space();
+    			button83 = element("button");
+    			button83.textContent = "HOMELESS";
+    			t497 = space();
+    			div76 = element("div");
+    			p106 = element("p");
+    			p106.textContent = "Free Specialty: Survival(Forage) +1";
+    			t499 = space();
+    			p107 = element("p");
+    			p107.textContent = "Free Gear: Winter Coat";
+    			t501 = space();
+    			button84 = element("button");
+    			button84.textContent = "LAWYER";
+    			t503 = space();
+    			div77 = element("div");
+    			p108 = element("p");
+    			p108.textContent = "Free Specialty: Entertain(Lie) +1";
+    			t505 = space();
+    			p109 = element("p");
+    			p109.textContent = "Free Gear: Alcohol";
+    			t507 = space();
+    			button85 = element("button");
+    			button85.textContent = "MANAGER";
+    			t509 = space();
+    			div78 = element("div");
+    			p110 = element("p");
+    			p110.textContent = "Free Specialty: Leadership(Encourage) +1";
+    			t511 = space();
+    			p111 = element("p");
+    			p111.textContent = "Free Gear: Wristwatch";
+    			t513 = space();
+    			button86 = element("button");
+    			button86.textContent = "MECHANIC";
+    			t515 = space();
+    			div79 = element("div");
+    			p112 = element("p");
+    			p112.textContent = "Free Specialty: Build(Customize) +1";
+    			t517 = space();
+    			p113 = element("p");
+    			p113.textContent = "Free Gear: Screwdriver";
+    			t519 = space();
+    			button87 = element("button");
+    			button87.textContent = "MILITARY";
+    			t521 = space();
+    			div80 = element("div");
+    			p114 = element("p");
+    			p114.textContent = "Free Specialty: Ranged(Guns) +1";
+    			t523 = space();
+    			p115 = element("p");
+    			p115.textContent = "Free Gear: AR-15 (+d6x2 5.56FMJ)";
+    			t525 = space();
+    			button88 = element("button");
+    			button88.textContent = "MUSICIAN";
+    			t527 = space();
+    			div81 = element("div");
+    			p116 = element("p");
+    			p116.textContent = "Free Specialty: Entertain(Inspire) +1";
+    			t529 = space();
+    			p117 = element("p");
+    			p117.textContent = "Free Gear: Musical Instrument";
+    			t531 = space();
+    			button89 = element("button");
+    			button89.textContent = "PARAMEDIC";
+    			t533 = space();
+    			div82 = element("div");
+    			p118 = element("p");
+    			p118.textContent = "Free Specialty: Medicine(First-Aid) +1";
+    			t535 = space();
+    			p119 = element("p");
+    			p119.textContent = "Free Gear: EMT Bag";
+    			t537 = space();
+    			button90 = element("button");
+    			button90.textContent = "PARK RANGER";
+    			t539 = space();
+    			div83 = element("div");
+    			p120 = element("p");
+    			p120.textContent = "Free Specialty: Survival(Camp) +1";
+    			t541 = space();
+    			p121 = element("p");
+    			p121.textContent = "Free Gear: Binoculars";
+    			t543 = space();
+    			button91 = element("button");
+    			button91.textContent = "PHARMACIST";
+    			t545 = space();
+    			div84 = element("div");
+    			p122 = element("p");
+    			p122.textContent = "Free Specialty: Science(Chemistry) +1";
+    			t547 = space();
+    			p123 = element("p");
+    			p123.textContent = "Free Gear: NBC Suit";
+    			t549 = space();
+    			button92 = element("button");
+    			button92.textContent = "PILOT";
+    			t551 = space();
+    			div85 = element("div");
+    			p124 = element("p");
+    			p124.textContent = "Free Specialty: Drive(Fly) + Pilot License +1";
+    			t553 = space();
+    			p125 = element("p");
+    			p125.textContent = "Free Gear: Flare Gun (+d6 12g Flares)";
+    			t555 = space();
+    			button93 = element("button");
+    			button93.textContent = "PRIZE FIGHTER";
+    			t557 = space();
+    			div86 = element("div");
+    			p126 = element("p");
+    			p126.textContent = "Free Specialty: Melee(Unarmed) +1";
+    			t559 = space();
+    			p127 = element("p");
+    			p127.textContent = "Free Gear: Brass Knuckles";
+    			t561 = space();
+    			button94 = element("button");
+    			button94.textContent = "RIDING INSTRUCTOR";
+    			t563 = space();
+    			div87 = element("div");
+    			p128 = element("p");
+    			p128.textContent = "Free Specialty: Tame(Ride) +1";
+    			t565 = space();
+    			p129 = element("p");
+    			p129.textContent = "Free Gear: Cowboy Hat";
+    			t567 = space();
+    			button95 = element("button");
+    			button95.textContent = "SECURITY GUARD";
+    			t569 = space();
+    			div88 = element("div");
+    			p130 = element("p");
+    			p130.textContent = "Free Specialty: Melee(Block) +1";
+    			t571 = space();
+    			p131 = element("p");
+    			p131.textContent = "Free Gear: Baton";
+    			t573 = space();
+    			button96 = element("button");
+    			button96.textContent = "SURGEON";
+    			t575 = space();
+    			div89 = element("div");
+    			p132 = element("p");
+    			p132.textContent = "Free Specialty: Medicine(Surgery) +1";
+    			t577 = space();
+    			p133 = element("p");
+    			p133.textContent = "Free Gear: Surgery Kit";
+    			t579 = space();
+    			button97 = element("button");
+    			button97.textContent = "TAXI DRIVER";
+    			t581 = space();
+    			div90 = element("div");
+    			p134 = element("p");
+    			p134.textContent = "Free Specialty: Drive(Stunt) +1";
+    			t583 = space();
+    			p135 = element("p");
+    			p135.textContent = "Free Gear: S&ampW Snubnose (+d6 .357FMJ)";
+    			t585 = space();
+    			button98 = element("button");
+    			button98.textContent = "TECHNICIAN";
+    			t587 = space();
+    			div91 = element("div");
+    			p136 = element("p");
+    			p136.textContent = "Free Specialty: Build(Salvage) +1";
+    			t589 = space();
+    			p137 = element("p");
+    			p137.textContent = "Free Gear: Multi-tool";
+    			t591 = space();
+    			button99 = element("button");
+    			button99.textContent = "TEACHER";
+    			t593 = space();
+    			div92 = element("div");
+    			p138 = element("p");
+    			p138.textContent = "Free Specialty: Leadership(Order) +1";
+    			t595 = space();
+    			p139 = element("p");
+    			p139.textContent = "Free Gear: Flashlight";
+    			t597 = space();
+    			button100 = element("button");
+    			button100.textContent = "THERAPIST";
+    			t599 = space();
+    			div93 = element("div");
+    			p140 = element("p");
+    			p140.textContent = "Free Specialty: Medicine(Psychology) +1";
+    			t601 = space();
+    			p141 = element("p");
+    			p141.textContent = "Free Gear: Sedatives (d6x10)";
+    			t603 = space();
+    			button101 = element("button");
+    			button101.textContent = "THIEF";
+    			t605 = space();
+    			div94 = element("div");
+    			p142 = element("p");
+    			p142.textContent = "Free Specialty: Larceny(Steal) +1";
+    			t607 = space();
+    			p143 = element("p");
+    			p143.textContent = "Free Gear: Crowbar";
+    			t609 = space();
+    			button102 = element("button");
+    			button102.textContent = "TRUCKER";
+    			t611 = space();
+    			div95 = element("div");
+    			p144 = element("p");
+    			p144.textContent = "Free Specialty: Drive(Combat) +1";
+    			t613 = space();
+    			p145 = element("p");
+    			p145.textContent = "Free Gear: Tire Iron";
+    			t615 = space();
+    			button103 = element("button");
+    			button103.textContent = "YOGA INSTRUCTOR";
+    			t617 = space();
+    			div96 = element("div");
+    			p146 = element("p");
+    			p146.textContent = "Free Specialty: Acrobatics(Dodge) +1";
+    			t619 = space();
+    			p147 = element("p");
+    			p147.textContent = "Free Gear: Pepper Spray";
+    			t621 = space();
+    			button104 = element("button");
+    			button104.textContent = "ZOO KEEPER";
+    			t623 = space();
+    			div97 = element("div");
+    			p148 = element("p");
+    			p148.textContent = "Free Specialty: Tame(Calm) +1";
+    			t625 = space();
+    			p149 = element("p");
+    			p149.textContent = "Free Gear: Hand Radio";
+    			t627 = space();
+    			button105 = element("button");
+    			button105.textContent = "RELATIONSHIP:";
+    			t629 = space();
+    			div99 = element("div");
+    			p150 = element("p");
+    			p150.textContent = "Each Player may roll once with each other Character on the Team. For any pair of Players, they each roll a Relationship and decide to use one of their results to describe how their Characters are related. Players should work out the details of their Relationships together before the story begins.";
+    			t631 = space();
+    			ol1 = element("ol");
+    			li62 = element("li");
+    			li62.textContent = "Biological siblings";
+    			t633 = space();
+    			li63 = element("li");
+    			li63.textContent = "Business partners";
+    			t635 = space();
+    			li64 = element("li");
+    			li64.textContent = "Childhood friends";
+    			t637 = space();
+    			li65 = element("li");
+    			li65.textContent = "Cousins";
+    			t639 = space();
+    			li66 = element("li");
+    			li66.textContent = "Family friends";
+    			t641 = space();
+    			li67 = element("li");
+    			li67.textContent = "Former Faction members";
+    			t643 = space();
+    			li68 = element("li");
+    			li68.textContent = "Had a falling out";
+    			t645 = space();
+    			li69 = element("li");
+    			li69.textContent = "Have the same ex";
+    			t647 = space();
+    			li70 = element("li");
+    			li70.textContent = "Mentor/apprentice";
+    			t649 = space();
+    			li71 = element("li");
+    			li71.textContent = "Once enemies now allies";
+    			t651 = space();
+    			li72 = element("li");
+    			li72.textContent = "Only remaining survivors";
+    			t653 = space();
+    			li73 = element("li");
+    			li73.textContent = "Partners in crime";
+    			t655 = space();
+    			li74 = element("li");
+    			li74.textContent = "Respectful rivals";
+    			t657 = space();
+    			li75 = element("li");
+    			li75.textContent = "Share a dark secret";
+    			t659 = space();
+    			li76 = element("li");
+    			li76.textContent = "Step siblings";
+    			t661 = space();
+    			li77 = element("li");
+    			li77.textContent = "They saved your life";
+    			t663 = space();
+    			li78 = element("li");
+    			li78.textContent = "War buddies";
+    			t665 = space();
+    			li79 = element("li");
+    			li79.textContent = "You saved their life";
+    			add_location(h2, file$a, 1, 4, 33);
+    			attr_dev(button0, "id", "CharacterCreationBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$a, 2, 4, 65);
+    			attr_dev(button1, "id", "CharacterCreationStep1Btn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$a, 4, 8, 196);
+    			add_location(p0, file$a, 6, 12, 346);
+    			attr_dev(div0, "id", "CharacterCreationStep1Sec");
+    			attr_dev(div0, "class", "Sec3");
+    			add_location(div0, file$a, 5, 8, 284);
+    			attr_dev(button2, "id", "CharacterCreationStep2Btn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$a, 8, 8, 439);
+    			add_location(p1, file$a, 10, 12, 598);
+    			add_location(li0, file$a, 12, 16, 842);
+    			add_location(li1, file$a, 13, 16, 885);
+    			add_location(li2, file$a, 14, 16, 930);
+    			add_location(li3, file$a, 15, 16, 980);
+    			add_location(ul0, file$a, 11, 12, 821);
+    			attr_dev(div1, "id", "CharacterCreationStep2Sec");
+    			attr_dev(div1, "class", "Sec3");
+    			add_location(div1, file$a, 9, 8, 536);
+    			attr_dev(button3, "id", "CharacterCreationStep3Btn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$a, 18, 8, 1051);
+    			add_location(p2, file$a, 20, 12, 1196);
+    			add_location(li4, file$a, 22, 16, 1355);
+    			add_location(li5, file$a, 23, 16, 1424);
+    			add_location(li6, file$a, 24, 16, 1492);
+    			add_location(li7, file$a, 25, 16, 1558);
+    			add_location(ul1, file$a, 21, 12, 1334);
+    			attr_dev(div2, "id", "CharacterCreationStep3Sec");
+    			attr_dev(div2, "class", "Sec3");
+    			add_location(div2, file$a, 19, 8, 1134);
+    			attr_dev(button4, "id", "CharacterCreationStep4Btn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$a, 28, 8, 1653);
+    			add_location(p3, file$a, 30, 12, 1802);
+    			add_location(li8, file$a, 32, 16, 1888);
+    			add_location(li9, file$a, 33, 16, 1954);
+    			add_location(li10, file$a, 34, 16, 2016);
+    			add_location(li11, file$a, 35, 16, 2066);
+    			add_location(li12, file$a, 36, 16, 2139);
+    			add_location(li13, file$a, 37, 16, 2220);
+    			add_location(li14, file$a, 38, 16, 2306);
+    			add_location(li15, file$a, 39, 16, 2374);
+    			add_location(li16, file$a, 40, 16, 2437);
+    			add_location(li17, file$a, 43, 24, 2525);
+    			add_location(li18, file$a, 44, 24, 2579);
+    			add_location(li19, file$a, 45, 24, 2638);
+    			add_location(ul2, file$a, 42, 20, 2496);
+    			add_location(li20, file$a, 41, 16, 2471);
+    			add_location(li21, file$a, 48, 16, 2731);
+    			add_location(li22, file$a, 49, 16, 2765);
+    			add_location(li23, file$a, 52, 24, 2851);
+    			add_location(li24, file$a, 53, 24, 2943);
+    			add_location(ul3, file$a, 51, 20, 2822);
+    			add_location(li25, file$a, 50, 16, 2797);
+    			add_location(ul4, file$a, 31, 12, 1867);
+    			attr_dev(div3, "id", "CharacterCreationStep4Sec");
+    			attr_dev(div3, "class", "Sec3");
+    			add_location(div3, file$a, 29, 8, 1740);
+    			attr_dev(button5, "id", "CharacterCreationStep5Btn");
+    			attr_dev(button5, "class", "Btn");
+    			add_location(button5, file$a, 58, 8, 3092);
+    			add_location(p4, file$a, 60, 12, 3235);
+    			attr_dev(button6, "id", "StartingArmorBtn");
+    			attr_dev(button6, "class", "Btn");
+    			add_location(button6, file$a, 61, 12, 3512);
+    			attr_dev(button7, "id", "StartingRolledArmorBtn");
+    			attr_dev(button7, "class", "Roll");
+    			attr_dev(button7, "onclick", "rollItem(iArmorList,'StartingRolledArmor')");
+    			add_location(button7, file$a, 63, 16, 3647);
+    			attr_dev(p5, "id", "StartingRolledArmor");
+    			add_location(p5, file$a, 64, 16, 3785);
+    			attr_dev(div4, "id", "StartingArmorSec");
+    			attr_dev(div4, "class", "Sec4");
+    			add_location(div4, file$a, 62, 12, 3590);
+    			attr_dev(button8, "id", "StartingMeleeBtn");
+    			attr_dev(button8, "class", "Btn");
+    			add_location(button8, file$a, 66, 12, 3849);
+    			attr_dev(button9, "id", "StartingRolledMeleeBtn");
+    			attr_dev(button9, "class", "Roll");
+    			attr_dev(button9, "onclick", "rollItem(iMeleeWeaponsList,'StartingRolledMelee')");
+    			add_location(button9, file$a, 68, 16, 3991);
+    			attr_dev(p6, "id", "StartingRolledMelee");
+    			add_location(p6, file$a, 69, 16, 4143);
+    			attr_dev(div5, "id", "StartingMeleeSec");
+    			attr_dev(div5, "class", "Sec4");
+    			add_location(div5, file$a, 67, 12, 3934);
+    			attr_dev(button10, "id", "StartingRangedBtn");
+    			attr_dev(button10, "class", "Btn");
+    			add_location(button10, file$a, 71, 12, 4207);
+    			attr_dev(button11, "id", "StartingRolledRangedBtn");
+    			attr_dev(button11, "class", "Roll");
+    			attr_dev(button11, "onclick", "rollItem(iRangedWeaponsList,'StartingRolledRanged')");
+    			add_location(button11, file$a, 73, 16, 4352);
+    			attr_dev(p7, "id", "StartingRolledRanged");
+    			add_location(p7, file$a, 74, 16, 4508);
+    			attr_dev(div6, "id", "StartingRangedSec");
+    			attr_dev(div6, "class", "Sec4");
+    			add_location(div6, file$a, 72, 12, 4294);
+    			attr_dev(button12, "id", "StartingMGLBtn");
+    			attr_dev(button12, "class", "Btn");
+    			add_location(button12, file$a, 76, 12, 4573);
+    			add_location(p8, file$a, 78, 16, 4703);
+    			add_location(p9, file$a, 79, 16, 4848);
+    			attr_dev(button13, "id", "StartingRolledMGLBtn");
+    			attr_dev(button13, "class", "Roll");
+    			attr_dev(button13, "onclick", "rollItem(iMasterGearList,'StartingRolledMGL')");
+    			add_location(button13, file$a, 80, 16, 4994);
+    			attr_dev(p10, "id", "StartingRolledMGL");
+    			add_location(p10, file$a, 81, 16, 5131);
+    			attr_dev(div7, "id", "StartingMGLSec");
+    			attr_dev(div7, "class", "Sec4");
+    			add_location(div7, file$a, 77, 12, 4648);
+    			attr_dev(div8, "id", "CharacterCreationStep5Sec");
+    			attr_dev(div8, "class", "Sec3");
+    			add_location(div8, file$a, 59, 8, 3173);
+    			attr_dev(button14, "id", "CharacterCreationStep6Btn");
+    			attr_dev(button14, "class", "Btn");
+    			add_location(button14, file$a, 84, 8, 5204);
+    			add_location(p11, file$a, 86, 12, 5352);
+    			attr_dev(div9, "id", "CharacterCreationStep6Sec");
+    			attr_dev(div9, "class", "Sec3");
+    			add_location(div9, file$a, 85, 8, 5290);
+    			attr_dev(button15, "id", "CharacterOptionsBtn");
+    			attr_dev(button15, "class", "Btn");
+    			add_location(button15, file$a, 88, 8, 5425);
+    			add_location(p12, file$a, 90, 12, 5561);
+    			attr_dev(button16, "id", "ExperiencedCharactersBtn");
+    			attr_dev(button16, "class", "Btn");
+    			add_location(button16, file$a, 91, 12, 5832);
+    			add_location(p13, file$a, 93, 16, 5992);
+    			attr_dev(button17, "id", "CapableCharactersBtn");
+    			attr_dev(button17, "class", "Btn");
+    			add_location(button17, file$a, 94, 16, 6308);
+    			add_location(p14, file$a, 96, 20, 6455);
+    			add_location(p15, file$a, 97, 20, 6505);
+    			attr_dev(div10, "id", "CapableCharactersSec");
+    			attr_dev(div10, "class", "Sec5");
+    			add_location(div10, file$a, 95, 16, 6390);
+    			attr_dev(button18, "id", "AdvancedCharactersBtn");
+    			attr_dev(button18, "class", "Btn");
+    			add_location(button18, file$a, 99, 16, 6570);
+    			add_location(p16, file$a, 101, 20, 6720);
+    			add_location(p17, file$a, 102, 20, 6771);
+    			attr_dev(div11, "id", "AdvancedCharactersSec");
+    			attr_dev(div11, "class", "Sec5");
+    			add_location(div11, file$a, 100, 16, 6654);
+    			attr_dev(button19, "id", "SeasonedCharactersBtn");
+    			attr_dev(button19, "class", "Btn");
+    			add_location(button19, file$a, 104, 16, 6836);
+    			add_location(p18, file$a, 106, 20, 6986);
+    			add_location(p19, file$a, 107, 20, 7037);
+    			attr_dev(div12, "id", "SeasonedCharactersSec");
+    			attr_dev(div12, "class", "Sec5");
+    			add_location(div12, file$a, 105, 16, 6920);
+    			attr_dev(button20, "id", "VeteranCharactersBtn");
+    			attr_dev(button20, "class", "Btn");
+    			add_location(button20, file$a, 109, 16, 7102);
+    			add_location(p20, file$a, 111, 20, 7249);
+    			add_location(p21, file$a, 112, 20, 7300);
+    			attr_dev(div13, "id", "VeteranCharactersSec");
+    			attr_dev(div13, "class", "Sec5");
+    			add_location(div13, file$a, 110, 16, 7184);
+    			attr_dev(button21, "id", "EliteCharactersBtn");
+    			attr_dev(button21, "class", "Btn");
+    			add_location(button21, file$a, 114, 16, 7365);
+    			add_location(p22, file$a, 116, 20, 7506);
+    			add_location(p23, file$a, 117, 20, 7557);
+    			attr_dev(div14, "id", "EliteCharactersSec");
+    			attr_dev(div14, "class", "Sec5");
+    			add_location(div14, file$a, 115, 16, 7443);
+    			attr_dev(button22, "id", "MasterCharactersBtn");
+    			attr_dev(button22, "class", "Btn");
+    			add_location(button22, file$a, 119, 16, 7623);
+    			add_location(p24, file$a, 121, 20, 7767);
+    			add_location(p25, file$a, 122, 20, 7818);
+    			attr_dev(div15, "id", "MasterCharactersSec");
+    			attr_dev(div15, "class", "Sec5");
+    			add_location(div15, file$a, 120, 16, 7703);
+    			attr_dev(div16, "id", "ExperiencedCharactersSec");
+    			attr_dev(div16, "class", "Sec4");
+    			add_location(div16, file$a, 92, 12, 5927);
+    			attr_dev(button23, "id", "AgeBtn");
+    			attr_dev(button23, "class", "Btn");
+    			add_location(button23, file$a, 125, 12, 7899);
+    			add_location(p26, file$a, 127, 16, 8004);
+    			attr_dev(button24, "id", "FirstAgeBtn");
+    			attr_dev(button24, "class", "Btn");
+    			add_location(button24, file$a, 128, 16, 8219);
+    			add_location(p27, file$a, 130, 20, 8342);
+    			add_location(p28, file$a, 131, 20, 8385);
+    			attr_dev(div17, "id", "FirstAgeSec");
+    			attr_dev(div17, "class", "Sec5");
+    			add_location(div17, file$a, 129, 16, 8286);
+    			attr_dev(button25, "id", "SecondAgeBtn");
+    			attr_dev(button25, "class", "Btn");
+    			add_location(button25, file$a, 133, 16, 8450);
+    			add_location(p29, file$a, 135, 20, 8576);
+    			add_location(p30, file$a, 136, 20, 8619);
+    			attr_dev(div18, "id", "SecondAgeSec");
+    			attr_dev(div18, "class", "Sec5");
+    			add_location(div18, file$a, 134, 16, 8519);
+    			attr_dev(button26, "id", "ThirdAgeBtn");
+    			attr_dev(button26, "class", "Btn");
+    			add_location(button26, file$a, 138, 16, 8684);
+    			add_location(p31, file$a, 140, 20, 8808);
+    			add_location(p32, file$a, 141, 20, 8852);
+    			attr_dev(div19, "id", "ThirdAgeSec");
+    			attr_dev(div19, "class", "Sec5");
+    			add_location(div19, file$a, 139, 16, 8752);
+    			attr_dev(button27, "id", "FourthAgeBtn");
+    			attr_dev(button27, "class", "Btn");
+    			add_location(button27, file$a, 143, 16, 8917);
+    			add_location(p33, file$a, 145, 20, 9043);
+    			add_location(p34, file$a, 146, 20, 9087);
+    			attr_dev(div20, "id", "FourthAgeSec");
+    			attr_dev(div20, "class", "Sec5");
+    			add_location(div20, file$a, 144, 16, 8986);
+    			attr_dev(button28, "id", "FifthAgeBtn");
+    			attr_dev(button28, "class", "Btn");
+    			add_location(button28, file$a, 148, 16, 9152);
+    			add_location(p35, file$a, 150, 20, 9276);
+    			add_location(p36, file$a, 151, 20, 9319);
+    			attr_dev(div21, "id", "FifthAgeSec");
+    			attr_dev(div21, "class", "Sec5");
+    			add_location(div21, file$a, 149, 16, 9220);
+    			attr_dev(button29, "id", "SixthAgeBtn");
+    			attr_dev(button29, "class", "Btn");
+    			add_location(button29, file$a, 153, 16, 9384);
+    			add_location(p37, file$a, 155, 20, 9506);
+    			add_location(p38, file$a, 156, 20, 9549);
+    			attr_dev(div22, "id", "SixthAgeSec");
+    			attr_dev(div22, "class", "Sec5");
+    			add_location(div22, file$a, 154, 16, 9450);
+    			attr_dev(div23, "id", "AgeSec");
+    			attr_dev(div23, "class", "Sec4");
+    			add_location(div23, file$a, 126, 12, 7957);
+    			attr_dev(button30, "id", "FlawBtn");
+    			attr_dev(button30, "class", "Btn");
+    			add_location(button30, file$a, 159, 12, 9629);
+    			add_location(p39, file$a, 161, 16, 9737);
+    			attr_dev(button31, "id", "AddictionBtn");
+    			attr_dev(button31, "class", "Btn");
+    			add_location(button31, file$a, 162, 16, 9953);
+    			add_location(p40, file$a, 164, 20, 10083);
+    			attr_dev(div24, "id", "AddictionSec");
+    			attr_dev(div24, "class", "Sec5");
+    			add_location(div24, file$a, 163, 16, 10026);
+    			attr_dev(button32, "id", "AllergyBtn");
+    			attr_dev(button32, "class", "Btn");
+    			add_location(button32, file$a, 166, 16, 10179);
+    			add_location(p41, file$a, 168, 20, 10303);
+    			attr_dev(div25, "id", "AllergySec");
+    			attr_dev(div25, "class", "Sec5");
+    			add_location(div25, file$a, 167, 16, 10248);
+    			attr_dev(button33, "id", "AmnesiaBtn");
+    			attr_dev(button33, "class", "Btn");
+    			add_location(button33, file$a, 170, 16, 10394);
+    			add_location(p42, file$a, 172, 20, 10518);
+    			attr_dev(div26, "id", "AmnesiaSec");
+    			attr_dev(div26, "class", "Sec5");
+    			add_location(div26, file$a, 171, 16, 10463);
+    			attr_dev(button34, "id", "AmputeeBtn");
+    			attr_dev(button34, "class", "Btn");
+    			add_location(button34, file$a, 174, 16, 10617);
+    			add_location(p43, file$a, 176, 20, 10741);
+    			attr_dev(div27, "id", "AmputeeSec");
+    			attr_dev(div27, "class", "Sec5");
+    			add_location(div27, file$a, 175, 16, 10686);
+    			attr_dev(button35, "id", "AnemiaBtn");
+    			attr_dev(button35, "class", "Btn");
+    			add_location(button35, file$a, 178, 16, 10842);
+    			add_location(p44, file$a, 180, 20, 10964);
+    			attr_dev(div28, "id", "AnemiaSec");
+    			attr_dev(div28, "class", "Sec5");
+    			add_location(div28, file$a, 179, 16, 10910);
+    			attr_dev(button36, "id", "AnxietyBtn");
+    			attr_dev(button36, "class", "Btn");
+    			add_location(button36, file$a, 182, 16, 11062);
+    			add_location(p45, file$a, 184, 20, 11186);
+    			attr_dev(div29, "id", "AnxietySec");
+    			attr_dev(div29, "class", "Sec5");
+    			add_location(div29, file$a, 183, 16, 11131);
+    			attr_dev(button37, "id", "AsthmaBtn");
+    			attr_dev(button37, "class", "Btn");
+    			add_location(button37, file$a, 186, 16, 11290);
+    			add_location(p46, file$a, 188, 20, 11412);
+    			attr_dev(div30, "id", "AsthmaSec");
+    			attr_dev(div30, "class", "Sec5");
+    			add_location(div30, file$a, 187, 16, 11358);
+    			attr_dev(button38, "id", "BadBackBtn");
+    			attr_dev(button38, "class", "Btn");
+    			add_location(button38, file$a, 190, 16, 11508);
+    			add_location(p47, file$a, 192, 20, 11634);
+    			attr_dev(div31, "id", "BadBackSec");
+    			attr_dev(div31, "class", "Sec5");
+    			add_location(div31, file$a, 191, 16, 11579);
+    			attr_dev(button39, "id", "BlindBtn");
+    			attr_dev(button39, "class", "Btn");
+    			add_location(button39, file$a, 194, 16, 11733);
+    			add_location(p48, file$a, 196, 20, 11852);
+    			attr_dev(div32, "id", "BlindSec");
+    			attr_dev(div32, "class", "Sec5");
+    			add_location(div32, file$a, 195, 16, 11799);
+    			attr_dev(button40, "id", "CancerBtn");
+    			attr_dev(button40, "class", "Btn");
+    			add_location(button40, file$a, 198, 16, 11950);
+    			add_location(p49, file$a, 200, 20, 12071);
+    			attr_dev(div33, "id", "CancerSec");
+    			attr_dev(div33, "class", "Sec5");
+    			add_location(div33, file$a, 199, 16, 12017);
+    			attr_dev(button41, "id", "CowardBtn");
+    			attr_dev(button41, "class", "Btn");
+    			add_location(button41, file$a, 202, 16, 12166);
+    			add_location(p50, file$a, 204, 20, 12287);
+    			attr_dev(div34, "id", "CowardSec");
+    			attr_dev(div34, "class", "Sec5");
+    			add_location(div34, file$a, 203, 16, 12233);
+    			attr_dev(button42, "id", "CrippledBtn");
+    			attr_dev(button42, "class", "Btn");
+    			add_location(button42, file$a, 206, 16, 12387);
+    			add_location(p51, file$a, 208, 20, 12515);
+    			attr_dev(div35, "id", "CrippledSec");
+    			attr_dev(div35, "class", "Sec5");
+    			add_location(div35, file$a, 207, 16, 12459);
+    			attr_dev(button43, "id", "CruelBtn");
+    			attr_dev(button43, "class", "Btn");
+    			add_location(button43, file$a, 210, 16, 12615);
+    			add_location(p52, file$a, 212, 20, 12733);
+    			attr_dev(div36, "id", "CruelSec");
+    			attr_dev(div36, "class", "Sec5");
+    			add_location(div36, file$a, 211, 16, 12680);
+    			attr_dev(button44, "id", "DeafBtn");
+    			attr_dev(button44, "class", "Btn");
+    			add_location(button44, file$a, 214, 16, 12835);
+    			add_location(p53, file$a, 216, 20, 12951);
+    			attr_dev(div37, "id", "DeafSec");
+    			attr_dev(div37, "class", "Sec5");
+    			add_location(div37, file$a, 215, 16, 12899);
+    			attr_dev(button45, "id", "DebtBtn");
+    			attr_dev(button45, "class", "Btn");
+    			add_location(button45, file$a, 218, 16, 13026);
+    			add_location(p54, file$a, 220, 20, 13141);
+    			attr_dev(div38, "id", "DebtSec");
+    			attr_dev(div38, "class", "Sec5");
+    			add_location(div38, file$a, 219, 16, 13089);
+    			attr_dev(button46, "id", "DeformedBtn");
+    			attr_dev(button46, "class", "Btn");
+    			add_location(button46, file$a, 222, 16, 13239);
+    			add_location(p55, file$a, 224, 20, 13367);
+    			attr_dev(div39, "id", "DeformedSec");
+    			attr_dev(div39, "class", "Sec5");
+    			add_location(div39, file$a, 223, 16, 13311);
+    			attr_dev(button47, "id", "DiabetesBtn");
+    			attr_dev(button47, "class", "Btn");
+    			add_location(button47, file$a, 226, 16, 13464);
+    			add_location(p56, file$a, 228, 20, 13591);
+    			attr_dev(div40, "id", "DiabetesSec");
+    			attr_dev(div40, "class", "Sec5");
+    			add_location(div40, file$a, 227, 16, 13535);
+    			attr_dev(button48, "id", "DyslexiaBtn");
+    			attr_dev(button48, "class", "Btn");
+    			add_location(button48, file$a, 230, 16, 13692);
+    			add_location(p57, file$a, 232, 20, 13820);
+    			attr_dev(div41, "id", "DyslexiaSec");
+    			attr_dev(div41, "class", "Sec5");
+    			add_location(div41, file$a, 231, 16, 13764);
+    			attr_dev(button49, "id", "ForgetfulBtn");
+    			attr_dev(button49, "class", "Btn");
+    			add_location(button49, file$a, 234, 16, 13909);
+    			add_location(p58, file$a, 236, 20, 14039);
+    			attr_dev(div42, "id", "ForgetfulSec");
+    			attr_dev(div42, "class", "Sec5");
+    			add_location(div42, file$a, 235, 16, 13982);
+    			attr_dev(button50, "id", "GamblerBtn");
+    			attr_dev(button50, "class", "Btn");
+    			add_location(button50, file$a, 238, 16, 14134);
+    			add_location(p59, file$a, 240, 20, 14258);
+    			attr_dev(div43, "id", "GamblerSec");
+    			attr_dev(div43, "class", "Sec5");
+    			add_location(div43, file$a, 239, 16, 14203);
+    			attr_dev(button51, "id", "KleptomaniaBtn");
+    			attr_dev(button51, "class", "Btn");
+    			add_location(button51, file$a, 242, 16, 14355);
+    			add_location(p60, file$a, 244, 20, 14491);
+    			attr_dev(div44, "id", "KleptomaniaSec");
+    			attr_dev(div44, "class", "Sec5");
+    			add_location(div44, file$a, 243, 16, 14432);
+    			attr_dev(button52, "id", "LazyBtn");
+    			attr_dev(button52, "class", "Btn");
+    			add_location(button52, file$a, 246, 16, 14588);
+    			add_location(p61, file$a, 248, 20, 14703);
+    			attr_dev(div45, "id", "LazySec");
+    			attr_dev(div45, "class", "Sec5");
+    			add_location(div45, file$a, 247, 16, 14651);
+    			attr_dev(button53, "id", "MeekBtn");
+    			attr_dev(button53, "class", "Btn");
+    			add_location(button53, file$a, 250, 16, 14805);
+    			add_location(p62, file$a, 252, 20, 14920);
+    			attr_dev(div46, "id", "MeekSec");
+    			attr_dev(div46, "class", "Sec5");
+    			add_location(div46, file$a, 251, 16, 14868);
+    			attr_dev(button54, "id", "MuteBtn");
+    			attr_dev(button54, "class", "Btn");
+    			add_location(button54, file$a, 254, 16, 15012);
+    			add_location(p63, file$a, 256, 20, 15128);
+    			attr_dev(div47, "id", "MuteSec");
+    			attr_dev(div47, "class", "Sec5");
+    			add_location(div47, file$a, 255, 16, 15076);
+    			attr_dev(button55, "id", "MyopiaBtn");
+    			attr_dev(button55, "class", "Btn");
+    			add_location(button55, file$a, 258, 16, 15214);
+    			add_location(p64, file$a, 260, 20, 15336);
+    			attr_dev(div48, "id", "MyopiaSec");
+    			attr_dev(div48, "class", "Sec5");
+    			add_location(div48, file$a, 259, 16, 15282);
+    			attr_dev(button56, "id", "NaiveBtn");
+    			attr_dev(button56, "class", "Btn");
+    			add_location(button56, file$a, 262, 16, 15433);
+    			add_location(p65, file$a, 264, 20, 15551);
+    			attr_dev(div49, "id", "NaiveSec");
+    			attr_dev(div49, "class", "Sec5");
+    			add_location(div49, file$a, 263, 16, 15498);
+    			attr_dev(button57, "id", "NightmaresBtn");
+    			attr_dev(button57, "class", "Btn");
+    			add_location(button57, file$a, 266, 16, 15630);
+    			add_location(p66, file$a, 268, 20, 15763);
+    			attr_dev(div50, "id", "NightmaresSec");
+    			attr_dev(div50, "class", "Sec5");
+    			add_location(div50, file$a, 267, 16, 15705);
+    			attr_dev(button58, "id", "NoisyBtn");
+    			attr_dev(button58, "class", "Btn");
+    			add_location(button58, file$a, 270, 16, 15864);
+    			add_location(p67, file$a, 272, 20, 15982);
+    			attr_dev(div51, "id", "NoisySec");
+    			attr_dev(div51, "class", "Sec5");
+    			add_location(div51, file$a, 271, 16, 15929);
+    			attr_dev(button59, "id", "ObeseBtn");
+    			attr_dev(button59, "class", "Btn");
+    			add_location(button59, file$a, 274, 16, 16046);
+    			add_location(p68, file$a, 276, 20, 16164);
+    			attr_dev(div52, "id", "ObeseSec");
+    			attr_dev(div52, "class", "Sec5");
+    			add_location(div52, file$a, 275, 16, 16111);
+    			attr_dev(button60, "id", "PacifistBtn");
+    			attr_dev(button60, "class", "Btn");
+    			add_location(button60, file$a, 278, 16, 16264);
+    			add_location(p69, file$a, 280, 20, 16391);
+    			attr_dev(div53, "id", "PacifistSec");
+    			attr_dev(div53, "class", "Sec5");
+    			add_location(div53, file$a, 279, 16, 16335);
+    			attr_dev(button61, "id", "ParanoiaBtn");
+    			attr_dev(button61, "class", "Btn");
+    			add_location(button61, file$a, 282, 16, 16479);
+    			add_location(p70, file$a, 284, 20, 16606);
+    			attr_dev(div54, "id", "ParanoiaSec");
+    			attr_dev(div54, "class", "Sec5");
+    			add_location(div54, file$a, 283, 16, 16550);
+    			attr_dev(button62, "id", "PhobiaBtn");
+    			attr_dev(button62, "class", "Btn");
+    			add_location(button62, file$a, 286, 16, 16678);
+    			add_location(p71, file$a, 288, 20, 16799);
+    			attr_dev(div55, "id", "PhobiaSec");
+    			attr_dev(div55, "class", "Sec5");
+    			add_location(div55, file$a, 287, 16, 16745);
+    			attr_dev(button63, "id", "RacistBtn");
+    			attr_dev(button63, "class", "Btn");
+    			add_location(button63, file$a, 290, 16, 16901);
+    			add_location(p72, file$a, 292, 20, 17022);
+    			attr_dev(div56, "id", "RacistSec");
+    			attr_dev(div56, "class", "Sec5");
+    			add_location(div56, file$a, 291, 16, 16968);
+    			attr_dev(button64, "id", "SexistBtn");
+    			attr_dev(button64, "class", "Btn");
+    			add_location(button64, file$a, 294, 16, 17124);
+    			add_location(p73, file$a, 296, 20, 17245);
+    			attr_dev(div57, "id", "SexistSec");
+    			attr_dev(div57, "class", "Sec5");
+    			add_location(div57, file$a, 295, 16, 17191);
+    			attr_dev(button65, "id", "SpeechImpedimentBtn");
+    			attr_dev(button65, "class", "Btn");
+    			add_location(button65, file$a, 298, 16, 17343);
+    			add_location(p74, file$a, 300, 20, 17495);
+    			attr_dev(div58, "id", "SpeechImpedimentSec");
+    			attr_dev(div58, "class", "Sec5");
+    			add_location(div58, file$a, 299, 16, 17431);
+    			attr_dev(button66, "id", "SuperstitiousBtn");
+    			attr_dev(button66, "class", "Btn");
+    			add_location(button66, file$a, 302, 16, 17589);
+    			add_location(p75, file$a, 304, 20, 17731);
+    			attr_dev(div59, "id", "SuperstitiousSec");
+    			attr_dev(div59, "class", "Sec5");
+    			add_location(div59, file$a, 303, 16, 17670);
+    			attr_dev(div60, "id", "FlawSec");
+    			attr_dev(div60, "class", "Sec4");
+    			add_location(div60, file$a, 160, 12, 9689);
+    			attr_dev(button67, "id", "HistoryBtn");
+    			attr_dev(button67, "class", "Btn");
+    			add_location(button67, file$a, 307, 12, 17840);
+    			add_location(p76, file$a, 309, 16, 17957);
+    			add_location(li26, file$a, 311, 20, 18239);
+    			add_location(li27, file$a, 312, 20, 18290);
+    			add_location(li28, file$a, 313, 20, 18341);
+    			add_location(li29, file$a, 314, 20, 18394);
+    			add_location(li30, file$a, 315, 20, 18445);
+    			add_location(li31, file$a, 316, 20, 18496);
+    			add_location(li32, file$a, 317, 20, 18549);
+    			add_location(li33, file$a, 318, 20, 18592);
+    			add_location(li34, file$a, 319, 20, 18637);
+    			add_location(li35, file$a, 320, 20, 18681);
+    			add_location(li36, file$a, 321, 20, 18727);
+    			add_location(li37, file$a, 322, 20, 18770);
+    			add_location(li38, file$a, 323, 20, 18812);
+    			add_location(li39, file$a, 324, 20, 18858);
+    			add_location(li40, file$a, 325, 20, 18901);
+    			add_location(li41, file$a, 326, 20, 18946);
+    			add_location(li42, file$a, 327, 20, 18989);
+    			add_location(li43, file$a, 328, 20, 19031);
+    			add_location(li44, file$a, 329, 20, 19076);
+    			add_location(li45, file$a, 330, 20, 19126);
+    			add_location(li46, file$a, 331, 20, 19177);
+    			add_location(li47, file$a, 332, 20, 19224);
+    			add_location(li48, file$a, 333, 20, 19276);
+    			add_location(li49, file$a, 334, 20, 19323);
+    			add_location(li50, file$a, 335, 20, 19369);
+    			add_location(li51, file$a, 336, 20, 19421);
+    			add_location(li52, file$a, 337, 20, 19470);
+    			add_location(li53, file$a, 338, 20, 19520);
+    			add_location(li54, file$a, 339, 20, 19571);
+    			add_location(li55, file$a, 340, 20, 19624);
+    			add_location(li56, file$a, 341, 20, 19677);
+    			add_location(li57, file$a, 342, 20, 19728);
+    			add_location(li58, file$a, 343, 20, 19773);
+    			add_location(li59, file$a, 344, 20, 19824);
+    			add_location(li60, file$a, 345, 20, 19877);
+    			add_location(li61, file$a, 346, 20, 19930);
+    			add_location(ol0, file$a, 310, 16, 18214);
+    			attr_dev(div61, "id", "HistorySec");
+    			attr_dev(div61, "class", "Sec4");
+    			add_location(div61, file$a, 308, 12, 17906);
+    			attr_dev(button68, "id", "ProfessionBtn");
+    			attr_dev(button68, "class", "Btn");
+    			add_location(button68, file$a, 349, 12, 20014);
+    			add_location(p77, file$a, 351, 16, 20140);
+    			attr_dev(button69, "id", "ActorBtn");
+    			attr_dev(button69, "class", "Btn");
+    			add_location(button69, file$a, 352, 16, 20347);
+    			add_location(p78, file$a, 354, 20, 20465);
+    			add_location(p79, file$a, 355, 20, 20531);
+    			attr_dev(div62, "id", "ActorSec");
+    			attr_dev(div62, "class", "Sec5");
+    			add_location(div62, file$a, 353, 16, 20412);
+    			attr_dev(button70, "id", "ArchitectBtn");
+    			attr_dev(button70, "class", "Btn");
+    			add_location(button70, file$a, 357, 16, 20595);
+    			add_location(p80, file$a, 359, 20, 20725);
+    			add_location(p81, file$a, 360, 20, 20788);
+    			attr_dev(div63, "id", "ArchitectSec");
+    			attr_dev(div63, "class", "Sec5");
+    			add_location(div63, file$a, 358, 16, 20668);
+    			attr_dev(button71, "id", "BaseballPlayerBtn");
+    			attr_dev(button71, "class", "Btn");
+    			add_location(button71, file$a, 362, 16, 20858);
+    			add_location(p82, file$a, 364, 20, 21004);
+    			add_location(p83, file$a, 365, 20, 21066);
+    			attr_dev(div64, "id", "BaseballPlayerSec");
+    			attr_dev(div64, "class", "Sec5");
+    			add_location(div64, file$a, 363, 16, 20942);
+    			attr_dev(button72, "id", "BasketballPlayerBtn");
+    			attr_dev(button72, "class", "Btn");
+    			add_location(button72, file$a, 367, 16, 21136);
+    			add_location(p84, file$a, 369, 20, 21288);
+    			add_location(p85, file$a, 370, 20, 21351);
+    			attr_dev(div65, "id", "BasketballPlayerSec");
+    			attr_dev(div65, "class", "Sec5");
+    			add_location(div65, file$a, 368, 16, 21224);
+    			attr_dev(button73, "id", "BurglarBtn");
+    			attr_dev(button73, "class", "Btn");
+    			add_location(button73, file$a, 372, 16, 21422);
+    			add_location(p86, file$a, 374, 20, 21546);
+    			add_location(p87, file$a, 375, 20, 21609);
+    			attr_dev(div66, "id", "BurglarSec");
+    			attr_dev(div66, "class", "Sec5");
+    			add_location(div66, file$a, 373, 16, 21491);
+    			attr_dev(button74, "id", "CampCounselorBtn");
+    			attr_dev(button74, "class", "Btn");
+    			add_location(button74, file$a, 377, 16, 21676);
+    			add_location(p88, file$a, 379, 20, 21819);
+    			add_location(p89, file$a, 380, 20, 21881);
+    			attr_dev(div67, "id", "CampCounselorSec");
+    			attr_dev(div67, "class", "Sec5");
+    			add_location(div67, file$a, 378, 16, 21758);
+    			attr_dev(button75, "id", "CarpenterBtn");
+    			attr_dev(button75, "class", "Btn");
+    			add_location(button75, file$a, 382, 16, 21951);
+    			add_location(p90, file$a, 384, 20, 22081);
+    			add_location(p91, file$a, 385, 20, 22141);
+    			attr_dev(div68, "id", "CarpenterSec");
+    			attr_dev(div68, "class", "Sec5");
+    			add_location(div68, file$a, 383, 16, 22024);
+    			attr_dev(button76, "id", "ConvictBtn");
+    			attr_dev(button76, "class", "Btn");
+    			add_location(button76, file$a, 387, 16, 22207);
+    			add_location(p92, file$a, 389, 20, 22331);
+    			add_location(p93, file$a, 390, 20, 22394);
+    			attr_dev(div69, "id", "ConvictSec");
+    			attr_dev(div69, "class", "Sec5");
+    			add_location(div69, file$a, 388, 16, 22276);
+    			attr_dev(button77, "id", "CopBtn");
+    			attr_dev(button77, "class", "Btn");
+    			add_location(button77, file$a, 392, 16, 22461);
+    			add_location(p94, file$a, 394, 20, 22573);
+    			add_location(p95, file$a, 395, 20, 22637);
+    			attr_dev(div70, "id", "CopSec");
+    			attr_dev(div70, "class", "Sec5");
+    			add_location(div70, file$a, 393, 16, 22522);
+    			attr_dev(button78, "id", "CourierBtn");
+    			attr_dev(button78, "class", "Btn");
+    			add_location(button78, file$a, 397, 16, 22716);
+    			add_location(p96, file$a, 399, 20, 22840);
+    			add_location(p97, file$a, 400, 20, 22905);
+    			attr_dev(div71, "id", "CourierSec");
+    			attr_dev(div71, "class", "Sec5");
+    			add_location(div71, file$a, 398, 16, 22785);
+    			attr_dev(button79, "id", "DogTrainerBtn");
+    			attr_dev(button79, "class", "Btn");
+    			add_location(button79, file$a, 402, 16, 22970);
+    			add_location(p98, file$a, 404, 20, 23104);
+    			add_location(p99, file$a, 405, 20, 23162);
+    			attr_dev(div72, "id", "DogTrainerSec");
+    			attr_dev(div72, "class", "Sec5");
+    			add_location(div72, file$a, 403, 16, 23046);
+    			attr_dev(button80, "id", "ElectricianBtn");
+    			attr_dev(button80, "class", "Btn");
+    			add_location(button80, file$a, 407, 16, 23232);
+    			add_location(p100, file$a, 409, 20, 23368);
+    			add_location(p101, file$a, 410, 20, 23430);
+    			attr_dev(div73, "id", "ElectricianSec");
+    			attr_dev(div73, "class", "Sec5");
+    			add_location(div73, file$a, 408, 16, 23309);
+    			attr_dev(button81, "id", "FootballPlayerBtn");
+    			attr_dev(button81, "class", "Btn");
+    			add_location(button81, file$a, 412, 16, 23498);
+    			add_location(p102, file$a, 414, 20, 23644);
+    			add_location(p103, file$a, 415, 20, 23704);
+    			attr_dev(div74, "id", "FootballPlayerSec");
+    			attr_dev(div74, "class", "Sec5");
+    			add_location(div74, file$a, 413, 16, 23582);
+    			attr_dev(button82, "id", "GymnastBtn");
+    			attr_dev(button82, "class", "Btn");
+    			add_location(button82, file$a, 417, 16, 23775);
+    			add_location(p104, file$a, 419, 20, 23899);
+    			add_location(p105, file$a, 420, 20, 23964);
+    			attr_dev(div75, "id", "GymnastSec");
+    			attr_dev(div75, "class", "Sec5");
+    			add_location(div75, file$a, 418, 16, 23844);
+    			attr_dev(button83, "id", "HomelessBtn");
+    			attr_dev(button83, "class", "Btn");
+    			add_location(button83, file$a, 422, 16, 24032);
+    			add_location(p106, file$a, 424, 20, 24159);
+    			add_location(p107, file$a, 425, 20, 24222);
+    			attr_dev(div76, "id", "HomelessSec");
+    			attr_dev(div76, "class", "Sec5");
+    			add_location(div76, file$a, 423, 16, 24103);
+    			attr_dev(button84, "id", "LawyerBtn");
+    			attr_dev(button84, "class", "Btn");
+    			add_location(button84, file$a, 427, 16, 24291);
+    			add_location(p108, file$a, 429, 20, 24412);
+    			add_location(p109, file$a, 430, 20, 24473);
+    			attr_dev(div77, "id", "LawyerSec");
+    			attr_dev(div77, "class", "Sec5");
+    			add_location(div77, file$a, 428, 16, 24358);
+    			attr_dev(button85, "id", "ManagerBtn");
+    			attr_dev(button85, "class", "Btn");
+    			add_location(button85, file$a, 432, 16, 24538);
+    			add_location(p110, file$a, 434, 20, 24662);
+    			add_location(p111, file$a, 435, 20, 24730);
+    			attr_dev(div78, "id", "ManagerSec");
+    			attr_dev(div78, "class", "Sec5");
+    			add_location(div78, file$a, 433, 16, 24607);
+    			attr_dev(button86, "id", "MechanicBtn");
+    			attr_dev(button86, "class", "Btn");
+    			add_location(button86, file$a, 437, 16, 24798);
+    			add_location(p112, file$a, 439, 20, 24925);
+    			add_location(p113, file$a, 440, 20, 24988);
+    			attr_dev(div79, "id", "MechanicSec");
+    			attr_dev(div79, "class", "Sec5");
+    			add_location(div79, file$a, 438, 16, 24869);
+    			attr_dev(button87, "id", "MilitaryBtn");
+    			attr_dev(button87, "class", "Btn");
+    			add_location(button87, file$a, 442, 16, 25057);
+    			add_location(p114, file$a, 444, 20, 25184);
+    			add_location(p115, file$a, 445, 20, 25243);
+    			attr_dev(div80, "id", "MilitarySec");
+    			attr_dev(div80, "class", "Sec5");
+    			add_location(div80, file$a, 443, 16, 25128);
+    			attr_dev(button88, "id", "MusicianBtn");
+    			attr_dev(button88, "class", "Btn");
+    			add_location(button88, file$a, 447, 16, 25322);
+    			add_location(p116, file$a, 449, 20, 25449);
+    			add_location(p117, file$a, 450, 20, 25514);
+    			attr_dev(div81, "id", "MusicianSec");
+    			attr_dev(div81, "class", "Sec5");
+    			add_location(div81, file$a, 448, 16, 25393);
+    			attr_dev(button89, "id", "ParamedicBtn");
+    			attr_dev(button89, "class", "Btn");
+    			add_location(button89, file$a, 452, 16, 25590);
+    			add_location(p118, file$a, 454, 20, 25720);
+    			add_location(p119, file$a, 455, 20, 25786);
+    			attr_dev(div82, "id", "ParamedicSec");
+    			attr_dev(div82, "class", "Sec5");
+    			add_location(div82, file$a, 453, 16, 25663);
+    			attr_dev(button90, "id", "ParkRangerBtn");
+    			attr_dev(button90, "class", "Btn");
+    			add_location(button90, file$a, 457, 16, 25851);
+    			add_location(p120, file$a, 459, 20, 25985);
+    			add_location(p121, file$a, 460, 20, 26046);
+    			attr_dev(div83, "id", "ParkRangerSec");
+    			attr_dev(div83, "class", "Sec5");
+    			add_location(div83, file$a, 458, 16, 25927);
+    			attr_dev(button91, "id", "PharmacistBtn");
+    			attr_dev(button91, "class", "Btn");
+    			add_location(button91, file$a, 462, 16, 26114);
+    			add_location(p122, file$a, 464, 20, 26247);
+    			add_location(p123, file$a, 465, 20, 26312);
+    			attr_dev(div84, "id", "PharmacistSec");
+    			attr_dev(div84, "class", "Sec5");
+    			add_location(div84, file$a, 463, 16, 26189);
+    			attr_dev(button92, "id", "PilotBtn");
+    			attr_dev(button92, "class", "Btn");
+    			add_location(button92, file$a, 467, 16, 26378);
+    			add_location(p124, file$a, 469, 20, 26496);
+    			add_location(p125, file$a, 470, 20, 26569);
+    			attr_dev(div85, "id", "PilotSec");
+    			attr_dev(div85, "class", "Sec5");
+    			add_location(div85, file$a, 468, 16, 26443);
+    			attr_dev(button93, "id", "PrizeFighterBtn");
+    			attr_dev(button93, "class", "Btn");
+    			add_location(button93, file$a, 472, 16, 26653);
+    			add_location(p126, file$a, 474, 20, 26793);
+    			add_location(p127, file$a, 475, 20, 26854);
+    			attr_dev(div86, "id", "PrizeFighterSec");
+    			attr_dev(div86, "class", "Sec5");
+    			add_location(div86, file$a, 473, 16, 26733);
+    			attr_dev(button94, "id", "RidingInstructorBtn");
+    			attr_dev(button94, "class", "Btn");
+    			add_location(button94, file$a, 477, 16, 26926);
+    			add_location(p128, file$a, 479, 20, 27078);
+    			add_location(p129, file$a, 480, 20, 27135);
+    			attr_dev(div87, "id", "RidingInstructorSec");
+    			attr_dev(div87, "class", "Sec5");
+    			add_location(div87, file$a, 478, 16, 27014);
+    			attr_dev(button95, "id", "SecurityGuardBtn");
+    			attr_dev(button95, "class", "Btn");
+    			add_location(button95, file$a, 482, 16, 27203);
+    			add_location(p130, file$a, 484, 20, 27346);
+    			add_location(p131, file$a, 485, 20, 27405);
+    			attr_dev(div88, "id", "SecurityGuardSec");
+    			attr_dev(div88, "class", "Sec5");
+    			add_location(div88, file$a, 483, 16, 27285);
+    			attr_dev(button96, "id", "SurgeonBtn");
+    			attr_dev(button96, "class", "Btn");
+    			add_location(button96, file$a, 487, 16, 27468);
+    			add_location(p132, file$a, 489, 20, 27592);
+    			add_location(p133, file$a, 490, 20, 27656);
+    			attr_dev(div89, "id", "SurgeonSec");
+    			attr_dev(div89, "class", "Sec5");
+    			add_location(div89, file$a, 488, 16, 27537);
+    			attr_dev(button97, "id", "TaxiDriverBtn");
+    			attr_dev(button97, "class", "Btn");
+    			add_location(button97, file$a, 492, 16, 27725);
+    			add_location(p134, file$a, 494, 20, 27859);
+    			add_location(p135, file$a, 495, 20, 27918);
+    			attr_dev(div90, "id", "TaxiDriverSec");
+    			attr_dev(div90, "class", "Sec5");
+    			add_location(div90, file$a, 493, 16, 27801);
+    			attr_dev(button98, "id", "TechnicianBtn");
+    			attr_dev(button98, "class", "Btn");
+    			add_location(button98, file$a, 497, 16, 28005);
+    			add_location(p136, file$a, 499, 20, 28138);
+    			add_location(p137, file$a, 500, 20, 28199);
+    			attr_dev(div91, "id", "TechnicianSec");
+    			attr_dev(div91, "class", "Sec5");
+    			add_location(div91, file$a, 498, 16, 28080);
+    			attr_dev(button99, "id", "TeacherBtn");
+    			attr_dev(button99, "class", "Btn");
+    			add_location(button99, file$a, 502, 16, 28267);
+    			add_location(p138, file$a, 504, 20, 28391);
+    			add_location(p139, file$a, 505, 20, 28455);
+    			attr_dev(div92, "id", "TeacherSec");
+    			attr_dev(div92, "class", "Sec5");
+    			add_location(div92, file$a, 503, 16, 28336);
+    			attr_dev(button100, "id", "TherapistBtn");
+    			attr_dev(button100, "class", "Btn");
+    			add_location(button100, file$a, 507, 16, 28523);
+    			add_location(p140, file$a, 509, 20, 28653);
+    			add_location(p141, file$a, 510, 20, 28720);
+    			attr_dev(div93, "id", "TherapistSec");
+    			attr_dev(div93, "class", "Sec5");
+    			add_location(div93, file$a, 508, 16, 28596);
+    			attr_dev(button101, "id", "ThiefBtn");
+    			attr_dev(button101, "class", "Btn");
+    			add_location(button101, file$a, 512, 16, 28795);
+    			add_location(p142, file$a, 514, 20, 28913);
+    			add_location(p143, file$a, 515, 20, 28974);
+    			attr_dev(div94, "id", "ThiefSec");
+    			attr_dev(div94, "class", "Sec5");
+    			add_location(div94, file$a, 513, 16, 28860);
+    			attr_dev(button102, "id", "TruckerBtn");
+    			attr_dev(button102, "class", "Btn");
+    			add_location(button102, file$a, 517, 16, 29039);
+    			add_location(p144, file$a, 519, 20, 29163);
+    			add_location(p145, file$a, 520, 20, 29223);
+    			attr_dev(div95, "id", "TruckerSec");
+    			attr_dev(div95, "class", "Sec5");
+    			add_location(div95, file$a, 518, 16, 29108);
+    			attr_dev(button103, "id", "YogaInstructorBtn");
+    			attr_dev(button103, "class", "Btn");
+    			add_location(button103, file$a, 522, 16, 29290);
+    			add_location(p146, file$a, 524, 20, 29436);
+    			add_location(p147, file$a, 525, 20, 29500);
+    			attr_dev(div96, "id", "YogaInstructorSec");
+    			attr_dev(div96, "class", "Sec5");
+    			add_location(div96, file$a, 523, 16, 29374);
+    			attr_dev(button104, "id", "ZooKeeperBtn");
+    			attr_dev(button104, "class", "Btn");
+    			add_location(button104, file$a, 527, 16, 29570);
+    			add_location(p148, file$a, 529, 20, 29701);
+    			add_location(p149, file$a, 530, 20, 29758);
+    			attr_dev(div97, "id", "ZooKeeperSec");
+    			attr_dev(div97, "class", "Sec5");
+    			add_location(div97, file$a, 528, 16, 29644);
+    			attr_dev(div98, "id", "ProfessionSec");
+    			attr_dev(div98, "class", "Sec4");
+    			add_location(div98, file$a, 350, 12, 20086);
+    			attr_dev(button105, "id", "RelationshipBtn");
+    			attr_dev(button105, "class", "Btn");
+    			add_location(button105, file$a, 533, 12, 29841);
+    			add_location(p150, file$a, 535, 16, 29973);
+    			add_location(li62, file$a, 537, 20, 30319);
+    			add_location(li63, file$a, 538, 20, 30368);
+    			add_location(li64, file$a, 539, 20, 30415);
+    			add_location(li65, file$a, 540, 20, 30462);
+    			add_location(li66, file$a, 541, 20, 30499);
+    			add_location(li67, file$a, 542, 20, 30543);
+    			add_location(li68, file$a, 543, 20, 30595);
+    			add_location(li69, file$a, 544, 20, 30642);
+    			add_location(li70, file$a, 545, 20, 30688);
+    			add_location(li71, file$a, 546, 20, 30735);
+    			add_location(li72, file$a, 547, 20, 30788);
+    			add_location(li73, file$a, 548, 20, 30842);
+    			add_location(li74, file$a, 549, 20, 30889);
+    			add_location(li75, file$a, 550, 20, 30936);
+    			add_location(li76, file$a, 551, 20, 30985);
+    			add_location(li77, file$a, 552, 20, 31028);
+    			add_location(li78, file$a, 553, 20, 31078);
+    			add_location(li79, file$a, 554, 20, 31119);
+    			add_location(ol1, file$a, 536, 16, 30294);
+    			attr_dev(div99, "id", "RelationshipSec");
+    			attr_dev(div99, "class", "Sec4");
+    			add_location(div99, file$a, 534, 12, 29917);
+    			attr_dev(div100, "id", "CharacterOptionsSec");
+    			attr_dev(div100, "class", "Sec3");
+    			add_location(div100, file$a, 89, 8, 5505);
+    			attr_dev(div101, "id", "CharacterCreationSec");
+    			attr_dev(div101, "class", "Sec2");
+    			add_location(div101, file$a, 3, 4, 143);
+    			attr_dev(div102, "class", "creation-rules");
+    			add_location(div102, file$a, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div102, anchor);
+    			append_dev(div102, h2);
+    			append_dev(div102, t1);
+    			append_dev(div102, button0);
+    			append_dev(div102, t3);
+    			append_dev(div102, div101);
+    			append_dev(div101, button1);
+    			append_dev(div101, t5);
+    			append_dev(div101, div0);
+    			append_dev(div0, p0);
+    			append_dev(div101, t7);
+    			append_dev(div101, button2);
+    			append_dev(div101, t9);
+    			append_dev(div101, div1);
+    			append_dev(div1, p1);
+    			append_dev(div1, t11);
+    			append_dev(div1, ul0);
+    			append_dev(ul0, li0);
+    			append_dev(ul0, t13);
+    			append_dev(ul0, li1);
+    			append_dev(ul0, t15);
+    			append_dev(ul0, li2);
+    			append_dev(ul0, t17);
+    			append_dev(ul0, li3);
+    			append_dev(div101, t19);
+    			append_dev(div101, button3);
+    			append_dev(div101, t21);
+    			append_dev(div101, div2);
+    			append_dev(div2, p2);
+    			append_dev(div2, t23);
+    			append_dev(div2, ul1);
+    			append_dev(ul1, li4);
+    			append_dev(ul1, t25);
+    			append_dev(ul1, li5);
+    			append_dev(ul1, t27);
+    			append_dev(ul1, li6);
+    			append_dev(ul1, t29);
+    			append_dev(ul1, li7);
+    			append_dev(div101, t31);
+    			append_dev(div101, button4);
+    			append_dev(div101, t33);
+    			append_dev(div101, div3);
+    			append_dev(div3, p3);
+    			append_dev(div3, t35);
+    			append_dev(div3, ul4);
+    			append_dev(ul4, li8);
+    			append_dev(ul4, t37);
+    			append_dev(ul4, li9);
+    			append_dev(ul4, t39);
+    			append_dev(ul4, li10);
+    			append_dev(ul4, t41);
+    			append_dev(ul4, li11);
+    			append_dev(ul4, t43);
+    			append_dev(ul4, li12);
+    			append_dev(ul4, t45);
+    			append_dev(ul4, li13);
+    			append_dev(ul4, t47);
+    			append_dev(ul4, li14);
+    			append_dev(ul4, t49);
+    			append_dev(ul4, li15);
+    			append_dev(ul4, t51);
+    			append_dev(ul4, li16);
+    			append_dev(ul4, t53);
+    			append_dev(ul4, li20);
+    			append_dev(li20, ul2);
+    			append_dev(ul2, li17);
+    			append_dev(ul2, t55);
+    			append_dev(ul2, li18);
+    			append_dev(ul2, t57);
+    			append_dev(ul2, li19);
+    			append_dev(ul4, t59);
+    			append_dev(ul4, li21);
+    			append_dev(ul4, t61);
+    			append_dev(ul4, li22);
+    			append_dev(ul4, t63);
+    			append_dev(ul4, li25);
+    			append_dev(li25, ul3);
+    			append_dev(ul3, li23);
+    			append_dev(ul3, t65);
+    			append_dev(ul3, li24);
+    			append_dev(div101, t67);
+    			append_dev(div101, button5);
+    			append_dev(div101, t69);
+    			append_dev(div101, div8);
+    			append_dev(div8, p4);
+    			append_dev(div8, t71);
+    			append_dev(div8, button6);
+    			append_dev(div8, t73);
+    			append_dev(div8, div4);
+    			append_dev(div4, button7);
+    			append_dev(div4, t75);
+    			append_dev(div4, p5);
+    			append_dev(div8, t76);
+    			append_dev(div8, button8);
+    			append_dev(div8, t78);
+    			append_dev(div8, div5);
+    			append_dev(div5, button9);
+    			append_dev(div5, t80);
+    			append_dev(div5, p6);
+    			append_dev(div8, t81);
+    			append_dev(div8, button10);
+    			append_dev(div8, t83);
+    			append_dev(div8, div6);
+    			append_dev(div6, button11);
+    			append_dev(div6, t85);
+    			append_dev(div6, p7);
+    			append_dev(div8, t86);
+    			append_dev(div8, button12);
+    			append_dev(div8, t88);
+    			append_dev(div8, div7);
+    			append_dev(div7, p8);
+    			append_dev(div7, t90);
+    			append_dev(div7, p9);
+    			append_dev(div7, t92);
+    			append_dev(div7, button13);
+    			append_dev(div7, t94);
+    			append_dev(div7, p10);
+    			append_dev(div101, t95);
+    			append_dev(div101, button14);
+    			append_dev(div101, t97);
+    			append_dev(div101, div9);
+    			append_dev(div9, p11);
+    			append_dev(div101, t99);
+    			append_dev(div101, button15);
+    			append_dev(div101, t101);
+    			append_dev(div101, div100);
+    			append_dev(div100, p12);
+    			append_dev(div100, t103);
+    			append_dev(div100, button16);
+    			append_dev(div100, t105);
+    			append_dev(div100, div16);
+    			append_dev(div16, p13);
+    			append_dev(div16, t107);
+    			append_dev(div16, button17);
+    			append_dev(div16, t109);
+    			append_dev(div16, div10);
+    			append_dev(div10, p14);
+    			append_dev(div10, t111);
+    			append_dev(div10, p15);
+    			append_dev(div16, t113);
+    			append_dev(div16, button18);
+    			append_dev(div16, t115);
+    			append_dev(div16, div11);
+    			append_dev(div11, p16);
+    			append_dev(div11, t117);
+    			append_dev(div11, p17);
+    			append_dev(div16, t119);
+    			append_dev(div16, button19);
+    			append_dev(div16, t121);
+    			append_dev(div16, div12);
+    			append_dev(div12, p18);
+    			append_dev(div12, t123);
+    			append_dev(div12, p19);
+    			append_dev(div16, t125);
+    			append_dev(div16, button20);
+    			append_dev(div16, t127);
+    			append_dev(div16, div13);
+    			append_dev(div13, p20);
+    			append_dev(div13, t129);
+    			append_dev(div13, p21);
+    			append_dev(div16, t131);
+    			append_dev(div16, button21);
+    			append_dev(div16, t133);
+    			append_dev(div16, div14);
+    			append_dev(div14, p22);
+    			append_dev(div14, t135);
+    			append_dev(div14, p23);
+    			append_dev(div16, t137);
+    			append_dev(div16, button22);
+    			append_dev(div16, t139);
+    			append_dev(div16, div15);
+    			append_dev(div15, p24);
+    			append_dev(div15, t141);
+    			append_dev(div15, p25);
+    			append_dev(div100, t143);
+    			append_dev(div100, button23);
+    			append_dev(div100, t145);
+    			append_dev(div100, div23);
+    			append_dev(div23, p26);
+    			append_dev(div23, t147);
+    			append_dev(div23, button24);
+    			append_dev(div23, t149);
+    			append_dev(div23, div17);
+    			append_dev(div17, p27);
+    			append_dev(div17, t151);
+    			append_dev(div17, p28);
+    			append_dev(div23, t153);
+    			append_dev(div23, button25);
+    			append_dev(div23, t155);
+    			append_dev(div23, div18);
+    			append_dev(div18, p29);
+    			append_dev(div18, t157);
+    			append_dev(div18, p30);
+    			append_dev(div23, t159);
+    			append_dev(div23, button26);
+    			append_dev(div23, t161);
+    			append_dev(div23, div19);
+    			append_dev(div19, p31);
+    			append_dev(div19, t163);
+    			append_dev(div19, p32);
+    			append_dev(div23, t165);
+    			append_dev(div23, button27);
+    			append_dev(div23, t167);
+    			append_dev(div23, div20);
+    			append_dev(div20, p33);
+    			append_dev(div20, t169);
+    			append_dev(div20, p34);
+    			append_dev(div23, t171);
+    			append_dev(div23, button28);
+    			append_dev(div23, t173);
+    			append_dev(div23, div21);
+    			append_dev(div21, p35);
+    			append_dev(div21, t175);
+    			append_dev(div21, p36);
+    			append_dev(div23, t177);
+    			append_dev(div23, button29);
+    			append_dev(div23, t179);
+    			append_dev(div23, div22);
+    			append_dev(div22, p37);
+    			append_dev(div22, t181);
+    			append_dev(div22, p38);
+    			append_dev(div100, t183);
+    			append_dev(div100, button30);
+    			append_dev(div100, t185);
+    			append_dev(div100, div60);
+    			append_dev(div60, p39);
+    			append_dev(div60, t187);
+    			append_dev(div60, button31);
+    			append_dev(div60, t189);
+    			append_dev(div60, div24);
+    			append_dev(div24, p40);
+    			append_dev(div60, t191);
+    			append_dev(div60, button32);
+    			append_dev(div60, t193);
+    			append_dev(div60, div25);
+    			append_dev(div25, p41);
+    			append_dev(div60, t195);
+    			append_dev(div60, button33);
+    			append_dev(div60, t197);
+    			append_dev(div60, div26);
+    			append_dev(div26, p42);
+    			append_dev(div60, t199);
+    			append_dev(div60, button34);
+    			append_dev(div60, t201);
+    			append_dev(div60, div27);
+    			append_dev(div27, p43);
+    			append_dev(div60, t203);
+    			append_dev(div60, button35);
+    			append_dev(div60, t205);
+    			append_dev(div60, div28);
+    			append_dev(div28, p44);
+    			append_dev(div60, t207);
+    			append_dev(div60, button36);
+    			append_dev(div60, t209);
+    			append_dev(div60, div29);
+    			append_dev(div29, p45);
+    			append_dev(div60, t211);
+    			append_dev(div60, button37);
+    			append_dev(div60, t213);
+    			append_dev(div60, div30);
+    			append_dev(div30, p46);
+    			append_dev(div60, t215);
+    			append_dev(div60, button38);
+    			append_dev(div60, t217);
+    			append_dev(div60, div31);
+    			append_dev(div31, p47);
+    			append_dev(div60, t219);
+    			append_dev(div60, button39);
+    			append_dev(div60, t221);
+    			append_dev(div60, div32);
+    			append_dev(div32, p48);
+    			append_dev(div60, t223);
+    			append_dev(div60, button40);
+    			append_dev(div60, t225);
+    			append_dev(div60, div33);
+    			append_dev(div33, p49);
+    			append_dev(div60, t227);
+    			append_dev(div60, button41);
+    			append_dev(div60, t229);
+    			append_dev(div60, div34);
+    			append_dev(div34, p50);
+    			append_dev(div60, t231);
+    			append_dev(div60, button42);
+    			append_dev(div60, t233);
+    			append_dev(div60, div35);
+    			append_dev(div35, p51);
+    			append_dev(div60, t235);
+    			append_dev(div60, button43);
+    			append_dev(div60, t237);
+    			append_dev(div60, div36);
+    			append_dev(div36, p52);
+    			append_dev(div60, t239);
+    			append_dev(div60, button44);
+    			append_dev(div60, t241);
+    			append_dev(div60, div37);
+    			append_dev(div37, p53);
+    			append_dev(div60, t243);
+    			append_dev(div60, button45);
+    			append_dev(div60, t245);
+    			append_dev(div60, div38);
+    			append_dev(div38, p54);
+    			append_dev(div60, t247);
+    			append_dev(div60, button46);
+    			append_dev(div60, t249);
+    			append_dev(div60, div39);
+    			append_dev(div39, p55);
+    			append_dev(div60, t251);
+    			append_dev(div60, button47);
+    			append_dev(div60, t253);
+    			append_dev(div60, div40);
+    			append_dev(div40, p56);
+    			append_dev(div60, t255);
+    			append_dev(div60, button48);
+    			append_dev(div60, t257);
+    			append_dev(div60, div41);
+    			append_dev(div41, p57);
+    			append_dev(div60, t259);
+    			append_dev(div60, button49);
+    			append_dev(div60, t261);
+    			append_dev(div60, div42);
+    			append_dev(div42, p58);
+    			append_dev(div60, t263);
+    			append_dev(div60, button50);
+    			append_dev(div60, t265);
+    			append_dev(div60, div43);
+    			append_dev(div43, p59);
+    			append_dev(div60, t267);
+    			append_dev(div60, button51);
+    			append_dev(div60, t269);
+    			append_dev(div60, div44);
+    			append_dev(div44, p60);
+    			append_dev(div60, t271);
+    			append_dev(div60, button52);
+    			append_dev(div60, t273);
+    			append_dev(div60, div45);
+    			append_dev(div45, p61);
+    			append_dev(div60, t275);
+    			append_dev(div60, button53);
+    			append_dev(div60, t277);
+    			append_dev(div60, div46);
+    			append_dev(div46, p62);
+    			append_dev(div60, t279);
+    			append_dev(div60, button54);
+    			append_dev(div60, t281);
+    			append_dev(div60, div47);
+    			append_dev(div47, p63);
+    			append_dev(div60, t283);
+    			append_dev(div60, button55);
+    			append_dev(div60, t285);
+    			append_dev(div60, div48);
+    			append_dev(div48, p64);
+    			append_dev(div60, t287);
+    			append_dev(div60, button56);
+    			append_dev(div60, t289);
+    			append_dev(div60, div49);
+    			append_dev(div49, p65);
+    			append_dev(div60, t291);
+    			append_dev(div60, button57);
+    			append_dev(div60, t293);
+    			append_dev(div60, div50);
+    			append_dev(div50, p66);
+    			append_dev(div60, t295);
+    			append_dev(div60, button58);
+    			append_dev(div60, t297);
+    			append_dev(div60, div51);
+    			append_dev(div51, p67);
+    			append_dev(div60, t299);
+    			append_dev(div60, button59);
+    			append_dev(div60, t301);
+    			append_dev(div60, div52);
+    			append_dev(div52, p68);
+    			append_dev(div60, t303);
+    			append_dev(div60, button60);
+    			append_dev(div60, t305);
+    			append_dev(div60, div53);
+    			append_dev(div53, p69);
+    			append_dev(div60, t307);
+    			append_dev(div60, button61);
+    			append_dev(div60, t309);
+    			append_dev(div60, div54);
+    			append_dev(div54, p70);
+    			append_dev(div60, t311);
+    			append_dev(div60, button62);
+    			append_dev(div60, t313);
+    			append_dev(div60, div55);
+    			append_dev(div55, p71);
+    			append_dev(div60, t315);
+    			append_dev(div60, button63);
+    			append_dev(div60, t317);
+    			append_dev(div60, div56);
+    			append_dev(div56, p72);
+    			append_dev(div60, t319);
+    			append_dev(div60, button64);
+    			append_dev(div60, t321);
+    			append_dev(div60, div57);
+    			append_dev(div57, p73);
+    			append_dev(div60, t323);
+    			append_dev(div60, button65);
+    			append_dev(div60, t325);
+    			append_dev(div60, div58);
+    			append_dev(div58, p74);
+    			append_dev(div60, t327);
+    			append_dev(div60, button66);
+    			append_dev(div60, t329);
+    			append_dev(div60, div59);
+    			append_dev(div59, p75);
+    			append_dev(div100, t331);
+    			append_dev(div100, button67);
+    			append_dev(div100, t333);
+    			append_dev(div100, div61);
+    			append_dev(div61, p76);
+    			append_dev(div61, t335);
+    			append_dev(div61, ol0);
+    			append_dev(ol0, li26);
+    			append_dev(ol0, t337);
+    			append_dev(ol0, li27);
+    			append_dev(ol0, t339);
+    			append_dev(ol0, li28);
+    			append_dev(ol0, t341);
+    			append_dev(ol0, li29);
+    			append_dev(ol0, t343);
+    			append_dev(ol0, li30);
+    			append_dev(ol0, t345);
+    			append_dev(ol0, li31);
+    			append_dev(ol0, t347);
+    			append_dev(ol0, li32);
+    			append_dev(ol0, t349);
+    			append_dev(ol0, li33);
+    			append_dev(ol0, t351);
+    			append_dev(ol0, li34);
+    			append_dev(ol0, t353);
+    			append_dev(ol0, li35);
+    			append_dev(ol0, t355);
+    			append_dev(ol0, li36);
+    			append_dev(ol0, t357);
+    			append_dev(ol0, li37);
+    			append_dev(ol0, t359);
+    			append_dev(ol0, li38);
+    			append_dev(ol0, t361);
+    			append_dev(ol0, li39);
+    			append_dev(ol0, t363);
+    			append_dev(ol0, li40);
+    			append_dev(ol0, t365);
+    			append_dev(ol0, li41);
+    			append_dev(ol0, t367);
+    			append_dev(ol0, li42);
+    			append_dev(ol0, t369);
+    			append_dev(ol0, li43);
+    			append_dev(ol0, t371);
+    			append_dev(ol0, li44);
+    			append_dev(ol0, t373);
+    			append_dev(ol0, li45);
+    			append_dev(ol0, t375);
+    			append_dev(ol0, li46);
+    			append_dev(ol0, t377);
+    			append_dev(ol0, li47);
+    			append_dev(ol0, t379);
+    			append_dev(ol0, li48);
+    			append_dev(ol0, t381);
+    			append_dev(ol0, li49);
+    			append_dev(ol0, t383);
+    			append_dev(ol0, li50);
+    			append_dev(ol0, t385);
+    			append_dev(ol0, li51);
+    			append_dev(ol0, t387);
+    			append_dev(ol0, li52);
+    			append_dev(ol0, t389);
+    			append_dev(ol0, li53);
+    			append_dev(ol0, t391);
+    			append_dev(ol0, li54);
+    			append_dev(ol0, t393);
+    			append_dev(ol0, li55);
+    			append_dev(ol0, t395);
+    			append_dev(ol0, li56);
+    			append_dev(ol0, t397);
+    			append_dev(ol0, li57);
+    			append_dev(ol0, t399);
+    			append_dev(ol0, li58);
+    			append_dev(ol0, t401);
+    			append_dev(ol0, li59);
+    			append_dev(ol0, t403);
+    			append_dev(ol0, li60);
+    			append_dev(ol0, t405);
+    			append_dev(ol0, li61);
+    			append_dev(div100, t407);
+    			append_dev(div100, button68);
+    			append_dev(div100, t409);
+    			append_dev(div100, div98);
+    			append_dev(div98, p77);
+    			append_dev(div98, t411);
+    			append_dev(div98, button69);
+    			append_dev(div98, t413);
+    			append_dev(div98, div62);
+    			append_dev(div62, p78);
+    			append_dev(div62, t415);
+    			append_dev(div62, p79);
+    			append_dev(div98, t417);
+    			append_dev(div98, button70);
+    			append_dev(div98, t419);
+    			append_dev(div98, div63);
+    			append_dev(div63, p80);
+    			append_dev(div63, t421);
+    			append_dev(div63, p81);
+    			append_dev(div98, t423);
+    			append_dev(div98, button71);
+    			append_dev(div98, t425);
+    			append_dev(div98, div64);
+    			append_dev(div64, p82);
+    			append_dev(div64, t427);
+    			append_dev(div64, p83);
+    			append_dev(div98, t429);
+    			append_dev(div98, button72);
+    			append_dev(div98, t431);
+    			append_dev(div98, div65);
+    			append_dev(div65, p84);
+    			append_dev(div65, t433);
+    			append_dev(div65, p85);
+    			append_dev(div98, t435);
+    			append_dev(div98, button73);
+    			append_dev(div98, t437);
+    			append_dev(div98, div66);
+    			append_dev(div66, p86);
+    			append_dev(div66, t439);
+    			append_dev(div66, p87);
+    			append_dev(div98, t441);
+    			append_dev(div98, button74);
+    			append_dev(div98, t443);
+    			append_dev(div98, div67);
+    			append_dev(div67, p88);
+    			append_dev(div67, t445);
+    			append_dev(div67, p89);
+    			append_dev(div98, t447);
+    			append_dev(div98, button75);
+    			append_dev(div98, t449);
+    			append_dev(div98, div68);
+    			append_dev(div68, p90);
+    			append_dev(div68, t451);
+    			append_dev(div68, p91);
+    			append_dev(div98, t453);
+    			append_dev(div98, button76);
+    			append_dev(div98, t455);
+    			append_dev(div98, div69);
+    			append_dev(div69, p92);
+    			append_dev(div69, t457);
+    			append_dev(div69, p93);
+    			append_dev(div98, t459);
+    			append_dev(div98, button77);
+    			append_dev(div98, t461);
+    			append_dev(div98, div70);
+    			append_dev(div70, p94);
+    			append_dev(div70, t463);
+    			append_dev(div70, p95);
+    			append_dev(div98, t465);
+    			append_dev(div98, button78);
+    			append_dev(div98, t467);
+    			append_dev(div98, div71);
+    			append_dev(div71, p96);
+    			append_dev(div71, t469);
+    			append_dev(div71, p97);
+    			append_dev(div98, t471);
+    			append_dev(div98, button79);
+    			append_dev(div98, t473);
+    			append_dev(div98, div72);
+    			append_dev(div72, p98);
+    			append_dev(div72, t475);
+    			append_dev(div72, p99);
+    			append_dev(div98, t477);
+    			append_dev(div98, button80);
+    			append_dev(div98, t479);
+    			append_dev(div98, div73);
+    			append_dev(div73, p100);
+    			append_dev(div73, t481);
+    			append_dev(div73, p101);
+    			append_dev(div98, t483);
+    			append_dev(div98, button81);
+    			append_dev(div98, t485);
+    			append_dev(div98, div74);
+    			append_dev(div74, p102);
+    			append_dev(div74, t487);
+    			append_dev(div74, p103);
+    			append_dev(div98, t489);
+    			append_dev(div98, button82);
+    			append_dev(div98, t491);
+    			append_dev(div98, div75);
+    			append_dev(div75, p104);
+    			append_dev(div75, t493);
+    			append_dev(div75, p105);
+    			append_dev(div98, t495);
+    			append_dev(div98, button83);
+    			append_dev(div98, t497);
+    			append_dev(div98, div76);
+    			append_dev(div76, p106);
+    			append_dev(div76, t499);
+    			append_dev(div76, p107);
+    			append_dev(div98, t501);
+    			append_dev(div98, button84);
+    			append_dev(div98, t503);
+    			append_dev(div98, div77);
+    			append_dev(div77, p108);
+    			append_dev(div77, t505);
+    			append_dev(div77, p109);
+    			append_dev(div98, t507);
+    			append_dev(div98, button85);
+    			append_dev(div98, t509);
+    			append_dev(div98, div78);
+    			append_dev(div78, p110);
+    			append_dev(div78, t511);
+    			append_dev(div78, p111);
+    			append_dev(div98, t513);
+    			append_dev(div98, button86);
+    			append_dev(div98, t515);
+    			append_dev(div98, div79);
+    			append_dev(div79, p112);
+    			append_dev(div79, t517);
+    			append_dev(div79, p113);
+    			append_dev(div98, t519);
+    			append_dev(div98, button87);
+    			append_dev(div98, t521);
+    			append_dev(div98, div80);
+    			append_dev(div80, p114);
+    			append_dev(div80, t523);
+    			append_dev(div80, p115);
+    			append_dev(div98, t525);
+    			append_dev(div98, button88);
+    			append_dev(div98, t527);
+    			append_dev(div98, div81);
+    			append_dev(div81, p116);
+    			append_dev(div81, t529);
+    			append_dev(div81, p117);
+    			append_dev(div98, t531);
+    			append_dev(div98, button89);
+    			append_dev(div98, t533);
+    			append_dev(div98, div82);
+    			append_dev(div82, p118);
+    			append_dev(div82, t535);
+    			append_dev(div82, p119);
+    			append_dev(div98, t537);
+    			append_dev(div98, button90);
+    			append_dev(div98, t539);
+    			append_dev(div98, div83);
+    			append_dev(div83, p120);
+    			append_dev(div83, t541);
+    			append_dev(div83, p121);
+    			append_dev(div98, t543);
+    			append_dev(div98, button91);
+    			append_dev(div98, t545);
+    			append_dev(div98, div84);
+    			append_dev(div84, p122);
+    			append_dev(div84, t547);
+    			append_dev(div84, p123);
+    			append_dev(div98, t549);
+    			append_dev(div98, button92);
+    			append_dev(div98, t551);
+    			append_dev(div98, div85);
+    			append_dev(div85, p124);
+    			append_dev(div85, t553);
+    			append_dev(div85, p125);
+    			append_dev(div98, t555);
+    			append_dev(div98, button93);
+    			append_dev(div98, t557);
+    			append_dev(div98, div86);
+    			append_dev(div86, p126);
+    			append_dev(div86, t559);
+    			append_dev(div86, p127);
+    			append_dev(div98, t561);
+    			append_dev(div98, button94);
+    			append_dev(div98, t563);
+    			append_dev(div98, div87);
+    			append_dev(div87, p128);
+    			append_dev(div87, t565);
+    			append_dev(div87, p129);
+    			append_dev(div98, t567);
+    			append_dev(div98, button95);
+    			append_dev(div98, t569);
+    			append_dev(div98, div88);
+    			append_dev(div88, p130);
+    			append_dev(div88, t571);
+    			append_dev(div88, p131);
+    			append_dev(div98, t573);
+    			append_dev(div98, button96);
+    			append_dev(div98, t575);
+    			append_dev(div98, div89);
+    			append_dev(div89, p132);
+    			append_dev(div89, t577);
+    			append_dev(div89, p133);
+    			append_dev(div98, t579);
+    			append_dev(div98, button97);
+    			append_dev(div98, t581);
+    			append_dev(div98, div90);
+    			append_dev(div90, p134);
+    			append_dev(div90, t583);
+    			append_dev(div90, p135);
+    			append_dev(div98, t585);
+    			append_dev(div98, button98);
+    			append_dev(div98, t587);
+    			append_dev(div98, div91);
+    			append_dev(div91, p136);
+    			append_dev(div91, t589);
+    			append_dev(div91, p137);
+    			append_dev(div98, t591);
+    			append_dev(div98, button99);
+    			append_dev(div98, t593);
+    			append_dev(div98, div92);
+    			append_dev(div92, p138);
+    			append_dev(div92, t595);
+    			append_dev(div92, p139);
+    			append_dev(div98, t597);
+    			append_dev(div98, button100);
+    			append_dev(div98, t599);
+    			append_dev(div98, div93);
+    			append_dev(div93, p140);
+    			append_dev(div93, t601);
+    			append_dev(div93, p141);
+    			append_dev(div98, t603);
+    			append_dev(div98, button101);
+    			append_dev(div98, t605);
+    			append_dev(div98, div94);
+    			append_dev(div94, p142);
+    			append_dev(div94, t607);
+    			append_dev(div94, p143);
+    			append_dev(div98, t609);
+    			append_dev(div98, button102);
+    			append_dev(div98, t611);
+    			append_dev(div98, div95);
+    			append_dev(div95, p144);
+    			append_dev(div95, t613);
+    			append_dev(div95, p145);
+    			append_dev(div98, t615);
+    			append_dev(div98, button103);
+    			append_dev(div98, t617);
+    			append_dev(div98, div96);
+    			append_dev(div96, p146);
+    			append_dev(div96, t619);
+    			append_dev(div96, p147);
+    			append_dev(div98, t621);
+    			append_dev(div98, button104);
+    			append_dev(div98, t623);
+    			append_dev(div98, div97);
+    			append_dev(div97, p148);
+    			append_dev(div97, t625);
+    			append_dev(div97, p149);
+    			append_dev(div100, t627);
+    			append_dev(div100, button105);
+    			append_dev(div100, t629);
+    			append_dev(div100, div99);
+    			append_dev(div99, p150);
+    			append_dev(div99, t631);
+    			append_dev(div99, ol1);
+    			append_dev(ol1, li62);
+    			append_dev(ol1, t633);
+    			append_dev(ol1, li63);
+    			append_dev(ol1, t635);
+    			append_dev(ol1, li64);
+    			append_dev(ol1, t637);
+    			append_dev(ol1, li65);
+    			append_dev(ol1, t639);
+    			append_dev(ol1, li66);
+    			append_dev(ol1, t641);
+    			append_dev(ol1, li67);
+    			append_dev(ol1, t643);
+    			append_dev(ol1, li68);
+    			append_dev(ol1, t645);
+    			append_dev(ol1, li69);
+    			append_dev(ol1, t647);
+    			append_dev(ol1, li70);
+    			append_dev(ol1, t649);
+    			append_dev(ol1, li71);
+    			append_dev(ol1, t651);
+    			append_dev(ol1, li72);
+    			append_dev(ol1, t653);
+    			append_dev(ol1, li73);
+    			append_dev(ol1, t655);
+    			append_dev(ol1, li74);
+    			append_dev(ol1, t657);
+    			append_dev(ol1, li75);
+    			append_dev(ol1, t659);
+    			append_dev(ol1, li76);
+    			append_dev(ol1, t661);
+    			append_dev(ol1, li77);
+    			append_dev(ol1, t663);
+    			append_dev(ol1, li78);
+    			append_dev(ol1, t665);
+    			append_dev(ol1, li79);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div102);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$d.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Creation extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$d, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Creation",
+    			options,
+    			id: create_fragment$d.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Dice.svelte generated by Svelte v3.15.0 */
+
+    const file$b = "src/components/rules/Dice.svelte";
+
+    function create_fragment$e(ctx) {
+    	let div6;
+    	let h2;
+    	let t1;
+    	let div5;
+    	let p0;
+    	let t3;
+    	let p1;
+    	let t5;
+    	let p2;
+    	let t7;
+    	let p3;
+    	let t9;
+    	let p4;
+    	let t11;
+    	let button0;
+    	let t13;
+    	let div0;
+    	let p5;
+    	let t15;
+    	let button1;
+    	let t17;
+    	let div1;
+    	let p6;
+    	let t19;
+    	let p7;
+    	let span0;
+    	let t21;
+    	let t22;
+    	let p8;
+    	let span1;
+    	let t24;
+    	let t25;
+    	let button2;
+    	let t27;
+    	let div2;
+    	let p9;
+    	let t29;
+    	let button3;
+    	let t31;
+    	let div3;
+    	let p10;
+    	let t33;
+    	let p11;
+    	let t35;
+    	let p12;
+    	let t37;
+    	let button4;
+    	let t39;
+    	let div4;
+    	let p13;
+
+    	const block = {
+    		c: function create() {
+    			div6 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Dice Rules";
+    			t1 = space();
+    			div5 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "When a Player wants their Character to attempt a difficult task, dice are used to decide a fair outcome. Players should think fast and give brief descriptions to maintain the survival-horror atmosphere. If a Player takes too long, the GN should skip them.";
+    			t3 = space();
+    			p1 = element("p");
+    			p1.textContent = "Players should also keep in mind that they are members of a Team. Taking advantage of the mechanics that allow cooperative play will increase the Characters' chances of survival. This empowers the Team to be much greater collectively than the sum of its parts.";
+    			t5 = space();
+    			p2 = element("p");
+    			p2.textContent = "Most rolls are made using just one six-sided die (“d6”). The way you calculate the Result of a d6 roll is as follows:";
+    			t7 = space();
+    			p3 = element("p");
+    			p3.textContent = "[d6 roll + (Trait, Instinct, or Skill) + modifiers = Result]";
+    			t9 = space();
+    			p4 = element("p");
+    			p4.textContent = "When rolling on a table d66 or d666 is often used. This means you must roll two or three d6s, one for each number column.";
+    			t11 = space();
+    			button0 = element("button");
+    			button0.textContent = "DIFFICULTY (#):";
+    			t13 = space();
+    			div0 = element("div");
+    			p5 = element("p");
+    			p5.textContent = "This is how hard it is to perform a task. The Result of your die roll must equal or exceed this number in order to be successful. Difficulty numbers are indicated with the # symbol. The GN sets the # and gives modifiers when appropriate. The players add their relevant modifiers to their roll to get a Result. If a roll is opposed by another roll, re-roll any ties.";
+    			t15 = space();
+    			button1 = element("button");
+    			button1.textContent = "SUCCESS (S):";
+    			t17 = space();
+    			div1 = element("div");
+    			p6 = element("p");
+    			p6.textContent = "Achieving a result that meets or beats a Difficulty (#) is called a Success. Re-roll any ties if making an opposed roll. Players are responsible for keeping track of any ongoing modifiers (bonuses and penalties) that are affecting their Character’s ability to perform actions.";
+    			t19 = space();
+    			p7 = element("p");
+    			span0 = element("span");
+    			span0.textContent = "Automatic Success:";
+    			t21 = text(" If your bonus alone is greater than the # and circumstances are calm, you Succeed without rolling.");
+    			t22 = space();
+    			p8 = element("p");
+    			span1 = element("span");
+    			span1.textContent = "Cooperation:";
+    			t24 = text(" If Characters want to help each other perform a task, they all roll at once but only the best roll is used, unless someone Botches (see below) in which case the Botch is used.");
+    			t25 = space();
+    			button2 = element("button");
+    			button2.textContent = "FAIL (F):";
+    			t27 = space();
+    			div2 = element("div");
+    			p9 = element("p");
+    			p9.textContent = "When the result is  less than the #, your attempt did not work. This usually is not catastrophic but rather just a temporary inconvenience.";
+    			t29 = space();
+    			button3 = element("button");
+    			button3.textContent = "EXPLODE (6):";
+    			t31 = space();
+    			div3 = element("div");
+    			p10 = element("p");
+    			p10.textContent = "When 6 comes up on a d6 roll, roll it again and again as long as 6's continue. This is called Exploding. Add each roll together, then add modifiers to get your Result.";
+    			t33 = space();
+    			p11 = element("p");
+    			p11.textContent = "For example, if your ATK roll is 6, then another 6, then a 1, your ATK result will be 13 + your Skill (say 3) + bonuses (say +1) for a Result of 17. This ATK will hit an enemy with a DEF 16 or less.";
+    			t35 = space();
+    			p12 = element("p");
+    			p12.textContent = "You get a bonus to DMG equal to the amount by which your ATK exceeds the target’s DEF. So on a Successful attack, DMG = Weapon DMG + (ATK – DEF). See Ch:2 for Combat.";
+    			t37 = space();
+    			button4 = element("button");
+    			button4.textContent = "BOTCH (1):";
+    			t39 = space();
+    			div4 = element("div");
+    			p13 = element("p");
+    			p13.textContent = "If you roll 1, re-roll to check for a Botch. If 1 is rolled again, you Fail very badly. Any other roll just means you have a 1 plus whatever other modifiers apply to that roll. You do not Botch on Exploding rolls. Skills usually list their Botch effects. The GN may add more negative effects depending on the circumstances around the Botch. Every time you Botch, you get +1XP.";
+    			add_location(h2, file$b, 1, 4, 29);
+    			add_location(p0, file$b, 3, 8, 98);
+    			add_location(p1, file$b, 4, 8, 369);
+    			add_location(p2, file$b, 5, 8, 645);
+    			add_location(p3, file$b, 6, 8, 778);
+    			add_location(p4, file$b, 7, 8, 854);
+    			attr_dev(button0, "id", "DifficultyBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$b, 8, 8, 991);
+    			add_location(p5, file$b, 10, 12, 1113);
+    			attr_dev(div0, "id", "DifficultySec");
+    			attr_dev(div0, "class", "Sec3");
+    			add_location(div0, file$b, 9, 8, 1063);
+    			attr_dev(button1, "id", "SuccessBtn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$b, 12, 8, 1509);
+    			add_location(p6, file$b, 14, 12, 1622);
+    			attr_dev(span0, "class", "Heading2");
+    			add_location(span0, file$b, 15, 15, 1921);
+    			add_location(p7, file$b, 15, 12, 1918);
+    			attr_dev(span1, "class", "Heading2");
+    			add_location(span1, file$b, 16, 15, 2088);
+    			add_location(p8, file$b, 16, 12, 2085);
+    			attr_dev(div1, "id", "SuccessSec");
+    			attr_dev(div1, "class", "Sec3");
+    			add_location(div1, file$b, 13, 8, 1575);
+    			attr_dev(button2, "id", "FailBtn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$b, 18, 8, 2334);
+    			add_location(p9, file$b, 20, 12, 2438);
+    			attr_dev(div2, "id", "FailSec");
+    			attr_dev(div2, "class", "Sec3");
+    			add_location(div2, file$b, 19, 8, 2394);
+    			attr_dev(button3, "id", "ExplodeBtn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$b, 22, 8, 2608);
+    			add_location(p10, file$b, 24, 12, 2721);
+    			add_location(p11, file$b, 25, 12, 2908);
+    			add_location(p12, file$b, 26, 12, 3126);
+    			attr_dev(div3, "id", "ExplodeSec");
+    			attr_dev(div3, "class", "Sec3");
+    			add_location(div3, file$b, 23, 8, 2674);
+    			attr_dev(button4, "id", "BotchBtn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$b, 28, 8, 3323);
+    			add_location(p13, file$b, 30, 12, 3430);
+    			attr_dev(div4, "id", "BotchSec");
+    			attr_dev(div4, "class", "Sec3");
+    			add_location(div4, file$b, 29, 8, 3385);
+    			attr_dev(div5, "id", "DiceRulesSec");
+    			attr_dev(div5, "class", "Sec2");
+    			add_location(div5, file$b, 2, 4, 53);
+    			attr_dev(div6, "class", "dice-rules");
+    			add_location(div6, file$b, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, h2);
+    			append_dev(div6, t1);
+    			append_dev(div6, div5);
+    			append_dev(div5, p0);
+    			append_dev(div5, t3);
+    			append_dev(div5, p1);
+    			append_dev(div5, t5);
+    			append_dev(div5, p2);
+    			append_dev(div5, t7);
+    			append_dev(div5, p3);
+    			append_dev(div5, t9);
+    			append_dev(div5, p4);
+    			append_dev(div5, t11);
+    			append_dev(div5, button0);
+    			append_dev(div5, t13);
+    			append_dev(div5, div0);
+    			append_dev(div0, p5);
+    			append_dev(div5, t15);
+    			append_dev(div5, button1);
+    			append_dev(div5, t17);
+    			append_dev(div5, div1);
+    			append_dev(div1, p6);
+    			append_dev(div1, t19);
+    			append_dev(div1, p7);
+    			append_dev(p7, span0);
+    			append_dev(p7, t21);
+    			append_dev(div1, t22);
+    			append_dev(div1, p8);
+    			append_dev(p8, span1);
+    			append_dev(p8, t24);
+    			append_dev(div5, t25);
+    			append_dev(div5, button2);
+    			append_dev(div5, t27);
+    			append_dev(div5, div2);
+    			append_dev(div2, p9);
+    			append_dev(div5, t29);
+    			append_dev(div5, button3);
+    			append_dev(div5, t31);
+    			append_dev(div5, div3);
+    			append_dev(div3, p10);
+    			append_dev(div3, t33);
+    			append_dev(div3, p11);
+    			append_dev(div3, t35);
+    			append_dev(div3, p12);
+    			append_dev(div5, t37);
+    			append_dev(div5, button4);
+    			append_dev(div5, t39);
+    			append_dev(div5, div4);
+    			append_dev(div4, p13);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div6);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$e.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Dice extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$e, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Dice",
+    			options,
+    			id: create_fragment$e.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Maneuvers.svelte generated by Svelte v3.15.0 */
+
+    const file$c = "src/components/rules/Maneuvers.svelte";
+
+    function create_fragment$f(ctx) {
+    	let div26;
+    	let h2;
+    	let t1;
+    	let button0;
+    	let t3;
+    	let div25;
+    	let p0;
+    	let t5;
+    	let p1;
+    	let t7;
+    	let button1;
+    	let t9;
+    	let div9;
+    	let button2;
+    	let t11;
+    	let div0;
+    	let p2;
+    	let t13;
+    	let button3;
+    	let t15;
+    	let div1;
+    	let p3;
+    	let t17;
+    	let button4;
+    	let t19;
+    	let div2;
+    	let p4;
+    	let t21;
+    	let button5;
+    	let t23;
+    	let div3;
+    	let p5;
+    	let t25;
+    	let button6;
+    	let t27;
+    	let div4;
+    	let p6;
+    	let t29;
+    	let button7;
+    	let t31;
+    	let div5;
+    	let p7;
+    	let t33;
+    	let button8;
+    	let t35;
+    	let div6;
+    	let p8;
+    	let t37;
+    	let button9;
+    	let t39;
+    	let div7;
+    	let p9;
+    	let t41;
+    	let button10;
+    	let t43;
+    	let div8;
+    	let p10;
+    	let t45;
+    	let button11;
+    	let t47;
+    	let div24;
+    	let button12;
+    	let t49;
+    	let div10;
+    	let p11;
+    	let t51;
+    	let button13;
+    	let t53;
+    	let div11;
+    	let p12;
+    	let t55;
+    	let button14;
+    	let t57;
+    	let div14;
+    	let p13;
+    	let t59;
+    	let p14;
+    	let t61;
+    	let p15;
+    	let t63;
+    	let button15;
+    	let t65;
+    	let div12;
+    	let p16;
+    	let t67;
+    	let button16;
+    	let t69;
+    	let div13;
+    	let p17;
+    	let t71;
+    	let button17;
+    	let t73;
+    	let div15;
+    	let p18;
+    	let t75;
+    	let button18;
+    	let t77;
+    	let div20;
+    	let p19;
+    	let t79;
+    	let button19;
+    	let t81;
+    	let div16;
+    	let p20;
+    	let t83;
+    	let button20;
+    	let t85;
+    	let div17;
+    	let p21;
+    	let t87;
+    	let button21;
+    	let t89;
+    	let div18;
+    	let p22;
+    	let t91;
+    	let button22;
+    	let t93;
+    	let div19;
+    	let p23;
+    	let t95;
+    	let button23;
+    	let t97;
+    	let div21;
+    	let p24;
+    	let t99;
+    	let button24;
+    	let t101;
+    	let div22;
+    	let p25;
+    	let t103;
+    	let button25;
+    	let t105;
+    	let div23;
+    	let p26;
+
+    	const block = {
+    		c: function create() {
+    			div26 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Maneuvers";
+    			t1 = space();
+    			button0 = element("button");
+    			button0.textContent = "MANEUVERS";
+    			t3 = space();
+    			div25 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "These are special combat actions that allow for more creative and detailed combat options than a basic MATK or RATK. The GN may allow Maneuvers to be performed together in combination.";
+    			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "# = Difficulty.  MATK = Melee.  RATK = Ranged.  DEF = Defense.";
+    			t7 = space();
+    			button1 = element("button");
+    			button1.textContent = "DEFENSIVE MANEUVERS";
+    			t9 = space();
+    			div9 = element("div");
+    			button2 = element("button");
+    			button2.textContent = "BLOCK";
+    			t11 = space();
+    			div0 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "Melee roll vs ATK. This is your DEF for that ATK. You cannot normally Block Guns unless you use a Shield for Cover. This counts as a Fast action for the rnd.";
+    			t13 = space();
+    			button3 = element("button");
+    			button3.textContent = "DISTRACT";
+    			t15 = space();
+    			div1 = element("div");
+    			p3 = element("p");
+    			p3.textContent = "To divert an opponent's attention, roll Entertain(Distract) vs Perception. The opponent uses Reflex for DEF for 1rnd. Botch = fall Prone.";
+    			t17 = space();
+    			button4 = element("button");
+    			button4.textContent = "DODGE";
+    			t19 = space();
+    			div2 = element("div");
+    			p4 = element("p");
+    			p4.textContent = "Acrobatics roll vs ATK. This is your DEF for that ATK. This counts as a Fast action for the rnd.";
+    			t21 = space();
+    			button5 = element("button");
+    			button5.textContent = "DUCK";
+    			t23 = space();
+    			div3 = element("div");
+    			p5 = element("p");
+    			p5.textContent = "Fast. Take Cover. Material’s DR reduces DMG. See Cover in SITUATIONS.";
+    			t25 = space();
+    			button6 = element("button");
+    			button6.textContent = "FULL DEFENSE";
+    			t27 = space();
+    			div4 = element("div");
+    			p6 = element("p");
+    			p6.textContent = "Make no ATK this rnd. You get a bonus to DEF rolls this rnd equal to your Reflex.";
+    			t29 = space();
+    			button7 = element("button");
+    			button7.textContent = "PROTECT";
+    			t31 = space();
+    			div5 = element("div");
+    			p7 = element("p");
+    			p7.textContent = "Fast. To put yourself between danger and someone within 1yd, roll Dodge vs their DEF when they are attacked. If you Succeed, and the attack Succeeds, you are hit instead of them.";
+    			t33 = space();
+    			button8 = element("button");
+    			button8.textContent = "SHOVE";
+    			t35 = space();
+    			div6 = element("div");
+    			p8 = element("p");
+    			p8.textContent = "Fast. 0DMG MATK. Roll C vs C to push a target d6/2yds away.";
+    			t37 = space();
+    			button9 = element("button");
+    			button9.textContent = "SPRINT";
+    			t39 = space();
+    			div7 = element("div");
+    			p9 = element("p");
+    			p9.textContent = "Spend your entire turn moving [Speed x2 + d6yds]. You can Sprint for minutes = C. Use Reflex for DEF. Unstable (-3 RATKs at or from you) unless Sprinting directly toward your opponent.";
+    			t41 = space();
+    			button10 = element("button");
+    			button10.textContent = "TAUNT";
+    			t43 = space();
+    			div8 = element("div");
+    			p10 = element("p");
+    			p10.textContent = "Leadership(Taunt) vs D. In combat, provoke the target into attacking you. Using a weapon adds the greater of DMG or Size. The result is a penalty to the loser’s next roll.";
+    			t45 = space();
+    			button11 = element("button");
+    			button11.textContent = "OFFENSIVE MANEUVERS";
+    			t47 = space();
+    			div24 = element("div");
+    			button12 = element("button");
+    			button12.textContent = "AIM";
+    			t49 = space();
+    			div10 = element("div");
+    			p11 = element("p");
+    			p11.textContent = "Hold your Ranged weapon on target for 1rnd to get a +1 bonus to RATK next rnd, up to 3 consecutive rnds for +3 RATK. Use Reflex for DEF while Aiming. Aim bonus is negated if you move or take DMG.";
+    			t51 = space();
+    			button13 = element("button");
+    			button13.textContent = "AMBUSH";
+    			t53 = space();
+    			div11 = element("div");
+    			p12 = element("p");
+    			p12.textContent = "Roll Stealth vs Perception while your target is unaware of your presence. Targets use only their Reflex for DEF.";
+    			t55 = space();
+    			button14 = element("button");
+    			button14.textContent = "CALLED SHOT";
+    			t57 = space();
+    			div14 = element("div");
+    			p13 = element("p");
+    			p13.textContent = "ATK targeting a specific body Location.";
+    			t59 = space();
+    			p14 = element("p");
+    			p14.textContent = "MATK penalties: -3 (Eye), -1 (Head), -0 (Arm, Torso, or Leg).";
+    			t61 = space();
+    			p15 = element("p");
+    			p15.textContent = "RATK penalties: -6 (Eye), -3 (Head), -1 (Arm or Leg), -0 Torso.";
+    			t63 = space();
+    			button15 = element("button");
+    			button15.textContent = "DISARM";
+    			t65 = space();
+    			div12 = element("div");
+    			p16 = element("p");
+    			p16.textContent = "Arm [MATK vs C/2 if 1h, MATK vs C if 2h]. 0DMG. Attacker gets the weapon if Disarming with an Unarmed MATK.";
+    			t67 = space();
+    			button16 = element("button");
+    			button16.textContent = "TRIP";
+    			t69 = space();
+    			div13 = element("div");
+    			p17 = element("p");
+    			p17.textContent = "Legs. Optional 0DMG. A vs C. Knock target Prone.";
+    			t71 = space();
+    			button17 = element("button");
+    			button17.textContent = "DUAL-WIELD";
+    			t73 = space();
+    			div15 = element("div");
+    			p18 = element("p");
+    			p18.textContent = "Extra Block for free or Fast ATK with Off-hand weapon. -1 (Primary), -3 (Off-hand). Total Size cannot exceed C x2.";
+    			t75 = space();
+    			button18 = element("button");
+    			button18.textContent = "GRAB";
+    			t77 = space();
+    			div20 = element("div");
+    			p19 = element("p");
+    			p19.textContent = "0DMG Unarmed MATK as a Called Shot to disable a Location. Use Reflex for DEF. Fast action to maintain a Grab.";
+    			t79 = space();
+    			button19 = element("button");
+    			button19.textContent = "DEFENDER";
+    			t81 = space();
+    			div16 = element("div");
+    			p20 = element("p");
+    			p20.textContent = "Cannot ATK with Grabbed Location. Use Reflex for DEF. Acrobatics or Melee vs Grab ATK to escape. Succeed by 3+ with Melee to reverse the Grab.";
+    			t83 = space();
+    			button20 = element("button");
+    			button20.textContent = "HOLD";
+    			t85 = space();
+    			div17 = element("div");
+    			p21 = element("p");
+    			p21.textContent = "Fast. You may Block ATKs using the Defender as a Shield. Defender counts as Cover.";
+    			t87 = space();
+    			button21 = element("button");
+    			button21.textContent = "LOCK";
+    			t89 = space();
+    			div18 = element("div");
+    			p22 = element("p");
+    			p22.textContent = "1 BDMG/rnd to the Grabbed Location.";
+    			t91 = space();
+    			button22 = element("button");
+    			button22.textContent = "TACKLE";
+    			t93 = space();
+    			div19 = element("div");
+    			p23 = element("p");
+    			p23.textContent = "Sprint and Grab Torso. Combatants both fall Prone.";
+    			t95 = space();
+    			button23 = element("button");
+    			button23.textContent = "OVERWATCH";
+    			t97 = space();
+    			div21 = element("div");
+    			p24 = element("p");
+    			p24.textContent = "+1 Perception and RATKs from higher ground.";
+    			t99 = space();
+    			button24 = element("button");
+    			button24.textContent = "RELOAD";
+    			t101 = space();
+    			div22 = element("div");
+    			p25 = element("p");
+    			p25.textContent = "Drop empty magazine or shell casings (Fast action), then load one new magazine or 2 new shells per rnd. Use Reflex for DEF.";
+    			t103 = space();
+    			button25 = element("button");
+    			button25.textContent = "SUPPRESSING FIRE";
+    			t105 = space();
+    			div23 = element("div");
+    			p26 = element("p");
+    			p26.textContent = "With an Auto gun, pick a 90° firing arc and fire 10 shots/rnd. Make one RATK roll with a d6 only, no bonuses. Until your next turn, the closest 10 individuals in your firing arc take the RATK vs Reflex. RNG penalties apply. Use Reflex for DEF.";
+    			add_location(h2, file$c, 1, 4, 34);
+    			attr_dev(button0, "id", "ManeuversBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$c, 2, 4, 57);
+    			add_location(p0, file$c, 4, 8, 163);
+    			add_location(p1, file$c, 5, 8, 363);
+    			attr_dev(button1, "id", "DefensiveBtn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$c, 6, 8, 441);
+    			attr_dev(button2, "id", "BlockManBtn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$c, 8, 12, 565);
+    			add_location(p2, file$c, 10, 16, 681);
+    			attr_dev(div0, "id", "BlockManSec");
+    			attr_dev(div0, "class", "Sec4");
+    			add_location(div0, file$c, 9, 12, 629);
+    			attr_dev(button3, "id", "DistractManBtn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$c, 12, 12, 877);
+    			add_location(p3, file$c, 14, 16, 1002);
+    			attr_dev(div1, "id", "DistractManSec");
+    			attr_dev(div1, "class", "Sec4");
+    			add_location(div1, file$c, 13, 12, 947);
+    			attr_dev(button4, "id", "DodgeManBtn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$c, 16, 12, 1178);
+    			add_location(p4, file$c, 18, 16, 1294);
+    			attr_dev(div2, "id", "DodgeManSec");
+    			attr_dev(div2, "class", "Sec4");
+    			add_location(div2, file$c, 17, 12, 1242);
+    			attr_dev(button5, "id", "DuckManBtn");
+    			attr_dev(button5, "class", "Btn");
+    			add_location(button5, file$c, 20, 12, 1429);
+    			add_location(p5, file$c, 22, 16, 1542);
+    			attr_dev(div3, "id", "DuckManSec");
+    			attr_dev(div3, "class", "Sec4");
+    			add_location(div3, file$c, 21, 12, 1491);
+    			attr_dev(button6, "id", "FullDefenseManBtn");
+    			attr_dev(button6, "class", "Btn");
+    			add_location(button6, file$c, 24, 12, 1650);
+    			add_location(p6, file$c, 26, 16, 1785);
+    			attr_dev(div4, "id", "FullDefenseManSec");
+    			attr_dev(div4, "class", "Sec4");
+    			add_location(div4, file$c, 25, 12, 1727);
+    			attr_dev(button7, "id", "ProtectManBtn");
+    			attr_dev(button7, "class", "Btn");
+    			add_location(button7, file$c, 28, 12, 1905);
+    			add_location(p7, file$c, 30, 16, 2027);
+    			attr_dev(div5, "id", "ProtectManSec");
+    			attr_dev(div5, "class", "Sec4");
+    			add_location(div5, file$c, 29, 12, 1973);
+    			attr_dev(button8, "id", "ShoveManBtn");
+    			attr_dev(button8, "class", "Btn");
+    			add_location(button8, file$c, 32, 12, 2244);
+    			add_location(p8, file$c, 34, 16, 2360);
+    			attr_dev(div6, "id", "ShoveManSec");
+    			attr_dev(div6, "class", "Sec4");
+    			add_location(div6, file$c, 33, 12, 2308);
+    			attr_dev(button9, "id", "SprintManBtn");
+    			attr_dev(button9, "class", "Btn");
+    			add_location(button9, file$c, 36, 12, 2458);
+    			add_location(p9, file$c, 38, 16, 2577);
+    			attr_dev(div7, "id", "SprintManSec");
+    			attr_dev(div7, "class", "Sec4");
+    			add_location(div7, file$c, 37, 12, 2524);
+    			attr_dev(button10, "id", "TauntManBtn");
+    			attr_dev(button10, "class", "Btn");
+    			add_location(button10, file$c, 40, 12, 2800);
+    			add_location(p10, file$c, 42, 16, 2916);
+    			attr_dev(div8, "id", "TauntManSec");
+    			attr_dev(div8, "class", "Sec4");
+    			add_location(div8, file$c, 41, 12, 2864);
+    			attr_dev(div9, "id", "DefensiveSec");
+    			attr_dev(div9, "class", "Sec3");
+    			add_location(div9, file$c, 7, 8, 516);
+    			attr_dev(button11, "id", "OffensiveBtn");
+    			attr_dev(button11, "class", "Btn");
+    			add_location(button11, file$c, 45, 8, 3137);
+    			attr_dev(button12, "id", "AimManBtn");
+    			attr_dev(button12, "class", "Btn");
+    			add_location(button12, file$c, 47, 12, 3261);
+    			add_location(p11, file$c, 49, 16, 3371);
+    			attr_dev(div10, "id", "AimManSec");
+    			attr_dev(div10, "class", "Sec4");
+    			add_location(div10, file$c, 48, 12, 3321);
+    			attr_dev(button13, "id", "AmbushManBtn");
+    			attr_dev(button13, "class", "Btn");
+    			add_location(button13, file$c, 51, 12, 3605);
+    			add_location(p12, file$c, 53, 16, 3724);
+    			attr_dev(div11, "id", "AmbushManSec");
+    			attr_dev(div11, "class", "Sec4");
+    			add_location(div11, file$c, 52, 12, 3671);
+    			attr_dev(button14, "id", "CalledShotManBtn");
+    			attr_dev(button14, "class", "Btn");
+    			add_location(button14, file$c, 55, 12, 3875);
+    			add_location(p13, file$c, 57, 16, 4007);
+    			add_location(p14, file$c, 58, 16, 4070);
+    			add_location(p15, file$c, 59, 16, 4155);
+    			attr_dev(button15, "id", "DisarmManBtn");
+    			attr_dev(button15, "class", "Btn");
+    			add_location(button15, file$c, 60, 16, 4242);
+    			add_location(p16, file$c, 62, 20, 4369);
+    			attr_dev(div12, "id", "DisarmManSec");
+    			attr_dev(div12, "class", "Sec5");
+    			add_location(div12, file$c, 61, 16, 4312);
+    			attr_dev(button16, "id", "TripManBtn");
+    			attr_dev(button16, "class", "Btn");
+    			add_location(button16, file$c, 64, 16, 4523);
+    			add_location(p17, file$c, 66, 20, 4644);
+    			attr_dev(div13, "id", "TripManSec");
+    			attr_dev(div13, "class", "Sec5");
+    			add_location(div13, file$c, 65, 16, 4589);
+    			attr_dev(div14, "id", "CalledShotManSec");
+    			attr_dev(div14, "class", "Sec4");
+    			add_location(div14, file$c, 56, 12, 3950);
+    			attr_dev(button17, "id", "DualWieldManBtn");
+    			attr_dev(button17, "class", "Btn");
+    			add_location(button17, file$c, 69, 12, 4754);
+    			add_location(p18, file$c, 71, 16, 4883);
+    			attr_dev(div15, "id", "DualWieldManSec");
+    			attr_dev(div15, "class", "Sec4");
+    			add_location(div15, file$c, 70, 12, 4827);
+    			attr_dev(button18, "id", "GrabManBtn");
+    			attr_dev(button18, "class", "Btn");
+    			add_location(button18, file$c, 73, 12, 5036);
+    			add_location(p19, file$c, 75, 16, 5149);
+    			attr_dev(button19, "id", "DefenderManBtn");
+    			attr_dev(button19, "class", "Btn");
+    			add_location(button19, file$c, 76, 16, 5282);
+    			add_location(p20, file$c, 78, 20, 5415);
+    			attr_dev(div16, "id", "DefenderManSec");
+    			attr_dev(div16, "class", "Sec5");
+    			add_location(div16, file$c, 77, 16, 5356);
+    			attr_dev(button20, "id", "HoldManBtn");
+    			attr_dev(button20, "class", "Btn");
+    			add_location(button20, file$c, 80, 16, 5604);
+    			add_location(p21, file$c, 82, 20, 5725);
+    			attr_dev(div17, "id", "HoldManSec");
+    			attr_dev(div17, "class", "Sec5");
+    			add_location(div17, file$c, 81, 16, 5670);
+    			attr_dev(button21, "id", "LockManBtn");
+    			attr_dev(button21, "class", "Btn");
+    			add_location(button21, file$c, 84, 16, 5854);
+    			add_location(p22, file$c, 86, 20, 5975);
+    			attr_dev(div18, "id", "LockManSec");
+    			attr_dev(div18, "class", "Sec5");
+    			add_location(div18, file$c, 85, 16, 5920);
+    			attr_dev(button22, "id", "TackleManBtn");
+    			attr_dev(button22, "class", "Btn");
+    			add_location(button22, file$c, 88, 16, 6057);
+    			add_location(p23, file$c, 90, 20, 6184);
+    			attr_dev(div19, "id", "TackleManSec");
+    			attr_dev(div19, "class", "Sec5");
+    			add_location(div19, file$c, 89, 16, 6127);
+    			attr_dev(div20, "id", "GrabManSec");
+    			attr_dev(div20, "class", "Sec4");
+    			add_location(div20, file$c, 74, 12, 5098);
+    			attr_dev(button23, "id", "OverwatchManBtn");
+    			attr_dev(button23, "class", "Btn");
+    			add_location(button23, file$c, 93, 12, 6296);
+    			add_location(p24, file$c, 95, 16, 6424);
+    			attr_dev(div21, "id", "OverwatchManSec");
+    			attr_dev(div21, "class", "Sec4");
+    			add_location(div21, file$c, 94, 12, 6368);
+    			attr_dev(button24, "id", "ReloadManBtn");
+    			attr_dev(button24, "class", "Btn");
+    			add_location(button24, file$c, 97, 12, 6506);
+    			add_location(p25, file$c, 99, 16, 6625);
+    			attr_dev(div22, "id", "ReloadManSec");
+    			attr_dev(div22, "class", "Sec4");
+    			add_location(div22, file$c, 98, 12, 6572);
+    			attr_dev(button25, "id", "SuppressingFireManBtn");
+    			attr_dev(button25, "class", "Btn");
+    			add_location(button25, file$c, 101, 12, 6787);
+    			add_location(p26, file$c, 103, 16, 6934);
+    			attr_dev(div23, "id", "SuppressingFireManSec");
+    			attr_dev(div23, "class", "Sec4");
+    			add_location(div23, file$c, 102, 12, 6872);
+    			attr_dev(div24, "id", "OffensiveSec");
+    			attr_dev(div24, "class", "Sec3");
+    			add_location(div24, file$c, 46, 8, 3212);
+    			attr_dev(div25, "id", "ManeuversSec");
+    			attr_dev(div25, "class", "Sec2");
+    			add_location(div25, file$c, 3, 4, 118);
+    			attr_dev(div26, "class", "maneuvers-rules");
+    			add_location(div26, file$c, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div26, anchor);
+    			append_dev(div26, h2);
+    			append_dev(div26, t1);
+    			append_dev(div26, button0);
+    			append_dev(div26, t3);
+    			append_dev(div26, div25);
+    			append_dev(div25, p0);
+    			append_dev(div25, t5);
+    			append_dev(div25, p1);
+    			append_dev(div25, t7);
+    			append_dev(div25, button1);
+    			append_dev(div25, t9);
+    			append_dev(div25, div9);
+    			append_dev(div9, button2);
+    			append_dev(div9, t11);
+    			append_dev(div9, div0);
+    			append_dev(div0, p2);
+    			append_dev(div9, t13);
+    			append_dev(div9, button3);
+    			append_dev(div9, t15);
+    			append_dev(div9, div1);
+    			append_dev(div1, p3);
+    			append_dev(div9, t17);
+    			append_dev(div9, button4);
+    			append_dev(div9, t19);
+    			append_dev(div9, div2);
+    			append_dev(div2, p4);
+    			append_dev(div9, t21);
+    			append_dev(div9, button5);
+    			append_dev(div9, t23);
+    			append_dev(div9, div3);
+    			append_dev(div3, p5);
+    			append_dev(div9, t25);
+    			append_dev(div9, button6);
+    			append_dev(div9, t27);
+    			append_dev(div9, div4);
+    			append_dev(div4, p6);
+    			append_dev(div9, t29);
+    			append_dev(div9, button7);
+    			append_dev(div9, t31);
+    			append_dev(div9, div5);
+    			append_dev(div5, p7);
+    			append_dev(div9, t33);
+    			append_dev(div9, button8);
+    			append_dev(div9, t35);
+    			append_dev(div9, div6);
+    			append_dev(div6, p8);
+    			append_dev(div9, t37);
+    			append_dev(div9, button9);
+    			append_dev(div9, t39);
+    			append_dev(div9, div7);
+    			append_dev(div7, p9);
+    			append_dev(div9, t41);
+    			append_dev(div9, button10);
+    			append_dev(div9, t43);
+    			append_dev(div9, div8);
+    			append_dev(div8, p10);
+    			append_dev(div25, t45);
+    			append_dev(div25, button11);
+    			append_dev(div25, t47);
+    			append_dev(div25, div24);
+    			append_dev(div24, button12);
+    			append_dev(div24, t49);
+    			append_dev(div24, div10);
+    			append_dev(div10, p11);
+    			append_dev(div24, t51);
+    			append_dev(div24, button13);
+    			append_dev(div24, t53);
+    			append_dev(div24, div11);
+    			append_dev(div11, p12);
+    			append_dev(div24, t55);
+    			append_dev(div24, button14);
+    			append_dev(div24, t57);
+    			append_dev(div24, div14);
+    			append_dev(div14, p13);
+    			append_dev(div14, t59);
+    			append_dev(div14, p14);
+    			append_dev(div14, t61);
+    			append_dev(div14, p15);
+    			append_dev(div14, t63);
+    			append_dev(div14, button15);
+    			append_dev(div14, t65);
+    			append_dev(div14, div12);
+    			append_dev(div12, p16);
+    			append_dev(div14, t67);
+    			append_dev(div14, button16);
+    			append_dev(div14, t69);
+    			append_dev(div14, div13);
+    			append_dev(div13, p17);
+    			append_dev(div24, t71);
+    			append_dev(div24, button17);
+    			append_dev(div24, t73);
+    			append_dev(div24, div15);
+    			append_dev(div15, p18);
+    			append_dev(div24, t75);
+    			append_dev(div24, button18);
+    			append_dev(div24, t77);
+    			append_dev(div24, div20);
+    			append_dev(div20, p19);
+    			append_dev(div20, t79);
+    			append_dev(div20, button19);
+    			append_dev(div20, t81);
+    			append_dev(div20, div16);
+    			append_dev(div16, p20);
+    			append_dev(div20, t83);
+    			append_dev(div20, button20);
+    			append_dev(div20, t85);
+    			append_dev(div20, div17);
+    			append_dev(div17, p21);
+    			append_dev(div20, t87);
+    			append_dev(div20, button21);
+    			append_dev(div20, t89);
+    			append_dev(div20, div18);
+    			append_dev(div18, p22);
+    			append_dev(div20, t91);
+    			append_dev(div20, button22);
+    			append_dev(div20, t93);
+    			append_dev(div20, div19);
+    			append_dev(div19, p23);
+    			append_dev(div24, t95);
+    			append_dev(div24, button23);
+    			append_dev(div24, t97);
+    			append_dev(div24, div21);
+    			append_dev(div21, p24);
+    			append_dev(div24, t99);
+    			append_dev(div24, button24);
+    			append_dev(div24, t101);
+    			append_dev(div24, div22);
+    			append_dev(div22, p25);
+    			append_dev(div24, t103);
+    			append_dev(div24, button25);
+    			append_dev(div24, t105);
+    			append_dev(div24, div23);
+    			append_dev(div23, p26);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div26);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$f.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Maneuvers extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$f, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Maneuvers",
+    			options,
+    			id: create_fragment$f.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Situations.svelte generated by Svelte v3.15.0 */
+
+    const file$d = "src/components/rules/Situations.svelte";
+
+    function create_fragment$g(ctx) {
+    	let div35;
+    	let h2;
+    	let t1;
+    	let button0;
+    	let t3;
+    	let div34;
+    	let p0;
+    	let t5;
+    	let button1;
+    	let t7;
+    	let div0;
+    	let p1;
+    	let t9;
+    	let button2;
+    	let t11;
+    	let div1;
+    	let p2;
+    	let t13;
+    	let button3;
+    	let t15;
+    	let div3;
+    	let p3;
+    	let t17;
+    	let button4;
+    	let t19;
+    	let div2;
+    	let ul;
+    	let li0;
+    	let t21;
+    	let li1;
+    	let t23;
+    	let li2;
+    	let t25;
+    	let li3;
+    	let t27;
+    	let li4;
+    	let t29;
+    	let li5;
+    	let t31;
+    	let li6;
+    	let t33;
+    	let li7;
+    	let t35;
+    	let li8;
+    	let t37;
+    	let button5;
+    	let t39;
+    	let div4;
+    	let p4;
+    	let t41;
+    	let button6;
+    	let t43;
+    	let div5;
+    	let p5;
+    	let t45;
+    	let button7;
+    	let t47;
+    	let div6;
+    	let p6;
+    	let t49;
+    	let button8;
+    	let t51;
+    	let div7;
+    	let p7;
+    	let t53;
+    	let button9;
+    	let t55;
+    	let div13;
+    	let p8;
+    	let t57;
+    	let button10;
+    	let t59;
+    	let div8;
+    	let p9;
+    	let t61;
+    	let button11;
+    	let t63;
+    	let div9;
+    	let p10;
+    	let t65;
+    	let button12;
+    	let t67;
+    	let div10;
+    	let p11;
+    	let t69;
+    	let button13;
+    	let t71;
+    	let div11;
+    	let p12;
+    	let t73;
+    	let button14;
+    	let t75;
+    	let div12;
+    	let p13;
+    	let t77;
+    	let button15;
+    	let t79;
+    	let div15;
+    	let p14;
+    	let t81;
+    	let button16;
+    	let t83;
+    	let div14;
+    	let p15;
+    	let t85;
+    	let button17;
+    	let t87;
+    	let div16;
+    	let p16;
+    	let t89;
+    	let button18;
+    	let t91;
+    	let div17;
+    	let p17;
+    	let t93;
+    	let button19;
+    	let t95;
+    	let div18;
+    	let p18;
+    	let t97;
+    	let button20;
+    	let t99;
+    	let div19;
+    	let p19;
+    	let t101;
+    	let button21;
+    	let t103;
+    	let div30;
+    	let p20;
+    	let t105;
+    	let button22;
+    	let t107;
+    	let div20;
+    	let p21;
+    	let t109;
+    	let button23;
+    	let t111;
+    	let div21;
+    	let p22;
+    	let t113;
+    	let button24;
+    	let t115;
+    	let div22;
+    	let p23;
+    	let t117;
+    	let button25;
+    	let t119;
+    	let div23;
+    	let p24;
+    	let t121;
+    	let button26;
+    	let t123;
+    	let div24;
+    	let p25;
+    	let t125;
+    	let button27;
+    	let t127;
+    	let div25;
+    	let p26;
+    	let t129;
+    	let button28;
+    	let t131;
+    	let div26;
+    	let p27;
+    	let t133;
+    	let button29;
+    	let t135;
+    	let div27;
+    	let p28;
+    	let t137;
+    	let button30;
+    	let t139;
+    	let div28;
+    	let p29;
+    	let t141;
+    	let button31;
+    	let t143;
+    	let div29;
+    	let p30;
+    	let t145;
+    	let button32;
+    	let t147;
+    	let div31;
+    	let p31;
+    	let t149;
+    	let button33;
+    	let t151;
+    	let div32;
+    	let p32;
+    	let t153;
+    	let button34;
+    	let t155;
+    	let div33;
+    	let p33;
+
+    	const block = {
+    		c: function create() {
+    			div35 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Situations";
+    			t1 = space();
+    			button0 = element("button");
+    			button0.textContent = "SITUATIONS";
+    			t3 = space();
+    			div34 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "These are special circumstances with unique effects.";
+    			t5 = space();
+    			button1 = element("button");
+    			button1.textContent = "BLEEDING";
+    			t7 = space();
+    			div0 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "After lethal DMG, take 1DMG/min to Torso HP. Roll Medicine(First-Aid) or C [# = DMG] to stop (Pain penalty applies). A Bleeding wound can be cauterized by doing 1FDMG to the Location.";
+    			t9 = space();
+    			button2 = element("button");
+    			button2.textContent = "CHASE";
+    			t11 = space();
+    			div1 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "Make opposed Athletics, Tame, or Drive rolls each round. +1 Success/rnd for the faster mode of transportation. Keep track of both sides’ total Successes. The Chase ends when the pursuer gives up or one side accumulates 3 Successes above their opponent.";
+    			t13 = space();
+    			button3 = element("button");
+    			button3.textContent = "COVER";
+    			t15 = space();
+    			div3 = element("div");
+    			p3 = element("p");
+    			p3.textContent = "Reduce DMG from ATKs that target a Location that is behind Cover by an amount equal to the Material’s Damage Reduction (DR). Roll Block with a Shield to use it’s Cover DR against an RATK.";
+    			t17 = space();
+    			button4 = element("button");
+    			button4.textContent = "MATERIAL";
+    			t19 = space();
+    			div2 = element("div");
+    			ul = element("ul");
+    			li0 = element("li");
+    			li0.textContent = "Drywall: 1DR";
+    			t21 = space();
+    			li1 = element("li");
+    			li1.textContent = "Glass: 1DR";
+    			t23 = space();
+    			li2 = element("li");
+    			li2.textContent = "Furniture: 3DR";
+    			t25 = space();
+    			li3 = element("li");
+    			li3.textContent = "Wood: 3DR";
+    			t27 = space();
+    			li4 = element("li");
+    			li4.textContent = "Sheet Metal: 6DR";
+    			t29 = space();
+    			li5 = element("li");
+    			li5.textContent = "Brick: 9DR";
+    			t31 = space();
+    			li6 = element("li");
+    			li6.textContent = "Concrete: 12DR";
+    			t33 = space();
+    			li7 = element("li");
+    			li7.textContent = "Log: 15DR";
+    			t35 = space();
+    			li8 = element("li");
+    			li8.textContent = "Water (per ft): 18DR";
+    			t37 = space();
+    			button5 = element("button");
+    			button5.textContent = "DEAFNESS";
+    			t39 = space();
+    			div4 = element("div");
+    			p4 = element("p");
+    			p4.textContent = "Fail Perception(Hear) rolls. No audible communication. Guns without Suppressors cause Deafness within 10yds for 1rnd.";
+    			t41 = space();
+    			button6 = element("button");
+    			button6.textContent = "FALLING";
+    			t43 = space();
+    			div5 = element("div");
+    			p5 = element("p");
+    			p5.textContent = "1 BDMG/yd after the first to Torso. Fast, Acrobatics # = height in yds for BDMG/2 and choose which Location(s) take BDMG.";
+    			t45 = space();
+    			button7 = element("button");
+    			button7.textContent = "FRIENDLY FIRE";
+    			t47 = space();
+    			div6 = element("div");
+    			p6 = element("p");
+    			p6.textContent = "-3 RATK to shoot at a target within 1yd of an ally. F:Roll a d6 RATK (no modifiers) vs ally's Reflex.";
+    			t49 = space();
+    			button8 = element("button");
+    			button8.textContent = "GRABBED";
+    			t51 = space();
+    			div7 = element("div");
+    			p7 = element("p");
+    			p7.textContent = "Use Reflex for DEF. Cannot ATK. Roll Acrobatics or Melee vs Grab # to escape. Succeed by 3+ at Melee to reverse the Grab.";
+    			t53 = space();
+    			button9 = element("button");
+    			button9.textContent = "NEEDS";
+    			t55 = space();
+    			div13 = element("div");
+    			p8 = element("p");
+    			p8.textContent = "-1 all rolls for each Need that isn’t met per unit of time.";
+    			t57 = space();
+    			button10 = element("button");
+    			button10.textContent = "DEHYDRATION";
+    			t59 = space();
+    			div8 = element("div");
+    			p9 = element("p");
+    			p9.textContent = "Die after C days without 1 Water.";
+    			t61 = space();
+    			button11 = element("button");
+    			button11.textContent = "EXHAUSTION";
+    			t63 = space();
+    			div9 = element("div");
+    			p10 = element("p");
+    			p10.textContent = "D# = hrs/6 to stay up past 24hrs without 6hrs sleep.";
+    			t65 = space();
+    			button12 = element("button");
+    			button12.textContent = "HYPOTHERMIA";
+    			t67 = space();
+    			div10 = element("div");
+    			p11 = element("p");
+    			p11.textContent = "Die after C hours exposed to freezing weather.";
+    			t69 = space();
+    			button13 = element("button");
+    			button13.textContent = "STARVATION";
+    			t71 = space();
+    			div11 = element("div");
+    			p12 = element("p");
+    			p12.textContent = "Die after C weeks without 1 Food.";
+    			t73 = space();
+    			button14 = element("button");
+    			button14.textContent = "SUFFOCATION";
+    			t75 = space();
+    			div12 = element("div");
+    			p13 = element("p");
+    			p13.textContent = "Die after C minutes without air.";
+    			t77 = space();
+    			button15 = element("button");
+    			button15.textContent = "PAIN";
+    			t79 = space();
+    			div15 = element("div");
+    			p14 = element("p");
+    			p14.textContent = "-1 to all rolls per point of DMG or other Pain source. Pain fades as DMG heals. Pain not caused by HP loss heals at 1/min.";
+    			t81 = space();
+    			button16 = element("button");
+    			button16.textContent = "THRESHOLD";
+    			t83 = space();
+    			div14 = element("div");
+    			p15 = element("p");
+    			p15.textContent = "Go unconscious when Pain exceeds [C + D]. \tAny further Blunt DMG is considered lethal DMG instead.";
+    			t85 = space();
+    			button17 = element("button");
+    			button17.textContent = "PRONE";
+    			t87 = space();
+    			div16 = element("div");
+    			p16 = element("p");
+    			p16.textContent = "+1 RATK. Use Reflex for DEF. +3 Stealth. Speed 1yd.";
+    			t89 = space();
+    			button18 = element("button");
+    			button18.textContent = "RANGE (RNG)";
+    			t91 = space();
+    			div17 = element("div");
+    			p17 = element("p");
+    			p17.textContent = "RATKs have a RNG increment in yards. -1 RATK per RNG after the first up to -9 RATK at 10x RNG. RATKs in first RNG target Torso. RATKs beyond that are random Location rolls or Called Shots.  For Scatter, RNG is a penalty to DMG and a bonus to RATK.";
+    			t93 = space();
+    			button19 = element("button");
+    			button19.textContent = "REFLEX";
+    			t95 = space();
+    			div18 = element("div");
+    			p18 = element("p");
+    			p18.textContent = "Reflex = Perception. This is default Defense if you are conscious but unaware or out of Fast actions for active Defense. Reflex is never rolled. It is a static Difficulty for enemy ATKs.";
+    			t97 = space();
+    			button20 = element("button");
+    			button20.textContent = "STUNNED";
+    			t99 = space();
+    			div19 = element("div");
+    			p19 = element("p");
+    			p19.textContent = "You cannot do anything. You are unaware (-6 Perception). Use Reflex for DEF. Fall Prone if Stunned more than 1 rnd.";
+    			t101 = space();
+    			button21 = element("button");
+    			button21.textContent = "TERRAIN";
+    			t103 = space();
+    			div30 = element("div");
+    			p20 = element("p");
+    			p20.textContent = "-1 to -6 Athletics, Acrobatics, Drive, and Speed.";
+    			t105 = space();
+    			button22 = element("button");
+    			button22.textContent = "ACID RAIN";
+    			t107 = space();
+    			div20 = element("div");
+    			p21 = element("p");
+    			p21.textContent = "-1 Athletics, Acrobatics, Drive, and Speed";
+    			t109 = space();
+    			button23 = element("button");
+    			button23.textContent = "BLIZZARD";
+    			t111 = space();
+    			div21 = element("div");
+    			p22 = element("p");
+    			p22.textContent = "-1/inch Athletics, Acrobatics, Drive, and Speed";
+    			t113 = space();
+    			button24 = element("button");
+    			button24.textContent = "DESERT";
+    			t115 = space();
+    			div22 = element("div");
+    			p23 = element("p");
+    			p23.textContent = "-1 Athletics, Acrobatics, Drive, and Speed";
+    			t117 = space();
+    			button25 = element("button");
+    			button25.textContent = "FOREST";
+    			t119 = space();
+    			div23 = element("div");
+    			p24 = element("p");
+    			p24.textContent = "-1 Athletics, Acrobatics, Drive, and Speed";
+    			t121 = space();
+    			button26 = element("button");
+    			button26.textContent = "HAIL/SLEET";
+    			t123 = space();
+    			div24 = element("div");
+    			p25 = element("p");
+    			p25.textContent = "-3 Athletics, Acrobatics, Drive, and Speed";
+    			t125 = space();
+    			button27 = element("button");
+    			button27.textContent = "MOUNTAIN";
+    			t127 = space();
+    			div25 = element("div");
+    			p26 = element("p");
+    			p26.textContent = "-1 Athletics, Acrobatics, Drive, and Speed";
+    			t129 = space();
+    			button28 = element("button");
+    			button28.textContent = "RAIN STORM";
+    			t131 = space();
+    			div26 = element("div");
+    			p27 = element("p");
+    			p27.textContent = "-1 Athletics, Acrobatics, Drive, and Speed";
+    			t133 = space();
+    			button29 = element("button");
+    			button29.textContent = "SNOW";
+    			t135 = space();
+    			div27 = element("div");
+    			p28 = element("p");
+    			p28.textContent = "-1/in Athletics, Acrobatics, Drive, and Speed";
+    			t137 = space();
+    			button30 = element("button");
+    			button30.textContent = "SWAMP";
+    			t139 = space();
+    			div28 = element("div");
+    			p29 = element("p");
+    			p29.textContent = "-6 Athletics, Acrobatics, Drive, and Speed";
+    			t141 = space();
+    			button31 = element("button");
+    			button31.textContent = "TUNDRA";
+    			t143 = space();
+    			div29 = element("div");
+    			p30 = element("p");
+    			p30.textContent = "-6 Athletics, Acrobatics, Drive";
+    			t145 = space();
+    			button32 = element("button");
+    			button32.textContent = "UNARMED";
+    			t147 = space();
+    			div31 = element("div");
+    			p31 = element("p");
+    			p31.textContent = "Punch or Headbutt: 1 DMG. Kick: 2 DMG. Unarmed MATKs do BDMG. BDMG is only Pain until Pain exceeds the Threshold [C + D]. AR is not reduced by Unarmed DMG.";
+    			t149 = space();
+    			button33 = element("button");
+    			button33.textContent = "UNSTABLE";
+    			t151 = space();
+    			div32 = element("div");
+    			p32 = element("p");
+    			p32.textContent = "-3 all physical rolls. -3 to RATKs at or from you.";
+    			t153 = space();
+    			button34 = element("button");
+    			button34.textContent = "VISIBILITY";
+    			t155 = space();
+    			div33 = element("div");
+    			p33 = element("p");
+    			p33.textContent = "-1 to -6 to all sight-based rolls. GN discretion.";
+    			add_location(h2, file$d, 1, 4, 35);
+    			attr_dev(button0, "id", "SituationsBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$d, 2, 4, 59);
+    			add_location(p0, file$d, 4, 8, 168);
+    			attr_dev(button1, "id", "BleedingSitBtn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$d, 5, 8, 236);
+    			add_location(p1, file$d, 7, 12, 353);
+    			attr_dev(div0, "id", "BleedingSitSec");
+    			attr_dev(div0, "class", "Sec3");
+    			add_location(div0, file$d, 6, 8, 302);
+    			attr_dev(button2, "id", "ChaseSitBtn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$d, 9, 8, 567);
+    			add_location(p2, file$d, 11, 12, 675);
+    			attr_dev(div1, "id", "ChaseSitSec");
+    			attr_dev(div1, "class", "Sec3");
+    			add_location(div1, file$d, 10, 8, 627);
+    			attr_dev(button3, "id", "CoverSitBtn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$d, 13, 8, 958);
+    			add_location(p3, file$d, 15, 12, 1066);
+    			attr_dev(button4, "id", "MaterialSitBtn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$d, 16, 12, 1273);
+    			add_location(li0, file$d, 19, 20, 1423);
+    			add_location(li1, file$d, 20, 20, 1465);
+    			add_location(li2, file$d, 21, 20, 1505);
+    			add_location(li3, file$d, 22, 20, 1549);
+    			add_location(li4, file$d, 23, 20, 1588);
+    			add_location(li5, file$d, 24, 20, 1634);
+    			add_location(li6, file$d, 25, 20, 1674);
+    			add_location(li7, file$d, 26, 20, 1718);
+    			add_location(li8, file$d, 27, 20, 1757);
+    			add_location(ul, file$d, 18, 16, 1398);
+    			attr_dev(div2, "id", "MaterialSitSec");
+    			attr_dev(div2, "class", "Sec3");
+    			add_location(div2, file$d, 17, 12, 1343);
+    			attr_dev(div3, "id", "CoverSitSec");
+    			attr_dev(div3, "class", "Sec3");
+    			add_location(div3, file$d, 14, 8, 1018);
+    			attr_dev(button5, "id", "DeafnessSitBtn");
+    			attr_dev(button5, "class", "Btn");
+    			add_location(button5, file$d, 31, 8, 1851);
+    			add_location(p4, file$d, 33, 12, 1968);
+    			attr_dev(div4, "id", "DeafnessSitSec");
+    			attr_dev(div4, "class", "Sec3");
+    			add_location(div4, file$d, 32, 8, 1917);
+    			attr_dev(button6, "id", "FallingSitBtn");
+    			attr_dev(button6, "class", "Btn");
+    			add_location(button6, file$d, 35, 8, 2116);
+    			add_location(p5, file$d, 37, 12, 2230);
+    			attr_dev(div5, "id", "FallingSitSec");
+    			attr_dev(div5, "class", "Sec3");
+    			add_location(div5, file$d, 36, 8, 2180);
+    			attr_dev(button7, "id", "FriendlyFireSitBtn");
+    			attr_dev(button7, "class", "Btn");
+    			add_location(button7, file$d, 39, 8, 2382);
+    			add_location(p6, file$d, 41, 12, 2512);
+    			attr_dev(div6, "id", "FriendlyFireSitSec");
+    			attr_dev(div6, "class", "Sec3");
+    			add_location(div6, file$d, 40, 8, 2457);
+    			attr_dev(button8, "id", "GrabbedSitBtn");
+    			attr_dev(button8, "class", "Btn");
+    			add_location(button8, file$d, 43, 8, 2644);
+    			add_location(p7, file$d, 45, 12, 2758);
+    			attr_dev(div7, "id", "GrabbedSitSec");
+    			attr_dev(div7, "class", "Sec3");
+    			add_location(div7, file$d, 44, 8, 2708);
+    			attr_dev(button9, "id", "NeedsSitBtn");
+    			attr_dev(button9, "class", "Btn");
+    			add_location(button9, file$d, 47, 8, 2910);
+    			add_location(p8, file$d, 49, 12, 3018);
+    			attr_dev(button10, "id", "SitBtn");
+    			attr_dev(button10, "class", "Btn");
+    			add_location(button10, file$d, 50, 12, 3097);
+    			add_location(p9, file$d, 52, 16, 3209);
+    			attr_dev(div8, "id", "SitSec");
+    			attr_dev(div8, "class", "Sec4");
+    			add_location(div8, file$d, 51, 12, 3162);
+    			attr_dev(button11, "id", "ExhaustionSitBtn");
+    			attr_dev(button11, "class", "Btn");
+    			add_location(button11, file$d, 54, 12, 3281);
+    			add_location(p10, file$d, 56, 16, 3412);
+    			attr_dev(div9, "id", "ExhaustionSitSec");
+    			attr_dev(div9, "class", "Sec4");
+    			add_location(div9, file$d, 55, 12, 3355);
+    			attr_dev(button12, "id", "HypothermiaSitBtn");
+    			attr_dev(button12, "class", "Btn");
+    			add_location(button12, file$d, 58, 12, 3503);
+    			add_location(p11, file$d, 60, 16, 3637);
+    			attr_dev(div10, "id", "HypothermiaSitSec");
+    			attr_dev(div10, "class", "Sec4");
+    			add_location(div10, file$d, 59, 12, 3579);
+    			attr_dev(button13, "id", "StarvationSitBtn");
+    			attr_dev(button13, "class", "Btn");
+    			add_location(button13, file$d, 62, 12, 3722);
+    			add_location(p12, file$d, 64, 16, 3853);
+    			attr_dev(div11, "id", "StarvationSitSec");
+    			attr_dev(div11, "class", "Sec4");
+    			add_location(div11, file$d, 63, 12, 3796);
+    			attr_dev(button14, "id", "SuffocationSitBtn");
+    			attr_dev(button14, "class", "Btn");
+    			add_location(button14, file$d, 66, 12, 3925);
+    			add_location(p13, file$d, 68, 16, 4059);
+    			attr_dev(div12, "id", "SuffocationSitSec");
+    			attr_dev(div12, "class", "Sec4");
+    			add_location(div12, file$d, 67, 12, 4001);
+    			attr_dev(div13, "id", "NeedsSitSec");
+    			attr_dev(div13, "class", "Sec3");
+    			add_location(div13, file$d, 48, 8, 2970);
+    			attr_dev(button15, "id", "PainSitBtn");
+    			attr_dev(button15, "class", "Btn");
+    			add_location(button15, file$d, 71, 8, 4141);
+    			add_location(p14, file$d, 73, 12, 4246);
+    			attr_dev(button16, "id", "ThresholdSitBtn");
+    			attr_dev(button16, "class", "Btn");
+    			add_location(button16, file$d, 74, 12, 4388);
+    			add_location(p15, file$d, 76, 16, 4516);
+    			attr_dev(div14, "id", "ThresholdSitSec");
+    			attr_dev(div14, "class", "Sec4");
+    			add_location(div14, file$d, 75, 12, 4460);
+    			attr_dev(div15, "id", "PainSitSec");
+    			attr_dev(div15, "class", "Sec3");
+    			add_location(div15, file$d, 72, 8, 4199);
+    			attr_dev(button17, "id", "ProneSitBtn");
+    			attr_dev(button17, "class", "Btn");
+    			add_location(button17, file$d, 79, 8, 4664);
+    			add_location(p16, file$d, 81, 12, 4772);
+    			attr_dev(div16, "id", "ProneSitSec");
+    			attr_dev(div16, "class", "Sec3");
+    			add_location(div16, file$d, 80, 8, 4724);
+    			attr_dev(button18, "id", "RangeSitBtn");
+    			attr_dev(button18, "class", "Btn");
+    			add_location(button18, file$d, 83, 8, 4854);
+    			add_location(p17, file$d, 85, 12, 4968);
+    			attr_dev(div17, "id", "RangeSitSec");
+    			attr_dev(div17, "class", "Sec3");
+    			add_location(div17, file$d, 84, 8, 4920);
+    			attr_dev(button19, "id", "ReflexSitBtn");
+    			attr_dev(button19, "class", "Btn");
+    			add_location(button19, file$d, 87, 8, 5246);
+    			add_location(p18, file$d, 89, 12, 5357);
+    			attr_dev(div18, "id", "ReflexSitSec");
+    			attr_dev(div18, "class", "Sec3");
+    			add_location(div18, file$d, 88, 8, 5308);
+    			attr_dev(button20, "id", "StunnedSitBtn");
+    			attr_dev(button20, "class", "Btn");
+    			add_location(button20, file$d, 91, 8, 5574);
+    			add_location(p19, file$d, 93, 12, 5688);
+    			attr_dev(div19, "id", "StunnedSitSec");
+    			attr_dev(div19, "class", "Sec3");
+    			add_location(div19, file$d, 92, 8, 5638);
+    			attr_dev(button21, "id", "TerrainSitBtn");
+    			attr_dev(button21, "class", "Btn");
+    			add_location(button21, file$d, 95, 8, 5834);
+    			add_location(p20, file$d, 97, 12, 5948);
+    			attr_dev(button22, "id", "AcidRainSitBtn");
+    			attr_dev(button22, "class", "Btn");
+    			add_location(button22, file$d, 98, 12, 6017);
+    			add_location(p21, file$d, 100, 16, 6143);
+    			attr_dev(div20, "id", "AcidRainSitSec");
+    			attr_dev(div20, "class", "Sec4");
+    			add_location(div20, file$d, 99, 12, 6088);
+    			attr_dev(button23, "id", "BlizzardSitBtn");
+    			attr_dev(button23, "class", "Btn");
+    			add_location(button23, file$d, 102, 12, 6224);
+    			add_location(p22, file$d, 104, 16, 6349);
+    			attr_dev(div21, "id", "BlizzardSitSec");
+    			attr_dev(div21, "class", "Sec4");
+    			add_location(div21, file$d, 103, 12, 6294);
+    			attr_dev(button24, "id", "DesertSitBtn");
+    			attr_dev(button24, "class", "Btn");
+    			add_location(button24, file$d, 106, 12, 6435);
+    			add_location(p23, file$d, 108, 16, 6554);
+    			attr_dev(div22, "id", "DesertSitSec");
+    			attr_dev(div22, "class", "Sec4");
+    			add_location(div22, file$d, 107, 12, 6501);
+    			attr_dev(button25, "id", "ForestSitBtn");
+    			attr_dev(button25, "class", "Btn");
+    			add_location(button25, file$d, 110, 12, 6635);
+    			add_location(p24, file$d, 112, 16, 6754);
+    			attr_dev(div23, "id", "ForestSitSec");
+    			attr_dev(div23, "class", "Sec4");
+    			add_location(div23, file$d, 111, 12, 6701);
+    			attr_dev(button26, "id", "HailSleetSitBtn");
+    			attr_dev(button26, "class", "Btn");
+    			add_location(button26, file$d, 114, 12, 6835);
+    			add_location(p25, file$d, 116, 16, 6964);
+    			attr_dev(div24, "id", "HailSleetSitSec");
+    			attr_dev(div24, "class", "Sec4");
+    			add_location(div24, file$d, 115, 12, 6908);
+    			attr_dev(button27, "id", "MountainSitBtn");
+    			attr_dev(button27, "class", "Btn");
+    			add_location(button27, file$d, 118, 12, 7045);
+    			add_location(p26, file$d, 120, 16, 7170);
+    			attr_dev(div25, "id", "MountainSitSec");
+    			attr_dev(div25, "class", "Sec4");
+    			add_location(div25, file$d, 119, 12, 7115);
+    			attr_dev(button28, "id", "RainStormSitBtn");
+    			attr_dev(button28, "class", "Btn");
+    			add_location(button28, file$d, 122, 12, 7251);
+    			add_location(p27, file$d, 124, 16, 7380);
+    			attr_dev(div26, "id", "RainStormSitSec");
+    			attr_dev(div26, "class", "Sec4");
+    			add_location(div26, file$d, 123, 12, 7324);
+    			attr_dev(button29, "id", "SnowSitBtn");
+    			attr_dev(button29, "class", "Btn");
+    			add_location(button29, file$d, 126, 12, 7461);
+    			add_location(p28, file$d, 128, 16, 7574);
+    			attr_dev(div27, "id", "SnowSitSec");
+    			attr_dev(div27, "class", "Sec4");
+    			add_location(div27, file$d, 127, 12, 7523);
+    			attr_dev(button30, "id", "SwampSitBtn");
+    			attr_dev(button30, "class", "Btn");
+    			add_location(button30, file$d, 130, 12, 7658);
+    			add_location(p29, file$d, 132, 16, 7774);
+    			attr_dev(div28, "id", "SwampSitSec");
+    			attr_dev(div28, "class", "Sec4");
+    			add_location(div28, file$d, 131, 12, 7722);
+    			attr_dev(button31, "id", "TundraSitBtn");
+    			attr_dev(button31, "class", "Btn");
+    			add_location(button31, file$d, 134, 12, 7855);
+    			add_location(p30, file$d, 136, 16, 7974);
+    			attr_dev(div29, "id", "TundraSitSec");
+    			attr_dev(div29, "class", "Sec4");
+    			add_location(div29, file$d, 135, 12, 7921);
+    			attr_dev(div30, "id", "TerrainSitSec");
+    			attr_dev(div30, "class", "Sec3");
+    			add_location(div30, file$d, 96, 8, 5898);
+    			attr_dev(button32, "id", "UnarmedSitBtn");
+    			attr_dev(button32, "class", "Btn");
+    			add_location(button32, file$d, 139, 8, 8055);
+    			add_location(p31, file$d, 141, 12, 8169);
+    			attr_dev(div31, "id", "UnarmedSitSec");
+    			attr_dev(div31, "class", "Sec3");
+    			add_location(div31, file$d, 140, 8, 8119);
+    			attr_dev(button33, "id", "UnstableSitBtn");
+    			attr_dev(button33, "class", "Btn");
+    			add_location(button33, file$d, 143, 8, 8355);
+    			add_location(p32, file$d, 145, 12, 8472);
+    			attr_dev(div32, "id", "UnstableSitSec");
+    			attr_dev(div32, "class", "Sec3");
+    			add_location(div32, file$d, 144, 8, 8421);
+    			attr_dev(button34, "id", "VisibilitySitBtn");
+    			attr_dev(button34, "class", "Btn");
+    			add_location(button34, file$d, 147, 8, 8553);
+    			add_location(p33, file$d, 149, 12, 8676);
+    			attr_dev(div33, "id", "VisibilitySitSec");
+    			attr_dev(div33, "class", "Sec3");
+    			add_location(div33, file$d, 148, 8, 8623);
+    			attr_dev(div34, "id", "SituationsSec");
+    			attr_dev(div34, "class", "Sec2");
+    			add_location(div34, file$d, 3, 4, 122);
+    			attr_dev(div35, "class", "situations-rules");
+    			add_location(div35, file$d, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div35, anchor);
+    			append_dev(div35, h2);
+    			append_dev(div35, t1);
+    			append_dev(div35, button0);
+    			append_dev(div35, t3);
+    			append_dev(div35, div34);
+    			append_dev(div34, p0);
+    			append_dev(div34, t5);
+    			append_dev(div34, button1);
+    			append_dev(div34, t7);
+    			append_dev(div34, div0);
+    			append_dev(div0, p1);
+    			append_dev(div34, t9);
+    			append_dev(div34, button2);
+    			append_dev(div34, t11);
+    			append_dev(div34, div1);
+    			append_dev(div1, p2);
+    			append_dev(div34, t13);
+    			append_dev(div34, button3);
+    			append_dev(div34, t15);
+    			append_dev(div34, div3);
+    			append_dev(div3, p3);
+    			append_dev(div3, t17);
+    			append_dev(div3, button4);
+    			append_dev(div3, t19);
+    			append_dev(div3, div2);
+    			append_dev(div2, ul);
+    			append_dev(ul, li0);
+    			append_dev(ul, t21);
+    			append_dev(ul, li1);
+    			append_dev(ul, t23);
+    			append_dev(ul, li2);
+    			append_dev(ul, t25);
+    			append_dev(ul, li3);
+    			append_dev(ul, t27);
+    			append_dev(ul, li4);
+    			append_dev(ul, t29);
+    			append_dev(ul, li5);
+    			append_dev(ul, t31);
+    			append_dev(ul, li6);
+    			append_dev(ul, t33);
+    			append_dev(ul, li7);
+    			append_dev(ul, t35);
+    			append_dev(ul, li8);
+    			append_dev(div34, t37);
+    			append_dev(div34, button5);
+    			append_dev(div34, t39);
+    			append_dev(div34, div4);
+    			append_dev(div4, p4);
+    			append_dev(div34, t41);
+    			append_dev(div34, button6);
+    			append_dev(div34, t43);
+    			append_dev(div34, div5);
+    			append_dev(div5, p5);
+    			append_dev(div34, t45);
+    			append_dev(div34, button7);
+    			append_dev(div34, t47);
+    			append_dev(div34, div6);
+    			append_dev(div6, p6);
+    			append_dev(div34, t49);
+    			append_dev(div34, button8);
+    			append_dev(div34, t51);
+    			append_dev(div34, div7);
+    			append_dev(div7, p7);
+    			append_dev(div34, t53);
+    			append_dev(div34, button9);
+    			append_dev(div34, t55);
+    			append_dev(div34, div13);
+    			append_dev(div13, p8);
+    			append_dev(div13, t57);
+    			append_dev(div13, button10);
+    			append_dev(div13, t59);
+    			append_dev(div13, div8);
+    			append_dev(div8, p9);
+    			append_dev(div13, t61);
+    			append_dev(div13, button11);
+    			append_dev(div13, t63);
+    			append_dev(div13, div9);
+    			append_dev(div9, p10);
+    			append_dev(div13, t65);
+    			append_dev(div13, button12);
+    			append_dev(div13, t67);
+    			append_dev(div13, div10);
+    			append_dev(div10, p11);
+    			append_dev(div13, t69);
+    			append_dev(div13, button13);
+    			append_dev(div13, t71);
+    			append_dev(div13, div11);
+    			append_dev(div11, p12);
+    			append_dev(div13, t73);
+    			append_dev(div13, button14);
+    			append_dev(div13, t75);
+    			append_dev(div13, div12);
+    			append_dev(div12, p13);
+    			append_dev(div34, t77);
+    			append_dev(div34, button15);
+    			append_dev(div34, t79);
+    			append_dev(div34, div15);
+    			append_dev(div15, p14);
+    			append_dev(div15, t81);
+    			append_dev(div15, button16);
+    			append_dev(div15, t83);
+    			append_dev(div15, div14);
+    			append_dev(div14, p15);
+    			append_dev(div34, t85);
+    			append_dev(div34, button17);
+    			append_dev(div34, t87);
+    			append_dev(div34, div16);
+    			append_dev(div16, p16);
+    			append_dev(div34, t89);
+    			append_dev(div34, button18);
+    			append_dev(div34, t91);
+    			append_dev(div34, div17);
+    			append_dev(div17, p17);
+    			append_dev(div34, t93);
+    			append_dev(div34, button19);
+    			append_dev(div34, t95);
+    			append_dev(div34, div18);
+    			append_dev(div18, p18);
+    			append_dev(div34, t97);
+    			append_dev(div34, button20);
+    			append_dev(div34, t99);
+    			append_dev(div34, div19);
+    			append_dev(div19, p19);
+    			append_dev(div34, t101);
+    			append_dev(div34, button21);
+    			append_dev(div34, t103);
+    			append_dev(div34, div30);
+    			append_dev(div30, p20);
+    			append_dev(div30, t105);
+    			append_dev(div30, button22);
+    			append_dev(div30, t107);
+    			append_dev(div30, div20);
+    			append_dev(div20, p21);
+    			append_dev(div30, t109);
+    			append_dev(div30, button23);
+    			append_dev(div30, t111);
+    			append_dev(div30, div21);
+    			append_dev(div21, p22);
+    			append_dev(div30, t113);
+    			append_dev(div30, button24);
+    			append_dev(div30, t115);
+    			append_dev(div30, div22);
+    			append_dev(div22, p23);
+    			append_dev(div30, t117);
+    			append_dev(div30, button25);
+    			append_dev(div30, t119);
+    			append_dev(div30, div23);
+    			append_dev(div23, p24);
+    			append_dev(div30, t121);
+    			append_dev(div30, button26);
+    			append_dev(div30, t123);
+    			append_dev(div30, div24);
+    			append_dev(div24, p25);
+    			append_dev(div30, t125);
+    			append_dev(div30, button27);
+    			append_dev(div30, t127);
+    			append_dev(div30, div25);
+    			append_dev(div25, p26);
+    			append_dev(div30, t129);
+    			append_dev(div30, button28);
+    			append_dev(div30, t131);
+    			append_dev(div30, div26);
+    			append_dev(div26, p27);
+    			append_dev(div30, t133);
+    			append_dev(div30, button29);
+    			append_dev(div30, t135);
+    			append_dev(div30, div27);
+    			append_dev(div27, p28);
+    			append_dev(div30, t137);
+    			append_dev(div30, button30);
+    			append_dev(div30, t139);
+    			append_dev(div30, div28);
+    			append_dev(div28, p29);
+    			append_dev(div30, t141);
+    			append_dev(div30, button31);
+    			append_dev(div30, t143);
+    			append_dev(div30, div29);
+    			append_dev(div29, p30);
+    			append_dev(div34, t145);
+    			append_dev(div34, button32);
+    			append_dev(div34, t147);
+    			append_dev(div34, div31);
+    			append_dev(div31, p31);
+    			append_dev(div34, t149);
+    			append_dev(div34, button33);
+    			append_dev(div34, t151);
+    			append_dev(div34, div32);
+    			append_dev(div32, p32);
+    			append_dev(div34, t153);
+    			append_dev(div34, button34);
+    			append_dev(div34, t155);
+    			append_dev(div34, div33);
+    			append_dev(div33, p33);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div35);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$g.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Situations extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$g, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Situations",
+    			options,
+    			id: create_fragment$g.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Skills.svelte generated by Svelte v3.15.0 */
+
+    const file$e = "src/components/rules/Skills.svelte";
+
+    function create_fragment$h(ctx) {
+    	let div64;
+    	let h2;
+    	let t1;
+    	let button0;
+    	let t3;
+    	let div63;
+    	let p0;
+    	let t5;
+    	let p1;
+    	let t7;
+    	let button1;
+    	let t9;
+    	let div0;
+    	let p2;
+    	let t11;
+    	let button2;
+    	let t13;
+    	let div1;
+    	let p3;
+    	let t15;
+    	let button3;
+    	let t17;
+    	let div14;
+    	let button4;
+    	let t19;
+    	let div5;
+    	let p4;
+    	let t21;
+    	let button5;
+    	let t23;
+    	let div2;
+    	let p5;
+    	let t25;
+    	let button6;
+    	let t27;
+    	let div3;
+    	let p6;
+    	let t29;
+    	let p7;
+    	let t31;
+    	let p8;
+    	let t33;
+    	let p9;
+    	let t35;
+    	let button7;
+    	let t37;
+    	let div4;
+    	let p10;
+    	let t39;
+    	let button8;
+    	let t41;
+    	let div9;
+    	let p11;
+    	let t43;
+    	let button9;
+    	let t45;
+    	let div6;
+    	let p12;
+    	let t47;
+    	let button10;
+    	let t49;
+    	let div7;
+    	let p13;
+    	let t51;
+    	let button11;
+    	let t53;
+    	let div8;
+    	let p14;
+    	let t55;
+    	let button12;
+    	let t57;
+    	let div13;
+    	let p15;
+    	let t59;
+    	let button13;
+    	let t61;
+    	let div10;
+    	let p16;
+    	let t63;
+    	let button14;
+    	let t65;
+    	let div11;
+    	let p17;
+    	let t67;
+    	let button15;
+    	let t69;
+    	let div12;
+    	let p18;
+    	let t71;
+    	let button16;
+    	let t73;
+    	let div27;
+    	let button17;
+    	let t75;
+    	let div18;
+    	let p19;
+    	let t77;
+    	let button18;
+    	let t79;
+    	let div15;
+    	let p20;
+    	let t81;
+    	let button19;
+    	let t83;
+    	let div16;
+    	let p21;
+    	let t85;
+    	let button20;
+    	let t87;
+    	let div17;
+    	let p22;
+    	let t89;
+    	let button21;
+    	let t91;
+    	let div22;
+    	let p23;
+    	let t93;
+    	let button22;
+    	let t95;
+    	let div19;
+    	let p24;
+    	let t97;
+    	let button23;
+    	let t99;
+    	let div20;
+    	let p25;
+    	let t101;
+    	let button24;
+    	let t103;
+    	let div21;
+    	let p26;
+    	let t105;
+    	let button25;
+    	let t107;
+    	let div26;
+    	let p27;
+    	let t109;
+    	let button26;
+    	let t111;
+    	let div23;
+    	let p28;
+    	let t113;
+    	let button27;
+    	let t115;
+    	let div24;
+    	let p29;
+    	let t117;
+    	let button28;
+    	let t119;
+    	let div25;
+    	let p30;
+    	let t121;
+    	let button29;
+    	let t123;
+    	let div42;
+    	let button30;
+    	let t125;
+    	let div33;
+    	let p31;
+    	let t127;
+    	let button31;
+    	let t129;
+    	let div30;
+    	let p32;
+    	let t131;
+    	let button32;
+    	let t133;
+    	let div28;
+    	let ul0;
+    	let li0;
+    	let t135;
+    	let li1;
+    	let t137;
+    	let li2;
+    	let t139;
+    	let li3;
+    	let t141;
+    	let li4;
+    	let t143;
+    	let button33;
+    	let t145;
+    	let div29;
+    	let ul1;
+    	let li5;
+    	let t147;
+    	let li6;
+    	let t149;
+    	let li7;
+    	let t151;
+    	let li8;
+    	let t153;
+    	let button34;
+    	let t155;
+    	let div31;
+    	let p33;
+    	let t157;
+    	let button35;
+    	let t159;
+    	let div32;
+    	let p34;
+    	let t161;
+    	let button36;
+    	let t163;
+    	let div37;
+    	let p35;
+    	let t165;
+    	let button37;
+    	let t167;
+    	let div34;
+    	let p36;
+    	let t169;
+    	let button38;
+    	let t171;
+    	let div35;
+    	let p37;
+    	let t173;
+    	let button39;
+    	let t175;
+    	let div36;
+    	let p38;
+    	let t177;
+    	let button40;
+    	let t179;
+    	let div41;
+    	let p39;
+    	let t181;
+    	let button41;
+    	let t183;
+    	let div38;
+    	let p40;
+    	let t185;
+    	let button42;
+    	let t187;
+    	let div39;
+    	let p41;
+    	let t189;
+    	let button43;
+    	let t191;
+    	let div40;
+    	let p42;
+    	let t193;
+    	let button44;
+    	let t195;
+    	let div62;
+    	let button45;
+    	let t197;
+    	let div46;
+    	let p43;
+    	let t199;
+    	let button46;
+    	let t201;
+    	let div43;
+    	let p44;
+    	let t203;
+    	let button47;
+    	let t205;
+    	let div44;
+    	let p45;
+    	let t207;
+    	let button48;
+    	let t209;
+    	let div45;
+    	let p46;
+    	let t211;
+    	let button49;
+    	let t213;
+    	let div50;
+    	let p47;
+    	let t215;
+    	let button50;
+    	let t217;
+    	let div47;
+    	let p48;
+    	let t219;
+    	let button51;
+    	let t221;
+    	let div48;
+    	let p49;
+    	let t223;
+    	let button52;
+    	let t225;
+    	let div49;
+    	let p50;
+    	let t227;
+    	let button53;
+    	let t229;
+    	let div61;
+    	let p51;
+    	let t231;
+    	let button54;
+    	let t233;
+    	let div51;
+    	let p52;
+    	let t235;
+    	let button55;
+    	let t237;
+    	let div52;
+    	let p53;
+    	let t239;
+    	let button56;
+    	let t241;
+    	let div60;
+    	let p54;
+    	let t243;
+    	let button57;
+    	let t245;
+    	let div59;
+    	let button58;
+    	let t247;
+    	let div53;
+    	let p55;
+    	let t249;
+    	let button59;
+    	let t251;
+    	let div54;
+    	let p56;
+    	let t253;
+    	let button60;
+    	let t255;
+    	let div55;
+    	let p57;
+    	let t257;
+    	let button61;
+    	let t259;
+    	let div56;
+    	let p58;
+    	let t261;
+    	let button62;
+    	let t263;
+    	let div57;
+    	let p59;
+    	let t265;
+    	let button63;
+    	let t267;
+    	let div58;
+    	let p60;
+
+    	const block = {
+    		c: function create() {
+    			div64 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Skills";
+    			t1 = space();
+    			button0 = element("button");
+    			button0.textContent = "SKILLS";
+    			t3 = space();
+    			div63 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "Skill rolls are [d6 + Skill]. A Skill roll may be against a Difficulty(#), Trait, Instinct, or another Skill. Parent Traits set the limit for their Skill scores. Skills have Specialties listed below that can exceed the Trait by taking the Specialize Ability.";
+    			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "# = Difficulty.   1 = Botch.";
+    			t7 = space();
+    			button1 = element("button");
+    			button1.textContent = "COOPERATION:";
+    			t9 = space();
+    			div0 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "To use a Skill with assistants, everyone rolls. Use the best roll unless someone Botches, then use that.";
+    			t11 = space();
+    			button2 = element("button");
+    			button2.textContent = "RETRAINING SKILLS:";
+    			t13 = space();
+    			div1 = element("div");
+    			p3 = element("p");
+    			p3.textContent = "1/month for 6XP you may move 1 point between Skills. You cannot lower a Skill to 0.";
+    			t15 = space();
+    			button3 = element("button");
+    			button3.textContent = "AGILITY SKILLS";
+    			t17 = space();
+    			div14 = element("div");
+    			button4 = element("button");
+    			button4.textContent = "ACROBATICS";
+    			t19 = space();
+    			div5 = element("div");
+    			p4 = element("p");
+    			p4.textContent = "Gymnastic prowess.";
+    			t21 = space();
+    			button5 = element("button");
+    			button5.textContent = "(DODGE)";
+    			t23 = space();
+    			div2 = element("div");
+    			p5 = element("p");
+    			p5.textContent = "Fast. Roll vs an ATK. 1:Prone.";
+    			t25 = space();
+    			button6 = element("button");
+    			button6.textContent = "(JUMP)";
+    			t27 = space();
+    			div3 = element("div");
+    			p6 = element("p");
+    			p6.textContent = "6#. Takes your action. 1:Fall, 1 BDMG/yd.";
+    			t29 = space();
+    			p7 = element("p");
+    			p7.textContent = "Standing Long Jump: Speed /2 yds";
+    			t31 = space();
+    			p8 = element("p");
+    			p8.textContent = "Running Long Jump: Speed yds";
+    			t33 = space();
+    			p9 = element("p");
+    			p9.textContent = "Vertical Jump: Speed x3\"";
+    			t35 = space();
+    			button7 = element("button");
+    			button7.textContent = "(TUMBLE)";
+    			t37 = space();
+    			div4 = element("div");
+    			p10 = element("p");
+    			p10.textContent = "# = yds to halve fall DMG [1 BDMG/yd] and choose Location. 1:Prone + Stunned d6rnds.";
+    			t39 = space();
+    			button8 = element("button");
+    			button8.textContent = "LARCENY";
+    			t41 = space();
+    			div9 = element("div");
+    			p11 = element("p");
+    			p11.textContent = "Delicate operations requiring finesse. 1/rnd.";
+    			t43 = space();
+    			button9 = element("button");
+    			button9.textContent = "(CONCEAL)";
+    			t45 = space();
+    			div6 = element("div");
+    			p12 = element("p");
+    			p12.textContent = "Hide items. Penalty = item Size. 1:Detected.";
+    			t47 = space();
+    			button10 = element("button");
+    			button10.textContent = "(DISABLE)";
+    			t49 = space();
+    			div7 = element("div");
+    			p13 = element("p");
+    			p13.textContent = "# by item. Takes d6mins 1:Breaks or explodes.";
+    			t51 = space();
+    			button11 = element("button");
+    			button11.textContent = "(STEAL)";
+    			t53 = space();
+    			div8 = element("div");
+    			p14 = element("p");
+    			p14.textContent = "Roll vs Perception to pick pocket. 1:Detected.";
+    			t55 = space();
+    			button12 = element("button");
+    			button12.textContent = "RANGED";
+    			t57 = space();
+    			div13 = element("div");
+    			p15 = element("p");
+    			p15.textContent = "Projectile fighting techniques. See Ch:2.";
+    			t59 = space();
+    			button13 = element("button");
+    			button13.textContent = "(ARCHERY)";
+    			t61 = space();
+    			div10 = element("div");
+    			p16 = element("p");
+    			p16.textContent = "Roll vs DEF. 1:Arrow lost or broken.";
+    			t63 = space();
+    			button14 = element("button");
+    			button14.textContent = "(GUNS)";
+    			t65 = space();
+    			div11 = element("div");
+    			p17 = element("p");
+    			p17.textContent = "Roll vs DEF. 1:Jammed dud. 1rnd to clear.";
+    			t67 = space();
+    			button15 = element("button");
+    			button15.textContent = "(THROW)";
+    			t69 = space();
+    			div12 = element("div");
+    			p18 = element("p");
+    			p18.textContent = "Roll vs DEF. RNG = C x2. 1:Broken weapon.";
+    			t71 = space();
+    			button16 = element("button");
+    			button16.textContent = "BRAINS SKILLS";
+    			t73 = space();
+    			div27 = element("div");
+    			button17 = element("button");
+    			button17.textContent = "MEDICINE";
+    			t75 = space();
+    			div18 = element("div");
+    			p19 = element("p");
+    			p19.textContent = "# = total DMG. Requires MEDICAL Gear.";
+    			t77 = space();
+    			button18 = element("button");
+    			button18.textContent = "(FIRST-AID)";
+    			t79 = space();
+    			div15 = element("div");
+    			p20 = element("p");
+    			p20.textContent = "Stop Bleeding. Requires a Bandage, First-Aid Kit, or EMT Bag. Takes 1min. 1:Bleed 1DMG.";
+    			t81 = space();
+    			button19 = element("button");
+    			button19.textContent = "(PSYCHOLOGY)";
+    			t83 = space();
+    			div16 = element("div");
+    			p21 = element("p");
+    			p21.textContent = "12# – Psyche. Subject gets +1 Psyche 1/week. Takes d6hrs. 1:-1 Psyche. See PSYCHE in Ch:4.";
+    			t85 = space();
+    			button20 = element("button");
+    			button20.textContent = "(SURGERY)";
+    			t87 = space();
+    			div17 = element("div");
+    			p22 = element("p");
+    			p22.textContent = "Heals 1HP to one Location and allows a disabled Location to fully Recover it’s maximum HP naturally. Roll once per wound. Takes 15min/DMG. 1: d6DMG and Bleeding.";
+    			t89 = space();
+    			button21 = element("button");
+    			button21.textContent = "SCIENCE";
+    			t91 = space();
+    			div22 = element("div");
+    			p23 = element("p");
+    			p23.textContent = "Knowledge and use of scientific data.";
+    			t93 = space();
+    			button22 = element("button");
+    			button22.textContent = "CHEMISTRY";
+    			t95 = space();
+    			div19 = element("div");
+    			p24 = element("p");
+    			p24.textContent = "BOMBS/DRUGS cost d6+# Chemicals and # x10mins. 1:Instant detonation (for BOMBS) or d6 Torso DMG to user (for DRUGS). See Ch:3.";
+    			t97 = space();
+    			button23 = element("button");
+    			button23.textContent = "PHYSICS";
+    			t99 = space();
+    			div20 = element("div");
+    			p25 = element("p");
+    			p25.textContent = "1/task. Takes d6mins. Base 9#. Add Brains to a physical task roll. 1:Brains is a penalty.";
+    			t101 = space();
+    			button24 = element("button");
+    			button24.textContent = "TECH";
+    			t103 = space();
+    			div21 = element("div");
+    			p26 = element("p");
+    			p26.textContent = "Base 12# to hack computer systems. Base 3# to control electronic devices. Roll item # to craft DIY ELECTRONICS. 1:Broken. See Ch:6.";
+    			t105 = space();
+    			button25 = element("button");
+    			button25.textContent = "SURVIVAL";
+    			t107 = space();
+    			div26 = element("div");
+    			p27 = element("p");
+    			p27.textContent = ">Primitive practices for living outdoors.";
+    			t109 = space();
+    			button26 = element("button");
+    			button26.textContent = "CAMPING";
+    			t111 = space();
+    			div23 = element("div");
+    			p28 = element("p");
+    			p28.textContent = "6#. Takes 1hr. Making fire and shelter costs 1 Wood/hr, prevents Hypothermia, and allows you to cook. Also used for tying knots (d6rnds).";
+    			t113 = space();
+    			button27 = element("button");
+    			button27.textContent = "FORAGE";
+    			t115 = space();
+    			div24 = element("div");
+    			p29 = element("p");
+    			p29.textContent = "Find 1 Food, Water, Bandage, or d6 Wood. Takes 1hr. 1:d6 Torso DMG from Food/Water.";
+    			t117 = space();
+    			button28 = element("button");
+    			button28.textContent = "NAVIGATE";
+    			t119 = space();
+    			div25 = element("div");
+    			p30 = element("p");
+    			p30.textContent = "Travel to destination. See Ecosystems in Ch:4. Roll vs Perception to cover tracks. 1:Lost.";
+    			t121 = space();
+    			button29 = element("button");
+    			button29.textContent = "CONSTITUTION SKILLS";
+    			t123 = space();
+    			div42 = element("div");
+    			button30 = element("button");
+    			button30.textContent = "BUILD";
+    			t125 = space();
+    			div33 = element("div");
+    			p31 = element("p");
+    			p31.textContent = "Make items from Parts. Base requirements are 6#, 1hr/1#, and d6+# Parts. 1:Tool broke.";
+    			t127 = space();
+    			button31 = element("button");
+    			button31.textContent = "(CUSTOMIZE)";
+    			t129 = space();
+    			div30 = element("div");
+    			p32 = element("p");
+    			p32.textContent = "Base 9#. Each roll is 1 day of work. Reduce remaining # by the result. Costs d6+1 Parts. Max 3/item. Limit 1 each. 1:Item broke.";
+    			t131 = space();
+    			button32 = element("button");
+    			button32.textContent = "WEAPON CUSTOMIZATIONS";
+    			t133 = space();
+    			div28 = element("div");
+    			ul0 = element("ul");
+    			li0 = element("li");
+    			li0.textContent = "+1 RATK";
+    			t135 = space();
+    			li1 = element("li");
+    			li1.textContent = "+1 Melee DMG";
+    			t137 = space();
+    			li2 = element("li");
+    			li2.textContent = "-1 Size";
+    			t139 = space();
+    			li3 = element("li");
+    			li3.textContent = "Change caliber";
+    			t141 = space();
+    			li4 = element("li");
+    			li4.textContent = "Add a WEAPON ATTRIBUTE";
+    			t143 = space();
+    			button33 = element("button");
+    			button33.textContent = "ARMOR CUSTOMIZATIONS";
+    			t145 = space();
+    			div29 = element("div");
+    			ul1 = element("ul");
+    			li5 = element("li");
+    			li5.textContent = "+1 AR";
+    			t147 = space();
+    			li6 = element("li");
+    			li6.textContent = "+1 Grab DMG";
+    			t149 = space();
+    			li7 = element("li");
+    			li7.textContent = "-1 Size";
+    			t151 = space();
+    			li8 = element("li");
+    			li8.textContent = "Add an ARMOR ATTRIBUTE";
+    			t153 = space();
+    			button34 = element("button");
+    			button34.textContent = "(REPAIR)";
+    			t155 = space();
+    			div31 = element("div");
+    			p33 = element("p");
+    			p33.textContent = "Fix broken items. Base 6#, takes d6hrs, costs d6 Parts. +1 using same Parts. 1:Parts broke.";
+    			t157 = space();
+    			button35 = element("button");
+    			button35.textContent = "(SALVAGE)";
+    			t159 = space();
+    			div32 = element("div");
+    			p34 = element("p");
+    			p34.textContent = "3#, takes d6hrs. Get Parts = [Result /2].";
+    			t161 = space();
+    			button36 = element("button");
+    			button36.textContent = "DRIVE";
+    			t163 = space();
+    			div37 = element("div");
+    			p35 = element("p");
+    			p35.textContent = "3#. 1/hr or 1/rnd. 1:Wreck, see Ch:3.";
+    			t165 = space();
+    			button37 = element("button");
+    			button37.textContent = "(FLY)";
+    			t167 = space();
+    			div34 = element("div");
+    			p36 = element("p");
+    			p36.textContent = "Used for piloting AIRCRAFT. -6 and unable to take off/land unless you take Pilot License.";
+    			t169 = space();
+    			button38 = element("button");
+    			button38.textContent = "(COMBAT)";
+    			t171 = space();
+    			div35 = element("div");
+    			p37 = element("p");
+    			p37.textContent = "Ram and Fixed Gun ATKs or Swerve DEF. See Vehicle Combat in Ch:3 for details.";
+    			t173 = space();
+    			button39 = element("button");
+    			button39.textContent = "(STUNT)";
+    			t175 = space();
+    			div36 = element("div");
+    			p38 = element("p");
+    			p38.textContent = "Accelerating, braking, and hard turns. 6#. See Driving in Ch:3 for details.";
+    			t177 = space();
+    			button40 = element("button");
+    			button40.textContent = "MELEE";
+    			t179 = space();
+    			div41 = element("div");
+    			p39 = element("p");
+    			p39.textContent = "Hand-to-hand combat. See Ch:2.";
+    			t181 = space();
+    			button41 = element("button");
+    			button41.textContent = "(BLOCK)";
+    			t183 = space();
+    			div38 = element("div");
+    			p40 = element("p");
+    			p40.textContent = "Fast. Roll vs ATK. Can only Block Guns when using a Shield as Cover. 1:Broken weapon.";
+    			t185 = space();
+    			button42 = element("button");
+    			button42.textContent = "(UNARMED)";
+    			t187 = space();
+    			div39 = element("div");
+    			p41 = element("p");
+    			p41.textContent = "Roll vs DEF. Punch or Headbutt: 1 BDMG. Kick: 2 BDMG. Add DMG Mod. 1:Prone.";
+    			t189 = space();
+    			button43 = element("button");
+    			button43.textContent = "(WEAPONRY)";
+    			t191 = space();
+    			div40 = element("div");
+    			p42 = element("p");
+    			p42.textContent = "Roll vs DEF. 1:Drop weapon.";
+    			t193 = space();
+    			button44 = element("button");
+    			button44.textContent = "DEMEANOR SKILLS";
+    			t195 = space();
+    			div62 = element("div");
+    			button45 = element("button");
+    			button45.textContent = "ENTERTAIN";
+    			t197 = space();
+    			div46 = element("div");
+    			p43 = element("p");
+    			p43.textContent = "Any performance that captivates an audience.";
+    			t199 = space();
+    			button46 = element("button");
+    			button46.textContent = "(DISTRACT)";
+    			t201 = space();
+    			div43 = element("div");
+    			p44 = element("p");
+    			p44.textContent = "Roll vs B. Target cannot use active DEF and Fails all Perception rolls for 1rnd. 1:Prone.";
+    			t203 = space();
+    			button47 = element("button");
+    			button47.textContent = "(INSPIRE)";
+    			t205 = space();
+    			div44 = element("div");
+    			p45 = element("p");
+    			p45.textContent = "1/week. d6mins. # = Comrades present. Each Comrade gets +1 Psyche. 1:-1 Psyche.";
+    			t207 = space();
+    			button48 = element("button");
+    			button48.textContent = "(LIE)";
+    			t209 = space();
+    			div45 = element("div");
+    			p46 = element("p");
+    			p46.textContent = "Roll vs Perception. Lie sincerely. 1:Slip up.";
+    			t211 = space();
+    			button49 = element("button");
+    			button49.textContent = "LEADERSHIP";
+    			t213 = space();
+    			div50 = element("div");
+    			p47 = element("p");
+    			p47.textContent = "Using your force of personality on others.";
+    			t215 = space();
+    			button50 = element("button");
+    			button50.textContent = "(ENCOURAGE)";
+    			t217 = space();
+    			div47 = element("div");
+    			p48 = element("p");
+    			p48.textContent = "1rnd. # = Comrade’s Demeanors. +d6 divided among Comrades to a roll each. 1:-1 all rolls.";
+    			t219 = space();
+    			button51 = element("button");
+    			button51.textContent = "(ORDER)";
+    			t221 = space();
+    			div48 = element("div");
+    			p49 = element("p");
+    			p49.textContent = "Roll vs D. -3 per Order per day. Target Extra obeys a harmless command. 1:Target disobeys.";
+    			t223 = space();
+    			button52 = element("button");
+    			button52.textContent = "(TAUNT)";
+    			t225 = space();
+    			div49 = element("div");
+    			p50 = element("p");
+    			p50.textContent = "Roll vs D. Provoke ATK in combat. High roll is a penalty to loser’s next roll. 1:Penalty x2.";
+    			t227 = space();
+    			button53 = element("button");
+    			button53.textContent = "TAME";
+    			t229 = space();
+    			div61 = element("div");
+    			p51 = element("p");
+    			p51.textContent = "1/rnd. Roll vs Animal's D. Pets are Comrades.";
+    			t231 = space();
+    			button54 = element("button");
+    			button54.textContent = "(CALM)";
+    			t233 = space();
+    			div51 = element("div");
+    			p52 = element("p");
+    			p52.textContent = "Improve animal's Attitude by 1. 1:Fight/flee.";
+    			t235 = space();
+    			button55 = element("button");
+    			button55.textContent = "(RIDE)";
+    			t237 = space();
+    			div52 = element("div");
+    			p53 = element("p");
+    			p53.textContent = "Mount obeys commands. 1:Thrown, d6 BDMG.";
+    			t239 = space();
+    			button56 = element("button");
+    			button56.textContent = "(TRAIN)";
+    			t241 = space();
+    			div60 = element("div");
+    			p54 = element("p");
+    			p54.textContent = "Takes 1 week. An animal can learn a number of Tricks = [its Brains x2]. One word commands.";
+    			t243 = space();
+    			button57 = element("button");
+    			button57.textContent = "TRICKS";
+    			t245 = space();
+    			div59 = element("div");
+    			button58 = element("button");
+    			button58.textContent = "ATTACK";
+    			t247 = space();
+    			div53 = element("div");
+    			p55 = element("p");
+    			p55.textContent = "MATK against a designated target.";
+    			t249 = space();
+    			button59 = element("button");
+    			button59.textContent = "GUARD";
+    			t251 = space();
+    			div54 = element("div");
+    			p56 = element("p");
+    			p56.textContent = "Stays close and alerts you if strangers approach.";
+    			t253 = space();
+    			button60 = element("button");
+    			button60.textContent = "HIDE";
+    			t255 = space();
+    			div55 = element("div");
+    			p57 = element("p");
+    			p57.textContent = "Stealth nearby until further notice.";
+    			t257 = space();
+    			button61 = element("button");
+    			button61.textContent = "HUNTING";
+    			t259 = space();
+    			div56 = element("div");
+    			p58 = element("p");
+    			p58.textContent = "Hunting roll using the pet's Skills. See Ch:4.";
+    			t261 = space();
+    			button62 = element("button");
+    			button62.textContent = "PERFORM";
+    			t263 = space();
+    			div57 = element("div");
+    			p59 = element("p");
+    			p59.textContent = "Entertain(Distract or Inspire) an audience.";
+    			t265 = space();
+    			button63 = element("button");
+    			button63.textContent = "SEARCH";
+    			t267 = space();
+    			div58 = element("div");
+    			p60 = element("p");
+    			p60.textContent = "Show it an item. Perception to go find another.";
+    			add_location(h2, file$e, 1, 4, 31);
+    			attr_dev(button0, "id", "SkillsBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$e, 2, 4, 51);
+    			add_location(p0, file$e, 4, 8, 148);
+    			add_location(p1, file$e, 5, 8, 422);
+    			attr_dev(button1, "id", "SkillCooperationBtn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$e, 6, 8, 466);
+    			add_location(p2, file$e, 8, 12, 597);
+    			attr_dev(div0, "id", "SkillCooperationSec");
+    			attr_dev(div0, "class", "Sec3");
+    			add_location(div0, file$e, 7, 8, 541);
+    			attr_dev(button2, "id", "RetrainingSkillsBtn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$e, 10, 8, 732);
+    			add_location(p3, file$e, 12, 12, 869);
+    			attr_dev(div1, "id", "RetrainingSkillsSec");
+    			attr_dev(div1, "class", "Sec3");
+    			add_location(div1, file$e, 11, 8, 813);
+    			attr_dev(button3, "id", "AgilitySkillsBtn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$e, 14, 8, 983);
+    			attr_dev(button4, "id", "AcrobaticsSkillBtn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$e, 16, 12, 1110);
+    			add_location(p4, file$e, 18, 16, 1245);
+    			attr_dev(button5, "id", "DodgeSpecialtyBtn");
+    			attr_dev(button5, "class", "Btn");
+    			add_location(button5, file$e, 19, 16, 1287);
+    			add_location(p5, file$e, 21, 20, 1425);
+    			attr_dev(div2, "id", "DodgeSpecialtySec");
+    			attr_dev(div2, "class", "Sec5");
+    			add_location(div2, file$e, 20, 16, 1363);
+    			attr_dev(button6, "id", "JumpSpecialtyBtn");
+    			attr_dev(button6, "class", "Btn");
+    			add_location(button6, file$e, 23, 16, 1502);
+    			add_location(p6, file$e, 25, 20, 1637);
+    			add_location(p7, file$e, 26, 20, 1706);
+    			add_location(p8, file$e, 27, 20, 1766);
+    			add_location(p9, file$e, 28, 20, 1822);
+    			attr_dev(div3, "id", "JumpSpecialtySec");
+    			attr_dev(div3, "class", "Sec5");
+    			add_location(div3, file$e, 24, 16, 1576);
+    			attr_dev(button7, "id", "TumbleSpecialtyBtn");
+    			attr_dev(button7, "class", "Btn");
+    			add_location(button7, file$e, 29, 22, 1876);
+    			add_location(p10, file$e, 31, 20, 2017);
+    			attr_dev(div4, "id", "TumbleSpecialtySec");
+    			attr_dev(div4, "class", "Sec5");
+    			add_location(div4, file$e, 30, 16, 1954);
+    			attr_dev(div5, "id", "AcrobaticsSkillSec");
+    			attr_dev(div5, "class", "Sec4");
+    			add_location(div5, file$e, 17, 12, 1186);
+    			attr_dev(button8, "id", "LarcenySkillBtn");
+    			attr_dev(button8, "class", "Btn");
+    			add_location(button8, file$e, 34, 12, 2163);
+    			add_location(p11, file$e, 36, 16, 2289);
+    			attr_dev(button9, "id", "ConcealSpecialtyBtn");
+    			attr_dev(button9, "class", "Btn");
+    			add_location(button9, file$e, 37, 16, 2358);
+    			add_location(p12, file$e, 39, 20, 2502);
+    			attr_dev(div6, "id", "ConcealSpecialtySec");
+    			attr_dev(div6, "class", "Sec5");
+    			add_location(div6, file$e, 38, 16, 2438);
+    			attr_dev(button10, "id", "DisableSpecialtyBtn");
+    			attr_dev(button10, "class", "Btn");
+    			add_location(button10, file$e, 41, 16, 2593);
+    			add_location(p13, file$e, 43, 20, 2737);
+    			attr_dev(div7, "id", "DisableSpecialtySec");
+    			attr_dev(div7, "class", "Sec5");
+    			add_location(div7, file$e, 42, 16, 2673);
+    			attr_dev(button11, "id", "StealSpecialtyBtn");
+    			attr_dev(button11, "class", "Btn");
+    			add_location(button11, file$e, 45, 16, 2829);
+    			add_location(p14, file$e, 47, 20, 2967);
+    			attr_dev(div8, "id", "StealSpecialtySec");
+    			attr_dev(div8, "class", "Sec5");
+    			add_location(div8, file$e, 46, 16, 2905);
+    			attr_dev(div9, "id", "LarcenySkillSec");
+    			attr_dev(div9, "class", "Sec4");
+    			add_location(div9, file$e, 35, 12, 2233);
+    			attr_dev(button12, "id", "RangedSkillBtn");
+    			attr_dev(button12, "class", "Btn");
+    			add_location(button12, file$e, 50, 12, 3075);
+    			add_location(p15, file$e, 52, 16, 3198);
+    			attr_dev(button13, "id", "ArcherySpecialtyBtn");
+    			attr_dev(button13, "class", "Btn");
+    			add_location(button13, file$e, 53, 16, 3263);
+    			add_location(p16, file$e, 55, 20, 3407);
+    			attr_dev(div10, "id", "ArcherySpecialtySec");
+    			attr_dev(div10, "class", "Sec5");
+    			add_location(div10, file$e, 54, 16, 3343);
+    			attr_dev(button14, "id", "GunsSpecialtyBtn");
+    			attr_dev(button14, "class", "Btn");
+    			add_location(button14, file$e, 57, 16, 3490);
+    			add_location(p17, file$e, 59, 20, 3625);
+    			attr_dev(div11, "id", "GunsSpecialtySec");
+    			attr_dev(div11, "class", "Sec5");
+    			add_location(div11, file$e, 58, 16, 3564);
+    			attr_dev(button15, "id", "ThrowSpecialtyBtn");
+    			attr_dev(button15, "class", "Btn");
+    			add_location(button15, file$e, 61, 16, 3713);
+    			add_location(p18, file$e, 63, 20, 3851);
+    			attr_dev(div12, "id", "ThrowSpecialtySec");
+    			attr_dev(div12, "class", "Sec5");
+    			add_location(div12, file$e, 62, 16, 3789);
+    			attr_dev(div13, "id", "RangedSkillSec");
+    			attr_dev(div13, "class", "Sec4");
+    			add_location(div13, file$e, 51, 12, 3143);
+    			attr_dev(div14, "id", "AgilitySkillsSec");
+    			attr_dev(div14, "class", "Sec3");
+    			add_location(div14, file$e, 15, 8, 1057);
+    			attr_dev(button16, "id", "BrainsSkillsBtn");
+    			attr_dev(button16, "class", "Btn");
+    			add_location(button16, file$e, 67, 8, 3965);
+    			attr_dev(button17, "id", "MedicineSkillBtn");
+    			attr_dev(button17, "class", "Btn");
+    			add_location(button17, file$e, 69, 12, 4089);
+    			add_location(p19, file$e, 71, 16, 4218);
+    			attr_dev(button18, "id", "FirstAidSpecialtyBtn");
+    			attr_dev(button18, "class", "Btn");
+    			add_location(button18, file$e, 72, 16, 4279);
+    			add_location(p20, file$e, 74, 20, 4427);
+    			attr_dev(div15, "id", "FirstAidSpecialtySec");
+    			attr_dev(div15, "class", "Sec5");
+    			add_location(div15, file$e, 73, 16, 4362);
+    			attr_dev(button19, "id", "PsychologySpecialtyBtn");
+    			attr_dev(button19, "class", "Btn");
+    			add_location(button19, file$e, 75, 22, 4544);
+    			add_location(p21, file$e, 77, 20, 4697);
+    			attr_dev(div16, "id", "PsychologySpecialtySec");
+    			attr_dev(div16, "class", "Sec5");
+    			add_location(div16, file$e, 76, 16, 4630);
+    			attr_dev(button20, "id", "SurgerySpecialtyBtn");
+    			attr_dev(button20, "class", "Btn");
+    			add_location(button20, file$e, 78, 22, 4817);
+    			add_location(p22, file$e, 80, 20, 4961);
+    			attr_dev(div17, "id", "SurgerySpecialtySec");
+    			attr_dev(div17, "class", "Sec5");
+    			add_location(div17, file$e, 79, 16, 4897);
+    			attr_dev(div18, "id", "MedicineSkillSec");
+    			attr_dev(div18, "class", "Sec4");
+    			add_location(div18, file$e, 70, 12, 4161);
+    			attr_dev(button21, "id", "ScienceSkillBtn");
+    			attr_dev(button21, "class", "Btn");
+    			add_location(button21, file$e, 83, 12, 5184);
+    			add_location(p23, file$e, 85, 16, 5310);
+    			attr_dev(button22, "id", "ChemistrySpecialtyBtn");
+    			attr_dev(button22, "class", "Btn");
+    			add_location(button22, file$e, 86, 16, 5371);
+    			add_location(p24, file$e, 88, 20, 5519);
+    			attr_dev(div19, "id", "ChemistrySpecialtySec");
+    			attr_dev(div19, "class", "Sec5");
+    			add_location(div19, file$e, 87, 16, 5453);
+    			attr_dev(button23, "id", "PhysicsSpecialtyBtn");
+    			attr_dev(button23, "class", "Btn");
+    			add_location(button23, file$e, 90, 16, 5692);
+    			add_location(p25, file$e, 92, 20, 5834);
+    			attr_dev(div20, "id", "PhysicsSpecialtySec");
+    			attr_dev(div20, "class", "Sec5");
+    			add_location(div20, file$e, 91, 16, 5770);
+    			attr_dev(button24, "id", "TechSpecialtyBtn");
+    			attr_dev(button24, "class", "Btn");
+    			add_location(button24, file$e, 94, 16, 5970);
+    			add_location(p26, file$e, 96, 20, 6103);
+    			attr_dev(div21, "id", "TechSpecialtySec");
+    			attr_dev(div21, "class", "Sec5");
+    			add_location(div21, file$e, 95, 16, 6042);
+    			attr_dev(div22, "id", "ScienceSkillSec");
+    			attr_dev(div22, "class", "Sec4");
+    			add_location(div22, file$e, 84, 12, 5254);
+    			attr_dev(button25, "id", "SurvivalSkillBtn");
+    			attr_dev(button25, "class", "Btn");
+    			add_location(button25, file$e, 99, 12, 6296);
+    			add_location(p27, file$e, 101, 16, 6425);
+    			attr_dev(button26, "id", "CampingSpecialtyBtn");
+    			attr_dev(button26, "class", "Btn");
+    			add_location(button26, file$e, 102, 16, 6490);
+    			add_location(p28, file$e, 104, 20, 6632);
+    			attr_dev(div23, "id", "CampingSpecialtySec");
+    			attr_dev(div23, "class", "Sec5");
+    			add_location(div23, file$e, 103, 16, 6568);
+    			attr_dev(button27, "id", "ForageSpecialtyBtn");
+    			attr_dev(button27, "class", "Btn");
+    			add_location(button27, file$e, 106, 16, 6816);
+    			add_location(p29, file$e, 108, 20, 6955);
+    			attr_dev(div24, "id", "ForageSpecialtySec");
+    			attr_dev(div24, "class", "Sec5");
+    			add_location(div24, file$e, 107, 16, 6892);
+    			attr_dev(button28, "id", "NavigateSpecialtyBtn");
+    			attr_dev(button28, "class", "Btn");
+    			add_location(button28, file$e, 110, 16, 7085);
+    			add_location(p30, file$e, 112, 20, 7230);
+    			attr_dev(div25, "id", "NavigateSpecialtySec");
+    			attr_dev(div25, "class", "Sec5");
+    			add_location(div25, file$e, 111, 16, 7165);
+    			attr_dev(div26, "id", "SurvivalSkillSec");
+    			attr_dev(div26, "class", "Sec4");
+    			add_location(div26, file$e, 100, 12, 6368);
+    			attr_dev(div27, "id", "BrainsSkillsSec");
+    			attr_dev(div27, "class", "Sec3");
+    			add_location(div27, file$e, 68, 8, 4037);
+    			attr_dev(button29, "id", "ConstitutionSkillsBtn");
+    			attr_dev(button29, "class", "Btn");
+    			add_location(button29, file$e, 116, 8, 7393);
+    			attr_dev(button30, "id", "BuildSkillBtn");
+    			attr_dev(button30, "class", "Btn");
+    			add_location(button30, file$e, 118, 12, 7535);
+    			add_location(p31, file$e, 120, 16, 7655);
+    			attr_dev(button31, "id", "CustomizeSpecialtyBtn");
+    			attr_dev(button31, "class", "Btn");
+    			add_location(button31, file$e, 121, 16, 7765);
+    			add_location(p32, file$e, 123, 20, 7915);
+    			attr_dev(button32, "id", "WeaponCustomizationsBtn");
+    			attr_dev(button32, "class", "Btn");
+    			add_location(button32, file$e, 124, 20, 8071);
+    			add_location(li0, file$e, 127, 28, 8276);
+    			add_location(li1, file$e, 128, 28, 8321);
+    			add_location(li2, file$e, 129, 28, 8371);
+    			add_location(li3, file$e, 130, 28, 8416);
+    			add_location(li4, file$e, 131, 28, 8468);
+    			add_location(ul0, file$e, 126, 24, 8243);
+    			attr_dev(div28, "id", "WeaponCustomizationsSec");
+    			attr_dev(div28, "class", "Sec6");
+    			add_location(div28, file$e, 125, 20, 8171);
+    			attr_dev(button33, "id", "ArmorCustomizationsBtn");
+    			attr_dev(button33, "class", "Btn");
+    			add_location(button33, file$e, 134, 20, 8577);
+    			add_location(li5, file$e, 137, 28, 8779);
+    			add_location(li6, file$e, 138, 28, 8822);
+    			add_location(li7, file$e, 139, 28, 8871);
+    			add_location(li8, file$e, 140, 28, 8916);
+    			add_location(ul1, file$e, 136, 24, 8746);
+    			attr_dev(div29, "id", "ArmorCustomizationsSec");
+    			attr_dev(div29, "class", "Sec6");
+    			add_location(div29, file$e, 135, 20, 8675);
+    			attr_dev(div30, "id", "CustomizeSpecialtySec");
+    			attr_dev(div30, "class", "Sec5");
+    			add_location(div30, file$e, 122, 16, 7849);
+    			attr_dev(button34, "id", "RepairSpecialtyBtn");
+    			attr_dev(button34, "class", "Btn");
+    			add_location(button34, file$e, 144, 16, 9044);
+    			add_location(p33, file$e, 146, 20, 9185);
+    			attr_dev(div31, "id", "RepairSpecialtySec");
+    			attr_dev(div31, "class", "Sec5");
+    			add_location(div31, file$e, 145, 16, 9122);
+    			attr_dev(button35, "id", "SalvageSpecialtyBtn");
+    			attr_dev(button35, "class", "Btn");
+    			add_location(button35, file$e, 148, 16, 9323);
+    			add_location(p34, file$e, 150, 20, 9467);
+    			attr_dev(div32, "id", "SalvageSpecialtySec");
+    			attr_dev(div32, "class", "Sec5");
+    			add_location(div32, file$e, 149, 16, 9403);
+    			attr_dev(div33, "id", "BuildSkillSec");
+    			attr_dev(div33, "class", "Sec4");
+    			add_location(div33, file$e, 119, 12, 7601);
+    			attr_dev(button36, "id", "DriveSkillBtn");
+    			attr_dev(button36, "class", "Btn");
+    			add_location(button36, file$e, 153, 12, 9570);
+    			add_location(p35, file$e, 155, 16, 9690);
+    			attr_dev(button37, "id", "FlySpecialtyBtn");
+    			attr_dev(button37, "class", "Btn");
+    			add_location(button37, file$e, 156, 16, 9751);
+    			add_location(p36, file$e, 158, 20, 9883);
+    			attr_dev(div34, "id", "FlySpecialtySec");
+    			attr_dev(div34, "class", "Sec5");
+    			add_location(div34, file$e, 157, 16, 9823);
+    			attr_dev(button38, "id", "CombatSpecialtyBtn");
+    			attr_dev(button38, "class", "Btn");
+    			add_location(button38, file$e, 160, 16, 10019);
+    			add_location(p37, file$e, 162, 20, 10160);
+    			attr_dev(div35, "id", "CombatSpecialtySec");
+    			attr_dev(div35, "class", "Sec5");
+    			add_location(div35, file$e, 161, 16, 10097);
+    			attr_dev(button39, "id", "StuntSpecialtyBtn");
+    			attr_dev(button39, "class", "Btn");
+    			add_location(button39, file$e, 164, 16, 10284);
+    			add_location(p38, file$e, 166, 20, 10422);
+    			attr_dev(div36, "id", "StuntSpecialtySec");
+    			attr_dev(div36, "class", "Sec5");
+    			add_location(div36, file$e, 165, 16, 10360);
+    			attr_dev(div37, "id", "DriveSkillSec");
+    			attr_dev(div37, "class", "Sec4");
+    			add_location(div37, file$e, 154, 12, 9636);
+    			attr_dev(button40, "id", "MeleeSkillBtn");
+    			attr_dev(button40, "class", "Btn");
+    			add_location(button40, file$e, 169, 12, 10559);
+    			add_location(p39, file$e, 171, 16, 10679);
+    			attr_dev(button41, "id", "BlockSpecialtyBtn");
+    			attr_dev(button41, "class", "Btn");
+    			add_location(button41, file$e, 172, 16, 10733);
+    			add_location(p40, file$e, 174, 20, 10871);
+    			attr_dev(div38, "id", "BlockSpecialtySec");
+    			attr_dev(div38, "class", "Sec5");
+    			add_location(div38, file$e, 173, 16, 10809);
+    			attr_dev(button42, "id", "UnarmedSpecialtyBtn");
+    			attr_dev(button42, "class", "Btn");
+    			add_location(button42, file$e, 175, 22, 10986);
+    			add_location(p41, file$e, 177, 20, 11130);
+    			attr_dev(div39, "id", "UnarmedSpecialtySec");
+    			attr_dev(div39, "class", "Sec5");
+    			add_location(div39, file$e, 176, 16, 11066);
+    			attr_dev(button43, "id", "WeaponrySpecialtyBtn");
+    			attr_dev(button43, "class", "Btn");
+    			add_location(button43, file$e, 178, 22, 11235);
+    			add_location(p42, file$e, 180, 20, 11382);
+    			attr_dev(div40, "id", "WeaponrySpecialtySec");
+    			attr_dev(div40, "class", "Sec5");
+    			add_location(div40, file$e, 179, 16, 11317);
+    			attr_dev(div41, "id", "MeleeSkillSec");
+    			attr_dev(div41, "class", "Sec4");
+    			add_location(div41, file$e, 170, 12, 10625);
+    			attr_dev(div42, "id", "ConstitutionSkillsSec");
+    			attr_dev(div42, "class", "Sec3");
+    			add_location(div42, file$e, 117, 8, 7477);
+    			attr_dev(button44, "id", "DemeanorSkillsBtn");
+    			attr_dev(button44, "class", "Btn");
+    			add_location(button44, file$e, 184, 8, 11482);
+    			attr_dev(button45, "id", "EntertainSkillBtn");
+    			attr_dev(button45, "class", "Btn");
+    			add_location(button45, file$e, 186, 12, 11612);
+    			add_location(p43, file$e, 188, 16, 11744);
+    			attr_dev(button46, "id", "DistractSpecialtyBtn");
+    			attr_dev(button46, "class", "Btn");
+    			add_location(button46, file$e, 189, 16, 11812);
+    			add_location(p44, file$e, 191, 20, 11959);
+    			attr_dev(div43, "id", "DistractSpecialtySec");
+    			attr_dev(div43, "class", "Sec5");
+    			add_location(div43, file$e, 190, 16, 11894);
+    			attr_dev(button47, "id", "InspireSpecialtyBtn");
+    			attr_dev(button47, "class", "Btn");
+    			add_location(button47, file$e, 193, 16, 12095);
+    			add_location(p45, file$e, 195, 20, 12239);
+    			attr_dev(div44, "id", "InspireSpecialtySec");
+    			attr_dev(div44, "class", "Sec5");
+    			add_location(div44, file$e, 194, 16, 12175);
+    			attr_dev(button48, "id", "LieSpecialtyBtn");
+    			attr_dev(button48, "class", "Btn");
+    			add_location(button48, file$e, 197, 16, 12365);
+    			add_location(p46, file$e, 199, 20, 12497);
+    			attr_dev(div45, "id", "LieSpecialtySec");
+    			attr_dev(div45, "class", "Sec5");
+    			add_location(div45, file$e, 198, 16, 12437);
+    			attr_dev(div46, "id", "EntertainSkillSec");
+    			attr_dev(div46, "class", "Sec4");
+    			add_location(div46, file$e, 187, 12, 11686);
+    			attr_dev(button49, "id", "LeadershipSkillBtn");
+    			attr_dev(button49, "class", "Btn");
+    			add_location(button49, file$e, 202, 12, 12604);
+    			add_location(p47, file$e, 204, 16, 12739);
+    			attr_dev(button50, "id", "EncourageSpecialtyBtn");
+    			attr_dev(button50, "class", "Btn");
+    			add_location(button50, file$e, 205, 16, 12805);
+    			add_location(p48, file$e, 207, 20, 12955);
+    			attr_dev(div47, "id", "EncourageSpecialtySec");
+    			attr_dev(div47, "class", "Sec5");
+    			add_location(div47, file$e, 206, 16, 12889);
+    			attr_dev(button51, "id", "OrderSpecialtyBtn");
+    			attr_dev(button51, "class", "Btn");
+    			add_location(button51, file$e, 209, 16, 13091);
+    			add_location(p49, file$e, 211, 20, 13229);
+    			attr_dev(div48, "id", "OrderSpecialtySec");
+    			attr_dev(div48, "class", "Sec5");
+    			add_location(div48, file$e, 210, 16, 13167);
+    			attr_dev(button52, "id", "TauntSpecialtyBtn");
+    			attr_dev(button52, "class", "Btn");
+    			add_location(button52, file$e, 213, 16, 13366);
+    			add_location(p50, file$e, 215, 20, 13504);
+    			attr_dev(div49, "id", "TauntSpecialtySec");
+    			attr_dev(div49, "class", "Sec5");
+    			add_location(div49, file$e, 214, 16, 13442);
+    			attr_dev(div50, "id", "LeadershipSkillSec");
+    			attr_dev(div50, "class", "Sec4");
+    			add_location(div50, file$e, 203, 12, 12680);
+    			attr_dev(button53, "id", "TameSkillBtn");
+    			attr_dev(button53, "class", "Btn");
+    			add_location(button53, file$e, 218, 12, 13658);
+    			add_location(p51, file$e, 220, 16, 13775);
+    			attr_dev(button54, "id", "CalmSpecialtyBtn");
+    			attr_dev(button54, "class", "Btn");
+    			add_location(button54, file$e, 221, 16, 13844);
+    			add_location(p52, file$e, 223, 20, 13979);
+    			attr_dev(div51, "id", "CalmSpecialtySec");
+    			attr_dev(div51, "class", "Sec5");
+    			add_location(div51, file$e, 222, 16, 13918);
+    			attr_dev(button55, "id", "RideSpecialtyBtn");
+    			attr_dev(button55, "class", "Btn");
+    			add_location(button55, file$e, 225, 16, 14071);
+    			add_location(p53, file$e, 227, 20, 14206);
+    			attr_dev(div52, "id", "RideSpecialtySec");
+    			attr_dev(div52, "class", "Sec5");
+    			add_location(div52, file$e, 226, 16, 14145);
+    			attr_dev(button56, "id", "TrainSpecialtyBtn");
+    			attr_dev(button56, "class", "Btn");
+    			add_location(button56, file$e, 229, 16, 14293);
+    			add_location(p54, file$e, 231, 20, 14431);
+    			attr_dev(button57, "id", "TricksBtn");
+    			attr_dev(button57, "class", "Btn");
+    			add_location(button57, file$e, 232, 20, 14549);
+    			attr_dev(button58, "id", "AttackTrickBtn");
+    			attr_dev(button58, "class", "Btn");
+    			add_location(button58, file$e, 234, 24, 14678);
+    			add_location(p55, file$e, 236, 28, 14825);
+    			attr_dev(div53, "id", "AttackTrickSec");
+    			attr_dev(div53, "class", "Sec7");
+    			add_location(div53, file$e, 235, 24, 14758);
+    			attr_dev(button59, "id", "GuardTrickBtn");
+    			attr_dev(button59, "class", "Btn");
+    			add_location(button59, file$e, 238, 24, 14921);
+    			add_location(p56, file$e, 240, 28, 15065);
+    			attr_dev(div54, "id", "GuardTrickSec");
+    			attr_dev(div54, "class", "Sec7");
+    			add_location(div54, file$e, 239, 24, 14999);
+    			attr_dev(button60, "id", "HideTrickBtn");
+    			attr_dev(button60, "class", "Btn");
+    			add_location(button60, file$e, 242, 24, 15177);
+    			add_location(p57, file$e, 244, 28, 15318);
+    			attr_dev(div55, "id", "HideTrickSec");
+    			attr_dev(div55, "class", "Sec7");
+    			add_location(div55, file$e, 243, 24, 15253);
+    			attr_dev(button61, "id", "HuntingTrickBtn");
+    			attr_dev(button61, "class", "Btn");
+    			add_location(button61, file$e, 246, 24, 15417);
+    			add_location(p58, file$e, 248, 28, 15567);
+    			attr_dev(div56, "id", "HuntingTrickSec");
+    			attr_dev(div56, "class", "Sec7");
+    			add_location(div56, file$e, 247, 24, 15499);
+    			attr_dev(button62, "id", "PerformTrickBtn");
+    			attr_dev(button62, "class", "Btn");
+    			add_location(button62, file$e, 250, 24, 15676);
+    			add_location(p59, file$e, 252, 28, 15826);
+    			attr_dev(div57, "id", "PerformTrickSec");
+    			attr_dev(div57, "class", "Sec7");
+    			add_location(div57, file$e, 251, 24, 15758);
+    			attr_dev(button63, "id", "SearchTrickBtn");
+    			attr_dev(button63, "class", "Btn");
+    			add_location(button63, file$e, 254, 24, 15932);
+    			add_location(p60, file$e, 256, 28, 16079);
+    			attr_dev(div58, "id", "SearchTrickSec");
+    			attr_dev(div58, "class", "Sec7");
+    			add_location(div58, file$e, 255, 24, 16012);
+    			attr_dev(div59, "id", "TricksSec");
+    			attr_dev(div59, "class", "Sec6");
+    			add_location(div59, file$e, 233, 20, 14620);
+    			attr_dev(div60, "id", "TrainSpecialtySec");
+    			attr_dev(div60, "class", "Sec5");
+    			add_location(div60, file$e, 230, 16, 14369);
+    			attr_dev(div61, "id", "TameSkillSec");
+    			attr_dev(div61, "class", "Sec4");
+    			add_location(div61, file$e, 219, 12, 13722);
+    			attr_dev(div62, "id", "DemeanorSkillsSec");
+    			attr_dev(div62, "class", "Sec3");
+    			add_location(div62, file$e, 185, 8, 11558);
+    			attr_dev(div63, "id", "SkillsSec");
+    			attr_dev(div63, "class", "Sec2");
+    			add_location(div63, file$e, 3, 4, 106);
+    			attr_dev(div64, "class", "skills-rules");
+    			add_location(div64, file$e, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div64, anchor);
+    			append_dev(div64, h2);
+    			append_dev(div64, t1);
+    			append_dev(div64, button0);
+    			append_dev(div64, t3);
+    			append_dev(div64, div63);
+    			append_dev(div63, p0);
+    			append_dev(div63, t5);
+    			append_dev(div63, p1);
+    			append_dev(div63, t7);
+    			append_dev(div63, button1);
+    			append_dev(div63, t9);
+    			append_dev(div63, div0);
+    			append_dev(div0, p2);
+    			append_dev(div63, t11);
+    			append_dev(div63, button2);
+    			append_dev(div63, t13);
+    			append_dev(div63, div1);
+    			append_dev(div1, p3);
+    			append_dev(div63, t15);
+    			append_dev(div63, button3);
+    			append_dev(div63, t17);
+    			append_dev(div63, div14);
+    			append_dev(div14, button4);
+    			append_dev(div14, t19);
+    			append_dev(div14, div5);
+    			append_dev(div5, p4);
+    			append_dev(div5, t21);
+    			append_dev(div5, button5);
+    			append_dev(div5, t23);
+    			append_dev(div5, div2);
+    			append_dev(div2, p5);
+    			append_dev(div5, t25);
+    			append_dev(div5, button6);
+    			append_dev(div5, t27);
+    			append_dev(div5, div3);
+    			append_dev(div3, p6);
+    			append_dev(div3, t29);
+    			append_dev(div3, p7);
+    			append_dev(div3, t31);
+    			append_dev(div3, p8);
+    			append_dev(div3, t33);
+    			append_dev(div3, p9);
+    			append_dev(div3, t35);
+    			append_dev(div5, button7);
+    			append_dev(div5, t37);
+    			append_dev(div5, div4);
+    			append_dev(div4, p10);
+    			append_dev(div14, t39);
+    			append_dev(div14, button8);
+    			append_dev(div14, t41);
+    			append_dev(div14, div9);
+    			append_dev(div9, p11);
+    			append_dev(div9, t43);
+    			append_dev(div9, button9);
+    			append_dev(div9, t45);
+    			append_dev(div9, div6);
+    			append_dev(div6, p12);
+    			append_dev(div9, t47);
+    			append_dev(div9, button10);
+    			append_dev(div9, t49);
+    			append_dev(div9, div7);
+    			append_dev(div7, p13);
+    			append_dev(div9, t51);
+    			append_dev(div9, button11);
+    			append_dev(div9, t53);
+    			append_dev(div9, div8);
+    			append_dev(div8, p14);
+    			append_dev(div14, t55);
+    			append_dev(div14, button12);
+    			append_dev(div14, t57);
+    			append_dev(div14, div13);
+    			append_dev(div13, p15);
+    			append_dev(div13, t59);
+    			append_dev(div13, button13);
+    			append_dev(div13, t61);
+    			append_dev(div13, div10);
+    			append_dev(div10, p16);
+    			append_dev(div13, t63);
+    			append_dev(div13, button14);
+    			append_dev(div13, t65);
+    			append_dev(div13, div11);
+    			append_dev(div11, p17);
+    			append_dev(div13, t67);
+    			append_dev(div13, button15);
+    			append_dev(div13, t69);
+    			append_dev(div13, div12);
+    			append_dev(div12, p18);
+    			append_dev(div63, t71);
+    			append_dev(div63, button16);
+    			append_dev(div63, t73);
+    			append_dev(div63, div27);
+    			append_dev(div27, button17);
+    			append_dev(div27, t75);
+    			append_dev(div27, div18);
+    			append_dev(div18, p19);
+    			append_dev(div18, t77);
+    			append_dev(div18, button18);
+    			append_dev(div18, t79);
+    			append_dev(div18, div15);
+    			append_dev(div15, p20);
+    			append_dev(div15, t81);
+    			append_dev(div18, button19);
+    			append_dev(div18, t83);
+    			append_dev(div18, div16);
+    			append_dev(div16, p21);
+    			append_dev(div16, t85);
+    			append_dev(div18, button20);
+    			append_dev(div18, t87);
+    			append_dev(div18, div17);
+    			append_dev(div17, p22);
+    			append_dev(div27, t89);
+    			append_dev(div27, button21);
+    			append_dev(div27, t91);
+    			append_dev(div27, div22);
+    			append_dev(div22, p23);
+    			append_dev(div22, t93);
+    			append_dev(div22, button22);
+    			append_dev(div22, t95);
+    			append_dev(div22, div19);
+    			append_dev(div19, p24);
+    			append_dev(div22, t97);
+    			append_dev(div22, button23);
+    			append_dev(div22, t99);
+    			append_dev(div22, div20);
+    			append_dev(div20, p25);
+    			append_dev(div22, t101);
+    			append_dev(div22, button24);
+    			append_dev(div22, t103);
+    			append_dev(div22, div21);
+    			append_dev(div21, p26);
+    			append_dev(div27, t105);
+    			append_dev(div27, button25);
+    			append_dev(div27, t107);
+    			append_dev(div27, div26);
+    			append_dev(div26, p27);
+    			append_dev(div26, t109);
+    			append_dev(div26, button26);
+    			append_dev(div26, t111);
+    			append_dev(div26, div23);
+    			append_dev(div23, p28);
+    			append_dev(div26, t113);
+    			append_dev(div26, button27);
+    			append_dev(div26, t115);
+    			append_dev(div26, div24);
+    			append_dev(div24, p29);
+    			append_dev(div26, t117);
+    			append_dev(div26, button28);
+    			append_dev(div26, t119);
+    			append_dev(div26, div25);
+    			append_dev(div25, p30);
+    			append_dev(div63, t121);
+    			append_dev(div63, button29);
+    			append_dev(div63, t123);
+    			append_dev(div63, div42);
+    			append_dev(div42, button30);
+    			append_dev(div42, t125);
+    			append_dev(div42, div33);
+    			append_dev(div33, p31);
+    			append_dev(div33, t127);
+    			append_dev(div33, button31);
+    			append_dev(div33, t129);
+    			append_dev(div33, div30);
+    			append_dev(div30, p32);
+    			append_dev(div30, t131);
+    			append_dev(div30, button32);
+    			append_dev(div30, t133);
+    			append_dev(div30, div28);
+    			append_dev(div28, ul0);
+    			append_dev(ul0, li0);
+    			append_dev(ul0, t135);
+    			append_dev(ul0, li1);
+    			append_dev(ul0, t137);
+    			append_dev(ul0, li2);
+    			append_dev(ul0, t139);
+    			append_dev(ul0, li3);
+    			append_dev(ul0, t141);
+    			append_dev(ul0, li4);
+    			append_dev(div30, t143);
+    			append_dev(div30, button33);
+    			append_dev(div30, t145);
+    			append_dev(div30, div29);
+    			append_dev(div29, ul1);
+    			append_dev(ul1, li5);
+    			append_dev(ul1, t147);
+    			append_dev(ul1, li6);
+    			append_dev(ul1, t149);
+    			append_dev(ul1, li7);
+    			append_dev(ul1, t151);
+    			append_dev(ul1, li8);
+    			append_dev(div33, t153);
+    			append_dev(div33, button34);
+    			append_dev(div33, t155);
+    			append_dev(div33, div31);
+    			append_dev(div31, p33);
+    			append_dev(div33, t157);
+    			append_dev(div33, button35);
+    			append_dev(div33, t159);
+    			append_dev(div33, div32);
+    			append_dev(div32, p34);
+    			append_dev(div42, t161);
+    			append_dev(div42, button36);
+    			append_dev(div42, t163);
+    			append_dev(div42, div37);
+    			append_dev(div37, p35);
+    			append_dev(div37, t165);
+    			append_dev(div37, button37);
+    			append_dev(div37, t167);
+    			append_dev(div37, div34);
+    			append_dev(div34, p36);
+    			append_dev(div37, t169);
+    			append_dev(div37, button38);
+    			append_dev(div37, t171);
+    			append_dev(div37, div35);
+    			append_dev(div35, p37);
+    			append_dev(div37, t173);
+    			append_dev(div37, button39);
+    			append_dev(div37, t175);
+    			append_dev(div37, div36);
+    			append_dev(div36, p38);
+    			append_dev(div42, t177);
+    			append_dev(div42, button40);
+    			append_dev(div42, t179);
+    			append_dev(div42, div41);
+    			append_dev(div41, p39);
+    			append_dev(div41, t181);
+    			append_dev(div41, button41);
+    			append_dev(div41, t183);
+    			append_dev(div41, div38);
+    			append_dev(div38, p40);
+    			append_dev(div38, t185);
+    			append_dev(div41, button42);
+    			append_dev(div41, t187);
+    			append_dev(div41, div39);
+    			append_dev(div39, p41);
+    			append_dev(div39, t189);
+    			append_dev(div41, button43);
+    			append_dev(div41, t191);
+    			append_dev(div41, div40);
+    			append_dev(div40, p42);
+    			append_dev(div63, t193);
+    			append_dev(div63, button44);
+    			append_dev(div63, t195);
+    			append_dev(div63, div62);
+    			append_dev(div62, button45);
+    			append_dev(div62, t197);
+    			append_dev(div62, div46);
+    			append_dev(div46, p43);
+    			append_dev(div46, t199);
+    			append_dev(div46, button46);
+    			append_dev(div46, t201);
+    			append_dev(div46, div43);
+    			append_dev(div43, p44);
+    			append_dev(div46, t203);
+    			append_dev(div46, button47);
+    			append_dev(div46, t205);
+    			append_dev(div46, div44);
+    			append_dev(div44, p45);
+    			append_dev(div46, t207);
+    			append_dev(div46, button48);
+    			append_dev(div46, t209);
+    			append_dev(div46, div45);
+    			append_dev(div45, p46);
+    			append_dev(div62, t211);
+    			append_dev(div62, button49);
+    			append_dev(div62, t213);
+    			append_dev(div62, div50);
+    			append_dev(div50, p47);
+    			append_dev(div50, t215);
+    			append_dev(div50, button50);
+    			append_dev(div50, t217);
+    			append_dev(div50, div47);
+    			append_dev(div47, p48);
+    			append_dev(div50, t219);
+    			append_dev(div50, button51);
+    			append_dev(div50, t221);
+    			append_dev(div50, div48);
+    			append_dev(div48, p49);
+    			append_dev(div50, t223);
+    			append_dev(div50, button52);
+    			append_dev(div50, t225);
+    			append_dev(div50, div49);
+    			append_dev(div49, p50);
+    			append_dev(div62, t227);
+    			append_dev(div62, button53);
+    			append_dev(div62, t229);
+    			append_dev(div62, div61);
+    			append_dev(div61, p51);
+    			append_dev(div61, t231);
+    			append_dev(div61, button54);
+    			append_dev(div61, t233);
+    			append_dev(div61, div51);
+    			append_dev(div51, p52);
+    			append_dev(div61, t235);
+    			append_dev(div61, button55);
+    			append_dev(div61, t237);
+    			append_dev(div61, div52);
+    			append_dev(div52, p53);
+    			append_dev(div61, t239);
+    			append_dev(div61, button56);
+    			append_dev(div61, t241);
+    			append_dev(div61, div60);
+    			append_dev(div60, p54);
+    			append_dev(div60, t243);
+    			append_dev(div60, button57);
+    			append_dev(div60, t245);
+    			append_dev(div60, div59);
+    			append_dev(div59, button58);
+    			append_dev(div59, t247);
+    			append_dev(div59, div53);
+    			append_dev(div53, p55);
+    			append_dev(div59, t249);
+    			append_dev(div59, button59);
+    			append_dev(div59, t251);
+    			append_dev(div59, div54);
+    			append_dev(div54, p56);
+    			append_dev(div59, t253);
+    			append_dev(div59, button60);
+    			append_dev(div59, t255);
+    			append_dev(div59, div55);
+    			append_dev(div55, p57);
+    			append_dev(div59, t257);
+    			append_dev(div59, button61);
+    			append_dev(div59, t259);
+    			append_dev(div59, div56);
+    			append_dev(div56, p58);
+    			append_dev(div59, t261);
+    			append_dev(div59, button62);
+    			append_dev(div59, t263);
+    			append_dev(div59, div57);
+    			append_dev(div57, p59);
+    			append_dev(div59, t265);
+    			append_dev(div59, button63);
+    			append_dev(div59, t267);
+    			append_dev(div59, div58);
+    			append_dev(div58, p60);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div64);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$h.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Skills$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$h, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Skills",
+    			options,
+    			id: create_fragment$h.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Terms.svelte generated by Svelte v3.15.0 */
+
+    const file$f = "src/components/rules/Terms.svelte";
+
+    function create_fragment$i(ctx) {
+    	let div7;
+    	let h2;
+    	let t1;
+    	let div6;
+    	let button0;
+    	let t3;
+    	let div0;
+    	let ul0;
+    	let li0;
+    	let t5;
+    	let li1;
+    	let t7;
+    	let li2;
+    	let t9;
+    	let li3;
+    	let t11;
+    	let li4;
+    	let t13;
+    	let li5;
+    	let t15;
+    	let li6;
+    	let t17;
+    	let li7;
+    	let t19;
+    	let button1;
+    	let t21;
+    	let div1;
+    	let ul1;
+    	let li8;
+    	let t23;
+    	let li9;
+    	let t25;
+    	let li10;
+    	let t27;
+    	let li11;
+    	let t29;
+    	let li12;
+    	let t31;
+    	let li13;
+    	let t33;
+    	let li14;
+    	let t35;
+    	let li15;
+    	let t37;
+    	let li16;
+    	let t39;
+    	let li17;
+    	let t41;
+    	let li18;
+    	let t43;
+    	let li19;
+    	let t45;
+    	let li20;
+    	let t47;
+    	let li21;
+    	let t49;
+    	let li22;
+    	let t51;
+    	let li23;
+    	let t53;
+    	let li24;
+    	let t55;
+    	let li25;
+    	let t57;
+    	let li26;
+    	let t59;
+    	let li27;
+    	let t61;
+    	let li28;
+    	let t63;
+    	let li29;
+    	let t65;
+    	let li30;
+    	let t67;
+    	let li31;
+    	let t69;
+    	let li32;
+    	let t71;
+    	let li33;
+    	let t73;
+    	let button2;
+    	let t75;
+    	let div2;
+    	let p0;
+    	let t77;
+    	let ul2;
+    	let li34;
+    	let t79;
+    	let li35;
+    	let t81;
+    	let li36;
+    	let t83;
+    	let li37;
+    	let t85;
+    	let button3;
+    	let t87;
+    	let div3;
+    	let p1;
+    	let t89;
+    	let ul3;
+    	let li38;
+    	let t91;
+    	let li39;
+    	let t93;
+    	let li40;
+    	let t95;
+    	let li41;
+    	let t97;
+    	let button4;
+    	let t99;
+    	let div4;
+    	let p2;
+    	let t101;
+    	let ul4;
+    	let li42;
+    	let t103;
+    	let li43;
+    	let t105;
+    	let li44;
+    	let t107;
+    	let li45;
+    	let t109;
+    	let li46;
+    	let t111;
+    	let button5;
+    	let t113;
+    	let div5;
+    	let p3;
+    	let t115;
+    	let ul5;
+    	let li47;
+    	let t117;
+    	let li48;
+    	let t119;
+    	let li49;
+    	let t121;
+    	let li50;
+    	let t123;
+    	let li51;
+    	let t125;
+    	let li52;
+    	let t127;
+    	let li53;
+
+    	const block = {
+    		c: function create() {
+    			div7 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Symbols and Terms";
+    			t1 = space();
+    			div6 = element("div");
+    			button0 = element("button");
+    			button0.textContent = "DICE";
+    			t3 = space();
+    			div0 = element("div");
+    			ul0 = element("ul");
+    			li0 = element("li");
+    			li0.textContent = "d6: One six-sided die. The only dice needed to play.";
+    			t5 = space();
+    			li1 = element("li");
+    			li1.textContent = "DIFFICULTY (#): Target number you must beat to Succeed.";
+    			t7 = space();
+    			li2 = element("li");
+    			li2.textContent = "EXPLODE (6): Rolling 6, rolling again, and adding up all rolls.";
+    			t9 = space();
+    			li3 = element("li");
+    			li3.textContent = "SUCCESS (S): Rolling above #.";
+    			t11 = space();
+    			li4 = element("li");
+    			li4.textContent = "FAIL (F): Rolling at or under #.";
+    			t13 = space();
+    			li5 = element("li");
+    			li5.textContent = "BOTCH (1): Rolling 1, then re-rolling another 1. Very bad.";
+    			t15 = space();
+    			li6 = element("li");
+    			li6.textContent = "MODIFIER: A bonus or penalty to rolls or Difficulties.";
+    			t17 = space();
+    			li7 = element("li");
+    			li7.textContent = "RESULT: The total of a roll plus or minus any modifiers.";
+    			t19 = space();
+    			button1 = element("button");
+    			button1.textContent = "GAME";
+    			t21 = space();
+    			div1 = element("div");
+    			ul1 = element("ul");
+    			li8 = element("li");
+    			li8.textContent = "ABILITY: Character upgrades that are bought with Experience.";
+    			t23 = space();
+    			li9 = element("li");
+    			li9.textContent = "ACTION: One significant thing a Character does in a round.";
+    			t25 = space();
+    			li10 = element("li");
+    			li10.textContent = "AR: Armor Rating. Protection given by Armor.";
+    			t27 = space();
+    			li11 = element("li");
+    			li11.textContent = "ATK: Attack. Can be Melee or Ranged. Roll vs Defense.";
+    			t29 = space();
+    			li12 = element("li");
+    			li12.textContent = "BDMG: Blunt Damage. Does not cause Bleeding.";
+    			t31 = space();
+    			li13 = element("li");
+    			li13.textContent = "CR: Cold-Resistant. Delays death from Hypothermia.";
+    			t33 = space();
+    			li14 = element("li");
+    			li14.textContent = "DEF: Defense. Block, Dodge, or Reflex. Attack Difficulty.";
+    			t35 = space();
+    			li15 = element("li");
+    			li15.textContent = "DMG: Damage. Reduces Health Points.";
+    			t37 = space();
+    			li16 = element("li");
+    			li16.textContent = "DR: Damage Reduction. Protection given by Cover.";
+    			t39 = space();
+    			li17 = element("li");
+    			li17.textContent = "EXTRAS: Non-Player Characters and creatures.";
+    			t41 = space();
+    			li18 = element("li");
+    			li18.textContent = "FAST: An action that takes only a split second.";
+    			t43 = space();
+    			li19 = element("li");
+    			li19.textContent = "FDMG: Fire Damage. Can be permanent.";
+    			t45 = space();
+    			li20 = element("li");
+    			li20.textContent = "FR: Fire-Resistant. Protection against Fire Damage.";
+    			t47 = space();
+    			li21 = element("li");
+    			li21.textContent = "GN: Game Narrator. The Player who directs the game.";
+    			t49 = space();
+    			li22 = element("li");
+    			li22.textContent = "HP: Health Points. Maximum Damage Locations can take.";
+    			t51 = space();
+    			li23 = element("li");
+    			li23.textContent = "LOCATION: Body parts: Head, Torso, Arms, or Legs.";
+    			t53 = space();
+    			li24 = element("li");
+    			li24.textContent = "MANEUVER: Special kinds of actions Characters may perform.";
+    			t55 = space();
+    			li25 = element("li");
+    			li25.textContent = "MATK or RATK: Melee Attack or Ranged Attack.";
+    			t57 = space();
+    			li26 = element("li");
+    			li26.textContent = "MGL: Master Gear List. Table with every piece of Gear.";
+    			t59 = space();
+    			li27 = element("li");
+    			li27.textContent = "PAIN: Penalty to all rolls from Damage and other sources.";
+    			t61 = space();
+    			li28 = element("li");
+    			li28.textContent = "REFLEX: Passive Defense = Perception.";
+    			t63 = space();
+    			li29 = element("li");
+    			li29.textContent = "RNG: Range incremented in yards.";
+    			t65 = space();
+    			li30 = element("li");
+    			li30.textContent = "RND: Round. 3 seconds of in-game time, usually in combat.";
+    			t67 = space();
+    			li31 = element("li");
+    			li31.textContent = "SCENARIO: The type of apocalypse taking place in your game.";
+    			t69 = space();
+    			li32 = element("li");
+    			li32.textContent = "SITUATION: Circumstances or status effects that cause modifiers.";
+    			t71 = space();
+    			li33 = element("li");
+    			li33.textContent = "SIZE (SZ): Measure of volume and weight. 1Sz ≈ 5lbs ≈ 1/2gal.";
+    			t73 = space();
+    			button2 = element("button");
+    			button2.textContent = "TRAITS";
+    			t75 = space();
+    			div2 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "Agility, Brains, Constitution, and Demeanor. Rated 1 to 6.";
+    			t77 = space();
+    			ul2 = element("ul");
+    			li34 = element("li");
+    			li34.textContent = "A: Agility Trait. A rolls are shown as A#.";
+    			t79 = space();
+    			li35 = element("li");
+    			li35.textContent = "B: Brains Trait. B rolls are shown as B#.";
+    			t81 = space();
+    			li36 = element("li");
+    			li36.textContent = "C: Constitution Trait. C rolls are shown as C#.";
+    			t83 = space();
+    			li37 = element("li");
+    			li37.textContent = "D: Demeanor Trait. D rolls are shown as D#.";
+    			t85 = space();
+    			button3 = element("button");
+    			button3.textContent = "INSTINCTS";
+    			t87 = space();
+    			div3 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "Natural talents everyone has based on Traits.";
+    			t89 = space();
+    			ul3 = element("ul");
+    			li38 = element("li");
+    			li38.textContent = "ATHLETICS: = C. Climbing and swimming.";
+    			t91 = space();
+    			li39 = element("li");
+    			li39.textContent = "PERCEPTION: = B. Processing sensory information.";
+    			t93 = space();
+    			li40 = element("li");
+    			li40.textContent = "SOCIALIZE: = D. Interacting with others.";
+    			t95 = space();
+    			li41 = element("li");
+    			li41.textContent = "STEALTH: = A. Remaining undetected.";
+    			t97 = space();
+    			button4 = element("button");
+    			button4.textContent = "SKILLS";
+    			t99 = space();
+    			div4 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "12 different types of actions limited by their Traits.";
+    			t101 = space();
+    			ul4 = element("ul");
+    			li42 = element("li");
+    			li42.textContent = "AGILITY SKILLS: Acrobatics, Ranged, Larceny";
+    			t103 = space();
+    			li43 = element("li");
+    			li43.textContent = "BRAINS SKILLS: Medicine, Science, Survival";
+    			t105 = space();
+    			li44 = element("li");
+    			li44.textContent = "CONSTITUTION SKILLS: Build, Drive, Melee";
+    			t107 = space();
+    			li45 = element("li");
+    			li45.textContent = "DEMEANOR SKILLS: Entertain, Leadership, Tame";
+    			t109 = space();
+    			li46 = element("li");
+    			li46.textContent = "Specialty: Sub-Skill that can change independently.";
+    			t111 = space();
+    			button5 = element("button");
+    			button5.textContent = "PROPERTIES";
+    			t113 = space();
+    			div5 = element("div");
+    			p3 = element("p");
+    			p3.textContent = "Trait-derived values.";
+    			t115 = space();
+    			ul5 = element("ul");
+    			li47 = element("li");
+    			li47.textContent = "CARRY = [C x6]. Maximum total Size you can carry.";
+    			t117 = space();
+    			li48 = element("li");
+    			li48.textContent = "DMG MOD = Melee and Ranged(Thrown) Damage modifier.";
+    			t119 = space();
+    			li49 = element("li");
+    			li49.textContent = "LUCK = D /day. Spend for various effects.";
+    			t121 = space();
+    			li50 = element("li");
+    			li50.textContent = "PSYCHE = [D]. Self-tracked mental health.";
+    			t123 = space();
+    			li51 = element("li");
+    			li51.textContent = "SPEED = [A + C] yds. Jog = Speed x2.";
+    			t125 = space();
+    			li52 = element("li");
+    			li52.textContent = "THRESHOLD = [C + D]. Pain you can take before passing out.";
+    			t127 = space();
+    			li53 = element("li");
+    			li53.textContent = "XP = B x6, then B each in-game week.";
+    			add_location(h2, file$f, 1, 4, 30);
+    			attr_dev(button0, "id", "DiceTermsBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$f, 3, 8, 104);
+    			add_location(li0, file$f, 6, 16, 234);
+    			add_location(li1, file$f, 7, 16, 312);
+    			add_location(li2, file$f, 8, 16, 393);
+    			add_location(li3, file$f, 9, 16, 482);
+    			add_location(li4, file$f, 10, 16, 537);
+    			add_location(li5, file$f, 11, 16, 595);
+    			add_location(li6, file$f, 12, 16, 679);
+    			add_location(li7, file$f, 13, 16, 759);
+    			add_location(ul0, file$f, 5, 12, 213);
+    			attr_dev(div0, "id", "DiceTermsSec");
+    			attr_dev(div0, "class", "Sec3");
+    			add_location(div0, file$f, 4, 8, 164);
+    			attr_dev(button1, "id", "GameTermsBtn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$f, 16, 8, 866);
+    			add_location(li8, file$f, 19, 16, 996);
+    			add_location(li9, file$f, 20, 16, 1082);
+    			add_location(li10, file$f, 21, 16, 1166);
+    			add_location(li11, file$f, 22, 16, 1236);
+    			add_location(li12, file$f, 23, 16, 1315);
+    			add_location(li13, file$f, 24, 16, 1385);
+    			add_location(li14, file$f, 25, 16, 1461);
+    			add_location(li15, file$f, 26, 16, 1544);
+    			add_location(li16, file$f, 27, 16, 1605);
+    			add_location(li17, file$f, 28, 16, 1679);
+    			add_location(li18, file$f, 29, 16, 1749);
+    			add_location(li19, file$f, 30, 16, 1822);
+    			add_location(li20, file$f, 31, 16, 1884);
+    			add_location(li21, file$f, 32, 16, 1961);
+    			add_location(li22, file$f, 33, 16, 2038);
+    			add_location(li23, file$f, 34, 16, 2117);
+    			add_location(li24, file$f, 35, 16, 2192);
+    			add_location(li25, file$f, 36, 16, 2276);
+    			add_location(li26, file$f, 37, 16, 2346);
+    			add_location(li27, file$f, 38, 16, 2426);
+    			add_location(li28, file$f, 39, 16, 2509);
+    			add_location(li29, file$f, 40, 16, 2572);
+    			add_location(li30, file$f, 41, 16, 2630);
+    			add_location(li31, file$f, 42, 16, 2713);
+    			add_location(li32, file$f, 43, 16, 2798);
+    			add_location(li33, file$f, 44, 16, 2888);
+    			add_location(ul1, file$f, 18, 12, 975);
+    			attr_dev(div1, "id", "GameTermsSec");
+    			attr_dev(div1, "class", "Sec3");
+    			add_location(div1, file$f, 17, 8, 926);
+    			attr_dev(button2, "id", "TraitsTermsBtn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$f, 47, 8, 3000);
+    			add_location(p0, file$f, 49, 12, 3115);
+    			add_location(li34, file$f, 51, 16, 3214);
+    			add_location(li35, file$f, 52, 16, 3282);
+    			add_location(li36, file$f, 53, 16, 3349);
+    			add_location(li37, file$f, 54, 16, 3422);
+    			add_location(ul2, file$f, 50, 12, 3193);
+    			attr_dev(div2, "id", "TraitsTermsSec");
+    			attr_dev(div2, "class", "Sec3");
+    			add_location(div2, file$f, 48, 8, 3064);
+    			attr_dev(button3, "id", "InstinctsTermsBtn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$f, 57, 8, 3516);
+    			add_location(p1, file$f, 59, 12, 3640);
+    			add_location(li38, file$f, 61, 16, 3726);
+    			add_location(li39, file$f, 62, 16, 3790);
+    			add_location(li40, file$f, 63, 16, 3864);
+    			add_location(li41, file$f, 64, 16, 3930);
+    			add_location(ul3, file$f, 60, 12, 3705);
+    			attr_dev(div3, "id", "InstinctsTermsSec");
+    			attr_dev(div3, "class", "Sec3");
+    			add_location(div3, file$f, 58, 8, 3586);
+    			attr_dev(button4, "id", "SkillsTermsBtn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$f, 67, 8, 4016);
+    			add_location(p2, file$f, 69, 12, 4131);
+    			add_location(li42, file$f, 71, 16, 4226);
+    			add_location(li43, file$f, 72, 16, 4295);
+    			add_location(li44, file$f, 73, 16, 4363);
+    			add_location(li45, file$f, 74, 16, 4429);
+    			add_location(li46, file$f, 75, 16, 4499);
+    			add_location(ul4, file$f, 70, 12, 4205);
+    			attr_dev(div4, "id", "SkillsTermsSec");
+    			attr_dev(div4, "class", "Sec3");
+    			add_location(div4, file$f, 68, 8, 4080);
+    			attr_dev(button5, "id", "PropertiesTermsBtn");
+    			attr_dev(button5, "class", "Btn");
+    			add_location(button5, file$f, 78, 8, 4601);
+    			add_location(p3, file$f, 80, 12, 4728);
+    			add_location(li47, file$f, 82, 16, 4790);
+    			add_location(li48, file$f, 83, 16, 4865);
+    			add_location(li49, file$f, 84, 16, 4942);
+    			add_location(li50, file$f, 85, 16, 5009);
+    			add_location(li51, file$f, 86, 16, 5076);
+    			add_location(li52, file$f, 87, 16, 5138);
+    			add_location(li53, file$f, 88, 16, 5222);
+    			add_location(ul5, file$f, 81, 12, 4769);
+    			attr_dev(div5, "id", "PropertiesTermsSec");
+    			attr_dev(div5, "class", "Sec3");
+    			add_location(div5, file$f, 79, 8, 4673);
+    			attr_dev(div6, "id", "SymbolsSec");
+    			attr_dev(div6, "class", "Sec2");
+    			add_location(div6, file$f, 2, 4, 61);
+    			attr_dev(div7, "class", "terms-rules");
+    			add_location(div7, file$f, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, h2);
+    			append_dev(div7, t1);
+    			append_dev(div7, div6);
+    			append_dev(div6, button0);
+    			append_dev(div6, t3);
+    			append_dev(div6, div0);
+    			append_dev(div0, ul0);
+    			append_dev(ul0, li0);
+    			append_dev(ul0, t5);
+    			append_dev(ul0, li1);
+    			append_dev(ul0, t7);
+    			append_dev(ul0, li2);
+    			append_dev(ul0, t9);
+    			append_dev(ul0, li3);
+    			append_dev(ul0, t11);
+    			append_dev(ul0, li4);
+    			append_dev(ul0, t13);
+    			append_dev(ul0, li5);
+    			append_dev(ul0, t15);
+    			append_dev(ul0, li6);
+    			append_dev(ul0, t17);
+    			append_dev(ul0, li7);
+    			append_dev(div6, t19);
+    			append_dev(div6, button1);
+    			append_dev(div6, t21);
+    			append_dev(div6, div1);
+    			append_dev(div1, ul1);
+    			append_dev(ul1, li8);
+    			append_dev(ul1, t23);
+    			append_dev(ul1, li9);
+    			append_dev(ul1, t25);
+    			append_dev(ul1, li10);
+    			append_dev(ul1, t27);
+    			append_dev(ul1, li11);
+    			append_dev(ul1, t29);
+    			append_dev(ul1, li12);
+    			append_dev(ul1, t31);
+    			append_dev(ul1, li13);
+    			append_dev(ul1, t33);
+    			append_dev(ul1, li14);
+    			append_dev(ul1, t35);
+    			append_dev(ul1, li15);
+    			append_dev(ul1, t37);
+    			append_dev(ul1, li16);
+    			append_dev(ul1, t39);
+    			append_dev(ul1, li17);
+    			append_dev(ul1, t41);
+    			append_dev(ul1, li18);
+    			append_dev(ul1, t43);
+    			append_dev(ul1, li19);
+    			append_dev(ul1, t45);
+    			append_dev(ul1, li20);
+    			append_dev(ul1, t47);
+    			append_dev(ul1, li21);
+    			append_dev(ul1, t49);
+    			append_dev(ul1, li22);
+    			append_dev(ul1, t51);
+    			append_dev(ul1, li23);
+    			append_dev(ul1, t53);
+    			append_dev(ul1, li24);
+    			append_dev(ul1, t55);
+    			append_dev(ul1, li25);
+    			append_dev(ul1, t57);
+    			append_dev(ul1, li26);
+    			append_dev(ul1, t59);
+    			append_dev(ul1, li27);
+    			append_dev(ul1, t61);
+    			append_dev(ul1, li28);
+    			append_dev(ul1, t63);
+    			append_dev(ul1, li29);
+    			append_dev(ul1, t65);
+    			append_dev(ul1, li30);
+    			append_dev(ul1, t67);
+    			append_dev(ul1, li31);
+    			append_dev(ul1, t69);
+    			append_dev(ul1, li32);
+    			append_dev(ul1, t71);
+    			append_dev(ul1, li33);
+    			append_dev(div6, t73);
+    			append_dev(div6, button2);
+    			append_dev(div6, t75);
+    			append_dev(div6, div2);
+    			append_dev(div2, p0);
+    			append_dev(div2, t77);
+    			append_dev(div2, ul2);
+    			append_dev(ul2, li34);
+    			append_dev(ul2, t79);
+    			append_dev(ul2, li35);
+    			append_dev(ul2, t81);
+    			append_dev(ul2, li36);
+    			append_dev(ul2, t83);
+    			append_dev(ul2, li37);
+    			append_dev(div6, t85);
+    			append_dev(div6, button3);
+    			append_dev(div6, t87);
+    			append_dev(div6, div3);
+    			append_dev(div3, p1);
+    			append_dev(div3, t89);
+    			append_dev(div3, ul3);
+    			append_dev(ul3, li38);
+    			append_dev(ul3, t91);
+    			append_dev(ul3, li39);
+    			append_dev(ul3, t93);
+    			append_dev(ul3, li40);
+    			append_dev(ul3, t95);
+    			append_dev(ul3, li41);
+    			append_dev(div6, t97);
+    			append_dev(div6, button4);
+    			append_dev(div6, t99);
+    			append_dev(div6, div4);
+    			append_dev(div4, p2);
+    			append_dev(div4, t101);
+    			append_dev(div4, ul4);
+    			append_dev(ul4, li42);
+    			append_dev(ul4, t103);
+    			append_dev(ul4, li43);
+    			append_dev(ul4, t105);
+    			append_dev(ul4, li44);
+    			append_dev(ul4, t107);
+    			append_dev(ul4, li45);
+    			append_dev(ul4, t109);
+    			append_dev(ul4, li46);
+    			append_dev(div6, t111);
+    			append_dev(div6, button5);
+    			append_dev(div6, t113);
+    			append_dev(div6, div5);
+    			append_dev(div5, p3);
+    			append_dev(div5, t115);
+    			append_dev(div5, ul5);
+    			append_dev(ul5, li47);
+    			append_dev(ul5, t117);
+    			append_dev(ul5, li48);
+    			append_dev(ul5, t119);
+    			append_dev(ul5, li49);
+    			append_dev(ul5, t121);
+    			append_dev(ul5, li50);
+    			append_dev(ul5, t123);
+    			append_dev(ul5, li51);
+    			append_dev(ul5, t125);
+    			append_dev(ul5, li52);
+    			append_dev(ul5, t127);
+    			append_dev(ul5, li53);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div7);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$i.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Terms extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$i, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Terms",
+    			options,
+    			id: create_fragment$i.name
+    		});
+    	}
+    }
+
+    /* src/components/rules/Traits.svelte generated by Svelte v3.15.0 */
+
+    const file$g = "src/components/rules/Traits.svelte";
+
+    function create_fragment$j(ctx) {
+    	let div28;
+    	let h2;
+    	let t1;
+    	let button0;
+    	let t3;
+    	let div27;
+    	let p0;
+    	let t5;
+    	let ol0;
+    	let li0;
+    	let t7;
+    	let li1;
+    	let t9;
+    	let li2;
+    	let t11;
+    	let li3;
+    	let t13;
+    	let li4;
+    	let t15;
+    	let li5;
+    	let t17;
+    	let p1;
+    	let t19;
+    	let p2;
+    	let t21;
+    	let p3;
+    	let t23;
+    	let p4;
+    	let t25;
+    	let button1;
+    	let t27;
+    	let div0;
+    	let p5;
+    	let t29;
+    	let button2;
+    	let t31;
+    	let div4;
+    	let p6;
+    	let t33;
+    	let p7;
+    	let t35;
+    	let p8;
+    	let t37;
+    	let button3;
+    	let t39;
+    	let div1;
+    	let p9;
+    	let t41;
+    	let p10;
+    	let t43;
+    	let button4;
+    	let t45;
+    	let div3;
+    	let button5;
+    	let t47;
+    	let div2;
+    	let p11;
+    	let t49;
+    	let ul0;
+    	let li6;
+    	let t51;
+    	let li7;
+    	let t53;
+    	let li8;
+    	let t55;
+    	let button6;
+    	let t57;
+    	let div8;
+    	let p12;
+    	let t59;
+    	let p13;
+    	let t61;
+    	let p14;
+    	let t63;
+    	let button7;
+    	let t65;
+    	let div5;
+    	let p15;
+    	let t67;
+    	let p16;
+    	let t69;
+    	let p17;
+    	let t71;
+    	let button8;
+    	let t73;
+    	let div7;
+    	let button9;
+    	let t75;
+    	let div6;
+    	let p18;
+    	let t77;
+    	let button10;
+    	let t79;
+    	let div15;
+    	let p19;
+    	let t81;
+    	let p20;
+    	let t83;
+    	let p21;
+    	let t85;
+    	let button11;
+    	let t87;
+    	let div9;
+    	let p22;
+    	let t89;
+    	let ul1;
+    	let li9;
+    	let t91;
+    	let li10;
+    	let t93;
+    	let li11;
+    	let t95;
+    	let p23;
+    	let t97;
+    	let button12;
+    	let t99;
+    	let div14;
+    	let button13;
+    	let t101;
+    	let div10;
+    	let p24;
+    	let t103;
+    	let button14;
+    	let t105;
+    	let div11;
+    	let p25;
+    	let t107;
+    	let ol1;
+    	let li12;
+    	let t109;
+    	let li13;
+    	let t111;
+    	let li14;
+    	let t113;
+    	let li15;
+    	let t115;
+    	let li16;
+    	let t117;
+    	let li17;
+    	let t119;
+    	let button15;
+    	let t121;
+    	let div12;
+    	let p26;
+    	let t123;
+    	let button16;
+    	let t125;
+    	let div13;
+    	let p27;
+    	let t127;
+    	let button17;
+    	let t129;
+    	let div26;
+    	let p28;
+    	let t131;
+    	let p29;
+    	let t133;
+    	let p30;
+    	let t135;
+    	let div16;
+    	let t137;
+    	let div17;
+    	let p31;
+    	let t139;
+    	let p32;
+    	let t141;
+    	let div18;
+    	let t143;
+    	let div25;
+    	let div19;
+    	let t145;
+    	let div20;
+    	let p33;
+    	let t147;
+    	let div21;
+    	let t149;
+    	let div22;
+    	let p34;
+    	let t151;
+    	let ul2;
+    	let li18;
+    	let t153;
+    	let li19;
+    	let t155;
+    	let li20;
+    	let t157;
+    	let p35;
+    	let t159;
+    	let div23;
+    	let t161;
+    	let div24;
+    	let p36;
+
+    	const block = {
+    		c: function create() {
+    			div28 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Traits";
+    			t1 = space();
+    			button0 = element("button");
+    			button0.textContent = "TRAITS";
+    			t3 = space();
+    			div27 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "The four Traits range from 1 to 6. Most Characters get 12 points for Traits. Trait rolls are [d6 + Trait]. Trait rolls may be Trait vs a Difficulty(#), Trait vs Trait, or Trait vs Skill. Trait scores set the upper limit for the Skills below them.";
+    			t5 = space();
+    			ol0 = element("ol");
+    			li0 = element("li");
+    			li0.textContent = "Feeble";
+    			t7 = space();
+    			li1 = element("li");
+    			li1.textContent = "Poor";
+    			t9 = space();
+    			li2 = element("li");
+    			li2.textContent = "Average";
+    			t11 = space();
+    			li3 = element("li");
+    			li3.textContent = "Good";
+    			t13 = space();
+    			li4 = element("li");
+    			li4.textContent = "Superior";
+    			t15 = space();
+    			li5 = element("li");
+    			li5.textContent = "Best";
+    			t17 = space();
+    			p1 = element("p");
+    			p1.textContent = "Traits act as the basis for the following Properties: Speed, Experience, Carry, Health, Threshold, and Luck.";
+    			t19 = space();
+    			p2 = element("p");
+    			p2.textContent = "Properties are explained in each Trait's description below.";
+    			t21 = space();
+    			p3 = element("p");
+    			p3.textContent = "Each Trait has an Instinct associated with it.";
+    			t23 = space();
+    			p4 = element("p");
+    			p4.textContent = "Agility = Stealth, Brains = Perception, Constitution = Athletics, and Demeanor = Socialize. These Instincts are typically passive static values, most often used by the GN to compare against an Extra's Instinct. They can also be rolled actively, just like Skills. You must declare it when you actively use an Instinct.";
+    			t25 = space();
+    			button1 = element("button");
+    			button1.textContent = "RETRAINING TRAITS:";
+    			t27 = space();
+    			div0 = element("div");
+    			p5 = element("p");
+    			p5.textContent = "1/year for 36XP you may move 1 point between Traits. Traits can only be changed by +1 or -1 in this way.";
+    			t29 = space();
+    			button2 = element("button");
+    			button2.textContent = "AGILITY (A)";
+    			t31 = space();
+    			div4 = element("div");
+    			p6 = element("p");
+    			p6.textContent = "Agility is a Character’s talent for manual dexterity and physical coordination. Characters with a high Agility are good at feats of balance, flexibility, and fine manipulation. Character’s with a low Agility are clumsy, stiff-jointed, and generally fumbling.";
+    			t33 = space();
+    			p7 = element("p");
+    			p7.textContent = "Agility is the Trait that governs the Stealth Instinct, Fast actions, and also makes up half of the Speed Property, alongside Constitution. Agility is also the parent Trait for the Acrobatics Skill (including Dodge Defense), as well as the Larceny, and Ranged Skills.";
+    			t35 = space();
+    			p8 = element("p");
+    			p8.textContent = "This means that Agility is very important for hiding from enemies, moving quickly, performing gymnastics, avoiding attacks, hiding items, disabling mechanisms, stealing, shooting guns or bows, and throwing weapons.";
+    			t37 = space();
+    			button3 = element("button");
+    			button3.textContent = "Stealth: [= A]";
+    			t39 = space();
+    			div1 = element("div");
+    			p9 = element("p");
+    			p9.textContent = "This is your talent for remaining undetected. +3 Stealth if you are Prone and +3 more if you do not move on your turn. Stealth is usually a static number that is compared to an enemy's Perception.";
+    			t41 = space();
+    			p10 = element("p");
+    			p10.textContent = "Stealth can be used actively as a bonus to a d6 roll to focus all of your effort on remaining undetected by nearby enemies, but your Speed is reduced by half.";
+    			t43 = space();
+    			button4 = element("button");
+    			button4.textContent = "AGILITY PROPERTIES:";
+    			t45 = space();
+    			div3 = element("div");
+    			button5 = element("button");
+    			button5.textContent = "SPEED: [A+C]";
+    			t47 = space();
+    			div2 = element("div");
+    			p11 = element("p");
+    			p11.textContent = "Tactical Speed in yards. You may move part of your Speed before and part after your action in combat. See Ch:2 for detailed Movement rules.";
+    			t49 = space();
+    			ul0 = element("ul");
+    			li6 = element("li");
+    			li6.textContent = "Jog = [Speed x2] for up to miles = C.";
+    			t51 = space();
+    			li7 = element("li");
+    			li7.textContent = "Sprint = [(Speed x2) + d6 yds] for up to mins = C.";
+    			t53 = space();
+    			li8 = element("li");
+    			li8.textContent = "March = [Speed /2 mph] for up to C x2 hrs.";
+    			t55 = space();
+    			button6 = element("button");
+    			button6.textContent = "BRAINS (B)";
+    			t57 = space();
+    			div8 = element("div");
+    			p12 = element("p");
+    			p12.textContent = "Brains is a Character’s talent for cognitive functioning and abstract thought. Characters with a high Brains are good at retaining and accessing knowledge, processing sensory input, and learning from personal experiences. Characters with a low Brains are absent minded, forgetful, and dull-witted.";
+    			t59 = space();
+    			p13 = element("p");
+    			p13.textContent = "Brains is the Trait that governs the Perception Instinct and is the basis of the Experience Property.  Brains is also the parent Trait for the Medicine, Science, and Survival Skills.";
+    			t61 = space();
+    			p14 = element("p");
+    			p14.textContent = "This means that Brains is very important for awareness, improving through reflection, performing medical procedures to treat wounds, mixing Drugs and Bombs, working on electronics, counseling others, and using primitive skills to shelter, forage, and navigate.";
+    			t63 = space();
+    			button7 = element("button");
+    			button7.textContent = "PERCEPTION: [= B]";
+    			t65 = space();
+    			div5 = element("div");
+    			p15 = element("p");
+    			p15.textContent = "Allows the gathering of detailed information from all of your senses. Penalties for distance vary by sense and circumstances but -1 per 30yds is standard to See and Hear from far away.";
+    			t67 = space();
+    			p16 = element("p");
+    			p16.textContent = "Perception is a static number that is compared to a Difficulty determined by the GN. It is only a bonus to a roll when a Character is actively searching (vs Stealth or Larceny), tracking (vs Survival), discerning (vs Socialize or Entertain), or Scavenging (# by AREA).";
+    			t69 = space();
+    			p17 = element("p");
+    			p17.textContent = "Reflex is the base Difficulty that an enemy must beat to hit the Character whenever the Character is caught unaware. Reflex is equal to Perception.";
+    			t71 = space();
+    			button8 = element("button");
+    			button8.textContent = "BRAINS PROPERTIES:";
+    			t73 = space();
+    			div7 = element("div");
+    			button9 = element("button");
+    			button9.textContent = "EXPERIENCE (XP): [= B/in-game week]";
+    			t75 = space();
+    			div6 = element("div");
+    			p18 = element("p");
+    			p18.textContent = "XP is shown on the Character Sheet as Unspent XP and Total XP. XP is awarded at the end of each in-game week. The GN can give bonus XP when appropriate. Spend XP to buy Abilities.";
+    			t77 = space();
+    			button10 = element("button");
+    			button10.textContent = "CONSTITUTION (C)";
+    			t79 = space();
+    			div15 = element("div");
+    			p19 = element("p");
+    			p19.textContent = "Constitution is a Character’s talent for physical strength and durability. Character’s with a high Constitution are extremely healthy, can lift a great deal of weight, and have strong immune systems. Character’s with a low Constitution cannot withstand very much punishment, are physically weak, and sickly.";
+    			t81 = space();
+    			p20 = element("p");
+    			p20.textContent = "Constitution is the Trait that governs the Athletics Instinct. Constitution determines DMG Mod, Health, Carry, which weapons and armor you can use effectively, and it also makes up half of the Speed Property, along with Agility, and half of the Pain Threshold Property, with Demeanor. Constitution is also the parent Trait for the Build and Drive Skills as well as the Melee (including Block Defense) Skill.";
+    			t83 = space();
+    			p21 = element("p");
+    			p21.textContent = "This means that Constitution is very important for absorbing damage, resisting disease, recovering from wounds, moving quickly, climbing and swimming, making, modifying, and repairing items, driving vehicles, attacking and defending with hand-to-hand weapons, and carrying and using heavy equipment.";
+    			t85 = space();
+    			button11 = element("button");
+    			button11.textContent = "ATHLETICS: [= C]";
+    			t87 = space();
+    			div9 = element("div");
+    			p22 = element("p");
+    			p22.textContent = "This is the mastery of physically demanding and specialized forms of movement.";
+    			t89 = space();
+    			ul1 = element("ul");
+    			li9 = element("li");
+    			li9.textContent = "Climbing: Move at [Speed /2]";
+    			t91 = space();
+    			li10 = element("li");
+    			li10.textContent = "Rappelling: Move at [Speed x4] with a rope";
+    			t93 = space();
+    			li11 = element("li");
+    			li11.textContent = "Swimming: Move at [Speed /4]";
+    			t95 = space();
+    			p23 = element("p");
+    			p23.textContent = "Difficulties are determined by the GN based on a wide variety of factors. Moving with Athletics usually takes your entire action. In some circumstances it may be possible to attack between Athletics rolls (kicking a climber on the wall next to you, for example) but doing so prevents your movement that round. Penalties that apply to Athletics rolls will almost always apply to any ATK or DEF while using Athletics.";
+    			t97 = space();
+    			button12 = element("button");
+    			button12.textContent = "CONSTITUTION PROPERTIES:";
+    			t99 = space();
+    			div14 = element("div");
+    			button13 = element("button");
+    			button13.textContent = "CARRY: [= Cx6]";
+    			t101 = space();
+    			div10 = element("div");
+    			p24 = element("p");
+    			p24.textContent = "This is the maximum total item Size you can haul comfortably. -1 Speed, DEF, and all rolls for each point of Size in excess of your Carry limit";
+    			t103 = space();
+    			button14 = element("button");
+    			button14.textContent = "DMG MOD: [=(C/3)-1]";
+    			t105 = space();
+    			div11 = element("div");
+    			p25 = element("p");
+    			p25.textContent = "Modifier to DMG when using Melee and muscle-powered Ranged weapons as follows:";
+    			t107 = space();
+    			ol1 = element("ol");
+    			li12 = element("li");
+    			li12.textContent = "-1";
+    			t109 = space();
+    			li13 = element("li");
+    			li13.textContent = "-1";
+    			t111 = space();
+    			li14 = element("li");
+    			li14.textContent = "-0";
+    			t113 = space();
+    			li15 = element("li");
+    			li15.textContent = "+0";
+    			t115 = space();
+    			li16 = element("li");
+    			li16.textContent = "+1";
+    			t117 = space();
+    			li17 = element("li");
+    			li17.textContent = "+1";
+    			t119 = space();
+    			button15 = element("button");
+    			button15.textContent = "THRESHOLD [= C+D]";
+    			t121 = space();
+    			div12 = element("div");
+    			p26 = element("p");
+    			p26.textContent = "The maximum Pain you can take before going unconscious. Any Blunt DMG that is taken after Pain has reached the Threshold is lethal and so reduces HP.";
+    			t123 = space();
+    			button16 = element("button");
+    			button16.textContent = "HEALTH (HP): [Torso HP = C x2, Head and Limb HP = C]";
+    			t125 = space();
+    			div13 = element("div");
+    			p27 = element("p");
+    			p27.textContent = "This is the amount of DMG you can take. Limbs are disabled and Bleeding at 0HP, and destroyed at -C. You go unconscious at 0HP on Head or Torso, and die at -C.";
+    			t127 = space();
+    			button17 = element("button");
+    			button17.textContent = "DEMEANOR (D)";
+    			t129 = space();
+    			div26 = element("div");
+    			p28 = element("p");
+    			p28.textContent = "Demeanor is a Character’s talent for navigating social encounters and sheer force of will. Character’s with a high Demeanor are charismatic, self-driven, and inspire confidence. Character’s with a low Demeanor are poor speakers, easily discouraged, find it difficult to make friends, and often feel hopeless about their lives.";
+    			t131 = space();
+    			p29 = element("p");
+    			p29.textContent = "Demeanor is the Trait that governs the Socialize Instinct. Demeanor is the amount of Luck and Psyche a Character starts with. Demeanor is also the parent Trait for the Entertain, Leadership, and Tame Skills.";
+    			t133 = space();
+    			p30 = element("p");
+    			p30.textContent = "This means that Demeanor is very important for altering fate, staying sane, haggling, keeping friends, resisting torture, lying convincingly, taking command, intimidating opponents, and handling animals.";
+    			t135 = space();
+    			div16 = element("div");
+    			div16.textContent = "SOCIALIZE: [= D]";
+    			t137 = space();
+    			div17 = element("div");
+    			p31 = element("p");
+    			p31.textContent = "This is the subtle art of gaining the upper hand in conversation. Uses include persuading an individual or crowd with a speech, gaining information, currying favor, or just general politicking.";
+    			t139 = space();
+    			p32 = element("p");
+    			p32.textContent = "Socialize should be used to quantify roleplaying interaction when necessary, not as a replacement for it.";
+    			t141 = space();
+    			div18 = element("div");
+    			div18.textContent = "DEMEANOR PROPERTIES:";
+    			t143 = space();
+    			div25 = element("div");
+    			div19 = element("div");
+    			div19.textContent = "COMRADES:";
+    			t145 = space();
+    			div20 = element("div");
+    			p33 = element("p");
+    			p33.textContent = "Loyal friends and pets who make your life worth living. It takes at least a month to make a new Comrade. Your Comrade must also consider you a Comrade. Only Comrades get bonuses from Demeanor Skills. Comrades should be listed in order of priority to your Character.";
+    			t147 = space();
+    			div21 = element("div");
+    			div21.textContent = "LUCK: [= D]";
+    			t149 = space();
+    			div22 = element("div");
+    			p34 = element("p");
+    			p34.textContent = "You may spend Luck in dramatic moments to:";
+    			t151 = space();
+    			ul2 = element("ul");
+    			li18 = element("li");
+    			li18.textContent = "Add an Exploding 6 to a roll you just made.";
+    			t153 = space();
+    			li19 = element("li");
+    			li19.textContent = "Take an additional Fast action on your turn.";
+    			t155 = space();
+    			li20 = element("li");
+    			li20.textContent = "Give a Luck point to a Comrade in the AREA.";
+    			t157 = space();
+    			p35 = element("p");
+    			p35.textContent = "Luck points refill at dawn each day. The GN may call for a Luck roll [d6 + current Luck points] for chance events that do not apply to Traits, Skills or Instincts.";
+    			t159 = space();
+    			div23 = element("div");
+    			div23.textContent = "PSYCHE: [= D]";
+    			t161 = space();
+    			div24 = element("div");
+    			p36 = element("p");
+    			p36.textContent = "This is a measure of your Character’s mental health on a scale from Crazy to Sane. See Psyche.";
+    			add_location(h2, file$g, 1, 4, 31);
+    			attr_dev(button0, "id", "TraitsBtn");
+    			attr_dev(button0, "class", "Btn");
+    			add_location(button0, file$g, 2, 4, 51);
+    			add_location(p0, file$g, 4, 8, 148);
+    			add_location(li0, file$g, 6, 12, 427);
+    			add_location(li1, file$g, 7, 12, 455);
+    			add_location(li2, file$g, 8, 12, 481);
+    			add_location(li3, file$g, 9, 12, 510);
+    			add_location(li4, file$g, 10, 12, 536);
+    			add_location(li5, file$g, 11, 12, 566);
+    			add_location(ol0, file$g, 5, 8, 410);
+    			add_location(p1, file$g, 13, 8, 602);
+    			add_location(p2, file$g, 14, 8, 726);
+    			add_location(p3, file$g, 15, 8, 801);
+    			add_location(p4, file$g, 16, 8, 863);
+    			attr_dev(button1, "id", "RetrainingTraitsBtn");
+    			attr_dev(button1, "class", "Btn");
+    			add_location(button1, file$g, 18, 8, 1197);
+    			add_location(p5, file$g, 20, 12, 1334);
+    			attr_dev(div0, "id", "RetrainingTraitsSec");
+    			attr_dev(div0, "class", "Sec3");
+    			add_location(div0, file$g, 19, 8, 1278);
+    			attr_dev(button2, "id", "AgilityTraitBtn");
+    			attr_dev(button2, "class", "Btn");
+    			add_location(button2, file$g, 23, 8, 1470);
+    			add_location(p6, file$g, 25, 12, 1592);
+    			add_location(p7, file$g, 26, 12, 1870);
+    			add_location(p8, file$g, 27, 12, 2157);
+    			attr_dev(button3, "id", "StealthInstinctBtn");
+    			attr_dev(button3, "class", "Btn");
+    			add_location(button3, file$g, 28, 12, 2391);
+    			add_location(p9, file$g, 30, 16, 2530);
+    			add_location(p10, file$g, 31, 16, 2750);
+    			attr_dev(div1, "id", "StealthInstinctSec");
+    			attr_dev(div1, "class", "Sec4");
+    			add_location(div1, file$g, 29, 12, 2471);
+    			attr_dev(button4, "id", "AgilityPropertiesBtn");
+    			attr_dev(button4, "class", "Btn");
+    			add_location(button4, file$g, 33, 12, 2947);
+    			attr_dev(button5, "id", "SpeedPropertyBtn");
+    			attr_dev(button5, "class", "Btn");
+    			add_location(button5, file$g, 35, 16, 3095);
+    			add_location(p11, file$g, 37, 20, 3236);
+    			add_location(li6, file$g, 39, 24, 3432);
+    			add_location(li7, file$g, 40, 24, 3503);
+    			add_location(li8, file$g, 41, 24, 3587);
+    			add_location(ul0, file$g, 38, 20, 3403);
+    			attr_dev(div2, "id", "SpeedPropertySec");
+    			attr_dev(div2, "class", "Sec5");
+    			add_location(div2, file$g, 36, 16, 3175);
+    			attr_dev(div3, "id", "AgilityPropertiesSec");
+    			attr_dev(div3, "class", "Sec4");
+    			add_location(div3, file$g, 34, 12, 3034);
+    			attr_dev(div4, "id", "AgilityTraitSec");
+    			attr_dev(div4, "class", "Sec3");
+    			add_location(div4, file$g, 24, 8, 1540);
+    			attr_dev(button6, "id", "BrainsTraitBtn");
+    			attr_dev(button6, "class", "Btn");
+    			add_location(button6, file$g, 47, 8, 3731);
+    			add_location(p12, file$g, 49, 12, 3850);
+    			add_location(p13, file$g, 50, 12, 4167);
+    			add_location(p14, file$g, 51, 12, 4369);
+    			attr_dev(button7, "id", "PerceptionInstinctBtn");
+    			attr_dev(button7, "class", "Btn");
+    			add_location(button7, file$g, 52, 12, 4649);
+    			add_location(p15, file$g, 54, 16, 4797);
+    			add_location(p16, file$g, 55, 16, 5005);
+    			add_location(p17, file$g, 56, 16, 5297);
+    			attr_dev(div5, "id", "PerceptionInstinctSec");
+    			attr_dev(div5, "class", "Sec4");
+    			add_location(div5, file$g, 53, 12, 4735);
+    			attr_dev(button8, "id", "BrainsPropertiesBtn");
+    			attr_dev(button8, "class", "Btn");
+    			add_location(button8, file$g, 58, 12, 5483);
+    			attr_dev(button9, "id", "ExperiencePropertyBtn");
+    			attr_dev(button9, "class", "Btn");
+    			add_location(button9, file$g, 60, 16, 5628);
+    			add_location(p18, file$g, 62, 20, 5802);
+    			attr_dev(div6, "id", "ExperiencePropertySec");
+    			attr_dev(div6, "class", "Sec5");
+    			add_location(div6, file$g, 61, 16, 5736);
+    			attr_dev(div7, "id", "BrainsPropertiesSec");
+    			attr_dev(div7, "class", "Sec4");
+    			add_location(div7, file$g, 59, 12, 5568);
+    			attr_dev(div8, "id", "BrainsTraitSec");
+    			attr_dev(div8, "class", "Sec3");
+    			add_location(div8, file$g, 48, 8, 3799);
+    			attr_dev(button10, "id", "ConstitutionTraitBtn");
+    			attr_dev(button10, "class", "Btn");
+    			add_location(button10, file$g, 67, 8, 6055);
+    			add_location(p19, file$g, 69, 12, 6192);
+    			add_location(p20, file$g, 70, 12, 6519);
+    			add_location(p21, file$g, 71, 12, 6946);
+    			attr_dev(button11, "id", "AthleticsInstinctBtn");
+    			attr_dev(button11, "class", "Btn");
+    			add_location(button11, file$g, 72, 12, 7265);
+    			add_location(p22, file$g, 74, 16, 7410);
+    			add_location(li9, file$g, 76, 20, 7537);
+    			add_location(li10, file$g, 77, 20, 7595);
+    			add_location(li11, file$g, 78, 20, 7667);
+    			add_location(ul1, file$g, 75, 16, 7512);
+    			add_location(p23, file$g, 80, 16, 7743);
+    			attr_dev(div9, "id", "AthleticsInstinctSec");
+    			attr_dev(div9, "class", "Sec4");
+    			add_location(div9, file$g, 73, 12, 7349);
+    			attr_dev(button12, "id", "ConstitutionPropertiesBtn");
+    			attr_dev(button12, "class", "Btn");
+    			add_location(button12, file$g, 82, 12, 8197);
+    			attr_dev(button13, "id", "CarryPropertyBtn");
+    			attr_dev(button13, "class", "Btn");
+    			add_location(button13, file$g, 84, 16, 8360);
+    			add_location(p24, file$g, 86, 20, 8503);
+    			attr_dev(div10, "id", "CarryPropertySec");
+    			attr_dev(div10, "class", "Sec5");
+    			add_location(div10, file$g, 85, 16, 8442);
+    			attr_dev(button14, "id", "DMGModPropertyBtn");
+    			attr_dev(button14, "class", "Btn");
+    			add_location(button14, file$g, 88, 16, 8693);
+    			add_location(p25, file$g, 90, 20, 8843);
+    			add_location(li12, file$g, 92, 24, 8978);
+    			add_location(li13, file$g, 93, 24, 9014);
+    			add_location(li14, file$g, 94, 24, 9050);
+    			add_location(li15, file$g, 95, 24, 9086);
+    			add_location(li16, file$g, 96, 24, 9122);
+    			add_location(li17, file$g, 97, 24, 9158);
+    			add_location(ol1, file$g, 91, 20, 8949);
+    			attr_dev(div11, "id", "DMGModPropertySec");
+    			attr_dev(div11, "class", "Sec5");
+    			add_location(div11, file$g, 89, 16, 8781);
+    			attr_dev(button15, "id", "ThresholdPropertyBtn");
+    			attr_dev(button15, "class", "Btn");
+    			add_location(button15, file$g, 100, 16, 9235);
+    			add_location(p26, file$g, 102, 20, 9389);
+    			attr_dev(div12, "id", "ThresholdPropertySec");
+    			attr_dev(div12, "class", "Sec5");
+    			add_location(div12, file$g, 101, 16, 9324);
+    			attr_dev(button16, "id", "HealthPropertyBtn");
+    			attr_dev(button16, "class", "Btn");
+    			add_location(button16, file$g, 104, 16, 9585);
+    			add_location(p27, file$g, 106, 20, 9768);
+    			attr_dev(div13, "id", "HealthPropertySec");
+    			attr_dev(div13, "class", "Sec5");
+    			add_location(div13, file$g, 105, 16, 9706);
+    			attr_dev(div14, "id", "ConstitutionPropertiesSec");
+    			attr_dev(div14, "class", "Sec4");
+    			add_location(div14, file$g, 83, 12, 8294);
+    			attr_dev(div15, "id", "ConstitutionTraitSec");
+    			attr_dev(div15, "class", "Sec3");
+    			add_location(div15, file$g, 68, 8, 6135);
+    			attr_dev(button17, "id", "DemeanorTraitBtn");
+    			attr_dev(button17, "class", "Btn");
+    			add_location(button17, file$g, 111, 8, 10001);
+    			add_location(p28, file$g, 113, 12, 10126);
+    			add_location(p29, file$g, 114, 12, 10472);
+    			add_location(p30, file$g, 115, 12, 10699);
+    			attr_dev(div16, "id", "SocializeInstinctBtn");
+    			add_location(div16, file$g, 116, 12, 10922);
+    			add_location(p31, file$g, 118, 16, 11049);
+    			add_location(p32, file$g, 119, 16, 11266);
+    			attr_dev(div17, "id", "SocializeInstinctSec");
+    			attr_dev(div17, "class", "Sec4");
+    			add_location(div17, file$g, 117, 12, 10988);
+    			attr_dev(div18, "id", "DemeanorPropertiesBtn");
+    			add_location(div18, file$g, 121, 12, 11410);
+    			attr_dev(div19, "id", "ComradesPropertyBtn");
+    			add_location(div19, file$g, 123, 16, 11543);
+    			add_location(p33, file$g, 125, 20, 11669);
+    			attr_dev(div20, "id", "ComradesPropertySec");
+    			attr_dev(div20, "class", "Sec5");
+    			add_location(div20, file$g, 124, 16, 11605);
+    			attr_dev(div21, "id", "LuckPropertyBtn");
+    			add_location(div21, file$g, 127, 16, 11981);
+    			add_location(p34, file$g, 129, 20, 12101);
+    			add_location(li18, file$g, 131, 24, 12200);
+    			add_location(li19, file$g, 132, 24, 12277);
+    			add_location(li20, file$g, 133, 24, 12355);
+    			add_location(ul2, file$g, 130, 20, 12171);
+    			add_location(p35, file$g, 135, 20, 12454);
+    			attr_dev(div22, "id", "LuckPropertySec");
+    			attr_dev(div22, "class", "Sec5");
+    			add_location(div22, file$g, 128, 16, 12041);
+    			attr_dev(div23, "id", "PsychePropertyBtn");
+    			add_location(div23, file$g, 137, 16, 12664);
+    			add_location(p36, file$g, 139, 20, 12790);
+    			attr_dev(div24, "id", "PsychePropertySec");
+    			attr_dev(div24, "class", "Sec5");
+    			add_location(div24, file$g, 138, 16, 12728);
+    			attr_dev(div25, "id", "DemeanorPropertiesSec");
+    			attr_dev(div25, "class", "Sec4");
+    			add_location(div25, file$g, 122, 12, 11481);
+    			attr_dev(div26, "id", "DemeanorTraitSec");
+    			attr_dev(div26, "class", "Sec3");
+    			add_location(div26, file$g, 112, 8, 10073);
+    			attr_dev(div27, "id", "TraitsSec");
+    			attr_dev(div27, "class", "Sec2");
+    			add_location(div27, file$g, 3, 4, 106);
+    			attr_dev(div28, "class", "traits-rules");
+    			add_location(div28, file$g, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div28, anchor);
+    			append_dev(div28, h2);
+    			append_dev(div28, t1);
+    			append_dev(div28, button0);
+    			append_dev(div28, t3);
+    			append_dev(div28, div27);
+    			append_dev(div27, p0);
+    			append_dev(div27, t5);
+    			append_dev(div27, ol0);
+    			append_dev(ol0, li0);
+    			append_dev(ol0, t7);
+    			append_dev(ol0, li1);
+    			append_dev(ol0, t9);
+    			append_dev(ol0, li2);
+    			append_dev(ol0, t11);
+    			append_dev(ol0, li3);
+    			append_dev(ol0, t13);
+    			append_dev(ol0, li4);
+    			append_dev(ol0, t15);
+    			append_dev(ol0, li5);
+    			append_dev(div27, t17);
+    			append_dev(div27, p1);
+    			append_dev(div27, t19);
+    			append_dev(div27, p2);
+    			append_dev(div27, t21);
+    			append_dev(div27, p3);
+    			append_dev(div27, t23);
+    			append_dev(div27, p4);
+    			append_dev(div27, t25);
+    			append_dev(div27, button1);
+    			append_dev(div27, t27);
+    			append_dev(div27, div0);
+    			append_dev(div0, p5);
+    			append_dev(div27, t29);
+    			append_dev(div27, button2);
+    			append_dev(div27, t31);
+    			append_dev(div27, div4);
+    			append_dev(div4, p6);
+    			append_dev(div4, t33);
+    			append_dev(div4, p7);
+    			append_dev(div4, t35);
+    			append_dev(div4, p8);
+    			append_dev(div4, t37);
+    			append_dev(div4, button3);
+    			append_dev(div4, t39);
+    			append_dev(div4, div1);
+    			append_dev(div1, p9);
+    			append_dev(div1, t41);
+    			append_dev(div1, p10);
+    			append_dev(div4, t43);
+    			append_dev(div4, button4);
+    			append_dev(div4, t45);
+    			append_dev(div4, div3);
+    			append_dev(div3, button5);
+    			append_dev(div3, t47);
+    			append_dev(div3, div2);
+    			append_dev(div2, p11);
+    			append_dev(div2, t49);
+    			append_dev(div2, ul0);
+    			append_dev(ul0, li6);
+    			append_dev(ul0, t51);
+    			append_dev(ul0, li7);
+    			append_dev(ul0, t53);
+    			append_dev(ul0, li8);
+    			append_dev(div27, t55);
+    			append_dev(div27, button6);
+    			append_dev(div27, t57);
+    			append_dev(div27, div8);
+    			append_dev(div8, p12);
+    			append_dev(div8, t59);
+    			append_dev(div8, p13);
+    			append_dev(div8, t61);
+    			append_dev(div8, p14);
+    			append_dev(div8, t63);
+    			append_dev(div8, button7);
+    			append_dev(div8, t65);
+    			append_dev(div8, div5);
+    			append_dev(div5, p15);
+    			append_dev(div5, t67);
+    			append_dev(div5, p16);
+    			append_dev(div5, t69);
+    			append_dev(div5, p17);
+    			append_dev(div8, t71);
+    			append_dev(div8, button8);
+    			append_dev(div8, t73);
+    			append_dev(div8, div7);
+    			append_dev(div7, button9);
+    			append_dev(div7, t75);
+    			append_dev(div7, div6);
+    			append_dev(div6, p18);
+    			append_dev(div27, t77);
+    			append_dev(div27, button10);
+    			append_dev(div27, t79);
+    			append_dev(div27, div15);
+    			append_dev(div15, p19);
+    			append_dev(div15, t81);
+    			append_dev(div15, p20);
+    			append_dev(div15, t83);
+    			append_dev(div15, p21);
+    			append_dev(div15, t85);
+    			append_dev(div15, button11);
+    			append_dev(div15, t87);
+    			append_dev(div15, div9);
+    			append_dev(div9, p22);
+    			append_dev(div9, t89);
+    			append_dev(div9, ul1);
+    			append_dev(ul1, li9);
+    			append_dev(ul1, t91);
+    			append_dev(ul1, li10);
+    			append_dev(ul1, t93);
+    			append_dev(ul1, li11);
+    			append_dev(div9, t95);
+    			append_dev(div9, p23);
+    			append_dev(div15, t97);
+    			append_dev(div15, button12);
+    			append_dev(div15, t99);
+    			append_dev(div15, div14);
+    			append_dev(div14, button13);
+    			append_dev(div14, t101);
+    			append_dev(div14, div10);
+    			append_dev(div10, p24);
+    			append_dev(div14, t103);
+    			append_dev(div14, button14);
+    			append_dev(div14, t105);
+    			append_dev(div14, div11);
+    			append_dev(div11, p25);
+    			append_dev(div11, t107);
+    			append_dev(div11, ol1);
+    			append_dev(ol1, li12);
+    			append_dev(ol1, t109);
+    			append_dev(ol1, li13);
+    			append_dev(ol1, t111);
+    			append_dev(ol1, li14);
+    			append_dev(ol1, t113);
+    			append_dev(ol1, li15);
+    			append_dev(ol1, t115);
+    			append_dev(ol1, li16);
+    			append_dev(ol1, t117);
+    			append_dev(ol1, li17);
+    			append_dev(div14, t119);
+    			append_dev(div14, button15);
+    			append_dev(div14, t121);
+    			append_dev(div14, div12);
+    			append_dev(div12, p26);
+    			append_dev(div14, t123);
+    			append_dev(div14, button16);
+    			append_dev(div14, t125);
+    			append_dev(div14, div13);
+    			append_dev(div13, p27);
+    			append_dev(div27, t127);
+    			append_dev(div27, button17);
+    			append_dev(div27, t129);
+    			append_dev(div27, div26);
+    			append_dev(div26, p28);
+    			append_dev(div26, t131);
+    			append_dev(div26, p29);
+    			append_dev(div26, t133);
+    			append_dev(div26, p30);
+    			append_dev(div26, t135);
+    			append_dev(div26, div16);
+    			append_dev(div26, t137);
+    			append_dev(div26, div17);
+    			append_dev(div17, p31);
+    			append_dev(div17, t139);
+    			append_dev(div17, p32);
+    			append_dev(div26, t141);
+    			append_dev(div26, div18);
+    			append_dev(div26, t143);
+    			append_dev(div26, div25);
+    			append_dev(div25, div19);
+    			append_dev(div25, t145);
+    			append_dev(div25, div20);
+    			append_dev(div20, p33);
+    			append_dev(div25, t147);
+    			append_dev(div25, div21);
+    			append_dev(div25, t149);
+    			append_dev(div25, div22);
+    			append_dev(div22, p34);
+    			append_dev(div22, t151);
+    			append_dev(div22, ul2);
+    			append_dev(ul2, li18);
+    			append_dev(ul2, t153);
+    			append_dev(ul2, li19);
+    			append_dev(ul2, t155);
+    			append_dev(ul2, li20);
+    			append_dev(div22, t157);
+    			append_dev(div22, p35);
+    			append_dev(div25, t159);
+    			append_dev(div25, div23);
+    			append_dev(div25, t161);
+    			append_dev(div25, div24);
+    			append_dev(div24, p36);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div28);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$j.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Traits$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$j, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Traits",
+    			options,
+    			id: create_fragment$j.name
     		});
     	}
     }
 
     /* src/pages/Rules.svelte generated by Svelte v3.15.0 */
-    const file$a = "src/pages/Rules.svelte";
+    const file$h = "src/pages/Rules.svelte";
 
-    function create_fragment$c(ctx) {
+    function create_fragment$k(ctx) {
     	let div1;
     	let t0;
     	let div0;
     	let button;
+    	let t2;
     	let current;
     	let dispose;
     	const combat = new Combat({ $$inline: true });
+
+    	const backnextbuttons = new BackNextButtons({
+    			props: { step: ctx.step },
+    			$$inline: true
+    		});
+
+    	backnextbuttons.$on("message", ctx.nav);
 
     	const block = {
     		c: function create() {
@@ -4960,12 +14866,14 @@ var app = (function () {
     			div0 = element("div");
     			button = element("button");
     			button.textContent = "Home";
+    			t2 = space();
+    			create_component(backnextbuttons.$$.fragment);
     			attr_dev(button, "class", "nav-button svelte-18puduf");
-    			add_location(button, file$a, 15, 8, 618);
+    			add_location(button, file$h, 25, 8, 971);
     			attr_dev(div0, "class", "nav-bar svelte-18puduf");
-    			add_location(div0, file$a, 14, 4, 588);
+    			add_location(div0, file$h, 24, 4, 941);
     			attr_dev(div1, "class", "page rules-page");
-    			add_location(div1, file$a, 12, 0, 539);
+    			add_location(div1, file$h, 22, 0, 892);
     			dispose = listen_dev(button, "click", router.Home, false, false, false);
     		},
     		l: function claim(nodes) {
@@ -4977,28 +14885,37 @@ var app = (function () {
     			append_dev(div1, t0);
     			append_dev(div1, div0);
     			append_dev(div0, button);
+    			append_dev(div1, t2);
+    			mount_component(backnextbuttons, div1, null);
     			current = true;
     		},
-    		p: noop,
+    		p: function update(changed, ctx) {
+    			const backnextbuttons_changes = {};
+    			if (changed.step) backnextbuttons_changes.step = ctx.step;
+    			backnextbuttons.$set(backnextbuttons_changes);
+    		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(combat.$$.fragment, local);
+    			transition_in(backnextbuttons.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(combat.$$.fragment, local);
+    			transition_out(backnextbuttons.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
     			destroy_component(combat);
+    			destroy_component(backnextbuttons);
     			dispose();
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$c.name,
+    		id: create_fragment$k.name,
     		type: "component",
     		source: "",
     		ctx
@@ -5007,24 +14924,49 @@ var app = (function () {
     	return block;
     }
 
+    function instance$c($$self, $$props, $$invalidate) {
+    	let step = 0;
+    	const options = [Terms, Dice, Creation, Traits$1, Skills$1, Combat, Maneuvers, Situations];
+
+    	function nav(event) {
+    		$$invalidate("step", step = event.detail.number);
+
+    		if (step == options.length || step < 0) {
+    			router.Home();
+    		} else {
+    			selected = options[step];
+    		}
+    	}
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("step" in $$props) $$invalidate("step", step = $$props.step);
+    	};
+
+    	return { step, nav };
+    }
+
     class Rules extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$c, safe_not_equal, {});
+    		init(this, options, instance$c, create_fragment$k, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Rules",
     			options,
-    			id: create_fragment$c.name
+    			id: create_fragment$k.name
     		});
     	}
     }
 
     /* src/pages/Home.svelte generated by Svelte v3.15.0 */
-    const file$b = "src/pages/Home.svelte";
+    const file$i = "src/pages/Home.svelte";
 
-    function create_fragment$d(ctx) {
+    function create_fragment$l(ctx) {
     	let div;
     	let button0;
     	let t1;
@@ -5040,11 +14982,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Rules";
     			attr_dev(button0, "class", "svelte-hz0e23");
-    			add_location(button0, file$b, 7, 4, 164);
+    			add_location(button0, file$i, 7, 4, 164);
     			attr_dev(button1, "class", "svelte-hz0e23");
-    			add_location(button1, file$b, 8, 4, 229);
+    			add_location(button1, file$i, 8, 4, 229);
     			attr_dev(div, "class", "page home-page svelte-hz0e23");
-    			add_location(div, file$b, 6, 0, 131);
+    			add_location(div, file$i, 6, 0, 131);
 
     			dispose = [
     				listen_dev(button0, "click", router.Creator, false, false, false),
@@ -5071,7 +15013,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$l.name,
     		type: "component",
     		source: "",
     		ctx
@@ -5083,13 +15025,13 @@ var app = (function () {
     class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$d, safe_not_equal, {});
+    		init(this, options, null, create_fragment$l, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Home",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$l.name
     		});
     	}
     }
@@ -5231,7 +15173,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$e(ctx) {
+    function create_fragment$m(ctx) {
     	let current;
 
     	const viewscreen = new ViewScreen({
@@ -5278,7 +15220,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$e.name,
+    		id: create_fragment$m.name,
     		type: "component",
     		source: "",
     		ctx
@@ -5290,13 +15232,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$e, safe_not_equal, {});
+    		init(this, options, null, create_fragment$m, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$e.name
+    			id: create_fragment$m.name
     		});
     	}
     }

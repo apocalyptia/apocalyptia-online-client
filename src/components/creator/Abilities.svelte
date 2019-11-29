@@ -3,13 +3,13 @@
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { AbilityList } from  '../../data/character/abilities'
+    import { AbilityList } from '../../data/character/abilities'
 
     function modifyAbilities() {
-        char.abilities = [];
+        char.abilities = []
         AbilityList.forEach(function (ability) {
             if (ability.taken > 0) {
-                char.abilities.push(ability);
+                char.abilities.push(ability)
             }
         })
     }
@@ -22,22 +22,22 @@
     <div class="stat-block">
         <div class="abilities-table">
             <div class="ability-row header-row separator">
-                <div class="medium-column">Name</div>
-                <div class="large-column">Description</div>
-                <div class="small-column">Max</div>
-                <div class="small-column">XP</div>
-                <div class="small-column">Taken</div>
+                <div class="m-col">Name</div>
+                <div class="l-col">Description</div>
+                <div class="s-col">Max</div>
+                <div class="s-col">XP</div>
+                <div class="s-col">Taken</div>
             </div>
             {#each AbilityList as ability, index}
                 {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
                     <div class="separator"></div>
                 {/if}
                 <div class="ability-row">
-                    <div class="medium-column">{ability.name}</div>
-                    <div class="large-column">{ability.description}</div>
-                    <div class="small-column">{ability.max}</div>
-                    <div class="small-column">{ability.xp}</div>
-                    <div class="small-column">
+                    <div class="m-col">{ability.name}</div>
+                    <div class="l-col">{ability.description}</div>
+                    <div class="s-col">{ability.max}</div>
+                    <div class="s-col">{ability.xp}</div>
+                    <div class="s-col">
                         <input
                             type="number"
                             class="taken-number"
@@ -63,15 +63,15 @@
     .header-row {
         font-size: 1.25em;
     }
-    .large-column {
+    .l-col {
         display: inline-block;
         width: 37.5%;
     }
-    .medium-column {
+    .m-col {
         display: inline-block;
         width: 25%;
     }
-    .small-column {
+    .s-col {
         display: inline-block;
         text-align: center;
         width: 10%;

@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable } from 'svelte/store'
 import { Character } from './character/character'
 
 let newCharacter = new Character()

@@ -48,7 +48,8 @@ node_modules/
 .DS_Store
 
 # Svelte
-public/bundle*
+public/*
+!public/global.css
 
 # File types
 *.gif

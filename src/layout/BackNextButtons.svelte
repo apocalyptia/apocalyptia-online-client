@@ -1,12 +1,12 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-    export let step;
+    import { createEventDispatcher } from 'svelte'
+    export let step
 
-    const dispatch = createEventDispatcher();
+    const d = createEventDispatcher()
 
-    function back () { dispatch('message', { number: --step }) }
+    function back () { d('message', { number: --step }) }
 
-    function next() { dispatch('message', { number: ++step }) }
+    function next() { d('message', { number: ++step }) }
 </script>
 
 <div>
