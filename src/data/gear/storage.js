@@ -1,26 +1,32 @@
-    //STORAGE
-    function Storage(type, notes, sz){
-        this.type = type;
-        this.notes = notes;
-        this.sz = sz;
+class Storage {
+    constructor(type, slots, notes, sz) {
+        this.type = type
+        this.slots = slots
+        this.notes = notes
+        this.sz = sz
     }
-    const iBackpack = new Gear('Backpack','30 Slots. 2rnds to access.',1);
-    const iBandoleer = new Gear('Bandoleer','Holds 50 bullets of any caliber.',0);
-    const iBDUJacket = new Gear('BDU Jacket','4x 1 Slots. Camo +1.',0);
-    const iCargoPants = new Gear('Cargo Pants','6x 1 Slots. Camo +1.',1);
-    const iCanteen = new Gear('Canteen','Holds 1 unit (.5gal) of liquid. Metal.',1);
-    const iConcealedHolster = new Gear('Concealed Holster','1 Slot. Perception 12# to spot a Size 1 Gun.',0);
-    const iCooler = new Gear('Cooler','30 Slots. Hunted or Foraged Food lasts 6 days.',4);
-    const iDuffelBag = new Gear('Duffel Bag','40 Slots. 2rnds to access.',3);
-    const iFuelCan = new Gear('Fuel Can','5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.',2);
-    const iHoody = new Gear('Hoody','2x 1 Slots. CR.',0);
-    const iHydrationPack = new Gear('Hydration Pack','Holds 4 units (2gal) of liquid.',1);
-    const iLockbox = new Gear('Lockbox','1 Slot. 10HP. 6DR. FR. Larceny(Disable) 9#.',2);
-    const iMessengerBag = new Gear('Messenger Bag','4 Slots. 1rnd to access.',2);
-    const iPlasticJug = new Gear('Plastic Jug', 'Holds 2 units (1gal) of liquid.',1);
-    const iPurse = new Gear('Purse','3 Slots. 1rnd to access.',1);
-    const iSpeedloader = new Gear('Speed-loader','Reload a revolver cylinder as 1 action.',0);
-    const iToolBelt = new Gear('Tool Belt','6x 1 Slots. +1 Build. Miscellaneous small tools.',2);
-    const iTrenchCoat = new Gear('Trench Coat','2x 2 Slots. CR. +1 Stealth.',1);
-    const iWaterBottle = new Gear('Water Bottle','Holds 1 unit (.5gal) of liquid.',1);
-    const iStorageList = [iBackpack,iBandoleer,iBDUJacket,iCargoPants,iCanteen,iConcealedHolster,iCooler,iDuffelBag,iFuelCan,iHoody,iHydrationPack,iLockbox,iMessengerBag,iPlasticJug,iPurse,iSpeedloader,iToolBelt,iTrenchCoat,iWaterBottle];
+}
+
+export const StorageList = [
+    new Storage('Backpack',             30, '2rnds to access.',                                 1),
+    new Storage('Bandoleer',            1,  'Holds 50 bullets of any caliber.',                 0),
+    new Storage('BDU Jacket',           4,  'Camo.',                                            0),
+    new Storage('Cargo Pants',          6,  'Camo.',                                            1),
+    new Storage('Canteen',              1,  'Holds 1 unit (.5gal) of liquid. Metal.',           1),
+    new Storage('Concealed Holster',    1,  'Perception 12# to spot a Size 1 Gun.',             0),
+    new Storage('Cooler',               30, 'Hunted or Foraged Food lasts 6 days.',             4),
+    new Storage('Duffel Bag',           40, '2rnds to access.',                                 3),
+    new Storage('Fuel Can',             5,  '5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.',      2),
+    new Storage('Hoody',                2,  'CR.',                                              0),
+    new Storage('Hydration Pack',       4,  'Holds 4 units (2gal) of liquid.',                  1),
+    new Storage('Lockbox',              1,  '10HP. 6DR. FR. Larceny(Disable) 9#.',              2),
+    new Storage('Messenger Bag',        4,  '1rnd to access.',                                  2),
+    new Storage('Plastic Jug',          2,  'Holds 2 units (1gal) of liquid.',                  1),
+    new Storage('Purse',                3,  '1rnd to access.',                                  1),
+    new Storage('Speed-loader',         0,  'Reload a revolver cylinder as 1 action.',          0),
+    new Storage('Tool Belt',            6,  '6x 1 Slots. +1 Build. Miscellaneous small tools.', 2),
+    new Storage('Trench Coat',          4,  'CR. +1 Stealth.',                                  1),
+    new Storage('Water Bottle',         1,  'Holds 1 unit (.5gal) of liquid.',                  1),
+]
+
+// TODO: Unit conversion still needs work.
