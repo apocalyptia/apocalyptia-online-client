@@ -5,20 +5,20 @@
 
 @font-face {
 	font-family: "Term";
-	src: url("./assets/fonts/IBM.ttf");
+	src: url("./assets/fonts/Hack.ttf");
 }
 
 html, body {
 	background: rgb(15, 30, 15);
-	color: rgb(100, 250, 100);
+	color: lime;
 	font-family: "Term";
-	font-size: 14pt;
+	font-size: 12pt;
 	height: 100vh;
 	width: 100vw;
 }
 
 a {
-	color: rgb(100, 250, 100);
+	color: lime;
 	text-decoration: none;
 }
 
@@ -29,15 +29,15 @@ label {
 input, button, select, textarea {
 	background: rgb(15, 30, 15);
 	border-radius: 5px;
-	border: 1px solid rgb(100, 250, 100);
-	color: rgb(100, 250, 100);
+	border: 1px solid lime;
+	color: lime;
 	font-family: "Term";
 	font-size: inherit;
 	text-align: center;
 }
 
 button:active {
-	background: rgb(100, 250, 100);
+	background: lime;
 	color: rgb(15, 30, 15);
 }
 

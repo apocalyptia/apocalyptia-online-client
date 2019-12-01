@@ -11,7 +11,9 @@
     import Traits from '../components/reference/Traits.svelte'
 
     let step = 0
-    const options = [Terms, Dice, Creation, Traits, Skills, Combat, Maneuvers, Situations ]
+    // const options = [Terms, Dice, Creation, Traits, Skills, Combat, Maneuvers, Situations ]
+    const options = [Combat]
+    let selected = options[step]
 
     function nav(event) {
         step = event.detail.number
@@ -21,9 +23,9 @@
 </script>
 
 <div class='page rules-page'>
-    <Combat />
-    <BackNextButtons step={step} on:message={nav} />
+    <svelte:component this={selected} />
 </div>
+<BackNextButtons step={step} on:message={nav} />
 
 <style>
 </style>
