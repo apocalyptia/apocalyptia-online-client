@@ -17,9 +17,15 @@
                     <div class='table'><svelte:component this={r.table}/></div>
                 {/if}
                 {#if r.subrules}
-                    <ul>
+                    <ul class='sub-ul'>
                         {#each r.subrules as s}
-                            <li>{s}</li>    
+                            <div class='separator'/>
+                            <li class='sub-li'>
+                                <div class='sub-box'>
+                                    <span class='sub-name'>{s.name}</span>
+                                    <div class='sub-notes'>{@html s.notes}</div>
+                                </div>
+                            </li>    
                         {/each}
                     </ul>
                 {/if}
@@ -35,12 +41,20 @@
         padding: 25px;
     }
     .name {
-        font-size: 1.1em;
+        font-size: 1.2em;
+        font-weight: bold;
     }
     .notes {
         padding-top: 25px;
     }
     .separator {
         height: 25px;
+    }
+    .sub-ul {
+        list-style: none;
+    }
+    .sub-name {
+        font-size: 1.1em;
+        font-weight: bold;
     }
 </style>

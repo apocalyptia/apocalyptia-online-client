@@ -17,11 +17,12 @@
         z-index: 1;
     }
     .title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .beta {
         color: lightcoral;
         border: 1px dotted lightcoral;
+        font-size: .8rem;
         padding: 3px;
     }
 </style>

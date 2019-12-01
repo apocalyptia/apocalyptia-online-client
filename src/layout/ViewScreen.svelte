@@ -1,17 +1,15 @@
-<div class='screen'>
-	<div class='display'>
-        <slot />
-    </div>
+<div class='view-screen'>
+    <slot />
 </div>
 
 <style>
-	.screen {
+	.view-screen {
 		height: 100vh;
 		overflow-x: hidden;
 		overflow-y: auto;
 		width: 100vw;
 	}
-	.screen:before {
+	.view-screen:before {
 		animation: hline 10s linear infinite;
 		background: rgb(100, 250, 100, .1);
 		content: '';
@@ -24,10 +22,5 @@
 	@keyframes hline {
 		0%   { top: 0; }
 		100% { top: 99%; } 
-	}
-	.display {
-		height: calc(100vh - 100px);
-		margin-bottom: 150px;
-		margin-top: 50px;
 	}
 </style>

@@ -1,13 +1,13 @@
-.screen.svelte-19m26kv{height:100vh;overflow-x:hidden;overflow-y:auto;width:100vw}.screen.svelte-19m26kv:before{animation:svelte-19m26kv-hline 10s linear infinite;background:rgb(100, 250, 100, .1);content:'';font-size:1px;height:1px;position:absolute;width:100vw;z-index:1000}@keyframes svelte-19m26kv-hline{0%{top:0}100%{top:99%}}.display.svelte-19m26kv{height:calc(100vh - 100px);margin-bottom:150px;margin-top:50px}
-.title-bar.svelte-1f9u1va{height:50px;position:fixed;text-align:center;top:0;width:100vw;z-index:1}.title.svelte-1f9u1va{font-size:2rem}.beta.svelte-1f9u1va{color:lightcoral;border:1px dotted lightcoral;padding:3px}
-.home-page.svelte-hz0e23{text-align:center}button.svelte-hz0e23{padding:2rem;width:70%;margin:1rem auto}
+.view-screen.svelte-8mevh{height:100vh;overflow-x:hidden;overflow-y:auto;width:100vw}.view-screen.svelte-8mevh:before{animation:svelte-8mevh-hline 10s linear infinite;background:rgb(100, 250, 100, .1);content:'';font-size:1px;height:1px;position:absolute;width:100vw;z-index:1000}@keyframes svelte-8mevh-hline{0%{top:0}100%{top:99%}}
+.title-bar.svelte-11p9k5r{height:50px;position:fixed;text-align:center;top:0;width:100vw;z-index:1}.title.svelte-11p9k5r{font-size:1.8rem}.beta.svelte-11p9k5r{color:lightcoral;border:1px dotted lightcoral;font-size:.8rem;padding:3px}
+.home-page.svelte-1oytnow{padding:25px;text-align:center}button.svelte-1oytnow{padding:2rem;width:70%;margin:1rem auto}
 div.svelte-1sye5nq{padding:20px;width:calc(100vw - 40px)}
-.page.svelte-1mq6qah{padding:25px}
+.ref-page.svelte-ttj5zk{padding:25px;padding-bottom:50px}
 div.svelte-1gidaka{display:flex;flex-direction:row;position:fixed;left:0;bottom:0px;height:50px;width:100vw}button.svelte-1gidaka{border:1px solid;width:50vw}
-.box.svelte-1d2ehrv{border:1px dotted lime;padding:25px}.name.svelte-1d2ehrv{font-size:1.1em}.notes.svelte-1d2ehrv{padding-top:25px}.separator.svelte-1d2ehrv{height:25px}
+.box.svelte-1v05fh1{border:1px dotted lime;padding:25px}.name.svelte-1v05fh1{font-size:1.2em;font-weight:bold}.notes.svelte-1v05fh1{padding-top:25px}.separator.svelte-1v05fh1{height:25px}.sub-ul.svelte-1v05fh1{list-style:none}.sub-name.svelte-1v05fh1{font-size:1.1em;font-weight:bold}
 .remaining.svelte-slj60w{margin-left:2rem}
 .skill-section.svelte-wj9h86{border:1px dashed var(--char-color);margin:20px 5px 20px 5px;padding:0 10px 10px 10px}.parent-trait-title.svelte-wj9h86{margin-bottom:10px}.remaining.svelte-wj9h86{margin-left:2rem}
 .abilities-table.svelte-maszxs{width:100%}.ability-row.svelte-maszxs{width:inherit}.header-row.svelte-maszxs{font-size:1.25em}.l-col.svelte-maszxs{display:inline-block;width:37.5%}.m-col.svelte-maszxs{display:inline-block;width:25%}.s-col.svelte-maszxs{display:inline-block;text-align:center;width:10%}.separator.svelte-maszxs{border-bottom:1px solid;margin-bottom:10px;padding-bottom:10px}
-table.svelte-1erdvth{border:1px solid red}
+.display-window.svelte-1rpze5{bottom:50px;height:calc(100vh - 100px);position:absolute;top:50px;width:100vw}
 
 /*# sourceMappingURL=apocalyptia-online.css.map */

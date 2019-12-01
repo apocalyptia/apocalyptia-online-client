@@ -2,7 +2,7 @@
     import router from '../routes'
     import BackNextButtons from '../layout/BackNextButtons.svelte'
     import RefList from '../layout/RefList.svelte'
-    import { Combat } from '../models/rules/combat.js'
+    import { Combat } from '../models/rules/combat/Combat.js'
     import Maneuvers from '../models/rules/maneuvers.js'
 
     let step = 0
@@ -19,13 +19,14 @@
     }
 </script>
 
-<div class='page'>
+<div class='ref-page'>
     <svelte:component this={RefList} list={selected} />
 </div>
 <BackNextButtons step={step} on:message={nav} />
 
 <style>
-    .page {
+    .ref-page {
         padding: 25px;
+        padding-bottom: 50px;
     }
 </style>

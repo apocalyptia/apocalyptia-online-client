@@ -4,13 +4,14 @@
 	import Reference from './Reference.svelte'
 </script>
 
-<div class='page home-page'>
+<div class='home-page'>
     <button on:click={router.Creator}>Character Creator</button>
     <button on:click={router.Reference}>Rules Reference</button>
 </div>
 
 <style>
     .home-page {
+        padding: 25px;
         text-align: center;
     }
     button {
