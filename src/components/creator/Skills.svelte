@@ -1,5 +1,5 @@
 <script>
-    import { CharacterStore } from '../../data/stores'
+    import { CharacterStore } from '../../models/stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
@@ -17,27 +17,27 @@
     }
 </script>
 
-<div class="step">
-    <div class="step-title">
+<div class='step'>
+    <div class='step-title'>
         <h2>Skills</h2>
     </div>
-    <div class="remaining">
+    <div class='remaining'>
         <h3>Points Remaining: {remaining}</h3>
     </div>
     {#each traits as trait}
-        <div class="skill-section">
-            <div class="parent-trait-title">
+        <div class='skill-section'>
+            <div class='parent-trait-title'>
                 {char.traits[trait].name} Skills
             </div>
             {#each skills as skill}
                 {#if char.traits[trait].name == char.skills[skill].parent}
-                    <div class="stat-block">
-                        <span class="stat-label">{char.skills[skill].name}</span>
+                    <div class='stat-block'>
+                        <span class='stat-label'>{char.skills[skill].name}</span>
                         <input
-                            class="stat-input"
-                            type="number"
-                            min="0"
-                            max="{Math.min(char.traits[trait].score, (char.skills[skill].score + remaining))}"
+                            class='stat-input'
+                            type='number'
+                            min='0'
+                            max='{Math.min(char.traits[trait].score, (char.skills[skill].score + remaining))}'
                             on:input={updateSkills}
                             bind:value={char.skills[skill].score}
                         >

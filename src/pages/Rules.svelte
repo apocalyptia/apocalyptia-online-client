@@ -20,10 +20,10 @@
     }
 </script>
 
-<div class="page rules-page">
+<div class='page rules-page'>
     <Combat />
-    <div class="nav-bar">
-        <button class="nav-button" on:click={router.Home}>Home</button>
+    <div class='nav-bar'>
+        <button class='nav-button' on:click={router.Home}>Home</button>
     </div>
     <BackNextButtons step={step} on:message={nav} />
 

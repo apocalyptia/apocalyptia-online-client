@@ -4,7 +4,7 @@
 	import Rules from './Rules.svelte'
 </script>
 
-<div class="page home-page">
+<div class='page home-page'>
     <button on:click={router.Creator}>Character Creator</button>
     <button on:click={router.Rules}>Rules</button>
 </div>

@@ -10,8 +10,8 @@
 <ViewScreen>
 	<TitleBar />
 	<Router>
-		<Route path="/" component="{Home}" />
-		<Route path="/creator" component="{Creator}" />
-		<Route path="/rules" component="{Rules}" />
+		<Route path='/' component='{Home}' />
+		<Route path='/creator' component='{Creator}' />
+		<Route path='/rules' component='{Rules}' />
 	</Router>
 </ViewScreen>

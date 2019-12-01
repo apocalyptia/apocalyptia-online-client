@@ -1,10 +1,10 @@
-<button id="PsycheBtn" class="Btn">PSYCHE</button>
-<div id="PsycheSec" class="Sec2">
+<button id='PsycheBtn' class='Btn'>PSYCHE</button>
+<div id='PsycheSec' class='Sec2'>
     <p>Surviving the Wasteland is fairly straight forward: kill anything that threatens you. The complicated part is dealing with the consequences. Sometimes survival may not seem worth the price.</p>
     <p>Psyche is the measure of a Character's mental stability. Primarily, it is a rough guide for roleplaying the Character’s psychological trauma. There are many ways to gain Psyche and many ways to lose it. When something terrible happens to the Character, the GN calls for a Psyche roll 6#. The Player rolls d6 + current Psyche and must Succeed in order to avoid losing 1 Psyche. You may not spend Luck on a Psyche roll.</p>
     <p>A list of examples of Psyche-related effects is given below:</p>
-    <button id="PsychePenaltyBtn" class="Btn">-1 PSYCHE PENALTY</button>
-    <div id="PsychePenaltySec" class="Sec3">
+    <button id='PsychePenaltyBtn' class='Btn'>-1 PSYCHE PENALTY</button>
+    <div id='PsychePenaltySec' class='Sec3'>
         <ul>
             <li>Brainwashing (Demeanor vs Demeanor)</li>
             <li>Extreme boredom during downtime (-1/week)</li>
@@ -27,8 +27,8 @@
             <li>Torturing or being tortured</li>
         </ul>
     </div>
-    <button id="PsycheBonusBtn" class="Btn">+1 PSYCHE BONUS</button>
-    <div id="PsycheBonusSec" class="Sec2">
+    <button id='PsycheBonusBtn' class='Btn'>+1 PSYCHE BONUS</button>
+    <div id='PsycheBonusSec' class='Sec2'>
         <ul>
             <li>Bath and grooming or similar use of a Luxury Item (+1/week)</li>
             <li>Beautiful day (see WEATHER)</li>
@@ -47,45 +47,45 @@
             <li>Touching performance (Entertain(Inspire), +1/week)</li>
         </ul>
     </div>
-    <button id="MentalBreakdownBtn" class="Btn">MENTAL BREAKDOWN</button>
-    <div id="MentalBreakdownSec" class="Sec3">
+    <button id='MentalBreakdownBtn' class='Btn'>MENTAL BREAKDOWN</button>
+    <div id='MentalBreakdownSec' class='Sec3'>
         <p>Whenever a Character loses their last point of Psyche, the GN should secretly roll on the MENTAL BREAKDOWN table below. The Character involuntarily experiences or performs the Effect within d6hrs. Each Comrade may roll Perception or Medicine(Psychology) to sense that something is wrong before the Effect happens. Success gives a Comrade a chance to intervene.</p>
         <p>The Effect lasts for 1 day. The Player then makes a D6# roll to recover 1 Psyche. On a Fail, roll another MENTAL BREAKDOWN.</p>
-        <div id="MentalBreakdownTable" class="tableDiv">
-            <div class="rowDiv">
-                <button class="cellDiv cen">d6</button>
-                <div class="cellDiv">Effect</div>
-                <button class="cellDiv cen">Perception</button>
+        <div id='MentalBreakdownTable' class='tableDiv'>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>d6</button>
+                <div class='cellDiv'>Effect</div>
+                <button class='cellDiv cen'>Perception</button>
             </div>
-            <div class="rowDiv">
-                <button class="cellDiv cen">1</button>
-                <button class="cellDiv">Severe depression. atttempt suicide.</button>
-                <button class="cellDiv cen">15#</button>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>1</button>
+                <button class='cellDiv'>Severe depression. atttempt suicide.</button>
+                <button class='cellDiv cen'>15#</button>
             </div>
-            <div class="rowDiv">
-                <button class="cellDiv cen">2</button>
-                <button class="cellDiv">Paranoid violence. attack a random person.</button>
-                <button class="cellDiv cen">15#</button>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>2</button>
+                <button class='cellDiv'>Paranoid violence. attack a random person.</button>
+                <button class='cellDiv cen'>15#</button>
             </div>
-            <div class="rowDiv">
-                <button class="cellDiv cen">3</button>
-                <button class="cellDiv">Extreme panic. Flee in terror.</button>
-                <button class="cellDiv cen">12#</button>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>3</button>
+                <button class='cellDiv'>Extreme panic. Flee in terror.</button>
+                <button class='cellDiv cen'>12#</button>
             </div>
-            <div class="rowDiv">
-                <button class="cellDiv cen">4</button>
-                <button class="cellDiv">Catatonic stupor. Totally immobile.</button>
-                <button class="cellDiv cen">12#</button>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>4</button>
+                <button class='cellDiv'>Catatonic stupor. Totally immobile.</button>
+                <button class='cellDiv cen'>12#</button>
             </div>
-            <div class="rowDiv">
-                <button class="cellDiv cen">5</button>
-                <div class="cellDiv">Audio-visual hallucinations.</div>
-                <button class="cellDiv cen">9#</button>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>5</button>
+                <div class='cellDiv'>Audio-visual hallucinations.</div>
+                <button class='cellDiv cen'>9#</button>
             </div>
-            <div class="rowDiv">
-                <button class="cellDiv cen">6</button>
-                <button class="cellDiv">Amnesic blackout. GN determines actions.</button>
-                <button class="cellDiv cen">9#</button>
+            <div class='rowDiv'>
+                <button class='cellDiv cen'>6</button>
+                <button class='cellDiv'>Amnesic blackout. GN determines actions.</button>
+                <button class='cellDiv cen'>9#</button>
             </div>
         </div>
     </div>

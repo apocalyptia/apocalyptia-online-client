@@ -1,8 +1,8 @@
-<div class="modifiers-rules">
+<div class='modifiers-rules'>
     <h2>Modifiers</h2>
-    <div id="ModRefSec" class="Sec2">
-        <button id="ArmorModsBtn" class="Btn">ARMOR ATTRIBUTES</button>
-        <div id="ArmorModsSec" class="Sec3">
+    <div id='ModRefSec' class='Sec2'>
+        <button id='ArmorModsBtn' class='Btn'>ARMOR ATTRIBUTES</button>
+        <div id='ArmorModsSec' class='Sec3'>
             <p>CAMO: +1 Stealth per Location for top Armor layer</p>
             <p>CR: Survive for +1hr in Hypothermia</p>
             <p>FR: AR reduces FDMG, FDMG does not diminish AR</p>
@@ -10,8 +10,8 @@
             <p>STORAGE: Adds a number of Size Slots for carrying Gear</p>
             <p>TREAD: Reduces Terrain penalty by Tread rating</p>
         </div>
-        <button id="WeaponModsBtn" class="Btn">WEAPON ATTRIBUTES</button>
-        <div id="WeaponModsSec" class="Sec3">
+        <button id='WeaponModsBtn' class='Btn'>WEAPON ATTRIBUTES</button>
+        <div id='WeaponModsSec' class='Sec3'>
             <p>AUTO: +3 RATK or Suppressing Fire. Uses 10 bullets.</p>
             <p>BLAST: d6 vs Reflex of all in radius. DMG/2 on a miss.</p>
             <p>BLUNT: No Bleeding. Only Pain until Pain exceeds Threshold [C+D].</p>
@@ -22,8 +22,8 @@
             <p>RAPID: May spend Fast actions to make additional ATK rolls.</p>
             <p>SCATTER: RATK bonus when using Scatter ammo.</p>
         </div>
-        <button id="AmmoModsBtn" class="Btn">AMMO ATTRIBUTES</button>
-        <div id="AmmoModsSec" class="Sec3">
+        <button id='AmmoModsBtn' class='Btn'>AMMO ATTRIBUTES</button>
+        <div id='AmmoModsSec' class='Sec3'>
             <p>AP: Pierce</p>
             <p>BROADHEAD: +3 DMG, d6DMG on removal</p>
             <p>BUCKSHOT: +3 DMG, Scatter</p>
@@ -35,8 +35,8 @@
             <p>SLUG: +1 DMG, RNG x3</p>
             <p>TRACER: +1 Auto RATK</p>
         </div>
-        <button id="GearModsBtn" class="Btn">GEAR</button>
-        <div id="GearModsSec" class="Sec3">
+        <button id='GearModsBtn' class='Btn'>GEAR</button>
+        <div id='GearModsSec' class='Sec3'>
             <p>BAYONET: +2 DMG for MATKs</p>
             <p>BIPOD: -3 Size requirement, 1rnd setup</p>
             <p>FOREGRIP: -1 Size requirement on 2h Guns</p>
@@ -47,8 +47,8 @@
             <p>SINGLE-POINT SLING: Draw or stow a 2h Gun Fast</p>
             <p>SUPPRESSOR: Removes the Loud Attribute</p>
         </div>
-        <button id="ManeuverModsBtn" class="Btn">MANEUVERS</button>
-        <div id="ManeuverModsSec" class="Sec3">
+        <button id='ManeuverModsBtn' class='Btn'>MANEUVERS</button>
+        <div id='ManeuverModsSec' class='Sec3'>
             <p>AIM: +1 RATK/rnd up to +3 RATK</p>
             <p>CALLED SHOT (EYE): -6 RATK or -3 MATK</p>
             <p>CALLED SHOT (HEAD): -3 RATK or -1 MATK</p>
@@ -59,8 +59,8 @@
             <p>OVERWATCH: +1 Perception, +1 RATK</p>
             <p>SPRINT: -3 to RATKs at or from you, unless approaching</p>
         </div>
-        <button id="SituationModsBtn" class="Btn">SITUATIONS</button>
-        <div id="SituationModsSec" class="Sec3">
+        <button id='SituationModsBtn' class='Btn'>SITUATIONS</button>
+        <div id='SituationModsSec' class='Sec3'>
             <p>BLEEDING: 1 Torso DMG/min, C vs total DMG to stop</p>
             <p>COVER: DMG is reduced by DR</p>
             <p>DEAFNESS: Fail Perception(Hear)</p>
@@ -73,16 +73,16 @@
             <p>UNSTABLE: -3 physical rolls, -3 RATKs at or from you</p>
             <p>VISIBILITY: -1 to -6 (Blind) to sigh-based rolls</p>
         </div>
-        <button id="TerrainModsBtn" class="Btn">TERRAIN</button>
-        <div id="TerrainModsSec" class="Sec3">
+        <button id='TerrainModsBtn' class='Btn'>TERRAIN</button>
+        <div id='TerrainModsSec' class='Sec3'>
             <p>DESERT: -1 Athletics, Acrobatics, Drive, and Speed</p>
             <p>FOREST: -1 Athletics, Acrobatics, Drive, and Speed</p>
             <p>MOUNTAIN: -3 Athletics, Acrobatics, Drive, and Speed</p>
             <p>SWAMP: -6 Athletics, Acrobatics, Drive, and Speed</p>
             <p>TUNDRA: -6 Athletics, Acrobatics, Drive, and Speed</p>
         </div>
-        <button id="WeatherModsBtn" class="Btn">WEATHER</button>
-        <div id="WeatherModsSec" class="Sec3">
+        <button id='WeatherModsBtn' class='Btn'>WEATHER</button>
+        <div id='WeatherModsSec' class='Sec3'>
             <p>ACID RAIN: -1 Visibility(Rain), -1 Terrain</p>
             <p>BLIZZARD: -3 Visibility(Cloud), -1/” Terrain</p>
             <p>DUST STORM: -6 Visibility(Cloud), Suffocation</p>

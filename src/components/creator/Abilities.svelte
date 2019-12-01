@@ -1,9 +1,9 @@
 <script>
-    import { CharacterStore } from '../../data/stores'
+    import { CharacterStore } from '../../models/stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { AbilityList } from '../../data/character/abilities'
+    import { AbilityList } from '../../models/character/abilities'
 
     function modifyAbilities() {
         char.abilities = []
@@ -15,32 +15,32 @@
     }
 </script>
 
-<div class="step">
-    <div class="step-title">
+<div class='step'>
+    <div class='step-title'>
         <h2>Abilities</h2>
     </div>
-    <div class="stat-block">
-        <div class="abilities-table">
-            <div class="ability-row header-row separator">
-                <div class="m-col">Name</div>
-                <div class="l-col">Description</div>
-                <div class="s-col">Max</div>
-                <div class="s-col">XP</div>
-                <div class="s-col">Taken</div>
+    <div class='stat-block'>
+        <div class='abilities-table'>
+            <div class='ability-row header-row separator'>
+                <div class='m-col'>Name</div>
+                <div class='l-col'>Description</div>
+                <div class='s-col'>Max</div>
+                <div class='s-col'>XP</div>
+                <div class='s-col'>Taken</div>
             </div>
             {#each AbilityList as ability, index}
                 {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
-                    <div class="separator"></div>
+                    <div class='separator'></div>
                 {/if}
-                <div class="ability-row">
-                    <div class="m-col">{ability.name}</div>
-                    <div class="l-col">{ability.description}</div>
-                    <div class="s-col">{ability.max}</div>
-                    <div class="s-col">{ability.xp}</div>
-                    <div class="s-col">
+                <div class='ability-row'>
+                    <div class='m-col'>{ability.name}</div>
+                    <div class='l-col'>{ability.description}</div>
+                    <div class='s-col'>{ability.max}</div>
+                    <div class='s-col'>{ability.xp}</div>
+                    <div class='s-col'>
                         <input
-                            type="number"
-                            class="taken-number"
+                            type='number'
+                            class='taken-number'
                             min=0
                             max={ability.max}
                             bind:value={ability.taken}

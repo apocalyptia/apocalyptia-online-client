@@ -1,8 +1,8 @@
-<div class="terms-rules">
+<div class='terms-rules'>
     <h2>Symbols and Terms</h2>
-    <div id="SymbolsSec" class="Sec2">
-        <button id="DiceTermsBtn" class="Btn">DICE</button>
-        <div id="DiceTermsSec" class="Sec3">
+    <div id='SymbolsSec' class='Sec2'>
+        <button id='DiceTermsBtn' class='Btn'>DICE</button>
+        <div id='DiceTermsSec' class='Sec3'>
             <ul>
                 <li>d6: One six-sided die. The only dice needed to play.</li>
                 <li>DIFFICULTY (#): Target number you must beat to Succeed.</li>
@@ -14,8 +14,8 @@
                 <li>RESULT: The total of a roll plus or minus any modifiers.</li>
             </ul>
         </div>
-        <button id="GameTermsBtn" class="Btn">GAME</button>
-        <div id="GameTermsSec" class="Sec3">
+        <button id='GameTermsBtn' class='Btn'>GAME</button>
+        <div id='GameTermsSec' class='Sec3'>
             <ul>
                 <li>ABILITY: Character upgrades that are bought with Experience.</li>
                 <li>ACTION: One significant thing a Character does in a round.</li>
@@ -45,8 +45,8 @@
                 <li>SIZE (SZ): Measure of volume and weight. 1Sz ≈ 5lbs ≈ 1/2gal.</li>
             </ul>
         </div>
-        <button id="TraitsTermsBtn" class="Btn">TRAITS</button>
-        <div id="TraitsTermsSec" class="Sec3">
+        <button id='TraitsTermsBtn' class='Btn'>TRAITS</button>
+        <div id='TraitsTermsSec' class='Sec3'>
             <p>Agility, Brains, Constitution, and Demeanor. Rated 1 to 6.</p>
             <ul>
                 <li>A: Agility Trait. A rolls are shown as A#.</li>
@@ -55,8 +55,8 @@
                 <li>D: Demeanor Trait. D rolls are shown as D#.</li>
             </ul>
         </div>
-        <button id="InstinctsTermsBtn" class="Btn">INSTINCTS</button>
-        <div id="InstinctsTermsSec" class="Sec3">
+        <button id='InstinctsTermsBtn' class='Btn'>INSTINCTS</button>
+        <div id='InstinctsTermsSec' class='Sec3'>
             <p>Natural talents everyone has based on Traits.</p>
             <ul>
                 <li>ATHLETICS: = C. Climbing and swimming.</li>
@@ -65,8 +65,8 @@
                 <li>STEALTH: = A. Remaining undetected.</li>
             </ul>
         </div>
-        <button id="SkillsTermsBtn" class="Btn">SKILLS</button>
-        <div id="SkillsTermsSec" class="Sec3">
+        <button id='SkillsTermsBtn' class='Btn'>SKILLS</button>
+        <div id='SkillsTermsSec' class='Sec3'>
             <p>12 different types of actions limited by their Traits.</p>
             <ul>
                 <li>AGILITY SKILLS: Acrobatics, Ranged, Larceny</li>
@@ -76,8 +76,8 @@
                 <li>Specialty: Sub-Skill that can change independently.</li>
             </ul>
         </div>
-        <button id="PropertiesTermsBtn" class="Btn">PROPERTIES</button>
-        <div id="PropertiesTermsSec" class="Sec3">
+        <button id='PropertiesTermsBtn' class='Btn'>PROPERTIES</button>
+        <div id='PropertiesTermsSec' class='Sec3'>
             <p>Trait-derived values.</p>
             <ul>
                 <li>CARRY = [C x6]. Maximum total Size you can carry.</li>

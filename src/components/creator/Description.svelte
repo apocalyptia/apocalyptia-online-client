@@ -1,79 +1,79 @@
 <script>
-    import { CharacterStore } from '../../data/stores'
+    import { CharacterStore } from '../../models/stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 </script>
 
-<div class="step">
-    <div class="step-title">
+<div class='step'>
+    <div class='step-title'>
         <h2>Description</h2>
     </div>
-    <div class="stat-block">
-        <span class="stat-label">Player:</span>
+    <div class='stat-block'>
+        <span class='stat-label'>Player:</span>
         <input
-            type="text"
-            class="full-input"
+            type='text'
+            class='full-input'
             bind:value={char.description.playerName.value}
         >
     </div>
-    <div class="stat-block">
-        <span class="stat-label">Character:</span>
+    <div class='stat-block'>
+        <span class='stat-label'>Character:</span>
         <input
-            type="text"
-            class="full-input"
+            type='text'
+            class='full-input'
             bind:value={char.description.characterName.value}
         >
     </div>
-    <div class="stat-block">
-        <div class="half-stat-block">
-            <span class="stat-label">Height:</span>
+    <div class='stat-block'>
+        <div class='half-stat-block'>
+            <span class='stat-label'>Height:</span>
             <input
-                type="text"
-                class="half-input"
+                type='text'
+                class='half-input'
                 bind:value={char.description.height.value}
             >
         </div>
-        <div class="half-stat-block">
-            <span class="stat-label">Weight:</span>
+        <div class='half-stat-block'>
+            <span class='stat-label'>Weight:</span>
             <input
-                type="text"
-                class="half-input"
+                type='text'
+                class='half-input'
                 bind:value={char.description.weight.value}
             >
         </div>
     </div>
-    <div class="stat-block">
-        <div class="half-stat-block">
-            <span class="stat-label">Hair:</span>
+    <div class='stat-block'>
+        <div class='half-stat-block'>
+            <span class='stat-label'>Hair:</span>
             <input
-                type="text"
-                class="half-input"
+                type='text'
+                class='half-input'
                 bind:value={char.description.hair.value}
             >
         </div>
-        <div class="half-stat-block">
-            <span class="stat-label">Skin:</span>
+        <div class='half-stat-block'>
+            <span class='stat-label'>Skin:</span>
             <input
-                type="text"
-                class="half-input"
+                type='text'
+                class='half-input'
                 bind:value={char.description.skin.value}
             >
         </div>
     </div>
-    <div class="stat-block">
-        <div class="half-stat-block">
-            <span class="stat-label">Gender:</span>
+    <div class='stat-block'>
+        <div class='half-stat-block'>
+            <span class='stat-label'>Gender:</span>
             <input
-                type="text"
-                class="half-input"
+                type='text'
+                class='half-input'
                 bind:value={char.description.gender.value}
             >
         </div>
-        <div class="half-stat-block">
-            <span class="stat-label">Age:</span>
+        <div class='half-stat-block'>
+            <span class='stat-label'>Age:</span>
             <input
-                type="text"
-                class="half-input"
+                type='text'
+                class='half-input'
                 bind:value={char.description.age.value}
             >
         </div>

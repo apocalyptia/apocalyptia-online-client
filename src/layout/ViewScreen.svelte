@@ -1,5 +1,5 @@
-<div class="screen">
-	<div class="display">
+<div class='screen'>
+	<div class='display'>
         <slot />
     </div>
 </div>

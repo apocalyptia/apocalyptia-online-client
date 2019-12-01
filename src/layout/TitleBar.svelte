@@ -1,10 +1,10 @@
 <script>
-    import router from "../routes"
+    import router from '../routes'
 </script>
 
-<button class="title-bar" on:click={router.Home}>
-    <span class="title">Apocalyptia Online</span>
-    <span class="beta">beta</span>
+<button class='title-bar' on:click={router.Home}>
+    <span class='title'>Apocalyptia Online</span>
+    <span class='beta'>beta</span>
 </button>
 
 <style>

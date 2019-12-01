@@ -16,9 +16,9 @@
     }
 </script>
 
-<div class="sheet-section">
-    <button class="die" on:click={roll_die}>
-        <div class="die_number" transition:fade={{duration: 1000}}>{result}</div>
+<div class='sheet-section'>
+    <button class='die' on:click={roll_die}>
+        <div class='die_number' transition:fade={{duration: 1000}}>{result}</div>
     </button>
 </div>
 
