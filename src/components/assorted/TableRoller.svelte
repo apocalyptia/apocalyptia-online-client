@@ -14,7 +14,7 @@
             <option value='iAircraftList'>Aircraft</option>
         </select>
         <p style='text-align:center;'><span id='TableRollResult'></span></p>
-        <button id='rollTableButton' class='Roll TableRoller' onclick='rollItem(document.getElementById('TableRollSelection').value, 'TableRollResult')'>ROLL TABLE</button>
+        <button id='rollTableButton' class='Roll TableRoller'>ROLL TABLE</button>
         <button id='TableResultsBtn' class='Btn TableRoller'>TABLE RESULTS LOG</button>
         <div id='TableResultsSec' class='Sec1 TableRollerBorder'>
             <span id='TableResultsLog'></span>
