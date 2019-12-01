@@ -1,12 +1,12 @@
 <script>
     import router from '../routes'
 	import Creator from './Creator.svelte'
-	import Rules from './Rules.svelte'
+	import Reference from './Reference.svelte'
 </script>
 
 <div class='page home-page'>
     <button on:click={router.Creator}>Character Creator</button>
-    <button on:click={router.Rules}>Rules</button>
+    <button on:click={router.Reference}>Rules Reference</button>
 </div>
 
 <style>
