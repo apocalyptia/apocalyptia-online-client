@@ -16,6 +16,13 @@
                     <div class='separator'/>
                     <div class='table'><svelte:component this={r.table}/></div>
                 {/if}
+                {#if r.subrules}
+                    <ul>
+                        {#each r.subrules as s}
+                            <li>{s}</li>    
+                        {/each}
+                    </ul>
+                {/if}
             {/if}
         </div>
         <div class='separator'/>
