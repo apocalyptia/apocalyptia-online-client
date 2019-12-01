@@ -4032,67 +4032,34 @@ var app = (function () {
         return y
     }
 
-    class Rule {
-        constructor(name, notes) {
-            this.name = name;
-            this.notes = notes;
-            this.visible = false;
-        }
-    }
-
-    const CombatRuleList = [
-        new Rule(`Time`,                `Combat time occurs in 3-second “rounds” (rnds),. Each Player gets a turn each rnd. Either the GN decides or rolls [A vs A] to determine who goes first. At the end of each turn, the Player chooses who will go next among those who have not had a turn yet this rnd. At the end of the rnd the last Player to act decides who will start the next round.`),
-        new Rule(`Communication`,       `You can speak or shout up to 6 words per round.`),
-        new Rule(`Actions`,             `Perform Actions by spending Action Points. Your maximum AP is your [(A + B), / 2]. AP refills at the start of your turn. Unless otherwise noted, all Actions cost 1AP. The only way to take an Action on another turn is to make a Defense roll or Ready an Action.`),
-        new Rule(`Prepare`,             `You may spend AP on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, the AP you already spent on the Prepared Action does not refresh, but you can continue holding that Prepared Action.`),
-        new Rule(`Movement`,            `Move once per rnd up to your Speed [A + C], or spend 2AP to Run at [Speed x 2]. Spend 1AP to drop Prone or stand up.`),
-        new Rule(`Attack`,              `There are MATKs (Melee), and RATKs (Ranged),. Roll [d6 + MATK or RATK] vs Defense (DEF),. Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`),
-        new Rule(`Defense`,             `1AP to defend against an ATK with Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`),
-        new Rule(`Reflex`,              `[Perception / 2] Default DEF. No roll or AP required.`),
-        new Rule(`Health`,              `[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`),
-        new Rule(`Bleeding`,            `When you take Wounds = [Health / 2] or more, you begin taking an additional 1DMG per minute. Roll Medicine(First-Aid), vs Wounds to stop Bleeding with a bandage.`),
-        new Rule(`Recovery`,            `After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 DMG from infection.`),
-        new Rule(`Damage`,              `Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF), + Weapon DMG]. All Wounds cause Pain penalties.`),
-        new Rule(`Damage Reduction`,    `DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`),
-        new Rule(`Fire`,                `Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR), Armor reduces FDMG.`),
-        new Rule(`Pain`,                `Wounds (and a few other effects), cause Pain which is a -1 penalty to all rolls and Speed. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if Pain = [C + D].`),
-        new Rule(`Vehicles`,            `Roll [Drive(Ram), vs Drive(Stunt),] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`),
-        new Rule(`Condition`,           `-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`),
-        new Rule(`Occupants`,           `Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`),
-        new Rule(`Pedestrians`,         `Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`),
-        new Rule(`Tires`,               `Roll [-3 ATK vs Drive(Stunt),] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`),
-        new Rule(`Wreck`,               `The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`),
-        new Rule(`Burning`,             `If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`)
-    ];
-
-    /* src/components/reference/Combat.svelte generated by Svelte v3.15.0 */
-    const file$9 = "src/components/reference/Combat.svelte";
+    /* src/layout/RefList.svelte generated by Svelte v3.15.0 */
+    const file$9 = "src/layout/RefList.svelte";
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
-    	child_ctx.rule = list[i];
+    	child_ctx.r = list[i];
     	return child_ctx;
     }
 
-    // (14:12) {#if rule.visible}
+    // (13:12) {#if r.visible}
     function create_if_block$3(ctx) {
     	let div;
-    	let t_value = ctx.rule.notes + "";
+    	let t_value = ctx.r.notes + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "rule-notes svelte-ijoyl");
-    			add_location(div, file$9, 14, 16, 445);
+    			attr_dev(div, "class", "notes svelte-1d2ehrv");
+    			add_location(div, file$9, 13, 16, 339);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, t);
     		},
     		p: function update(changed, ctx) {
-    			if (changed.list && t_value !== (t_value = ctx.rule.notes + "")) set_data_dev(t, t_value);
+    			if (changed.list && t_value !== (t_value = ctx.r.notes + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -4103,24 +4070,24 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(14:12) {#if rule.visible}",
+    		source: "(13:12) {#if r.visible}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (11:4) {#each list as rule}
+    // (10:4) {#each list.rules as r}
     function create_each_block$3(ctx) {
     	let div0;
     	let span;
-    	let t0_value = ctx.rule.name + "";
+    	let t0_value = ctx.r.name + "";
     	let t0;
     	let t1;
     	let t2;
     	let div1;
     	let dispose;
-    	let if_block = ctx.rule.visible && create_if_block$3(ctx);
+    	let if_block = ctx.r.visible && create_if_block$3(ctx);
 
     	function click_handler(...args) {
     		return ctx.click_handler(ctx, ...args);
@@ -4135,12 +4102,12 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t2 = space();
     			div1 = element("div");
-    			attr_dev(span, "class", "rule-name svelte-ijoyl");
-    			add_location(span, file$9, 12, 12, 355);
-    			attr_dev(div0, "class", "rule-box svelte-ijoyl");
-    			add_location(div0, file$9, 11, 8, 275);
-    			attr_dev(div1, "class", "separator svelte-ijoyl");
-    			add_location(div1, file$9, 17, 8, 529);
+    			attr_dev(span, "class", "name svelte-1d2ehrv");
+    			add_location(span, file$9, 11, 12, 260);
+    			attr_dev(div0, "class", "box svelte-1d2ehrv");
+    			add_location(div0, file$9, 10, 8, 188);
+    			attr_dev(div1, "class", "separator svelte-1d2ehrv");
+    			add_location(div1, file$9, 16, 8, 415);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -4154,9 +4121,9 @@ var app = (function () {
     		},
     		p: function update(changed, new_ctx) {
     			ctx = new_ctx;
-    			if (changed.list && t0_value !== (t0_value = ctx.rule.name + "")) set_data_dev(t0, t0_value);
+    			if (changed.list && t0_value !== (t0_value = ctx.r.name + "")) set_data_dev(t0, t0_value);
 
-    			if (ctx.rule.visible) {
+    			if (ctx.r.visible) {
     				if (if_block) {
     					if_block.p(changed, ctx);
     				} else {
@@ -4182,7 +4149,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(11:4) {#each list as rule}",
+    		source: "(10:4) {#each list.rules as r}",
     		ctx
     	});
 
@@ -4192,10 +4159,12 @@ var app = (function () {
     function create_fragment$c(ctx) {
     	let div1;
     	let h2;
+    	let t0_value = ctx.list.name + "";
+    	let t0;
     	let t1;
     	let div0;
     	let t2;
-    	let each_value = ctx.list;
+    	let each_value = ctx.list.rules;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -4206,7 +4175,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			h2 = element("h2");
-    			h2.textContent = "Combat";
+    			t0 = text(t0_value);
     			t1 = space();
     			div0 = element("div");
     			t2 = space();
@@ -4215,11 +4184,11 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$9, 8, 4, 197);
-    			attr_dev(div0, "class", "separator svelte-ijoyl");
-    			add_location(div0, file$9, 9, 4, 217);
-    			attr_dev(div1, "class", "combat-rules svelte-ijoyl");
-    			add_location(div1, file$9, 7, 0, 166);
+    			add_location(h2, file$9, 7, 4, 102);
+    			attr_dev(div0, "class", "separator svelte-1d2ehrv");
+    			add_location(div0, file$9, 8, 4, 127);
+    			attr_dev(div1, "class", "page");
+    			add_location(div1, file$9, 6, 0, 79);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4227,6 +4196,7 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, h2);
+    			append_dev(h2, t0);
     			append_dev(div1, t1);
     			append_dev(div1, div0);
     			append_dev(div1, t2);
@@ -4236,8 +4206,10 @@ var app = (function () {
     			}
     		},
     		p: function update(changed, ctx) {
+    			if (changed.list && t0_value !== (t0_value = ctx.list.name + "")) set_data_dev(t0, t0_value);
+
     			if (changed.list || changed.HideShow) {
-    				each_value = ctx.list;
+    				each_value = ctx.list.rules;
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -4279,11 +4251,21 @@ var app = (function () {
     }
 
     function instance$a($$self, $$props, $$invalidate) {
-    	let list = CombatRuleList;
-    	const click_handler = ({ rule }) => $$invalidate("list", list = HideShow(rule, list));
+    	let { list } = $$props;
+    	const writable_props = ["list"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<RefList> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = ({ r }) => $$invalidate("list", list = HideShow(r, list));
+
+    	$$self.$set = $$props => {
+    		if ("list" in $$props) $$invalidate("list", list = $$props.list);
+    	};
 
     	$$self.$capture_state = () => {
-    		return {};
+    		return { list };
     	};
 
     	$$self.$inject_state = $$props => {
@@ -4293,19 +4275,67 @@ var app = (function () {
     	return { list, click_handler };
     }
 
-    class Combat extends SvelteComponentDev {
+    class RefList extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$c, safe_not_equal, {});
+    		init(this, options, instance$a, create_fragment$c, safe_not_equal, { list: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "Combat",
+    			tagName: "RefList",
     			options,
     			id: create_fragment$c.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || ({});
+
+    		if (ctx.list === undefined && !("list" in props)) {
+    			console.warn("<RefList> was created without expected prop 'list'");
+    		}
+    	}
+
+    	get list() {
+    		throw new Error("<RefList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set list(value) {
+    		throw new Error("<RefList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
+
+    class Rule {
+        constructor(name, notes) {
+            this.name = name;
+            this.notes = notes;
+            this.visible = false;
+        }
+    }
+
+    const Combat = [
+        new Rule(`Time`,                `Combat time occurs in 3-second “rounds” (rnds),. Each Player gets a turn each rnd. Either the GN decides or rolls [A vs A] to determine who goes first. At the end of each turn, the Player chooses who will go next among those who have not had a turn yet this rnd. At the end of the rnd the last Player to act decides who will start the next round.`),
+        new Rule(`Communication`,       `You can speak or shout up to 6 words per round.`),
+        new Rule(`Actions`,             `Perform Actions by spending Action Points. Your maximum AP is your [(A + B), / 2]. AP refills at the start of your turn. Unless otherwise noted, all Actions cost 1AP. The only way to take an Action on another turn is to make a Defense roll or Ready an Action.`),
+        new Rule(`Prepare`,             `You may spend AP on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, the AP you already spent on the Prepared Action does not refresh, but you can continue holding that Prepared Action.`),
+        new Rule(`Movement`,            `Move once per rnd up to your Speed [A + C], or spend 2AP to Run at [Speed x 2]. Spend 1AP to drop Prone or stand up.`),
+        new Rule(`Attack`,              `There are MATKs (Melee), and RATKs (Ranged),. Roll [d6 + MATK or RATK] vs Defense (DEF),. Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`),
+        new Rule(`Defense`,             `1AP to defend against an ATK with Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`),
+        new Rule(`Reflex`,              `[Perception / 2] Default DEF. No roll or AP required.`),
+        new Rule(`Health`,              `[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`),
+        new Rule(`Bleeding`,            `When you take Wounds = [Health / 2] or more, you begin taking an additional 1DMG per minute. Roll Medicine(First-Aid), vs Wounds to stop Bleeding with a bandage.`),
+        new Rule(`Recovery`,            `After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 DMG from infection.`),
+        new Rule(`Damage`,              `Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF), + Weapon DMG]. All Wounds cause Pain penalties.`),
+        new Rule(`Damage Reduction`,    `DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`),
+        new Rule(`Fire`,                `Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR), Armor reduces FDMG.`),
+        new Rule(`Pain`,                `Wounds (and a few other effects), cause Pain which is a -1 penalty to all rolls and Speed. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if Pain = [C + D].`),
+        new Rule(`Vehicles`,            `Roll [Drive(Ram), vs Drive(Stunt),] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`),
+        new Rule(`Condition`,           `-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`),
+        new Rule(`Occupants`,           `Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`),
+        new Rule(`Pedestrians`,         `Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`),
+        new Rule(`Tires`,               `Roll [-3 ATK vs Drive(Stunt),] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`),
+        new Rule(`Wreck`,               `The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`),
+        new Rule(`Burning`,             `If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`)
+    ];
 
     /* src/pages/Reference.svelte generated by Svelte v3.15.0 */
     const file$a = "src/pages/Reference.svelte";
@@ -4314,14 +4344,17 @@ var app = (function () {
     	let div;
     	let t;
     	let current;
-    	var switch_value = ctx.selected;
+    	var switch_value = RefList;
 
     	function switch_props(ctx) {
-    		return { $$inline: true };
+    		return {
+    			props: { list: ctx.selected },
+    			$$inline: true
+    		};
     	}
 
     	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props());
+    		var switch_instance = new switch_value(switch_props(ctx));
     	}
 
     	const backnextbuttons = new BackNextButtons({
@@ -4337,8 +4370,8 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
-    			attr_dev(div, "class", "page rules-page");
-    			add_location(div, file$a, 24, 0, 989);
+    			attr_dev(div, "class", "page svelte-1mq6qah");
+    			add_location(div, file$a, 19, 0, 517);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4355,7 +4388,10 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(changed, ctx) {
-    			if (switch_value !== (switch_value = ctx.selected)) {
+    			const switch_instance_changes = {};
+    			if (changed.selected) switch_instance_changes.list = ctx.selected;
+
+    			if (switch_value !== (switch_value = RefList)) {
     				if (switch_instance) {
     					group_outros();
     					const old_component = switch_instance;
@@ -4368,13 +4404,15 @@ var app = (function () {
     				}
 
     				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
+    					switch_instance = new switch_value(switch_props(ctx));
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
     					mount_component(switch_instance, div, null);
     				} else {
     					switch_instance = null;
     				}
+    			} else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
     			}
 
     			const backnextbuttons_changes = {};
@@ -4413,16 +4451,16 @@ var app = (function () {
 
     function instance$b($$self, $$props, $$invalidate) {
     	let step = 0;
-    	const options = [Combat];
-    	let selected = options[step];
+    	const pages = [{ name: "Combat", rules: Combat }];
+    	let selected = pages[step];
 
     	function nav(event) {
     		$$invalidate("step", step = event.detail.number);
 
-    		if (step == options.length || step < 0) {
+    		if (step == pages.length || step < 0) {
     			router.Home();
     		} else {
-    			$$invalidate("selected", selected = options[step]);
+    			$$invalidate("selected", selected = pages[step]);
     		}
     	}
 

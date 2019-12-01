@@ -1,31 +1,29 @@
 <script>
     import router from '../routes'
     import BackNextButtons from '../layout/BackNextButtons.svelte'
-    import Combat from '../components/reference/Combat.svelte'
-    import Creation from '../components/reference/Creation.svelte'
-    import Dice from '../components/reference/Dice.svelte'
-    import Maneuvers from '../components/reference/Maneuvers.svelte'
-    import Situations from '../components/reference/Situations.svelte'
-    import Skills from '../components/reference/Skills.svelte'
-    import Terms from '../components/reference/Terms.svelte'
-    import Traits from '../components/reference/Traits.svelte'
+    import RefList from '../layout/RefList.svelte'
+    import { Combat } from '../models/rules/combat.js'
 
     let step = 0
-    // const options = [Terms, Dice, Creation, Traits, Skills, Combat, Maneuvers, Situations ]
-    const options = [Combat]
-    let selected = options[step]
+    const pages = [
+        { name: 'Combat', rules: Combat }
+    ]
+    let selected = pages[step]
 
     function nav(event) {
         step = event.detail.number
-        if (step == options.length || step < 0) { router.Home() }
-        else { selected = options[step] }
+        if (step == pages.length || step < 0) { router.Home() }
+        else { selected = pages[step] }
     }
 </script>
 
-<div class='page rules-page'>
-    <svelte:component this={selected} />
+<div class='page'>
+    <svelte:component this={RefList} list={selected} />
 </div>
 <BackNextButtons step={step} on:message={nav} />
 
 <style>
+    .page {
+        padding: 25px;
+    }
 </style>
