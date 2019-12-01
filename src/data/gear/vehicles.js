@@ -1,4 +1,17 @@
-    //VEHICLES
+class Vehicle {
+    constuctor(type, speed, dr, handling, mpg, fuel, seats, cargo) {
+        this.type = type
+        this.speed = speed
+        this.dr = dr
+        this.handling = handling
+        this.mpg = mpg
+        this.fuel = fuel
+        this.seats = seats
+        this.cargo = cargo
+    }
+}
+
+//VEHICLES
     function Vehicle(type,hp,dr,dmg,spd,mph,han,mpg,fuel,occ,car,area,sz){
         this.type = type;
         this.hp = hp;
@@ -14,6 +27,7 @@
         this.area = area;
         this.sz = sz;
     }
+
     const iAmbulance = new Vehicle('Ambulance',40,1,10,120,80,'-3',10,35,4,200,'7x3');
     const iBoxTruck = new Vehicle('Box Truck',40,1,10,90,60,'-3',10,40,2,1600,'10x3');
     const iBus = new Vehicle('Bus',50,3,12,90,60,'-6',15,100,60,1200,'12x4');
