@@ -1,4 +1,5 @@
 <script>
+    import CombatRuleList from '../../models/rules/combat.js'
     let visible = false
     let action_visible = false    
 </script>
