@@ -9,7 +9,7 @@
 
 <style>
     .title-bar {
-        height: 40px;
+        height: 50px;
         position: fixed;
         text-align: center;
         top: 0;

@@ -477,9 +477,9 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			if (default_slot) default_slot.c();
-    			attr_dev(div0, "class", "display svelte-138r0ca");
+    			attr_dev(div0, "class", "display svelte-19m26kv");
     			add_location(div0, file, 1, 1, 22);
-    			attr_dev(div1, "class", "screen svelte-138r0ca");
+    			attr_dev(div1, "class", "screen svelte-19m26kv");
     			add_location(div1, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -1664,11 +1664,11 @@ var app = (function () {
     			t1 = space();
     			span1 = element("span");
     			span1.textContent = "beta";
-    			attr_dev(span0, "class", "title svelte-8t0adb");
+    			attr_dev(span0, "class", "title svelte-1f9u1va");
     			add_location(span0, file$1, 5, 4, 109);
-    			attr_dev(span1, "class", "beta svelte-8t0adb");
+    			attr_dev(span1, "class", "beta svelte-1f9u1va");
     			add_location(span1, file$1, 6, 4, 159);
-    			attr_dev(button, "class", "title-bar svelte-8t0adb");
+    			attr_dev(button, "class", "title-bar svelte-1f9u1va");
     			add_location(button, file$1, 4, 0, 55);
     			dispose = listen_dev(button, "click", router.Home, false, false, false);
     		},
@@ -1733,11 +1733,11 @@ var app = (function () {
     			t1 = space();
     			button1 = element("button");
     			button1.textContent = "Next";
-    			attr_dev(button0, "class", "svelte-mz0ikb");
+    			attr_dev(button0, "class", "svelte-1gidaka");
     			add_location(button0, file$2, 12, 4, 257);
-    			attr_dev(button1, "class", "svelte-mz0ikb");
+    			attr_dev(button1, "class", "svelte-1gidaka");
     			add_location(button1, file$2, 13, 4, 299);
-    			attr_dev(div, "class", "svelte-mz0ikb");
+    			attr_dev(div, "class", "svelte-1gidaka");
     			add_location(div, file$2, 11, 0, 247);
 
     			dispose = [
@@ -4044,25 +4044,65 @@ var app = (function () {
     // (13:12) {#if r.visible}
     function create_if_block$3(ctx) {
     	let div;
-    	let t_value = ctx.r.notes + "";
+    	let raw_value = ctx.r.notes + "";
     	let t;
+    	let if_block_anchor;
+    	let current;
+    	let if_block = ctx.r.table && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			t = text(t_value);
+    			t = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
     			attr_dev(div, "class", "notes svelte-1d2ehrv");
     			add_location(div, file$9, 13, 16, 339);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, t);
+    			div.innerHTML = raw_value;
+    			insert_dev(target, t, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
     		},
     		p: function update(changed, ctx) {
-    			if (changed.list && t_value !== (t_value = ctx.r.notes + "")) set_data_dev(t, t_value);
+    			if ((!current || changed.list) && raw_value !== (raw_value = ctx.r.notes + "")) div.innerHTML = raw_value;
+    			if (ctx.r.table) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_1$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
     		}
     	};
 
@@ -4071,6 +4111,95 @@ var app = (function () {
     		id: create_if_block$3.name,
     		type: "if",
     		source: "(13:12) {#if r.visible}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (15:16) {#if r.table}
+    function create_if_block_1$1(ctx) {
+    	let div0;
+    	let t;
+    	let div1;
+    	let current;
+    	var switch_value = ctx.r.table;
+
+    	function switch_props(ctx) {
+    		return { $$inline: true };
+    	}
+
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props());
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			t = space();
+    			div1 = element("div");
+    			if (switch_instance) create_component(switch_instance.$$.fragment);
+    			attr_dev(div0, "class", "separator svelte-1d2ehrv");
+    			add_location(div0, file$9, 15, 20, 430);
+    			attr_dev(div1, "class", "table");
+    			add_location(div1, file$9, 16, 20, 475);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, div1, anchor);
+
+    			if (switch_instance) {
+    				mount_component(switch_instance, div1, null);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(changed, ctx) {
+    			if (switch_value !== (switch_value = ctx.r.table)) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props());
+    					create_component(switch_instance.$$.fragment);
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, div1, null);
+    				} else {
+    					switch_instance = null;
+    				}
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t);
+    			if (detaching) detach_dev(div1);
+    			if (switch_instance) destroy_component(switch_instance);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(15:16) {#if r.table}",
     		ctx
     	});
 
@@ -4086,6 +4215,7 @@ var app = (function () {
     	let t1;
     	let t2;
     	let div1;
+    	let current;
     	let dispose;
     	let if_block = ctx.r.visible && create_if_block$3(ctx);
 
@@ -4107,7 +4237,7 @@ var app = (function () {
     			attr_dev(div0, "class", "box svelte-1d2ehrv");
     			add_location(div0, file$9, 10, 8, 188);
     			attr_dev(div1, "class", "separator svelte-1d2ehrv");
-    			add_location(div1, file$9, 16, 8, 415);
+    			add_location(div1, file$9, 20, 8, 598);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -4118,23 +4248,40 @@ var app = (function () {
     			if (if_block) if_block.m(div0, null);
     			insert_dev(target, t2, anchor);
     			insert_dev(target, div1, anchor);
+    			current = true;
     		},
     		p: function update(changed, new_ctx) {
     			ctx = new_ctx;
-    			if (changed.list && t0_value !== (t0_value = ctx.r.name + "")) set_data_dev(t0, t0_value);
+    			if ((!current || changed.list) && t0_value !== (t0_value = ctx.r.name + "")) set_data_dev(t0, t0_value);
 
     			if (ctx.r.visible) {
     				if (if_block) {
     					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
     				} else {
     					if_block = create_if_block$3(ctx);
     					if_block.c();
+    					transition_in(if_block, 1);
     					if_block.m(div0, null);
     				}
     			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
     			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
@@ -4164,12 +4311,17 @@ var app = (function () {
     	let t1;
     	let div0;
     	let t2;
+    	let current;
     	let each_value = ctx.list.rules;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
     	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
 
     	const block = {
     		c: function create() {
@@ -4204,9 +4356,11 @@ var app = (function () {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div1, null);
     			}
+
+    			current = true;
     		},
     		p: function update(changed, ctx) {
-    			if (changed.list && t0_value !== (t0_value = ctx.list.name + "")) set_data_dev(t0, t0_value);
+    			if ((!current || changed.list) && t0_value !== (t0_value = ctx.list.name + "")) set_data_dev(t0, t0_value);
 
     			if (changed.list || changed.HideShow) {
     				each_value = ctx.list.rules;
@@ -4217,22 +4371,42 @@ var app = (function () {
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
     					} else {
     						each_blocks[i] = create_each_block$3(child_ctx);
     						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
     						each_blocks[i].m(div1, null);
     					}
     				}
 
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
     				}
 
-    				each_blocks.length = each_value.length;
+    				check_outros();
     			}
     		},
-    		i: noop,
-    		o: noop,
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks, detaching);
@@ -4305,34 +4479,227 @@ var app = (function () {
     }
 
     class Rule {
-        constructor(name, notes) {
+        constructor(name, notes, table='', visible=false) {
             this.name = name;
             this.notes = notes;
-            this.visible = false;
+            this.table = table;
+            this.visible = visible;
         }
     }
 
+    /* src/models/rules/CalledShot.svelte generated by Svelte v3.15.0 */
+
+    const file$a = "src/models/rules/CalledShot.svelte";
+
+    function create_fragment$d(ctx) {
+    	let table;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let tr1;
+    	let td0;
+    	let t9;
+    	let td1;
+    	let t11;
+    	let td2;
+    	let t13;
+    	let td3;
+    	let t15;
+    	let tr2;
+    	let td4;
+    	let t17;
+    	let td5;
+    	let t19;
+    	let td6;
+    	let t21;
+    	let td7;
+    	let t23;
+    	let tr3;
+    	let td8;
+    	let t25;
+    	let td9;
+    	let t27;
+    	let td10;
+    	let t29;
+    	let td11;
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Location";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "ATK";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "DMG";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Notes";
+    			t7 = space();
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			td0.textContent = "Head";
+    			t9 = space();
+    			td1 = element("td");
+    			td1.textContent = "-3";
+    			t11 = space();
+    			td2 = element("td");
+    			td2.textContent = "x2";
+    			t13 = space();
+    			td3 = element("td");
+    			td3.textContent = "Stun for 1rnd";
+    			t15 = space();
+    			tr2 = element("tr");
+    			td4 = element("td");
+    			td4.textContent = "Arm";
+    			t17 = space();
+    			td5 = element("td");
+    			td5.textContent = "-1";
+    			t19 = space();
+    			td6 = element("td");
+    			td6.textContent = "/2";
+    			t21 = space();
+    			td7 = element("td");
+    			td7.textContent = "Target drops held item";
+    			t23 = space();
+    			tr3 = element("tr");
+    			td8 = element("td");
+    			td8.textContent = "Leg";
+    			t25 = space();
+    			td9 = element("td");
+    			td9.textContent = "-1";
+    			t27 = space();
+    			td10 = element("td");
+    			td10.textContent = "/2";
+    			t29 = space();
+    			td11 = element("td");
+    			td11.textContent = "Target falls Prone";
+    			add_location(th0, file$a, 2, 8, 25);
+    			add_location(th1, file$a, 3, 8, 51);
+    			add_location(th2, file$a, 4, 8, 72);
+    			add_location(th3, file$a, 5, 8, 93);
+    			add_location(tr0, file$a, 1, 4, 12);
+    			add_location(td0, file$a, 8, 8, 135);
+    			add_location(td1, file$a, 9, 8, 157);
+    			add_location(td2, file$a, 10, 8, 177);
+    			add_location(td3, file$a, 11, 8, 197);
+    			add_location(tr1, file$a, 7, 4, 122);
+    			add_location(td4, file$a, 14, 8, 247);
+    			add_location(td5, file$a, 15, 8, 268);
+    			add_location(td6, file$a, 16, 8, 288);
+    			add_location(td7, file$a, 17, 8, 308);
+    			add_location(tr2, file$a, 13, 4, 234);
+    			add_location(td8, file$a, 20, 8, 367);
+    			add_location(td9, file$a, 21, 8, 388);
+    			add_location(td10, file$a, 22, 8, 408);
+    			add_location(td11, file$a, 23, 8, 428);
+    			add_location(tr3, file$a, 19, 4, 354);
+    			add_location(table, file$a, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(table, t7);
+    			append_dev(table, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(tr1, t9);
+    			append_dev(tr1, td1);
+    			append_dev(tr1, t11);
+    			append_dev(tr1, td2);
+    			append_dev(tr1, t13);
+    			append_dev(tr1, td3);
+    			append_dev(table, t15);
+    			append_dev(table, tr2);
+    			append_dev(tr2, td4);
+    			append_dev(tr2, t17);
+    			append_dev(tr2, td5);
+    			append_dev(tr2, t19);
+    			append_dev(tr2, td6);
+    			append_dev(tr2, t21);
+    			append_dev(tr2, td7);
+    			append_dev(table, t23);
+    			append_dev(table, tr3);
+    			append_dev(tr3, td8);
+    			append_dev(tr3, t25);
+    			append_dev(tr3, td9);
+    			append_dev(tr3, t27);
+    			append_dev(tr3, td10);
+    			append_dev(tr3, t29);
+    			append_dev(tr3, td11);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(table);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$d.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class CalledShot extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$d, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "CalledShot",
+    			options,
+    			id: create_fragment$d.name
+    		});
+    	}
+    }
+
     const Combat = [
-        new Rule(`Time`,                `Combat time occurs in 3-second “rounds” (rnds),. Each Player gets a turn each rnd. Either the GN decides or rolls [A vs A] to determine who goes first. At the end of each turn, the Player chooses who will go next among those who have not had a turn yet this rnd. At the end of the rnd the last Player to act decides who will start the next round.`),
+        new Rule(`Time`,                `Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd. Either the GN decides or rolls [A vs A] to determine who goes first. At the end of each turn, the Player chooses who will go next among those who have not had a turn yet this rnd. At the end of the rnd the last Player to act decides who will start the next round.`, CalledShot),
         new Rule(`Communication`,       `You can speak or shout up to 6 words per round.`),
-        new Rule(`Actions`,             `Perform Actions by spending Action Points. Your maximum AP is your [(A + B), / 2]. AP refills at the start of your turn. Unless otherwise noted, all Actions cost 1AP. The only way to take an Action on another turn is to make a Defense roll or Ready an Action.`),
+        new Rule(`Actions`,             `Perform Actions by spending Action Points. Your maximum AP is your [(A + B) / 2]. AP refills at the start of your turn. Unless otherwise noted, all Actions cost 1AP. The only way to take an Action on another turn is to make a Defense roll or Ready an Action.`),
         new Rule(`Prepare`,             `You may spend AP on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, the AP you already spent on the Prepared Action does not refresh, but you can continue holding that Prepared Action.`),
         new Rule(`Movement`,            `Move once per rnd up to your Speed [A + C], or spend 2AP to Run at [Speed x 2]. Spend 1AP to drop Prone or stand up.`),
-        new Rule(`Attack`,              `There are MATKs (Melee), and RATKs (Ranged),. Roll [d6 + MATK or RATK] vs Defense (DEF),. Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`),
+        new Rule(`Attack`,              `There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF). Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`),
         new Rule(`Defense`,             `1AP to defend against an ATK with Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`),
         new Rule(`Reflex`,              `[Perception / 2] Default DEF. No roll or AP required.`),
         new Rule(`Health`,              `[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`),
-        new Rule(`Bleeding`,            `When you take Wounds = [Health / 2] or more, you begin taking an additional 1DMG per minute. Roll Medicine(First-Aid), vs Wounds to stop Bleeding with a bandage.`),
+        new Rule(`Bleeding`,            `When you take Wounds = [Health / 2] or more, you begin taking an additional 1DMG per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding with a bandage.`),
         new Rule(`Recovery`,            `After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 DMG from infection.`),
-        new Rule(`Damage`,              `Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF), + Weapon DMG]. All Wounds cause Pain penalties.`),
+        new Rule(`Damage`,              `Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`),
         new Rule(`Damage Reduction`,    `DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`),
-        new Rule(`Fire`,                `Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR), Armor reduces FDMG.`),
-        new Rule(`Pain`,                `Wounds (and a few other effects), cause Pain which is a -1 penalty to all rolls and Speed. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if Pain = [C + D].`),
-        new Rule(`Vehicles`,            `Roll [Drive(Ram), vs Drive(Stunt),] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`),
+        new Rule(`Fire`,                `Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces FDMG.`),
+        new Rule(`Pain`,                `Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if Pain = [C + D].`),
+        new Rule(`Vehicles`,            `Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`),
         new Rule(`Condition`,           `-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`),
         new Rule(`Occupants`,           `Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`),
         new Rule(`Pedestrians`,         `Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`),
-        new Rule(`Tires`,               `Roll [-3 ATK vs Drive(Stunt),] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`),
+        new Rule(`Tires`,               `Roll [-3 ATK vs Drive(Stunt)] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`),
         new Rule(`Wreck`,               `The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`),
         new Rule(`Burning`,             `If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`)
     ];
@@ -4357,9 +4724,9 @@ var app = (function () {
     const Maneuvers = DefensiveManeuvers.concat(OffensiveManeuvers);
 
     /* src/pages/Reference.svelte generated by Svelte v3.15.0 */
-    const file$a = "src/pages/Reference.svelte";
+    const file$b = "src/pages/Reference.svelte";
 
-    function create_fragment$d(ctx) {
+    function create_fragment$e(ctx) {
     	let div;
     	let t;
     	let current;
@@ -4390,7 +4757,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "page svelte-1mq6qah");
-    			add_location(div, file$a, 21, 0, 623);
+    			add_location(div, file$b, 21, 0, 623);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4459,7 +4826,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$e.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4498,21 +4865,21 @@ var app = (function () {
     class Reference extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$d, safe_not_equal, {});
+    		init(this, options, instance$b, create_fragment$e, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Reference",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$e.name
     		});
     	}
     }
 
     /* src/pages/Home.svelte generated by Svelte v3.15.0 */
-    const file$b = "src/pages/Home.svelte";
+    const file$c = "src/pages/Home.svelte";
 
-    function create_fragment$e(ctx) {
+    function create_fragment$f(ctx) {
     	let div;
     	let button0;
     	let t1;
@@ -4528,11 +4895,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Rules Reference";
     			attr_dev(button0, "class", "svelte-hz0e23");
-    			add_location(button0, file$b, 7, 4, 172);
+    			add_location(button0, file$c, 7, 4, 172);
     			attr_dev(button1, "class", "svelte-hz0e23");
-    			add_location(button1, file$b, 8, 4, 237);
+    			add_location(button1, file$c, 8, 4, 237);
     			attr_dev(div, "class", "page home-page svelte-hz0e23");
-    			add_location(div, file$b, 6, 0, 139);
+    			add_location(div, file$c, 6, 0, 139);
 
     			dispose = [
     				listen_dev(button0, "click", router.Creator, false, false, false),
@@ -4559,7 +4926,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$e.name,
+    		id: create_fragment$f.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4571,13 +4938,13 @@ var app = (function () {
     class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$e, safe_not_equal, {});
+    		init(this, options, null, create_fragment$f, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Home",
     			options,
-    			id: create_fragment$e.name
+    			id: create_fragment$f.name
     		});
     	}
     }
@@ -4719,7 +5086,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$f(ctx) {
+    function create_fragment$g(ctx) {
     	let current;
 
     	const viewscreen = new ViewScreen({
@@ -4766,7 +5133,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$f.name,
+    		id: create_fragment$g.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4778,13 +5145,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$f, safe_not_equal, {});
+    		init(this, options, null, create_fragment$g, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$f.name
+    			id: create_fragment$g.name
     		});
     	}
     }

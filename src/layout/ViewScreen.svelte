@@ -23,9 +23,11 @@
 	}
 	@keyframes hline {
 		0%   { top: 0; }
-		100% { top: 99%; }
+		100% { top: 99%; } 
 	}
 	.display {
-		margin-top: 40px;
+		height: calc(100vh - 100px);
+		margin-bottom: 150px;
+		margin-top: 50px;
 	}
 </style>

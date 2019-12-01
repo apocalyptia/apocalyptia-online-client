@@ -11,7 +11,11 @@
         <div class='box' on:click={() => list = HideShow(r, list)}>
             <span class='name'>{r.name}</span>
             {#if r.visible}
-                <div class='notes'>{r.notes}</div>
+                <div class='notes'>{@html r.notes}</div>
+                {#if r.table}
+                    <div class='separator'/>
+                    <div class='table'><svelte:component this={r.table}/></div>
+                {/if}
             {/if}
         </div>
         <div class='separator'/>

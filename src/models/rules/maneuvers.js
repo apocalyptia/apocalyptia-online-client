@@ -1,4 +1,5 @@
 import Rule from './rule.js'
+import CalledShot from './CalledShot.svelte'
 
 const DefensiveManeuvers = [
     new Rule(`Block`,           `Roll [Melee vs MATK or RATK when using a Shield] for DEF.`),
