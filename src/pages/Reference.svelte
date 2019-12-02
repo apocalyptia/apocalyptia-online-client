@@ -3,12 +3,14 @@
     import BackNextButtons from '../layout/BackNextButtons.svelte'
     import RefList from '../layout/RefList.svelte'
     import { Combat } from '../models/rules/combat/Combat.js'
-    import Maneuvers from '../models/rules/maneuvers.js'
+    import { Maneuvers } from '../models/rules/maneuvers/Maneuvers.js'
+    import { Situations } from '../models/rules/situations/Situations.js'
 
     let step = 0
     const pages = [
         { name: 'Combat', rules: Combat },
-        { name: 'Maneuvers', rules: Maneuvers }
+        { name: 'Maneuvers', rules: Maneuvers },
+        { name: 'Situations', rules: Situations }
     ]
     let selected = pages[step]
 
