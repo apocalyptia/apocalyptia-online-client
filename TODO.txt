@@ -1,1 +1,0 @@
-Figure out best way to do accordions for skills, abilities, rules, etc.
