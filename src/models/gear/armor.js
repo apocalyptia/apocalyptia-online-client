@@ -26,6 +26,10 @@ export const ArmorList = [
     new Armor(`Work Gloves`,        1, `Arms`,              [`FR`],                     1)
 ]
 
+export const RandomArmor = function() {
+    return ArmorList[Math.random()]
+}
+
 export const ArmorAttributes = [
     { 'Camo':           `+1 Stealth per Location when in a given Biome.` },
     { 'CR':             `Delay Hypothermia for 1 hour per Location.` },

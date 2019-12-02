@@ -1,5 +1,5 @@
 <script>
-    import { CharacterStore } from '../../models/stores'
+    import { CharacterStore } from '../../models/stores.js'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
@@ -13,6 +13,7 @@
         let r = 0
         for (const trait of traits) r += char.traits[trait].score
         remaining = traitPoints - r
+        console.log(char.traits)
     }
 </script>
 

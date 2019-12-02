@@ -1,5 +1,5 @@
 class Skill {
-    constructor (name, parent) {
+    constructor(name, parent) {
         this.name = name,
         this.parent = parent,
         this.score = 0

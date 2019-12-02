@@ -10,7 +10,7 @@
     import Gear from '../components/creator/Gear.svelte'
 
     let step = 0
-    const options = [ Traits, Description, Skills, Properties, Abilities, Gear ]
+    const options = [ Gear, Description, Traits, Skills, Properties, Abilities, Gear ]
     let selected = options[step]
 
     function nav(event) {
@@ -23,7 +23,7 @@
 <div>
     <svelte:component this={selected}/>
 </div>
-<BackNextButtons step={step} on:message={nav} />
+<BackNextButtons {step} on:message={nav} />
 
 <style>
     div {

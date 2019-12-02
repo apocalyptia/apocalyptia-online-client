@@ -24,7 +24,7 @@
 <div class='ref-page'>
     <svelte:component this={RefList} list={selected} />
 </div>
-<BackNextButtons step={step} on:message={nav} />
+<BackNextButtons {step} on:message={nav} />
 
 <style>
     .ref-page {
