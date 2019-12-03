@@ -8,7 +8,7 @@ class Drug {
     }
 }
 
-export const DrugList = [
+export const DrugsList = [
     new Drug(`Alcohol`,             9,  true,   `Antibiotic or Fuel. C9# or Unstable.`,                 1),
     new Drug(`Antibiotic`,          12, false,  `Prevents infection in Recovery for 1 day.`,            0),
     new Drug(`Hallucinogen`,        15, false,  `+1 Perform and Tame. -3 all other rolls. -1 Psyche.`,  0),

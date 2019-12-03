@@ -5060,7 +5060,7 @@ var app = (function () {
 
     const Bleeding = new Rule(
         `Bleeding`, 
-        `When you take Wounds = [Health / 2] or more, you begin taking an additional 1DMG per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding with a bandage.`
+        `1 DMG per min caused by your HP dropping to half or some other effect. Roll [(Medicine or C) vs DMG] to stop.`
     );
 
     const Recovery = new Rule(
@@ -5159,7 +5159,7 @@ var app = (function () {
 
     const Protect = new Rule(
         `Protect`, 
-        `Become the new target of an ATK targeting someone within 1yd of you. You may still Block as normal, but you cannot Dodge the ATK.`
+        `Become the new target of all ATKs targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the ATK.`
     );
 
     const Sneak = new Rule(
@@ -5484,11 +5484,6 @@ var app = (function () {
     ];
 
     const Maneuvers = DefensiveManeuvers.concat(OffensiveManeuvers).concat(SocialManeuvers);
-
-    const Bleeding$1 = new Rule(
-        `Bleeding`, 
-        `1 DMG per min caused by your HP dropping to half or some other effect. Roll [(Medicine or C) vs DMG] to stop.`
-    );
 
     const Burning$1 = new Rule(
         `Burning`, 
@@ -5827,7 +5822,7 @@ var app = (function () {
     );
 
     const Situations = [
-        Bleeding$1,
+        Bleeding,
         Burning$1,
         Chase,
         Concealed,

@@ -1,4 +1,4 @@
-import { Bleeding } from './bleeding/Bleeding.js'
+import { Bleeding } from './Bleeding.ts'
 import { Burning } from './burning/Burning.js'
 import { Chase } from './chase/Chase.js'
 import { Concealed } from './concealed/Concealed.js'

@@ -1,0 +1,1 @@
+- Maybe Luck is rolled at character creator. 1d6. And that is just how lucky the character is. Has nothing to do with Demeanor. For balancing Traits, add Demeanor to Initiative formula.

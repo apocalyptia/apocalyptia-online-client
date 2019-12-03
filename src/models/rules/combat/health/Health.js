@@ -1,5 +1,5 @@
 import Rule from '../../rule.js'
-import { Bleeding } from './Bleeding.js'
+import { Bleeding } from '../../situations/Bleeding.ts'
 import { Recovery } from './Recovery.js'
 
 export const Health = new Rule(

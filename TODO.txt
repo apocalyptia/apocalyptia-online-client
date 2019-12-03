@@ -1,0 +1,4 @@
+Remove Action Point system. Edit in code as shown highlighted in book chapters: Abilities, Combat, Maneuvers, Situations, Skills, Traits, Properties, Gear, and Character Sheet.
+
+Add a 9xp Ability.
+Add a 6xp Ability.
