@@ -2,9 +2,9 @@
     import router from '../routes'
     import BackNextButtons from '../layout/BackNextButtons.svelte'
     import RefList from '../layout/RefList.svelte'
-    import { Combat } from '../models/rules/combat/Combat.js'
-    import { Maneuvers } from '../models/rules/maneuvers/Maneuvers.js'
-    import { Situations } from '../models/rules/situations/Situations.js'
+    import { Combat } from '../models/combat/Combat'
+    import { Maneuvers } from '../models/maneuvers/Maneuvers'
+    import { Situations } from '../models/situations/Situations'
 
     let step = 0
     const pages = [

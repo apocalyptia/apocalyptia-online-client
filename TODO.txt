@@ -2,3 +2,5 @@ Remove Action Point system. Edit in code as shown highlighted in book chapters: 
 
 Add a 9xp Ability.
 Add a 6xp Ability.
+
+Fix TypeScript integration issues.

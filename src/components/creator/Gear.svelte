@@ -1,21 +1,21 @@
 <script>
-    import { CharacterStore } from '../../models/stores.js'
+    import { CharacterStore } from '../../models/stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { AccessoryList } from '../../models/gear/accessories.js'
-    import { AmmoList } from '../../models/gear/ammo.js'
-    import { ArmorList } from '../../models/gear/armor.js'
-    import { BombList } from '../../models/gear/bombs.js'
-    import { DocumentList } from '../../models/gear/documents.js'
-    import { DrugsList } from '../../models/gear/drugs.js'
-    import { ElectronicsList } from '../../models/gear/electronics.js'
-    import { EquipmentList } from '../../models/gear/equipment.js'
-    import { MedicalList } from '../../models/gear/medical.js'
-    import { MeleeList } from '../../models/gear/melee.js'
-    import { RangedList } from '../../models/gear/ranged.js'
-    import { StorageList } from '../../models/gear/storage.js'
-    import { d6Roll } from '../../models/rules/roller.js'
+    import { AccessoryList } from '../../models/gear/accessories'
+    import { AmmoList } from '../../models/gear/ammo'
+    import { ArmorList } from '../../models/gear/armor'
+    import { BombList } from '../../models/gear/bombs'
+    import { DocumentList } from '../../models/gear/documents'
+    import { DrugsList } from '../../models/gear/drugs'
+    import { ElectronicsList } from '../../models/gear/electronics'
+    import { EquipmentList } from '../../models/gear/equipment'
+    import { MedicalList } from '../../models/gear/medical'
+    import { MeleeList } from '../../models/gear/melee'
+    import { RangedList } from '../../models/gear/ranged'
+    import { StorageList } from '../../models/gear/storage'
+    import { d6Roll } from '../../models/roller'
 
 
     function roll() {
