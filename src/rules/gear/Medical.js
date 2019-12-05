@@ -15,5 +15,5 @@ export const MedicalList = [
     new Medical(`Stethoscope`,      `+1 Medicine. Perception(Hear) 6# through doors.`,          1),
     new Medical(`Surgery Kit`,      `+3 Medicine(Surgery).`,                                    3),
     new Medical(`Thermometer`,      `+1 Medicine. Accurately reads temperature.`,               0),
-    new Medical(`Transfusion Kit`,  `Medicine 9#. 1 Health/15mins. Heal up to 1 Health max.`,   1),
+    new Medical(`Transfusion Kit`,  `Medicine 9#. Heal 1 Wound. Takes 1hr.`,                    1),
 ]
