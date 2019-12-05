@@ -2234,73 +2234,73 @@ var app = (function () {
     			span7.textContent = "Age:";
     			t24 = space();
     			input7 = element("input");
-    			add_location(h2, file$4, 8, 8, 225);
+    			add_location(h2, file$4, 8, 8, 221);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$4, 7, 4, 192);
+    			add_location(div0, file$4, 7, 4, 188);
     			attr_dev(span0, "class", "stat-label");
-    			add_location(span0, file$4, 11, 8, 294);
+    			add_location(span0, file$4, 11, 8, 290);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "full-input");
-    			add_location(input0, file$4, 12, 8, 342);
+    			add_location(input0, file$4, 12, 8, 338);
     			attr_dev(div1, "class", "stat-block");
-    			add_location(div1, file$4, 10, 4, 261);
+    			add_location(div1, file$4, 10, 4, 257);
     			attr_dev(span1, "class", "stat-label");
-    			add_location(span1, file$4, 19, 8, 521);
+    			add_location(span1, file$4, 19, 8, 517);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "class", "full-input");
-    			add_location(input1, file$4, 20, 8, 572);
+    			add_location(input1, file$4, 20, 8, 568);
     			attr_dev(div2, "class", "stat-block");
-    			add_location(div2, file$4, 18, 4, 488);
+    			add_location(div2, file$4, 18, 4, 484);
     			attr_dev(span2, "class", "stat-label");
-    			add_location(span2, file$4, 28, 12, 796);
+    			add_location(span2, file$4, 28, 12, 792);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "class", "half-input");
-    			add_location(input2, file$4, 29, 12, 848);
+    			add_location(input2, file$4, 29, 12, 844);
     			attr_dev(div3, "class", "half-stat-block");
-    			add_location(div3, file$4, 27, 8, 754);
+    			add_location(div3, file$4, 27, 8, 750);
     			attr_dev(span3, "class", "stat-label");
-    			add_location(span3, file$4, 36, 12, 1056);
+    			add_location(span3, file$4, 36, 12, 1052);
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "class", "half-input");
-    			add_location(input3, file$4, 37, 12, 1108);
+    			add_location(input3, file$4, 37, 12, 1104);
     			attr_dev(div4, "class", "half-stat-block");
-    			add_location(div4, file$4, 35, 8, 1014);
+    			add_location(div4, file$4, 35, 8, 1010);
     			attr_dev(div5, "class", "stat-block");
-    			add_location(div5, file$4, 26, 4, 721);
+    			add_location(div5, file$4, 26, 4, 717);
     			attr_dev(span4, "class", "stat-label");
-    			add_location(span4, file$4, 46, 12, 1356);
+    			add_location(span4, file$4, 46, 12, 1352);
     			attr_dev(input4, "type", "text");
     			attr_dev(input4, "class", "half-input");
-    			add_location(input4, file$4, 47, 12, 1406);
+    			add_location(input4, file$4, 47, 12, 1402);
     			attr_dev(div6, "class", "half-stat-block");
-    			add_location(div6, file$4, 45, 8, 1314);
+    			add_location(div6, file$4, 45, 8, 1310);
     			attr_dev(span5, "class", "stat-label");
-    			add_location(span5, file$4, 54, 12, 1612);
+    			add_location(span5, file$4, 54, 12, 1608);
     			attr_dev(input5, "type", "text");
     			attr_dev(input5, "class", "half-input");
-    			add_location(input5, file$4, 55, 12, 1662);
+    			add_location(input5, file$4, 55, 12, 1658);
     			attr_dev(div7, "class", "half-stat-block");
-    			add_location(div7, file$4, 53, 8, 1570);
+    			add_location(div7, file$4, 53, 8, 1566);
     			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$4, 44, 4, 1281);
+    			add_location(div8, file$4, 44, 4, 1277);
     			attr_dev(span6, "class", "stat-label");
-    			add_location(span6, file$4, 64, 12, 1908);
+    			add_location(span6, file$4, 64, 12, 1904);
     			attr_dev(input6, "type", "text");
     			attr_dev(input6, "class", "half-input");
-    			add_location(input6, file$4, 65, 12, 1960);
+    			add_location(input6, file$4, 65, 12, 1956);
     			attr_dev(div9, "class", "half-stat-block");
-    			add_location(div9, file$4, 63, 8, 1866);
+    			add_location(div9, file$4, 63, 8, 1862);
     			attr_dev(span7, "class", "stat-label");
-    			add_location(span7, file$4, 72, 12, 2168);
+    			add_location(span7, file$4, 72, 12, 2164);
     			attr_dev(input7, "type", "text");
     			attr_dev(input7, "class", "half-input");
-    			add_location(input7, file$4, 73, 12, 2217);
+    			add_location(input7, file$4, 73, 12, 2213);
     			attr_dev(div10, "class", "half-stat-block");
-    			add_location(div10, file$4, 71, 8, 2126);
+    			add_location(div10, file$4, 71, 8, 2122);
     			attr_dev(div11, "class", "stat-block");
-    			add_location(div11, file$4, 62, 4, 1833);
+    			add_location(div11, file$4, 62, 4, 1829);
     			attr_dev(div12, "class", "step");
-    			add_location(div12, file$4, 6, 0, 169);
+    			add_location(div12, file$4, 6, 0, 165);
 
     			dispose = [
     				listen_dev(input0, "input", ctx.input0_input_handler),
@@ -2544,14 +2544,14 @@ var app = (function () {
     			input = element("input");
     			t2 = space();
     			attr_dev(span, "class", "stat-label");
-    			add_location(span, file$5, 28, 12, 760);
+    			add_location(span, file$5, 28, 12, 755);
     			attr_dev(input, "class", "stat-input");
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", input_max_value = Math.min(ctx.char.traits[ctx.trait].max, ctx.char.traits[ctx.trait].score + ctx.remaining));
-    			add_location(input, file$5, 29, 12, 830);
+    			add_location(input, file$5, 29, 12, 825);
     			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$5, 27, 8, 723);
+    			add_location(div, file$5, 27, 8, 718);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -2632,14 +2632,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$5, 21, 8, 574);
+    			add_location(h2, file$5, 21, 8, 569);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$5, 20, 4, 541);
-    			add_location(h3, file$5, 24, 8, 637);
+    			add_location(div0, file$5, 20, 4, 536);
+    			add_location(h3, file$5, 24, 8, 632);
     			attr_dev(div1, "class", "remaining svelte-slj60w");
-    			add_location(div1, file$5, 23, 4, 605);
+    			add_location(div1, file$5, 23, 4, 600);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$5, 19, 0, 518);
+    			add_location(div2, file$5, 19, 0, 513);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2801,14 +2801,14 @@ var app = (function () {
     			t1 = space();
     			input = element("input");
     			attr_dev(span, "class", "stat-label");
-    			add_location(span, file$6, 34, 24, 1068);
+    			add_location(span, file$6, 34, 24, 1064);
     			attr_dev(input, "class", "stat-input");
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = Math.min(ctx.char.traits[ctx.trait].score, ctx.char.skills[ctx.skill].score + ctx.remaining));
-    			add_location(input, file$6, 35, 24, 1150);
+    			add_location(input, file$6, 35, 24, 1146);
     			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$6, 33, 20, 1019);
+    			add_location(div, file$6, 33, 20, 1015);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -2929,9 +2929,9 @@ var app = (function () {
 
     			t3 = space();
     			attr_dev(div0, "class", "parent-trait-title svelte-wj9h86");
-    			add_location(div0, file$6, 28, 12, 787);
+    			add_location(div0, file$6, 28, 12, 783);
     			attr_dev(div1, "class", "skill-section svelte-wj9h86");
-    			add_location(div1, file$6, 27, 8, 747);
+    			add_location(div1, file$6, 27, 8, 743);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -3023,14 +3023,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$6, 21, 8, 598);
+    			add_location(h2, file$6, 21, 8, 594);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$6, 20, 4, 565);
-    			add_location(h3, file$6, 24, 8, 661);
+    			add_location(div0, file$6, 20, 4, 561);
+    			add_location(h3, file$6, 24, 8, 657);
     			attr_dev(div1, "class", "remaining svelte-wj9h86");
-    			add_location(div1, file$6, 23, 4, 629);
+    			add_location(div1, file$6, 23, 4, 625);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$6, 19, 0, 542);
+    			add_location(div2, file$6, 19, 0, 538);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3327,91 +3327,91 @@ var app = (function () {
     			t42 = space();
     			span22 = element("span");
     			t43 = text(t43_value);
-    			add_location(h2, file$7, 8, 8, 225);
+    			add_location(h2, file$7, 8, 8, 221);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$7, 7, 4, 192);
+    			add_location(div0, file$7, 7, 4, 188);
     			attr_dev(span0, "class", "three-column");
-    			add_location(span0, file$7, 11, 8, 293);
+    			add_location(span0, file$7, 11, 8, 289);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "class", "three-column");
     			input0.value = input0_value_value = ctx.char.props.health.setHealth();
     			attr_dev(input0, "min", "0");
     			attr_dev(input0, "max", input0_max_value = ctx.char.props.health.score);
-    			add_location(input0, file$7, 12, 8, 343);
+    			add_location(input0, file$7, 12, 8, 339);
     			attr_dev(span1, "class", "three-column");
-    			add_location(span1, file$7, 19, 8, 537);
+    			add_location(span1, file$7, 19, 8, 533);
     			attr_dev(div1, "class", "stat-block");
-    			add_location(div1, file$7, 10, 4, 260);
+    			add_location(div1, file$7, 10, 4, 256);
     			attr_dev(span2, "class", "three-column");
-    			add_location(span2, file$7, 22, 8, 645);
+    			add_location(span2, file$7, 22, 8, 641);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "class", "three-column");
     			input1.value = "0";
     			attr_dev(input1, "min", "0");
     			attr_dev(input1, "max", input1_max_value = ctx.char.props.health.score);
-    			add_location(input1, file$7, 23, 8, 693);
+    			add_location(input1, file$7, 23, 8, 689);
     			attr_dev(span3, "class", "three-column");
-    			add_location(span3, file$7, 30, 8, 857);
+    			add_location(span3, file$7, 30, 8, 853);
     			attr_dev(div2, "class", "stat-block");
-    			add_location(div2, file$7, 21, 4, 612);
+    			add_location(div2, file$7, 21, 4, 608);
     			attr_dev(span4, "class", "three-column");
-    			add_location(span4, file$7, 33, 8, 978);
+    			add_location(span4, file$7, 33, 8, 974);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "class", "three-column");
     			input2.value = input2_value_value = ctx.char.props.psyche.setPsyche();
     			attr_dev(input2, "min", "0");
     			attr_dev(input2, "max", input2_max_value = ctx.char.props.psyche.score);
-    			add_location(input2, file$7, 34, 8, 1028);
+    			add_location(input2, file$7, 34, 8, 1024);
     			attr_dev(span5, "class", "three-column");
-    			add_location(span5, file$7, 41, 8, 1222);
+    			add_location(span5, file$7, 41, 8, 1218);
     			attr_dev(div3, "class", "stat-block");
-    			add_location(div3, file$7, 32, 4, 945);
+    			add_location(div3, file$7, 32, 4, 941);
     			attr_dev(span6, "class", "stat-label");
-    			add_location(span6, file$7, 46, 12, 1371);
+    			add_location(span6, file$7, 46, 12, 1367);
     			attr_dev(span7, "class", "stat-input");
-    			add_location(span7, file$7, 47, 12, 1423);
+    			add_location(span7, file$7, 47, 12, 1419);
     			attr_dev(span8, "class", "three-column");
-    			add_location(span8, file$7, 45, 8, 1331);
+    			add_location(span8, file$7, 45, 8, 1327);
     			attr_dev(span9, "class", "stat-label");
-    			add_location(span9, file$7, 50, 12, 1551);
+    			add_location(span9, file$7, 50, 12, 1547);
     			attr_dev(span10, "class", "stat-input");
-    			add_location(span10, file$7, 51, 12, 1602);
+    			add_location(span10, file$7, 51, 12, 1598);
     			attr_dev(span11, "class", "three-column");
-    			add_location(span11, file$7, 49, 8, 1511);
+    			add_location(span11, file$7, 49, 8, 1507);
     			attr_dev(span12, "class", "stat-label");
-    			add_location(span12, file$7, 54, 12, 1728);
+    			add_location(span12, file$7, 54, 12, 1724);
     			attr_dev(span13, "class", "stat-input");
-    			add_location(span13, file$7, 55, 12, 1779);
+    			add_location(span13, file$7, 55, 12, 1775);
     			attr_dev(span14, "class", "three-column");
-    			add_location(span14, file$7, 53, 8, 1688);
+    			add_location(span14, file$7, 53, 8, 1684);
     			attr_dev(div4, "class", "stat-block");
-    			add_location(div4, file$7, 44, 4, 1298);
+    			add_location(div4, file$7, 44, 4, 1294);
     			attr_dev(span15, "class", "stat-label");
-    			add_location(span15, file$7, 60, 8, 1906);
+    			add_location(span15, file$7, 60, 8, 1902);
     			attr_dev(span16, "class", "stat-input");
-    			add_location(span16, file$7, 61, 8, 1955);
+    			add_location(span16, file$7, 61, 8, 1951);
     			attr_dev(div5, "class", "stat-block");
-    			add_location(div5, file$7, 59, 4, 1873);
+    			add_location(div5, file$7, 59, 4, 1869);
     			attr_dev(span17, "class", "stat-label");
-    			add_location(span17, file$7, 64, 8, 2069);
+    			add_location(span17, file$7, 64, 8, 2065);
     			attr_dev(span18, "class", "stat-input");
-    			add_location(span18, file$7, 65, 8, 2116);
+    			add_location(span18, file$7, 65, 8, 2112);
     			attr_dev(div6, "class", "stat-block");
-    			add_location(div6, file$7, 63, 4, 2036);
+    			add_location(div6, file$7, 63, 4, 2032);
     			attr_dev(span19, "class", "stat-label");
-    			add_location(span19, file$7, 68, 8, 2226);
+    			add_location(span19, file$7, 68, 8, 2222);
     			attr_dev(span20, "class", "stat-input");
-    			add_location(span20, file$7, 69, 8, 2272);
+    			add_location(span20, file$7, 69, 8, 2268);
     			attr_dev(div7, "class", "stat-block");
-    			add_location(div7, file$7, 67, 4, 2193);
+    			add_location(div7, file$7, 67, 4, 2189);
     			attr_dev(span21, "class", "stat-label");
-    			add_location(span21, file$7, 72, 8, 2380);
+    			add_location(span21, file$7, 72, 8, 2376);
     			attr_dev(span22, "class", "stat-input");
-    			add_location(span22, file$7, 73, 8, 2432);
+    			add_location(span22, file$7, 73, 8, 2428);
     			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$7, 71, 4, 2347);
+    			add_location(div8, file$7, 71, 4, 2343);
     			attr_dev(div9, "class", "step");
-    			add_location(div9, file$7, 6, 0, 169);
+    			add_location(div9, file$7, 6, 0, 165);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3643,7 +3643,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "separator svelte-maszxs");
-    			add_location(div, file$8, 32, 20, 1105);
+    			add_location(div, file$8, 32, 20, 1100);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3718,22 +3718,22 @@ var app = (function () {
     			input = element("input");
     			t9 = space();
     			attr_dev(div0, "class", "m-col svelte-maszxs");
-    			add_location(div0, file$8, 35, 20, 1219);
+    			add_location(div0, file$8, 35, 20, 1214);
     			attr_dev(div1, "class", "l-col svelte-maszxs");
-    			add_location(div1, file$8, 36, 20, 1279);
+    			add_location(div1, file$8, 36, 20, 1274);
     			attr_dev(div2, "class", "s-col svelte-maszxs");
-    			add_location(div2, file$8, 37, 20, 1346);
+    			add_location(div2, file$8, 37, 20, 1341);
     			attr_dev(div3, "class", "s-col svelte-maszxs");
-    			add_location(div3, file$8, 38, 20, 1405);
+    			add_location(div3, file$8, 38, 20, 1400);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "class", "taken-number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = ctx.ability.max);
-    			add_location(input, file$8, 40, 24, 1507);
+    			add_location(input, file$8, 40, 24, 1502);
     			attr_dev(div4, "class", "s-col svelte-maszxs");
-    			add_location(div4, file$8, 39, 20, 1463);
+    			add_location(div4, file$8, 39, 20, 1458);
     			attr_dev(div5, "class", "ability-row svelte-maszxs");
-    			add_location(div5, file$8, 34, 16, 1173);
+    			add_location(div5, file$8, 34, 16, 1168);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -3864,27 +3864,27 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$8, 19, 8, 517);
+    			add_location(h2, file$8, 19, 8, 512);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$8, 18, 4, 484);
+    			add_location(div0, file$8, 18, 4, 479);
     			attr_dev(div1, "class", "m-col svelte-maszxs");
-    			add_location(div1, file$8, 24, 16, 689);
+    			add_location(div1, file$8, 24, 16, 684);
     			attr_dev(div2, "class", "l-col svelte-maszxs");
-    			add_location(div2, file$8, 25, 16, 735);
+    			add_location(div2, file$8, 25, 16, 730);
     			attr_dev(div3, "class", "s-col svelte-maszxs");
-    			add_location(div3, file$8, 26, 16, 788);
+    			add_location(div3, file$8, 26, 16, 783);
     			attr_dev(div4, "class", "s-col svelte-maszxs");
-    			add_location(div4, file$8, 27, 16, 833);
+    			add_location(div4, file$8, 27, 16, 828);
     			attr_dev(div5, "class", "s-col svelte-maszxs");
-    			add_location(div5, file$8, 28, 16, 877);
+    			add_location(div5, file$8, 28, 16, 872);
     			attr_dev(div6, "class", "ability-row header-row separator svelte-maszxs");
-    			add_location(div6, file$8, 23, 12, 626);
+    			add_location(div6, file$8, 23, 12, 621);
     			attr_dev(div7, "class", "abilities-table svelte-maszxs");
-    			add_location(div7, file$8, 22, 8, 584);
+    			add_location(div7, file$8, 22, 8, 579);
     			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$8, 21, 4, 551);
+    			add_location(div8, file$8, 21, 4, 546);
     			attr_dev(div9, "class", "step");
-    			add_location(div9, file$8, 17, 0, 461);
+    			add_location(div9, file$8, 17, 0, 456);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4002,9 +4002,31 @@ var app = (function () {
     	}
     }
 
+    const d6 = () => { return Math.ceil(Math.random()*6) };
+
+    const d6Roll = () => {
+        let roll = d6();
+        let result = roll;
+        if (roll == 6) {
+            while (roll == 6) {
+                console.log('EXPLODE!');
+                roll = d6();
+                result += roll;
+            }
+        }
+        if (roll == 1) {
+            roll = d6();
+            if (roll == 1) {
+                console.log('BOTCH!');
+                return -666
+            }
+        }
+        return result
+    };
+
     class Armor {
-        constructor(type, dr, loc, notes, sz) {
-            this.type = type;
+        constructor(name, dr, loc, notes, sz) {
+            this.name = name;
             this.dr = dr;
             this.loc = loc;
             this.notes = notes;
@@ -4049,28 +4071,6 @@ var app = (function () {
     // new Armor(`Land Warrior Helmet`, `4`, `Head`, `FR. Nightvision Goggles. Radio.`, 2)
     // new Armor(`Spiked Jacket`, `2, 2`, `Torso, Arms`, `+1 DMG Grab.`, 3)
 
-    const d6 = () => { return Math.ceil(Math.random()*6) };
-
-    const d6Roll = () => {
-        let roll = d6();
-        let result = roll;
-        if (roll == 6) {
-            while (roll == 6) {
-                console.log('EXPLODE!');
-                roll = d6();
-                result += roll;
-            }
-        }
-        if (roll == 1) {
-            roll = d6();
-            if (roll == 1) {
-                console.log('BOTCH!');
-                return -666
-            }
-        }
-        return result
-    };
-
     /* src/components/creator/Gear.svelte generated by Svelte v3.15.0 */
     const file$9 = "src/components/creator/Gear.svelte";
 
@@ -4090,7 +4090,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			add_location(div, file$9, 28, 8, 1126);
+    			add_location(div, file$9, 28, 8, 1064);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4136,8 +4136,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(button, file$9, 25, 0, 1040);
-    			add_location(div, file$9, 26, 0, 1081);
+    			add_location(button, file$9, 25, 0, 978);
+    			add_location(div, file$9, 26, 0, 1019);
     			dispose = listen_dev(button, "click", roll, false, false, false);
     		},
     		l: function claim(nodes) {
@@ -4265,7 +4265,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "svelte-1sye5nq");
-    			add_location(div, file$a, 22, 0, 823);
+    			add_location(div, file$a, 22, 0, 817);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4340,7 +4340,7 @@ var app = (function () {
 
     function instance$b($$self, $$props, $$invalidate) {
     	let step = 0;
-    	const options = [Gear, Description, Traits, Skills, Properties, Abilities, Gear];
+    	const options = [Description, Traits, Skills, Properties, Abilities, Gear];
     	let selected = options[step];
 
     	function nav(event) {
@@ -5182,9 +5182,9 @@ var app = (function () {
         `Spend AP to get an equal bonus to one ATK.`
     );
 
-    /* src/models/rules/maneuvers/offensive/calledshot/CalledShotTable.svelte generated by Svelte v3.15.0 */
+    /* src/rules/maneuvers/CalledShotTable.svelte generated by Svelte v3.15.0 */
 
-    const file$c = "src/models/rules/maneuvers/offensive/calledshot/CalledShotTable.svelte";
+    const file$c = "src/rules/maneuvers/CalledShotTable.svelte";
 
     function create_fragment$e(ctx) {
     	let table;
@@ -5500,9 +5500,9 @@ var app = (function () {
         `If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected. Targets are Defenseless against ATKs from Concealed opponents.`
     );
 
-    /* src/models/rules/situations/cover/CoverTable.svelte generated by Svelte v3.15.0 */
+    /* src/rules/situations/CoverTable.svelte generated by Svelte v3.15.0 */
 
-    const file$d = "src/models/rules/situations/cover/CoverTable.svelte";
+    const file$d = "src/rules/situations/CoverTable.svelte";
 
     function create_fragment$f(ctx) {
     	let table;
@@ -5875,7 +5875,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "ref-page svelte-ttj5zk");
-    			add_location(div, file$e, 23, 0, 769);
+    			add_location(div, file$e, 23, 0, 744);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

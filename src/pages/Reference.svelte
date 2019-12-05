@@ -2,7 +2,7 @@
     import router from '../routes'
     import BackNextButtons from '../layout/BackNextButtons.svelte'
     import RefList from '../layout/RefList.svelte'
-    import { Combat } from '../rules/combat/Combat'
+    import { Combat } from '../rules/combat/CombatRules'
     import { Maneuvers } from '../rules/maneuvers/Maneuvers'
     import { Situations } from '../rules/situations/Situations'
 
