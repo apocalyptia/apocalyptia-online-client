@@ -1,8 +1,8 @@
 .view-screen.svelte-8mevh{height:100vh;overflow-x:hidden;overflow-y:auto;width:100vw}.view-screen.svelte-8mevh:before{animation:svelte-8mevh-hline 10s linear infinite;background:rgb(100, 250, 100, .1);content:'';font-size:1px;height:1px;position:absolute;width:100vw;z-index:1000}@keyframes svelte-8mevh-hline{0%{top:0}100%{top:99%}}
 .title-bar.svelte-11p9k5r{height:50px;position:fixed;text-align:center;top:0;width:100vw;z-index:1}.title.svelte-11p9k5r{font-size:1.8rem}.beta.svelte-11p9k5r{color:lightcoral;border:1px dotted lightcoral;font-size:.8rem;padding:3px}
 .display-window.svelte-1rpze5{bottom:50px;height:calc(100vh - 100px);position:absolute;top:50px;width:100vw}
-div.svelte-1sye5nq{padding:20px;width:calc(100vw - 40px)}
 .home-page.svelte-1oytnow{padding:25px;text-align:center}button.svelte-1oytnow{padding:2rem;width:70%;margin:1rem auto}
+div.svelte-1sye5nq{padding:20px;width:calc(100vw - 40px)}
 .ref-page.svelte-ttj5zk{padding:25px;padding-bottom:50px}
 div.svelte-1gidaka{display:flex;flex-direction:row;position:fixed;left:0;bottom:0px;height:50px;width:100vw}button.svelte-1gidaka{border:1px solid;width:50vw}
 .box.svelte-1v05fh1{border:1px dotted lime;padding:25px}.name.svelte-1v05fh1{font-size:1.2em;font-weight:bold}.notes.svelte-1v05fh1{padding-top:25px}.separator.svelte-1v05fh1{height:25px}.sub-ul.svelte-1v05fh1{list-style:none}.sub-name.svelte-1v05fh1{font-size:1.1em;font-weight:bold}

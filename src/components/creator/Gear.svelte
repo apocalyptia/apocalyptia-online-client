@@ -3,10 +3,9 @@
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { d6Roll } from '../../rules/roller'
     import { AccessoryList } from '../../rules/gear/accessories'
     import { AmmoList } from '../../rules/gear/ammo'
-    import { ArmorList } from '../../rules/gear/armor'
+    import { ArmorList, RandomArmor } from '../../rules/gear/armor'
     import { BombList } from '../../rules/gear/bombs'
     import { DocumentList } from '../../rules/gear/documents'
     import { DrugsList } from '../../rules/gear/drugs'
@@ -17,15 +16,20 @@
     import { RangedList } from '../../rules/gear/ranged'
     import { StorageList } from '../../rules/gear/storage'
 
+    let armorResult = ""
 
-    function roll() {
-        console.log(d6Roll())
+
+
+    function rollArmor() {
+        armorResult = RandomArmor()
     }
 </script>
 
-<button on:click={roll}>ROLL IT</button>
+<button on:click={rollArmor}>ROLL IT</button>
 <div>
     {#each ArmorList as armor}
-        <div>{armor.type}</div>
+        <div>{armor.name}</div>
     {/each}
 </div>
+<br>
+<div>My Armor: {armorResult.name}</div>

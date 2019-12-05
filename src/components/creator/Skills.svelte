@@ -11,9 +11,9 @@
     updateSkills()
 
     function updateSkills() {
-        let r = 0
-        for (const skill of skills) r += char.skills[skill].score
-        remaining = startingSkillPoints - r
+        let skillCount = 0
+        for (const skill of skills) skillCount += char.skills[skill].score
+        remaining = startingSkillPoints - skillCount
     }
 </script>
 

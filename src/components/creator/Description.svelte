@@ -6,7 +6,7 @@
     function random(array) { return array[Math.ceil(Math.random() * array.length) - 1] }
 
     function randomName() {
-        let femaleNames = [
+        const femaleNames = [
             'Aaliyah',
             'Abagail',
             'Abbey',
@@ -1008,7 +1008,7 @@
             'Zoey',
             'Zoie',
         ]
-        let maleNames = [
+        const maleNames = [
             'Aaron',
             'Abdullah',
             'Abel',
@@ -2012,13 +2012,13 @@
         ]
         if (char.description.gender.value == 'Male') { char.description.characterName.value = random(maleNames) }
         else if (char.description.gender.value == 'Female') { char.description.characterName.value = random(femaleNames) } 
-        else { char.description.characterName.value = random(femaleNames.concat(maleNames)) }
+        else { char.description.characterName.value = random([...femaleNames, ...maleNames]) }
     }
 
     function randomHeight() {
-        let totalInches = Math.ceil((Math.random() * 18) + 58) // 4'11' low, 5'7' median, 6'4' high
-        let feet = Math.floor(totalInches / 12)
-        let inches = Math.floor(totalInches % 12)
+        const totalInches = Math.ceil((Math.random() * 18) + 58) // 4'11' low, 5'7' median, 6'4' high
+        const feet = Math.floor(totalInches / 12)
+        const inches = Math.floor(totalInches % 12)
         char.description.height.value = `${feet}' ${inches}"`
     }
 

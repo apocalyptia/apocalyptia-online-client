@@ -6,7 +6,7 @@ class Trait {
     }
 }
 
-export let traitsList = {
+export const traitsList = {
     'agility': new Trait(`Agility`),
     'brains': new Trait(`Brains`),
     'constitution': new Trait(`Constitution`),

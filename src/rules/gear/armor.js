@@ -27,7 +27,9 @@ export const ArmorList = [
 ]
 
 export const RandomArmor = function() {
-    return ArmorList[Math.random()]
+    const randomRoll = Math.ceil(Math.random() * (ArmorList.length - 1))
+    console.log(randomRoll)
+    return ArmorList[randomRoll]
 }
 
 export const ArmorAttributes = [

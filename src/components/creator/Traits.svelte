@@ -10,10 +10,9 @@
     let remaining = traitPoints - traits.length
 
     function updateTraits() {
-        let r = 0
-        for (const trait of traits) r += char.traits[trait].score
-        remaining = traitPoints - r
-        console.log(char.traits)
+        let traitCount = 0
+        for (const trait of traits) traitCount += char.traits[trait].score
+        remaining = traitPoints - traitCount
     }
 </script>
 

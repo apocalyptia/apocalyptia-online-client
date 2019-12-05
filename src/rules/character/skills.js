@@ -6,7 +6,7 @@ class Skill {
     }
 }
 
-export let skillsList = {
+export const skillsList = {
     'acrobatics': new Skill(`Acrobatics`, `Agility`),
     'athletics': new Skill(`Athletics`, `Constitution`),
     'build': new Skill(`Build`, `Brains`),
