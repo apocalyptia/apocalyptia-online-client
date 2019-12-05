@@ -64,3 +64,7 @@ public/*
 # Project specific rules
 book/
 old_code.js
+public/apocalyptia-online.js
+public/apocalyptia-online.js.map
+public/apocalyptia-online.css
+public/apocalyptia-online.css.map

@@ -28,7 +28,7 @@ export const AbilityList = [
     new Ability(`Danger Sense`,         `+1 Reflex.`,                                   1, 9, 0, ``),
     new Ability(`Discipline`,           `Ignore 1 Pain penalty.`,                       3, 9, 0, ``),
     new Ability(`Fortunate`,            `+1 Luck.`,                                     1, 9, 0, ``),
-    new Ability(`Free Running`,         `Climb at [Speed] for 2AP.`,                    1, 9, 0, ``),
+    new Ability(`Free Running`,         `Acrobatics 9# to Climb as a Run action.`,      1, 9, 0, ``),
     new Ability(`Unorthodox*`,          `Pick a new parent Trait for a Skill.`,         1, 9, 0, ``),
     // OPEN SLOT FOR NEW ABILITY
     // 12 XP Abilities
