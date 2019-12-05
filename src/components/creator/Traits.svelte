@@ -1,9 +1,9 @@
 <script>
-    import { CharacterStore } from '../../rules/stores'
+    import { CharacterStore } from '../../rules/Stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { traitPoints } from '../../rules/character/traits'
+    import { traitPoints } from '../../rules/character/Traits'
 
     const traits = Object.keys(char.traits)
 

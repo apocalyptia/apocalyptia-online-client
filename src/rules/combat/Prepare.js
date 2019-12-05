@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 
 export const Prepare = new Rule(
     `Prepare`, 

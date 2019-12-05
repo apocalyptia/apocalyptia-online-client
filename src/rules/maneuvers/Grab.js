@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 import { Hold } from './Hold'
 import { Tackle } from './Tackle'
 import { Throw } from './Throw'

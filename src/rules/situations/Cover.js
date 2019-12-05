@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 import CoverTable from './CoverTable.svelte'
 
 export const Cover = new Rule(

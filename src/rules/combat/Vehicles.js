@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 import { Burning } from './Burning'
 import { Conditions } from './Conditions'
 import { Occupants } from './Occupants'

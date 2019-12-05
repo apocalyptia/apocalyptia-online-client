@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 import { Dehydration } from './Dehydration'
 import { Exhaustion } from './Exhaustion'
 import { Hypothermia } from './Hypothermia'

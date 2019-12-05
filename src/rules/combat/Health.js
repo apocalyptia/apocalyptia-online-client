@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 import { Bleeding } from '../situations/Bleeding'
 import { Recovery } from './Recovery'
 

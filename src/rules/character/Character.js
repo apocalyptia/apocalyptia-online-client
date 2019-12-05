@@ -1,9 +1,5 @@
-import {
-    traitsList
-} from './traits'
-import {
-    skillsList
-} from './skills'
+import { traitsList } from './Traits'
+import { skillsList } from './Skills'
 
 
 export class Character {

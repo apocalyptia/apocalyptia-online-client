@@ -1,4 +1,4 @@
-import Rule from '../rule'
+import Rule from '../Rule'
 import CalledShotTable from './CalledShotTable.svelte'
 
 export const CalledShot = new Rule(

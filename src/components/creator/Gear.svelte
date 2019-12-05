@@ -1,20 +1,20 @@
 <script>
-    import { CharacterStore } from '../../rules/stores'
+    import { CharacterStore } from '../../rules/Stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { AccessoryList } from '../../rules/gear/accessories'
-    import { AmmoList } from '../../rules/gear/ammo'
-    import { ArmorList, RandomArmor } from '../../rules/gear/armor'
-    import { BombList } from '../../rules/gear/bombs'
-    import { DocumentList } from '../../rules/gear/documents'
-    import { DrugsList } from '../../rules/gear/drugs'
-    import { ElectronicsList } from '../../rules/gear/electronics'
-    import { EquipmentList } from '../../rules/gear/equipment'
-    import { MedicalList } from '../../rules/gear/medical'
-    import { MeleeList } from '../../rules/gear/melee'
-    import { RangedList } from '../../rules/gear/ranged'
-    import { StorageList } from '../../rules/gear/storage'
+    import { AccessoryList } from '../../rules/gear/Accessories'
+    import { AmmoList } from '../../rules/gear/Ammo'
+    import { ArmorList, RandomArmor } from '../../rules/gear/Armor'
+    import { BombList } from '../../rules/gear/Bombs'
+    import { DocumentList } from '../../rules/gear/Documents'
+    import { DrugsList } from '../../rules/gear/Drugs'
+    import { ElectronicsList } from '../../rules/gear/Electronics'
+    import { EquipmentList } from '../../rules/gear/Equipment'
+    import { MedicalList } from '../../rules/gear/Medical'
+    import { MeleeList } from '../../rules/gear/Melee'
+    import { RangedList } from '../../rules/gear/Ranged'
+    import { StorageList } from '../../rules/gear/Storage'
 
     let armorResult = ""
 

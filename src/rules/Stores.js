@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import { Character } from './character/character'
+import { Character } from './character/Character'
 
 let newCharacter = new Character()
 

@@ -1,9 +1,9 @@
 <script>
-    import { CharacterStore } from '../../rules/stores'
+    import { CharacterStore } from '../../rules/Stores'
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { AbilityList } from '../../rules/character/abilities'
+    import { AbilityList } from '../../rules/character/Abilities'
 
     function modifyAbilities() {
         char.abilities = []
