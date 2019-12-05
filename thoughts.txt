@@ -1,5 +1,3 @@
-- Maybe Luck is rolled at character creator. 1d6. And that is just how lucky the character is. Has nothing to do with Demeanor. For balancing Traits, add Demeanor to Initiative formula.
-
-- Weapons with the Blunt attribute do not cause Bleeding.
+- Maybe Luck is rolled at character creator. 1d6. And that is just how lucky the character is. Has nothing to do with Demeanor. For balancing Traits, add Demeanor to Initiative formula?
 
 - Pulled Blow: Maneuver you declare before rolling your MATK. On a hit, you halve your DMG bonus from Success.
