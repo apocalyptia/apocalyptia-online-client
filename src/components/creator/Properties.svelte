@@ -12,21 +12,8 @@
     </div>
     {#each props as prop}
         <div class='stat-block'>
-            <span class='stat-label'>{char.props[prop].name}:</span>
-            <span class='stat-label'>{char.props[prop].base}</span>
+            <span>{char.props[prop].name}</span>
+            <span class='three-column'>{char.props[prop].base}</span>
         </div>
     {/each}
 </div>
-
-    <!-- <div class='stat-block'>
-        <span class='three-column'>Health:</span>
-        <input
-            type='number'
-            class='three-column'
-            value={char.props.health.setHealth()}
-            min=0
-            max={char.props.health.score}
-        >
-        <span class='three-column'>{char.props.health.score}</span>
-    </div>
-    -->

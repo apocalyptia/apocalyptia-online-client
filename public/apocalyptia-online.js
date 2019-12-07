@@ -5413,26 +5413,23 @@ var app = (function () {
     	let t0_value = ctx.char.props[ctx.prop].name + "";
     	let t0;
     	let t1;
-    	let t2;
     	let span1;
-    	let t3_value = ctx.char.props[ctx.prop].base + "";
+    	let t2_value = ctx.char.props[ctx.prop].base + "";
+    	let t2;
     	let t3;
-    	let t4;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			span0 = element("span");
     			t0 = text(t0_value);
-    			t1 = text(":");
-    			t2 = space();
+    			t1 = space();
     			span1 = element("span");
-    			t3 = text(t3_value);
-    			t4 = space();
-    			attr_dev(span0, "class", "stat-label");
+    			t2 = text(t2_value);
+    			t3 = space();
     			add_location(span0, file$7, 14, 12, 366);
-    			attr_dev(span1, "class", "stat-label");
-    			add_location(span1, file$7, 15, 12, 435);
+    			attr_dev(span1, "class", "three-column");
+    			add_location(span1, file$7, 15, 12, 415);
     			attr_dev(div, "class", "stat-block");
     			add_location(div, file$7, 13, 8, 329);
     		},
@@ -5440,15 +5437,14 @@ var app = (function () {
     			insert_dev(target, div, anchor);
     			append_dev(div, span0);
     			append_dev(span0, t0);
-    			append_dev(span0, t1);
-    			append_dev(div, t2);
+    			append_dev(div, t1);
     			append_dev(div, span1);
-    			append_dev(span1, t3);
-    			append_dev(div, t4);
+    			append_dev(span1, t2);
+    			append_dev(div, t3);
     		},
     		p: function update(changed, ctx) {
     			if (changed.char && t0_value !== (t0_value = ctx.char.props[ctx.prop].name + "")) set_data_dev(t0, t0_value);
-    			if (changed.char && t3_value !== (t3_value = ctx.char.props[ctx.prop].base + "")) set_data_dev(t3, t3_value);
+    			if (changed.char && t2_value !== (t2_value = ctx.char.props[ctx.prop].base + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
