@@ -435,10 +435,6 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
-    function prop_dev(node, property, value) {
-        node[property] = value;
-        dispatch_dev("SvelteDOMSetProperty", { node, property, value });
-    }
     function set_data_dev(text, data) {
         data = '' + data;
         if (text.data === data)
@@ -1923,201 +1919,2299 @@ var app = (function () {
     	}
     }
 
-    class Trait {
-        constructor (name) {
-            this.name = name,
-            this.score = 1,
-            this.max = 6;
-        }
-    }
+    const femaleNames = [
+        'Aaliyah',
+        'Abagail',
+        'Abbey',
+        'Abbie',
+        'Abbigail',
+        'Abby',
+        'Abigail',
+        'Abigale',
+        'Abigayle',
+        'Abril',
+        'Addison',
+        'Adeline',
+        'Adriana',
+        'Adrianna',
+        'Adrienne',
+        'Aileen',
+        'Aimee',
+        'Ainsley',
+        'Aisha',
+        'Aiyana',
+        'Alaina',
+        'Alana',
+        'Alanna',
+        'Alayna',
+        'Aleah',
+        'Alejandra',
+        'Alena',
+        'Alessandra',
+        'Alex',
+        'Alexa',
+        'Alexandra',
+        'Alexandrea',
+        'Alexandria',
+        'Alexia',
+        'Alexis',
+        'Alexus',
+        'Alexys',
+        'Alia',
+        'Alice',
+        'Alicia',
+        'Alina',
+        'Alisa',
+        'Alisha',
+        'Alison',
+        'Alissa',
+        'Alivia',
+        'Aliya',
+        'Aliyah',
+        'Aliza',
+        'Alize',
+        'Allie',
+        'Allison',
+        'Ally',
+        'Allyson',
+        'Allyssa',
+        'Alma',
+        'Alondra',
+        'Alysa',
+        'Alyson',
+        'Alyssa',
+        'Amanda',
+        'Amani',
+        'Amara',
+        'Amari',
+        'Amaya',
+        'Amber',
+        'Amelia',
+        'America',
+        'Amina',
+        'Amira',
+        'Amiya',
+        'Amy',
+        'Amya',
+        'Ana',
+        'Anahi',
+        'Anastasia',
+        'Anaya',
+        'Andrea',
+        'Angel',
+        'Angela',
+        'Angelica',
+        'Angelina',
+        'Angelique',
+        'Angie',
+        'Anika',
+        'Anissa',
+        'Anita',
+        'Aniya',
+        'Aniyah',
+        'Anjali',
+        'Ann',
+        'Anna',
+        'Annabel',
+        'Annabella',
+        'Annabelle',
+        'Annalise',
+        'Anne',
+        'Annette',
+        'Annie',
+        'Annika',
+        'Ansley',
+        'Antonia',
+        'Anya',
+        'April',
+        'Araceli',
+        'Aracely',
+        'Areli',
+        'Arely',
+        'Aria',
+        'Ariana',
+        'Arianna',
+        'Ariel',
+        'Arielle',
+        'Arlene',
+        'Armani',
+        'Aryana',
+        'Aryanna',
+        'Ashanti',
+        'Ashlee',
+        'Ashleigh',
+        'Ashley',
+        'Ashly',
+        'Ashlyn',
+        'Ashlynn',
+        'Ashton',
+        'Ashtyn',
+        'Asia',
+        'Aspen',
+        'Athena',
+        'Aubree',
+        'Aubrey',
+        'Aubrie',
+        'Audrey',
+        'Aurora',
+        'Autumn',
+        'Ava',
+        'Avery',
+        'Ayana',
+        'Ayanna',
+        'Ayla',
+        'Aylin',
+        'Baby',
+        'Bailee',
+        'Bailey',
+        'Barbara',
+        'Baylee',
+        'Beatriz',
+        'Belen',
+        'Bella',
+        'Berenice',
+        'Bethany',
+        'Bianca',
+        'Blanca',
+        'Bonnie',
+        'Brandi',
+        'Brandy',
+        'Breana',
+        'Breanna',
+        'Brenda',
+        'Brenna',
+        'Bria',
+        'Briana',
+        'Brianna',
+        'Brianne',
+        'Bridget',
+        'Bridgette',
+        'Brielle',
+        'Brionna',
+        'Brisa',
+        'Britney',
+        'Brittany',
+        'Brittney',
+        'Brook',
+        'Brooke',
+        'Brooklyn',
+        'Brooklynn',
+        'Bryana',
+        'Bryanna',
+        'Brynn',
+        'Cadence',
+        'Caitlin',
+        'Caitlyn',
+        'Caitlynn',
+        'Caleigh',
+        'Cali',
+        'Calista',
+        'Callie',
+        'Cameron',
+        'Camila',
+        'Camilla',
+        'Camille',
+        'Camryn',
+        'Candace',
+        'Candice',
+        'Cara',
+        'Carina',
+        'Carissa',
+        'Carla',
+        'Carlee',
+        'Carley',
+        'Carli',
+        'Carlie',
+        'Carly',
+        'Carmen',
+        'Carol',
+        'Carolina',
+        'Caroline',
+        'Carolyn',
+        'Carrie',
+        'Carson',
+        'Casandra',
+        'Casey',
+        'Cassandra',
+        'Cassidy',
+        'Cassie',
+        'Catalina',
+        'Catherine',
+        'Cayla',
+        'Cecelia',
+        'Cecilia',
+        'Celeste',
+        'Celia',
+        'Celina',
+        'Celine',
+        'Chandler',
+        'Chanel',
+        'Charity',
+        'Charlotte',
+        'Chasity',
+        'Chaya',
+        'Chelsea',
+        'Chelsey',
+        'Cheyanne',
+        'Cheyenne',
+        'Chloe',
+        'Christa',
+        'Christian',
+        'Christiana',
+        'Christina',
+        'Christine',
+        'Christy',
+        'Chyna',
+        'Ciara',
+        'Ciera',
+        'Cierra',
+        'Cindy',
+        'Citlali',
+        'Claire',
+        'Clara',
+        'Clare',
+        'Clarissa',
+        'Claudia',
+        'Colleen',
+        'Cora',
+        'Corinne',
+        'Courtney',
+        'Cristal',
+        'Cristina',
+        'Crystal',
+        'Cynthia',
+        'Daisy',
+        'Dakota',
+        'Dalia',
+        'Damaris',
+        'Dana',
+        'Daniela',
+        'Daniella',
+        'Danielle',
+        'Danna',
+        'Daphne',
+        'Darby',
+        'Darlene',
+        'Dasia',
+        'Dayana',
+        'Dayanara',
+        'Deanna',
+        'Deasia',
+        'Deborah',
+        'Deja',
+        'Delaney',
+        'Delia',
+        'Delilah',
+        'Denise',
+        'Desirae',
+        'Desiree',
+        'Destinee',
+        'Destiney',
+        'Destini',
+        'Destiny',
+        'Devin',
+        'Devon',
+        'Devyn',
+        'Diamond',
+        'Diana',
+        'Diane',
+        'Dianna',
+        'Dominique',
+        'Donna',
+        'Dorothy',
+        'Drew',
+        'Dulce',
+        'Dylan',
+        'Ebony',
+        'Eden',
+        'Edith',
+        'Eileen',
+        'Elaina',
+        'Elaine',
+        'Eleanor',
+        'Elena',
+        'Eliana',
+        'Elisa',
+        'Elisabeth',
+        'Elise',
+        'Elissa',
+        'Eliza',
+        'Elizabeth',
+        'Ella',
+        'Elle',
+        'Ellen',
+        'Ellie',
+        'Elsa',
+        'Elyse',
+        'Elyssa',
+        'Emely',
+        'Emerson',
+        'Emilee',
+        'Emilia',
+        'Emilie',
+        'Emily',
+        'Emma',
+        'Emmalee',
+        'Erica',
+        'Ericka',
+        'Erika',
+        'Erin',
+        'Esmeralda',
+        'Esperanza',
+        'Essence',
+        'Estefania',
+        'Esther',
+        'Estrella',
+        'Eva',
+        'Eve',
+        'Evelin',
+        'Evelyn',
+        'Fabiola',
+        'Faith',
+        'Fatima',
+        'Felicia',
+        'Felicity',
+        'Fernanda',
+        'Fiona',
+        'Frances',
+        'Francesca',
+        'Frida',
+        'Gabriela',
+        'Gabriella',
+        'Gabrielle',
+        'Galilea',
+        'Genesis',
+        'Genevieve',
+        'Georgia',
+        'Gia',
+        'Giana',
+        'Gianna',
+        'Gillian',
+        'Gina',
+        'Giovanna',
+        'Giselle',
+        'Gisselle',
+        'Gloria',
+        'Grace',
+        'Gracie',
+        'Graciela',
+        'Greta',
+        'Gretchen',
+        'Guadalupe',
+        'Gwendolyn',
+        'Hadley',
+        'Hailee',
+        'Hailey',
+        'Hailie',
+        'Haleigh',
+        'Haley',
+        'Halie',
+        'Halle',
+        'Hallie',
+        'Hana',
+        'Hanna',
+        'Hannah',
+        'Harley',
+        'Harmony',
+        'Haven',
+        'Hayden',
+        'Haylee',
+        'Hayley',
+        'Haylie',
+        'Hazel',
+        'Heather',
+        'Heaven',
+        'Heidi',
+        'Helen',
+        'Helena',
+        'Hillary',
+        'Holly',
+        'Hope',
+        'Hunter',
+        'Iliana',
+        'Imani',
+        'India',
+        'Ingrid',
+        'Irene',
+        'Iris',
+        'Isabel',
+        'Isabela',
+        'Isabell',
+        'Isabella',
+        'Isabelle',
+        'Isis',
+        'Itzel',
+        'Ivy',
+        'Iyana',
+        'Iyanna',
+        'Izabella',
+        'Jacey',
+        'Jackeline',
+        'Jacklyn',
+        'Jaclyn',
+        'Jacqueline',
+        'Jacquelyn',
+        'Jada',
+        'Jade',
+        'Jaden',
+        'Jadyn',
+        'Jaelyn',
+        'Jaida',
+        'Jaiden',
+        'Jaidyn',
+        'Jailyn',
+        'Jaime',
+        'Jakayla',
+        'Jaliyah',
+        'Jalyn',
+        'Jalynn',
+        'Jamie',
+        'Jamya',
+        'Jana',
+        'Janae',
+        'Jane',
+        'Janelle',
+        'Janessa',
+        'Janet',
+        'Janice',
+        'Janiya',
+        'Janiyah',
+        'Jaquelin',
+        'Jaqueline',
+        'Jasmin',
+        'Jasmine',
+        'Jasmyn',
+        'Jaycee',
+        'Jayda',
+        'Jayden',
+        'Jayla',
+        'Jaylene',
+        'Jaylin',
+        'Jaylyn',
+        'Jaylynn',
+        'Jazlyn',
+        'Jazmin',
+        'Jazmine',
+        'Jazmyn',
+        'Jazmyne',
+        'Jeanette',
+        'Jenifer',
+        'Jenna',
+        'Jennifer',
+        'Jenny',
+        'Jessica',
+        'Jessie',
+        'Jewel',
+        'Jillian',
+        'Jimena',
+        'Joana',
+        'Joanna',
+        'Jocelyn',
+        'Joelle',
+        'Johana',
+        'Johanna',
+        'Jolie',
+        'Jordan',
+        'Jordyn',
+        'Joselyn',
+        'Josephine',
+        'Josie',
+        'Joslyn',
+        'Journey',
+        'Joy',
+        'Joyce',
+        'Judith',
+        'Julia',
+        'Juliana',
+        'Julianna',
+        'Julianne',
+        'Julie',
+        'Juliet',
+        'Juliette',
+        'Julissa',
+        'Justice',
+        'Justine',
+        'Kacey',
+        'Kaci',
+        'Kacie',
+        'Kadence',
+        'Kaela',
+        'Kaelyn',
+        'Kaia',
+        'Kaila',
+        'Kailee',
+        'Kailey',
+        'Kailyn',
+        'Kaitlin',
+        'Kaitlyn',
+        'Kaitlynn',
+        'Kaiya',
+        'Kaleigh',
+        'Kaley',
+        'Kali',
+        'Kaliyah',
+        'Kallie',
+        'Kalyn',
+        'Kamryn',
+        'Kara',
+        'Karen',
+        'Kari',
+        'Karina',
+        'Karissa',
+        'Karla',
+        'Karlee',
+        'Karley',
+        'Karli',
+        'Karlie',
+        'Karly',
+        'Kasandra',
+        'Kasey',
+        'Kassandra',
+        'Kassidy',
+        'Katarina',
+        'Kate',
+        'Katelin',
+        'Katelyn',
+        'Katelynn',
+        'Katharine',
+        'Katherine',
+        'Kathleen',
+        'Kathryn',
+        'Kathy',
+        'Katie',
+        'Katlyn',
+        'Katrina',
+        'Katy',
+        'Kaya',
+        'Kaydence',
+        'Kayla',
+        'Kaylah',
+        'Kaylee',
+        'Kayleigh',
+        'Kayley',
+        'Kayli',
+        'Kaylie',
+        'Kaylin',
+        'Kaylyn',
+        'Kaylynn',
+        'Keely',
+        'Keira',
+        'Kelli',
+        'Kellie',
+        'Kelly',
+        'Kelsey',
+        'Kelsi',
+        'Kelsie',
+        'Kendal',
+        'Kendall',
+        'Kendra',
+        'Kenia',
+        'Kenna',
+        'Kennedi',
+        'Kennedy',
+        'Kenya',
+        'Kenzie',
+        'Keyla',
+        'Kiana',
+        'Kianna',
+        'Kiara',
+        'Kiera',
+        'Kierra',
+        'Kiersten',
+        'Kiley',
+        'Kimberly',
+        'Kinsey',
+        'Kira',
+        'Kirsten',
+        'Kourtney',
+        'Krista',
+        'Kristen',
+        'Kristin',
+        'Kristina',
+        'Kristine',
+        'Krystal',
+        'Kya',
+        'Kyla',
+        'Kylee',
+        'Kyleigh',
+        'Kylie',
+        'Kyra',
+        'Lacey',
+        'Laci',
+        'Laila',
+        'Laisha',
+        'Lana',
+        'Laney',
+        'Lara',
+        'Larissa',
+        'Laura',
+        'Laurel',
+        'Lauren',
+        'Lauryn',
+        'Layla',
+        'Lea',
+        'Leah',
+        'Leanna',
+        'Leila',
+        'Leilani',
+        'Lena',
+        'Lesley',
+        'Leslie',
+        'Lesly',
+        'Leticia',
+        'Lexi',
+        'Lexie',
+        'Lexus',
+        'Lia',
+        'Liana',
+        'Libby',
+        'Liberty',
+        'Lila',
+        'Lilian',
+        'Liliana',
+        'Lillian',
+        'Lilliana',
+        'Lillie',
+        'Lilly',
+        'Lily',
+        'Lina',
+        'Linda',
+        'Lindsay',
+        'Lindsey',
+        'Lisa',
+        'Lisbeth',
+        'Lisette',
+        'Litzy',
+        'Lizbeth',
+        'Lizeth',
+        'Lizette',
+        'Logan',
+        'Lola',
+        'London',
+        'Loren',
+        'Lorena',
+        'Lucia',
+        'Lucy',
+        'Luz',
+        'Lydia',
+        'Lyndsey',
+        'Lyric',
+        'Macey',
+        'Maci',
+        'Macie',
+        'Mackenzie',
+        'Macy',
+        'Madalyn',
+        'Madalynn',
+        'Maddison',
+        'Madeleine',
+        'Madeline',
+        'Madelyn',
+        'Madelynn',
+        'Madilyn',
+        'Madisen',
+        'Madison',
+        'Madisyn',
+        'Madyson',
+        'Maegan',
+        'Maeve',
+        'Magdalena',
+        'Maggie',
+        'Maia',
+        'Makaila',
+        'Makayla',
+        'Makena',
+        'Makenna',
+        'Makenzie',
+        'Maleah',
+        'Malia',
+        'Maliyah',
+        'Mallory',
+        'Mandy',
+        'Mara',
+        'Margaret',
+        'Margarita',
+        'Maria',
+        'Mariah',
+        'Mariam',
+        'Mariana',
+        'Marianna',
+        'Maribel',
+        'Marie',
+        'Mariela',
+        'Marilyn',
+        'Marina',
+        'Marisa',
+        'Marisol',
+        'Marissa',
+        'Maritza',
+        'Marlee',
+        'Marlene',
+        'Marley',
+        'Martha',
+        'Mary',
+        'Maryam',
+        'Mattie',
+        'Maura',
+        'Maya',
+        'Mayra',
+        'Mckayla',
+        'Mckenna',
+        'Mckenzie',
+        'Meadow',
+        'Meagan',
+        'Meaghan',
+        'Megan',
+        'Meghan',
+        'Melanie',
+        'Melany',
+        'Melina',
+        'Melinda',
+        'Melissa',
+        'Melody',
+        'Mercedes',
+        'Meredith',
+        'Mia',
+        'Miah',
+        'Micaela',
+        'Micah',
+        'Michaela',
+        'Michelle',
+        'Mikaela',
+        'Mikayla',
+        'Mira',
+        'Miracle',
+        'Miranda',
+        'Mireya',
+        'Miriam',
+        'Mollie',
+        'Molly',
+        'Monica',
+        'Monique',
+        'Monserrat',
+        'Montana',
+        'Morgan',
+        'Moriah',
+        'Mya',
+        'Myah',
+        'Myra',
+        'Nadia',
+        'Nancy',
+        'Naomi',
+        'Natalia',
+        'Natalie',
+        'Nataly',
+        'Natasha',
+        'Nathalie',
+        'Nayeli',
+        'Nevaeh',
+        'Nia',
+        'Nichole',
+        'Nicole',
+        'Nicolette',
+        'Nikki',
+        'Nina',
+        'Noelia',
+        'Noelle',
+        'Noemi',
+        'Nora',
+        'Norah',
+        'Norma',
+        'Nya',
+        'Nyah',
+        'Nyasia',
+        'Nyla',
+        'Olivia',
+        'Paige',
+        'Paloma',
+        'Pamela',
+        'Paola',
+        'Paris',
+        'Parker',
+        'Patience',
+        'Patricia',
+        'Paula',
+        'Paulina',
+        'Payton',
+        'Penelope',
+        'Perla',
+        'Peyton',
+        'Phoebe',
+        'Piper',
+        'Precious',
+        'Presley',
+        'Princess',
+        'Priscila',
+        'Priscilla',
+        'Quinn',
+        'Rachael',
+        'Rachel',
+        'Rachelle',
+        'Raegan',
+        'Raina',
+        'Raquel',
+        'Raven',
+        'Rayna',
+        'Reagan',
+        'Reanna',
+        'Rebeca',
+        'Rebecca',
+        'Rebekah',
+        'Reese',
+        'Regan',
+        'Regina',
+        'Reilly',
+        'Reina',
+        'Renee',
+        'Reyna',
+        'Rhiannon',
+        'Riley',
+        'Rita',
+        'Robin',
+        'Robyn',
+        'Rocio',
+        'Rosa',
+        'Rose',
+        'Rosemary',
+        'Roxana',
+        'Ruby',
+        'Ruth',
+        'Ryan',
+        'Ryann',
+        'Rylee',
+        'Ryleigh',
+        'Rylie',
+        'Sabrina',
+        'Sadie',
+        'Sage',
+        'Saige',
+        'Sally',
+        'Salma',
+        'Samantha',
+        'Samara',
+        'Samira',
+        'Sandra',
+        'Sandy',
+        'Sara',
+        'Sarah',
+        'Sarahi',
+        'Sarai',
+        'Sarina',
+        'Sasha',
+        'Savana',
+        'Savanah',
+        'Savanna',
+        'Savannah',
+        'Scarlett',
+        'Selena',
+        'Selina',
+        'Serena',
+        'Serenity',
+        'Shakira',
+        'Shania',
+        'Shaniya',
+        'Shannon',
+        'Sharon',
+        'Shawna',
+        'Shayla',
+        'Shaylee',
+        'Shayna',
+        'Shea',
+        'Sheila',
+        'Shelby',
+        'Sheridan',
+        'Sherlyn',
+        'Shirley',
+        'Shreya',
+        'Shyann',
+        'Shyanne',
+        'Sidney',
+        'Sienna',
+        'Sierra',
+        'Silvia',
+        'Simone',
+        'Sky',
+        'Skye',
+        'Skyla',
+        'Skylar',
+        'Skyler',
+        'Sofia',
+        'Sonia',
+        'Sonya',
+        'Sophia',
+        'Sophie',
+        'Stacey',
+        'Stacy',
+        'Stella',
+        'Stephanie',
+        'Stephany',
+        'Summer',
+        'Susan',
+        'Susana',
+        'Sydnee',
+        'Sydney',
+        'Sydni',
+        'Sydnie',
+        'Sylvia',
+        'Tabitha',
+        'Talia',
+        'Taliyah',
+        'Tamara',
+        'Tamia',
+        'Tania',
+        'Taniya',
+        'Tanya',
+        'Tara',
+        'Taryn',
+        'Tatiana',
+        'Tatum',
+        'Tatyana',
+        'Taya',
+        'Tayler',
+        'Taylor',
+        'Teagan',
+        'Teresa',
+        'Tess',
+        'Tessa',
+        'Thalia',
+        'Theresa',
+        'Tia',
+        'Tiana',
+        'Tianna',
+        'Tiara',
+        'Tierra',
+        'Tiffany',
+        'Tina',
+        'Toni',
+        'Tori',
+        'Tracy',
+        'Trinity',
+        'Trista',
+        'Tyler',
+        'Tyra',
+        'Unique',
+        'Valentina',
+        'Valeria',
+        'Valerie',
+        'Vanesa',
+        'Vanessa',
+        'Veronica',
+        'Victoria',
+        'Violet',
+        'Virginia',
+        'Vivian',
+        'Viviana',
+        'Wendy',
+        'Whitney',
+        'Willow',
+        'Ximena',
+        'Yadira',
+        'Yareli',
+        'Yasmin',
+        'Yasmine',
+        'Yazmin',
+        'Yesenia',
+        'Yessenia',
+        'Yolanda',
+        'Yoselin',
+        'Yuliana',
+        'Yvette',
+        'Zaria',
+        'Zoe',
+        'Zoey',
+        'Zoie',
+    ];
 
-    const traitsList = {
-        'agility': new Trait(`Agility`),
-        'brains': new Trait(`Brains`),
-        'constitution': new Trait(`Constitution`),
-        'demeanor': new Trait(`Demeanor`),
-    };
-
-    const traitPoints = 12;
-
-    class Skill {
-        constructor(name, parent) {
-            this.name = name,
-            this.parent = parent,
-            this.score = 0;
-        }
-    }
-
-    const skillsList = {
-        'acrobatics': new Skill(`Acrobatics`, `Agility`),
-        'athletics': new Skill(`Athletics`, `Constitution`),
-        'build': new Skill(`Build`, `Brains`),
-        'drive': new Skill(`Drive`, `Constitution`),
-        'larceny': new Skill(`Larceny`, `Agility`),
-        'leadership': new Skill(`Leadership`, `Demeanor`),
-        'medicine': new Skill(`Medicine`, `Brains`),
-        'melee': new Skill(`Melee`, `Constitution`),
-        'perception': new Skill(`Perception`, `Brains`),
-        'perform': new Skill(`Perform`, `Demeanor`),
-        'ranged': new Skill(`Ranged`, `Agility`),
-        'science': new Skill(`Science`, `Brains`),
-        'socialize': new Skill(`Socialize`, `Demeanor`),
-        'stealth': new Skill(`Stealth`, `Agility`),
-        'survival': new Skill(`Survival`, `Constitution`),
-        'tame': new Skill(`Tame`, `Demeanor`),
-    };
+    const maleNames = [
+        'Aaron',
+        'Abdullah',
+        'Abel',
+        'Abraham',
+        'Abram',
+        'Adam',
+        'Adan',
+        'Addison',
+        'Aden',
+        'Aditya',
+        'Adolfo',
+        'Adonis',
+        'Adrian',
+        'Adriel',
+        'Adrien',
+        'Agustin',
+        'Ahmad',
+        'Ahmed',
+        'Aidan',
+        'Aiden',
+        'Alan',
+        'Albert',
+        'Alberto',
+        'Alden',
+        'Aldo',
+        'Alec',
+        'Alejandro',
+        'Alessandro',
+        'Alex',
+        'Alexander',
+        'Alexandro',
+        'Alexis',
+        'Alexzander',
+        'Alfonso',
+        'Alfred',
+        'Alfredo',
+        'Ali',
+        'Alijah',
+        'Allan',
+        'Allen',
+        'Alonso',
+        'Alonzo',
+        'Alvaro',
+        'Alvin',
+        'Amari',
+        'Amarion',
+        'Amir',
+        'Anderson',
+        'Andre',
+        'Andreas',
+        'Andres',
+        'Andrew',
+        'Andy',
+        'Angel',
+        'Angelo',
+        'Anthony',
+        'Antoine',
+        'Anton',
+        'Antonio',
+        'Antony',
+        'Antwan',
+        'Ari',
+        'Ariel',
+        'Arjun',
+        'Armando',
+        'Armani',
+        'Arnold',
+        'Aron',
+        'Arthur',
+        'Arturo',
+        'Aryan',
+        'Asa',
+        'Asher',
+        'Ashton',
+        'Aubrey',
+        'August',
+        'Augustus',
+        'Austen',
+        'Austin',
+        'Austyn',
+        'Avery',
+        'Axel',
+        'Aydan',
+        'Ayden',
+        'Baby',
+        'Bailey',
+        'Barrett',
+        'Barry',
+        'Beau',
+        'Ben',
+        'Benito',
+        'Benjamin',
+        'Bennett',
+        'Benny',
+        'Bernard',
+        'Bernardo',
+        'Billy',
+        'Blaine',
+        'Blaise',
+        'Blake',
+        'Blaze',
+        'Bo',
+        'Bobby',
+        'Brad',
+        'Braden',
+        'Bradley',
+        'Brady',
+        'Bradyn',
+        'Braeden',
+        'Braedon',
+        'Braiden',
+        'Branden',
+        'Brandon',
+        'Braxton',
+        'Brayan',
+        'Brayden',
+        'Braydon',
+        'Brendan',
+        'Brenden',
+        'Brendon',
+        'Brennan',
+        'Brennen',
+        'Brent',
+        'Brenton',
+        'Bret',
+        'Brett',
+        'Brian',
+        'Brice',
+        'Brock',
+        'Brodie',
+        'Brody',
+        'Bronson',
+        'Brooks',
+        'Bruce',
+        'Bruno',
+        'Bryan',
+        'Bryant',
+        'Bryce',
+        'Brycen',
+        'Bryson',
+        'Byron',
+        'Cade',
+        'Caden',
+        'Cael',
+        'Caiden',
+        'Cale',
+        'Caleb',
+        'Calvin',
+        'Camden',
+        'Cameron',
+        'Camren',
+        'Camron',
+        'Carl',
+        'Carlo',
+        'Carlos',
+        'Carlton',
+        'Carson',
+        'Carter',
+        'Casey',
+        'Cason',
+        'Cayden',
+        'Cedric',
+        'Cesar',
+        'Chad',
+        'Chaim',
+        'Chance',
+        'Chandler',
+        'Charles',
+        'Charlie',
+        'Chase',
+        'Chaz',
+        'Chris',
+        'Christian',
+        'Christopher',
+        'Clarence',
+        'Clark',
+        'Clay',
+        'Clayton',
+        'Clifford',
+        'Clifton',
+        'Clinton',
+        'Coby',
+        'Cody',
+        'Colby',
+        'Cole',
+        'Coleman',
+        'Colin',
+        'Collin',
+        'Colt',
+        'Colten',
+        'Colton',
+        'Conner',
+        'Connor',
+        'Conor',
+        'Conrad',
+        'Cooper',
+        'Corbin',
+        'Cordell',
+        'Corey',
+        'Cornelius',
+        'Cortez',
+        'Cory',
+        'Craig',
+        'Cristian',
+        'Cristobal',
+        'Cristopher',
+        'Cruz',
+        'Cullen',
+        'Curtis',
+        'Cyrus',
+        'Dakota',
+        'Dale',
+        'Dallas',
+        'Dallin',
+        'Dalton',
+        'Damarion',
+        'Damian',
+        'Damien',
+        'Damion',
+        'Damon',
+        'Dandre',
+        'Dane',
+        'Dangelo',
+        'Daniel',
+        'Danny',
+        'Dante',
+        'Daquan',
+        'Darian',
+        'Darien',
+        'Darin',
+        'Dario',
+        'Darion',
+        'Darius',
+        'Darnell',
+        'Darrell',
+        'Darren',
+        'Darrin',
+        'Darrion',
+        'Darrius',
+        'Darryl',
+        'Darwin',
+        'Daryl',
+        'Dashawn',
+        'David',
+        'Davin',
+        'Davion',
+        'Davis',
+        'Davon',
+        'Dawson',
+        'Dayton',
+        'Dean',
+        'Deandre',
+        'Deangelo',
+        'Declan',
+        'Demarcus',
+        'Demetrius',
+        'Dennis',
+        'Denzel',
+        'Deon',
+        'Deonte',
+        'Derek',
+        'Derick',
+        'Derrick',
+        'Deshaun',
+        'Deshawn',
+        'Desmond',
+        'Destin',
+        'Devan',
+        'Devante',
+        'Deven',
+        'Devin',
+        'Devon',
+        'Devonte',
+        'Devyn',
+        'Dexter',
+        'Diego',
+        'Dillan',
+        'Dillon',
+        'Dimitri',
+        'Dion',
+        'Domenic',
+        'Dominic',
+        'Dominick',
+        'Dominik',
+        'Dominique',
+        'Don',
+        'Donald',
+        'Donavan',
+        'Donovan',
+        'Donte',
+        'Dorian',
+        'Douglas',
+        'Drake',
+        'Draven',
+        'Drew',
+        'Duane',
+        'Duncan',
+        'Dustin',
+        'Dwayne',
+        'Dwight',
+        'Dylan',
+        'Dylon',
+        'Ean',
+        'Earl',
+        'Easton',
+        'Eddie',
+        'Edgar',
+        'Eduardo',
+        'Edward',
+        'Edwin',
+        'Efrain',
+        'Efren',
+        'Eli',
+        'Elian',
+        'Elias',
+        'Elijah',
+        'Eliseo',
+        'Elisha',
+        'Elliot',
+        'Elliott',
+        'Ellis',
+        'Elmer',
+        'Elvis',
+        'Emanuel',
+        'Emerson',
+        'Emiliano',
+        'Emilio',
+        'Emmanuel',
+        'Emmett',
+        'Enrique',
+        'Eric',
+        'Erick',
+        'Erik',
+        'Ernest',
+        'Ernesto',
+        'Esteban',
+        'Estevan',
+        'Ethan',
+        'Ethen',
+        'Eugene',
+        'Evan',
+        'Everett',
+        'Ezekiel',
+        'Ezequiel',
+        'Ezra',
+        'Fabian',
+        'Felipe',
+        'Felix',
+        'Fernando',
+        'Fidel',
+        'Finn',
+        'Fletcher',
+        'Forrest',
+        'Francis',
+        'Francisco',
+        'Frank',
+        'Frankie',
+        'Franklin',
+        'Fred',
+        'Freddie',
+        'Freddy',
+        'Frederick',
+        'Fredrick',
+        'Gabriel',
+        'Gael',
+        'Gage',
+        'Gaige',
+        'Gannon',
+        'Garett',
+        'Garret',
+        'Garrett',
+        'Garrison',
+        'Gary',
+        'Gaven',
+        'Gavin',
+        'Gavyn',
+        'Geoffrey',
+        'George',
+        'Gerald',
+        'Gerardo',
+        'German',
+        'Giancarlo',
+        'Gianni',
+        'Gideon',
+        'Gilbert',
+        'Gilberto',
+        'Gino',
+        'Giovani',
+        'Giovanni',
+        'Giovanny',
+        'Glen',
+        'Glenn',
+        'Gonzalo',
+        'Gordon',
+        'Grady',
+        'Graham',
+        'Grant',
+        'Grayson',
+        'Gregory',
+        'Greyson',
+        'Griffin',
+        'Guadalupe',
+        'Guillermo',
+        'Gunnar',
+        'Gunner',
+        'Gustavo',
+        'Guy',
+        'Haden',
+        'Hamza',
+        'Harley',
+        'Harold',
+        'Harrison',
+        'Harry',
+        'Hassan',
+        'Hayden',
+        'Heath',
+        'Hector',
+        'Henry',
+        'Heriberto',
+        'Holden',
+        'Houston',
+        'Howard',
+        'Hudson',
+        'Hugh',
+        'Hugo',
+        'Humberto',
+        'Hunter',
+        'Ian',
+        'Ibrahim',
+        'Ignacio',
+        'Immanuel',
+        'Irvin',
+        'Irving',
+        'Isaac',
+        'Isaak',
+        'Isai',
+        'Isaiah',
+        'Isaias',
+        'Isiah',
+        'Ismael',
+        'Israel',
+        'Issac',
+        'Ivan',
+        'Izaiah',
+        'Jabari',
+        'Jace',
+        'Jack',
+        'Jackson',
+        'Jacob',
+        'Jacoby',
+        'Jaden',
+        'Jadon',
+        'Jadyn',
+        'Jaeden',
+        'Jagger',
+        'Jaheim',
+        'Jahiem',
+        'Jaiden',
+        'Jaime',
+        'Jair',
+        'Jairo',
+        'Jake',
+        'Jakob',
+        'Jakobe',
+        'Jalen',
+        'Jamal',
+        'Jamar',
+        'Jamari',
+        'Jamarion',
+        'Jamel',
+        'James',
+        'Jameson',
+        'Jamie',
+        'Jamil',
+        'Jamir',
+        'Jamison',
+        'Jan',
+        'Jaquan',
+        'Jared',
+        'Jaren',
+        'Jarod',
+        'Jaron',
+        'Jarred',
+        'Jarrett',
+        'Jarrod',
+        'Jarvis',
+        'Jase',
+        'Jason',
+        'Jasper',
+        'Javen',
+        'Javier',
+        'Javion',
+        'Javon',
+        'Jaxon',
+        'Jaxson',
+        'Jay',
+        'Jayce',
+        'Jayden',
+        'Jaydon',
+        'Jaylan',
+        'Jaylen',
+        'Jaylin',
+        'Jaylon',
+        'Jayson',
+        'Jean',
+        'Jeff',
+        'Jefferson',
+        'Jeffery',
+        'Jeffrey',
+        'Jeremiah',
+        'Jeremy',
+        'Jermaine',
+        'Jerome',
+        'Jerry',
+        'Jesse',
+        'Jessie',
+        'Jesus',
+        'Jett',
+        'Jevon',
+        'Jimmy',
+        'Joan',
+        'Joaquin',
+        'Joe',
+        'Joel',
+        'Joey',
+        'Johan',
+        'John',
+        'Johnathan',
+        'Johnathon',
+        'Johnny',
+        'Jon',
+        'Jonah',
+        'Jonas',
+        'Jonathan',
+        'Jonathon',
+        'Jordan',
+        'Jorden',
+        'Jordon',
+        'Jordy',
+        'Jordyn',
+        'Jorge',
+        'Jose',
+        'Josef',
+        'Joseph',
+        'Josh',
+        'Joshua',
+        'Josiah',
+        'Josue',
+        'Jovan',
+        'Jovani',
+        'Jovanni',
+        'Jovanny',
+        'Jovany',
+        'Juan',
+        'Judah',
+        'Jude',
+        'Julian',
+        'Julien',
+        'Julio',
+        'Julius',
+        'Junior',
+        'Justice',
+        'Justin',
+        'Justus',
+        'Justyn',
+        'Kade',
+        'Kaden',
+        'Kadin',
+        'Kai',
+        'Kaiden',
+        'Kale',
+        'Kaleb',
+        'Kameron',
+        'Kamron',
+        'Kane',
+        'Kanye',
+        'Kareem',
+        'Karl',
+        'Karson',
+        'Kasey',
+        'Kayden',
+        'Keagan',
+        'Keanu',
+        'Keaton',
+        'Keegan',
+        'Keenan',
+        'Keith',
+        'Kellen',
+        'Kelly',
+        'Kelton',
+        'Kelvin',
+        'Kendall',
+        'Kendrick',
+        'Kennedy',
+        'Kenneth',
+        'Kenny',
+        'Kent',
+        'Kenyon',
+        'Keon',
+        'Keshawn',
+        'Keven',
+        'Kevin',
+        'Kevon',
+        'Keyon',
+        'Keyshawn',
+        'Khalid',
+        'Khalil',
+        'Kian',
+        'Kieran',
+        'Kirk',
+        'Kobe',
+        'Koby',
+        'Kody',
+        'Kolby',
+        'Kole',
+        'Kolton',
+        'Korbin',
+        'Korey',
+        'Kory',
+        'Kristian',
+        'Kristofer',
+        'Kristopher',
+        'Kurt',
+        'Kurtis',
+        'Kylan',
+        'Kyle',
+        'Kyler',
+        'Kyree',
+        'Lamar',
+        'Lamont',
+        'Lance',
+        'Landen',
+        'Landon',
+        'Lane',
+        'Larry',
+        'Latrell',
+        'Lawrence',
+        'Lawson',
+        'Layne',
+        'Layton',
+        'Lee',
+        'Leo',
+        'Leon',
+        'Leonard',
+        'Leonardo',
+        'Leonel',
+        'Leroy',
+        'Levi',
+        'Lewis',
+        'Liam',
+        'Lincoln',
+        'Lloyd',
+        'Logan',
+        'London',
+        'Lonnie',
+        'Lorenzo',
+        'Louis',
+        'Luca',
+        'Lucas',
+        'Luciano',
+        'Luis',
+        'Lukas',
+        'Luke',
+        'Maddox',
+        'Malachi',
+        'Malakai',
+        'Malcolm',
+        'Malik',
+        'Manuel',
+        'Marc',
+        'Marcel',
+        'Marcelo',
+        'Marco',
+        'Marcos',
+        'Marcus',
+        'Mariano',
+        'Mario',
+        'Mark',
+        'Markus',
+        'Marlon',
+        'Marques',
+        'Marquez',
+        'Marquis',
+        'Marquise',
+        'Marshall',
+        'Martin',
+        'Marvin',
+        'Mason',
+        'Mateo',
+        'Mathew',
+        'Matteo',
+        'Matthew',
+        'Maurice',
+        'Mauricio',
+        'Maverick',
+        'Max',
+        'Maxim',
+        'Maximilian',
+        'Maximillian',
+        'Maximus',
+        'Maxwell',
+        'Mekhi',
+        'Melvin',
+        'Micah',
+        'Michael',
+        'Micheal',
+        'Miguel',
+        'Mike',
+        'Mikel',
+        'Miles',
+        'Milo',
+        'Milton',
+        'Misael',
+        'Mitchel',
+        'Mitchell',
+        'Mohamed',
+        'Mohammad',
+        'Mohammed',
+        'Moises',
+        'Morgan',
+        'Moses',
+        'Moshe',
+        'Muhammad',
+        'Myles',
+        'Nash',
+        'Nasir',
+        'Nathan',
+        'Nathanael',
+        'Nathanial',
+        'Nathaniel',
+        'Nathen',
+        'Neal',
+        'Nehemiah',
+        'Neil',
+        'Nelson',
+        'Nestor',
+        'Nicholas',
+        'Nick',
+        'Nickolas',
+        'Nico',
+        'Nicolas',
+        'Nigel',
+        'Nikhil',
+        'Niko',
+        'Nikolas',
+        'Noah',
+        'Noe',
+        'Noel',
+        'Nolan',
+        'Norman',
+        'Octavio',
+        'Oliver',
+        'Omar',
+        'Omari',
+        'Omarion',
+        'Orion',
+        'Orlando',
+        'Oscar',
+        'Osvaldo',
+        'Oswaldo',
+        'Owen',
+        'Pablo',
+        'Parker',
+        'Patrick',
+        'Paul',
+        'Paxton',
+        'Payton',
+        'Pedro',
+        'Perry',
+        'Peter',
+        'Peyton',
+        'Philip',
+        'Phillip',
+        'Phoenix',
+        'Pierce',
+        'Pierre',
+        'Porter',
+        'Pranav',
+        'Preston',
+        'Prince',
+        'Quentin',
+        'Quincy',
+        'Quinn',
+        'Quinten',
+        'Quintin',
+        'Quinton',
+        'Rafael',
+        'Rahul',
+        'Ralph',
+        'Ramiro',
+        'Ramon',
+        'Randall',
+        'Randy',
+        'Raphael',
+        'Rashad',
+        'Raul',
+        'Raven',
+        'Ray',
+        'Raymond',
+        'Raymundo',
+        'Reagan',
+        'Reece',
+        'Reed',
+        'Reese',
+        'Reginald',
+        'Reid',
+        'Reilly',
+        'Remington',
+        'Rene',
+        'Reuben',
+        'Rey',
+        'Reynaldo',
+        'Rhett',
+        'Ricardo',
+        'Richard',
+        'Rickey',
+        'Ricky',
+        'Rigoberto',
+        'Riley',
+        'River',
+        'Robert',
+        'Roberto',
+        'Rocco',
+        'Rocky',
+        'Roderick',
+        'Rodney',
+        'Rodolfo',
+        'Rodrigo',
+        'Rogelio',
+        'Roger',
+        'Rohan',
+        'Roland',
+        'Rolando',
+        'Roman',
+        'Romeo',
+        'Ronald',
+        'Ronaldo',
+        'Ronan',
+        'Ronnie',
+        'Rory',
+        'Ross',
+        'Rowan',
+        'Roy',
+        'Ruben',
+        'Rudy',
+        'Russell',
+        'Ryan',
+        'Ryder',
+        'Rylan',
+        'Rylee',
+        'Ryley',
+        'Sabastian',
+        'Sage',
+        'Salvador',
+        'Salvatore',
+        'Sam',
+        'Samir',
+        'Sammy',
+        'Samson',
+        'Samuel',
+        'Santiago',
+        'Santino',
+        'Santos',
+        'Saul',
+        'Savion',
+        'Sawyer',
+        'Scott',
+        'Seamus',
+        'Sean',
+        'Sebastian',
+        'Semaj',
+        'Sergio',
+        'Seth',
+        'Shamar',
+        'Shane',
+        'Shannon',
+        'Shaun',
+        'Shawn',
+        'Shayne',
+        'Shea',
+        'Sheldon',
+        'Shemar',
+        'Sidney',
+        'Silas',
+        'Simeon',
+        'Simon',
+        'Sincere',
+        'Skylar',
+        'Skyler',
+        'Solomon',
+        'Sonny',
+        'Spencer',
+        'Stanley',
+        'Stefan',
+        'Stephan',
+        'Stephen',
+        'Stephon',
+        'Sterling',
+        'Steve',
+        'Steven',
+        'Stone',
+        'Stuart',
+        'Sullivan',
+        'Syed',
+        'Talon',
+        'Tanner',
+        'Tariq',
+        'Tate',
+        'Taylor',
+        'Terence',
+        'Terrance',
+        'Terrell',
+        'Terrence',
+        'Terry',
+        'Thaddeus',
+        'Theodore',
+        'Thomas',
+        'Timothy',
+        'Titus',
+        'Tobias',
+        'Toby',
+        'Todd',
+        'Tomas',
+        'Tommy',
+        'Tony',
+        'Trace',
+        'Travis',
+        'Travon',
+        'Tre',
+        'Trent',
+        'Trenton',
+        'Trever',
+        'Trevion',
+        'Trevon',
+        'Trevor',
+        'Trey',
+        'Treyton',
+        'Tristan',
+        'Tristen',
+        'Tristian',
+        'Tristin',
+        'Triston',
+        'Troy',
+        'Trystan',
+        'Tucker',
+        'Turner',
+        'Ty',
+        'Tyler',
+        'Tylor',
+        'Tyree',
+        'Tyrell',
+        'Tyrese',
+        'Tyrone',
+        'Tyshawn',
+        'Tyson',
+        'Ulises',
+        'Ulysses',
+        'Uriel',
+        'Valentin',
+        'Vance',
+        'Vaughn',
+        'Vernon',
+        'Vicente',
+        'Victor',
+        'Vincent',
+        'Wade',
+        'Walker',
+        'Walter',
+        'Warren',
+        'Waylon',
+        'Wayne',
+        'Wesley',
+        'Weston',
+        'Will',
+        'William',
+        'Willie',
+        'Wilson',
+        'Winston',
+        'Wyatt',
+        'Xander',
+        'Xavier',
+        'Xzavier',
+        'Yahir',
+        'Yair',
+        'Yosef',
+        'Yusuf',
+        'Zachariah',
+        'Zachary',
+        'Zachery',
+        'Zack',
+        'Zackary',
+        'Zackery',
+        'Zain',
+        'Zaire',
+        'Zakary',
+        'Zander',
+        'Zane',
+        'Zavier',
+        'Zechariah',
+        'Zion',
+    ];
 
     class Character {
         constructor() {
             this.scenario = ``,
-                this.completed = false,
-                this.description = {
-                    age: {
-                        label: `Age`,
-                        value: ``
-                    },
-                    characterName: {
-                        label: `Character`,
-                        value: ``
-                    },
-                    gender: {
-                        label: `Gender`,
-                        value: ``
-                    },
-                    hair: {
-                        label: `Hair`,
-                        value: ``
-                    },
-                    height: {
-                        label: `Height`,
-                        value: ``
-                    },
-                    playerName: {
-                        label: `Player`,
-                        value: ``
-                    },
-                    skin: {
-                        label: `Skin`,
-                        value: ``
-                    },
-                    weight: {
-                        label: `Weight`,
-                        value: ``
-                    },
+            this.completed = false,
+            this.description = {
+                age: {
+                    label: `Age`,
+                    value: ``
                 },
-                this.traits = traitsList,
-                this.skills = skillsList,
-                this.props = {
-                    actions: {
-                        name: `Actions`,
-                        base: 1,
-                        score: 1,
-                        setActions: () => {
-                            const actions = Math.floor((this.traits[`agility`].score + this.traits[`brains`].score) / 2);
-                            this.props.actions.base = actions;
-                            return actions
-                        }
-                    },
-                    block: {
-                        name: `Block`,
-                        base: 0,
-                        score: 0,
-                        setBlock: () => {
-                            const block = this.skills[`melee`].score;
-                            this.props.block.base = block;
-                            return block
-                        }
-                    },
-                    dodge: {
-                        name: `Dodge`,
-                        base: 0,
-                        score: 0,
-                        setDodge: () => {
-                            const dodge = this.skills[`acrobatics`].score;
-                            this.props.dodge.base = dodge;
-                            return dodge
-                        }
-                    },
-                    health: {
-                        name: `Health`,
-                        base: 3,
-                        score: 3,
-                        setHealth: () => {
-                            const health = this.traits[`constitution`].score * 3;
-                            this.props.health.base = health;
-                            return health
-                        }
-                    },
-                    luck: {
-                        name: `Luck`,
-                        base: 1,
-                        score: 1,
-                        setLuck: () => {
-                            const luck = this.traits[`demeanor`].score;
-                            this.props.luck.base = luck;
-                            return luck
-                        }
-                    },
-                    psyche: {
-                        name: `Psyche`,
-                        base: 1,
-                        score: 1,
-                        setPsyche: () => {
-                            const psyche = this.traits[`demeanor`].score * 3;
-                            this.props.psyche.base = psyche;
-                            return psyche
-                        }
-                    },
-                    reflex: {
-                        name: `Reflex`,
-                        base: 0,
-                        score: 0,
-                        setReflex: () => {
-                            const reflex = Math.floor(this.skills[`perception`].score / 2);
-                            this.props.reflex.base = reflex;
-                            return reflex
-                        }
-                    },
-                    speed: {
-                        name: `Speed`,
-                        base: 2,
-                        score: 2,
-                        setSpeed: () => {
-                            const speed = this.traits[`agility`].score + this.traits[`constitution`].score;
-                            this.props.speed.base = speed;
-                            return speed
-                        }
-                    },
-                    xp: {
-                        name: `Experience`,
-                        base: 6,
-                        score: 6,
-                        setXP: () => {
-                            const xp = this.traits[`brains`].score * 6;
-                            this.props.xp.base = xp;
-                            return xp
-                        }
-                    },
+                characterName: {
+                    label: `Character`,
+                    value: ``
                 },
-                this.abilities = [],
-                this.gear = {
-                    armor: {
-                        name: `Armor`,
-                        inventory: []
-                    },
-                    weapons: {
-                        name: `Weapons`,
-                        inventory: []
-                    },
-                    backpack: {
-                        name: `Backpack`,
-                        inventory: []
-                    },
-                    ammo: {
-                        name: `Ammo`,
-                        inventory: []
-                    },
-                };
+                gender: {
+                    label: `Gender`,
+                    value: ``
+                },
+                hair: {
+                    label: `Hair`,
+                    value: ``
+                },
+                height: {
+                    label: `Height`,
+                    value: ``
+                },
+                playerName: {
+                    label: `Player`,
+                    value: ``
+                },
+                skin: {
+                    label: `Skin`,
+                    value: ``
+                },
+                weight: {
+                    label: `Weight`,
+                    value: ``
+                },
+            },
+            this.traits = {
+                agility: {
+                    name: `Agility`,
+                    base: 1,
+                    score: 1,
+                    max: 6
+                },
+                brains: {
+                    name: `Brains`,
+                    base: 1,
+                    score: 1,
+                    max: 6
+                },
+                constitution: {
+                    name: `Constitution`,
+                    base: 1,
+                    score: 1,
+                    max: 6
+                },
+                demeanor: {
+                    name: `Demeanor`,
+                    base: 1,
+                    score: 1,
+                    max: 6
+                },
+            },
+            this.skills = {
+                acrobatics: {
+                    name: `Acrobatics`,
+                    parent: `Agility`,
+                    base: 0,
+                    score: 0
+                },
+                athletics: {
+                    name: `Athletics`,
+                    parent: `Constitution`,
+                    base: 0,
+                    score: 0
+                },
+                build: {
+                    name: `Build`,
+                    parent: `Brains`,
+                    base: 0,
+                    score: 0
+                },
+                drive: {
+                    name: `Drive`,
+                    parent: `Constitution`,
+                    base: 0,
+                    score: 0
+                },
+                larceny: {
+                    name: `Larceny`,
+                    parent: `Agility`,
+                    base: 0,
+                    score: 0
+                },
+                leadership: {
+                    name: `Leadership`,
+                    parent: `Demeanor`,
+                    base: 0,
+                    score: 0
+                },
+                medicine: {
+                    name: `Medicine`,
+                    parent: `Brains`,
+                    base: 0,
+                    score: 0
+                },
+                melee: {
+                    name: `Melee`,
+                    parent: `Constitution`,
+                    base: 0,
+                    score: 0
+                },
+                perception: {
+                    name: `Perception`,
+                    parent: `Brains`,
+                    base: 0,
+                    score: 0
+                },
+                perform: {
+                    name: `Perform`,
+                    parent: `Demeanor`,
+                    base: 0,
+                    score: 0
+                },
+                ranged: {
+                    name: `Ranged`,
+                    parent: `Agility`,
+                    base: 0,
+                    score: 0
+                },
+                science: {
+                    name: `Science`,
+                    parent: `Brains`,
+                    base: 0,
+                    score: 0
+                },
+                socialize: {
+                    name: `Socialize`,
+                    parent: `Demeanor`,
+                    base: 0,
+                    score: 0
+                },
+                stealth: {
+                    name: `Stealth`,
+                    parent: `Agility`,
+                    base: 0,
+                    score: 0
+                },
+                survival: {
+                    name: `Survival`,
+                    parent: `Constitution`,
+                    base: 0,
+                    score: 0
+                },
+                tame: {
+                    name: `Tame`,
+                    parent: `Demeanor`,
+                    base: 0,
+                    score: 0
+                },
+            },
+            this.props = {
+                actions: {
+                    name: `Actions`,
+                    base: 1,
+                    score: 1,
+                    set: () => {
+                        const actions = Math.floor((this.traits.agility.score + this.traits.brains.score) / 2);
+                        this.props.actions.base = actions;
+                        return actions
+                    }
+                },
+                block: {
+                    name: `Block`,
+                    base: 0,
+                    score: 0,
+                    set: () => {
+                        const block = this.skills.melee.score;
+                        this.props.block.base = block;
+                        return block
+                    }
+                },
+                dodge: {
+                    name: `Dodge`,
+                    base: 0,
+                    score: 0,
+                    set: () => {
+                        const dodge = this.skills.acrobatics.score;
+                        this.props.dodge.base = dodge;
+                        return dodge
+                    }
+                },
+                health: {
+                    name: `Health`,
+                    base: this.traits.constitution.score * 3,
+                    score: 3,
+                    set: () => {
+                        const health = this.traits.constitution.score * 3;
+                        this.props.health.base = health;
+                        return health
+                    }
+                },
+                init: {
+                    name: `Initiative`,
+                    base: 1,
+                    score: 1,
+                    set: () => {
+                        const init = this.traits.agility.score;
+                        this.props.init.base = init;
+                        return init
+                    }
+                },
+                luck: {
+                    name: `Luck`,
+                    base: 1,
+                    score: 1,
+                    set: () => {
+                        const luck = this.traits[`demeanor`].score;
+                        this.props.luck.base = luck;
+                        return luck
+                    }
+                },
+                psyche: {
+                    name: `Psyche`,
+                    base: 1,
+                    score: 1,
+                    set: () => {
+                        const psyche = this.traits[`demeanor`].score * 3;
+                        this.props.psyche.base = psyche;
+                        return psyche
+                    }
+                },
+                reflex: {
+                    name: `Reflex`,
+                    base: 0,
+                    score: 0,
+                    set: () => {
+                        const reflex = Math.floor(this.skills[`perception`].score / 2);
+                        this.props.reflex.base = reflex;
+                        return reflex
+                    }
+                },
+                speed: {
+                    name: `Speed`,
+                    base: 2,
+                    score: 2,
+                    set: () => {
+                        const speed = this.traits[`agility`].score + this.traits[`constitution`].score;
+                        this.props.speed.base = speed;
+                        return speed
+                    }
+                },
+                xp: {
+                    name: `Experience`,
+                    base: 6,
+                    score: 6,
+                    set: () => {
+                        const xp = this.traits[`brains`].score * 6;
+                        this.props.xp.base = xp;
+                        return xp
+                    }
+                },
+            },
+            this.abilities = [],
+            this.gear = {
+                armor: {
+                    name: `Armor`,
+                    inventory: []
+                },
+                weapons: {
+                    name: `Weapons`,
+                    inventory: []
+                },
+                backpack: {
+                    name: `Backpack`,
+                    inventory: []
+                },
+                ammo: {
+                    name: `Ammo`,
+                    inventory: []
+                },
+            };
+        }
+        updateProps() {
+            let props = Object.keys(this.props);
+            props.forEach((prop) => { this.props[prop].set(); });
         }
     }
 
@@ -2276,84 +4370,84 @@ var app = (function () {
     			div12 = element("div");
     			button7 = element("button");
     			button7.textContent = "Random Character";
-    			add_location(h2, file$4, 2070, 8, 46029);
+    			add_location(h2, file$4, 67, 8, 2141);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$4, 2069, 4, 45996);
+    			add_location(div0, file$4, 66, 4, 2108);
     			attr_dev(span0, "class", "stat-label svelte-7mgfw7");
-    			add_location(span0, file$4, 2073, 8, 46098);
+    			add_location(span0, file$4, 70, 8, 2210);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "svelte-7mgfw7");
-    			add_location(input0, file$4, 2074, 8, 46146);
+    			add_location(input0, file$4, 71, 8, 2258);
     			attr_dev(div1, "class", "stat-block");
-    			add_location(div1, file$4, 2072, 4, 46065);
+    			add_location(div1, file$4, 69, 4, 2177);
     			attr_dev(span1, "class", "stat-label svelte-7mgfw7");
-    			add_location(span1, file$4, 2080, 8, 46294);
+    			add_location(span1, file$4, 77, 8, 2406);
     			attr_dev(input1, "class", "svelte-7mgfw7");
-    			add_location(input1, file$4, 2081, 8, 46345);
+    			add_location(input1, file$4, 78, 8, 2457);
     			attr_dev(button0, "class", "svelte-7mgfw7");
-    			add_location(button0, file$4, 2082, 8, 46411);
+    			add_location(button0, file$4, 79, 8, 2523);
     			attr_dev(div2, "class", "stat-block");
-    			add_location(div2, file$4, 2079, 4, 46261);
+    			add_location(div2, file$4, 76, 4, 2373);
     			attr_dev(span2, "class", "stat-label svelte-7mgfw7");
-    			add_location(span2, file$4, 2086, 12, 46547);
+    			add_location(span2, file$4, 83, 12, 2659);
     			attr_dev(input2, "class", "half-input svelte-7mgfw7");
-    			add_location(input2, file$4, 2087, 12, 46599);
+    			add_location(input2, file$4, 84, 12, 2711);
     			attr_dev(button1, "class", "svelte-7mgfw7");
-    			add_location(button1, file$4, 2088, 12, 46681);
+    			add_location(button1, file$4, 85, 12, 2793);
     			attr_dev(div3, "class", "half-stat-block svelte-7mgfw7");
-    			add_location(div3, file$4, 2085, 8, 46505);
+    			add_location(div3, file$4, 82, 8, 2617);
     			attr_dev(span3, "class", "stat-label svelte-7mgfw7");
-    			add_location(span3, file$4, 2091, 12, 46794);
+    			add_location(span3, file$4, 88, 12, 2906);
     			attr_dev(input3, "class", "half-input svelte-7mgfw7");
-    			add_location(input3, file$4, 2092, 12, 46846);
+    			add_location(input3, file$4, 89, 12, 2958);
     			attr_dev(button2, "class", "svelte-7mgfw7");
-    			add_location(button2, file$4, 2093, 12, 46928);
+    			add_location(button2, file$4, 90, 12, 3040);
     			attr_dev(div4, "class", "half-stat-block svelte-7mgfw7");
-    			add_location(div4, file$4, 2090, 8, 46752);
+    			add_location(div4, file$4, 87, 8, 2864);
     			attr_dev(div5, "class", "stat-block");
-    			add_location(div5, file$4, 2084, 4, 46472);
+    			add_location(div5, file$4, 81, 4, 2584);
     			attr_dev(span4, "class", "stat-label svelte-7mgfw7");
-    			add_location(span4, file$4, 2098, 12, 47081);
+    			add_location(span4, file$4, 95, 12, 3193);
     			attr_dev(input4, "class", "half-input svelte-7mgfw7");
-    			add_location(input4, file$4, 2099, 12, 47131);
+    			add_location(input4, file$4, 96, 12, 3243);
     			attr_dev(button3, "class", "svelte-7mgfw7");
-    			add_location(button3, file$4, 2100, 12, 47211);
+    			add_location(button3, file$4, 97, 12, 3323);
     			attr_dev(div6, "class", "half-stat-block svelte-7mgfw7");
-    			add_location(div6, file$4, 2097, 8, 47039);
+    			add_location(div6, file$4, 94, 8, 3151);
     			attr_dev(span5, "class", "stat-label svelte-7mgfw7");
-    			add_location(span5, file$4, 2103, 12, 47322);
+    			add_location(span5, file$4, 100, 12, 3434);
     			attr_dev(input5, "class", "half-input svelte-7mgfw7");
-    			add_location(input5, file$4, 2104, 12, 47372);
+    			add_location(input5, file$4, 101, 12, 3484);
     			attr_dev(button4, "class", "svelte-7mgfw7");
-    			add_location(button4, file$4, 2105, 12, 47452);
+    			add_location(button4, file$4, 102, 12, 3564);
     			attr_dev(div7, "class", "half-stat-block svelte-7mgfw7");
-    			add_location(div7, file$4, 2102, 8, 47280);
+    			add_location(div7, file$4, 99, 8, 3392);
     			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$4, 2096, 4, 47006);
+    			add_location(div8, file$4, 93, 4, 3118);
     			attr_dev(span6, "class", "stat-label svelte-7mgfw7");
-    			add_location(span6, file$4, 2110, 12, 47603);
+    			add_location(span6, file$4, 107, 12, 3715);
     			attr_dev(input6, "class", "half-input svelte-7mgfw7");
-    			add_location(input6, file$4, 2111, 12, 47655);
+    			add_location(input6, file$4, 108, 12, 3767);
     			attr_dev(button5, "class", "svelte-7mgfw7");
-    			add_location(button5, file$4, 2112, 12, 47737);
+    			add_location(button5, file$4, 109, 12, 3849);
     			attr_dev(div9, "class", "half-stat-block svelte-7mgfw7");
-    			add_location(div9, file$4, 2109, 8, 47561);
+    			add_location(div9, file$4, 106, 8, 3673);
     			attr_dev(span7, "class", "stat-label svelte-7mgfw7");
-    			add_location(span7, file$4, 2115, 12, 47850);
+    			add_location(span7, file$4, 112, 12, 3962);
     			attr_dev(input7, "class", "half-input svelte-7mgfw7");
-    			add_location(input7, file$4, 2116, 12, 47899);
+    			add_location(input7, file$4, 113, 12, 4011);
     			attr_dev(button6, "class", "svelte-7mgfw7");
-    			add_location(button6, file$4, 2117, 12, 47978);
+    			add_location(button6, file$4, 114, 12, 4090);
     			attr_dev(div10, "class", "half-stat-block svelte-7mgfw7");
-    			add_location(div10, file$4, 2114, 8, 47808);
+    			add_location(div10, file$4, 111, 8, 3920);
     			attr_dev(div11, "class", "stat-block");
-    			add_location(div11, file$4, 2108, 4, 47528);
+    			add_location(div11, file$4, 105, 4, 3640);
     			attr_dev(button7, "class", "random-all svelte-7mgfw7");
-    			add_location(button7, file$4, 2121, 8, 48086);
+    			add_location(button7, file$4, 118, 8, 4198);
     			attr_dev(div12, "class", "stat-block");
-    			add_location(div12, file$4, 2120, 4, 48053);
+    			add_location(div12, file$4, 117, 4, 4165);
     			attr_dev(div13, "class", "step");
-    			add_location(div13, file$4, 2068, 0, 45973);
+    			add_location(div13, file$4, 65, 0, 2085);
 
     			dispose = [
     				listen_dev(input0, "input", ctx.input0_input_handler),
@@ -2514,2012 +4608,6 @@ var app = (function () {
     	});
 
     	function randomName() {
-    		const femaleNames = [
-    			"Aaliyah",
-    			"Abagail",
-    			"Abbey",
-    			"Abbie",
-    			"Abbigail",
-    			"Abby",
-    			"Abigail",
-    			"Abigale",
-    			"Abigayle",
-    			"Abril",
-    			"Addison",
-    			"Adeline",
-    			"Adriana",
-    			"Adrianna",
-    			"Adrienne",
-    			"Aileen",
-    			"Aimee",
-    			"Ainsley",
-    			"Aisha",
-    			"Aiyana",
-    			"Alaina",
-    			"Alana",
-    			"Alanna",
-    			"Alayna",
-    			"Aleah",
-    			"Alejandra",
-    			"Alena",
-    			"Alessandra",
-    			"Alex",
-    			"Alexa",
-    			"Alexandra",
-    			"Alexandrea",
-    			"Alexandria",
-    			"Alexia",
-    			"Alexis",
-    			"Alexus",
-    			"Alexys",
-    			"Alia",
-    			"Alice",
-    			"Alicia",
-    			"Alina",
-    			"Alisa",
-    			"Alisha",
-    			"Alison",
-    			"Alissa",
-    			"Alivia",
-    			"Aliya",
-    			"Aliyah",
-    			"Aliza",
-    			"Alize",
-    			"Allie",
-    			"Allison",
-    			"Ally",
-    			"Allyson",
-    			"Allyssa",
-    			"Alma",
-    			"Alondra",
-    			"Alysa",
-    			"Alyson",
-    			"Alyssa",
-    			"Amanda",
-    			"Amani",
-    			"Amara",
-    			"Amari",
-    			"Amaya",
-    			"Amber",
-    			"Amelia",
-    			"America",
-    			"Amina",
-    			"Amira",
-    			"Amiya",
-    			"Amy",
-    			"Amya",
-    			"Ana",
-    			"Anahi",
-    			"Anastasia",
-    			"Anaya",
-    			"Andrea",
-    			"Angel",
-    			"Angela",
-    			"Angelica",
-    			"Angelina",
-    			"Angelique",
-    			"Angie",
-    			"Anika",
-    			"Anissa",
-    			"Anita",
-    			"Aniya",
-    			"Aniyah",
-    			"Anjali",
-    			"Ann",
-    			"Anna",
-    			"Annabel",
-    			"Annabella",
-    			"Annabelle",
-    			"Annalise",
-    			"Anne",
-    			"Annette",
-    			"Annie",
-    			"Annika",
-    			"Ansley",
-    			"Antonia",
-    			"Anya",
-    			"April",
-    			"Araceli",
-    			"Aracely",
-    			"Areli",
-    			"Arely",
-    			"Aria",
-    			"Ariana",
-    			"Arianna",
-    			"Ariel",
-    			"Arielle",
-    			"Arlene",
-    			"Armani",
-    			"Aryana",
-    			"Aryanna",
-    			"Ashanti",
-    			"Ashlee",
-    			"Ashleigh",
-    			"Ashley",
-    			"Ashly",
-    			"Ashlyn",
-    			"Ashlynn",
-    			"Ashton",
-    			"Ashtyn",
-    			"Asia",
-    			"Aspen",
-    			"Athena",
-    			"Aubree",
-    			"Aubrey",
-    			"Aubrie",
-    			"Audrey",
-    			"Aurora",
-    			"Autumn",
-    			"Ava",
-    			"Avery",
-    			"Ayana",
-    			"Ayanna",
-    			"Ayla",
-    			"Aylin",
-    			"Baby",
-    			"Bailee",
-    			"Bailey",
-    			"Barbara",
-    			"Baylee",
-    			"Beatriz",
-    			"Belen",
-    			"Bella",
-    			"Berenice",
-    			"Bethany",
-    			"Bianca",
-    			"Blanca",
-    			"Bonnie",
-    			"Brandi",
-    			"Brandy",
-    			"Breana",
-    			"Breanna",
-    			"Brenda",
-    			"Brenna",
-    			"Bria",
-    			"Briana",
-    			"Brianna",
-    			"Brianne",
-    			"Bridget",
-    			"Bridgette",
-    			"Brielle",
-    			"Brionna",
-    			"Brisa",
-    			"Britney",
-    			"Brittany",
-    			"Brittney",
-    			"Brook",
-    			"Brooke",
-    			"Brooklyn",
-    			"Brooklynn",
-    			"Bryana",
-    			"Bryanna",
-    			"Brynn",
-    			"Cadence",
-    			"Caitlin",
-    			"Caitlyn",
-    			"Caitlynn",
-    			"Caleigh",
-    			"Cali",
-    			"Calista",
-    			"Callie",
-    			"Cameron",
-    			"Camila",
-    			"Camilla",
-    			"Camille",
-    			"Camryn",
-    			"Candace",
-    			"Candice",
-    			"Cara",
-    			"Carina",
-    			"Carissa",
-    			"Carla",
-    			"Carlee",
-    			"Carley",
-    			"Carli",
-    			"Carlie",
-    			"Carly",
-    			"Carmen",
-    			"Carol",
-    			"Carolina",
-    			"Caroline",
-    			"Carolyn",
-    			"Carrie",
-    			"Carson",
-    			"Casandra",
-    			"Casey",
-    			"Cassandra",
-    			"Cassidy",
-    			"Cassie",
-    			"Catalina",
-    			"Catherine",
-    			"Cayla",
-    			"Cecelia",
-    			"Cecilia",
-    			"Celeste",
-    			"Celia",
-    			"Celina",
-    			"Celine",
-    			"Chandler",
-    			"Chanel",
-    			"Charity",
-    			"Charlotte",
-    			"Chasity",
-    			"Chaya",
-    			"Chelsea",
-    			"Chelsey",
-    			"Cheyanne",
-    			"Cheyenne",
-    			"Chloe",
-    			"Christa",
-    			"Christian",
-    			"Christiana",
-    			"Christina",
-    			"Christine",
-    			"Christy",
-    			"Chyna",
-    			"Ciara",
-    			"Ciera",
-    			"Cierra",
-    			"Cindy",
-    			"Citlali",
-    			"Claire",
-    			"Clara",
-    			"Clare",
-    			"Clarissa",
-    			"Claudia",
-    			"Colleen",
-    			"Cora",
-    			"Corinne",
-    			"Courtney",
-    			"Cristal",
-    			"Cristina",
-    			"Crystal",
-    			"Cynthia",
-    			"Daisy",
-    			"Dakota",
-    			"Dalia",
-    			"Damaris",
-    			"Dana",
-    			"Daniela",
-    			"Daniella",
-    			"Danielle",
-    			"Danna",
-    			"Daphne",
-    			"Darby",
-    			"Darlene",
-    			"Dasia",
-    			"Dayana",
-    			"Dayanara",
-    			"Deanna",
-    			"Deasia",
-    			"Deborah",
-    			"Deja",
-    			"Delaney",
-    			"Delia",
-    			"Delilah",
-    			"Denise",
-    			"Desirae",
-    			"Desiree",
-    			"Destinee",
-    			"Destiney",
-    			"Destini",
-    			"Destiny",
-    			"Devin",
-    			"Devon",
-    			"Devyn",
-    			"Diamond",
-    			"Diana",
-    			"Diane",
-    			"Dianna",
-    			"Dominique",
-    			"Donna",
-    			"Dorothy",
-    			"Drew",
-    			"Dulce",
-    			"Dylan",
-    			"Ebony",
-    			"Eden",
-    			"Edith",
-    			"Eileen",
-    			"Elaina",
-    			"Elaine",
-    			"Eleanor",
-    			"Elena",
-    			"Eliana",
-    			"Elisa",
-    			"Elisabeth",
-    			"Elise",
-    			"Elissa",
-    			"Eliza",
-    			"Elizabeth",
-    			"Ella",
-    			"Elle",
-    			"Ellen",
-    			"Ellie",
-    			"Elsa",
-    			"Elyse",
-    			"Elyssa",
-    			"Emely",
-    			"Emerson",
-    			"Emilee",
-    			"Emilia",
-    			"Emilie",
-    			"Emily",
-    			"Emma",
-    			"Emmalee",
-    			"Erica",
-    			"Ericka",
-    			"Erika",
-    			"Erin",
-    			"Esmeralda",
-    			"Esperanza",
-    			"Essence",
-    			"Estefania",
-    			"Esther",
-    			"Estrella",
-    			"Eva",
-    			"Eve",
-    			"Evelin",
-    			"Evelyn",
-    			"Fabiola",
-    			"Faith",
-    			"Fatima",
-    			"Felicia",
-    			"Felicity",
-    			"Fernanda",
-    			"Fiona",
-    			"Frances",
-    			"Francesca",
-    			"Frida",
-    			"Gabriela",
-    			"Gabriella",
-    			"Gabrielle",
-    			"Galilea",
-    			"Genesis",
-    			"Genevieve",
-    			"Georgia",
-    			"Gia",
-    			"Giana",
-    			"Gianna",
-    			"Gillian",
-    			"Gina",
-    			"Giovanna",
-    			"Giselle",
-    			"Gisselle",
-    			"Gloria",
-    			"Grace",
-    			"Gracie",
-    			"Graciela",
-    			"Greta",
-    			"Gretchen",
-    			"Guadalupe",
-    			"Gwendolyn",
-    			"Hadley",
-    			"Hailee",
-    			"Hailey",
-    			"Hailie",
-    			"Haleigh",
-    			"Haley",
-    			"Halie",
-    			"Halle",
-    			"Hallie",
-    			"Hana",
-    			"Hanna",
-    			"Hannah",
-    			"Harley",
-    			"Harmony",
-    			"Haven",
-    			"Hayden",
-    			"Haylee",
-    			"Hayley",
-    			"Haylie",
-    			"Hazel",
-    			"Heather",
-    			"Heaven",
-    			"Heidi",
-    			"Helen",
-    			"Helena",
-    			"Hillary",
-    			"Holly",
-    			"Hope",
-    			"Hunter",
-    			"Iliana",
-    			"Imani",
-    			"India",
-    			"Ingrid",
-    			"Irene",
-    			"Iris",
-    			"Isabel",
-    			"Isabela",
-    			"Isabell",
-    			"Isabella",
-    			"Isabelle",
-    			"Isis",
-    			"Itzel",
-    			"Ivy",
-    			"Iyana",
-    			"Iyanna",
-    			"Izabella",
-    			"Jacey",
-    			"Jackeline",
-    			"Jacklyn",
-    			"Jaclyn",
-    			"Jacqueline",
-    			"Jacquelyn",
-    			"Jada",
-    			"Jade",
-    			"Jaden",
-    			"Jadyn",
-    			"Jaelyn",
-    			"Jaida",
-    			"Jaiden",
-    			"Jaidyn",
-    			"Jailyn",
-    			"Jaime",
-    			"Jakayla",
-    			"Jaliyah",
-    			"Jalyn",
-    			"Jalynn",
-    			"Jamie",
-    			"Jamya",
-    			"Jana",
-    			"Janae",
-    			"Jane",
-    			"Janelle",
-    			"Janessa",
-    			"Janet",
-    			"Janice",
-    			"Janiya",
-    			"Janiyah",
-    			"Jaquelin",
-    			"Jaqueline",
-    			"Jasmin",
-    			"Jasmine",
-    			"Jasmyn",
-    			"Jaycee",
-    			"Jayda",
-    			"Jayden",
-    			"Jayla",
-    			"Jaylene",
-    			"Jaylin",
-    			"Jaylyn",
-    			"Jaylynn",
-    			"Jazlyn",
-    			"Jazmin",
-    			"Jazmine",
-    			"Jazmyn",
-    			"Jazmyne",
-    			"Jeanette",
-    			"Jenifer",
-    			"Jenna",
-    			"Jennifer",
-    			"Jenny",
-    			"Jessica",
-    			"Jessie",
-    			"Jewel",
-    			"Jillian",
-    			"Jimena",
-    			"Joana",
-    			"Joanna",
-    			"Jocelyn",
-    			"Joelle",
-    			"Johana",
-    			"Johanna",
-    			"Jolie",
-    			"Jordan",
-    			"Jordyn",
-    			"Joselyn",
-    			"Josephine",
-    			"Josie",
-    			"Joslyn",
-    			"Journey",
-    			"Joy",
-    			"Joyce",
-    			"Judith",
-    			"Julia",
-    			"Juliana",
-    			"Julianna",
-    			"Julianne",
-    			"Julie",
-    			"Juliet",
-    			"Juliette",
-    			"Julissa",
-    			"Justice",
-    			"Justine",
-    			"Kacey",
-    			"Kaci",
-    			"Kacie",
-    			"Kadence",
-    			"Kaela",
-    			"Kaelyn",
-    			"Kaia",
-    			"Kaila",
-    			"Kailee",
-    			"Kailey",
-    			"Kailyn",
-    			"Kaitlin",
-    			"Kaitlyn",
-    			"Kaitlynn",
-    			"Kaiya",
-    			"Kaleigh",
-    			"Kaley",
-    			"Kali",
-    			"Kaliyah",
-    			"Kallie",
-    			"Kalyn",
-    			"Kamryn",
-    			"Kara",
-    			"Karen",
-    			"Kari",
-    			"Karina",
-    			"Karissa",
-    			"Karla",
-    			"Karlee",
-    			"Karley",
-    			"Karli",
-    			"Karlie",
-    			"Karly",
-    			"Kasandra",
-    			"Kasey",
-    			"Kassandra",
-    			"Kassidy",
-    			"Katarina",
-    			"Kate",
-    			"Katelin",
-    			"Katelyn",
-    			"Katelynn",
-    			"Katharine",
-    			"Katherine",
-    			"Kathleen",
-    			"Kathryn",
-    			"Kathy",
-    			"Katie",
-    			"Katlyn",
-    			"Katrina",
-    			"Katy",
-    			"Kaya",
-    			"Kaydence",
-    			"Kayla",
-    			"Kaylah",
-    			"Kaylee",
-    			"Kayleigh",
-    			"Kayley",
-    			"Kayli",
-    			"Kaylie",
-    			"Kaylin",
-    			"Kaylyn",
-    			"Kaylynn",
-    			"Keely",
-    			"Keira",
-    			"Kelli",
-    			"Kellie",
-    			"Kelly",
-    			"Kelsey",
-    			"Kelsi",
-    			"Kelsie",
-    			"Kendal",
-    			"Kendall",
-    			"Kendra",
-    			"Kenia",
-    			"Kenna",
-    			"Kennedi",
-    			"Kennedy",
-    			"Kenya",
-    			"Kenzie",
-    			"Keyla",
-    			"Kiana",
-    			"Kianna",
-    			"Kiara",
-    			"Kiera",
-    			"Kierra",
-    			"Kiersten",
-    			"Kiley",
-    			"Kimberly",
-    			"Kinsey",
-    			"Kira",
-    			"Kirsten",
-    			"Kourtney",
-    			"Krista",
-    			"Kristen",
-    			"Kristin",
-    			"Kristina",
-    			"Kristine",
-    			"Krystal",
-    			"Kya",
-    			"Kyla",
-    			"Kylee",
-    			"Kyleigh",
-    			"Kylie",
-    			"Kyra",
-    			"Lacey",
-    			"Laci",
-    			"Laila",
-    			"Laisha",
-    			"Lana",
-    			"Laney",
-    			"Lara",
-    			"Larissa",
-    			"Laura",
-    			"Laurel",
-    			"Lauren",
-    			"Lauryn",
-    			"Layla",
-    			"Lea",
-    			"Leah",
-    			"Leanna",
-    			"Leila",
-    			"Leilani",
-    			"Lena",
-    			"Lesley",
-    			"Leslie",
-    			"Lesly",
-    			"Leticia",
-    			"Lexi",
-    			"Lexie",
-    			"Lexus",
-    			"Lia",
-    			"Liana",
-    			"Libby",
-    			"Liberty",
-    			"Lila",
-    			"Lilian",
-    			"Liliana",
-    			"Lillian",
-    			"Lilliana",
-    			"Lillie",
-    			"Lilly",
-    			"Lily",
-    			"Lina",
-    			"Linda",
-    			"Lindsay",
-    			"Lindsey",
-    			"Lisa",
-    			"Lisbeth",
-    			"Lisette",
-    			"Litzy",
-    			"Lizbeth",
-    			"Lizeth",
-    			"Lizette",
-    			"Logan",
-    			"Lola",
-    			"London",
-    			"Loren",
-    			"Lorena",
-    			"Lucia",
-    			"Lucy",
-    			"Luz",
-    			"Lydia",
-    			"Lyndsey",
-    			"Lyric",
-    			"Macey",
-    			"Maci",
-    			"Macie",
-    			"Mackenzie",
-    			"Macy",
-    			"Madalyn",
-    			"Madalynn",
-    			"Maddison",
-    			"Madeleine",
-    			"Madeline",
-    			"Madelyn",
-    			"Madelynn",
-    			"Madilyn",
-    			"Madisen",
-    			"Madison",
-    			"Madisyn",
-    			"Madyson",
-    			"Maegan",
-    			"Maeve",
-    			"Magdalena",
-    			"Maggie",
-    			"Maia",
-    			"Makaila",
-    			"Makayla",
-    			"Makena",
-    			"Makenna",
-    			"Makenzie",
-    			"Maleah",
-    			"Malia",
-    			"Maliyah",
-    			"Mallory",
-    			"Mandy",
-    			"Mara",
-    			"Margaret",
-    			"Margarita",
-    			"Maria",
-    			"Mariah",
-    			"Mariam",
-    			"Mariana",
-    			"Marianna",
-    			"Maribel",
-    			"Marie",
-    			"Mariela",
-    			"Marilyn",
-    			"Marina",
-    			"Marisa",
-    			"Marisol",
-    			"Marissa",
-    			"Maritza",
-    			"Marlee",
-    			"Marlene",
-    			"Marley",
-    			"Martha",
-    			"Mary",
-    			"Maryam",
-    			"Mattie",
-    			"Maura",
-    			"Maya",
-    			"Mayra",
-    			"Mckayla",
-    			"Mckenna",
-    			"Mckenzie",
-    			"Meadow",
-    			"Meagan",
-    			"Meaghan",
-    			"Megan",
-    			"Meghan",
-    			"Melanie",
-    			"Melany",
-    			"Melina",
-    			"Melinda",
-    			"Melissa",
-    			"Melody",
-    			"Mercedes",
-    			"Meredith",
-    			"Mia",
-    			"Miah",
-    			"Micaela",
-    			"Micah",
-    			"Michaela",
-    			"Michelle",
-    			"Mikaela",
-    			"Mikayla",
-    			"Mira",
-    			"Miracle",
-    			"Miranda",
-    			"Mireya",
-    			"Miriam",
-    			"Mollie",
-    			"Molly",
-    			"Monica",
-    			"Monique",
-    			"Monserrat",
-    			"Montana",
-    			"Morgan",
-    			"Moriah",
-    			"Mya",
-    			"Myah",
-    			"Myra",
-    			"Nadia",
-    			"Nancy",
-    			"Naomi",
-    			"Natalia",
-    			"Natalie",
-    			"Nataly",
-    			"Natasha",
-    			"Nathalie",
-    			"Nayeli",
-    			"Nevaeh",
-    			"Nia",
-    			"Nichole",
-    			"Nicole",
-    			"Nicolette",
-    			"Nikki",
-    			"Nina",
-    			"Noelia",
-    			"Noelle",
-    			"Noemi",
-    			"Nora",
-    			"Norah",
-    			"Norma",
-    			"Nya",
-    			"Nyah",
-    			"Nyasia",
-    			"Nyla",
-    			"Olivia",
-    			"Paige",
-    			"Paloma",
-    			"Pamela",
-    			"Paola",
-    			"Paris",
-    			"Parker",
-    			"Patience",
-    			"Patricia",
-    			"Paula",
-    			"Paulina",
-    			"Payton",
-    			"Penelope",
-    			"Perla",
-    			"Peyton",
-    			"Phoebe",
-    			"Piper",
-    			"Precious",
-    			"Presley",
-    			"Princess",
-    			"Priscila",
-    			"Priscilla",
-    			"Quinn",
-    			"Rachael",
-    			"Rachel",
-    			"Rachelle",
-    			"Raegan",
-    			"Raina",
-    			"Raquel",
-    			"Raven",
-    			"Rayna",
-    			"Reagan",
-    			"Reanna",
-    			"Rebeca",
-    			"Rebecca",
-    			"Rebekah",
-    			"Reese",
-    			"Regan",
-    			"Regina",
-    			"Reilly",
-    			"Reina",
-    			"Renee",
-    			"Reyna",
-    			"Rhiannon",
-    			"Riley",
-    			"Rita",
-    			"Robin",
-    			"Robyn",
-    			"Rocio",
-    			"Rosa",
-    			"Rose",
-    			"Rosemary",
-    			"Roxana",
-    			"Ruby",
-    			"Ruth",
-    			"Ryan",
-    			"Ryann",
-    			"Rylee",
-    			"Ryleigh",
-    			"Rylie",
-    			"Sabrina",
-    			"Sadie",
-    			"Sage",
-    			"Saige",
-    			"Sally",
-    			"Salma",
-    			"Samantha",
-    			"Samara",
-    			"Samira",
-    			"Sandra",
-    			"Sandy",
-    			"Sara",
-    			"Sarah",
-    			"Sarahi",
-    			"Sarai",
-    			"Sarina",
-    			"Sasha",
-    			"Savana",
-    			"Savanah",
-    			"Savanna",
-    			"Savannah",
-    			"Scarlett",
-    			"Selena",
-    			"Selina",
-    			"Serena",
-    			"Serenity",
-    			"Shakira",
-    			"Shania",
-    			"Shaniya",
-    			"Shannon",
-    			"Sharon",
-    			"Shawna",
-    			"Shayla",
-    			"Shaylee",
-    			"Shayna",
-    			"Shea",
-    			"Sheila",
-    			"Shelby",
-    			"Sheridan",
-    			"Sherlyn",
-    			"Shirley",
-    			"Shreya",
-    			"Shyann",
-    			"Shyanne",
-    			"Sidney",
-    			"Sienna",
-    			"Sierra",
-    			"Silvia",
-    			"Simone",
-    			"Sky",
-    			"Skye",
-    			"Skyla",
-    			"Skylar",
-    			"Skyler",
-    			"Sofia",
-    			"Sonia",
-    			"Sonya",
-    			"Sophia",
-    			"Sophie",
-    			"Stacey",
-    			"Stacy",
-    			"Stella",
-    			"Stephanie",
-    			"Stephany",
-    			"Summer",
-    			"Susan",
-    			"Susana",
-    			"Sydnee",
-    			"Sydney",
-    			"Sydni",
-    			"Sydnie",
-    			"Sylvia",
-    			"Tabitha",
-    			"Talia",
-    			"Taliyah",
-    			"Tamara",
-    			"Tamia",
-    			"Tania",
-    			"Taniya",
-    			"Tanya",
-    			"Tara",
-    			"Taryn",
-    			"Tatiana",
-    			"Tatum",
-    			"Tatyana",
-    			"Taya",
-    			"Tayler",
-    			"Taylor",
-    			"Teagan",
-    			"Teresa",
-    			"Tess",
-    			"Tessa",
-    			"Thalia",
-    			"Theresa",
-    			"Tia",
-    			"Tiana",
-    			"Tianna",
-    			"Tiara",
-    			"Tierra",
-    			"Tiffany",
-    			"Tina",
-    			"Toni",
-    			"Tori",
-    			"Tracy",
-    			"Trinity",
-    			"Trista",
-    			"Tyler",
-    			"Tyra",
-    			"Unique",
-    			"Valentina",
-    			"Valeria",
-    			"Valerie",
-    			"Vanesa",
-    			"Vanessa",
-    			"Veronica",
-    			"Victoria",
-    			"Violet",
-    			"Virginia",
-    			"Vivian",
-    			"Viviana",
-    			"Wendy",
-    			"Whitney",
-    			"Willow",
-    			"Ximena",
-    			"Yadira",
-    			"Yareli",
-    			"Yasmin",
-    			"Yasmine",
-    			"Yazmin",
-    			"Yesenia",
-    			"Yessenia",
-    			"Yolanda",
-    			"Yoselin",
-    			"Yuliana",
-    			"Yvette",
-    			"Zaria",
-    			"Zoe",
-    			"Zoey",
-    			"Zoie"
-    		];
-
-    		const maleNames = [
-    			"Aaron",
-    			"Abdullah",
-    			"Abel",
-    			"Abraham",
-    			"Abram",
-    			"Adam",
-    			"Adan",
-    			"Addison",
-    			"Aden",
-    			"Aditya",
-    			"Adolfo",
-    			"Adonis",
-    			"Adrian",
-    			"Adriel",
-    			"Adrien",
-    			"Agustin",
-    			"Ahmad",
-    			"Ahmed",
-    			"Aidan",
-    			"Aiden",
-    			"Alan",
-    			"Albert",
-    			"Alberto",
-    			"Alden",
-    			"Aldo",
-    			"Alec",
-    			"Alejandro",
-    			"Alessandro",
-    			"Alex",
-    			"Alexander",
-    			"Alexandro",
-    			"Alexis",
-    			"Alexzander",
-    			"Alfonso",
-    			"Alfred",
-    			"Alfredo",
-    			"Ali",
-    			"Alijah",
-    			"Allan",
-    			"Allen",
-    			"Alonso",
-    			"Alonzo",
-    			"Alvaro",
-    			"Alvin",
-    			"Amari",
-    			"Amarion",
-    			"Amir",
-    			"Anderson",
-    			"Andre",
-    			"Andreas",
-    			"Andres",
-    			"Andrew",
-    			"Andy",
-    			"Angel",
-    			"Angelo",
-    			"Anthony",
-    			"Antoine",
-    			"Anton",
-    			"Antonio",
-    			"Antony",
-    			"Antwan",
-    			"Ari",
-    			"Ariel",
-    			"Arjun",
-    			"Armando",
-    			"Armani",
-    			"Arnold",
-    			"Aron",
-    			"Arthur",
-    			"Arturo",
-    			"Aryan",
-    			"Asa",
-    			"Asher",
-    			"Ashton",
-    			"Aubrey",
-    			"August",
-    			"Augustus",
-    			"Austen",
-    			"Austin",
-    			"Austyn",
-    			"Avery",
-    			"Axel",
-    			"Aydan",
-    			"Ayden",
-    			"Baby",
-    			"Bailey",
-    			"Barrett",
-    			"Barry",
-    			"Beau",
-    			"Ben",
-    			"Benito",
-    			"Benjamin",
-    			"Bennett",
-    			"Benny",
-    			"Bernard",
-    			"Bernardo",
-    			"Billy",
-    			"Blaine",
-    			"Blaise",
-    			"Blake",
-    			"Blaze",
-    			"Bo",
-    			"Bobby",
-    			"Brad",
-    			"Braden",
-    			"Bradley",
-    			"Brady",
-    			"Bradyn",
-    			"Braeden",
-    			"Braedon",
-    			"Braiden",
-    			"Branden",
-    			"Brandon",
-    			"Braxton",
-    			"Brayan",
-    			"Brayden",
-    			"Braydon",
-    			"Brendan",
-    			"Brenden",
-    			"Brendon",
-    			"Brennan",
-    			"Brennen",
-    			"Brent",
-    			"Brenton",
-    			"Bret",
-    			"Brett",
-    			"Brian",
-    			"Brice",
-    			"Brock",
-    			"Brodie",
-    			"Brody",
-    			"Bronson",
-    			"Brooks",
-    			"Bruce",
-    			"Bruno",
-    			"Bryan",
-    			"Bryant",
-    			"Bryce",
-    			"Brycen",
-    			"Bryson",
-    			"Byron",
-    			"Cade",
-    			"Caden",
-    			"Cael",
-    			"Caiden",
-    			"Cale",
-    			"Caleb",
-    			"Calvin",
-    			"Camden",
-    			"Cameron",
-    			"Camren",
-    			"Camron",
-    			"Carl",
-    			"Carlo",
-    			"Carlos",
-    			"Carlton",
-    			"Carson",
-    			"Carter",
-    			"Casey",
-    			"Cason",
-    			"Cayden",
-    			"Cedric",
-    			"Cesar",
-    			"Chad",
-    			"Chaim",
-    			"Chance",
-    			"Chandler",
-    			"Charles",
-    			"Charlie",
-    			"Chase",
-    			"Chaz",
-    			"Chris",
-    			"Christian",
-    			"Christopher",
-    			"Clarence",
-    			"Clark",
-    			"Clay",
-    			"Clayton",
-    			"Clifford",
-    			"Clifton",
-    			"Clinton",
-    			"Coby",
-    			"Cody",
-    			"Colby",
-    			"Cole",
-    			"Coleman",
-    			"Colin",
-    			"Collin",
-    			"Colt",
-    			"Colten",
-    			"Colton",
-    			"Conner",
-    			"Connor",
-    			"Conor",
-    			"Conrad",
-    			"Cooper",
-    			"Corbin",
-    			"Cordell",
-    			"Corey",
-    			"Cornelius",
-    			"Cortez",
-    			"Cory",
-    			"Craig",
-    			"Cristian",
-    			"Cristobal",
-    			"Cristopher",
-    			"Cruz",
-    			"Cullen",
-    			"Curtis",
-    			"Cyrus",
-    			"Dakota",
-    			"Dale",
-    			"Dallas",
-    			"Dallin",
-    			"Dalton",
-    			"Damarion",
-    			"Damian",
-    			"Damien",
-    			"Damion",
-    			"Damon",
-    			"Dandre",
-    			"Dane",
-    			"Dangelo",
-    			"Daniel",
-    			"Danny",
-    			"Dante",
-    			"Daquan",
-    			"Darian",
-    			"Darien",
-    			"Darin",
-    			"Dario",
-    			"Darion",
-    			"Darius",
-    			"Darnell",
-    			"Darrell",
-    			"Darren",
-    			"Darrin",
-    			"Darrion",
-    			"Darrius",
-    			"Darryl",
-    			"Darwin",
-    			"Daryl",
-    			"Dashawn",
-    			"David",
-    			"Davin",
-    			"Davion",
-    			"Davis",
-    			"Davon",
-    			"Dawson",
-    			"Dayton",
-    			"Dean",
-    			"Deandre",
-    			"Deangelo",
-    			"Declan",
-    			"Demarcus",
-    			"Demetrius",
-    			"Dennis",
-    			"Denzel",
-    			"Deon",
-    			"Deonte",
-    			"Derek",
-    			"Derick",
-    			"Derrick",
-    			"Deshaun",
-    			"Deshawn",
-    			"Desmond",
-    			"Destin",
-    			"Devan",
-    			"Devante",
-    			"Deven",
-    			"Devin",
-    			"Devon",
-    			"Devonte",
-    			"Devyn",
-    			"Dexter",
-    			"Diego",
-    			"Dillan",
-    			"Dillon",
-    			"Dimitri",
-    			"Dion",
-    			"Domenic",
-    			"Dominic",
-    			"Dominick",
-    			"Dominik",
-    			"Dominique",
-    			"Don",
-    			"Donald",
-    			"Donavan",
-    			"Donovan",
-    			"Donte",
-    			"Dorian",
-    			"Douglas",
-    			"Drake",
-    			"Draven",
-    			"Drew",
-    			"Duane",
-    			"Duncan",
-    			"Dustin",
-    			"Dwayne",
-    			"Dwight",
-    			"Dylan",
-    			"Dylon",
-    			"Ean",
-    			"Earl",
-    			"Easton",
-    			"Eddie",
-    			"Edgar",
-    			"Eduardo",
-    			"Edward",
-    			"Edwin",
-    			"Efrain",
-    			"Efren",
-    			"Eli",
-    			"Elian",
-    			"Elias",
-    			"Elijah",
-    			"Eliseo",
-    			"Elisha",
-    			"Elliot",
-    			"Elliott",
-    			"Ellis",
-    			"Elmer",
-    			"Elvis",
-    			"Emanuel",
-    			"Emerson",
-    			"Emiliano",
-    			"Emilio",
-    			"Emmanuel",
-    			"Emmett",
-    			"Enrique",
-    			"Eric",
-    			"Erick",
-    			"Erik",
-    			"Ernest",
-    			"Ernesto",
-    			"Esteban",
-    			"Estevan",
-    			"Ethan",
-    			"Ethen",
-    			"Eugene",
-    			"Evan",
-    			"Everett",
-    			"Ezekiel",
-    			"Ezequiel",
-    			"Ezra",
-    			"Fabian",
-    			"Felipe",
-    			"Felix",
-    			"Fernando",
-    			"Fidel",
-    			"Finn",
-    			"Fletcher",
-    			"Forrest",
-    			"Francis",
-    			"Francisco",
-    			"Frank",
-    			"Frankie",
-    			"Franklin",
-    			"Fred",
-    			"Freddie",
-    			"Freddy",
-    			"Frederick",
-    			"Fredrick",
-    			"Gabriel",
-    			"Gael",
-    			"Gage",
-    			"Gaige",
-    			"Gannon",
-    			"Garett",
-    			"Garret",
-    			"Garrett",
-    			"Garrison",
-    			"Gary",
-    			"Gaven",
-    			"Gavin",
-    			"Gavyn",
-    			"Geoffrey",
-    			"George",
-    			"Gerald",
-    			"Gerardo",
-    			"German",
-    			"Giancarlo",
-    			"Gianni",
-    			"Gideon",
-    			"Gilbert",
-    			"Gilberto",
-    			"Gino",
-    			"Giovani",
-    			"Giovanni",
-    			"Giovanny",
-    			"Glen",
-    			"Glenn",
-    			"Gonzalo",
-    			"Gordon",
-    			"Grady",
-    			"Graham",
-    			"Grant",
-    			"Grayson",
-    			"Gregory",
-    			"Greyson",
-    			"Griffin",
-    			"Guadalupe",
-    			"Guillermo",
-    			"Gunnar",
-    			"Gunner",
-    			"Gustavo",
-    			"Guy",
-    			"Haden",
-    			"Hamza",
-    			"Harley",
-    			"Harold",
-    			"Harrison",
-    			"Harry",
-    			"Hassan",
-    			"Hayden",
-    			"Heath",
-    			"Hector",
-    			"Henry",
-    			"Heriberto",
-    			"Holden",
-    			"Houston",
-    			"Howard",
-    			"Hudson",
-    			"Hugh",
-    			"Hugo",
-    			"Humberto",
-    			"Hunter",
-    			"Ian",
-    			"Ibrahim",
-    			"Ignacio",
-    			"Immanuel",
-    			"Irvin",
-    			"Irving",
-    			"Isaac",
-    			"Isaak",
-    			"Isai",
-    			"Isaiah",
-    			"Isaias",
-    			"Isiah",
-    			"Ismael",
-    			"Israel",
-    			"Issac",
-    			"Ivan",
-    			"Izaiah",
-    			"Jabari",
-    			"Jace",
-    			"Jack",
-    			"Jackson",
-    			"Jacob",
-    			"Jacoby",
-    			"Jaden",
-    			"Jadon",
-    			"Jadyn",
-    			"Jaeden",
-    			"Jagger",
-    			"Jaheim",
-    			"Jahiem",
-    			"Jaiden",
-    			"Jaime",
-    			"Jair",
-    			"Jairo",
-    			"Jake",
-    			"Jakob",
-    			"Jakobe",
-    			"Jalen",
-    			"Jamal",
-    			"Jamar",
-    			"Jamari",
-    			"Jamarion",
-    			"Jamel",
-    			"James",
-    			"Jameson",
-    			"Jamie",
-    			"Jamil",
-    			"Jamir",
-    			"Jamison",
-    			"Jan",
-    			"Jaquan",
-    			"Jared",
-    			"Jaren",
-    			"Jarod",
-    			"Jaron",
-    			"Jarred",
-    			"Jarrett",
-    			"Jarrod",
-    			"Jarvis",
-    			"Jase",
-    			"Jason",
-    			"Jasper",
-    			"Javen",
-    			"Javier",
-    			"Javion",
-    			"Javon",
-    			"Jaxon",
-    			"Jaxson",
-    			"Jay",
-    			"Jayce",
-    			"Jayden",
-    			"Jaydon",
-    			"Jaylan",
-    			"Jaylen",
-    			"Jaylin",
-    			"Jaylon",
-    			"Jayson",
-    			"Jean",
-    			"Jeff",
-    			"Jefferson",
-    			"Jeffery",
-    			"Jeffrey",
-    			"Jeremiah",
-    			"Jeremy",
-    			"Jermaine",
-    			"Jerome",
-    			"Jerry",
-    			"Jesse",
-    			"Jessie",
-    			"Jesus",
-    			"Jett",
-    			"Jevon",
-    			"Jimmy",
-    			"Joan",
-    			"Joaquin",
-    			"Joe",
-    			"Joel",
-    			"Joey",
-    			"Johan",
-    			"John",
-    			"Johnathan",
-    			"Johnathon",
-    			"Johnny",
-    			"Jon",
-    			"Jonah",
-    			"Jonas",
-    			"Jonathan",
-    			"Jonathon",
-    			"Jordan",
-    			"Jorden",
-    			"Jordon",
-    			"Jordy",
-    			"Jordyn",
-    			"Jorge",
-    			"Jose",
-    			"Josef",
-    			"Joseph",
-    			"Josh",
-    			"Joshua",
-    			"Josiah",
-    			"Josue",
-    			"Jovan",
-    			"Jovani",
-    			"Jovanni",
-    			"Jovanny",
-    			"Jovany",
-    			"Juan",
-    			"Judah",
-    			"Jude",
-    			"Julian",
-    			"Julien",
-    			"Julio",
-    			"Julius",
-    			"Junior",
-    			"Justice",
-    			"Justin",
-    			"Justus",
-    			"Justyn",
-    			"Kade",
-    			"Kaden",
-    			"Kadin",
-    			"Kai",
-    			"Kaiden",
-    			"Kale",
-    			"Kaleb",
-    			"Kameron",
-    			"Kamron",
-    			"Kane",
-    			"Kanye",
-    			"Kareem",
-    			"Karl",
-    			"Karson",
-    			"Kasey",
-    			"Kayden",
-    			"Keagan",
-    			"Keanu",
-    			"Keaton",
-    			"Keegan",
-    			"Keenan",
-    			"Keith",
-    			"Kellen",
-    			"Kelly",
-    			"Kelton",
-    			"Kelvin",
-    			"Kendall",
-    			"Kendrick",
-    			"Kennedy",
-    			"Kenneth",
-    			"Kenny",
-    			"Kent",
-    			"Kenyon",
-    			"Keon",
-    			"Keshawn",
-    			"Keven",
-    			"Kevin",
-    			"Kevon",
-    			"Keyon",
-    			"Keyshawn",
-    			"Khalid",
-    			"Khalil",
-    			"Kian",
-    			"Kieran",
-    			"Kirk",
-    			"Kobe",
-    			"Koby",
-    			"Kody",
-    			"Kolby",
-    			"Kole",
-    			"Kolton",
-    			"Korbin",
-    			"Korey",
-    			"Kory",
-    			"Kristian",
-    			"Kristofer",
-    			"Kristopher",
-    			"Kurt",
-    			"Kurtis",
-    			"Kylan",
-    			"Kyle",
-    			"Kyler",
-    			"Kyree",
-    			"Lamar",
-    			"Lamont",
-    			"Lance",
-    			"Landen",
-    			"Landon",
-    			"Lane",
-    			"Larry",
-    			"Latrell",
-    			"Lawrence",
-    			"Lawson",
-    			"Layne",
-    			"Layton",
-    			"Lee",
-    			"Leo",
-    			"Leon",
-    			"Leonard",
-    			"Leonardo",
-    			"Leonel",
-    			"Leroy",
-    			"Levi",
-    			"Lewis",
-    			"Liam",
-    			"Lincoln",
-    			"Lloyd",
-    			"Logan",
-    			"London",
-    			"Lonnie",
-    			"Lorenzo",
-    			"Louis",
-    			"Luca",
-    			"Lucas",
-    			"Luciano",
-    			"Luis",
-    			"Lukas",
-    			"Luke",
-    			"Maddox",
-    			"Malachi",
-    			"Malakai",
-    			"Malcolm",
-    			"Malik",
-    			"Manuel",
-    			"Marc",
-    			"Marcel",
-    			"Marcelo",
-    			"Marco",
-    			"Marcos",
-    			"Marcus",
-    			"Mariano",
-    			"Mario",
-    			"Mark",
-    			"Markus",
-    			"Marlon",
-    			"Marques",
-    			"Marquez",
-    			"Marquis",
-    			"Marquise",
-    			"Marshall",
-    			"Martin",
-    			"Marvin",
-    			"Mason",
-    			"Mateo",
-    			"Mathew",
-    			"Matteo",
-    			"Matthew",
-    			"Maurice",
-    			"Mauricio",
-    			"Maverick",
-    			"Max",
-    			"Maxim",
-    			"Maximilian",
-    			"Maximillian",
-    			"Maximus",
-    			"Maxwell",
-    			"Mekhi",
-    			"Melvin",
-    			"Micah",
-    			"Michael",
-    			"Micheal",
-    			"Miguel",
-    			"Mike",
-    			"Mikel",
-    			"Miles",
-    			"Milo",
-    			"Milton",
-    			"Misael",
-    			"Mitchel",
-    			"Mitchell",
-    			"Mohamed",
-    			"Mohammad",
-    			"Mohammed",
-    			"Moises",
-    			"Morgan",
-    			"Moses",
-    			"Moshe",
-    			"Muhammad",
-    			"Myles",
-    			"Nash",
-    			"Nasir",
-    			"Nathan",
-    			"Nathanael",
-    			"Nathanial",
-    			"Nathaniel",
-    			"Nathen",
-    			"Neal",
-    			"Nehemiah",
-    			"Neil",
-    			"Nelson",
-    			"Nestor",
-    			"Nicholas",
-    			"Nick",
-    			"Nickolas",
-    			"Nico",
-    			"Nicolas",
-    			"Nigel",
-    			"Nikhil",
-    			"Niko",
-    			"Nikolas",
-    			"Noah",
-    			"Noe",
-    			"Noel",
-    			"Nolan",
-    			"Norman",
-    			"Octavio",
-    			"Oliver",
-    			"Omar",
-    			"Omari",
-    			"Omarion",
-    			"Orion",
-    			"Orlando",
-    			"Oscar",
-    			"Osvaldo",
-    			"Oswaldo",
-    			"Owen",
-    			"Pablo",
-    			"Parker",
-    			"Patrick",
-    			"Paul",
-    			"Paxton",
-    			"Payton",
-    			"Pedro",
-    			"Perry",
-    			"Peter",
-    			"Peyton",
-    			"Philip",
-    			"Phillip",
-    			"Phoenix",
-    			"Pierce",
-    			"Pierre",
-    			"Porter",
-    			"Pranav",
-    			"Preston",
-    			"Prince",
-    			"Quentin",
-    			"Quincy",
-    			"Quinn",
-    			"Quinten",
-    			"Quintin",
-    			"Quinton",
-    			"Rafael",
-    			"Rahul",
-    			"Ralph",
-    			"Ramiro",
-    			"Ramon",
-    			"Randall",
-    			"Randy",
-    			"Raphael",
-    			"Rashad",
-    			"Raul",
-    			"Raven",
-    			"Ray",
-    			"Raymond",
-    			"Raymundo",
-    			"Reagan",
-    			"Reece",
-    			"Reed",
-    			"Reese",
-    			"Reginald",
-    			"Reid",
-    			"Reilly",
-    			"Remington",
-    			"Rene",
-    			"Reuben",
-    			"Rey",
-    			"Reynaldo",
-    			"Rhett",
-    			"Ricardo",
-    			"Richard",
-    			"Rickey",
-    			"Ricky",
-    			"Rigoberto",
-    			"Riley",
-    			"River",
-    			"Robert",
-    			"Roberto",
-    			"Rocco",
-    			"Rocky",
-    			"Roderick",
-    			"Rodney",
-    			"Rodolfo",
-    			"Rodrigo",
-    			"Rogelio",
-    			"Roger",
-    			"Rohan",
-    			"Roland",
-    			"Rolando",
-    			"Roman",
-    			"Romeo",
-    			"Ronald",
-    			"Ronaldo",
-    			"Ronan",
-    			"Ronnie",
-    			"Rory",
-    			"Ross",
-    			"Rowan",
-    			"Roy",
-    			"Ruben",
-    			"Rudy",
-    			"Russell",
-    			"Ryan",
-    			"Ryder",
-    			"Rylan",
-    			"Rylee",
-    			"Ryley",
-    			"Sabastian",
-    			"Sage",
-    			"Salvador",
-    			"Salvatore",
-    			"Sam",
-    			"Samir",
-    			"Sammy",
-    			"Samson",
-    			"Samuel",
-    			"Santiago",
-    			"Santino",
-    			"Santos",
-    			"Saul",
-    			"Savion",
-    			"Sawyer",
-    			"Scott",
-    			"Seamus",
-    			"Sean",
-    			"Sebastian",
-    			"Semaj",
-    			"Sergio",
-    			"Seth",
-    			"Shamar",
-    			"Shane",
-    			"Shannon",
-    			"Shaun",
-    			"Shawn",
-    			"Shayne",
-    			"Shea",
-    			"Sheldon",
-    			"Shemar",
-    			"Sidney",
-    			"Silas",
-    			"Simeon",
-    			"Simon",
-    			"Sincere",
-    			"Skylar",
-    			"Skyler",
-    			"Solomon",
-    			"Sonny",
-    			"Spencer",
-    			"Stanley",
-    			"Stefan",
-    			"Stephan",
-    			"Stephen",
-    			"Stephon",
-    			"Sterling",
-    			"Steve",
-    			"Steven",
-    			"Stone",
-    			"Stuart",
-    			"Sullivan",
-    			"Syed",
-    			"Talon",
-    			"Tanner",
-    			"Tariq",
-    			"Tate",
-    			"Taylor",
-    			"Terence",
-    			"Terrance",
-    			"Terrell",
-    			"Terrence",
-    			"Terry",
-    			"Thaddeus",
-    			"Theodore",
-    			"Thomas",
-    			"Timothy",
-    			"Titus",
-    			"Tobias",
-    			"Toby",
-    			"Todd",
-    			"Tomas",
-    			"Tommy",
-    			"Tony",
-    			"Trace",
-    			"Travis",
-    			"Travon",
-    			"Tre",
-    			"Trent",
-    			"Trenton",
-    			"Trever",
-    			"Trevion",
-    			"Trevon",
-    			"Trevor",
-    			"Trey",
-    			"Treyton",
-    			"Tristan",
-    			"Tristen",
-    			"Tristian",
-    			"Tristin",
-    			"Triston",
-    			"Troy",
-    			"Trystan",
-    			"Tucker",
-    			"Turner",
-    			"Ty",
-    			"Tyler",
-    			"Tylor",
-    			"Tyree",
-    			"Tyrell",
-    			"Tyrese",
-    			"Tyrone",
-    			"Tyshawn",
-    			"Tyson",
-    			"Ulises",
-    			"Ulysses",
-    			"Uriel",
-    			"Valentin",
-    			"Vance",
-    			"Vaughn",
-    			"Vernon",
-    			"Vicente",
-    			"Victor",
-    			"Vincent",
-    			"Wade",
-    			"Walker",
-    			"Walter",
-    			"Warren",
-    			"Waylon",
-    			"Wayne",
-    			"Wesley",
-    			"Weston",
-    			"Will",
-    			"William",
-    			"Willie",
-    			"Wilson",
-    			"Winston",
-    			"Wyatt",
-    			"Xander",
-    			"Xavier",
-    			"Xzavier",
-    			"Yahir",
-    			"Yair",
-    			"Yosef",
-    			"Yusuf",
-    			"Zachariah",
-    			"Zachary",
-    			"Zachery",
-    			"Zack",
-    			"Zackary",
-    			"Zackery",
-    			"Zain",
-    			"Zaire",
-    			"Zakary",
-    			"Zander",
-    			"Zane",
-    			"Zavier",
-    			"Zechariah",
-    			"Zion"
-    		];
-
     		if (char.description.gender.value == "Male") {
     			$$invalidate("char", char.description.characterName.value = random(maleNames), char);
     		} else if (char.description.gender.value == "Female") {
@@ -4687,18 +4775,18 @@ var app = (function () {
     			input = element("input");
     			t2 = space();
     			attr_dev(span, "class", "stat-label");
-    			add_location(span, file$5, 27, 12, 749);
+    			add_location(span, file$5, 27, 12, 746);
     			attr_dev(input, "class", "stat-input");
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", input_max_value = Math.min(ctx.char.traits[ctx.trait].max, ctx.char.traits[ctx.trait].score + ctx.remaining));
-    			add_location(input, file$5, 28, 12, 819);
+    			add_location(input, file$5, 28, 12, 816);
     			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$5, 26, 8, 712);
+    			add_location(div, file$5, 26, 8, 709);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
-    				listen_dev(input, "input", ctx.updateTraits, false, false, false)
+    				listen_dev(input, "input", ctx.countTraitPoints, false, false, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -4775,14 +4863,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$5, 20, 8, 563);
+    			add_location(h2, file$5, 20, 8, 560);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$5, 19, 4, 530);
-    			add_location(h3, file$5, 23, 8, 626);
+    			add_location(div0, file$5, 19, 4, 527);
+    			add_location(h3, file$5, 23, 8, 623);
     			attr_dev(div1, "class", "remaining svelte-slj60w");
-    			add_location(div1, file$5, 22, 4, 594);
+    			add_location(div1, file$5, 22, 4, 591);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$5, 18, 0, 507);
+    			add_location(div2, file$5, 18, 0, 504);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4805,7 +4893,7 @@ var app = (function () {
     		p: function update(changed, ctx) {
     			if (changed.remaining) set_data_dev(t3, ctx.remaining);
 
-    			if (changed.Math || changed.char || changed.traits || changed.remaining || changed.updateTraits) {
+    			if (changed.Math || changed.char || changed.traits || changed.remaining || changed.countTraitPoints) {
     				each_value = ctx.traits;
     				let i;
 
@@ -4847,6 +4935,8 @@ var app = (function () {
     	return block;
     }
 
+    const traitPoints = 12;
+
     function instance$6($$self, $$props, $$invalidate) {
     	let char;
 
@@ -4857,10 +4947,15 @@ var app = (function () {
     	const traits = Object.keys(char.traits);
     	let remaining = traitPoints - traits.length;
 
-    	function updateTraits() {
+    	function countTraitPoints() {
     		let traitCount = 0;
-    		for (const trait of traits) traitCount += char.traits[trait].score;
+
+    		traits.forEach(trait => {
+    			traitCount += char.traits[trait].score;
+    		});
+
     		$$invalidate("remaining", remaining = traitPoints - traitCount);
+    		char.updateProps();
     	}
 
     	function input_input_handler({ trait }) {
@@ -4882,7 +4977,7 @@ var app = (function () {
     		char,
     		traits,
     		remaining,
-    		updateTraits,
+    		countTraitPoints,
     		input_input_handler
     	};
     }
@@ -4943,18 +5038,18 @@ var app = (function () {
     			t1 = space();
     			input = element("input");
     			attr_dev(span, "class", "stat-label");
-    			add_location(span, file$6, 34, 24, 1091);
+    			add_location(span, file$6, 34, 24, 1106);
     			attr_dev(input, "class", "stat-input");
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = Math.min(ctx.char.traits[ctx.trait].score, ctx.char.skills[ctx.skill].score + ctx.remaining));
-    			add_location(input, file$6, 35, 24, 1173);
+    			add_location(input, file$6, 35, 24, 1188);
     			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$6, 33, 20, 1042);
+    			add_location(div, file$6, 33, 20, 1057);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
-    				listen_dev(input, "input", ctx.updateSkills, false, false, false)
+    				listen_dev(input, "input", ctx.countSkillPoints, false, false, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -5071,9 +5166,9 @@ var app = (function () {
 
     			t3 = space();
     			attr_dev(div0, "class", "parent-trait-title svelte-wj9h86");
-    			add_location(div0, file$6, 28, 12, 810);
+    			add_location(div0, file$6, 28, 12, 825);
     			attr_dev(div1, "class", "skill-section svelte-wj9h86");
-    			add_location(div1, file$6, 27, 8, 770);
+    			add_location(div1, file$6, 27, 8, 785);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -5091,7 +5186,7 @@ var app = (function () {
     		p: function update(changed, ctx) {
     			if (changed.char && t0_value !== (t0_value = ctx.char.traits[ctx.trait].name + "")) set_data_dev(t0, t0_value);
 
-    			if (changed.char || changed.traits || changed.skills || changed.Math || changed.remaining || changed.updateSkills) {
+    			if (changed.char || changed.traits || changed.skills || changed.Math || changed.remaining || changed.countSkillPoints) {
     				each_value_1 = ctx.skills;
     				let i;
 
@@ -5165,14 +5260,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$6, 21, 8, 621);
+    			add_location(h2, file$6, 21, 8, 636);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$6, 20, 4, 588);
-    			add_location(h3, file$6, 24, 8, 684);
+    			add_location(div0, file$6, 20, 4, 603);
+    			add_location(h3, file$6, 24, 8, 699);
     			attr_dev(div1, "class", "remaining svelte-wj9h86");
-    			add_location(div1, file$6, 23, 4, 652);
+    			add_location(div1, file$6, 23, 4, 667);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$6, 19, 0, 565);
+    			add_location(div2, file$6, 19, 0, 580);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5195,7 +5290,7 @@ var app = (function () {
     		p: function update(changed, ctx) {
     			if (changed.remaining) set_data_dev(t3, ctx.remaining);
 
-    			if (changed.skills || changed.char || changed.traits || changed.Math || changed.remaining || changed.updateSkills) {
+    			if (changed.skills || changed.char || changed.traits || changed.Math || changed.remaining || changed.countSkillPoints) {
     				each_value = ctx.traits;
     				let i;
 
@@ -5248,12 +5343,16 @@ var app = (function () {
     	const skills = Object.keys(char.skills);
     	let startingSkillPoints = char.traits.brains.score * 3;
     	let remaining = startingSkillPoints;
-    	updateSkills();
 
-    	function updateSkills() {
+    	function countSkillPoints() {
     		let skillCount = 0;
-    		for (const skill of skills) skillCount += char.skills[skill].score;
+
+    		skills.forEach(skill => {
+    			skillCount += char.skills[skill].score;
+    		});
+
     		$$invalidate("remaining", remaining = startingSkillPoints - skillCount);
+    		char.updateProps();
     	}
 
     	function input_input_handler({ skill }) {
@@ -5277,7 +5376,7 @@ var app = (function () {
     		traits,
     		skills,
     		remaining,
-    		updateSkills,
+    		countSkillPoints,
     		input_input_handler
     	};
     }
@@ -5297,377 +5396,148 @@ var app = (function () {
     }
 
     /* src/components/creator/Properties.svelte generated by Svelte v3.15.0 */
+
+    const { Object: Object_1$2 } = globals;
     const file$7 = "src/components/creator/Properties.svelte";
 
-    function create_fragment$9(ctx) {
-    	let div9;
-    	let div0;
-    	let h2;
-    	let t1;
-    	let div1;
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = Object_1$2.create(ctx);
+    	child_ctx.prop = list[i];
+    	return child_ctx;
+    }
+
+    // (13:4) {#each props as prop}
+    function create_each_block$2(ctx) {
+    	let div;
     	let span0;
-    	let t3;
-    	let input0;
-    	let input0_value_value;
-    	let input0_max_value;
-    	let t4;
+    	let t0_value = ctx.char.props[ctx.prop].name + "";
+    	let t0;
+    	let t1;
+    	let t2;
     	let span1;
-    	let t5_value = ctx.char.props.health.score + "";
-    	let t5;
-    	let t6;
-    	let div2;
-    	let span2;
-    	let t8;
-    	let input1;
-    	let input1_max_value;
-    	let t9;
-    	let span3;
-    	let t10_value = Math.floor(ctx.char.props.health.base / 2) + "";
-    	let t10;
-    	let t11;
-    	let div3;
-    	let span4;
-    	let t13;
-    	let input2;
-    	let input2_value_value;
-    	let input2_max_value;
-    	let t14;
-    	let span5;
-    	let t15_value = ctx.char.props.psyche.score + "";
-    	let t15;
-    	let t16;
-    	let div4;
-    	let span8;
-    	let span6;
-    	let t18;
-    	let span7;
-    	let t19_value = ctx.char.props.reflex.setReflex() + "";
-    	let t19;
-    	let t20;
-    	let span11;
-    	let span9;
-    	let t22;
-    	let span10;
-    	let t23_value = ctx.char.props.block.setBlock() + "";
-    	let t23;
-    	let t24;
-    	let span14;
-    	let span12;
-    	let t26;
-    	let span13;
-    	let t27_value = ctx.char.props.dodge.setDodge() + "";
-    	let t27;
-    	let t28;
-    	let div5;
-    	let span15;
-    	let t30;
-    	let span16;
-    	let t31_value = ctx.char.props.actions.setActions() + "";
-    	let t31;
-    	let t32;
-    	let div6;
-    	let span17;
-    	let t34;
-    	let span18;
-    	let t35_value = ctx.char.props.speed.setSpeed() + "";
-    	let t35;
-    	let t36;
-    	let div7;
-    	let span19;
-    	let t38;
-    	let span20;
-    	let t39_value = ctx.char.props.luck.setLuck() + "";
-    	let t39;
-    	let t40;
-    	let div8;
-    	let span21;
-    	let t42;
-    	let span22;
-    	let t43_value = ctx.char.props.xp.setXP() + "";
-    	let t43;
+    	let t3_value = ctx.char.props[ctx.prop].base + "";
+    	let t3;
+    	let t4;
 
     	const block = {
     		c: function create() {
-    			div9 = element("div");
+    			div = element("div");
+    			span0 = element("span");
+    			t0 = text(t0_value);
+    			t1 = text(":");
+    			t2 = space();
+    			span1 = element("span");
+    			t3 = text(t3_value);
+    			t4 = space();
+    			attr_dev(span0, "class", "stat-label");
+    			add_location(span0, file$7, 14, 12, 366);
+    			attr_dev(span1, "class", "stat-label");
+    			add_location(span1, file$7, 15, 12, 435);
+    			attr_dev(div, "class", "stat-block");
+    			add_location(div, file$7, 13, 8, 329);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, span0);
+    			append_dev(span0, t0);
+    			append_dev(span0, t1);
+    			append_dev(div, t2);
+    			append_dev(div, span1);
+    			append_dev(span1, t3);
+    			append_dev(div, t4);
+    		},
+    		p: function update(changed, ctx) {
+    			if (changed.char && t0_value !== (t0_value = ctx.char.props[ctx.prop].name + "")) set_data_dev(t0, t0_value);
+    			if (changed.char && t3_value !== (t3_value = ctx.char.props[ctx.prop].base + "")) set_data_dev(t3, t3_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(13:4) {#each props as prop}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$9(ctx) {
+    	let div1;
+    	let div0;
+    	let h2;
+    	let t1;
+    	let each_value = ctx.props;
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
     			div0 = element("div");
     			h2 = element("h2");
     			h2.textContent = "Properties";
     			t1 = space();
-    			div1 = element("div");
-    			span0 = element("span");
-    			span0.textContent = "Health:";
-    			t3 = space();
-    			input0 = element("input");
-    			t4 = space();
-    			span1 = element("span");
-    			t5 = text(t5_value);
-    			t6 = space();
-    			div2 = element("div");
-    			span2 = element("span");
-    			span2.textContent = "Pain:";
-    			t8 = space();
-    			input1 = element("input");
-    			t9 = space();
-    			span3 = element("span");
-    			t10 = text(t10_value);
-    			t11 = space();
-    			div3 = element("div");
-    			span4 = element("span");
-    			span4.textContent = "Psyche:";
-    			t13 = space();
-    			input2 = element("input");
-    			t14 = space();
-    			span5 = element("span");
-    			t15 = text(t15_value);
-    			t16 = space();
-    			div4 = element("div");
-    			span8 = element("span");
-    			span6 = element("span");
-    			span6.textContent = "Reflex:";
-    			t18 = space();
-    			span7 = element("span");
-    			t19 = text(t19_value);
-    			t20 = space();
-    			span11 = element("span");
-    			span9 = element("span");
-    			span9.textContent = "Block:";
-    			t22 = space();
-    			span10 = element("span");
-    			t23 = text(t23_value);
-    			t24 = space();
-    			span14 = element("span");
-    			span12 = element("span");
-    			span12.textContent = "Dodge:";
-    			t26 = space();
-    			span13 = element("span");
-    			t27 = text(t27_value);
-    			t28 = space();
-    			div5 = element("div");
-    			span15 = element("span");
-    			span15.textContent = "Actions:";
-    			t30 = space();
-    			span16 = element("span");
-    			t31 = text(t31_value);
-    			t32 = space();
-    			div6 = element("div");
-    			span17 = element("span");
-    			span17.textContent = "Speed:";
-    			t34 = space();
-    			span18 = element("span");
-    			t35 = text(t35_value);
-    			t36 = space();
-    			div7 = element("div");
-    			span19 = element("span");
-    			span19.textContent = "Luck:";
-    			t38 = space();
-    			span20 = element("span");
-    			t39 = text(t39_value);
-    			t40 = space();
-    			div8 = element("div");
-    			span21 = element("span");
-    			span21.textContent = "Experience:";
-    			t42 = space();
-    			span22 = element("span");
-    			t43 = text(t43_value);
-    			add_location(h2, file$7, 8, 8, 221);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h2, file$7, 10, 8, 264);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$7, 7, 4, 188);
-    			attr_dev(span0, "class", "three-column");
-    			add_location(span0, file$7, 11, 8, 289);
-    			attr_dev(input0, "type", "number");
-    			attr_dev(input0, "class", "three-column");
-    			input0.value = input0_value_value = ctx.char.props.health.setHealth();
-    			attr_dev(input0, "min", "0");
-    			attr_dev(input0, "max", input0_max_value = ctx.char.props.health.score);
-    			add_location(input0, file$7, 12, 8, 339);
-    			attr_dev(span1, "class", "three-column");
-    			add_location(span1, file$7, 19, 8, 533);
-    			attr_dev(div1, "class", "stat-block");
-    			add_location(div1, file$7, 10, 4, 256);
-    			attr_dev(span2, "class", "three-column");
-    			add_location(span2, file$7, 22, 8, 641);
-    			attr_dev(input1, "type", "number");
-    			attr_dev(input1, "class", "three-column");
-    			input1.value = "0";
-    			attr_dev(input1, "min", "0");
-    			attr_dev(input1, "max", input1_max_value = ctx.char.props.health.score);
-    			add_location(input1, file$7, 23, 8, 689);
-    			attr_dev(span3, "class", "three-column");
-    			add_location(span3, file$7, 30, 8, 853);
-    			attr_dev(div2, "class", "stat-block");
-    			add_location(div2, file$7, 21, 4, 608);
-    			attr_dev(span4, "class", "three-column");
-    			add_location(span4, file$7, 33, 8, 974);
-    			attr_dev(input2, "type", "number");
-    			attr_dev(input2, "class", "three-column");
-    			input2.value = input2_value_value = ctx.char.props.psyche.setPsyche();
-    			attr_dev(input2, "min", "0");
-    			attr_dev(input2, "max", input2_max_value = ctx.char.props.psyche.score);
-    			add_location(input2, file$7, 34, 8, 1024);
-    			attr_dev(span5, "class", "three-column");
-    			add_location(span5, file$7, 41, 8, 1218);
-    			attr_dev(div3, "class", "stat-block");
-    			add_location(div3, file$7, 32, 4, 941);
-    			attr_dev(span6, "class", "stat-label");
-    			add_location(span6, file$7, 46, 12, 1367);
-    			attr_dev(span7, "class", "stat-input");
-    			add_location(span7, file$7, 47, 12, 1419);
-    			attr_dev(span8, "class", "three-column");
-    			add_location(span8, file$7, 45, 8, 1327);
-    			attr_dev(span9, "class", "stat-label");
-    			add_location(span9, file$7, 50, 12, 1547);
-    			attr_dev(span10, "class", "stat-input");
-    			add_location(span10, file$7, 51, 12, 1598);
-    			attr_dev(span11, "class", "three-column");
-    			add_location(span11, file$7, 49, 8, 1507);
-    			attr_dev(span12, "class", "stat-label");
-    			add_location(span12, file$7, 54, 12, 1724);
-    			attr_dev(span13, "class", "stat-input");
-    			add_location(span13, file$7, 55, 12, 1775);
-    			attr_dev(span14, "class", "three-column");
-    			add_location(span14, file$7, 53, 8, 1684);
-    			attr_dev(div4, "class", "stat-block");
-    			add_location(div4, file$7, 44, 4, 1294);
-    			attr_dev(span15, "class", "stat-label");
-    			add_location(span15, file$7, 60, 8, 1902);
-    			attr_dev(span16, "class", "stat-input");
-    			add_location(span16, file$7, 61, 8, 1951);
-    			attr_dev(div5, "class", "stat-block");
-    			add_location(div5, file$7, 59, 4, 1869);
-    			attr_dev(span17, "class", "stat-label");
-    			add_location(span17, file$7, 64, 8, 2065);
-    			attr_dev(span18, "class", "stat-input");
-    			add_location(span18, file$7, 65, 8, 2112);
-    			attr_dev(div6, "class", "stat-block");
-    			add_location(div6, file$7, 63, 4, 2032);
-    			attr_dev(span19, "class", "stat-label");
-    			add_location(span19, file$7, 68, 8, 2222);
-    			attr_dev(span20, "class", "stat-input");
-    			add_location(span20, file$7, 69, 8, 2268);
-    			attr_dev(div7, "class", "stat-block");
-    			add_location(div7, file$7, 67, 4, 2189);
-    			attr_dev(span21, "class", "stat-label");
-    			add_location(span21, file$7, 72, 8, 2376);
-    			attr_dev(span22, "class", "stat-input");
-    			add_location(span22, file$7, 73, 8, 2428);
-    			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$7, 71, 4, 2343);
-    			attr_dev(div9, "class", "step");
-    			add_location(div9, file$7, 6, 0, 165);
+    			add_location(div0, file$7, 9, 4, 231);
+    			attr_dev(div1, "class", "step");
+    			add_location(div1, file$7, 8, 0, 208);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div0);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
     			append_dev(div0, h2);
-    			append_dev(div9, t1);
-    			append_dev(div9, div1);
-    			append_dev(div1, span0);
-    			append_dev(div1, t3);
-    			append_dev(div1, input0);
-    			append_dev(div1, t4);
-    			append_dev(div1, span1);
-    			append_dev(span1, t5);
-    			append_dev(div9, t6);
-    			append_dev(div9, div2);
-    			append_dev(div2, span2);
-    			append_dev(div2, t8);
-    			append_dev(div2, input1);
-    			append_dev(div2, t9);
-    			append_dev(div2, span3);
-    			append_dev(span3, t10);
-    			append_dev(div9, t11);
-    			append_dev(div9, div3);
-    			append_dev(div3, span4);
-    			append_dev(div3, t13);
-    			append_dev(div3, input2);
-    			append_dev(div3, t14);
-    			append_dev(div3, span5);
-    			append_dev(span5, t15);
-    			append_dev(div9, t16);
-    			append_dev(div9, div4);
-    			append_dev(div4, span8);
-    			append_dev(span8, span6);
-    			append_dev(span8, t18);
-    			append_dev(span8, span7);
-    			append_dev(span7, t19);
-    			append_dev(div4, t20);
-    			append_dev(div4, span11);
-    			append_dev(span11, span9);
-    			append_dev(span11, t22);
-    			append_dev(span11, span10);
-    			append_dev(span10, t23);
-    			append_dev(div4, t24);
-    			append_dev(div4, span14);
-    			append_dev(span14, span12);
-    			append_dev(span14, t26);
-    			append_dev(span14, span13);
-    			append_dev(span13, t27);
-    			append_dev(div9, t28);
-    			append_dev(div9, div5);
-    			append_dev(div5, span15);
-    			append_dev(div5, t30);
-    			append_dev(div5, span16);
-    			append_dev(span16, t31);
-    			append_dev(div9, t32);
-    			append_dev(div9, div6);
-    			append_dev(div6, span17);
-    			append_dev(div6, t34);
-    			append_dev(div6, span18);
-    			append_dev(span18, t35);
-    			append_dev(div9, t36);
-    			append_dev(div9, div7);
-    			append_dev(div7, span19);
-    			append_dev(div7, t38);
-    			append_dev(div7, span20);
-    			append_dev(span20, t39);
-    			append_dev(div9, t40);
-    			append_dev(div9, div8);
-    			append_dev(div8, span21);
-    			append_dev(div8, t42);
-    			append_dev(div8, span22);
-    			append_dev(span22, t43);
+    			append_dev(div1, t1);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div1, null);
+    			}
     		},
     		p: function update(changed, ctx) {
-    			if (changed.char && input0_value_value !== (input0_value_value = ctx.char.props.health.setHealth())) {
-    				prop_dev(input0, "value", input0_value_value);
+    			if (changed.char || changed.props) {
+    				each_value = ctx.props;
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
     			}
-
-    			if (changed.char && input0_max_value !== (input0_max_value = ctx.char.props.health.score)) {
-    				attr_dev(input0, "max", input0_max_value);
-    			}
-
-    			if (changed.char && t5_value !== (t5_value = ctx.char.props.health.score + "")) set_data_dev(t5, t5_value);
-
-    			if (changed.char && input1_max_value !== (input1_max_value = ctx.char.props.health.score)) {
-    				attr_dev(input1, "max", input1_max_value);
-    			}
-
-    			if (changed.char && t10_value !== (t10_value = Math.floor(ctx.char.props.health.base / 2) + "")) set_data_dev(t10, t10_value);
-
-    			if (changed.char && input2_value_value !== (input2_value_value = ctx.char.props.psyche.setPsyche())) {
-    				prop_dev(input2, "value", input2_value_value);
-    			}
-
-    			if (changed.char && input2_max_value !== (input2_max_value = ctx.char.props.psyche.score)) {
-    				attr_dev(input2, "max", input2_max_value);
-    			}
-
-    			if (changed.char && t15_value !== (t15_value = ctx.char.props.psyche.score + "")) set_data_dev(t15, t15_value);
-    			if (changed.char && t19_value !== (t19_value = ctx.char.props.reflex.setReflex() + "")) set_data_dev(t19, t19_value);
-    			if (changed.char && t23_value !== (t23_value = ctx.char.props.block.setBlock() + "")) set_data_dev(t23, t23_value);
-    			if (changed.char && t27_value !== (t27_value = ctx.char.props.dodge.setDodge() + "")) set_data_dev(t27, t27_value);
-    			if (changed.char && t31_value !== (t31_value = ctx.char.props.actions.setActions() + "")) set_data_dev(t31, t31_value);
-    			if (changed.char && t35_value !== (t35_value = ctx.char.props.speed.setSpeed() + "")) set_data_dev(t35, t35_value);
-    			if (changed.char && t39_value !== (t39_value = ctx.char.props.luck.setLuck() + "")) set_data_dev(t39, t39_value);
-    			if (changed.char && t43_value !== (t43_value = ctx.char.props.xp.setXP() + "")) set_data_dev(t43, t43_value);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div1);
+    			destroy_each(each_blocks, detaching);
     		}
     	};
 
@@ -5689,6 +5559,8 @@ var app = (function () {
     		$$invalidate("char", char = value);
     	});
 
+    	const props = Object.keys(char.props);
+
     	$$self.$capture_state = () => {
     		return {};
     	};
@@ -5697,7 +5569,7 @@ var app = (function () {
     		if ("char" in $$props) $$invalidate("char", char = $$props.char);
     	};
 
-    	return { char };
+    	return { char, props };
     }
 
     class Properties extends SvelteComponentDev {
@@ -5744,7 +5616,7 @@ var app = (function () {
         new Ability(`Danger Sense`,         `+1 Reflex.`,                                   1, 9, 0, ``),
         new Ability(`Discipline`,           `Ignore 1 Pain penalty.`,                       3, 9, 0, ``),
         new Ability(`Fortunate`,            `+1 Luck.`,                                     1, 9, 0, ``),
-        new Ability(`Free Running`,         `Climb at [Speed] for 2AP.`,                    1, 9, 0, ``),
+        new Ability(`Free Running`,         `Acrobatics 9# to Climb as a Run action.`,      1, 9, 0, ``),
         new Ability(`Unorthodox*`,          `Pick a new parent Trait for a Skill.`,         1, 9, 0, ``),
         // OPEN SLOT FOR NEW ABILITY
         // 12 XP Abilities
@@ -5769,7 +5641,7 @@ var app = (function () {
     /* src/components/creator/Abilities.svelte generated by Svelte v3.15.0 */
     const file$8 = "src/components/creator/Abilities.svelte";
 
-    function get_each_context$2(ctx, list, i) {
+    function get_each_context$3(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
     	child_ctx.ability = list[i];
     	child_ctx.each_value = list;
@@ -5777,7 +5649,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (32:16) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
+    // (31:16) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
     function create_if_block$2(ctx) {
     	let div;
 
@@ -5785,7 +5657,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "separator svelte-maszxs");
-    			add_location(div, file$8, 32, 20, 1100);
+    			add_location(div, file$8, 31, 20, 1099);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5799,15 +5671,15 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(32:16) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}",
+    		source: "(31:16) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:12) {#each AbilityList as ability, index}
-    function create_each_block$2(ctx) {
+    // (30:12) {#each AbilityList as ability, index}
+    function create_each_block$3(ctx) {
     	let t0;
     	let div5;
     	let div0;
@@ -5860,22 +5732,22 @@ var app = (function () {
     			input = element("input");
     			t9 = space();
     			attr_dev(div0, "class", "m-col svelte-maszxs");
-    			add_location(div0, file$8, 35, 20, 1214);
+    			add_location(div0, file$8, 34, 20, 1213);
     			attr_dev(div1, "class", "l-col svelte-maszxs");
-    			add_location(div1, file$8, 36, 20, 1274);
+    			add_location(div1, file$8, 35, 20, 1273);
     			attr_dev(div2, "class", "s-col svelte-maszxs");
-    			add_location(div2, file$8, 37, 20, 1341);
+    			add_location(div2, file$8, 36, 20, 1340);
     			attr_dev(div3, "class", "s-col svelte-maszxs");
-    			add_location(div3, file$8, 38, 20, 1400);
+    			add_location(div3, file$8, 37, 20, 1399);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "class", "taken-number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = ctx.ability.max);
-    			add_location(input, file$8, 40, 24, 1502);
+    			add_location(input, file$8, 39, 24, 1501);
     			attr_dev(div4, "class", "s-col svelte-maszxs");
-    			add_location(div4, file$8, 39, 20, 1458);
+    			add_location(div4, file$8, 38, 20, 1457);
     			attr_dev(div5, "class", "ability-row svelte-maszxs");
-    			add_location(div5, file$8, 34, 16, 1168);
+    			add_location(div5, file$8, 33, 16, 1167);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -5942,9 +5814,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$2.name,
+    		id: create_each_block$3.name,
     		type: "each",
-    		source: "(31:12) {#each AbilityList as ability, index}",
+    		source: "(30:12) {#each AbilityList as ability, index}",
     		ctx
     	});
 
@@ -5973,7 +5845,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
     	}
 
     	const block = {
@@ -6006,27 +5878,27 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$8, 19, 8, 512);
+    			add_location(h2, file$8, 18, 8, 511);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$8, 18, 4, 479);
+    			add_location(div0, file$8, 17, 4, 478);
     			attr_dev(div1, "class", "m-col svelte-maszxs");
-    			add_location(div1, file$8, 24, 16, 684);
+    			add_location(div1, file$8, 23, 16, 683);
     			attr_dev(div2, "class", "l-col svelte-maszxs");
-    			add_location(div2, file$8, 25, 16, 730);
+    			add_location(div2, file$8, 24, 16, 729);
     			attr_dev(div3, "class", "s-col svelte-maszxs");
-    			add_location(div3, file$8, 26, 16, 783);
+    			add_location(div3, file$8, 25, 16, 782);
     			attr_dev(div4, "class", "s-col svelte-maszxs");
-    			add_location(div4, file$8, 27, 16, 828);
+    			add_location(div4, file$8, 26, 16, 827);
     			attr_dev(div5, "class", "s-col svelte-maszxs");
-    			add_location(div5, file$8, 28, 16, 872);
+    			add_location(div5, file$8, 27, 16, 871);
     			attr_dev(div6, "class", "ability-row header-row separator svelte-maszxs");
-    			add_location(div6, file$8, 23, 12, 621);
+    			add_location(div6, file$8, 22, 12, 620);
     			attr_dev(div7, "class", "abilities-table svelte-maszxs");
-    			add_location(div7, file$8, 22, 8, 579);
+    			add_location(div7, file$8, 21, 8, 578);
     			attr_dev(div8, "class", "stat-block");
-    			add_location(div8, file$8, 21, 4, 546);
+    			add_location(div8, file$8, 20, 4, 545);
     			attr_dev(div9, "class", "step");
-    			add_location(div9, file$8, 17, 0, 456);
+    			add_location(div9, file$8, 16, 0, 455);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6060,12 +5932,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$2(ctx, each_value, i);
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(changed, child_ctx);
     					} else {
-    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i] = create_each_block$3(child_ctx);
     						each_blocks[i].c();
     						each_blocks[i].m(div7, null);
     					}
@@ -6200,14 +6072,14 @@ var app = (function () {
     /* src/components/creator/Gear.svelte generated by Svelte v3.15.0 */
     const file$9 = "src/components/creator/Gear.svelte";
 
-    function get_each_context$3(ctx, list, i) {
+    function get_each_context$4(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
     	child_ctx.armor = list[i];
     	return child_ctx;
     }
 
     // (30:4) {#each ArmorList as armor}
-    function create_each_block$3(ctx) {
+    function create_each_block$4(ctx) {
     	let div;
     	let t_value = ctx.armor.name + "";
     	let t;
@@ -6230,7 +6102,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$3.name,
+    		id: create_each_block$4.name,
     		type: "each",
     		source: "(30:4) {#each ArmorList as armor}",
     		ctx
@@ -6255,7 +6127,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
     	}
 
     	const block = {
@@ -6306,12 +6178,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$3(ctx, each_value, i);
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(changed, child_ctx);
     					} else {
-    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i] = create_each_block$4(child_ctx);
     						each_blocks[i].c();
     						each_blocks[i].m(div0, null);
     					}
@@ -6422,7 +6294,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "svelte-1sye5nq");
-    			add_location(div, file$a, 22, 0, 817);
+    			add_location(div, file$a, 22, 0, 837);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6497,7 +6369,7 @@ var app = (function () {
 
     function instance$b($$self, $$props, $$invalidate) {
     	let step = 0;
-    	const options = [Description, Traits, Skills, Properties, Abilities, Gear];
+    	const options = [Traits, Properties, Description, Traits, Skills, Properties, Abilities, Gear];
     	let selected = options[step];
 
     	function nav(event) {
@@ -6550,7 +6422,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    function get_each_context$4(ctx, list, i) {
+    function get_each_context$5(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
     	child_ctx.r = list[i];
     	return child_ctx;
@@ -6881,7 +6753,7 @@ var app = (function () {
     }
 
     // (10:4) {#each list.rules as r}
-    function create_each_block$4(ctx) {
+    function create_each_block$5(ctx) {
     	let div0;
     	let span;
     	let t0_value = ctx.r.name + "";
@@ -6968,7 +6840,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$4.name,
+    		id: create_each_block$5.name,
     		type: "each",
     		source: "(10:4) {#each list.rules as r}",
     		ctx
@@ -6990,7 +6862,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
     	}
 
     	const out = i => transition_out(each_blocks[i], 1, 1, () => {
@@ -7041,13 +6913,13 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$4(ctx, each_value, i);
+    					const child_ctx = get_each_context$5(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(changed, child_ctx);
     						transition_in(each_blocks[i], 1);
     					} else {
-    						each_blocks[i] = create_each_block$4(child_ctx);
+    						each_blocks[i] = create_each_block$5(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
     						each_blocks[i].m(div1, null);
@@ -8009,7 +7881,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "ref-page svelte-ttj5zk");
-    			add_location(div, file$e, 23, 0, 744);
+    			add_location(div, file$e, 24, 0, 847);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

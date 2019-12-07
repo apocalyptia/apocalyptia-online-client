@@ -8,12 +8,12 @@
 
     let startingSkillPoints = char.traits.brains.score * 3
     let remaining = startingSkillPoints
-    updateSkills()
 
-    function updateSkills() {
+    function countSkillPoints() {
         let skillCount = 0
-        for (const skill of skills) skillCount += char.skills[skill].score
+        skills.forEach((skill) => { skillCount += char.skills[skill].score })
         remaining = startingSkillPoints - skillCount
+        char.updateProps()
     }
 </script>
 
@@ -38,7 +38,7 @@
                             type='number'
                             min='0'
                             max='{Math.min(char.traits[trait].score, (char.skills[skill].score + remaining))}'
-                            on:input={updateSkills}
+                            on:input={countSkillPoints}
                             bind:value={char.skills[skill].score}
                         >
                     </div>

@@ -1,8 +1,4 @@
 <script>
-    import { CharacterStore } from '../../rules/Stores'
-    let char
-    const unsubscribe = CharacterStore.subscribe(value => { char = value })
-
     import { AccessoryList } from '../../rules/gear/Accessories'
     import { AmmoList } from '../../rules/gear/Ammo'
     import { ArmorList, RandomArmor } from '../../rules/gear/Armor'
@@ -15,6 +11,10 @@
     import { MeleeList } from '../../rules/gear/Melee'
     import { RangedList } from '../../rules/gear/Ranged'
     import { StorageList } from '../../rules/gear/Storage'
+    import { CharacterStore } from '../../rules/Stores'
+    let char
+    const unsubscribe = CharacterStore.subscribe(value => { char = value })
+
 
     let armorResult = ""
 

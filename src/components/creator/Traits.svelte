@@ -3,16 +3,16 @@
     let char
     const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-    import { traitPoints } from '../../rules/character/Traits'
-
     const traits = Object.keys(char.traits)
 
+    const traitPoints = 12
     let remaining = traitPoints - traits.length
 
-    function updateTraits() {
+    function countTraitPoints() {
         let traitCount = 0
-        for (const trait of traits) traitCount += char.traits[trait].score
+        traits.forEach((trait) => { traitCount += char.traits[trait].score })
         remaining = traitPoints - traitCount
+        char.updateProps()
     }
 </script>
 
@@ -31,7 +31,7 @@
                 type='number'
                 min='1'
                 max={Math.min(char.traits[trait].max, (char.traits[trait].score + remaining))}
-                on:input={updateTraits}
+                on:input={countTraitPoints}
                 bind:value={char.traits[trait].score}
             >
         </div>
