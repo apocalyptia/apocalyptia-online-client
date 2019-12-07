@@ -2,5 +2,5 @@ import Rule from '../Rule'
 
 export const Bleeding = new Rule(
     `Bleeding`, 
-    `1 DMG per min caused by your HP dropping to half or some other effect. Roll [(Medicine or C) vs DMG] to stop.`
+    `When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`
 )

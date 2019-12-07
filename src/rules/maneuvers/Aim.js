@@ -2,5 +2,5 @@ import Rule from '../Rule'
 
 export const Aim = new Rule(
     `Aim`, 
-    `Spend AP to get an equal bonus to one ATK.`
+    `Spend an Action to get +3 to your next ATK against a specific target.`
 )

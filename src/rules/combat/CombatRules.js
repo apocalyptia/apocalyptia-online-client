@@ -4,14 +4,16 @@ import { Communication } from './Communication'
 import { Damage } from './Damage'
 import { Defense } from './Defense'
 import { Health } from './Health'
+import { Initiative } from './Initiative'
 import { Movement } from './Movement'
-import { Time } from './Time'
+import { Rounds } from './Rounds'
 import { Vehicles } from './Vehicles'
 
 export const Combat = [
-    Time,
-    Communication,
+    Rounds,
+    Initiative,
     Actions,
+    Communication,
     Movement,
     Attack,
     Defense,

@@ -4088,16 +4088,6 @@ var app = (function () {
                 },
             },
             this.props = {
-                actions: {
-                    name: `Actions`,
-                    base: 1,
-                    score: 1,
-                    set: () => {
-                        const actions = Math.floor((this.traits.agility.score + this.traits.brains.score) / 2);
-                        this.props.actions.base = actions;
-                        return actions
-                    }
-                },
                 block: {
                     name: `Block`,
                     base: 0,
@@ -7032,12 +7022,12 @@ var app = (function () {
 
     const Prepare = new Rule(
         `Prepare`, 
-        `You may spend AP on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time prior to the turn on which it triggers, at which point you are committed to taking the Prepared Action. If you are still waiting with a Prepared Action on your next turn, the AP you already spent on the Prepared Action does not refresh, but you can continue holding that Prepared Action.`
+        `You may spend 1 Action on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, you can continue holding that Prepared Action.`
     );
 
     const Actions = new Rule(
         `Actions`, 
-        `Perform Actions by spending Action Points. Your maximum AP is your [(A + B) / 2]. AP refills at the start of your turn. Unless otherwise noted, all Actions cost 1AP. The only Actions you can take outside of your turn are Prepared Actions or Defense rolls.`, 
+        `On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`, 
         [Prepare]
     );
 
@@ -7074,23 +7064,23 @@ var app = (function () {
 
     const Reflex = new Rule(
         `Reflex`, 
-        `[Perception / 2]. Default DEF if you are rendered Defenseless or get Attacked when you are out of AP. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`
+        `[Perception / 2]. This is your default DEF. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`
     );
 
     const Defense = new Rule(
         `Defense`, 
-        `1AP to defend against an ATK with Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`, 
+        `You get 2 Defense Actions per round that you may spend to roll Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`, 
         [Reflex]
     );
 
     const Bleeding = new Rule(
         `Bleeding`, 
-        `1 DMG per min caused by your HP dropping to half or some other effect. Roll [(Medicine or C) vs DMG] to stop.`
+        `When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`
     );
 
     const Recovery = new Rule(
         `Recovery`, 
-        `After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 DMG from infection.`
+        `After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 Wound from infection.`
     );
 
     const Health = new Rule(
@@ -7099,14 +7089,19 @@ var app = (function () {
         [Bleeding, Recovery]
     );
 
-    const Movement = new Rule(
-        `Movement`, 
-        `Move once per rnd up to your Speed [A + C], or spend 2AP to Run at [Speed x 2]. You may drop Prone as part of your Movement. Standing up costs 1AP.`
+    const Initiative = new Rule(
+        `Initiative`, 
+        `Everyone in combat rolls [d6 + A] to determine the turn order at the start of each new rnd.`
     );
 
-    const Time = new Rule(
-        `Time`, 
-        `Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd. Either the GN decides or rolls [A vs A] to determine who goes first. At the end of each turn, the Player chooses who will go next among those who have not had a turn yet this rnd. At the end of the rnd the last Player to act decides who will start the next round.`
+    const Movement = new Rule(
+        `Movement`, 
+        `Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`
+    );
+
+    const Rounds = new Rule(
+        `Rounds`, 
+        `Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd.`
     );
 
     const Burning = new Rule(
@@ -7146,9 +7141,10 @@ var app = (function () {
     );
 
     const Combat = [
-        Time,
-        Communication,
+        Rounds,
+        Initiative,
         Actions,
+        Communication,
         Movement,
         Attack,
         Defense,
@@ -7162,6 +7158,11 @@ var app = (function () {
         `Roll [Melee vs MATK or RATK when using a Shield] for DEF.`
     );
 
+    const DefensivePosture = new Rule(
+        `Defensive Posture`, 
+        `Skip your turn to get 1 extra Defense Action until your next turn.`
+    );
+
     const Dodge = new Rule(
         `Dodge`, 
         `Roll [Acrobatics vs MATK or RATK (Throw)] for DEF.`
@@ -7170,11 +7171,6 @@ var app = (function () {
     const Duck = new Rule(
         `Duck`, 
         `Roll [Dodge vs ATK] to move up to your Speed to get behind Cover. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`
-    );
-
-    const FullDefense = new Rule(
-        `Full Defense`, 
-        `Declare Full Defense on your turn and forego all ATKs to get a bonus = [Reflex] to all Block and Dodge rolls until your next turn.`
     );
 
     const Hide = new Rule(
@@ -7194,17 +7190,22 @@ var app = (function () {
 
     const DefensiveManeuvers = [
         Block,
+        DefensivePosture,
         Dodge,
         Duck,
-        FullDefense,
         Hide,
         Protect,
         Sneak
     ];
 
+    const AggressivePosture = new Rule(
+        `Aggressive Posture`, 
+        `Get 1 extra Action at the cost of leaving yourself Defenseless until your next turn.`
+    );
+
     const Aim = new Rule(
         `Aim`, 
-        `Spend AP to get an equal bonus to one ATK.`
+        `Spend an Action to get +3 to your next ATK against a specific target.`
     );
 
     /* src/rules/maneuvers/CalledShotTable.svelte generated by Svelte v3.15.0 */
@@ -7428,7 +7429,7 @@ var app = (function () {
 
     const Grab = new Rule(
         `Grab`, 
-        `0DMG MATK to render an enemy Defenseless. You must have a free hand to Grab. Spend 1AP per rnd to retain Grab. Roll [(Acrobatics or Melee) vs Grab] to escape.`,
+        `0DMG MATK to render an enemy Defenseless and unable to take actions except attempting escape [(Acrobatics or Melee) vs Grab]. You must have a free hand to Grab. Spend 1 Action per rnd to retain a Grab.`,
         [Hold, Tackle, Throw]
     );
 
@@ -7453,6 +7454,7 @@ var app = (function () {
     );
 
     const OffensiveManeuvers = [
+        AggressivePosture,
         Aim,
         CalledShot,
         Disarm,
@@ -7512,7 +7514,7 @@ var app = (function () {
 
     const Burning$1 = new Rule(
         `Burning`, 
-        `1 FDMG per rnd. Spend 1AP to stop, drop Prone, and roll Survival 9# to put out the flames.`
+        `1 FDMG per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`
     );
 
     const Chase = new Rule(
@@ -7732,7 +7734,7 @@ var app = (function () {
 
     const Cover = new Rule(
         `Cover`, 
-        `You can lean in and out of Cover to ATK as part of your action. All Cover except Glass makes you Concealed. If an opponent Waits until you lean out of Cover, they must make a Called Shot to hit an exposed Location. All DMG is negated against targets that are behind Cover if the Material DR is >= the weapon’s base DMG. If weapon DMG exceeds the Material DR, the Material DR acts as an Armor bonus for DMG reduction.`,
+        `You can lean in and out of Cover to ATK as part of an Action. All Cover except Glass makes you Concealed. If an opponent Waits until you lean out of Cover, they must make a Called Shot to hit an exposed Location. All DMG is negated against targets that are behind Cover if the Material DR is >= the weapon’s base DMG. If weapon DMG exceeds the Material DR, the Material DR acts as an Armor bonus for DMG reduction.`,
         [],
         CoverTable
     );
@@ -7800,7 +7802,7 @@ var app = (function () {
 
     const Stun = new Rule(
         `Stun`, 
-        `Defenseless and cannot take actions. Prone if [Stunned > 1rnd].`
+        `Defenseless and cannot take Actions. Prone if [Stunned > 1rnd].`
     );
 
     const Unarmed = new Rule(
@@ -7810,7 +7812,7 @@ var app = (function () {
 
     const Unconscious = new Rule(
         `Unconscious`, 
-        `Unaware and unable to take actions. 0 DEF. Prone.`
+        `Unaware and unable to take Actions. 0 DEF. Prone.`
     );
 
     const Unstable = new Rule(
@@ -7877,7 +7879,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "ref-page svelte-ttj5zk");
-    			add_location(div, file$e, 24, 0, 847);
+    			add_location(div, file$e, 24, 0, 855);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

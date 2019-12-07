@@ -161,16 +161,6 @@ export class Character {
             },
         },
         this.props = {
-            actions: {
-                name: `Actions`,
-                base: 1,
-                score: 1,
-                set: () => {
-                    const actions = Math.floor((this.traits.agility.score + this.traits.brains.score) / 2)
-                    this.props.actions.base = actions
-                    return actions
-                }
-            },
             block: {
                 name: `Block`,
                 base: 0,
