@@ -4740,70 +4740,113 @@ var app = (function () {
 
     // (26:4) {#each traits as trait}
     function create_each_block(ctx) {
-    	let div;
-    	let span;
+    	let div4;
+    	let div0;
+    	let span0;
     	let t0_value = ctx.char.traits[ctx.trait].name + "";
     	let t0;
     	let t1;
-    	let input;
-    	let input_max_value;
-    	let input_updating = false;
+    	let span1;
+    	let t2_value = ctx.char.traits[ctx.trait].score + "";
     	let t2;
+    	let t3;
+    	let div3;
+    	let div1;
+    	let input;
+    	let input_name_value;
+    	let input_max_value;
+    	let t4;
+    	let div2;
+    	let span2;
+    	let t6;
     	let dispose;
 
-    	function input_input_handler() {
-    		input_updating = true;
-    		ctx.input_input_handler.call(input, ctx);
+    	function input_change_input_handler() {
+    		ctx.input_change_input_handler.call(input, ctx);
     	}
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			span = element("span");
+    			div4 = element("div");
+    			div0 = element("div");
+    			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
+    			span1 = element("span");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			div3 = element("div");
+    			div1 = element("div");
     			input = element("input");
-    			t2 = space();
-    			attr_dev(span, "class", "stat-label");
-    			add_location(span, file$5, 27, 12, 746);
-    			attr_dev(input, "class", "stat-input");
-    			attr_dev(input, "type", "number");
+    			t4 = space();
+    			div2 = element("div");
+    			span2 = element("span");
+    			span2.textContent = "1   2   3   4   5   6";
+    			t6 = space();
+    			attr_dev(span0, "class", "stat-label");
+    			add_location(span0, file$5, 28, 16, 793);
+    			add_location(span1, file$5, 29, 16, 867);
+    			attr_dev(div0, "class", "stat-column-left");
+    			add_location(div0, file$5, 27, 12, 746);
+    			attr_dev(input, "class", "stat-input svelte-1nubbx5");
+    			attr_dev(input, "type", "range");
+    			attr_dev(input, "name", input_name_value = "" + (ctx.char.traits[ctx.trait].name + "Score"));
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", input_max_value = Math.min(ctx.char.traits[ctx.trait].max, ctx.char.traits[ctx.trait].score + ctx.remaining));
-    			add_location(input, file$5, 28, 12, 816);
-    			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$5, 26, 8, 709);
+    			add_location(input, file$5, 33, 20, 1025);
+    			attr_dev(div1, "class", "stat-input svelte-1nubbx5");
+    			add_location(div1, file$5, 32, 16, 980);
+    			add_location(span2, file$5, 44, 20, 1529);
+    			attr_dev(div2, "class", "stat-input svelte-1nubbx5");
+    			add_location(div2, file$5, 43, 16, 1484);
+    			attr_dev(div3, "class", "stat-column svelte-1nubbx5");
+    			add_location(div3, file$5, 31, 12, 938);
+    			attr_dev(div4, "class", "stat-block svelte-1nubbx5");
+    			add_location(div4, file$5, 26, 8, 709);
 
     			dispose = [
-    				listen_dev(input, "input", input_input_handler),
+    				listen_dev(input, "change", input_change_input_handler),
+    				listen_dev(input, "input", input_change_input_handler),
     				listen_dev(input, "input", ctx.countTraitPoints, false, false, false)
     			];
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, span);
-    			append_dev(span, t0);
-    			append_dev(div, t1);
-    			append_dev(div, input);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div0);
+    			append_dev(div0, span0);
+    			append_dev(span0, t0);
+    			append_dev(div0, t1);
+    			append_dev(div0, span1);
+    			append_dev(span1, t2);
+    			append_dev(div4, t3);
+    			append_dev(div4, div3);
+    			append_dev(div3, div1);
+    			append_dev(div1, input);
     			set_input_value(input, ctx.char.traits[ctx.trait].score);
-    			append_dev(div, t2);
+    			append_dev(div3, t4);
+    			append_dev(div3, div2);
+    			append_dev(div2, span2);
+    			append_dev(div4, t6);
     		},
     		p: function update(changed, new_ctx) {
     			ctx = new_ctx;
     			if (changed.char && t0_value !== (t0_value = ctx.char.traits[ctx.trait].name + "")) set_data_dev(t0, t0_value);
+    			if (changed.char && t2_value !== (t2_value = ctx.char.traits[ctx.trait].score + "")) set_data_dev(t2, t2_value);
+
+    			if (changed.char && input_name_value !== (input_name_value = "" + (ctx.char.traits[ctx.trait].name + "Score"))) {
+    				attr_dev(input, "name", input_name_value);
+    			}
 
     			if ((changed.char || changed.remaining) && input_max_value !== (input_max_value = Math.min(ctx.char.traits[ctx.trait].max, ctx.char.traits[ctx.trait].score + ctx.remaining))) {
     				attr_dev(input, "max", input_max_value);
     			}
 
-    			if (!input_updating && (changed.char || changed.traits)) {
+    			if (changed.char || changed.traits) {
     				set_input_value(input, ctx.char.traits[ctx.trait].score);
     			}
-
-    			input_updating = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div4);
     			run_all(dispose);
     		}
     	};
@@ -4857,7 +4900,7 @@ var app = (function () {
     			attr_dev(div0, "class", "step-title");
     			add_location(div0, file$5, 19, 4, 527);
     			add_location(h3, file$5, 23, 8, 623);
-    			attr_dev(div1, "class", "remaining svelte-slj60w");
+    			attr_dev(div1, "class", "remaining svelte-1nubbx5");
     			add_location(div1, file$5, 22, 4, 591);
     			attr_dev(div2, "class", "step");
     			add_location(div2, file$5, 18, 0, 504);
@@ -4883,7 +4926,7 @@ var app = (function () {
     		p: function update(changed, ctx) {
     			if (changed.remaining) set_data_dev(t3, ctx.remaining);
 
-    			if (changed.Math || changed.char || changed.traits || changed.remaining || changed.countTraitPoints) {
+    			if (changed.char || changed.traits || changed.Math || changed.remaining || changed.countTraitPoints) {
     				each_value = ctx.traits;
     				let i;
 
@@ -4948,7 +4991,7 @@ var app = (function () {
     		char.updateProps();
     	}
 
-    	function input_input_handler({ trait }) {
+    	function input_change_input_handler({ trait }) {
     		char.traits[trait].score = to_number(this.value);
     		$$invalidate("char", char);
     		$$invalidate("traits", traits);
@@ -4968,7 +5011,7 @@ var app = (function () {
     		traits,
     		remaining,
     		countTraitPoints,
-    		input_input_handler
+    		input_change_input_handler
     	};
     }
 
