@@ -1,38 +1,38 @@
 class RangedWeapon {
-    constructor(name, dmg, hands, rng, cal, mag, reg, notes, sz) {
-        this.name = name
-        this.dmg = dmg
-        this.hands = hands
-        this.rng = rng
-        this.cal = cal
-        this.mag = mag
-        this.reg = reg
-        this.notes = notes
-        this.sz = sz
-    }
+	constructor(name, dmg, hands, rng, cal, mag, reg, notes, sz) {
+		this.name = name
+		this.dmg = dmg
+		this.hands = hands
+		this.rng = rng
+		this.cal = cal
+		this.mag = mag
+		this.reg = reg
+		this.notes = notes
+		this.sz = sz
+	}
 }
 
 export const RangedList = [
-    new RangedWeapon(`Bolt-Action Rifle`,               3, 2, 200,  5,  `.308`,     `C`, [],                    4),
-    new RangedWeapon(`Compound Bow`,                    1, 2, 10,   1,  `Arrow`,    `C`, [],                    4),
-    new RangedWeapon(`Crossbow`,                        2, 2, 20,   1,  `Arrow`,    `C`, [],                    4),
-    new RangedWeapon(`Double-Barrel Shotgun`,           4, 2, 20,   2,  `12g`,      `C`, [`Rapid`, `Scatter`],  4),
-    new RangedWeapon(`Lever-Action Rifle`,              2, 2, 50,   10, `.357`,     `C`, [],                    3),
-    new RangedWeapon(`Pump Shotgun`,                    4, 2, 20,   6,  `12g`,      `C`, [`Scatter`],           4),
-    new RangedWeapon(`Revolver`,                        2, 1, 10,   6,  `.357`,     `C`, [],                    2),
-    new RangedWeapon(`Semi-Auto Carbine`,               1, 2, 30,   30, `9mm`,      `C`, [`Rapid`],             3),
-    new RangedWeapon(`Semi-Auto Pistol`,                1, 1, 10,   15, `9mm`,      `C`, [`Rapid`],             1),
-    new RangedWeapon(`Semi-Auto Rifle`,                 2, 2, 100,  30, `5.56`,     `C`, [`Rapid`],             3),
-    new RangedWeapon(`Semi-Auto Shotgun`,               4, 2, 20,   6,  `12g`,      `C`, [`Rapid`, `Scatter`],  4),
-    new RangedWeapon(`Target Pistol`,                   1, 2, 30,   10, `.22`,      `C`, [`Rapid`],             1),
-    new RangedWeapon(`Target Rifle`,                    1, 2, 50,   10, `.22`,      `C`, [`Rapid`],             3),
+	new RangedWeapon(`Bolt-Action Rifle`,			   3, 2, 200,  5,  `.308`,	 `C`, [],					4),
+	new RangedWeapon(`Compound Bow`,					1, 2, 10,   1,  `Arrow`,	`C`, [],					4),
+	new RangedWeapon(`Crossbow`,						2, 2, 20,   1,  `Arrow`,	`C`, [],					4),
+	new RangedWeapon(`Double-Barrel Shotgun`,		   4, 2, 20,   2,  `12g`,	  `C`, [`Rapid`, `Scatter`],  4),
+	new RangedWeapon(`Lever-Action Rifle`,			  2, 2, 50,   10, `.357`,	 `C`, [],					3),
+	new RangedWeapon(`Pump Shotgun`,					4, 2, 20,   6,  `12g`,	  `C`, [`Scatter`],		   4),
+	new RangedWeapon(`Revolver`,						2, 1, 10,   6,  `.357`,	 `C`, [],					2),
+	new RangedWeapon(`Semi-Auto Carbine`,			   1, 2, 30,   30, `9mm`,	  `C`, [`Rapid`],			 3),
+	new RangedWeapon(`Semi-Auto Pistol`,				1, 1, 10,   15, `9mm`,	  `C`, [`Rapid`],			 1),
+	new RangedWeapon(`Semi-Auto Rifle`,				 2, 2, 100,  30, `5.56`,	 `C`, [`Rapid`],			 3),
+	new RangedWeapon(`Semi-Auto Shotgun`,			   4, 2, 20,   6,  `12g`,	  `C`, [`Rapid`, `Scatter`],  4),
+	new RangedWeapon(`Target Pistol`,				   1, 2, 30,   10, `.22`,	  `C`, [`Rapid`],			 1),
+	new RangedWeapon(`Target Rifle`,					1, 2, 50,   10, `.22`,	  `C`, [`Rapid`],			 3),
 ]
 
 // TODO: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
 
 // RARE
 // new RangedWeapon(`Blowgun`, 0, `Cx2`, `Dart`, 1, 2, `Pierce. DMG Mod.`, 1),
-// new RangedWeapon(`Bolas`, 0, `Cx2`, `-`, `-`, 1, `Blunt. DMG Mod. Trip. Throw.`, 1),    
+// new RangedWeapon(`Bolas`, 0, `Cx2`, `-`, `-`, 1, `Blunt. DMG Mod. Trip. Throw.`, 1),	
 // new RangedWeapon(`Derringer`, 1, 3, `.22`, 2, 1, `-1 RATK.`, 0),
 // new RangedWeapon(`Flamethrower`, `d6x3`, 5, `Fuel`, 7, `Auto. 3yd Blast. FDMG.`, 6),
 // new RangedWeapon(`Longbow`, 1, 20, `Arrow`, 1, 2, `DMG Mod. -1 RATK.`, 3),

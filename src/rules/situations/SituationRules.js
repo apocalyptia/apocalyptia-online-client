@@ -17,21 +17,21 @@ import { Unstable } from './Unstable'
 import { Visibility } from './Visibility'
 
 export const Situations = [
-    Bleeding,
-    Burning,
-    Chase,
-    Concealed,
-    Cover,
-    Defenseless,
-    Falling,
-    FriendlyFire,
-    Needs,
-    OffHand,
-    Prone,
-    Range,
-    Stun,
-    Unarmed,
-    Unconscious,
-    Unstable,
-    Visibility
+	Bleeding,
+	Burning,
+	Chase,
+	Concealed,
+	Cover,
+	Defenseless,
+	Falling,
+	FriendlyFire,
+	Needs,
+	OffHand,
+	Prone,
+	Range,
+	Stun,
+	Unarmed,
+	Unconscious,
+	Unstable,
+	Visibility
 ]

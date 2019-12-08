@@ -7,11 +7,11 @@ import { Protect } from './Protect'
 import { Sneak } from './Sneak'
 
 export const DefensiveManeuvers = [
-    Block,
-    DefensivePosture,
-    Dodge,
-    Duck,
-    Hide,
-    Protect,
-    Sneak
+	Block,
+	DefensivePosture,
+	Dodge,
+	Duck,
+	Hide,
+	Protect,
+	Sneak
 ]

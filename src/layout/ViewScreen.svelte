@@ -1,5 +1,5 @@
 <div class='view-screen'>
-    <slot />
+	<slot />
 </div>
 
 <style>

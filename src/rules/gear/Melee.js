@@ -1,27 +1,27 @@
 class MeleeWeapon {
-    constuctor(name, dmg, hands, rng, notes, sz) {
-        this.name = name
-        this.dmg = dmg
-        this.hands = hands
-        this.rng = rng
-        this.notes = notes
-        this.sz = sz
-    }
+	constuctor(name, dmg, hands, rng, notes, sz) {
+		this.name = name
+		this.dmg = dmg
+		this.hands = hands
+		this.rng = rng
+		this.notes = notes
+		this.sz = sz
+	}
 }
 
 export const MeleeList = [
-    new MeleeWeapon(`Ax`,               5, 2, 2, [`Slow`, `Chop`],          4),
-    new MeleeWeapon(`Baseball Bat`,     3, 2, 2, [],                        3),
-    new MeleeWeapon(`Brass Knuckles`,   2, 1, 1, [`Unarmed`],               1),
-    new MeleeWeapon(`Crowbar`,          3, 1, 2, [],                        3),
-    new MeleeWeapon(`Hammer`,           2, 1, 1, [],                        2),
-    new MeleeWeapon(`Hatchet`,          2, 1, 1, [`Chop`],                  2),
-    new MeleeWeapon(`Knife`,            2, 1, 1, [`Pierce`, `Rapid`],       1),
-    new MeleeWeapon(`Machete`,          3, 1, 2, [`Chop`],                  2),
-    new MeleeWeapon(`Shield`,           1, 1, 1, [`Cover 3DR`, `+3 Block`], 4),
-    new MeleeWeapon(`Sledgehammer`,     5, 2, 2, [`Slow`],                  5),
-    new MeleeWeapon(`Spear`,            4, 2, 3, [`Pierce`],                3),
-    new MeleeWeapon(`Staff`,            2, 2, 3, [],                        3)
+	new MeleeWeapon(`Ax`,			   5, 2, 2, [`Slow`, `Chop`],		  4),
+	new MeleeWeapon(`Baseball Bat`,	 3, 2, 2, [],						3),
+	new MeleeWeapon(`Brass Knuckles`,   2, 1, 1, [`Unarmed`],			   1),
+	new MeleeWeapon(`Crowbar`,		  3, 1, 2, [],						3),
+	new MeleeWeapon(`Hammer`,		   2, 1, 1, [],						2),
+	new MeleeWeapon(`Hatchet`,		  2, 1, 1, [`Chop`],				  2),
+	new MeleeWeapon(`Knife`,			2, 1, 1, [`Pierce`, `Rapid`],	   1),
+	new MeleeWeapon(`Machete`,		  3, 1, 2, [`Chop`],				  2),
+	new MeleeWeapon(`Shield`,		   1, 1, 1, [`Cover 3DR`, `+3 Block`], 4),
+	new MeleeWeapon(`Sledgehammer`,	 5, 2, 2, [`Slow`],				  5),
+	new MeleeWeapon(`Spear`,			4, 2, 3, [`Pierce`],				3),
+	new MeleeWeapon(`Staff`,			2, 2, 3, [],						3)
 ]
 
 // RARE

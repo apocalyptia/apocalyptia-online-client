@@ -7,11 +7,11 @@ import { Taunt } from './Taunt'
 import { Torture } from './Torture'
 
 export const SocialManeuvers = [
-    Distract,
-    Encourage,
-    Interrogate,
-    Negotiate,
-    Recruit,
-    Taunt,
-    Torture
+	Distract,
+	Encourage,
+	Interrogate,
+	Negotiate,
+	Recruit,
+	Taunt,
+	Torture
 ]

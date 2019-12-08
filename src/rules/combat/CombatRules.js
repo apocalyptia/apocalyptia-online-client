@@ -10,14 +10,14 @@ import { Rounds } from './Rounds'
 import { Vehicles } from './Vehicles'
 
 export const Combat = [
-    Rounds,
-    Initiative,
-    Actions,
-    Communication,
-    Movement,
-    Attack,
-    Defense,
-    Health,
-    Damage,
-    Vehicles
+	Rounds,
+	Initiative,
+	Actions,
+	Communication,
+	Movement,
+	Attack,
+	Defense,
+	Health,
+	Damage,
+	Vehicles
 ]

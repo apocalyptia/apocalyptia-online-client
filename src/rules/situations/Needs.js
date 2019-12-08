@@ -6,7 +6,7 @@ import { Starvation } from './Starvation'
 import { Suffocation } from './Suffocation'
 
 export const Needs = new Rule(
-    `Needs`, 
-    `1 Pain for each lacking Need over a given period of time:`,
-    [Dehydration, Exhaustion, Hypothermia, Starvation, Suffocation]
+	`Needs`, 
+	`1 Pain for each lacking Need over a given period of time:`,
+	[Dehydration, Exhaustion, Hypothermia, Starvation, Suffocation]
 )
