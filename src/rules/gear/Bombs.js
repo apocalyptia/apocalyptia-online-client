@@ -1,12 +1,12 @@
-class Bomb {
-	constuctor(name, mix, dmg, blast, duration, effects, sz) {
-		this.name = name
+import Gear from './Gear.js'
+
+class Bomb extends Gear {
+	constuctor(name, mix, dmg, blast, duration, description, sz) {
+		super(name, description, sz)
 		this.mix = mix
 		this.dmg = dmg
 		this.blast = blast
 		this.duration = duration
-		this.effects = effects
-		this.sz = sz
 	}
 }
 

@@ -1,9 +1,9 @@
-class Electronic {
-	constuctor (name, hours, notes, sz) {
-		this.name = name
+import Gear from './Gear.js'
+
+class Electronic extends Gear {
+	constuctor (name, hours, description, sz) {
+		super(name, description, sz)
 		this.hours = hours
-		this.notes = notes
-		this.sz = sz
 	}
 }
 

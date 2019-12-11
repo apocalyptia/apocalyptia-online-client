@@ -1,8 +1,8 @@
-class Medical {
-	constructor(name, notes, sz) {
-		this.name = name
-		this.notes = notes
-		this.sz = sz
+import Gear from './Gear.js'
+
+class Medical extends Gear {
+	constructor(name, description, sz) {
+		super(name, description, sz)
 	}
 }
 

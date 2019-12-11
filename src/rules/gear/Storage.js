@@ -1,9 +1,9 @@
-class Storage {
-	constructor(name, slots, notes, sz) {
-		this.name = name
+import Gear from './Gear.js'
+
+class Storage extends Gear {
+	constructor(name, slots, description, sz) {
+		super(name, description, sz)
 		this.slots = slots
-		this.notes = notes
-		this.sz = sz
 	}
 }
 

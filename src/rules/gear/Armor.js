@@ -1,10 +1,10 @@
-class Armor {
-	constructor(name, dr, loc, notes, sz) {
-		this.name = name
+import Gear from './Gear.js'
+
+class Armor extends Gear {
+	constructor(name, dr, loc, description, sz) {
+		super(name, description, sz)
 		this.dr = dr
 		this.loc = loc
-		this.notes = notes
-		this.sz = sz
 	}
 }
 

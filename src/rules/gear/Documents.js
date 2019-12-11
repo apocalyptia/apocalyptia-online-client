@@ -1,8 +1,8 @@
-class Document {
-	constuctor(name, notes, sz) {
-		this.name = name
-		this.notes = notes
-		this.sz = sz
+import Gear from './Gear.js'
+
+class Document extends Gear {
+	constuctor(name, description, sz) {
+		super(name, description, sz)
 	}
 }
 

@@ -1,7 +1,8 @@
-class Attribute {
-	constructor(name, notes) {
-		this.name = name
-		this.notes = notes
+import Rule from '../Rule.js'
+
+class Attribute extends Rule {
+	constructor(name, description) {
+		super(name, description)
 	}
 }
 

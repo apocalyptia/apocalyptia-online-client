@@ -1,14 +1,14 @@
-class RangedWeapon {
-	constructor(name, dmg, hands, rng, cal, mag, reg, notes, sz) {
-		this.name = name
+import Gear from './Gear.js'
+
+class RangedWeapon extends Gear {
+	constructor(name, dmg, hands, rng, cal, mag, reg, description, sz) {
+		super(name, description, sz)
 		this.dmg = dmg
 		this.hands = hands
 		this.rng = rng
 		this.cal = cal
 		this.mag = mag
 		this.reg = reg
-		this.notes = notes
-		this.sz = sz
 	}
 }
 

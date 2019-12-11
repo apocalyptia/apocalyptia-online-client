@@ -1,10 +1,10 @@
-class Drug {
-	constuctor (name, mix, overdose, notes, sz) {
-		this.name = name
+import Gear from './Gear.js'
+
+class Drug extends Gear {
+	constuctor (name, mix, overdose, description, sz) {
+		super(name, description, sz)
 		this.mix = mix
 		this.overdose = overdose
-		this.notes = notes
-		this.sz = sz
 	}
 }
 
