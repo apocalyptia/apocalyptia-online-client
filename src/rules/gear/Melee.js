@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class MeleeWeapon extends Gear {
-	constuctor(name, dmg, hands, rng, description, sz) {
+	constructor(name, dmg, hands, rng, description, sz) {
 		super(name, description, sz)
 		this.dmg = dmg
 		this.hands = hands

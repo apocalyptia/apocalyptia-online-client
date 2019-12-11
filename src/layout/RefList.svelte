@@ -11,7 +11,7 @@
 		<div class='box' on:click={() => list = HideShow(r, list)}>
 			<span class='name'>{r.name}</span>
 			{#if r.visible}
-				<div class='notes'>{@html r.notes}</div>
+				<div class='description'>{@html r.description}</div>
 				{#if r.table}
 					<div class='separator'/>
 					<div class='table'><svelte:component this={r.table}/></div>
@@ -23,7 +23,7 @@
 							<li class='sub-li'>
 								<div class='sub-box'>
 									<span class='sub-name'>{s.name}</span>
-									<div class='sub-notes'>{@html s.notes}</div>
+									<div class='sub-notes'>{@html s.description}</div>
 								</div>
 							</li>	
 						{/each}
@@ -44,7 +44,7 @@
 		font-size: 1.2em;
 		font-weight: bold;
 	}
-	.notes {
+	.description {
 		padding-top: 25px;
 	}
 	.separator {

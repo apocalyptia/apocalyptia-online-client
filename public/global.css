@@ -80,3 +80,39 @@ button {
 	width: 33.3%;
 	text-align: center;
 }
+
+.slider-input {
+	color: transparent;
+	-webkit-appearance: none;
+	width: 90%;
+}
+.slider-input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+.slider-input::focus {
+	outline: none;
+}
+.slider-input::-ms-track {
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+.slider-input::-moz-range-thumb {
+	border: 1px solid rgb(15, 30, 15);
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+	background: lime;
+}
+.slider-input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: 1px solid rgb(15, 30, 15);
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+	background: lime;
+	margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+.slider-input:invalid {
+	background: red;
+}

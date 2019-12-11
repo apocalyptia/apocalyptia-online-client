@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class Document extends Gear {
-	constuctor(name, description, sz) {
+	constructor(name, description, sz) {
 		super(name, description, sz)
 	}
 }

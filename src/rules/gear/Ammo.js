@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class Ammo extends Gear {
-	constuctor(cal, name, description, sz) {
+	constructor(cal, name, description, sz) {
 		super(name, description, sz)
 		this.cal = cal
 	}

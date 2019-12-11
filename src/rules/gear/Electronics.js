@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class Electronic extends Gear {
-	constuctor (name, hours, description, sz) {
+	constructor (name, hours, description, sz) {
 		super(name, description, sz)
 		this.hours = hours
 	}

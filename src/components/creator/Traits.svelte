@@ -9,6 +9,7 @@
 	let remaining = traitPoints - traits.length
 
 	function countTraitPoints(event) {
+		// TODO: Fix possible? infinite loop race condition in recursion logic
 		let traitCount = 0
 		traits.forEach((trait) => { traitCount += char.traits[trait].score })
 		remaining = traitPoints - traitCount
@@ -35,7 +36,7 @@
 			<div class='stat-column value-column'>
 				<div class='stat-input'>
 					<input
-						class='stat-input'
+						class='slider-input'
 						type='range'
 						name='{char.traits[trait].name.toLowerCase()}'
 						min=1
@@ -81,9 +82,6 @@
 	.stat-column {
 		text-align: center;
 	}
-	.remaining {
-		margin-left: 2rem;
-	}
 	.stat-input {
 		text-align: center;
 	}
@@ -91,37 +89,5 @@
 		display: inline-block;
 		text-align: center;
 		width: 14%;
-	}
-	input[type=range] {
-		color: transparent;
-		-webkit-appearance: none;
-		width: 90%;
-	}
-	input[type=range]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-	}
-	input[type=range]::focus {
-		outline: none;
-	}
-	input[type=range]::-ms-track {
-		background: transparent;
-		border-color: transparent;
-		color: transparent;
-	}
-	input[type=range]::-moz-range-thumb {
-		border: 1px solid rgb(15, 30, 15);
-		height: 30px;
-		width: 30px;
-		border-radius: 5px;
-		background: lime;
-	}
-	input[type=range]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		border: 1px solid rgb(15, 30, 15);
-		height: 30px;
-		width: 30px;
-		border-radius: 5px;
-		background: lime;
-		margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 	}
 </style>

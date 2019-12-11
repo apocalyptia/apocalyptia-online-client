@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class Vehicle extends Gear {
-	constuctor(name, speed, dr, handling, mpg, fuel, seats, cargo, description='', sz='') {
+	constructor(name, speed, dr, handling, mpg, fuel, seats, cargo, description='', sz='') {
 		super(name, description, sz)
 		this.speed = speed
 		this.dr = dr

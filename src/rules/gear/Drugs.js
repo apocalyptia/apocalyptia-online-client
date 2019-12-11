@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class Drug extends Gear {
-	constuctor (name, mix, overdose, description, sz) {
+	constructor (name, mix, overdose, description, sz) {
 		super(name, description, sz)
 		this.mix = mix
 		this.overdose = overdose

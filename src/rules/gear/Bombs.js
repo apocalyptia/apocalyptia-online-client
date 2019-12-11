@@ -1,7 +1,7 @@
 import Gear from './Gear.js'
 
 class Bomb extends Gear {
-	constuctor(name, mix, dmg, blast, duration, description, sz) {
+	constructor(name, mix, dmg, blast, duration, description, sz) {
 		super(name, description, sz)
 		this.mix = mix
 		this.dmg = dmg

@@ -4770,7 +4770,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (30:1) {#each traits as trait}
+    // (31:1) {#each traits as trait}
     function create_each_block(ctx) {
     	let div4;
     	let div0;
@@ -4833,37 +4833,37 @@ var app = (function () {
     			span6 = element("span");
     			span6.textContent = "6";
     			t14 = space();
-    			attr_dev(span0, "class", "stat-label svelte-xqe81l");
-    			add_location(span0, file$5, 32, 4, 801);
-    			attr_dev(div0, "class", "stat-column name-column svelte-xqe81l");
-    			add_location(div0, file$5, 31, 3, 759);
-    			attr_dev(input, "class", "stat-input svelte-xqe81l");
+    			attr_dev(span0, "class", "stat-label svelte-105ezgy");
+    			add_location(span0, file$5, 33, 4, 874);
+    			attr_dev(div0, "class", "stat-column name-column svelte-105ezgy");
+    			add_location(div0, file$5, 32, 3, 832);
+    			attr_dev(input, "class", "slider-input");
     			attr_dev(input, "type", "range");
     			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].traits[/*trait*/ ctx[7]].name.toLowerCase());
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", "6");
     			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[1] < 0);
-    			add_location(input, file$5, 36, 5, 945);
-    			attr_dev(div1, "class", "stat-input svelte-xqe81l");
-    			add_location(div1, file$5, 35, 4, 915);
-    			attr_dev(span1, "class", "svelte-xqe81l");
-    			add_location(span1, file$5, 48, 5, 1266);
-    			attr_dev(span2, "class", "svelte-xqe81l");
-    			add_location(span2, file$5, 49, 5, 1286);
-    			attr_dev(span3, "class", "svelte-xqe81l");
-    			add_location(span3, file$5, 50, 5, 1306);
-    			attr_dev(span4, "class", "svelte-xqe81l");
-    			add_location(span4, file$5, 51, 5, 1326);
-    			attr_dev(span5, "class", "svelte-xqe81l");
-    			add_location(span5, file$5, 52, 5, 1346);
-    			attr_dev(span6, "class", "svelte-xqe81l");
-    			add_location(span6, file$5, 53, 5, 1366);
-    			attr_dev(div2, "class", "stat-input svelte-xqe81l");
-    			add_location(div2, file$5, 47, 4, 1236);
-    			attr_dev(div3, "class", "stat-column value-column svelte-xqe81l");
-    			add_location(div3, file$5, 34, 3, 872);
-    			attr_dev(div4, "class", "stat-block svelte-xqe81l");
-    			add_location(div4, file$5, 30, 2, 731);
+    			add_location(input, file$5, 37, 5, 1018);
+    			attr_dev(div1, "class", "stat-input svelte-105ezgy");
+    			add_location(div1, file$5, 36, 4, 988);
+    			attr_dev(span1, "class", "svelte-105ezgy");
+    			add_location(span1, file$5, 49, 5, 1341);
+    			attr_dev(span2, "class", "svelte-105ezgy");
+    			add_location(span2, file$5, 50, 5, 1361);
+    			attr_dev(span3, "class", "svelte-105ezgy");
+    			add_location(span3, file$5, 51, 5, 1381);
+    			attr_dev(span4, "class", "svelte-105ezgy");
+    			add_location(span4, file$5, 52, 5, 1401);
+    			attr_dev(span5, "class", "svelte-105ezgy");
+    			add_location(span5, file$5, 53, 5, 1421);
+    			attr_dev(span6, "class", "svelte-105ezgy");
+    			add_location(span6, file$5, 54, 5, 1441);
+    			attr_dev(div2, "class", "stat-input svelte-105ezgy");
+    			add_location(div2, file$5, 48, 4, 1311);
+    			attr_dev(div3, "class", "stat-column value-column svelte-105ezgy");
+    			add_location(div3, file$5, 35, 3, 945);
+    			attr_dev(div4, "class", "stat-block svelte-105ezgy");
+    			add_location(div4, file$5, 31, 2, 804);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
@@ -4922,7 +4922,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(30:1) {#each traits as trait}",
+    		source: "(31:1) {#each traits as trait}",
     		ctx
     	});
 
@@ -4963,14 +4963,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$5, 24, 2, 606);
+    			add_location(h2, file$5, 25, 2, 679);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$5, 23, 1, 579);
-    			add_location(h3, file$5, 27, 2, 657);
-    			attr_dev(div1, "class", "remaining svelte-xqe81l");
-    			add_location(div1, file$5, 26, 1, 631);
+    			add_location(div0, file$5, 24, 1, 652);
+    			add_location(h3, file$5, 28, 2, 730);
+    			attr_dev(div1, "class", "remaining svelte-105ezgy");
+    			add_location(div1, file$5, 27, 1, 704);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$5, 22, 0, 559);
+    			add_location(div2, file$5, 23, 0, 632);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5111,79 +5111,157 @@ var app = (function () {
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (33:4) {#if char.traits[trait].name == char.skills[skill].parent}
+    // (38:4) {#if char.traits[trait].name == char.skills[skill].parent}
     function create_if_block$1(ctx) {
-    	let div;
-    	let span;
-    	let t0_value = /*char*/ ctx[0].skills[/*skill*/ ctx[11]].name + "";
+    	let div4;
+    	let div0;
+    	let span0;
+    	let t0_value = /*char*/ ctx[0].skills[/*skill*/ ctx[12]].name + "";
     	let t0;
     	let t1;
+    	let div3;
+    	let div1;
     	let input;
-    	let input_max_value;
-    	let input_updating = false;
+    	let input_name_value;
+    	let input_invalid_value;
+    	let t2;
+    	let div2;
+    	let span1;
+    	let t4;
+    	let span2;
+    	let t6;
+    	let span3;
+    	let t8;
+    	let span4;
+    	let t10;
+    	let span5;
+    	let t12;
+    	let span6;
     	let dispose;
 
-    	function input_input_handler() {
-    		input_updating = true;
-    		/*input_input_handler*/ ctx[7].call(input, /*skill*/ ctx[11]);
+    	function input_change_input_handler() {
+    		/*input_change_input_handler*/ ctx[7].call(input, /*skill*/ ctx[12]);
     	}
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			span = element("span");
+    			div4 = element("div");
+    			div0 = element("div");
+    			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
+    			div3 = element("div");
+    			div1 = element("div");
     			input = element("input");
-    			attr_dev(span, "class", "stat-label");
-    			add_location(span, file$6, 34, 6, 938);
-    			attr_dev(input, "class", "stat-input");
-    			attr_dev(input, "type", "number");
+    			t2 = space();
+    			div2 = element("div");
+    			span1 = element("span");
+    			span1.textContent = "1";
+    			t4 = space();
+    			span2 = element("span");
+    			span2.textContent = "2";
+    			t6 = space();
+    			span3 = element("span");
+    			span3.textContent = "3";
+    			t8 = space();
+    			span4 = element("span");
+    			span4.textContent = "4";
+    			t10 = space();
+    			span5 = element("span");
+    			span5.textContent = "5";
+    			t12 = space();
+    			span6 = element("span");
+    			span6.textContent = "6";
+    			attr_dev(span0, "class", "stat-label svelte-3smw6b");
+    			add_location(span0, file$6, 40, 7, 1158);
+    			attr_dev(div0, "class", "stat-column name-column svelte-3smw6b");
+    			add_location(div0, file$6, 39, 6, 1113);
+    			attr_dev(input, "class", "slider-input");
+    			attr_dev(input, "type", "range");
+    			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[12]].name.toLowerCase());
     			attr_dev(input, "min", "0");
-    			attr_dev(input, "max", input_max_value = Math.min(/*char*/ ctx[0].traits[/*trait*/ ctx[8]].score, /*char*/ ctx[0].skills[/*skill*/ ctx[11]].score + /*remaining*/ ctx[1]));
-    			add_location(input, file$6, 35, 6, 1002);
-    			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$6, 33, 5, 907);
+    			attr_dev(input, "max", "6");
+    			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[1] < 0 || this.value > /*char*/ ctx[0].traits[/*trait*/ ctx[9]].score);
+    			add_location(input, file$6, 44, 8, 1314);
+    			attr_dev(div1, "class", "stat-input svelte-3smw6b");
+    			add_location(div1, file$6, 43, 7, 1281);
+    			attr_dev(span1, "class", "svelte-3smw6b");
+    			add_location(span1, file$6, 56, 8, 1716);
+    			attr_dev(span2, "class", "svelte-3smw6b");
+    			add_location(span2, file$6, 57, 8, 1739);
+    			attr_dev(span3, "class", "svelte-3smw6b");
+    			add_location(span3, file$6, 58, 8, 1762);
+    			attr_dev(span4, "class", "svelte-3smw6b");
+    			add_location(span4, file$6, 59, 8, 1785);
+    			attr_dev(span5, "class", "svelte-3smw6b");
+    			add_location(span5, file$6, 60, 8, 1808);
+    			attr_dev(span6, "class", "svelte-3smw6b");
+    			add_location(span6, file$6, 61, 8, 1831);
+    			attr_dev(div2, "class", "stat-input svelte-3smw6b");
+    			add_location(div2, file$6, 55, 7, 1683);
+    			attr_dev(div3, "class", "stat-column value-column svelte-3smw6b");
+    			add_location(div3, file$6, 42, 6, 1235);
+    			attr_dev(div4, "class", "stat-block svelte-3smw6b");
+    			add_location(div4, file$6, 38, 5, 1082);
 
     			dispose = [
-    				listen_dev(input, "input", input_input_handler),
-    				listen_dev(input, "input", /*countSkillPoints*/ ctx[4], false, false, false)
+    				listen_dev(input, "change", input_change_input_handler),
+    				listen_dev(input, "input", input_change_input_handler),
+    				listen_dev(input, "input", prevent_default(/*input_handler*/ ctx[8]), false, true, false)
     			];
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, span);
-    			append_dev(span, t0);
-    			append_dev(div, t1);
-    			append_dev(div, input);
-    			set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[11]].score);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div0);
+    			append_dev(div0, span0);
+    			append_dev(span0, t0);
+    			append_dev(div4, t1);
+    			append_dev(div4, div3);
+    			append_dev(div3, div1);
+    			append_dev(div1, input);
+    			set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[12]].score);
+    			append_dev(div3, t2);
+    			append_dev(div3, div2);
+    			append_dev(div2, span1);
+    			append_dev(div2, t4);
+    			append_dev(div2, span2);
+    			append_dev(div2, t6);
+    			append_dev(div2, span3);
+    			append_dev(div2, t8);
+    			append_dev(div2, span4);
+    			append_dev(div2, t10);
+    			append_dev(div2, span5);
+    			append_dev(div2, t12);
+    			append_dev(div2, span6);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].skills[/*skill*/ ctx[11]].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].skills[/*skill*/ ctx[12]].name + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*char, remaining*/ 3 && input_max_value !== (input_max_value = Math.min(/*char*/ ctx[0].traits[/*trait*/ ctx[8]].score, /*char*/ ctx[0].skills[/*skill*/ ctx[11]].score + /*remaining*/ ctx[1]))) {
-    				attr_dev(input, "max", input_max_value);
+    			if (dirty & /*char*/ 1 && input_name_value !== (input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[12]].name.toLowerCase())) {
+    				attr_dev(input, "name", input_name_value);
     			}
 
-    			if (!input_updating && dirty & /*char, skills*/ 9) {
-    				set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[11]].score);
+    			if (dirty & /*remaining, char*/ 3 && input_invalid_value !== (input_invalid_value = /*remaining*/ ctx[1] < 0 || this.value > /*char*/ ctx[0].traits[/*trait*/ ctx[9]].score)) {
+    				attr_dev(input, "invalid", input_invalid_value);
     			}
 
-    			input_updating = false;
+    			if (dirty & /*char, skills*/ 9) {
+    				set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[12]].score);
+    			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div4);
     			run_all(dispose);
     		}
     	};
@@ -5192,17 +5270,17 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(33:4) {#if char.traits[trait].name == char.skills[skill].parent}",
+    		source: "(38:4) {#if char.traits[trait].name == char.skills[skill].parent}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:3) {#each skills as skill}
+    // (37:3) {#each skills as skill}
     function create_each_block_1(ctx) {
     	let if_block_anchor;
-    	let if_block = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name == /*char*/ ctx[0].skills[/*skill*/ ctx[11]].parent && create_if_block$1(ctx);
+    	let if_block = /*char*/ ctx[0].traits[/*trait*/ ctx[9]].name == /*char*/ ctx[0].skills[/*skill*/ ctx[12]].parent && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -5214,7 +5292,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*char*/ ctx[0].traits[/*trait*/ ctx[8]].name == /*char*/ ctx[0].skills[/*skill*/ ctx[11]].parent) {
+    			if (/*char*/ ctx[0].traits[/*trait*/ ctx[9]].name == /*char*/ ctx[0].skills[/*skill*/ ctx[12]].parent) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -5237,18 +5315,19 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(32:3) {#each skills as skill}",
+    		source: "(37:3) {#each skills as skill}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:1) {#each traits as trait}
+    // (32:1) {#each traits as trait}
     function create_each_block$1(ctx) {
     	let div1;
     	let div0;
-    	let t0_value = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name + "";
+    	let h3;
+    	let t0_value = /*char*/ ctx[0].traits[/*trait*/ ctx[9]].name + "";
     	let t0;
     	let t1;
     	let t2;
@@ -5264,6 +5343,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			div0 = element("div");
+    			h3 = element("h3");
     			t0 = text(t0_value);
     			t1 = text(" Skills");
     			t2 = space();
@@ -5273,16 +5353,18 @@ var app = (function () {
     			}
 
     			t3 = space();
-    			attr_dev(div0, "class", "parent-trait-title svelte-3s9tkm");
-    			add_location(div0, file$6, 28, 3, 732);
-    			attr_dev(div1, "class", "skill-section svelte-3s9tkm");
-    			add_location(div1, file$6, 27, 2, 701);
+    			add_location(h3, file$6, 34, 4, 935);
+    			attr_dev(div0, "class", "parent-trait-title svelte-3smw6b");
+    			add_location(div0, file$6, 33, 3, 898);
+    			attr_dev(div1, "class", "skill-section svelte-3smw6b");
+    			add_location(div1, file$6, 32, 2, 867);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
-    			append_dev(div0, t0);
-    			append_dev(div0, t1);
+    			append_dev(div0, h3);
+    			append_dev(h3, t0);
+    			append_dev(h3, t1);
     			append_dev(div1, t2);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -5292,9 +5374,9 @@ var app = (function () {
     			append_dev(div1, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].traits[/*trait*/ ctx[9]].name + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*char, traits, skills, Math, remaining, countSkillPoints*/ 31) {
+    			if (dirty & /*char, traits, skills, remaining, countSkillPoints*/ 31) {
     				each_value_1 = /*skills*/ ctx[3];
     				let i;
 
@@ -5327,7 +5409,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(27:1) {#each traits as trait}",
+    		source: "(32:1) {#each traits as trait}",
     		ctx
     	});
 
@@ -5368,14 +5450,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$6, 21, 2, 576);
+    			add_location(h2, file$6, 26, 2, 742);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$6, 20, 1, 549);
-    			add_location(h3, file$6, 24, 2, 627);
-    			attr_dev(div1, "class", "remaining svelte-3s9tkm");
-    			add_location(div1, file$6, 23, 1, 601);
+    			add_location(div0, file$6, 25, 1, 715);
+    			add_location(h3, file$6, 29, 2, 793);
+    			attr_dev(div1, "class", "remaining svelte-3smw6b");
+    			add_location(div1, file$6, 28, 1, 767);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$6, 19, 0, 529);
+    			add_location(div2, file$6, 24, 0, 695);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5398,7 +5480,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*remaining*/ 2) set_data_dev(t3, /*remaining*/ ctx[1]);
 
-    			if (dirty & /*skills, char, traits, Math, remaining, countSkillPoints*/ 31) {
+    			if (dirty & /*skills, char, traits, remaining, countSkillPoints*/ 31) {
     				each_value = /*traits*/ ctx[2];
     				let i;
 
@@ -5452,7 +5534,7 @@ var app = (function () {
     	let startingSkillPoints = char.traits.brains.score * 3;
     	let remaining = startingSkillPoints;
 
-    	function countSkillPoints() {
+    	function countSkillPoints(event) {
     		let skillCount = 0;
 
     		skills.forEach(skill => {
@@ -5460,14 +5542,22 @@ var app = (function () {
     		});
 
     		$$invalidate(1, remaining = startingSkillPoints - skillCount);
+
+    		if (remaining < 0) {
+    			$$invalidate(0, char.skills[event.target.name].score = 1, char);
+    			countSkillPoints(event);
+    		}
+
     		char.updateProps();
     	}
 
-    	function input_input_handler(skill) {
+    	function input_change_input_handler(skill) {
     		char.skills[skill].score = to_number(this.value);
     		$$invalidate(0, char);
     		$$invalidate(3, skills);
     	}
+
+    	const input_handler = event => countSkillPoints(event);
 
     	$$self.$capture_state = () => {
     		return {};
@@ -5487,7 +5577,8 @@ var app = (function () {
     		countSkillPoints,
     		unsubscribe,
     		startingSkillPoints,
-    		input_input_handler
+    		input_change_input_handler,
+    		input_handler
     	];
     }
 
@@ -6128,13 +6219,74 @@ var app = (function () {
     	}
     }
 
-    class Armor {
-    	constructor(name, dr, loc, notes, sz) {
-    		this.name = name;
+    class Gear extends Rule {
+        constructor(name, description, sz) {
+            super(name, description);
+            this.sz = sz;
+        }
+    }
+
+    class Accessory extends Gear {
+    	constructor(name, description, sz) {
+    		super(name, description, sz);
+    	}
+    }
+
+    const AccessoryList = [
+    	new Accessory(`Bayonet`,			`Knife. +1 DMG and Pierce for MATKs.`,				1),
+    	new Accessory(`Bipod`,				`Ignore Size requirement. 1rnd setup.`,				1),
+    	new Accessory(`Drum Magazine`,		`Gun specific. 3x Ammo magazine capacity.`,			1),
+    	new Accessory(`Foregrip`,			`-1 Size requirement for 2h Gun.`,					0),
+    	new Accessory(`Holosight`,			`+1 RATK.`,											0),
+    	new Accessory(`Laser`,				`+1 RATK. -6 RATK to Blind for d6rnds.`,			0),
+    	new Accessory(`Scope`,				`+3 Aimed RATKs and Perception(See).`,				1),
+    	new Accessory(`Single-Point Sling`,	`Draw or stow a 2h Gun without using an Action.`,	0),
+    	new Accessory(`Suppressor`,			`Firing a Gun does not break Concealment.`,			0)
+    ];
+
+    class Ammo extends Gear {
+    	constructor(cal, name, description, sz) {
+    		super(name, description, sz);
+    		this.cal = cal;
+    	}
+    }
+
+    const AmmoList = [
+    	new Ammo(`Arrow`,	`Broadhead`,		`+1 DMG. Pierce.`,	.1),
+    	new Ammo(`Arrow`,	`Standard`,			`Basic ammo.`,		.1),
+    	new Ammo(`.22`,		`Standard`,			`Basic ammo.`,		.005),
+    	new Ammo(`.22`,		`Hollow Point`,		`+1 DMG.`,			.005),
+    	new Ammo(`.22`,		`Match`,			`+1 RATK.`,			.005),
+    	new Ammo(`9mm`,		`Standard`,			`Basic ammo.`,		.01),
+    	new Ammo(`9mm`,		`Hollow Point`,		`+1 DMG.`,			.01),
+    	new Ammo(`9mm`,		`Match`,			`+1 RATK.`,			.01),
+    	new Ammo(`.357`,	`Standard`,			`Basic ammo.`,		.01),
+    	new Ammo(`.357`,	`Hollow Point`,		`+1 DMG.`,			.01),
+    	new Ammo(`5.56`,	`Armor Piercing`,	`Pierce.`,			.02),
+    	new Ammo(`5.56`,	`Standard`,			`Basic ammo.`,		.02),
+    	new Ammo(`5.56`,	`Hollow Point`,		`+1 DMG.`,			.02),
+    	new Ammo(`5.56`,	`Match`,			`+1 RATK.`,			.02),
+    	new Ammo(`.308`,	`Armor Piercing`,   `Pierce.`,			.02),
+    	new Ammo(`.308`,	`Standard`,		 	`Basic ammo.`,		.02),
+    	new Ammo(`.308`,	`Hollow Point`,		`+1 DMG.`,			.02),
+    	new Ammo(`.308`,	`Match`,			`+1 RATK.`,			.02),
+    	new Ammo(`12g`,		`Buckshot`,			 `Scatter.`,		.05),
+    	new Ammo(`12g`,		`Slug`,				 `RNG x2.`,			.05)
+    ];
+
+
+    // OLD
+    // new Ammo(`.22`,	 `Tracer`,			`+1 Auto RATK.`,.005),
+    // new Ammo(`12g`,	 `Birdshot`,		  `Basic ammo. Scatter.`,.05),
+    // new Ammo(`12g`,	 `Flare`,			 `3FDMG/rnd for 3rnds. 50yd light radius.`,.05),
+    // new Ammo(`12g`,	 `Rubber`,			`Blunt.`,.05),
+    // new Ammo(`5.56`,	`Tracer`,			`+1 Auto RATK.`,.02),
+
+    class Armor extends Gear {
+    	constructor(name, dr, loc, description, sz) {
+    		super(name, description, sz);
     		this.dr = dr;
     		this.loc = loc;
-    		this.notes = notes;
-    		this.sz = sz;
     	}
     }
 
@@ -6180,6 +6332,391 @@ var app = (function () {
     // new Armor(`Knuckle Gloves`, `2`, `Arms`, `2DMG Punch. Blunt. FR.`, 1)
     // new Armor(`Land Warrior Helmet`, `4`, `Head`, `FR. Nightvision Goggles. Radio.`, 2)
     // new Armor(`Spiked Jacket`, `2, 2`, `Torso, Arms`, `+1 DMG Grab.`, 3)
+
+    class Bomb extends Gear {
+    	constructor(name, mix, dmg, blast, duration, description, sz) {
+    		super(name, description, sz);
+    		this.mix = mix;
+    		this.dmg = dmg;
+    		this.blast = blast;
+    		this.duration = duration;
+    	}
+    }
+
+    const BombList = [
+    	new Bomb(`Flashbang`,   9,  `0`,		`6yd`,	  `d6rnds`,   `1rnd fuse. Blind. Stun.`,  1),
+    	new Bomb(`Frag`,		9,  `d6x3`,	 `15yd`,	 `instant`,  `1rnd fuse. Pierce.`,	   1),
+    	new Bomb(`Molotov`,	 1,  `d6`,	   `3yd`,	  `1min`,	 `1FDMG/rnd.`,			   2),
+    	new Bomb(`Smoke`,	   3,  `0`,		`1yd/rnd`,  `d6mins`,   `Blind.`,				   1),
+    	new Bomb(`Teargas`,	 15, `1`,		`1yd/rnd`,  `d6mins`,   `Blind. Suffocation`,	   1),
+    	new Bomb(`Thermite`,	6,  `d6x6`,	 `1yd`,	  `6rnds`,	`1rnd fuse. FDMG.`,		 1),
+    ];
+
+    // OLD
+    // new Bomb(`Chlorine`,	18, `toxin`,	`1yd/rnd`,  `d6+3mins`, `Blind. Suffocation x2. Stun.`, 1)
+    // new Bomb(`Claymore`,	18, `d6x9`,	 `30yd`,	 `instant`,  `30yd 90° Blast. Loud.`,		2)
+    // new Bomb(`Dynamite`,	12, `d6x6`,	 `30yd`,	 `instant`,  `10rnd fuse.`,				  1)
+    // new Bomb(`Firecracker`, 6,  `0`,		`0yd`,	  `d6+3rnds`, `Mimics sound of gunfire.`,	 0)
+    // new Bomb(`Landmine`,	15, `d6x6`,	 `3yd`,	  `instant`,  ``,							 2)
+    // new Bomb(`Sky Rocket`,  12, `d6x3`,	 `60yd`,	 `instant`,  `-1 RATK. RNG:50. Blind.`,	  1)
+
+    class Document extends Gear {
+    	constructor(name, description, sz) {
+    		super(name, description, sz);
+    	}
+    }
+
+    const DocumentList = [
+    	new Document(`Body in Balance`,			 `+1 Athletics`,					 1),
+    	new Document(`Book of Ninja`,			   `+1 Stealth`,					   1),
+    	new Document(`Defensive Driving`,		   `+1 Drive`,						 1),
+    	new Document(`Dog Tricks`,				  `+1 Tame`,						  1),
+    	new Document(`Effective Habits`,			`+1 to any one Skill`,			  1),
+    	new Document(`Engineering Concepts`,		`+1 Build`,						 1),
+    	new Document(`General Science Knowledge`,   `+1 Science`,					   1),
+    	new Document(`Gray\`s Anatomy`,			 `+1 Medicine`,					  1),
+    	new Document(`Home Security`,			   `+1 Larceny`,					   1),
+    	new Document(`How to Win Friends`,		  `+1 Socialize`,					 1),
+    	new Document(`How Yoga Works`,			  `+1 Acrobatics`,					1),
+    	new Document(`Leadership Basics`,		   `+1 Leadership`,					1),
+    	new Document(`Personal Defense`,			`+1 Ranged`,						1),
+    	new Document(`SAS Survival Guide`,		  `+1 Survival`,					  1),
+    	new Document(`Stand-up Comedy`,			 `+1 Entertain`,					 1),
+    	new Document(`Tao of Jeet Kune Do`,		 `+1 Melee`,						 1),
+    	new Document(`Yellow Pages`,				`+1 Scavenging. Regional.`,		 1),
+    	new Document(`Zen Mind`,					`+1 Perception`,					1),
+    	new Document(`Bilingual Dictionary`,		`Multilingual Ability`,			 1),
+    	new Document(`Classic Novel`,			   `+1 Psyche`,						1),
+    	new Document(`Holy Book`,				   `-1 Psyche`,						1),
+    	new Document(`Map (Atlas)`,				 `+1 Survival(Navigate)`,			1),
+    	new Document(`Map (Local)`,				 `+1 Survival(Navigate). Regional.`, 0),
+    	new Document(`Map (Topographic)`,		   `+3 Survival(Navigate). Regional.`, 0),
+    ];
+
+    class Drug extends Gear {
+    	constructor (name, mix, overdose, description, sz) {
+    		super(name, description, sz);
+    		this.mix = mix;
+    		this.overdose = overdose;
+    	}
+    }
+
+    const DrugsList = [
+    	new Drug(`Alcohol`,			 9,  true,   `Antibiotic or Fuel. C9# or Unstable.`,				 1),
+    	new Drug(`Antibiotic`,		  12, false,  `Prevents infection in Recovery for 1 day.`,			0),
+    	new Drug(`Hallucinogen`,		15, false,  `+1 Perform and Tame. -3 all other rolls. -1 Psyche.`,  0),
+    	new Drug(`Painkiller`,		  9,  true,   `Ignore 1 Pain penalty.`,							   0),
+    	new Drug(`Sedative`,			12, true,   `D#6/rnd to take any action.`,						  0),
+    	new Drug(`Stimulant`,		   9,  true,   `Ignore Exhaustion penalties for 6hrs.`,				0)
+    ];
+
+    // OLD
+    // new Drug(`Chloroform`,		  15, true,   `Liquid. C#12 or Unconscious. Takes d6rnds.`,	   0)
+    // new Drug(`Cyanide`,			 18, true,   `Pill. d6 Torso DMG/rnd for 5rnds.`,				0)
+    // new Drug(`Epinephrine`,		 15, true,   `Injection. Rescuscitate within C+3mins.`,		  0)
+    // new Drug(`Iodine`,			  6,  false,  `Purify 1gal of Water. Prevents Radiation.`,		0)
+    // new Drug(`Potassium Chloride`,  18, true,   `Injection. d6 Torso DMG/min for 5mins.`,		   0)
+    // new Drug(`Sodium Pentothal`,	15, true,   `Injection. -6 Entertain(Lie).`,					0)
+
+    class Electronic extends Gear {
+    	constructor (name, hours, description, sz) {
+    		super(name, description, sz);
+    		this.hours = hours;
+    	}
+    }
+
+    const ElectronicsList = [
+    	new Electronic(`Cellphone`,			 3,	  `1yd light, camera, remote control.`,	   1),
+    	new Electronic(`Emergency Radio`,	   6,	  `AM/FM/Shortwave. 1yd light.`,			  1),
+    	new Electronic(`Flashlight`,			3,	  `10yd light. -3 RATK to Blind 1rnd.`,	   1),
+    	new Electronic(`Geiger Counter`,		24,	 `Science 6# to detect Radiation in 1yd.`,   2),
+    	new Electronic(`Hand Radio`,			9,	  `9-channel 2-way radio. 3 mile range.`,	 1),
+    	new Electronic(`Headlamp`,			  3,	  `3yd light. Hands free.`,				   0),
+    	new Electronic(`Lantern`,			   6,	  `3yd light radius.`,						2),
+    	new Electronic(`Megaphone`,			 12,	 `+1 Leadership when speaking to a crowd.`,  2),
+    	new Electronic(`Multimeter`,			48,	 `+3 Science(Technology). Detect voltage.`,  1),
+    	new Electronic(`Nightvision Goggles`,   36,	 `Ignore Visibility penalties in darkness.`, 1),
+    	new Electronic(`Quadcopter Drone`,	  .25,	`Science 6# to use. Camera. 90yd Speed.`,   2),
+    	new Electronic(`RC Car`,				.5,	 `Science 3# to use. 45yd Speed.`,		   3),
+    	new Electronic(`Solar Lamp`,			9,	  `1yd light radius. 1day charge.`,		   1),
+    	new Electronic(`Stun Gun`,			  .25,	`MATK. C9# or Stun for 1rnd.`,			  1)
+    ];
+
+    // OLD
+    //  new Electronic(`Radio Jammer`,		  3,	  `Blocks radio signal within 100yds.`,	   1)
+
+    class Equipment extends Gear {
+    	constructor(name, description, sz) {
+    		super(name, description, sz);
+    	}
+    }
+
+    const EquipmentList = [
+    	new Equipment(`Air Horn`,		   `Emits a loud shriek up to a 1 mile radius.`,	   1),
+    	new Equipment(`Balaclava`,		  `+1 Stealth. Mask. CR.`,							0),
+    	new Equipment(`Bandanna`,		   `+1 C vs airborne toxins. Can use as Bandage.`,	 0),
+    	new Equipment(`Baseball Cap`,	   `Reduce Visibility(Rain and Sun) penalty by 1.`,	0),
+    	new Equipment(`Bicycle`,			`Athletics 3#. Speed x3yds (x.7mph). 2h.`,		  8),
+    	new Equipment(`Binoculars`,		 `+3 Perception(See) at 50+yds.`,					1),
+    	new Equipment(`Bobby Pin`,		  `Allows Larceny(Disable) roll on key locks.`,	   0),
+    	new Equipment(`Bolt Cutters`,	   `C9# to cut metal (Handcuffs, Padlocks, etc).`,	 3),
+    	new Equipment(`Cage Trap`,		  `+3 Survival(Forage). Takes 1day.`,				 6),
+    	new Equipment(`Candle`,			 `1yd light radius for 6hrs.`,					   0),
+    	new Equipment(`Candy`,			  `Restores 1 Luck point. 1/day.`,					0),
+    	new Equipment(`Carabiner`,		  `+1 Athletics(Climb and Rappel). Holds 50Sz.`,	  0),
+    	new Equipment(`Compass`,			`+3 Survival(Navigate). Always points North.`,	  0),
+    	new Equipment(`Cowboy Hat`,		 `Reduce Visibility(Rain and Sun) penalty by 3.`,	0),
+    	new Equipment(`Chalk`,			  `Used to temporarily write on any surface.`,		0),
+    	new Equipment(`Chemical`,		   `Substances used for Science(Chemistry).`,		  1),
+    	new Equipment(`Choker Leash`,	   `+3 Tame. Grabbed. C +3 vs C to control.`,		  1),
+    	new Equipment(`Duct Tape`,		  `+1 Build/1yd or use 2yds as Handcuffs. 60yds.`,	1),
+    	new Equipment(`Dust Mask`,		  `+3 C vs airborne toxins. Mask.`,				   1),
+    	new Equipment(`Ear Plugs`,		  `No Deafness from noise. -3 Perception(Hear).`,	 9),
+    	new Equipment(`Egg Timer`,		  `Set up to 60mins. Loud ringing for 1min.`,		 1),
+    	new Equipment(`Fire-stick`,		 `+3 Survival(Camp). Magnesium rod and steel.`,	  0),
+    	new Equipment(`Fishing Pole`,	   `+1 Survival(Forage) at river, lake, or ocean.`,	2),
+    	new Equipment(`Flare Gun`,		  `Pistol. RNG:3. Ammo: 12g Flares or 1 use 12g.`,	1),
+    	new Equipment(`Flippers`,		   `+3 Athletics(Swim). -6 walking Speed.`,			2),
+    	new Equipment(`Food`,			   `Contains 1 Food to feed a person for a day.`,	  1),
+    	new Equipment(`Gas Mask`,		   `+6 C vs airborne toxins. Mask. -1 Perception.`,	1),
+    	new Equipment(`Glass Cutter`,	   `Cuts glass quietly.`,							  0),
+    	new Equipment(`Goggles`,			`+3 C to resist toxins in eyes.`,				   1),
+    	new Equipment(`Grappling Hook`,	 `+3 Athletics(Climb and Rappel). Holds 100Sz.`,	 2),
+    	new Equipment(`Gun Cleaning Kit`,   `Gun gets +1 RATK for 1day. Takes 1hr/gun.`,		1),
+    	new Equipment(`Hacksaw`,			`1DMG/rnd of sawing to almost any material.`,	   2),
+    	new Equipment(`Hammock`,			`Suspended sleeping device for 1 person.`,		  1),
+    	new Equipment(`Handcuffs`,		  `Grabbed. A15# to escape. Larceny(Disable) 12#.`,   1),
+    	new Equipment(`Leather Belt`,	   `1yd strap. Stops Limb Bleeding. Holds 50Sz.`,	  1),
+    	new Equipment(`Lifejacket`,		 `+6 Athletics(Swim). Prevents drowning.`,		   2),
+    	new Equipment(`Lighter`,			`Makes a small fire. 1yd radius light.`,			0),
+    	new Equipment(`Lockpicks`,		  `+3 Larceny(Disable) key locks. 6 picks.`,		  1),
+    	new Equipment(`Luxury Item`,		`Toilet paper, cigarette, etc. +1 Psyche 1/wk.`,	0),
+    	new Equipment(`Magnifying Glass`,   `+6 Perception(See) to inspect tiny details.`,	  1),
+    	new Equipment(`Makeup`,			 `+1 Socialize and Entertain for 6hrs. 30 uses.`,	0),
+    	new Equipment(`Marbles`,			`30/bag. 2sqyd area. A12# or fall Prone.`,		  1),
+    	new Equipment(`Marker`,			 `Used to permanently write on any surface.`,		0),
+    	new Equipment(`Matchbook`,		  `+1 Survival(Camp). 1yd light radius, 3rnds.`,	  0),
+    	new Equipment(`Measuring Cup`,	  `+3 Science(Chemistry). Marked glass cup.`,		 1),
+    	new Equipment(`Monocular`,		  `+1 Perception(See) at 25+yds.`,					1),
+    	new Equipment(`Multi-Tool`,		 `+1 Larceny(Disable), Build, Science(Tech).`,	   1),
+    	new Equipment(`Musical Instrument`, `+1 Entertain(Distract and Inspire).`,			  1),
+    	new Equipment(`Mylar Blanket`,	  `CR. 1yd x 2yd reflective foil sheet.`,			 0),
+    	new Equipment(`Notebook`,		   `100 pages of paper with a wire binding.`,		  1),
+    	new Equipment(`Padlock`,			`10HP. 6DR. Larceny(Disable) 9#.`,				  1),
+    	new Equipment(`Paracord`,		   `60yd coil. Holds 50Sz.`,						   1),
+    	new Equipment(`Part`,			   `Scrap used for Build and Science(Tech).`,		  1),
+    	new Equipment(`Pepper Spray`,	   `+1 Ranged(Gun). RNG:1. 3 Pain. 3 uses. Toxin.`,	0),
+    	new Equipment(`Pocket Mirror`,	  `Perception(See) 6# to see from behind Cover.`,	 0),
+    	new Equipment(`Poncho`,			 `CR. Waterproof.`,								  0),
+    	new Equipment(`Rat Trap`,		   `+1 Survival(Forage). Takes 1day.`,				 1),
+    	new Equipment(`Road Flare`,		 `3FDMG. 10yd light radius for 20mins.`,			 1),
+    	new Equipment(`Rollerblades`,	   `Athletics 6#. Speed x3. 1rnd equip. Fail:Prone.`,  2),
+    	new Equipment(`Rope`,			   `30yd nylon coil. Holds 100Sz.`,					2),
+    	new Equipment(`Running Shoes`,	  `+1 mile of Jogging distance.`,					 2),
+    	new Equipment(`Skateboard`,		 `Athletics 6#. Speed x3. Fail:Prone.`,			  3),
+    	new Equipment(`Sleeping Bag`,	   `Insulated bag for up to 2 people. CR +3hrs.`,	  3),
+    	new Equipment(`Snorkel`,			`Breathe while just beneath water's surface.`,	 1),
+    	new Equipment(`Spotting Scope`,	 `+6 Perception(See) at 100+yds.`,				   2),
+    	new Equipment(`Spray Paint`,		`RATK Called Shot:Head. Blind d6rnds. 10 uses.`,	1),
+    	new Equipment(`Sunglasses`,		 `No Visibility(Sun) penalty. +1 C vs light.`,	   0),
+    	new Equipment(`Swiss Army Knife`,   `+1 Build and Survival.`,						   1),
+    	new Equipment(`Tape Measure`,	   `+1 Build. 10yd long wind-up metal tape.`,		  2),
+    	new Equipment(`Tarp`,			   `3yd x 3yd plastic sheet. CR. Waterproof.`,		 1),
+    	new Equipment(`Tent`,			   `4 person. 5min setup/take-down. CR +3hrs.`,		6),
+    	new Equipment(`Thermal Underwear`,  `CR. Can use as 6 Bandages.`,					   1),
+    	new Equipment(`Tool Bag`,		   `+3 Build. Pliers, wrenches, level, etc.`,		  3),
+    	new Equipment(`Water Filter`,	   `Purifies 1 Water ration (.5gal) per minute.`,	  1),
+    	new Equipment(`Whetstone`,		  `Blade gets +1 DMG for 1day. Takes 1hr/blade.`,	 1),
+    	new Equipment(`Whistle`,			`+1 Tame(Train). Loud shriek 500yd radius.`,		0),
+    	new Equipment(`Wire Saw`,		   `1DMG/rnd of sawing to wood or bone.`,			  1),
+    	new Equipment(`Wristwatch`,		 `Tells time and +1 Survival(Navigate).`,			0),
+    	new Equipment(`Zip Tie`,			`Grabbed. C9# to escape. Use for +1 Build.`,		0)
+    ];
+
+    // TODO: Check all item Notes.
+
+    class Medical extends Gear {
+    	constructor(name, description, sz) {
+    		super(name, description, sz);
+    	}
+    }
+
+    const MedicalList = [
+    	new Medical(`Bandage`,		  `+1 Medicine(First-Aid). 1 use.`,						   0),
+    	new Medical(`Crutch`,		   `Halves Leg DMG Pain penalty to Speed.`,					3),
+    	new Medical(`EMT Bag`,		  `+3 Medicine(First-Aid). 30 uses.`,						 5),
+    	new Medical(`First-Aid Kit`,	`+1 Medicine(First-Aid). 5 uses.`,						  1),
+    	new Medical(`Pressure Cuff`,	`+1 Medicine.`,											 1),
+    	new Medical(`Stethoscope`,	  `+1 Medicine. Perception(Hear) 6# through doors.`,		  1),
+    	new Medical(`Surgery Kit`,	  `+3 Medicine(Surgery).`,									3),
+    	new Medical(`Thermometer`,	  `+1 Medicine. Accurately reads temperature.`,			   0),
+    	new Medical(`Transfusion Kit`,  `Medicine 9#. Heal 1 Wound. Takes 1hr.`,					1),
+    ];
+
+    class MeleeWeapon extends Gear {
+    	constructor(name, dmg, hands, rng, description, sz) {
+    		super(name, description, sz);
+    		this.dmg = dmg;
+    		this.hands = hands;
+    		this.rng = rng;
+    	}
+    }
+
+    const MeleeList = [
+    	new MeleeWeapon(`Ax`,			   5, 2, 2, [`Slow`, `Chop`],		  4),
+    	new MeleeWeapon(`Baseball Bat`,	 3, 2, 2, [],						3),
+    	new MeleeWeapon(`Brass Knuckles`,   2, 1, 1, [`Unarmed`],			   1),
+    	new MeleeWeapon(`Crowbar`,		  3, 1, 2, [],						3),
+    	new MeleeWeapon(`Hammer`,		   2, 1, 1, [],						2),
+    	new MeleeWeapon(`Hatchet`,		  2, 1, 1, [`Chop`],				  2),
+    	new MeleeWeapon(`Knife`,			2, 1, 1, [`Pierce`, `Rapid`],	   1),
+    	new MeleeWeapon(`Machete`,		  3, 1, 2, [`Chop`],				  2),
+    	new MeleeWeapon(`Shield`,		   1, 1, 1, [`Cover 3DR`, `+3 Block`], 4),
+    	new MeleeWeapon(`Sledgehammer`,	 5, 2, 2, [`Slow`],				  5),
+    	new MeleeWeapon(`Spear`,			4, 2, 3, [`Pierce`],				3),
+    	new MeleeWeapon(`Staff`,			2, 2, 3, [],						3)
+    ];
+
+    // RARE
+    // new MeleeWeapon(`Barbwire Club`, 3, 1, ``, 2),
+    // new MeleeWeapon(`Bowie Knife`, 2, 1, `Chop. Rapid.`, 1),
+    // new MeleeWeapon(`Broadsword`, 4, 2, `Chop or Pierce.`, 4),
+    // new MeleeWeapon(`Catch Pole`, 0, 2, `+1 Block. Blunt. +1 Grab.`, 3),
+    // new MeleeWeapon(`Chainsaw`, 6, 2, `.5gal Fuel. d6rnd start. 1: Empty. Loud.`, 4),
+    // new MeleeWeapon(`Ice Ax`, 3, 1, `Lever. Pierce.`, 2),
+    // new MeleeWeapon(`Katana`, 5, 2, `Chop or Pierce. Rapid.`, 3),
+    // new MeleeWeapon(`Kukri`, 3, 1, `Chop`, 2),
+    // new MeleeWeapon(`Lasso`, 0, 2, `Blunt. +1 Grab. Throw (RNG:3)`, 2),
+    // new MeleeWeapon(`Net`, 0, 2, `+6 Grab.`, 3),
+    // new MeleeWeapon(`Rapier`, 3, 1, `Pierce. Rapid.`, 2),
+    // new MeleeWeapon(`Scythe`, 6, 2, `Chop. Pierce.`, 4),
+    // new MeleeWeapon(`Sign Shield`, 2, 1, `+3 Block. Cover 6DR.`, 4),
+    // new MeleeWeapon(`Switchblade`, 1, 1, `Pierce. Rapid.`, 0),
+    // new MeleeWeapon(`Trench Knife`, 2, 1, `Blunt Punch. Pierce. Rapid.`, 1),
+    // new MeleeWeapon(`Whip`, 0, 1, `Blunt. +1 Disarm. +1 Grab. RNG:3.`, 1),
+
+    // OLD
+    // new MeleeWeapon(`Baton`, 2, 1, `Blunt. Rapid.`, 2),
+    // new MeleeWeapon(`Cane`, 1, 1, `Blunt. +1 Trip. Can be used as a Crutch.`, 3),
+    // new MeleeWeapon(`Cleaver`, 2, 1, `Chop.`, 1),
+    // new MeleeWeapon(`Firepoker`, 3, 1, `Lever. Pierce.`, 3),
+    // new MeleeWeapon(`Garrote`, 1, 2, `Blunt. +3 to Grab(Lock) Head.`, 1),
+    // new MeleeWeapon(`Metal Club`, 3, 2, `Blunt.`, 3),
+    // new MeleeWeapon(`Pickax`, 6, 2, `Lever. Pierce.`, 5),
+    // new MeleeWeapon(`Pitchfork`, 3, 2, `+1 Block. Pierce.`, 4),
+    // new MeleeWeapon(`Screwdriver`, 1, 1, `Lever. Pierce. Rapid.`, 1),
+    // new MeleeWeapon(`Shovel`, 3, 2, `+1 Block`, 4),
+    // new MeleeWeapon(`Tire Iron`, 2, 1, `Lever.`, 2),
+    // new MeleeWeapon(`Torch`, 1, 1, `Blunt. +1 FDMG. 5yd light radius 1hr.`, 2),
+
+    class RangedWeapon extends Gear {
+    	constructor(name, dmg, hands, rng, cal, mag, reg, description, sz) {
+    		super(name, description, sz);
+    		this.dmg = dmg;
+    		this.hands = hands;
+    		this.rng = rng;
+    		this.cal = cal;
+    		this.mag = mag;
+    		this.reg = reg;
+    	}
+    }
+
+    const RangedList = [
+    	new RangedWeapon(`Bolt-Action Rifle`,			   3, 2, 200,  5,  `.308`,	 `C`, [],					4),
+    	new RangedWeapon(`Compound Bow`,					1, 2, 10,   1,  `Arrow`,	`C`, [],					4),
+    	new RangedWeapon(`Crossbow`,						2, 2, 20,   1,  `Arrow`,	`C`, [],					4),
+    	new RangedWeapon(`Double-Barrel Shotgun`,		   4, 2, 20,   2,  `12g`,	  `C`, [`Rapid`, `Scatter`],  4),
+    	new RangedWeapon(`Lever-Action Rifle`,			  2, 2, 50,   10, `.357`,	 `C`, [],					3),
+    	new RangedWeapon(`Pump Shotgun`,					4, 2, 20,   6,  `12g`,	  `C`, [`Scatter`],		   4),
+    	new RangedWeapon(`Revolver`,						2, 1, 10,   6,  `.357`,	 `C`, [],					2),
+    	new RangedWeapon(`Semi-Auto Carbine`,			   1, 2, 30,   30, `9mm`,	  `C`, [`Rapid`],			 3),
+    	new RangedWeapon(`Semi-Auto Pistol`,				1, 1, 10,   15, `9mm`,	  `C`, [`Rapid`],			 1),
+    	new RangedWeapon(`Semi-Auto Rifle`,				 2, 2, 100,  30, `5.56`,	 `C`, [`Rapid`],			 3),
+    	new RangedWeapon(`Semi-Auto Shotgun`,			   4, 2, 20,   6,  `12g`,	  `C`, [`Rapid`, `Scatter`],  4),
+    	new RangedWeapon(`Target Pistol`,				   1, 2, 30,   10, `.22`,	  `C`, [`Rapid`],			 1),
+    	new RangedWeapon(`Target Rifle`,					1, 2, 50,   10, `.22`,	  `C`, [`Rapid`],			 3),
+    ];
+
+    // TODO: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
+
+    // RARE
+    // new RangedWeapon(`Blowgun`, 0, `Cx2`, `Dart`, 1, 2, `Pierce. DMG Mod.`, 1),
+    // new RangedWeapon(`Bolas`, 0, `Cx2`, `-`, `-`, 1, `Blunt. DMG Mod. Trip. Throw.`, 1),	
+    // new RangedWeapon(`Derringer`, 1, 3, `.22`, 2, 1, `-1 RATK.`, 0),
+    // new RangedWeapon(`Flamethrower`, `d6x3`, 5, `Fuel`, 7, `Auto. 3yd Blast. FDMG.`, 6),
+    // new RangedWeapon(`Longbow`, 1, 20, `Arrow`, 1, 2, `DMG Mod. -1 RATK.`, 3),
+    // new RangedWeapon(`M2 Browning`, 12, 200, `.50BMG`, `belt`, 2, `Auto. Mounted.`, 16),
+    // new RangedWeapon(`M4A1 Carbine`, 4, 50, `5.56`, `30mag`, 2, `Auto. Rapid.`, 3),
+    // new RangedWeapon(`M32 Launcher`, `varies`, 25, `40mm`, 6, 2, `Rapid.`, 4),
+    // new RangedWeapon(`M60 Machinegun`, 5, 100, `.308`, 300, 2, `Auto. Rapid. Bipod.`, 6),
+    // new RangedWeapon(`M72 LAW`, `d6x9`, 50, `Rocket`, 1, 2, `12yd Blast. Pierce.`, 3),
+    // new RangedWeapon(`M82 Barret`, 12, 200, `.50BMG`, `10mag`, 2, `Rapid. Bipod. Scope.`, 6),
+    // new RangedWeapon(`M134 Minigun`, 5, 100, `.308`, 1000, 2, `Auto only. Rapid. Mounted.`, 8),
+    // new RangedWeapon(`M203 Launcher`, `varies`, 25, `40mm`, 1, 2, `2h GUN ACCESSORY.`, 2),
+    // new RangedWeapon(`M249 SAW`, 4, 100, `5.56`, 100, 2, `Auto. Rapid.`, 5),
+    // new RangedWeapon(`Medusa 47`, `2, 3`, `9mm, .357`, `6cyl`, 1, `Revolver. Multi-Caliber.`, 2),
+    // new RangedWeapon(`Saiga-12`, 6, 15, `12g`, `12mag`, 2, `Rapid. Scatter.`, 4),
+    // new RangedWeapon(`Slingshot`, 1, 5, `Rocks`, 1, 2, `Blunt. DMG Mod.`, 1),
+    // new RangedWeapon(`Speargun`, 4, 5, `Arrow + Rope`, 1, 2, `Pierce. 2rnd Reload.`, 4),
+    // new RangedWeapon(`Uzi`, 2, 10, `9mm`, `30mag`, 2, `Auto. Rapid. -1 RATK.`, 3),
+    // new RangedWeapon(`W. P. Grenade`, `d6x3`, 3, `Grenade`, 1, 1, `6yd Blast. Blind. d6rnds.`, 1),
+
+    // OLD
+    // new RangedWeapon(`AK-47`, 4, 50, `7.62`, `30mag`, 2, `Auto. Rapid.`, 4),
+    // new RangedWeapon(`AR-15`, 4, 100, `5.56`, `30mag`, 2, `Rapid.`, 3),
+    // new RangedWeapon(`Benelli M4`, 6, 15, `12g`, 7, 2, `Rapid. Scatter.`, 4),
+    // new RangedWeapon(`Browning A-Bolt`, 4, 100, `5.56`, `5mag`, 2, `+1 RATK. Scope.`, 3),
+    // new RangedWeapon(`Colt Python`, 3, 25, `.357`, `6cyl`, 1, `Revolver.`, 2),
+    // new RangedWeapon(`Compound Bow`, 1, 25, `Arrow`, 1, 2, `DMG Mod. -1 RATK.`, 4),
+    // new RangedWeapon(`Crossbow`, 6, 50, `Arrow`, 1, 2, `1rnd Reload.`, 4),
+    // new RangedWeapon(`Glock 17`, 2, 25, `9mm`, `17mag`, 1, `Rapid.`, 1),
+    // new RangedWeapon(`H&ampK MP5`, 2, 50, `9mm`, `30mag`, 2, `Auto. Rapid.`, 2),
+    // new RangedWeapon(`Henry Golden Boy`, 1, 50, `.22`, 16, 2, `+1 RATK.`, 3),
+    // new RangedWeapon(`Kimber 1911`, 2, 25, `.45`, 7, 1, `Rapid.`, 1),
+    // new RangedWeapon(`MAC-10`, 2, 5, `.45`, 30, 2, `Auto. Rapid. -1 RATK`, 2),
+    // new RangedWeapon(`Marlin 1894C`, 3, 50, `.357`, 9, 2, `+1 RATK.`, 3),
+    // new RangedWeapon(`Mossberg 500`, 6, 10, `12g`, 5, 2, `Scatter.`, 2),
+    // new RangedWeapon(`Norinco SKS`, 4, 50, `7.62`, 10, 2, `Rapid. Bayonet.`, 4),
+    // new RangedWeapon(`Remington 700`, 5, 100, `.308`, 6, 2, `+1 RATK. Scope.`, 4),
+    // new RangedWeapon(`Remington 870`, `var`, 15, `12g`, 7, 2, `Scatter.`, 4),
+    // new RangedWeapon(`Ruger 10/22`, 1, 50, `.22`, `10mag`, 2, `Rapid.`, 3),
+    // new RangedWeapon(`Ruger Mk.III`, 1, 25, `.22`, `10mag`, 1, `Rapid.`, 1),
+    // new RangedWeapon(`SIG Sauer P290`, 2, 10, `9mm`, `6mag`, 1, `Rapid.`, 1),
+    // new RangedWeapon(`Savage Mk.II`, 1, 50, `.22`, `10mag`, 2, `+1 RATK.`, 3),
+    // new RangedWeapon(`Springfield M1A`, 5, 100, `.308`, `20mag`, 2, `Rapid.`, 4),
+    // new RangedWeapon(`S&ampW Snubnose`, 3, 5, `.357`, `5cyl`, 1, `Revolver.`, 1),
+    // new RangedWeapon(`Winchester Sawn-off`, 6, 5, `12g`, 2, 2, `Rapid. Scatter.`, 2)
+
+    class Storage extends Gear {
+    	constructor(name, slots, description, sz) {
+    		super(name, description, sz);
+    		this.slots = slots;
+    	}
+    }
+
+    const StorageList = [
+    	new Storage(`Backpack`,			 30, `2rnds to access.`,								 1),
+    	new Storage(`Bandoleer`,			1,  `Holds 50 bullets of any caliber.`,				 0),
+    	new Storage(`BDU Jacket`,		   4,  `Camo.`,											0),
+    	new Storage(`Cargo Pants`,		  6,  `Camo.`,											1),
+    	new Storage(`Canteen`,			  1,  `Holds 1 unit (.5gal) of liquid. Metal.`,		   1),
+    	new Storage(`Concealed Holster`,	1,  `Perception 12# to spot a Size 1 Gun.`,			 0),
+    	new Storage(`Cooler`,			   30, `Hunted or Foraged Food lasts 6 days.`,			 4),
+    	new Storage(`Duffel Bag`,		   40, `2rnds to access.`,								 3),
+    	new Storage(`Fuel Can`,			 5,  `5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.`,	  2),
+    	new Storage(`Hoody`,				2,  `CR.`,											  0),
+    	new Storage(`Hydration Pack`,	   4,  `Holds 4 units (2gal) of liquid.`,				  1),
+    	new Storage(`Lockbox`,			  1,  `10HP. 6DR. FR. Larceny(Disable) 9#.`,			  2),
+    	new Storage(`Messenger Bag`,		4,  `1rnd to access.`,								  2),
+    	new Storage(`Plastic Jug`,		  2,  `Holds 2 units (1gal) of liquid.`,				  1),
+    	new Storage(`Purse`,				3,  `1rnd to access.`,								  1),
+    	new Storage(`Speed-loader`,		 0,  `Reload a revolver cylinder as 1 action.`,		  0),
+    	new Storage(`Tool Belt`,			6,  `6x 1 Slots. +1 Build. Miscellaneous small tools.`, 2),
+    	new Storage(`Trench Coat`,		  4,  `CR. +1 Stealth.`,								  1),
+    	new Storage(`Water Bottle`,		 1,  `Holds 1 unit (.5gal) of liquid.`,				  1),
+    ];
+
+    // TODO: Unit conversion still needs work.
 
     /* src/components/creator/Gear.svelte generated by Svelte v3.16.0 */
     const file$9 = "src/components/creator/Gear.svelte";
@@ -6361,7 +6898,7 @@ var app = (function () {
     	return [armorResult, rollArmor];
     }
 
-    class Gear extends SvelteComponentDev {
+    class Gear$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$a, create_fragment$b, safe_not_equal, {});
@@ -6406,7 +6943,7 @@ var app = (function () {
     			t = space();
     			create_component(backnextbuttons.$$.fragment);
     			attr_dev(div, "class", "svelte-ug53d0");
-    			add_location(div, file$a, 22, 0, 780);
+    			add_location(div, file$a, 22, 0, 776);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6481,7 +7018,7 @@ var app = (function () {
 
     function instance$b($$self, $$props, $$invalidate) {
     	let step = 0;
-    	const options = [Traits, Properties, Description, Traits, Skills, Properties, Abilities, Gear];
+    	const options = [Traits, Skills, Description, Traits, Skills, Properties, Abilities, Gear$1];
     	let selected = options[step];
 
     	function nav(event) {
@@ -6543,7 +7080,7 @@ var app = (function () {
     // (13:3) {#if r.visible}
     function create_if_block$3(ctx) {
     	let div;
-    	let raw_value = /*r*/ ctx[2].notes + "";
+    	let raw_value = /*r*/ ctx[2].description + "";
     	let t0;
     	let t1;
     	let if_block1_anchor;
@@ -6559,7 +7096,7 @@ var app = (function () {
     			t1 = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
-    			attr_dev(div, "class", "notes svelte-36ip37");
+    			attr_dev(div, "class", "description svelte-qwk6k4");
     			add_location(div, file$b, 13, 4, 288);
     		},
     		m: function mount(target, anchor) {
@@ -6573,7 +7110,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*list*/ 1) && raw_value !== (raw_value = /*r*/ ctx[2].notes + "")) div.innerHTML = raw_value;
+    			if ((!current || dirty & /*list*/ 1) && raw_value !== (raw_value = /*r*/ ctx[2].description + "")) div.innerHTML = raw_value;
     			if (/*r*/ ctx[2].table) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
@@ -6659,10 +7196,10 @@ var app = (function () {
     			t = space();
     			div1 = element("div");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			attr_dev(div0, "class", "separator svelte-36ip37");
-    			add_location(div0, file$b, 15, 5, 352);
+    			attr_dev(div0, "class", "separator svelte-qwk6k4");
+    			add_location(div0, file$b, 15, 5, 364);
     			attr_dev(div1, "class", "table");
-    			add_location(div1, file$b, 16, 5, 382);
+    			add_location(div1, file$b, 16, 5, 394);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -6744,8 +7281,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(ul, "class", "sub-ul svelte-36ip37");
-    			add_location(ul, file$b, 19, 5, 478);
+    			attr_dev(ul, "class", "sub-ul svelte-qwk6k4");
+    			add_location(ul, file$b, 19, 5, 490);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -6806,7 +7343,7 @@ var app = (function () {
     	let t1;
     	let t2;
     	let div1;
-    	let raw_value = /*s*/ ctx[5].notes + "";
+    	let raw_value = /*s*/ ctx[5].description + "";
     	let t3;
 
     	const block = {
@@ -6820,16 +7357,16 @@ var app = (function () {
     			t2 = space();
     			div1 = element("div");
     			t3 = space();
-    			attr_dev(div0, "class", "separator svelte-36ip37");
-    			add_location(div0, file$b, 21, 7, 535);
-    			attr_dev(span, "class", "sub-name svelte-36ip37");
-    			add_location(span, file$b, 24, 9, 626);
+    			attr_dev(div0, "class", "separator svelte-qwk6k4");
+    			add_location(div0, file$b, 21, 7, 547);
+    			attr_dev(span, "class", "sub-name svelte-qwk6k4");
+    			add_location(span, file$b, 24, 9, 638);
     			attr_dev(div1, "class", "sub-notes");
-    			add_location(div1, file$b, 25, 9, 674);
+    			add_location(div1, file$b, 25, 9, 686);
     			attr_dev(div2, "class", "sub-box");
-    			add_location(div2, file$b, 23, 8, 595);
+    			add_location(div2, file$b, 23, 8, 607);
     			attr_dev(li, "class", "sub-li");
-    			add_location(li, file$b, 22, 7, 567);
+    			add_location(li, file$b, 22, 7, 579);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -6845,7 +7382,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*list*/ 1 && t1_value !== (t1_value = /*s*/ ctx[5].name + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*list*/ 1 && raw_value !== (raw_value = /*s*/ ctx[5].notes + "")) div1.innerHTML = raw_value;		},
+    			if (dirty & /*list*/ 1 && raw_value !== (raw_value = /*s*/ ctx[5].description + "")) div1.innerHTML = raw_value;		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
     			if (detaching) detach_dev(t0);
@@ -6890,12 +7427,12 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t2 = space();
     			div1 = element("div");
-    			attr_dev(span, "class", "name svelte-36ip37");
+    			attr_dev(span, "class", "name svelte-qwk6k4");
     			add_location(span, file$b, 11, 3, 230);
-    			attr_dev(div0, "class", "box svelte-36ip37");
+    			attr_dev(div0, "class", "box svelte-qwk6k4");
     			add_location(div0, file$b, 10, 2, 167);
-    			attr_dev(div1, "class", "separator svelte-36ip37");
-    			add_location(div1, file$b, 33, 2, 803);
+    			attr_dev(div1, "class", "separator svelte-qwk6k4");
+    			add_location(div1, file$b, 33, 2, 821);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -6995,7 +7532,7 @@ var app = (function () {
     			}
 
     			add_location(h2, file$b, 7, 1, 93);
-    			attr_dev(div0, "class", "separator svelte-36ip37");
+    			attr_dev(div0, "class", "separator svelte-qwk6k4");
     			add_location(div0, file$b, 8, 1, 115);
     			attr_dev(div1, "class", "page");
     			add_location(div1, file$b, 6, 0, 73);
@@ -7169,7 +7706,7 @@ var app = (function () {
 
     const Pain = new Rule(
     	`Pain`, 
-    	`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if Pain = [C + D].`
+    	`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if [Pain > D].`
     );
 
     const Damage = new Rule(
@@ -7201,7 +7738,7 @@ var app = (function () {
 
     const Health = new Rule(
     	`Health`, 
-    	`[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`, 
+    	`[C x 2]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`, 
     	[Bleeding, Recovery]
     );
 
