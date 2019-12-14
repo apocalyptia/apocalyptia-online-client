@@ -1,4 +1,4 @@
-import Rule from '../Rule.js'
+import Rule from './Rule.js'
 
 class Ability extends Rule {
 	constructor(name, description, max, xp, taken, notes) {

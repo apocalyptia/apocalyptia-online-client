@@ -7673,15 +7673,9 @@ var app = (function () {
     	}
     }
 
-    const Prepare = new Rule(
-    	`Prepare`, 
-    	`You may spend 1 Action on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, you can continue holding that Prepared Action.`
-    );
-
-    const Actions = new Rule(
-    	`Actions`, 
-    	`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`, 
-    	[Prepare]
+    const Bleeding = new Rule(
+    	`Bleeding`, 
+    	`When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`
     );
 
     const Attack = new Rule(
@@ -7689,9 +7683,19 @@ var app = (function () {
     	`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF). Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`
     );
 
+    const Burning = new Rule(
+    	`Burning`, 
+    	`If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`
+    );
+
     const Communication = new Rule(
     	`Communication`, 
     	`You can speak or shout up to 6 words per round.`
+    );
+
+    const Conditions = new Rule(
+    	`Conditions`, 
+    	`-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`
     );
 
     const DamageReduction = new Rule(
@@ -7704,44 +7708,6 @@ var app = (function () {
     	`Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces FDMG.`
     );
 
-    const Pain = new Rule(
-    	`Pain`, 
-    	`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if [Pain > D].`
-    );
-
-    const Damage = new Rule(
-    	`Damage`, 
-    	`Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`, 
-    	[DamageReduction, FireDamage, Pain]
-    );
-
-    const Reflex = new Rule(
-    	`Reflex`, 
-    	`[Perception / 2]. This is your default DEF. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`
-    );
-
-    const Defense = new Rule(
-    	`Defense`, 
-    	`You get 2 Defense Actions per round that you may spend to roll Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`, 
-    	[Reflex]
-    );
-
-    const Bleeding = new Rule(
-    	`Bleeding`, 
-    	`When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`
-    );
-
-    const Recovery = new Rule(
-    	`Recovery`, 
-    	`After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 Wound from infection.`
-    );
-
-    const Health = new Rule(
-    	`Health`, 
-    	`[C x 2]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`, 
-    	[Bleeding, Recovery]
-    );
-
     const Initiative = new Rule(
     	`Initiative`, 
     	`Everyone in combat rolls [d6 + A] to determine the turn order at the start of each new rnd.`
@@ -7752,29 +7718,39 @@ var app = (function () {
     	`Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`
     );
 
-    const Rounds = new Rule(
-    	`Rounds`, 
-    	`Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd.`
-    );
-
-    const Burning = new Rule(
-    	`Burning`, 
-    	`If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`
-    );
-
-    const Conditions = new Rule(
-    	`Conditions`, 
-    	`-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`
-    );
-
     const Occupants = new Rule(
     	`Occupants`, 
     	`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`
     );
 
+    const Pain = new Rule(
+    	`Pain`, 
+    	`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if [Pain > D].`
+    );
+
     const Pedestrians = new Rule(
     	`Pedestrians`, 
     	`Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`
+    );
+
+    const Prepare = new Rule(
+    	`Prepare`, 
+    	`You may spend 1 Action on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, you can continue holding that Prepared Action.`
+    );
+
+    const Recovery = new Rule(
+    	`Recovery`, 
+    	`After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 Wound from infection.`
+    );
+
+    const Reflex = new Rule(
+    	`Reflex`, 
+    	`[Perception / 2]. This is your default DEF. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`
+    );
+
+    const Rounds = new Rule(
+    	`Rounds`, 
+    	`Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd.`
     );
 
     const Tires = new Rule(
@@ -7787,11 +7763,37 @@ var app = (function () {
     	`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`
     );
 
+
+    const Actions = new Rule(
+    	`Actions`, 
+    	`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`, 
+    	[Prepare]
+    );
+
+    const Damage = new Rule(
+    	`Damage`, 
+    	`Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`, 
+    	[DamageReduction, FireDamage, Pain]
+    );
+
+    const Defense = new Rule(
+    	`Defense`, 
+    	`You get 2 Defense Actions per round that you may spend to roll Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`, 
+    	[Reflex]
+    );
+
+    const Health = new Rule(
+    	`Health`, 
+    	`[C x 2]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`, 
+    	[Bleeding, Recovery]
+    );
+
     const Vehicles = new Rule(
     	`Vehicles`, 
     	`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`, 
     	[Conditions, Occupants, Pedestrians, Tires, Wreck, Burning]
     );
+
 
     const Combat = [
     	Rounds,
