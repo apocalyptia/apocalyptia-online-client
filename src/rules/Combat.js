@@ -1,5 +1,5 @@
 import Rule from './Rule'
-import { Bleeding } from './situations/Bleeding'
+import { Bleeding } from './Situations'
 
 
 export const Attack = new Rule(

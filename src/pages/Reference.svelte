@@ -5,7 +5,7 @@
 	// TODO: Add remaining rules sections: Dice, Creation, Traits, Skills, Properties, Abilities, Gear
 	import { Combat } from '../rules/Combat'
 	import { Maneuvers } from '../rules/Maneuvers'
-	import { Situations } from '../rules/situations/SituationRules'
+	import { Situations } from '../rules/Situations'
 
 	let step = 0
 	const pages = [
