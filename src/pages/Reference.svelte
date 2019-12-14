@@ -3,8 +3,8 @@
 	import BackNextButtons from '../layout/BackNextButtons.svelte'
 	import RefList from '../layout/RefList.svelte'
 	// TODO: Add remaining rules sections: Dice, Creation, Traits, Skills, Properties, Abilities, Gear
-	import { Combat } from '../rules/combat/CombatRules'
-	import { Maneuvers } from '../rules/maneuvers/ManeuverRules'
+	import { Combat } from '../rules/Combat'
+	import { Maneuvers } from '../rules/Maneuvers'
 	import { Situations } from '../rules/situations/SituationRules'
 
 	let step = 0

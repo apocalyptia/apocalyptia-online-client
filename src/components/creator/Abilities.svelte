@@ -1,5 +1,5 @@
 <script>
-	import { AbilityList } from '../../rules/character/Abilities'
+	import { AbilityList } from '../../rules//Abilities'
 	import { CharacterStore } from '../../rules/Stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
