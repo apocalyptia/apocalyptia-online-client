@@ -13,7 +13,7 @@
 	}
 
 	function randomHeight() {
-		const totalInches = Math.ceil((Math.random() * 18) + 58) // 4'11' low, 5'7' median, 6'4' high
+		const totalInches = Math.ceil((Math.random() * 14) + 60) // 5ft low, 5ft7in median, 6ft2in high
 		const feet = Math.floor(totalInches / 12)
 		const inches = Math.floor(totalInches % 12)
 		char.description.height.value = `${feet}' ${inches}"`
@@ -61,6 +61,12 @@
 		randomHeight()
 		randomName()
 	}
+
+	const descriptions = [
+		[{ name: "Height", random: randomHeight }, { name: "Weight", random: randomWeight }],
+		[{ name: "Skin", random: randomSkin }, { name: "Hair", random: randomHair }],
+		[{ name: "Gender", random: randomGender }, { name: "Age", random: randomAge }]
+	]
 </script>
 
 <div class='step'>
@@ -84,54 +90,19 @@
 		>
 		<button on:click={randomName}>Random</button>
 	</div>
-	<div class='stat-block'>
-		<div class='half-stat-block'>
-			<div class='hs-container'>
-				<span class='stat-label'>Height:</span>
-				<input class='half-input' bind:value={char.description.height.value}>
-				<button on:click={randomHeight}>Random</button>
-			</div>
+	{#each descriptions as pair}
+		<div class='stat-block'>
+			{#each pair as {name, random}}
+				<div class='half-stat-block'>
+					<div class='hs-container'>
+						<span class='stat-label'>{name}:</span>
+						<input class='half-input' bind:value={char.description[name.toLowerCase()].value}>
+						<button on:click={random}>Random</button>
+					</div>
+				</div>
+			{/each}
 		</div>
-		<div class='half-stat-block'>
-			<div class='hs-container'>
-				<span class='stat-label'>Weight:</span>
-				<input class='half-input' bind:value={char.description.weight.value}>
-				<button on:click={randomWeight}>Random</button>
-			</div>
-		</div>
-	</div>
-	<div class='stat-block'>
-		<div class='half-stat-block'>
-			<div class='hs-container'>
-				<span class='stat-label'>Hair:</span>
-				<input class='half-input' bind:value={char.description.hair.value}>
-				<button on:click={randomHair}>Random</button>
-			</div>
-		</div>
-		<div class='half-stat-block'>
-			<div class='hs-container'>
-				<span class='stat-label'>Skin:</span>
-				<input class='half-input' bind:value={char.description.skin.value}>
-				<button on:click={randomSkin}>Random</button>
-			</div>
-		</div>
-	</div>
-	<div class='stat-block'>
-		<div class='half-stat-block'>
-			<div class='hs-container'>
-				<span class='stat-label'>Gender:</span>
-				<input class='half-input' bind:value={char.description.gender.value}>
-				<button on:click={randomGender}>Random</button>
-			</div>
-		</div>
-		<div class='half-stat-block'>
-			<div class='hs-container'>
-				<span class='stat-label'>Age:</span>
-				<input class='half-input' bind:value={char.description.age.value}>
-				<button on:click={randomAge}>Random</button>
-			</div>
-		</div>
-	</div>
+	{/each}
 	<div class='stat-block'>
 		<button class='random-all' on:click={randomDescription}>Random Character</button>
 	</div>
