@@ -71,48 +71,65 @@
 		<span class='stat-label'>Player:</span>
 		<input
 			type='text'
+			class='player-name'
 			bind:value={char.description.playerName.value}
 		>
 	</div>
 	<div class='stat-block'>
 		<span class='stat-label'>Character:</span>
-		<input bind:value={char.description.characterName.value}>
+		<input
+			type='text'
+			class='character-name'
+			bind:value={char.description.characterName.value}
+		>
 		<button on:click={randomName}>Random</button>
 	</div>
 	<div class='stat-block'>
 		<div class='half-stat-block'>
-			<span class='stat-label'>Height:</span>
-			<input class='half-input' bind:value={char.description.height.value}>
-			<button on:click={randomHeight}>Random</button>
+			<div class='hs-container'>
+				<span class='stat-label'>Height:</span>
+				<input class='half-input' bind:value={char.description.height.value}>
+				<button on:click={randomHeight}>Random</button>
+			</div>
 		</div>
 		<div class='half-stat-block'>
-			<span class='stat-label'>Weight:</span>
-			<input class='half-input' bind:value={char.description.weight.value}>
-			<button on:click={randomWeight}>Random</button>
-		</div>
-	</div>
-	<div class='stat-block'>
-		<div class='half-stat-block'>
-			<span class='stat-label'>Hair:</span>
-			<input class='half-input' bind:value={char.description.hair.value}>
-			<button on:click={randomHair}>Random</button>
-		</div>
-		<div class='half-stat-block'>
-			<span class='stat-label'>Skin:</span>
-			<input class='half-input' bind:value={char.description.skin.value}>
-			<button on:click={randomSkin}>Random</button>
+			<div class='hs-container'>
+				<span class='stat-label'>Weight:</span>
+				<input class='half-input' bind:value={char.description.weight.value}>
+				<button on:click={randomWeight}>Random</button>
+			</div>
 		</div>
 	</div>
 	<div class='stat-block'>
 		<div class='half-stat-block'>
-			<span class='stat-label'>Gender:</span>
-			<input class='half-input' bind:value={char.description.gender.value}>
-			<button on:click={randomGender}>Random</button>
+			<div class='hs-container'>
+				<span class='stat-label'>Hair:</span>
+				<input class='half-input' bind:value={char.description.hair.value}>
+				<button on:click={randomHair}>Random</button>
+			</div>
 		</div>
 		<div class='half-stat-block'>
-			<span class='stat-label'>Age:</span>
-			<input class='half-input' bind:value={char.description.age.value}>
-			<button on:click={randomAge}>Random</button>
+			<div class='hs-container'>
+				<span class='stat-label'>Skin:</span>
+				<input class='half-input' bind:value={char.description.skin.value}>
+				<button on:click={randomSkin}>Random</button>
+			</div>
+		</div>
+	</div>
+	<div class='stat-block'>
+		<div class='half-stat-block'>
+			<div class='hs-container'>
+				<span class='stat-label'>Gender:</span>
+				<input class='half-input' bind:value={char.description.gender.value}>
+				<button on:click={randomGender}>Random</button>
+			</div>
+		</div>
+		<div class='half-stat-block'>
+			<div class='hs-container'>
+				<span class='stat-label'>Age:</span>
+				<input class='half-input' bind:value={char.description.age.value}>
+				<button on:click={randomAge}>Random</button>
+			</div>
 		</div>
 	</div>
 	<div class='stat-block'>
@@ -121,10 +138,38 @@
 </div>
 
 <style >
-	@media only screen and (max-width: 600px) {
-		.stat-label {
-			display: block;
-		}
+	.stat-label {
+		display: block;
+	}
+	.player-name {
+		width: 100%;
+	}
+	.character-name {
+		width: 100%;
+	}
+	input {
+		height: 1.75em;
+	}
+	button {
+		height: 1.75em;
+		padding: 2px;
+	}
+	.random-all {
+		margin: auto;
+		padding: 5px;
+	}
+	.half-input {
+		width: 70%;
+	}
+	.half-stat-block {
+		text-align: center;
+		width: 50% ;
+	}
+	.hs-container {
+		display: inline-block;
+		text-align: left;
+	}
+	@media only screen and (max-width: 500px) {
 		input {
 			display: inline-block;
 			width: 100%;
@@ -138,23 +183,8 @@
 			padding: 5px;
 			width: 55%;
 		}
-	}
-	.stat-label {
-		display: block;
-	}
-	input {
-		height: 1.75em;
-		width: 50% ;
-	}
-	button {
-		height: 1.75em;
-		padding: 2px;
-	}
-	.random-all {
-		margin: auto;
-		padding: 5px;
-	}
-	.half-stat-block {
-		width: 50% ;
+		.half-input {
+			width: 50%;
+		}
 	}
 </style>
