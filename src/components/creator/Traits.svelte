@@ -9,12 +9,12 @@
 	let remaining = traitPoints - traits.length
 
 	function countTraitPoints(event) {
-		// TODO: Fix possible? infinite loop race condition in recursion logic
 		let traitCount = 0
 		traits.forEach((trait) => { traitCount += char.traits[trait].score })
 		remaining = traitPoints - traitCount
 		if (remaining < 0) {
-			char.traits[event.target.name].score = 1
+			char.traits[event.target.name].score -= 1
+			event.target.value -= 1
 			countTraitPoints(event)
 		}
 		char.updateProps()
