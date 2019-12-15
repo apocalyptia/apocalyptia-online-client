@@ -1,4 +1,4 @@
-<table>
+<table class='called-shot-table'>
 	<tr>
 		<th>Location</th>
 		<th>ATK</th>
