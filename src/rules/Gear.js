@@ -127,8 +127,6 @@ class Attribute extends Rule {
 	}
 }
 
-// TODO : Figure out rules to specify weapon categories that attributes qualify for.
-
 export const ArmorAttributesList = [
 	new Attribute('Camo', '+1 Stealth per Location when in a given Biome.'),
 	new Attribute('CR', 'Delay Hypothermia for 1hr per Location.'),
@@ -369,8 +367,6 @@ export const EquipmentList = [
 	new Equipment(`Zip Tie`,			`Grabbed. C9# to escape. Use for +1 Build.`,		0)
 ]
 
-// TODO: Check all item Notes.
-
 class Medical extends Gear {
 	constructor(name, description, sz) {
 		super(name, description, sz)
@@ -473,8 +469,6 @@ export const RangedList = [
 	new RangedWeapon(`Target Rifle`,					1, 2, 50,   10, `.22`,	  `C`, [`Rapid`],			 3),
 ]
 
-// TODO: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
-
 // RARE RANGED
 // new RangedWeapon(`Blowgun`, 0, `Cx2`, `Dart`, 1, 2, `Pierce. DMG Mod.`, 1),
 // new RangedWeapon(`Bolas`, 0, `Cx2`, `-`, `-`, 1, `Blunt. DMG Mod. Trip. Throw.`, 1),	
@@ -551,8 +545,6 @@ export const StorageList = [
 	new Storage(`Trench Coat`,		  4,  `CR. +1 Stealth.`,								  1),
 	new Storage(`Water Bottle`,		 1,  `Holds 1 unit (.5gal) of liquid.`,				  1),
 ]
-
-// TODO: Unit conversion still needs work.
 
 class Vehicle extends Gear {
 	constructor(name, speed, dr, handling, mpg, fuel, seats, cargo, description='', sz='') {

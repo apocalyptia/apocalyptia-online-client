@@ -9,7 +9,6 @@
 	<p>The table below shows how the Factions in the left column typically feel about the Factions on the top row. Higher numbers indicate worse relations. These feelings are not always reciprocal. Some Factions are natural allies, while others are sworn enemies. Changing these prejudices requires time, effort, and wisdom.</p>
 	<button id='FactionRelationsBtn' class='Btn'>FACTION RELATIONS</button>
 	<div id='FactionRelationsSec' class='Sec3'>
-		<!--TODO: FIGURE OUT RESPONSIVE TABLE DESIGN FOR FACTION RELATIONS-->
 		<table id='FactionRelationsTable'>
 
 		</table>

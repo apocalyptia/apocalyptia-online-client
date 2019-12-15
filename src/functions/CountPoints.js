@@ -24,5 +24,3 @@ function pointTally(char, attribute) {
     })
     return pointCount
 }
-
-// TODO: Needs work. Gets stuck in infinite loops. Probably due to "conditional" parameter.
