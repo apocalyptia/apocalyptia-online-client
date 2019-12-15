@@ -1,5 +1,5 @@
 <script>
-	import HideShow from './HideShow'
+	import HideShow from '../functions/HideShow'
 
 	export let list
 </script>
@@ -23,7 +23,9 @@
 							<li class='sub-li'>
 								<div class='sub-box'>
 									<span class='sub-name'>{s.name}</span>
-									<div class='sub-notes'>{@html s.description}</div>
+									<div class='sub-notes'>
+										{@html s.description}
+									</div>
 								</div>
 							</li>	
 						{/each}

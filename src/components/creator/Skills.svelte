@@ -1,5 +1,5 @@
 <script>
-	import HideShow from '../../layout/HideShow'
+	import HideShow from '../../functions/HideShow'
 	import { CharacterStore } from '../../rules/Stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
