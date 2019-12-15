@@ -12,16 +12,17 @@
 			name: trait, visible: false
 		})
 	})
-	let startingSkillPoints = char.traits.brains.score * 3
-	let remaining = startingSkillPoints
+	let skillPoints = char.traits.brains.score * 3
+	let remaining = skillPoints
 
 	function countSkillPoints(event) {
+		let target = event.target
 		let skillCount = 0
 		skills.forEach((skill) => { skillCount += char.skills[skill].score })
-		remaining = startingSkillPoints - skillCount
-		if (remaining < 0) {
-			char.skills[event.target.name].score -= 1
-			event.target.value -= 1
+		remaining = skillPoints - skillCount
+		if (remaining < 0 || target.value > char.skills[target.name].max) {
+			char.skills[target.name].score -= 1
+			target.value -= 1
 			countSkillPoints(event)
 		}
 		char.updateProps()
@@ -118,5 +119,8 @@
 		display: inline-block;
 		text-align: center;
 		width: 12%;
+	}
+	.step {
+		margin-bottom: 75px;
 	}
 </style>

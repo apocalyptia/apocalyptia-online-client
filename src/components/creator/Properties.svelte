@@ -13,7 +13,7 @@
 	{#each props as prop}
 		<div class='stat-block'>
 			<span>{char.props[prop].name}</span>
-			<span class='three-column'>{char.props[prop].base}</span>
+			<span class='three-column'>{char.props[prop].score}</span>
 		</div>
 	{/each}
 </div>

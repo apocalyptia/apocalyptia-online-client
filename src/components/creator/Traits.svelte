@@ -1,4 +1,5 @@
 <script>
+	import capitalize from '../../functions/Capitalize'
 	import { CharacterStore } from '../../rules/Stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
@@ -9,15 +10,27 @@
 	let remaining = traitPoints - traits.length
 
 	function countTraitPoints(event) {
+		let target = event.target
 		let traitCount = 0
 		traits.forEach((trait) => { traitCount += char.traits[trait].score })
 		remaining = traitPoints - traitCount
 		if (remaining < 0) {
-			char.traits[event.target.name].score -= 1
-			event.target.value -= 1
+			char.traits[target.name].score -= 1
+			target.value -= 1
 			countTraitPoints(event)
 		}
+		setSkillMax()
 		char.updateProps()
+	}
+
+	function setSkillMax() {
+		traits.forEach((trait) => {
+			Object.keys(char.skills).forEach((skill) => {
+				if (char.skills[skill].parent === capitalize(trait)) {
+					char.skills[skill].max = char.traits[trait].score
+				}
+			})
+		})
 	}
 </script>
 
