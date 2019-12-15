@@ -1,25 +1,32 @@
 <script>
+	import HideShow from '../../layout/HideShow'
 	import { CharacterStore } from '../../rules/Stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-	const traits = Object.keys(char.traits)
 	const skills = Object.keys(char.skills)
 
+	let skillGroups = []
+	Object.keys(char.traits).forEach((trait) => {
+		skillGroups.push({
+			name: trait, visible: true
+		})
+	})
 	let startingSkillPoints = char.traits.brains.score * 3
 	let remaining = startingSkillPoints
 
 	function countSkillPoints(event) {
-		// TODO: Fix infinite loop race condition in recursion logic
 		let skillCount = 0
 		skills.forEach((skill) => { skillCount += char.skills[skill].score })
 		remaining = startingSkillPoints - skillCount
 		if (remaining < 0) {
-			char.skills[event.target.name].score = 1
+			char.skills[event.target.name].score -= 1
+			event.target.value -= 1
 			countSkillPoints(event)
 		}
 		char.updateProps()
 	}
+
 </script>
 
 <div class='step'>
@@ -29,44 +36,49 @@
 	<div class='remaining'>
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
-	{#each traits as trait}
-		<div class='skill-section'>
-			<div class='parent-trait-title'>
-				<h3>{char.traits[trait].name} Skills</h3>
-			</div>
-			{#each skills as skill}
-				{#if char.traits[trait].name == char.skills[skill].parent}
-					<div class='stat-block'>
-						<div class='stat-column name-column'>
-							<span class='stat-label'>{char.skills[skill].name}</span>
-						</div>
-						<div class='stat-column value-column'>
-							<div class='stat-input'>
-								<input
-									class='slider-input'
-									type='range'
-									name='{char.skills[skill].name.toLowerCase()}'
-									min=0
-									max=6
-									bind:value={char.skills[skill].score}
-									invalid={(remaining < 0) || this.value > char.traits[trait].score}
-									on:input|preventDefault={(event) => countSkillPoints(event)}
-								>
+	<div class='skill-list'>
+		{#each skillGroups as group}
+			<div class='trait-section'>
+				<div class='parent-trait-title' on:click={() => skillGroups = HideShow(group, skillGroups)}>
+					<h3>{char.traits[group.name].name} Skills</h3>
+				</div>
+				{#if group.visible}
+					{#each skills as skill}
+						{#if char.traits[group.name].name == char.skills[skill].parent}
+							<div class='stat-block'>
+								<div class='stat-column name-column'>
+									<span class='stat-label'>{char.skills[skill].name}</span>
+								</div>
+								<div class='stat-column value-column'>
+									<div class='stat-input'>
+										<input
+											class='slider-input'
+											type='range'
+											name='{char.skills[skill].name.toLowerCase()}'
+											min=0
+											max=6
+											bind:value={char.skills[skill].score}
+											invalid={(remaining < 0) || this.value > char.traits[group.name].score}
+											on:input|preventDefault={(event) => countSkillPoints(event)}
+										>
+									</div>
+									<div class='stat-input'>
+										<span>0</span>
+										<span>1</span>
+										<span>2</span>
+										<span>3</span>
+										<span>4</span>
+										<span>5</span>
+										<span>6</span>
+									</div>
+								</div>
 							</div>
-							<div class='stat-input'>
-								<span>1</span>
-								<span>2</span>
-								<span>3</span>
-								<span>4</span>
-								<span>5</span>
-								<span>6</span>
-							</div>
-						</div>
-					</div>
+						{/if}
+					{/each}
 				{/if}
-			{/each}
-		</div>
-	{/each}
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style>
@@ -83,30 +95,28 @@
 			width: 50%;
 		}
 	}
-	.skill-section{
-		border: 1px dashed var(--char-color);
-		margin: 20px 5px 20px 5px;
-		padding: 0 10px 10px 10px;
+	.skill-list {
+		margin-top: 25px;
 	}
-	.parent-trait-title {
-		margin-bottom: 10px;
-		text-align: center;
+	.trait-section {
+		border-width: 2px;
+		border-style: dotted;
+		display: block;
+		justify-content: space-between;
+		margin: .5rem;
+		padding: 1rem;
+		align-items: center;
 	}
-	.remaining {
-		text-align: center;
-	}
-	.stat-label {
-		text-align: center;
-	}
-	.stat-column {
-		text-align: center;
-	}
+	.parent-trait-title, 
+	.remaining, 
+	.stat-label, 
+	.stat-column, 
 	.stat-input {
 		text-align: center;
 	}
 	.stat-input span {
 		display: inline-block;
 		text-align: center;
-		width: 14%;
+		width: 12%;
 	}
 </style>

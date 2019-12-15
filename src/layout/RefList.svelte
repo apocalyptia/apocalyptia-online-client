@@ -4,7 +4,7 @@
 	export let list
 </script>
 
-<div class='page'>
+<div>
 	<h2>{list.name}</h2>
 	<div class='separator'/>
 	{#each list.rules as r}

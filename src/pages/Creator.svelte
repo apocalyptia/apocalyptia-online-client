@@ -10,7 +10,7 @@
 	import Gear from '../components/creator/Gear.svelte'
 
 	let step = 0
-	const options = [ Description, Traits, Skills, Properties, Abilities, Gear ]
+	const options = [ Skills, Description, Traits, Skills, Properties, Abilities, Gear ]
 	let selected = options[step]
 
 	function nav(event) {

@@ -73,15 +73,9 @@
 			width: 50%;
 		}
 	}
-	.remaining {
-		text-align: center;
-	}
-	.stat-label {
-		text-align: center;
-	}
-	.stat-column {
-		text-align: center;
-	}
+	.remaining,
+	.stat-label,
+	.stat-column,
 	.stat-input {
 		text-align: center;
 	}
