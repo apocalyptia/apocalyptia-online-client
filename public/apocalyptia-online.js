@@ -5292,38 +5292,38 @@ var app = (function () {
     			span7.textContent = "6";
     			t16 = space();
     			attr_dev(span0, "class", "stat-label svelte-2md177");
-    			add_location(span0, file$6, 49, 9, 1398);
+    			add_location(span0, file$6, 49, 9, 1399);
     			attr_dev(div0, "class", "stat-column name-column svelte-2md177");
-    			add_location(div0, file$6, 48, 8, 1351);
+    			add_location(div0, file$6, 48, 8, 1352);
     			attr_dev(input, "class", "slider-input");
     			attr_dev(input, "type", "range");
     			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name.toLowerCase());
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", "6");
     			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[2] < 0 || this.value > /*char*/ ctx[0].traits[/*group*/ ctx[10].name].score);
-    			add_location(input, file$6, 53, 10, 1562);
+    			add_location(input, file$6, 53, 10, 1563);
     			attr_dev(div1, "class", "stat-input svelte-2md177");
-    			add_location(div1, file$6, 52, 9, 1527);
+    			add_location(div1, file$6, 52, 9, 1528);
     			attr_dev(span1, "class", "svelte-2md177");
-    			add_location(span1, file$6, 65, 10, 1993);
+    			add_location(span1, file$6, 65, 10, 1994);
     			attr_dev(span2, "class", "svelte-2md177");
-    			add_location(span2, file$6, 66, 10, 2018);
+    			add_location(span2, file$6, 66, 10, 2019);
     			attr_dev(span3, "class", "svelte-2md177");
-    			add_location(span3, file$6, 67, 10, 2043);
+    			add_location(span3, file$6, 67, 10, 2044);
     			attr_dev(span4, "class", "svelte-2md177");
-    			add_location(span4, file$6, 68, 10, 2068);
+    			add_location(span4, file$6, 68, 10, 2069);
     			attr_dev(span5, "class", "svelte-2md177");
-    			add_location(span5, file$6, 69, 10, 2093);
+    			add_location(span5, file$6, 69, 10, 2094);
     			attr_dev(span6, "class", "svelte-2md177");
-    			add_location(span6, file$6, 70, 10, 2118);
+    			add_location(span6, file$6, 70, 10, 2119);
     			attr_dev(span7, "class", "svelte-2md177");
-    			add_location(span7, file$6, 71, 10, 2143);
+    			add_location(span7, file$6, 71, 10, 2144);
     			attr_dev(div2, "class", "stat-input svelte-2md177");
-    			add_location(div2, file$6, 64, 9, 1958);
+    			add_location(div2, file$6, 64, 9, 1959);
     			attr_dev(div3, "class", "stat-column value-column svelte-2md177");
-    			add_location(div3, file$6, 51, 8, 1479);
+    			add_location(div3, file$6, 51, 8, 1480);
     			attr_dev(div4, "class", "stat-block svelte-2md177");
-    			add_location(div4, file$6, 47, 7, 1318);
+    			add_location(div4, file$6, 47, 7, 1319);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
@@ -5464,11 +5464,11 @@ var app = (function () {
     			t2 = space();
     			if (if_block) if_block.c();
     			t3 = space();
-    			add_location(h3, file$6, 42, 5, 1130);
+    			add_location(h3, file$6, 42, 5, 1131);
     			attr_dev(div0, "class", "parent-trait-title svelte-2md177");
-    			add_location(div0, file$6, 41, 4, 1032);
+    			add_location(div0, file$6, 41, 4, 1033);
     			attr_dev(div1, "class", "trait-section svelte-2md177");
-    			add_location(div1, file$6, 40, 3, 1000);
+    			add_location(div1, file$6, 40, 3, 1001);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -5552,16 +5552,16 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$6, 33, 2, 842);
+    			add_location(h2, file$6, 33, 2, 843);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$6, 32, 1, 815);
-    			add_location(h3, file$6, 36, 2, 893);
+    			add_location(div0, file$6, 32, 1, 816);
+    			add_location(h3, file$6, 36, 2, 894);
     			attr_dev(div1, "class", "remaining svelte-2md177");
-    			add_location(div1, file$6, 35, 1, 867);
+    			add_location(div1, file$6, 35, 1, 868);
     			attr_dev(div2, "class", "skill-list svelte-2md177");
-    			add_location(div2, file$6, 38, 1, 941);
+    			add_location(div2, file$6, 38, 1, 942);
     			attr_dev(div3, "class", "step");
-    			add_location(div3, file$6, 31, 0, 795);
+    			add_location(div3, file$6, 31, 0, 796);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5638,7 +5638,7 @@ var app = (function () {
     	let skillGroups = [];
 
     	Object.keys(char.traits).forEach(trait => {
-    		skillGroups.push({ name: trait, visible: true });
+    		skillGroups.push({ name: trait, visible: false });
     	});
 
     	let startingSkillPoints = char.traits.brains.score * 3;

@@ -9,7 +9,7 @@
 	let skillGroups = []
 	Object.keys(char.traits).forEach((trait) => {
 		skillGroups.push({
-			name: trait, visible: true
+			name: trait, visible: false
 		})
 	})
 	let startingSkillPoints = char.traits.brains.score * 3
