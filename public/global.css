@@ -116,3 +116,8 @@ button {
 .slider-input:invalid {
 	background: red;
 }
+
+.ref-page {
+	padding: 25px;
+	padding-bottom: 50px;
+}

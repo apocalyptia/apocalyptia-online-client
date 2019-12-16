@@ -1,6 +1,7 @@
 <script>
 	import router from '../routes'
-	import BackNextButtons from '../layout/BackNextButtons.svelte'
+	import Navigator from '../functions/Navigator'
+	import NavButtons from '../layout/NavButtons.svelte'
 
 	import Description from '../components/creator/Description.svelte'
 	import Traits from '../components/creator/Traits.svelte'
@@ -9,21 +10,21 @@
 	import Abilities from '../components/creator/Abilities.svelte'
 	import Gear from '../components/creator/Gear.svelte'
 
-	let step = 0
-	const options = [ Description, Traits, Skills, Properties, Abilities, Gear ]
-	let selected = options[step]
+	let screen = {
+		step: 0,
+		options: [ Description, Traits, Skills, Properties, Abilities, Gear ]
+	}
+	screen.selected = screen.options[screen.step]
 
-	function nav(event) {
-		step = event.detail.number
-		if (step == options.length || step < 0) { router.Home() }
-		else { selected = options[step] }
+	function nav(event, screen) {
+		screen = Navigator(event, screen)
 	}
 </script>
 
 <div>
-	<svelte:component this={selected}/>
+	<svelte:component this={screen.selected}/>
 </div>
-<BackNextButtons {step} on:message={nav} />
+<NavButtons {screen} on:message={(event) => nav(event, screen)} />
 
 <style>
 	div {

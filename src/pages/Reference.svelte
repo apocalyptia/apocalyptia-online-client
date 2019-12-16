@@ -1,34 +1,30 @@
 <script>
 	import router from '../routes'
-	import BackNextButtons from '../layout/BackNextButtons.svelte'
+	import Navigator from '../functions/Navigator'
+	import NavButtons from '../layout/NavButtons.svelte'
 	import RefList from '../layout/RefList.svelte'
 	import { Combat } from '../rules/Combat'
 	import { Maneuvers } from '../rules/Maneuvers'
 	import { Situations } from '../rules/Situations'
 
-	let step = 0
-	const pages = [
-		{ name: 'Combat', rules: Combat },
-		{ name: 'Maneuvers', rules: Maneuvers },
-		{ name: 'Situations', rules: Situations }
-	]
-	let selected = pages[step]
+	let screen = {
+		step: 0,
+		options: [
+			{ name: `Combat`, page: Combat, link: router.RefCombat },
+			{ name: `Maneuvers`, page: Maneuvers, link: router.RefManeuvers },
+			{ name: `Situations`, page: Situations, link: router.RefSituations }
+		]
+	}
+	screen.selected = screen.options[screen.step]
 
 	function nav(event) {
-		step = event.detail.number
-		if (step == pages.length || step < 0) { router.Home() }
-		else { selected = pages[step] }
+		screen = Navigator(event, screen)
 	}
 </script>
 
 <div class='ref-page'>
-	<svelte:component this={RefList} list={selected} />
+	{#each screen.options as option}
+		<button on:click={option.link}>{option.name}</button>
+	{/each}
 </div>
-<BackNextButtons {step} on:message={nav} />
-
-<style>
-	.ref-page {
-		padding: 25px;
-		padding-bottom: 50px;
-	}
-</style>
+<NavButtons {screen} on:message={(event) => nav(event, screen)} />

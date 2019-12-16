@@ -1,16 +1,20 @@
 <script>
+    import router from '../routes'
 	import { createEventDispatcher } from 'svelte'
-	export let step
+	export let screen
 
 	const d = createEventDispatcher()
 
-	function back () { d('message', { number: --step }) }
+    function back () { d('message', { number: --screen.step }) }
+    
+    function home () { router.Home() }
 
-	function next() { d('message', { number: ++step }) }
+	function next() { d('message', { number: ++screen.step }) }
 </script>
 
 <div>
 	<button on:click={back}>Back</button>
+    <button on:click={home}>Home</button>
 	<button on:click={next}>Next</button>
 </div>
 
