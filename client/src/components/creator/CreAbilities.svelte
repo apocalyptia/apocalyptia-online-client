@@ -53,27 +53,37 @@
 </div>
 
 <style>
-	.abilities-table {
+	@media only screen and (max-width: 500px) {
+		.m-col {
+			text-decoration: underline;
+		}
+		.m-col, .l-col {
+			display: block;
+			/* width: 100%; */
+		}
+	}
+	@media only screen and (min-width: 500px) {
+		.m-col {
+			text-decoration: underline;
+		}
+		.m-col, .l-col {
+			display: inline-block;
+			/* width: 10%; */
+		}
+	}
+	/* .abilities-table {
 		width: 100%;
-	}
-	.ability-row {
+	} */
+	/* .ability-row {
 		width: inherit;
-	}
+	} */
 	.header-row {
 		font-size: 1.25em;
-	}
-	.l-col {
-		display: inline-block;
-		width: 37.5%;
-	}
-	.m-col {
-		display: inline-block;
-		width: 25%;
 	}
 	.s-col {
 		display: inline-block;
 		text-align: center;
-		width: 10%;
+		/* width: 10%; */
 	}
 	.separator {
 		border-bottom: 1px solid;

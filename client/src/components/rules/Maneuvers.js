@@ -4,7 +4,7 @@ import CalledShotTable from './CalledShotTable.svelte'
 
 export const AggressivePosture = new Rule(
 	`Aggressive Posture`, 
-	`Get 1 extra Action at the cost of leaving yourself Defenseless until your next turn.`
+	`Get 1 extra Action (for a total of 3) at the cost of leaving yourself Defenseless until your next turn.`
 )
 
 export const Aim = new Rule(
@@ -26,7 +26,7 @@ export const CalledShot = new Rule(
 
 export const DefensivePosture = new Rule(
 	`Defensive Posture`, 
-	`Skip your turn to get 1 extra Defense Action until your next turn.`
+	`Skip your turn to get 1 extra Defense Action (for a total of 3) until your next turn.`
 )
 
 export const Disarm = new Rule(

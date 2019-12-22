@@ -5,26 +5,25 @@
 </script>
 
 <div>
-	<h2>{list.name}</h2>
 	<div class='separator'/>
-	{#each list.rules as r}
-		<div class='box' on:click={() => list = HideShow(r, list)}>
-			<span class='name'>{r.name}</span>
-			{#if r.visible}
-				<div class='description'>{@html r.description}</div>
-				{#if r.table}
+	{#each list as rule}
+		<div class='box' on:click={() => list = HideShow(rule, list)}>
+			<span class='name'>{rule.name}</span>
+			{#if rule.visible}
+				<div class='description'>{@html rule.description}</div>
+				{#if rule.table}
 					<div class='separator'/>
-					<div class='table'><svelte:component this={r.table}/></div>
+					<div class='table'><svelte:component this={rule.table}/></div>
 				{/if}
-				{#if r.subrules}
+				{#if rule.subrules}
 					<ul class='sub-ul'>
-						{#each r.subrules as s}
+						{#each rule.subrules as subrule}
 							<div class='separator'/>
 							<li class='sub-li'>
 								<div class='sub-box'>
-									<span class='sub-name'>{s.name}</span>
+									<span class='sub-name'>{subrule.name}</span>
 									<div class='sub-notes'>
-										{@html s.description}
+										{@html subrule.description}
 									</div>
 								</div>
 							</li>	

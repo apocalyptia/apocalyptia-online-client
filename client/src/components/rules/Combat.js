@@ -2,7 +2,7 @@ import Rule from './rule'
 import { Bleeding } from './Situations'
 
 
-const STupidRule = new Rule(`Stupid Rule`, `dumb shit this does`)
+// Single Rules
 
 export const Attack = new Rule(
 	`Attack`, 
@@ -90,6 +90,8 @@ export const Wreck = new Rule(
 )
 
 
+// Compound Rules
+
 export const Actions = new Rule(
 	`Actions`, 
 	`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`, 
@@ -114,14 +116,14 @@ export const Health = new Rule(
 	[Bleeding, Recovery]
 )
 
-
-
 export const Vehicles = new Rule(
 	`Vehicles`, 
 	`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`, 
 	[Conditions, Occupants, Pedestrians, Tires, Wreck, Burning]
 )
 
+
+// Rule List
 
 export const Combat = [
 	Rounds,

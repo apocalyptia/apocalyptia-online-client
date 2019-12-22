@@ -11,7 +11,7 @@
 
 	let screen = {
 		step: 0,
-		options: [ Description, Traits, Skills, Properties, Abilities, Gear ]
+		options: [ Traits, Abilities, Description, Traits, Skills, Properties, Abilities, Gear ]
 	}
 	screen.selected = screen.options[screen.step]
 
@@ -49,7 +49,7 @@
 		flex-direction: row;
 		position: fixed;
 		left: 0;
-		bottom: 0px;
+		bottom: 0;
 		height: 50px;
 		width: 100vw;
 	}

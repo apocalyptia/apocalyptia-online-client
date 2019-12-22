@@ -5,9 +5,13 @@
 </script>
 
 <div class='ref-page'>
-	<h3>COMBAT REF test</h3>
+	<div class='ref-header'>Combat Rules</div>
 	<svelte:component this={RefList} list={Combat} />
 </div>
 
 <style>
+	.ref-header {
+		font-size: 1.5rem;
+		text-align: center;
+	}
 </style>

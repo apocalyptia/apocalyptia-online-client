@@ -5,7 +5,7 @@
 </script>
 
 <div class='ref-page'>
-	<h3>SITUATIONS REF test</h3>
+	<div class='ref-header'>Situation Rules</div>
 	<svelte:component this={RefList} list={Situations} />
 </div>
 

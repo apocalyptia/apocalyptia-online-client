@@ -46,7 +46,7 @@
 				{#if group.visible}
 					{#each skills as skill}
 						{#if char.traits[group.name].name == char.skills[skill].parent}
-							<div class='stat-block'>
+							<div class='skill-block'>
 								<div class='stat-column name-column'>
 									<span class='stat-label'>{char.skills[skill].name}</span>
 								</div>
@@ -64,13 +64,13 @@
 										>
 									</div>
 									<div class='stat-input'>
-										<span>0</span>
-										<span>1</span>
-										<span>2</span>
-										<span>3</span>
-										<span>4</span>
-										<span>5</span>
-										<span>6</span>
+										<div>0</div>
+										<div>1</div>
+										<div>2</div>
+										<div>3</div>
+										<div>4</div>
+										<div>5</div>
+										<div>6</div>
 									</div>
 								</div>
 							</div>
@@ -84,16 +84,20 @@
 
 <style>
 	@media only screen and (max-width: 500px) {
-		.stat-block {
+		.skill-block {
 			display: block;
+			width: 100%;
 		}
 		.stat-column {
 			width: 100%;
 		}
+		.trait-section {
+			text-align: center;
+		}
 	}
 	@media only screen and (min-width: 500px) {
 		.stat-column {
-			width: 50%;
+			width: 100%;
 		}
 	}
 	.skill-list {
@@ -115,10 +119,16 @@
 	.stat-input {
 		text-align: center;
 	}
-	.stat-input span {
-		display: inline-block;
+	.slider-input {
+		width: 100%;
+	}
+	.stat-input {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	.stat-input div {
 		text-align: center;
-		width: 12%;
+		min-width: calc(100%/7);
 	}
 	.step {
 		margin-bottom: 75px;

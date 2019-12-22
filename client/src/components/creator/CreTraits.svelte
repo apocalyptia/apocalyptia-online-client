@@ -60,12 +60,12 @@
 					>
 				</div>
 				<div class='stat-input'>
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span>5</span>
-					<span>6</span>
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+					<div>5</div>
+					<div>6</div>
 				</div>
 			</div>
 		</div>
@@ -92,9 +92,15 @@
 	.stat-input {
 		text-align: center;
 	}
-	.stat-input span {
-		display: inline-block;
+	.slider-input {
+		width: 100%;
+	}
+	.stat-input {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	.stat-input div {
 		text-align: center;
-		width: 14%;
+		width: calc(100%/6);
 	}
 </style>
