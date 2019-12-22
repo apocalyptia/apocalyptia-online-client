@@ -4930,7 +4930,7 @@ var app = (function () {
     	return block;
     }
 
-    // (48:6) {#if char.traits[group.name].name == char.skills[skill].parent}
+    // (49:6) {#if char.traits[group.name].name == char.skills[skill].parent}
     function create_if_block_1$1(ctx) {
     	let div11;
     	let div0;
@@ -4998,39 +4998,39 @@ var app = (function () {
     			div8 = element("div");
     			div8.textContent = "6";
     			t16 = space();
-    			attr_dev(span, "class", "stat-label svelte-1wyajz9");
-    			add_location(span, file$4, 50, 9, 1436);
-    			attr_dev(div0, "class", "stat-column name-column svelte-1wyajz9");
-    			add_location(div0, file$4, 49, 8, 1389);
-    			attr_dev(input, "class", "slider-input svelte-1wyajz9");
+    			attr_dev(span, "class", "stat-label svelte-ulhg5z");
+    			add_location(span, file$4, 51, 9, 1472);
+    			attr_dev(div0, "class", "stat-column name-column svelte-ulhg5z");
+    			add_location(div0, file$4, 50, 8, 1425);
+    			attr_dev(input, "class", "slider-input svelte-ulhg5z");
     			attr_dev(input, "type", "range");
     			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name.toLowerCase());
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", "6");
     			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[2] < 0 || this.value > /*char*/ ctx[0].traits[/*group*/ ctx[10].name].score);
-    			add_location(input, file$4, 54, 10, 1600);
-    			attr_dev(div1, "class", "stat-input svelte-1wyajz9");
-    			add_location(div1, file$4, 53, 9, 1565);
-    			attr_dev(div2, "class", "svelte-1wyajz9");
-    			add_location(div2, file$4, 66, 10, 2031);
-    			attr_dev(div3, "class", "svelte-1wyajz9");
-    			add_location(div3, file$4, 67, 10, 2054);
-    			attr_dev(div4, "class", "svelte-1wyajz9");
-    			add_location(div4, file$4, 68, 10, 2077);
-    			attr_dev(div5, "class", "svelte-1wyajz9");
-    			add_location(div5, file$4, 69, 10, 2100);
-    			attr_dev(div6, "class", "svelte-1wyajz9");
-    			add_location(div6, file$4, 70, 10, 2123);
-    			attr_dev(div7, "class", "svelte-1wyajz9");
-    			add_location(div7, file$4, 71, 10, 2146);
-    			attr_dev(div8, "class", "svelte-1wyajz9");
-    			add_location(div8, file$4, 72, 10, 2169);
-    			attr_dev(div9, "class", "stat-input svelte-1wyajz9");
-    			add_location(div9, file$4, 65, 9, 1996);
-    			attr_dev(div10, "class", "stat-column value-column svelte-1wyajz9");
-    			add_location(div10, file$4, 52, 8, 1517);
-    			attr_dev(div11, "class", "skill-block svelte-1wyajz9");
-    			add_location(div11, file$4, 48, 7, 1355);
+    			add_location(input, file$4, 55, 10, 1636);
+    			attr_dev(div1, "class", "stat-input svelte-ulhg5z");
+    			add_location(div1, file$4, 54, 9, 1601);
+    			attr_dev(div2, "class", "svelte-ulhg5z");
+    			add_location(div2, file$4, 67, 10, 2067);
+    			attr_dev(div3, "class", "svelte-ulhg5z");
+    			add_location(div3, file$4, 68, 10, 2090);
+    			attr_dev(div4, "class", "svelte-ulhg5z");
+    			add_location(div4, file$4, 69, 10, 2113);
+    			attr_dev(div5, "class", "svelte-ulhg5z");
+    			add_location(div5, file$4, 70, 10, 2136);
+    			attr_dev(div6, "class", "svelte-ulhg5z");
+    			add_location(div6, file$4, 71, 10, 2159);
+    			attr_dev(div7, "class", "svelte-ulhg5z");
+    			add_location(div7, file$4, 72, 10, 2182);
+    			attr_dev(div8, "class", "svelte-ulhg5z");
+    			add_location(div8, file$4, 73, 10, 2205);
+    			attr_dev(div9, "class", "stat-input svelte-ulhg5z");
+    			add_location(div9, file$4, 66, 9, 2032);
+    			attr_dev(div10, "class", "stat-column value-column svelte-ulhg5z");
+    			add_location(div10, file$4, 53, 8, 1553);
+    			attr_dev(div11, "class", "skill-block svelte-ulhg5z");
+    			add_location(div11, file$4, 49, 7, 1391);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
@@ -5091,7 +5091,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(48:6) {#if char.traits[group.name].name == char.skills[skill].parent}",
+    		source: "(49:6) {#if char.traits[group.name].name == char.skills[skill].parent}",
     		ctx
     	});
 
@@ -5100,15 +5100,23 @@ var app = (function () {
 
     // (47:5) {#each skills as skill}
     function create_each_block_1$1(ctx) {
+    	let div;
+    	let t;
     	let if_block_anchor;
     	let if_block = /*char*/ ctx[0].traits[/*group*/ ctx[10].name].name == /*char*/ ctx[0].skills[/*skill*/ ctx[13]].parent && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
+    			div = element("div");
+    			t = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
+    			attr_dev(div, "class", "separator svelte-ulhg5z");
+    			add_location(div, file$4, 47, 6, 1284);
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			insert_dev(target, t, anchor);
     			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
     		},
@@ -5127,6 +5135,8 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t);
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
     		}
@@ -5172,9 +5182,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t3 = space();
     			add_location(h3, file$4, 43, 5, 1167);
-    			attr_dev(div0, "class", "parent-trait-title svelte-1wyajz9");
+    			attr_dev(div0, "class", "parent-trait-title svelte-ulhg5z");
     			add_location(div0, file$4, 42, 4, 1069);
-    			attr_dev(div1, "class", "trait-section svelte-1wyajz9");
+    			attr_dev(div1, "class", "trait-section svelte-ulhg5z");
     			add_location(div1, file$4, 41, 3, 1037);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
@@ -5263,11 +5273,11 @@ var app = (function () {
     			attr_dev(div0, "class", "step-title");
     			add_location(div0, file$4, 33, 1, 852);
     			add_location(h3, file$4, 37, 2, 930);
-    			attr_dev(div1, "class", "remaining svelte-1wyajz9");
+    			attr_dev(div1, "class", "remaining svelte-ulhg5z");
     			add_location(div1, file$4, 36, 1, 904);
-    			attr_dev(div2, "class", "skill-list svelte-1wyajz9");
+    			attr_dev(div2, "class", "skill-list svelte-ulhg5z");
     			add_location(div2, file$4, 39, 1, 978);
-    			attr_dev(div3, "class", "step svelte-1wyajz9");
+    			attr_dev(div3, "class", "step svelte-ulhg5z");
     			add_location(div3, file$4, 32, 0, 832);
     		},
     		l: function claim(nodes) {

@@ -45,6 +45,7 @@
 				</div>
 				{#if group.visible}
 					{#each skills as skill}
+						<div class='separator'></div>
 						{#if char.traits[group.name].name == char.skills[skill].parent}
 							<div class='skill-block'>
 								<div class='stat-column name-column'>
@@ -132,5 +133,8 @@
 	}
 	.step {
 		margin-bottom: 75px;
+	}
+	.separator {
+		margin-top: 20px;
 	}
 </style>
