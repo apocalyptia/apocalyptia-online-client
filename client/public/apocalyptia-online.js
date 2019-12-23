@@ -5637,7 +5637,7 @@ var app = (function () {
     	// 3 XP Abilities
     	new Ability(`Favorite Weapon`,		`Botch is only a Fail with this one weapon.`,	1, 3, 0, ``),
     	new Ability(`Hyper Immunity`,		`+1 to resist Diseases.`,						3, 3, 0, ``),
-    	new Ability(`Pack Mentality`,		`+1 ATK at same target a Comrade ATKs.`,		1, 3, 0, ``),
+    	new Ability(`Pack Mentality`,		`+1 ATK at a target a Comrade ATKs this rnd.`,		1, 3, 0, ``),
     	new Ability(`Quick Reload`,			`Free Reload once per rnd.`,					1, 3, 0, ``),
     	new Ability(`Specialize*`,			`+1 to a Skill Specialty.`,						1, 3, 0, ``),
     	new Ability(`Weapon Training*`,		`+1 ATK for a specific weapon.`,				1, 3, 0, ``),
@@ -5679,13 +5679,13 @@ var app = (function () {
 
     function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
-    	child_ctx[5] = list;
-    	child_ctx[6] = i;
+    	child_ctx[5] = list[i];
+    	child_ctx[6] = list;
+    	child_ctx[7] = i;
     	return child_ctx;
     }
 
-    // (25:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
+    // (49:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
     function create_if_block$2(ctx) {
     	let div;
     	let t;
@@ -5696,9 +5696,9 @@ var app = (function () {
     			div = element("div");
     			t = space();
     			br = element("br");
-    			attr_dev(div, "class", "separator");
-    			add_location(div, file$6, 25, 5, 663);
-    			add_location(br, file$6, 26, 5, 698);
+    			attr_dev(div, "class", "separator svelte-i950az");
+    			add_location(div, file$6, 49, 5, 1347);
+    			add_location(br, file$6, 50, 5, 1382);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5716,14 +5716,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(25:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}",
+    		source: "(49:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (23:3) {#each AbilityList as ability, index}
+    // (47:3) {#each AbilityList as ability, index}
     function create_each_block$4(ctx) {
     	let br;
     	let t0;
@@ -5731,46 +5731,44 @@ var app = (function () {
     	let div5;
     	let div0;
     	let span0;
+    	let t2_value = /*ability*/ ctx[5].name + "";
+    	let t2;
     	let t3;
-    	let span1;
-    	let t4_value = /*ability*/ ctx[4].name + "";
-    	let t4;
-    	let t5;
     	let div1;
+    	let span1;
+    	let t5;
     	let span2;
+    	let t6_value = /*ability*/ ctx[5].description + "";
+    	let t6;
     	let t7;
-    	let span3;
-    	let t8_value = /*ability*/ ctx[4].description + "";
-    	let t8;
-    	let t9;
     	let div2;
+    	let span3;
+    	let t9;
     	let span4;
+    	let t10_value = /*ability*/ ctx[5].max + "";
+    	let t10;
     	let t11;
-    	let span5;
-    	let t12_value = /*ability*/ ctx[4].max + "";
-    	let t12;
-    	let t13;
     	let div3;
+    	let span5;
+    	let t13;
     	let span6;
+    	let t14_value = /*ability*/ ctx[5].xp + "";
+    	let t14;
     	let t15;
-    	let span7;
-    	let t16_value = /*ability*/ ctx[4].xp + "";
-    	let t16;
-    	let t17;
     	let div4;
+    	let span7;
+    	let t17;
     	let span8;
-    	let t19;
-    	let span9;
     	let input;
     	let input_max_value;
     	let input_updating = false;
-    	let t20;
+    	let t18;
     	let dispose;
-    	let if_block = AbilityList[/*index*/ ctx[6] - 1] != undefined && AbilityList[/*index*/ ctx[6]].xp != AbilityList[/*index*/ ctx[6] - 1].xp && create_if_block$2(ctx);
+    	let if_block = AbilityList[/*index*/ ctx[7] - 1] != undefined && AbilityList[/*index*/ ctx[7]].xp != AbilityList[/*index*/ ctx[7] - 1].xp && create_if_block$2(ctx);
 
     	function input_input_handler() {
     		input_updating = true;
-    		/*input_input_handler*/ ctx[3].call(input, /*ability*/ ctx[4]);
+    		/*input_input_handler*/ ctx[4].call(input, /*ability*/ ctx[5]);
     	}
 
     	const block = {
@@ -5782,81 +5780,76 @@ var app = (function () {
     			div5 = element("div");
     			div0 = element("div");
     			span0 = element("span");
-    			span0.textContent = "Name:";
+    			t2 = text(t2_value);
     			t3 = space();
-    			span1 = element("span");
-    			t4 = text(t4_value);
-    			t5 = space();
     			div1 = element("div");
+    			span1 = element("span");
+    			span1.textContent = "Descripiton:";
+    			t5 = space();
     			span2 = element("span");
-    			span2.textContent = "Descripiton:";
+    			t6 = text(t6_value);
     			t7 = space();
-    			span3 = element("span");
-    			t8 = text(t8_value);
-    			t9 = space();
     			div2 = element("div");
+    			span3 = element("span");
+    			span3.textContent = "Max:";
+    			t9 = space();
     			span4 = element("span");
-    			span4.textContent = "Max:";
+    			t10 = text(t10_value);
     			t11 = space();
-    			span5 = element("span");
-    			t12 = text(t12_value);
-    			t13 = space();
     			div3 = element("div");
+    			span5 = element("span");
+    			span5.textContent = "XP:";
+    			t13 = space();
     			span6 = element("span");
-    			span6.textContent = "XP:";
+    			t14 = text(t14_value);
     			t15 = space();
-    			span7 = element("span");
-    			t16 = text(t16_value);
-    			t17 = space();
     			div4 = element("div");
+    			span7 = element("span");
+    			span7.textContent = "Taken:";
+    			t17 = space();
     			span8 = element("span");
-    			span8.textContent = "Taken:";
-    			t19 = space();
-    			span9 = element("span");
     			input = element("input");
-    			t20 = space();
-    			add_location(br, file$6, 23, 4, 557);
-    			attr_dev(span0, "class", "name-label");
-    			add_location(span0, file$6, 30, 6, 774);
-    			attr_dev(span1, "class", "ability-name svelte-1rf7ath");
-    			add_location(span1, file$6, 31, 6, 819);
-    			attr_dev(div0, "class", "m-col svelte-1rf7ath");
-    			add_location(div0, file$6, 29, 5, 748);
-    			attr_dev(span2, "class", "description-label");
-    			add_location(span2, file$6, 34, 6, 911);
-    			attr_dev(span3, "class", "ability-description");
-    			add_location(span3, file$6, 35, 6, 970);
-    			attr_dev(div1, "class", "l-col svelte-1rf7ath");
-    			add_location(div1, file$6, 33, 5, 885);
-    			attr_dev(span4, "class", "max-label");
-    			add_location(span4, file$6, 38, 6, 1076);
-    			attr_dev(span5, "class", "ability-max");
-    			add_location(span5, file$6, 39, 6, 1119);
-    			attr_dev(div2, "class", "s-col svelte-1rf7ath");
-    			add_location(div2, file$6, 37, 5, 1050);
-    			attr_dev(span6, "class", "xp-label");
-    			add_location(span6, file$6, 42, 6, 1209);
-    			attr_dev(span7, "class", "ability-xp");
-    			add_location(span7, file$6, 43, 6, 1250);
-    			attr_dev(div3, "class", "s-col svelte-1rf7ath");
-    			add_location(div3, file$6, 41, 5, 1183);
-    			attr_dev(span8, "class", "taken-label");
-    			add_location(span8, file$6, 46, 6, 1338);
+    			t18 = space();
+    			add_location(br, file$6, 47, 4, 1241);
+    			attr_dev(span0, "class", "ability-name svelte-i950az");
+    			add_location(span0, file$6, 54, 6, 1458);
+    			attr_dev(div0, "class", "m-col svelte-i950az");
+    			add_location(div0, file$6, 53, 5, 1432);
+    			attr_dev(span1, "class", "description-label svelte-i950az");
+    			add_location(span1, file$6, 57, 6, 1550);
+    			attr_dev(span2, "class", "ability-description");
+    			add_location(span2, file$6, 58, 6, 1609);
+    			attr_dev(div1, "class", "l-col svelte-i950az");
+    			add_location(div1, file$6, 56, 5, 1524);
+    			attr_dev(span3, "class", "max-label svelte-i950az");
+    			add_location(span3, file$6, 61, 6, 1715);
+    			attr_dev(span4, "class", "ability-max");
+    			add_location(span4, file$6, 62, 6, 1758);
+    			attr_dev(div2, "class", "s-col svelte-i950az");
+    			add_location(div2, file$6, 60, 5, 1689);
+    			attr_dev(span5, "class", "xp-label svelte-i950az");
+    			add_location(span5, file$6, 65, 6, 1848);
+    			attr_dev(span6, "class", "ability-xp");
+    			add_location(span6, file$6, 66, 6, 1889);
+    			attr_dev(div3, "class", "s-col svelte-i950az");
+    			add_location(div3, file$6, 64, 5, 1822);
+    			attr_dev(span7, "class", "taken-label svelte-i950az");
+    			add_location(span7, file$6, 69, 6, 1977);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "class", "taken-number");
     			attr_dev(input, "min", "0");
-    			attr_dev(input, "max", input_max_value = /*ability*/ ctx[4].max);
-    			add_location(input, file$6, 48, 7, 1421);
-    			attr_dev(span9, "class", "ability-taken");
-    			add_location(span9, file$6, 47, 6, 1385);
-    			attr_dev(div4, "class", "s-col svelte-1rf7ath");
-    			add_location(div4, file$6, 45, 5, 1312);
+    			attr_dev(input, "max", input_max_value = /*ability*/ ctx[5].max);
+    			add_location(input, file$6, 71, 7, 2060);
+    			attr_dev(span8, "class", "ability-taken");
+    			add_location(span8, file$6, 70, 6, 2024);
+    			attr_dev(div4, "class", "s-col svelte-i950az");
+    			add_location(div4, file$6, 68, 5, 1951);
     			attr_dev(div5, "class", "ability-row");
-    			add_location(div5, file$6, 28, 4, 717);
+    			add_location(div5, file$6, 52, 4, 1401);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
-    				listen_dev(input, "input", /*modifyAbilities*/ ctx[0], false, false, false)
+    				listen_dev(input, "input", /*modifyAbilities*/ ctx[1], false, false, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -5867,40 +5860,38 @@ var app = (function () {
     			insert_dev(target, div5, anchor);
     			append_dev(div5, div0);
     			append_dev(div0, span0);
-    			append_dev(div0, t3);
-    			append_dev(div0, span1);
-    			append_dev(span1, t4);
-    			append_dev(div5, t5);
+    			append_dev(span0, t2);
+    			append_dev(div5, t3);
     			append_dev(div5, div1);
+    			append_dev(div1, span1);
+    			append_dev(div1, t5);
     			append_dev(div1, span2);
-    			append_dev(div1, t7);
-    			append_dev(div1, span3);
-    			append_dev(span3, t8);
-    			append_dev(div5, t9);
+    			append_dev(span2, t6);
+    			append_dev(div5, t7);
     			append_dev(div5, div2);
+    			append_dev(div2, span3);
+    			append_dev(div2, t9);
     			append_dev(div2, span4);
-    			append_dev(div2, t11);
-    			append_dev(div2, span5);
-    			append_dev(span5, t12);
-    			append_dev(div5, t13);
+    			append_dev(span4, t10);
+    			append_dev(div5, t11);
     			append_dev(div5, div3);
+    			append_dev(div3, span5);
+    			append_dev(div3, t13);
     			append_dev(div3, span6);
-    			append_dev(div3, t15);
-    			append_dev(div3, span7);
-    			append_dev(span7, t16);
-    			append_dev(div5, t17);
+    			append_dev(span6, t14);
+    			append_dev(div5, t15);
     			append_dev(div5, div4);
+    			append_dev(div4, span7);
+    			append_dev(div4, t17);
     			append_dev(div4, span8);
-    			append_dev(div4, t19);
-    			append_dev(div4, span9);
-    			append_dev(span9, input);
-    			set_input_value(input, /*ability*/ ctx[4].taken);
-    			append_dev(div5, t20);
+    			append_dev(span8, input);
+    			set_input_value(input, /*ability*/ ctx[5].taken);
+    			append_dev(div5, t18);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (AbilityList[/*index*/ ctx[6] - 1] != undefined && AbilityList[/*index*/ ctx[6]].xp != AbilityList[/*index*/ ctx[6] - 1].xp) {
+    			if (AbilityList[/*index*/ ctx[7] - 1] != undefined && AbilityList[/*index*/ ctx[7]].xp != AbilityList[/*index*/ ctx[7] - 1].xp) {
     				if (!if_block) {
     					if_block = create_if_block$2(ctx);
     					if_block.c();
@@ -5911,17 +5902,17 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*AbilityList*/ 0 && t4_value !== (t4_value = /*ability*/ ctx[4].name + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*AbilityList*/ 0 && t8_value !== (t8_value = /*ability*/ ctx[4].description + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*AbilityList*/ 0 && t12_value !== (t12_value = /*ability*/ ctx[4].max + "")) set_data_dev(t12, t12_value);
-    			if (dirty & /*AbilityList*/ 0 && t16_value !== (t16_value = /*ability*/ ctx[4].xp + "")) set_data_dev(t16, t16_value);
+    			if (dirty & /*AbilityList*/ 0 && t2_value !== (t2_value = /*ability*/ ctx[5].name + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*AbilityList*/ 0 && t6_value !== (t6_value = /*ability*/ ctx[5].description + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*AbilityList*/ 0 && t10_value !== (t10_value = /*ability*/ ctx[5].max + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*AbilityList*/ 0 && t14_value !== (t14_value = /*ability*/ ctx[5].xp + "")) set_data_dev(t14, t14_value);
 
-    			if (dirty & /*AbilityList*/ 0 && input_max_value !== (input_max_value = /*ability*/ ctx[4].max)) {
+    			if (dirty & /*AbilityList*/ 0 && input_max_value !== (input_max_value = /*ability*/ ctx[5].max)) {
     				attr_dev(input, "max", input_max_value);
     			}
 
     			if (!input_updating && dirty & /*AbilityList*/ 0) {
-    				set_input_value(input, /*ability*/ ctx[4].taken);
+    				set_input_value(input, /*ability*/ ctx[5].taken);
     			}
 
     			input_updating = false;
@@ -5940,7 +5931,7 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(23:3) {#each AbilityList as ability, index}",
+    		source: "(47:3) {#each AbilityList as ability, index}",
     		ctx
     	});
 
@@ -5948,12 +5939,28 @@ var app = (function () {
     }
 
     function create_fragment$8(ctx) {
-    	let div3;
+    	let div10;
     	let div0;
     	let h2;
     	let t1;
-    	let div2;
     	let div1;
+    	let h3;
+    	let t2;
+    	let t3;
+    	let t4;
+    	let div9;
+    	let div8;
+    	let div7;
+    	let div2;
+    	let t6;
+    	let div3;
+    	let t8;
+    	let div4;
+    	let t10;
+    	let div5;
+    	let t12;
+    	let div6;
+    	let t14;
     	let each_value = AbilityList;
     	let each_blocks = [];
 
@@ -5963,45 +5970,99 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
+    			div10 = element("div");
     			div0 = element("div");
     			h2 = element("h2");
     			h2.textContent = "Abilities";
     			t1 = space();
-    			div2 = element("div");
     			div1 = element("div");
+    			h3 = element("h3");
+    			t2 = text("XP Remaining: ");
+    			t3 = text(/*remaining*/ ctx[0]);
+    			t4 = space();
+    			div9 = element("div");
+    			div8 = element("div");
+    			div7 = element("div");
+    			div2 = element("div");
+    			div2.textContent = "Name";
+    			t6 = space();
+    			div3 = element("div");
+    			div3.textContent = "Description";
+    			t8 = space();
+    			div4 = element("div");
+    			div4.textContent = "Max";
+    			t10 = space();
+    			div5 = element("div");
+    			div5.textContent = "XP";
+    			t12 = space();
+    			div6 = element("div");
+    			div6.textContent = "Taken";
+    			t14 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$6, 18, 2, 428);
+    			add_location(h2, file$6, 32, 2, 764);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$6, 17, 1, 401);
-    			attr_dev(div1, "class", "abilities-list svelte-1rf7ath");
-    			add_location(div1, file$6, 21, 2, 483);
-    			attr_dev(div2, "class", "stat-block");
-    			add_location(div2, file$6, 20, 1, 456);
-    			attr_dev(div3, "class", "abilities-step svelte-1rf7ath");
-    			add_location(div3, file$6, 16, 0, 371);
+    			add_location(div0, file$6, 31, 1, 737);
+    			add_location(h3, file$6, 35, 2, 818);
+    			attr_dev(div1, "class", "remaining svelte-i950az");
+    			add_location(div1, file$6, 34, 1, 792);
+    			attr_dev(div2, "class", "m-col name-header svelte-i950az");
+    			add_location(div2, file$6, 40, 4, 950);
+    			attr_dev(div3, "class", "l-col description-header svelte-i950az");
+    			add_location(div3, file$6, 41, 4, 996);
+    			attr_dev(div4, "class", "s-col max-header svelte-i950az");
+    			add_location(div4, file$6, 42, 4, 1056);
+    			attr_dev(div5, "class", "s-col xp-header svelte-i950az");
+    			add_location(div5, file$6, 43, 4, 1100);
+    			attr_dev(div6, "class", "s-col taken-header svelte-i950az");
+    			add_location(div6, file$6, 44, 4, 1142);
+    			attr_dev(div7, "class", "header-row svelte-i950az");
+    			add_location(div7, file$6, 39, 3, 921);
+    			attr_dev(div8, "class", "abilities-list svelte-i950az");
+    			add_location(div8, file$6, 38, 2, 889);
+    			attr_dev(div9, "class", "stat-block");
+    			add_location(div9, file$6, 37, 1, 862);
+    			attr_dev(div10, "class", "abilities-step svelte-i950az");
+    			add_location(div10, file$6, 30, 0, 707);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, div0);
+    			insert_dev(target, div10, anchor);
+    			append_dev(div10, div0);
     			append_dev(div0, h2);
-    			append_dev(div3, t1);
-    			append_dev(div3, div2);
-    			append_dev(div2, div1);
+    			append_dev(div10, t1);
+    			append_dev(div10, div1);
+    			append_dev(div1, h3);
+    			append_dev(h3, t2);
+    			append_dev(h3, t3);
+    			append_dev(div10, t4);
+    			append_dev(div10, div9);
+    			append_dev(div9, div8);
+    			append_dev(div8, div7);
+    			append_dev(div7, div2);
+    			append_dev(div7, t6);
+    			append_dev(div7, div3);
+    			append_dev(div7, t8);
+    			append_dev(div7, div4);
+    			append_dev(div7, t10);
+    			append_dev(div7, div5);
+    			append_dev(div7, t12);
+    			append_dev(div7, div6);
+    			append_dev(div8, t14);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
+    				each_blocks[i].m(div8, null);
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*AbilityList, modifyAbilities, undefined*/ 1) {
+    			if (dirty & /*remaining*/ 1) set_data_dev(t3, /*remaining*/ ctx[0]);
+
+    			if (dirty & /*AbilityList, modifyAbilities, undefined*/ 2) {
     				each_value = AbilityList;
     				let i;
 
@@ -6013,7 +6074,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$4(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div1, null);
+    						each_blocks[i].m(div8, null);
     					}
     				}
 
@@ -6027,7 +6088,7 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div10);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -6050,12 +6111,28 @@ var app = (function () {
     		char = value;
     	});
 
+    	let remaining = char.props.xp.score;
+
     	function modifyAbilities() {
+    		$$invalidate(0, remaining = char.props.xp.score);
     		char.abilities = [];
 
     		AbilityList.forEach(function (ability) {
     			if (ability.taken > 0) {
     				char.abilities.push(ability);
+
+    				for (let t = 0; t < ability.taken; t++) {
+    					$$invalidate(0, remaining -= ability.xp);
+    				}
+    			}
+
+    			switch (ability.name) {
+    				case `Specialize`:
+    					break;
+    				case `Fleet Footed`:
+    					char.props.speed.score += 1;
+    				case `Danger Sense`:
+    					char.props.reflex.score += 1;
     			}
     		});
     	}
@@ -6070,9 +6147,10 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("char" in $$props) char = $$props.char;
+    		if ("remaining" in $$props) $$invalidate(0, remaining = $$props.remaining);
     	};
 
-    	return [modifyAbilities, char, unsubscribe, input_input_handler];
+    	return [remaining, modifyAbilities, char, unsubscribe, input_input_handler];
     }
 
     class CreAbilities extends SvelteComponentDev {

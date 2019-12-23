@@ -4,11 +4,25 @@
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
+	let remaining = char.props.xp.score
+
 	function modifyAbilities() {
+		remaining = char.props.xp.score
 		char.abilities = []
 		AbilityList.forEach(function (ability) {
 			if (ability.taken > 0) {
 				char.abilities.push(ability)
+				for (let t = 0; t < ability.taken; t++) {
+					remaining -= ability.xp
+				}
+			}
+			switch (ability.name) {
+				case `Specialize`:
+					break
+				case `Fleet Footed`:
+					char.props.speed.score += 1
+				case `Danger Sense`:
+					char.props.reflex.score += 1
 			}
 		})
 	}
@@ -18,8 +32,18 @@
 	<div class='step-title'>
 		<h2>Abilities</h2>
 	</div>
+	<div class='remaining'>
+		<h3>XP Remaining: {remaining}</h3>
+	</div>
 	<div class='stat-block'>
 		<div class='abilities-list'>
+			<div class='header-row'>
+				<div class='m-col name-header'>Name</div>
+				<div class='l-col description-header'>Description</div>
+				<div class='s-col max-header'>Max</div>
+				<div class='s-col xp-header'>XP</div>
+				<div class='s-col taken-header'>Taken</div>
+			</div>
 			{#each AbilityList as ability, index}
 				<br>
 				{#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
@@ -28,7 +52,6 @@
 				{/if}
 				<div class='ability-row'>
 					<div class='m-col'>
-						<span class='name-label'>Name: </span>
 						<span class='ability-name'>{ability.name}</span>
 					</div>
 					<div class='l-col'>
@@ -63,6 +86,52 @@
 </div>
 
 <style>
+	@media only screen and (max-width: 500px) {
+		.header-row {
+			display: none;
+		}
+		.l-col, .m-col, .s-col {
+			display: block;
+		}
+		.ability-name,
+		.description-label,
+		.max-label,
+		.xp-label,
+		.taken-label {
+			font-weight: bold;
+		}
+		.ability-name {
+			text-decoration: underline;
+		}
+	}
+	@media only screen and (min-width: 500px) {
+		.name-header,
+		.description-header,
+		.max-header,
+		.xp-header,
+		.taken-header {
+			text-decoration: underline;
+		}
+		.description-label,
+		.max-label,
+		.xp-label,
+		.taken-label {
+			display: none;
+		}
+		.l-col, .m-col, .s-col {
+			display: inline-block;
+		}
+		.l-col {
+			width: 46%;
+		}
+		.m-col {
+			width: 20%;
+		}
+		.s-col {
+			text-align: center;
+			width: 8%;
+		}
+	}
 	.abilities-step {
 		margin-bottom: 5vh;
 		text-align: left;
@@ -70,10 +139,13 @@
 	.abilities-list {
 		width: 100%;
 	}
-	.ability-name {
-		text-decoration: underline;
+	.remaining {
+		text-align: center;
 	}
-	.l-col, .m-col, .s-col {
-		display: block;
+	.separator {
+		border-bottom: 1px solid;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		width: 100%;
 	}
 </style>

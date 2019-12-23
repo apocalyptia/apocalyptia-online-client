@@ -14,7 +14,7 @@ export const AbilityList = [
 	// 3 XP Abilities
 	new Ability(`Favorite Weapon`,		`Botch is only a Fail with this one weapon.`,	1, 3, 0, ``),
 	new Ability(`Hyper Immunity`,		`+1 to resist Diseases.`,						3, 3, 0, ``),
-	new Ability(`Pack Mentality`,		`+1 ATK at same target a Comrade ATKs.`,		1, 3, 0, ``),
+	new Ability(`Pack Mentality`,		`+1 ATK at a target a Comrade ATKs this rnd.`,		1, 3, 0, ``),
 	new Ability(`Quick Reload`,			`Free Reload once per rnd.`,					1, 3, 0, ``),
 	new Ability(`Specialize*`,			`+1 to a Skill Specialty.`,						1, 3, 0, ``),
 	new Ability(`Weapon Training*`,		`+1 ATK for a specific weapon.`,				1, 3, 0, ``),
