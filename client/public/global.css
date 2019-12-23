@@ -117,18 +117,17 @@ button {
 	background: red;
 }
 
-.ref-page {
-	padding: 25px;
-	padding-bottom: 50px;
-}
-
-.menu-page {
-	padding: 25px;
+.display-page {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	padding: 2%;
 	text-align: center;
+	width: 96%;
 }
 
-.menu-page button {
-	padding: 2rem;
-	width: 70%;
-	margin: 1rem auto;
+.diplay-button {
+	height: 10vh;
+	margin: 10% 10% 0%;
+	width: 80%;
 }

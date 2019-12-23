@@ -4930,35 +4930,37 @@ var app = (function () {
     	return block;
     }
 
-    // (49:6) {#if char.traits[group.name].name == char.skills[skill].parent}
+    // (48:6) {#if char.traits[group.name].name == char.skills[skill].parent}
     function create_if_block_1$1(ctx) {
+    	let br;
+    	let t0;
     	let div11;
     	let div0;
     	let span;
-    	let t0_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name + "";
-    	let t0;
+    	let t1_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name + "";
     	let t1;
+    	let t2;
     	let div10;
     	let div1;
     	let input;
     	let input_name_value;
     	let input_invalid_value;
-    	let t2;
+    	let t3;
     	let div9;
     	let div2;
-    	let t4;
+    	let t5;
     	let div3;
-    	let t6;
+    	let t7;
     	let div4;
-    	let t8;
+    	let t9;
     	let div5;
-    	let t10;
+    	let t11;
     	let div6;
-    	let t12;
+    	let t13;
     	let div7;
-    	let t14;
+    	let t15;
     	let div8;
-    	let t16;
+    	let t17;
     	let dispose;
 
     	function input_change_input_handler() {
@@ -4967,70 +4969,73 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			br = element("br");
+    			t0 = space();
     			div11 = element("div");
     			div0 = element("div");
     			span = element("span");
-    			t0 = text(t0_value);
-    			t1 = space();
+    			t1 = text(t1_value);
+    			t2 = space();
     			div10 = element("div");
     			div1 = element("div");
     			input = element("input");
-    			t2 = space();
+    			t3 = space();
     			div9 = element("div");
     			div2 = element("div");
     			div2.textContent = "0";
-    			t4 = space();
+    			t5 = space();
     			div3 = element("div");
     			div3.textContent = "1";
-    			t6 = space();
+    			t7 = space();
     			div4 = element("div");
     			div4.textContent = "2";
-    			t8 = space();
+    			t9 = space();
     			div5 = element("div");
     			div5.textContent = "3";
-    			t10 = space();
+    			t11 = space();
     			div6 = element("div");
     			div6.textContent = "4";
-    			t12 = space();
+    			t13 = space();
     			div7 = element("div");
     			div7.textContent = "5";
-    			t14 = space();
+    			t15 = space();
     			div8 = element("div");
     			div8.textContent = "6";
-    			t16 = space();
-    			attr_dev(span, "class", "stat-label svelte-ulhg5z");
-    			add_location(span, file$4, 51, 9, 1472);
-    			attr_dev(div0, "class", "stat-column name-column svelte-ulhg5z");
-    			add_location(div0, file$4, 50, 8, 1425);
-    			attr_dev(input, "class", "slider-input svelte-ulhg5z");
+    			t17 = space();
+    			add_location(br, file$4, 48, 7, 1355);
+    			attr_dev(span, "class", "stat-label svelte-1wyajz9");
+    			add_location(span, file$4, 51, 9, 1448);
+    			attr_dev(div0, "class", "stat-column name-column svelte-1wyajz9");
+    			add_location(div0, file$4, 50, 8, 1401);
+    			attr_dev(input, "class", "slider-input svelte-1wyajz9");
     			attr_dev(input, "type", "range");
     			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name.toLowerCase());
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", "6");
     			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[2] < 0 || this.value > /*char*/ ctx[0].traits[/*group*/ ctx[10].name].score);
-    			add_location(input, file$4, 55, 10, 1636);
-    			attr_dev(div1, "class", "stat-input svelte-ulhg5z");
-    			add_location(div1, file$4, 54, 9, 1601);
-    			attr_dev(div2, "class", "svelte-ulhg5z");
-    			add_location(div2, file$4, 67, 10, 2067);
-    			attr_dev(div3, "class", "svelte-ulhg5z");
-    			add_location(div3, file$4, 68, 10, 2090);
-    			attr_dev(div4, "class", "svelte-ulhg5z");
-    			add_location(div4, file$4, 69, 10, 2113);
-    			attr_dev(div5, "class", "svelte-ulhg5z");
-    			add_location(div5, file$4, 70, 10, 2136);
-    			attr_dev(div6, "class", "svelte-ulhg5z");
-    			add_location(div6, file$4, 71, 10, 2159);
-    			attr_dev(div7, "class", "svelte-ulhg5z");
-    			add_location(div7, file$4, 72, 10, 2182);
-    			attr_dev(div8, "class", "svelte-ulhg5z");
-    			add_location(div8, file$4, 73, 10, 2205);
-    			attr_dev(div9, "class", "stat-input svelte-ulhg5z");
-    			add_location(div9, file$4, 66, 9, 2032);
-    			attr_dev(div10, "class", "stat-column value-column svelte-ulhg5z");
-    			add_location(div10, file$4, 53, 8, 1553);
-    			attr_dev(div11, "class", "skill-block svelte-ulhg5z");
-    			add_location(div11, file$4, 49, 7, 1391);
+    			add_location(input, file$4, 55, 10, 1612);
+    			attr_dev(div1, "class", "stat-input svelte-1wyajz9");
+    			add_location(div1, file$4, 54, 9, 1577);
+    			attr_dev(div2, "class", "svelte-1wyajz9");
+    			add_location(div2, file$4, 67, 10, 2043);
+    			attr_dev(div3, "class", "svelte-1wyajz9");
+    			add_location(div3, file$4, 68, 10, 2066);
+    			attr_dev(div4, "class", "svelte-1wyajz9");
+    			add_location(div4, file$4, 69, 10, 2089);
+    			attr_dev(div5, "class", "svelte-1wyajz9");
+    			add_location(div5, file$4, 70, 10, 2112);
+    			attr_dev(div6, "class", "svelte-1wyajz9");
+    			add_location(div6, file$4, 71, 10, 2135);
+    			attr_dev(div7, "class", "svelte-1wyajz9");
+    			add_location(div7, file$4, 72, 10, 2158);
+    			attr_dev(div8, "class", "svelte-1wyajz9");
+    			add_location(div8, file$4, 73, 10, 2181);
+    			attr_dev(div9, "class", "stat-input svelte-1wyajz9");
+    			add_location(div9, file$4, 66, 9, 2008);
+    			attr_dev(div10, "class", "stat-column value-column svelte-1wyajz9");
+    			add_location(div10, file$4, 53, 8, 1529);
+    			attr_dev(div11, "class", "skill-block svelte-1wyajz9");
+    			add_location(div11, file$4, 49, 7, 1367);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
@@ -5039,35 +5044,37 @@ var app = (function () {
     			];
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, br, anchor);
+    			insert_dev(target, t0, anchor);
     			insert_dev(target, div11, anchor);
     			append_dev(div11, div0);
     			append_dev(div0, span);
-    			append_dev(span, t0);
-    			append_dev(div11, t1);
+    			append_dev(span, t1);
+    			append_dev(div11, t2);
     			append_dev(div11, div10);
     			append_dev(div10, div1);
     			append_dev(div1, input);
     			set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[13]].score);
-    			append_dev(div10, t2);
+    			append_dev(div10, t3);
     			append_dev(div10, div9);
     			append_dev(div9, div2);
-    			append_dev(div9, t4);
+    			append_dev(div9, t5);
     			append_dev(div9, div3);
-    			append_dev(div9, t6);
+    			append_dev(div9, t7);
     			append_dev(div9, div4);
-    			append_dev(div9, t8);
+    			append_dev(div9, t9);
     			append_dev(div9, div5);
-    			append_dev(div9, t10);
+    			append_dev(div9, t11);
     			append_dev(div9, div6);
-    			append_dev(div9, t12);
+    			append_dev(div9, t13);
     			append_dev(div9, div7);
-    			append_dev(div9, t14);
+    			append_dev(div9, t15);
     			append_dev(div9, div8);
-    			append_dev(div11, t16);
+    			append_dev(div11, t17);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*char*/ 1 && t1_value !== (t1_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name + "")) set_data_dev(t1, t1_value);
 
     			if (dirty & /*char*/ 1 && input_name_value !== (input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name.toLowerCase())) {
     				attr_dev(input, "name", input_name_value);
@@ -5082,6 +5089,8 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(br);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(div11);
     			run_all(dispose);
     		}
@@ -5091,7 +5100,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(49:6) {#if char.traits[group.name].name == char.skills[skill].parent}",
+    		source: "(48:6) {#if char.traits[group.name].name == char.skills[skill].parent}",
     		ctx
     	});
 
@@ -5100,23 +5109,15 @@ var app = (function () {
 
     // (47:5) {#each skills as skill}
     function create_each_block_1$1(ctx) {
-    	let div;
-    	let t;
     	let if_block_anchor;
     	let if_block = /*char*/ ctx[0].traits[/*group*/ ctx[10].name].name == /*char*/ ctx[0].skills[/*skill*/ ctx[13]].parent && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			t = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(div, "class", "separator svelte-ulhg5z");
-    			add_location(div, file$4, 47, 6, 1284);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			insert_dev(target, t, anchor);
     			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
     		},
@@ -5135,8 +5136,6 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			if (detaching) detach_dev(t);
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
     		}
@@ -5182,9 +5181,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t3 = space();
     			add_location(h3, file$4, 43, 5, 1167);
-    			attr_dev(div0, "class", "parent-trait-title svelte-ulhg5z");
+    			attr_dev(div0, "class", "parent-trait-title svelte-1wyajz9");
     			add_location(div0, file$4, 42, 4, 1069);
-    			attr_dev(div1, "class", "trait-section svelte-ulhg5z");
+    			attr_dev(div1, "class", "trait-section svelte-1wyajz9");
     			add_location(div1, file$4, 41, 3, 1037);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
@@ -5273,11 +5272,11 @@ var app = (function () {
     			attr_dev(div0, "class", "step-title");
     			add_location(div0, file$4, 33, 1, 852);
     			add_location(h3, file$4, 37, 2, 930);
-    			attr_dev(div1, "class", "remaining svelte-ulhg5z");
+    			attr_dev(div1, "class", "remaining svelte-1wyajz9");
     			add_location(div1, file$4, 36, 1, 904);
-    			attr_dev(div2, "class", "skill-list svelte-ulhg5z");
+    			attr_dev(div2, "class", "skill-list svelte-1wyajz9");
     			add_location(div2, file$4, 39, 1, 978);
-    			attr_dev(div3, "class", "step svelte-ulhg5z");
+    			attr_dev(div3, "class", "step svelte-1wyajz9");
     			add_location(div3, file$4, 32, 0, 832);
     		},
     		l: function claim(nodes) {
@@ -5686,21 +5685,30 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (31:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
+    // (32:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
     function create_if_block$2(ctx) {
     	let div;
+    	let t;
+    	let br;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "separator svelte-1jewotr");
-    			add_location(div, file$6, 31, 5, 880);
+    			t = space();
+    			br = element("br");
+    			attr_dev(div, "class", "separator svelte-1y96y0y");
+    			add_location(div, file$6, 32, 5, 889);
+    			add_location(br, file$6, 33, 5, 924);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, br, anchor);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t);
+    			if (detaching) detach_dev(br);
     		}
     	};
 
@@ -5708,7 +5716,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(31:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}",
+    		source: "(32:4) {#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}",
     		ctx
     	});
 
@@ -5717,29 +5725,31 @@ var app = (function () {
 
     // (30:3) {#each AbilityList as ability, index}
     function create_each_block$4(ctx) {
+    	let br;
     	let t0;
+    	let t1;
     	let div5;
     	let div0;
-    	let t1_value = /*ability*/ ctx[4].name + "";
-    	let t1;
+    	let t2_value = /*ability*/ ctx[4].name + "";
     	let t2;
-    	let div1;
-    	let t3_value = /*ability*/ ctx[4].description + "";
     	let t3;
+    	let div1;
+    	let t4_value = /*ability*/ ctx[4].description + "";
     	let t4;
-    	let div2;
-    	let t5_value = /*ability*/ ctx[4].max + "";
     	let t5;
+    	let div2;
+    	let t6_value = /*ability*/ ctx[4].max + "";
     	let t6;
-    	let div3;
-    	let t7_value = /*ability*/ ctx[4].xp + "";
     	let t7;
+    	let div3;
+    	let t8_value = /*ability*/ ctx[4].xp + "";
     	let t8;
+    	let t9;
     	let div4;
     	let input;
     	let input_max_value;
     	let input_updating = false;
-    	let t9;
+    	let t10;
     	let dispose;
     	let if_block = AbilityList[/*index*/ ctx[6] - 1] != undefined && AbilityList[/*index*/ ctx[6]].xp != AbilityList[/*index*/ ctx[6] - 1].xp && create_if_block$2(ctx);
 
@@ -5750,41 +5760,44 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			if (if_block) if_block.c();
+    			br = element("br");
     			t0 = space();
+    			if (if_block) if_block.c();
+    			t1 = space();
     			div5 = element("div");
     			div0 = element("div");
-    			t1 = text(t1_value);
-    			t2 = space();
+    			t2 = text(t2_value);
+    			t3 = space();
     			div1 = element("div");
-    			t3 = text(t3_value);
-    			t4 = space();
+    			t4 = text(t4_value);
+    			t5 = space();
     			div2 = element("div");
-    			t5 = text(t5_value);
-    			t6 = space();
+    			t6 = text(t6_value);
+    			t7 = space();
     			div3 = element("div");
-    			t7 = text(t7_value);
-    			t8 = space();
+    			t8 = text(t8_value);
+    			t9 = space();
     			div4 = element("div");
     			input = element("input");
-    			t9 = space();
-    			attr_dev(div0, "class", "m-col svelte-1jewotr");
-    			add_location(div0, file$6, 34, 5, 955);
-    			attr_dev(div1, "class", "l-col svelte-1jewotr");
-    			add_location(div1, file$6, 35, 5, 1000);
-    			attr_dev(div2, "class", "s-col svelte-1jewotr");
-    			add_location(div2, file$6, 36, 5, 1052);
-    			attr_dev(div3, "class", "s-col svelte-1jewotr");
-    			add_location(div3, file$6, 37, 5, 1096);
+    			t10 = space();
+    			add_location(br, file$6, 30, 4, 783);
+    			attr_dev(div0, "class", "m-col svelte-1y96y0y");
+    			add_location(div0, file$6, 36, 5, 974);
+    			attr_dev(div1, "class", "l-col svelte-1y96y0y");
+    			add_location(div1, file$6, 37, 5, 1019);
+    			attr_dev(div2, "class", "s-col svelte-1y96y0y");
+    			add_location(div2, file$6, 38, 5, 1071);
+    			attr_dev(div3, "class", "s-col svelte-1y96y0y");
+    			add_location(div3, file$6, 39, 5, 1115);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "class", "taken-number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = /*ability*/ ctx[4].max);
-    			add_location(input, file$6, 39, 6, 1165);
-    			attr_dev(div4, "class", "s-col svelte-1jewotr");
-    			add_location(div4, file$6, 38, 5, 1139);
-    			attr_dev(div5, "class", "ability-row");
-    			add_location(div5, file$6, 33, 4, 924);
+    			add_location(input, file$6, 41, 6, 1184);
+    			attr_dev(div4, "class", "s-col svelte-1y96y0y");
+    			add_location(div4, file$6, 40, 5, 1158);
+    			attr_dev(div5, "class", "ability-row svelte-1y96y0y");
+    			add_location(div5, file$6, 35, 4, 943);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -5792,25 +5805,27 @@ var app = (function () {
     			];
     		},
     		m: function mount(target, anchor) {
-    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, br, anchor);
     			insert_dev(target, t0, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t1, anchor);
     			insert_dev(target, div5, anchor);
     			append_dev(div5, div0);
-    			append_dev(div0, t1);
-    			append_dev(div5, t2);
+    			append_dev(div0, t2);
+    			append_dev(div5, t3);
     			append_dev(div5, div1);
-    			append_dev(div1, t3);
-    			append_dev(div5, t4);
+    			append_dev(div1, t4);
+    			append_dev(div5, t5);
     			append_dev(div5, div2);
-    			append_dev(div2, t5);
-    			append_dev(div5, t6);
+    			append_dev(div2, t6);
+    			append_dev(div5, t7);
     			append_dev(div5, div3);
-    			append_dev(div3, t7);
-    			append_dev(div5, t8);
+    			append_dev(div3, t8);
+    			append_dev(div5, t9);
     			append_dev(div5, div4);
     			append_dev(div4, input);
     			set_input_value(input, /*ability*/ ctx[4].taken);
-    			append_dev(div5, t9);
+    			append_dev(div5, t10);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
@@ -5819,17 +5834,17 @@ var app = (function () {
     				if (!if_block) {
     					if_block = create_if_block$2(ctx);
     					if_block.c();
-    					if_block.m(t0.parentNode, t0);
+    					if_block.m(t1.parentNode, t1);
     				}
     			} else if (if_block) {
     				if_block.d(1);
     				if_block = null;
     			}
 
-    			if (dirty & /*AbilityList*/ 0 && t1_value !== (t1_value = /*ability*/ ctx[4].name + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*AbilityList*/ 0 && t3_value !== (t3_value = /*ability*/ ctx[4].description + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*AbilityList*/ 0 && t5_value !== (t5_value = /*ability*/ ctx[4].max + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*AbilityList*/ 0 && t7_value !== (t7_value = /*ability*/ ctx[4].xp + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*AbilityList*/ 0 && t2_value !== (t2_value = /*ability*/ ctx[4].name + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*AbilityList*/ 0 && t4_value !== (t4_value = /*ability*/ ctx[4].description + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*AbilityList*/ 0 && t6_value !== (t6_value = /*ability*/ ctx[4].max + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*AbilityList*/ 0 && t8_value !== (t8_value = /*ability*/ ctx[4].xp + "")) set_data_dev(t8, t8_value);
 
     			if (dirty & /*AbilityList*/ 0 && input_max_value !== (input_max_value = /*ability*/ ctx[4].max)) {
     				attr_dev(input, "max", input_max_value);
@@ -5842,8 +5857,10 @@ var app = (function () {
     			input_updating = false;
     		},
     		d: function destroy(detaching) {
-    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(br);
     			if (detaching) detach_dev(t0);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(div5);
     			run_all(dispose);
     		}
@@ -5918,23 +5935,23 @@ var app = (function () {
     			add_location(h2, file$6, 18, 2, 418);
     			attr_dev(div0, "class", "step-title");
     			add_location(div0, file$6, 17, 1, 391);
-    			attr_dev(div1, "class", "m-col svelte-1jewotr");
+    			attr_dev(div1, "class", "m-col svelte-1y96y0y");
     			add_location(div1, file$6, 23, 4, 557);
-    			attr_dev(div2, "class", "l-col svelte-1jewotr");
+    			attr_dev(div2, "class", "l-col svelte-1y96y0y");
     			add_location(div2, file$6, 24, 4, 591);
-    			attr_dev(div3, "class", "s-col svelte-1jewotr");
+    			attr_dev(div3, "class", "s-col svelte-1y96y0y");
     			add_location(div3, file$6, 25, 4, 632);
-    			attr_dev(div4, "class", "s-col svelte-1jewotr");
+    			attr_dev(div4, "class", "s-col svelte-1y96y0y");
     			add_location(div4, file$6, 26, 4, 665);
-    			attr_dev(div5, "class", "s-col svelte-1jewotr");
+    			attr_dev(div5, "class", "s-col svelte-1y96y0y");
     			add_location(div5, file$6, 27, 4, 697);
-    			attr_dev(div6, "class", "ability-row header-row separator svelte-1jewotr");
+    			attr_dev(div6, "class", "ability-row header-row separator svelte-1y96y0y");
     			add_location(div6, file$6, 22, 3, 506);
-    			attr_dev(div7, "class", "abilities-table");
+    			attr_dev(div7, "class", "abilities-table svelte-1y96y0y");
     			add_location(div7, file$6, 21, 2, 473);
     			attr_dev(div8, "class", "stat-block");
     			add_location(div8, file$6, 20, 1, 446);
-    			attr_dev(div9, "class", "step");
+    			attr_dev(div9, "class", "step svelte-1y96y0y");
     			add_location(div9, file$6, 16, 0, 371);
     		},
     		l: function claim(nodes) {
@@ -6895,9 +6912,10 @@ var app = (function () {
     const file$8 = "src/pages/Creator.svelte";
 
     function create_fragment$a(ctx) {
-    	let div1;
-    	let t0;
+    	let div2;
     	let div0;
+    	let t0;
+    	let div1;
     	let button0;
     	let t2;
     	let button1;
@@ -6917,10 +6935,11 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t0 = space();
-    			div0 = element("div");
+    			div1 = element("div");
     			button0 = element("button");
     			button0.textContent = "Back";
     			t2 = space();
@@ -6929,16 +6948,18 @@ var app = (function () {
     			t4 = space();
     			button2 = element("button");
     			button2.textContent = "Next";
-    			attr_dev(button0, "class", "nav-button svelte-hux7yo");
-    			add_location(button0, file$8, 35, 2, 1106);
-    			attr_dev(button1, "class", "nav-button svelte-hux7yo");
-    			add_location(button1, file$8, 36, 2, 1165);
-    			attr_dev(button2, "class", "nav-button svelte-hux7yo");
-    			add_location(button2, file$8, 37, 2, 1224);
-    			attr_dev(div0, "class", "nav-buttons svelte-hux7yo");
-    			add_location(div0, file$8, 34, 1, 1078);
-    			attr_dev(div1, "class", "creator-page svelte-hux7yo");
-    			add_location(div1, file$8, 32, 0, 1006);
+    			attr_dev(div0, "class", "creator-page svelte-1jijto");
+    			add_location(div0, file$8, 33, 1, 1026);
+    			attr_dev(button0, "class", "nav-button svelte-1jijto");
+    			add_location(button0, file$8, 37, 2, 1135);
+    			attr_dev(button1, "class", "nav-button svelte-1jijto");
+    			add_location(button1, file$8, 38, 2, 1194);
+    			attr_dev(button2, "class", "nav-button svelte-1jijto");
+    			add_location(button2, file$8, 39, 2, 1253);
+    			attr_dev(div1, "class", "nav-buttons svelte-1jijto");
+    			add_location(div1, file$8, 36, 1, 1107);
+    			attr_dev(div2, "class", "display-page");
+    			add_location(div2, file$8, 32, 0, 998);
 
     			dispose = [
     				listen_dev(button0, "click", /*back*/ ctx[1], false, false, false),
@@ -6950,19 +6971,20 @@ var app = (function () {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
 
     			if (switch_instance) {
-    				mount_component(switch_instance, div1, null);
+    				mount_component(switch_instance, div0, null);
     			}
 
-    			append_dev(div1, t0);
-    			append_dev(div1, div0);
-    			append_dev(div0, button0);
-    			append_dev(div0, t2);
-    			append_dev(div0, button1);
-    			append_dev(div0, t4);
-    			append_dev(div0, button2);
+    			append_dev(div2, t0);
+    			append_dev(div2, div1);
+    			append_dev(div1, button0);
+    			append_dev(div1, t2);
+    			append_dev(div1, button1);
+    			append_dev(div1, t4);
+    			append_dev(div1, button2);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -6982,7 +7004,7 @@ var app = (function () {
     					switch_instance = new switch_value(switch_props());
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div1, t0);
+    					mount_component(switch_instance, div0, null);
     				} else {
     					switch_instance = null;
     				}
@@ -6998,7 +7020,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			if (switch_instance) destroy_component(switch_instance);
     			run_all(dispose);
     		}
@@ -7022,7 +7044,7 @@ var app = (function () {
     function instance$9($$self, $$props, $$invalidate) {
     	let screen = {
     		step: 0,
-    		options: [CreTraits, CreAbilities, CreDescription, CreTraits, CreSkills, CreProperties, CreAbilities, CreGear]
+    		options: [CreAbilities, CreDescription, CreTraits, CreSkills, CreProperties, CreAbilities, CreGear]
     	};
 
     	screen.selected = screen.options[screen.step];
@@ -8854,10 +8876,13 @@ var app = (function () {
     			t3 = space();
     			button2 = element("button");
     			button2.textContent = "Situations";
-    			add_location(button0, file$f, 8, 1, 293);
-    			add_location(button1, file$f, 9, 1, 346);
-    			add_location(button2, file$f, 10, 1, 405);
-    			attr_dev(div, "class", "menu-page");
+    			attr_dev(button0, "class", "diplay-button");
+    			add_location(button0, file$f, 8, 1, 296);
+    			attr_dev(button1, "class", "diplay-button");
+    			add_location(button1, file$f, 11, 1, 376);
+    			attr_dev(button2, "class", "diplay-button");
+    			add_location(button2, file$f, 14, 1, 462);
+    			attr_dev(div, "class", "display-page");
     			add_location(div, file$f, 7, 0, 268);
 
     			dispose = [
@@ -8929,9 +8954,11 @@ var app = (function () {
     			t1 = space();
     			button1 = element("button");
     			button1.textContent = "Rules Reference";
-    			add_location(button0, file$g, 7, 1, 165);
-    			add_location(button1, file$g, 8, 1, 227);
-    			attr_dev(div, "class", "menu-page");
+    			attr_dev(button0, "class", "diplay-button");
+    			add_location(button0, file$g, 7, 1, 168);
+    			attr_dev(button1, "class", "diplay-button");
+    			add_location(button1, file$g, 10, 1, 257);
+    			attr_dev(div, "class", "display-page");
     			add_location(div, file$g, 6, 0, 140);
 
     			dispose = [

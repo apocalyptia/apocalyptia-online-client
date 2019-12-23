@@ -5,8 +5,14 @@
 	import RefSituations from '../components/reference/RefSituations.svelte'
 </script>
 
-<div class='menu-page'>
-	<button on:click={router.RefCombat}>Combat</button>
-	<button on:click={router.RefManeuvers}>Maneuvers</button>
-	<button on:click={router.RefSituations}>Situations</button>
+<div class='display-page'>
+	<button class='diplay-button' on:click={router.RefCombat}>
+		Combat
+	</button>
+	<button class='diplay-button' on:click={router.RefManeuvers}>
+		Maneuvers
+	</button>
+	<button class='diplay-button' on:click={router.RefSituations}>
+		Situations
+	</button>
 </div>

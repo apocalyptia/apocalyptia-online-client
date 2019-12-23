@@ -28,8 +28,10 @@
 				<div class='s-col'>Taken</div>
 			</div>
 			{#each AbilityList as ability, index}
+				<br>
 				{#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
 					<div class='separator'></div>
+					<br>
 				{/if}
 				<div class='ability-row'>
 					<div class='m-col'>{ability.name}</div>
@@ -63,20 +65,26 @@
 		}
 	}
 	@media only screen and (min-width: 500px) {
-		.m-col {
-			text-decoration: underline;
-		}
-		.m-col, .l-col {
+		.l-col, .m-col, .s-col {
 			display: inline-block;
 			/* width: 10%; */
 		}
+		.m-col {
+			width: 20%;
+		}
+		.l-col {
+			width: 40%;
+		}
+		.s-col {
+			width: 8%;
+		}
 	}
-	/* .abilities-table {
+	.abilities-table {
 		width: 100%;
-	} */
-	/* .ability-row {
-		width: inherit;
-	} */
+	}
+	.ability-row {
+		width: 100%;
+	}
 	.header-row {
 		font-size: 1.25em;
 	}
@@ -89,5 +97,8 @@
 		border-bottom: 1px solid;
 		margin-bottom: 10px;
 		padding-bottom: 10px;
+	}
+	.step {
+		margin-bottom: 50px;
 	}
 </style>

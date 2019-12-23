@@ -11,7 +11,7 @@
 
 	let screen = {
 		step: 0,
-		options: [ Traits, Abilities, Description, Traits, Skills, Properties, Abilities, Gear ]
+		options: [ Abilities, Description, Traits, Skills, Properties, Abilities, Gear ]
 	}
 	screen.selected = screen.options[screen.step]
 
@@ -30,8 +30,10 @@
 	}
 </script>
 
-<div class='creator-page'>
-	<svelte:component this={screen.selected}/>
+<div class='display-page'>
+	<div class='creator-page'>
+		<svelte:component this={screen.selected}/>
+	</div>
 	<div class='nav-buttons'>
 		<button class='nav-button' on:click={back}>Back</button>
 		<button class='nav-button' on:click={home}>Home</button>
@@ -42,7 +44,6 @@
 <style>
 	.creator-page {
 		padding: 20px;
-		width: calc(100vw - 40px);
 	}
 	.nav-buttons {
 		display: flex;
