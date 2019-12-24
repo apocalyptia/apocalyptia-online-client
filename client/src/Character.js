@@ -39,203 +39,312 @@ export class Character {
 		this.traits = {
 			agility: {
 				name: `Agility`,
+				base: 1,
+				max: 6,
+				mods: 0,
 				score: 1,
-				max: 6
+				set: () => {
+					this.traits.agility.score = this.traits.agility.base + this.traits.agility.mods
+				},
 			},
 			brains: {
 				name: `Brains`,
+				base: 1,
+				max: 6,
+				mods: 0,
 				score: 1,
-				max: 6
+				set: () => {
+					this.traits.brains.score =  this.traits.brains.base + this.traits.brains.mods
+				},
 			},
 			constitution: {
 				name: `Constitution`,
+				base: 1,
+				max: 6,
+				mods: 0,
 				score: 1,
-				max: 6
+				set: () => {
+					this.traits.constitution.score = this.traits.constitution.base + this.traits.constitution.mods
+				},
 			},
 			demeanor: {
 				name: `Demeanor`,
+				base: 1,
+				max: 6,
+				mods: 0,
 				score: 1,
-				max: 6
+				set: () => {
+					this.traits.demeanor.score = this.traits.demeanor.base + this.traits.demeanor.mods
+				},
 			},
 		},
 		this.skills = {
 			acrobatics: {
 				name: `Acrobatics`,
 				parent: `Agility`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.acrobatics.score = this.skills.acrobatics.base + this.skills.acrobatics.mods
+				},
 			},
 			athletics: {
 				name: `Athletics`,
 				parent: `Constitution`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.athletics.score = this.skills.athletics.base + this.skills.athletics.mods
+				},
 			},
 			build: {
 				name: `Build`,
 				parent: `Brains`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.build.score = this.skills.build.base + this.skills.build.mods
+				},
 			},
 			drive: {
 				name: `Drive`,
 				parent: `Constitution`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.drive.score = this.skills.drive.base + this.skills.drive.mods
+				},
 			},
 			larceny: {
 				name: `Larceny`,
 				parent: `Agility`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.larceny.score = this.skills.larceny.base + this.skills.larceny.mods
+				},
 			},
 			leadership: {
 				name: `Leadership`,
 				parent: `Demeanor`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.leadership.score = this.skills.leadership.base + this.skills.leadership.mods
+				},
 			},
 			medicine: {
 				name: `Medicine`,
 				parent: `Brains`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.medicine.score = this.skills.medicine.base + this.skills.medicine.mods
+				},
 			},
 			melee: {
 				name: `Melee`,
 				parent: `Constitution`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.melee.score = this.skills.melee.base + this.skills.melee.mods
+				},
 			},
 			perception: {
 				name: `Perception`,
 				parent: `Brains`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.perception.score = this.skills.perception.base + this.skills.perception.mods
+				},
 			},
 			perform: {
 				name: `Perform`,
 				parent: `Demeanor`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.perform.score = this.skills.perform.base + this.skills.perform.mods
+				},
 			},
 			ranged: {
 				name: `Ranged`,
 				parent: `Agility`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.ranged.score = this.skills.ranged.base + this.skills.ranged.mods
+				},
 			},
 			science: {
 				name: `Science`,
 				parent: `Brains`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.science.score = this.skills.science.base + this.skills.science.mods
+				},
 			},
 			socialize: {
 				name: `Socialize`,
 				parent: `Demeanor`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.socialize.score = this.skills.socialize.base + this.skills.socialize.mods
+				},
 			},
 			stealth: {
 				name: `Stealth`,
 				parent: `Agility`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.stealth.score = this.skills.stealth.base + this.skills.stealth.mods
+				},
 			},
 			survival: {
 				name: `Survival`,
 				parent: `Constitution`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.survival.score = this.skills.survival.base + this.skills.survival.mods
+				},
 			},
 			tame: {
 				name: `Tame`,
 				parent: `Demeanor`,
+				base: 0,
+				max: 1,
+				mods: 0,
 				score: 0,
-				max: 1
+				set: () => {
+					this.skills.tame.score = this.skills.tame.base + this.skills.tame.mods
+				},
 			},
 		},
 		this.props = {
 			block: {
 				name: `Block`,
+				base: 0,
+				mods: 0,
 				score: 0,
 				set: () => {
-					const block = this.skills.melee.score
-					this.props.block.score = block
-					return block
+					this.props.block.base = this.skills.melee.set
+					this.props.block.score = this.props.block.base + this.props.block.mods
 				}
 			},
 			dodge: {
 				name: `Dodge`,
+				base: 0,
+				mods: 0,
 				score: 0,
 				set: () => {
-					const dodge = this.skills.acrobatics.score
-					this.props.dodge.score = dodge
-					return dodge
+					this.props.dodge.base = this.skills.acrobatics.set
+					this.props.dodge.score = this.props.dodge.base + this.props.dodge.mods
 				}
 			},
 			health: {
 				name: `Health`,
-				score: 3,
+				base: 2,
+				mods: 0,
+				score: 2,
 				set: () => {
-					const health = this.traits.constitution.score * 3
-					this.props.health.score = health
-					return health
+					this.props.health.base = this.traits.constitution.set * 2
+					this.props.health.score = this.props.health.base + this.props.health.mods
 				}
 			},
 			init: {
 				name: `Initiative`,
+				base: 1,
+				mods: 0,
 				score: 1,
 				set: () => {
-					const init = this.traits.agility.score
-					this.props.init.score = init
-					return init
+					this.props.init.base = this.traits.agility.set
+					this.props.init.score = this.props.init.base + this.props.init.mods
 				}
 			},
 			luck: {
 				name: `Luck`,
+				base: 1,
+				mods: 0,
 				score: 1,
 				set: () => {
-					const luck = this.traits[`demeanor`].score
-					this.props.luck.score = luck
-					return luck
+					this.props.luck.base = this.traits.demeanor.set
+					this.props.luck.score = this.props.luck.base + this.props.luck.mods
 				}
 			},
 			psyche: {
 				name: `Psyche`,
-				score: 1,
+				base: 2,
+				mods: 0,
+				score: 2,
 				set: () => {
-					const psyche = this.traits[`demeanor`].score * 3
-					this.props.psyche.score = psyche
-					return psyche
+					this.props.psyche.base = this.traits.demeanor.set * 2
+					this.props.psyche.score = this.props.psyche.base + this.props.psyche.mods
 				}
 			},
 			reflex: {
 				name: `Reflex`,
+				base: 0,
+				mods: 0,
 				score: 0,
 				set: () => {
-					const reflex = Math.floor(this.skills[`perception`].score / 2)
-					this.props.reflex.score = reflex
-					return reflex
+					this.props.reflex.base = Math.floor(this.skills.perception.set / 2)
+					this.props.reflex.score = this.props.reflex.base + this.props.reflex.mods
 				}
 			},
 			speed: {
 				name: `Speed`,
+				base: 2,
+				mods: 0,
 				score: 2,
 				set: () => {
-					const speed = this.traits[`agility`].score + this.traits[`constitution`].score
-					this.props.speed.score = speed
-					return speed
+					this.props.speed.base = this.traits.agility.set + this.traits.constitution.set
+					this.props.speed.score = this.props.speed.base + this.props.speed.mods
 				}
 			},
 			xp: {
 				name: `Experience`,
+				base: 6,
+				mods: 0,
 				score: 6,
 				set: () => {
-					const xp = this.traits[`brains`].score * 6
-					this.props.xp.score = xp
-					return xp
+					this.props.xp.base = this.traits.brains.set * 6
+					this.props.xp.score = this.props.xp.base + this.props.xp.mods
 				}
 			},
 		},
@@ -260,7 +369,8 @@ export class Character {
 		}
 	}
 	updateProps() {
+		console.log('props updated')
 		let props = Object.keys(this.props)
-		props.forEach((prop) => { this.props[prop].set() })
+		props.forEach((prop) => { this.props[prop].set })
 	}
 }

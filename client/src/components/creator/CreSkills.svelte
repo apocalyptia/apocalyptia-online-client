@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition'
 	import HideShow from '../../functions/HideShow'
 	import { CharacterStore } from '../../stores'
 	let char
@@ -12,25 +13,24 @@
 			name: trait, visible: false
 		})
 	})
-	let skillPoints = char.traits.brains.score * 3
+	let skillPoints = char.traits.brains.base * 3
 	let remaining = skillPoints
 
 	function countSkillPoints(event) {
 		let target = event.target
 		let skillCount = 0
-		skills.forEach((skill) => { skillCount += char.skills[skill].score })
+		skills.forEach((skill) => { skillCount += char.skills[skill].base })
 		remaining = skillPoints - skillCount
 		if (remaining < 0 || target.value > char.skills[target.name].max) {
-			char.skills[target.name].score -= 1
+			char.skills[target.name].base -= 1
 			target.value -= 1
 			countSkillPoints(event)
 		}
-		char.updateProps()
 	}
 
 </script>
 
-<div class='step'>
+<div class='skills-step' in:fade>
 	<div class='step-title'>
 		<h2>Skills</h2>
 	</div>
@@ -59,8 +59,8 @@
 											name='{char.skills[skill].name.toLowerCase()}'
 											min=0
 											max=6
-											bind:value={char.skills[skill].score}
-											invalid={(remaining < 0) || this.value > char.traits[group.name].score}
+											bind:value={char.skills[skill].base}
+											invalid={(remaining < 0) || this.value > char.traits[group.name].base}
 											on:input|preventDefault={(event) => countSkillPoints(event)}
 										>
 									</div>

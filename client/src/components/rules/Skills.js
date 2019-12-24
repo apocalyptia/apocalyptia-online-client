@@ -1,4 +1,4 @@
-import Rule from './Rule.js'
+import Rule from './rule'
 
 export class Skill extends Rule {
 	constructor(name, description, parent, difficulty, specialties=[]) {
@@ -65,7 +65,12 @@ export const Stealth = new Skill(
 	]
 )
 
-export const AgilitySkills = [Acrobatics, Larceny, Ranged, Stealth]
+export const AgilitySkills = [
+	Acrobatics,
+	Larceny,
+	Ranged,
+	Stealth
+]
 
 
 export const Medicine = new Skill(
@@ -112,7 +117,12 @@ export const Survival = new Skill(
 	]
 )
 
-export const BrainsSkills = [Medicine, Perception, Science, Survival]
+export const BrainsSkills = [
+	Medicine,
+	Perception,
+	Science,
+	Survival
+]
 
 
 export const Athletics = new Skill(
@@ -159,7 +169,12 @@ export const Melee = new Skill(
 	]
 )
 
-export const ConstitutionSkills = [Athletics, Build, Drive, Melee]
+export const ConstitutionSkills = [
+	Athletics,
+	Build,
+	Drive,
+	Melee
+]
 
 
 export const Leadership = new Skill(
@@ -206,7 +221,12 @@ export const Tame = new Skill(
 	]
 )
 
-export const DemeanorSkills = [Leadership, Perform, Socialize, Tame]
+export const DemeanorSkills = [
+	Leadership,
+	Perform,
+	Socialize,
+	Tame
+]
 
 
 export const SkillList = [
@@ -215,3 +235,10 @@ export const SkillList = [
 	...ConstitutionSkills,
 	...DemeanorSkills
 ]
+
+export const SpecialtyList = []
+SkillList.forEach((skill) => {
+	skill.specialties.forEach((specialty) => {
+		SpecialtyList.push(specialty)
+	})
+})

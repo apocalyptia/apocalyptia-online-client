@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition'
 	import capitalize from '../../functions/Capitalize'
 	import { CharacterStore } from '../../stores'
 	let char
@@ -12,29 +13,28 @@
 	function countTraitPoints(event) {
 		let target = event.target
 		let traitCount = 0
-		traits.forEach((trait) => { traitCount += char.traits[trait].score })
+		traits.forEach((trait) => { traitCount += char.traits[trait].base })
 		remaining = traitPoints - traitCount
 		if (remaining < 0) {
-			char.traits[target.name].score -= 1
+			char.traits[target.name].base -= 1
 			target.value -= 1
 			countTraitPoints(event)
 		}
 		setSkillMax()
-		char.updateProps()
 	}
 
 	function setSkillMax() {
 		traits.forEach((trait) => {
 			Object.keys(char.skills).forEach((skill) => {
 				if (char.skills[skill].parent === capitalize(trait)) {
-					char.skills[skill].max = char.traits[trait].score
+					char.skills[skill].max = char.traits[trait].base
 				}
 			})
 		})
 	}
 </script>
 
-<div class='step'>
+<div class='traits-step' in:fade>
 	<div class='step-title'>
 		<h2>Traits</h2>
 	</div>
@@ -54,7 +54,7 @@
 						name='{char.traits[trait].name.toLowerCase()}'
 						min=1
 						max=6
-						bind:value={char.traits[trait].score}
+						bind:value={char.traits[trait].base}
 						invalid={remaining < 0}
 						on:input|preventDefault={(event) => countTraitPoints(event)}
 					>

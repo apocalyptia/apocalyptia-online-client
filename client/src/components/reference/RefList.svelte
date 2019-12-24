@@ -1,4 +1,5 @@
 <script>
+	import { slide } from 'svelte/transition'
 	import HideShow from '../../functions/HideShow'
 
 	export let list
@@ -10,26 +11,28 @@
 		<div class='box' on:click={() => list = HideShow(rule, list)}>
 			<span class='name'>{rule.name}</span>
 			{#if rule.visible}
-				<div class='description'>{@html rule.description}</div>
-				{#if rule.table}
-					<div class='separator'/>
-					<div class='table'><svelte:component this={rule.table}/></div>
-				{/if}
-				{#if rule.subrules}
-					<ul class='sub-ul'>
-						{#each rule.subrules as subrule}
-							<div class='separator'/>
-							<li class='sub-li'>
-								<div class='sub-box'>
-									<span class='sub-name'>{subrule.name}</span>
-									<div class='sub-notes'>
-										{@html subrule.description}
+				<div class='description' transition:slide>
+					{@html rule.description}
+					{#if rule.table}
+						<div class='separator'/>
+						<div class='table'><svelte:component this={rule.table}/></div>
+					{/if}
+					{#if rule.subrules}
+						<ul class='sub-ul'>
+							{#each rule.subrules as subrule}
+								<div class='separator'/>
+								<li class='sub-li'>
+									<div class='sub-box'>
+										<span class='sub-name'>{subrule.name}</span>
+										<div class='sub-notes'>
+											{@html subrule.description}
+										</div>
 									</div>
-								</div>
-							</li>	
-						{/each}
-					</ul>
-				{/if}
+								</li>	
+							{/each}
+						</ul>
+					{/if}
+				</div>
 			{/if}
 		</div>
 		<div class='separator'/>
@@ -57,5 +60,6 @@
 	.sub-name {
 		font-size: 1.1em;
 		font-weight: bold;
+		text-decoration: underline;
 	}
 </style>

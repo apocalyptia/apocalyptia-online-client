@@ -36,17 +36,17 @@ export const Defenseless = new Rule(
 
 export const Dehydration = new Rule(
 	`Dehydration`, 
-	`People need 1 Water per day. 1 Pain per day without Water. This penalty is reduced by 1 per day with Water. Going without Water for a number of days = C is lethal.`
+	`People need 1 Water per day. 1 Pain per day without Water. This penalty is reduced by 1 per day with Water. Going without Water for a number of days = [C] is lethal.`
 )
 
 export const Exhaustion = new Rule(
 	`Exhaustion`, 
-	`People need 8 hours of sleep per day. 1 Pain per day without sufficient sleep. Go unconscious for 8 hours after days = C without sleep. Penalties go away after 8 hours of sleep.`
+	`People need 8 hours of sleep per day. 1 Pain per day without sufficient sleep. Go unconscious for 8 hours after days = [C] without sleep. Penalties go away after 8 hours of sleep.`
 )
 
 export const Falling = new Rule(
 	`Falling`, 
-	`1DMG per 2yds. Roll [Acrobatics # = yds] to halve Falling DMG.`
+	`1 Wound per 2yds. Roll [Acrobatics # = yds] as a Defense Action to halve Falling DMG.`
 )
 
 export const FriendlyFire = new Rule(
@@ -56,7 +56,7 @@ export const FriendlyFire = new Rule(
 
 export const Hypothermia = new Rule(
 	`Hypothermia`, 
-	`People need warmth to stay alive. 1 Pain per hour of Hypothermia.  Reduce penalty by 1 per hour of warmth. Hypothermia for hours = C is lethal.`
+	`People need warmth to stay alive. 1 Pain per hour of Hypothermia.  Reduce penalty by 1 per hour of warmth. Hypothermia for hours = [C] is lethal.`
 )
 
 export const OffHand = new Rule(
@@ -76,7 +76,7 @@ export const Range = new Rule(
 
 export const Starvation = new Rule(
 	`Starvation`, 
-	`People need 1 Food per day. 1 Pain per week without Food. This penalty is reduced by 1 per day with Food. Going without Food for a number of weeks = C is lethal.`
+	`People need 1 Food per day. 1 Pain per week without Food. This penalty is reduced by 1 per day with Food. Going without Food for a number of weeks = [C] is lethal.`
 )
 
 export const Stun = new Rule(
@@ -86,7 +86,7 @@ export const Stun = new Rule(
 
 export const Suffocation = new Rule(
 	`Suffocation`, 
-	`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = C is lethal.`
+	`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [C] is lethal.`
 )
 
 export const Unarmed = new Rule(

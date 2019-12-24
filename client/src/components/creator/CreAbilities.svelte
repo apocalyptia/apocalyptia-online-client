@@ -1,34 +1,30 @@
 <script>
-	import { AbilityList } from '../rules//Abilities'
+	import { fade } from 'svelte/transition'
+	import { AbilityList } from '../rules/Abilities'
+	import { SkillList } from '../rules/Skills'
 	import { CharacterStore } from '../../stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+
+	let Abilities = AbilityList
 
 	let remaining = char.props.xp.score
 
 	function modifyAbilities() {
 		remaining = char.props.xp.score
 		char.abilities = []
-		AbilityList.forEach(function (ability) {
-			if (ability.taken > 0) {
-				char.abilities.push(ability)
-				for (let t = 0; t < ability.taken; t++) {
-					remaining -= ability.xp
+		for (let i = 0; i < Abilities.length; i++) {
+			if (Abilities[i].taken) {
+				char.abilities.push(Abilities[i])
+				for (let t = 0; t < Abilities[i].taken; t++) {
+					remaining -= Abilities[i].xp
 				}
 			}
-			switch (ability.name) {
-				case `Specialize`:
-					break
-				case `Fleet Footed`:
-					char.props.speed.score += 1
-				case `Danger Sense`:
-					char.props.reflex.score += 1
-			}
-		})
+		}
 	}
 </script>
 
-<div class='abilities-step'>
+<div class='abilities-step' in:fade>
 	<div class='step-title'>
 		<h2>Abilities</h2>
 	</div>
@@ -44,9 +40,9 @@
 				<div class='s-col xp-header'>XP</div>
 				<div class='s-col taken-header'>Taken</div>
 			</div>
-			{#each AbilityList as ability, index}
+			{#each Abilities as ability, index}
 				<br>
-				{#if AbilityList[index-1] != undefined && AbilityList[index].xp != AbilityList[index-1].xp}
+				{#if Abilities[index-1] != undefined && Abilities[index].xp != Abilities[index-1].xp}
 					<div class='separator'></div>
 					<br>
 				{/if}
@@ -57,6 +53,15 @@
 					<div class='l-col'>
 						<span class='description-label'>Descripiton: </span>
 						<span class='ability-description'>{ability.description}</span>
+						{#if ability.options.length}
+							<span class='ability-options'>
+								<select value={ability.options[0]}>
+									{#each ability.options as option}
+										<option value={option}>{option.name}</option>
+									{/each}
+								</select>
+							</span>
+						{/if}
 					</div>
 					<div class='s-col'>
 						<span class='max-label'>Max: </span>
@@ -69,14 +74,33 @@
 					<div class='s-col'>
 						<span class='taken-label'>Taken: </span>
 						<span class='ability-taken'>
-							<input
+							<select class='taken-number'>
+								<option value=0>0</option>
+								<option value=1>1</option>
+								{#if ability.max > 1}
+									<option value=2>2</option>
+									<option value=3>3</option>
+									{#if ability.max > 3}
+										<option value=4>4</option>
+										<option value=5>5</option>
+										<option value=6>6</option>
+										{#if ability.max > 6}
+											<option value=7>7</option>
+											<option value=8>8</option>
+											<option value=9>9</option>
+										{/if}
+									{/if}
+								{/if}
+							</select>
+							<!-- <input
 								type='number'
 								class='taken-number'
 								min=0
 								max={ability.max}
+								disabled={remaining < 0}
 								bind:value={ability.taken}
 								on:input={modifyAbilities}
-							>
+							> -->
 						</span>
 					</div>
 				</div>
@@ -122,7 +146,7 @@
 			display: inline-block;
 		}
 		.l-col {
-			width: 46%;
+			width: 50%;
 		}
 		.m-col {
 			width: 20%;
@@ -147,5 +171,8 @@
 		margin-bottom: 10px;
 		padding-bottom: 10px;
 		width: 100%;
+	}
+	.taken-number {
+		width: 5vw;
 	}
 </style>

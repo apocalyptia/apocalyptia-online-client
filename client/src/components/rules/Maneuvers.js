@@ -81,7 +81,7 @@ export const Protect = new Rule(
 
 export const Push = new Rule(
 	`Push`,
-	`Roll [C vs C] to push an enemy up to [C] yds. 0DMG.`
+	`Roll [C vs C] to push an enemy in front of you as you move up to [C] yds. 0DMG.`
 )
 
 export const Recruit = new Rule(
@@ -96,7 +96,7 @@ export const Reload = new Rule(
 
 export const Shove = new Rule(
 	`Shove`,
-	`Roll [MATK vs C] to shove an enemy up to [C] yds away. 0DMG.`
+	`Roll [MATK vs C] to shove an enemy up to [C/2] yds away from you, knocking them Prone. 0DMG.`
 )
 
 export const Sneak = new Rule(
@@ -116,7 +116,7 @@ export const Taunt = new Rule(
 
 export const Throw = new Rule(
 	`Throw`,
-	`Throw a Grabbed enemy up to [C] yds and takes Falling DMG. Prone.`
+	`Throw a Grabbed enemy up to [C] yds and they take Falling DMG. Prone.`
 )
 
 export const Torture = new Rule(

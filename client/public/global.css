@@ -59,13 +59,13 @@ button {
 }
 
 .stat-block {
-	border-width: 2px;
+	align-items: center;
 	border-style: dotted;
+	border-width: 2px;
 	display: flex;
 	justify-content: space-between;
 	margin: .5rem;
 	padding: 1rem;
-	align-items: center;
 }
 
 .half-stat-block {
@@ -77,8 +77,8 @@ button {
 }
 
 .three-column {
-	width: 33.3%;
 	text-align: center;
+	width: 33.3%;
 }
 
 .slider-input {
@@ -98,22 +98,23 @@ button {
 	color: transparent;
 }
 .slider-input::-moz-range-thumb {
+	background: lime;
+	border-radius: 5px;
 	border: 1px solid rgb(15, 30, 15);
 	height: 30px;
 	width: 30px;
-	border-radius: 5px;
-	background: lime;
 }
 .slider-input::-webkit-slider-thumb {
 	-webkit-appearance: none;
+	background: lime;
+	border-radius: 5px;
 	border: 1px solid rgb(15, 30, 15);
 	height: 30px;
-	width: 30px;
-	border-radius: 5px;
-	background: lime;
 	margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+	width: 30px;
 }
-.slider-input:invalid {
+input:invalid {
+	color: black;
 	background: red;
 }
 
@@ -121,13 +122,33 @@ button {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: column;
-	padding: 2%;
+	height: calc(100vh - 50px);
 	text-align: center;
-	width: 96%;
+	width: 100vw;
 }
 
 .diplay-button {
 	height: 10vh;
-	margin: 10% 10% 0%;
-	width: 80%;
+	margin: 5vh 15vw 0 15vw;
+	width: 70vw;
+}
+
+.ref-page {
+	margin-bottom: 50px;
+	padding: 20px;
+}
+.ref-header {
+	font-size: 1.5rem;
+	text-align: center;
+}
+.ref-back {
+	bottom: 0;
+	height: 50px;
+	left: 0;
+	position: fixed;
+	width: 33.3vw;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }

@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition'
 	import { femaleNames, maleNames } from '../../assets/lists/names.js'
 	import { CharacterStore } from '../../stores'
 	let char
@@ -69,7 +70,7 @@
 	]
 </script>
 
-<div class='step'>
+<div class='step' in:fade>
 	<div class='step-title'>
 		<h2>Description</h2>
 	</div>

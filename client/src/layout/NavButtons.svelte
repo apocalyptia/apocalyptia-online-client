@@ -22,16 +22,16 @@
 
 <style>
 	.nav-buttons {
+		bottom: 0px;
 		display: flex;
 		flex-direction: row;
-		position: fixed;
-		left: 0;
-		bottom: 0px;
 		height: 50px;
+		left: 0;
+		position: fixed;
 		width: 100vw;
 	}
 	.nav-button {
 		border: 1px solid;
-		width: 50vw;
+		width: 33.3vw;
 	}
 </style>
