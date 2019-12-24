@@ -13,16 +13,27 @@ class Accessory extends Gear {
 	}
 }
 
+
+export const Bayonet = new Accessory(`Bayonet`, `Knife. +1 DMG and Pierce for MATKs.`, 1)
+export const Bipod = new Accessory(`Bipod`, `Ignore Size requirement. 1rnd setup.`, 1)
+export const DrumMagazine = new Accessory(`Drum Magazine`, `Gun specific. 3x Ammo magazine capacity.`, 1)
+export const Foregrip = new Accessory(`Foregrip`, `-1 Size requirement for 2h Gun.`, 0)
+export const Holosight = new Accessory(`Holosight`, `+1 RATK.`, 0)
+export const Laser = new Accessory(`Laser`, `+1 RATK. -6 RATK to Blind for d6rnds.`, 0)
+export const Scope = new Accessory(`Scope`, `+3 Aimed RATKs and Perception(See).`, 1)
+export const SinglePointSling = new Accessory(`Single-Point Sling`, `Draw or stow a 2h Gun without using an Action.`, 0)
+export const Suppressor = new Accessory(`Suppressor`, `Firing a Gun does not break Concealment.`, 0)
+
 export const AccessoryList = [
-	new Accessory(`Bayonet`,			`Knife. +1 DMG and Pierce for MATKs.`,				1),
-	new Accessory(`Bipod`,				`Ignore Size requirement. 1rnd setup.`,				1),
-	new Accessory(`Drum Magazine`,		`Gun specific. 3x Ammo magazine capacity.`,			1),
-	new Accessory(`Foregrip`,			`-1 Size requirement for 2h Gun.`,					0),
-	new Accessory(`Holosight`,			`+1 RATK.`,											0),
-	new Accessory(`Laser`,				`+1 RATK. -6 RATK to Blind for d6rnds.`,			0),
-	new Accessory(`Scope`,				`+3 Aimed RATKs and Perception(See).`,				1),
-	new Accessory(`Single-Point Sling`,	`Draw or stow a 2h Gun without using an Action.`,	0),
-	new Accessory(`Suppressor`,			`Firing a Gun does not break Concealment.`,			0)
+	Bayonet,
+	Bipod,
+	DrumMagazine,
+	Foregrip,
+	Holosight,
+	Laser,
+	Scope,
+	SinglePointSling,
+	Suppressor
 ]
 
 class Ammo extends Gear {
@@ -516,6 +527,12 @@ export const RangedList = [
 // new RangedWeapon(`Springfield M1A`, 5, 100, `.308`, `20mag`, 2, `Rapid.`, 4),
 // new RangedWeapon(`S&ampW Snubnose`, 3, 5, `.357`, `5cyl`, 1, `Revolver.`, 1),
 // new RangedWeapon(`Winchester Sawn-off`, 6, 5, `12g`, 2, 2, `Rapid. Scatter.`, 2)
+
+export const WeaponList = [
+	...MeleeList,
+	...RangedList
+]
+
 
 class Storage extends Gear {
 	constructor(name, slots, description, sz) {

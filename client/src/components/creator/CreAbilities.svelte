@@ -74,7 +74,12 @@
 					<div class='s-col'>
 						<span class='taken-label'>Taken: </span>
 						<span class='ability-taken'>
-							<select class='taken-number'>
+							<select
+								class='taken-number'
+								bind:value={ability.taken}
+								invalid={remaining < 0}
+								on:change={modifyAbilities}
+							>
 								<option value=0>0</option>
 								<option value=1>1</option>
 								{#if ability.max > 1}
@@ -92,15 +97,6 @@
 									{/if}
 								{/if}
 							</select>
-							<!-- <input
-								type='number'
-								class='taken-number'
-								min=0
-								max={ability.max}
-								disabled={remaining < 0}
-								bind:value={ability.taken}
-								on:input={modifyAbilities}
-							> -->
 						</span>
 					</div>
 				</div>
