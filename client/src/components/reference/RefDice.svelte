@@ -3,7 +3,6 @@
 	import { router } from '../../routes'
 	import { Dice } from '../rules/Dice'
 	import RefList from './RefList.svelte'
-	import NavButtons from '../../layout/NavButtons.svelte'
 </script>
 
 <div class='ref-page' in:fade>

@@ -44,6 +44,7 @@
 <style>
 	.creator-page {
 		padding: 20px;
+		padding-bottom: 50px;
 	}
 	.nav-buttons {
 		display: flex;

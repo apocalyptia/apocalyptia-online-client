@@ -1,12 +1,8 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import { CharacterStore } from '../../stores'
-	let char
-	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+	import { character } from '../../stores'
 
-	const props = Object.keys(char.props)
-
-	console.log('now!')
+	const props = Object.keys($character.props)
 </script>
 
 <div class='properties-step' in:fade>
@@ -15,8 +11,8 @@
 	</div>
 	{#each props as prop}
 		<div class='stat-block'>
-			<span>{char.props[prop].name}</span>
-			<span class='three-column'>{char.props[prop].score}</span>
+			<span>{$character.props[prop].name}</span>
+			<span class='three-column'>{$character.props[prop].score}</span>
 		</div>
 	{/each}
 </div>

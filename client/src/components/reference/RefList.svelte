@@ -64,8 +64,4 @@
 		font-weight: bold;
 		text-decoration: underline;
 	}
-	table {
-		border: 1px solid lime;
-		padding: 10px;
-	}
 </style>

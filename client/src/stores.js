@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 import { Character } from './Character'
 
-let newCharacter = new Character()
+const newCharacter = new Character()
 
-export const CharacterStore = writable(newCharacter)
+export const character = writable(newCharacter)

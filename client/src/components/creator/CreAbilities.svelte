@@ -2,20 +2,18 @@
 	import { fade } from 'svelte/transition'
 	import { AbilityList } from '../rules/Abilities'
 	import { SkillList } from '../rules/Skills'
-	import { CharacterStore } from '../../stores'
-	let char
-	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+	import { character } from '../../stores'
 
 	let Abilities = AbilityList
 
-	let remaining = char.props.xp.score
+	let remaining = $character.props.xp.score
 
 	const modifyAbilities = () => {
-		remaining = char.props.xp.score
-		char.abilities = []
+		remaining = $character.props.xp.score
+		$character.abilities = []
 		for (let i = 0; i < Abilities.length; i++) {
 			if (Abilities[i].taken) {
-				char.abilities.push(Abilities[i])
+				$character.abilities.push(Abilities[i])
 				for (let t = 0; t < Abilities[i].taken; t++) {
 					remaining -= Abilities[i].xp
 				}

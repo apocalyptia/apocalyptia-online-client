@@ -1,29 +1,27 @@
 <script>
 	import { fade } from 'svelte/transition'
 	import { femaleNames, maleNames } from '../../assets/lists/names.js'
-	import { CharacterStore } from '../../stores'
-	let char
-	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+	import { character } from '../../stores'
 
 	const random = (array) => { return array[Math.ceil(Math.random() * array.length) - 1] }
 
 	const randomName = () => {
-		if (char.description.gender.value == 'Male') { char.description.characterName.value = random(maleNames) }
-		else if (char.description.gender.value == 'Female') { char.description.characterName.value = random(femaleNames) } 
-		else { char.description.characterName.value = random([...femaleNames, ...maleNames]) }
+		if ($character.description.gender.value == 'Male') { $character.description.$characterName.value = random(maleNames) }
+		else if ($character.description.gender.value == 'Female') { $character.description.$characterName.value = random(femaleNames) } 
+		else { $character.description.$characterName.value = random([...femaleNames, ...maleNames]) }
 	}
 
 	const randomHeight = () => {
 		const totalInches = Math.ceil((Math.random() * 14) + 60) // 5ft low, 5ft7in median, 6ft2in high
 		const feet = Math.floor(totalInches / 12)
 		const inches = Math.floor(totalInches % 12)
-		char.description.height.value = `${feet}' ${inches}"`
+		$character.description.height.value = `${feet}' ${inches}"`
 	}
 
-	const randomWeight = () => { char.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
+	const randomWeight = () => { $character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
 
 	const randomHair = () => {
-		char.description.hair.value = random(
+		$character.description.hair.value = random(
 			[
 				'Auburn',
 				'Bald',
@@ -37,7 +35,7 @@
 		)
 	}
 
-	const randomSkin = () => { char.description.skin.value = random(
+	const randomSkin = () => { $character.description.skin.value = random(
 			[
 				'Black',
 				'Brown',
@@ -49,9 +47,9 @@
 		) 
 	}
 
-	const randomGender = () => { char.description.gender.value = random(['Female', 'Male']) }
+	const randomGender = () => { $character.description.gender.value = random(['Female', 'Male']) }
 
-	const randomAge = () => { char.description.age.value = Math.ceil((Math.random() * 33) + 17) }
+	const randomAge = () => { $character.description.age.value = Math.ceil((Math.random() * 33) + 17) }
 
 	const randomDescription = () => {
 		randomAge()
@@ -79,7 +77,7 @@
 		<input
 			type='text'
 			class='player-name'
-			bind:value={char.description.playerName.value}
+			bind:value={$character.description.playerName.value}
 		>
 	</div>
 	<div class='stat-block'>
@@ -87,7 +85,7 @@
 		<input
 			type='text'
 			class='character-name'
-			bind:value={char.description.characterName.value}
+			bind:value={$character.description.characterName.value}
 		>
 		<button on:click={randomName}>Random</button>
 	</div>
@@ -97,7 +95,7 @@
 				<div class='half-stat-block'>
 					<div class='hs-container'>
 						<span class='stat-label'>{name}:</span>
-						<input class='half-input' bind:value={char.description[name.toLowerCase()].value}>
+						<input class='half-input' bind:value={$character.description[name.toLowerCase()].value}>
 						<button on:click={random}>Random</button>
 					</div>
 				</div>

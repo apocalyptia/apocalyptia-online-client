@@ -76,6 +76,10 @@ var app = (function () {
                 result[k] = props[k];
         return result;
     }
+    function set_store_value(store, ret, value = ret) {
+        store.set(value);
+        return ret;
+    }
 
     const is_client = typeof window !== 'undefined';
     let now = is_client
@@ -433,111 +437,8 @@ var app = (function () {
             }
         };
     }
-    function create_bidirectional_transition(node, fn, params, intro) {
-        let config = fn(node, params);
-        let t = intro ? 0 : 1;
-        let running_program = null;
-        let pending_program = null;
-        let animation_name = null;
-        function clear_animation() {
-            if (animation_name)
-                delete_rule(node, animation_name);
-        }
-        function init(program, duration) {
-            const d = program.b - t;
-            duration *= Math.abs(d);
-            return {
-                a: t,
-                b: program.b,
-                d,
-                duration,
-                start: program.start,
-                end: program.start + duration,
-                group: program.group
-            };
-        }
-        function go(b) {
-            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
-            const program = {
-                start: now() + delay,
-                b
-            };
-            if (!b) {
-                // @ts-ignore todo: improve typings
-                program.group = outros;
-                outros.r += 1;
-            }
-            if (running_program) {
-                pending_program = program;
-            }
-            else {
-                // if this is an intro, and there's a delay, we need to do
-                // an initial tick and/or apply CSS animation immediately
-                if (css) {
-                    clear_animation();
-                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
-                }
-                if (b)
-                    tick(0, 1);
-                running_program = init(program, duration);
-                add_render_callback(() => dispatch(node, b, 'start'));
-                loop(now => {
-                    if (pending_program && now > pending_program.start) {
-                        running_program = init(pending_program, duration);
-                        pending_program = null;
-                        dispatch(node, running_program.b, 'start');
-                        if (css) {
-                            clear_animation();
-                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
-                        }
-                    }
-                    if (running_program) {
-                        if (now >= running_program.end) {
-                            tick(t = running_program.b, 1 - t);
-                            dispatch(node, running_program.b, 'end');
-                            if (!pending_program) {
-                                // we're done
-                                if (running_program.b) {
-                                    // intro — we can tidy up immediately
-                                    clear_animation();
-                                }
-                                else {
-                                    // outro — needs to be coordinated
-                                    if (!--running_program.group.r)
-                                        run_all(running_program.group.c);
-                                }
-                            }
-                            running_program = null;
-                        }
-                        else if (now >= running_program.start) {
-                            const p = now - running_program.start;
-                            t = running_program.a + running_program.d * easing(p / running_program.duration);
-                            tick(t, 1 - t);
-                        }
-                    }
-                    return !!(running_program || pending_program);
-                });
-            }
-        }
-        return {
-            run(b) {
-                if (is_function(config)) {
-                    wait().then(() => {
-                        // @ts-ignore
-                        config = config();
-                        go(b);
-                    });
-                }
-                else {
-                    go(b);
-                }
-            },
-            end() {
-                clear_animation();
-                running_program = pending_program = null;
-            }
-        };
-    }
+
+    const globals = (typeof window !== 'undefined' ? window : global);
 
     function get_spread_update(levels, updates) {
         const update = {};
@@ -1956,10 +1857,14 @@ var app = (function () {
     	Home: () => { navigate(`/`, { replace: true }); },
     	Creator: () => { navigate(`/creator`, { replace: true }); },
     	Reference: () => { navigate(`/reference`, { replace: true }); },
-    	RefDice: () => { navigate(`/reference/dice`, { replace: true });},
-    	RefCombat: () => { navigate(`/reference/combat`, { replace: true }); },
-    	RefManeuvers: () => { navigate(`/reference/maneuvers`, { replace: true }); },
-    	RefSituations: () => { navigate(`/reference/situations`, { replace: true }); }
+    	// RefDice: () => { navigate(`/reference/dice`, { replace: true })},
+    	// RefTraits: () => { navigate(`/reference/traits`, { replace: true })},
+    	// RefSkills: () => { navigate(`/reference/skills`, { replace: true })},
+    	// RefCombat: () => { navigate(`/reference/combat`, { replace: true }) },
+    	// RefManeuvers: () => { navigate(`/reference/maneuvers`, { replace: true }) },
+    	// RefSituations: () => { navigate(`/reference/situations`, { replace: true }) },
+    	// RefAbilities: () => { navigate(`/reference/abilities`, { replace: true })},
+    	// RefGear: () => { navigate(`/reference/Gear`, { replace: true })},
     };
 
     /* src/layout/TitleBar.svelte generated by Svelte v3.16.5 */
@@ -2031,11 +1936,6 @@ var app = (function () {
     	}
     }
 
-    function cubicOut(t) {
-        const f = t - 1.0;
-        return f * f * f + 1.0;
-    }
-
     function fade(node, { delay = 0, duration = 400, easing = identity }) {
         const o = +getComputedStyle(node).opacity;
         return {
@@ -2043,31 +1943,6 @@ var app = (function () {
             duration,
             easing,
             css: t => `opacity: ${t * o}`
-        };
-    }
-    function slide(node, { delay = 0, duration = 400, easing = cubicOut }) {
-        const style = getComputedStyle(node);
-        const opacity = +style.opacity;
-        const height = parseFloat(style.height);
-        const padding_top = parseFloat(style.paddingTop);
-        const padding_bottom = parseFloat(style.paddingBottom);
-        const margin_top = parseFloat(style.marginTop);
-        const margin_bottom = parseFloat(style.marginBottom);
-        const border_top_width = parseFloat(style.borderTopWidth);
-        const border_bottom_width = parseFloat(style.borderBottomWidth);
-        return {
-            delay,
-            duration,
-            easing,
-            css: t => `overflow: hidden;` +
-                `opacity: ${Math.min(t * 20, 1) * opacity};` +
-                `height: ${t * height}px;` +
-                `padding-top: ${t * padding_top}px;` +
-                `padding-bottom: ${t * padding_bottom}px;` +
-                `margin-top: ${t * margin_top}px;` +
-                `margin-bottom: ${t * margin_bottom}px;` +
-                `border-top-width: ${t * border_top_width}px;` +
-                `border-bottom-width: ${t * border_bottom_width}px;`
         };
     }
 
@@ -4454,32 +4329,32 @@ var app = (function () {
     	}
     }
 
-    let newCharacter = new Character();
+    const newCharacter = new Character();
 
-    const CharacterStore = writable(newCharacter);
+    const character = writable(newCharacter);
 
     /* src/components/creator/CreDescription.svelte generated by Svelte v3.16.5 */
     const file$2 = "src/components/creator/CreDescription.svelte";
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[18] = list[i].name;
+    	child_ctx[17] = list[i].name;
     	child_ctx[4] = list[i].random;
     	return child_ctx;
     }
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i];
+    	child_ctx[14] = list[i];
     	return child_ctx;
     }
 
-    // (96:3) {#each pair as {name, random}}
+    // (94:3) {#each pair as {name, random}}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
     	let span;
-    	let t0_value = /*name*/ ctx[18] + "";
+    	let t0_value = /*name*/ ctx[17] + "";
     	let t0;
     	let t1;
     	let t2;
@@ -4489,7 +4364,7 @@ var app = (function () {
     	let dispose;
 
     	function input_input_handler() {
-    		/*input_input_handler*/ ctx[14].call(input, /*name*/ ctx[18]);
+    		/*input_input_handler*/ ctx[13].call(input, /*name*/ ctx[17]);
     	}
 
     	const block = {
@@ -4505,15 +4380,15 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Random";
     			attr_dev(span, "class", "stat-label svelte-19jcicn");
-    			add_location(span, file$2, 98, 6, 2728);
+    			add_location(span, file$2, 96, 6, 2721);
     			attr_dev(input, "class", "half-input svelte-19jcicn");
-    			add_location(input, file$2, 99, 6, 2774);
+    			add_location(input, file$2, 97, 6, 2767);
     			attr_dev(button, "class", "svelte-19jcicn");
-    			add_location(button, file$2, 100, 6, 2863);
+    			add_location(button, file$2, 98, 6, 2862);
     			attr_dev(div0, "class", "hs-container svelte-19jcicn");
-    			add_location(div0, file$2, 97, 5, 2695);
+    			add_location(div0, file$2, 95, 5, 2688);
     			attr_dev(div1, "class", "half-stat-block svelte-19jcicn");
-    			add_location(div1, file$2, 96, 4, 2660);
+    			add_location(div1, file$2, 94, 4, 2653);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
@@ -4528,15 +4403,15 @@ var app = (function () {
     			append_dev(span, t1);
     			append_dev(div0, t2);
     			append_dev(div0, input);
-    			set_input_value(input, /*char*/ ctx[0].description[/*name*/ ctx[18].toLowerCase()].value);
+    			set_input_value(input, /*$character*/ ctx[0].description[/*name*/ ctx[17].toLowerCase()].value);
     			append_dev(div0, t3);
     			append_dev(div0, button);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*char, descriptions*/ 9 && input.value !== /*char*/ ctx[0].description[/*name*/ ctx[18].toLowerCase()].value) {
-    				set_input_value(input, /*char*/ ctx[0].description[/*name*/ ctx[18].toLowerCase()].value);
+    			if (dirty & /*$character, descriptions*/ 9 && input.value !== /*$character*/ ctx[0].description[/*name*/ ctx[17].toLowerCase()].value) {
+    				set_input_value(input, /*$character*/ ctx[0].description[/*name*/ ctx[17].toLowerCase()].value);
     			}
     		},
     		d: function destroy(detaching) {
@@ -4549,17 +4424,17 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(96:3) {#each pair as {name, random}}",
+    		source: "(94:3) {#each pair as {name, random}}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:1) {#each descriptions as pair}
+    // (92:1) {#each descriptions as pair}
     function create_each_block(ctx) {
     	let div;
-    	let each_value_1 = /*pair*/ ctx[15];
+    	let each_value_1 = /*pair*/ ctx[14];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -4575,7 +4450,7 @@ var app = (function () {
     			}
 
     			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$2, 94, 2, 2597);
+    			add_location(div, file$2, 92, 2, 2590);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4585,8 +4460,8 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*descriptions, char*/ 9) {
-    				each_value_1 = /*pair*/ ctx[15];
+    			if (dirty & /*descriptions, $character*/ 9) {
+    				each_value_1 = /*pair*/ ctx[14];
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
@@ -4618,7 +4493,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(94:1) {#each descriptions as pair}",
+    		source: "(92:1) {#each descriptions as pair}",
     		ctx
     	});
 
@@ -4685,35 +4560,35 @@ var app = (function () {
     			div3 = element("div");
     			button1 = element("button");
     			button1.textContent = "Random Character";
-    			add_location(h2, file$2, 74, 2, 2125);
+    			add_location(h2, file$2, 72, 2, 2106);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$2, 73, 1, 2098);
+    			add_location(div0, file$2, 71, 1, 2079);
     			attr_dev(span0, "class", "stat-label svelte-19jcicn");
-    			add_location(span0, file$2, 77, 2, 2182);
+    			add_location(span0, file$2, 75, 2, 2163);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "player-name svelte-19jcicn");
-    			add_location(input0, file$2, 78, 2, 2224);
+    			add_location(input0, file$2, 76, 2, 2205);
     			attr_dev(div1, "class", "stat-block");
-    			add_location(div1, file$2, 76, 1, 2155);
+    			add_location(div1, file$2, 74, 1, 2136);
     			attr_dev(span1, "class", "stat-label svelte-19jcicn");
-    			add_location(span1, file$2, 85, 2, 2359);
+    			add_location(span1, file$2, 83, 2, 2346);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "class", "character-name svelte-19jcicn");
-    			add_location(input1, file$2, 86, 2, 2404);
+    			add_location(input1, file$2, 84, 2, 2391);
     			attr_dev(button0, "class", "svelte-19jcicn");
-    			add_location(button0, file$2, 91, 2, 2511);
+    			add_location(button0, file$2, 89, 2, 2504);
     			attr_dev(div2, "class", "stat-block");
-    			add_location(div2, file$2, 84, 1, 2332);
+    			add_location(div2, file$2, 82, 1, 2319);
     			attr_dev(button1, "class", "random-all svelte-19jcicn");
-    			add_location(button1, file$2, 107, 2, 2985);
+    			add_location(button1, file$2, 105, 2, 2984);
     			attr_dev(div3, "class", "stat-block");
-    			add_location(div3, file$2, 106, 1, 2958);
+    			add_location(div3, file$2, 104, 1, 2957);
     			attr_dev(div4, "class", "step");
-    			add_location(div4, file$2, 72, 0, 2070);
+    			add_location(div4, file$2, 70, 0, 2051);
 
     			dispose = [
-    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[11]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[12]),
     				listen_dev(button0, "click", /*randomName*/ ctx[1], false, false, false),
     				listen_dev(button1, "click", /*randomDescription*/ ctx[2], false, false, false)
     			];
@@ -4730,13 +4605,13 @@ var app = (function () {
     			append_dev(div1, span0);
     			append_dev(div1, t3);
     			append_dev(div1, input0);
-    			set_input_value(input0, /*char*/ ctx[0].description.playerName.value);
+    			set_input_value(input0, /*$character*/ ctx[0].description.playerName.value);
     			append_dev(div4, t4);
     			append_dev(div4, div2);
     			append_dev(div2, span1);
     			append_dev(div2, t6);
     			append_dev(div2, input1);
-    			set_input_value(input1, /*char*/ ctx[0].description.characterName.value);
+    			set_input_value(input1, /*$character*/ ctx[0].description.characterName.value);
     			append_dev(div2, t7);
     			append_dev(div2, button0);
     			append_dev(div4, t9);
@@ -4750,15 +4625,15 @@ var app = (function () {
     			append_dev(div3, button1);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*char*/ 1 && input0.value !== /*char*/ ctx[0].description.playerName.value) {
-    				set_input_value(input0, /*char*/ ctx[0].description.playerName.value);
+    			if (dirty & /*$character*/ 1 && input0.value !== /*$character*/ ctx[0].description.playerName.value) {
+    				set_input_value(input0, /*$character*/ ctx[0].description.playerName.value);
     			}
 
-    			if (dirty & /*char*/ 1 && input1.value !== /*char*/ ctx[0].description.characterName.value) {
-    				set_input_value(input1, /*char*/ ctx[0].description.characterName.value);
+    			if (dirty & /*$character*/ 1 && input1.value !== /*$character*/ ctx[0].description.characterName.value) {
+    				set_input_value(input1, /*$character*/ ctx[0].description.characterName.value);
     			}
 
-    			if (dirty & /*descriptions, char*/ 9) {
+    			if (dirty & /*descriptions, $character*/ 9) {
     				each_value = /*descriptions*/ ctx[3];
     				let i;
 
@@ -4809,23 +4684,21 @@ var app = (function () {
     }
 
     function instance$3($$self, $$props, $$invalidate) {
-    	let char;
-
-    	const unsubscribe = CharacterStore.subscribe(value => {
-    		$$invalidate(0, char = value);
-    	});
+    	let $character;
+    	validate_store(character, "character");
+    	component_subscribe($$self, character, $$value => $$invalidate(0, $character = $$value));
 
     	const random = array => {
     		return array[Math.ceil(Math.random() * array.length) - 1];
     	};
 
     	const randomName = () => {
-    		if (char.description.gender.value == "Male") {
-    			$$invalidate(0, char.description.characterName.value = random(maleNames), char);
-    		} else if (char.description.gender.value == "Female") {
-    			$$invalidate(0, char.description.characterName.value = random(femaleNames), char);
+    		if ($character.description.gender.value == "Male") {
+    			set_store_value(character, $character.description.$characterName.value = random(maleNames), $character);
+    		} else if ($character.description.gender.value == "Female") {
+    			set_store_value(character, $character.description.$characterName.value = random(femaleNames), $character);
     		} else {
-    			$$invalidate(0, char.description.characterName.value = random([...femaleNames, ...maleNames]), char);
+    			set_store_value(character, $character.description.$characterName.value = random([...femaleNames, ...maleNames]), $character);
     		}
     	};
 
@@ -4833,27 +4706,27 @@ var app = (function () {
     		const totalInches = Math.ceil(Math.random() * 14 + 60);
     		const feet = Math.floor(totalInches / 12);
     		const inches = Math.floor(totalInches % 12);
-    		$$invalidate(0, char.description.height.value = `${feet}' ${inches}"`, char);
+    		set_store_value(character, $character.description.height.value = `${feet}' ${inches}"`, $character);
     	};
 
     	const randomWeight = () => {
-    		$$invalidate(0, char.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs`, char);
+    		set_store_value(character, $character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs`, $character);
     	};
 
     	const randomHair = () => {
-    		$$invalidate(0, char.description.hair.value = random(["Auburn", "Bald", "Black", "Blonde", "Brunette", "Gray", "Red", "White"]), char);
+    		set_store_value(character, $character.description.hair.value = random(["Auburn", "Bald", "Black", "Blonde", "Brunette", "Gray", "Red", "White"]), $character);
     	};
 
     	const randomSkin = () => {
-    		$$invalidate(0, char.description.skin.value = random(["Black", "Brown", "Olive", "Pale", "Tan", "White"]), char);
+    		set_store_value(character, $character.description.skin.value = random(["Black", "Brown", "Olive", "Pale", "Tan", "White"]), $character);
     	};
 
     	const randomGender = () => {
-    		$$invalidate(0, char.description.gender.value = random(["Female", "Male"]), char);
+    		set_store_value(character, $character.description.gender.value = random(["Female", "Male"]), $character);
     	};
 
     	const randomAge = () => {
-    		$$invalidate(0, char.description.age.value = Math.ceil(Math.random() * 33 + 17), char);
+    		set_store_value(character, $character.description.age.value = Math.ceil(Math.random() * 33 + 17), $character);
     	};
 
     	const randomDescription = () => {
@@ -4876,18 +4749,18 @@ var app = (function () {
     	];
 
     	function input0_input_handler() {
-    		char.description.playerName.value = this.value;
-    		$$invalidate(0, char);
+    		$character.description.playerName.value = this.value;
+    		character.set($character);
     	}
 
     	function input1_input_handler() {
-    		char.description.characterName.value = this.value;
-    		$$invalidate(0, char);
+    		$character.description.characterName.value = this.value;
+    		character.set($character);
     	}
 
     	function input_input_handler(name) {
-    		char.description[name.toLowerCase()].value = this.value;
-    		$$invalidate(0, char);
+    		$character.description[name.toLowerCase()].value = this.value;
+    		character.set($character);
     		$$invalidate(3, descriptions);
     	}
 
@@ -4896,16 +4769,15 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("char" in $$props) $$invalidate(0, char = $$props.char);
+    		if ("$character" in $$props) character.set($character = $$props.$character);
     	};
 
     	return [
-    		char,
+    		$character,
     		randomName,
     		randomDescription,
     		descriptions,
     		random,
-    		unsubscribe,
     		randomHeight,
     		randomWeight,
     		randomHair,
@@ -4941,16 +4813,16 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
-    // (44:1) {#each traits as trait}
+    // (42:1) {#each traits as trait}
     function create_each_block$1(ctx) {
     	let div10;
     	let div0;
     	let span;
-    	let t0_value = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name + "";
+    	let t0_value = /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].name + "";
     	let t0;
     	let t1;
     	let div9;
@@ -4975,7 +4847,7 @@ var app = (function () {
     	let dispose;
 
     	function input_change_input_handler() {
-    		/*input_change_input_handler*/ ctx[6].call(input, /*trait*/ ctx[8]);
+    		/*input_change_input_handler*/ ctx[5].call(input, /*trait*/ ctx[7]);
     	}
 
     	const block = {
@@ -5009,41 +4881,41 @@ var app = (function () {
     			div7.textContent = "6";
     			t14 = space();
     			attr_dev(span, "class", "stat-label svelte-1i3rsgc");
-    			add_location(span, file$3, 46, 4, 1191);
+    			add_location(span, file$3, 44, 4, 1145);
     			attr_dev(div0, "class", "stat-column name-column svelte-1i3rsgc");
-    			add_location(div0, file$3, 45, 3, 1149);
+    			add_location(div0, file$3, 43, 3, 1103);
     			attr_dev(input, "class", "slider-input svelte-1i3rsgc");
     			attr_dev(input, "type", "range");
-    			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name.toLowerCase());
+    			attr_dev(input, "name", input_name_value = /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].name.toLowerCase());
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", "6");
-    			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[1] < 0);
-    			add_location(input, file$3, 50, 5, 1335);
+    			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[0] < 0);
+    			add_location(input, file$3, 48, 5, 1295);
     			attr_dev(div1, "class", "stat-input svelte-1i3rsgc");
-    			add_location(div1, file$3, 49, 4, 1305);
+    			add_location(div1, file$3, 47, 4, 1265);
     			attr_dev(div2, "class", "svelte-1i3rsgc");
-    			add_location(div2, file$3, 62, 5, 1657);
+    			add_location(div2, file$3, 60, 5, 1629);
     			attr_dev(div3, "class", "svelte-1i3rsgc");
-    			add_location(div3, file$3, 63, 5, 1675);
+    			add_location(div3, file$3, 61, 5, 1647);
     			attr_dev(div4, "class", "svelte-1i3rsgc");
-    			add_location(div4, file$3, 64, 5, 1693);
+    			add_location(div4, file$3, 62, 5, 1665);
     			attr_dev(div5, "class", "svelte-1i3rsgc");
-    			add_location(div5, file$3, 65, 5, 1711);
+    			add_location(div5, file$3, 63, 5, 1683);
     			attr_dev(div6, "class", "svelte-1i3rsgc");
-    			add_location(div6, file$3, 66, 5, 1729);
+    			add_location(div6, file$3, 64, 5, 1701);
     			attr_dev(div7, "class", "svelte-1i3rsgc");
-    			add_location(div7, file$3, 67, 5, 1747);
+    			add_location(div7, file$3, 65, 5, 1719);
     			attr_dev(div8, "class", "stat-input svelte-1i3rsgc");
-    			add_location(div8, file$3, 61, 4, 1627);
+    			add_location(div8, file$3, 59, 4, 1599);
     			attr_dev(div9, "class", "stat-column value-column svelte-1i3rsgc");
-    			add_location(div9, file$3, 48, 3, 1262);
+    			add_location(div9, file$3, 46, 3, 1222);
     			attr_dev(div10, "class", "stat-block svelte-1i3rsgc");
-    			add_location(div10, file$3, 44, 2, 1121);
+    			add_location(div10, file$3, 42, 2, 1075);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
     				listen_dev(input, "input", input_change_input_handler),
-    				listen_dev(input, "input", prevent_default(/*input_handler*/ ctx[7]), false, true, false)
+    				listen_dev(input, "input", prevent_default(/*input_handler*/ ctx[6]), false, true, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -5055,7 +4927,7 @@ var app = (function () {
     			append_dev(div10, div9);
     			append_dev(div9, div1);
     			append_dev(div1, input);
-    			set_input_value(input, /*char*/ ctx[0].traits[/*trait*/ ctx[8]].base);
+    			set_input_value(input, /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].base);
     			append_dev(div9, t2);
     			append_dev(div9, div8);
     			append_dev(div8, div2);
@@ -5073,18 +4945,18 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$character*/ 2 && t0_value !== (t0_value = /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].name + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*char*/ 1 && input_name_value !== (input_name_value = /*char*/ ctx[0].traits[/*trait*/ ctx[8]].name.toLowerCase())) {
+    			if (dirty & /*$character*/ 2 && input_name_value !== (input_name_value = /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].name.toLowerCase())) {
     				attr_dev(input, "name", input_name_value);
     			}
 
-    			if (dirty & /*remaining*/ 2 && input_invalid_value !== (input_invalid_value = /*remaining*/ ctx[1] < 0)) {
+    			if (dirty & /*remaining*/ 1 && input_invalid_value !== (input_invalid_value = /*remaining*/ ctx[0] < 0)) {
     				attr_dev(input, "invalid", input_invalid_value);
     			}
 
-    			if (dirty & /*char, traits*/ 5) {
-    				set_input_value(input, /*char*/ ctx[0].traits[/*trait*/ ctx[8]].base);
+    			if (dirty & /*$character, traits*/ 6) {
+    				set_input_value(input, /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].base);
     			}
     		},
     		d: function destroy(detaching) {
@@ -5097,7 +4969,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(44:1) {#each traits as trait}",
+    		source: "(42:1) {#each traits as trait}",
     		ctx
     	});
 
@@ -5132,21 +5004,21 @@ var app = (function () {
     			div1 = element("div");
     			h3 = element("h3");
     			t2 = text("Points Remaining: ");
-    			t3 = text(/*remaining*/ ctx[1]);
+    			t3 = text(/*remaining*/ ctx[0]);
     			t4 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$3, 38, 2, 996);
+    			add_location(h2, file$3, 36, 2, 950);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$3, 37, 1, 969);
-    			add_location(h3, file$3, 41, 2, 1047);
+    			add_location(div0, file$3, 35, 1, 923);
+    			add_location(h3, file$3, 39, 2, 1001);
     			attr_dev(div1, "class", "remaining svelte-1i3rsgc");
-    			add_location(div1, file$3, 40, 1, 1021);
+    			add_location(div1, file$3, 38, 1, 975);
     			attr_dev(div2, "class", "traits-step");
-    			add_location(div2, file$3, 36, 0, 934);
+    			add_location(div2, file$3, 34, 0, 888);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5167,9 +5039,9 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*remaining*/ 2) set_data_dev(t3, /*remaining*/ ctx[1]);
+    			if (dirty & /*remaining*/ 1) set_data_dev(t3, /*remaining*/ ctx[0]);
 
-    			if (dirty & /*char, traits, remaining, countTraitPoints*/ 15) {
+    			if (dirty & /*$character, traits, remaining, countTraitPoints*/ 15) {
     				each_value = /*traits*/ ctx[2];
     				let i;
 
@@ -5221,13 +5093,10 @@ var app = (function () {
     const traitPoints = 12;
 
     function instance$4($$self, $$props, $$invalidate) {
-    	let char;
-
-    	const unsubscribe = CharacterStore.subscribe(value => {
-    		$$invalidate(0, char = value);
-    	});
-
-    	const traits = Object.keys(char.traits);
+    	let $character;
+    	validate_store(character, "character");
+    	component_subscribe($$self, character, $$value => $$invalidate(1, $character = $$value));
+    	const traits = Object.keys($character.traits);
     	let remaining = traitPoints - traits.length;
 
     	const countTraitPoints = event => {
@@ -5235,13 +5104,13 @@ var app = (function () {
     		let traitCount = 0;
 
     		traits.forEach(trait => {
-    			traitCount += char.traits[trait].base;
+    			traitCount += $character.traits[trait].base;
     		});
 
-    		$$invalidate(1, remaining = traitPoints - traitCount);
+    		$$invalidate(0, remaining = traitPoints - traitCount);
 
     		if (remaining < 0) {
-    			$$invalidate(0, char.traits[target.name].base -= 1, char);
+    			set_store_value(character, $character.traits[target.name].base -= 1, $character);
     			target.value -= 1;
     			countTraitPoints(event);
     		}
@@ -5251,17 +5120,17 @@ var app = (function () {
 
     	const setSkillMax = () => {
     		traits.forEach(trait => {
-    			Object.keys(char.skills).forEach(skill => {
-    				if (char.skills[skill].parent === capitalize(trait)) {
-    					$$invalidate(0, char.skills[skill].max = char.traits[trait].base, char);
+    			Object.keys($character.skills).forEach(skill => {
+    				if ($character.skills[skill].parent === capitalize(trait)) {
+    					set_store_value(character, $character.skills[skill].max = $character.traits[trait].base, $character);
     				}
     			});
     		});
     	};
 
     	function input_change_input_handler(trait) {
-    		char.traits[trait].base = to_number(this.value);
-    		$$invalidate(0, char);
+    		$character.traits[trait].base = to_number(this.value);
+    		character.set($character);
     		$$invalidate(2, traits);
     	}
 
@@ -5272,16 +5141,15 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("char" in $$props) $$invalidate(0, char = $$props.char);
-    		if ("remaining" in $$props) $$invalidate(1, remaining = $$props.remaining);
+    		if ("remaining" in $$props) $$invalidate(0, remaining = $$props.remaining);
+    		if ("$character" in $$props) character.set($character = $$props.$character);
     	};
 
     	return [
-    		char,
     		remaining,
+    		$character,
     		traits,
     		countTraitPoints,
-    		unsubscribe,
     		setSkillMax,
     		input_change_input_handler,
     		input_handler
@@ -5312,17 +5180,17 @@ var app = (function () {
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (46:4) {#if group.visible}
+    // (44:4) {#if group.visible}
     function create_if_block$1(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*skills*/ ctx[3];
@@ -5348,7 +5216,7 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*char, skillGroups, skills, remaining, countSkillPoints*/ 31) {
+    			if (dirty & /*$character, skillGroups, skills, remaining, countSkillPoints*/ 31) {
     				each_value_1 = /*skills*/ ctx[3];
     				let i;
 
@@ -5381,21 +5249,21 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(46:4) {#if group.visible}",
+    		source: "(44:4) {#if group.visible}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:6) {#if char.traits[group.name].name == char.skills[skill].parent}
+    // (46:6) {#if $character.traits[group.name].name == $character.skills[skill].parent}
     function create_if_block_1$1(ctx) {
     	let br;
     	let t0;
     	let div11;
     	let div0;
     	let span;
-    	let t1_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name + "";
+    	let t1_value = /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].name + "";
     	let t1;
     	let t2;
     	let div10;
@@ -5422,7 +5290,7 @@ var app = (function () {
     	let dispose;
 
     	function input_change_input_handler() {
-    		/*input_change_input_handler*/ ctx[8].call(input, /*skill*/ ctx[13]);
+    		/*input_change_input_handler*/ ctx[7].call(input, /*skill*/ ctx[12]);
     	}
 
     	const block = {
@@ -5460,45 +5328,45 @@ var app = (function () {
     			div8 = element("div");
     			div8.textContent = "6";
     			t17 = space();
-    			add_location(br, file$4, 48, 7, 1395);
-    			attr_dev(span, "class", "stat-label svelte-1wyajz9");
-    			add_location(span, file$4, 51, 9, 1488);
-    			attr_dev(div0, "class", "stat-column name-column svelte-1wyajz9");
-    			add_location(div0, file$4, 50, 8, 1441);
-    			attr_dev(input, "class", "slider-input svelte-1wyajz9");
+    			add_location(br, file$4, 46, 7, 1361);
+    			attr_dev(span, "class", "stat-label svelte-10qxham");
+    			add_location(span, file$4, 49, 9, 1454);
+    			attr_dev(div0, "class", "stat-column name-column svelte-10qxham");
+    			add_location(div0, file$4, 48, 8, 1407);
+    			attr_dev(input, "class", "slider-input svelte-10qxham");
     			attr_dev(input, "type", "range");
-    			attr_dev(input, "name", input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name.toLowerCase());
+    			attr_dev(input, "name", input_name_value = /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].name.toLowerCase());
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", "6");
-    			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[2] < 0 || this.value > /*char*/ ctx[0].traits[/*group*/ ctx[10].name].base);
-    			add_location(input, file$4, 55, 10, 1652);
-    			attr_dev(div1, "class", "stat-input svelte-1wyajz9");
-    			add_location(div1, file$4, 54, 9, 1617);
-    			attr_dev(div2, "class", "svelte-1wyajz9");
-    			add_location(div2, file$4, 67, 10, 2081);
-    			attr_dev(div3, "class", "svelte-1wyajz9");
-    			add_location(div3, file$4, 68, 10, 2104);
-    			attr_dev(div4, "class", "svelte-1wyajz9");
-    			add_location(div4, file$4, 69, 10, 2127);
-    			attr_dev(div5, "class", "svelte-1wyajz9");
-    			add_location(div5, file$4, 70, 10, 2150);
-    			attr_dev(div6, "class", "svelte-1wyajz9");
-    			add_location(div6, file$4, 71, 10, 2173);
-    			attr_dev(div7, "class", "svelte-1wyajz9");
-    			add_location(div7, file$4, 72, 10, 2196);
-    			attr_dev(div8, "class", "svelte-1wyajz9");
-    			add_location(div8, file$4, 73, 10, 2219);
-    			attr_dev(div9, "class", "stat-input svelte-1wyajz9");
-    			add_location(div9, file$4, 66, 9, 2046);
-    			attr_dev(div10, "class", "stat-column value-column svelte-1wyajz9");
-    			add_location(div10, file$4, 53, 8, 1569);
-    			attr_dev(div11, "class", "skill-block svelte-1wyajz9");
-    			add_location(div11, file$4, 49, 7, 1407);
+    			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[1] < 0 || this.value > /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].base);
+    			add_location(input, file$4, 53, 10, 1624);
+    			attr_dev(div1, "class", "stat-input svelte-10qxham");
+    			add_location(div1, file$4, 52, 9, 1589);
+    			attr_dev(div2, "class", "svelte-10qxham");
+    			add_location(div2, file$4, 65, 10, 2071);
+    			attr_dev(div3, "class", "svelte-10qxham");
+    			add_location(div3, file$4, 66, 10, 2094);
+    			attr_dev(div4, "class", "svelte-10qxham");
+    			add_location(div4, file$4, 67, 10, 2117);
+    			attr_dev(div5, "class", "svelte-10qxham");
+    			add_location(div5, file$4, 68, 10, 2140);
+    			attr_dev(div6, "class", "svelte-10qxham");
+    			add_location(div6, file$4, 69, 10, 2163);
+    			attr_dev(div7, "class", "svelte-10qxham");
+    			add_location(div7, file$4, 70, 10, 2186);
+    			attr_dev(div8, "class", "svelte-10qxham");
+    			add_location(div8, file$4, 71, 10, 2209);
+    			attr_dev(div9, "class", "stat-input svelte-10qxham");
+    			add_location(div9, file$4, 64, 9, 2036);
+    			attr_dev(div10, "class", "stat-column value-column svelte-10qxham");
+    			add_location(div10, file$4, 51, 8, 1541);
+    			attr_dev(div11, "class", "skill-block svelte-10qxham");
+    			add_location(div11, file$4, 47, 7, 1373);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
     				listen_dev(input, "input", input_change_input_handler),
-    				listen_dev(input, "input", prevent_default(/*input_handler*/ ctx[9]), false, true, false)
+    				listen_dev(input, "input", prevent_default(/*input_handler*/ ctx[8]), false, true, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -5512,7 +5380,7 @@ var app = (function () {
     			append_dev(div11, div10);
     			append_dev(div10, div1);
     			append_dev(div1, input);
-    			set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[13]].base);
+    			set_input_value(input, /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].base);
     			append_dev(div10, t3);
     			append_dev(div10, div9);
     			append_dev(div9, div2);
@@ -5532,18 +5400,18 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*char*/ 1 && t1_value !== (t1_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*$character*/ 4 && t1_value !== (t1_value = /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].name + "")) set_data_dev(t1, t1_value);
 
-    			if (dirty & /*char*/ 1 && input_name_value !== (input_name_value = /*char*/ ctx[0].skills[/*skill*/ ctx[13]].name.toLowerCase())) {
+    			if (dirty & /*$character*/ 4 && input_name_value !== (input_name_value = /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].name.toLowerCase())) {
     				attr_dev(input, "name", input_name_value);
     			}
 
-    			if (dirty & /*remaining, char, skillGroups*/ 7 && input_invalid_value !== (input_invalid_value = /*remaining*/ ctx[2] < 0 || this.value > /*char*/ ctx[0].traits[/*group*/ ctx[10].name].base)) {
+    			if (dirty & /*remaining, $character, skillGroups*/ 7 && input_invalid_value !== (input_invalid_value = /*remaining*/ ctx[1] < 0 || this.value > /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].base)) {
     				attr_dev(input, "invalid", input_invalid_value);
     			}
 
-    			if (dirty & /*char, skills*/ 9) {
-    				set_input_value(input, /*char*/ ctx[0].skills[/*skill*/ ctx[13]].base);
+    			if (dirty & /*$character, skills*/ 12) {
+    				set_input_value(input, /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].base);
     			}
     		},
     		d: function destroy(detaching) {
@@ -5558,17 +5426,17 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(48:6) {#if char.traits[group.name].name == char.skills[skill].parent}",
+    		source: "(46:6) {#if $character.traits[group.name].name == $character.skills[skill].parent}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:5) {#each skills as skill}
+    // (45:5) {#each skills as skill}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
-    	let if_block = /*char*/ ctx[0].traits[/*group*/ ctx[10].name].name == /*char*/ ctx[0].skills[/*skill*/ ctx[13]].parent && create_if_block_1$1(ctx);
+    	let if_block = /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].name == /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].parent && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -5580,7 +5448,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*char*/ ctx[0].traits[/*group*/ ctx[10].name].name == /*char*/ ctx[0].skills[/*skill*/ ctx[13]].parent) {
+    			if (/*$character*/ ctx[2].traits[/*group*/ ctx[9].name].name == /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].parent) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -5603,19 +5471,19 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(47:5) {#each skills as skill}",
+    		source: "(45:5) {#each skills as skill}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:2) {#each skillGroups as group}
+    // (39:2) {#each skillGroups as group}
     function create_each_block$2(ctx) {
     	let div1;
     	let div0;
     	let h3;
-    	let t0_value = /*char*/ ctx[0].traits[/*group*/ ctx[10].name].name + "";
+    	let t0_value = /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].name + "";
     	let t0;
     	let t1;
     	let t2;
@@ -5623,10 +5491,10 @@ var app = (function () {
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[7](/*group*/ ctx[10], ...args);
+    		return /*click_handler*/ ctx[6](/*group*/ ctx[9], ...args);
     	}
 
-    	let if_block = /*group*/ ctx[10].visible && create_if_block$1(ctx);
+    	let if_block = /*group*/ ctx[9].visible && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -5638,11 +5506,11 @@ var app = (function () {
     			t2 = space();
     			if (if_block) if_block.c();
     			t3 = space();
-    			add_location(h3, file$4, 43, 5, 1207);
-    			attr_dev(div0, "class", "parent-trait-title svelte-1wyajz9");
-    			add_location(div0, file$4, 42, 4, 1109);
-    			attr_dev(div1, "class", "trait-section svelte-1wyajz9");
-    			add_location(div1, file$4, 41, 3, 1077);
+    			add_location(h3, file$4, 41, 5, 1155);
+    			attr_dev(div0, "class", "parent-trait-title svelte-10qxham");
+    			add_location(div0, file$4, 40, 4, 1057);
+    			attr_dev(div1, "class", "trait-section svelte-10qxham");
+    			add_location(div1, file$4, 39, 3, 1025);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -5657,9 +5525,9 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*char, skillGroups*/ 3 && t0_value !== (t0_value = /*char*/ ctx[0].traits[/*group*/ ctx[10].name].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$character, skillGroups*/ 5 && t0_value !== (t0_value = /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].name + "")) set_data_dev(t0, t0_value);
 
-    			if (/*group*/ ctx[10].visible) {
+    			if (/*group*/ ctx[9].visible) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -5683,7 +5551,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(41:2) {#each skillGroups as group}",
+    		source: "(39:2) {#each skillGroups as group}",
     		ctx
     	});
 
@@ -5702,7 +5570,7 @@ var app = (function () {
     	let t4;
     	let div2;
     	let div3_intro;
-    	let each_value = /*skillGroups*/ ctx[1];
+    	let each_value = /*skillGroups*/ ctx[0];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -5719,7 +5587,7 @@ var app = (function () {
     			div1 = element("div");
     			h3 = element("h3");
     			t2 = text("Points Remaining: ");
-    			t3 = text(/*remaining*/ ctx[2]);
+    			t3 = text(/*remaining*/ ctx[1]);
     			t4 = space();
     			div2 = element("div");
 
@@ -5727,16 +5595,16 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$4, 34, 2, 919);
+    			add_location(h2, file$4, 32, 2, 867);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$4, 33, 1, 892);
-    			add_location(h3, file$4, 37, 2, 970);
-    			attr_dev(div1, "class", "remaining svelte-1wyajz9");
-    			add_location(div1, file$4, 36, 1, 944);
-    			attr_dev(div2, "class", "skill-list svelte-1wyajz9");
-    			add_location(div2, file$4, 39, 1, 1018);
+    			add_location(div0, file$4, 31, 1, 840);
+    			add_location(h3, file$4, 35, 2, 918);
+    			attr_dev(div1, "class", "remaining svelte-10qxham");
+    			add_location(div1, file$4, 34, 1, 892);
+    			attr_dev(div2, "class", "skill-list svelte-10qxham");
+    			add_location(div2, file$4, 37, 1, 966);
     			attr_dev(div3, "class", "skills-step");
-    			add_location(div3, file$4, 32, 0, 857);
+    			add_location(div3, file$4, 30, 0, 805);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5758,10 +5626,10 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*remaining*/ 4) set_data_dev(t3, /*remaining*/ ctx[2]);
+    			if (dirty & /*remaining*/ 2) set_data_dev(t3, /*remaining*/ ctx[1]);
 
-    			if (dirty & /*skillGroups, skills, char, remaining, countSkillPoints, HideShow*/ 31) {
-    				each_value = /*skillGroups*/ ctx[1];
+    			if (dirty & /*skillGroups, skills, $character, remaining, countSkillPoints, HideShow*/ 31) {
+    				each_value = /*skillGroups*/ ctx[0];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -5810,20 +5678,17 @@ var app = (function () {
     }
 
     function instance$5($$self, $$props, $$invalidate) {
-    	let char;
-
-    	const unsubscribe = CharacterStore.subscribe(value => {
-    		$$invalidate(0, char = value);
-    	});
-
-    	const skills = Object.keys(char.skills);
+    	let $character;
+    	validate_store(character, "character");
+    	component_subscribe($$self, character, $$value => $$invalidate(2, $character = $$value));
+    	const skills = Object.keys($character.skills);
     	let skillGroups = [];
 
-    	Object.keys(char.traits).forEach(trait => {
+    	Object.keys($character.traits).forEach(trait => {
     		skillGroups.push({ name: trait, visible: false });
     	});
 
-    	let skillPoints = char.traits.brains.base * 3;
+    	let skillPoints = $character.traits.brains.base * 3;
     	let remaining = skillPoints;
 
     	const countSkillPoints = event => {
@@ -5831,23 +5696,23 @@ var app = (function () {
     		let skillCount = 0;
 
     		skills.forEach(skill => {
-    			skillCount += char.skills[skill].base;
+    			skillCount += $character.skills[skill].base;
     		});
 
-    		$$invalidate(2, remaining = skillPoints - skillCount);
+    		$$invalidate(1, remaining = skillPoints - skillCount);
 
-    		if (remaining < 0 || target.value > char.skills[target.name].max) {
-    			$$invalidate(0, char.skills[target.name].base -= 1, char);
+    		if (remaining < 0 || target.value > $character.skills[target.name].max) {
+    			set_store_value(character, $character.skills[target.name].base -= 1, $character);
     			target.value -= 1;
     			countSkillPoints(event);
     		}
     	};
 
-    	const click_handler = group => $$invalidate(1, skillGroups = HideShow(group, skillGroups));
+    	const click_handler = group => $$invalidate(0, skillGroups = HideShow(group, skillGroups));
 
     	function input_change_input_handler(skill) {
-    		char.skills[skill].base = to_number(this.value);
-    		$$invalidate(0, char);
+    		$character.skills[skill].base = to_number(this.value);
+    		character.set($character);
     		$$invalidate(3, skills);
     	}
 
@@ -5858,19 +5723,18 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("char" in $$props) $$invalidate(0, char = $$props.char);
-    		if ("skillGroups" in $$props) $$invalidate(1, skillGroups = $$props.skillGroups);
+    		if ("skillGroups" in $$props) $$invalidate(0, skillGroups = $$props.skillGroups);
     		if ("skillPoints" in $$props) skillPoints = $$props.skillPoints;
-    		if ("remaining" in $$props) $$invalidate(2, remaining = $$props.remaining);
+    		if ("remaining" in $$props) $$invalidate(1, remaining = $$props.remaining);
+    		if ("$character" in $$props) character.set($character = $$props.$character);
     	};
 
     	return [
-    		char,
     		skillGroups,
     		remaining,
+    		$character,
     		skills,
     		countSkillPoints,
-    		unsubscribe,
     		skillPoints,
     		click_handler,
     		input_change_input_handler,
@@ -5897,19 +5761,19 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[3] = list[i];
+    	child_ctx[2] = list[i];
     	return child_ctx;
     }
 
-    // (16:1) {#each props as prop}
+    // (12:1) {#each props as prop}
     function create_each_block$3(ctx) {
     	let div;
     	let span0;
-    	let t0_value = /*char*/ ctx[0].props[/*prop*/ ctx[3]].name + "";
+    	let t0_value = /*$character*/ ctx[0].props[/*prop*/ ctx[2]].name + "";
     	let t0;
     	let t1;
     	let span1;
-    	let t2_value = /*char*/ ctx[0].props[/*prop*/ ctx[3]].score + "";
+    	let t2_value = /*$character*/ ctx[0].props[/*prop*/ ctx[2]].score + "";
     	let t2;
     	let t3;
 
@@ -5922,11 +5786,11 @@ var app = (function () {
     			span1 = element("span");
     			t2 = text(t2_value);
     			t3 = space();
-    			add_location(span0, file$5, 17, 3, 401);
+    			add_location(span0, file$5, 13, 3, 297);
     			attr_dev(span1, "class", "three-column");
-    			add_location(span1, file$5, 18, 3, 441);
+    			add_location(span1, file$5, 14, 3, 343);
     			attr_dev(div, "class", "stat-block");
-    			add_location(div, file$5, 16, 2, 373);
+    			add_location(div, file$5, 12, 2, 269);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5938,8 +5802,8 @@ var app = (function () {
     			append_dev(div, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*char*/ 1 && t0_value !== (t0_value = /*char*/ ctx[0].props[/*prop*/ ctx[3]].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*char*/ 1 && t2_value !== (t2_value = /*char*/ ctx[0].props[/*prop*/ ctx[3]].score + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*$character*/ 1 && t0_value !== (t0_value = /*$character*/ ctx[0].props[/*prop*/ ctx[2]].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$character*/ 1 && t2_value !== (t2_value = /*$character*/ ctx[0].props[/*prop*/ ctx[2]].score + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -5950,7 +5814,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(16:1) {#each props as prop}",
+    		source: "(12:1) {#each props as prop}",
     		ctx
     	});
 
@@ -5982,11 +5846,11 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$5, 13, 2, 320);
+    			add_location(h2, file$5, 9, 2, 216);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$5, 12, 1, 293);
+    			add_location(div0, file$5, 8, 1, 189);
     			attr_dev(div1, "class", "properties-step");
-    			add_location(div1, file$5, 11, 0, 254);
+    			add_location(div1, file$5, 7, 0, 150);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6002,7 +5866,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*char, props*/ 3) {
+    			if (dirty & /*$character, props*/ 3) {
     				each_value = /*props*/ ctx[1];
     				let i;
 
@@ -6052,24 +5916,20 @@ var app = (function () {
     }
 
     function instance$6($$self, $$props, $$invalidate) {
-    	let char;
-
-    	const unsubscribe = CharacterStore.subscribe(value => {
-    		$$invalidate(0, char = value);
-    	});
-
-    	const props = Object.keys(char.props);
-    	console.log("now!");
+    	let $character;
+    	validate_store(character, "character");
+    	component_subscribe($$self, character, $$value => $$invalidate(0, $character = $$value));
+    	const props = Object.keys($character.props);
 
     	$$self.$capture_state = () => {
     		return {};
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("char" in $$props) $$invalidate(0, char = $$props.char);
+    		if ("$character" in $$props) character.set($character = $$props.$character);
     	};
 
-    	return [char, props];
+    	return [$character, props];
     }
 
     class CreProperties extends SvelteComponentDev {
@@ -7302,19 +7162,19 @@ var app = (function () {
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i];
-    	child_ctx[7] = list;
-    	child_ctx[8] = i;
+    	child_ctx[5] = list[i];
+    	child_ctx[6] = list;
+    	child_ctx[7] = i;
     	return child_ctx;
     }
 
-    // (45:4) {#if Abilities[index-1] != undefined && Abilities[index].xp != Abilities[index-1].xp}
+    // (43:4) {#if Abilities[index-1] != undefined && Abilities[index].xp != Abilities[index-1].xp}
     function create_if_block_4(ctx) {
     	let div;
     	let t;
@@ -7326,8 +7186,8 @@ var app = (function () {
     			t = space();
     			br = element("br");
     			attr_dev(div, "class", "separator svelte-1tt0awy");
-    			add_location(div, file$6, 45, 5, 1302);
-    			add_location(br, file$6, 46, 5, 1337);
+    			add_location(div, file$6, 43, 5, 1238);
+    			add_location(br, file$6, 44, 5, 1273);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7345,19 +7205,19 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(45:4) {#if Abilities[index-1] != undefined && Abilities[index].xp != Abilities[index-1].xp}",
+    		source: "(43:4) {#if Abilities[index-1] != undefined && Abilities[index].xp != Abilities[index-1].xp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:6) {#if ability.options.length}
+    // (54:6) {#if ability.options.length}
     function create_if_block_3(ctx) {
     	let span;
     	let select;
     	let select_value_value;
-    	let each_value_1 = /*ability*/ ctx[6].options;
+    	let each_value_1 = /*ability*/ ctx[5].options;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -7373,9 +7233,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(select, file$6, 57, 8, 1708);
+    			add_location(select, file$6, 55, 8, 1644);
     			attr_dev(span, "class", "ability-options");
-    			add_location(span, file$6, 56, 7, 1669);
+    			add_location(span, file$6, 54, 7, 1605);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -7385,7 +7245,7 @@ var app = (function () {
     				each_blocks[i].m(select, null);
     			}
 
-    			select_value_value = /*ability*/ ctx[6].options[0];
+    			select_value_value = /*ability*/ ctx[5].options[0];
 
     			for (var i = 0; i < select.options.length; i += 1) {
     				var option = select.options[i];
@@ -7398,7 +7258,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*Abilities*/ 1) {
-    				each_value_1 = /*ability*/ ctx[6].options;
+    				each_value_1 = /*ability*/ ctx[5].options;
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
@@ -7420,7 +7280,7 @@ var app = (function () {
     				each_blocks.length = each_value_1.length;
     			}
 
-    			if (dirty & /*Abilities*/ 1 && select_value_value !== (select_value_value = /*ability*/ ctx[6].options[0])) {
+    			if (dirty & /*Abilities*/ 1 && select_value_value !== (select_value_value = /*ability*/ ctx[5].options[0])) {
     				for (var i = 0; i < select.options.length; i += 1) {
     					var option = select.options[i];
 
@@ -7441,17 +7301,17 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(56:6) {#if ability.options.length}",
+    		source: "(54:6) {#if ability.options.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:9) {#each ability.options as option}
+    // (57:9) {#each ability.options as option}
     function create_each_block_1$2(ctx) {
     	let option;
-    	let t_value = /*option*/ ctx[9].name + "";
+    	let t_value = /*option*/ ctx[8].name + "";
     	let t;
     	let option_value_value;
 
@@ -7459,18 +7319,18 @@ var app = (function () {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = option_value_value = /*option*/ ctx[9];
+    			option.__value = option_value_value = /*option*/ ctx[8];
     			option.value = option.__value;
-    			add_location(option, file$6, 59, 10, 1797);
+    			add_location(option, file$6, 57, 10, 1733);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
     			append_dev(option, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*Abilities*/ 1 && t_value !== (t_value = /*option*/ ctx[9].name + "")) set_data_dev(t, t_value);
+    			if (dirty & /*Abilities*/ 1 && t_value !== (t_value = /*option*/ ctx[8].name + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*Abilities*/ 1 && option_value_value !== (option_value_value = /*option*/ ctx[9])) {
+    			if (dirty & /*Abilities*/ 1 && option_value_value !== (option_value_value = /*option*/ ctx[8])) {
     				prop_dev(option, "__value", option_value_value);
     			}
 
@@ -7485,19 +7345,19 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(59:9) {#each ability.options as option}",
+    		source: "(57:9) {#each ability.options as option}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (85:8) {#if ability.max > 1}
+    // (83:8) {#if ability.max > 1}
     function create_if_block$2(ctx) {
     	let option0;
     	let option1;
     	let if_block_anchor;
-    	let if_block = /*ability*/ ctx[6].max > 3 && create_if_block_1$2(ctx);
+    	let if_block = /*ability*/ ctx[5].max > 3 && create_if_block_1$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -7509,10 +7369,10 @@ var app = (function () {
     			if_block_anchor = empty();
     			option0.__value = "2";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 85, 9, 2551);
+    			add_location(option0, file$6, 83, 9, 2487);
     			option1.__value = "3";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 86, 9, 2587);
+    			add_location(option1, file$6, 84, 9, 2523);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option0, anchor);
@@ -7521,7 +7381,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*ability*/ ctx[6].max > 3) {
+    			if (/*ability*/ ctx[5].max > 3) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -7546,20 +7406,20 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(85:8) {#if ability.max > 1}",
+    		source: "(83:8) {#if ability.max > 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:9) {#if ability.max > 3}
+    // (86:9) {#if ability.max > 3}
     function create_if_block_1$2(ctx) {
     	let option0;
     	let option1;
     	let option2;
     	let if_block_anchor;
-    	let if_block = /*ability*/ ctx[6].max > 6 && create_if_block_2(ctx);
+    	let if_block = /*ability*/ ctx[5].max > 6 && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
@@ -7573,13 +7433,13 @@ var app = (function () {
     			if_block_anchor = empty();
     			option0.__value = "4";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 88, 10, 2655);
+    			add_location(option0, file$6, 86, 10, 2591);
     			option1.__value = "5";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 89, 10, 2692);
+    			add_location(option1, file$6, 87, 10, 2628);
     			option2.__value = "6";
     			option2.value = option2.__value;
-    			add_location(option2, file$6, 90, 10, 2729);
+    			add_location(option2, file$6, 88, 10, 2665);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option0, anchor);
@@ -7589,7 +7449,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*ability*/ ctx[6].max > 6) {
+    			if (/*ability*/ ctx[5].max > 6) {
     				if (!if_block) {
     					if_block = create_if_block_2(ctx);
     					if_block.c();
@@ -7613,14 +7473,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(88:9) {#if ability.max > 3}",
+    		source: "(86:9) {#if ability.max > 3}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:10) {#if ability.max > 6}
+    // (90:10) {#if ability.max > 6}
     function create_if_block_2(ctx) {
     	let option0;
     	let option1;
@@ -7636,13 +7496,13 @@ var app = (function () {
     			option2.textContent = "9";
     			option0.__value = "7";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 92, 11, 2799);
+    			add_location(option0, file$6, 90, 11, 2735);
     			option1.__value = "8";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 93, 11, 2837);
+    			add_location(option1, file$6, 91, 11, 2773);
     			option2.__value = "9";
     			option2.value = option2.__value;
-    			add_location(option2, file$6, 94, 11, 2875);
+    			add_location(option2, file$6, 92, 11, 2811);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option0, anchor);
@@ -7660,14 +7520,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(92:10) {#if ability.max > 6}",
+    		source: "(90:10) {#if ability.max > 6}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:3) {#each Abilities as ability, index}
+    // (41:3) {#each Abilities as ability, index}
     function create_each_block$4(ctx) {
     	let br;
     	let t0;
@@ -7675,14 +7535,14 @@ var app = (function () {
     	let div5;
     	let div0;
     	let span0;
-    	let t2_value = /*ability*/ ctx[6].name + "";
+    	let t2_value = /*ability*/ ctx[5].name + "";
     	let t2;
     	let t3;
     	let div1;
     	let span1;
     	let t5;
     	let span2;
-    	let t6_value = /*ability*/ ctx[6].description + "";
+    	let t6_value = /*ability*/ ctx[5].description + "";
     	let t6;
     	let t7;
     	let t8;
@@ -7690,14 +7550,14 @@ var app = (function () {
     	let span3;
     	let t10;
     	let span4;
-    	let t11_value = /*ability*/ ctx[6].max + "";
+    	let t11_value = /*ability*/ ctx[5].max + "";
     	let t11;
     	let t12;
     	let div3;
     	let span5;
     	let t14;
     	let span6;
-    	let t15_value = /*ability*/ ctx[6].xp + "";
+    	let t15_value = /*ability*/ ctx[5].xp + "";
     	let t15;
     	let t16;
     	let div4;
@@ -7710,12 +7570,12 @@ var app = (function () {
     	let select_invalid_value;
     	let t21;
     	let dispose;
-    	let if_block0 = /*Abilities*/ ctx[0][/*index*/ ctx[8] - 1] != undefined && /*Abilities*/ ctx[0][/*index*/ ctx[8]].xp != /*Abilities*/ ctx[0][/*index*/ ctx[8] - 1].xp && create_if_block_4(ctx);
-    	let if_block1 = /*ability*/ ctx[6].options.length && create_if_block_3(ctx);
-    	let if_block2 = /*ability*/ ctx[6].max > 1 && create_if_block$2(ctx);
+    	let if_block0 = /*Abilities*/ ctx[0][/*index*/ ctx[7] - 1] != undefined && /*Abilities*/ ctx[0][/*index*/ ctx[7]].xp != /*Abilities*/ ctx[0][/*index*/ ctx[7] - 1].xp && create_if_block_4(ctx);
+    	let if_block1 = /*ability*/ ctx[5].options.length && create_if_block_3(ctx);
+    	let if_block2 = /*ability*/ ctx[5].max > 1 && create_if_block$2(ctx);
 
     	function select_change_handler() {
-    		/*select_change_handler*/ ctx[5].call(select, /*ability*/ ctx[6]);
+    		/*select_change_handler*/ ctx[4].call(select, /*ability*/ ctx[5]);
     	}
 
     	const block = {
@@ -7764,47 +7624,47 @@ var app = (function () {
     			option1.textContent = "1";
     			if (if_block2) if_block2.c();
     			t21 = space();
-    			add_location(br, file$6, 43, 4, 1202);
+    			add_location(br, file$6, 41, 4, 1138);
     			attr_dev(span0, "class", "ability-name svelte-1tt0awy");
-    			add_location(span0, file$6, 50, 6, 1413);
+    			add_location(span0, file$6, 48, 6, 1349);
     			attr_dev(div0, "class", "m-col svelte-1tt0awy");
-    			add_location(div0, file$6, 49, 5, 1387);
+    			add_location(div0, file$6, 47, 5, 1323);
     			attr_dev(span1, "class", "description-label svelte-1tt0awy");
-    			add_location(span1, file$6, 53, 6, 1505);
+    			add_location(span1, file$6, 51, 6, 1441);
     			attr_dev(span2, "class", "ability-description");
-    			add_location(span2, file$6, 54, 6, 1564);
+    			add_location(span2, file$6, 52, 6, 1500);
     			attr_dev(div1, "class", "l-col svelte-1tt0awy");
-    			add_location(div1, file$6, 52, 5, 1479);
+    			add_location(div1, file$6, 50, 5, 1415);
     			attr_dev(span3, "class", "max-label svelte-1tt0awy");
-    			add_location(span3, file$6, 66, 6, 1948);
+    			add_location(span3, file$6, 64, 6, 1884);
     			attr_dev(span4, "class", "ability-max");
-    			add_location(span4, file$6, 67, 6, 1991);
+    			add_location(span4, file$6, 65, 6, 1927);
     			attr_dev(div2, "class", "s-col svelte-1tt0awy");
-    			add_location(div2, file$6, 65, 5, 1922);
+    			add_location(div2, file$6, 63, 5, 1858);
     			attr_dev(span5, "class", "xp-label svelte-1tt0awy");
-    			add_location(span5, file$6, 70, 6, 2081);
+    			add_location(span5, file$6, 68, 6, 2017);
     			attr_dev(span6, "class", "ability-xp");
-    			add_location(span6, file$6, 71, 6, 2122);
+    			add_location(span6, file$6, 69, 6, 2058);
     			attr_dev(div3, "class", "s-col svelte-1tt0awy");
-    			add_location(div3, file$6, 69, 5, 2055);
+    			add_location(div3, file$6, 67, 5, 1991);
     			attr_dev(span7, "class", "taken-label svelte-1tt0awy");
-    			add_location(span7, file$6, 74, 6, 2210);
+    			add_location(span7, file$6, 72, 6, 2146);
     			option0.__value = "0";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 82, 8, 2450);
+    			add_location(option0, file$6, 80, 8, 2386);
     			option1.__value = "1";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 83, 8, 2485);
+    			add_location(option1, file$6, 81, 8, 2421);
     			attr_dev(select, "class", "taken-number svelte-1tt0awy");
     			attr_dev(select, "invalid", select_invalid_value = /*remaining*/ ctx[1] < 0);
-    			if (/*ability*/ ctx[6].taken === void 0) add_render_callback(select_change_handler);
-    			add_location(select, file$6, 76, 7, 2293);
+    			if (/*ability*/ ctx[5].taken === void 0) add_render_callback(select_change_handler);
+    			add_location(select, file$6, 74, 7, 2229);
     			attr_dev(span8, "class", "ability-taken");
-    			add_location(span8, file$6, 75, 6, 2257);
+    			add_location(span8, file$6, 73, 6, 2193);
     			attr_dev(div4, "class", "s-col svelte-1tt0awy");
-    			add_location(div4, file$6, 73, 5, 2184);
+    			add_location(div4, file$6, 71, 5, 2120);
     			attr_dev(div5, "class", "ability-row");
-    			add_location(div5, file$6, 48, 4, 1356);
+    			add_location(div5, file$6, 46, 4, 1292);
 
     			dispose = [
     				listen_dev(select, "change", select_change_handler),
@@ -7849,13 +7709,13 @@ var app = (function () {
     			append_dev(select, option0);
     			append_dev(select, option1);
     			if (if_block2) if_block2.m(select, null);
-    			select_option(select, /*ability*/ ctx[6].taken);
+    			select_option(select, /*ability*/ ctx[5].taken);
     			append_dev(div5, t21);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (/*Abilities*/ ctx[0][/*index*/ ctx[8] - 1] != undefined && /*Abilities*/ ctx[0][/*index*/ ctx[8]].xp != /*Abilities*/ ctx[0][/*index*/ ctx[8] - 1].xp) {
+    			if (/*Abilities*/ ctx[0][/*index*/ ctx[7] - 1] != undefined && /*Abilities*/ ctx[0][/*index*/ ctx[7]].xp != /*Abilities*/ ctx[0][/*index*/ ctx[7] - 1].xp) {
     				if (!if_block0) {
     					if_block0 = create_if_block_4(ctx);
     					if_block0.c();
@@ -7866,10 +7726,10 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty & /*Abilities*/ 1 && t2_value !== (t2_value = /*ability*/ ctx[6].name + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*Abilities*/ 1 && t6_value !== (t6_value = /*ability*/ ctx[6].description + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*Abilities*/ 1 && t2_value !== (t2_value = /*ability*/ ctx[5].name + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*Abilities*/ 1 && t6_value !== (t6_value = /*ability*/ ctx[5].description + "")) set_data_dev(t6, t6_value);
 
-    			if (/*ability*/ ctx[6].options.length) {
+    			if (/*ability*/ ctx[5].options.length) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -7882,10 +7742,10 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (dirty & /*Abilities*/ 1 && t11_value !== (t11_value = /*ability*/ ctx[6].max + "")) set_data_dev(t11, t11_value);
-    			if (dirty & /*Abilities*/ 1 && t15_value !== (t15_value = /*ability*/ ctx[6].xp + "")) set_data_dev(t15, t15_value);
+    			if (dirty & /*Abilities*/ 1 && t11_value !== (t11_value = /*ability*/ ctx[5].max + "")) set_data_dev(t11, t11_value);
+    			if (dirty & /*Abilities*/ 1 && t15_value !== (t15_value = /*ability*/ ctx[5].xp + "")) set_data_dev(t15, t15_value);
 
-    			if (/*ability*/ ctx[6].max > 1) {
+    			if (/*ability*/ ctx[5].max > 1) {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
     				} else {
@@ -7903,7 +7763,7 @@ var app = (function () {
     			}
 
     			if (dirty & /*Abilities*/ 1) {
-    				select_option(select, /*ability*/ ctx[6].taken);
+    				select_option(select, /*ability*/ ctx[5].taken);
     			}
     		},
     		d: function destroy(detaching) {
@@ -7922,7 +7782,7 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(43:3) {#each Abilities as ability, index}",
+    		source: "(41:3) {#each Abilities as ability, index}",
     		ctx
     	});
 
@@ -7995,30 +7855,30 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$6, 28, 2, 727);
+    			add_location(h2, file$6, 26, 2, 663);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$6, 27, 1, 700);
-    			add_location(h3, file$6, 31, 2, 781);
+    			add_location(div0, file$6, 25, 1, 636);
+    			add_location(h3, file$6, 29, 2, 717);
     			attr_dev(div1, "class", "remaining svelte-1tt0awy");
-    			add_location(div1, file$6, 30, 1, 755);
+    			add_location(div1, file$6, 28, 1, 691);
     			attr_dev(div2, "class", "m-col name-header svelte-1tt0awy");
-    			add_location(div2, file$6, 36, 4, 913);
+    			add_location(div2, file$6, 34, 4, 849);
     			attr_dev(div3, "class", "l-col description-header svelte-1tt0awy");
-    			add_location(div3, file$6, 37, 4, 959);
+    			add_location(div3, file$6, 35, 4, 895);
     			attr_dev(div4, "class", "s-col max-header svelte-1tt0awy");
-    			add_location(div4, file$6, 38, 4, 1019);
+    			add_location(div4, file$6, 36, 4, 955);
     			attr_dev(div5, "class", "s-col xp-header svelte-1tt0awy");
-    			add_location(div5, file$6, 39, 4, 1063);
+    			add_location(div5, file$6, 37, 4, 999);
     			attr_dev(div6, "class", "s-col taken-header svelte-1tt0awy");
-    			add_location(div6, file$6, 40, 4, 1105);
+    			add_location(div6, file$6, 38, 4, 1041);
     			attr_dev(div7, "class", "header-row svelte-1tt0awy");
-    			add_location(div7, file$6, 35, 3, 884);
+    			add_location(div7, file$6, 33, 3, 820);
     			attr_dev(div8, "class", "abilities-list svelte-1tt0awy");
-    			add_location(div8, file$6, 34, 2, 852);
+    			add_location(div8, file$6, 32, 2, 788);
     			attr_dev(div9, "class", "stat-block");
-    			add_location(div9, file$6, 33, 1, 825);
+    			add_location(div9, file$6, 31, 1, 761);
     			attr_dev(div10, "class", "abilities-step svelte-1tt0awy");
-    			add_location(div10, file$6, 26, 0, 662);
+    			add_location(div10, file$6, 24, 0, 598);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8104,22 +7964,19 @@ var app = (function () {
     }
 
     function instance$7($$self, $$props, $$invalidate) {
-    	let char;
-
-    	const unsubscribe = CharacterStore.subscribe(value => {
-    		char = value;
-    	});
-
+    	let $character;
+    	validate_store(character, "character");
+    	component_subscribe($$self, character, $$value => $$invalidate(3, $character = $$value));
     	let Abilities = AbilityList;
-    	let remaining = char.props.xp.score;
+    	let remaining = $character.props.xp.score;
 
     	const modifyAbilities = () => {
-    		$$invalidate(1, remaining = char.props.xp.score);
-    		char.abilities = [];
+    		$$invalidate(1, remaining = $character.props.xp.score);
+    		set_store_value(character, $character.abilities = [], $character);
 
     		for (let i = 0; i < Abilities.length; i++) {
     			if (Abilities[i].taken) {
-    				char.abilities.push(Abilities[i]);
+    				$character.abilities.push(Abilities[i]);
 
     				for (let t = 0; t < Abilities[i].taken; t++) {
     					$$invalidate(1, remaining -= Abilities[i].xp);
@@ -8138,19 +7995,12 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("char" in $$props) char = $$props.char;
     		if ("Abilities" in $$props) $$invalidate(0, Abilities = $$props.Abilities);
     		if ("remaining" in $$props) $$invalidate(1, remaining = $$props.remaining);
+    		if ("$character" in $$props) character.set($character = $$props.$character);
     	};
 
-    	return [
-    		Abilities,
-    		remaining,
-    		modifyAbilities,
-    		char,
-    		unsubscribe,
-    		select_change_handler
-    	];
+    	return [Abilities, remaining, modifyAbilities, $character, select_change_handler];
     }
 
     class CreAbilities extends SvelteComponentDev {
@@ -8176,21 +8026,21 @@ var app = (function () {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[2] = list[i];
     	return child_ctx;
     }
 
-    // (33:2) {#each ArmorList as armor}
+    // (31:2) {#each ArmorList as armor}
     function create_each_block$5(ctx) {
     	let div;
-    	let t_value = /*armor*/ ctx[4].name + "";
+    	let t_value = /*armor*/ ctx[2].name + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			add_location(div, file$7, 33, 3, 674);
+    			add_location(div, file$7, 31, 3, 586);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -8206,7 +8056,7 @@ var app = (function () {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(33:2) {#each ArmorList as armor}",
+    		source: "(31:2) {#each ArmorList as armor}",
     		ctx
     	});
 
@@ -8252,12 +8102,12 @@ var app = (function () {
     			div1 = element("div");
     			t4 = text("My Armor: ");
     			t5 = text(t5_value);
-    			add_location(button, file$7, 30, 1, 589);
-    			add_location(div0, file$7, 31, 1, 636);
-    			add_location(br, file$7, 36, 1, 717);
-    			add_location(div1, file$7, 37, 1, 723);
+    			add_location(button, file$7, 28, 1, 501);
+    			add_location(div0, file$7, 29, 1, 548);
+    			add_location(br, file$7, 34, 1, 629);
+    			add_location(div1, file$7, 35, 1, 635);
     			attr_dev(div2, "class", "gear-step");
-    			add_location(div2, file$7, 29, 0, 556);
+    			add_location(div2, file$7, 27, 0, 468);
     			dispose = listen_dev(button, "click", /*rollArmor*/ ctx[1], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -8334,12 +8184,6 @@ var app = (function () {
     }
 
     function instance$8($$self, $$props, $$invalidate) {
-    	let char;
-
-    	const unsubscribe = CharacterStore.subscribe(value => {
-    		char = value;
-    	});
-
     	let armorResult = "";
 
     	const rollArmor = () => {
@@ -8351,7 +8195,6 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("char" in $$props) char = $$props.char;
     		if ("armorResult" in $$props) $$invalidate(0, armorResult = $$props.armorResult);
     	};
 
@@ -8412,15 +8255,15 @@ var app = (function () {
     			t4 = space();
     			button2 = element("button");
     			button2.textContent = "Next";
-    			attr_dev(div0, "class", "creator-page svelte-1jijto");
+    			attr_dev(div0, "class", "creator-page svelte-17t6p71");
     			add_location(div0, file$8, 33, 1, 1024);
-    			attr_dev(button0, "class", "nav-button svelte-1jijto");
+    			attr_dev(button0, "class", "nav-button svelte-17t6p71");
     			add_location(button0, file$8, 37, 2, 1133);
-    			attr_dev(button1, "class", "nav-button svelte-1jijto");
+    			attr_dev(button1, "class", "nav-button svelte-17t6p71");
     			add_location(button1, file$8, 38, 2, 1192);
-    			attr_dev(button2, "class", "nav-button svelte-1jijto");
+    			attr_dev(button2, "class", "nav-button svelte-17t6p71");
     			add_location(button2, file$8, 39, 2, 1251);
-    			attr_dev(div1, "class", "nav-buttons svelte-1jijto");
+    			attr_dev(div1, "class", "nav-buttons svelte-17t6p71");
     			add_location(div1, file$8, 36, 1, 1105);
     			attr_dev(div2, "class", "display-page");
     			add_location(div2, file$8, 32, 0, 996);
@@ -8558,95 +8401,116 @@ var app = (function () {
     	}
     }
 
-    /* src/components/rules/tables/DifficultyTable.svelte generated by Svelte v3.16.5 */
+    /* src/components/reference/RefMenu.svelte generated by Svelte v3.16.5 */
 
-    const file$9 = "src/components/rules/tables/DifficultyTable.svelte";
+    const { console: console_1 } = globals;
+    const file$9 = "src/components/reference/RefMenu.svelte";
 
-    function create_fragment$b(ctx) {
-    	let table;
-    	let tr;
-    	let td0;
-    	let t1;
-    	let td1;
-    	let t3;
-    	let td2;
-    	let t5;
-    	let td3;
-    	let t7;
-    	let td4;
-    	let t9;
-    	let td5;
-    	let t11;
-    	let td6;
-    	let t13;
-    	let td7;
+    function get_each_context$6(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[4] = list[i];
+    	return child_ctx;
+    }
+
+    // (21:0) {#each chapters as chapter}
+    function create_each_block$6(ctx) {
+    	let button;
+    	let t_value = /*chapter*/ ctx[4] + "";
+    	let t;
+    	let dispose;
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[3](/*chapter*/ ctx[4], ...args);
+    	}
 
     	const block = {
     		c: function create() {
-    			table = element("table");
-    			tr = element("tr");
-    			td0 = element("td");
-    			td0.textContent = "3#";
-    			t1 = space();
-    			td1 = element("td");
-    			td1.textContent = "Simple";
-    			t3 = space();
-    			td2 = element("td");
-    			td2.textContent = "6#";
-    			t5 = space();
-    			td3 = element("td");
-    			td3.textContent = "Typical";
-    			t7 = space();
-    			td4 = element("td");
-    			td4.textContent = "9#";
-    			t9 = space();
-    			td5 = element("td");
-    			td5.textContent = "Hard";
-    			t11 = space();
-    			td6 = element("td");
-    			td6.textContent = "12#";
-    			t13 = space();
-    			td7 = element("td");
-    			td7.textContent = "Extreme";
-    			add_location(td0, file$9, 5, 2, 61);
-    			add_location(td1, file$9, 6, 2, 75);
-    			add_location(td2, file$9, 7, 2, 93);
-    			add_location(td3, file$9, 8, 2, 107);
-    			add_location(td4, file$9, 9, 2, 126);
-    			add_location(td5, file$9, 10, 2, 140);
-    			add_location(td6, file$9, 11, 2, 156);
-    			add_location(td7, file$9, 12, 2, 171);
-    			add_location(tr, file$9, 4, 1, 54);
-    			attr_dev(table, "class", "difficulty-table");
-    			add_location(table, file$9, 3, 0, 20);
+    			button = element("button");
+    			t = text(t_value);
+    			attr_dev(button, "class", "diplay-button");
+    			add_location(button, file$9, 21, 4, 336);
+    			dispose = listen_dev(button, "click", prevent_default(click_handler), false, true, false);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			append_dev(button, t);
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$6.name,
+    		type: "each",
+    		source: "(21:0) {#each chapters as chapter}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$b(ctx) {
+    	let each_1_anchor;
+    	let each_value = /*chapters*/ ctx[0];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, table, anchor);
-    			append_dev(table, tr);
-    			append_dev(tr, td0);
-    			append_dev(tr, t1);
-    			append_dev(tr, td1);
-    			append_dev(tr, t3);
-    			append_dev(tr, td2);
-    			append_dev(tr, t5);
-    			append_dev(tr, td3);
-    			append_dev(tr, t7);
-    			append_dev(tr, td4);
-    			append_dev(tr, t9);
-    			append_dev(tr, td5);
-    			append_dev(tr, t11);
-    			append_dev(tr, td6);
-    			append_dev(tr, t13);
-    			append_dev(tr, td7);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*change, chapters*/ 3) {
+    				each_value = /*chapters*/ ctx[0];
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$6(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(table);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
 
@@ -8661,679 +8525,129 @@ var app = (function () {
     	return block;
     }
 
-    class DifficultyTable extends SvelteComponentDev {
+    function instance$a($$self, $$props, $$invalidate) {
+    	const chapters = [
+    		`Dice`,
+    		`Traits`,
+    		`Skills`,
+    		`Combat`,
+    		`Maneuvers`,
+    		`Situations`,
+    		`Abilities`,
+    		`Gear`
+    	];
+
+    	let { chap = `` } = $$props;
+
+    	const change = ch => {
+    		$$invalidate(2, chap = ch);
+    		console.log(chap);
+    	};
+
+    	const writable_props = ["chap"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<RefMenu> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = chapter => change(chapter);
+
+    	$$self.$set = $$props => {
+    		if ("chap" in $$props) $$invalidate(2, chap = $$props.chap);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { chap };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("chap" in $$props) $$invalidate(2, chap = $$props.chap);
+    	};
+
+    	return [chapters, change, chap, click_handler];
+    }
+
+    class RefMenu extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$b, safe_not_equal, {});
+    		init(this, options, instance$a, create_fragment$b, safe_not_equal, { chap: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "DifficultyTable",
+    			tagName: "RefMenu",
     			options,
     			id: create_fragment$b.name
     		});
     	}
-    }
 
-    const Difficulty = new Rule(
-    	'Difficulty',
-    	['The Result of your roll must be greater than or equal to the Difficulty number to be successful. Difficulties are indicated by the # symbol. The GN or an opposing roll set the # for your rolls.'],
-    	[],
-    	DifficultyTable
-    );
-
-    const RoteActions = new Rule(
-    	'Rote Actions',
-    	['If your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.']
-    );
-
-    const Cooperation = new Rule(
-    	'Cooperation',
-    	['If Characters want to help each other perform a task, one of them makes the roll and the rest add their Scores together as a Modifier to the main Character’s Result. The GN should use their judgement to determine the time to completion.']
-    );
-
-    const Success = new Rule(
-    	'Success',
-    	['If [Result >= #], the attempted action worked. Re-roll ties on opposed rolls. The degree of Success is important for some rolls.'],
-    	[RoteActions, Cooperation]
-    );
-
-    const Fail = new Rule(
-    	'Fail',
-    	['If [Result < #], the attempted action did not work.']
-    );
-
-    const Explode = new Rule(
-    	'Explode',
-    	[`If a 6 is rolled, re-roll it again and again as long as 6's continue. Add all of these d6 rolls together, then calculate your Result.`]
-    );
-
-    const Botch = new Rule(
-    	'Botch',
-    	[
-    		'If you roll 1 on a die, re-roll to check for a Botch. If a 1 is rolled again, you Botch, meaning you fail very badly. For any other number, your d6 roll is just a 1. Bonus rolls from Exploding dice do not Botch.',
-    		'The GN has a great deal of latitude to be creative when determining the effects of Botching under various circumstances, but they should always be fair.',
-    		'Whenever a Character Botches, they get +1 Experience Point because we learn the most from our greatest failures.'
-    	]
-    );
-
-    const Dice = [
-    	Difficulty,
-    	Success,
-    	Fail,
-    	Explode,
-    	Botch
-    ];
-
-    /* src/components/reference/RefList.svelte generated by Svelte v3.16.5 */
-    const file$a = "src/components/reference/RefList.svelte";
-
-    function get_each_context_1$3(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
-    	return child_ctx;
-    }
-
-    function get_each_context_2(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
-    	return child_ctx;
-    }
-
-    function get_each_context$6(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
-    	return child_ctx;
-    }
-
-    // (13:3) {#if rule.visible}
-    function create_if_block$3(ctx) {
-    	let div;
-    	let t0;
-    	let t1;
-    	let div_transition;
-    	let current;
-    	let each_value_2 = /*rule*/ ctx[2].description;
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value_2.length; i += 1) {
-    		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	get chap() {
+    		throw new Error("<RefMenu>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	let if_block0 = /*rule*/ ctx[2].table && create_if_block_2$1(ctx);
-    	let if_block1 = /*rule*/ ctx[2].subrules && create_if_block_1$3(ctx);
+    	set chap(value) {
+    		throw new Error("<RefMenu>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/pages/Reference.svelte generated by Svelte v3.16.5 */
+    const file$a = "src/pages/Reference.svelte";
+
+    function create_fragment$c(ctx) {
+    	let div;
+    	let div_intro;
+    	let t0;
+    	let button;
+    	let current;
+    	let dispose;
+    	const refmenu = new RefMenu({ $$inline: true });
 
     	const block = {
     		c: function create() {
     			div = element("div");
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
+    			create_component(refmenu.$$.fragment);
     			t0 = space();
-    			if (if_block0) if_block0.c();
-    			t1 = space();
-    			if (if_block1) if_block1.c();
-    			attr_dev(div, "class", "description svelte-18087ww");
-    			add_location(div, file$a, 13, 4, 320);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div, null);
-    			}
-
-    			append_dev(div, t0);
-    			if (if_block0) if_block0.m(div, null);
-    			append_dev(div, t1);
-    			if (if_block1) if_block1.m(div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*list*/ 1) {
-    				each_value_2 = /*rule*/ ctx[2].description;
-    				let i;
-
-    				for (i = 0; i < each_value_2.length; i += 1) {
-    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block_2(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(div, t0);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value_2.length;
-    			}
-
-    			if (/*rule*/ ctx[2].table) {
-    				if (if_block0) {
-    					if_block0.p(ctx, dirty);
-    					transition_in(if_block0, 1);
-    				} else {
-    					if_block0 = create_if_block_2$1(ctx);
-    					if_block0.c();
-    					transition_in(if_block0, 1);
-    					if_block0.m(div, t1);
-    				}
-    			} else if (if_block0) {
-    				group_outros();
-
-    				transition_out(if_block0, 1, 1, () => {
-    					if_block0 = null;
-    				});
-
-    				check_outros();
-    			}
-
-    			if (/*rule*/ ctx[2].subrules) {
-    				if (if_block1) {
-    					if_block1.p(ctx, dirty);
-    				} else {
-    					if_block1 = create_if_block_1$3(ctx);
-    					if_block1.c();
-    					if_block1.m(div, null);
-    				}
-    			} else if (if_block1) {
-    				if_block1.d(1);
-    				if_block1 = null;
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(if_block0);
-
-    			add_render_callback(() => {
-    				if (!div_transition) div_transition = create_bidirectional_transition(div, slide, {}, true);
-    				div_transition.run(1);
-    			});
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(if_block0);
-    			if (!div_transition) div_transition = create_bidirectional_transition(div, slide, {}, false);
-    			div_transition.run(0);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_each(each_blocks, detaching);
-    			if (if_block0) if_block0.d();
-    			if (if_block1) if_block1.d();
-    			if (detaching && div_transition) div_transition.end();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$3.name,
-    		type: "if",
-    		source: "(13:3) {#if rule.visible}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (15:5) {#each rule.description as desc}
-    function create_each_block_2(ctx) {
-    	let p;
-    	let raw_value = /*desc*/ ctx[8] + "";
-
-    	const block = {
-    		c: function create() {
-    			p = element("p");
-    			add_location(p, file$a, 15, 6, 407);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			p.innerHTML = raw_value;
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*list*/ 1 && raw_value !== (raw_value = /*desc*/ ctx[8] + "")) p.innerHTML = raw_value;		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_2.name,
-    		type: "each",
-    		source: "(15:5) {#each rule.description as desc}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (18:5) {#if rule.table}
-    function create_if_block_2$1(ctx) {
-    	let div0;
-    	let t;
-    	let div1;
-    	let current;
-    	var switch_value = /*rule*/ ctx[2].table;
-
-    	function switch_props(ctx) {
-    		return { $$inline: true };
-    	}
-
-    	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props());
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div0 = element("div");
-    			t = space();
-    			div1 = element("div");
-    			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			attr_dev(div0, "class", "separator svelte-18087ww");
-    			add_location(div0, file$a, 18, 6, 468);
-    			attr_dev(div1, "class", "table");
-    			add_location(div1, file$a, 19, 6, 499);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div0, anchor);
-    			insert_dev(target, t, anchor);
-    			insert_dev(target, div1, anchor);
-
-    			if (switch_instance) {
-    				mount_component(switch_instance, div1, null);
-    			}
-
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			if (switch_value !== (switch_value = /*rule*/ ctx[2].table)) {
-    				if (switch_instance) {
-    					group_outros();
-    					const old_component = switch_instance;
-
-    					transition_out(old_component.$$.fragment, 1, 0, () => {
-    						destroy_component(old_component, 1);
-    					});
-
-    					check_outros();
-    				}
-
-    				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
-    					create_component(switch_instance.$$.fragment);
-    					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div1, null);
-    				} else {
-    					switch_instance = null;
-    				}
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div0);
-    			if (detaching) detach_dev(t);
-    			if (detaching) detach_dev(div1);
-    			if (switch_instance) destroy_component(switch_instance);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_2$1.name,
-    		type: "if",
-    		source: "(18:5) {#if rule.table}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (22:5) {#if rule.subrules}
-    function create_if_block_1$3(ctx) {
-    	let ul;
-    	let each_value_1 = /*rule*/ ctx[2].subrules;
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value_1.length; i += 1) {
-    		each_blocks[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
-    	}
-
-    	const block = {
-    		c: function create() {
-    			ul = element("ul");
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			attr_dev(ul, "class", "sub-ul svelte-18087ww");
-    			add_location(ul, file$a, 22, 6, 604);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, ul, anchor);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul, null);
-    			}
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*list*/ 1) {
-    				each_value_1 = /*rule*/ ctx[2].subrules;
-    				let i;
-
-    				for (i = 0; i < each_value_1.length; i += 1) {
-    					const child_ctx = get_each_context_1$3(ctx, each_value_1, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block_1$3(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(ul, null);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value_1.length;
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(ul);
-    			destroy_each(each_blocks, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_1$3.name,
-    		type: "if",
-    		source: "(22:5) {#if rule.subrules}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (24:7) {#each rule.subrules as subrule}
-    function create_each_block_1$3(ctx) {
-    	let div0;
-    	let t0;
-    	let li;
-    	let div2;
-    	let span;
-    	let t1_value = /*subrule*/ ctx[5].name + "";
-    	let t1;
-    	let t2;
-    	let div1;
-    	let raw_value = /*subrule*/ ctx[5].description + "";
-    	let t3;
-
-    	const block = {
-    		c: function create() {
-    			div0 = element("div");
-    			t0 = space();
-    			li = element("li");
-    			div2 = element("div");
-    			span = element("span");
-    			t1 = text(t1_value);
-    			t2 = space();
-    			div1 = element("div");
-    			t3 = space();
-    			attr_dev(div0, "class", "separator svelte-18087ww");
-    			add_location(div0, file$a, 24, 8, 672);
-    			attr_dev(span, "class", "sub-name svelte-18087ww");
-    			add_location(span, file$a, 27, 10, 766);
-    			attr_dev(div1, "class", "sub-notes");
-    			add_location(div1, file$a, 28, 10, 821);
-    			attr_dev(div2, "class", "sub-box");
-    			add_location(div2, file$a, 26, 9, 734);
-    			attr_dev(li, "class", "sub-li");
-    			add_location(li, file$a, 25, 8, 705);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div0, anchor);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, li, anchor);
-    			append_dev(li, div2);
-    			append_dev(div2, span);
-    			append_dev(span, t1);
-    			append_dev(div2, t2);
-    			append_dev(div2, div1);
-    			div1.innerHTML = raw_value;
-    			append_dev(li, t3);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*list*/ 1 && t1_value !== (t1_value = /*subrule*/ ctx[5].name + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*list*/ 1 && raw_value !== (raw_value = /*subrule*/ ctx[5].description + "")) div1.innerHTML = raw_value;		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div0);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(li);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_1$3.name,
-    		type: "each",
-    		source: "(24:7) {#each rule.subrules as subrule}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (10:1) {#each list as rule}
-    function create_each_block$6(ctx) {
-    	let div0;
-    	let span;
-    	let t0_value = /*rule*/ ctx[2].name + "";
-    	let t0;
-    	let t1;
-    	let t2;
-    	let div1;
-    	let current;
-    	let dispose;
-    	let if_block = /*rule*/ ctx[2].visible && create_if_block$3(ctx);
-
-    	function click_handler(...args) {
-    		return /*click_handler*/ ctx[1](/*rule*/ ctx[2], ...args);
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div0 = element("div");
-    			span = element("span");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			if (if_block) if_block.c();
-    			t2 = space();
-    			div1 = element("div");
-    			attr_dev(span, "class", "name svelte-18087ww");
-    			add_location(span, file$a, 11, 3, 256);
-    			attr_dev(div0, "class", "box svelte-18087ww");
-    			add_location(div0, file$a, 10, 2, 190);
-    			attr_dev(div1, "class", "separator svelte-18087ww");
-    			add_location(div1, file$a, 39, 2, 1001);
-    			dispose = listen_dev(div0, "click", click_handler, false, false, false);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div0, anchor);
-    			append_dev(div0, span);
-    			append_dev(span, t0);
-    			append_dev(div0, t1);
-    			if (if_block) if_block.m(div0, null);
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, div1, anchor);
-    			current = true;
-    		},
-    		p: function update(new_ctx, dirty) {
-    			ctx = new_ctx;
-    			if ((!current || dirty & /*list*/ 1) && t0_value !== (t0_value = /*rule*/ ctx[2].name + "")) set_data_dev(t0, t0_value);
-
-    			if (/*rule*/ ctx[2].visible) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-    					transition_in(if_block, 1);
-    				} else {
-    					if_block = create_if_block$3(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(div0, null);
-    				}
-    			} else if (if_block) {
-    				group_outros();
-
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
-    				});
-
-    				check_outros();
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(if_block);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(if_block);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div0);
-    			if (if_block) if_block.d();
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(div1);
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block$6.name,
-    		type: "each",
-    		source: "(10:1) {#each list as rule}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$c(ctx) {
-    	let div1;
-    	let div0;
-    	let t;
-    	let current;
-    	let each_value = /*list*/ ctx[0];
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
-    	}
-
-    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
-    		each_blocks[i] = null;
-    	});
-
-    	const block = {
-    		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
-    			t = space();
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			attr_dev(div0, "class", "separator svelte-18087ww");
-    			add_location(div0, file$a, 8, 1, 141);
-    			add_location(div1, file$a, 7, 0, 134);
+    			button = element("button");
+    			button.textContent = "Back";
+    			attr_dev(div, "class", "display-page");
+    			add_location(div, file$a, 14, 0, 724);
+    			attr_dev(button, "class", "ref-back");
+    			add_location(button, file$a, 25, 0, 1400);
+    			dispose = listen_dev(button, "click", router.Home, false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			append_dev(div1, t);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
-    			}
-
+    			insert_dev(target, div, anchor);
+    			mount_component(refmenu, div, null);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, button, anchor);
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*list, HideShow*/ 1) {
-    				each_value = /*list*/ ctx[0];
-    				let i;
-
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$6(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    						transition_in(each_blocks[i], 1);
-    					} else {
-    						each_blocks[i] = create_each_block$6(child_ctx);
-    						each_blocks[i].c();
-    						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div1, null);
-    					}
-    				}
-
-    				group_outros();
-
-    				for (i = each_value.length; i < each_blocks.length; i += 1) {
-    					out(i);
-    				}
-
-    				check_outros();
-    			}
-    		},
+    		p: noop,
     		i: function intro(local) {
     			if (current) return;
+    			transition_in(refmenu.$$.fragment, local);
 
-    			for (let i = 0; i < each_value.length; i += 1) {
-    				transition_in(each_blocks[i]);
+    			if (!div_intro) {
+    				add_render_callback(() => {
+    					div_intro = create_in_transition(div, fade, {});
+    					div_intro.start();
+    				});
     			}
 
     			current = true;
     		},
     		o: function outro(local) {
-    			each_blocks = each_blocks.filter(Boolean);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				transition_out(each_blocks[i]);
-    			}
-
+    			transition_out(refmenu.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(div);
+    			destroy_component(refmenu);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(button);
+    			dispose();
     		}
     	};
 
@@ -9348,1516 +8662,24 @@ var app = (function () {
     	return block;
     }
 
-    function instance$a($$self, $$props, $$invalidate) {
-    	let { list } = $$props;
-    	const writable_props = ["list"];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<RefList> was created with unknown prop '${key}'`);
-    	});
-
-    	const click_handler = rule => $$invalidate(0, list = HideShow(rule, list));
-
-    	$$self.$set = $$props => {
-    		if ("list" in $$props) $$invalidate(0, list = $$props.list);
-    	};
-
-    	$$self.$capture_state = () => {
-    		return { list };
-    	};
-
-    	$$self.$inject_state = $$props => {
-    		if ("list" in $$props) $$invalidate(0, list = $$props.list);
-    	};
-
-    	return [list, click_handler];
-    }
-
-    class RefList extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$a, create_fragment$c, safe_not_equal, { list: 0 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "RefList",
-    			options,
-    			id: create_fragment$c.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || ({});
-
-    		if (/*list*/ ctx[0] === undefined && !("list" in props)) {
-    			console.warn("<RefList> was created without expected prop 'list'");
-    		}
-    	}
-
-    	get list() {
-    		throw new Error("<RefList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set list(value) {
-    		throw new Error("<RefList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
-    /* src/components/reference/RefDice.svelte generated by Svelte v3.16.5 */
-    const file$b = "src/components/reference/RefDice.svelte";
-
-    function create_fragment$d(ctx) {
-    	let div1;
-    	let div0;
-    	let t1;
-    	let div1_intro;
-    	let t2;
-    	let button;
-    	let current;
-    	let dispose;
-    	var switch_value = RefList;
-
-    	function switch_props(ctx) {
-    		return { props: { list: Dice }, $$inline: true };
-    	}
-
-    	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props());
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
-    			div0.textContent = "Dice Rules";
-    			t1 = space();
-    			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			t2 = space();
-    			button = element("button");
-    			button.textContent = "Back";
-    			attr_dev(div0, "class", "ref-header");
-    			add_location(div0, file$b, 9, 1, 268);
-    			attr_dev(div1, "class", "ref-page");
-    			add_location(div1, file$b, 8, 0, 236);
-    			attr_dev(button, "class", "ref-back");
-    			add_location(button, file$b, 12, 0, 365);
-    			dispose = listen_dev(button, "click", router.Reference, false, false, false);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			append_dev(div1, t1);
-
-    			if (switch_instance) {
-    				mount_component(switch_instance, div1, null);
-    			}
-
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, button, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			if (switch_value !== (switch_value = RefList)) {
-    				if (switch_instance) {
-    					group_outros();
-    					const old_component = switch_instance;
-
-    					transition_out(old_component.$$.fragment, 1, 0, () => {
-    						destroy_component(old_component, 1);
-    					});
-
-    					check_outros();
-    				}
-
-    				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
-    					create_component(switch_instance.$$.fragment);
-    					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div1, null);
-    				} else {
-    					switch_instance = null;
-    				}
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-
-    			if (!div1_intro) {
-    				add_render_callback(() => {
-    					div1_intro = create_in_transition(div1, fade, {});
-    					div1_intro.start();
-    				});
-    			}
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (switch_instance) destroy_component(switch_instance);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(button);
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$d.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    class RefDice extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, null, create_fragment$d, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "RefDice",
-    			options,
-    			id: create_fragment$d.name
-    		});
-    	}
-    }
-
-    /* src/components/rules/tables/CoverTable.svelte generated by Svelte v3.16.5 */
-
-    const file$c = "src/components/rules/tables/CoverTable.svelte";
-
-    function create_fragment$e(ctx) {
-    	let table;
-    	let tr0;
-    	let th0;
-    	let th1;
-    	let t2;
-    	let tr1;
-    	let td0;
-    	let td1;
-    	let t5;
-    	let tr2;
-    	let td2;
-    	let td3;
-    	let t8;
-    	let tr3;
-    	let td4;
-    	let td5;
-    	let t11;
-    	let tr4;
-    	let td6;
-    	let td7;
-    	let t14;
-    	let tr5;
-    	let td8;
-    	let td9;
-    	let t17;
-    	let tr6;
-    	let td10;
-    	let td11;
-    	let t20;
-    	let tr7;
-    	let td12;
-    	let td13;
-    	let t23;
-    	let tr8;
-    	let td14;
-    	let td15;
-
-    	const block = {
-    		c: function create() {
-    			table = element("table");
-    			tr0 = element("tr");
-    			th0 = element("th");
-    			th0.textContent = "Material";
-    			th1 = element("th");
-    			th1.textContent = "DR";
-    			t2 = space();
-    			tr1 = element("tr");
-    			td0 = element("td");
-    			td0.textContent = "Drywall";
-    			td1 = element("td");
-    			td1.textContent = "0";
-    			t5 = space();
-    			tr2 = element("tr");
-    			td2 = element("td");
-    			td2.textContent = "Glass";
-    			td3 = element("td");
-    			td3.textContent = "1";
-    			t8 = space();
-    			tr3 = element("tr");
-    			td4 = element("td");
-    			td4.textContent = "Plywood";
-    			td5 = element("td");
-    			td5.textContent = "1";
-    			t11 = space();
-    			tr4 = element("tr");
-    			td6 = element("td");
-    			td6.textContent = "Hardwood";
-    			td7 = element("td");
-    			td7.textContent = "2";
-    			t14 = space();
-    			tr5 = element("tr");
-    			td8 = element("td");
-    			td8.textContent = "Sheet Metal";
-    			td9 = element("td");
-    			td9.textContent = "2";
-    			t17 = space();
-    			tr6 = element("tr");
-    			td10 = element("td");
-    			td10.textContent = "Brick";
-    			td11 = element("td");
-    			td11.textContent = "3";
-    			t20 = space();
-    			tr7 = element("tr");
-    			td12 = element("td");
-    			td12.textContent = "Concrete";
-    			td13 = element("td");
-    			td13.textContent = "4";
-    			t23 = space();
-    			tr8 = element("tr");
-    			td14 = element("td");
-    			td14.textContent = "Steel";
-    			td15 = element("td");
-    			td15.textContent = "5";
-    			add_location(th0, file$c, 4, 5, 54);
-    			add_location(th1, file$c, 4, 22, 71);
-    			add_location(tr0, file$c, 4, 1, 50);
-    			add_location(td0, file$c, 5, 5, 93);
-    			add_location(td1, file$c, 5, 21, 109);
-    			add_location(tr1, file$c, 5, 1, 89);
-    			add_location(td2, file$c, 6, 5, 130);
-    			add_location(td3, file$c, 6, 19, 144);
-    			add_location(tr2, file$c, 6, 1, 126);
-    			add_location(td4, file$c, 7, 5, 165);
-    			add_location(td5, file$c, 7, 21, 181);
-    			add_location(tr3, file$c, 7, 1, 161);
-    			add_location(td6, file$c, 8, 5, 202);
-    			add_location(td7, file$c, 8, 22, 219);
-    			add_location(tr4, file$c, 8, 1, 198);
-    			add_location(td8, file$c, 9, 5, 240);
-    			add_location(td9, file$c, 9, 25, 260);
-    			add_location(tr5, file$c, 9, 1, 236);
-    			add_location(td10, file$c, 10, 5, 281);
-    			add_location(td11, file$c, 10, 19, 295);
-    			add_location(tr6, file$c, 10, 1, 277);
-    			add_location(td12, file$c, 11, 5, 316);
-    			add_location(td13, file$c, 11, 22, 333);
-    			add_location(tr7, file$c, 11, 1, 312);
-    			add_location(td14, file$c, 12, 5, 354);
-    			add_location(td15, file$c, 12, 19, 368);
-    			add_location(tr8, file$c, 12, 1, 350);
-    			attr_dev(table, "class", ".cover-table");
-    			add_location(table, file$c, 3, 0, 20);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, table, anchor);
-    			append_dev(table, tr0);
-    			append_dev(tr0, th0);
-    			append_dev(tr0, th1);
-    			append_dev(table, t2);
-    			append_dev(table, tr1);
-    			append_dev(tr1, td0);
-    			append_dev(tr1, td1);
-    			append_dev(table, t5);
-    			append_dev(table, tr2);
-    			append_dev(tr2, td2);
-    			append_dev(tr2, td3);
-    			append_dev(table, t8);
-    			append_dev(table, tr3);
-    			append_dev(tr3, td4);
-    			append_dev(tr3, td5);
-    			append_dev(table, t11);
-    			append_dev(table, tr4);
-    			append_dev(tr4, td6);
-    			append_dev(tr4, td7);
-    			append_dev(table, t14);
-    			append_dev(table, tr5);
-    			append_dev(tr5, td8);
-    			append_dev(tr5, td9);
-    			append_dev(table, t17);
-    			append_dev(table, tr6);
-    			append_dev(tr6, td10);
-    			append_dev(tr6, td11);
-    			append_dev(table, t20);
-    			append_dev(table, tr7);
-    			append_dev(tr7, td12);
-    			append_dev(tr7, td13);
-    			append_dev(table, t23);
-    			append_dev(table, tr8);
-    			append_dev(tr8, td14);
-    			append_dev(tr8, td15);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(table);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$e.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    class CoverTable extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, null, create_fragment$e, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "CoverTable",
-    			options,
-    			id: create_fragment$e.name
-    		});
-    	}
-    }
-
-    const Bleeding = new Rule(
-    	`Bleeding`, 
-    	[`When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`]
-    );
-
-    const Burning = new Rule(
-    	`Burning`, 
-    	[`1 FDMG per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`]
-    );
-
-    const Chase = new Rule(
-    	`Chase`, 
-    	[`Roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each rnd. Chase ends when one side gets 3 Successes over the other.`]
-    );
-
-    const Concealed = new Rule(
-    	`Concealed`, 
-    	[`If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected. Targets are Defenseless against ATKs from Concealed opponents.`]
-    );
-
-    const Cover = new Rule(
-    	`Cover`, 
-    	[`You can lean in and out of Cover to ATK as part of an Action. All Cover except Glass makes you Concealed. If an opponent Waits until you lean out of Cover, they must make a Called Shot to hit an exposed Location. All DMG is negated against targets that are behind Cover if the Material DR is >= the weapon’s base DMG. If weapon DMG exceeds the Material DR, the Material DR acts as an Armor bonus for DMG reduction.`],
-    	[],
-    	CoverTable
-    );
-
-    const Defenseless = new Rule(
-    	`Defenseless`, 
-    	[`Use Reflex [Perception / 2] for DEF.`]
-    );
-
-    const Falling = new Rule(
-    	`Falling`, 
-    	[`1 Wound per 2yds. Roll [Acrobatics # = yds] as a Defense Action to halve Falling DMG.`]
-    );
-
-    const FriendlyFire = new Rule(
-    	`Friendly Fire`, 
-    	[`-3 RATK against targets within 1yd of your ally. If the RATK Fails, re-roll the RATK vs the ally’s Reflex.`]
-    );
-
-    const OffHand = new Rule(
-    	`Off-Hand`, 
-    	[`-3 penalty to ATK with your Off-Hand.`]
-    );
-
-    const Prone = new Rule(
-    	`Prone`, 
-    	[`You may drop Prone as part of your Movement. Standing up costs 1AP. +1 RATK. +3 Stealth. Speed 1yd.`]
-    );
-
-    const Range = new Rule(
-    	`Range`, 
-    	[`RATKs take a -1 penalty per additional RNG increment. MATKs take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`]
-    );
-
-    const Stun = new Rule(
-    	`Stun`, 
-    	[`Defenseless and cannot take Actions. Prone if [Stunned > 1rnd].`]
-    );
-
-    const Suffocation = new Rule(
-    	`Suffocation`, 
-    	[`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [C] is lethal.`]
-    );
-
-    const Unarmed = new Rule(
-    	`Unarmed`, 
-    	[`If the target is conscious, the target rolls C vs DMG to avoid being knocked Unconscious. If the target is Unconscious, the target takes DMG = Melee score. DR is not depleted.`]
-    );
-
-    const Unconscious = new Rule(
-    	`Unconscious`, 
-    	[`Unaware and unable to take Actions. 0 DEF. Prone.`]
-    );
-
-    const Unstable = new Rule(
-    	`Unstable`, 
-    	[`-3 penalty to physical rolls. -3 to RATKs at or from you.`]
-    );
-
-    const Visibility = new Rule(
-    	`Visibility`, 
-    	[`-1 to -6 (Blind) to sight-based rolls, including ATK and DEF.`]
-    );
-
-
-    const Needs = new Rule(
-    	`Needs`, 
-    	[`1 Pain for each lacking Need over a given period of time:`]
-    	[Suffocation]
-    );
-
-
-    const Situations = [
-    	Bleeding,
-    	Burning,
-    	Chase,
-    	Concealed,
-    	Cover,
-    	Defenseless,
-    	Falling,
-    	FriendlyFire,
-    	Needs,
-    	OffHand,
-    	Prone,
-    	Range,
-    	Stun,
-    	Unarmed,
-    	Unconscious,
-    	Unstable,
-    	Visibility
-    ];
-
-    // Single Rules
-
-    const Attack = new Rule(
-    	`Attack`, 
-    	[`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF). Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`]
-    );
-
-    const Burning$1 = new Rule(
-    	`Burning`, 
-    	[`If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`]
-    );
-
-    const Communication = new Rule(
-    	`Communication`, 
-    	[`You can speak or shout up to 6 words per round.`]
-    );
-
-    const Conditions = new Rule(
-    	`Conditions`, 
-    	[`-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`]
-    );
-
-    const DamageReduction = new Rule(
-    	`Damage Reduction`, 
-    	[`DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`]
-    );
-
-    const FireDamage = new Rule(
-    	`Fire Damage`, 
-    	[`Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces FDMG.`]
-    );
-
-    const Initiative = new Rule(
-    	`Initiative`, 
-    	[`Everyone in combat rolls [d6 + A] to determine the turn order at the start of each new rnd.`]
-    );
-
-    const Movement = new Rule(
-    	`Movement`, 
-    	[`Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`]
-    );
-
-    const Occupants = new Rule(
-    	`Occupants`, 
-    	[`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`]
-    );
-
-    const Pain = new Rule(
-    	`Pain`, 
-    	[`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if [Pain > D].`]
-    );
-
-    const Pedestrians = new Rule(
-    	`Pedestrians`, 
-    	[`Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`]
-    );
-
-    const Prepare = new Rule(
-    	`Prepare`, 
-    	[`You may spend 1 Action on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, you can continue holding that Prepared Action.`]
-    );
-
-    const Recovery = new Rule(
-    	`Recovery`, 
-    	[`After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 Wound from infection.`]
-    );
-
-    const Reflex = new Rule(
-    	`Reflex`, 
-    	[`[Perception / 2]. This is your default DEF. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`]
-    );
-
-    const Rounds = new Rule(
-    	`Rounds`, 
-    	[`Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd.`]
-    );
-
-    const Tires = new Rule(
-    	`Tires`, 
-    	[`Roll [-3 ATK vs Drive(Stunt)] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`]
-    );
-
-    const Wreck = new Rule(
-    	`Wreck`, 
-    	[`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`]
-    );
-
-
-    // Compound Rules
-
-    const Actions = new Rule(
-    	`Actions`, 
-    	[`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`], 
-    	[Prepare]
-    );
-
-    const Damage = new Rule(
-    	`Damage`, 
-    	[`Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`],
-    	[DamageReduction, FireDamage, Pain]
-    );
-
-    const Defense = new Rule(
-    	`Defense`, 
-    	[`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`], 
-    	[Reflex]
-    );
-
-    const Health = new Rule(
-    	`Health`, 
-    	[`[C x 2]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`],
-    	[Bleeding, Recovery]
-    );
-
-    const Vehicles = new Rule(
-    	`Vehicles`, 
-    	[`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`],
-    	[Conditions, Occupants, Pedestrians, Tires, Wreck, Burning$1]
-    );
-
-
-    // Rule List
-
-    const Combat = [
-    	Rounds,
-    	Initiative,
-    	Actions,
-    	Communication,
-    	Movement,
-    	Attack,
-    	Defense,
-    	Health,
-    	Damage,
-    	Vehicles
-    ];
-
-    /* src/components/reference/RefCombat.svelte generated by Svelte v3.16.5 */
-    const file$d = "src/components/reference/RefCombat.svelte";
-
-    function create_fragment$f(ctx) {
-    	let div1;
-    	let div0;
-    	let t1;
-    	let div1_intro;
-    	let t2;
-    	let button;
-    	let current;
-    	let dispose;
-    	var switch_value = RefList;
-
-    	function switch_props(ctx) {
-    		return { props: { list: Combat }, $$inline: true };
-    	}
-
-    	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props());
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
-    			div0.textContent = "Combat Rules";
-    			t1 = space();
-    			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			t2 = space();
-    			button = element("button");
-    			button.textContent = "Back";
-    			attr_dev(div0, "class", "ref-header");
-    			add_location(div0, file$d, 9, 1, 272);
-    			attr_dev(div1, "class", "ref-page");
-    			add_location(div1, file$d, 8, 0, 240);
-    			attr_dev(button, "class", "ref-back");
-    			add_location(button, file$d, 12, 0, 373);
-    			dispose = listen_dev(button, "click", router.Reference, false, false, false);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			append_dev(div1, t1);
-
-    			if (switch_instance) {
-    				mount_component(switch_instance, div1, null);
-    			}
-
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, button, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			if (switch_value !== (switch_value = RefList)) {
-    				if (switch_instance) {
-    					group_outros();
-    					const old_component = switch_instance;
-
-    					transition_out(old_component.$$.fragment, 1, 0, () => {
-    						destroy_component(old_component, 1);
-    					});
-
-    					check_outros();
-    				}
-
-    				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
-    					create_component(switch_instance.$$.fragment);
-    					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div1, null);
-    				} else {
-    					switch_instance = null;
-    				}
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-
-    			if (!div1_intro) {
-    				add_render_callback(() => {
-    					div1_intro = create_in_transition(div1, fade, {});
-    					div1_intro.start();
-    				});
-    			}
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (switch_instance) destroy_component(switch_instance);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(button);
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$f.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    class RefCombat extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, null, create_fragment$f, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "RefCombat",
-    			options,
-    			id: create_fragment$f.name
-    		});
-    	}
-    }
-
-    /* src/components/rules/tables/CalledShotTable.svelte generated by Svelte v3.16.5 */
-
-    const file$e = "src/components/rules/tables/CalledShotTable.svelte";
-
-    function create_fragment$g(ctx) {
-    	let table;
-    	let tr0;
-    	let th0;
-    	let t1;
-    	let th1;
-    	let t3;
-    	let th2;
-    	let t5;
-    	let th3;
-    	let t7;
-    	let tr1;
-    	let td0;
-    	let t9;
-    	let td1;
-    	let t11;
-    	let td2;
-    	let t13;
-    	let td3;
-    	let t15;
-    	let tr2;
-    	let td4;
-    	let t17;
-    	let td5;
-    	let t19;
-    	let td6;
-    	let t21;
-    	let td7;
-    	let t23;
-    	let tr3;
-    	let td8;
-    	let t25;
-    	let td9;
-    	let t27;
-    	let td10;
-    	let t29;
-    	let td11;
-
-    	const block = {
-    		c: function create() {
-    			table = element("table");
-    			tr0 = element("tr");
-    			th0 = element("th");
-    			th0.textContent = "Location";
-    			t1 = space();
-    			th1 = element("th");
-    			th1.textContent = "ATK";
-    			t3 = space();
-    			th2 = element("th");
-    			th2.textContent = "DMG";
-    			t5 = space();
-    			th3 = element("th");
-    			th3.textContent = "Notes";
-    			t7 = space();
-    			tr1 = element("tr");
-    			td0 = element("td");
-    			td0.textContent = "Head";
-    			t9 = space();
-    			td1 = element("td");
-    			td1.textContent = "-3";
-    			t11 = space();
-    			td2 = element("td");
-    			td2.textContent = "x2";
-    			t13 = space();
-    			td3 = element("td");
-    			td3.textContent = "Stun for 1rnd";
-    			t15 = space();
-    			tr2 = element("tr");
-    			td4 = element("td");
-    			td4.textContent = "Arm";
-    			t17 = space();
-    			td5 = element("td");
-    			td5.textContent = "-1";
-    			t19 = space();
-    			td6 = element("td");
-    			td6.textContent = "/2";
-    			t21 = space();
-    			td7 = element("td");
-    			td7.textContent = "Target drops held item";
-    			t23 = space();
-    			tr3 = element("tr");
-    			td8 = element("td");
-    			td8.textContent = "Leg";
-    			t25 = space();
-    			td9 = element("td");
-    			td9.textContent = "-1";
-    			t27 = space();
-    			td10 = element("td");
-    			td10.textContent = "/2";
-    			t29 = space();
-    			td11 = element("td");
-    			td11.textContent = "Target falls Prone";
-    			add_location(th0, file$e, 5, 2, 62);
-    			add_location(th1, file$e, 6, 2, 82);
-    			add_location(th2, file$e, 7, 2, 97);
-    			add_location(th3, file$e, 8, 2, 112);
-    			add_location(tr0, file$e, 4, 1, 55);
-    			add_location(td0, file$e, 11, 2, 142);
-    			add_location(td1, file$e, 12, 2, 158);
-    			add_location(td2, file$e, 13, 2, 172);
-    			add_location(td3, file$e, 14, 2, 186);
-    			add_location(tr1, file$e, 10, 1, 135);
-    			add_location(td4, file$e, 17, 2, 224);
-    			add_location(td5, file$e, 18, 2, 239);
-    			add_location(td6, file$e, 19, 2, 253);
-    			add_location(td7, file$e, 20, 2, 267);
-    			add_location(tr2, file$e, 16, 1, 217);
-    			add_location(td8, file$e, 23, 2, 314);
-    			add_location(td9, file$e, 24, 2, 329);
-    			add_location(td10, file$e, 25, 2, 343);
-    			add_location(td11, file$e, 26, 2, 357);
-    			add_location(tr3, file$e, 22, 1, 307);
-    			attr_dev(table, "class", "called-shot-table");
-    			add_location(table, file$e, 3, 0, 20);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, table, anchor);
-    			append_dev(table, tr0);
-    			append_dev(tr0, th0);
-    			append_dev(tr0, t1);
-    			append_dev(tr0, th1);
-    			append_dev(tr0, t3);
-    			append_dev(tr0, th2);
-    			append_dev(tr0, t5);
-    			append_dev(tr0, th3);
-    			append_dev(table, t7);
-    			append_dev(table, tr1);
-    			append_dev(tr1, td0);
-    			append_dev(tr1, t9);
-    			append_dev(tr1, td1);
-    			append_dev(tr1, t11);
-    			append_dev(tr1, td2);
-    			append_dev(tr1, t13);
-    			append_dev(tr1, td3);
-    			append_dev(table, t15);
-    			append_dev(table, tr2);
-    			append_dev(tr2, td4);
-    			append_dev(tr2, t17);
-    			append_dev(tr2, td5);
-    			append_dev(tr2, t19);
-    			append_dev(tr2, td6);
-    			append_dev(tr2, t21);
-    			append_dev(tr2, td7);
-    			append_dev(table, t23);
-    			append_dev(table, tr3);
-    			append_dev(tr3, td8);
-    			append_dev(tr3, t25);
-    			append_dev(tr3, td9);
-    			append_dev(tr3, t27);
-    			append_dev(tr3, td10);
-    			append_dev(tr3, t29);
-    			append_dev(tr3, td11);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(table);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$g.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    class CalledShotTable extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, null, create_fragment$g, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "CalledShotTable",
-    			options,
-    			id: create_fragment$g.name
-    		});
-    	}
-    }
-
-    const AggressivePosture = new Rule(
-    	`Aggressive Posture`, 
-    	[`Get 1 extra Action (for a total of 3) at the cost of leaving yourself Defenseless until your next turn.`]
-    );
-
-    const Aim = new Rule(
-    	`Aim`, 
-    	[`Spend an Action to get +3 to your next ATK against a specific target.`]
-    );
-
-    const Block = new Rule(
-    	`Block`, 
-    	[`Roll [Melee vs MATK or RATK when using a Shield] for DEF.`]
-    );
-
-    const CalledShot = new Rule(
-    	`Called Shot`, 
-    	[`ATKs target the Torso by default. A Called Shot is an ATK targeting the Head, Arms, or Legs with added effects based on Location.`],
-    	[],
-    	CalledShotTable
-    );
-
-    const DefensivePosture = new Rule(
-    	`Defensive Posture`, 
-    	[`Skip your turn to get 1 extra Defense Action (for a total of 3) until your next turn.`]
-    );
-
-    const Disarm = new Rule(
-    	`Disarm`, 
-    	[`Roll [MATK vs Melee (+ C if the weapon is used two-handed)]. The weapon flies d6 yds away. Attacker gets the weapon if Unarmed.`]
-    );
-
-    const Distract = new Rule(
-    	`Distract`,
-    	[`Roll [Perform vs Perception]. Stun target for 1rnd.`]
-    );
-
-    const Dodge = new Rule(
-    	`Dodge`, 
-    	[`Roll [Acrobatics vs MATK or RATK (Throw)] for DEF.`]
-    );
-
-    const Duck = new Rule(
-    	`Duck`, 
-    	[`Roll [Dodge vs ATK] to move up to your Speed to get behind Cover. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`]
-    );
-
-    const Encourage = new Rule(
-    	`Encourage`,
-    	[`Roll [Leadership vs groups’ total D scores]. The group gets a bonus = [your D] for one specific roll each. A Botch is -1 to all rolls.`]
-    );
-
-    const Hide = new Rule(
-    	`Hide`, 
-    	[`Roll [Stealth vs Perception] to be Concealed. 0 Speed. +3 if Prone.`]
-    );
-
-    const Hold = new Rule(
-    	`Hold`,
-    	[`Block ATKs using a Grabbed enemy as a Shield.`]
-    );
-
-    const Interrogate = new Rule(
-    	`Interrogate`,
-    	[`Roll [Leadership vs D] to get information out of a subject who does not want to help, but without resorting to violence. Each roll takes d6 mins of conversation. If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly). If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts. After Fails = [D], the interrogator gives up or the subject cracks and tells everything they know.`]
-    );
-
-    const Negotiate = new Rule(
-    	`Negotiate`,
-    	[`If opposed parties are willing to talk out their differences, each side start with a list of demands. Roll [Socialize vs Socialize] once per demand. Attitude and situational modifiers should be applied by the GN. Success means you get your demand and the opposed negotiator concedes. Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`]
-    );
-
-    const Protect = new Rule(
-    	`Protect`, 
-    	[`Become the new target of all ATKs targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the ATK.`]
-    );
-
-    const Push = new Rule(
-    	`Push`,
-    	[`Roll [C vs C] to push an enemy in front of you as you move up to [C] yds. 0DMG.`]
-    );
-
-    const Recruit = new Rule(
-    	`Recruit`,
-    	[`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and situational modifiers should be applied by the GN.`]
-    );
-
-    const Reload = new Rule(
-    	`Reload`,
-    	[`Replace a magazine or a single piece of ammunition (depending on the weapon) in a Ranged weapon.`]
-    );
-
-    const Shove = new Rule(
-    	`Shove`,
-    	[`Roll [MATK vs C] to shove an enemy up to [C/2] yds away from you, knocking them Prone. 0DMG.`]
-    );
-
-    const Sneak = new Rule(
-    	`Sneak`, 
-    	[`Roll [Stealth vs Perception] to move Concealed at [Speed / 2].`]
-    );
-
-    const Tackle = new Rule(
-    	`Tackle`,
-    	[`Roll [C vs C] to go Prone with Grabbed enemy.`]
-    );
-
-    const Taunt = new Rule(
-    	`Taunt`,
-    	[`Roll [Leadership vs D]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1rnd if [penalty > enemy’s D].`]
-    );
-
-    const Throw = new Rule(
-    	`Throw`,
-    	[`Throw a Grabbed enemy up to [C] yds and they take Falling DMG. Prone.`]
-    );
-
-    const Torture = new Rule(
-    	`Torture`,
-    	[`Roll [Medicine vs prisoner’s C] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 DMG to the captive. Roll [D vs D] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`]
-    );
-
-    const Trip = new Rule(
-    	`Trip`,
-    	[`Roll [MATK vs A] to knock an enemy Prone. 1DMG.`]
-    );
-
-
-    const Grab = new Rule(
-    	`Grab`,
-    	[`0DMG MATK to render an enemy Defenseless and unable to take actions except attempting escape [(Acrobatics or Melee) vs Grab]. You must have a free hand to Grab. Spend 1 Action per rnd to retain a Grab.`],
-    	[Hold, Tackle, Throw]
-    );
-
-
-    const DefensiveManeuvers = [
-    	Block,
-    	DefensivePosture,
-    	Dodge,
-    	Duck,
-    	Hide,
-    	Protect,
-    	Sneak
-    ];
-
-    const OffensiveManeuvers = [
-    	AggressivePosture,
-    	Aim,
-    	CalledShot,
-    	Disarm,
-    	Grab,
-    	Push,
-    	Reload,
-    	Shove,
-    	Trip
-    ];
-
-    const SocialManeuvers = [
-    	Distract,
-    	Encourage,
-    	Interrogate,
-    	Negotiate,
-    	Recruit,
-    	Taunt,
-    	Torture
-    ];
-
-    const Maneuvers = [...DefensiveManeuvers, ...OffensiveManeuvers, ...SocialManeuvers];
-
-    /* src/components/reference/RefManeuvers.svelte generated by Svelte v3.16.5 */
-    const file$f = "src/components/reference/RefManeuvers.svelte";
-
-    function create_fragment$h(ctx) {
-    	let div1;
-    	let div0;
-    	let t1;
-    	let div1_intro;
-    	let t2;
-    	let button;
-    	let current;
-    	let dispose;
-    	var switch_value = RefList;
-
-    	function switch_props(ctx) {
-    		return {
-    			props: { list: Maneuvers },
-    			$$inline: true
-    		};
-    	}
-
-    	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props());
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
-    			div0.textContent = "Maneuver Rules";
-    			t1 = space();
-    			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			t2 = space();
-    			button = element("button");
-    			button.textContent = "Back";
-    			attr_dev(div0, "class", "ref-header");
-    			add_location(div0, file$f, 9, 1, 278);
-    			attr_dev(div1, "class", "ref-page");
-    			add_location(div1, file$f, 8, 0, 246);
-    			attr_dev(button, "class", "ref-back");
-    			add_location(button, file$f, 12, 0, 384);
-    			dispose = listen_dev(button, "click", router.Reference, false, false, false);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			append_dev(div1, t1);
-
-    			if (switch_instance) {
-    				mount_component(switch_instance, div1, null);
-    			}
-
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, button, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			if (switch_value !== (switch_value = RefList)) {
-    				if (switch_instance) {
-    					group_outros();
-    					const old_component = switch_instance;
-
-    					transition_out(old_component.$$.fragment, 1, 0, () => {
-    						destroy_component(old_component, 1);
-    					});
-
-    					check_outros();
-    				}
-
-    				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
-    					create_component(switch_instance.$$.fragment);
-    					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div1, null);
-    				} else {
-    					switch_instance = null;
-    				}
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-
-    			if (!div1_intro) {
-    				add_render_callback(() => {
-    					div1_intro = create_in_transition(div1, fade, {});
-    					div1_intro.start();
-    				});
-    			}
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (switch_instance) destroy_component(switch_instance);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(button);
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$h.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    class RefManeuvers extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, null, create_fragment$h, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "RefManeuvers",
-    			options,
-    			id: create_fragment$h.name
-    		});
-    	}
-    }
-
-    /* src/components/reference/RefSituations.svelte generated by Svelte v3.16.5 */
-    const file$g = "src/components/reference/RefSituations.svelte";
-
-    function create_fragment$i(ctx) {
-    	let div1;
-    	let div0;
-    	let t1;
-    	let div1_intro;
-    	let t2;
-    	let button;
-    	let current;
-    	let dispose;
-    	var switch_value = RefList;
-
-    	function switch_props(ctx) {
-    		return {
-    			props: { list: Situations },
-    			$$inline: true
-    		};
-    	}
-
-    	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props());
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
-    			div0.textContent = "Situation Rules";
-    			t1 = space();
-    			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			t2 = space();
-    			button = element("button");
-    			button.textContent = "Back";
-    			attr_dev(div0, "class", "ref-header");
-    			add_location(div0, file$g, 9, 1, 280);
-    			attr_dev(div1, "class", "ref-page");
-    			add_location(div1, file$g, 8, 0, 248);
-    			attr_dev(button, "class", "ref-back");
-    			add_location(button, file$g, 12, 0, 388);
-    			dispose = listen_dev(button, "click", router.Reference, false, false, false);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			append_dev(div1, t1);
-
-    			if (switch_instance) {
-    				mount_component(switch_instance, div1, null);
-    			}
-
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, button, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			if (switch_value !== (switch_value = RefList)) {
-    				if (switch_instance) {
-    					group_outros();
-    					const old_component = switch_instance;
-
-    					transition_out(old_component.$$.fragment, 1, 0, () => {
-    						destroy_component(old_component, 1);
-    					});
-
-    					check_outros();
-    				}
-
-    				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
-    					create_component(switch_instance.$$.fragment);
-    					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div1, null);
-    				} else {
-    					switch_instance = null;
-    				}
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-
-    			if (!div1_intro) {
-    				add_render_callback(() => {
-    					div1_intro = create_in_transition(div1, fade, {});
-    					div1_intro.start();
-    				});
-    			}
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (switch_instance) destroy_component(switch_instance);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(button);
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$i.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    class RefSituations extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, null, create_fragment$i, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "RefSituations",
-    			options,
-    			id: create_fragment$i.name
-    		});
-    	}
-    }
-
-    /* src/pages/Reference.svelte generated by Svelte v3.16.5 */
-    const file$h = "src/pages/Reference.svelte";
-
-    function create_fragment$j(ctx) {
-    	let div;
-    	let button0;
-    	let t1;
-    	let button1;
-    	let t3;
-    	let button2;
-    	let t5;
-    	let button3;
-    	let t7;
-    	let button4;
-    	let div_intro;
-    	let dispose;
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			button0 = element("button");
-    			button0.textContent = "Dice";
-    			t1 = space();
-    			button1 = element("button");
-    			button1.textContent = "Combat";
-    			t3 = space();
-    			button2 = element("button");
-    			button2.textContent = "Maneuvers";
-    			t5 = space();
-    			button3 = element("button");
-    			button3.textContent = "Situations";
-    			t7 = space();
-    			button4 = element("button");
-    			button4.textContent = "Back";
-    			attr_dev(button0, "class", "diplay-button");
-    			add_location(button0, file$h, 10, 1, 408);
-    			attr_dev(button1, "class", "diplay-button");
-    			add_location(button1, file$h, 13, 1, 484);
-    			attr_dev(button2, "class", "diplay-button");
-    			add_location(button2, file$h, 16, 1, 564);
-    			attr_dev(button3, "class", "diplay-button");
-    			add_location(button3, file$h, 19, 1, 650);
-    			attr_dev(button4, "class", "ref-back");
-    			add_location(button4, file$h, 22, 1, 738);
-    			attr_dev(div, "class", "display-page");
-    			add_location(div, file$h, 9, 0, 372);
-
-    			dispose = [
-    				listen_dev(button0, "click", router.RefDice, false, false, false),
-    				listen_dev(button1, "click", router.RefCombat, false, false, false),
-    				listen_dev(button2, "click", router.RefManeuvers, false, false, false),
-    				listen_dev(button3, "click", router.RefSituations, false, false, false),
-    				listen_dev(button4, "click", router.Home, false, false, false)
-    			];
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, button0);
-    			append_dev(div, t1);
-    			append_dev(div, button1);
-    			append_dev(div, t3);
-    			append_dev(div, button2);
-    			append_dev(div, t5);
-    			append_dev(div, button3);
-    			append_dev(div, t7);
-    			append_dev(div, button4);
-    		},
-    		p: noop,
-    		i: function intro(local) {
-    			if (!div_intro) {
-    				add_render_callback(() => {
-    					div_intro = create_in_transition(div, fade, {});
-    					div_intro.start();
-    				});
-    			}
-    		},
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			run_all(dispose);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$j.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     class Reference extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$j, safe_not_equal, {});
+    		init(this, options, null, create_fragment$c, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Reference",
     			options,
-    			id: create_fragment$j.name
+    			id: create_fragment$c.name
     		});
     	}
     }
 
     /* src/pages/Home.svelte generated by Svelte v3.16.5 */
-    const file$i = "src/pages/Home.svelte";
+    const file$b = "src/pages/Home.svelte";
 
-    function create_fragment$k(ctx) {
+    function create_fragment$d(ctx) {
     	let div;
     	let button0;
     	let t1;
@@ -10874,11 +8696,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Rules Reference";
     			attr_dev(button0, "class", "diplay-button");
-    			add_location(button0, file$i, 8, 1, 218);
+    			add_location(button0, file$b, 8, 1, 218);
     			attr_dev(button1, "class", "diplay-button");
-    			add_location(button1, file$i, 11, 1, 307);
+    			add_location(button1, file$b, 11, 1, 307);
     			attr_dev(div, "class", "display-page");
-    			add_location(div, file$i, 7, 0, 182);
+    			add_location(div, file$b, 7, 0, 182);
 
     			dispose = [
     				listen_dev(button0, "click", router.Creator, false, false, false),
@@ -10912,7 +8734,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$k.name,
+    		id: create_fragment$d.name,
     		type: "component",
     		source: "",
     		ctx
@@ -10924,28 +8746,24 @@ var app = (function () {
     class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$k, safe_not_equal, {});
+    		init(this, options, null, create_fragment$d, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Home",
     			options,
-    			id: create_fragment$k.name
+    			id: create_fragment$d.name
     		});
     	}
     }
 
     /* src/App.svelte generated by Svelte v3.16.5 */
-    const file$j = "src/App.svelte";
+    const file$c = "src/App.svelte";
 
-    // (17:2) <Router>
+    // (21:2) <Router>
     function create_default_slot_1(ctx) {
     	let t0;
     	let t1;
-    	let t2;
-    	let t3;
-    	let t4;
-    	let t5;
     	let current;
 
     	const route0 = new Route({
@@ -10963,38 +8781,6 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const route3 = new Route({
-    			props: {
-    				path: "/reference/dice",
-    				component: RefDice
-    			},
-    			$$inline: true
-    		});
-
-    	const route4 = new Route({
-    			props: {
-    				path: "/reference/combat",
-    				component: RefCombat
-    			},
-    			$$inline: true
-    		});
-
-    	const route5 = new Route({
-    			props: {
-    				path: "/reference/maneuvers",
-    				component: RefManeuvers
-    			},
-    			$$inline: true
-    		});
-
-    	const route6 = new Route({
-    			props: {
-    				path: "/reference/situations",
-    				component: RefSituations
-    			},
-    			$$inline: true
-    		});
-
     	const block = {
     		c: function create() {
     			create_component(route0.$$.fragment);
@@ -11002,14 +8788,6 @@ var app = (function () {
     			create_component(route1.$$.fragment);
     			t1 = space();
     			create_component(route2.$$.fragment);
-    			t2 = space();
-    			create_component(route3.$$.fragment);
-    			t3 = space();
-    			create_component(route4.$$.fragment);
-    			t4 = space();
-    			create_component(route5.$$.fragment);
-    			t5 = space();
-    			create_component(route6.$$.fragment);
     		},
     		m: function mount(target, anchor) {
     			mount_component(route0, target, anchor);
@@ -11017,14 +8795,6 @@ var app = (function () {
     			mount_component(route1, target, anchor);
     			insert_dev(target, t1, anchor);
     			mount_component(route2, target, anchor);
-    			insert_dev(target, t2, anchor);
-    			mount_component(route3, target, anchor);
-    			insert_dev(target, t3, anchor);
-    			mount_component(route4, target, anchor);
-    			insert_dev(target, t4, anchor);
-    			mount_component(route5, target, anchor);
-    			insert_dev(target, t5, anchor);
-    			mount_component(route6, target, anchor);
     			current = true;
     		},
     		p: noop,
@@ -11033,20 +8803,12 @@ var app = (function () {
     			transition_in(route0.$$.fragment, local);
     			transition_in(route1.$$.fragment, local);
     			transition_in(route2.$$.fragment, local);
-    			transition_in(route3.$$.fragment, local);
-    			transition_in(route4.$$.fragment, local);
-    			transition_in(route5.$$.fragment, local);
-    			transition_in(route6.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(route0.$$.fragment, local);
     			transition_out(route1.$$.fragment, local);
     			transition_out(route2.$$.fragment, local);
-    			transition_out(route3.$$.fragment, local);
-    			transition_out(route4.$$.fragment, local);
-    			transition_out(route5.$$.fragment, local);
-    			transition_out(route6.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -11055,14 +8817,6 @@ var app = (function () {
     			destroy_component(route1, detaching);
     			if (detaching) detach_dev(t1);
     			destroy_component(route2, detaching);
-    			if (detaching) detach_dev(t2);
-    			destroy_component(route3, detaching);
-    			if (detaching) detach_dev(t3);
-    			destroy_component(route4, detaching);
-    			if (detaching) detach_dev(t4);
-    			destroy_component(route5, detaching);
-    			if (detaching) detach_dev(t5);
-    			destroy_component(route6, detaching);
     		}
     	};
 
@@ -11070,14 +8824,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(17:2) <Router>",
+    		source: "(21:2) <Router>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (14:0) <ViewScreen>
+    // (18:0) <ViewScreen>
     function create_default_slot(ctx) {
     	let t;
     	let div;
@@ -11099,7 +8853,7 @@ var app = (function () {
     			div = element("div");
     			create_component(router.$$.fragment);
     			attr_dev(div, "class", "display-window svelte-nascqk");
-    			add_location(div, file$j, 15, 1, 604);
+    			add_location(div, file$c, 19, 1, 890);
     		},
     		m: function mount(target, anchor) {
     			mount_component(titlebar, target, anchor);
@@ -11140,14 +8894,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(14:0) <ViewScreen>",
+    		source: "(18:0) <ViewScreen>",
     		ctx
     	});
 
     	return block;
     }
 
-    function create_fragment$l(ctx) {
+    function create_fragment$e(ctx) {
     	let current;
 
     	const viewscreen = new ViewScreen({
@@ -11194,7 +8948,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$l.name,
+    		id: create_fragment$e.name,
     		type: "component",
     		source: "",
     		ctx
@@ -11206,13 +8960,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$l, safe_not_equal, {});
+    		init(this, options, null, create_fragment$e, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$l.name
+    			id: create_fragment$e.name
     		});
     	}
     }

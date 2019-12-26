@@ -1,28 +1,26 @@
 <script>
 	import { fade } from 'svelte/transition'
 	import { HideShow } from '../../functions/HideShow'
-	import { CharacterStore } from '../../stores'
-	let char
-	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+	import { character } from '../../stores'
 
-	const skills = Object.keys(char.skills)
+	const skills = Object.keys($character.skills)
 
 	let skillGroups = []
-	Object.keys(char.traits).forEach((trait) => {
+	Object.keys($character.traits).forEach((trait) => {
 		skillGroups.push({
 			name: trait, visible: false
 		})
 	})
-	let skillPoints = char.traits.brains.base * 3
+	let skillPoints = $character.traits.brains.base * 3
 	let remaining = skillPoints
 
 	const countSkillPoints = (event) => {
 		let target = event.target
 		let skillCount = 0
-		skills.forEach((skill) => { skillCount += char.skills[skill].base })
+		skills.forEach((skill) => { skillCount += $character.skills[skill].base })
 		remaining = skillPoints - skillCount
-		if (remaining < 0 || target.value > char.skills[target.name].max) {
-			char.skills[target.name].base -= 1
+		if (remaining < 0 || target.value > $character.skills[target.name].max) {
+			$character.skills[target.name].base -= 1
 			target.value -= 1
 			countSkillPoints(event)
 		}
@@ -41,26 +39,26 @@
 		{#each skillGroups as group}
 			<div class='trait-section'>
 				<div class='parent-trait-title' on:click={() => skillGroups = HideShow(group, skillGroups)}>
-					<h3>{char.traits[group.name].name} Skills</h3>
+					<h3>{$character.traits[group.name].name} Skills</h3>
 				</div>
 				{#if group.visible}
 					{#each skills as skill}
-						{#if char.traits[group.name].name == char.skills[skill].parent}
+						{#if $character.traits[group.name].name == $character.skills[skill].parent}
 							<br>
 							<div class='skill-block'>
 								<div class='stat-column name-column'>
-									<span class='stat-label'>{char.skills[skill].name}</span>
+									<span class='stat-label'>{$character.skills[skill].name}</span>
 								</div>
 								<div class='stat-column value-column'>
 									<div class='stat-input'>
 										<input
 											class='slider-input'
 											type='range'
-											name='{char.skills[skill].name.toLowerCase()}'
+											name='{$character.skills[skill].name.toLowerCase()}'
 											min=0
 											max=6
-											bind:value={char.skills[skill].base}
-											invalid={(remaining < 0) || this.value > char.traits[group.name].base}
+											bind:value={$character.skills[skill].base}
+											invalid={(remaining < 0) || this.value > $character.traits[group.name].base}
 											on:input|preventDefault={(event) => countSkillPoints(event)}
 										>
 									</div>
@@ -130,8 +128,5 @@
 	.stat-input div {
 		text-align: center;
 		min-width: calc(100%/7);
-	}
-	.step {
-		margin-bottom: 75px;
 	}
 </style>

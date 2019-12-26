@@ -1,11 +1,9 @@
 <script>
 	import { fade } from 'svelte/transition'
 	import { capitalize } from '../../functions/Capitalize'
-	import { CharacterStore } from '../../stores'
-	let char
-	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+	import { character } from '../../stores'
 
-	const traits = Object.keys(char.traits)
+	const traits = Object.keys($character.traits)
 
 	const traitPoints = 12
 	let remaining = traitPoints - traits.length
@@ -13,10 +11,10 @@
 	const countTraitPoints = (event) => {
 		let target = event.target
 		let traitCount = 0
-		traits.forEach((trait) => { traitCount += char.traits[trait].base })
+		traits.forEach((trait) => { traitCount += $character.traits[trait].base })
 		remaining = traitPoints - traitCount
 		if (remaining < 0) {
-			char.traits[target.name].base -= 1
+			$character.traits[target.name].base -= 1
 			target.value -= 1
 			countTraitPoints(event)
 		}
@@ -25,9 +23,9 @@
 
 	const setSkillMax = () => {
 		traits.forEach((trait) => {
-			Object.keys(char.skills).forEach((skill) => {
-				if (char.skills[skill].parent === capitalize(trait)) {
-					char.skills[skill].max = char.traits[trait].base
+			Object.keys($character.skills).forEach((skill) => {
+				if ($character.skills[skill].parent === capitalize(trait)) {
+					$character.skills[skill].max = $character.traits[trait].base
 				}
 			})
 		})
@@ -44,17 +42,17 @@
 	{#each traits as trait}
 		<div class='stat-block'>
 			<div class='stat-column name-column'>
-				<span class='stat-label'>{char.traits[trait].name}</span>
+				<span class='stat-label'>{$character.traits[trait].name}</span>
 			</div>
 			<div class='stat-column value-column'>
 				<div class='stat-input'>
 					<input
 						class='slider-input'
 						type='range'
-						name='{char.traits[trait].name.toLowerCase()}'
+						name='{$character.traits[trait].name.toLowerCase()}'
 						min=1
 						max=6
-						bind:value={char.traits[trait].base}
+						bind:value={$character.traits[trait].base}
 						invalid={remaining < 0}
 						on:input|preventDefault={(event) => countTraitPoints(event)}
 					>

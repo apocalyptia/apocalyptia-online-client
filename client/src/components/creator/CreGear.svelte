@@ -16,9 +16,7 @@
 		MasterGearList
 	} from '../rules/Gear'
 	import { random } from '../../functions/Random'
-	import { CharacterStore } from '../../stores'
-	let char
-	const unsubscribe = CharacterStore.subscribe(value => { char = value })
+	import { character } from '../../stores'
 
 	let armorResult = ""
 
