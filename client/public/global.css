@@ -17,6 +17,17 @@ html, body {
 	width: 100vw;
 }
 
+table {
+	border: 2px solid lime;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+table td {
+	border: 1px solid lime;
+	padding: .5rem;
+}
+
 a {
 	color: lime;
 	text-decoration: none;

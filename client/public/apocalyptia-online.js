@@ -6105,30 +6105,22 @@ var app = (function () {
 
     const Agility = new Trait(
     	`Agility`,
-    	[
-    		`Agility is a Character’s talent for physical coordination. High Agility indicates balance, flexibility, and fine motor skill. This Trait determines Initiative and Speed. Agility is the parent Trait for Acrobatics, Larceny, Ranged, and Stealth.`
-    	]
+    	[`Agility is a Character’s talent for physical coordination. High Agility indicates balance, flexibility, and fine motor skill. This Trait determines Initiative and Speed. Agility is the parent Trait for Acrobatics, Larceny, Ranged, and Stealth.`]
     );
 
     const Brains = new Trait(
     	`Brains`,
-    	[
-    		`Brains is a Character’s talent for cognitive performance and abstract thought. High Brains indicates sharp memory, keen awareness, and studiousness. This Trait determines Experience. Brains is the parent Trait for Build, Medicine, Perception, Science.`
-    	]
+    	[`Brains is a Character’s talent for cognitive performance and abstract thought. High Brains indicates sharp memory, keen awareness, and studiousness. This Trait determines Experience. Brains is the parent Trait for Build, Medicine, Perception, Science.`]
     );
 
     const Constitution = new Trait(
     	`Constitution`,
-    	[
-    		`Constitution is a Character’s talent for physical strength and durability. High Constitution indicates good health and powerful muscles. This Trait determines Health, Pain, and Speed. Constitution is the parent Trait for Athletics, Drive, Melee, and Survival.`
-    	]
+    	[`Constitution is a Character’s talent for physical strength and durability. High Constitution indicates good health and powerful muscles. This Trait determines Health, Pain, and Speed. Constitution is the parent Trait for Athletics, Drive, Melee, and Survival.`]
     );
 
     const Demeanor = new Trait(
     	`Demeanor`,
-    	[
-    		`Demeanor is a Character’s talent for social exchanges and sheer force of will. High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Psyche and Luck. Demeanor is also the parent Trait for Leadership, Perform, Socialize, and Tame.`
-    	]
+    	[`Demeanor is a Character’s talent for social exchanges and sheer force of will. High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Psyche and Luck. Demeanor is also the parent Trait for Leadership, Perform, Socialize, and Tame.`]
     );
 
     const TraitList = [
@@ -6156,92 +6148,68 @@ var app = (function () {
 
     const Acrobatics = new Skill(
     	`Acrobatics`,
-    	[
-    		`Gymnastic prowess.`
-    	],
+    	[`Gymnastic prowess.`],
     	`Agility`,
     	6,
     	[
     		new Specialty(
     			`Dodge`,
-    			[
-    				`Roll vs [MATK or Ranged(Throw)].`
-    			]
+    			[`Roll vs [MATK or Ranged(Throw)].`]
     		),
     		new Specialty(
     			`Jump`,
-    			[
-    				`Running Jump [Speed]. Vertical [Speed x 3"].`
-    			]
+    			[`Running Jump [Speed]. Vertical [Speed x 3"].`]
     		)
     	]
     );
 
     const Larceny = new Skill(
     	`Larceny`,
-    	[
-    		`Delicate manual operations.`
-    	],
+    	[`Delicate manual operations.`],
     	`Agility`,
     	'varies',
     	[
     		new Specialty(
     			`Mechanical`,
-    			[
-    				`(d6rnds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms. # by item.`
-    			]
+    			[`(d6rnds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms. # by item.`]
     		),
     		new Specialty(
     			`Trick`,
-    			[
-    				`Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand.`
-    			]
+    			[`Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand.`]
     		)
     	]
     );
 
     const Ranged = new Skill(
     	`Ranged`,
-    	[
-    		`Projectile combat.`
-    	],
+    	[`Projectile combat.`],
     	`Agility`,
     	'DEF',
     	[
     		new Specialty(
     			`Shoot`,
-    			[
-    				`Roll vs [Reflex or Block (with a Shield)].`
-    			]
+    			[`Roll vs [Reflex or Block (with a Shield)].`]
     		),
     		new Specialty(
     			`Throw`,
-    			[
-    				`Roll vs [Dodge or Block (with a Shield)].`
-    			]
+    			[`Roll vs [Dodge or Block (with a Shield)].`]
     		)
     	]
     );
 
     const Stealth = new Skill(
     	`Stealth`,
-    	[
-    		`Conceal your presence.`
-    	],
+    	[`Conceal your presence.`],
     	`Agility`,
     	'Perception',
     	[
     		new Specialty(
     			`Hide`,
-    			[
-    				`Stay motionless and Concealed. +3 if Prone.`
-    			]
+    			[`Stay motionless and Concealed. +3 if Prone.`]
     		),
     		new Specialty(
     			`Sneak`,
-    			[
-    				`Move [Speed / 2] while Concealed.`
-    			]
+    			[`Move [Speed / 2] while Concealed.`]
     		)
     	]
     );
@@ -6256,92 +6224,68 @@ var app = (function () {
 
     const Medicine = new Skill(
     	`Medicine`,
-    	[
-    		`Diagnosing and treating wounds.`
-    	],
+    	[`Diagnosing and treating wounds.`],
     	`Brains`,
     	'Wounds',
     	[
     		new Specialty(
     			`First-Aid`,
-    			[
-    				`Stop Bleeding. Takes 1d6rnds.`
-    			]
+    			[`Stop Bleeding. Takes 1d6rnds.`]
     		),
     		new Specialty(
     			`Surgery`,
-    			[
-    				`Heal 1 Wound. Cannot be performed again on the same patient until they are fully healed. d6DMG on a Botch.`
-    			]
+    			[`Heal 1 Wound. Cannot be performed again on the same patient until they are fully healed. d6DMG on a Botch.`]
     		)
     	]
     );
 
     const Perception = new Skill(
     	`Perception`,
-    	[
-    		`Processing sensory input.`
-    	],
+    	[`Processing sensory input.`],
     	`Brains`,
     	'varies',
     	[
     		new Specialty(
     			`Search`,
-    			[
-    				`Roll vs [Stealth (or Survival if tracking)].`
-    			]
+    			[`Roll vs [Stealth (or Survival if tracking)].`]
     		),
     		new Specialty(
     			`Intuition`,
-    			[
-    				`Roll vs [Socialize or Perform].`
-    			]
+    			[`Roll vs [Socialize or Perform].`]
     		)
     	]
     );
 
     const Science = new Skill(
     	`Science`,
-    	[
-    		`Knowledge of physical laws.`
-    	],
+    	[`Knowledge of physical laws.`],
     	`Brains`,
     	'varies',
     	[
     		new Specialty(
     			`Chemistry`,
-    			[
-    				`(# x 10mins) Use [d6 + # Chemicals].`
-    			]
+    			[`(# x 10mins) Use [d6 + # Chemicals].`]
     		),
     		new Specialty(
     			`Technology`,
-    			[
-    				`(varies) Make or use electronic devices.`
-    			]
+    			[`(varies) Make or use electronic devices.`]
     		)
     	]
     );
 
     const Survival = new Skill(
     	`Survival`,
-    	[
-    		`Primitive practices for living outdoors.`
-    	],
+    	[`Primitive practices for living outdoors.`],
     	`Brains`,
     	'Biome',
     	[
     		new Specialty(
     			`Forage`,
-    			[
-    				`(1hr) Provide 1 Need for 1 person.`
-    			]
+    			[`(1hr) Provide 1 Need for 1 person.`]
     		),
     		new Specialty(
     			`Navigate`,
-    			[
-    				`(1min) Plot course. Roll vs [Perception] if tracked.`
-    			]
+    			[`(1min) Plot course. Roll vs [Perception] if tracked.`]
     		)
     	]
     );
@@ -6356,92 +6300,68 @@ var app = (function () {
 
     const Athletics = new Skill(
     	`Athletics`,
-    	[
-    		`Physically difficult forms of motion.`
-    	],
+    	[`Physically difficult forms of motion.`],
     	`Constitution`,
     	'varies',
     	[
     		new Specialty(
     			`Climb`,
-    			[
-    				`Move along vertical surfaces at [Speed / 2].`
-    			]
+    			[`Move along vertical surfaces at [Speed / 2].`]
     		),
     		new Specialty(
     			`Swim`,
-    			[
-    				`Move in water at [Speed / 4].`
-    			]
+    			[`Move in water at [Speed / 4].`]
     		)
     	]
     );
 
     const Build = new Skill(
     	`Build`,
-    	[
-    		`Make an item from [d6 + #] Parts.	`
-    	],
+    	[`Make an item from [d6 + #] Parts.	`],
     	`Constitution`,
     	'varies',
     	[
     		new Specialty(
     			`Customize`,
-    			[
-    				`(#hrs) 3 per item. Each must be unique. Weapons: +1 RATK, +1 Melee DMG, or a new Attribute. Armor: +1 DR or a new Attribute.`
-    			]
+    			[`(#hrs) 3 per item. Each must be unique. Weapons: +1 RATK, +1 Melee DMG, or a new Attribute. Armor: +1 DR or a new Attribute.`]
     		),
     		new Specialty(
     			`Repair`,
-    			[
-    				`(#hrs) Fix broken item. +1 with same Parts.`
-    			]
+    			[`(#hrs) Fix broken item. +1 with same Parts.`]
     		)
     	]
     );
 
     const Drive = new Skill(
     	`Drive`,
-    	[
-    		`Operate vehicles.`
-    	],
+    	[`Operate vehicles.`],
     	`Constitution`,
     	'varies',
     	[
     		new Specialty(
     			`Ram`,
-    			[
-    				`Roll vs [Drive(Stunt)] to ATK with a vehicle.`
-    			]
+    			[`Roll vs [Drive(Stunt)] to ATK with a vehicle.`]
     		),
     		new Specialty(
     			`Stunt`,
-    			[
-    				`Roll vs [Drive(Ram)] for DEF with a vehicle.`
-    			]
+    			[`Roll vs [Drive(Ram)] for DEF with a vehicle.`]
     		)
     	]
     );
 
     const Melee = new Skill(
     	`Melee`,
-    	[
-    		`Hand-to-hand combat.`
-    	],
+    	[`Hand-to-hand combat.`],
     	`Constitution`,
     	'ATK or DEF',
     	[
     		new Specialty(
     			`Block`,
-    			[
-    				`Roll vs [MATK or RATK (if you have a Shield)].`
-    			]
+    			[`Roll vs [MATK or RATK (if you have a Shield)].`]
     		),
     		new Specialty(
     			`Strike`,
-    			[
-    				`Roll vs [DEF]. DMG = [weapon DMG + Success].`
-    			]
+    			[`Roll vs [DEF]. DMG = [weapon DMG + Success].`]
     		)
     	]
     );
@@ -6456,92 +6376,68 @@ var app = (function () {
 
     const Leadership = new Skill(
     	`Leadership`,
-    	[
-    		`Directing the efforts of others. Modifiers from multiple uses of the same Leadership Specialty do not stack.`
-    	],
+    	[`Directing the efforts of others. Modifiers from multiple uses of the same Leadership Specialty do not stack.`],
     	`Demeanor`,
     	'Demeanor',
     	[
     		new Specialty(
     			`Encourage`,
-    			[
-    				`Roll vs [total target(s) Demeanor]. Target(s) get a bonus = [your Demeanor] to one roll you choose.`
-    			]
+    			[`Roll vs [total target(s) Demeanor]. Target(s) get a bonus = [your Demeanor] to one roll you choose.`]
     		),
     		new Specialty(
     			`Intimidate`,
-    			[
-    				`Roll vs [total target(s) Demeanor]. Target(s) take a penalty = [your Demeanor] to any roll except one you choose.`
-    			]
+    			[`Roll vs [total target(s) Demeanor]. Target(s) take a penalty = [your Demeanor] to any roll except one you choose.`]
     		)
     	]
     );
 
     const Perform = new Skill(
     	`Perform`,
-    	[
-    		`Captivating an audience.`
-    	],
+    	[`Captivating an audience.`],
     	`Demeanor`,
     	'Perception',
     	[
     		new Specialty(
     			`Distract`,
-    			[
-    				`Target is Defenseless for 1rnd.`
-    			]
+    			[`Target is Defenseless for 1rnd.`]
     		),
     		new Specialty(
     			`Deceive`,
-    			[
-    				`Target believes your plausible falsehood.`
-    			]
+    			[`Target believes your plausible falsehood.`]
     		)
     	]
     );
 
     const Socialize = new Skill(
     	`Socialize`,
-    	[
-    		`Alter a person’s Attitude by one step.`
-    	],
+    	[`Alter a person’s Attitude by one step.`],
     	`Demeanor`,
     	'Demeanor',
     	[
     		new Specialty(
     			`Gossip`,
-    			[
-    				`(d6hrs) Gather or spread rumors.`
-    			]
+    			[`(d6hrs) Gather or spread rumors.`]
     		),
     		new Specialty(
     			`Persuade`,
-    			[
-    				`(d6mins) Target seriously considers your opinion.`
-    			]
+    			[`(d6mins) Target seriously considers your opinion.`]
     		)
     	]
     );
 
     const Tame = new Skill(
     	`Tame`,
-    	[
-    		`Alter an animal’s Attitude by one step.`
-    	],
+    	[`Alter an animal’s Attitude by one step.`],
     	`Demeanor`,
     	'Demeanor',
     	[
     		new Specialty(
     			`Command`,
-    			[
-    				`Animal obeys your command.`
-    			]
+    			[`Animal obeys your command.`]
     		),
     		new Specialty(
     			`Train`,
-    			[
-    				`(1wk) Animals learn commands = [its Brains x 2].`
-    			]
+    			[`(1wk) Animals learn commands = [its Brains x 2].`]
     		)
     	]
     );
@@ -7166,46 +7062,34 @@ var app = (function () {
 
     const FavoriteWeapon = new Ability(
     	`Favorite Weapon`,
-    	[
-    		`Botch is only a Fail with this one weapon.`
-    	],
+    	[`Botch is only a Fail with this one weapon.`],
     	1, 3, 0, ``,
     	WeaponList
     );
     const HyperImmunity = new Ability(
     	`Hyper Immunity`,
-    	[
-    		`+1 to resist Diseases.`
-    	],
+    	[`+1 to resist Diseases.`],
     	3, 3, 0, ``
     );
     const PackMentality = new Ability(
     	`Pack Mentality`,
-    	[
-    		`+1 ATK at a target a Comrade ATKs this rnd.`
-    	],
+    	[`+1 ATK at a target a Comrade ATKs this rnd.`],
     	1, 3, 0, ``
     );
     const QuickReload = new Ability(
     	`Quick Reload`,
-    	[
-    		`Free Reload once per rnd.`
-    	],
+    	[`Free Reload once per rnd.`],
     	1, 3, 0, ``
     );
     const Specialize = new Ability(
     	`Specialize`,
-    	[
-    		`+1 to a Skill Specialty.`
-    	],
+    	[`+1 to a Skill Specialty.`],
     	1, 3, 0, ``,
     	SpecialtyList
     );
     const WeaponTraining = new Ability(
     	`Weapon Training`,
-    	[
-    		`+1 ATK for a specific weapon.`
-    	],
+    	[`+1 ATK for a specific weapon.`],
     	1, 3, 0, ``,
     	WeaponList
     );
@@ -7223,38 +7107,28 @@ var app = (function () {
 
     const EfficientWork = new Ability(
     	`Efficient Work`,
-    	[
-    		`[Time / 2] for a Skill (minimum 1 action).`
-    	],
+    	[`[Time / 2] for a Skill (minimum 1 action).`],
     	1, 6, 0, ``,
     	SkillList
     );
     const FastDraw = new Ability(
     	`Fast Draw`,
-    	[
-    		`Free item draw once per rnd.`
-    	],
+    	[`Free item draw once per rnd.`],
     	1, 6, 0, ``
     );
     const FleetFooted = new Ability(
     	`Fleet Footed`,
-    	[
-    		`+1 Speed.`
-    	],
+    	[`+1 Speed.`],
     	3, 6, 0, ``
     );
     const Multilingual = new Ability(
     	`Multilingual*`,
-    	[
-    		`Learn a different form of communication.`
-    	],
+    	[`Learn a different form of communication.`],
     	9, 6, 0, ``
     );  // Make a list or make an input box?
     const Practice = new Ability(
     	`Practice`,
-    	[
-    		`+1 to a Skill (up to the parent Trait).`
-    	],
+    	[`+1 to a Skill (up to the parent Trait).`],
     	1, 6, 0, ``,
     	SkillList
     );
@@ -7273,37 +7147,27 @@ var app = (function () {
 
     const DangerSense = new Ability(
     	`Danger Sense`,
-    	[
-    		`+1 Reflex.`
-    	],
+    	[`+1 Reflex.`],
     	1, 9, 0, ``
     );
     const Discipline = new Ability(
     	`Discipline`,
-    	[
-    		`Ignore 1 Pain penalty.`
-    	],
+    	[`Ignore 1 Pain penalty.`],
     	3, 9, 0, ``
     );
     const Fortunate = new Ability(
     	`Fortunate`,
-    	[
-    		`+1 Luck.`
-    	],
+    	[`+1 Luck.`],
     	1, 9, 0, ``
     );
     const FreeRunning = new Ability(
     	`Free Running`,
-    	[
-    		`Acrobatics 9# to Climb as a Run action.`
-    	],
+    	[`Acrobatics 9# to Climb as a Run action.`],
     	1, 9, 0, ``
     );
     const Unorthodox = new Ability(
     	`Unorthodox*`,
-    	[
-    		`Pick a new parent Trait for a Skill.`
-    	],
+    	[`Pick a new parent Trait for a Skill.`],
     	1, 9, 0, ``,
     	[SkillList, TraitList]
     );  // Need to figure this out. Maybe two Options parameters?
@@ -7322,23 +7186,17 @@ var app = (function () {
 
     const Fencing = new Ability(
     	`Fencing`,
-    	[
-    		`Free Block roll once per rnd.`
-    	],
+    	[`Free Block roll once per rnd.`],
     	1, 12, 0, ``
     );
     const Sidestep = new Ability(
     	`Side-step`,
-    	[
-    		`Free Dodge roll once per rnd.`
-    	],
+    	[`Free Dodge roll once per rnd.`],
     	1, 12, 0, ``
     );
     const Wrestling = new Ability(
     	`Wrestling`,
-    	[
-    		`Free Grab roll once per rnd.`
-    	],
+    	[`Free Grab roll once per rnd.`],
     	1, 12, 0, ``
     );
 
@@ -7352,23 +7210,17 @@ var app = (function () {
 
     const FirmGrip = new Ability(
     	`Firm Grip`,
-    	[
-    		`Use 2h weapons in 1h, up to Size 3.`
-    	],
+    	[`Use 2h weapons in 1h, up to Size 3.`],
     	1, 15, 0, ``
     );
     const HardHeaded = new Ability(
     	`Hard Headed`,
-    	[
-    		`Ignore Stun from Head DMG.`
-    	],
+    	[`Ignore Stun from Head DMG.`],
     	1, 15, 0, ``
     );
     const PowerfulStrike = new Ability(
     	`Powerful Strike*`,
-    	[
-    		`+1 DMG for a specific Melee weapon.`
-    	],
+    	[`+1 DMG for a specific Melee weapon.`],
     	1, 15, 0, ``,
     	MeleeList
     );
@@ -7383,16 +7235,12 @@ var app = (function () {
 
     const Assassin = new Ability(
     	`Assassin`,
-    	[
-    		`+3 DMG to ATKs from Concealment.`
-    	],
+    	[`+3 DMG to ATKs from Concealment.`],
     	1, 18, 0, ``
     );
     const VehicleOperation = new Ability(
     	`Vehicle Operation*`,
-    	[
-    		`Proficiently operate a class of vehicle.`
-    	],
+    	[`Proficiently operate a class of vehicle.`],
     	1, 18, 0, ``
     ); // Need to add VehicleList when it is made
 
@@ -7405,16 +7253,12 @@ var app = (function () {
 
     const Ambidextrous = new Ability(
     	`Ambidextrous`,
-    	[
-    		`Off-hand penalty is -1 instead of -3.`
-    	],
+    	[`Off-hand penalty is -1 instead of -3.`],
     	1, 24, 0, ``
     );
     const Tough = new Ability(
     	`Tough`,
-    	[
-    		`+1 Health.`
-    	],
+    	[`+1 Health.`],
     	3, 24, 0, ``
     );
 
@@ -7427,16 +7271,12 @@ var app = (function () {
 
     const SelfImprovement = new Ability(
     	`Self Improvement*`,
-    	[
-    		`+1 to a Trait (max 6).`
-    	],
+    	[`+1 to a Trait (max 6).`],
     	3, 30, 0, ``
     );
     const SecondChance = new Ability(
     	`Second Chance`,
-    	[
-    		`Spend this Ability to avoid Death once.`
-    	],
+    	[`Spend this Ability to avoid Death once.`],
     	9, 30, 0, ``
     );
 
@@ -8718,9 +8558,9 @@ var app = (function () {
     	}
     }
 
-    /* src/components/rules/DifficultyTable.svelte generated by Svelte v3.16.5 */
+    /* src/components/rules/tables/DifficultyTable.svelte generated by Svelte v3.16.5 */
 
-    const file$9 = "src/components/rules/DifficultyTable.svelte";
+    const file$9 = "src/components/rules/tables/DifficultyTable.svelte";
 
     function create_fragment$b(ctx) {
     	let table;
@@ -8836,48 +8676,36 @@ var app = (function () {
     }
 
     const Difficulty = new Rule(
-    		'Difficulty',
-    		[
-    			'The Result of your roll must be greater than or equal to the Difficulty number to be successful. Difficulties are indicated by the # symbol. The GN or an opposing roll set the # for your rolls.'
-    		],
-    		[],
-    		DifficultyTable
+    	'Difficulty',
+    	['The Result of your roll must be greater than or equal to the Difficulty number to be successful. Difficulties are indicated by the # symbol. The GN or an opposing roll set the # for your rolls.'],
+    	[],
+    	DifficultyTable
     );
 
     const RoteActions = new Rule(
     	'Rote Actions',
-    	[
-    		'If your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.'
-    	]
+    	['If your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.']
     );
 
     const Cooperation = new Rule(
     	'Cooperation',
-    	[
-    		'If Characters want to help each other perform a task, one of them makes the roll and the rest add their Scores together as a Modifier to the main Character’s Result. The GN should use their judgement to determine the time to completion.'
-    	]
+    	['If Characters want to help each other perform a task, one of them makes the roll and the rest add their Scores together as a Modifier to the main Character’s Result. The GN should use their judgement to determine the time to completion.']
     );
 
     const Success = new Rule(
     	'Success',
-    	[
-    		'If [Result >= #], the attempted action worked. Re-roll ties on opposed rolls. The degree of Success is important for some rolls.'
-    	],
+    	['If [Result >= #], the attempted action worked. Re-roll ties on opposed rolls. The degree of Success is important for some rolls.'],
     	[RoteActions, Cooperation]
     );
 
     const Fail = new Rule(
     	'Fail',
-    	[
-    		'If [Result < #], the attempted action did not work.'
-    	]
+    	['If [Result < #], the attempted action did not work.']
     );
 
     const Explode = new Rule(
     	'Explode',
-    	[
-    		`If a 6 is rolled, re-roll it again and again as long as 6's continue. Add all of these d6 rolls together, then calculate your Result.`
-    	]
+    	[`If a 6 is rolled, re-roll it again and again as long as 6's continue. Add all of these d6 rolls together, then calculate your Result.`]
     );
 
     const Botch = new Rule(
@@ -9704,9 +9532,9 @@ var app = (function () {
     	}
     }
 
-    /* src/components/rules/CoverTable.svelte generated by Svelte v3.16.5 */
+    /* src/components/rules/tables/CoverTable.svelte generated by Svelte v3.16.5 */
 
-    const file$c = "src/components/rules/CoverTable.svelte";
+    const file$c = "src/components/rules/tables/CoverTable.svelte";
 
     function create_fragment$e(ctx) {
     	let table;
@@ -9908,131 +9736,95 @@ var app = (function () {
 
     const Bleeding = new Rule(
     	`Bleeding`, 
-    	[
-    		`When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`
-    	]
+    	[`When you take Wounds = [Health / 2] or more, you begin taking an additional 1 Wound per minute. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`]
     );
 
     const Burning = new Rule(
     	`Burning`, 
-    	[
-    		`1 FDMG per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`
-    	]
+    	[`1 FDMG per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`]
     );
 
     const Chase = new Rule(
     	`Chase`, 
-    	[
-    		`Roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each rnd. Chase ends when one side gets 3 Successes over the other.`
-    	]
+    	[`Roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each rnd. Chase ends when one side gets 3 Successes over the other.`]
     );
 
     const Concealed = new Rule(
     	`Concealed`, 
-    	[
-    		`If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected. Targets are Defenseless against ATKs from Concealed opponents.`
-    	]
+    	[`If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected. Targets are Defenseless against ATKs from Concealed opponents.`]
     );
 
     const Cover = new Rule(
     	`Cover`, 
-    	[
-    		`You can lean in and out of Cover to ATK as part of an Action. All Cover except Glass makes you Concealed. If an opponent Waits until you lean out of Cover, they must make a Called Shot to hit an exposed Location. All DMG is negated against targets that are behind Cover if the Material DR is >= the weapon’s base DMG. If weapon DMG exceeds the Material DR, the Material DR acts as an Armor bonus for DMG reduction.`
-    	],
+    	[`You can lean in and out of Cover to ATK as part of an Action. All Cover except Glass makes you Concealed. If an opponent Waits until you lean out of Cover, they must make a Called Shot to hit an exposed Location. All DMG is negated against targets that are behind Cover if the Material DR is >= the weapon’s base DMG. If weapon DMG exceeds the Material DR, the Material DR acts as an Armor bonus for DMG reduction.`],
     	[],
     	CoverTable
     );
 
     const Defenseless = new Rule(
     	`Defenseless`, 
-    	[
-    		`Use Reflex [Perception / 2] for DEF.`
-    	]
+    	[`Use Reflex [Perception / 2] for DEF.`]
     );
 
     const Falling = new Rule(
     	`Falling`, 
-    	[
-    		`1 Wound per 2yds. Roll [Acrobatics # = yds] as a Defense Action to halve Falling DMG.`
-    	]
+    	[`1 Wound per 2yds. Roll [Acrobatics # = yds] as a Defense Action to halve Falling DMG.`]
     );
 
     const FriendlyFire = new Rule(
     	`Friendly Fire`, 
-    	[
-    		`-3 RATK against targets within 1yd of your ally. If the RATK Fails, re-roll the RATK vs the ally’s Reflex.`
-    	]
+    	[`-3 RATK against targets within 1yd of your ally. If the RATK Fails, re-roll the RATK vs the ally’s Reflex.`]
     );
 
     const OffHand = new Rule(
     	`Off-Hand`, 
-    	[
-    		`-3 penalty to ATK with your Off-Hand.`
-    	]
+    	[`-3 penalty to ATK with your Off-Hand.`]
     );
 
     const Prone = new Rule(
     	`Prone`, 
-    	[
-    		`You may drop Prone as part of your Movement. Standing up costs 1AP. +1 RATK. +3 Stealth. Speed 1yd.`
-    	]
+    	[`You may drop Prone as part of your Movement. Standing up costs 1AP. +1 RATK. +3 Stealth. Speed 1yd.`]
     );
 
     const Range = new Rule(
     	`Range`, 
-    	[
-    		`RATKs take a -1 penalty per additional RNG increment. MATKs take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`
-    	]
+    	[`RATKs take a -1 penalty per additional RNG increment. MATKs take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`]
     );
 
     const Stun = new Rule(
     	`Stun`, 
-    	[
-    		`Defenseless and cannot take Actions. Prone if [Stunned > 1rnd].`
-    	]
+    	[`Defenseless and cannot take Actions. Prone if [Stunned > 1rnd].`]
     );
 
     const Suffocation = new Rule(
     	`Suffocation`, 
-    	[
-    		`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [C] is lethal.`
-    	]
+    	[`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [C] is lethal.`]
     );
 
     const Unarmed = new Rule(
     	`Unarmed`, 
-    	[
-    		`If the target is conscious, the target rolls C vs DMG to avoid being knocked Unconscious. If the target is Unconscious, the target takes DMG = Melee score. DR is not depleted.`
-    	]
+    	[`If the target is conscious, the target rolls C vs DMG to avoid being knocked Unconscious. If the target is Unconscious, the target takes DMG = Melee score. DR is not depleted.`]
     );
 
     const Unconscious = new Rule(
     	`Unconscious`, 
-    	[
-    		`Unaware and unable to take Actions. 0 DEF. Prone.`
-    	]
+    	[`Unaware and unable to take Actions. 0 DEF. Prone.`]
     );
 
     const Unstable = new Rule(
     	`Unstable`, 
-    	[
-    		`-3 penalty to physical rolls. -3 to RATKs at or from you.`
-    	]
+    	[`-3 penalty to physical rolls. -3 to RATKs at or from you.`]
     );
 
     const Visibility = new Rule(
     	`Visibility`, 
-    	[
-    		`-1 to -6 (Blind) to sight-based rolls, including ATK and DEF.`
-    	]
+    	[`-1 to -6 (Blind) to sight-based rolls, including ATK and DEF.`]
     );
 
 
     const Needs = new Rule(
     	`Needs`, 
-    	[
-    		`1 Pain for each lacking Need over a given period of time:`
-    	]
+    	[`1 Pain for each lacking Need over a given period of time:`]
     	[Suffocation]
     );
 
@@ -10061,121 +9853,87 @@ var app = (function () {
 
     const Attack = new Rule(
     	`Attack`, 
-    	[
-    		`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF). Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`
-    	]
+    	[`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF). Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`]
     );
 
     const Burning$1 = new Rule(
     	`Burning`, 
-    	[
-    		`If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`
-    	]
+    	[`If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`]
     );
 
     const Communication = new Rule(
     	`Communication`, 
-    	[
-    		`You can speak or shout up to 6 words per round.`
-    	]
+    	[`You can speak or shout up to 6 words per round.`]
     );
 
     const Conditions = new Rule(
     	`Conditions`, 
-    	[
-    		`-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`
-    	]
+    	[`-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`]
     );
 
     const DamageReduction = new Rule(
     	`Damage Reduction`, 
-    	[
-    		`DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`
-    	]
+    	[`DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`]
     );
 
     const FireDamage = new Rule(
     	`Fire Damage`, 
-    	[
-    		`Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces FDMG.`
-    	]
+    	[`Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces FDMG.`]
     );
 
     const Initiative = new Rule(
     	`Initiative`, 
-    	[
-    		`Everyone in combat rolls [d6 + A] to determine the turn order at the start of each new rnd.`
-    	]
+    	[`Everyone in combat rolls [d6 + A] to determine the turn order at the start of each new rnd.`]
     );
 
     const Movement = new Rule(
     	`Movement`, 
-    	[
-    		`Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`
-    	]
+    	[`Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`]
     );
 
     const Occupants = new Rule(
     	`Occupants`, 
-    	[
-    		`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`
-    	]
+    	[`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`]
     );
 
     const Pain = new Rule(
     	`Pain`, 
-    	[
-    		`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if [Pain > D].`
-    	]
+    	[`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain. You go unconscious if [Pain > D].`]
     );
 
     const Pedestrians = new Rule(
     	`Pedestrians`, 
-    	[
-    		`Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`
-    	]
+    	[`Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`]
     );
 
     const Prepare = new Rule(
     	`Prepare`, 
-    	[
-    		`You may spend 1 Action on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, you can continue holding that Prepared Action.`
-    	]
+    	[`You may spend 1 Action on your turn to declare and hold a specific Action to occur on a later turn to preempt a triggering event that you describe. Prepared Actions resolve before other Actions in the order that they are triggered. You may choose to abandon a Prepared Action at any time. If you are still waiting with a Prepared Action on your next turn, you can continue holding that Prepared Action.`]
     );
 
     const Recovery = new Rule(
     	`Recovery`, 
-    	[
-    		`After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 Wound from infection.`
-    	]
+    	[`After a day of rest, roll [C vs total Wounds] to heal 1HP. On a Fail, take 1 Wound from infection.`]
     );
 
     const Reflex = new Rule(
     	`Reflex`, 
-    	[
-    		`[Perception / 2]. This is your default DEF. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`
-    	]
+    	[`[Perception / 2]. This is your default DEF. Reflex is never rolled. It is a static Difficulty for enemy ATKs.`]
     );
 
     const Rounds = new Rule(
     	`Rounds`, 
-    	[
-    		`Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd.`
-    	]
+    	[`Combat time occurs in 3-second “rounds” (rnds). Each Player gets a turn each rnd.`]
     );
 
     const Tires = new Rule(
     	`Tires`, 
-    	[
-    		`Roll [-3 ATK vs Drive(Stunt)] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`
-    	]
+    	[`Roll [-3 ATK vs Drive(Stunt)] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck. If a front tire gets destroyed, the vehicle Wrecks automatically.`]
     );
 
     const Wreck = new Rule(
     	`Wreck`, 
-    	[
-    		`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`
-    	]
+    	[`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`]
     );
 
 
@@ -10183,31 +9941,31 @@ var app = (function () {
 
     const Actions = new Rule(
     	`Actions`, 
-    	`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`, 
+    	[`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`], 
     	[Prepare]
     );
 
     const Damage = new Rule(
     	`Damage`, 
-    	`Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`, 
+    	[`Damage causes Wounds, which could eventually kill you. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`],
     	[DamageReduction, FireDamage, Pain]
     );
 
     const Defense = new Rule(
     	`Defense`, 
-    	`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`, 
+    	[`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must use Reflex for DEF.`], 
     	[Reflex]
     );
 
     const Health = new Rule(
     	`Health`, 
-    	`[C x 2]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`, 
+    	[`[C x 2]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding when you take Wounds = [Health / 2] and you die when you take Wounds = Health.`],
     	[Bleeding, Recovery]
     );
 
     const Vehicles = new Rule(
     	`Vehicles`, 
-    	`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`, 
+    	[`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`],
     	[Conditions, Occupants, Pedestrians, Tires, Wreck, Burning$1]
     );
 
@@ -10357,9 +10115,9 @@ var app = (function () {
     	}
     }
 
-    /* src/components/rules/CalledShotTable.svelte generated by Svelte v3.16.5 */
+    /* src/components/rules/tables/CalledShotTable.svelte generated by Svelte v3.16.5 */
 
-    const file$e = "src/components/rules/CalledShotTable.svelte";
+    const file$e = "src/components/rules/tables/CalledShotTable.svelte";
 
     function create_fragment$g(ctx) {
     	let table;
@@ -10552,187 +10310,135 @@ var app = (function () {
 
     const AggressivePosture = new Rule(
     	`Aggressive Posture`, 
-    	[
-    		`Get 1 extra Action (for a total of 3) at the cost of leaving yourself Defenseless until your next turn.`
-    	]
+    	[`Get 1 extra Action (for a total of 3) at the cost of leaving yourself Defenseless until your next turn.`]
     );
 
     const Aim = new Rule(
     	`Aim`, 
-    	[
-    		`Spend an Action to get +3 to your next ATK against a specific target.`
-    	]
+    	[`Spend an Action to get +3 to your next ATK against a specific target.`]
     );
 
     const Block = new Rule(
     	`Block`, 
-    	[
-    		`Roll [Melee vs MATK or RATK when using a Shield] for DEF.`
-    	]
+    	[`Roll [Melee vs MATK or RATK when using a Shield] for DEF.`]
     );
 
     const CalledShot = new Rule(
     	`Called Shot`, 
-    	[
-    		`ATKs target the Torso by default. A Called Shot is an ATK targeting the Head, Arms, or Legs with added effects based on Location.`
-    	],
+    	[`ATKs target the Torso by default. A Called Shot is an ATK targeting the Head, Arms, or Legs with added effects based on Location.`],
     	[],
     	CalledShotTable
     );
 
     const DefensivePosture = new Rule(
     	`Defensive Posture`, 
-    	[
-    		`Skip your turn to get 1 extra Defense Action (for a total of 3) until your next turn.`
-    	]
+    	[`Skip your turn to get 1 extra Defense Action (for a total of 3) until your next turn.`]
     );
 
     const Disarm = new Rule(
     	`Disarm`, 
-    	[
-    		`Roll [MATK vs Melee (+ C if the weapon is used two-handed)]. The weapon flies d6 yds away. Attacker gets the weapon if Unarmed.`
-    	]
+    	[`Roll [MATK vs Melee (+ C if the weapon is used two-handed)]. The weapon flies d6 yds away. Attacker gets the weapon if Unarmed.`]
     );
 
     const Distract = new Rule(
     	`Distract`,
-    	[
-    		`Roll [Perform vs Perception]. Stun target for 1rnd.`
-    	]
+    	[`Roll [Perform vs Perception]. Stun target for 1rnd.`]
     );
 
     const Dodge = new Rule(
     	`Dodge`, 
-    	[
-    		`Roll [Acrobatics vs MATK or RATK (Throw)] for DEF.`
-    	]
+    	[`Roll [Acrobatics vs MATK or RATK (Throw)] for DEF.`]
     );
 
     const Duck = new Rule(
     	`Duck`, 
-    	[
-    		`Roll [Dodge vs ATK] to move up to your Speed to get behind Cover. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`
-    	]
+    	[`Roll [Dodge vs ATK] to move up to your Speed to get behind Cover. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`]
     );
 
     const Encourage = new Rule(
     	`Encourage`,
-    	[
-    		`Roll [Leadership vs groups’ total D scores]. The group gets a bonus = [your D] for one specific roll each. A Botch is -1 to all rolls.`
-    	]
+    	[`Roll [Leadership vs groups’ total D scores]. The group gets a bonus = [your D] for one specific roll each. A Botch is -1 to all rolls.`]
     );
 
     const Hide = new Rule(
     	`Hide`, 
-    	[
-    		`Roll [Stealth vs Perception] to be Concealed. 0 Speed. +3 if Prone.`
-    	]
+    	[`Roll [Stealth vs Perception] to be Concealed. 0 Speed. +3 if Prone.`]
     );
 
     const Hold = new Rule(
     	`Hold`,
-    	[
-    		`Block ATKs using a Grabbed enemy as a Shield.`
-    	]
+    	[`Block ATKs using a Grabbed enemy as a Shield.`]
     );
 
     const Interrogate = new Rule(
     	`Interrogate`,
-    	[
-    		`Roll [Leadership vs D] to get information out of a subject who does not want to help, but without resorting to violence. Each roll takes d6 mins of conversation. If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly). If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts. After Fails = [D], the interrogator gives up or the subject cracks and tells everything they know.`
-    	]
+    	[`Roll [Leadership vs D] to get information out of a subject who does not want to help, but without resorting to violence. Each roll takes d6 mins of conversation. If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly). If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts. After Fails = [D], the interrogator gives up or the subject cracks and tells everything they know.`]
     );
 
     const Negotiate = new Rule(
     	`Negotiate`,
-    	[
-    		`If opposed parties are willing to talk out their differences, each side start with a list of demands. Roll [Socialize vs Socialize] once per demand. Attitude and situational modifiers should be applied by the GN. Success means you get your demand and the opposed negotiator concedes. Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`
-    	]
+    	[`If opposed parties are willing to talk out their differences, each side start with a list of demands. Roll [Socialize vs Socialize] once per demand. Attitude and situational modifiers should be applied by the GN. Success means you get your demand and the opposed negotiator concedes. Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`]
     );
 
     const Protect = new Rule(
     	`Protect`, 
-    	[
-    		`Become the new target of all ATKs targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the ATK.`
-    	]
+    	[`Become the new target of all ATKs targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the ATK.`]
     );
 
     const Push = new Rule(
     	`Push`,
-    	[
-    		`Roll [C vs C] to push an enemy in front of you as you move up to [C] yds. 0DMG.`
-    	]
+    	[`Roll [C vs C] to push an enemy in front of you as you move up to [C] yds. 0DMG.`]
     );
 
     const Recruit = new Rule(
     	`Recruit`,
-    	[
-    		`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and situational modifiers should be applied by the GN.`
-    	]
+    	[`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and situational modifiers should be applied by the GN.`]
     );
 
     const Reload = new Rule(
     	`Reload`,
-    	[
-    		`Replace a magazine or a single piece of ammunition (depending on the weapon) in a Ranged weapon.`
-    	]
+    	[`Replace a magazine or a single piece of ammunition (depending on the weapon) in a Ranged weapon.`]
     );
 
     const Shove = new Rule(
     	`Shove`,
-    	[
-    		`Roll [MATK vs C] to shove an enemy up to [C/2] yds away from you, knocking them Prone. 0DMG.`
-    	]
+    	[`Roll [MATK vs C] to shove an enemy up to [C/2] yds away from you, knocking them Prone. 0DMG.`]
     );
 
     const Sneak = new Rule(
     	`Sneak`, 
-    	[
-    		`Roll [Stealth vs Perception] to move Concealed at [Speed / 2].`
-    	]
+    	[`Roll [Stealth vs Perception] to move Concealed at [Speed / 2].`]
     );
 
     const Tackle = new Rule(
     	`Tackle`,
-    	[
-    		`Roll [C vs C] to go Prone with Grabbed enemy.`
-    	]
+    	[`Roll [C vs C] to go Prone with Grabbed enemy.`]
     );
 
     const Taunt = new Rule(
     	`Taunt`,
-    	[
-    		`Roll [Leadership vs D]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1rnd if [penalty > enemy’s D].`
-    	]
+    	[`Roll [Leadership vs D]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1rnd if [penalty > enemy’s D].`]
     );
 
     const Throw = new Rule(
     	`Throw`,
-    	[
-    		`Throw a Grabbed enemy up to [C] yds and they take Falling DMG. Prone.`
-    	]
+    	[`Throw a Grabbed enemy up to [C] yds and they take Falling DMG. Prone.`]
     );
 
     const Torture = new Rule(
     	`Torture`,
-    	[
-    		`Roll [Medicine vs prisoner’s C] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 DMG to the captive. Roll [D vs D] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`
-    	]
+    	[`Roll [Medicine vs prisoner’s C] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 DMG to the captive. Roll [D vs D] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`]
     );
 
     const Trip = new Rule(
     	`Trip`,
-    	[
-    		`Roll [MATK vs A] to knock an enemy Prone. 1DMG.`
-    	]
+    	[`Roll [MATK vs A] to knock an enemy Prone. 1DMG.`]
     );
 
 
     const Grab = new Rule(
     	`Grab`,
-    	[
-    		`0DMG MATK to render an enemy Defenseless and unable to take actions except attempting escape [(Acrobatics or Melee) vs Grab]. You must have a free hand to Grab. Spend 1 Action per rnd to retain a Grab.`
-    	],
+    	[`0DMG MATK to render an enemy Defenseless and unable to take actions except attempting escape [(Acrobatics or Melee) vs Grab]. You must have a free hand to Grab. Spend 1 Action per rnd to retain a Grab.`],
     	[Hold, Tackle, Throw]
     );
 

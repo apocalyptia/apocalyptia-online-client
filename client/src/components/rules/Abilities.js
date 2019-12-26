@@ -18,46 +18,34 @@ class Ability extends Rule {
 
 export const FavoriteWeapon = new Ability(
 	`Favorite Weapon`,
-	[
-		`Botch is only a Fail with this one weapon.`
-	],
+	[`Botch is only a Fail with this one weapon.`],
 	1, 3, 0, ``,
 	WeaponList
 )
 export const HyperImmunity = new Ability(
 	`Hyper Immunity`,
-	[
-		`+1 to resist Diseases.`
-	],
+	[`+1 to resist Diseases.`],
 	3, 3, 0, ``
 )
 export const PackMentality = new Ability(
 	`Pack Mentality`,
-	[
-		`+1 ATK at a target a Comrade ATKs this rnd.`
-	],
+	[`+1 ATK at a target a Comrade ATKs this rnd.`],
 	1, 3, 0, ``
 )
 export const QuickReload = new Ability(
 	`Quick Reload`,
-	[
-		`Free Reload once per rnd.`
-	],
+	[`Free Reload once per rnd.`],
 	1, 3, 0, ``
 )
 export const Specialize = new Ability(
 	`Specialize`,
-	[
-		`+1 to a Skill Specialty.`
-	],
+	[`+1 to a Skill Specialty.`],
 	1, 3, 0, ``,
 	SpecialtyList
 )
 export const WeaponTraining = new Ability(
 	`Weapon Training`,
-	[
-		`+1 ATK for a specific weapon.`
-	],
+	[`+1 ATK for a specific weapon.`],
 	1, 3, 0, ``,
 	WeaponList
 )
@@ -75,38 +63,28 @@ export const XP3Abilities = [
 
 export const EfficientWork = new Ability(
 	`Efficient Work`,
-	[
-		`[Time / 2] for a Skill (minimum 1 action).`
-	],
+	[`[Time / 2] for a Skill (minimum 1 action).`],
 	1, 6, 0, ``,
 	SkillList
 )
 export const FastDraw = new Ability(
 	`Fast Draw`,
-	[
-		`Free item draw once per rnd.`
-	],
+	[`Free item draw once per rnd.`],
 	1, 6, 0, ``
 )
 export const FleetFooted = new Ability(
 	`Fleet Footed`,
-	[
-		`+1 Speed.`
-	],
+	[`+1 Speed.`],
 	3, 6, 0, ``
 )
 export const Multilingual = new Ability(
 	`Multilingual*`,
-	[
-		`Learn a different form of communication.`
-	],
+	[`Learn a different form of communication.`],
 	9, 6, 0, ``
 )  // Make a list or make an input box?
 export const Practice = new Ability(
 	`Practice`,
-	[
-		`+1 to a Skill (up to the parent Trait).`
-	],
+	[`+1 to a Skill (up to the parent Trait).`],
 	1, 6, 0, ``,
 	SkillList
 )
@@ -125,37 +103,27 @@ export const XP6Abilities = [
 
 export const DangerSense = new Ability(
 	`Danger Sense`,
-	[
-		`+1 Reflex.`
-	],
+	[`+1 Reflex.`],
 	1, 9, 0, ``
 )
 export const Discipline = new Ability(
 	`Discipline`,
-	[
-		`Ignore 1 Pain penalty.`
-	],
+	[`Ignore 1 Pain penalty.`],
 	3, 9, 0, ``
 )
 export const Fortunate = new Ability(
 	`Fortunate`,
-	[
-		`+1 Luck.`
-	],
+	[`+1 Luck.`],
 	1, 9, 0, ``
 )
 export const FreeRunning = new Ability(
 	`Free Running`,
-	[
-		`Acrobatics 9# to Climb as a Run action.`
-	],
+	[`Acrobatics 9# to Climb as a Run action.`],
 	1, 9, 0, ``
 )
 export const Unorthodox = new Ability(
 	`Unorthodox*`,
-	[
-		`Pick a new parent Trait for a Skill.`
-	],
+	[`Pick a new parent Trait for a Skill.`],
 	1, 9, 0, ``,
 	[SkillList, TraitList]
 )  // Need to figure this out. Maybe two Options parameters?
@@ -174,23 +142,17 @@ export const XP9Abilities = [
 
 export const Fencing = new Ability(
 	`Fencing`,
-	[
-		`Free Block roll once per rnd.`
-	],
+	[`Free Block roll once per rnd.`],
 	1, 12, 0, ``
 )
 export const Sidestep = new Ability(
 	`Side-step`,
-	[
-		`Free Dodge roll once per rnd.`
-	],
+	[`Free Dodge roll once per rnd.`],
 	1, 12, 0, ``
 )
 export const Wrestling = new Ability(
 	`Wrestling`,
-	[
-		`Free Grab roll once per rnd.`
-	],
+	[`Free Grab roll once per rnd.`],
 	1, 12, 0, ``
 )
 
@@ -204,23 +166,17 @@ export const XP12Abilities = [
 
 export const FirmGrip = new Ability(
 	`Firm Grip`,
-	[
-		`Use 2h weapons in 1h, up to Size 3.`
-	],
+	[`Use 2h weapons in 1h, up to Size 3.`],
 	1, 15, 0, ``
 )
 export const HardHeaded = new Ability(
 	`Hard Headed`,
-	[
-		`Ignore Stun from Head DMG.`
-	],
+	[`Ignore Stun from Head DMG.`],
 	1, 15, 0, ``
 )
 export const PowerfulStrike = new Ability(
 	`Powerful Strike*`,
-	[
-		`+1 DMG for a specific Melee weapon.`
-	],
+	[`+1 DMG for a specific Melee weapon.`],
 	1, 15, 0, ``,
 	MeleeList
 )
@@ -235,16 +191,12 @@ export const XP15Abilities = [
 
 export const Assassin = new Ability(
 	`Assassin`,
-	[
-		`+3 DMG to ATKs from Concealment.`
-	],
+	[`+3 DMG to ATKs from Concealment.`],
 	1, 18, 0, ``
 )
 export const VehicleOperation = new Ability(
 	`Vehicle Operation*`,
-	[
-		`Proficiently operate a class of vehicle.`
-	],
+	[`Proficiently operate a class of vehicle.`],
 	1, 18, 0, ``
 ) // Need to add VehicleList when it is made
 
@@ -257,16 +209,12 @@ export const XP18Abilities = [
 
 export const Ambidextrous = new Ability(
 	`Ambidextrous`,
-	[
-		`Off-hand penalty is -1 instead of -3.`
-	],
+	[`Off-hand penalty is -1 instead of -3.`],
 	1, 24, 0, ``
 )
 export const Tough = new Ability(
 	`Tough`,
-	[
-		`+1 Health.`
-	],
+	[`+1 Health.`],
 	3, 24, 0, ``
 )
 
@@ -279,16 +227,12 @@ export const XP24Abilities = [
 
 export const SelfImprovement = new Ability(
 	`Self Improvement*`,
-	[
-		`+1 to a Trait (max 6).`
-	],
+	[`+1 to a Trait (max 6).`],
 	3, 30, 0, ``
 )
 export const SecondChance = new Ability(
 	`Second Chance`,
-	[
-		`Spend this Ability to avoid Death once.`
-	],
+	[`Spend this Ability to avoid Death once.`],
 	9, 30, 0, ``
 )
 
