@@ -19,6 +19,7 @@
 			countTraitPoints(event)
 		}
 		setSkillMax()
+		$character.updateProps()
 	}
 
 	const setSkillMax = () => {

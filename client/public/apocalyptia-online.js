@@ -3999,6 +3999,7 @@ var app = (function () {
     				score: 1,
     				set: () => {
     					this.traits.agility.score = this.traits.agility.base + this.traits.agility.mods;
+    					return this.traits.agility.score
     				},
     			},
     			brains: {
@@ -4009,6 +4010,7 @@ var app = (function () {
     				score: 1,
     				set: () => {
     					this.traits.brains.score =  this.traits.brains.base + this.traits.brains.mods;
+    					return this.traits.brains.score
     				},
     			},
     			constitution: {
@@ -4019,6 +4021,7 @@ var app = (function () {
     				score: 1,
     				set: () => {
     					this.traits.constitution.score = this.traits.constitution.base + this.traits.constitution.mods;
+    					return this.traits.constitution.score
     				},
     			},
     			demeanor: {
@@ -4029,6 +4032,7 @@ var app = (function () {
     				score: 1,
     				set: () => {
     					this.traits.demeanor.score = this.traits.demeanor.base + this.traits.demeanor.mods;
+    					return this.traits.demeanor.score
     				},
     			},
     		},
@@ -4042,6 +4046,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.acrobatics.score = this.skills.acrobatics.base + this.skills.acrobatics.mods;
+    					return this.skills.acrobatics.score
     				},
     			},
     			athletics: {
@@ -4053,6 +4058,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.athletics.score = this.skills.athletics.base + this.skills.athletics.mods;
+    					return this.skills.athletics.score
     				},
     			},
     			build: {
@@ -4064,6 +4070,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.build.score = this.skills.build.base + this.skills.build.mods;
+    					return this.skills.build.score
     				},
     			},
     			drive: {
@@ -4075,6 +4082,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.drive.score = this.skills.drive.base + this.skills.drive.mods;
+    					return this.skills.drive.score
     				},
     			},
     			larceny: {
@@ -4086,6 +4094,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.larceny.score = this.skills.larceny.base + this.skills.larceny.mods;
+    					return this.skills.larceny.score
     				},
     			},
     			leadership: {
@@ -4097,6 +4106,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.leadership.score = this.skills.leadership.base + this.skills.leadership.mods;
+    					return this.skills.leadership.score
     				},
     			},
     			medicine: {
@@ -4108,6 +4118,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.medicine.score = this.skills.medicine.base + this.skills.medicine.mods;
+    					return this.skills.medicine.score
     				},
     			},
     			melee: {
@@ -4119,6 +4130,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.melee.score = this.skills.melee.base + this.skills.melee.mods;
+    					return this.skills.melee.score
     				},
     			},
     			perception: {
@@ -4130,6 +4142,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.perception.score = this.skills.perception.base + this.skills.perception.mods;
+    					return this.skills.perception.score
     				},
     			},
     			perform: {
@@ -4141,6 +4154,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.perform.score = this.skills.perform.base + this.skills.perform.mods;
+    					return this.skills.perform.score
     				},
     			},
     			ranged: {
@@ -4152,6 +4166,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.ranged.score = this.skills.ranged.base + this.skills.ranged.mods;
+    					return this.skills.ranged.score
     				},
     			},
     			science: {
@@ -4163,6 +4178,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.science.score = this.skills.science.base + this.skills.science.mods;
+    					return this.skills.science.score
     				},
     			},
     			socialize: {
@@ -4174,6 +4190,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.socialize.score = this.skills.socialize.base + this.skills.socialize.mods;
+    					return this.skills.socialize.score
     				},
     			},
     			stealth: {
@@ -4185,6 +4202,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.stealth.score = this.skills.stealth.base + this.skills.stealth.mods;
+    					return this.skills.stealth.score
     				},
     			},
     			survival: {
@@ -4196,6 +4214,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.survival.score = this.skills.survival.base + this.skills.survival.mods;
+    					return this.skills.survival.score
     				},
     			},
     			tame: {
@@ -4207,6 +4226,7 @@ var app = (function () {
     				score: 0,
     				set: () => {
     					this.skills.tame.score = this.skills.tame.base + this.skills.tame.mods;
+    					return this.skills.tame.score
     				},
     			},
     		},
@@ -4217,8 +4237,9 @@ var app = (function () {
     				mods: 0,
     				score: 0,
     				set: () => {
-    					this.props.block.base = this.skills.melee.set;
+    					this.props.block.base = this.skills.melee.set();
     					this.props.block.score = this.props.block.base + this.props.block.mods;
+    					return this.props.block.score
     				}
     			},
     			dodge: {
@@ -4227,8 +4248,9 @@ var app = (function () {
     				mods: 0,
     				score: 0,
     				set: () => {
-    					this.props.dodge.base = this.skills.acrobatics.set;
+    					this.props.dodge.base = this.skills.acrobatics.set();
     					this.props.dodge.score = this.props.dodge.base + this.props.dodge.mods;
+    					return this.props.dodge.score
     				}
     			},
     			health: {
@@ -4237,8 +4259,9 @@ var app = (function () {
     				mods: 0,
     				score: 2,
     				set: () => {
-    					this.props.health.base = this.traits.constitution.set * 2;
+    					this.props.health.base = this.traits.constitution.set() * 2;
     					this.props.health.score = this.props.health.base + this.props.health.mods;
+    					return this.props.health.score
     				}
     			},
     			init: {
@@ -4247,8 +4270,9 @@ var app = (function () {
     				mods: 0,
     				score: 1,
     				set: () => {
-    					this.props.init.base = this.traits.agility.set;
+    					this.props.init.base = this.traits.agility.set();
     					this.props.init.score = this.props.init.base + this.props.init.mods;
+    					return this.props.init.score
     				}
     			},
     			luck: {
@@ -4257,8 +4281,9 @@ var app = (function () {
     				mods: 0,
     				score: 1,
     				set: () => {
-    					this.props.luck.base = this.traits.demeanor.set;
+    					this.props.luck.base = this.traits.demeanor.set();
     					this.props.luck.score = this.props.luck.base + this.props.luck.mods;
+    					return this.props.luck.score
     				}
     			},
     			psyche: {
@@ -4267,8 +4292,9 @@ var app = (function () {
     				mods: 0,
     				score: 2,
     				set: () => {
-    					this.props.psyche.base = this.traits.demeanor.set * 2;
+    					this.props.psyche.base = this.traits.demeanor.set() * 2;
     					this.props.psyche.score = this.props.psyche.base + this.props.psyche.mods;
+    					return this.props.psyche.score
     				}
     			},
     			reflex: {
@@ -4277,8 +4303,9 @@ var app = (function () {
     				mods: 0,
     				score: 0,
     				set: () => {
-    					this.props.reflex.base = Math.floor(this.skills.perception.set / 2);
+    					this.props.reflex.base = Math.floor(this.skills.perception.set() / 2);
     					this.props.reflex.score = this.props.reflex.base + this.props.reflex.mods;
+    					return this.props.reflex.score
     				}
     			},
     			speed: {
@@ -4287,8 +4314,9 @@ var app = (function () {
     				mods: 0,
     				score: 2,
     				set: () => {
-    					this.props.speed.base = this.traits.agility.set + this.traits.constitution.set;
+    					this.props.speed.base = this.traits.agility.set() + this.traits.constitution.set();
     					this.props.speed.score = this.props.speed.base + this.props.speed.mods;
+    					return this.props.speed.score
     				}
     			},
     			xp: {
@@ -4297,8 +4325,9 @@ var app = (function () {
     				mods: 0,
     				score: 6,
     				set: () => {
-    					this.props.xp.base = this.traits.brains.set * 6;
+    					this.props.xp.base = this.traits.brains.set() * 6;
     					this.props.xp.score = this.props.xp.base + this.props.xp.mods;
+    					return this.props.xp.score
     				}
     			},
     		},
@@ -4323,9 +4352,8 @@ var app = (function () {
     		};
     	}
     	updateProps() {
-    		console.log('props updated');
     		let props = Object.keys(this.props);
-    		props.forEach((prop) => { this.props[prop].set; });
+    		props.forEach((prop) => { this.props[prop].set(); });
     	}
     }
 
@@ -4817,7 +4845,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (42:1) {#each traits as trait}
+    // (43:1) {#each traits as trait}
     function create_each_block$1(ctx) {
     	let div10;
     	let div0;
@@ -4881,36 +4909,36 @@ var app = (function () {
     			div7.textContent = "6";
     			t14 = space();
     			attr_dev(span, "class", "stat-label svelte-1i3rsgc");
-    			add_location(span, file$3, 44, 4, 1145);
+    			add_location(span, file$3, 45, 4, 1172);
     			attr_dev(div0, "class", "stat-column name-column svelte-1i3rsgc");
-    			add_location(div0, file$3, 43, 3, 1103);
+    			add_location(div0, file$3, 44, 3, 1130);
     			attr_dev(input, "class", "slider-input svelte-1i3rsgc");
     			attr_dev(input, "type", "range");
     			attr_dev(input, "name", input_name_value = /*$character*/ ctx[1].traits[/*trait*/ ctx[7]].name.toLowerCase());
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", "6");
     			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[0] < 0);
-    			add_location(input, file$3, 48, 5, 1295);
+    			add_location(input, file$3, 49, 5, 1322);
     			attr_dev(div1, "class", "stat-input svelte-1i3rsgc");
-    			add_location(div1, file$3, 47, 4, 1265);
+    			add_location(div1, file$3, 48, 4, 1292);
     			attr_dev(div2, "class", "svelte-1i3rsgc");
-    			add_location(div2, file$3, 60, 5, 1629);
+    			add_location(div2, file$3, 61, 5, 1656);
     			attr_dev(div3, "class", "svelte-1i3rsgc");
-    			add_location(div3, file$3, 61, 5, 1647);
+    			add_location(div3, file$3, 62, 5, 1674);
     			attr_dev(div4, "class", "svelte-1i3rsgc");
-    			add_location(div4, file$3, 62, 5, 1665);
+    			add_location(div4, file$3, 63, 5, 1692);
     			attr_dev(div5, "class", "svelte-1i3rsgc");
-    			add_location(div5, file$3, 63, 5, 1683);
+    			add_location(div5, file$3, 64, 5, 1710);
     			attr_dev(div6, "class", "svelte-1i3rsgc");
-    			add_location(div6, file$3, 64, 5, 1701);
+    			add_location(div6, file$3, 65, 5, 1728);
     			attr_dev(div7, "class", "svelte-1i3rsgc");
-    			add_location(div7, file$3, 65, 5, 1719);
+    			add_location(div7, file$3, 66, 5, 1746);
     			attr_dev(div8, "class", "stat-input svelte-1i3rsgc");
-    			add_location(div8, file$3, 59, 4, 1599);
+    			add_location(div8, file$3, 60, 4, 1626);
     			attr_dev(div9, "class", "stat-column value-column svelte-1i3rsgc");
-    			add_location(div9, file$3, 46, 3, 1222);
+    			add_location(div9, file$3, 47, 3, 1249);
     			attr_dev(div10, "class", "stat-block svelte-1i3rsgc");
-    			add_location(div10, file$3, 42, 2, 1075);
+    			add_location(div10, file$3, 43, 2, 1102);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
@@ -4969,7 +4997,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(42:1) {#each traits as trait}",
+    		source: "(43:1) {#each traits as trait}",
     		ctx
     	});
 
@@ -5011,14 +5039,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$3, 36, 2, 950);
+    			add_location(h2, file$3, 37, 2, 977);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$3, 35, 1, 923);
-    			add_location(h3, file$3, 39, 2, 1001);
+    			add_location(div0, file$3, 36, 1, 950);
+    			add_location(h3, file$3, 40, 2, 1028);
     			attr_dev(div1, "class", "remaining svelte-1i3rsgc");
-    			add_location(div1, file$3, 38, 1, 975);
+    			add_location(div1, file$3, 39, 1, 1002);
     			attr_dev(div2, "class", "traits-step");
-    			add_location(div2, file$3, 34, 0, 888);
+    			add_location(div2, file$3, 35, 0, 915);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5116,6 +5144,7 @@ var app = (function () {
     		}
 
     		setSkillMax();
+    		$character.updateProps();
     	};
 
     	const setSkillMax = () => {
@@ -5190,7 +5219,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (44:4) {#if group.visible}
+    // (45:4) {#if group.visible}
     function create_if_block$1(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*skills*/ ctx[3];
@@ -5249,14 +5278,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(44:4) {#if group.visible}",
+    		source: "(45:4) {#if group.visible}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (46:6) {#if $character.traits[group.name].name == $character.skills[skill].parent}
+    // (47:6) {#if $character.traits[group.name].name == $character.skills[skill].parent}
     function create_if_block_1$1(ctx) {
     	let br;
     	let t0;
@@ -5328,40 +5357,40 @@ var app = (function () {
     			div8 = element("div");
     			div8.textContent = "6";
     			t17 = space();
-    			add_location(br, file$4, 46, 7, 1361);
+    			add_location(br, file$4, 47, 7, 1388);
     			attr_dev(span, "class", "stat-label svelte-10qxham");
-    			add_location(span, file$4, 49, 9, 1454);
+    			add_location(span, file$4, 50, 9, 1481);
     			attr_dev(div0, "class", "stat-column name-column svelte-10qxham");
-    			add_location(div0, file$4, 48, 8, 1407);
+    			add_location(div0, file$4, 49, 8, 1434);
     			attr_dev(input, "class", "slider-input svelte-10qxham");
     			attr_dev(input, "type", "range");
     			attr_dev(input, "name", input_name_value = /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].name.toLowerCase());
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", "6");
     			attr_dev(input, "invalid", input_invalid_value = /*remaining*/ ctx[1] < 0 || this.value > /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].base);
-    			add_location(input, file$4, 53, 10, 1624);
+    			add_location(input, file$4, 54, 10, 1651);
     			attr_dev(div1, "class", "stat-input svelte-10qxham");
-    			add_location(div1, file$4, 52, 9, 1589);
+    			add_location(div1, file$4, 53, 9, 1616);
     			attr_dev(div2, "class", "svelte-10qxham");
-    			add_location(div2, file$4, 65, 10, 2071);
+    			add_location(div2, file$4, 66, 10, 2098);
     			attr_dev(div3, "class", "svelte-10qxham");
-    			add_location(div3, file$4, 66, 10, 2094);
+    			add_location(div3, file$4, 67, 10, 2121);
     			attr_dev(div4, "class", "svelte-10qxham");
-    			add_location(div4, file$4, 67, 10, 2117);
+    			add_location(div4, file$4, 68, 10, 2144);
     			attr_dev(div5, "class", "svelte-10qxham");
-    			add_location(div5, file$4, 68, 10, 2140);
+    			add_location(div5, file$4, 69, 10, 2167);
     			attr_dev(div6, "class", "svelte-10qxham");
-    			add_location(div6, file$4, 69, 10, 2163);
+    			add_location(div6, file$4, 70, 10, 2190);
     			attr_dev(div7, "class", "svelte-10qxham");
-    			add_location(div7, file$4, 70, 10, 2186);
+    			add_location(div7, file$4, 71, 10, 2213);
     			attr_dev(div8, "class", "svelte-10qxham");
-    			add_location(div8, file$4, 71, 10, 2209);
+    			add_location(div8, file$4, 72, 10, 2236);
     			attr_dev(div9, "class", "stat-input svelte-10qxham");
-    			add_location(div9, file$4, 64, 9, 2036);
+    			add_location(div9, file$4, 65, 9, 2063);
     			attr_dev(div10, "class", "stat-column value-column svelte-10qxham");
-    			add_location(div10, file$4, 51, 8, 1541);
+    			add_location(div10, file$4, 52, 8, 1568);
     			attr_dev(div11, "class", "skill-block svelte-10qxham");
-    			add_location(div11, file$4, 47, 7, 1373);
+    			add_location(div11, file$4, 48, 7, 1400);
 
     			dispose = [
     				listen_dev(input, "change", input_change_input_handler),
@@ -5426,14 +5455,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(46:6) {#if $character.traits[group.name].name == $character.skills[skill].parent}",
+    		source: "(47:6) {#if $character.traits[group.name].name == $character.skills[skill].parent}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:5) {#each skills as skill}
+    // (46:5) {#each skills as skill}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*$character*/ ctx[2].traits[/*group*/ ctx[9].name].name == /*$character*/ ctx[2].skills[/*skill*/ ctx[12]].parent && create_if_block_1$1(ctx);
@@ -5471,14 +5500,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(45:5) {#each skills as skill}",
+    		source: "(46:5) {#each skills as skill}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:2) {#each skillGroups as group}
+    // (40:2) {#each skillGroups as group}
     function create_each_block$2(ctx) {
     	let div1;
     	let div0;
@@ -5506,11 +5535,11 @@ var app = (function () {
     			t2 = space();
     			if (if_block) if_block.c();
     			t3 = space();
-    			add_location(h3, file$4, 41, 5, 1155);
+    			add_location(h3, file$4, 42, 5, 1182);
     			attr_dev(div0, "class", "parent-trait-title svelte-10qxham");
-    			add_location(div0, file$4, 40, 4, 1057);
+    			add_location(div0, file$4, 41, 4, 1084);
     			attr_dev(div1, "class", "trait-section svelte-10qxham");
-    			add_location(div1, file$4, 39, 3, 1025);
+    			add_location(div1, file$4, 40, 3, 1052);
     			dispose = listen_dev(div0, "click", click_handler, false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -5551,7 +5580,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(39:2) {#each skillGroups as group}",
+    		source: "(40:2) {#each skillGroups as group}",
     		ctx
     	});
 
@@ -5595,16 +5624,16 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$4, 32, 2, 867);
+    			add_location(h2, file$4, 33, 2, 894);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$4, 31, 1, 840);
-    			add_location(h3, file$4, 35, 2, 918);
+    			add_location(div0, file$4, 32, 1, 867);
+    			add_location(h3, file$4, 36, 2, 945);
     			attr_dev(div1, "class", "remaining svelte-10qxham");
-    			add_location(div1, file$4, 34, 1, 892);
+    			add_location(div1, file$4, 35, 1, 919);
     			attr_dev(div2, "class", "skill-list svelte-10qxham");
-    			add_location(div2, file$4, 37, 1, 966);
+    			add_location(div2, file$4, 38, 1, 993);
     			attr_dev(div3, "class", "skills-step");
-    			add_location(div3, file$4, 30, 0, 805);
+    			add_location(div3, file$4, 31, 0, 832);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5706,6 +5735,8 @@ var app = (function () {
     			target.value -= 1;
     			countSkillPoints(event);
     		}
+
+    		$character.updateProps();
     	};
 
     	const click_handler = group => $$invalidate(0, skillGroups = HideShow(group, skillGroups));
@@ -5787,7 +5818,6 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			add_location(span0, file$5, 13, 3, 297);
-    			attr_dev(span1, "class", "three-column");
     			add_location(span1, file$5, 14, 3, 343);
     			attr_dev(div, "class", "stat-block");
     			add_location(div, file$5, 12, 2, 269);

@@ -24,6 +24,7 @@
 			target.value -= 1
 			countSkillPoints(event)
 		}
+		$character.updateProps()
 	}
 
 </script>

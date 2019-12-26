@@ -45,6 +45,7 @@ export class Character {
 				score: 1,
 				set: () => {
 					this.traits.agility.score = this.traits.agility.base + this.traits.agility.mods
+					return this.traits.agility.score
 				},
 			},
 			brains: {
@@ -55,6 +56,7 @@ export class Character {
 				score: 1,
 				set: () => {
 					this.traits.brains.score =  this.traits.brains.base + this.traits.brains.mods
+					return this.traits.brains.score
 				},
 			},
 			constitution: {
@@ -65,6 +67,7 @@ export class Character {
 				score: 1,
 				set: () => {
 					this.traits.constitution.score = this.traits.constitution.base + this.traits.constitution.mods
+					return this.traits.constitution.score
 				},
 			},
 			demeanor: {
@@ -75,6 +78,7 @@ export class Character {
 				score: 1,
 				set: () => {
 					this.traits.demeanor.score = this.traits.demeanor.base + this.traits.demeanor.mods
+					return this.traits.demeanor.score
 				},
 			},
 		},
@@ -88,6 +92,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.acrobatics.score = this.skills.acrobatics.base + this.skills.acrobatics.mods
+					return this.skills.acrobatics.score
 				},
 			},
 			athletics: {
@@ -99,6 +104,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.athletics.score = this.skills.athletics.base + this.skills.athletics.mods
+					return this.skills.athletics.score
 				},
 			},
 			build: {
@@ -110,6 +116,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.build.score = this.skills.build.base + this.skills.build.mods
+					return this.skills.build.score
 				},
 			},
 			drive: {
@@ -121,6 +128,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.drive.score = this.skills.drive.base + this.skills.drive.mods
+					return this.skills.drive.score
 				},
 			},
 			larceny: {
@@ -132,6 +140,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.larceny.score = this.skills.larceny.base + this.skills.larceny.mods
+					return this.skills.larceny.score
 				},
 			},
 			leadership: {
@@ -143,6 +152,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.leadership.score = this.skills.leadership.base + this.skills.leadership.mods
+					return this.skills.leadership.score
 				},
 			},
 			medicine: {
@@ -154,6 +164,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.medicine.score = this.skills.medicine.base + this.skills.medicine.mods
+					return this.skills.medicine.score
 				},
 			},
 			melee: {
@@ -165,6 +176,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.melee.score = this.skills.melee.base + this.skills.melee.mods
+					return this.skills.melee.score
 				},
 			},
 			perception: {
@@ -176,6 +188,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.perception.score = this.skills.perception.base + this.skills.perception.mods
+					return this.skills.perception.score
 				},
 			},
 			perform: {
@@ -187,6 +200,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.perform.score = this.skills.perform.base + this.skills.perform.mods
+					return this.skills.perform.score
 				},
 			},
 			ranged: {
@@ -198,6 +212,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.ranged.score = this.skills.ranged.base + this.skills.ranged.mods
+					return this.skills.ranged.score
 				},
 			},
 			science: {
@@ -209,6 +224,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.science.score = this.skills.science.base + this.skills.science.mods
+					return this.skills.science.score
 				},
 			},
 			socialize: {
@@ -220,6 +236,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.socialize.score = this.skills.socialize.base + this.skills.socialize.mods
+					return this.skills.socialize.score
 				},
 			},
 			stealth: {
@@ -231,6 +248,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.stealth.score = this.skills.stealth.base + this.skills.stealth.mods
+					return this.skills.stealth.score
 				},
 			},
 			survival: {
@@ -242,6 +260,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.survival.score = this.skills.survival.base + this.skills.survival.mods
+					return this.skills.survival.score
 				},
 			},
 			tame: {
@@ -253,6 +272,7 @@ export class Character {
 				score: 0,
 				set: () => {
 					this.skills.tame.score = this.skills.tame.base + this.skills.tame.mods
+					return this.skills.tame.score
 				},
 			},
 		},
@@ -263,8 +283,9 @@ export class Character {
 				mods: 0,
 				score: 0,
 				set: () => {
-					this.props.block.base = this.skills.melee.set
+					this.props.block.base = this.skills.melee.set()
 					this.props.block.score = this.props.block.base + this.props.block.mods
+					return this.props.block.score
 				}
 			},
 			dodge: {
@@ -273,8 +294,9 @@ export class Character {
 				mods: 0,
 				score: 0,
 				set: () => {
-					this.props.dodge.base = this.skills.acrobatics.set
+					this.props.dodge.base = this.skills.acrobatics.set()
 					this.props.dodge.score = this.props.dodge.base + this.props.dodge.mods
+					return this.props.dodge.score
 				}
 			},
 			health: {
@@ -283,8 +305,9 @@ export class Character {
 				mods: 0,
 				score: 2,
 				set: () => {
-					this.props.health.base = this.traits.constitution.set * 2
+					this.props.health.base = this.traits.constitution.set() * 2
 					this.props.health.score = this.props.health.base + this.props.health.mods
+					return this.props.health.score
 				}
 			},
 			init: {
@@ -293,8 +316,9 @@ export class Character {
 				mods: 0,
 				score: 1,
 				set: () => {
-					this.props.init.base = this.traits.agility.set
+					this.props.init.base = this.traits.agility.set()
 					this.props.init.score = this.props.init.base + this.props.init.mods
+					return this.props.init.score
 				}
 			},
 			luck: {
@@ -303,8 +327,9 @@ export class Character {
 				mods: 0,
 				score: 1,
 				set: () => {
-					this.props.luck.base = this.traits.demeanor.set
+					this.props.luck.base = this.traits.demeanor.set()
 					this.props.luck.score = this.props.luck.base + this.props.luck.mods
+					return this.props.luck.score
 				}
 			},
 			psyche: {
@@ -313,8 +338,9 @@ export class Character {
 				mods: 0,
 				score: 2,
 				set: () => {
-					this.props.psyche.base = this.traits.demeanor.set * 2
+					this.props.psyche.base = this.traits.demeanor.set() * 2
 					this.props.psyche.score = this.props.psyche.base + this.props.psyche.mods
+					return this.props.psyche.score
 				}
 			},
 			reflex: {
@@ -323,8 +349,9 @@ export class Character {
 				mods: 0,
 				score: 0,
 				set: () => {
-					this.props.reflex.base = Math.floor(this.skills.perception.set / 2)
+					this.props.reflex.base = Math.floor(this.skills.perception.set() / 2)
 					this.props.reflex.score = this.props.reflex.base + this.props.reflex.mods
+					return this.props.reflex.score
 				}
 			},
 			speed: {
@@ -333,8 +360,9 @@ export class Character {
 				mods: 0,
 				score: 2,
 				set: () => {
-					this.props.speed.base = this.traits.agility.set + this.traits.constitution.set
+					this.props.speed.base = this.traits.agility.set() + this.traits.constitution.set()
 					this.props.speed.score = this.props.speed.base + this.props.speed.mods
+					return this.props.speed.score
 				}
 			},
 			xp: {
@@ -343,8 +371,9 @@ export class Character {
 				mods: 0,
 				score: 6,
 				set: () => {
-					this.props.xp.base = this.traits.brains.set * 6
+					this.props.xp.base = this.traits.brains.set() * 6
 					this.props.xp.score = this.props.xp.base + this.props.xp.mods
+					return this.props.xp.score
 				}
 			},
 		},
@@ -369,8 +398,7 @@ export class Character {
 		}
 	}
 	updateProps() {
-		console.log('props updated')
 		let props = Object.keys(this.props)
-		props.forEach((prop) => { this.props[prop].set })
+		props.forEach((prop) => { this.props[prop].set() })
 	}
 }
