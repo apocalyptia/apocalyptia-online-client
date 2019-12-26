@@ -3,13 +3,13 @@
 
 	let result = 6
 
-	function roll() {
+	const roll = () => {
 		result = Math.ceil(Math.random()*6)
 	}
 
-	function roll_die() {
+	const roll_die = () => {
 		for (let i = 0; i < 60000; i++) {
-			setTimeout(function() {
+			setTimeout(() => {
 				roll()
 			}, 50)
 		}

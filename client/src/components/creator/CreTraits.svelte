@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import capitalize from '../../functions/Capitalize'
+	import { capitalize } from '../../functions/Capitalize'
 	import { CharacterStore } from '../../stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
@@ -10,7 +10,7 @@
 	const traitPoints = 12
 	let remaining = traitPoints - traits.length
 
-	function countTraitPoints(event) {
+	const countTraitPoints = (event) => {
 		let target = event.target
 		let traitCount = 0
 		traits.forEach((trait) => { traitCount += char.traits[trait].base })
@@ -23,7 +23,7 @@
 		setSkillMax()
 	}
 
-	function setSkillMax() {
+	const setSkillMax = () => {
 		traits.forEach((trait) => {
 			Object.keys(char.skills).forEach((skill) => {
 				if (char.skills[skill].parent === capitalize(trait)) {

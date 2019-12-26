@@ -5,11 +5,11 @@
 
 	let ced = createEventDispatcher()
 
-	function back () { ced('message', { number: --screen.step }) }
+	const back  = () => { ced('message', { number: --screen.step }) }
 
-	function home () { router.Home() }
+	const home  = () => { router.Home() }
 
-	function next() { router.Traits() }
+	const next = () => { router.Traits() }
 
 	// ced('message', { number: ++screen.step })
 </script>

@@ -5,24 +5,24 @@
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
-	function random(array) { return array[Math.ceil(Math.random() * array.length) - 1] }
+	const random = (array) => { return array[Math.ceil(Math.random() * array.length) - 1] }
 
-	function randomName() {
+	const randomName = () => {
 		if (char.description.gender.value == 'Male') { char.description.characterName.value = random(maleNames) }
 		else if (char.description.gender.value == 'Female') { char.description.characterName.value = random(femaleNames) } 
 		else { char.description.characterName.value = random([...femaleNames, ...maleNames]) }
 	}
 
-	function randomHeight() {
+	const randomHeight = () => {
 		const totalInches = Math.ceil((Math.random() * 14) + 60) // 5ft low, 5ft7in median, 6ft2in high
 		const feet = Math.floor(totalInches / 12)
 		const inches = Math.floor(totalInches % 12)
 		char.description.height.value = `${feet}' ${inches}"`
 	}
 
-	function randomWeight() { char.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
+	const randomWeight = () => { char.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
 
-	function randomHair() {
+	const randomHair = () => {
 		char.description.hair.value = random(
 			[
 				'Auburn',
@@ -37,7 +37,7 @@
 		)
 	}
 
-	function randomSkin() { char.description.skin.value = random(
+	const randomSkin = () => { char.description.skin.value = random(
 			[
 				'Black',
 				'Brown',
@@ -49,11 +49,11 @@
 		) 
 	}
 
-	function randomGender() { char.description.gender.value = random(['Female', 'Male']) }
+	const randomGender = () => { char.description.gender.value = random(['Female', 'Male']) }
 
-	function randomAge() { char.description.age.value = Math.ceil((Math.random() * 33) + 17) }
+	const randomAge = () => { char.description.age.value = Math.ceil((Math.random() * 33) + 17) }
 
-	function randomDescription() {
+	const randomDescription = () => {
 		randomAge()
 		randomGender()
 		randomSkin()

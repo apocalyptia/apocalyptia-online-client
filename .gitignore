@@ -7,5 +7,5 @@ node_modules/
 # Project specific rules
 book/
 old_code.js
-/public/*.*
 !global.css
+client/public/*

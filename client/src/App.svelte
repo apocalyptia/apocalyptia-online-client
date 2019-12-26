@@ -5,6 +5,7 @@
 	import Home from './pages/Home.svelte'
 	import Creator from './pages/Creator.svelte'
 	import Reference from './pages/Reference.svelte'
+	import RefDice from './components/reference/RefDice.svelte'
 	import RefCombat from './components/reference/RefCombat.svelte'
 	import RefManeuvers from './components/reference/RefManeuvers.svelte'
 	import RefSituations from './components/reference/RefSituations.svelte'
@@ -17,6 +18,7 @@
 			<Route path='/' component='{Home}' />
 			<Route path='/creator' component='{Creator}' />
 			<Route path='/reference' component='{Reference}' />
+			<Route path='/reference/dice' component='{RefDice}' />
 			<Route path='/reference/combat' component='{RefCombat}' />
 			<Route path='/reference/maneuvers' component='{RefManeuvers}' />
 			<Route path='/reference/situations' component='{RefSituations}' />

@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import HideShow from '../../functions/HideShow'
+	import { HideShow } from '../../functions/HideShow'
 	import { CharacterStore } from '../../stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
@@ -16,7 +16,7 @@
 	let skillPoints = char.traits.brains.base * 3
 	let remaining = skillPoints
 
-	function countSkillPoints(event) {
+	const countSkillPoints = (event) => {
 		let target = event.target
 		let skillCount = 0
 		skills.forEach((skill) => { skillCount += char.skills[skill].base })

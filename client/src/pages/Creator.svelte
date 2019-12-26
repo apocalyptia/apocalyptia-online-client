@@ -15,15 +15,15 @@
 	}
 	screen.selected = screen.options[screen.step]
 
-	function back () {
+	const back  = () => {
 		--screen.step
 		if (screen.step == screen.options.length || screen.step < 0) { router.Home() }
 		else { screen.selected = screen.options[screen.step] }
 	}
 
-	function home () { router.Home() }
+	const home  = () => { router.Home() }
 
-	function next() { 
+	const next = () => { 
 		++screen.step
 		if (screen.step == screen.options.length || screen.step < 0) { router.Home() }
 		else { screen.selected = screen.options[screen.step] }

@@ -1,5 +1,6 @@
 import Rule from './rule'
 
+
 export default class Gear extends Rule {
 	constructor(name, description, sz) {
 		super(name, description)
@@ -7,12 +8,12 @@ export default class Gear extends Rule {
 	}
 }
 
+
 class Accessory extends Gear {
 	constructor(name, description, sz) {
 		super(name, description, sz)
 	}
 }
-
 
 export const Bayonet = new Accessory(`Bayonet`, `Knife. +1 DMG and Pierce for MATKs.`, 1)
 export const Bipod = new Accessory(`Bipod`, `Ignore Size requirement. 1rnd setup.`, 1)
@@ -36,34 +37,59 @@ export const AccessoryList = [
 	Suppressor
 ]
 
+
 class Ammo extends Gear {
-	constructor(cal, name, description, sz) {
+	constructor(description, sz, cal, type) {
 		super(name, description, sz)
 		this.cal = cal
+		this.type = type
+		this.name = `${cal} ${type}`
 	}
 }
 
+export const ArrowBroadhead = new Ammo(`+1 DMG. Pierce.`, .1, `Arrow`, `Broadhead`)
+export const ArrowStandard = new Ammo(`Basic ammo.`, .1, `Arrow`, `Standard`)
+export const Standard22 = new Ammo(`Basic ammo.`, .005, `.22`, `Standard`)
+export const HollowPoint22 = new Ammo(`+1 DMG.`, .005, `.22`, `Hollow Point`)
+export const Match22 = new Ammo(`+1 RATK.`, .005, `.22`, `Match`)
+export const Standard9mm = new Ammo(`Basic ammo.`, .01, `9mm`, `Standard`)
+export const HollowPoint9mm = new Ammo(`+1 DMG.`, .01, `9mm`, `Hollow Point`)
+export const Match9mm = new Ammo(`+1 RATK.`, .01, `9mm`, `Match`)
+export const Standard357 = new Ammo(`Basic ammo.`, .01, `.357`, `Standard`)
+export const HollowPoint357 = new Ammo(`+1 DMG.`, .01, `.357`, `Hollow Point`)
+export const ArmorPiercing556 = new Ammo(`Pierce.`, .02, `5.56`, `Armor Piercing`)
+export const Standard556 = new Ammo(`Basic ammo.`, .02, `5.56`, `Standard`)
+export const HollowPoint556 = new Ammo(`+1 DMG.`, .02, `5.56`, `Hollow Point`)
+export const Match556 = new Ammo(`+1 RATK.`, .02, `5.56`, `Match`)
+export const ArmorPiercing308 = new Ammo(`Pierce.`, .02, `.308`, `Armor Piercing`)
+export const Standard308 = new Ammo(`Basic ammo.`, .02, `.308`, `Standard`)
+export const HollowPoint308 = new Ammo(`+1 DMG.`, .02, `.308`, `Hollow Point`)
+export const Match308 = new Ammo(`+1 RATK.`, .02, `.308`, `Match`)
+export const Buckshot12g = new Ammo(`Scatter.`, .05, `12g`, `Buckshot`)
+export const Slug12g = new Ammo(`RNG x2.`, .05, `12g`, `Slug`)
+
 export const AmmoList = [
-	new Ammo(`Arrow`,	`Broadhead`,		`+1 DMG. Pierce.`,	.1),
-	new Ammo(`Arrow`,	`Standard`,			`Basic ammo.`,		.1),
-	new Ammo(`.22`,		`Standard`,			`Basic ammo.`,		.005),
-	new Ammo(`.22`,		`Hollow Point`,		`+1 DMG.`,			.005),
-	new Ammo(`.22`,		`Match`,			`+1 RATK.`,			.005),
-	new Ammo(`9mm`,		`Standard`,			`Basic ammo.`,		.01),
-	new Ammo(`9mm`,		`Hollow Point`,		`+1 DMG.`,			.01),
-	new Ammo(`9mm`,		`Match`,			`+1 RATK.`,			.01),
-	new Ammo(`.357`,	`Standard`,			`Basic ammo.`,		.01),
-	new Ammo(`.357`,	`Hollow Point`,		`+1 DMG.`,			.01),
-	new Ammo(`5.56`,	`Armor Piercing`,	`Pierce.`,			.02),
-	new Ammo(`5.56`,	`Standard`,			`Basic ammo.`,		.02),
-	new Ammo(`5.56`,	`Hollow Point`,		`+1 DMG.`,			.02),
-	new Ammo(`5.56`,	`Match`,			`+1 RATK.`,			.02),
-	new Ammo(`.308`,	`Armor Piercing`,   `Pierce.`,			.02),
-	new Ammo(`.308`,	`Standard`,		 	`Basic ammo.`,		.02),
-	new Ammo(`.308`,	`Hollow Point`,		`+1 DMG.`,			.02),
-	new Ammo(`.308`,	`Match`,			`+1 RATK.`,			.02),
-	new Ammo(`12g`,		`Buckshot`,			 `Scatter.`,		.05),
-	new Ammo(`12g`,		`Slug`,				 `RNG x2.`,			.05)
+	ArrowBroadhead,
+	ArrowStandard,
+	Standard22,
+	HollowPoint22,
+	Match22,
+	Standard9mm,
+	HollowPoint9mm,
+	Match9mm,
+	Standard357,
+	HollowPoint357,
+	ArmorPiercing556,
+	Standard556,
+	HollowPoint556,
+	Match556,
+	ArmorPiercing308,
+	Standard308,
+	HollowPoint308,
+	Match308,
+	Match308,
+	Buckshot12g,
+	Slug12g
 ]
 
 // OLD AMMO
@@ -73,44 +99,47 @@ export const AmmoList = [
 // new Ammo(`12g`,	 `Rubber`,			`Blunt.`,.05),
 // new Ammo(`5.56`,	`Tracer`,			`+1 Auto RATK.`,.02),
 
+
 class Armor extends Gear {
-	constructor(name, dr, loc, description, sz) {
+	constructor(name, description, sz, dr, loc) {
 		super(name, description, sz)
 		this.dr = dr
 		this.loc = loc
 	}
 }
 
+export const AthleticHelmet = new Armor(`Athletic Helmet`, [], 2, 1, `Head`)
+export const AthleticPads = new Armor(`Athletic Pads`, [], 2, 1, `Torso`)
+export const CombatHelmet = new Armor(`Combat Helmet`, [`Camo`], 2, 3, `Head`)
+export const Coveralls = new Armor(`Coveralls`, [`Camo`, `CR`], 3, 1, `Arms, Torso, Legs`)
+export const FirefighterSuit = new Armor(`Firefighter Suit`, 2, `Full Body`, [`CR`, `FR`, `Mask`], 5)
+export const FlakJacket = new Armor(`Flak Jacket`, [`Camo`], 4, 2, `Torso`)
+export const GhillieSuit = new Armor(`Ghillie Suit`, [`Camo`, `CR`], 4, 1, `Full Body`)
+export const HikingBoots = new Armor(`Hiking Boots`, [`CR`, `FR`], 2, 1, `Legs`)
+export const KevlarVest = new Armor(`Kevlar Vest`, [`CR`, `FR`], 4, 3, `Torso`)
+export const LeatherJacket = new Armor(`Leather Jacket`, [], 2, 1, `Arms, Torso`)
+export const MotorcycleHelmet = new Armor(`Motorcycle Helmet`, [`FR`, `Mask`], 2, 1, `Head`)
+export const HazmatSuit = new Armor(`Hazmat Suit`, [`Mask`, `Impermeable`], 2, 0, `Full Body`)
+export const PlateCarrier = new Armor(`Plate Carrier`, [`Camo`, `CR`, `FR`], 4, 4, `Torso`)
+export const WinterCoat = new Armor(`Winter Coat`, [`CR`], 2, 1, `Arms, Torso`)
+export const WorkGloves = new Armor(`Work Gloves`, [`FR`], 1, 1, `Arms`)
+
 export const ArmorList = [
-	new Armor(`Athletic Helmet`,	1, `Head`,			  [],						 2),
-	new Armor(`Athletic Pads`,	  1, `Torso`,			 [],						 2),
-	new Armor(`Combat Helmet`,	  3, `Head`,			  [`Camo`],				   2),
-	new Armor(`Coveralls`,		  1, `Arms, Torso, Legs`, [`Camo`, `CR`],			 3),
-	new Armor(`Firefighter Suit`,   2, `Full Body`,		 [`CR`, `FR`, `Mask`],	   5),
-	new Armor(`Flak Jacket`,		2, `Torso`,			 [`Camo`],				   4),
-	new Armor(`Ghillie Suit`,	   1, `Full Body`,		 [`Camo`, `CR`],			 4),
-	new Armor(`Hiking Boots`,	   1, `Legs`,			  [`CR`, `FR`],			   2),
-	new Armor(`Kevlar Vest`,		3, `Torso`,			 [`CR`, `FR`],			   4),
-	new Armor(`Leather Jacket`,	 1, `Arms, Torso`,	   [],						 2),
-	new Armor(`Motorcycle Helmet`,  1, `Head`,			  [`FR`, `Mask`],			 2),
-	new Armor(`Hazmat Suit`,		0, `Full Body`,		 [`Mask`, `Impermeable`],	2),
-	new Armor(`Plate Carrier`,	  4, `Torso`,			 [`Camo`, `CR`, `FR`],	   4),
-	new Armor(`Winter Coat`,		1, `Arms, Torso`,	   [`CR`],					 2),
-	new Armor(`Work Gloves`,		1, `Arms`,			  [`FR`],					 1)
-]
-
-export const RandomArmor = function() {
-	const randomRoll = Math.ceil(Math.random() * (ArmorList.length - 1))
-	console.log(randomRoll)
-	return ArmorList[randomRoll]
-}
-
-export const ArmorAttributes = [
-	{ 'Camo':		   `+1 Stealth per Location when in a given Biome.` },
-	{ 'CR':			 `Delay Hypothermia for 1 hour per Location.` },
-	{ 'FR':			 `Armor DR reduces FDMG.` },
-	{ 'Impermeable':	`Automatic Success to resist Diseases and Toxins.` },
-	{ 'Mask':		   `Obscures identity and protects face. -1 Perception.` }
+	AthleticHelmet,
+	AthleticPads,
+	CombatHelmet,
+	Coveralls,
+	FirefighterSuit,
+	FlakJacket,
+	GhillieSuit,
+	HikingBoots,
+	KevlarVest,
+	LeatherJacket,
+	MotorcycleHelmet,
+	HazmatSuit,
+	PlateCarrier,
+	WinterCoat,
+	WorkGloves
 ]
 
 // OLD ARMOR
@@ -132,54 +161,93 @@ export const ArmorAttributes = [
 // new Armor(`Land Warrior Helmet`, `4`, `Head`, `FR. Nightvision Goggles. Radio.`, 2)
 // new Armor(`Spiked Jacket`, `2, 2`, `Torso, Arms`, `+1 DMG Grab.`, 3)
 
+
 class Attribute extends Rule {
 	constructor(name, description) {
 		super(name, description)
 	}
 }
 
-export const ArmorAttributesList = [
-	new Attribute('Camo', '+1 Stealth per Location when in a given Biome.'),
-	new Attribute('CR', 'Delay Hypothermia for 1hr per Location.'),
-	new Attribute('FR', 'Armor DR reduces FDMG.'),
-	new Attribute('Impermeable', 'Automatic Success to resist exposure to Diseases and Toxins.'),
-	new Attribute('Mask', 'Obscures identity and protects face. -1 Perception.'),
-]
-
-export const WeaponAttributesList = [
-	new Attribute('1h', 'Used one-handed. +1 RATK if used with both hands.'),
-	new Attribute('2h', 'Used two-handed. Penalty = [Sz] if used one-handed.'),
-	new Attribute('Auto', '[+3 RATK vs one target] or 3yd Blast. Uses 10 bullets.'),
-	new Attribute('Blast', '[d6 vs Reflex] in radius. [DMG / 2] on a miss (mininum 1).'),
-	new Attribute('Blunt', 'Does not cause Bleeding.'),
-	new Attribute('Chop', '+1 DMG to Locations with no Armor.'),
-	new Attribute('FDMG', 'Fire DMG. FDMG can only be prevented with FR Armor.'),
-	new Attribute('Pierce', '+1 DMG to Locations with Armor.'),
-	new Attribute('Rapid', '2 ATKS for 1 Action.'),
-	new Attribute('Sawn-off', '[RNG / 2] and -1 Size.'),
-	new Attribute('Scatter', 'Ignore RNG penalties. -1 DMG per extended RNG.'),
-	new Attribute('Slow', 'Penalty to Initiative = Size.'),
-]
-
 class AmmoAttribute extends Attribute {
-	constructor(name, notes, caliber) {
-		super(name, notes)
-		this.caliber = caliber
+	constructor(name, description, calibers) {
+		super(name, description)
+		this.calibers = calibers
 	}
 }
 
+export const ArmorPiercing = new AmmoAttribute('Armor Piercing', ['Pierce.'], ['5.56', '.308'])
+export const Broadhead = new AmmoAttribute('Broadhead', ['+1 DMG. Pierce'], ['Arrow'])
+export const Buckshot = new AmmoAttribute('Buckshot', ['Scatter.'], ['12g'])
+export const HollowPoint = new AmmoAttribute('Hollow Point', ['+1 DMG.'], ['.22', '9mm', '.357', '5.56', '.308', '12g'])
+export const Match = new AmmoAttribute('Match', ['+1 RATK.'], ['.22', '9mm', '.357', '5.56', '.308'])
+export const Slug = new AmmoAttribute('Slug', ['RNG x2.'], ['12g'])
+
 export const AmmoAttributesList = [
-	new AmmoAttribute('Armor Piercing', 'Pierce.', ['5.56', '.308']),
-	new AmmoAttribute('Broadhead', '+1 DMG. Pierce', ['Arrow']),
-	new AmmoAttribute('Buckshot', 'Scatter.', ['12g']),
-	new AmmoAttribute('Hollow Point', '+1 DMG.', ['.22', '9mm', '.357', '5.56', '.308', '12g']),
-	new AmmoAttribute('Match', '+1 RATK.', ['.22', '9mm', '.357', '5.56', '.308']),
-	new AmmoAttribute('Slug', 'RNG x2.', ['12g'])
+	ArmorPiercing,
+	Broadhead,
+	Buckshot,
+	HollowPoint,
+	Match,
+	Slug
+]
+
+class ArmorAttribute extends Attribute {
+	constructor(name, description) {
+		super(name, description)
+	}
+}
+
+export const Camo = new ArmorAttribute('Camo', ['+1 Stealth per Location when in a given Biome.'])
+export const CR = new ArmorAttribute('CR', ['Delay Hypothermia for 1hr per Location.'])
+export const FR = new ArmorAttribute('FR', ['Armor DR reduces FDMG.'])
+export const Impermeable = new ArmorAttribute('Impermeable', ['Automatic Success to resist exposure to Diseases and Toxins.'])
+export const Mask = new ArmorAttribute('Mask', ['Obscures identity and protects face. -1 Perception.'])
+
+export const ArmorAttributesList = [
+	Camo,
+	CR,
+	FR,
+	Impermeable,
+	Mask
+]
+
+class WeaponAttribute extends Attribute {
+	constructor(name, description) {
+		super(name, description)
+	}
+}
+
+export const OneHanded = new WeaponAttribute('1h', ['Used one-handed. +1 RATK if used with both hands.'])
+export const TwoHanded = new WeaponAttribute('2h', ['Used two-handed. Penalty = [Sz] if used one-handed.'])
+export const Auto = new WeaponAttribute('Auto', ['[+3 RATK vs one target] or 3yd Blast. Uses 10 bullets.'])
+export const Blast = new WeaponAttribute('Blast', ['[d6 vs Reflex] in radius. [DMG / 2] on a miss (mininum 1).'])
+export const Blunt = new WeaponAttribute('Blunt', ['Does not cause Bleeding.'])
+export const Chop = new WeaponAttribute('Chop', ['+1 DMG to Locations with no Armor.'])
+export const FDMG = new WeaponAttribute('FDMG', ['Fire DMG. FDMG can only be prevented with FR Armor.'])
+export const Pierce = new WeaponAttribute('Pierce', ['+1 DMG to Locations with Armor.'])
+export const Rapid = new WeaponAttribute('Rapid', ['2 ATKS for 1 Action.'])
+export const Sawnoff = new WeaponAttribute('Sawn-off', ['[RNG / 2] and -1 Size.'])
+export const Scatter = new WeaponAttribute('Scatter', ['Ignore RNG penalties. -1 DMG per extended RNG.'])
+export const Slow = new WeaponAttribute('Slow', ['Penalty to Initiative = Size.'])
+
+export const WeaponAttributesList = [
+	OneHanded,
+	TwoHanded,
+	Auto,
+	Blast,
+	Blunt,
+	Chop,
+	FDMG,
+	Pierce,
+	Rapid,
+	Sawnoff,
+	Scatter,
+	Slow
 ]
 
 
 class Bomb extends Gear {
-	constructor(name, mix, dmg, blast, duration, description, sz) {
+	constructor(name, description, sz, mix, dmg, blast, duration) {
 		super(name, description, sz)
 		this.mix = mix
 		this.dmg = dmg
@@ -188,13 +256,20 @@ class Bomb extends Gear {
 	}
 }
 
+export const Flashbang = new Bomb(`Flashbang`, [`1rnd fuse. Blind. Stun.`], 1, 9, `0`, `6yd`, `d6rnds`)
+export const Frag = new Bomb(`Frag`, [`1rnd fuse. Pierce.`], 1, 9, `d6x3`, `15yd`, `instant`)
+export const Molotov = new Bomb(`Molotov`, [`1FDMG/rnd.`], 2, 1, `d6`, `3yd`, `1min`)
+export const Smoke = new Bomb(`Smoke`, [`Blind.`], 1, 3, `0`, `1yd/rnd`, `d6mins`)
+export const Teargas = new Bomb(`Teargas`, [`Blind. Suffocation`], 1, 15, `1`, `1yd/rnd`, `d6mins`)
+export const Thermite = new Bomb(`Thermite`, [`1rnd fuse. FDMG.`], 1, 6, `d6x6`, `1yd`, `6rnds`)
+
 export const BombList = [
-	new Bomb(`Flashbang`,   9,  `0`,		`6yd`,	  `d6rnds`,   `1rnd fuse. Blind. Stun.`,  1),
-	new Bomb(`Frag`,		9,  `d6x3`,	 `15yd`,	 `instant`,  `1rnd fuse. Pierce.`,	   1),
-	new Bomb(`Molotov`,	 1,  `d6`,	   `3yd`,	  `1min`,	 `1FDMG/rnd.`,			   2),
-	new Bomb(`Smoke`,	   3,  `0`,		`1yd/rnd`,  `d6mins`,   `Blind.`,				   1),
-	new Bomb(`Teargas`,	 15, `1`,		`1yd/rnd`,  `d6mins`,   `Blind. Suffocation`,	   1),
-	new Bomb(`Thermite`,	6,  `d6x6`,	 `1yd`,	  `6rnds`,	`1rnd fuse. FDMG.`,		 1),
+	Flashbang,
+	Frag,
+	Molotov,
+	Smoke,
+	Teargas,
+	Thermite
 ]
 
 // OLD BOMBS
@@ -205,54 +280,88 @@ export const BombList = [
 // new Bomb(`Landmine`,	15, `d6x6`,	 `3yd`,	  `instant`,  ``,							 2)
 // new Bomb(`Sky Rocket`,  12, `d6x3`,	 `60yd`,	 `instant`,  `-1 RATK. RNG:50. Blind.`,	  1)
 
+
 class Document extends Gear {
 	constructor(name, description, sz) {
 		super(name, description, sz)
 	}
 }
 
+export const BodyInBalance = new Document(`Body in Balance`, [`+1 Athletics`], 1)
+export const BookOfNinja = new Document(`Book of Ninja`, [`+1 Stealth`], 1)
+export const DefensiveDriving = new Document(`Defensive Driving`, [`+1 Drive`], 1)
+export const DogTricks = new Document(`Dog Tricks`, [`+1 Tame`], 1)
+export const EffectiveHabits = new Document(`Effective Habits`, [`+1 to any one Skill`], 1)
+export const EngineeringConcepts = new Document(`Engineering Concepts`, [`+1 Build`], 1)
+export const GeneralScienceKnowledge = new Document(`General Science Knowledge`, [`+1 Science`], 1)
+export const GraysAnatomy = new Document(`Gray\`s Anatomy`, [`+1 Medicine`], 1)
+export const HomeSecurity = new Document(`Home Security`, [`+1 Larceny`], 1)
+export const HowToWinFriends = new Document(`How to Win Friends`, [`+1 Socialize`], 1)
+export const HowYogaWorks = new Document(`How Yoga Works`, [`+1 Acrobatics`], 1)
+export const LeadershipBasics = new Document(`Leadership Basics`, [`+1 Leadership`], 1)
+export const PersonalDefense = new Document(`Personal Defense`, [`+1 Ranged`], 1)
+export const SASSurvivalGuide = new Document(`SAS Survival Guide`, [`+1 Survival`], 1)
+export const StandupComedy = new Document(`Stand-up Comedy`, [`+1 Entertain`], 1)
+export const TaoOfJeetKuneDo = new Document(`Tao of Jeet Kune Do`, [`+1 Melee`], 1)
+export const YellowPags = new Document(`Yellow Pages`, [`+1 Scavenging. Regional.`], 1)
+export const ZenMind = new Document(`Zen Mind`, [`+1 Perception`], 1)
+export const BilingualDictionary = new Document(`Bilingual Dictionary`, [`Multilingual Ability`], 1)
+export const ClassicNovel = new Document(`Classic Novel`, [`+1 Psyche`], 1)
+export const HolyBook = new Document(`Holy Book`, [`-1 Psyche`], 1)
+export const MapAtlas = new Document(`Map (Atlas)`, [`+1 Survival(Navigate)`], 1)
+export const MapLocal = new Document(`Map (Local)`, [`+1 Survival(Navigate). Regional.`], 0)
+export const MapTopographic = new Document(`Map (Topographic)`, [`+3 Survival(Navigate). Regional.`], 0)
+
 export const DocumentList = [
-	new Document(`Body in Balance`,			 `+1 Athletics`,					 1),
-	new Document(`Book of Ninja`,			   `+1 Stealth`,					   1),
-	new Document(`Defensive Driving`,		   `+1 Drive`,						 1),
-	new Document(`Dog Tricks`,				  `+1 Tame`,						  1),
-	new Document(`Effective Habits`,			`+1 to any one Skill`,			  1),
-	new Document(`Engineering Concepts`,		`+1 Build`,						 1),
-	new Document(`General Science Knowledge`,   `+1 Science`,					   1),
-	new Document(`Gray\`s Anatomy`,			 `+1 Medicine`,					  1),
-	new Document(`Home Security`,			   `+1 Larceny`,					   1),
-	new Document(`How to Win Friends`,		  `+1 Socialize`,					 1),
-	new Document(`How Yoga Works`,			  `+1 Acrobatics`,					1),
-	new Document(`Leadership Basics`,		   `+1 Leadership`,					1),
-	new Document(`Personal Defense`,			`+1 Ranged`,						1),
-	new Document(`SAS Survival Guide`,		  `+1 Survival`,					  1),
-	new Document(`Stand-up Comedy`,			 `+1 Entertain`,					 1),
-	new Document(`Tao of Jeet Kune Do`,		 `+1 Melee`,						 1),
-	new Document(`Yellow Pages`,				`+1 Scavenging. Regional.`,		 1),
-	new Document(`Zen Mind`,					`+1 Perception`,					1),
-	new Document(`Bilingual Dictionary`,		`Multilingual Ability`,			 1),
-	new Document(`Classic Novel`,			   `+1 Psyche`,						1),
-	new Document(`Holy Book`,				   `-1 Psyche`,						1),
-	new Document(`Map (Atlas)`,				 `+1 Survival(Navigate)`,			1),
-	new Document(`Map (Local)`,				 `+1 Survival(Navigate). Regional.`, 0),
-	new Document(`Map (Topographic)`,		   `+3 Survival(Navigate). Regional.`, 0),
+	BodyInBalance,
+	BookOfNinja,
+	DefensiveDriving,
+	DogTricks,
+	EffectiveHabits,
+	EngineeringConcepts,
+	GeneralScienceKnowledge,
+	GraysAnatomy,
+	HomeSecurity,
+	HowToWinFriends,
+	HowYogaWorks,
+	LeadershipBasics,
+	PersonalDefense,
+	SASSurvivalGuide,
+	StandupComedy,
+	TaoOfJeetKuneDo,
+	YellowPags,
+	ZenMind,
+	BilingualDictionary,
+	ClassicNovel,
+	HolyBook,
+	MapAtlas,
+	MapLocal,
+	MapTopographic
 ]
 
+
 class Drug extends Gear {
-	constructor (name, mix, overdose, description, sz) {
+	constructor (name, description, sz, mix, overdose) {
 		super(name, description, sz)
 		this.mix = mix
 		this.overdose = overdose
 	}
 }
 
+export const Alcohol = new Drug(`Alcohol`, [`Antibiotic or Fuel. C9# or Unstable.`], 1, 9, true)
+export const Antibiotic = new Drug(`Antibiotic`, [`Prevents infection in Recovery for 1 day.`], 0, 12, false)
+export const Hallucinogen = new Drug(`Hallucinogen`, [`+1 Perform and Tame. -3 all other rolls. -1 Psyche.`], 0, 15, false)
+export const Painkiller = new Drug(`Painkiller`, [`Ignore 1 Pain penalty.`], 0, 9, true)
+export const Sedative = new Drug(`Sedative`, [`D#6/rnd to take any action.`], 0, 12, true)
+export const Stimulant = new Drug(`Stimulant`, [`Ignore Exhaustion penalties for 6hrs.`], 0, 9, true)
+
 export const DrugsList = [
-	new Drug(`Alcohol`,			 9,  true,   `Antibiotic or Fuel. C9# or Unstable.`,				 1),
-	new Drug(`Antibiotic`,		  12, false,  `Prevents infection in Recovery for 1 day.`,			0),
-	new Drug(`Hallucinogen`,		15, false,  `+1 Perform and Tame. -3 all other rolls. -1 Psyche.`,  0),
-	new Drug(`Painkiller`,		  9,  true,   `Ignore 1 Pain penalty.`,							   0),
-	new Drug(`Sedative`,			12, true,   `D#6/rnd to take any action.`,						  0),
-	new Drug(`Stimulant`,		   9,  true,   `Ignore Exhaustion penalties for 6hrs.`,				0)
+	Alcohol,
+	Antibiotic,
+	Hallucinogen,
+	Painkiller,
+	Sedative,
+	Stimulant
 ]
 
 // OLD DRUGS
@@ -263,6 +372,7 @@ export const DrugsList = [
 // new Drug(`Potassium Chloride`,  18, true,   `Injection. d6 Torso DMG/min for 5mins.`,		   0)
 // new Drug(`Sodium Pentothal`,	15, true,   `Injection. -6 Entertain(Lie).`,					0)
 
+
 class Electronic extends Gear {
 	constructor (name, hours, description, sz) {
 		super(name, description, sz)
@@ -270,25 +380,41 @@ class Electronic extends Gear {
 	}
 }
 
+export const Cellphone = new Electronic(`Cellphone`, [`1yd light, camera, remote control.`], 1, 3)
+export const EmergencyRadio = new Electronic(`Emergency Radio`, [`AM/FM/Shortwave. 1yd light.`], 1, 6)
+export const Flashlight = new Electronic(`Flashlight`, [`10yd light. -3 RATK to Blind 1rnd.`], 1, 3)
+export const GeigerCounter = new Electronic(`Geiger Counter`, [`Science 6# to detect Radiation in 1yd.`], 2, 24)
+export const HandRadio = new Electronic(`Hand Radio`, [`9-channel 2-way radio. 3 mile range.`], 1, 9)
+export const Headlamp = new Electronic(`Headlamp`, [`3yd light. Hands free.`], 0, 3)
+export const Lantern = new Electronic(`Lantern`, [`3yd light radius.`], 2, 6)
+export const Megaphone = new Electronic(`Megaphone`, [`+1 Leadership when speaking to a crowd.`], 2, 12)
+export const Multimeter = new Electronic(`Multimeter`, [`+3 Science(Technology). Detect voltage.`], 1, 48)
+export const NightvisionGoggles = new Electronic(`Nightvision Goggles`, [`Ignore Visibility penalties in darkness.`], 1, 36)
+export const QuadcopterDrone = new Electronic(`Quadcopter Drone`, [`Science 6# to use. Camera. 90yd Speed.`], 2, .25)
+export const RCCar = new Electronic(`RC Car`, [`Science 3# to use. 45yd Speed.`], 3, .5)
+export const SolarLamp = new Electronic(`Solar Lamp`, [`1yd light radius. 1day charge.`], 1, 9)
+export const StunGun = new Electronic(`Stun Gun`, [`MATK. C9# or Stun for 1rnd.`], 1, .25)
+
 export const ElectronicsList = [
-	new Electronic(`Cellphone`,			 3,	  `1yd light, camera, remote control.`,	   1),
-	new Electronic(`Emergency Radio`,	   6,	  `AM/FM/Shortwave. 1yd light.`,			  1),
-	new Electronic(`Flashlight`,			3,	  `10yd light. -3 RATK to Blind 1rnd.`,	   1),
-	new Electronic(`Geiger Counter`,		24,	 `Science 6# to detect Radiation in 1yd.`,   2),
-	new Electronic(`Hand Radio`,			9,	  `9-channel 2-way radio. 3 mile range.`,	 1),
-	new Electronic(`Headlamp`,			  3,	  `3yd light. Hands free.`,				   0),
-	new Electronic(`Lantern`,			   6,	  `3yd light radius.`,						2),
-	new Electronic(`Megaphone`,			 12,	 `+1 Leadership when speaking to a crowd.`,  2),
-	new Electronic(`Multimeter`,			48,	 `+3 Science(Technology). Detect voltage.`,  1),
-	new Electronic(`Nightvision Goggles`,   36,	 `Ignore Visibility penalties in darkness.`, 1),
-	new Electronic(`Quadcopter Drone`,	  .25,	`Science 6# to use. Camera. 90yd Speed.`,   2),
-	new Electronic(`RC Car`,				.5,	 `Science 3# to use. 45yd Speed.`,		   3),
-	new Electronic(`Solar Lamp`,			9,	  `1yd light radius. 1day charge.`,		   1),
-	new Electronic(`Stun Gun`,			  .25,	`MATK. C9# or Stun for 1rnd.`,			  1)
+	Cellphone,
+	EmergencyRadio,
+	Flashlight,
+	GeigerCounter,
+	HandRadio,
+	Headlamp,
+	Lantern,
+	Megaphone,
+	Multimeter,
+	NightvisionGoggles,
+	QuadcopterDrone,
+	RCCar,
+	SolarLamp,
+	StunGun
 ]
 
 // OLD ELECTRONICS
 //  new Electronic(`Radio Jammer`,		  3,	  `Blocks radio signal within 100yds.`,	   1)
+
 
 class Equipment extends Gear {
 	constructor(name, description, sz) {
@@ -296,87 +422,168 @@ class Equipment extends Gear {
 	}
 }
 
+export const AirHorn = new Equipment(`Air Horn`, [`Emits a loud shriek up to a 1 mile radius.`], 1)
+export const Balaclava = new Equipment(`Balaclava`, [`+1 Stealth. Mask. CR.`], 0)
+export const Bandanna = new Equipment(`Bandanna`, [`+1 C vs airborne toxins. Can use as Bandage.`], 0)
+export const BaseballCap = new Equipment(`Baseball Cap`, `Reduce Visibility(Rain and Sun) penalty by 1.`,	0)
+export const Bicycle = new Equipment(`Bicycle`, [`Athletics 3#. Speed x3yds (x.7mph). 2h.`], 8)
+export const Binoculars = new Equipment(`Binoculars`, [`+3 Perception(See) at 50+yds.`], 1)
+export const BobbyPin = new Equipment(`Bobby Pin`, [`Allows Larceny(Disable) roll on key locks.`], 0)
+export const BoltCutters = new Equipment(`Bolt Cutters`, [`C9# to cut metal (Handcuffs, Padlocks, etc).`], 3)
+export const CageTrap = new Equipment(`Cage Trap`, [`+3 Survival(Forage). Takes 1day.`], 6)
+export const Candle = new Equipment(`Candle`, [`1yd light radius for 6hrs.`], 0)
+export const Candy = new Equipment(`Candy`, [`Restores 1 Luck point. 1/day.`], 0)
+export const Carabiner = new Equipment(`Carabiner`, [`+1 Athletics(Climb and Rappel). Holds 50Sz.`], 0)
+export const Compass = new Equipment(`Compass`, [`+3 Survival(Navigate). Always points North.`], 0)
+export const CowboyHat = new Equipment(`Cowboy Hat`, [`Reduce Visibility(Rain and Sun) penalty by 3.`], 0)
+export const Chalk = new Equipment(`Chalk`, [`Used to temporarily write on any surface.`], 0)
+export const Chemical = new Equipment(`Chemical`, [`Substances used for Science(Chemistry).`], 1)
+export const ChokerLeash = new Equipment(`Choker Leash`, [`+3 Tame. Grabbed. C +3 vs C to control.`], 1)
+export const DuctTape = new Equipment(`Duct Tape`, [`+1 Build/1yd or use 2yds as Handcuffs. 60yds.`], 1)
+export const DustMask = new Equipment(`Dust Mask`, [`+3 C vs airborne toxins. Mask.`], 1)
+export const EarPlugs = new Equipment(`Ear Plugs`, [`No Deafness from noise. -3 Perception(Hear).`], 9)
+export const EggTimer = new Equipment(`Egg Timer`, [`Set up to 60mins. Loud ringing for 1min.`], 1)
+export const Firestick = new Equipment(`Fire-stick`, [`+3 Survival(Camp). Magnesium rod and steel.`], 0)
+export const FishingPole = new Equipment(`Fishing Pole`, [`+1 Survival(Forage) at river, lake, or ocean.`], 2)
+export const FlareGun = new Equipment(`Flare Gun`, [`Pistol. RNG:3. Ammo: 12g Flares or 1 use 12g.`], 1)
+export const Flippers = new Equipment(`Flippers`, [`+3 Athletics(Swim). -6 walking Speed.`], 2)
+export const Food = new Equipment(`Food`, [`Contains 1 Food to feed a person for a day.`], 1)
+export const GasMask = new Equipment(`Gas Mask`, [`+6 C vs airborne toxins. Mask. -1 Perception.`], 1)
+export const GlassCutter = new Equipment(`Glass Cutter`, [`Cuts glass quietly.`], 0)
+export const Goggles = new Equipment(`Goggles`, [`+3 C to resist toxins in eyes.`], 1)
+export const GrapplingHook = new Equipment(`Grappling Hook`, [`+3 Athletics(Climb and Rappel). Holds 100Sz.`], 2)
+export const GunCleaningKit = new Equipment(`Gun Cleaning Kit`, [`Gun gets +1 RATK for 1day. Takes 1hr/gun.`], 1)
+export const Hacksaw = new Equipment(`Hacksaw`, [`1DMG/rnd of sawing to almost any material.`], 2)
+export const Hammock = new Equipment(`Hammock`, [`Suspended sleeping device for 1 person.`], 1)
+export const Handcuffs = new Equipment(`Handcuffs`, [`Grabbed. A15# to escape. Larceny(Disable) 12#.`], 1)
+export const LeatherBelt = new Equipment(`Leather Belt`, [`1yd strap. Stops Limb Bleeding. Holds 50Sz.`], 1)
+export const Lifejacket = new Equipment(`Lifejacket`, [`+6 Athletics(Swim). Prevents drowning.`], 2)
+export const Lighter = new Equipment(`Lighter`, [`Makes a small fire. 1yd radius light.`], 0)
+export const Lockpicks = new Equipment(`Lockpicks`, [`+3 Larceny(Disable) key locks. 6 picks.`], 1)
+export const LuxuryItem = new Equipment(`Luxury Item`, [`Toilet paper, cigarette, etc. +1 Psyche 1/wk.`], 0)
+export const MagnifyingGlass = new Equipment(`Magnifying Glass`, [`+6 Perception(See) to inspect tiny details.`], 1)
+export const Makeup = new Equipment(`Makeup`, [`+1 Socialize and Entertain for 6hrs. 30 uses.`], 0)
+export const Marbles = new Equipment(`Marbles`, [`30/bag. 2sqyd area. A12# or fall Prone.`], 1)
+export const Marker = new Equipment(`Marker`, [`Used to permanently write on any surface.`], 0)
+export const Matchbook = new Equipment(`Matchbook`, [`+1 Survival(Camp). 1yd light radius, 3rnds.`], 0)
+export const MeasuringCup = new Equipment(`Measuring Cup`, [`+3 Science(Chemistry). Marked glass cup.`], 1)
+export const Monocular = new Equipment(`Monocular`, [`+1 Perception(See) at 25+yds.`], 1)
+export const Multitool = new Equipment(`Multi-tool`, [`+1 Larceny(Disable), Build, Science(Tech).`], 1)
+export const MusicalInstrument = new Equipment(`Musical Instrument`, [`+1 Entertain(Distract and Inspire).`], 1)
+export const MylarBlanket = new Equipment(`Mylar Blanket`, [`CR. 1yd x 2yd reflective foil sheet.`], 0)
+export const Notebook = new Equipment(`Notebook`, [`100 pages of paper with a wire binding.`], 1)
+export const Padlock = new Equipment(`Padlock`, [`10HP. 6DR. Larceny(Disable) 9#.`], 1)
+export const Paracord = new Equipment(`Paracord`, [`60yd coil. Holds 50Sz.`], 1)
+export const Part = new Equipment(`Part`, [`Scrap used for Build and Science(Tech).`], 1)
+export const PepperSpray = new Equipment(`Pepper Spray`, [`+1 Ranged(Gun). RNG:1. 3 Pain. 3 uses. Toxin.`], 0)
+export const PocketMirror = new Equipment(`Pocket Mirror`, [`Perception(See) 6# to see from behind Cover.`], 0)
+export const Poncho = new Equipment(`Poncho`, [`CR. Waterproof.`], 0)
+export const RatTrap = new Equipment(`Rat Trap`, [`+1 Survival(Forage). Takes 1day.`], 1)
+export const RoadFlare = new Equipment(`Road Flare`, [`3FDMG. 10yd light radius for 20mins.`], 1)
+export const Rollerblades = new Equipment(`Rollerblades`, [`Athletics 6#. Speed x3. 1rnd equip. Fail:Prone.`], 2)
+export const Rope = new Equipment(`Rope`, [`30yd nylon coil. Holds 100Sz.`], 2)
+export const RunningShoes = new Equipment(`Running Shoes`, [`+1 mile of Jogging distance.`], 2)
+export const Skateboard = new Equipment(`Skateboard`, [`Athletics 6#. Speed x3. Fail:Prone.`], 3)
+export const SleepingBag = new Equipment(`Sleeping Bag`, [`Insulated bag for up to 2 people. CR +3hrs.`], 3)
+export const Snorkel = new Equipment(`Snorkel`, [`Breathe while just beneath water's surface.`], 1)
+export const SpottingScope = new Equipment(`Spotting Scope`, [`+6 Perception(See) at 100+yds.`], 2)
+export const SprayPaint = new Equipment(`Spray Paint`, [`RATK Called Shot:Head. Blind d6rnds. 10 uses.`], 1)
+export const Sunglasses = new Equipment(`Sunglasses`, [`No Visibility(Sun) penalty. +1 C vs light.`], 0)
+export const SwissArmyKnife = new Equipment(`Swiss Army Knife`, [`+1 Build and Survival.`], 1)
+export const TapeMeasure = new Equipment(`Tape Measure`, [`+1 Build. 10yd long wind-up metal tape.`], 2)
+export const Tarp = new Equipment(`Tarp`, [`3yd x 3yd plastic sheet. CR. Waterproof.`], 1)
+export const Tent = new Equipment(`Tent`, [`4 person. 5min setup/take-down. CR +3hrs.`], 6)
+export const ThermalUnderwear = new Equipment(`Thermal Underwear`, [`CR. Can use as 6 Bandages.`], 1)
+export const ToolBag = new Equipment(`Tool Bag`, [`+3 Build. Pliers, wrenches, level, etc.`], 3)
+export const WaterFilter = new Equipment(`Water Filter`, [`Purifies 1 Water ration (.5gal) per minute.`], 1)
+export const Whetstone = new Equipment(`Whetstone`, [`Blade gets +1 DMG for 1day. Takes 1hr/blade.`], 1)
+export const Whistle = new Equipment(`Whistle`, [`+1 Tame(Train). Loud shriek 500yd radius.`], 0)
+export const WireSaw = new Equipment(`Wire Saw`, [`1DMG/rnd of sawing to wood or bone.`], 1)
+export const Wristwatch = new Equipment(`Wristwatch`, [`Tells time and +1 Survival(Navigate).`], 0)
+export const ZipTie = new Equipment(`Zip Tie`, [`Grabbed. C9# to escape. Use for +1 Build.`], 0)
+
 export const EquipmentList = [
-	new Equipment(`Air Horn`,		   `Emits a loud shriek up to a 1 mile radius.`,	   1),
-	new Equipment(`Balaclava`,		  `+1 Stealth. Mask. CR.`,							0),
-	new Equipment(`Bandanna`,		   `+1 C vs airborne toxins. Can use as Bandage.`,	 0),
-	new Equipment(`Baseball Cap`,	   `Reduce Visibility(Rain and Sun) penalty by 1.`,	0),
-	new Equipment(`Bicycle`,			`Athletics 3#. Speed x3yds (x.7mph). 2h.`,		  8),
-	new Equipment(`Binoculars`,		 `+3 Perception(See) at 50+yds.`,					1),
-	new Equipment(`Bobby Pin`,		  `Allows Larceny(Disable) roll on key locks.`,	   0),
-	new Equipment(`Bolt Cutters`,	   `C9# to cut metal (Handcuffs, Padlocks, etc).`,	 3),
-	new Equipment(`Cage Trap`,		  `+3 Survival(Forage). Takes 1day.`,				 6),
-	new Equipment(`Candle`,			 `1yd light radius for 6hrs.`,					   0),
-	new Equipment(`Candy`,			  `Restores 1 Luck point. 1/day.`,					0),
-	new Equipment(`Carabiner`,		  `+1 Athletics(Climb and Rappel). Holds 50Sz.`,	  0),
-	new Equipment(`Compass`,			`+3 Survival(Navigate). Always points North.`,	  0),
-	new Equipment(`Cowboy Hat`,		 `Reduce Visibility(Rain and Sun) penalty by 3.`,	0),
-	new Equipment(`Chalk`,			  `Used to temporarily write on any surface.`,		0),
-	new Equipment(`Chemical`,		   `Substances used for Science(Chemistry).`,		  1),
-	new Equipment(`Choker Leash`,	   `+3 Tame. Grabbed. C +3 vs C to control.`,		  1),
-	new Equipment(`Duct Tape`,		  `+1 Build/1yd or use 2yds as Handcuffs. 60yds.`,	1),
-	new Equipment(`Dust Mask`,		  `+3 C vs airborne toxins. Mask.`,				   1),
-	new Equipment(`Ear Plugs`,		  `No Deafness from noise. -3 Perception(Hear).`,	 9),
-	new Equipment(`Egg Timer`,		  `Set up to 60mins. Loud ringing for 1min.`,		 1),
-	new Equipment(`Fire-stick`,		 `+3 Survival(Camp). Magnesium rod and steel.`,	  0),
-	new Equipment(`Fishing Pole`,	   `+1 Survival(Forage) at river, lake, or ocean.`,	2),
-	new Equipment(`Flare Gun`,		  `Pistol. RNG:3. Ammo: 12g Flares or 1 use 12g.`,	1),
-	new Equipment(`Flippers`,		   `+3 Athletics(Swim). -6 walking Speed.`,			2),
-	new Equipment(`Food`,			   `Contains 1 Food to feed a person for a day.`,	  1),
-	new Equipment(`Gas Mask`,		   `+6 C vs airborne toxins. Mask. -1 Perception.`,	1),
-	new Equipment(`Glass Cutter`,	   `Cuts glass quietly.`,							  0),
-	new Equipment(`Goggles`,			`+3 C to resist toxins in eyes.`,				   1),
-	new Equipment(`Grappling Hook`,	 `+3 Athletics(Climb and Rappel). Holds 100Sz.`,	 2),
-	new Equipment(`Gun Cleaning Kit`,   `Gun gets +1 RATK for 1day. Takes 1hr/gun.`,		1),
-	new Equipment(`Hacksaw`,			`1DMG/rnd of sawing to almost any material.`,	   2),
-	new Equipment(`Hammock`,			`Suspended sleeping device for 1 person.`,		  1),
-	new Equipment(`Handcuffs`,		  `Grabbed. A15# to escape. Larceny(Disable) 12#.`,   1),
-	new Equipment(`Leather Belt`,	   `1yd strap. Stops Limb Bleeding. Holds 50Sz.`,	  1),
-	new Equipment(`Lifejacket`,		 `+6 Athletics(Swim). Prevents drowning.`,		   2),
-	new Equipment(`Lighter`,			`Makes a small fire. 1yd radius light.`,			0),
-	new Equipment(`Lockpicks`,		  `+3 Larceny(Disable) key locks. 6 picks.`,		  1),
-	new Equipment(`Luxury Item`,		`Toilet paper, cigarette, etc. +1 Psyche 1/wk.`,	0),
-	new Equipment(`Magnifying Glass`,   `+6 Perception(See) to inspect tiny details.`,	  1),
-	new Equipment(`Makeup`,			 `+1 Socialize and Entertain for 6hrs. 30 uses.`,	0),
-	new Equipment(`Marbles`,			`30/bag. 2sqyd area. A12# or fall Prone.`,		  1),
-	new Equipment(`Marker`,			 `Used to permanently write on any surface.`,		0),
-	new Equipment(`Matchbook`,		  `+1 Survival(Camp). 1yd light radius, 3rnds.`,	  0),
-	new Equipment(`Measuring Cup`,	  `+3 Science(Chemistry). Marked glass cup.`,		 1),
-	new Equipment(`Monocular`,		  `+1 Perception(See) at 25+yds.`,					1),
-	new Equipment(`Multi-Tool`,		 `+1 Larceny(Disable), Build, Science(Tech).`,	   1),
-	new Equipment(`Musical Instrument`, `+1 Entertain(Distract and Inspire).`,			  1),
-	new Equipment(`Mylar Blanket`,	  `CR. 1yd x 2yd reflective foil sheet.`,			 0),
-	new Equipment(`Notebook`,		   `100 pages of paper with a wire binding.`,		  1),
-	new Equipment(`Padlock`,			`10HP. 6DR. Larceny(Disable) 9#.`,				  1),
-	new Equipment(`Paracord`,		   `60yd coil. Holds 50Sz.`,						   1),
-	new Equipment(`Part`,			   `Scrap used for Build and Science(Tech).`,		  1),
-	new Equipment(`Pepper Spray`,	   `+1 Ranged(Gun). RNG:1. 3 Pain. 3 uses. Toxin.`,	0),
-	new Equipment(`Pocket Mirror`,	  `Perception(See) 6# to see from behind Cover.`,	 0),
-	new Equipment(`Poncho`,			 `CR. Waterproof.`,								  0),
-	new Equipment(`Rat Trap`,		   `+1 Survival(Forage). Takes 1day.`,				 1),
-	new Equipment(`Road Flare`,		 `3FDMG. 10yd light radius for 20mins.`,			 1),
-	new Equipment(`Rollerblades`,	   `Athletics 6#. Speed x3. 1rnd equip. Fail:Prone.`,  2),
-	new Equipment(`Rope`,			   `30yd nylon coil. Holds 100Sz.`,					2),
-	new Equipment(`Running Shoes`,	  `+1 mile of Jogging distance.`,					 2),
-	new Equipment(`Skateboard`,		 `Athletics 6#. Speed x3. Fail:Prone.`,			  3),
-	new Equipment(`Sleeping Bag`,	   `Insulated bag for up to 2 people. CR +3hrs.`,	  3),
-	new Equipment(`Snorkel`,			`Breathe while just beneath water's surface.`,	 1),
-	new Equipment(`Spotting Scope`,	 `+6 Perception(See) at 100+yds.`,				   2),
-	new Equipment(`Spray Paint`,		`RATK Called Shot:Head. Blind d6rnds. 10 uses.`,	1),
-	new Equipment(`Sunglasses`,		 `No Visibility(Sun) penalty. +1 C vs light.`,	   0),
-	new Equipment(`Swiss Army Knife`,   `+1 Build and Survival.`,						   1),
-	new Equipment(`Tape Measure`,	   `+1 Build. 10yd long wind-up metal tape.`,		  2),
-	new Equipment(`Tarp`,			   `3yd x 3yd plastic sheet. CR. Waterproof.`,		 1),
-	new Equipment(`Tent`,			   `4 person. 5min setup/take-down. CR +3hrs.`,		6),
-	new Equipment(`Thermal Underwear`,  `CR. Can use as 6 Bandages.`,					   1),
-	new Equipment(`Tool Bag`,		   `+3 Build. Pliers, wrenches, level, etc.`,		  3),
-	new Equipment(`Water Filter`,	   `Purifies 1 Water ration (.5gal) per minute.`,	  1),
-	new Equipment(`Whetstone`,		  `Blade gets +1 DMG for 1day. Takes 1hr/blade.`,	 1),
-	new Equipment(`Whistle`,			`+1 Tame(Train). Loud shriek 500yd radius.`,		0),
-	new Equipment(`Wire Saw`,		   `1DMG/rnd of sawing to wood or bone.`,			  1),
-	new Equipment(`Wristwatch`,		 `Tells time and +1 Survival(Navigate).`,			0),
-	new Equipment(`Zip Tie`,			`Grabbed. C9# to escape. Use for +1 Build.`,		0)
+	AirHorn,
+	Balaclava,
+	Bandanna,
+	BaseballCap,
+	Bicycle,
+	Binoculars,
+	BobbyPin,
+	BoltCutters,
+	CageTrap,
+	Candle,
+	Candy,
+	Carabiner,
+	Compass,
+	CowboyHat,
+	Chalk,
+	Chemical,
+	ChokerLeash,
+	DuctTape,
+	DustMask,
+	EarPlugs,
+	EggTimer,
+	Firestick,
+	FishingPole,
+	FlareGun,
+	Flippers,
+	Food,
+	GasMask,
+	GlassCutter,
+	Goggles,
+	GrapplingHook,
+	GunCleaningKit,
+	Hacksaw,
+	Hammock,
+	Handcuffs,
+	LeatherBelt,
+	Lifejacket,
+	Lighter,
+	Lockpicks,
+	LuxuryItem,
+	MagnifyingGlass,
+	Makeup,
+	Marbles,
+	Marker,
+	Matchbook,
+	MeasuringCup,
+	Monocular,
+	Multitool,
+	MusicalInstrument,
+	MylarBlanket,
+	Notebook,
+	Padlock,
+	Paracord,
+	Part,
+	PepperSpray,
+	PocketMirror,
+	Poncho,
+	RatTrap,
+	RoadFlare,
+	Rollerblades,
+	Rope,
+	RunningShoes,
+	Skateboard,
+	SleepingBag,
+	Snorkel,
+	SpottingScope,
+	SprayPaint,
+	Sunglasses,
+	SwissArmyKnife,
+	TapeMeasure,
+	Tarp,
+	Tent,
+	ThermalUnderwear,
+	ToolBag,
+	WaterFilter,
+	Whetstone,
+	Whistle,
+	WireSaw,
+	Wristwatch,
+	ZipTie
 ]
+
 
 class Medical extends Gear {
 	constructor(name, description, sz) {
@@ -384,20 +591,31 @@ class Medical extends Gear {
 	}
 }
 
+export const Bandage = new Medical(`Bandage`, [`+1 Medicine(First-Aid). 1 use.`], 0)
+export const Crutch = new Medical(`Crutch`, [`Halves Leg DMG Pain penalty to Speed.`], 3)
+export const EMTBag = new Medical(`EMT Bag`, [`+3 Medicine(First-Aid). 30 uses.`], 5)
+export const FirstAidKit = new Medical(`First-Aid Kit`, [`+1 Medicine(First-Aid). 5 uses.`], 1)
+export const PressureCuff = new Medical(`Pressure Cuff`, [`+1 Medicine.`], 1)
+export const Stethoscope = new Medical(`Stethoscope`, [`+1 Medicine. Perception(Hear) 6# through doors.`], 1)
+export const SurgeryKit = new Medical(`Surgery Kit`, [`+3 Medicine(Surgery).`], 3)
+export const Thermometer = new Medical(`Thermometer`, [`+1 Medicine. Accurately reads temperature.`], 0)
+export const TransfusionKit = new Medical(`Transfusion Kit`, [`Medicine 9#. Heal 1 Wound. Takes 1hr.`], 1)
+
 export const MedicalList = [
-	new Medical(`Bandage`,		  `+1 Medicine(First-Aid). 1 use.`,						   0),
-	new Medical(`Crutch`,		   `Halves Leg DMG Pain penalty to Speed.`,					3),
-	new Medical(`EMT Bag`,		  `+3 Medicine(First-Aid). 30 uses.`,						 5),
-	new Medical(`First-Aid Kit`,	`+1 Medicine(First-Aid). 5 uses.`,						  1),
-	new Medical(`Pressure Cuff`,	`+1 Medicine.`,											 1),
-	new Medical(`Stethoscope`,	  `+1 Medicine. Perception(Hear) 6# through doors.`,		  1),
-	new Medical(`Surgery Kit`,	  `+3 Medicine(Surgery).`,									3),
-	new Medical(`Thermometer`,	  `+1 Medicine. Accurately reads temperature.`,			   0),
-	new Medical(`Transfusion Kit`,  `Medicine 9#. Heal 1 Wound. Takes 1hr.`,					1),
+	Bandage,
+	Crutch,
+	EMTBag,
+	FirstAidKit,
+	PressureCuff,
+	Stethoscope,
+	SurgeryKit,
+	Thermometer,
+	TransfusionKit
 ]
 
+
 class MeleeWeapon extends Gear {
-	constructor(name, dmg, hands, rng, description, sz) {
+	constructor(name, description, sz, dmg, hands, rng) {
 		super(name, description, sz)
 		this.dmg = dmg
 		this.hands = hands
@@ -405,19 +623,32 @@ class MeleeWeapon extends Gear {
 	}
 }
 
+export const Ax = new MeleeWeapon(`Ax`, [`Slow`, `Chop`], 4, 5, 2, 2)
+export const BaseballBat = new MeleeWeapon(`Baseball Bat`, [], 3, 3, 2, 2)
+export const BrassKnuckles = new MeleeWeapon(`Brass Knuckles`, [`Unarmed`], 1, 2, 1, 1)
+export const Crowbar = new MeleeWeapon(`Crowbar`, [], 3, 3, 1, 2)
+export const Hammer = new MeleeWeapon(`Hammer`, [], 2, 2, 1, 1)
+export const Hatchet = new MeleeWeapon(`Hatchet`, [`Chop`], 2, 2, 1, 1)
+export const Knife = new MeleeWeapon(`Knife`, [`Pierce`, `Rapid`], 1, 2, 1, 1)
+export const Machete = new MeleeWeapon(`Machete`, [`Chop`], 2, 3, 1, 2)
+export const Shield = new MeleeWeapon(`Shield`, [`Cover 3DR`, `+3 Block`], 4, 1, 1, 1)
+export const Sledgehammer = new MeleeWeapon(`Sledgehammer`, [`Slow`], 5, 5, 2, 2)
+export const Spear = new MeleeWeapon(`Spear`, [`Pierce`], 3, 4, 2, 3)
+export const Staff = new MeleeWeapon(`Staff`, [], 3, 2, 2, 3)
+
 export const MeleeList = [
-	new MeleeWeapon(`Ax`,			   5, 2, 2, [`Slow`, `Chop`],		  4),
-	new MeleeWeapon(`Baseball Bat`,	 3, 2, 2, [],						3),
-	new MeleeWeapon(`Brass Knuckles`,   2, 1, 1, [`Unarmed`],			   1),
-	new MeleeWeapon(`Crowbar`,		  3, 1, 2, [],						3),
-	new MeleeWeapon(`Hammer`,		   2, 1, 1, [],						2),
-	new MeleeWeapon(`Hatchet`,		  2, 1, 1, [`Chop`],				  2),
-	new MeleeWeapon(`Knife`,			2, 1, 1, [`Pierce`, `Rapid`],	   1),
-	new MeleeWeapon(`Machete`,		  3, 1, 2, [`Chop`],				  2),
-	new MeleeWeapon(`Shield`,		   1, 1, 1, [`Cover 3DR`, `+3 Block`], 4),
-	new MeleeWeapon(`Sledgehammer`,	 5, 2, 2, [`Slow`],				  5),
-	new MeleeWeapon(`Spear`,			4, 2, 3, [`Pierce`],				3),
-	new MeleeWeapon(`Staff`,			2, 2, 3, [],						3)
+	Ax,
+	BaseballBat,
+	BrassKnuckles,
+	Crowbar,
+	Hammer,
+	Hatchet,
+	Knife,
+	Machete,
+	Shield,
+	Sledgehammer,
+	Spear,
+	Staff
 ]
 
 // RARE MELEE
@@ -452,6 +683,7 @@ export const MeleeList = [
 // new MeleeWeapon(`Tire Iron`, 2, 1, `Lever.`, 2),
 // new MeleeWeapon(`Torch`, 1, 1, `Blunt. +1 FDMG. 5yd light radius 1hr.`, 2),
 
+
 class RangedWeapon extends Gear {
 	constructor(name, dmg, hands, rng, cal, mag, reg, description, sz) {
 		super(name, description, sz)
@@ -464,20 +696,34 @@ class RangedWeapon extends Gear {
 	}
 }
 
+export const BoltActionRifle = new RangedWeapon(`Bolt-Action Rifle`, [], 4, 3, 2, 200, 5, `.308`, `C`)
+export const CompoundBow = new RangedWeapon(`Compound Bow`, [], 4, 1, 2, 10, 1, `Arrow`, `C`)
+export const Crossbow = new RangedWeapon(`Crossbow`, [], 4, 2, 2, 20, 1, `Arrow`, `C`)
+export const DoubleBarrelShotgun = new RangedWeapon(`Double-Barrel Shotgun`, [`Rapid`, `Scatter`], 4, 4, 2, 20, 2, `12g`, `C`)
+export const LeverActionRifle = new RangedWeapon(`Lever-Action Rifle`, [], 3, 2, 2, 50, 10, `.357`, `C`)
+export const PumpShotgun = new RangedWeapon(`Pump Shotgun`, [`Scatter`], 4, 4, 2, 20, 6, `12g`, `C`)
+export const Revolver = new RangedWeapon(`Revolver`, [], 2, 2, 1, 10, 6, `.357`, `C`)
+export const SemiAutoCarbine = new RangedWeapon(`Semi-Auto Carbine`, [`Rapid`], 3, 1, 2, 30, 30, `9mm`, `C`)
+export const SemiAutoPistol = new RangedWeapon(`Semi-Auto Pistol`, [`Rapid`], 1, 1, 1, 10, 15, `9mm`, `C`)
+export const SemiAutoRifle = new RangedWeapon(`Semi-Auto Rifle`, [`Rapid`], 3, 2, 2, 100, 30, `5.56`, `C`)
+export const SemiAutoShotgun = new RangedWeapon(`Semi-Auto Shotgun`, [`Rapid`, `Scatter`], 4, 4, 2, 20, 6, `12g`, `C`)
+export const TargetPistol = new RangedWeapon(`Target Pistol`, [`Rapid`], 1, 1, 2, 30, 10, `.22`, `C`)
+export const TargetRifle = new RangedWeapon(`Target Rifle`, [`Rapid`], 3, 1, 2, 50, 10, `.22`, `C`)
+
 export const RangedList = [
-	new RangedWeapon(`Bolt-Action Rifle`,			   3, 2, 200,  5,  `.308`,	 `C`, [],					4),
-	new RangedWeapon(`Compound Bow`,					1, 2, 10,   1,  `Arrow`,	`C`, [],					4),
-	new RangedWeapon(`Crossbow`,						2, 2, 20,   1,  `Arrow`,	`C`, [],					4),
-	new RangedWeapon(`Double-Barrel Shotgun`,		   4, 2, 20,   2,  `12g`,	  `C`, [`Rapid`, `Scatter`],  4),
-	new RangedWeapon(`Lever-Action Rifle`,			  2, 2, 50,   10, `.357`,	 `C`, [],					3),
-	new RangedWeapon(`Pump Shotgun`,					4, 2, 20,   6,  `12g`,	  `C`, [`Scatter`],		   4),
-	new RangedWeapon(`Revolver`,						2, 1, 10,   6,  `.357`,	 `C`, [],					2),
-	new RangedWeapon(`Semi-Auto Carbine`,			   1, 2, 30,   30, `9mm`,	  `C`, [`Rapid`],			 3),
-	new RangedWeapon(`Semi-Auto Pistol`,				1, 1, 10,   15, `9mm`,	  `C`, [`Rapid`],			 1),
-	new RangedWeapon(`Semi-Auto Rifle`,				 2, 2, 100,  30, `5.56`,	 `C`, [`Rapid`],			 3),
-	new RangedWeapon(`Semi-Auto Shotgun`,			   4, 2, 20,   6,  `12g`,	  `C`, [`Rapid`, `Scatter`],  4),
-	new RangedWeapon(`Target Pistol`,				   1, 2, 30,   10, `.22`,	  `C`, [`Rapid`],			 1),
-	new RangedWeapon(`Target Rifle`,					1, 2, 50,   10, `.22`,	  `C`, [`Rapid`],			 3),
+	BoltActionRifle,
+	CompoundBow,
+	Crossbow,
+	DoubleBarrelShotgun,
+	LeverActionRifle,
+	PumpShotgun,
+	Revolver,
+	SemiAutoCarbine,
+	SemiAutoPistol,
+	SemiAutoRifle,
+	SemiAutoShotgun,
+	TargetPistol,
+	TargetRifle
 ]
 
 // RARE RANGED
@@ -528,6 +774,7 @@ export const RangedList = [
 // new RangedWeapon(`S&ampW Snubnose`, 3, 5, `.357`, `5cyl`, 1, `Revolver.`, 1),
 // new RangedWeapon(`Winchester Sawn-off`, 6, 5, `12g`, 2, 2, `Rapid. Scatter.`, 2)
 
+
 export const WeaponList = [
 	...MeleeList,
 	...RangedList
@@ -535,46 +782,67 @@ export const WeaponList = [
 
 
 class Storage extends Gear {
-	constructor(name, slots, description, sz) {
+	constructor(name, description, sz, slots) {
 		super(name, description, sz)
 		this.slots = slots
 	}
 }
 
+export const Backpack = new Storage(`Backpack`, `2rnds to access.`, 1, 30)
+export const Bandoleer = new Storage(`Bandoleer`, `Holds 50 bullets of any caliber.`, 0, 1)
+export const BDUJacket = new Storage(`BDU Jacket`, `Camo.`, 0, 4)
+export const CargoPants = new Storage(`Cargo Pants`, `Camo.`, 1, 6)
+export const Canteen = new Storage(`Canteen`, `Holds 1 unit (.5gal) of liquid. Metal.`, 1, 1)
+export const ConcealedHolster = new Storage(`Concealed Holster`, `Perception 12# to spot a Size 1 Gun.`, 0, 1)
+export const Cooler = new Storage(`Cooler`, `Hunted or Foraged Food lasts 6 days.`, 4, 30)
+export const DuffelBag = new Storage(`Duffel Bag`, `2rnds to access.`, 3, 40)
+export const FuelCan = new Storage(`Fuel Can`, `5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.`, 2, 5)
+export const Hoody = new Storage(`Hoody`, `CR.`, 0, 2)
+export const HydrationPack = new Storage(`Hydration Pack`, `Holds 4 units (2gal) of liquid.`, 1, 4)
+export const Lockbox = new Storage(`Lockbox`, `10HP. 6DR. FR. Larceny(Disable) 9#.`, 2, 1)
+export const MessengerBag = new Storage(`Messenger Bag`, `1rnd to access.`, 2, 4)
+export const PlasticJug = new Storage(`Plastic Jug`, `Holds 2 units (1gal) of liquid.`, 1, 2)
+export const Purse = new Storage(`Purse`, `1rnd to access.`, 1, 3)
+export const Speedloader = new Storage(`Speed-loader`, `Reload a revolver cylinder as 1 action.`, 0, 0)
+export const ToolBelt = new Storage(`Tool Belt`, `6x 1 Slots. +1 Build. Miscellaneous small tools.`, 2, 6)
+export const TrenchCoat = new Storage(`Trench Coat`, `CR. +1 Stealth.`, 1, 4)
+export const WaterBottle = new Storage(`Water Bottle`, `Holds 1 unit (.5gal) of liquid.`, 1, 1)
+
 export const StorageList = [
-	new Storage(`Backpack`,			 30, `2rnds to access.`,								 1),
-	new Storage(`Bandoleer`,			1,  `Holds 50 bullets of any caliber.`,				 0),
-	new Storage(`BDU Jacket`,		   4,  `Camo.`,											0),
-	new Storage(`Cargo Pants`,		  6,  `Camo.`,											1),
-	new Storage(`Canteen`,			  1,  `Holds 1 unit (.5gal) of liquid. Metal.`,		   1),
-	new Storage(`Concealed Holster`,	1,  `Perception 12# to spot a Size 1 Gun.`,			 0),
-	new Storage(`Cooler`,			   30, `Hunted or Foraged Food lasts 6 days.`,			 4),
-	new Storage(`Duffel Bag`,		   40, `2rnds to access.`,								 3),
-	new Storage(`Fuel Can`,			 5,  `5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.`,	  2),
-	new Storage(`Hoody`,				2,  `CR.`,											  0),
-	new Storage(`Hydration Pack`,	   4,  `Holds 4 units (2gal) of liquid.`,				  1),
-	new Storage(`Lockbox`,			  1,  `10HP. 6DR. FR. Larceny(Disable) 9#.`,			  2),
-	new Storage(`Messenger Bag`,		4,  `1rnd to access.`,								  2),
-	new Storage(`Plastic Jug`,		  2,  `Holds 2 units (1gal) of liquid.`,				  1),
-	new Storage(`Purse`,				3,  `1rnd to access.`,								  1),
-	new Storage(`Speed-loader`,		 0,  `Reload a revolver cylinder as 1 action.`,		  0),
-	new Storage(`Tool Belt`,			6,  `6x 1 Slots. +1 Build. Miscellaneous small tools.`, 2),
-	new Storage(`Trench Coat`,		  4,  `CR. +1 Stealth.`,								  1),
-	new Storage(`Water Bottle`,		 1,  `Holds 1 unit (.5gal) of liquid.`,				  1),
+	Backpack,
+	Bandoleer,
+	BDUJacket,
+	CargoPants,
+	Canteen,
+	ConcealedHolster,
+	Cooler,
+	DuffelBag,
+	FuelCan,
+	Hoody,
+	HydrationPack,
+	Lockbox,
+	MessengerBag,
+	PlasticJug,
+	Purse,
+	Speedloader,
+	ToolBelt,
+	TrenchCoat,
+	WaterBottle
 ]
 
-class Vehicle extends Gear {
-	constructor(name, speed, dr, handling, mpg, fuel, seats, cargo, description='', sz='') {
-		super(name, description, sz)
-		this.speed = speed
-		this.dr = dr
-		this.handling = handling
-		this.mpg = mpg
-		this.fuel = fuel
-		this.seats = seats
-		this.cargo = cargo
-	}
-}
+
+// class Vehicle extends Gear {
+// 	constructor(name, speed, dr, handling, mpg, fuel, seats, cargo, description='', sz='') {
+// 		super(name, description, sz)
+// 		this.speed = speed
+// 		this.dr = dr
+// 		this.handling = handling
+// 		this.mpg = mpg
+// 		this.fuel = fuel
+// 		this.seats = seats
+// 		this.cargo = cargo
+// 	}
+// }
 
 //VEHICLES
 	// function Vehicle(name,hp,dr,dmg,spd,mph,han,mpg,fuel,occ,car,area,sz){
@@ -682,3 +950,18 @@ class Vehicle extends Gear {
 	// const cTurretGun = new Gear(`Turret Gun**`,`Build 6#*. Passenger uses Ranged for RATK rolls.`,9);
 	// const cWinch = new Gear(`Winch**`,`Build 9#. 30yd cable. 1yd/min. Hauls 2000Sz.`,15);
 	// const iVehicleCustomizationsList = [cAirBag,cAirFilter,cBackupFuelTank,cBallisticGlass,cBodySpines,cBrushGuard,cCargoRack,cCBRadio,cEjectorSeat,cEnhancedBrakes,cExoCage,cFireSuppression,cFixedGun,cFloodLights,cFrameJack,cFuelCapLock,cHiddenCompartment,cHighFlowExhaust,cHubcapBlades,cIntakeSnorkel,cKeypadIgnition,cLuxurySuspension,cNitrousBooster,cParachute,cPayloadDropper,cRackAndPinion,cRamPlow,cRunFlatTires,cSafetyHarness,cSlickDispenser,cSteelPlates,cStrutBraces,cSupercharger,cTireChains,cTurretGun,cWinch];
+
+
+export const MasterGearList = [
+	...AccessoryList,
+	...AmmoList,
+	...ArmorList,
+	...BombList,
+	...DocumentList,
+	...DrugsList,
+	...ElectronicsList,
+	...EquipmentList,
+	...MedicalList,
+	...WeaponList,
+	...StorageList
+]

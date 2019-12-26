@@ -1,10 +1,10 @@
-export default function countPoints(
+export const countPoints(
 		event, 
 		char, 
 		attribute,
 		starting, 
 		conditional
-	) {
+	) => {
 	let pointCount = pointTally(char, attribute)
 	let remaining = starting - pointCount
 	if (remaining < 0 || conditional) {
@@ -17,7 +17,7 @@ export default function countPoints(
 	return remaining
 }
 
-function pointTally(char, attribute) {
+const pointTally = (char, attribute) => {
 	let pointCount = 0
 	Object.keys(char[attribute]).forEach((a) => {
 		pointCount += char[attribute][a].score

@@ -1,6 +1,6 @@
 <script>
 	import { slide } from 'svelte/transition'
-	import HideShow from '../../functions/HideShow'
+	import { HideShow } from '../../functions/HideShow'
 
 	export let list
 </script>
@@ -12,7 +12,9 @@
 			<span class='name'>{rule.name}</span>
 			{#if rule.visible}
 				<div class='description' transition:slide>
-					{@html rule.description}
+					{#each rule.description as desc}
+						<p>{@html desc}</p>
+					{/each}
 					{#if rule.table}
 						<div class='separator'/>
 						<div class='table'><svelte:component this={rule.table}/></div>
@@ -61,5 +63,9 @@
 		font-size: 1.1em;
 		font-weight: bold;
 		text-decoration: underline;
+	}
+	table {
+		border: 1px solid lime;
+		padding: 10px;
 	}
 </style>

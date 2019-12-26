@@ -1,7 +1,5 @@
 Add a 9xp Ability.
 Add a 6xp Ability.
-CountPoints.js needs work. Gets stuck in infinite loops. Probably due to "conditional" parameter.
-Reference.svelte: Add remaining rules sections: Dice, Creation, Traits, Skills, Properties, Abilities, Gear
 Gear.js:
 	Check all item Notes.
 	Attributes: Figure out rules to specify weapon categories that attributes qualify for.

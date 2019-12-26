@@ -3,8 +3,7 @@
 	import {
 		AccessoryList,
 		AmmoList,
-		ArmorList, 
-		RandomArmor,
+		ArmorList,
 		BombList,
 		DocumentList,
 		DrugsList,
@@ -13,16 +12,18 @@
 		MedicalList,
 		MeleeList,
 		RangedList,
-		StorageList
+		StorageList,
+		MasterGearList
 	} from '../rules/Gear'
+	import { random } from '../../functions/Random'
 	import { CharacterStore } from '../../stores'
 	let char
 	const unsubscribe = CharacterStore.subscribe(value => { char = value })
 
 	let armorResult = ""
 
-	function rollArmor() {
-		armorResult = RandomArmor()
+	const rollArmor = () => {
+		armorResult = random(ArmorList)
 	}
 </script>
 

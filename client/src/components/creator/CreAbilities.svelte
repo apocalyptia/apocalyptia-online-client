@@ -10,7 +10,7 @@
 
 	let remaining = char.props.xp.score
 
-	function modifyAbilities() {
+	const modifyAbilities = () => {
 		remaining = char.props.xp.score
 		char.abilities = []
 		for (let i = 0; i < Abilities.length; i++) {
