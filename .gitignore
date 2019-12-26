@@ -6,6 +6,6 @@ node_modules/
 
 # Project specific rules
 book/
-old_code.js
-!global.css
-client/public/*
+client/old_code.js
+.gif
+.ttf
