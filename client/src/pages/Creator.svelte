@@ -11,7 +11,7 @@
 
 	let screen = {
 		step: 0,
-		options: [ Abilities, Description, Traits, Skills, Properties, Abilities, Gear ]
+		options: [ Description, Traits, Skills, Properties, Abilities, Gear ]
 	}
 	screen.selected = screen.options[screen.step]
 

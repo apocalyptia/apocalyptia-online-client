@@ -8413,17 +8413,17 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Next";
     			attr_dev(div0, "class", "creator-page svelte-1jijto");
-    			add_location(div0, file$8, 33, 1, 1035);
+    			add_location(div0, file$8, 33, 1, 1024);
     			attr_dev(button0, "class", "nav-button svelte-1jijto");
-    			add_location(button0, file$8, 37, 2, 1144);
+    			add_location(button0, file$8, 37, 2, 1133);
     			attr_dev(button1, "class", "nav-button svelte-1jijto");
-    			add_location(button1, file$8, 38, 2, 1203);
+    			add_location(button1, file$8, 38, 2, 1192);
     			attr_dev(button2, "class", "nav-button svelte-1jijto");
-    			add_location(button2, file$8, 39, 2, 1262);
+    			add_location(button2, file$8, 39, 2, 1251);
     			attr_dev(div1, "class", "nav-buttons svelte-1jijto");
-    			add_location(div1, file$8, 36, 1, 1116);
+    			add_location(div1, file$8, 36, 1, 1105);
     			attr_dev(div2, "class", "display-page");
-    			add_location(div2, file$8, 32, 0, 1007);
+    			add_location(div2, file$8, 32, 0, 996);
 
     			dispose = [
     				listen_dev(button0, "click", /*back*/ ctx[1], false, false, false),
@@ -8504,7 +8504,7 @@ var app = (function () {
     function instance$9($$self, $$props, $$invalidate) {
     	let screen = {
     		step: 0,
-    		options: [CreAbilities, CreDescription, CreTraits, CreSkills, CreProperties, CreAbilities, CreGear]
+    		options: [CreDescription, CreTraits, CreSkills, CreProperties, CreAbilities, CreGear]
     	};
 
     	screen.selected = screen.options[screen.step];
