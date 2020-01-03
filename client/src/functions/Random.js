@@ -1,5 +1,5 @@
 export const random = (arr) => {
-		return arr[Math.floor(Math.random() * arr.length)]
+	return arr[Math.floor(Math.random() * arr.length)]
 }
 
 export const d6 = () => {

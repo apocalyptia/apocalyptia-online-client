@@ -101,7 +101,7 @@
 		}
 	}
 	.skill-list {
-		margin-top: 25px;
+		margin-top: 1rem;
 	}
 	.trait-section {
 		border-width: 2px;
@@ -118,9 +118,6 @@
 	.stat-column, 
 	.stat-input {
 		text-align: center;
-	}
-	.slider-input {
-		width: 100%;
 	}
 	.stat-input {
 		display: flex;

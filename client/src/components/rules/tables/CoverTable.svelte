@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <table class='.cover-table'>
 	<tr><th>Material</th><th>DR</th></tr>
 	<tr><td>Drywall</td><td>0</td></tr>
@@ -12,6 +9,3 @@
 	<tr><td>Concrete</td><td>4</td></tr>
 	<tr><td>Steel</td><td>5</td></tr>
 </table>
-
-<style>
-</style>

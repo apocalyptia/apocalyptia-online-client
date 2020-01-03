@@ -1,24 +1,49 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import { AbilityList } from '../rules/Abilities'
+	import { Ability, AbilityList, MasterAbilityList } from '../rules/Abilities'
 	import { SkillList } from '../rules/Skills'
 	import { character } from '../../stores'
 
-	let Abilities = AbilityList
+	$: remaining = $character.props.xp.score - $character.abilities.reduce((t, n) => n.taken * n.xp, 0)
 
-	let remaining = $character.props.xp.score
+	let DisplayList = [...AbilityList]
 
 	const modifyAbilities = () => {
-		remaining = $character.props.xp.score
 		$character.abilities = []
-		for (let i = 0; i < Abilities.length; i++) {
-			if (Abilities[i].taken) {
-				$character.abilities.push(Abilities[i])
-				for (let t = 0; t < Abilities[i].taken; t++) {
-					remaining -= Abilities[i].xp
+		for (let a = 0; a < MasterAbilityList.length; ++a) {
+			MasterAbilityList[a].taken = 0
+			for (let d = 0; d < DisplayList.length; ++d) {
+				DisplayList[d].taken = parseInt(DisplayList[d].taken)
+				if (
+					DisplayList[d].taken &&
+					DisplayList[d].name == MasterAbilityList[a].name &&
+					DisplayList[d].options[DisplayList[d].selection].name == 
+					MasterAbilityList[a].options[0].name
+				) {
+					MasterAbilityList[a].taken = DisplayList[d].taken
+					$character.abilities.push(MasterAbilityList[a])
+
+					// START EXPERIMENTAL
+					// if (DisplayList[d].options.length > 1) {
+					// 	DisplayList.splice(
+					// 		d+1, 0,
+					// 		new Ability(
+					// 			DisplayList[d].name,
+					// 			DisplayList[d].description,
+					// 			DisplayList[d].max,
+					// 			DisplayList[d].xp,
+					// 			0,
+					// 			DisplayList[d].options.filter(f => f.name != MasterAbilityList[a].options[0].name)
+					// 		)
+					// 	)
+					// }
+					// END EXPERIMENTAL
+
+					break
 				}
 			}
 		}
+		console.log($character.abilities)
 	}
 </script>
 
@@ -32,84 +57,87 @@
 	<div class='stat-block'>
 		<div class='abilities-list'>
 			<div class='header-row'>
-				<div class='m-col name-header'>Name</div>
-				<div class='l-col description-header'>Description</div>
-				<div class='s-col max-header'>Max</div>
-				<div class='s-col xp-header'>XP</div>
-				<div class='s-col taken-header'>Taken</div>
+				<div class='col m-col name-header'>Name</div>
+				<div class='col l-col description-header'>Description</div>
+				<div class='col s-col max-header'>Max</div>
+				<div class='col s-col xp-header'>XP</div>
+				<div class='col s-col taken-header'>Taken</div>
 			</div>
-			{#each Abilities as ability, index}
-				<br>
-				{#if Abilities[index-1] != undefined && Abilities[index].xp != Abilities[index-1].xp}
-					<div class='separator'></div>
-					<br>
+			{#each DisplayList as ability, index}
+				{#if
+					DisplayList[index-1] != undefined && 
+					DisplayList[index].xp != DisplayList[index-1].xp
+				}
+					<div class='xp-separator' />
+				{/if}
+				{#if
+					index == 0 ||
+					ability.xp != DisplayList[index-1].xp
+				}
+					<div class='xp-header'>{ability.xp}XP Abilities</div>
 				{/if}
 				<div class='ability-row'>
-					<div class='m-col'>
+					<div class='col m-col'>
 						<span class='ability-name'>{ability.name}</span>
 					</div>
-					<div class='l-col'>
+					<div class='col l-col'>
 						<span class='description-label'>Descripiton: </span>
-						<span class='ability-description'>{ability.description}</span>
-						{#if ability.options.length}
+						<span class='ability-description'>
+							{ability.description}
+						</span>
+						{#if ability.options[0] != ''}
 							<span class='ability-options'>
-								<select value={ability.options[0]}>
-									{#each ability.options as option}
-										<option value={option}>{option.name}</option>
+								<select
+									name={ability.name}
+									bind:value={ability.selection}
+									on:change={modifyAbilities}
+								>
+									{#each ability.options as option, index}
+										<option value={index}>
+											{option.name}
+										</option>
 									{/each}
 								</select>
 							</span>
 						{/if}
 					</div>
-					<div class='s-col'>
+					<div class='col s-col'>
 						<span class='max-label'>Max: </span>
 						<span class='ability-max'>{ability.max}</span>
 					</div>
-					<div class='s-col'>
+					<div class='col s-col'>
 						<span class='xp-label'>XP: </span>
 						<span class='ability-xp'>{ability.xp}</span>
 					</div>
-					<div class='s-col'>
+					<div class='col s-col'>
 						<span class='taken-label'>Taken: </span>
 						<span class='ability-taken'>
-							<select
+							<input
+								type='number'
+								min=0
+								max={ability.max}
 								class='taken-number'
 								bind:value={ability.taken}
-								invalid={remaining < 0}
 								on:change={modifyAbilities}
 							>
-								<option value=0>0</option>
-								<option value=1>1</option>
-								{#if ability.max > 1}
-									<option value=2>2</option>
-									<option value=3>3</option>
-									{#if ability.max > 3}
-										<option value=4>4</option>
-										<option value=5>5</option>
-										<option value=6>6</option>
-										{#if ability.max > 6}
-											<option value=7>7</option>
-											<option value=8>8</option>
-											<option value=9>9</option>
-										{/if}
-									{/if}
-								{/if}
-							</select>
 						</span>
 					</div>
 				</div>
+				{#if
+					DisplayList[index+1] != undefined &&
+					DisplayList[index].xp == DisplayList[index+1].xp
+				}
+					<div class='ab-separator' />
+				{/if}
 			{/each}
 		</div>
 	</div>
 </div>
 
 <style>
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 1000px) {
 		.header-row {
 			display: none;
-		}
-		.l-col, .m-col, .s-col {
-			display: block;
 		}
 		.ability-name,
 		.description-label,
@@ -122,7 +150,7 @@
 			text-decoration: underline;
 		}
 	}
-	@media only screen and (min-width: 500px) {
+	@media only screen and (min-width: 1000px) {
 		.name-header,
 		.description-header,
 		.max-header,
@@ -150,8 +178,16 @@
 			width: 8%;
 		}
 	}
+	.xp-header {
+		font-size: 1.25rem;
+		margin-bottom: 1.25rem;
+		text-align: center;
+		text-decoration: underline;
+	}
+	.col {
+		vertical-align: top;
+	}
 	.abilities-step {
-		margin-bottom: 5vh;
 		text-align: left;
 	}
 	.abilities-list {
@@ -160,13 +196,18 @@
 	.remaining {
 		text-align: center;
 	}
-	.separator {
+	.ab-separator {
+		margin-bottom: 1.5rem;
+	}
+	.xp-separator {
 		border-bottom: 1px solid;
-		margin-bottom: 10px;
-		padding-bottom: 10px;
+		margin-bottom: 1.25rem;
+		padding-bottom: 1.25rem;
 		width: 100%;
 	}
 	.taken-number {
-		width: 5vw;
+		width: 10vw;
+		max-width: 50px;
+		height: 1.25rem;
 	}
 </style>

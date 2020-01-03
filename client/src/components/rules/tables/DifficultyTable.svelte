@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <table class='difficulty-table'>
 	<tr>
 		<td>3#</td>
@@ -13,6 +10,3 @@
 		<td>Extreme</td>
 	</tr>
 </table>
-
-<style>
-</style>

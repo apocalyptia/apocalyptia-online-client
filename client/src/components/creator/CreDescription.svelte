@@ -1,14 +1,13 @@
 <script>
 	import { fade } from 'svelte/transition'
 	import { femaleNames, maleNames } from '../../assets/lists/names.js'
+	import { random } from '../../functions/Random'
 	import { character } from '../../stores'
 
-	const random = (array) => { return array[Math.ceil(Math.random() * array.length) - 1] }
-
 	const randomName = () => {
-		if ($character.description.gender.value == 'Male') { $character.description.$characterName.value = random(maleNames) }
-		else if ($character.description.gender.value == 'Female') { $character.description.$characterName.value = random(femaleNames) } 
-		else { $character.description.$characterName.value = random([...femaleNames, ...maleNames]) }
+		if ($character.description.gender.value == 'Male') { $character.description.characterName.value = random(maleNames) }
+		else if ($character.description.gender.value == 'Female') { $character.description.characterName.value = random(femaleNames) } 
+		else { $character.description.characterName.value = random([...femaleNames, ...maleNames]) }
 	}
 
 	const randomHeight = () => {
@@ -68,7 +67,7 @@
 	]
 </script>
 
-<div class='step' in:fade>
+<div class='description-step' in:fade>
 	<div class='step-title'>
 		<h2>Description</h2>
 	</div>
@@ -76,7 +75,7 @@
 		<span class='stat-label'>Player:</span>
 		<input
 			type='text'
-			class='player-name'
+			class='full-block'
 			bind:value={$character.description.playerName.value}
 		>
 	</div>
@@ -84,7 +83,7 @@
 		<span class='stat-label'>Character:</span>
 		<input
 			type='text'
-			class='character-name'
+			class='full-block'
 			bind:value={$character.description.characterName.value}
 		>
 		<button on:click={randomName}>Random</button>
@@ -92,69 +91,19 @@
 	{#each descriptions as pair}
 		<div class='stat-block'>
 			{#each pair as {name, random}}
-				<div class='half-stat-block'>
-					<div class='hs-container'>
+				<div class='pair-block'>
+					<div class='pair-container'>
 						<span class='stat-label'>{name}:</span>
-						<input class='half-input' bind:value={$character.description[name.toLowerCase()].value}>
+						<input
+							type='text'
+							class='pair-input'
+							bind:value={$character.description[name.toLowerCase()].value}
+						>
 						<button on:click={random}>Random</button>
 					</div>
 				</div>
 			{/each}
 		</div>
 	{/each}
-	<div class='stat-block'>
-		<button class='random-all' on:click={randomDescription}>Random Character</button>
-	</div>
+	<button class='center-button' on:click={randomDescription}>Random Character</button>
 </div>
-
-<style >
-	.stat-label {
-		display: block;
-	}
-	.player-name {
-		width: 100%;
-	}
-	.character-name {
-		width: 100%;
-	}
-	input {
-		height: 1.75em;
-	}
-	button {
-		height: 1.75em;
-		padding: 2px;
-	}
-	.random-all {
-		margin: auto;
-		padding: 5px;
-	}
-	.half-input {
-		width: 70%;
-	}
-	.half-stat-block {
-		text-align: center;
-		width: 50% ;
-	}
-	.hs-container {
-		display: inline-block;
-		text-align: left;
-	}
-	@media only screen and (max-width: 500px) {
-		input {
-			display: inline-block;
-			width: 100%;
-		}
-		button {
-			display: block;
-			float: right;
-		}
-		.half-stat-block {
-			display: block;
-			padding: 5px;
-			width: 55%;
-		}
-		.half-input {
-			width: 50%;
-		}
-	}
-</style>

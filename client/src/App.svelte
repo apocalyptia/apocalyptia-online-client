@@ -36,9 +36,12 @@
 
 <style>
 	.display-window {
-		height: calc(100vh - 50px);
 		position: absolute;
-		top: 50px;
+		top: 3rem;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		height: calc(100vh - 3rem);
+		text-align: center;
 		width: 100vw;
 	}
 </style>

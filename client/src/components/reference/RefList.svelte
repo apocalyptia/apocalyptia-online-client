@@ -5,7 +5,7 @@
 	export let list
 </script>
 
-<div>
+<div class='ref-list'>
 	<div class='separator'/>
 	{#each list as rule}
 		<div class='box' on:click={() => list = HideShow(rule, list)}>
@@ -17,7 +17,9 @@
 					{/each}
 					{#if rule.table}
 						<div class='separator'/>
-						<div class='table'><svelte:component this={rule.table}/></div>
+						<div class='table'>
+							<svelte:component this={rule.table}/>
+						</div>
 					{/if}
 					{#if rule.subrules}
 						<ul class='sub-ul'>
@@ -25,7 +27,9 @@
 								<div class='separator'/>
 								<li class='sub-li'>
 									<div class='sub-box'>
-										<span class='sub-name'>{subrule.name}</span>
+										<span class='sub-name'>
+											{subrule.name}
+										</span>
 										<div class='sub-notes'>
 											{@html subrule.description}
 										</div>
@@ -44,23 +48,23 @@
 <style>
 	.box {
 		border: 1px dotted lime;
-		padding: 25px;
+		padding: 1rem;
 	}
 	.name {
-		font-size: 1.2em;
+		font-size: 1.25rem;
 		font-weight: bold;
 	}
 	.description {
-		padding-top: 25px;
+		padding-top: 1rem;
+		text-align: left;
 	}
 	.separator {
-		height: 25px;
+		height: 1rem;
 	}
 	.sub-ul {
 		list-style: none;
 	}
 	.sub-name {
-		font-size: 1.1em;
 		font-weight: bold;
 		text-decoration: underline;
 	}

@@ -12,12 +12,13 @@
 
     export let chap = ``
 
-    const change = (ch) => {
-        chap = ch
-        console.log(chap)
-    }
+    const change = (ch) => chap = ch
 </script>
 
 {#each chapters as chapter}
-    <button class='diplay-button' on:click|preventDefault={() => change(chapter)}>{chapter}</button>
+    <button
+        class='display-button'
+        on:click|preventDefault={() => change(chapter)}>
+            {chapter}
+    </button>
 {/each}
