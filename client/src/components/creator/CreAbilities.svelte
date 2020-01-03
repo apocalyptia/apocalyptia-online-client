@@ -8,41 +8,45 @@
 
 	let DisplayList = [...AbilityList]
 
+// START EXPERIMENTAL
+// if (DisplayList[d].options.length > 1) {
+// 	DisplayList.splice(
+// 		d+1, 0,
+// 		new Ability(
+// 			DisplayList[d].name,
+// 			DisplayList[d].description,
+// 			DisplayList[d].max,
+// 			DisplayList[d].xp,
+// 			0,
+// 			DisplayList[d].options.filter(f => f.name != MasterAbilityList[a].options[0].name)
+// 		)
+// 	)
+// }
+// END EXPERIMENTAL
+
 	const modifyAbilities = () => {
 		$character.abilities = []
-		for (let a = 0; a < MasterAbilityList.length; ++a) {
+		aloop: for (let a = 0; a < MasterAbilityList.length; ++a) {
 			MasterAbilityList[a].taken = 0
 			for (let d = 0; d < DisplayList.length; ++d) {
 				DisplayList[d].taken = parseInt(DisplayList[d].taken)
-				if (
-					DisplayList[d].taken &&
-					DisplayList[d].name == MasterAbilityList[a].name &&
-					DisplayList[d].options[DisplayList[d].selection].name == 
-					MasterAbilityList[a].options[0].name
-				) {
-					MasterAbilityList[a].taken = DisplayList[d].taken
-					$character.abilities.push(MasterAbilityList[a])
-
-					// START EXPERIMENTAL
-					// if (DisplayList[d].options.length > 1) {
-					// 	DisplayList.splice(
-					// 		d+1, 0,
-					// 		new Ability(
-					// 			DisplayList[d].name,
-					// 			DisplayList[d].description,
-					// 			DisplayList[d].max,
-					// 			DisplayList[d].xp,
-					// 			0,
-					// 			DisplayList[d].options.filter(f => f.name != MasterAbilityList[a].options[0].name)
-					// 		)
-					// 	)
-					// }
-					// END EXPERIMENTAL
-
-					break
+				if (DisplayList[d].name == MasterAbilityList[a].name) {
+					if (DisplayList[d].options.length == 1) {
+						MasterAbilityList[a].taken = DisplayList[d].taken
+						if (DisplayList[d].taken) $character.abilities.push(DisplayList[d])
+						continue aloop
+					}
+					else {
+						if (MasterAbilityList[a].options[0].name == DisplayList[d].options[DisplayList[d].selection].name) {
+							MasterAbilityList[a].taken = DisplayList[d].taken
+							if (DisplayList[d].taken) $character.abilities.push(MasterAbilityList[a])
+							continue aloop
+						}
+					}
 				}
 			}
 		}
+		console.log(MasterAbilityList)
 		console.log($character.abilities)
 	}
 </script>
@@ -118,7 +122,7 @@
 								max={ability.max}
 								class='taken-number'
 								bind:value={ability.taken}
-								on:change={modifyAbilities}
+								on:change|preventDefault={modifyAbilities}
 							>
 						</span>
 					</div>

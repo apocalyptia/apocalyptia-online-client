@@ -7553,15 +7553,6 @@ var app = (function () {
     	WeaponList
     );
 
-    const XP3Abilities = [
-    	FavoriteWeapon,
-    	HyperImmunity,
-    	PackMentality,
-    	QuickReload,
-    	Specialize,
-    	WeaponTraining
-    ];
-
     // 6 XP Abilities ---> TODO: Add 1 more
 
     const EfficientWork = new Ability(
@@ -7600,16 +7591,6 @@ var app = (function () {
     	1, 6, 0,
     	SkillList
     );
-
-    // OPEN SLOT FOR NEW 6XP ABILITY
-
-    const XP6Abilities = [
-    	EfficientWork,
-    	FastDraw,
-    	FleetFooted,
-    	Multilingual,
-    	Practice
-    ];
 
     // 9 XP Abilities ---> TODO: Add 1 more
 
@@ -7654,16 +7635,6 @@ var app = (function () {
     	unorthodoxList
     );
 
-    // OPEN SLOT FOR NEW 9XP ABILITY
-
-    const XP9Abilities = [
-    	DangerSense,
-    	Discipline,
-    	Fortunate,
-    	FreeRunning,
-    	Unorthodox
-    ];
-
     // 12 XP Abilities
 
     const Fencing = new Ability(
@@ -7681,12 +7652,6 @@ var app = (function () {
     	[`Free Grab roll once per rnd.`],
     	1, 12, 0
     );
-
-    const XP12Abilities = [
-    	Fencing,
-    	Sidestep,
-    	Wrestling
-    ];
 
     // 15 XP Abilities
 
@@ -7707,12 +7672,6 @@ var app = (function () {
     	MeleeList
     );
 
-    const XP15Abilities = [
-    	FirmGrip,
-    	HardHeaded,
-    	PowerfulStrike
-    ];
-
     // 18 XP Abilities
 
     const Assassin = new Ability(
@@ -7726,11 +7685,6 @@ var app = (function () {
     	1, 18, 0
     ); // TODO: Need to add VehicleList when it is made
 
-    const XP18Abilities = [
-    	Assassin,
-    	VehicleOperation
-    ];
-
     // 24 XP Abilities
 
     const Ambidextrous = new Ability(
@@ -7743,11 +7697,6 @@ var app = (function () {
     	[`+1 Health.`],
     	3, 24, 0
     );
-
-    const XP24Abilities = [
-    	Ambidextrous,
-    	Tough
-    ];
 
     // 30 XP Abilities
 
@@ -7770,13 +7719,13 @@ var app = (function () {
 
 
     const AbilityList = [
-    	...XP3Abilities,
-    	...XP6Abilities,
-    	...XP9Abilities,
-    	...XP12Abilities,
-    	...XP15Abilities,
-    	...XP18Abilities,
-    	...XP24Abilities,
+    	// ...XP3Abilities,
+    	// ...XP6Abilities,
+    	// ...XP9Abilities,
+    	// ...XP12Abilities,
+    	// ...XP15Abilities,
+    	// ...XP18Abilities,
+    	// ...XP24Abilities,
     	...XP30Abilities
     ];
 
@@ -7784,10 +7733,9 @@ var app = (function () {
 
     const TempAbilityList = new Set([]);
     for (let a = 0; a < AbilityList.length; ++a) {
-    	let newAbility;
     	if (AbilityList[a].options.length > 1) {
     		for (let o = 0; o < AbilityList[a].options.length; ++o) {
-    			newAbility = new Ability(
+    			let newAbility = new Ability(
     				AbilityList[a].name,
     				AbilityList[a].description,
     				AbilityList[a].max,
@@ -7796,18 +7744,19 @@ var app = (function () {
     				[AbilityList[a].options[o]],
     				o
     			);
+    			TempAbilityList.add(newAbility);
     		}
     	}
     	else {
-    		newAbility = new Ability(
+    		let newAbility = new Ability(
     			AbilityList[a].name,
     			AbilityList[a].description,
     			AbilityList[a].max,
     			AbilityList[a].xp,
     			AbilityList[a].taken
     		);
+    		TempAbilityList.add(newAbility);
     	}
-    	TempAbilityList.add(newAbility);
     }
     const MasterAbilityList = [...TempAbilityList];
 
@@ -7829,7 +7778,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (67:4) {#if      DisplayList[index-1] != undefined &&       DisplayList[index].xp != DisplayList[index-1].xp     }
+    // (71:4) {#if      DisplayList[index-1] != undefined &&       DisplayList[index].xp != DisplayList[index-1].xp     }
     function create_if_block_3(ctx) {
     	let div;
 
@@ -7837,7 +7786,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "xp-separator svelte-1gqpsr5");
-    			add_location(div, file$7, 70, 5, 2127);
+    			add_location(div, file$7, 74, 5, 2323);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7851,14 +7800,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(67:4) {#if      DisplayList[index-1] != undefined &&       DisplayList[index].xp != DisplayList[index-1].xp     }",
+    		source: "(71:4) {#if      DisplayList[index-1] != undefined &&       DisplayList[index].xp != DisplayList[index-1].xp     }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:4) {#if      index == 0 ||      ability.xp != DisplayList[index-1].xp     }
+    // (77:4) {#if      index == 0 ||      ability.xp != DisplayList[index-1].xp     }
     function create_if_block_2(ctx) {
     	let div;
     	let t0_value = /*ability*/ ctx[6].xp + "";
@@ -7871,7 +7820,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = text("XP Abilities");
     			attr_dev(div, "class", "xp-header svelte-1gqpsr5");
-    			add_location(div, file$7, 76, 5, 2248);
+    			add_location(div, file$7, 80, 5, 2444);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7890,14 +7839,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(73:4) {#if      index == 0 ||      ability.xp != DisplayList[index-1].xp     }",
+    		source: "(77:4) {#if      index == 0 ||      ability.xp != DisplayList[index-1].xp     }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:6) {#if ability.options[0] != ''}
+    // (92:6) {#if ability.options[0] != ''}
     function create_if_block_1$2(ctx) {
     	let span;
     	let select;
@@ -7925,9 +7874,9 @@ var app = (function () {
 
     			attr_dev(select, "name", select_name_value = /*ability*/ ctx[6].name);
     			if (/*ability*/ ctx[6].selection === void 0) add_render_callback(select_change_handler);
-    			add_location(select, file$7, 89, 8, 2693);
+    			add_location(select, file$7, 93, 8, 2889);
     			attr_dev(span, "class", "ability-options");
-    			add_location(span, file$7, 88, 7, 2654);
+    			add_location(span, file$7, 92, 7, 2850);
 
     			dispose = [
     				listen_dev(select, "change", select_change_handler),
@@ -7989,14 +7938,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(88:6) {#if ability.options[0] != ''}",
+    		source: "(92:6) {#if ability.options[0] != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:9) {#each ability.options as option, index}
+    // (99:9) {#each ability.options as option, index}
     function create_each_block_1$2(ctx) {
     	let option;
     	let t0_value = /*option*/ ctx[9].name + "";
@@ -8011,7 +7960,7 @@ var app = (function () {
     			t1 = space();
     			option.__value = option_value_value = /*index*/ ctx[8];
     			option.value = option.__value;
-    			add_location(option, file$7, 95, 10, 2877);
+    			add_location(option, file$7, 99, 10, 3073);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8030,14 +7979,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(95:9) {#each ability.options as option, index}",
+    		source: "(99:9) {#each ability.options as option, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (126:4) {#if      DisplayList[index+1] != undefined &&      DisplayList[index].xp == DisplayList[index+1].xp     }
+    // (130:4) {#if      DisplayList[index+1] != undefined &&      DisplayList[index].xp == DisplayList[index+1].xp     }
     function create_if_block$2(ctx) {
     	let div;
 
@@ -8045,7 +7994,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "ab-separator svelte-1gqpsr5");
-    			add_location(div, file$7, 129, 5, 3738);
+    			add_location(div, file$7, 133, 5, 3949);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -8059,14 +8008,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(126:4) {#if      DisplayList[index+1] != undefined &&      DisplayList[index].xp == DisplayList[index+1].xp     }",
+    		source: "(130:4) {#if      DisplayList[index+1] != undefined &&      DisplayList[index].xp == DisplayList[index+1].xp     }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:3) {#each DisplayList as ability, index}
+    // (70:3) {#each DisplayList as ability, index}
     function create_each_block$3(ctx) {
     	let t0;
     	let t1;
@@ -8163,44 +8112,44 @@ var app = (function () {
     			if (if_block3) if_block3.c();
     			if_block3_anchor = empty();
     			attr_dev(span0, "class", "ability-name svelte-1gqpsr5");
-    			add_location(span0, file$7, 80, 6, 2377);
+    			add_location(span0, file$7, 84, 6, 2573);
     			attr_dev(div0, "class", "col m-col svelte-1gqpsr5");
-    			add_location(div0, file$7, 79, 5, 2347);
+    			add_location(div0, file$7, 83, 5, 2543);
     			attr_dev(span1, "class", "description-label svelte-1gqpsr5");
-    			add_location(span1, file$7, 83, 6, 2473);
+    			add_location(span1, file$7, 87, 6, 2669);
     			attr_dev(span2, "class", "ability-description");
-    			add_location(span2, file$7, 84, 6, 2532);
+    			add_location(span2, file$7, 88, 6, 2728);
     			attr_dev(div1, "class", "col l-col svelte-1gqpsr5");
-    			add_location(div1, file$7, 82, 5, 2443);
+    			add_location(div1, file$7, 86, 5, 2639);
     			attr_dev(span3, "class", "max-label svelte-1gqpsr5");
-    			add_location(span3, file$7, 104, 6, 3054);
+    			add_location(span3, file$7, 108, 6, 3250);
     			attr_dev(span4, "class", "ability-max");
-    			add_location(span4, file$7, 105, 6, 3097);
+    			add_location(span4, file$7, 109, 6, 3293);
     			attr_dev(div2, "class", "col s-col svelte-1gqpsr5");
-    			add_location(div2, file$7, 103, 5, 3024);
+    			add_location(div2, file$7, 107, 5, 3220);
     			attr_dev(span5, "class", "xp-label svelte-1gqpsr5");
-    			add_location(span5, file$7, 108, 6, 3191);
+    			add_location(span5, file$7, 112, 6, 3387);
     			attr_dev(span6, "class", "ability-xp");
-    			add_location(span6, file$7, 109, 6, 3232);
+    			add_location(span6, file$7, 113, 6, 3428);
     			attr_dev(div3, "class", "col s-col svelte-1gqpsr5");
-    			add_location(div3, file$7, 107, 5, 3161);
+    			add_location(div3, file$7, 111, 5, 3357);
     			attr_dev(span7, "class", "taken-label svelte-1gqpsr5");
-    			add_location(span7, file$7, 112, 6, 3324);
+    			add_location(span7, file$7, 116, 6, 3520);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = /*ability*/ ctx[6].max);
     			attr_dev(input, "class", "taken-number svelte-1gqpsr5");
-    			add_location(input, file$7, 114, 7, 3407);
+    			add_location(input, file$7, 118, 7, 3603);
     			attr_dev(span8, "class", "ability-taken");
-    			add_location(span8, file$7, 113, 6, 3371);
+    			add_location(span8, file$7, 117, 6, 3567);
     			attr_dev(div4, "class", "col s-col svelte-1gqpsr5");
-    			add_location(div4, file$7, 111, 5, 3294);
+    			add_location(div4, file$7, 115, 5, 3490);
     			attr_dev(div5, "class", "ability-row");
-    			add_location(div5, file$7, 78, 4, 2316);
+    			add_location(div5, file$7, 82, 4, 2512);
 
     			dispose = [
     				listen_dev(input, "input", input_input_handler),
-    				listen_dev(input, "change", /*modifyAbilities*/ ctx[2], false, false, false)
+    				listen_dev(input, "change", prevent_default(/*modifyAbilities*/ ctx[2]), false, true, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -8328,7 +8277,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(66:3) {#each DisplayList as ability, index}",
+    		source: "(70:3) {#each DisplayList as ability, index}",
     		ctx
     	});
 
@@ -8401,30 +8350,30 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$7, 51, 2, 1517);
+    			add_location(h2, file$7, 55, 2, 1713);
     			attr_dev(div0, "class", "step-title");
-    			add_location(div0, file$7, 50, 1, 1490);
-    			add_location(h3, file$7, 54, 2, 1571);
+    			add_location(div0, file$7, 54, 1, 1686);
+    			add_location(h3, file$7, 58, 2, 1767);
     			attr_dev(div1, "class", "remaining svelte-1gqpsr5");
-    			add_location(div1, file$7, 53, 1, 1545);
+    			add_location(div1, file$7, 57, 1, 1741);
     			attr_dev(div2, "class", "col m-col name-header svelte-1gqpsr5");
-    			add_location(div2, file$7, 59, 4, 1703);
+    			add_location(div2, file$7, 63, 4, 1899);
     			attr_dev(div3, "class", "col l-col description-header svelte-1gqpsr5");
-    			add_location(div3, file$7, 60, 4, 1753);
+    			add_location(div3, file$7, 64, 4, 1949);
     			attr_dev(div4, "class", "col s-col max-header svelte-1gqpsr5");
-    			add_location(div4, file$7, 61, 4, 1817);
+    			add_location(div4, file$7, 65, 4, 2013);
     			attr_dev(div5, "class", "col s-col xp-header svelte-1gqpsr5");
-    			add_location(div5, file$7, 62, 4, 1865);
+    			add_location(div5, file$7, 66, 4, 2061);
     			attr_dev(div6, "class", "col s-col taken-header svelte-1gqpsr5");
-    			add_location(div6, file$7, 63, 4, 1911);
+    			add_location(div6, file$7, 67, 4, 2107);
     			attr_dev(div7, "class", "header-row svelte-1gqpsr5");
-    			add_location(div7, file$7, 58, 3, 1674);
+    			add_location(div7, file$7, 62, 3, 1870);
     			attr_dev(div8, "class", "abilities-list svelte-1gqpsr5");
-    			add_location(div8, file$7, 57, 2, 1642);
+    			add_location(div8, file$7, 61, 2, 1838);
     			attr_dev(div9, "class", "stat-block");
-    			add_location(div9, file$7, 56, 1, 1615);
+    			add_location(div9, file$7, 60, 1, 1811);
     			attr_dev(div10, "class", "abilities-step svelte-1gqpsr5");
-    			add_location(div10, file$7, 49, 0, 1452);
+    			add_location(div10, file$7, 53, 0, 1648);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8518,20 +8467,29 @@ var app = (function () {
     	const modifyAbilities = () => {
     		set_store_value(character, $character.abilities = [], $character);
 
-    		for (let a = 0; a < MasterAbilityList.length; ++a) {
+    		aloop: for (let a = 0; a < MasterAbilityList.length; ++a) {
     			MasterAbilityList[a].taken = 0;
 
     			for (let d = 0; d < DisplayList.length; ++d) {
     				$$invalidate(0, DisplayList[d].taken = parseInt(DisplayList[d].taken), DisplayList);
 
-    				if (DisplayList[d].taken && DisplayList[d].name == MasterAbilityList[a].name && DisplayList[d].options[DisplayList[d].selection].name == MasterAbilityList[a].options[0].name) {
-    					MasterAbilityList[a].taken = DisplayList[d].taken;
-    					$character.abilities.push(MasterAbilityList[a]);
-    					break;
+    				if (DisplayList[d].name == MasterAbilityList[a].name) {
+    					if (DisplayList[d].options.length == 1) {
+    						MasterAbilityList[a].taken = DisplayList[d].taken;
+    						if (DisplayList[d].taken) $character.abilities.push(DisplayList[d]);
+    						continue aloop;
+    					} else {
+    						if (MasterAbilityList[a].options[0].name == DisplayList[d].options[DisplayList[d].selection].name) {
+    							MasterAbilityList[a].taken = DisplayList[d].taken;
+    							if (DisplayList[d].taken) $character.abilities.push(MasterAbilityList[a]);
+    							continue aloop;
+    						}
+    					}
     				}
     			}
     		}
 
+    		console.log(MasterAbilityList);
     		console.log($character.abilities);
     	};
 

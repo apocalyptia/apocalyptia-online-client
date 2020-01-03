@@ -280,13 +280,13 @@ export const XP30Abilities = [
 
 
 export const AbilityList = [
-	...XP3Abilities,
-	...XP6Abilities,
-	...XP9Abilities,
-	...XP12Abilities,
-	...XP15Abilities,
-	...XP18Abilities,
-	...XP24Abilities,
+	// ...XP3Abilities,
+	// ...XP6Abilities,
+	// ...XP9Abilities,
+	// ...XP12Abilities,
+	// ...XP15Abilities,
+	// ...XP18Abilities,
+	// ...XP24Abilities,
 	...XP30Abilities
 ]
 
@@ -294,10 +294,9 @@ export const AbilityList = [
 
 const TempAbilityList = new Set([])
 for (let a = 0; a < AbilityList.length; ++a) {
-	let newAbility
 	if (AbilityList[a].options.length > 1) {
 		for (let o = 0; o < AbilityList[a].options.length; ++o) {
-			newAbility = new Ability(
+			let newAbility = new Ability(
 				AbilityList[a].name,
 				AbilityList[a].description,
 				AbilityList[a].max,
@@ -306,17 +305,18 @@ for (let a = 0; a < AbilityList.length; ++a) {
 				[AbilityList[a].options[o]],
 				o
 			)
+			TempAbilityList.add(newAbility)
 		}
 	}
 	else {
-		newAbility = new Ability(
+		let newAbility = new Ability(
 			AbilityList[a].name,
 			AbilityList[a].description,
 			AbilityList[a].max,
 			AbilityList[a].xp,
 			AbilityList[a].taken
 		)
+		TempAbilityList.add(newAbility)
 	}
-	TempAbilityList.add(newAbility)
 }
 export const MasterAbilityList = [...TempAbilityList]
