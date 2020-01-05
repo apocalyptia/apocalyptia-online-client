@@ -1,4 +1,5 @@
 <script>
+	import * as sapper from '@sapper/app'
 	import { createEventDispatcher } from 'svelte'
 
 	export let options
@@ -13,7 +14,7 @@
 	}
 
 	const home = () => {
-		// router.Home()
+		sapper.goto("/")
 	}
 
 	const next = () => { 
@@ -22,16 +23,14 @@
 	}
 
 	const navigate = () => {
-		if (step > options.length -1 || step < 0) goto("/")
+		if (step > options.length -1 || step < 0) sapper.goto("/")
 		else dispatch('nav', { selection: options[step].content })
 	}
 </script>
 
 <div class='nav-buttons'>
 	<button class='nav-button' on:click={back}>Back</button>
-	<a href="/">
-		<button class='nav-button'>Home</button>
-	</a>
+	<button class='nav-button' on:click={home}>Home</button>
 	<button class='nav-button' on:click={next}>Next</button>
 </div>
 
