@@ -22,12 +22,8 @@
 	}
 
 	const navigate = () => {
-		if (step > options.length -1 || step < 0) {
-			window.location.assign("/")
-		}
-		else {
-			dispatch('nav', { selection: options[step].content })
-		}
+		if (step > options.length -1 || step < 0) goto("/")
+		else dispatch('nav', { selection: options[step].content })
 	}
 </script>
 
