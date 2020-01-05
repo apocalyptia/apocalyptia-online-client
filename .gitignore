@@ -1,11 +1,6 @@
-# Dependency directories
-node_modules/
-
-# Dropbox
 .DS_Store
-
-# Project specific rules
-book/
-client/old_code.js
-.gif
-.ttf
+/node_modules/
+/src/node_modules/@sapper/
+yarn-error.log
+/cypress/screenshots/
+/__sapper__/
