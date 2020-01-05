@@ -35,11 +35,15 @@
 		if (headerClass != lastHeaderClass) dispatch(headerClass)
 		lastHeaderClass = headerClass
 	}
+
+	const goHome = () => {
+		sapper.goto('/')
+	}
 </script>
 
 <svelte:window bind:scrollY={y} />
 <div use:action class={headerClass}>
-	<button id='title-bar' class='title-bar' on:click={sapper.goto('/')}>
+	<button id='title-bar' class='title-bar' on:click={goHome}>
 		<span class='title'>Apocalyptia Online</span>
 		<span class='beta'>beta</span>
 	</button>
