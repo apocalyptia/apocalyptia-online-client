@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition'
 	import { Combat } from '../../components/rules/Combat'
-	import RefList from '../../components/ui/RefList.svelte'
+	import RefList from '../../components/ui/reference/RefList.svelte'
 </script>
 
 <div class='ref-page' in:fade>

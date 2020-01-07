@@ -24,4 +24,4 @@
 <div class='page-container' in:fade>
 	<svelte:component this={selected} />
 </div>
-<NavButtons on:nav={handleNavigation} {options}/>
+<NavButtons on:nav={handleNavigation} {options} />

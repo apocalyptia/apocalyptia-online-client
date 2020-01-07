@@ -1,6 +1,6 @@
 <script>
 	import RefList from './RefList.svelte'
-	import NavButtons from './NavButtons.svelte'
+	import NavButtons from '../NavButtons.svelte'
 
 	export let list
 </script>

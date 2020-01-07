@@ -1,7 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import Creator from './creator.svelte'
-	import Reference from './reference.svelte'
 </script>
 
 <svelte:head>

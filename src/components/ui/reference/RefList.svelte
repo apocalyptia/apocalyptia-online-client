@@ -1,6 +1,6 @@
 <script>
 	import { slide } from 'svelte/transition'
-	import { HideShow } from '../../helpers/HideShow'
+	import { HideShow } from '../../../helpers/HideShow'
 
 	export let list
 </script>
@@ -11,7 +11,7 @@
 		<div class='box' on:click={() => list = HideShow(rule, list)}>
 			<span class='name'>{rule.name}</span>
 			{#if rule.visible}
-				<div class='description' transition:slide>
+				<div class='description'>
 					{#each rule.description as desc}
 						<p>{@html desc}</p>
 					{/each}
@@ -46,6 +46,9 @@
 </div>
 
 <style>
+	.ref-list {
+		margin-bottom: 3rem;
+	}
 	.box {
 		border: 1px dotted lime;
 		padding: 1rem;

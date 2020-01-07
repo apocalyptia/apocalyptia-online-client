@@ -1,23 +1,31 @@
 <script>
 	import { fade } from 'svelte/transition'
-    import { createEventDispatcher } from 'svelte';
+	import * as sapper from '@sapper/app'
 
-    export let options
+	export let options
+	export let root = '/'
+	export let skip = false
 
-    const dispatch = createEventDispatcher()
-
-    const navigate = (option) => {
-        dispatch('nav', { selection: option.content })
-    }
+	const navigate = (option) => {
+		sapper.goto(`${root}/${option.toLowerCase()}`)
+	}
 </script>
 
 <div class='menu-page' in:fade>
-    {#each options as option}
-        <button
-            class='display-button'
-            on:click|preventDefault={(event) => navigate(option)}
-        >
-            {option.name}
-        </button>
-    {/each}
+	{#each options as option, index}
+		{#if skip && index}
+			<button
+				class='display-button'
+				on:click|preventDefault={(event) => navigate(option)}
+			>
+				{option}
+			</button>
+		{/if}
+	{/each}
 </div>
+
+<style>
+	.menu-page {
+		margin-bottom: calc(3rem + 5vh);
+	}
+</style>

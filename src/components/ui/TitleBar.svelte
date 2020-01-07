@@ -1,6 +1,7 @@
 <script>
 	import * as sapper from '@sapper/app'
 	import { createEventDispatcher } from 'svelte'
+	import { refToC } from '../../stores'
 
 	let duration = '300ms'
 	let offset = 0
@@ -37,6 +38,7 @@
 	}
 
 	const goHome = () => {
+		$refToC.reset()
 		sapper.goto('/')
 	}
 </script>
@@ -52,12 +54,11 @@
 <style>
 	.title-bar {
 		height: 3rem;
-		margin-bottom: 1rem;
 		position: fixed;
 		text-align: center;
 		top: 0;
 		transition: top 0.3s linear;
-		width: 100vw;
+		width: 100%;
 		z-index: 1;
 	}
 	.pin {

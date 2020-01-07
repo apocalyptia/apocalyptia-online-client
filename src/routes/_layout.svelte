@@ -20,6 +20,6 @@
 		flex-direction: column;
 		height: calc(100vh - 3rem);
 		text-align: center;
-		width: 100vw;
+		width: 100%;
 	}
 </style>

@@ -3,6 +3,7 @@
 	import { createEventDispatcher } from 'svelte'
 
 	export let options
+	export let root = '/'
 
 	const dispatch = createEventDispatcher()
 
@@ -14,7 +15,7 @@
 	}
 
 	const home = () => {
-		sapper.goto("/")
+		sapper.goto(root)
 	}
 
 	const next = () => { 
@@ -23,15 +24,15 @@
 	}
 
 	const navigate = () => {
-		if (step > options.length -1 || step < 0) sapper.goto("/")
+		if (step > options.length -1 || step < 0) sapper.goto(root)
 		else dispatch('nav', { selection: options[step].content })
 	}
 </script>
 
 <div class='nav-buttons'>
-	<button class='nav-button' on:click={back}>Back</button>
+	<button class='nav-button' on:click={back}>&lt;</button>
 	<button class='nav-button' on:click={home}>Home</button>
-	<button class='nav-button' on:click={next}>Next</button>
+	<button class='nav-button' on:click={next}>&gt;</button>
 </div>
 
 <style>
@@ -40,7 +41,7 @@
 		display: flex;
 		left: 0;
 		position: fixed;
-		width: 100vw;
+		width: 100%;
 	}
 	.nav-button {
 		border: 1px solid var(--txt-color);

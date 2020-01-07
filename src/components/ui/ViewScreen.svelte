@@ -7,7 +7,7 @@
 		height: 100vh;
 		overflow-x: hidden;
 		overflow-y: auto;
-		width: 100vw;
+		width: 100%;
 	}
 	.view-screen:before {
 		animation: hline 10s linear infinite;
@@ -16,7 +16,7 @@
 		font-size: 1px;
 		height: 1px;
 		position: absolute;
-		width: 100vw;
+		width: 100%;
 		z-index: 1000;
 	}
 	@keyframes hline {
