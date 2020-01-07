@@ -5,12 +5,12 @@
 
 <div class='menu-page' in:fade>
 	{#each $refToC.chapters as chapter, index}
-        <button
-            class='display-button'
-            on:click={$refToC.go(index)}
-        >
-            {chapter}
-        </button>
+		<button
+			class='display-button'
+			on:click={$refToC.go(index)}
+		>
+			{chapter}
+		</button>
 	{/each}
 </div>
 

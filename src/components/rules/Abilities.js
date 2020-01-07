@@ -14,7 +14,7 @@ export class Ability extends Rule {
 		options=[``],
 		selection=0,
 		notes=``,
-		visible=true
+		visible=false
 	) {
 		super(name, description)
 		this.max = max

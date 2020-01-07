@@ -7,17 +7,17 @@ const newCharacter = new Character()
 export const character = writable(newCharacter)
 
 const referenceToC = new TableOfContents(
-    'reference',
-    [
-        'Dice',
-        'Traits',
-        'Skills',
-        'Combat',
-        'Maneuvers',
-        'Situations',
-        'Abilities',
-        'Gear'
-    ]
+	'reference',
+	[
+		'Dice',
+		'Traits',
+		'Skills',
+		'Combat',
+		'Maneuvers',
+		'Situations',
+		'Abilities',
+		'Gear'
+	]
 )
 
 export const refToC = writable(referenceToC)
