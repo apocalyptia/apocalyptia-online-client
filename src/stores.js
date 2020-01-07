@@ -6,8 +6,25 @@ const newCharacter = new Character()
 
 export const character = writable(newCharacter)
 
+const creatorToC = new TableOfContents(
+	'Home',
+	'/',
+	[
+		'Abilities',
+		'Description',
+		'Traits',
+		'Skills',
+		'Properties',
+		'Abilities',
+		'Gear'
+	]
+)
+
+export const creToC = writable(creatorToC)
+
 const referenceToC = new TableOfContents(
-	'reference',
+	'Contents',
+	'/reference',
 	[
 		'Dice',
 		'Traits',

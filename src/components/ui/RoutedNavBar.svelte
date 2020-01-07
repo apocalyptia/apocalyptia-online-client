@@ -1,11 +1,11 @@
 <script>
-	import { refToC } from '../../../stores'
+	export let storeToC
 </script>
 
 <div class='nav-buttons'>
-	<button class='nav-button' on:click={$refToC.back()}>&lt;</button>
-	<button class='nav-button' on:click={$refToC.home()}>Contents</button>
-	<button class='nav-button' on:click={$refToC.next()}>&gt;</button>
+	<button class='nav-button' on:click={storeToC.back()}>&lt;</button>
+	<button class='nav-button' on:click={storeToC.home()}>{storeToC.name}</button>
+	<button class='nav-button' on:click={storeToC.next()}>&gt;</button>
 </div>
 
 <style>

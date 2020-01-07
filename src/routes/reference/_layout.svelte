@@ -1,10 +1,11 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import RefNavBar from '../../components/ui/reference/RefNavBar.svelte'
+	import RoutedNavBar from '../../components/ui/RoutedNavBar.svelte'
+	import {refToC} from '../../stores'
 </script>
 
 
 <div class='page-container' in:fade>
 	<slot />
 </div>
-<RefNavBar />
+<RoutedNavBar storeToC={$refToC}/>

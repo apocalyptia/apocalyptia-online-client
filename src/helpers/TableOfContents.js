@@ -1,17 +1,20 @@
 import * as sapper from '@sapper/app'
 
 export class TableOfContents {
-	constructor(root='', chapters=[]) {
+	constructor(name='', root='/', chapters=[]) {
+		this.name = name,
 		this.root = root,
-		this.current = -1,
-		this.chapters = chapters
+		this.chapters = chapters,
+		this.starting = -1,
+		this.current = this.starting
 	}
 	go(index) {
 		this.current = index
-		sapper.goto(`/${this.root}/${this.chapters[index].toLowerCase()}`)
+		sapper.goto(`${this.root}/${this.chapters[index].toLowerCase()}`)
 	}
 	home() {
-		sapper.goto(`/${this.root}`)
+		this.reset()
+		sapper.goto(this.root)
 	}
 	back() {
 		this.current--
@@ -20,7 +23,7 @@ export class TableOfContents {
 		}
 		else {
 			this.reset()
-			sapper.goto('/')
+			sapper.goto(this.root)
 		}
 	}
 	next() {
@@ -34,6 +37,6 @@ export class TableOfContents {
 		}
 	}
 	reset() {
-		this.current = -1
+		this.current = this.starting
 	}
 }
