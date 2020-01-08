@@ -4,9 +4,10 @@
 	import { SkillList } from '../rules/Skills'
 	import { character } from '../../stores'
 
-	$: remaining = $character.props.xp.score - $character.abilities.reduce((t, n) => n.taken * n.xp, 0)
+	$: remaining = $character.props.xp.score - $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
 
 	let DisplayList = [...AbilityList]
+	let ModelList = [...MasterAbilityList]
 
 // START EXPERIMENTAL
 // if (DisplayList[d].options.length > 1) {
@@ -44,14 +45,18 @@
 	}
 
 	const handleTaken = (ability) => {
-		logAbility(ability)
-		for (let a = 0; a < MasterAbilityList.length; ++a) {
-			if (MasterAbilityList[a].options[0].name == ability.options[ability.selection].name) {
-				MasterAbilityList[a].taken = ability.taken
+		$character.abilities = []
+		let tempList = []
+		for (let a = 0; a < ModelList.length; ++a) {
+			if (ModelList[a].options[0].name == ability.options[ability.selection].name) {
+				ModelList[a].taken = ability.taken
+				if (ability.taken) tempList.push(ability)
 				break
 			}
 		}
-		logTaken()
+		$character.abilities = [...tempList]
+		console.log($character.abilities)
+		console.log(remaining)
 	}
 
 	const handleSelection = (ability) => {
@@ -68,12 +73,12 @@
 
 	const syncLists = () => {
 		// resetMaster()
-		for (let a = 0; a < MasterAbilityList.length; ++a) {
+		for (let a = 0; a < ModelList.length; ++a) {
 			for (let d = 0; d < DisplayList.length; ++d) {
 				DisplayList[d].taken = parseInt(DisplayList[d].taken)
 				if (a == DisplayList[d].id) {
-					console.log('Setting taken for ', MasterAbilityList[a])
-					MasterAbilityList[a].taken = DisplayList[d].taken
+					console.log('Setting taken for ', ModelList[a])
+					ModelList[a].taken = DisplayList[d].taken
 				}
 			}
 		}

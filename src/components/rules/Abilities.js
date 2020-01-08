@@ -319,4 +319,7 @@ for (let a = 0; a < AbilityList.length; ++a) {
 		TempAbilityList.add(newAbility)
 	}
 }
+for (let i = 0; i < TempAbilityList.length; ++i) {
+	TempAbilityList[i].id = i
+}
 export const MasterAbilityList = [...TempAbilityList]
