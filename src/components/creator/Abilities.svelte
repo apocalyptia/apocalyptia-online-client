@@ -55,8 +55,6 @@
 			}
 		}
 		$character.abilities = [...tempList]
-		console.log($character.abilities)
-		console.log(remaining)
 	}
 
 	const handleSelection = (ability) => {
