@@ -6,8 +6,9 @@ export class Trait extends Rule {
 	}
 }
 
+export const startingTraitPoints = 14
 
-export const TraitExplanation = 'The four Traits range from 1 to 6. You get 12 points for Traits. Trait rolls are [d6 + Trait]. Trait scores set the upper limit for their Skills. The average person would have a 3 in each Trait.'
+export const TraitExplanation = `The four Traits range from 1 to 6. You get ${startingTraitPoints} points for Traits. Trait rolls are [d6 + Trait]. Trait scores set the upper limit for their Skills. The average person would have a 3 in each Trait.`
 
 export const TraitFlowExplanation = 'Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. Recalculate any associated Properties.'
 

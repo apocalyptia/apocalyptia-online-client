@@ -1,5 +1,8 @@
 export class Character {
 	constructor() {
+		this.settings = {
+			startingTraitPoints: 12
+		},
 		this.scenario = ``,
 		this.completed = false,
 		this.description = {
