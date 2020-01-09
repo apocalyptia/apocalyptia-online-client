@@ -41,7 +41,7 @@ export const Initiative = new Rule(
 
 export const Movement = new Rule(
 	`Movement`, 
-	[`Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`]
+	[`Spend 1 Action to move up to your Speed [A + C], or 2 Actions to Run up to [Speed x 3]. Spend 1 Action to go Prone or stand.`]
 )
 
 export const Occupants = new Rule(

@@ -1,3 +1,5 @@
+- Pepper Spray takes time to start working but lasts 15 to 30 mins
+
 - Maybe Luck is rolled at character creation. 1d6. And that is just how lucky the character is. Has nothing to do with Demeanor. For balancing Traits, add Demeanor to Initiative formula?
 
 - Pulled Blow: Maneuver you declare before rolling your MATK. On a hit, you halve your DMG bonus from Success.
@@ -6,4 +8,4 @@
 
 - Health: Maybe Health should be paired down to C x 2?
 
-- Adaptive Skill Points: Normal Skill points are permanent once assigned. You have Adaptive Skill points = Brains as additional Skill points that can be moved around at a rate of 1 per week. This replaces the current Floating Skills rules. Also, remove Floating Traits.
+- Adaptive Skill Points: Normal Skill points are permanent once assigned. You have Adaptive Skill points = Brains as additional Skill points that can be moved around at a rate of 1 per week. This replaces the current Floating Skills rules. Also, remove Floating Traits. Normal Skill Points = B x 3. Adaptive Skill Points = B x 3.
