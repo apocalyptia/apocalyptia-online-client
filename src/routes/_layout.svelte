@@ -18,7 +18,8 @@
 		top: 3rem;
 		flex-wrap: nowrap;
 		flex-direction: column;
-		height: calc(100vh - 3rem);
+		height: fit-content;
+		padding-bottom: 3rem;
 		text-align: center;
 		width: 100%;
 	}

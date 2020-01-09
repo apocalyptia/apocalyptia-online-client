@@ -3,55 +3,42 @@
 	import { capitalize } from '../../helpers/Capitalize'
 	import { random } from '../../helpers/Random'
 	import { character } from '../../stores'
+	import { startingTraitPoints } from '../rules/Traits'
 
 	const traits = Object.keys($character.traits)
 
-	const traitPoints = 12
-	let remaining = traitPoints - traits.length
+	$: spentTraitPoints = Object.values($character.traits).reduce((t, { base }) => t += base, 0)
+	$: remaining = startingTraitPoints - spentTraitPoints
 
-	const countTraitPoints = (trait=``) => {
-		remaining = traitPoints - totalTraits()
-		if (trait && remaining < 0) reduceTrait(trait)
-		setSkillMax()
-		$character.updateProps()
-	}
-
-	const totalTraits = () => {
-		let traitCount = 0
-		traits.forEach((trait) => { traitCount += $character.traits[trait].base })
-		return traitCount
+	const modifyTrait = (trait) => {
+		if (remaining < 0) reduceTrait(trait)
+		calculateResults()
 	}
 
 	const reduceTrait = (trait) => {
-		$character.traits[trait.name].base -= 1
-		$character.traits[trait.name].set()
-		trait.value -= 1
-		countTraitPoints(trait)
+		do {
+			$character.traits[trait.name].base -= 1
+			spentTraitPoints -= 1
+			remaining += 1
+		} while (remaining < 0 && $character.traits[trait.name].base > 1)
 	}
 
-	const setSkillMax = () => {
+	const randomTraits = () => {
+		traits.forEach((trait) => {$character.traits[trait].base = 1})
+		while(remaining > 0) $character.traits[random(traits)].base += 1
+		calculateResults()
+	}
+
+	const calculateResults = () => {
 		traits.forEach((trait) => {
+			$character.traits[trait].set()
 			Object.keys($character.skills).forEach((skill) => {
 				if ($character.skills[skill].parent === capitalize(trait)) {
 					$character.skills[skill].max = $character.traits[trait].base
 				}
 			})
 		})
-	}
-
-	const randomTraits = () => {
-		traits.forEach((trait) => {
-			$character.traits[trait].base = 1
-			$character.traits[trait].set()
-		})
-		remaining = traitPoints - traits.length
-		while(remaining > 0) {
-			const randTrait = random(traits)
-			$character.traits[randTrait].base += 1
-			$character.traits[randTrait].set()
-			remaining -= 1
-		}
-		countTraitPoints()
+		$character.updateProps()
 	}
 </script>
 
@@ -77,7 +64,7 @@
 							max=6
 							bind:value={$character.traits[trait].base}
 							invalid={remaining < 0}
-							on:click|preventDefault={(event) => countTraitPoints(event.target)}
+							on:change|preventDefault={(event) => modifyTrait(event.target)}
 						>
 						<div class='range-indicator'>
 							<div class='range-number trait-1'>1</div>
@@ -92,7 +79,7 @@
 			</div>
 		{/each}
 	</div>
-	<button class='center-button' on:click={randomTraits}>Random Traits</button>
+	<button class='center-button' on:change={randomTraits}>Random Traits</button>
 </div>
 
 <style>
