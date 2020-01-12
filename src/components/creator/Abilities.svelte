@@ -7,66 +7,30 @@
 	$: remaining = $character.props.xp.score - $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
 
 	let DisplayList = [...AbilityList]
+
 	let ModelList = [...MasterAbilityList]
-
-	console.log(DisplayList)
-
-// START EXPERIMENTAL
-// if (DisplayList[d].options.length > 1) {
-	// DisplayList.splice(
-	// 	d+1, 0,
-	// 	new Ability(
-	// 		DisplayList[d].name,
-	// 		DisplayList[d].description,
-	// 		DisplayList[d].max,
-	// 		DisplayList[d].xp,
-	// 		0,
-	// 		DisplayList[d].options.filter(f => f.name != MasterAbilityList[a].options[0].name)
-	// 	)
-	// )
-// }
-// END EXPERIMENTAL
-
-	const logMaster = () => {
-		for (let a = 0; a < MasterAbilityList.length; ++a) {
-			console.log('Master = ', MasterAbilityList[a])
-		}
-	}
-	const logDisplay = () => {
-		for (let d = 0; d < DisplayList.length; ++d) {
-			console.log('Display = ',  DisplayList[d])
-		}
-	}
-	const logTaken = () => {
-		for (let a = 0; a < MasterAbilityList.length; ++a) {
-			console.log('Taken = ', MasterAbilityList[a].options[0].name, MasterAbilityList[a].taken)
-		}
-	}
-	const logAbility = (ability) => {
-		console.log(ability)
-	}
 
 	const handleTaken = (ability) => {
 		$character.abilities = []
 		let tempList = []
 		for (let a = 0; a < ModelList.length; ++a) {
 			if (ModelList[a].options[0].name == ability.options[ability.selection].name) {
-				ModelList[a].taken = ability.taken
+				ModelList[a].taken = parseInt(ability.taken)
 				if (ability.taken) tempList.push(ability)
 				break
 			}
 		}
 		$character.abilities = [...tempList]
+		console.log($character.abilities)
 	}
 
 	const handleSelection = (ability) => {
 		for (let a = 0; a < MasterAbilityList.length; ++a) {
 			if (a == ability.id) {
-				MasterAbilityList[a].taken = ability.taken
+				MasterAbilityList[a].taken = parseInt(ability.taken)
 				break
 			}
 		}
-		// syncLists()
 	}
 
 
@@ -77,7 +41,6 @@
 			for (let d = 0; d < DisplayList.length; ++d) {
 				DisplayList[d].taken = parseInt(DisplayList[d].taken)
 				if (a == DisplayList[d].id) {
-					console.log('Setting taken for ', ModelList[a])
 					ModelList[a].taken = DisplayList[d].taken
 				}
 			}
@@ -87,7 +50,6 @@
 	const resetMaster = () => {
 		for (let a = 0; a < MasterAbilityList.length; ++a) {
 			MasterAbilityList[a].taken = 0
-			console.log('Reset: ', MasterAbilityList[a].options[0].name, ' to: ', MasterAbilityList[a].taken)
 		}
 	}
 
@@ -186,7 +148,7 @@
 				<div class='col s-col xp-header'>XP</div>
 				<div class='col s-col taken-header'>Taken</div>
 			</div>
-			{#each DisplayList as ability, index}
+			{#each DisplayList as ability, index (ability.id)}
 					{#if !index || ability.xp != DisplayList[index-1].xp}
 						<div class='xp-separator' />
 					{/if}
@@ -235,6 +197,11 @@
 									on:change|preventDefault={(event) => handleTaken(ability)}
 								>
 									<option value=0>0</option>
+									<option value=1>1</option>
+									{#if ability.max > 1 && ability.max <= 3}
+										<option value=2>2</option>
+										<option value=3>3</option>
+									{/if}
 								</select>
 							</span>
 						</div>

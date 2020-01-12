@@ -1,4 +1,4 @@
-<table class='.cover-table'>
+<table class='cover-table'>
 	<tr><th>Material</th><th>DR</th></tr>
 	<tr><td>Drywall</td><td>0</td></tr>
 	<tr><td>Glass</td><td>1</td></tr>
