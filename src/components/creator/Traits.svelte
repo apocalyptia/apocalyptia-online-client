@@ -7,25 +7,39 @@
 
 	const traits = Object.keys($character.traits)
 
-	$: spentTraitPoints = Object.values($character.traits).reduce((t, { base }) => t += base, 0)
-	$: remaining = startingTraitPoints - spentTraitPoints
+	let spentTraitPoints = Object.values($character.traits).reduce((t, { base }) => t += base, 0)
+	let remaining = startingTraitPoints - spentTraitPoints
 
 	const modifyTrait = (trait) => {
-		if (remaining < 0) reduceTrait(trait)
+		if (remaining < 0) limitTrait(trait)
 		calculateResults()
 	}
 
-	const reduceTrait = (trait) => {
-		do {
-			$character.traits[trait.name].base -= 1
-			spentTraitPoints -= 1
-			remaining += 1
-		} while (remaining < 0 && $character.traits[trait.name].base > 1)
+	const addTrait = (trait) => {
+		$character.traits[trait].base++
+		spentTraitPoints++
+		remaining--
+	}
+
+	const subtractTrait = (trait) => {
+		$character.traits[trait.name].base--
+		spentTraitPoints--
+		remaining++
+	}
+
+	const limitTrait = (trait) => {
+		while (remaining < 0) subtractTrait(trait)
+	}
+
+	const resetTraits = () => {
+		traits.forEach((trait) => $character.traits[trait].base = 1)
+		spentTraitPoints = traits.length
+		remaining = startingTraitPoints - spentTraitPoints
 	}
 
 	const randomTraits = () => {
-		traits.forEach((trait) => {$character.traits[trait].base = 1})
-		while(remaining > 0) $character.traits[random(traits)].base += 1
+		resetTraits()
+		while(remaining > 0) addTrait(random(traits))
 		calculateResults()
 	}
 
@@ -79,7 +93,7 @@
 			</div>
 		{/each}
 	</div>
-	<button class='center-button' on:change={randomTraits}>Random Traits</button>
+	<button class='center-button' on:click={randomTraits}>Random Traits</button>
 </div>
 
 <style>

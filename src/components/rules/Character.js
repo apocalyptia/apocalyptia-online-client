@@ -308,7 +308,7 @@ export class Character {
 				mods: 0,
 				score: 2,
 				set: () => {
-					this.props.health.base = this.traits.constitution.set() * 2
+					this.props.health.base = this.traits.constitution.set() * 3
 					this.props.health.score = this.props.health.base + this.props.health.mods
 					return this.props.health.score
 				}
@@ -344,17 +344,6 @@ export class Character {
 					this.props.psyche.base = this.traits.demeanor.set() * 2
 					this.props.psyche.score = this.props.psyche.base + this.props.psyche.mods
 					return this.props.psyche.score
-				}
-			},
-			reflex: {
-				name: `Reflex`,
-				base: 0,
-				mods: 0,
-				score: 0,
-				set: () => {
-					this.props.reflex.base = Math.floor(this.skills.perception.set() / 2)
-					this.props.reflex.score = this.props.reflex.base + this.props.reflex.mods
-					return this.props.reflex.score
 				}
 			},
 			speed: {

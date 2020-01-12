@@ -1,7 +1,0 @@
-Add a 9xp Ability.
-Add a 6xp Ability.
-Gear.js:
-	Check all item Notes.
-	Attributes: Figure out rules to specify weapon categories that attributes qualify for.
-	Ranged: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
-	Storage: Unit conversions still need work.

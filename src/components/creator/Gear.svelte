@@ -14,7 +14,7 @@
 		RangedList,
 		StorageList,
 		MasterGearList
-	} from '../rules/Gear'
+	} from '../../helpers/lists/gear'
 	import { random } from '../../helpers/Random'
 	import { character } from '../../stores'
 

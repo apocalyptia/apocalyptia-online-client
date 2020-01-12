@@ -42,9 +42,6 @@
 			<div class='prop-item'>
 				{$character.props.dodge.name}: {$character.props.dodge.score}
 			</div>
-			<div class='prop-item'>
-				{$character.props.reflex.name}: {$character.props.reflex.score}
-			</div>
 		</div>
 	</div>
 </div>
