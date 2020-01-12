@@ -9,6 +9,8 @@
 	let DisplayList = [...AbilityList]
 	let ModelList = [...MasterAbilityList]
 
+	console.log(DisplayList)
+
 // START EXPERIMENTAL
 // if (DisplayList[d].options.length > 1) {
 	// DisplayList.splice(
@@ -198,7 +200,7 @@
 						<div class='col l-col'>
 							<span class='description-label'>Descripiton: </span>
 							<span class='ability-description'>
-								{ability.description}
+								{ability.description[0]}
 							</span>
 							{#if ability.options[0] != ""}
 								<span class='ability-options'>
@@ -227,14 +229,13 @@
 						<div class='col s-col'>
 							<span class='taken-label'>Taken: </span>
 							<span class='ability-taken'>
-								<input
-									type='number'
+								<select
 									class='taken-number'
-									min=0
-									max={ability.max}
 									bind:value={ability.taken}
 									on:change|preventDefault={(event) => handleTaken(ability)}
 								>
+									<option value=0>0</option>
+								</select>
 							</span>
 						</div>
 					</div>

@@ -12,7 +12,7 @@ import {
 
 
 class Bomb extends Weapon {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz,
@@ -22,15 +22,15 @@ class Bomb extends Weapon {
 		fuse,
 		duration,
 		mix
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz,
 			dmg,
 			rng,
 			attributes
-		)
+		})
 		this.fuse = fuse
 		this.duration = duration
 		this.mix = mix

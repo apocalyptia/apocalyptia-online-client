@@ -2,19 +2,19 @@ import { Gear, Attribute } from '../Gear'
 
 
 class Armor extends Gear {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz,
 		dr,
 		loc,
 		attributes
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz
-		)
+		})
 		this.dr = dr
 		this.loc = loc
 		this.attributes = attributes
@@ -194,14 +194,14 @@ export const ArmorList = [
 
 
 class ArmorAttribute extends Attribute {
-	constructor(
+	constructor({
 		name,
 		description
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 	}
 }
 

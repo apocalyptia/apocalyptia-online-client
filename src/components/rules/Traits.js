@@ -14,8 +14,14 @@ const DemeanorSkillList = DemeanorSkills.map((skill)=> { skill.name }).join(', '
 
 
 export class Trait extends Rule {
-	constructor(name, description) {
-		super(name, description)
+	constructor({
+		name,
+		description
+	}) {
+		super({
+			name,
+			description
+		})
 	}
 }
 

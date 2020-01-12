@@ -2,8 +2,17 @@ import { Gear } from '../Gear'
 
 
 class Electronic extends Gear {
-	constructor (name, hours, description, sz) {
-		super(name, description, sz)
+	constructor ({
+		name,
+		hours,
+		description,
+		sz
+	}) {
+		super({
+			name,
+			description,
+			sz
+		})
 		this.hours = hours
 	}
 }

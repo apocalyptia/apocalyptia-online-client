@@ -2,17 +2,17 @@ import Rule from './Rule'
 
 
 export class Skill extends Rule {
-	constructor(
+	constructor({
 		name,
 		description,
 		parent,
 		difficulty,
 		specialties=[]
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 		this.parent = parent
 		this.difficulty = difficulty
 		this.specialties = specialties
@@ -20,14 +20,14 @@ export class Skill extends Rule {
 }
 
 export class Specialty extends Rule {
-	constructor(
+	constructor({
 		name,
 		description
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 	}
 }
 

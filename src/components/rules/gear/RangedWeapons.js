@@ -8,7 +8,7 @@ import {
 
 
 class RangedWeapon extends Weapon {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz,
@@ -18,15 +18,15 @@ class RangedWeapon extends Weapon {
 		mag,
 		cal,
 		reg
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz,
 			dmg,
 			rng,
 			attributes
-		)
+		})
 		this.mag = mag
 		this.cal = cal
 		this.reg = reg

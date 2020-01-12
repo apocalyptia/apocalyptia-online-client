@@ -2,8 +2,17 @@ import { Gear } from '../Gear'
 
 
 class Storage extends Gear {
-	constructor(name, description, sz, slots) {
-		super(name, description, sz)
+	constructor({
+		name,
+		description,
+		sz,
+		slots
+	}) {
+		super({
+			name,
+			description,
+			sz
+		})
 		this.slots = slots
 	}
 }

@@ -20,7 +20,12 @@ export class Ability extends Rule {
 		notes=``,
 		id=null
 	}) {
-		super(name, description, visible, formula)
+		super({
+			name,
+			description,
+			visible,
+			formula
+		})
 		this.max = max
 		this.xp = xp
 		this.taken = taken
@@ -35,7 +40,7 @@ export class Ability extends Rule {
 
 export const FavoriteWeapon = new Ability({
 	name: `Favorite Weapon`,
-	descriptions: [
+	description: [
 		`Botch is only a Fail with this weapon type.`
 	],
 	max: 1,

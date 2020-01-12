@@ -2,18 +2,18 @@ import { Gear } from '../Gear'
 
 
 class Drug extends Gear {
-	constructor (
+	constructor({
 		name,
 		description,
 		sz,
 		mix,
 		overdose
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz
-		)
+		})
 		this.mix = mix
 		this.overdose = overdose
 	}

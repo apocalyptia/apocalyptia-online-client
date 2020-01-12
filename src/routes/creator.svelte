@@ -16,7 +16,7 @@
 		{ name: 'Abilities', content: Abilities },
 		{ name: 'Gear', content: Gear }
 	]
-	let selected = Description
+	let selected = Abilities
 
 	const handleNavigation = (event) => selected = event.detail.selection
 </script>

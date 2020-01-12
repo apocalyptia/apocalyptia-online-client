@@ -12,22 +12,22 @@ import { Unarmed } from '../Situations'
 
 
 class MeleeWeapon extends Weapon {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz,
 		dmg,
 		rng,
 		attributes
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz,
 			dmg,
 			rng,
 			attributes
-		)
+		})
 	}
 }
 

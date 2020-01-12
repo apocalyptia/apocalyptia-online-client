@@ -2,18 +2,18 @@ import { Gear, Attribute } from '../Gear'
 
 
 class Ammo extends Gear {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz,
 		cal,
 		type
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz
-		)
+		})
 		this.cal = cal
 		this.type = type
 	}
@@ -207,15 +207,15 @@ export const AmmoList = [
 
 
 class AmmoAttribute extends Attribute {
-	constructor(
+	constructor({
 		name,
 		description,
 		calibers
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 		this.calibers = calibers
 	}
 }

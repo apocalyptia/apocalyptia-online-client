@@ -2,16 +2,16 @@ import { Gear } from '../Gear'
 
 
 class Equipment extends Gear {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz
-		)
+		})
 	}
 }
 

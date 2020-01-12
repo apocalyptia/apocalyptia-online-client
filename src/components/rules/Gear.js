@@ -2,33 +2,33 @@ import Rule from './Rule'
 
 
 export class Gear extends Rule {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 		this.sz = sz
 	}
 }
 
 export class Weapon extends Gear {
-	constructor(
+	constructor({
 		name,
 		description,
 		sz,
 		dmg,
 		rng,
 		attributes
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description,
 			sz
-		)
+		})
 		this.dmg = dmg
 		this.rng = rng
 		this.attributes = attributes
@@ -36,13 +36,13 @@ export class Weapon extends Gear {
 }
 
 export class Attribute extends Rule {
-	constructor(
+	constructor({
 		name,
 		description
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 	}
 }

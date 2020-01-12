@@ -3,14 +3,14 @@ import { Unarmed } from '../Situations'
 
 
 export class WeaponAttribute extends Attribute {
-	constructor(
+	constructor({
 		name,
 		description
-	) {
-		super(
+	}) {
+		super({
 			name,
 			description
-		)
+		})
 	}
 }
 
