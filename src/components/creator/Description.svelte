@@ -71,7 +71,7 @@
 	<div class='step-title'>
 		<h2>Description</h2>
 	</div>
-	<div class='stat-block'>
+	<div class='section-card'>
 		<span class='stat-label'>Player:</span>
 		<input
 			type='text'
@@ -79,7 +79,7 @@
 			bind:value={$character.description.playerName.value}
 		>
 	</div>
-	<div class='stat-block'>
+	<div class='section-card'>
 		<span class='stat-label'>Character:</span>
 		<input
 			type='text'
@@ -89,7 +89,7 @@
 		<button on:click={randomName}>Random</button>
 	</div>
 	{#each descriptions as pair}
-		<div class='stat-block'>
+		<div class='section-card'>
 			{#each pair as {name, random}}
 				<div class='pair-block'>
 					<div class='pair-container'>

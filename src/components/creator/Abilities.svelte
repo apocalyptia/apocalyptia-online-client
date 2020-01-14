@@ -1,39 +1,55 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import { Ability, AbilityList, MasterAbilityList } from '../rules/Abilities'
+	import {
+		Ability,
+		AbilityList,
+		MasterAbilityList,
+		AbilityGroups
+	} from '../rules/Abilities'
 	import { SkillList } from '../rules/Skills'
+	import { HideShow } from '../../helpers/HideShow'
 	import { character } from '../../stores'
+	import AbilityCard from '../ui/creator/AbilityCard.svelte'
+	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
 
-	$: remaining = $character.props.xp.score - $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+	let spentXP = 0
+	$: remaining = getRemaining()
 
+	const getRemaining = () => {
+		return $character.props.xp.score - spentXP
+	}
+
+	let xpGroups = [...AbilityGroups]
 	let DisplayList = [...AbilityList]
+	let CurrentAbilities = []
 
-	let ModelList = [...MasterAbilityList]
 
-	const handleTaken = (ability) => {
-		$character.abilities = []
-		let tempList = []
-		for (let a = 0; a < ModelList.length; ++a) {
-			if (ModelList[a].options[0].name == ability.options[ability.selection].name) {
-				ModelList[a].taken = parseInt(ability.taken)
-				if (ability.taken) tempList.push(ability)
-				break
-			}
-		}
-		$character.abilities = [...tempList]
-		console.log($character.abilities)
-	}
 
-	const handleSelection = (ability) => {
-		for (let a = 0; a < MasterAbilityList.length; ++a) {
-			if (a == ability.id) {
-				MasterAbilityList[a].taken = parseInt(ability.taken)
-				break
+	for (let x = 0; x < DisplayList.length; ++x) {
+		for (let y = 0; y < MasterAbilityList.length; ++y) {
+			if (DisplayList[x].name == MasterAbilityList[y].name) {
+				DisplayList[x].id = MasterAbilityList[y].id
 			}
 		}
 	}
 
+	const spentXPTotal = () => {
+		spentXP = $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+		remaining = $character.props.xp.score = spentXP
+	}
 
+	const resetCharacterAbilities = () => {
+		for (let a = 0; a < $character.abilities.length; ++a) {
+			$character.abilities[a].taken = 0
+		}
+	}
+
+	const populateDisplay = () => {
+		DisplayList = []
+		// for (let a = 0; a < MasterAbilityList.length; ++a) {
+		// 	if ()
+		// }
+	}
 
 	const syncLists = () => {
 		// resetMaster()
@@ -139,7 +155,12 @@
 	<div class='remaining'>
 		<h3>XP Remaining: {remaining}</h3>
 	</div>
-	<div class='stat-block'>
+	{#if $character.abilities.length}
+		<div class='section-card'>
+			<AbilityCurrent />
+		</div>
+	{/if}
+	<div class='section-card'>
 		<div class='abilities-list'>
 			<div class='header-row'>
 				<div class='col m-col name-header'>Name</div>
@@ -148,104 +169,46 @@
 				<div class='col s-col xp-header'>XP</div>
 				<div class='col s-col taken-header'>Taken</div>
 			</div>
-			{#each DisplayList as ability, index (ability.id)}
-					{#if !index || ability.xp != DisplayList[index-1].xp}
-						<div class='xp-separator' />
-					{/if}
-					{#if !index || ability.xp != DisplayList[index-1].xp}
-						<div class='xp-header'>{ability.xp}XP Abilities</div>
-					{/if}
-					<div class='ability-row'>
-						<div class='col m-col'>
-							<span class='ability-name'>{ability.name}</span>
-						</div>
-						<div class='col l-col'>
-							<span class='description-label'>Descripiton: </span>
-							<span class='ability-description'>
-								{ability.description[0]}
-							</span>
-							{#if ability.options[0] != ""}
-								<span class='ability-options'>
-									<select
-										name={ability.name}
-										bind:value={ability.selection}
-										on:change|preventDefault={(event) => handleTaken(ability)}
-									>
-										{#each ability.options as option, index}
-											<option value={index}>
-												{option.name}
-											</option>
-										{/each}
-									</select>
-								</span>
-							{/if}
-						</div>
-						<div class='col s-col'>
-							<span class='max-label'>Max: </span>
-							<span class='ability-max'>{ability.max}</span>
-						</div>
-						<div class='col s-col'>
-							<span class='xp-label'>XP: </span>
-							<span class='ability-xp'>{ability.xp}</span>
-						</div>
-						<div class='col s-col'>
-							<span class='taken-label'>Taken: </span>
-							<span class='ability-taken'>
-								<select
-									class='taken-number'
-									bind:value={ability.taken}
-									on:change|preventDefault={(event) => handleTaken(ability)}
-								>
-									<option value=0>0</option>
-									<option value=1>1</option>
-									{#if ability.max > 1 && ability.max <= 3}
-										<option value=2>2</option>
-										<option value=3>3</option>
-									{/if}
-								</select>
-							</span>
-						</div>
+			{#each xpGroups as group}
+				<div class='xp-group-section'>
+					<div
+						class='xp-group-title'
+						on:click={() => xpGroups = HideShow(group, xpGroups)}
+					>
+						{group.name}XP Abilities
 					</div>
-					{#if
-						index < (DisplayList.length-1) &&
-						ability.xp == DisplayList[index+1].xp
-					}
-						<div class='ab-separator' />
+					{#if group.visible}
+						{#each group.list as ability}
+							<AbilityCard {ability} />
+						{/each}
 					{/if}
+				</div>
 			{/each}
 		</div>
 	</div>
 </div>
 
 <style>
+	.xp-group-section {
+		border: 1px solid lime;
+		padding: 1rem;
+	}
 	@media only screen and (max-width: 1000px) {
 		.header-row {
 			display: none;
 		}
-		.ability-name,
-		.description-label,
-		.max-label,
-		.xp-label,
-		.taken-label {
-			font-weight: bold;
-		}
-		.ability-name {
-			text-decoration: underline;
-		}
 	}
 	@media only screen and (min-width: 1000px) {
+		.header-row {
+			padding: 1rem;
+		}
 		.name-header,
 		.description-header,
 		.max-header,
 		.xp-header,
 		.taken-header {
 			text-decoration: underline;
-		}
-		.description-label,
-		.max-label,
-		.xp-label,
-		.taken-label {
-			display: none;
+			text-align: center;
 		}
 		.l-col, .m-col, .s-col {
 			display: inline-block;
@@ -261,11 +224,9 @@
 			width: 8%;
 		}
 	}
-	.xp-header {
+	.xp-group-title {
 		font-size: 1.25rem;
-		margin-bottom: 1.25rem;
 		text-align: center;
-		text-decoration: underline;
 	}
 	.col {
 		vertical-align: top;
@@ -278,19 +239,5 @@
 	}
 	.remaining {
 		text-align: center;
-	}
-	.ab-separator {
-		margin-bottom: 1.5rem;
-	}
-	.xp-separator {
-		border-bottom: 1px solid;
-		margin-bottom: 1.25rem;
-		padding-bottom: 1.25rem;
-		width: 100%;
-	}
-	.taken-number {
-		width: 10vw;
-		max-width: 50px;
-		height: 1.25rem;
 	}
 </style>

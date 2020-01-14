@@ -3,51 +3,49 @@
 	import { capitalize } from '../../helpers/Capitalize'
 	import { random } from '../../helpers/Random'
 	import { character } from '../../stores'
-	import { startingTraitPoints } from '../rules/Traits'
+	import { startingTraitPoints, traitMax } from '../rules/Traits'
+
 
 	const traits = Object.keys($character.traits)
 
-	let spentTraitPoints = Object.values($character.traits).reduce((t, { base }) => t += base, 0)
-	let remaining = startingTraitPoints - spentTraitPoints
+	let remaining = startingTraitPoints - traits.length
+
+	const sumTraits = () => {
+		remaining = startingTraitPoints - Object.values($character.traits).reduce((t, { base }) => t += base, 0)
+	}
 
 	const modifyTrait = (trait) => {
-		if (remaining < 0) limitTrait(trait)
+		sumTraits()
+		while (remaining < 0) {
+			$character.traits[trait].base--
+			sumTraits()
+		}
 		calculateResults()
 	}
 
-	const addTrait = (trait) => {
-		$character.traits[trait].base++
-		spentTraitPoints++
-		remaining--
-	}
-
-	const subtractTrait = (trait) => {
-		$character.traits[trait.name].base--
-		spentTraitPoints--
-		remaining++
-	}
-
-	const limitTrait = (trait) => {
-		while (remaining < 0) subtractTrait(trait)
-	}
-
 	const resetTraits = () => {
-		traits.forEach((trait) => $character.traits[trait].base = 1)
-		spentTraitPoints = traits.length
-		remaining = startingTraitPoints - spentTraitPoints
+		Object.keys($character.traits).forEach((trait) => $character.traits[trait].base = 1)
+		sumTraits()
 	}
 
 	const randomTraits = () => {
 		resetTraits()
-		while(remaining > 0) addTrait(random(traits))
+		while(remaining > 0) {
+			let trait = random(traits)
+			if ($character.traits[trait].base < traitMax) {
+				$character.traits[random(traits)].base++
+				sumTraits()
+			}
+		}
 		calculateResults()
 	}
 
 	const calculateResults = () => {
-		traits.forEach((trait) => {
+		sumTraits()
+		Object.keys($character.traits).forEach((trait) => {
 			$character.traits[trait].set()
 			Object.keys($character.skills).forEach((skill) => {
-				if ($character.skills[skill].parent === capitalize(trait)) {
+				if ($character.skills[skill].parent == capitalize(trait)) {
 					$character.skills[skill].max = $character.traits[trait].base
 				}
 			})
@@ -65,40 +63,47 @@
 	</div>
 	<div class='trait-list'>
 		{#each traits as trait}
-			<div class='stat-block'>
+			<div class='section-card'>
 				<div>
-					<span class='stat-label'>{$character.traits[trait].name}</span>
+					<span class='stat-label'>{capitalize(trait)}</span>
 				</div>
 				<div class='stat-column'>
 					<div class='range-block'>
 						<input
 							type='range'
-							name='{$character.traits[trait].name.toLowerCase()}'
+							name='{trait.toLowerCase()}'
 							min=1
-							max=6
+							max={traitMax}
 							bind:value={$character.traits[trait].base}
-							invalid={remaining < 0}
-							on:change|preventDefault={(event) => modifyTrait(event.target)}
+							on:change|preventDefault={() => {modifyTrait(trait)}}
 						>
 						<div class='range-indicator'>
-							<div class='range-number trait-1'>1</div>
-							<div class='range-number trait-2'>2</div>
-							<div class='range-number trait-3'>3</div>
-							<div class='range-number trait-4'>4</div>
-							<div class='range-number trait-5'>5</div>
-							<div class='range-number trait-6'>6</div>
+							{#each Array(traitMax) as _, i}
+								<div class='range-number trait-{i+1}'>{i+1}</div>
+							{/each}
 						</div>
 					</div>
 				</div>
 			</div>
 		{/each}
 	</div>
-	<button class='center-button' on:click={randomTraits}>Random Traits</button>
+	<button
+		class='center-button'
+		on:click={resetTraits}
+	>
+		Reset Traits
+	</button>
+	<button
+		class='center-button'
+		on:click={randomTraits}
+	>
+		Random Traits
+	</button>
 </div>
 
 <style>
 	@media only screen and (max-width: 500px) {
-		.stat-block {
+		.section-card {
 			display: block;
 		}
 		.stat-column {

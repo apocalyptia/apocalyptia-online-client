@@ -6,11 +6,6 @@ Gear.js:
 	Ranged: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
 	Storage: Unit conversions still need work.
 
-Would it be possible to display a blank box instead of a value of 0?  On mobile, if you click in the box, but click on the wrong side of the 0, then when you put a value in, it makes it a tens value. <- Change inputs from number to select. Update options based on remaining XP.
-
----- Replace Reflex with a Passive Block and Dodge, each at Skill / 2.
----- Health = Cx3. Bleed 1/min @ 2/3 Health. Unconscious and Bleed 1/rnd @ 1/3 Health.
-
 ---- Put Expand/Collapse All button on reference.
 ---- Put Search bar on Ref page.
 
@@ -20,3 +15,5 @@ Would it be possible to display a blank box instead of a value of 0?  On mobile
 - Initiative: If Init can Explode, maybe it can also Botch? Lost your turn if you Botch an Init roll? Too brutal?
 
 - Pepper Spray takes time to start working but lasts 15 to 30 mins
+
+Add feature to modify Abilities using AbilityModal.svelte

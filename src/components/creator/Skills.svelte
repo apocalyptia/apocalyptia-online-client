@@ -1,7 +1,9 @@
 <script>
+	import { onMount, onDestroy } from 'svelte'
 	import { fade } from 'svelte/transition'
 	import { HideShow } from '../../helpers/HideShow'
 	import { character } from '../../stores'
+	import { traitMax } from '../rules/Traits'
 
 	const skills = Object.keys($character.skills)
 
@@ -12,21 +14,28 @@
 		})
 	})
 	let skillPoints = $character.traits.brains.base * 3
-	let remaining = skillPoints
+	let remaining = ($character.traits.brains.base * 3) - Object.values($character.skills).reduce((t, { base }) => t += base, 0)
 
-	const countSkillPoints = (event) => {
-		let target = event.target
-		let skillCount = 0
-		skills.forEach((skill) => { skillCount += $character.skills[skill].base })
-		remaining = skillPoints - skillCount
-		if (remaining < 0 || target.value > $character.skills[target.name].max) {
-			$character.skills[target.name].base -= 1
-			target.value -= 1
-			countSkillPoints(event)
+	onMount(() => {
+		Object.keys($character.skills).forEach((skill) => countSkillPoints(skill))
+	})
+
+	const sumSkills = () => {
+		remaining = skillPoints - Object.values($character.skills).reduce((t, { base }) => t += base, 0)
+	}
+
+	const overMaximum = (skill) => {
+		return $character.skills[skill].base > $character.skills[skill].max
+	}
+
+	const countSkillPoints = (skill) => {
+		sumSkills()
+		while (remaining < 0 || overMaximum(skill)) {
+			$character.skills[skill].base--
+			sumSkills()
 		}
 		$character.updateProps()
 	}
-
 </script>
 
 <div class='skills-step' in:fade>
@@ -39,7 +48,10 @@
 	<div class='skill-list'>
 		{#each skillGroups as group}
 			<div class='trait-section'>
-				<div class='parent-trait-title' on:click={() => skillGroups = HideShow(group, skillGroups)}>
+				<div
+					class='parent-trait-title'
+					on:click={() => skillGroups = HideShow(group, skillGroups)}
+				>
 					<h3>{$character.traits[group.name].name} Skills</h3>
 				</div>
 				{#if group.visible}
@@ -59,18 +71,13 @@
 											min=0
 											max=6
 											bind:value={$character.skills[skill].base}
-											invalid={remaining < 0}
-											on:input|preventDefault={(event) => countSkillPoints(event)}
+											on:input|preventDefault={()=>{countSkillPoints(skill)}}
 										>
 									</div>
 									<div class='stat-input'>
-										<div>0</div>
-										<div>1</div>
-										<div>2</div>
-										<div>3</div>
-										<div>4</div>
-										<div>5</div>
-										<div>6</div>
+										{#each Array(traitMax+1) as _, i}
+											<div>{i}</div>
+										{/each}
 									</div>
 								</div>
 							</div>

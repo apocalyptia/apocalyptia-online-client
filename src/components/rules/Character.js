@@ -1,8 +1,5 @@
 export class Character {
 	constructor() {
-		this.settings = {
-			startingTraitPoints: 12
-		},
 		this.scenario = ``,
 		this.completed = false,
 		this.description = {
@@ -43,7 +40,6 @@ export class Character {
 			agility: {
 				name: `Agility`,
 				base: 1,
-				max: 6,
 				mods: 0,
 				score: 1,
 				set: () => {
@@ -54,7 +50,6 @@ export class Character {
 			brains: {
 				name: `Brains`,
 				base: 1,
-				max: 6,
 				mods: 0,
 				score: 1,
 				set: () => {
@@ -65,7 +60,6 @@ export class Character {
 			constitution: {
 				name: `Constitution`,
 				base: 1,
-				max: 6,
 				mods: 0,
 				score: 1,
 				set: () => {
@@ -76,7 +70,6 @@ export class Character {
 			demeanor: {
 				name: `Demeanor`,
 				base: 1,
-				max: 6,
 				mods: 0,
 				score: 1,
 				set: () => {

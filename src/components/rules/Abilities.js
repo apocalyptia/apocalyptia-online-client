@@ -41,7 +41,7 @@ export class Ability extends Rule {
 export const FavoriteWeapon = new Ability({
 	name: `Favorite Weapon`,
 	description: [
-		`Botch is only a Fail with this weapon type.`
+		`Any Botch with a specified weapon type is reduced in severity to a normal Fail.`
 	],
 	max: 1,
 	xp: 3,
@@ -88,7 +88,7 @@ export const Specialize = new Ability({
 export const WeaponTraining = new Ability({
 	name: `Weapon Training`,
 	description: [
-		`+1 ATK with this weapon type.`
+		`+1 ATK with a specified weapon type.`
 	],
 	max: 1,
 	xp: 3,
@@ -280,7 +280,7 @@ export const HardHeaded = new Ability({
 export const PowerfulStrike = new Ability({
 	name: `Powerful Strike`,
 	description: [
-		`+1 DMG with this Melee weapon type.`
+		`+1 DMG with a specified Melee weapon type.`
 	],
 	max: 1,
 	xp: 15,
@@ -382,7 +382,51 @@ export const AbilityList = [
 ]
 
 
-const TempAbilityList = new Set([])
+export const AbilityGroups = [
+	{
+		name: 3,
+		visible: false,
+		list: XP3Abilities
+	},
+	{
+		name: 6,
+		visible: false,
+		list: XP6Abilities
+	},
+	{
+		name: 9,
+		visible: false,
+		list: XP9Abilities
+	},
+	{
+		name: 12,
+		visible: false,
+		list: XP12Abilities
+	},
+	{
+		name: 15,
+		visible: false,
+		list: XP15Abilities
+	},
+	{
+		name: 18,
+		visible: false,
+		list: XP18Abilities
+	},
+	{
+		name: 24,
+		visible: false,
+		list: XP24Abilities
+	},
+	{
+		name: 30,
+		visible: false,
+		list: XP30Abilities
+	},
+]
+
+
+const TempAbilityList = []
 for (let a = 0; a < AbilityList.length; ++a) {
 	if (AbilityList[a].options.length > 1) {
 		for (let o = 0; o < AbilityList[a].options.length; ++o) {
@@ -395,7 +439,7 @@ for (let a = 0; a < AbilityList.length; ++a) {
 				options: [AbilityList[a].options[o]],
 				selection: o
 			})
-			TempAbilityList.add(newAbility)
+			TempAbilityList.push(newAbility)
 		}
 
 	}
@@ -407,7 +451,7 @@ for (let a = 0; a < AbilityList.length; ++a) {
 			xp: AbilityList[a].xp,
 			taken: AbilityList[a].taken
 		})
-		TempAbilityList.add(newAbility)
+		TempAbilityList.push(newAbility)
 	}
 }
 for (let i = 0; i < TempAbilityList.length; ++i) {

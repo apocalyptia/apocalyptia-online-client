@@ -10,7 +10,7 @@
 		width: 100%;
 	}
 	.view-screen:before {
-		animation: hline 10s linear infinite;
+		/* animation: hline 5s linear infinite; */
 		background: rgb(100, 250, 100, .1);
 		content: '';
 		font-size: 1px;
@@ -19,8 +19,8 @@
 		width: 100%;
 		z-index: 1000;
 	}
-	@keyframes hline {
+	/* @keyframes hline {
 		0%   { top: 0; }
-		100% { top: 99%; } 
-	}
+		100% { top: 100vmax; } 
+	} */
 </style>
