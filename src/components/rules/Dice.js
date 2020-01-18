@@ -32,7 +32,7 @@ export const Cooperation = new Rule({
 export const Success = new Rule({
 	name: `Success`,
 	description: [
-		`If [Result >= #], the attempted action worked. Re-roll ties on opposed rolls. The degree of Success is important for some rolls.`
+		`If [Result >= #], the attempted action worked. Re-roll ties on opposed rolls. The degree of Success is important for some rolls, such as Attacks.`
 	],
 	subrules: [
 		RoteActions,

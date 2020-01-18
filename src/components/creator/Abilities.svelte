@@ -24,7 +24,6 @@
 	let CurrentAbilities = []
 
 
-
 	for (let x = 0; x < DisplayList.length; ++x) {
 		for (let y = 0; y < MasterAbilityList.length; ++y) {
 			if (DisplayList[x].name == MasterAbilityList[y].name) {
@@ -162,13 +161,6 @@
 	{/if}
 	<div class='section-card'>
 		<div class='abilities-list'>
-			<div class='header-row'>
-				<div class='col m-col name-header'>Name</div>
-				<div class='col l-col description-header'>Description</div>
-				<div class='col s-col max-header'>Max</div>
-				<div class='col s-col xp-header'>XP</div>
-				<div class='col s-col taken-header'>Taken</div>
-			</div>
 			{#each xpGroups as group}
 				<div class='xp-group-section'>
 					<div
@@ -193,43 +185,9 @@
 		border: 1px solid lime;
 		padding: 1rem;
 	}
-	@media only screen and (max-width: 1000px) {
-		.header-row {
-			display: none;
-		}
-	}
-	@media only screen and (min-width: 1000px) {
-		.header-row {
-			padding: 1rem;
-		}
-		.name-header,
-		.description-header,
-		.max-header,
-		.xp-header,
-		.taken-header {
-			text-decoration: underline;
-			text-align: center;
-		}
-		.l-col, .m-col, .s-col {
-			display: inline-block;
-		}
-		.l-col {
-			width: 50%;
-		}
-		.m-col {
-			width: 20%;
-		}
-		.s-col {
-			text-align: center;
-			width: 8%;
-		}
-	}
 	.xp-group-title {
 		font-size: 1.25rem;
 		text-align: center;
-	}
-	.col {
-		vertical-align: top;
 	}
 	.abilities-step {
 		text-align: left;

@@ -66,7 +66,7 @@ export const LanguageList = [
 	{ name: 'Ukrainian' },
 	{ name: 'Urdu' },
 	{ name: 'Uyghur' },
-	{ name: 'Viet{ namese' },
+	{ name: 'Vietnamese' },
 	{ name: 'Yoruba' },
 	{ name: 'Zulu' },
 ]

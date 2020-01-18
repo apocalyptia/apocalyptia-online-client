@@ -48,7 +48,7 @@ export const Cover = new Rule({
 export const Defenseless = new Rule({
 	name: `Defenseless`, 
 	description: [
-		`You must use a Reflexive Defense.`
+		`You must use a Reflexive Defense. Use your Block score against Melee Attacks and you Dodge score against Ranged Attacks.`
 	]
 })
 
@@ -132,7 +132,7 @@ export const Suffocation = new Rule({
 export const Unarmed = new Rule({
 	name: `Unarmed`, 
 	description: [
-		`If the target is conscious, the target rolls [C vs DMG] to avoid being knocked Unconscious. If the target is Unconscious, the target takes DMG = Melee score. DR is not depleted.`
+		`Successful Unarmed ATKs do DMG = [(ATK - DEF) / 2]. Always round down. DR is not depleted.`
 	]
 })
 
