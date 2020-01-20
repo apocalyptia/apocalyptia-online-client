@@ -13,7 +13,7 @@ export const countPoints = (
 		remaining = starting - pointTally(char, attribute)
 		console.log('Remaining: ', remaining)
 	}
-	char.updateProps()
+	char.updateProperties()
 	return remaining
 }
 

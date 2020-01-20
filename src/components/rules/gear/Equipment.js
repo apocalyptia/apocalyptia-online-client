@@ -322,7 +322,7 @@ export const Lockpicks = new Equipment({
 export const LuxuryItem = new Equipment({
 	name: `Luxury Item`,
 	description: [
-		`Toilet paper, cigarette, etc. +1 Psyche 1/wk.`
+		`Toilet paper, cigarette, etc. +1 Mental Health 1/wk.`
 	],
 	sz: 0
 })
@@ -418,7 +418,7 @@ export const Notebook = new Equipment({
 export const Padlock = new Equipment({
 	name: `Padlock`,
 	description: [
-		`10HP. 6DR. Larceny(Disable) 9#.`
+		`2DR. Larceny(Disable) 9#.`
 	],
 	sz: 1
 })

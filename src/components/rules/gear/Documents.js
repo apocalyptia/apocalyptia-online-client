@@ -170,7 +170,7 @@ export const BilingualDictionary = new Document({
 export const ClassicNovel = new Document({
 	name: `Classic Novel`,
 	description: [
-		`+1 Psyche`
+		`+1 Mental Health`
 	],
 	sz: 1
 })
@@ -178,7 +178,7 @@ export const ClassicNovel = new Document({
 export const HolyBook = new Document({
 	name: `Holy Book`,
 	description: [
-		`-1 Psyche`
+		`-1 Mental Health`
 	],
 	sz: 1
 })

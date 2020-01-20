@@ -120,7 +120,7 @@ export const HydrationPack = new Storage({
 export const Lockbox = new Storage({
 	name: `Lockbox`,
 	description: [
-		`10HP. 6DR. FR. Larceny(Disable) 9#.`
+		`2DR. FR. Larceny(Disable) 9#.`
 	],
 	sz: 2,
 	slots: 1

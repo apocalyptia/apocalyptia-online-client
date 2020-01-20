@@ -102,7 +102,7 @@ export const Shield = new WeaponAttribute({
 export const Slow = new WeaponAttribute({
 	name: 'Slow',
 	description: [
-		'Penalty to Initiative = Size.'
+		'Penalty to Speed = Size.'
 	]
 })
 

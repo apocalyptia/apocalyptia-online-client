@@ -34,7 +34,8 @@
 			$character.skills[skill].base--
 			sumSkills()
 		}
-		$character.updateProps()
+		$character.setStat('skills', skill)
+		$character.updateProperties()
 	}
 </script>
 

@@ -43,14 +43,14 @@
 	const calculateResults = () => {
 		sumTraits()
 		Object.keys($character.traits).forEach((trait) => {
-			$character.traits[trait].set()
+			$character.setStat('traits', trait)
 			Object.keys($character.skills).forEach((skill) => {
 				if ($character.skills[skill].parent == capitalize(trait)) {
 					$character.skills[skill].max = $character.traits[trait].base
 				}
 			})
 		})
-		$character.updateProps()
+		$character.updateProperties()
 	}
 </script>
 

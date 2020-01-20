@@ -12,7 +12,7 @@ Gear.js:
 - Maybe have a Hard Headed like Ability to negate Arm or Leg Called Shots.
 - Bonus XP each session. Some is given by GN. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage, etc).
 
-- Initiative: If Init can Explode, maybe it can also Botch? Lost your turn if you Botch an Init roll? Too brutal?
+- Initiative: Use Speed for Initiative rolls. If Init can Explode, maybe it can also Botch? Lost your turn if you Botch an Init roll? Too brutal?
 
 - Pepper Spray takes time to start working but lasts 15 to 30 mins
 

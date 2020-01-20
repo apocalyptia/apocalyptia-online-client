@@ -37,7 +37,7 @@ export const TraitFlowExplanation = 'Once per year (in-game), you may choose to 
 export const Agility = new Trait({
 	name: `Agility`,
 	description: [
-		`Agility is a Character’s talent for physical coordination. High Agility indicates balance, flexibility, and fine motor skill. This Trait determines Initiative and Speed. Agility is the parent Trait for: ${AbilitySkillList}.`
+		`Agility is a Character’s talent for physical coordination. High Agility indicates balance, flexibility, and fine motor skill. This Trait determines Speed. Agility is the parent Trait for: ${AbilitySkillList}.`
 	]
 })
 
@@ -51,14 +51,14 @@ export const Brains = new Trait({
 export const Constitution = new Trait({
 	name: `Constitution`,
 	description: [
-		`Constitution is a Character’s talent for physical strength and durability. High Constitution indicates good health and powerful muscles. This Trait determines Health, Pain, and Speed. Constitution is the parent Trait for: ${ConstitutionSkillList}.`
+		`Constitution is a Character’s talent for physical strength and durability. High Constitution indicates good health and powerful muscles. This Trait determines Physical Health. Constitution is the parent Trait for: ${ConstitutionSkillList}.`
 	]
 })
 
 export const Demeanor = new Trait({
 	name: `Demeanor`,
 	description: [
-		`Demeanor is a Character’s talent for social exchanges and sheer force of will. High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Psyche and Luck. Demeanor is also the parent Trait for: ${DemeanorSkillList}.`
+		`Demeanor is a Character’s talent for social exchanges and sheer force of will. High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Mental Health. Demeanor is also the parent Trait for: ${DemeanorSkillList}.`
 	]
 })
 

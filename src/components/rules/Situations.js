@@ -33,14 +33,15 @@ export const Chase = new Rule({
 export const Concealed = new Rule({
 	name: `Concealed`, 
 	description: [
-		`If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected. Targets are Defenseless against ATKs from Concealed opponents.`
+		`If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected by this penalty, though Blast DMG may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against ATKs from Concealed opponents.`
 	]
 })
 
 export const Cover = new Rule({
 	name: `Cover`, 
 	description: [
-		`You can lean in and out of Cover to ATK as part of an Action. All Cover except Glass makes you Concealed. If an opponent holds a Prepared Attack until you lean out of Cover, they must make a Called Shot to hit an exposed Location. All DMG is negated against targets that are behind Cover if the Material DR is >= the weapon’s base DMG. If weapon DMG exceeds the Material DR, the Material DR acts as an Armor bonus for DMG reduction.`
+		`All DMG is negated against targets that are behind Cover unless the weapon's base DMG exceeds the Material DR, in which case the Material DR acts as an Armor bonus for DMG reduction.`,
+		`All Cover except Glass makes you Concealed while behind Cover. You can lean in and out of Cover to ATK as part of an Action. If an opponent ATKs simultaneously when you ATK from Cover, they must make a Called Shot to hit an exposed Location.`
 	],
 	table: CoverTable
 })
@@ -48,7 +49,7 @@ export const Cover = new Rule({
 export const Defenseless = new Rule({
 	name: `Defenseless`, 
 	description: [
-		`You must use a Reflexive Defense. Use your Block score against Melee Attacks and you Dodge score against Ranged Attacks.`
+		`You must use a Reflexive Defense. Use your Block score against Melee ATKs and you Dodge score against Ranged ATKs.`
 	]
 })
 

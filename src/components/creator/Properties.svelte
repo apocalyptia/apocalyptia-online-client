@@ -1,53 +1,59 @@
 <script>
 	import { fade } from 'svelte/transition'
+	import { d6 } from '../../helpers/Random'
 	import { character } from '../../stores'
 
-	const props = Object.keys($character.props)
+	const properties = Object.keys($character.properties)
+
+	const rollLuck = () => {
+		if ($character.properties.luck.base == 0) {
+			$character.properties.luck.base = d6()
+			$character.setStat('properties', 'luck')
+		}
+	}
 </script>
 
 <div class='properties-step' in:fade>
 	<div class='step-title'>
 		<h2>Properties</h2>
 	</div>
-	<div class='props-list'>
+	<div class='properties-list centered'>
 		<div class='prop-col'>
-			<span class='left-col'>
-				<div class='prop-item'>
-					{$character.props.health.name}: {$character.props.health.score}
-				</div>
-				<div class='prop-item'>
-					{$character.props.init.name}: {$character.props.init.score}
-				</div>
-				<div class='prop-item'>
-					{$character.props.speed.name}: {$character.props.speed.score}
-				</div>
-			</span>
-			<span class='right-col'>
-				<div class='prop-item'>
-					{$character.props.psyche.name}: {$character.props.psyche.score}
-				</div>
-				<div class='prop-item'>
-					{$character.props.luck.name}: {$character.props.luck.score}
-				</div>
-				<div class='prop-item'>
-					{$character.props.xp.name}: {$character.props.xp.score}
-				</div>
-			</span>
+			<div class='prop-item'>
+				{$character.properties.physicalHealth.name}: {$character.properties.physicalHealth.score}
+			</div>
+			<div class='prop-item'>
+				{$character.properties.mentalHealth.name}: {$character.properties.mentalHealth.score}
+			</div>
+			<div class='prop-item'>
+				{$character.properties.speed.name}: {$character.properties.speed.score}
+			</div>
+			<div class='prop-item'>
+				{$character.properties.xp.name}: {$character.properties.xp.score}
+			</div>
 		</div>
 		<div class='def-list'>
 			<div class='def-header'>Defenses</div>
 			<div class='prop-item'>
-				{$character.props.block.name}: {$character.props.block.score}
+				{$character.properties.block.name}: {$character.properties.block.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.dodge.name}: {$character.props.dodge.score}
+				{$character.properties.dodge.name}: {$character.properties.dodge.score}
+			</div>
+		</div>
+		<div class='prop-col'>
+			<div class='prop-item'>
+				{$character.properties.luck.name}: {$character.properties.luck.score}
+			</div>
+			<div class='prop-item'>
+				<button on:click={rollLuck}>Roll Luck</button>
 			</div>
 		</div>
 	</div>
 </div>
 
 <style>
-	.props-list {
+	.properties-list {
 		display: flex;
 		flex-direction: column;
 		text-align: left;
@@ -56,7 +62,6 @@
 		border: 1px solid lime;
 		margin: .5rem;
 		padding: .5rem;
-		text-align: center;
 	}
 	.def-list .prop-item {
 		display: inline-block;
@@ -75,11 +80,8 @@
 		margin: .5rem;
 		padding: .5rem;
 	}
-	.left-col {
-		float: left;
-	}
-	.right-col {
-		float: right;
+	.centered {
+		text-align: center;
 	}
 	.prop-item {
 		margin: 1rem;
