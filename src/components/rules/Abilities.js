@@ -36,6 +36,7 @@ export class Ability extends Rule {
 	}
 }
 
+
 // 3 XP Abilities
 
 export const FavoriteWeapon = new Ability({
@@ -458,3 +459,6 @@ for (let i = 0; i < TempAbilityList.length; ++i) {
 	TempAbilityList[i].id = i
 }
 export const MasterAbilityList = [...TempAbilityList]
+
+
+export const AbilitiesExplanation = `These are Character upgrades purchased with XP.`

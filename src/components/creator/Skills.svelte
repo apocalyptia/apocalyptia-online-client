@@ -4,27 +4,23 @@
 	import { HideShow } from '../../helpers/HideShow'
 	import { character } from '../../stores'
 	import { traitMax } from '../rules/Traits'
+	import { 
+		startingSkillPoints,
+		SkillExplanation
+	} from '../rules/Skills'
 
 
 	const skills = Object.keys($character.skills)
 
-	let remaining = ($character.traits.brains.base * 3) - 
+	const getRemaining = () => {
+		return startingSkillPoints($character) - 
 		Object.values($character.skills).reduce(
 			(t, { base }) => t += base, 0
 		)
-
-	let skillGroups = []
-	Object.keys($character.traits).forEach((t) => {
-		skillGroups.push({ name: t, visible: false })
-	})
-
-	const skillPoints = $character.traits.brains.base * 3
+	}
 
 	const sumSkills = () => {
-		remaining = skillPoints - 
-			Object.values($character.skills).reduce(
-				(t, { base }) => t += base, 0
-			)
+		remaining = getRemaining()
 	}
 
 	const overMaximum = (s) => {
@@ -49,11 +45,21 @@
 			(s) => countSkillPoints(s)
 		)
 	})
+
+	let skillGroups = []
+	Object.keys($character.traits).forEach((t) => {
+		skillGroups.push({ name: t, visible: false })
+	})
+
+	let remaining = getRemaining()
 </script>
 
 <div class='skills-step' in:fade>
 	<div class='step-title'>
 		<h2>Skills</h2>
+	</div>
+	<div class='explanation'>
+		<p>{SkillExplanation}</p>
 	</div>
 	<div class='remaining'>
 		<h3>Points Remaining: {remaining}</h3>
@@ -124,6 +130,9 @@
 		.stat-column {
 			width: 100%;
 		}
+	}
+	.explanation {
+		padding: 1rem;
 	}
 	.skill-list {
 		margin-top: 1rem;

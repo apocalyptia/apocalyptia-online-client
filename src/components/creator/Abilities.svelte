@@ -11,6 +11,7 @@
 	import { character } from '../../stores'
 	import AbilityCard from '../ui/creator/AbilityCard.svelte'
 	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
+	import { AbilitiesExplanation } from '../rules/Abilities'
 
 	let spentXP = 0
 	$: remaining = getRemaining()
@@ -151,6 +152,9 @@
 	<div class='step-title'>
 		<h2>Abilities</h2>
 	</div>
+	<div class='explanation'>
+		<p>{AbilitiesExplanation}</p>
+	</div>
 	<div class='remaining'>
 		<h3>XP Remaining: {remaining}</h3>
 	</div>
@@ -181,6 +185,9 @@
 </div>
 
 <style>
+	.explanation {
+		padding: 1rem;
+	}
 	.xp-group-section {
 		border: 1px solid lime;
 		padding: 1rem;

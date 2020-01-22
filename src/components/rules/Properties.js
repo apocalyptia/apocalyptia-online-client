@@ -1,4 +1,6 @@
 import Rule from './Rule'
+import { Block, Dodge } from './Maneuvers'
+
 
 export class Property extends Rule {
 	constructor({
@@ -14,26 +16,34 @@ export class Property extends Rule {
 	}
 }
 
-export const Block = new Property({
+
+export const BlockDefense = new Property({
 	name: `Block`,
-	description: [
-		``
-	],
+	description: [ ...Block.description ],
 	formula: `melee`
 })
 
-export const Dodge = new Property({
+export const DodgeDefense = new Property({
 	name: `Dodge`,
-	description: [
-		``
-	],
+	description: [ ...Dodge.description ],
 	formula: `acrobatics`
+})
+
+export const Experience = new Property({
+	name: `Experience`,
+	description: [
+		`[B per session] XP is earned once per game session. +1 XP every time you roll a Botch. The GN may give bonus XP. Spend XP to buy Abilities.`
+	],
+	formula: `brains * 3`
 })
 
 export const Luck = new Property({
 	name: `Luck`,
 	description: [
-		``
+		`Roll a d6 during Character Creation to determine your Luck. Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance. Luck points refill at dawn each day. You may spend Luck in dramatic moments to:`,
+		`• Take a re-roll with a +6 bonus.`,
+		`• Take an extra Action.`,
+		`• Give a Luck point to a Comrade.`
 	],
 	formula: `d6`
 })
@@ -57,15 +67,21 @@ export const PhysicalHealth = new Property({
 export const Speed = new Property({
 	name: `Speed`,
 	description: [
-		``
+		`[A x 3]. This the Property that is rolled against all other participants at the beginning of each round of combat to determine the order in which each participant's turn is resolved. This is also a Character's personal Walking rate in yards per round at the cost of 1 Action. Characters can travel long distances overland at [Speed / 2] mph for up to [C x 3] hrs per day.`
 	],
 	formula: `agility * 3`
 })
 
-export const Experience = new Property({
-	name: `Experience`,
-	description: [
-		``
-	],
-	formula: `brains * 3`
-})
+
+export const Properties = [
+	BlockDefense,
+	DodgeDefense,
+	Experience,
+	Luck,
+	MentalHealth,
+	PhysicalHealth,
+	Speed
+]
+
+
+export const PropertyExplanation = `Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`

@@ -13,13 +13,15 @@
 
 	const traits = Object.keys($character.traits)
 
-	let remaining = startingTraitPoints - traits.length
-
-	const sumTraits = () => {
-		remaining = startingTraitPoints - 
-		Object.values($character.traits).reduce(
+	const getRemaining = () => {
+		return startingTraitPoints -
+			Object.values($character.traits).reduce(
 			(t, { base }) => t += base, 0
 		)
+	}
+
+	const sumTraits = () => {
+		remaining = getRemaining()
 	}
 
 	const modifyTrait = (t) => {
@@ -66,6 +68,8 @@
 	onMount(() => {
 		calculateResults()
 	})
+
+	let remaining = getRemaining()
 </script>
 
 <div class='traits-step' in:fade>

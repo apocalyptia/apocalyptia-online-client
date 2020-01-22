@@ -35,7 +35,7 @@ export const Defense = new Rule({
 export const Movement = new Rule({
 	name: `Movement`, 
 	description: [
-		`Spend 1 Action to move up to your Speed [A x 3], or 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`
+		`Spend 1 Action to Walk up to your Speed [A x 3]. You may divide up your movement around other Actions on your turn however you wish. You may spend 2 Actions to Run up to [Speed x 2]. Spend 1 Action to go Prone or stand.`
 	]
 })
 

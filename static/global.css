@@ -216,7 +216,7 @@ label {
 }
 
 .step-title {
-	display: flex;
+	text-align: center;
 }
 
 .ref-header {

@@ -29,6 +29,7 @@ const referenceToC = new TableOfContents(
 		'Dice',
 		'Traits',
 		'Skills',
+		'Properties',
 		'Combat',
 		'Maneuvers',
 		'Situations',
