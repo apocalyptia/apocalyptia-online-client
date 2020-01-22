@@ -1,42 +1,54 @@
 <script>
-	import { onMount, onDestroy } from 'svelte'
+	import { onMount } from 'svelte'
 	import { fade } from 'svelte/transition'
 	import { HideShow } from '../../helpers/HideShow'
 	import { character } from '../../stores'
 	import { traitMax } from '../rules/Traits'
 
+
 	const skills = Object.keys($character.skills)
 
-	let skillGroups = []
-	Object.keys($character.traits).forEach((trait) => {
-		skillGroups.push({
-			name: trait, visible: false
-		})
-	})
-	let skillPoints = $character.traits.brains.base * 3
-	let remaining = ($character.traits.brains.base * 3) - Object.values($character.skills).reduce((t, { base }) => t += base, 0)
+	let remaining = ($character.traits.brains.base * 3) - 
+		Object.values($character.skills).reduce(
+			(t, { base }) => t += base, 0
+		)
 
-	onMount(() => {
-		Object.keys($character.skills).forEach((skill) => countSkillPoints(skill))
+	let skillGroups = []
+	Object.keys($character.traits).forEach((t) => {
+		skillGroups.push({ name: t, visible: false })
 	})
+
+	const skillPoints = $character.traits.brains.base * 3
 
 	const sumSkills = () => {
-		remaining = skillPoints - Object.values($character.skills).reduce((t, { base }) => t += base, 0)
+		remaining = skillPoints - 
+			Object.values($character.skills).reduce(
+				(t, { base }) => t += base, 0
+			)
 	}
 
-	const overMaximum = (skill) => {
-		return $character.skills[skill].base > $character.skills[skill].max
+	const overMaximum = (s) => {
+		return (
+			$character.skills[s].base > 
+			$character.skills[s].max
+		)
 	}
 
-	const countSkillPoints = (skill) => {
+	const countSkillPoints = (s) => {
 		sumSkills()
-		while (remaining < 0 || overMaximum(skill)) {
-			$character.skills[skill].base--
+		while (remaining < 0 || overMaximum(s)) {
+			$character.skills[s].base--
 			sumSkills()
 		}
-		$character.setStat('skills', skill)
+		$character.setStat('skills', s)
 		$character.updateProperties()
 	}
+
+	onMount(() => {
+		Object.keys($character.skills).forEach(
+			(s) => countSkillPoints(s)
+		)
+	})
 </script>
 
 <div class='skills-step' in:fade>
@@ -56,23 +68,28 @@
 					<h3>{$character.traits[group.name].name} Skills</h3>
 				</div>
 				{#if group.visible}
-					{#each skills as skill}
-						{#if $character.traits[group.name].name == $character.skills[skill].parent}
+					{#each skills as s}
+						{#if 
+							$character.traits[group.name].name == 
+							$character.skills[s].parent
+						}
 							<br>
 							<div class='skill-block'>
 								<div class='stat-column name-column'>
-									<span class='stat-label'>{$character.skills[skill].name}</span>
+									<span class='stat-label'>
+										{$character.skills[s].name}
+									</span>
 								</div>
 								<div class='stat-column value-column'>
 									<div class='stat-input'>
 										<input
 											class='slider-input'
 											type='range'
-											name='{$character.skills[skill].name.toLowerCase()}'
+											name='{$character.skills[s].name.toLowerCase()}'
 											min=0
 											max=6
-											bind:value={$character.skills[skill].base}
-											on:input|preventDefault={()=>{countSkillPoints(skill)}}
+											bind:value={$character.skills[s].base}
+											on:input|preventDefault={()=>{countSkillPoints(s)}}
 										>
 									</div>
 									<div class='stat-input'>

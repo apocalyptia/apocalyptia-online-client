@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte'
 	import { fade } from 'svelte/transition'
 	import { capitalize } from '../../helpers/Capitalize'
 	import { random } from '../../helpers/Random'
@@ -11,28 +12,33 @@
 	let remaining = startingTraitPoints - traits.length
 
 	const sumTraits = () => {
-		remaining = startingTraitPoints - Object.values($character.traits).reduce((t, { base }) => t += base, 0)
+		remaining = startingTraitPoints - 
+		Object.values($character.traits).reduce(
+			(t, { base }) => t += base, 0
+		)
 	}
 
-	const modifyTrait = (trait) => {
+	const modifyTrait = (t) => {
 		sumTraits()
 		while (remaining < 0) {
-			$character.traits[trait].base--
+			$character.traits[t].base--
 			sumTraits()
 		}
 		calculateResults()
 	}
 
 	const resetTraits = () => {
-		Object.keys($character.traits).forEach((trait) => $character.traits[trait].base = 1)
+		Object.keys($character.traits).forEach(
+			(t) => $character.traits[t].base = 1
+		)
 		sumTraits()
 	}
 
 	const randomTraits = () => {
 		resetTraits()
 		while(remaining > 0) {
-			let trait = random(traits)
-			if ($character.traits[trait].base < traitMax) {
+			let t = random(traits)
+			if ($character.traits[t].base < traitMax) {
 				$character.traits[random(traits)].base++
 				sumTraits()
 			}
@@ -42,16 +48,20 @@
 
 	const calculateResults = () => {
 		sumTraits()
-		Object.keys($character.traits).forEach((trait) => {
-			$character.setStat('traits', trait)
-			Object.keys($character.skills).forEach((skill) => {
-				if ($character.skills[skill].parent == capitalize(trait)) {
-					$character.skills[skill].max = $character.traits[trait].base
+		Object.keys($character.traits).forEach((t) => {
+			$character.setStat('traits', t)
+			Object.keys($character.skills).forEach((s) => {
+				if ($character.skills[s].parent == capitalize(t)) {
+					$character.skills[s].max = $character.traits[t].base
 				}
 			})
 		})
 		$character.updateProperties()
 	}
+
+	onMount(() => {
+		calculateResults()
+	})
 </script>
 
 <div class='traits-step' in:fade>
@@ -62,24 +72,28 @@
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
 	<div class='trait-list'>
-		{#each traits as trait}
+		{#each traits as t}
 			<div class='section-card'>
 				<div>
-					<span class='stat-label'>{capitalize(trait)}</span>
+					<span class='stat-label'>
+						{capitalize(t)}
+					</span>
 				</div>
 				<div class='stat-column'>
 					<div class='range-block'>
 						<input
 							type='range'
-							name='{trait.toLowerCase()}'
+							name='{t.toLowerCase()}'
 							min=1
 							max={traitMax}
-							bind:value={$character.traits[trait].base}
-							on:change|preventDefault={() => {modifyTrait(trait)}}
+							bind:value={$character.traits[t].base}
+							on:change|preventDefault={() => {modifyTrait(t)}}
 						>
 						<div class='range-indicator'>
 							{#each Array(traitMax) as _, i}
-								<div class='range-number trait-{i+1}'>{i+1}</div>
+								<div class='range-number trait-{i+1}'>
+									{i+1}
+								</div>
 							{/each}
 						</div>
 					</div>
