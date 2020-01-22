@@ -1,19 +1,28 @@
-Add a 9xp Ability.
-Add a 6xp Ability.
+--- SPECIFIC BUGS AND FEATURES ---
+
+Abilities.js:
+	Add a 9xp Ability.
+	Add a 6xp Ability.
+	Add feature to modify Abilities using AbilityModal.svelte
+
 Gear.js:
 	Check all item Notes.
 	Attributes: Figure out rules to specify weapon categories that attributes qualify for.
 	Ranged: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
 	Storage: Unit conversions still need work.
+	Pepper Spray takes time to start working but lasts 15 to 30 mins
 
----- Put Expand/Collapse All button on reference.
----- Put Search bar on Ref page.
+Reference:
+	Put Expand/Collapse All button on reference.
+	Put Search bar on Ref page.
 
-- Maybe have a Hard Headed like Ability to negate Arm or Leg Called Shots.
-- Bonus XP each session. Some is given by GN. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage, etc).
 
-- Initiative: Use Speed for Initiative rolls. If Init can Explode, maybe it can also Botch? Lost your turn if you Botch an Init roll? Too brutal?
 
-- Pepper Spray takes time to start working but lasts 15 to 30 mins
+--- BRAINSTORMING ---
 
-Add feature to modify Abilities using AbilityModal.svelte
+- Bonus XP each session? Some is given by GN. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage, etc).
+
+- Adaptive Skill Points: Normal Skill points are permanent once assigned. You have Adaptive Skill points = Brains as additional Skill points that can be moved around at a rate of 1 per week. This replaces the current Floating Skills rules. Also, remove Floating Traits. Normal Skill Points = B x 3. Adaptive Skill Points = B x 3. Maybe 5 and 6 cost more? Maybe Adaptive Skills only = B x 1?
+
+
+- Maybe have a Hard Headed like Ability to negate Arm or Leg Called Shots?
