@@ -4,7 +4,11 @@
 	import { capitalize } from '../../helpers/Capitalize'
 	import { random } from '../../helpers/Random'
 	import { character } from '../../stores'
-	import { startingTraitPoints, traitMax } from '../rules/Traits'
+	import {
+		startingTraitPoints,
+		traitMax,
+		TraitExplanation
+	} from '../rules/Traits'
 
 
 	const traits = Object.keys($character.traits)
@@ -68,6 +72,9 @@
 	<div class='step-title'>
 		<h2>Traits</h2>
 	</div>
+	<div class='explanation'>
+		<p>{TraitExplanation}</p>
+	</div>
 	<div class='remaining'>
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
@@ -128,6 +135,9 @@
 		.stat-column {
 			width: 50%;
 		}
+	}
+	.explanation {
+		padding: 1rem;
 	}
 	.trait-list {
 		margin-top: 1rem;
