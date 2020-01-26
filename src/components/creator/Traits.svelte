@@ -12,7 +12,7 @@
 	const traits = Object.keys($character.traits)
 
 	const getRemaining = () => {
-		return $character.options.startingTraitPoints -
+		return $character.options.startingTraits -
 			Object.values($character.traits).reduce(
 				(t, { base }) => t += base, 0
 			)
