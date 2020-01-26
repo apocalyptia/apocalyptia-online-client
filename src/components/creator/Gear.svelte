@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import {
 		AccessoryList,
 		AmmoList,
@@ -25,7 +24,7 @@
 	}
 </script>
 
-<div class='gear-step' in:fade>
+<div class='gear-step'>
 	<button on:click={rollArmor}>ROLL IT</button>
 	<div>
 		{#each ArmorList as armor}

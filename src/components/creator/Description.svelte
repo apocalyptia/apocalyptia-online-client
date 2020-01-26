@@ -1,13 +1,18 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import { femaleNames, maleNames } from '../../helpers/lists/names.js'
 	import { random } from '../../helpers/Random'
 	import { character } from '../../stores'
 
 	const randomName = () => {
-		if ($character.description.gender.value == 'Male') { $character.description.characterName.value = random(maleNames) }
-		else if ($character.description.gender.value == 'Female') { $character.description.characterName.value = random(femaleNames) } 
-		else { $character.description.characterName.value = random([...femaleNames, ...maleNames]) }
+		if ($character.description.gender.value == 'Male') {
+			$character.description.characterName.value = random(maleNames)
+		}
+		else if ($character.description.gender.value == 'Female') {
+			$character.description.characterName.value = random(femaleNames)
+		} 
+		else {
+			$character.description.characterName.value = random([...femaleNames, ...maleNames])
+		}
 	}
 
 	const randomHeight = () => {
@@ -61,13 +66,22 @@
 	}
 
 	const descriptions = [
-		[{ name: "Height", random: randomHeight }, { name: "Weight", random: randomWeight }],
-		[{ name: "Skin", random: randomSkin }, { name: "Hair", random: randomHair }],
-		[{ name: "Gender", random: randomGender }, { name: "Age", random: randomAge }]
+		[
+			{ name: "Height", random: randomHeight },
+			{ name: "Weight", random: randomWeight }
+		],
+		[
+			{ name: "Skin", random: randomSkin },
+			{ name: "Hair", random: randomHair }
+		],
+		[
+			{ name: "Gender", random: randomGender },
+			{ name: "Age", random: randomAge }
+		]
 	]
 </script>
 
-<div class='description-step' in:fade>
+<div class='description-step'>
 	<div class='step-title'>
 		<h2>Description</h2>
 	</div>

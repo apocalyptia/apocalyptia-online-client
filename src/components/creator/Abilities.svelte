@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import {
 		Ability,
 		AbilityList,
@@ -13,12 +12,10 @@
 	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
 	import { AbilitiesExplanation } from '../rules/Abilities'
 
-	let spentXP = 0
-	$: remaining = getRemaining()
 
-	const getRemaining = () => {
-		return $character.properties.xp.score - spentXP
-	}
+	let spentXP = 0
+
+	const getRemaining = () => $character.properties.xp.score - spentXP
 
 	let xpGroups = [...AbilityGroups]
 	let DisplayList = [...AbilityList]
@@ -38,17 +35,10 @@
 		remaining = $character.properties.xp.score = spentXP
 	}
 
-	const resetCharacterAbilities = () => {
+	const resetAbilities = () => {
 		for (let a = 0; a < $character.abilities.length; ++a) {
 			$character.abilities[a].taken = 0
 		}
-	}
-
-	const populateDisplay = () => {
-		DisplayList = []
-		// for (let a = 0; a < MasterAbilityList.length; ++a) {
-		// 	if ()
-		// }
 	}
 
 	const syncLists = () => {
@@ -146,9 +136,11 @@
 		}
 		console.log($character.abilities)
 	}
+
+	let remaining = getRemaining()
 </script>
 
-<div class='abilities-step' in:fade>
+<div class='abilities-step'>
 	<div class='step-title'>
 		<h2>Abilities</h2>
 	</div>
@@ -182,6 +174,9 @@
 			{/each}
 		</div>
 	</div>
+	<div class='button-row'>
+		<button on:click={resetAbilities}>Reset Abilities</button>
+	</div>
 </div>
 
 <style>
@@ -203,6 +198,9 @@
 		width: 100%;
 	}
 	.remaining {
+		text-align: center;
+	}
+	.button-row {
 		text-align: center;
 	}
 </style>

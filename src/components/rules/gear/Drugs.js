@@ -43,7 +43,7 @@ export const Antibiotic = new Drug({
 export const Hallucinogen = new Drug({
 	name: `Hallucinogen`,
 	description: [
-		`+1 Perform and Tame. -3 all other rolls. -1 Mental Health.`
+		`+1 Perform and Tame. -3 all other rolls. -1 Psyche.`
 	],
 	sz: 0,
 	mix: 15,

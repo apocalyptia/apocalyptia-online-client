@@ -6,41 +6,38 @@
 
 	let showModal = false
 
-	const displayModal = () => {
-		console.log('MODAL!')
-		showModal = true
-	}
-
-
+	const displayModal = () => showModal = true
 </script>
 
 <div class='ability-card' on:click={displayModal}>
 	<div class='ability-name'>{ability.name}</div>
-	<div class='description-section'>
-		<span class='description-label'>
-			Descripiton:
-		</span>
-		<span class='ability-description'>
-			{ability.description}
-		</span>
+	<div class='ability-description-section'>
+		<span class='description-label'>Descripiton:</span>
+		<span class='ability-description'>{ability.description}</span>
 	</div>
-	{#if ability.options[0] != ""}
-		<span class='ability-options'>
-			<select
-				name={ability.name}
-				bind:value={ability.selection}
-			>
-				{#each ability.options as option, index}
-					<option value={index}>
-						{option.name}
-					</option>
-				{/each}
-			</select>
-		</span>
-	{/if}
+	<div class='ability-options-section'>
+		{#if ability.options[0] != ""}
+			<span class='ability-options'>
+				<select
+					name={ability.name}
+					bind:value={ability.selection}
+				>
+					{#each ability.options as option, index}
+						<option value={index}>
+							{option.name}
+						</option>
+					{/each}
+				</select>
+			</span>
+		{/if}
+	</div>
+	<div class='ability-taken-section'>
+		<span class='taken-label'>Taken:</span>
+		<span class='ability-taken'>{ability.taken}</span>
+	</div>
 </div>
 {#if showModal}
-	<AbilityModal on:close="{() => showModal = false}" {ability} />
+	<AbilityModal on:close='{() => showModal = false}' {ability} />
 {/if}
 
 <style>

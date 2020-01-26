@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <table class='called-shot-table'>
 	<tr>
 		<th>Location</th>
@@ -27,6 +24,3 @@
 		<td>Target falls Prone</td>
 	</tr>
 </table>
-
-<style>
-</style>

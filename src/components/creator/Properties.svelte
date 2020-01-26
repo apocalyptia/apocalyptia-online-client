@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import { d6 } from '../../helpers/Random'
 	import { character } from '../../stores'
 	import {
@@ -17,7 +16,7 @@
 	}
 </script>
 
-<div class='properties-step' in:fade>
+<div class='properties-step'>
 	<div class='step-title'>
 		<h2>Properties</h2>
 	</div>
@@ -46,17 +45,17 @@
 		<div class='def-list'>
 			<div class='def-header centered'>Defenses</div>
 			<div class='left-col'>
-				<div class='prop-item'>
+				<div class='prop-item centered'>
 					{$character.properties.block.name}: {$character.properties.block.score}
 				</div>
 			</div>
 			<div class='right-col'>
-				<div class='prop-item'>
+				<div class='prop-item centered'>
 					{$character.properties.dodge.name}: {$character.properties.dodge.score}
 				</div>
 			</div>
 		</div>
-		<div class='prop-col'>
+		<div class='prop-col luck'>
 			<div class='prop-item centered'>
 				{$character.properties.luck.name}: {$character.properties.luck.score}
 			</div>
@@ -106,9 +105,11 @@
 	}
 	.left-col {
 		float: left;
+		width: 50%;
 	}
 	.right-col {
 		float: right;
+		width: 50%;
 	}
 	.centered {
 		text-align: center;

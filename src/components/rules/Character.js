@@ -1,7 +1,10 @@
 export class Character {
 	constructor() {
-		this.scenario = ``,
 		this.completed = false,
+		this.options = {
+			scenario: ``,
+			startingTraits: 14
+		},
 		this.description = {
 			age: {
 				label: `Age`,
@@ -215,14 +218,14 @@ export class Character {
 				formula: () => this.properties.luck.base
 			},
 			mentalHealth: {
-				name: `Mental Health`,
+				name: `Psyche`,
 				base: 3,
 				mods: 0,
 				score: 3,
 				formula: () => this.traits.demeanor.score * 3
 			},
 			physicalHealth: {
-				name: `Physical Health`,
+				name: `Health`,
 				base: 3,
 				mods: 0,
 				score: 3,

@@ -25,7 +25,6 @@ export class Trait extends Rule {
 	}
 }
 
-export const startingTraitPoints = 14
 
 export const traitMax = 6
 
@@ -47,14 +46,14 @@ export const Brains = new Trait({
 export const Constitution = new Trait({
 	name: `Constitution`,
 	description: [
-		`Constitution is a Character’s talent for physical strength and durability. High Constitution indicates good health and powerful muscles. This Trait determines Physical Health. Constitution is the parent Trait for: ${ConstitutionSkillList}.`
+		`Constitution is a Character’s talent for physical strength and durability. High Constitution indicates good health and powerful muscles. This Trait determines Health. Constitution is the parent Trait for: ${ConstitutionSkillList}.`
 	]
 })
 
 export const Demeanor = new Trait({
 	name: `Demeanor`,
 	description: [
-		`Demeanor is a Character’s talent for social exchanges and sheer force of will. High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Mental Health. Demeanor is also the parent Trait for: ${DemeanorSkillList}.`
+		`Demeanor is a Character’s talent for social exchanges and sheer force of will. High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Psyche. Demeanor is also the parent Trait for: ${DemeanorSkillList}.`
 	]
 })
 
@@ -67,6 +66,8 @@ export const TraitList = [
 ]
 
 
-export const TraitExplanation = `The four Traits range from 1 to 6. You get ${startingTraitPoints} points for Traits. Trait rolls are [d6 + Trait]. Trait scores set the upper limit for their Skills.`
+export const TraitExplanation = (traitPoints) => {
+	return `The four Traits range from 1 to 6. You get ${traitPoints} points for Traits. Trait rolls are [d6 + Trait]. Trait scores set the upper limit for their Skills.`
+}
 
 export const TraitFlowExplanation = `Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. Recalculate any associated Properties.`

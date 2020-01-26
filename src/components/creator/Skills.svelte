@@ -1,60 +1,79 @@
 <script>
 	import { onMount } from 'svelte'
-	import { fade } from 'svelte/transition'
-	import { HideShow } from '../../helpers/HideShow'
 	import { character } from '../../stores'
+	import { HideShow } from '../../helpers/HideShow'
+	import { random } from '../../helpers/Random'
 	import { traitMax } from '../rules/Traits'
 	import { 
 		startingSkillPoints,
 		SkillExplanation
 	} from '../rules/Skills'
+	import Slider from '../ui/creator/Slider.svelte'
 
+
+	let skillGroups = Object.keys($character.traits).map(t => {
+		return { name: t, visible: false }
+	})
 
 	const skills = Object.keys($character.skills)
 
 	const getRemaining = () => {
 		return startingSkillPoints($character) - 
-		Object.values($character.skills).reduce(
-			(t, { base }) => t += base, 0
-		)
+			Object.values($character.skills).reduce(
+				(s, { base }) => s += base, 0
+			)
 	}
 
 	const sumSkills = () => {
 		remaining = getRemaining()
 	}
 
-	const overMaximum = (s) => {
-		return (
-			$character.skills[s].base > 
-			$character.skills[s].max
-		)
+	const assignSkill = (s, value) => {
+		$character.skills[s].base = parseInt(value)
+		checkSkill(s)
 	}
 
-	const countSkillPoints = (s) => {
+	const checkSkill = s => {
 		sumSkills()
-		while (remaining < 0 || overMaximum(s)) {
+		while (remaining < 0 || ($character.skills[s].base > $character.skills[s].max)) {
 			$character.skills[s].base--
 			sumSkills()
 		}
-		$character.setStat('skills', s)
+		calculateResults()
+	}
+
+	const calculateResults = () => {
+		Object.keys($character.skills).forEach(s => {
+			$character.setStat('skills', s)
+		})
 		$character.updateProperties()
 	}
 
-	onMount(() => {
+	const resetSkills = () => {
 		Object.keys($character.skills).forEach(
-			(s) => countSkillPoints(s)
+			s => $character.skills[s].base = 0
 		)
-	})
+		sumSkills()
+	}
 
-	let skillGroups = []
-	Object.keys($character.traits).forEach((t) => {
-		skillGroups.push({ name: t, visible: false })
-	})
+	const randomSkills = () => {
+		resetSkills()
+		while(remaining > 0) {
+			let s = random(skills)
+			if ($character.skills[s].base < $character.skills[s].max) {
+				$character.skills[s].base++
+				sumSkills()
+			}
+		}
+		calculateResults()
+	}
 
 	let remaining = getRemaining()
+
+	onMount(() => calculateResults())
 </script>
 
-<div class='skills-step' in:fade>
+<div class='skills-step'>
 	<div class='step-title'>
 		<h2>Skills</h2>
 	</div>
@@ -64,7 +83,7 @@
 	<div class='remaining'>
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
-	<div class='skill-list'>
+	<div class='list'>
 		{#each skillGroups as group}
 			<div class='trait-section'>
 				<div
@@ -80,29 +99,20 @@
 							$character.skills[s].parent
 						}
 							<br>
-							<div class='skill-block'>
+							<div class='section-card'>
 								<div class='stat-column name-column'>
 									<span class='stat-label'>
 										{$character.skills[s].name}
 									</span>
 								</div>
-								<div class='stat-column value-column'>
-									<div class='stat-input'>
-										<input
-											class='slider-input'
-											type='range'
-											name='{$character.skills[s].name.toLowerCase()}'
-											min=0
-											max=6
-											bind:value={$character.skills[s].base}
-											on:input|preventDefault={()=>{countSkillPoints(s)}}
-										>
-									</div>
-									<div class='stat-input'>
-										{#each Array(traitMax+1) as _, i}
-											<div>{i}</div>
-										{/each}
-									</div>
+								<div class='stat-column'>
+									<Slider
+										name='{s.toLowerCase()}'
+										min={parseInt(0)}
+										max={parseInt(6)}
+										value={$character.skills[s].base}
+										on:input={event => assignSkill(s, event.target.value)}
+									/>
 								</div>
 							</div>
 						{/if}
@@ -111,13 +121,16 @@
 			</div>
 		{/each}
 	</div>
+	<div class='button-row'>
+		<button on:click={resetSkills}>Reset Skills</button>
+		<button on:click={randomSkills}>Random Skills</button>
+	</div>
 </div>
 
 <style>
 	@media only screen and (max-width: 500px) {
-		.skill-block {
+		.section-card {
 			display: block;
-			width: 100%;
 		}
 		.stat-column {
 			width: 100%;
@@ -128,13 +141,13 @@
 	}
 	@media only screen and (min-width: 500px) {
 		.stat-column {
-			width: 100%;
+			width: 50%;
 		}
 	}
 	.explanation {
 		padding: 1rem;
 	}
-	.skill-list {
+	.list {
 		margin-top: 1rem;
 	}
 	.trait-section {
@@ -146,19 +159,10 @@
 		padding: 1rem;
 		align-items: center;
 	}
-	.parent-trait-title, 
-	.remaining, 
-	.stat-label, 
-	.stat-column, 
-	.stat-input {
+	.parent-trait-title,
+	.remaining,
+	.stat-label,
+	.button-row {
 		text-align: center;
-	}
-	.stat-input {
-		display: flex;
-		flex-wrap: nowrap;
-	}
-	.stat-input div {
-		text-align: center;
-		min-width: calc(100%/7);
 	}
 </style>

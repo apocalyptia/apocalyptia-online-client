@@ -322,7 +322,7 @@ export const Lockpicks = new Equipment({
 export const LuxuryItem = new Equipment({
 	name: `Luxury Item`,
 	description: [
-		`Toilet paper, cigarette, etc. +1 Mental Health 1/wk.`
+		`Toilet paper, cigarette, etc. +1 Psyche 1/wk.`
 	],
 	sz: 0
 })

@@ -1,9 +1,8 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import { refToC } from '../../../stores'
 </script>
 
-<div class='menu-page' in:fade>
+<div class='menu-page'>
 	{#each $refToC.chapters as chapter, index}
 		<button
 			class='display-button'

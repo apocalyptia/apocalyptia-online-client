@@ -392,15 +392,15 @@ export const Socialize = new Skill({
 	difficulty: 'Demeanor',
 	specialties: [
 		new Specialty({
-			name: `Gossip`,
-			description: [
-				`(d6hrs) Gather or spread rumors.`
-			]
-		}),
-		new Specialty({
 			name: `Persuade`,
 			description: [
 				`(d6mins) Target seriously considers your opinion.`
+			]
+		}),
+		new Specialty({
+			name: `Therapy`,
+			description: [
+				`Heal 1 Trauma. Cannot be performed again on the same day. d6DMG on a Botch.`
 			]
 		})
 	]

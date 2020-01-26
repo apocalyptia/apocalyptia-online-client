@@ -49,7 +49,7 @@ export const Luck = new Property({
 })
 
 export const MentalHealth = new Property({
-	name: `Mental Health`,
+	name: `Psyche`,
 	description: [
 		`[D x 3]. This is a measure of how much Trauma you can withstand. Any number of horrible events can cause Trauma. When Trauma = [D x 3] you lose all hope and seek out death at the earliest opportunity, unless someone can restrain you until you have Recovered from at least 1 Trauma.`
 	],
@@ -57,7 +57,7 @@ export const MentalHealth = new Property({
 })
 
 export const PhysicalHealth = new Property({
-	name: `Physical Health`,
+	name: `Health`,
 	description: [
 		`[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding 1 Wound/min when you have Wounds = [C]. The rate of Bleeding increases to 1 Wound/rnd and you fall Unconscious when you have Wounds = [C x 2]. You die when you have Wounds = [C x 3].`
 	],

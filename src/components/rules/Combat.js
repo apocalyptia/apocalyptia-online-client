@@ -77,7 +77,7 @@ export const Pain = new Rule({
 export const Damage = new Rule({
 	name: `Damage`, 
 	description: [
-		`Damage causes Wounds. You die when Wounds = Physical Health. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`
+		`Damage causes Wounds. You die when Wounds = Health. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`
 	],
 	subrules: [
 		DamageReduction,

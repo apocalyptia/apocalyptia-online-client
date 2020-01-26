@@ -1,12 +1,11 @@
 <script>
-	import { fade } from 'svelte/transition'
 </script>
 
 <svelte:head>
 	<title>Apocalyptia Online</title>
 </svelte:head>
 
-<div in:fade>
+<div>
 	<a href="/creator">
 		<button class='display-button'>
 			Character Creator

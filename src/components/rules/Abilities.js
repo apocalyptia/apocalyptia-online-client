@@ -333,7 +333,7 @@ export const Ambidextrous = new Ability({
 export const Tough = new Ability({
 	name: `Tough`,
 	description: [
-		`+1 Physical Health.`
+		`+1 Health.`
 	],
 	max: 3,
 	xp: 24

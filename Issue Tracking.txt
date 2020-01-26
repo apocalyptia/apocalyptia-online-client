@@ -24,5 +24,9 @@ Reference:
 
 - Adaptive Skill Points: Normal Skill points are permanent once assigned. You have Adaptive Skill points = Brains as additional Skill points that can be moved around at a rate of 1 per week. This replaces the current Floating Skills rules. Also, remove Floating Traits. Normal Skill Points = B x 3. Adaptive Skill Points = B x 3. Maybe 5 and 6 cost more? Maybe Adaptive Skills only = B x 1?
 
-
 - Maybe have a Hard Headed like Ability to negate Arm or Leg Called Shots?
+
+- What kind of Abilities could I make to deal with Trauma/Psyche?
+
+- Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health?
+- Likewise set a blur effect that reflects the character psyche?

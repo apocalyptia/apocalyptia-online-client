@@ -1,7 +1,7 @@
 <script>
 	import { character } from '../../../stores'
 
-	const modify = (ability) => {
+	const modify = ability => {
 		for (let i = 0; i < $character.abilities.length; ++i) {
 			if ($character.abilities[i].name == ability.name) {
 				$character.abilities[i].taken = ability.taken
@@ -10,7 +10,7 @@
 		console.log($character.abilities)
 	}
 
-	const remove = (ability) => {
+	const remove = ability => {
 		$character.abilities = $character.abilities.filter((c) => {
 			return c.id != ability.id
 		})

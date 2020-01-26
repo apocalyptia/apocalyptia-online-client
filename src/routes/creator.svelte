@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import NavButtons from '../components/ui/NavButtons.svelte'
 	import Description from '../components/creator/Description.svelte'
 	import Traits from '../components/creator/Traits.svelte'
@@ -16,12 +15,13 @@
 		{ name: 'Abilities', content: Abilities },
 		{ name: 'Gear', content: Gear }
 	]
+
 	let selected = Description
 
-	const handleNavigation = (event) => selected = event.detail.selection
+	const handleNavigation = event => selected = event.detail.selection
 </script>
 
-<div class='page-container' in:fade>
+<div class='page-container'>
 	<svelte:component this={selected} />
 </div>
 <NavButtons on:nav={handleNavigation} {options} />

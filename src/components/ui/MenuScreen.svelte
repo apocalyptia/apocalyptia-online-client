@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import * as sapper from '@sapper/app'
 
 	export let options
@@ -11,7 +10,7 @@
 	}
 </script>
 
-<div class='menu-page' in:fade>
+<div class='menu-page'>
 	{#each options as option, index}
 		{#if skip && index}
 			<button
