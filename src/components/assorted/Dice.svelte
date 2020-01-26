@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition'
 
 	let result = 6
 
