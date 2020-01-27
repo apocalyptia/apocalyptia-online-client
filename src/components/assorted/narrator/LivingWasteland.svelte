@@ -8,7 +8,7 @@
 		<div id='SurvivalThreatsTable' class='tableDiv'>
 			<div class='rowDiv'><div class='cellDiv cen'>Threat</div><div class='cellDiv cen'>Time</div></div>
 			<div class='rowDiv'><div class='cellDiv'>Violence</div><div class='cellDiv'>Varies. Possibly instant.</div></div>
-			<div class='rowDiv'><div class='cellDiv'>Suffocation</div><div class='cellDiv'>Minutes c Constitution.</div></div>
+			<div class='rowDiv'><div class='cellDiv'>Asphyxiation</div><div class='cellDiv'>Minutes c Constitution.</div></div>
 			<div class='rowDiv'><div class='cellDiv'>Hypothermia</div><div class='cellDiv'>Hours c Constitution.</div></div>
 			<div class='rowDiv'><div class='cellDiv'>Dehydration</div><div class='cellDiv'>Days c Constitution.</div></div>
 			<div class='rowDiv'><div class='cellDiv'>Starvation</div><div class='cellDiv'>Weeks c Constitution.</div></div>

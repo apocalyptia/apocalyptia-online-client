@@ -123,8 +123,8 @@ export const Stun = new Rule({
 	]
 })
 
-export const Suffocation = new Rule({
-	name: `Suffocation`, 
+export const Asphyxiation = new Rule({
+	name: `Asphyxiation`, 
 	description: [
 		`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [C] is lethal.`
 	]
@@ -165,11 +165,11 @@ export const Needs = new Rule({
 		`1 Pain for each lacking Need over a given period of time:`
 	],
 	subrules: [
+		Asphyxiation,
 		Dehydration,
 		Exhaustion,
 		Hypothermia,
-		Starvation,
-		Suffocation
+		Starvation
 	]
 })
 

@@ -18,7 +18,7 @@
 	const skills = Object.keys($character.skills)
 
 	const getRemaining = () => {
-		return startingSkillPoints($character) - 
+		return startingSkillPoints($character) -
 			Object.values($character.skills).reduce(
 				(s, { base }) => s += base, 0
 			)
@@ -35,7 +35,7 @@
 
 	const checkSkill = s => {
 		sumSkills()
-		while (remaining < 0 || ($character.skills[s].base > $character.skills[s].max)) {
+		while (remaining < 0 || $character.skills[s].base > $character.skills[s].max) {
 			$character.skills[s].base--
 			sumSkills()
 		}
@@ -110,7 +110,7 @@
 										name='{s.toLowerCase()}'
 										min={parseInt(0)}
 										max={parseInt(6)}
-										value={$character.skills[s].base}
+										bind:value={$character.skills[s].base}
 										on:input={event => assignSkill(s, event.target.value)}
 									/>
 								</div>

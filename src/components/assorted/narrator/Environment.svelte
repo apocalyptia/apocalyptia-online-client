@@ -38,7 +38,7 @@
 						<button class='cellDiv cen'>1</button>
 						<button class='cellDiv'>Dust Storm</button>
 						<button class='cellDiv cen'>-6 (Cloud)</button>
-						<button class='cellDiv cen'>Suffocation</button>
+						<button class='cellDiv cen'>Asphyxiation</button>
 						<button class='cellDiv cen'>1DMG/min</button>
 						<div class='cellDiv'>d6hrs</div>
 					</div>
@@ -79,7 +79,7 @@
 						<div class='cellDiv'>Wildfire</div>
 						<button class='cellDiv cen'>-6 (Cloud)</button>
 						<button class='cellDiv cen'>-</button>
-						<button class='cellDiv cen'>1FDMG/min, Suffocation</button>
+						<button class='cellDiv cen'>1FDMG/min, Asphyxiation</button>
 						<div class='cellDiv'>d6hrs</div>
 					</div>
 				</div>

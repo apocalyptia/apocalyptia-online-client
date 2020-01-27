@@ -7,7 +7,7 @@ import {
 import {
 	Blind,
 	Stun,
-	Suffocation
+	Asphyxiation
 } from '../Situations'
 
 
@@ -101,7 +101,7 @@ export const Teargas = new Bomb({
 	attributes: [
 		Blind,
 		Stun,
-		Suffocation
+		Asphyxiation
 	],
 	fuse: `1rnd`,
 	duration: `d6mins`,
@@ -133,7 +133,7 @@ export const BombList = [
 ]
 
 // OLD BOMBS
-// new Bomb(`Chlorine`,	18, `toxin`,	`1yd/rnd`,  `d6+3mins`, `Blind. Suffocation x2. Stun.`, 1)
+// new Bomb(`Chlorine`,	18, `toxin`,	`1yd/rnd`,  `d6+3mins`, `Blind. Asphyxiation x2. Stun.`, 1)
 // new Bomb(`Claymore`,	18, `d6x9`,	 `30yd`,	 `instant`,  `30yd 90° Blast. Loud.`,		2)
 // new Bomb(`Dynamite`,	12, `d6x6`,	 `30yd`,	 `instant`,  `10rnd fuse.`,				  1)
 // new Bomb(`Firecracker`, 6,  `0`,		`0yd`,	  `d6+3rnds`, `Mimics sound of gunfire.`,	 0)

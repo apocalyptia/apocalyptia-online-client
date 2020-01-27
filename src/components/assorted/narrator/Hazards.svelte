@@ -75,7 +75,7 @@
 			</div>
 			<button id='BurningBuildingHazardBtn' class='Btn'>BURNING BUILDING</button>
 			<div id='BurningBuildingHazardSec' class='Sec5'>
-				<p>d6FDMG/rnd for 30min/floor + Suffocation</p>
+				<p>d6FDMG/rnd for 30min/floor + Asphyxiation</p>
 			</div>
 			<button id='ThermiteHazardBtn' class='Btn'>THERMITE</button>
 			<div id='ThermiteHazardSec' class='Sec5'>
@@ -99,8 +99,8 @@
 	<div id='StarvationHazardSec' class='Sec3'>
 		<p>People require 1 Food per day. -1 to all rolls per week without Food. This penalty is reduced by 1 per day with Food. Going without Food for a number of weeks = C is lethal. Diabetes halves this lethal time.</p>
 	</div>
-	<button id='SuffocationHazardBtn' class='Btn'>SUFFOCATION</button>
-	<div id='SuffocationHazardSec' class='Sec3'>
-		<p>People require constant air supply. -1 to all rolls per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = C is lethal. Asthma causes Suffocation for d6mins when you Botch Athletics. Wildfire Suffocates for d6hrs. Teargas Suffocates for d6mins. Chlorine gas Suffocates twice as fast for d6+3 minutes.</p>
+	<button id='AsphyxiationHazardBtn' class='Btn'>Asphyxiation</button>
+	<div id='AsphyxiationHazardSec' class='Sec3'>
+		<p>People require constant air supply. -1 to all rolls per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = C is lethal. Asthma causes Asphyxiation for d6mins when you Botch Athletics. Wildfire Suffocates for d6hrs. Teargas Suffocates for d6mins. Chlorine gas Suffocates twice as fast for d6+3 minutes.</p>
 	</div>
 </div>

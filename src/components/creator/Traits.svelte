@@ -40,7 +40,10 @@
 		Object.keys($character.traits).forEach(t => {
 			$character.setStat('traits', t)
 			Object.keys($character.skills).forEach(s => {
-				if ($character.skills[s].parent == $character.traits[t].name) {
+				if (
+					$character.skills[s].parent == $character.traits[t].name &&
+					$character.skills[s].max != $character.traits[t].base
+				) {
 					$character.skills[s].max = $character.traits[t].base
 				}
 			})
@@ -95,7 +98,7 @@
 						name='{t.toLowerCase()}'
 						min={parseInt(1)}
 						max={parseInt(traitMax)}
-						value={$character.traits[t].base}
+						bind:value={$character.traits[t].base}
 						on:input={event => assignTrait(t, event.target.value)}
 					/>
 				</div>

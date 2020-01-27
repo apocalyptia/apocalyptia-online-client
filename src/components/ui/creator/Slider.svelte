@@ -7,7 +7,7 @@
 
 
 <div class='range-block'>
-	<input type='range' {name} {min} {max} {value} on:input>
+	<input type='range' {name} {min} {max} bind:value={value} on:input>
 	<div class='range-indicator'>
 		{#if min}
 			{#each Array(max) as _, i}
