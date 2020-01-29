@@ -29,10 +29,18 @@ export const DodgeDefense = new Property({
 	formula: `acrobatics`
 })
 
-export const Experience = new Property({
-	name: `Experience`,
+export const Health = new Property({
+	name: `Health`,
 	description: [
-		`[B per session] XP is earned once per game session. +1 XP every time you roll a Botch. The GN may give bonus XP. Spend XP to buy Abilities.`
+		`[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding 1 Wound/min when you have Wounds = [C]. The rate of Bleeding increases to 1 Wound/rnd and you fall Unconscious when you have Wounds = [C x 2]. You die when you have Wounds = [C x 3].`
+	],
+	formula: `constitution * 3`
+})
+
+export const Intellect = new Property({
+	name: `Intellect`,
+	description: [
+		`[B per session] XP is earned once per game session. You also get +1 XP every time you roll a Botch. The GN may give bonus XP. Spend XP to buy Abilities.`
 	],
 	formula: `brains * 3`
 })
@@ -48,20 +56,12 @@ export const Luck = new Property({
 	formula: `d6`
 })
 
-export const MentalHealth = new Property({
+export const Psyche = new Property({
 	name: `Psyche`,
 	description: [
 		`[D x 3]. This is a measure of how much Trauma you can withstand. Any number of horrible events can cause Trauma. When Trauma = [D x 3] you lose all hope and seek out death at the earliest opportunity, unless someone can restrain you until you have Recovered from at least 1 Trauma.`
 	],
 	formula: `demeanor * 3`
-})
-
-export const PhysicalHealth = new Property({
-	name: `Health`,
-	description: [
-		`[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding 1 Wound/min when you have Wounds = [C]. The rate of Bleeding increases to 1 Wound/rnd and you fall Unconscious when you have Wounds = [C x 2]. You die when you have Wounds = [C x 3].`
-	],
-	formula: `constitution * 3`
 })
 
 export const Speed = new Property({
@@ -79,10 +79,10 @@ export const PropertyExplanation = `Properties represent a variety of attributes
 const Properties = [
 	BlockDefense,
 	DodgeDefense,
-	Experience,
+	Intellect,
 	Luck,
-	MentalHealth,
-	PhysicalHealth,
+	Psyche,
+	Health,
 	Speed
 ]
 

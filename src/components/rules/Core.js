@@ -59,7 +59,7 @@ export const Botch = new Rule({
 	description: [
 		`If you roll 1 on a die, re-roll to check for a Botch. If a 1 is rolled again, you Botch, meaning you fail very badly. For any other number, your d6 roll is just a 1. Bonus rolls from Exploding dice do not Botch.`,
 		`The GN has a great deal of latitude to be creative when determining the effects of Botching under various circumstances, but they should always be fair.`,
-		`Whenever a Character Botches, they get +1 Experience Point because we learn the most from our greatest failures.`
+		`Whenever a Character Botches, they get +1 XP because we learn the most from our greatest failures.`
 	]
 })
 

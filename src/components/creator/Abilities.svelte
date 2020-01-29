@@ -15,7 +15,7 @@
 
 	let spentXP = 0
 
-	const getRemaining = () => $character.properties.xp.score - spentXP
+	const getRemaining = () => $character.properties.intellect.score - spentXP
 
 	let xpGroups = [...AbilityGroups]
 	let DisplayList = [...Abilities]
@@ -32,7 +32,7 @@
 
 	const spentXPTotal = () => {
 		spentXP = $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
-		remaining = $character.properties.xp.score = spentXP
+		remaining = $character.properties.intellect.score = spentXP
 	}
 
 	const resetAbilities = () => {

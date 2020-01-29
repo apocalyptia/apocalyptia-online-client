@@ -210,6 +210,20 @@ export class Character {
 				score: 0,
 				formula: () => this.skills.acrobatics.score
 			},
+			health: {
+				name: `Health`,
+				base: 3,
+				mods: 0,
+				score: 3,
+				formula: () => this.traits.constitution.score * 3
+			},
+			intellect: {
+				name: `Intellect`,
+				base: 3,
+				mods: 0,
+				score: 3,
+				formula: () => this.traits.brains.score * 3
+			},
 			luck: {
 				name: `Luck`,
 				base: 0,
@@ -217,19 +231,12 @@ export class Character {
 				score: 0,
 				formula: () => this.properties.luck.base
 			},
-			mentalHealth: {
+			psyche: {
 				name: `Psyche`,
 				base: 3,
 				mods: 0,
 				score: 3,
 				formula: () => this.traits.demeanor.score * 3
-			},
-			physicalHealth: {
-				name: `Health`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				formula: () => this.traits.constitution.score * 3
 			},
 			speed: {
 				name: `Speed`,
@@ -237,14 +244,7 @@ export class Character {
 				mods: 0,
 				score: 3,
 				formula: () => this.traits.agility.score * 3
-			},
-			xp: {
-				name: `Experience`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				formula: () => this.traits.brains.score * 3
-			},
+			}
 		},
 		this.abilities = [],
 		this.gear = {

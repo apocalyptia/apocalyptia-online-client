@@ -27,10 +27,10 @@
 		<div class='prop-col'>
 			<div class='left-col'>
 				<div class='prop-item'>
-					{$character.properties.physicalHealth.name}: {$character.properties.physicalHealth.score}
+					{$character.properties.health.name}: {$character.properties.health.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.mentalHealth.name}: {$character.properties.mentalHealth.score}
+					{$character.properties.psyche.name}: {$character.properties.psyche.score}
 				</div>
 			</div>
 			<div class='right-col'>
@@ -38,7 +38,7 @@
 					{$character.properties.speed.name}: {$character.properties.speed.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.xp.name}: {$character.properties.xp.score}
+					{$character.properties.intellect.name}: {$character.properties.intellect.score}
 				</div>
 			</div>
 		</div>
