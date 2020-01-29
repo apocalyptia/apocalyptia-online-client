@@ -11,7 +11,6 @@ export const countPoints = (
 		char[attribute][event.target.name].score -= 1
 		event.target.value -= 1
 		remaining = starting - pointTally(char, attribute)
-		console.log('Remaining: ', remaining)
 	}
 	char.updateProperties()
 	return remaining

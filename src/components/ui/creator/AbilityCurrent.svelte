@@ -7,7 +7,6 @@
 				$character.abilities[i].taken = ability.taken
 			}
 		}
-		console.log($character.abilities)
 	}
 
 	const remove = ability => {

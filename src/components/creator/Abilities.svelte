@@ -108,7 +108,6 @@
 											incrementer = o
 										}
 										else {
-											console.log('kill it')
 											DisplayList.splice(d+o+1, 1)
 										}
 									}
@@ -134,7 +133,6 @@
 				}
 			}
 		}
-		console.log($character.abilities)
 	}
 
 	let remaining = getRemaining()
@@ -148,7 +146,7 @@
 		<p>{AbilitiesExplanation}</p>
 	</div>
 	<div class='remaining'>
-		<h3>XP Remaining: {remaining}</h3>
+		<h3>Starting XP Remaining: {remaining}</h3>
 	</div>
 	{#if $character.abilities.length}
 		<div class='section-card'>

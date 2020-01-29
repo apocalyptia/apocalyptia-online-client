@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
+	import { capitalize } from '../../helpers/Capitalize'
 	import { random } from '../../helpers/Random'
 	import {
 		traitMax,
@@ -90,7 +91,7 @@
 			<div class='section-card'>
 				<div>
 					<span class='stat-label'>
-						{$character.traits[t].name}
+						{capitalize($character.traits[t].name)}
 					</span>
 				</div>
 				<div class='stat-column'>

@@ -1,3 +1,8 @@
+import { arrayToObject } from '../../helpers/ArrayToObject'
+import Skills from './Skills'
+import Traits from './Traits'
+
+
 export class Character {
 	constructor() {
 		this.completed = false,
@@ -39,162 +44,8 @@ export class Character {
 				value: ``
 			},
 		},
-		this.traits = {
-			agility: {
-				name: `Agility`,
-				base: 1,
-				mods: 0,
-				score: 1
-			},
-			brains: {
-				name: `Brains`,
-				base: 1,
-				mods: 0,
-				score: 1
-			},
-			constitution: {
-				name: `Constitution`,
-				base: 1,
-				mods: 0,
-				score: 1
-			},
-			demeanor: {
-				name: `Demeanor`,
-				base: 1,
-				mods: 0,
-				score: 1
-			},
-		},
-		this.skills = {
-			acrobatics: {
-				name: `Acrobatics`,
-				parent: `Agility`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			athletics: {
-				name: `Athletics`,
-				parent: `Constitution`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			build: {
-				name: `Build`,
-				parent: `Brains`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			drive: {
-				name: `Drive`,
-				parent: `Constitution`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			larceny: {
-				name: `Larceny`,
-				parent: `Agility`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			leadership: {
-				name: `Leadership`,
-				parent: `Demeanor`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			medicine: {
-				name: `Medicine`,
-				parent: `Brains`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			melee: {
-				name: `Melee`,
-				parent: `Constitution`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			perception: {
-				name: `Perception`,
-				parent: `Brains`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			perform: {
-				name: `Perform`,
-				parent: `Demeanor`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			ranged: {
-				name: `Ranged`,
-				parent: `Agility`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			science: {
-				name: `Science`,
-				parent: `Brains`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			socialize: {
-				name: `Socialize`,
-				parent: `Demeanor`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			stealth: {
-				name: `Stealth`,
-				parent: `Agility`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			survival: {
-				name: `Survival`,
-				parent: `Constitution`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-			tame: {
-				name: `Tame`,
-				parent: `Demeanor`,
-				base: 0,
-				max: 1,
-				mods: 0,
-				score: 0
-			},
-		},
+		this.traits = arrayToObject(Traits, `name`),
+		this.skills = arrayToObject(Skills, `name`)
 		this.properties = {
 			block: {
 				name: `Block`,

@@ -1,4 +1,4 @@
-import Rule from './Rule'
+import Stat from './Stat'
 import {
 	AgilitySkills,
 	BrainsSkills,
@@ -8,19 +8,28 @@ import {
 
 
 const AgilitySkillList = AgilitySkills.map(skill=> skill.name).join(', ')
+
 const BrainsSkillList = BrainsSkills.map(skill=> skill.name).join(', ')
+
 const ConstitutionSkillList = ConstitutionSkills.map(skill=> skill.name).join(', ')
+
 const DemeanorSkillList = DemeanorSkills.map(skill=> skill.name).join(', ')
 
 
-export class Trait extends Rule {
+export class Trait extends Stat {
 	constructor({
 		name,
-		description
+		description,
+		base,
+		mods,
+		score
 	}) {
 		super({
 			name,
-			description
+			description,
+			base,
+			mods,
+			score
 		})
 	}
 }
@@ -30,7 +39,7 @@ export const traitMax = 6
 
 
 export const Agility = new Trait({
-	name: `Agility`,
+	name: `agility`,
 	description: [
 		`Agility is a Character’s talent for physical coordination.`,
 		`High Agility indicates balance, flexibility, and fine motor skill.`,
@@ -40,7 +49,7 @@ export const Agility = new Trait({
 })
 
 export const Brains = new Trait({
-	name: `Brains`,
+	name: `brains`,
 	description: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
 		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
@@ -50,7 +59,7 @@ export const Brains = new Trait({
 })
 
 export const Constitution = new Trait({
-	name: `Constitution`,
+	name: `constitution`,
 	description: [
 		`Constitution is a Character’s talent for physical power and durability.`,
 		`High Constitution indicates good health, high stamina, and strong muscles.`,
@@ -60,7 +69,7 @@ export const Constitution = new Trait({
 })
 
 export const Demeanor = new Trait({
-	name: `Demeanor`,
+	name: `demeanor`,
 	description: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
 		`High Demeanor indicates charisma, self-motivation, and confidence.`,
@@ -78,10 +87,10 @@ export const TraitFlowExplanation = `Once per year (in-game), you may choose to 
 
 
 const Traits = [
-	Agility,
-	Brains,
-	Constitution,
-	Demeanor
+	{ ...Agility },
+	{ ...Brains },
+	{ ...Constitution },
+	{ ...Demeanor }
 ]
 
 export default Traits

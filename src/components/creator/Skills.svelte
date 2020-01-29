@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
+	import { capitalize } from '../../helpers/Capitalize'
 	import { HideShow } from '../../helpers/HideShow'
 	import { random } from '../../helpers/Random'
 	import { traitMax } from '../rules/Traits'
@@ -90,7 +91,7 @@
 					class='parent-trait-title'
 					on:click={() => skillGroups = HideShow(group, skillGroups)}
 				>
-					<h3>{$character.traits[group.name].name} Skills</h3>
+					<h3>{capitalize($character.traits[group.name].name)} Skills</h3>
 				</div>
 				{#if group.visible}
 					{#each skills as s}
@@ -102,7 +103,7 @@
 							<div class='section-card'>
 								<div class='stat-column name-column'>
 									<span class='stat-label'>
-										{$character.skills[s].name}
+										{capitalize($character.skills[s].name)}
 									</span>
 								</div>
 								<div class='stat-column'>
