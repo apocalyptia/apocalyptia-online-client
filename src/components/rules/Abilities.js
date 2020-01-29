@@ -359,7 +359,7 @@ export const SelfImprovement = new Ability({
 export const CloseCall = new Ability({
 	name: `Close Call`,
 	description: [
-		`Spend this Ability to avoid Death once.`
+		`Spend this Ability to survive an otherwise lethal encounter.`
 	],
 	max: 1,
 	xp: 30,

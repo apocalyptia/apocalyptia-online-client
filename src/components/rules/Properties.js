@@ -37,20 +37,28 @@ export const Health = new Property({
 	formula: `constitution * 3`
 })
 
+export const Experience = new Property({
+	name: `Experience`,
+	description: [
+		`[B x 6] starting. Experience represents how much you have learned up to now. You accumulate additional Experience Points ("XP") = [Intellect] for each game session that you survive. You also get +1 XP every time you roll a Botch. The Narrator may also give bonus XP. You may spend your XP to buy Abilities to permanently improve your character. You may also spend 1XP per round to regain 1 Luck Point.`
+	],
+	formula: `brains * 3`
+})
+
 export const Intellect = new Property({
 	name: `Intellect`,
 	description: [
-		`[B per session] XP is earned once per game session. You also get +1 XP every time you roll a Botch. The Narrator may give bonus XP. Spend XP to buy Abilities.`
+		`XP = [B] is earned automatically for each game session that you survive.`
 	],
-	formula: `brains * 3`
+	formula: `brains`
 })
 
 export const Luck = new Property({
 	name: `Luck`,
 	description: [
-		`Roll a d6 during Character Creation to determine your Luck. Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance. Luck points refill at dawn each day. You may spend Luck in dramatic moments to:`,
+		`Roll a d6 during Character Creation to determine your Luck. Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance. You may spend Luck Points in dramatic moments for various effects listed below. You may only spend 1 Luck Point per round. You regain 1 spent Luck Point at dawn each day. Spend a Luck Point to get one of the following effects:`,
 		`• Take a re-roll with a +6 bonus.`,
-		`• Take an extra Action.`,
+		`• Take an extra Action on your turn.`,
 		`• Give a Luck point to a Comrade.`
 	],
 	formula: `d6`

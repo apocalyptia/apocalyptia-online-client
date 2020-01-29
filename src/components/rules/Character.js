@@ -217,12 +217,19 @@ export class Character {
 				score: 3,
 				formula: () => this.traits.constitution.score * 3
 			},
-			intellect: {
-				name: `Intellect`,
+			experience: {
+				name: `Experience`,
 				base: 3,
 				mods: 0,
 				score: 3,
 				formula: () => this.traits.brains.score * 3
+			},
+			intellect: {
+				name: `Intellect`,
+				base: 1,
+				mods: 0,
+				score: 1,
+				formula: () => this.traits.brains.score
 			},
 			luck: {
 				name: `Luck`,
