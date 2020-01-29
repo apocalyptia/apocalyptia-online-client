@@ -1,9 +1,9 @@
-import { TraitList } from '../../components/rules/Traits'
-import { SkillList } from '../../components/rules/Skills'
+import Traits from '../../components/rules/Traits'
+import Skills from '../../components/rules/Skills'
 
 let uList = []
-TraitList.forEach((trait) => {
-	SkillList.forEach((skill) => {
+Traits.forEach((trait) => {
+	Skills.forEach((skill) => {
 		let tname = trait.name
 		let sname = skill.name
 		if (skill.parent != trait.name) {

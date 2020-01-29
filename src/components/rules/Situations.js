@@ -98,7 +98,7 @@ export const OffHand = new Rule({
 export const Prone = new Rule({
 	name: `Prone`, 
 	description: [
-		`You may drop Prone as part of your Movement. Standing up costs 1AP. +1 RATK. +3 Stealth. Speed 1yd.`
+		`You may drop Prone as part of your Movement. Standing up takes one Action. +1 RATK. -3 DEF vs MATKs. +3 Stealth. Speed 1yd.`
 	]
 })
 
@@ -174,7 +174,7 @@ export const Needs = new Rule({
 })
 
 
-export const Situations = [
+const Situations = [
 	Bleeding,
 	Blind,
 	Burning,
@@ -194,3 +194,5 @@ export const Situations = [
 	Unstable,
 	Visibility
 ]
+
+export default Situations

@@ -437,12 +437,13 @@ export const DemeanorSkills = [
 ]
 
 
-export const SkillList = [
+const SkillList = [
 	...AgilitySkills,
 	...BrainsSkills,
 	...ConstitutionSkills,
 	...DemeanorSkills
 ]
+
 
 let sList = []
 SkillList.forEach((skill) => {
@@ -456,3 +457,8 @@ export const SpecialtyList = [...sList]
 export const SkillExplanation = `The ${SkillList.length} Skills range from 0 to 6. You get [B x 6] points for Skills. Skill rolls are [d6 + Skill]. Trait scores set the upper limit for their Skills. Specialties (listed below their Skills) equal their parent Skill by default. Specialties can exceed the parent Skill by taking the Specialize Ability. Unless otherwise noted, a Skill takes one Action.`
 
 export const SkillFlowExplanation = `Skill Flow: Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
+
+
+const Skills = SkillList
+
+export default Skills

@@ -1,6 +1,14 @@
 import { writable } from 'svelte/store'
 import { Character } from './components/rules/Character'
 import { TableOfContents } from './helpers/TableOfContents'
+import Abilities from './components/rules/Abilities'
+import Combat from './components/rules/Combat'
+import Core from './components/rules/Core'
+import Maneuvers from './components/rules/Maneuvers'
+import Properties from './components/rules/Properties'
+import Situations from './components/rules/Situations'
+import Skills from './components/rules/Skills'
+import Traits from './components/rules/Traits'
 
 const newCharacter = new Character()
 
@@ -10,7 +18,6 @@ const creatorToC = new TableOfContents(
 	'Home',
 	'/',
 	[
-		'Abilities',
 		'Description',
 		'Traits',
 		'Skills',
@@ -26,7 +33,7 @@ const referenceToC = new TableOfContents(
 	'Contents',
 	'/reference',
 	[
-		'Dice',
+		'Core',
 		'Traits',
 		'Skills',
 		'Properties',
@@ -35,6 +42,17 @@ const referenceToC = new TableOfContents(
 		'Situations',
 		'Abilities',
 		'Gear'
+	],
+	[
+		Core,
+		Traits,
+		Skills,
+		Properties,
+		Combat,
+		Maneuvers,
+		Situations,
+		Abilities,
+		// 'Gear'
 	]
 )
 

@@ -14,6 +14,7 @@
 				<div class='description'>
 					{#each rule.description as desc}
 						<p>{@html desc}</p>
+						<br>
 					{/each}
 					{#if rule.table}
 						<div class='separator'/>
@@ -46,6 +47,9 @@
 </div>
 
 <style>
+	p {
+		line-height: 1.5;
+	}
 	.ref-list {
 		margin-bottom: 3rem;
 	}

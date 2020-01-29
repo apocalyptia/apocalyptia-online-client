@@ -1,25 +1,15 @@
 <script>
-	import * as sapper from '@sapper/app'
-
-	export let options
-	export let root = '/'
-	export let skip = false
-
-	const navigate = (option) => {
-		sapper.goto(`${root}/${option.toLowerCase()}`)
-	}
+	export let ToC
 </script>
 
 <div class='menu-page'>
-	{#each options as option, index}
-		{#if skip && index}
-			<button
-				class='display-button'
-				on:click|preventDefault={(event) => navigate(option)}
-			>
-				{option}
-			</button>
-		{/if}
+	{#each $ToC.chapters as chapter, index}
+		<button
+			class='display-button'
+			on:click={$ToC.go(index)}
+		>
+			{chapter}
+		</button>
 	{/each}
 </div>
 

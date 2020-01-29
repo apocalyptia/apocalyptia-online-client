@@ -1,10 +1,11 @@
 import * as sapper from '@sapper/app'
 
 export class TableOfContents {
-	constructor(name='', root='/', chapters=[]) {
+	constructor(name='', root='/', chapters=[], modules=[]) {
 		this.name = name,
 		this.root = root,
 		this.chapters = chapters,
+		this.modules = modules,
 		this.starting = -1,
 		this.current = this.starting
 	}

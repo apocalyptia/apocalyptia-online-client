@@ -1,11 +1,11 @@
 <script>
-	import {
+	import 
+		Abilities,
+	{
 		Ability,
-		AbilityList,
 		MasterAbilityList,
 		AbilityGroups
 	} from '../rules/Abilities'
-	import { SkillList } from '../rules/Skills'
 	import { HideShow } from '../../helpers/HideShow'
 	import { character } from '../../stores'
 	import AbilityCard from '../ui/creator/AbilityCard.svelte'
@@ -18,7 +18,7 @@
 	const getRemaining = () => $character.properties.xp.score - spentXP
 
 	let xpGroups = [...AbilityGroups]
-	let DisplayList = [...AbilityList]
+	let DisplayList = [...Abilities]
 	let CurrentAbilities = []
 
 

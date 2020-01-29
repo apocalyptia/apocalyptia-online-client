@@ -149,7 +149,7 @@ export const Vehicles = new Rule({
 
 // Rule List
 
-export const Combat = [
+const Combat = [
 	Rounds,
 	Actions,
 	Communication,
@@ -160,3 +160,5 @@ export const Combat = [
 	Recovery,
 	Vehicles
 ]
+
+export default Combat

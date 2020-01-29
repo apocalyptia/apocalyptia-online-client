@@ -1,5 +1,6 @@
 <script>
-	import RefMenuScreen from '../../components/ui/reference/RefMenuScreen.svelte'
+	import MenuScreen from '../../components/ui/MenuScreen.svelte'
+	import { refToC } from '../../stores'
 </script>
 
-<RefMenuScreen />
+<MenuScreen ToC={refToC}/>

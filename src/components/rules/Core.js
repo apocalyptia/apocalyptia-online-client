@@ -2,7 +2,7 @@ import Rule from './Rule'
 import DifficultyTable from './tables/DifficultyTable.svelte'
 
 
-export const DiceExplanation = `When you want to attempt a difficult action, roll one six-sided die (“d6”) to decide a fair outcome. Added to the d6 roll is the Character’s score in a Trait or Skill, depending on the action. Finally, add or subtract from the roll any modifiers relevant to the circumstances, as determined by the Game Narrator (“GN”). The formula for a roll is always shown in [brackets]. Calculate the Result of a d6 roll as follows:`
+export const CoreExplanation = `When you want to attempt a difficult action, roll one six-sided die (“d6”) to decide a fair outcome. Added to the d6 roll is the Character’s score in a Trait or Skill, depending on the action. Finally, add or subtract from the roll any modifiers relevant to the circumstances, as determined by the Game Narrator (“GN”). The formula for a roll is always shown in [brackets]. Calculate the Result of a d6 roll as follows:`
 
 export const ResultFormula = `[d6 Roll + Score ± Modifiers] = Result`
 
@@ -64,10 +64,12 @@ export const Botch = new Rule({
 })
 
 
-export const Dice = [
+const Core = [
 	Difficulty,
 	Success,
 	Fail,
 	Explode,
 	Botch
 ]
+
+export default Core

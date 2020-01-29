@@ -73,7 +73,10 @@ export const Speed = new Property({
 })
 
 
-export const Properties = [
+export const PropertyExplanation = `Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
+
+
+const Properties = [
 	BlockDefense,
 	DodgeDefense,
 	Experience,
@@ -83,5 +86,4 @@ export const Properties = [
 	Speed
 ]
 
-
-export const PropertyExplanation = `Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
+export default Properties

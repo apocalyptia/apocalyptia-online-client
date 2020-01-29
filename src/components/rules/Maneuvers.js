@@ -232,8 +232,10 @@ export const SocialManeuvers = [
 	Torture
 ]
 
-export const Maneuvers = [
+const Maneuvers = [
 	...DefensiveManeuvers,
 	...OffensiveManeuvers,
 	...SocialManeuvers
 ]
+
+export default Maneuvers

@@ -22,6 +22,6 @@
 </script>
 
 <div class='page-container'>
-	<svelte:component this={selected} />
+	<svelte:component this={selected}/>
 </div>
 <NavButtons on:nav={handleNavigation} {options} />
