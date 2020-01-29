@@ -7,13 +7,9 @@
 	const { page } = sapper.stores()
 
 	const { slug } = $page.params
-
-	const chapterName = capitalize(slug)
-
-	const chapterList = `${chapterName}`
 </script>
 
 <div class='ref-page'>
-	<div class='ref-header'>{chapterName} Rules</div>
+	<div class='ref-header'>{capitalize(slug)} Rules</div>
 	<RefList list={$refToC.modules[$refToC.current]} />
 </div>
