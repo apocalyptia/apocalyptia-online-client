@@ -1,7 +1,7 @@
 <button id='ExampleDifficultiesBtn' class='Btn'>EXAMPLE DIFFICULTIES</button>
 <div id='ExampleDifficultiesSec' class='Sec2'>
-	<p>Being a GN is a balancing act. Give your Players every opportunity to accomplish things and make a difference in the world, but avoid the temptation to make things easy for them. If you do not challenge Players, their victories will soon become predictable, their achievements will lose value, and the game will no longer be fun. Defeat must always be a possibility. Players expect and appreciate consistency and fairness with rulings. Maintain objectivity and avoid favoritism or grudges.</p>
-	<p>This game relies on the GN, as the storyteller and referee, to improvise Difficulties and modifiers in a fair and consistent way. Below are a few common EXAMPLE DIFFICULTIES:</p>
+	<p>Being a Narrator is a balancing act. Give your Players every opportunity to accomplish things and make a difference in the world, but avoid the temptation to make things easy for them. If you do not challenge Players, their victories will soon become predictable, their achievements will lose value, and the game will no longer be fun. Defeat must always be a possibility. Players expect and appreciate consistency and fairness with rulings. Maintain objectivity and avoid favoritism or grudges.</p>
+	<p>This game relies on the Narrator, as the storyteller and referee, to improvise Difficulties and modifiers in a fair and consistent way. Below are a few common EXAMPLE DIFFICULTIES:</p>
 	<div id='ClimbDifficultyTable' class='tableDiv'>
 		<div class='rowDiv'><div class='cellDiv cen'>#</div><div class='cellDiv cen'>Climb</div><div class='cellDiv cen'>Swim</div><div class='cellDiv cen'>Larceny</div><div class='cellDiv cen'>Scavenge</div></div>
 		<div class='rowDiv'><div class='cellDiv cen'>1</div><div class='cellDiv'>Ladder</div><div class='cellDiv'>Public Pool</div><div class='cellDiv'>Glove cox</div><div class='cellDiv'>Inner city</div></div>

@@ -91,7 +91,7 @@
 	</div>
 	<button id='SettlementEncountersBtn' class='Btn'>SETTLEMENT ENCOUNTERS</button>
 	<div id='SettlementEncountersSec' class='Sec3'>
-		<p>Below is a sample of the types of people the Team is likely to come across in a sizable Settlement, along with a brief description of what they may want or have to offer the Team. One thing the GN should keep in mind when playing these Extras is that few people have any incentive to tell the truth to the Team upon first meeting them. The Team is an exploitable opportunity for many desperate Settlement dwellers. Everybody needs something and most people are capable of doing terrible things to get what they need.</p>
+		<p>Below is a sample of the types of people the Team is likely to come across in a sizable Settlement, along with a brief description of what they may want or have to offer the Team. One thing the Narrator should keep in mind when playing these Extras is that few people have any incentive to tell the truth to the Team upon first meeting them. The Team is an exploitable opportunity for many desperate Settlement dwellers. Everybody needs something and most people are capable of doing terrible things to get what they need.</p>
 		<p>Citizens of a Settlement often do not see many new faces from day to day. The things that Characters do in a Settlement will be remembered and contribute to the reputation of the Character and their Team. Rumors can spread quickly, even from Settlement to Settlement as Traders and travelers drift through. Enemies will usually wait to attack out in the Wasteland rather than cause a scene among witnesses. Friends, on the other hand, can offer protection, information, and favors.</p>
 		<p>During a first encounter with a new Extra, the Player should roll Perception vs the Extras' Socialize roll to be able to tell if the Extra is acting suspicious or seems trustworthy.</p>
 		<button id='SettlementEncountersTableBtn' class='Btn'>SETTLEMENT ENCOUNTERS TABLE</button>
@@ -281,12 +281,12 @@
 		</div>
 		<button id='FirstImpressionsBtn' class='Btn'>FIRST IMPRESSIONS</button>
 		<div id='FirstImpressionsSec' class='Sec4'>
-			<p>When meeting new Extras, the Character (if meeting individually) or the Team leader (if meeting collectively), rolls Socialize vs Socialize to establish a First Impression. The degree of Success or Failure acts as a modifier to the Extra's Attitude for subsequent social rolls in this first exchange. This modifier will change as the GN sees fit based of further interactions. The Team's reputation may cause further modifiers if the Extra has heard of the Team. See HUMANS in Ch:5.</p>
+			<p>When meeting new Extras, the Character (if meeting individually) or the Team leader (if meeting collectively), rolls Socialize vs Socialize to establish a First Impression. The degree of Success or Failure acts as a modifier to the Extra's Attitude for subsequent social rolls in this first exchange. This modifier will change as the Narrator sees fit based of further interactions. The Team's reputation may cause further modifiers if the Extra has heard of the Team. See HUMANS in Ch:5.</p>
 		</div>
 	</div>
 	<button id='SettlementCreationBtn' class='Btn'>SETTLEMENT CREATION</button>
 	<div id='SettlementCreationSec' class='Sec3'>
-		<p>A Settlement can be randomly generated with the following steps. The GN can make alterations anywhere during the process.</p>
+		<p>A Settlement can be randomly generated with the following steps. The Narrator can make alterations anywhere during the process.</p>
 		<button id='SettlementCreationStep1Btn' class='Btn'>STEP 1: CLIMATE AND AREA</button>
 		<div id='SettlementCreationStep1Sec' class='Sec4'>
 			<p>Start either by using the current CLIMATE in which your game is taking place, or roll on the CLIMATE table. Then either select or roll an appropriate SETTLEMENT AREA to define the surroundings.</p>
@@ -410,7 +410,7 @@
 		<div id='SettlementCreationStep4Sec' class='Sec4'>
 			<p>Next, roll [d6 x (d6x10)] once for each major RESOURCE (Water, Food, Parts, Chemicals, Fuel, Energy, Ammo), to see how much of that Resource the Settlement has on hand for trade or consumption. The most important Resources are Food and Water, since the people requires one of each per day per point of Population.</p>
 			<p>For rolling Ammo amounts, divide the total rolled evenly between each caliber. The Ammo will be of the basic starting AMMO type (FMJ, Birdshot, Target) for each caliber.</p>
-			<p>If your group prefers a faster simpler method to manage Resources, roll below to get a qualitative measure for each RESOURCE. In this case, the GN can simply inform the Players when a given Resource level increases or decreases for whatever reason.</p>
+			<p>If your group prefers a faster simpler method to manage Resources, roll below to get a qualitative measure for each RESOURCE. In this case, the Narrator can simply inform the Players when a given Resource level increases or decreases for whatever reason.</p>
 			<button id='SettlementResourcesBtn' class='Btn'>RESOURCES</button>
 			<div id='SettlementResourcesSec' class='Sec5'>
 				<ol>

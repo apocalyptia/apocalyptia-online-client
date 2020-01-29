@@ -1,6 +1,6 @@
 <button id='EnvironmentBtn' class='Btn'>ENVIRONMENT</button>
 <div id='EnvironmentSec' class='Sec2'>
-	<p>The impersonal behavior of nature is a tool for the GN to give the Players the sense of being an individual within a harsh world that is indifferent to their survival. Roll WEATHER 1/day.</p>
+	<p>The impersonal behavior of nature is a tool for the Narrator to give the Players the sense of being an individual within a harsh world that is indifferent to their survival. Roll WEATHER 1/day.</p>
 	<button id='WeatherEnvironmentBtn' class='Btn'>WEATHER</button>
 	<div id='WeatherEnvironmentSec' class='Sec3'>
 		<div id='WeatherEnvironmentTable' class='tableDiv'>

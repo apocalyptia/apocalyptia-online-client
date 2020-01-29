@@ -1,7 +1,7 @@
 <button id='PsycheBtn' class='Btn'>PSYCHE</button>
 <div id='PsycheSec' class='Sec2'>
 	<p>Surviving the Wasteland is fairly straight forward: kill anything that threatens you. The complicated part is dealing with the consequences. Sometimes survival may not seem worth the price.</p>
-	<p>Psyche is the measure of a Character's mental stability. Primarily, it is a rough guide for roleplaying the Character’s psychological trauma. There are many ways to gain Psyche and many ways to lose it. When something terrible happens to the Character, the GN calls for a Psyche roll 6#. The Player rolls d6 + current Psyche and must Succeed in order to avoid losing 1 Psyche. You may not spend Luck on a Psyche roll.</p>
+	<p>Psyche is the measure of a Character's mental stability. Primarily, it is a rough guide for roleplaying the Character’s psychological trauma. There are many ways to gain Psyche and many ways to lose it. When something terrible happens to the Character, the Narrator calls for a Psyche roll 6#. The Player rolls d6 + current Psyche and must Succeed in order to avoid losing 1 Psyche. You may not spend Luck on a Psyche roll.</p>
 	<p>A list of examples of Psyche-related effects is given below:</p>
 	<button id='PsychePenaltyBtn' class='Btn'>-1 PSYCHE PENALTY</button>
 	<div id='PsychePenaltySec' class='Sec3'>
@@ -49,7 +49,7 @@
 	</div>
 	<button id='MentalBreakdownBtn' class='Btn'>MENTAL BREAKDOWN</button>
 	<div id='MentalBreakdownSec' class='Sec3'>
-		<p>Whenever a Character loses their last point of Psyche, the GN should secretly roll on the MENTAL BREAKDOWN table below. The Character involuntarily experiences or performs the Effect within d6hrs. Each Comrade may roll Perception or Medicine(Psychology) to sense that something is wrong before the Effect happens. Success gives a Comrade a chance to intervene.</p>
+		<p>Whenever a Character loses their last point of Psyche, the Narrator should secretly roll on the MENTAL BREAKDOWN table below. The Character involuntarily experiences or performs the Effect within d6hrs. Each Comrade may roll Perception or Medicine(Psychology) to sense that something is wrong before the Effect happens. Success gives a Comrade a chance to intervene.</p>
 		<p>The Effect lasts for 1 day. The Player then makes a D6# roll to recover 1 Psyche. On a Fail, roll another MENTAL BREAKDOWN.</p>
 		<div id='MentalBreakdownTable' class='tableDiv'>
 			<div class='rowDiv'>
@@ -84,7 +84,7 @@
 			</div>
 			<div class='rowDiv'>
 				<button class='cellDiv cen'>6</button>
-				<button class='cellDiv'>Amnesic blackout. GN determines actions.</button>
+				<button class='cellDiv'>Amnesic blackout. Narrator determines actions.</button>
 				<button class='cellDiv cen'>9#</button>
 			</div>
 		</div>

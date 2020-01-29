@@ -1,6 +1,6 @@
 <button id='MissionBtn' class='Btn'>MISSION</button>
 <div id='MissionSec' class='Sec2'>
-	<p>When the Team has to leave the relative safety of their Base or Settlement to accomplish a goal in the Wasteland, this is called a Mission. The GN should make AREA and ENCOUNTER rolls periodically to keep things interesting. Scenarios give a minimum rate for ENCOUNTER rolls to occur. This is an ideal time to introduce new Characters. There are three basic types of Missions:</p>
+	<p>When the Team has to leave the relative safety of their Base or Settlement to accomplish a goal in the Wasteland, this is called a Mission. The Narrator should make AREA and ENCOUNTER rolls periodically to keep things interesting. Scenarios give a minimum rate for ENCOUNTER rolls to occur. This is an ideal time to introduce new Characters. There are three basic types of Missions:</p>
 	<button id='TravelMissionBtn' class='Btn'>TRAVEL</button>
 	<div id='TravelMissionSec' class='Sec3'>
 		<p>The Team must move a considerable distance, out in the open, away from the relative safety of their Base and familiar surroundings. Use Marching Speed [Speed /2mph] of the slowest Team member to determine distance per hour. Use Survival(Navigate) 1/day vs Ecosystem # to stay on course.</p>

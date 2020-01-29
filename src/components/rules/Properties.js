@@ -40,7 +40,7 @@ export const Health = new Property({
 export const Intellect = new Property({
 	name: `Intellect`,
 	description: [
-		`[B per session] XP is earned once per game session. You also get +1 XP every time you roll a Botch. The GN may give bonus XP. Spend XP to buy Abilities.`
+		`[B per session] XP is earned once per game session. You also get +1 XP every time you roll a Botch. The Narrator may give bonus XP. Spend XP to buy Abilities.`
 	],
 	formula: `brains * 3`
 })

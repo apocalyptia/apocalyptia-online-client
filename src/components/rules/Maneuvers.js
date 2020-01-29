@@ -97,7 +97,7 @@ export const Interrogate = new Rule({
 export const Negotiate = new Rule({
 	name: `Negotiate`,
 	description: [
-		`If opposed parties are willing to talk out their differences, each side start with a list of demands. Roll [Socialize vs Socialize] once per demand. Attitude and situational modifiers should be applied by the GN. Success means you get your demand and the opposed negotiator concedes. Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`
+		`If opposed parties are willing to talk out their differences, each side start with a list of demands. Roll [Socialize vs Socialize] once per demand. Attitude and situational modifiers should be applied by the Narrator. Success means you get your demand and the opposed negotiator concedes. Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`
 	]
 })
 
@@ -125,7 +125,7 @@ export const Push = new Rule({
 export const Recruit = new Rule({
 	name: `Recruit`,
 	description: [
-		`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and situational modifiers should be applied by the GN.`
+		`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and situational modifiers should be applied by the Narrator.`
 	]
 })
 
