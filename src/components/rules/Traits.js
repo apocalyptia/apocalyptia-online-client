@@ -63,7 +63,9 @@ export const Demeanor = new Trait({
 	name: `Demeanor`,
 	description: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
-		`High Demeanor indicates charisma, self-motivation, and confidence. This Trait determines Psyche. Demeanor is also the parent Trait for the following Skills: ${DemeanorSkillList}.`
+		`High Demeanor indicates charisma, self-motivation, and confidence.`,
+		`This Trait determines Psyche.`,
+		`Demeanor is also the parent Trait for the following Skills: ${DemeanorSkillList}.`
 	]
 })
 
