@@ -5,13 +5,15 @@ export default class Stat extends Rule {
 	constructor({
 		name,
 		description,
-		base=1,
+		formula,
+		base=0,
 		mods=0,
-		score=1
+		score=0
 	}) {
 		super({
 			name,
-			description
+			description,
+			formula
 		})
 		this.base = base
 		this.mods = mods

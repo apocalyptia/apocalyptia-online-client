@@ -1,6 +1,7 @@
 import { arrayToObject } from '../../helpers/ArrayToObject'
-import Skills from './Skills'
 import Traits from './Traits'
+import Skills from './Skills'
+import Properties from './Properties'
 
 
 export class Character {
@@ -45,65 +46,8 @@ export class Character {
 			},
 		},
 		this.traits = arrayToObject(Traits, `name`),
-		this.skills = arrayToObject(Skills, `name`)
-		this.properties = {
-			block: {
-				name: `Block`,
-				base: 0,
-				mods: 0,
-				score: 0,
-				formula: () => this.skills.melee.score
-			},
-			dodge: {
-				name: `Dodge`,
-				base: 0,
-				mods: 0,
-				score: 0,
-				formula: () => this.skills.acrobatics.score
-			},
-			health: {
-				name: `Health`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				formula: () => this.traits.constitution.score * 3
-			},
-			experience: {
-				name: `Experience`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				formula: () => this.traits.brains.score * 3
-			},
-			intellect: {
-				name: `Intellect`,
-				base: 1,
-				mods: 0,
-				score: 1,
-				formula: () => this.traits.brains.score
-			},
-			luck: {
-				name: `Luck`,
-				base: 0,
-				mods: 0,
-				score: 0,
-				formula: () => this.properties.luck.base
-			},
-			psyche: {
-				name: `Psyche`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				formula: () => this.traits.demeanor.score * 3
-			},
-			speed: {
-				name: `Speed`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				formula: () => this.traits.agility.score * 3
-			}
-		},
+		this.skills = arrayToObject(Skills, `name`),
+		this.properties = arrayToObject(Properties, `name`),
 		this.abilities = [],
 		this.gear = {
 			armor: {
@@ -125,12 +69,16 @@ export class Character {
 		}
 	}
 	setStat(type, stat) {
-		if (type == 'properties') this[type][stat].base = this[type][stat].formula()
+		if (type == `properties` && stat != `luck`) {
+			this[type][stat].base = this[type][stat].formula(this)
+		}
+		if (stat == `luck`) this.properties.luck.base = 0
 		this[type][stat].score = this[type][stat].base + this[type][stat].mods
 		return this[type][stat].score
 	}
 	updateProperties() {
-		let properties = Object.keys(this.properties)
-		properties.forEach((property) => this.setStat('properties', property))
+		Object.keys(this.properties).forEach((property) => {
+			this.setStat(`properties`, property)
+		})
 	}
 }

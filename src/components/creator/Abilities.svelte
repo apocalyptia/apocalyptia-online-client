@@ -21,7 +21,6 @@
 	let DisplayList = [...Abilities]
 	let CurrentAbilities = []
 
-
 	for (let x = 0; x < DisplayList.length; ++x) {
 		for (let y = 0; y < MasterAbilityList.length; ++y) {
 			if (DisplayList[x].name == MasterAbilityList[y].name) {

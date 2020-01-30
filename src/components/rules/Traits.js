@@ -20,9 +20,9 @@ export class Trait extends Stat {
 	constructor({
 		name,
 		description,
-		base,
+		base=1,
 		mods,
-		score
+		score=1
 	}) {
 		super({
 			name,
