@@ -1,20 +1,10 @@
 <script>
-	import {
-		AccessoryList,
-		AmmoList,
-		ArmorList,
-		BombList,
-		DocumentList,
-		DrugsList,
-		ElectronicsList,
-		EquipmentList,
-		MedicalList,
-		MeleeList,
-		RangedList,
-		StorageList,
-		MasterGearList
-	} from '../../helpers/lists/gear'
-	import { random } from '../../helpers/Random'
+	import AmmoList from '../rules/gear/weapons/AmmoList'
+	import ArmorList from '../rules/gear/ArmorList'
+	import MeleeWeaponList from '../rules/gear/weapons/MeleeWeaponList'
+	import RangedWeaponList from '../rules/gear/weapons/RangedWeaponList'
+	import { MasterGearList } from '../helpers/lists/gear'
+	import { random } from '../helpers/Random'
 	import { character } from '../../stores'
 
 	let armorResult = ""

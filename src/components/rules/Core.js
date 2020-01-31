@@ -1,4 +1,4 @@
-import Rule from './Rule'
+import Rule from '../classes/Rule'
 import DifficultyTable from './tables/DifficultyTable.svelte'
 
 

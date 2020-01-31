@@ -1,27 +1,6 @@
-import Stat from './Stat'
+import Property from '../classes/Property'
 import { Block, Dodge } from './Maneuvers'
-import { d6 } from '../../helpers/Random'
-
-
-export class Property extends Stat {
-	constructor({
-		name,
-		description,
-		formula,
-		base,
-		mods,
-		score
-	}) {
-		super({
-			name,
-			description,
-			formula,
-			mods
-		})
-		this.base = base
-		this.score = score
-	}
-}
+import { d6 } from '../helpers/Random'
 
 
 export const block = new Property({

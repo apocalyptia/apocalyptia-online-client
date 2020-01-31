@@ -1,4 +1,4 @@
-import Rule from './Rule'
+import Rule from '../classes/Rule'
 import CoverTable from './tables/CoverTable.svelte'
 
 

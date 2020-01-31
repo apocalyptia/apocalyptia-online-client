@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
-	import { capitalize } from '../../helpers/Capitalize'
-	import { HideShow } from '../../helpers/HideShow'
-	import { random } from '../../helpers/Random'
+	import { capitalize } from '../helpers/Capitalize'
+	import { HideShow } from '../helpers/HideShow'
+	import { random } from '../helpers/Random'
 	import { traitMax } from '../rules/Traits'
 	import { 
 		startingSkillPoints,

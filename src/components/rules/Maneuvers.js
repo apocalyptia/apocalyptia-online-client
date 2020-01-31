@@ -1,4 +1,4 @@
-import Rule from './Rule'
+import Rule from '../classes/Rule'
 import CalledShotTable from './tables/CalledShotTable.svelte'
 
 

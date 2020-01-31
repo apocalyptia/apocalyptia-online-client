@@ -1,6 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition'
-	import { HideShow } from '../../../helpers/HideShow'
+	import { capitalize } from '../../helpers/Capitalize'
+	import { HideShow } from '../../helpers/HideShow'
 
 	export let list
 </script>
@@ -9,7 +10,7 @@
 	<div class='separator'/>
 	{#each list as rule}
 		<div class='box' on:click={() => list = HideShow(rule, list)}>
-			<span class='name'>{rule.name}</span>
+			<span class='name'>{capitalize(rule.name)}</span>
 			{#if rule.visible}
 				<div class='description'>
 					{#each rule.description as desc}
@@ -29,7 +30,7 @@
 								<li class='sub-li'>
 									<div class='sub-box'>
 										<span class='sub-name'>
-											{subrule.name}
+											{capitalize(subrule.name)}
 										</span>
 										<div class='sub-notes'>
 											{@html subrule.description}

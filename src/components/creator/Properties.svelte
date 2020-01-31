@@ -1,7 +1,7 @@
 <script>
-	import { d6 } from '../../helpers/Random'
+	import { d6 } from '../helpers/Random'
 	import { character } from '../../stores'
-	import { capitalize } from '../../helpers/Capitalize'
+	import { capitalize } from '../helpers/Capitalize'
 	import { PropertyExplanation } from '../rules/Properties'
 
 

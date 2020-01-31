@@ -1,47 +1,5 @@
-import Stat from './Stat'
-
-
-export class Skill extends Stat {
-	constructor({
-		name,
-		description,
-		base,
-		mods,
-		score,
-		parent,
-		difficulty,
-		specialties=[]
-	}) {
-		super({
-			name,
-			description,
-			base,
-			mods,
-			score
-		})
-		this.parent = parent
-		this.difficulty = difficulty
-		this.specialties = specialties
-	}
-}
-
-export class Specialty extends Stat {
-	constructor({
-		name,
-		description,
-		base,
-		mods,
-		score
-	}) {
-		super({
-			name,
-			description,
-			base,
-			mods,
-			score
-		})
-	}
-}
+import Skill from '../classes/Skill'
+import Specialty from '../classes/Specialty'
 
 
 export const startingSkillPoints = (character) => {

@@ -1,40 +1,10 @@
-import Rule from './Rule'
+import Ability from '../classes/Ability'
 import Traits from './Traits'
 import Skills, { SpecialtyList } from './Skills'
-import { MeleeList, WeaponList } from '../../helpers/lists/gear'
-import { LanguageList } from '../../helpers/lists/languages'
-import { UnorthodoxList } from '../../helpers/lists/unorthodox'
-
-
-export class Ability extends Rule {
-	constructor({
-		name,
-		description,
-		visible,
-		formula,
-		max,
-		xp,
-		taken=0,
-		options=[``],
-		selection=0,
-		notes=``,
-		id=null
-	}) {
-		super({
-			name,
-			description,
-			visible,
-			formula
-		})
-		this.max = max
-		this.xp = xp
-		this.taken = taken
-		this.options = options
-		this.selection = selection,
-		this.notes = notes,
-		this.id = id
-	}
-}
+import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
+import { WeaponList } from '../helpers/lists/gear'
+import { LanguageList } from '../helpers/lists/languages'
+import { UnorthodoxList } from '../helpers/lists/unorthodox'
 
 
 // 3 XP Abilities
@@ -285,7 +255,7 @@ export const PowerfulStrike = new Ability({
 	],
 	max: 1,
 	xp: 15,
-	options: MeleeList
+	options: MeleeWeaponList
 })
 
 export const XP15Abilities = [
@@ -415,7 +385,7 @@ export const AbilityGroups = [
 ]
 
 
-const Abilities = [
+export const AbilitiesList = [
 	...XP3Abilities,
 	...XP6Abilities,
 	...XP9Abilities,
@@ -428,16 +398,16 @@ const Abilities = [
 
 
 const TempAbilityList = []
-for (let a = 0; a < Abilities.length; ++a) {
-	if (Abilities[a].options.length > 1) {
-		for (let o = 0; o < Abilities[a].options.length; ++o) {
+for (let a = 0; a < AbilitiesList.length; ++a) {
+	if (AbilitiesList[a].options.length > 1) {
+		for (let o = 0; o < AbilitiesList[a].options.length; ++o) {
 			let newAbility = new Ability({
-				name: Abilities[a].name,
-				description: Abilities[a].description,
-				max: Abilities[a].max,
-				xp: Abilities[a].xp,
-				taken: Abilities[a].taken,
-				options: [Abilities[a].options[o]],
+				name: AbilitiesList[a].name,
+				description: AbilitiesList[a].description,
+				max: AbilitiesList[a].max,
+				xp: AbilitiesList[a].xp,
+				taken: AbilitiesList[a].taken,
+				options: [AbilitiesList[a].options[o]],
 				selection: o
 			})
 			TempAbilityList.push(newAbility)
@@ -446,11 +416,11 @@ for (let a = 0; a < Abilities.length; ++a) {
 	}
 	else {
 		let newAbility = new Ability({
-			name: Abilities[a].name,
-			description: Abilities[a].description,
-			max: Abilities[a].max,
-			xp: Abilities[a].xp,
-			taken: Abilities[a].taken
+			name: AbilitiesList[a].name,
+			description: AbilitiesList[a].description,
+			max: AbilitiesList[a].max,
+			xp: AbilitiesList[a].xp,
+			taken: AbilitiesList[a].taken
 		})
 		TempAbilityList.push(newAbility)
 	}
@@ -458,7 +428,7 @@ for (let a = 0; a < Abilities.length; ++a) {
 for (let i = 0; i < TempAbilityList.length; ++i) {
 	TempAbilityList[i].id = i
 }
-export const MasterAbilityList = [...TempAbilityList]
+export const Abilities = [...TempAbilityList]
 
 
 export const AbilitiesExplanation = `These are Character upgrades purchased with XP.`

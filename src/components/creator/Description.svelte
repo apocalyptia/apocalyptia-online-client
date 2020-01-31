@@ -1,6 +1,6 @@
 <script>
-	import { femaleNames, maleNames } from '../../helpers/lists/names.js'
-	import { random } from '../../helpers/Random'
+	import { femaleNames, maleNames } from '..//helpers/lists/names.js'
+	import { random } from '../helpers/Random'
 	import { character } from '../../stores'
 
 	const randomName = () => {

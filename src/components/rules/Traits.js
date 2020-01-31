@@ -1,4 +1,4 @@
-import Stat from './Stat'
+import Trait from '../classes/Trait'
 import {
 	AgilitySkills,
 	BrainsSkills,
@@ -16,23 +16,7 @@ const ConstitutionSkillList = ConstitutionSkills.map(skill=> skill.name).join(',
 const DemeanorSkillList = DemeanorSkills.map(skill=> skill.name).join(', ')
 
 
-export class Trait extends Stat {
-	constructor({
-		name,
-		description,
-		base=1,
-		mods,
-		score=1
-	}) {
-		super({
-			name,
-			description,
-			base,
-			mods,
-			score
-		})
-	}
-}
+
 
 
 export const traitMax = 6

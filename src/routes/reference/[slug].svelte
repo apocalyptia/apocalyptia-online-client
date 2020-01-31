@@ -1,6 +1,6 @@
 <script type='module'>
 	import * as sapper from '@sapper/app'
-	import { capitalize } from '../../helpers/Capitalize'
+	import { capitalize } from '../../components/helpers/Capitalize'
 	import RefList from '../../components/ui/reference/RefList.svelte'
 	import { refToC } from '../../stores'
 

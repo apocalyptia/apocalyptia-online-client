@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
-	import { capitalize } from '../../helpers/Capitalize'
-	import { random } from '../../helpers/Random'
+	import { capitalize } from '../helpers/Capitalize'
+	import { random } from '../helpers/Random'
 	import {
 		traitMax,
 		TraitExplanation
