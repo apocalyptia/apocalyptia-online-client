@@ -7,7 +7,7 @@
 	import Abilities from '../../components/creator/Abilities.svelte'
 	import Gear from '../../components/creator/Gear.svelte'
 
-	let options = [
+	const options = [
 		{ name: 'Description', content: Description },
 		{ name: 'Traits', content: Traits },
 		{ name: 'Skills', content: Skills },
@@ -16,12 +16,10 @@
 		{ name: 'Gear', content: Gear }
 	]
 
-	let selected = Description
-
-	const handleNavigation = event => selected = event.detail.selection
+	let selected = Abilities
 </script>
 
 <div class='page-container'>
 	<svelte:component this={selected}/>
 </div>
-<NavButtons on:nav={handleNavigation} {options} />
+<NavButtons on:nav={(event) => selected = event.detail.selection} {options} />
