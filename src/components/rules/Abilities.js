@@ -412,7 +412,6 @@ for (let a = 0; a < AbilitiesList.length; ++a) {
 			})
 			TempAbilityList.push(newAbility)
 		}
-
 	}
 	else {
 		let newAbility = new Ability({
@@ -431,7 +430,7 @@ for (let i = 0; i < TempAbilityList.length; ++i) {
 export const Abilities = [...TempAbilityList]
 
 
-export const AbilitiesExplanation = `These are Character upgrades purchased with XP.`
+export const AbilitiesExplanation = `Abilities are Character upgrades purchased with XP.`
 
 
 export default Abilities

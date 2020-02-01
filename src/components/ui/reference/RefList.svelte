@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition'
 	import { capitalize } from '../../helpers/Capitalize'
-	import { HideShow } from '../../helpers/HideShow'
+	import { ToggleVisible } from '../../helpers/ToggleVisible'
 
 	export let list
 </script>
@@ -9,7 +9,7 @@
 <div class='ref-list'>
 	<div class='separator'/>
 	{#each list as rule}
-		<div class='box' on:click={() => list = HideShow(rule, list)}>
+		<div class='box' on:click={() => list = ToggleVisible(rule, list)}>
 			<span class='name'>{capitalize(rule.name)}</span>
 			{#if rule.visible}
 				<div class='description'>

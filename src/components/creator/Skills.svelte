@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
 	import { capitalize } from '../helpers/Capitalize'
-	import { HideShow } from '../helpers/HideShow'
+	import { ToggleVisible } from '../helpers/ToggleVisible'
 	import { random } from '../helpers/Random'
 	import { traitMax } from '../rules/Traits'
 	import { 
@@ -89,7 +89,7 @@
 			<div class='trait-section'>
 				<div
 					class='parent-trait-title'
-					on:click={() => skillGroups = HideShow(group, skillGroups)}
+					on:click={() => skillGroups = ToggleVisible(group, skillGroups)}
 				>
 					<h3>{capitalize($character.traits[group.name].name)} Skills</h3>
 				</div>

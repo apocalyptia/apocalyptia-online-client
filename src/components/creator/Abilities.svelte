@@ -1,24 +1,22 @@
 <script>
+	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores'
-	import { HideShow } from '../helpers/HideShow'
-	import 
-		Abilities,
-	{
+	import { ToggleVisible } from '../helpers/ToggleVisible'
+	import Abilities, {
 		AbilitiesExplanation,
-		AbilitiesList,
 		AbilityGroups
 	} from '../rules/Abilities'
-	import AbilityCard from '../ui/creator/AbilityCard.svelte'
 	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
+	import AbilityModal from '../ui/creator/AbilityModal.svelte'
 
 
 	let spentXP = 0
 
 	const getRemaining = () => $character.properties.experience.score - spentXP
 
+	let remaining = getRemaining()
+
 	let xpGroups = [...AbilityGroups]
-	let DisplayList = [...Abilities]
-	let CurrentAbilities = []
 
 	const resetAbilities = () => {
 		for (let a = 0; a < $character.abilities.length; ++a) {
@@ -26,20 +24,18 @@
 		}
 	}
 
+	let MasterAbilityList = Abilities
 
-	let remaining = getRemaining()
+	beforeUpdate(() => {
+		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
+		console.log('Character Abilities: ', $character.abilities)
+	})
 </script>
 
 <div class='abilities-step'>
-	<div class='step-title'>
-		<h2>Abilities</h2>
-	</div>
-	<div class='explanation'>
-		<p>{AbilitiesExplanation}</p>
-	</div>
-	<div class='remaining'>
-		<h3>Starting XP Remaining: {remaining}</h3>
-	</div>
+	<div class='step-title'><h2>Abilities</h2></div>
+	<div class='explanation'><p>{AbilitiesExplanation}</p></div>
+	<div class='remaining'><h3>Starting XP Remaining: {remaining}</h3></div>
 	{#if $character.abilities.length}
 		<div class='section-card'>
 			<AbilityCurrent />
@@ -47,20 +43,26 @@
 	{/if}
 	<div class='section-card'>
 		<div class='abilities-list'>
-			{#each xpGroups as group}
-				<div class='xp-group-section'>
-					<div
-						class='xp-group-title'
-						on:click={() => xpGroups = HideShow(group, xpGroups)}
-					>
-						{group.name}XP Abilities
+			{#each MasterAbilityList as ability, index}
+				{#if index == 0 || ability.xp != MasterAbilityList[index-1].xp}
+					<div class='xp-group-title'>{ability.xp}XP Abilities</div>
+				{/if}
+					<div class='ability-card' on:click={() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
+						<div class='card-row'>
+							<span class='ability-name'>{ability.name}
+								{#if ability.options[0] != ""}
+									:&nbsp;{ability.options[0].name}
+								{/if}
+							</span>
+							<span class='ability-taken'>Taken: {ability.taken}</span>
+						</div>
+						<div class='card-row'>
+							<span class='ability-description'>{ability.description}</span>
+						</div>
 					</div>
-					{#if group.visible}
-						{#each group.list as ability}
-							<AbilityCard {ability} />
-						{/each}
-					{/if}
-				</div>
+				{#if ability.visible == true}
+					<AbilityModal on:close='{() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}' {ability} />
+				{/if}
 			{/each}
 		</div>
 	</div>
@@ -73,24 +75,30 @@
 	.explanation {
 		padding: 1rem;
 	}
-	.xp-group-section {
-		border: 1px solid lime;
-		padding: 1rem;
-	}
-	.xp-group-title {
-		font-size: 1.25rem;
-		text-align: center;
-	}
 	.abilities-step {
 		text-align: left;
 	}
 	.abilities-list {
 		width: 100%;
 	}
-	.remaining {
-		text-align: center;
-	}
+	.remaining,
 	.button-row {
 		text-align: center;
+	}
+	.ability-card {
+		margin: 1rem 0;
+	}
+	.card-row {
+		display: flex;
+		justify-content: space-between;
+	}
+	.ability-name{
+		flex: 2;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.ability-taken {
+		flex: 1;
+		font-weight: bold;
 	}
 </style>

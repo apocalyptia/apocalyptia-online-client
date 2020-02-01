@@ -10,30 +10,12 @@
 </script>
 
 <div class='ability-card' on:click={displayModal}>
-	<div class='ability-name'>{ability.name}</div>
-	<div class='ability-description-section'>
-		<span class='description-label'>Descripiton:</span>
+	<div class='card-row'>
+		<span class='ability-name'>{ability.name}</span>
+		<span class='ability-taken'>Taken: {ability.taken}</span>
+	</div>
+	<div class='card-row'>
 		<span class='ability-description'>{ability.description}</span>
-	</div>
-	<div class='ability-options-section'>
-		{#if ability.options[0] != ""}
-			<span class='ability-options'>
-				<select
-					name={ability.name}
-					bind:value={ability.selection}
-				>
-					{#each ability.options as option, index}
-						<option value={index}>
-							{option.name}
-						</option>
-					{/each}
-				</select>
-			</span>
-		{/if}
-	</div>
-	<div class='ability-taken-section'>
-		<span class='taken-label'>Taken:</span>
-		<span class='ability-taken'>{ability.taken}</span>
 	</div>
 </div>
 {#if showModal}
@@ -44,14 +26,17 @@
 	.ability-card {
 		margin: 1rem 0;
 	}
-	.ability-name,
-	.description-label {
-		font-weight: bold;
+	.card-row {
+		display: flex;
+		justify-content: space-between;
 	}
-	.ability-name {
+	.ability-name{
+		flex: 2;
+		font-weight: bold;
 		text-decoration: underline;
 	}
-	.ability-options {
-		display: block;
+	.ability-taken {
+		flex: 1;
+		font-weight: bold;
 	}
 </style>

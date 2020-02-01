@@ -1,18 +1,10 @@
 <script>
 	import { character } from '../../../stores'
+	import Abilities from '../../rules/Abilities'
 
-	const modify = ability => {
-		for (let i = 0; i < $character.abilities.length; ++i) {
-			if ($character.abilities[i].name == ability.name) {
-				$character.abilities[i].taken = ability.taken
-			}
-		}
-	}
-
-	const remove = ability => {
-		$character.abilities = $character.abilities.filter((c) => {
-			return c.id != ability.id
-		})
+	const updateAbilities = () => {
+		$character.abilities = Abilities.filter(ability => ability.taken)
+		console.log('Character Abilities: ', $character.abilities)
 	}
 </script>
 
@@ -22,8 +14,8 @@
 		<div class='current-abilities-header'>
 			<span class='l-col'>Name</span>
 			<span class='s-col'>XP</span>
+			<span class='s-col'>Max</span>
 			<span class='s-col'>Taken</span>
-			<span class='s-col'>Remove</span>
 		</div>
 		<div class='current-abilities-list'>
 			{#each $character.abilities as ability}
@@ -31,27 +23,22 @@
 					<span class='l-col'>
 						{ability.name}
 						{#if ability.options[0] != ""}
-							&nbsp;({ability.options[ability.selection].name})
+							&nbsp;({ability.options[0].name})
 						{/if}
 					</span>
 					<span class='s-col'>{ability.xp}</span>
+
+					<span class='s-col'>{ability.max}</span>
 					<span class='s-col'>
 						<select
 							class='taken-number'
 							bind:value={ability.taken}
-							on:change={(event) => modify(ability)}
+							on:change={updateAbilities}
 						>
-							<option value=1>1</option>
-							{#if ability.max > 1 && ability.max <= 3}
-								<option value=2>2</option>
-								<option value=3>3</option>
-							{/if}
+							{#each Array(ability.max+1) as _, i}
+								<option value={i}>{i}</option>
+							{/each}
 						</select>
-					</span>
-					<span class='s-col'>
-						<button
-							on:click={remove(ability)}
-						>X</button>
 					</span>
 				</div>
 			{/each}
@@ -68,12 +55,17 @@
 		text-align: center;
 		width: 100%;
 	}
+	.current-abilities-header,
+	.current-ability-row {
+		align-items: baseline;
+		display: flex;
+		justify-content: space-between;
+	}
 	.l-col {
-		display: inline-block;
-		width: 50%;
+		flex: 3;
 	}
 	.s-col {
-		display: inline-block;
-		width: 15%;
+		flex: 1;
+		text-align: center;
 	}
 </style>
