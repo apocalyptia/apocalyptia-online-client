@@ -1,17 +1,17 @@
 <script>
-	import { femaleNames, maleNames } from '..//helpers/lists/names.js'
+	import Name, { FemaleNames, MaleNames } from '../helpers/Names'
 	import RandomRoll from '../helpers/Random'
 	import { character } from '../../stores'
 
 	const randomName = () => {
 		if ($character.description.gender.value == 'Male') {
-			$character.description.characterName.value = RandomRoll(maleNames)
+			$character.description.characterName.value = RandomRoll(MaleNames)
 		}
 		else if ($character.description.gender.value == 'Female') {
-			$character.description.characterName.value = RandomRoll(femaleNames)
+			$character.description.characterName.value = RandomRoll(FemaleNames)
 		} 
 		else {
-			$character.description.characterName.value = RandomRoll([...femaleNames, ...maleNames])
+			$character.description.characterName.value = RandomRoll(Names)
 		}
 	}
 

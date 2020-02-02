@@ -3,8 +3,8 @@ import Traits from './Traits'
 import Skills, { SpecialtyList } from './Skills'
 import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
 import { WeaponList } from './Gear'
-import { LanguageList } from '../helpers/lists/languages'
-import { UnorthodoxList } from '../helpers/lists/unorthodox'
+import Capitalize from '../helpers/Capitalize'
+import Languages from '../helpers/Languages'
 
 
 let id = 0
@@ -115,7 +115,7 @@ export const Multilingual = new Ability({
 	],
 	max: 1,
 	xp: 6,
-	options: LanguageList
+	options: Languages
 })
 
 export const Practice = new Ability({
@@ -183,7 +183,23 @@ export const Unorthodox = new Ability({
 	],
 	max: 1,
 	xp: 9,
-	options: UnorthodoxList
+	options: (function() {
+		let uList = []
+		Traits.forEach((trait) => {
+			Skills.forEach((skill) => {
+				let tname = trait.name
+				let sname = skill.name
+				if (skill.parent != trait.name) {
+					uList.push(
+						{
+							name: `${Capitalize(tname)} - ${Capitalize(sname)}`
+						}
+					)
+				}
+			})
+		})
+		return [...uList]
+	})()
 })
 
 // OPEN SLOT FOR NEW 9XP ABILITY

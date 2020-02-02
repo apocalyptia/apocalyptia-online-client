@@ -1,4 +1,4 @@
-export const femaleNames = [
+export const FemaleNames = [
 	'Aaliyah',
 	'Abagail',
 	'Abbey',
@@ -1001,7 +1001,7 @@ export const femaleNames = [
 	'Zoie',
 ]
 
-export const maleNames = [
+export const MaleNames = [
 	'Aaron',
 	'Abdullah',
 	'Abel',
@@ -2003,3 +2003,7 @@ export const maleNames = [
 	'Zechariah',
 	'Zion',
 ]
+
+const Names = [...FemaleNames, ...MaleNames]
+
+export default Names

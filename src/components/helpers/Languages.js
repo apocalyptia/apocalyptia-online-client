@@ -1,4 +1,4 @@
-export const LanguageList = [
+const Languages = [
 	{ name: 'Amharic' },
 	{ name: 'Arabic' },
 	{ name: 'Assamese' },
@@ -70,3 +70,5 @@ export const LanguageList = [
 	{ name: 'Yoruba' },
 	{ name: 'Zulu' },
 ]
+
+export default Languages
