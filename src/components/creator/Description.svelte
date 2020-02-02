@@ -1,7 +1,8 @@
 <script>
-	import Name, { FemaleNames, MaleNames } from '../helpers/Names'
-	import RandomRoll from '../helpers/Random'
 	import { character } from '../../stores'
+	import RandomRoll from '../helpers/Random'
+	import Name, { FemaleNames, MaleNames } from '../helpers/Names'
+
 
 	const randomName = () => {
 		if ($character.description.gender.value == 'Male') {
@@ -22,7 +23,9 @@
 		$character.description.height.value = `${feet}' ${inches}"`
 	}
 
-	const randomWeight = () => { $character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
+	const randomWeight = () => {
+		$character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs`
+	} // 101 to 200 lbs
 
 	const randomHair = () => {
 		$character.description.hair.value = RandomRoll(
@@ -39,7 +42,8 @@
 		)
 	}
 
-	const randomSkin = () => { $character.description.skin.value = RandomRoll(
+	const randomSkin = () => {
+		$character.description.skin.value = RandomRoll(
 			[
 				'Black',
 				'Brown',
@@ -51,9 +55,13 @@
 		) 
 	}
 
-	const randomGender = () => { $character.description.gender.value = RandomRoll(['Female', 'Male']) }
+	const randomGender = () => {
+		$character.description.gender.value = RandomRoll(['Female', 'Male'])
+	}
 
-	const randomAge = () => { $character.description.age.value = Math.ceil((Math.random() * 33) + 17) }
+	const randomAge = () => {
+		$character.description.age.value = Math.ceil((Math.random() * 33) + 17)
+	}
 
 	const randomDescription = () => {
 		randomAge()
