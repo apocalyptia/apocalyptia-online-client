@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
-import { Character } from './components/classes/Character'
-import { TableOfContents } from './components/helpers/TableOfContents'
+import Character from './components/classes/Character'
+import TableOfContents from './components/helpers/TableOfContents'
 import Abilities from './components/rules/Abilities'
 import Combat from './components/rules/Combat'
 import Core from './components/rules/Core'

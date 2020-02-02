@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
-	import { capitalize } from '../helpers/Capitalize'
-	import { random } from '../helpers/Random'
+	import Capitalize from '../helpers/Capitalize'
+	import RandomRoll from '../helpers/Random'
 	import {
 		traitMax,
 		TraitExplanation
@@ -62,7 +62,7 @@
 	const randomTraits = () => {
 		resetTraits()
 		while(remaining > 0) {
-			let t = random(traits)
+			let t = Random(traits)
 			if ($character.traits[t].base < traitMax) {
 				$character.traits[t].base++
 				sumTraits()
@@ -91,7 +91,7 @@
 			<div class='section-card'>
 				<div>
 					<span class='stat-label'>
-						{capitalize($character.traits[t].name)}
+						{Capitalize($character.traits[t].name)}
 					</span>
 				</div>
 				<div class='stat-column'>

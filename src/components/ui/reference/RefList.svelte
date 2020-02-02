@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition'
-	import { capitalize } from '../../helpers/Capitalize'
-	import { ToggleVisible } from '../../helpers/ToggleVisible'
+	import Capitalize from '../../helpers/Capitalize'
+	import ToggleVisible from '../../helpers/ToggleVisible'
 
 	export let list
 </script>
@@ -10,7 +10,7 @@
 	<div class='separator'/>
 	{#each list as rule}
 		<div class='box' on:click={() => list = ToggleVisible(rule, list)}>
-			<span class='name'>{capitalize(rule.name)}</span>
+			<span class='name'>{Capitalize(rule.name)}</span>
 			{#if rule.visible}
 				<div class='description'>
 					{#each rule.description as desc}
@@ -30,7 +30,7 @@
 								<li class='sub-li'>
 									<div class='sub-box'>
 										<span class='sub-name'>
-											{capitalize(subrule.name)}
+											{Capitalize(subrule.name)}
 										</span>
 										<div class='sub-notes'>
 											{@html subrule.description}

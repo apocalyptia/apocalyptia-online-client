@@ -1,9 +1,9 @@
-import { arrayToObject } from '../helpers/ArrayToObject'
+import ArrayToObject from '../helpers/ArrayToObject'
 import Traits from '../rules/Traits'
 import Skills from '../rules/Skills'
 import Properties from '../rules/Properties'
 
-export class Character {
+class Character {
 	constructor() {
 		this.completed = false,
 		this.options = {
@@ -44,9 +44,9 @@ export class Character {
 				value: ``
 			},
 		},
-		this.traits = arrayToObject(Traits, `name`),
-		this.skills = arrayToObject(Skills, `name`),
-		this.properties = arrayToObject(Properties, `name`),
+		this.traits = ArrayToObject(Traits, `name`),
+		this.skills = ArrayToObject(Skills, `name`),
+		this.properties = ArrayToObject(Properties, `name`),
 		this.abilities = [],
 		this.gear = {
 			armor: {
@@ -81,3 +81,5 @@ export class Character {
 		})
 	}
 }
+
+export default Character

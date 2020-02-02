@@ -1,17 +1,17 @@
 <script>
 	import { femaleNames, maleNames } from '..//helpers/lists/names.js'
-	import { random } from '../helpers/Random'
+	import RandomRoll from '../helpers/Random'
 	import { character } from '../../stores'
 
 	const randomName = () => {
 		if ($character.description.gender.value == 'Male') {
-			$character.description.characterName.value = random(maleNames)
+			$character.description.characterName.value = Random(maleNames)
 		}
 		else if ($character.description.gender.value == 'Female') {
-			$character.description.characterName.value = random(femaleNames)
+			$character.description.characterName.value = Random(femaleNames)
 		} 
 		else {
-			$character.description.characterName.value = random([...femaleNames, ...maleNames])
+			$character.description.characterName.value = Random([...femaleNames, ...maleNames])
 		}
 	}
 
@@ -25,7 +25,7 @@
 	const randomWeight = () => { $character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
 
 	const randomHair = () => {
-		$character.description.hair.value = random(
+		$character.description.hair.value = Random(
 			[
 				'Auburn',
 				'Bald',
@@ -39,7 +39,7 @@
 		)
 	}
 
-	const randomSkin = () => { $character.description.skin.value = random(
+	const randomSkin = () => { $character.description.skin.value = Random(
 			[
 				'Black',
 				'Brown',
@@ -51,7 +51,7 @@
 		) 
 	}
 
-	const randomGender = () => { $character.description.gender.value = random(['Female', 'Male']) }
+	const randomGender = () => { $character.description.gender.value = Random(['Female', 'Male']) }
 
 	const randomAge = () => { $character.description.age.value = Math.ceil((Math.random() * 33) + 17) }
 

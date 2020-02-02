@@ -1,13 +1,14 @@
 <script>
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores'
-	import { ToggleVisible } from '../helpers/ToggleVisible'
+	import ToggleVisible from '../helpers/ToggleVisible'
 	import Abilities, {
 		AbilitiesExplanation,
 		AbilityGroups
 	} from '../rules/Abilities'
+	import AbilityGroup from '../ui/creator/AbilityGroup.svelte'
+	import AbilityCard from '../ui/creator/AbilityCard.svelte'
 	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
-	import AbilityModal from '../ui/creator/AbilityModal.svelte'
 
 
 	let spentXP = 0
@@ -16,15 +17,13 @@
 
 	let remaining = getRemaining()
 
-	let xpGroups = [...AbilityGroups]
+	let MasterAbilityList = Abilities
 
 	const resetAbilities = () => {
 		for (let a = 0; a < $character.abilities.length; ++a) {
 			$character.abilities[a].taken = 0
 		}
 	}
-
-	let MasterAbilityList = Abilities
 
 	beforeUpdate(() => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
@@ -38,31 +37,15 @@
 	<div class='remaining'><h3>Starting XP Remaining: {remaining}</h3></div>
 	{#if $character.abilities.length}
 		<div class='section-card'>
-			<AbilityCurrent />
+			<AbilityCurrent {MasterAbilityList}/>
 		</div>
 	{/if}
 	<div class='section-card'>
 		<div class='abilities-list'>
-			{#each MasterAbilityList as ability, index}
-				{#if index == 0 || ability.xp != MasterAbilityList[index-1].xp}
-					<div class='xp-group-title'>{ability.xp}XP Abilities</div>
-				{/if}
-					<div class='ability-card' on:click={() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
-						<div class='card-row'>
-							<span class='ability-name'>{ability.name}
-								{#if ability.options[0] != ""}
-									:&nbsp;{ability.options[0].name}
-								{/if}
-							</span>
-							<span class='ability-taken'>Taken: {ability.taken}</span>
-						</div>
-						<div class='card-row'>
-							<span class='ability-description'>{ability.description}</span>
-						</div>
-					</div>
-				{#if ability.visible == true}
-					<AbilityModal on:close='{() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}' {ability} />
-				{/if}
+			{#each AbilityGroups as group, index}
+				<div class='ability-group'>
+					<AbilityGroup {group} {MasterAbilityList}/>
+				</div>
 			{/each}
 		</div>
 	</div>
@@ -72,6 +55,9 @@
 </div>
 
 <style>
+	.ability-group {
+		margin: 1rem;
+	}
 	.explanation {
 		padding: 1rem;
 	}
@@ -84,21 +70,5 @@
 	.remaining,
 	.button-row {
 		text-align: center;
-	}
-	.ability-card {
-		margin: 1rem 0;
-	}
-	.card-row {
-		display: flex;
-		justify-content: space-between;
-	}
-	.ability-name{
-		flex: 2;
-		font-weight: bold;
-		text-decoration: underline;
-	}
-	.ability-taken {
-		flex: 1;
-		font-weight: bold;
 	}
 </style>

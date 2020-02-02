@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte'
 	import { character } from '../../stores'
-	import { capitalize } from '../helpers/Capitalize'
-	import { ToggleVisible } from '../helpers/ToggleVisible'
-	import { random } from '../helpers/Random'
+	import Capitalize from '../helpers/Capitalize'
+	import ToggleVisible from '../helpers/ToggleVisible'
+	import RandomRoll from '../helpers/Random'
 	import { traitMax } from '../rules/Traits'
 	import { 
 		startingSkillPoints,
@@ -60,7 +60,7 @@
 	const randomSkills = () => {
 		resetSkills()
 		while(remaining > 0) {
-			let s = random(skills)
+			let s = Random(skills)
 			if ($character.skills[s].base < $character.skills[s].max) {
 				$character.skills[s].base++
 				sumSkills()
@@ -91,7 +91,7 @@
 					class='parent-trait-title'
 					on:click={() => skillGroups = ToggleVisible(group, skillGroups)}
 				>
-					<h3>{capitalize($character.traits[group.name].name)} Skills</h3>
+					<h3>{Capitalize($character.traits[group.name].name)} Skills</h3>
 				</div>
 				{#if group.visible}
 					{#each skills as s}
@@ -103,7 +103,7 @@
 							<div class='section-card'>
 								<div class='stat-column name-column'>
 									<span class='stat-label'>
-										{capitalize($character.skills[s].name)}
+										{Capitalize($character.skills[s].name)}
 									</span>
 								</div>
 								<div class='stat-column'>

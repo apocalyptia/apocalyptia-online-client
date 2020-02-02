@@ -1,6 +1,6 @@
 <script type='module'>
 	import * as sapper from '@sapper/app'
-	import { capitalize } from '../../components/helpers/Capitalize'
+	import Capitalize from '../../components/helpers/Capitalize'
 	import RefList from '../../components/ui/reference/RefList.svelte'
 	import { refToC } from '../../stores'
 
@@ -10,6 +10,6 @@
 </script>
 
 <div class='ref-page'>
-	<div class='ref-header'>{capitalize(slug)} Rules</div>
+	<div class='ref-header'>{Capitalize(slug)} Rules</div>
 	<RefList list={$refToC.modules[$refToC.current]} />
 </div>

@@ -7,6 +7,9 @@ import { LanguageList } from '../helpers/lists/languages'
 import { UnorthodoxList } from '../helpers/lists/unorthodox'
 
 
+let id = 0
+
+
 // 3 XP Abilities
 
 export const FavoriteWeapon = new Ability({
@@ -397,37 +400,43 @@ export const AbilitiesList = [
 ]
 
 
-const TempAbilityList = []
-for (let a = 0; a < AbilitiesList.length; ++a) {
-	if (AbilitiesList[a].options.length > 1) {
-		for (let o = 0; o < AbilitiesList[a].options.length; ++o) {
+
+const IdTag = (list) => {
+	let newList = []
+	for (let i = 0; i < list.length; ++i) {
+		if (list[i].options[0]) {
+			for (let o = 0; o < list[i].options.length; ++o) {
+				let newAbility = new Ability({
+					name: list[i].name,
+					description: list[i].description,
+					max: list[i].max,
+					xp: list[i].xp,
+					taken: list[i].taken,
+					options: [list[i].options[o]],
+					selection: o
+				})
+				newList.push(newAbility)
+			}
+		} else {
 			let newAbility = new Ability({
-				name: AbilitiesList[a].name,
-				description: AbilitiesList[a].description,
-				max: AbilitiesList[a].max,
-				xp: AbilitiesList[a].xp,
-				taken: AbilitiesList[a].taken,
-				options: [AbilitiesList[a].options[o]],
-				selection: o
+				name: list[i].name,
+				description: list[i].description,
+				max: list[i].max,
+				xp: list[i].xp,
+				taken: list[i].taken
 			})
-			TempAbilityList.push(newAbility)
+			newList.push(newAbility)
 		}
 	}
-	else {
-		let newAbility = new Ability({
-			name: AbilitiesList[a].name,
-			description: AbilitiesList[a].description,
-			max: AbilitiesList[a].max,
-			xp: AbilitiesList[a].xp,
-			taken: AbilitiesList[a].taken
-		})
-		TempAbilityList.push(newAbility)
+	for (let a = 0; a < newList.length; ++a) {
+		newList[a].id = id
+		id++
 	}
+	return newList
 }
-for (let i = 0; i < TempAbilityList.length; ++i) {
-	TempAbilityList[i].id = i
-}
-export const Abilities = [...TempAbilityList]
+
+
+export const Abilities = IdTag(AbilitiesList)
 
 
 export const AbilitiesExplanation = `Abilities are Character upgrades purchased with XP.`

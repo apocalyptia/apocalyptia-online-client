@@ -1,7 +1,3 @@
-export const random = (arr) => {
-	return arr[Math.floor(Math.random() * arr.length)]
-}
-
 export const d6 = () => {
 	return Math.ceil(Math.random() * 6)
 }
@@ -23,3 +19,9 @@ export const d6Roll = () => {
 	}
 	return result
 }
+
+const RandomRoll = (a) => {
+	return a[Math.floor(Math.random() * a.length)]
+}
+
+export default RandomRoll

@@ -4,13 +4,13 @@
 	import MeleeWeaponList from '../rules/gear/weapons/MeleeWeaponList'
 	import RangedWeaponList from '../rules/gear/weapons/RangedWeaponList'
 	import { MasterGearList } from '../helpers/lists/gear'
-	import { random } from '../helpers/Random'
+	import RandomRoll from '../helpers/Random'
 	import { character } from '../../stores'
 
 	let armorResult = ""
 
 	const rollArmor = () => {
-		armorResult = random(ArmorList)
+		armorResult = Random(ArmorList)
 	}
 </script>
 

@@ -1,4 +1,4 @@
-export const arrayToObject = (array, key) => {
+const ArrayToObject = (array, key) => {
 	const initialValue = {}
 	return array.reduce((obj, item) => {
 		return {
@@ -7,3 +7,5 @@ export const arrayToObject = (array, key) => {
 		}
 	}, initialValue)
 }
+
+export default ArrayToObject

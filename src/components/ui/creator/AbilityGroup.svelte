@@ -1,23 +1,23 @@
 <script>
-	import { ToggleVisible } from '../../helpers/ToggleVisible'
-	import { AbilityGroups } from '../../rules/Abilities'
+	import ToggleVisible from '../../helpers/ToggleVisible'
 	import AbilityCard from './AbilityCard.svelte'
 
 	export let group
-
-	let xpGroups = [...AbilityGroups]
+	export let MasterAbilityList
 </script>
 
 <div class='xp-group-section'>
 	<div
 		class='xp-group-title'
-		on:click={() => xpGroups = ToggleVisible(group, xpGroups)}
+		on:click={() => group = ToggleVisible(group, group)}
 	>
 		{group.name}XP Abilities
 	</div>
 	{#if group.visible}
 		{#each group.list as ability}
-			<AbilityCard {ability} />
+			<div class='ability-card'>
+				<AbilityCard {ability} {MasterAbilityList}/>
+			</div>
 		{/each}
 	{/if}
 </div>
@@ -30,5 +30,10 @@
 	.xp-group-title {
 		font-size: 1.25rem;
 		text-align: center;
+	}
+	.ability-card {
+		margin: 1rem;
+		padding: .5rem;
+		border: 1px solid lime;
 	}
 </style>

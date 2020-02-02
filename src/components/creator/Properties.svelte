@@ -1,7 +1,7 @@
 <script>
-	import { d6 } from '../helpers/Random'
 	import { character } from '../../stores'
-	import { capitalize } from '../helpers/Capitalize'
+	import { d6 } from '../helpers/Random'
+	import Capitalize from '../helpers/Capitalize'
 	import { PropertyExplanation } from '../rules/Properties'
 
 
@@ -26,21 +26,21 @@
 		<div class='prop-col'>
 			<div class='left-col'>
 				<div class='prop-item'>
-					{capitalize($character.properties.health.name)}: 
+					{Capitalize($character.properties.health.name)}: 
 					{$character.properties.health.score}
 				</div>
 				<div class='prop-item'>
-					{capitalize($character.properties.psyche.name)}: 
+					{Capitalize($character.properties.psyche.name)}: 
 					{$character.properties.psyche.score}
 				</div>
 			</div>
 			<div class='right-col'>
 				<div class='prop-item'>
-					{capitalize($character.properties.speed.name)}: 
+					{Capitalize($character.properties.speed.name)}: 
 					{$character.properties.speed.score}
 				</div>
 				<div class='prop-item'>
-					{capitalize($character.properties.intellect.name)}: 
+					{Capitalize($character.properties.intellect.name)}: 
 					{$character.properties.intellect.score}
 				</div>
 			</div>
@@ -49,20 +49,20 @@
 			<div class='def-header centered'>Defenses</div>
 			<div class='left-col'>
 				<div class='prop-item centered'>
-					{capitalize($character.properties.block.name)}: 
+					{Capitalize($character.properties.block.name)}: 
 					{$character.properties.block.score}
 				</div>
 			</div>
 			<div class='right-col'>
 				<div class='prop-item centered'>
-					{capitalize($character.properties.dodge.name)}: 
+					{Capitalize($character.properties.dodge.name)}: 
 					{$character.properties.dodge.score}
 				</div>
 			</div>
 		</div>
 		<div class='prop-col luck'>
 			<div class='prop-item centered'>
-				{capitalize($character.properties.luck.name)}: 
+				{Capitalize($character.properties.luck.name)}: 
 				{$character.properties.luck.score}
 			</div>
 			<div class='prop-item'>

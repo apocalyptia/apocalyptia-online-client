@@ -1,10 +1,10 @@
 <script>
 	import { character } from '../../../stores'
-	import Abilities from '../../rules/Abilities'
+
+	export let MasterAbilityList
 
 	const updateAbilities = () => {
-		$character.abilities = Abilities.filter(ability => ability.taken)
-		console.log('Character Abilities: ', $character.abilities)
+		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
 	}
 </script>
 
@@ -22,12 +22,11 @@
 				<div class='current-ability-row'>
 					<span class='l-col'>
 						{ability.name}
-						{#if ability.options[0] != ""}
+						{#if ability.options[0]}
 							&nbsp;({ability.options[0].name})
 						{/if}
 					</span>
 					<span class='s-col'>{ability.xp}</span>
-
 					<span class='s-col'>{ability.max}</span>
 					<span class='s-col'>
 						<select
@@ -60,6 +59,9 @@
 		align-items: baseline;
 		display: flex;
 		justify-content: space-between;
+	}
+	.current-ability-row {
+		margin: 1rem 0;
 	}
 	.l-col {
 		flex: 3;

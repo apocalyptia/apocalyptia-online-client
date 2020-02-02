@@ -1,3 +1,4 @@
+import Capitalize from '../Capitalize'
 import Traits from '../../rules/Traits'
 import Skills from '../../rules/Skills'
 
@@ -9,7 +10,7 @@ Traits.forEach((trait) => {
 		if (skill.parent != trait.name) {
 			uList.push(
 				{
-					name: `${tname} - ${sname}`
+					name: `${Capitalize(tname)} - ${Capitalize(sname)}`
 				}
 			)
 		}

@@ -1,6 +1,6 @@
 import * as sapper from '@sapper/app'
 
-export class TableOfContents {
+class TableOfContents {
 	constructor(name='', root='/', chapters=[], modules=[]) {
 		this.name = name,
 		this.root = root,
@@ -41,3 +41,5 @@ export class TableOfContents {
 		this.current = this.starting
 	}
 }
+
+export default TableOfContents
