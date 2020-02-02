@@ -10,7 +10,7 @@
 	let armorResult = ""
 
 	const rollArmor = () => {
-		armorResult = Random(ArmorList)
+		armorResult = RandomRoll(ArmorList)
 	}
 </script>
 

@@ -60,7 +60,7 @@
 	const randomSkills = () => {
 		resetSkills()
 		while(remaining > 0) {
-			let s = Random(skills)
+			let s = RandomRoll(skills)
 			if ($character.skills[s].base < $character.skills[s].max) {
 				$character.skills[s].base++
 				sumSkills()

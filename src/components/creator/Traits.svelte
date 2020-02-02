@@ -62,7 +62,7 @@
 	const randomTraits = () => {
 		resetTraits()
 		while(remaining > 0) {
-			let t = Random(traits)
+			let t = RandomRoll(traits)
 			if ($character.traits[t].base < traitMax) {
 				$character.traits[t].base++
 				sumTraits()
