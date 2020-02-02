@@ -5,7 +5,7 @@
 	export let ability
 	export let MasterAbilityList
 
-	ability = MasterAbilityList.filter(a => a.name == ability.name)
+	ability = MasterAbilityList.filter(a => a.name == ability.name)[0]
 
 	console.log(ability)
 
