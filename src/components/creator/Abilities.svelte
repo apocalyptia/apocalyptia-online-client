@@ -2,7 +2,8 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores'
 	import ToggleVisible from '../helpers/ToggleVisible'
-	import Abilities, {
+	import {
+		AbilitiesList,
 		AbilitiesExplanation,
 		AbilityGroups
 	} from '../rules/Abilities'
@@ -17,7 +18,7 @@
 
 	let remaining = getRemaining()
 
-	let MasterAbilityList = Abilities
+	let MasterAbilityList = AbilitiesList
 
 	const resetAbilities = () => {
 		for (let a = 0; a < $character.abilities.length; ++a) {

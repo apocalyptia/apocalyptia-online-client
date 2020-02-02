@@ -404,7 +404,7 @@ export const AbilityGroups = [
 ]
 
 
-export const AbilitiesList = [
+export const Abilities = [
 	...XP3Abilities,
 	...XP6Abilities,
 	...XP9Abilities,
@@ -452,7 +452,7 @@ const IdTag = (list) => {
 }
 
 
-export const Abilities = IdTag(AbilitiesList)
+export const AbilitiesList = IdTag(Abilities)
 
 
 export const AbilitiesExplanation = `Abilities are Character upgrades purchased with XP.`
