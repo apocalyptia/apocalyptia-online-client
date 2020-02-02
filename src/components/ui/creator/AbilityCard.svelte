@@ -2,7 +2,6 @@
 	import { character } from '../../../stores'
 	import Capitalize from '../../helpers/Capitalize'
 	import ToggleVisible from '../../helpers/ToggleVisible'
-	import Abilities from '../../rules/Abilities'
 	import AbilityModal from './AbilityModal.svelte'
 
 	export let ability

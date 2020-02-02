@@ -1,5 +1,11 @@
-const Capitalize = (word) => {
-	return word.charAt(0).toUpperCase() + word.slice(1)
+const Capitalize = (string) => {
+	return string
+		.toLowerCase()
+		.split(' ')
+		.map(word => {
+			return word.charAt(0).toUpperCase() + word.substring(1)
+		})
+		.join(' ')
 }
 
 export default Capitalize
