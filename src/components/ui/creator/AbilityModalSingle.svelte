@@ -7,8 +7,6 @@
 
 	ability = MasterAbilityList.filter(a => a.name == ability.name)[0]
 
-	console.log(ability)
-
 	const updateAbilities = () => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
 	}
