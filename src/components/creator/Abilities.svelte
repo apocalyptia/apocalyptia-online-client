@@ -27,7 +27,6 @@
 
 	beforeUpdate(() => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-		console.log('Character Abilities: ', $character.abilities)
 	})
 </script>
 
