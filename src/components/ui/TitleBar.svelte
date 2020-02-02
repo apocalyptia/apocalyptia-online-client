@@ -58,7 +58,7 @@
 		text-align: center;
 		top: 0;
 		transition: top 0.3s linear;
-		width: 100%;
+		width: 100vw;
 		z-index: 1;
 	}
 	.pin {

@@ -5,15 +5,13 @@
 	<title>Apocalyptia Online</title>
 </svelte:head>
 
-<div>
-	<a href="/creator">
-		<button class='display-button'>
-			Character Creator
-		</button>
-	</a>
-	<a href="/reference">
-		<button class='display-button'>
-			Rules Reference
-		</button>
-	</a>
-</div>
+<a href="/creator">
+	<button class='display-button'>
+		Character Creator
+	</button>
+</a>
+<a href="/reference">
+	<button class='display-button'>
+		Rules Reference
+	</button>
+</a>

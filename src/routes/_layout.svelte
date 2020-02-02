@@ -18,7 +18,7 @@
 		top: 3rem;
 		flex-wrap: nowrap;
 		flex-direction: column;
-		height: fit-content;
+		height: calc(100vh - 3rem);
 		padding-bottom: 3rem;
 		text-align: center;
 		width: 100%;

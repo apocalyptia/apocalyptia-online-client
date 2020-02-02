@@ -89,7 +89,7 @@
 		text-align: left;
 	}
 	.def-list {
-		border: 1px solid lime;
+		border: 1px solid;
 		margin: .5rem;
 		padding: .5rem;
 	}
@@ -106,7 +106,7 @@
 		margin-top: 1rem;
 	}
 	.prop-col {
-		border: 1px solid lime;
+		border: 1px solid;
 		margin: .5rem;
 		padding: .5rem;
 	}

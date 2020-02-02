@@ -24,7 +24,7 @@
 
 <style>
 	.xp-group-section {
-		border: 1px solid lime;
+		border: 1px solid;
 		padding: 1rem;
 	}
 	.xp-group-title {
@@ -34,6 +34,6 @@
 	.ability-card {
 		margin: 1rem;
 		padding: .5rem;
-		border: 1px solid lime;
+		border: 1px solid;
 	}
 </style>

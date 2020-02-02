@@ -3,7 +3,6 @@
 Abilities.js:
 	Add a 9xp Ability.
 	Add a 6xp Ability.
-	Add feature to modify Abilities using AbilityModal.svelte
 
 Gear.js:
 	Check all item Notes.

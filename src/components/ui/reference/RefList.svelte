@@ -55,7 +55,7 @@
 		margin-bottom: 3rem;
 	}
 	.box {
-		border: 1px dotted lime;
+		border: 1px dotted;
 		padding: 1rem;
 	}
 	.name {

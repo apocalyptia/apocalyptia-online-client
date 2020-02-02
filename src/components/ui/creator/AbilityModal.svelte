@@ -60,7 +60,7 @@
 		padding: 1rem;
 		border-radius: 0.2rem;
 		background: rgba(0,0,0,0.9);
-		border: 1px solid lime;
+		border: 1px solid;
 	}
 	.button-row {
 		text-align: center;

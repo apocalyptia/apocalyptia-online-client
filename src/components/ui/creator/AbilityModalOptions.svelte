@@ -37,7 +37,7 @@
 	}
 	.ability-section {
 		align-items: center;
-		border: 1px dashed lime;
+		border: 1px dashed;
 		display: flex;
 		margin: 1rem auto;
 		padding: .5rem;
