@@ -1,11 +1,11 @@
 <script>
+	import { character } from '../../stores'
+	import RandomRoll from '../helpers/Random'
+	import MasterGearList from '../rules/Gear'
 	import AmmoList from '../rules/gear/weapons/AmmoList'
 	import ArmorList from '../rules/gear/ArmorList'
 	import MeleeWeaponList from '../rules/gear/weapons/MeleeWeaponList'
 	import RangedWeaponList from '../rules/gear/weapons/RangedWeaponList'
-	import { MasterGearList } from '../helpers/lists/gear'
-	import RandomRoll from '../helpers/Random'
-	import { character } from '../../stores'
 
 	let armorResult = ""
 

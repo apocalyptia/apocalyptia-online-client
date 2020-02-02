@@ -2,7 +2,7 @@ import Ability from '../classes/Ability'
 import Traits from './Traits'
 import Skills, { SpecialtyList } from './Skills'
 import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
-import { WeaponList } from '../helpers/lists/gear'
+import { WeaponList } from './Gear'
 import { LanguageList } from '../helpers/lists/languages'
 import { UnorthodoxList } from '../helpers/lists/unorthodox'
 
