@@ -31,8 +31,8 @@ export const experience = new Property({
 		`[B x 6] starting. Experience represents how much you have learned up to now. You accumulate additional Experience Points ("XP") = [Intellect] for each game session that you survive. You also get +1 XP every time you roll a Botch. The Narrator may also give bonus XP. You may spend your XP to buy Abilities to permanently improve your character. You may also spend 1XP per round to regain 1 Luck Point.`
 	],
 	formula: (character) => character.traits.brains.score * 3,
-	base: 3,
-	score: 3
+	score: 3,
+	remaining: 3
 })
 
 export const intellect = new Property({

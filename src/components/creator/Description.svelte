@@ -5,13 +5,13 @@
 
 	const randomName = () => {
 		if ($character.description.gender.value == 'Male') {
-			$character.description.characterName.value = Random(maleNames)
+			$character.description.characterName.value = RandomRoll(maleNames)
 		}
 		else if ($character.description.gender.value == 'Female') {
-			$character.description.characterName.value = Random(femaleNames)
+			$character.description.characterName.value = RandomRoll(femaleNames)
 		} 
 		else {
-			$character.description.characterName.value = Random([...femaleNames, ...maleNames])
+			$character.description.characterName.value = RandomRoll([...femaleNames, ...maleNames])
 		}
 	}
 
@@ -25,7 +25,7 @@
 	const randomWeight = () => { $character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs` } // 101 to 200 lbs
 
 	const randomHair = () => {
-		$character.description.hair.value = Random(
+		$character.description.hair.value = RandomRoll(
 			[
 				'Auburn',
 				'Bald',
@@ -39,7 +39,7 @@
 		)
 	}
 
-	const randomSkin = () => { $character.description.skin.value = Random(
+	const randomSkin = () => { $character.description.skin.value = RandomRoll(
 			[
 				'Black',
 				'Brown',
@@ -51,7 +51,7 @@
 		) 
 	}
 
-	const randomGender = () => { $character.description.gender.value = Random(['Female', 'Male']) }
+	const randomGender = () => { $character.description.gender.value = RandomRoll(['Female', 'Male']) }
 
 	const randomAge = () => { $character.description.age.value = Math.ceil((Math.random() * 33) + 17) }
 

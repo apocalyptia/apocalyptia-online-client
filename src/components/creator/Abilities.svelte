@@ -27,6 +27,8 @@
 
 	beforeUpdate(() => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
+		spentXP = $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+		remaining = getRemaining()
 	})
 </script>
 
