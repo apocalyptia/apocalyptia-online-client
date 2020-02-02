@@ -17,9 +17,9 @@ export const Ax = new MeleeWeapon({
 	dmg: 5,
 	rng: 2,
 	attributes: [
+		TwoHanded,
 		Chop,
-		Slow,
-		TwoHanded
+		Slow
 	]
 })
 
@@ -70,8 +70,8 @@ export const Hatchet = new MeleeWeapon({
 	dmg: 2,
 	rng: 1,
 	attributes: [
-		Chop,
-		OneHanded
+		OneHanded,
+		Chop
 	]
 })
 
@@ -93,8 +93,8 @@ export const Machete = new MeleeWeapon({
 	dmg: 3,
 	rng: 2,
 	attributes: [
-		Chop,
-		OneHanded
+		OneHanded,
+		Chop
 	]
 })
 
@@ -115,8 +115,8 @@ export const Sledgehammer = new MeleeWeapon({
 	dmg: 5,
 	rng: 2,
 	attributes: [
-		Slow,
-		TwoHanded
+		TwoHanded,
+		Slow
 	]
 })
 
@@ -126,8 +126,8 @@ export const Spear = new MeleeWeapon({
 	dmg: 4,
 	rng: 3,
 	attributes: [
-		Pierce,
-		TwoHanded
+		TwoHanded,
+		Pierce
 	]
 })
 

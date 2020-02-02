@@ -1,4 +1,11 @@
 import Armor from '../../classes/Armor'
+import {
+	Camo,
+	CR,
+	FR,
+	Impermeable,
+	Mask
+} from './attributes/ArmorAttributesList'
 
 
 export const AthleticHelmet = new Armor({
@@ -21,7 +28,7 @@ export const CombatHelmet = new Armor({
 	dr: 3,
 	loc: `Head`,
 	attributes: [
-		`Camo`
+		Camo
 	]
 })
 
@@ -31,8 +38,8 @@ export const Coveralls = new Armor({
 	dr: 1,
 	loc: `Arms, Torso, Legs`,
 	attributes: [
-		`Camo`,
-		`CR`
+		Camo,
+		CR
 	]
 })
 
@@ -42,9 +49,9 @@ export const FirefighterSuit = new Armor({
 	dr: 2,
 	loc: `Full Body`,
 	attributes: [
-		`CR`,
-		`FR`,
-		`Mask`
+		CR,
+		FR,
+		Mask
 	]
 })
 
@@ -54,7 +61,7 @@ export const FlakJacket = new Armor({
 	dr: 2,
 	loc: `Torso`,
 	attributes: [
-		`Camo`
+		Camo
 	]
 })
 
@@ -64,8 +71,8 @@ export const GhillieSuit = new Armor({
 	dr: 1,
 	loc: `Full Body`,
 	attributes: [
-		`Camo`,
-		`CR`
+		Camo,
+		CR
 	]
 })
 
@@ -75,8 +82,8 @@ export const HikingBoots = new Armor({
 	dr: 1,
 	loc: `Legs`,
 	attributes: [
-		`CR`,
-		`FR`
+		CR,
+		FR
 	]
 })
 
@@ -86,8 +93,8 @@ export const KevlarVest = new Armor({
 	dr: 3,
 	loc: `Torso`,
 	attributes: [
-		`CR`,
-		`FR`
+		CR,
+		FR
 	]
 })
 
@@ -104,8 +111,8 @@ export const MotorcycleHelmet = new Armor({
 	dr: 1,
 	loc: `Head`,
 	attributes: [
-		`FR`,
-		`Mask`
+		FR,
+		Mask
 	]
 })
 
@@ -115,8 +122,8 @@ export const HazmatSuit = new Armor({
 	dr: 0,
 	loc: `Full Body`,
 	attributes: [
-		`Mask`,
-		`Impermeable`
+		Mask,
+		Impermeable
 	]
 })
 
@@ -126,9 +133,9 @@ export const PlateCarrier = new Armor({
 	dr: 4,
 	loc: `Torso`,
 	attributes: [
-		`Camo`,
-		`CR`,
-		`FR`
+		Camo,
+		CR,
+		FR
 	]
 })
 
@@ -138,7 +145,7 @@ export const WinterCoat = new Armor({
 	dr: 1,
 	loc: `Arms, Torso`,
 	attributes: [
-		`CR`
+		CR
 	]
 })
 
@@ -148,7 +155,7 @@ export const WorkGloves = new Armor({
 	dr: 1,
 	loc: `Arms`,
 	attributes: [
-		`FR`
+		FR
 	]
 })
 

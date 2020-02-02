@@ -103,7 +103,6 @@
 	}
 	.def-header {
 		font-size: 1.25rem;
-		margin-top: 1rem;
 	}
 	.prop-col {
 		border: 1px solid;

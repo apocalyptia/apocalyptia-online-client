@@ -45,4 +45,4 @@ const ArmorAttributesList = [
 	Mask
 ]
 
-export const ArmorAttributesList
+export default ArmorAttributesList

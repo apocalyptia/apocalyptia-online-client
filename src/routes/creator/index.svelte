@@ -16,7 +16,7 @@
 		{ name: 'Gear', content: Gear }
 	]
 
-	let selected = Description
+	let selected = Gear
 </script>
 
 <div class='page-container'>

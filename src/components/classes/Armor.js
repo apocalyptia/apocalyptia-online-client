@@ -7,7 +7,7 @@ export default class Armor extends Gear {
 		sz,
 		dr,
 		loc,
-		attributes
+		attributes=[]
 	}) {
 		super({
 			name,
