@@ -52,10 +52,11 @@
 	}
 	.modal {
 		position: fixed;
-		left: 10%;
-		right: 10%;
-		top: 10%;
-		bottom: 10%;
+		left: 10vw;
+		right: 10vw;
+		top: 10vh;
+		height: fit-content;
+		max-height: 75vh;
 		overflow: scroll;
 		padding: 1rem;
 		border-radius: 0.2rem;

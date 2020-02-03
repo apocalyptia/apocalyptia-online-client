@@ -1,5 +1,6 @@
 <script>
 	import { character } from '../../../stores'
+	import Capitalize from '../../helpers/Capitalize'
 
 	export let MasterAbilityList
 
@@ -23,7 +24,7 @@
 					<span class='l-col'>
 						{ability.name}
 						{#if ability.options[0]}
-							&nbsp;({ability.options[0].name})
+							&nbsp;({Capitalize(ability.options[0].name)})
 						{/if}
 					</span>
 					<span class='s-col'>{ability.xp}</span>
@@ -59,9 +60,11 @@
 		align-items: baseline;
 		display: flex;
 		justify-content: space-between;
-	}
-	.current-ability-row {
 		margin: 1rem 0;
+	}
+	.current-abilities-header {
+		font-weight: bold;
+		text-decoration: underline;
 	}
 	.l-col {
 		flex: 3;
