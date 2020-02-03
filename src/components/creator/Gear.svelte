@@ -47,6 +47,9 @@
 </script>
 
 <div class='gear-step'>
+	<div class='step-title'>
+		<h2>Gear</h2>
+	</div>
 	<div class='section-card'>
 		<h3>Melee Weapon</h3>
 		<div class='table'>
