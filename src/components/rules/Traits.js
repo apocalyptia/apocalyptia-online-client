@@ -5,18 +5,20 @@ import {
 	ConstitutionSkills,
 	DemeanorSkills
 } from './Skills'
+import Capitalize from '../helpers/Capitalize'
 
 
-const AgilitySkillList = AgilitySkills.map(skill=> skill.name).join(', ')
+const AgilitySkillList = AgilitySkills
+	.map(skill=> Capitalize(skill.name)).join(', ')
 
-const BrainsSkillList = BrainsSkills.map(skill=> skill.name).join(', ')
+const BrainsSkillList = BrainsSkills
+	.map(skill=> Capitalize(skill.name)).join(', ')
 
-const ConstitutionSkillList = ConstitutionSkills.map(skill=> skill.name).join(', ')
+const ConstitutionSkillList = ConstitutionSkills
+	.map(skill=> Capitalize(skill.name)).join(', ')
 
-const DemeanorSkillList = DemeanorSkills.map(skill=> skill.name).join(', ')
-
-
-
+const DemeanorSkillList = DemeanorSkills
+	.map(skill=> Capitalize(skill.name)).join(', ')
 
 
 export const traitMax = 6

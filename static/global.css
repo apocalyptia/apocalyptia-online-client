@@ -41,7 +41,6 @@ body {
 /* Layout Level */
 
 table {
-	border: 2px solid var(--txt-color);
 	border-collapse: collapse;
 	margin: 0 auto;
 }

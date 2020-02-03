@@ -12,21 +12,21 @@ export const AthleticHelmet = new Armor({
 	name: `Athletic Helmet`,
 	sz: 2,
 	dr: 1,
-	loc: `Head`
+	location: `Head`
 })
 
 export const AthleticPads = new Armor({
 	name: `Athletic Pads`,
 	sz: 2,
 	dr: 1,
-	loc: `Torso`
+	location: `Torso`
 })
 
 export const CombatHelmet = new Armor({
 	name: `Combat Helmet`,
 	sz: 2,
 	dr: 3,
-	loc: `Head`,
+	location: `Head`,
 	attributes: [
 		Camo
 	]
@@ -36,7 +36,7 @@ export const Coveralls = new Armor({
 	name: `Coveralls`,
 	sz: 3,
 	dr: 1,
-	loc: `Arms, Torso, Legs`,
+	location: `Arms, Torso, Legs`,
 	attributes: [
 		Camo,
 		CR
@@ -47,7 +47,7 @@ export const FirefighterSuit = new Armor({
 	name: `Firefighter Suit`,
 	sz: 5,
 	dr: 2,
-	loc: `Full Body`,
+	location: `Full Body`,
 	attributes: [
 		CR,
 		FR,
@@ -59,7 +59,7 @@ export const FlakJacket = new Armor({
 	name: `Flak Jacket`,
 	sz: 4,
 	dr: 2,
-	loc: `Torso`,
+	location: `Torso`,
 	attributes: [
 		Camo
 	]
@@ -69,7 +69,7 @@ export const GhillieSuit = new Armor({
 	name: `Ghillie Suit`,
 	sz: 4,
 	dr: 1,
-	loc: `Full Body`,
+	location: `Full Body`,
 	attributes: [
 		Camo,
 		CR
@@ -80,7 +80,7 @@ export const HikingBoots = new Armor({
 	name: `Hiking Boots`,
 	sz: 2,
 	dr: 1,
-	loc: `Legs`,
+	location: `Legs`,
 	attributes: [
 		CR,
 		FR
@@ -91,7 +91,7 @@ export const KevlarVest = new Armor({
 	name: `Kevlar Vest`,
 	sz: 4,
 	dr: 3,
-	loc: `Torso`,
+	location: `Torso`,
 	attributes: [
 		CR,
 		FR
@@ -102,14 +102,14 @@ export const LeatherJacket = new Armor({
 	name: `Leather Jacket`,
 	sz: 2,
 	dr: 1,
-	loc: `Arms, Torso`
+	location: `Arms, Torso`
 })
 
 export const MotorcycleHelmet = new Armor({
 	name: `Motorcycle Helmet`,
 	sz: 2,
 	dr: 1,
-	loc: `Head`,
+	location: `Head`,
 	attributes: [
 		FR,
 		Mask
@@ -120,7 +120,7 @@ export const HazmatSuit = new Armor({
 	name: `Hazmat Suit`,
 	sz: 2,
 	dr: 0,
-	loc: `Full Body`,
+	location: `Full Body`,
 	attributes: [
 		Mask,
 		Impermeable
@@ -131,7 +131,7 @@ export const PlateCarrier = new Armor({
 	name: `Plate Carrier`,
 	sz: 4,
 	dr: 4,
-	loc: `Torso`,
+	location: `Torso`,
 	attributes: [
 		Camo,
 		CR,
@@ -143,7 +143,7 @@ export const WinterCoat = new Armor({
 	name: `Winter Coat`,
 	sz: 2,
 	dr: 1,
-	loc: `Arms, Torso`,
+	location: `Arms, Torso`,
 	attributes: [
 		CR
 	]
@@ -153,7 +153,7 @@ export const WorkGloves = new Armor({
 	name: `Work Gloves`,
 	sz: 1,
 	dr: 1,
-	loc: `Arms`,
+	location: `Arms`,
 	attributes: [
 		FR
 	]

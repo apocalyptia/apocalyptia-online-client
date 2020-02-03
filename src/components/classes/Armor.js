@@ -6,7 +6,7 @@ export default class Armor extends Gear {
 		description,
 		sz,
 		dr,
-		loc,
+		location,
 		attributes=[]
 	}) {
 		super({
@@ -15,7 +15,7 @@ export default class Armor extends Gear {
 			sz
 		})
 		this.dr = dr
-		this.loc = loc
+		this.location = location
 		this.attributes = attributes
 	}
 }
