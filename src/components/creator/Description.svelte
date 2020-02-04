@@ -1,14 +1,14 @@
 <script>
 	import { character } from '../../stores'
 	import RandomRoll from '../helpers/Random'
-	import Name, { FemaleNames, MaleNames } from '../helpers/Names'
+	import Names, { FemaleNames, MaleNames } from '../helpers/Names'
 
 
 	const randomName = () => {
-		if ($character.description.gender.value == 'Male') {
+		if ($character.description.sex.value == 'Male') {
 			$character.description.characterName.value = RandomRoll(MaleNames)
 		}
-		else if ($character.description.gender.value == 'Female') {
+		else if ($character.description.sex.value == 'Female') {
 			$character.description.characterName.value = RandomRoll(FemaleNames)
 		} 
 		else {
@@ -55,8 +55,8 @@
 		) 
 	}
 
-	const randomGender = () => {
-		$character.description.gender.value = RandomRoll(['Female', 'Male'])
+	const randomSex = () => {
+		$character.description.sex.value = RandomRoll(['Female', 'Male'])
 	}
 
 	const randomAge = () => {
@@ -65,12 +65,18 @@
 
 	const randomDescription = () => {
 		randomAge()
-		randomGender()
+		randomSex()
 		randomSkin()
 		randomHair()
 		randomWeight()
 		randomHeight()
 		randomName()
+	}
+
+	const resetDescription = () => {
+		Object.keys($character.description).forEach((d) => {
+			$character.description[d].value = ``
+		})
 	}
 
 	const descriptions = [
@@ -83,7 +89,7 @@
 			{ name: "Hair", random: randomHair }
 		],
 		[
-			{ name: "Gender", random: randomGender },
+			{ name: "Sex", random: randomSex },
 			{ name: "Age", random: randomAge }
 		]
 	]
@@ -127,5 +133,6 @@
 			{/each}
 		</div>
 	{/each}
-	<button class='center-button' on:click={randomDescription}>Random Character</button>
+	<button class='center-button' on:click={resetDescription}>Reset Description</button>
+	<button class='center-button' on:click={randomDescription}>Random Description</button>
 </div>

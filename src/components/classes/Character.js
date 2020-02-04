@@ -19,8 +19,8 @@ class Character {
 				label: `Character`,
 				value: ``
 			},
-			gender: {
-				label: `Gender`,
+			sex: {
+				label: `Sex`,
 				value: ``
 			},
 			hair: {
