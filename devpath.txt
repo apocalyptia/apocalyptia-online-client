@@ -1,0 +1,8 @@
+apply ability mods to character
+finish gear step
+set up rethinkdb
+set up user login
+make narrator dashboard
+make game group functionality
+write the combat system 
+make game group chat
