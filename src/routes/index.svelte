@@ -1,4 +1,16 @@
 <script>
+	function getSomething() {
+		fetch('getapi')
+	}
+	function postSomething() {
+		fetch('postapi', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({data: 'yum'})
+        })
+	}
 </script>
 
 <svelte:head>
