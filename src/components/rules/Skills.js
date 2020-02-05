@@ -1,5 +1,6 @@
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
+import DynamicSort from '../helpers/DynamicSort'
 
 
 export const startingSkillPoints = (character) => {
@@ -414,12 +415,14 @@ const SkillList = [
 	...DemeanorSkills
 ]
 
+
 let specList = []
 SkillList.forEach((skill) => {
 	Object.keys(skill.specialties).forEach((specialty) => {
 		specList.push(skill.specialties[specialty])
 	})
 })
+specList.sort(DynamicSort('name'))
 export const SpecialtyList = specList
 
 
