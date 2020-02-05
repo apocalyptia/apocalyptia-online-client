@@ -44,7 +44,7 @@ const referenceToC = new TableOfContents(
 		'Maneuvers',
 		'Situations',
 		'Abilities',
-		'Gear'
+		// 'Gear'
 	],
 	[
 		Core,

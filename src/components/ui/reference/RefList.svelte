@@ -40,6 +40,23 @@
 							{/each}
 						</ul>
 					{/if}
+					{#if rule.hasOwnProperty('specialties')}
+						<ul class='sub-ul'>
+							{#each Object.values(rule.specialties) as specialty}
+								<div class='separator' />
+								<li class='sub-li'>
+									<div class='sub-box'>
+										<span class='sub-name'>
+											{Capitalize(specialty.name)}
+										</span>
+										<div class='sub-notes'>
+											{@html specialty.description}
+										</div>
+									</div>
+								</li>
+							{/each}
+						</ul>
+					{/if}
 				</div>
 			{/if}
 		</div>
