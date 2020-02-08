@@ -1,6 +1,6 @@
 <script>
-	import ViewScreen from '../components/ui/ViewScreen.svelte'
-	import TitleBar from '../components/ui/TitleBar.svelte'
+	import ViewScreen from '../components/views/ui/ViewScreen.svelte'
+	import TitleBar from '../components/views/ui/TitleBar.svelte'
 </script>
 
 <main>

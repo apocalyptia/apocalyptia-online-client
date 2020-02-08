@@ -1,5 +1,5 @@
 <script>
-	import RoutedNavBar from '../../components/ui/RoutedNavBar.svelte'
+	import RoutedNavBar from '../../components/views/ui/RoutedNavBar.svelte'
 	import {refToC} from '../../stores'
 </script>
 

@@ -1,7 +1,7 @@
 <script type='module'>
 	import * as sapper from '@sapper/app'
 	import Capitalize from '../../components/helpers/Capitalize'
-	import RefList from '../../components/ui/reference/RefList.svelte'
+	import RefList from '../../components/views/ui/reference/RefList.svelte'
 	import { refToC } from '../../stores'
 
 	const { page } = sapper.stores()

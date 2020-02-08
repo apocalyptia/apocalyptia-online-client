@@ -1,11 +1,11 @@
 <script>
-	import NavButtons from '../../components/ui/NavButtons.svelte'
-	import Description from '../../components/creator/Description.svelte'
-	import Traits from '../../components/creator/Traits.svelte'
-	import Skills from '../../components/creator/Skills.svelte'
-	import Properties from '../../components/creator/Properties.svelte'
-	import Abilities from '../../components/creator/Abilities.svelte'
-	import Gear from '../../components/creator/Gear.svelte'
+	import NavButtons from '../../components/views/ui/NavButtons.svelte'
+	import Description from '../../components/views/creator/Description.svelte'
+	import Traits from '../../components/views/creator/Traits.svelte'
+	import Skills from '../../components/views/creator/Skills.svelte'
+	import Properties from '../../components/views/creator/Properties.svelte'
+	import Abilities from '../../components/views/creator/Abilities.svelte'
+	import Gear from '../../components/views/creator/Gear.svelte'
 
 	const options = [
 		{ name: 'Description', content: Description },

@@ -1,29 +1,19 @@
 <script>
-	function getSomething() {
-		fetch('getapi')
-	}
-	function postSomething() {
-		fetch('postapi', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({data: 'yum'})
-        })
+	import { onMount } from 'svelte'
+
+	onMount() {
+		netlifyIdentity.open()
+
+		const user = netlifyIdentity.currentUser()
+
+		
 	}
 </script>
 
 <svelte:head>
 	<title>Apocalyptia Online</title>
+	<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
-<a href="/creator">
-	<button class='display-button'>
-		Character Creator
-	</button>
-</a>
-<a href="/reference">
-	<button class='display-button'>
-		Rules Reference
-	</button>
-</a>
+<div data-netlify-identity-menu></div>
+<div data-netlify-identity-button>Login with Netlify Identity</div>

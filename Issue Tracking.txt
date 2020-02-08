@@ -15,7 +15,30 @@ Reference:
 	Put Expand/Collapse All button on reference.
 	Put Search bar on Ref page.
 
-
+Combat:
+	Grappling
+		Step 1: Grab
+			Defender can't move
+			Attacker can ATK, DEF, MOV
+		Step 2: Restrain
+			Defender can't move or ATK/DEF
+			Attacker can ATK, DEF (Hostage), or MOV
+		Step 3: Pin
+			Defender can't ATK, DEF, or MOV (Prone)
+			Attacker can ATK
+		Attack Options while Grappling
+			MATK w/ 1h weapon
+			RATK w/ 1h weapon
+			Throw
+			Grapple +1 Step
+			Unarmed ATK
+			Disarm
+			Trip
+			Called Shot
+			Choke
+			Break
+		Roll UMATK vs Dodge or Block(Unarmed) to Grab as an action. From Grab you may spend another action to upgrade to Restrain and another to Pin. Grappled opponent spends action and rolls Melee vs Melee to degrade Grapple by -1 step. They may also ATK if they are only Grabbed.
+		When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.
 
 --- BRAINSTORMING ---
 

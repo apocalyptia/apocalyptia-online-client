@@ -1,16 +1,13 @@
 <script>
 	import { fade } from 'svelte/transition'
+	import { d6Roll } from '../../helpers/Random'
 
 	let result = 6
-
-	const roll = () => {
-		result = Math.ceil(Math.random()*6)
-	}
 
 	const roll_die = () => {
 		for (let i = 0; i < 60000; i++) {
 			setTimeout(() => {
-				roll()
+				result = d6Roll()
 			}, 50)
 		}
 	}
