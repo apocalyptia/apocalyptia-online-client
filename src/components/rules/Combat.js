@@ -13,7 +13,9 @@ export const Actions = new Rule({
 export const Attack = new Rule({
 	name: `Attack`, 
 	description: [
-		`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF). Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total. Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`
+		`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF).`,
+		`Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total.`,
+		`Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`
 	]
 })
 
@@ -27,8 +29,12 @@ export const Communication = new Rule({
 export const Defense = new Rule({
 	name: `Defense`, 
 	description: [
-		`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics]. A Botch means you fall Prone if Dodging, or drop your weapon if Blocking. If you are unaware or unable to avoid the Attack, you are Defenseless and must the appropriate Reflexive Defense.`,
-		`There is one Reflexive form of each Defense Action. They are used as your default DEF, equal to your Acrobatics score (for Dodge) and your Melee score (for Block). They act as static Difficulties for enemy ATKs after you have already used your Defense Actions in that rnd. Use Reflexive Dodge against Ranged Attacks and Reflexive Block against Melee Attacks.`
+		`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics].`,
+		`A Botch means you fall Prone if Dodging, or drop your weapon if Blocking.`,
+		`If you are unaware or unable to avoid the Attack, you are Defenseless and must the appropriate Reflexive Defense.`,
+		`There is one Reflexive form of each Defense Action which are used as your default DEF, equal to your Acrobatics score for Dodge and your Melee score for Block.`,
+		`Reflexive Defenses act as static Difficulties for enemy ATKs after you have already used your Defense Actions in that rnd.`,
+		`Use Reflexive Dodge against Ranged Attacks and Reflexive Block against Melee Attacks.`
 	]
 })
 
@@ -42,14 +48,16 @@ export const Movement = new Rule({
 export const Recovery = new Rule({
 	name: `Recovery`, 
 	description: [
-		`After 3 days of rest, roll [C vs total Wounds] to heal 1 Wound and [D vs total Trauma] to heal 1 Trauma. On a Fail, you take 1 additional Wound or Trauma, depending on what you were rolling to Recover.`
+		`After 3 days of rest, roll [C vs total Wounds] to heal 1 Wound, and [D vs total Trauma] to heal 1 Trauma.`,
+		`On a Fail, you take 1 additional Wound or Trauma, depending on what you were rolling to Recover.`
 	]
 })
 
 export const Rounds = new Rule({
 	name: `Rounds`, 
 	description: [
-		`Combat time occurs in 3-second “rounds” (rnds). Each Player rolls [d6 + Speed] to determine the turn order at the start of each new rnd. This roll may Explode or Botch. On a Botch, you lose your turn. You may choose to delay your turn and go later in the rnd if you wish.`
+		`Combat time occurs in 3-second “rounds” (rnds). Each Player rolls [d6 + Speed] to determine the turn order at the start of each new rnd.`,
+		`This Speed roll may Explode or Botch. On a Botch, you lose your turn.`
 	]
 })
 
@@ -70,7 +78,8 @@ export const FireDamage = new Rule({
 export const Pain = new Rule({
 	name: `Pain`, 
 	description: [
-		`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed. Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain.`
+		`Wounds (and a few other effects) cause Pain which is a -1 penalty to all rolls and Speed.`,
+		`Pain fades as Wounds heal. You fall Prone if your Speed drops to 0 from Pain.`
 	]
 })
 

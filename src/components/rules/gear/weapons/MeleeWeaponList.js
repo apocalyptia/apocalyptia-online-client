@@ -14,7 +14,7 @@ import { Unarmed } from '../../Situations'
 export const Ax = new MeleeWeapon({
 	name: `Ax`,
 	sz: 4,
-	dmg: 5,
+	dmg: 4,
 	rng: 2,
 	attributes: [
 		TwoHanded,
@@ -36,7 +36,7 @@ export const BaseballBat = new MeleeWeapon({
 export const BrassKnuckles = new MeleeWeapon({
 	name: `Brass Knuckles`,
 	sz: 1,
-	dmg: 2,
+	dmg: 1,
 	rng: 1,
 	attributes: [
 		OneHanded,
@@ -78,7 +78,7 @@ export const Hatchet = new MeleeWeapon({
 export const Knife = new MeleeWeapon({
 	name: `Knife`,
 	sz: 1,
-	dmg: 2,
+	dmg: 1,
 	rng: 1,
 	attributes: [
 		OneHanded,
@@ -101,7 +101,7 @@ export const Machete = new MeleeWeapon({
 export const RiotShield = new MeleeWeapon({
 	name: `Riot Shield`,
 	sz: 4,
-	dmg: 1,
+	dmg: 0,
 	rng: 1,
 	attributes: [
 		OneHanded,
@@ -112,7 +112,7 @@ export const RiotShield = new MeleeWeapon({
 export const Sledgehammer = new MeleeWeapon({
 	name: `Sledgehammer`,
 	sz: 5,
-	dmg: 5,
+	dmg: 4,
 	rng: 2,
 	attributes: [
 		TwoHanded,

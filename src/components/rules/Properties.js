@@ -18,7 +18,10 @@ export const dodge = new Property({
 export const health = new Property({
 	name: `health`,
 	description: [
-		`[C x 3]. This is a measure of how many Wounds you can withstand. Damage causes Wounds. You start Bleeding 1 Wound/min when you have Wounds = [C]. The rate of Bleeding increases to 1 Wound/rnd and you fall Unconscious when you have Wounds = [C x 2]. You die when you have Wounds = [C x 3].`
+		`[C x 3]. This is a measure of how many Wounds you can withstand. Damage is the cause of most Wounds.`,
+		`You start Bleeding 1 Wound/min when you have Wounds = [C].`,
+		`The rate of Bleeding increases to 1 Wound/rnd and you fall Unconscious when you have Wounds = [C x 2].`,
+		`You die when you have Wounds = [C x 3].`
 	],
 	formula: (character) => character.traits.constitution.score * 3,
 	base: 3,
@@ -28,7 +31,10 @@ export const health = new Property({
 export const experience = new Property({
 	name: `experience`,
 	description: [
-		`[B x 6] starting. Experience represents how much you have learned up to now. You accumulate additional Experience Points ("XP") = [Intellect] for each game session that you survive. You also get +1 XP every time you roll a Botch. The Narrator may also give bonus XP. You may spend your XP to buy Abilities to permanently improve your character. You may also spend 1XP per round to regain 1 Luck Point.`
+		`[B x 6] starting. Experience represents how much you have learned up to now.`,
+		`You accumulate additional Experience Points ("XP") = [Intellect] for each game session that you survive.`,
+		`You also get +1 XP every time you roll a Botch. The Narrator may also give bonus XP.`,
+		`You may spend XP to buy Abilities to improve your Character. You may also spend 1XP per round to regain 1 Luck Point.`
 	],
 	formula: (character) => character.traits.brains.score * 3,
 	score: 3,
@@ -48,7 +54,8 @@ export const intellect = new Property({
 export const luck = new Property({
 	name: `luck`,
 	description: [
-		`Roll a d6 during Character Creation to determine your Luck. Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance. You may spend Luck Points in dramatic moments for various effects listed below. You may only spend 1 Luck Point per round. You regain 1 spent Luck Point at dawn each day. Spend a Luck Point to get one of the following effects:`,
+		`Roll a d6 during Character Creation to determine your Luck. Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance.`,
+		`You may spend 1 Luck Point per round in dramatic moments for various effects listed below. You regain 1 spent Luck Point at dawn each day.`,
 		`• Take a re-roll with a +6 bonus.`,
 		`• Take an extra Action on your turn.`,
 		`• Give a Luck point to a Comrade.`
@@ -59,7 +66,8 @@ export const luck = new Property({
 export const psyche = new Property({
 	name: `psyche`,
 	description: [
-		`[D x 3]. This is a measure of how much Trauma you can withstand. Any number of horrible events can cause Trauma. When Trauma = [D x 3] you lose all hope and seek out death at the earliest opportunity, unless someone can restrain you until you have Recovered from at least 1 Trauma.`
+		`[D x 3]. This is a measure of how much Trauma you can withstand. Any number of horrible events can cause Trauma.`,
+		`When Trauma = [D x 3] you lose all hope and seek out death at the earliest opportunity, unless someone can restrain you until you have Recovered from at least 1 Trauma.`
 	],
 	formula: (character) => character.traits.demeanor.score * 3,
 	base: 3,
@@ -69,7 +77,9 @@ export const psyche = new Property({
 export const speed = new Property({
 	name: `speed`,
 	description: [
-		`[A x 3]. This the Property that is rolled against all other participants at the beginning of each round of combat to determine the order in which each participant's turn is resolved. This is also a Character's personal Walking rate in yards per round at the cost of 1 Action. Characters can travel long distances overland at [Speed / 2] mph for up to [C x 3] hrs per day.`
+		`[A x 3]. Roll this Property against all other participants at the beginning of each round of combat to determine the order in which turns are resolved.`,
+		`This is also the number of yards you can Walk as 1 Action.`,
+		`When traveling long distances overland, you can March at [Speed / 2] mph for up to [C x 3] hrs per day.`
 	],
 	formula: (character) => character.traits.agility.score * 3,
 	base: 3,
