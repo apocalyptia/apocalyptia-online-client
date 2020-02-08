@@ -2,6 +2,7 @@
 	export let ToC
 </script>
 
+
 <div class='menu-page'>
 	{#each $ToC.chapters as chapter, index}
 		<button
@@ -12,6 +13,7 @@
 		</button>
 	{/each}
 </div>
+
 
 <style>
 	.menu-page {

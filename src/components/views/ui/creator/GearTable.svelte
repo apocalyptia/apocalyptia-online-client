@@ -1,5 +1,6 @@
 <script>
-	import Capitalize from '../../helpers/Capitalize'
+	import Capitalize from '../../../helpers/Capitalize'
+
 	export let item
 	export let list
 </script>
@@ -43,6 +44,7 @@
 		</td>
 	</tr>
 </table>
+
 
 <style>
 	table {

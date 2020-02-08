@@ -1,12 +1,13 @@
 <script>
-	import { character } from '../../../stores'
-	import Capitalize from '../../helpers/Capitalize'
-	import ToggleVisible from '../../helpers/ToggleVisible'
+	import { character } from '../../../../stores'
+	import Capitalize from '../../../helpers/Capitalize'
+	import ToggleVisible from '../../../helpers/ToggleVisible'
 	import AbilityModal from './AbilityModal.svelte'
 
 	export let ability
 	export let MasterAbilityList
 </script>
+
 
 <div class='ability-card' 
 	on:click={() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
@@ -24,6 +25,7 @@
 		{MasterAbilityList}
 	/>
 {/if}
+
 
 <style>
 	.ability-card {

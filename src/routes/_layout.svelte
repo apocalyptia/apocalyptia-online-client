@@ -3,6 +3,7 @@
 	import TitleBar from '../components/views/ui/TitleBar.svelte'
 </script>
 
+
 <main>
 	<ViewScreen>
 		<TitleBar />
@@ -11,6 +12,7 @@
 		</div>
 	</ViewScreen>
 </main>
+
 
 <style>
 	.display-window {

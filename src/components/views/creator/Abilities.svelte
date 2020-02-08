@@ -1,16 +1,15 @@
 <script>
 	import { beforeUpdate } from 'svelte'
-	import { character } from '../../stores'
-	import ToggleVisible from '../helpers/ToggleVisible'
+	import { character } from '../../../stores'
+	import ToggleVisible from '../../helpers/ToggleVisible'
 	import {
 		AbilitiesList,
 		AbilitiesExplanation,
 		AbilityGroups
-	} from '../rules/Abilities'
+	} from '../../rules/Abilities'
 	import AbilityGroup from '../ui/creator/AbilityGroup.svelte'
 	import AbilityCard from '../ui/creator/AbilityCard.svelte'
 	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
-
 
 	let spentXP = 0
 
@@ -32,6 +31,7 @@
 		remaining = getRemaining()
 	})
 </script>
+
 
 <div class='abilities-step'>
 	<div class='step-title'><h2>Abilities</h2></div>
@@ -55,6 +55,7 @@
 		<button on:click={resetAbilities}>Reset Abilities</button>
 	</div>
 </div>
+
 
 <style>
 	.ability-group {

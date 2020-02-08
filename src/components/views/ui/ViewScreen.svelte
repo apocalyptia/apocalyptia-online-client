@@ -2,6 +2,7 @@
 	<slot />
 </div>
 
+
 <style>
 	.view-screen {
 		height: 100vh;

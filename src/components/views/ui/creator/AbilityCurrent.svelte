@@ -1,6 +1,6 @@
 <script>
-	import { character } from '../../../stores'
-	import Capitalize from '../../helpers/Capitalize'
+	import { character } from '../../../../stores'
+	import Capitalize from '../../../helpers/Capitalize'
 
 	export let MasterAbilityList
 
@@ -8,6 +8,7 @@
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
 	}
 </script>
+
 
 <div class='current-abilities'>
 	<div class='current-abilities-title'>Current Abilities</div>
@@ -45,6 +46,7 @@
 		</div>
 	</div>
 </div>
+
 
 <style>
 	.current-abilities {

@@ -1,11 +1,11 @@
 <script>
-	import { character } from '../../stores'
-	import RandomRoll from '../helpers/Random'
-	import MasterGearList from '../rules/Gear'
-	import AmmoList from '../rules/gear/weapons/AmmoList'
-	import ArmorList from '../rules/gear/ArmorList'
-	import MeleeWeaponList from '../rules/gear/weapons/MeleeWeaponList'
-	import RangedWeaponList from '../rules/gear/weapons/RangedWeaponList'
+	import { character } from '../../../stores'
+	import RandomRoll from '../../helpers/Random'
+	import MasterGearList from '../../rules/Gear'
+	import AmmoList from '../../rules/gear/weapons/AmmoList'
+	import ArmorList from '../../rules/gear/ArmorList'
+	import MeleeWeaponList from '../../rules/gear/weapons/MeleeWeaponList'
+	import RangedWeaponList from '../../rules/gear/weapons/RangedWeaponList'
 	import GearTable from '../ui/creator/GearTable.svelte'
 
 	let melee, ranged, armor
@@ -27,6 +27,7 @@
 		armor = RandomRoll(ArmorList)
 	}
 </script>
+
 
 <div class='gear-step'>
 	<div class='step-title'>
@@ -54,6 +55,7 @@
 		</div>
 	</div>
 </div>
+
 
 <style>
 	.section-card {

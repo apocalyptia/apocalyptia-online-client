@@ -1,6 +1,6 @@
 <script>
-	import { character } from '../../../stores'
-	import Capitalize from '../../helpers/Capitalize'
+	import { character } from '../../../../stores'
+	import Capitalize from '../../../helpers/Capitalize'
 
 	export let ability
 	export let MasterAbilityList
@@ -11,6 +11,7 @@
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
 	}
 </script>
+
 
 <div class='ability-section'>
 	<span class='ability-name-label'>{Capitalize(ability.name)}</span>
@@ -25,10 +26,9 @@
 			{/each}
 		</select>
 	</span>
-	<span class='taken-selector'>
-
-	</span>
+	<span class='taken-selector'></span>
 </div>
+
 
 <style>
 	.ability-section {

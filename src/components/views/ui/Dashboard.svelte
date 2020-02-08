@@ -8,3 +8,8 @@
 		Rules Reference
 	</button>
 </a>
+<!-- <a href="/narrator">
+	<button class='display-button'>
+		Narrator Section
+	</button>
+</a> -->

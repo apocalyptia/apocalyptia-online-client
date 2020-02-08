@@ -1,8 +1,8 @@
 <script>
-	import { character } from '../../stores'
-	import Capitalize from '../helpers/Capitalize'
-	import RandomRoll from '../helpers/Random'
-	import Names, { FemaleNames, MaleNames } from '../helpers/Names'
+	import { character } from '../../../stores'
+	import Capitalize from '../../helpers/Capitalize'
+	import RandomRoll from '../../helpers/Random'
+	import Names, { FemaleNames, MaleNames } from '../../helpers/Names'
 
 	const randomName = () => {
 		if ($character.description.sex.value == 'Male') {
@@ -94,6 +94,7 @@
 		]
 	]
 </script>
+
 
 <div class='description-step'>
 	<div class='step-title'>

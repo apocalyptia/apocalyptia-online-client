@@ -1,4 +1,4 @@
-<button id='AreasEncountersBtn' class='Btn'>AREAS AND ENCOUNTERS</button>
+<button id='AreasEncountersBtn' class='Btn'>AREAS</button>
 <div id='AreasEncountersSec' class='Sec2'>
 	<p>Apocalyptia is designed to be easy to run, especially for a first-time Narrator. Using the AREA and ENCOUNTER tables provide a way to randomly generate a dynamic game world. This section is meant to be a supplement to the story, not a replacement for it. The Narrator can use this section to maintain a steady pace of game play and to spark new ideas if the game session becomes stale and boring. The Narrator can save game time by rolling a list of random AREAS and/or ENCOUNTERS before the session begins.</p>
 	<p>The two basic types of AREAS the Team may wander through in the Wasteland are RURAL and URBAN. RURAL encompasses small towns, farmlands, and the surrounding countryside. These places are usually a little safer but the looting is sparse. URBAN includes downtown business districts, industrial sprawl, and suburban neighborhoods. These places are full of loot but tend to be much more dangerous and harder to escape.</p>
@@ -14,17 +14,8 @@
 	<button id='RuralAreasBtn' class='Btn'>RURAL AREAS</button>
 	<div id='RuralAreasSec' class='Sec3'>
 	</div>
-	<button id='RuralEncountersBtn' class='Btn'>RURAL ENCOUNTERS</button>
-	<div id='RuralEncountersSec' class='Sec3'>
-	</div>
 	<button id='UrbanAreasBtn' class='Btn'>URBAN AREAS</button>
 	<div id='UrbanAreasSec' class='Sec3'>
-	</div>
-	<button id='UrbanEncountersBtn' class='Btn'>URBAN ENCOUNTERS</button>
-	<div id='UrbanEncountersSec' class='Sec3'>
-	</div>
-	<button id='SpecialEncountersBtn' class='Btn'>SPECIAL ENCOUNTERS</button>
-	<div id='SpecialEncountersSec' class='Sec3'>
 	</div>
 	<button id='AreaLootBtn' class='Btn'>AREA LOOT</button>
 	<div id='AreaLootSec' class='Sec3'>

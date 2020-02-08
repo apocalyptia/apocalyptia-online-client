@@ -1,10 +1,10 @@
 <script>
-	import { slide } from 'svelte/transition'
-	import Capitalize from '../../helpers/Capitalize'
-	import ToggleVisible from '../../helpers/ToggleVisible'
+	import Capitalize from '../../../helpers/Capitalize'
+	import ToggleVisible from '../../../helpers/ToggleVisible'
 
 	export let list
 </script>
+
 
 <div class='ref-list'>
 	<div class='separator'/>
@@ -36,7 +36,7 @@
 											{@html subrule.description}
 										</div>
 									</div>
-								</li>	
+								</li>
 							{/each}
 						</ul>
 					{/if}
@@ -63,6 +63,7 @@
 		<div class='separator'/>
 	{/each}
 </div>
+
 
 <style>
 	p {

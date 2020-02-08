@@ -1,10 +1,11 @@
 <script>
-	import ToggleVisible from '../../helpers/ToggleVisible'
+	import ToggleVisible from '../../../helpers/ToggleVisible'
 	import AbilityCard from './AbilityCard.svelte'
 
 	export let group
 	export let MasterAbilityList
 </script>
+
 
 <div class='xp-group-section'>
 	<div
@@ -21,6 +22,7 @@
 		{/each}
 	{/if}
 </div>
+
 
 <style>
 	.xp-group-section {

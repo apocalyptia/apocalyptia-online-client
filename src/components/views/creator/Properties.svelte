@@ -1,9 +1,8 @@
 <script>
-	import { character } from '../../stores'
-	import { d6 } from '../helpers/Random'
-	import Capitalize from '../helpers/Capitalize'
-	import { PropertyExplanation } from '../rules/Properties'
-
+	import { character } from '../../../stores'
+	import { d6 } from '../../helpers/Random'
+	import Capitalize from '../../helpers/Capitalize'
+	import { PropertyExplanation } from '../../rules/Properties'
 
 	const properties = Object.keys($character.properties)
 
@@ -14,6 +13,7 @@
 		}
 	}
 </script>
+
 
 <div class='properties-step'>
 	<div class='step-title'>
@@ -78,6 +78,7 @@
 		</div>
 	</div>
 </div>
+
 
 <style>
 	.explanation {

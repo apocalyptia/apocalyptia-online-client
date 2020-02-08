@@ -1,14 +1,13 @@
 <script>
 	import { onMount } from 'svelte'
-	import { character } from '../../stores'
-	import Capitalize from '../helpers/Capitalize'
-	import RandomRoll from '../helpers/Random'
+	import { character } from '../../../stores'
+	import Capitalize from '../../helpers/Capitalize'
+	import RandomRoll from '../../helpers/Random'
 	import {
 		traitMax,
 		TraitExplanation
-	} from '../rules/Traits'
+	} from '../../rules/Traits'
 	import Slider from '../ui/creator/Slider.svelte'
-
 
 	const traits = Object.keys($character.traits)
 
@@ -76,6 +75,7 @@
 	onMount(() => calculateResults())
 </script>
 
+
 <div class='traits-step'>
 	<div class='step-title'>
 		<h2>Traits</h2>
@@ -111,6 +111,7 @@
 		<button on:click={randomTraits}>Random Traits</button>
 	</div>
 </div>
+
 
 <style>
 	@media only screen and (max-width: 500px) {

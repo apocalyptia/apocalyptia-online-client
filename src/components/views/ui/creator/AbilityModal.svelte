@@ -19,10 +19,9 @@
 	if (previously_focused) onDestroy(() => previously_focused.focus())
 </script>
 
+
 <svelte:window on:keydown={handle_keydown}/>
-
 <div class="modal-background" on:click={close}></div>
-
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='ability-name'><h2>{ability.name}</h2></div>
 	<div class='description-section'>
@@ -40,6 +39,7 @@
 		<button on:click={close}>Close</button>
 	</div>
 </div>
+
 
 <style>
 	.modal-background {

@@ -1,16 +1,15 @@
 <script>
 	import { onMount } from 'svelte'
-	import { character } from '../../stores'
-	import Capitalize from '../helpers/Capitalize'
-	import ToggleVisible from '../helpers/ToggleVisible'
-	import RandomRoll from '../helpers/Random'
-	import { traitMax } from '../rules/Traits'
+	import { character } from '../../../stores'
+	import Capitalize from '../../helpers/Capitalize'
+	import ToggleVisible from '../../helpers/ToggleVisible'
+	import RandomRoll from '../../helpers/Random'
+	import { traitMax } from '../../rules/Traits'
 	import { 
 		startingSkillPoints,
 		SkillExplanation
-	} from '../rules/Skills'
+	} from '../../rules/Skills'
 	import Slider from '../ui/creator/Slider.svelte'
-
 
 	let skillGroups = Object.keys($character.traits).map(t => {
 		return { name: t, visible: false }
@@ -74,6 +73,7 @@
 	onMount(() => calculateResults())
 </script>
 
+
 <div class='skills-step'>
 	<div class='step-title'>
 		<h2>Skills</h2>
@@ -127,6 +127,7 @@
 		<button on:click={randomSkills}>Random Skills</button>
 	</div>
 </div>
+
 
 <style>
 	@media only screen and (max-width: 500px) {

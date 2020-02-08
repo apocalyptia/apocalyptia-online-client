@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store'
 import Character from './components/classes/Character'
 import TableOfContents from './components/helpers/TableOfContents'
+
 import Abilities from './components/rules/Abilities'
 import Combat from './components/rules/Combat'
 import Core from './components/rules/Core'
@@ -12,7 +13,6 @@ import Traits from './components/rules/Traits'
 
 
 const newCharacter = new Character()
-
 export const character = writable(newCharacter)
 
 
@@ -28,7 +28,6 @@ const creatorToC = new TableOfContents(
 		'Gear'
 	]
 )
-
 export const creToC = writable(creatorToC)
 
 
@@ -43,8 +42,7 @@ const referenceToC = new TableOfContents(
 		'Combat',
 		'Maneuvers',
 		'Situations',
-		'Abilities',
-		// 'Gear'
+		'Abilities'
 	],
 	[
 		Core,
@@ -54,9 +52,50 @@ const referenceToC = new TableOfContents(
 		Combat,
 		Maneuvers,
 		Situations,
-		Abilities,
-		// 'Gear'
+		Abilities
 	]
 )
-
 export const refToC = writable(referenceToC)
+
+
+// const narratorToC = new TableOfContents(
+// 	'Contents',
+// 	'/narrator',
+// 	[
+// 		'Areas',
+// 		'Bases',
+// 		'Difficulties',
+// 		'Diseases',
+// 		'Encounters',
+// 		'Environment',
+// 		'Extras',
+// 		'Factions',
+// 		'Hazards',
+// 		'Mission',
+// 		'Narrator',
+// 		'Preparation',
+// 		'Psyche',
+// 		'Scenarios',
+// 		'Settlements',
+// 		'Wasteland',
+// 	],
+// 	[
+// 		Areas,
+// 		Bases,
+// 		Difficulties,
+// 		Diseases,
+// 		Encounters,
+// 		Environment,
+// 		Extras,
+// 		Factions,
+// 		Hazards,
+// 		Mission,
+// 		Narrator,
+// 		Preparation,
+// 		Psyche,
+// 		Scenarios,
+// 		Settlements,
+// 		Wasteland,
+// 	]
+// )
+// export const narToC = writable(narratorToC)

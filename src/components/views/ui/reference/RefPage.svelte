@@ -5,6 +5,7 @@
 	export let list 
 </script>
 
+
 <div class='ref-page'>
 	<div class='ref-header'>{list} Rules</div>
 	<svelte:component this={RefList} {list} />

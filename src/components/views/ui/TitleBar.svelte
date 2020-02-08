@@ -1,7 +1,7 @@
 <script>
 	import * as sapper from '@sapper/app'
 	import { createEventDispatcher } from 'svelte'
-	import { refToC } from '../../stores'
+	import { refToC } from '../../../stores'
 
 	let duration = '300ms'
 	let offset = 0
@@ -43,6 +43,7 @@
 	}
 </script>
 
+
 <svelte:window bind:scrollY={y} />
 <div use:action class={headerClass}>
 	<button id='title-bar' class='title-bar' on:click={goHome}>
@@ -50,6 +51,7 @@
 		<span class='beta'>beta</span>
 	</button>
 </div>
+
 
 <style>
 	.title-bar {

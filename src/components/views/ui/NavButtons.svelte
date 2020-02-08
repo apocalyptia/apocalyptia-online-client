@@ -29,11 +29,13 @@
 	}
 </script>
 
+
 <div class='nav-buttons'>
 	<button class='nav-button' on:click={back}>&lt;</button>
 	<button class='nav-button' on:click={home}>Home</button>
 	<button class='nav-button' on:click={next}>&gt;</button>
 </div>
+
 
 <style>
 	.nav-buttons {
