@@ -13,7 +13,7 @@
 		{ name: 'Skills', content: Skills },
 		{ name: 'Properties', content: Properties },
 		{ name: 'Abilities', content: Abilities },
-		{ name: 'Gear', content: Gear }
+		{ name: 'Gear', content: Gear },
 	]
 
 	let selected = Description

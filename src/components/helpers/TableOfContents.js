@@ -1,7 +1,7 @@
 import * as sapper from '@sapper/app'
 
 
-class TableOfContents {
+export default class {
 
 	constructor(name='', root='/', chapters=[], modules=[]) {
 		this.name = name,
@@ -45,6 +45,3 @@ class TableOfContents {
 	}
 
 }
-
-
-export default TableOfContents

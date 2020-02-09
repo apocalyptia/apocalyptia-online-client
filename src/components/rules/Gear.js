@@ -17,7 +17,7 @@ export const WeaponList = [
 	...RangedWeaponList
 ]
 
-const MasterGearList = [
+export default [
 	...AccessoryList,
 	...AmmoList,
 	...ArmorList,
@@ -30,5 +30,3 @@ const MasterGearList = [
 	...StorageList,
 	...WeaponList
 ]
-
-export default MasterGearList

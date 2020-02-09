@@ -2004,6 +2004,4 @@ export const MaleNames = [
 	'Zion',
 ]
 
-const Names = [...FemaleNames, ...MaleNames]
-
-export default Names
+export default [...FemaleNames, ...MaleNames]

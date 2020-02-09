@@ -1,4 +1,4 @@
-const Languages = [
+export default [
 	{ name: 'Amharic' },
 	{ name: 'Arabic' },
 	{ name: 'Assamese' },
@@ -70,5 +70,3 @@ const Languages = [
 	{ name: 'Yoruba' },
 	{ name: 'Zulu' },
 ]
-
-export default Languages

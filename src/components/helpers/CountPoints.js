@@ -1,4 +1,4 @@
-const CountPoints = (
+export default (
 		event, 
 		char, 
 		attribute,
@@ -23,5 +23,3 @@ const pointTally = (char, attribute) => {
 	})
 	return pointCount
 }
-
-export default CountPoints

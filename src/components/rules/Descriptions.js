@@ -41,7 +41,7 @@ export const Weight = new Description({
 	value: ``
 })
 
-const Descriptions = [
+export default [
 	Player,
 	Character,
 	Age,
@@ -51,5 +51,3 @@ const Descriptions = [
 	Height,
 	Weight
 ]
-
-export default Descriptions

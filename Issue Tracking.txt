@@ -16,6 +16,8 @@ Reference:
 	Put Search bar on Ref page.
 
 Combat:
+  Actions:
+    Maybe you get 3 Actions per round to spend however you like between Atk, Def, Mov or any other action. This replaces the 2 on your turn and 2 for defense system and removes the need for Aggressive Posture and Defensive Posture. 
 	Grappling
 		Step 1: Grab
 			Defender can't move

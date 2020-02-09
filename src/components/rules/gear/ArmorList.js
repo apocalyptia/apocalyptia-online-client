@@ -160,7 +160,7 @@ export const WorkGloves = new Armor({
 })
 
 
-const ArmorList = [
+export default [
 	AthleticHelmet,
 	AthleticPads,
 	CombatHelmet,
@@ -177,8 +177,6 @@ const ArmorList = [
 	WinterCoat,
 	WorkGloves
 ]
-
-export default ArmorList
 
 
 

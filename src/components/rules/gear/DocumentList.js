@@ -4,7 +4,7 @@ import Document from '../../classes/Document'
 export const BodyInBalance = new Document({
 	name: `Body in Balance`,
 	description: [
-		`+1 Athletics`
+		`+1 Athletics`,
 	],
 	sz: 1
 })
@@ -12,7 +12,7 @@ export const BodyInBalance = new Document({
 export const BookOfNinja = new Document({
 	name: `Book of Ninja`,
 	description: [
-		`+1 Stealth`
+		`+1 Stealth`,
 	],
 	sz: 1
 })
@@ -20,7 +20,7 @@ export const BookOfNinja = new Document({
 export const DefensiveDriving = new Document({
 	name: `Defensive Driving`,
 	description: [
-		`+1 Drive`
+		`+1 Drive`,
 	],
 	sz: 1
 })
@@ -28,7 +28,7 @@ export const DefensiveDriving = new Document({
 export const DogTricks = new Document({
 	name: `Dog Tricks`,
 	description: [
-		`+1 Tame`
+		`+1 Tame`,
 	],
 	sz: 1
 })
@@ -36,7 +36,7 @@ export const DogTricks = new Document({
 export const EffectiveHabits = new Document({
 	name: `Effective Habits`,
 	description: [
-		`+1 to any one Skill`
+		`+1 to any one Skill`,
 	],
 	sz: 1
 })
@@ -44,7 +44,7 @@ export const EffectiveHabits = new Document({
 export const EngineeringConcepts = new Document({
 	name: `Engineering Concepts`,
 	description: [
-		`+1 Build`
+		`+1 Build`,
 	],
 	sz: 1
 })
@@ -52,7 +52,7 @@ export const EngineeringConcepts = new Document({
 export const GeneralScienceKnowledge = new Document({
 	name: `General Science Knowledge`,
 	description: [
-		`+1 Science`
+		`+1 Science`,
 	],
 	sz: 1
 })
@@ -60,7 +60,7 @@ export const GeneralScienceKnowledge = new Document({
 export const GraysAnatomy = new Document({
 	name: `Gray\`s Anatomy`,
 	description: [
-		`+1 Medicine`
+		`+1 Medicine`,
 	],
 	sz: 1
 })
@@ -68,7 +68,7 @@ export const GraysAnatomy = new Document({
 export const HomeSecurity = new Document({
 	name: `Home Security`,
 	description: [
-		`+1 Larceny`
+		`+1 Larceny`,
 	],
 	sz: 1
 })
@@ -76,7 +76,7 @@ export const HomeSecurity = new Document({
 export const HowToWinFriends = new Document({
 	name: `How to Win Friends`,
 	description: [
-		`+1 Socialize`
+		`+1 Socialize`,
 	],
 	sz: 1
 })
@@ -84,7 +84,7 @@ export const HowToWinFriends = new Document({
 export const HowYogaWorks = new Document({
 	name: `How Yoga Works`,
 	description: [
-		`+1 Acrobatics`
+		`+1 Acrobatics`,
 	],
 	sz: 1
 })
@@ -92,7 +92,7 @@ export const HowYogaWorks = new Document({
 export const LeadershipBasics = new Document({
 	name: `Leadership Basics`,
 	description: [
-		`+1 Leadership`
+		`+1 Leadership`,
 	],
 	sz: 1
 })
@@ -100,7 +100,7 @@ export const LeadershipBasics = new Document({
 export const PersonalDefense = new Document({
 	name: `Personal Defense`,
 	description: [
-		`+1 Ranged`
+		`+1 Ranged`,
 	],
 	sz: 1
 })
@@ -108,7 +108,7 @@ export const PersonalDefense = new Document({
 export const SASSurvivalGuide = new Document({
 	name: `SAS Survival Guide`,
 	description: [
-		`+1 Survival`
+		`+1 Survival`,
 	],
 	sz: 1
 })
@@ -116,7 +116,7 @@ export const SASSurvivalGuide = new Document({
 export const StandupComedy = new Document({
 	name: `Stand-up Comedy`,
 	description: [
-		`+1 Entertain`
+		`+1 Entertain`,
 	],
 	sz: 1
 })
@@ -124,7 +124,7 @@ export const StandupComedy = new Document({
 export const TaoOfJeetKuneDo = new Document({
 	name: `Tao of Jeet Kune Do`,
 	description: [
-		`+1 Melee`
+		`+1 Melee`,
 	],
 	sz: 1
 })
@@ -132,7 +132,7 @@ export const TaoOfJeetKuneDo = new Document({
 export const YellowPages = new Document({
 	name: `Yellow Pages`,
 	description: [
-		`+1 Scavenging. Regional.`
+		`+1 Scavenging. Regional.`,
 	],
 	sz: 1
 })
@@ -140,7 +140,7 @@ export const YellowPages = new Document({
 export const ZenMind = new Document({
 	name: `Zen Mind`,
 	description: [
-		`+1 Perception`
+		`+1 Perception`,
 	],
 	sz: 1
 })
@@ -148,7 +148,7 @@ export const ZenMind = new Document({
 export const BilingualDictionary = new Document({
 	name: `Bilingual Dictionary`,
 	description: [
-		`Multilingual Ability`
+		`Multilingual Ability`,
 	],
 	sz: 1
 })
@@ -156,7 +156,7 @@ export const BilingualDictionary = new Document({
 export const ClassicNovel = new Document({
 	name: `Classic Novel`,
 	description: [
-		`+1 Psyche`
+		`+1 Psyche`,
 	],
 	sz: 1
 })
@@ -164,7 +164,7 @@ export const ClassicNovel = new Document({
 export const HolyBook = new Document({
 	name: `Holy Book`,
 	description: [
-		`-1 Psyche`
+		`-1 Psyche`,
 	],
 	sz: 1
 })
@@ -172,7 +172,7 @@ export const HolyBook = new Document({
 export const MapAtlas = new Document({
 	name: `Map (Atlas)`,
 	description: [
-		`+1 Survival(Navigate)`
+		`+1 Survival(Navigate)`,
 	],
 	sz: 1
 })
@@ -180,7 +180,7 @@ export const MapAtlas = new Document({
 export const MapLocal = new Document({
 	name: `Map (Local)`,
 	description: [
-		`+1 Survival(Navigate). Regional.`
+		`+1 Survival(Navigate). Regional.`,
 	],
 	sz: 0
 })
@@ -188,13 +188,13 @@ export const MapLocal = new Document({
 export const MapTopographic = new Document({
 	name: `Map (Topographic)`,
 	description: [
-		`+3 Survival(Navigate). Regional.`
+		`+3 Survival(Navigate). Regional.`,
 	],
 	sz: 0
 })
 
 
-const DocumentList = [
+export default [
 	BodyInBalance,
 	BookOfNinja,
 	DefensiveDriving,
@@ -220,5 +220,3 @@ const DocumentList = [
 	MapLocal,
 	MapTopographic
 ]
-
-export default DocumentList

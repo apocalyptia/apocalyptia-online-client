@@ -4,7 +4,7 @@ import Drug from '../../classes/Drug'
 export const Alcohol = new Drug({
 	name: `Alcohol`,
 	description: [
-		`Antibiotic or Fuel. C9# or Unstable.`
+		`Antibiotic or Fuel. C9# or Unstable.`,
 	],
 	sz: 1,
 	mix: 9,
@@ -14,7 +14,7 @@ export const Alcohol = new Drug({
 export const Antibiotic = new Drug({
 	name: `Antibiotic`,
 	description: [
-		`Prevents infection in Recovery for 1 day.`
+		`Prevents infection in Recovery for 1 day.`,
 	],
 	sz: 0,
 	mix: 12,
@@ -24,7 +24,7 @@ export const Antibiotic = new Drug({
 export const Hallucinogen = new Drug({
 	name: `Hallucinogen`,
 	description: [
-		`+1 Perform and Tame. -3 all other rolls. -1 Psyche.`
+		`+1 Perform and Tame. -3 all other rolls. -1 Psyche.`,
 	],
 	sz: 0,
 	mix: 15,
@@ -34,7 +34,7 @@ export const Hallucinogen = new Drug({
 export const Painkiller = new Drug({
 	name: `Painkiller`,
 	description: [
-		`Ignore 1 Pain penalty.`
+		`Ignore 1 Pain penalty.`,
 	],
 	sz: 0,
 	mix: 9,
@@ -44,7 +44,7 @@ export const Painkiller = new Drug({
 export const Sedative = new Drug({
 	name: `Sedative`,
 	description: [
-		`D#6/rnd to take any action.`
+		`D#6/rnd to take any action.`,
 	],
 	sz: 0,
 	mix: 12,
@@ -54,7 +54,7 @@ export const Sedative = new Drug({
 export const Stimulant = new Drug({
 	name: `Stimulant`,
 	description: [
-		`Ignore Exhaustion penalties for 6hrs.`
+		`Ignore Exhaustion penalties for 6hrs.`,
 	],
 	sz: 0,
 	mix: 9,
@@ -62,7 +62,7 @@ export const Stimulant = new Drug({
 })
 
 
-export const DrugsList = [
+export default [
 	Alcohol,
 	Antibiotic,
 	Hallucinogen,
@@ -71,7 +71,6 @@ export const DrugsList = [
 	Stimulant
 ]
 
-export default DrugList
 
 
 // OLD DRUGS

@@ -91,7 +91,7 @@
 		[
 			{ name: "height", random: randomHeight },
 			{ name: "weight", random: randomWeight }
-		]
+		],
 	]
 </script>
 

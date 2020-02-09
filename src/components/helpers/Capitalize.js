@@ -1,4 +1,4 @@
-const Capitalize = (string) => {
+export default (string) => {
 	return string
 		.split(' ')
 		.map(word => {
@@ -6,5 +6,3 @@ const Capitalize = (string) => {
 		})
 		.join(' ')
 }
-
-export default Capitalize

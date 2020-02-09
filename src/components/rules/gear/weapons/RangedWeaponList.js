@@ -187,7 +187,7 @@ export const TargetRifle = new RangedWeapon({
 })
 
 
-const RangedWeaponList = [
+export default [
 	BoltActionRifle,
 	CompoundBow,
 	Crossbow,
@@ -203,7 +203,7 @@ const RangedWeaponList = [
 	TargetRifle
 ]
 
-export default RangedWeaponList
+
 
 // RARE RANGED
 // new RangedWeapon(`Blowgun`, 0, `Cx2`, `Dart`, 1, 2, `Pierce. DMG Mod.`, 1),

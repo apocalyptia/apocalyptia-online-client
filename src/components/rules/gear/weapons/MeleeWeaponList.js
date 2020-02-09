@@ -142,7 +142,7 @@ export const Staff = new MeleeWeapon({
 })
 
 
-const MeleeWeaponList = [
+export default [
 	Ax,
 	BaseballBat,
 	BrassKnuckles,
@@ -156,8 +156,6 @@ const MeleeWeaponList = [
 	Spear,
 	Staff
 ]
-
-export default MeleeWeaponList
 
 
 // RARE MELEE

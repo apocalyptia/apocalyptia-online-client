@@ -10,13 +10,12 @@
 
 	let melee, ranged, armor
 
-	const meleeList = ['DMG', 'RNG']
-	const rangedList = ['DMG', 'RNG', 'cal', 'mag']
-	const armorList = ['DR', 'location']
+	const meleeList = ['DMG', 'RNG',]
+	const rangedList = ['DMG', 'RNG', 'cal', 'mag',]
+	const armorList = ['DR', 'location',]
 
 	const rollMelee = () => {
 		melee = RandomRoll(MeleeWeaponList)
-		console.log(melee)
 	}
 
 	const rollRanged = () => {

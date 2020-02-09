@@ -96,7 +96,7 @@ export const Thermite = new Bomb({
 })
 
 
-const BombList = [
+export default [
 	Flashbang,
 	Frag,
 	Molotov,
@@ -104,8 +104,6 @@ const BombList = [
 	Teargas,
 	Thermite
 ]
-
-export default BombList
 
 
 
