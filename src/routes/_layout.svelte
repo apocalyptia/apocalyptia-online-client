@@ -20,7 +20,7 @@
 		top: 3rem;
 		flex-wrap: nowrap;
 		flex-direction: column;
-		height: calc(100vh - 3rem);
+		height: calc(100vh - 6rem);
 		padding-bottom: 3rem;
 		text-align: center;
 		width: 100%;
