@@ -1,0 +1,25 @@
+<script>
+	import User from "../components/views/ui/User.svelte"
+	import { get } from "../routes/api/api"
+	import { onMount } from "svelte"
+
+	let users
+
+	onMount(() => {
+		get("listUsers").then(res => {
+			users = res
+			console.log(users)
+		})
+	})
+</script>
+
+<div>
+	<h1>List of Users</h1>
+	{#if users}
+		{#each users as user}
+			<User {user} />
+		{/each}
+	{:else}
+		<p>No users yet</p>
+	{/if}
+</div>

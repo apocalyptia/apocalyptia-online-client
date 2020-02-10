@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte'
-	import Dashboard from './Dashboard.svelte'
-	import Register from './Register.svelte'
-	import Signin from './Signin.svelte'
+	import Dashboard from './dashboard.svelte'
+	import Register from './register.svelte'
+	import Signin from './signin.svelte'
 	import { authUserStore, confirm, logout } from '../stores/userStore'
 	import * as sapper from '@sapper/app'
 
@@ -24,12 +24,26 @@
 
 {#if $authUserStore}
 	<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
-{:else}
-	<p>Not logged in</p>
-{/if}
-{#if !$authUserStore}
-	<button on:click={()=>sapper.goto('/Register')}>Register</button>
-	<button on:click={()=>sapper.goto('/Signin')}>Sign In</button>
-{:else}
 	<Dashboard />
+{:else}
+	<div class='center-card'>
+		<div class='title-row'>
+			Connection established...
+		</div>
+		<div class='button-row'>
+			<button on:click={()=>sapper.goto('/register')}>
+				Signup
+			</button>
+			<button on:click={()=>sapper.goto('/signin')}>
+				Login
+			</button>
+		</div>
+	</div>
 {/if}
+
+
+<style>
+	.button-row {
+		justify-content: space-between !important;
+	}
+</style>

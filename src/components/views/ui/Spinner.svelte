@@ -1,5 +1,5 @@
 <script>
-    import Spinner from "svelte-spinner"
+	import Spinner from "svelte-spinner"
 </script>
 
 
@@ -7,7 +7,7 @@
 
 
 <style>
-    :global(.svelte-spinner) {
-        display: inline;
-    }
+	:global(.svelte-spinner) {
+		display: inline;
+	}
 </style>
