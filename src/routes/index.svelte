@@ -1,18 +1,20 @@
 <script>
-	import Dashboard from '../components/views/ui/Dashboard.svelte'
-	import Register from '../components/views/ui/Register.svelte'
-	import Signin from '../components/views/ui/Signin.svelte'
+	import { onMount } from 'svelte'
+	import Dashboard from './Dashboard.svelte'
+	import Register from './Register.svelte'
+	import Signin from './Signin.svelte'
 	import { authUserStore, confirm, logout } from '../stores/userStore'
+	import * as sapper from '@sapper/app'
 
-	let hash = window.location.hash.substr(1)
-
-	let result = hash.split('&').reduce((result, item) => {
-		let parts = item.split('=')
-		result[parts[0]] = parts[1]
-		return result
-	}, {})
-
-	if (result.confirmation_token) confirm(result.confirmation_token)
+	onMount(() => {
+		let hash = window.location.hash.substr(1)
+		let result = hash.split('&').reduce((result, item) => {
+			let parts = item.split('=')
+			result[parts[0]] = parts[1]
+			return result
+		}, {})
+		if (result.confirmation_token) confirm(result.confirmation_token)
+	})
 </script>
 
 
@@ -21,13 +23,13 @@
 </svelte:head>
 
 {#if $authUserStore}
-	<p>Logged in as {$authUserStore.email}</p>
-	<button on:click={logout}>Logout</button>
-	<Dashboard />
+	<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
 {:else}
 	<p>Not logged in</p>
 {/if}
 {#if !$authUserStore}
-	<a href='/register'>Register</a>
-	<a href='/signin'>Signin</a>
+	<button on:click={()=>sapper.goto('/Register')}>Register</button>
+	<button on:click={()=>sapper.goto('/Signin')}>Sign In</button>
+{:else}
+	<Dashboard />
 {/if}

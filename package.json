@@ -15,7 +15,8 @@
     "compression": "^1.7.1",
     "gotrue-js": "^0.9.25",
     "polka": "^0.5.2",
-    "sirv": "^0.4.2"
+    "sirv": "^0.4.2",
+    "svelte-spinner": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -32,6 +33,6 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^5.2.0",
     "sapper": "^0.27.9",
-    "svelte": "^3.18.1"
+    "svelte": "^3.18.2"
   }
 }
