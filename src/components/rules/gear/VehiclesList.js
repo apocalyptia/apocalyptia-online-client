@@ -81,7 +81,7 @@
 	// const cEnhancedBrakes = new Gear(`Enhanced Brakes`,`Build 6#. Brake at -20mph/rnd.`,3);
 	// const cExoCage = new Gear(`Exo-Cage`,`Build 15#. Get one extra Prestine Condition level.`,18);
 	// const cFireSuppression = new Gear(`Fire Suppression`,`Build 9#. Puts out any fires on/in vehicle.`,6);
-	// const cFixedGun = new Gear(`Fixed Gun**`,`Build 3#*. Driver uses Drive(Combat) for RATK rolls.`,3);
+	// const cFixedGun = new Gear(`Fixed Gun**`,`Build 3#*. Driver uses Drive(Combat) for RAttack rolls.`,3);
 	// const cFloodLights = new Gear(`Flood Lights`,`Build 9#. No Visibility penalty in darkness. 10yds.`,3);
 	// const cFrameJack = new Gear(`Frame Jack**`,`Build 9#. Tire change time is halved on one side.`,6);
 	// const cFuelCapLock = new Gear(`Fuel Cap Lock`,`Build 3#. 10HP. Larceny(Disable) 9# takes d6mins.`,0);
@@ -103,6 +103,6 @@
 	// const cStrutBraces = new Gear(`Strut Braces`,`Build 6#. +1 Drive(Stunt).`,6);
 	// const cSupercharger = new Gear(`Supercharger`,`Build 18#. +20mph (+30yd) maximum Speed.`,9);
 	// const cTireChains = new Gear(`Tire Chains`,`Build 3#. Ignore Terrain penalties. -25% Speed.`,9);
-	// const cTurretGun = new Gear(`Turret Gun**`,`Build 6#*. Passenger uses Ranged for RATK rolls.`,9);
+	// const cTurretGun = new Gear(`Turret Gun**`,`Build 6#*. Passenger uses Ranged for RAttack rolls.`,9);
 	// const cWinch = new Gear(`Winch**`,`Build 9#. 30yd cable. 1yd/min. Hauls 2000Sz.`,15);
 	// const iVehicleCustomizationsList = [cAirBag,cAirFilter,cBackupFuelTank,cBallisticGlass,cBodySpines,cBrushGuard,cCargoRack,cCBRadio,cEjectorSeat,cEnhancedBrakes,cExoCage,cFireSuppression,cFixedGun,cFloodLights,cFrameJack,cFuelCapLock,cHiddenCompartment,cHighFlowExhaust,cHubcapBlades,cIntakeSnorkel,cKeypadIgnition,cLuxurySuspension,cNitrousBooster,cParachute,cPayloadDropper,cRackAndPinion,cRamPlow,cRunFlatTires,cSafetyHarness,cSlickDispenser,cSteelPlates,cStrutBraces,cSupercharger,cTireChains,cTurretGun,cWinch];

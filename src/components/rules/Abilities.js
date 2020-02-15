@@ -31,7 +31,7 @@ export const HyperImmunity = new Ability({
 export const PackMentality = new Ability({
 	name: `Pack Mentality`,
 	description: [
-		`+1 ATK at a target a Comrade ATKs this rnd.`,
+		`+1 Attack at a target a Comrade Attacks this rnd.`,
 	],
 	max: 1,
 	xp: 3
@@ -59,7 +59,7 @@ export const Specialize = new Ability({
 export const WeaponTraining = new Ability({
 	name: `Weapon Training`,
 	description: [
-		`+1 ATK with a specified weapon type.`,
+		`+1 Attack with a specified weapon type.`,
 	],
 	max: 1,
 	xp: 3,
@@ -285,7 +285,7 @@ export const XP15Abilities = [
 export const Assassin = new Ability({
 	name: `Assassin`,
 	description: [
-		`+3 Damage to ATKs from Concealment.`,
+		`+3 Damage to Attacks from Concealment.`,
 	],
 	max: 1,
 	xp: 18

@@ -12,7 +12,7 @@ export const AggressivePosture = new Rule({
 export const Aim = new Rule({
 	name: `Aim`, 
 	description: [
-		`Spend an Action to get +3 to your next ATK against a specific target.`,
+		`Spend an Action to get +3 to your next Attack against a specific target.`,
 	]
 })
 
@@ -26,7 +26,7 @@ export const Block = new Rule({
 export const CalledShot = new Rule({
 	name: `Called Shot`, 
 	description: [
-		`ATKs target the Torso by default. A Called Shot is an ATK targeting the Head, Arms, or Legs with added effects based on Location.`,
+		`Attacks target the Torso by default. A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects based on Location.`,
 	],
 	table: CalledShotTable
 })
@@ -55,14 +55,14 @@ export const Distract = new Rule({
 export const Dodge = new Rule({
 	name: `Dodge`, 
 	description: [
-		`Roll [Acrobatics vs Melee or Ranged (Throw)] for DEF. As part of a Dodge, you may elect to go Prone for free if you wish.`,
+		`Roll [Acrobatics vs Melee or Ranged (Throw)] for Defense. As part of a Dodge, you may elect to go Prone for free if you wish.`,
 	]
 })
 
 export const Duck = new Rule({
 	name: `Duck`, 
 	description: [
-		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) Attack. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
+		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs Attack] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) Attack. As part of this Dodge, you may elect to go Prone. If the Attack still hits, the Cover Material’s DR reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
 	]
 })
 
@@ -111,7 +111,7 @@ export const NonLethalForce = new Rule({
 export const Protect = new Rule({
 	name: `Protect`, 
 	description: [
-		`Become the new target of all ATKs targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the ATK.`,
+		`Become the new target of all Attacks targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the Attack.`,
 	]
 })
 

@@ -60,7 +60,7 @@ export const Ranged = new Skill({
 		`Projectile combat.`,
 	],
 	parent: `agility`,
-	difficulty: 'DEF',
+	difficulty: 'Defense',
 	specialties: {
 		shoot: new Specialty({
 			name: `Shoot`,
@@ -265,13 +265,13 @@ export const Drive = new Skill({
 		ram: new Specialty({
 			name: `Ram`,
 			description: [
-				`Roll vs [Drive(Stunt)] to ATK with a vehicle.`,
+				`Roll vs [Drive(Stunt)] to Attack with a vehicle.`,
 			]
 		}),
 		stunt: new Specialty({
 			name: `Stunt`,
 			description: [
-				`Roll vs [Drive(Ram)] for DEF with a vehicle.`,
+				`Roll vs [Drive(Ram)] for Defense with a vehicle.`,
 			]
 		})
 	}
@@ -283,7 +283,7 @@ export const Melee = new Skill({
 		`Hand-to-hand combat.`,
 	],
 	parent: `constitution`,
-	difficulty: 'ATK or DEF',
+	difficulty: 'Attack or Defense',
 	specialties: {
 		block: new Specialty({
 			name: `Block`,
@@ -294,7 +294,7 @@ export const Melee = new Skill({
 		strike: new Specialty({
 			name: `Strike`,
 			description: [
-				`Roll vs [DEF]. Damage = [weapon Damage + Success].`,
+				`Roll vs [Defense]. Damage = [weapon Damage + Success].`,
 			]
 		})
 	}

@@ -13,9 +13,9 @@ export const Actions = new Rule({
 export const Attack = new Rule({
 	name: `Attack`, 
 	description: [
-		`There are Melee Attacks and Ranged Attacks. Roll [d6 + Melee Attack or Ranged Attack] vs Defense (DEF).`,
-		`Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total.`,
-		`Deal bonus Damage = [ATK - DEF] up to your Melee or Ranged score.`,
+		`There are Melee Attacks and Ranged Attacks. Roll [d6 + Melee Attack or Ranged Attack] vs Defense.`,
+		`Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the Attack total.`,
+		`Deal bonus Damage = [Attack - Defense] up to your Melee or Ranged score.`,
 	]
 })
 
@@ -32,8 +32,8 @@ export const Defense = new Rule({
 		`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics].`,
 		`A Botch means you fall Prone if Dodging, or drop your weapon if Blocking.`,
 		`If you are unaware or unable to avoid the Attack, you are Defenseless and must the appropriate Reflexive Defense.`,
-		`There is one Reflexive form of each Defense Action which are used as your default DEF, equal to your Acrobatics score for Dodge and your Melee score for Block.`,
-		`Reflexive Defenses act as static Difficulties for enemy ATKs after you have already used your Defense Actions in that rnd.`,
+		`There is one Reflexive form of each Defense Action which are used as your default Defense, equal to your Acrobatics score for Dodge and your Melee score for Block.`,
+		`Reflexive Defenses act as static Difficulties for enemy Attacks after you have already used your Defense Actions in that rnd.`,
 		`Use Reflexive Dodge against Ranged Attacks and Reflexive Block against Melee Attacks.`,
 	]
 })
@@ -88,7 +88,7 @@ export const Pain = new Rule({
 export const Damage = new Rule({
 	name: `Damage`, 
 	description: [
-		`Damage causes Wounds. You die when Wounds = Health. Successful ATKs do Damage = [(ATK - DEF) + Weapon Damage]. All Wounds cause Pain penalties.`,
+		`Damage causes Wounds. You die when Wounds = Health. Successful Attacks do Damage = [(Attack - Defense) + Weapon Damage]. All Wounds cause Pain penalties.`,
 	],
 	subrules: [
 		DamageReduction,
@@ -131,7 +131,7 @@ export const Pedestrians = new Rule({
 export const Tires = new Rule({
 	name: `Tires`, 
 	description: [
-		`Roll [-3 ATK vs Drive(Stunt)] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck.`,
+		`Roll [-3 Attack vs Drive(Stunt)] to destroy a tire. If the tire is destroyed, the driver must roll [Drive 9#] or Wreck.`,
 		`If a front tire gets destroyed, the vehicle Wrecks automatically.`,
 	]
 })

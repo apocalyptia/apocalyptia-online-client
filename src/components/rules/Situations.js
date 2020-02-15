@@ -33,7 +33,7 @@ export const Chase = new Rule({
 export const Concealed = new Rule({
 	name: `Concealed`, 
 	description: [
-		`If an opponent knows your position but cannot see you, they are considered to be Blind to you. This means that their ATK is at a -6 penalty. Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against ATKs from Concealed opponents.`,
+		`If an opponent knows your position but cannot see you, they are considered to be Blind to you. This means that their Attack is at a -6 penalty. Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against Attacks from Concealed opponents.`,
 	]
 })
 
@@ -42,7 +42,7 @@ export const Cover = new Rule({
 	description: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material DR, in which case the Material DR acts as an Armor bonus for Damage reduction.`,
 		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
-		`You can lean in and out of Cover to ATK as part of an Action. If an opponent ATKs simultaneously when you ATK from Cover, they must make a Called Shot to hit an exposed Location.`,
+		`You can lean in and out of Cover to Attack as part of an Action. If an opponent Attacks simultaneously when you Attack from Cover, they must make a Called Shot to hit an exposed Location.`,
 	],
 	table: CoverTable
 })
@@ -57,7 +57,7 @@ export const Deaf = new Rule({
 export const Defenseless = new Rule({
 	name: `Defenseless`, 
 	description: [
-		`You must use a Reflexive Defense. Use your Block score against Melee ATKs and you Dodge score against Ranged ATKs.`,
+		`You must use a Reflexive Defense. Use your Block score against Melee Attacks and you Dodge score against Ranged Attacks.`,
 	]
 })
 
@@ -120,7 +120,7 @@ export const Immobilized = new Rule({
 export const OffHand = new Rule({
 	name: `Off-Hand`, 
 	description: [
-		`-3 penalty to ATK with your Off-Hand.`,
+		`-3 penalty to Attack with your Off-Hand.`,
 	]
 })
 
@@ -178,14 +178,14 @@ export const Asphyxiation = new Rule({
 export const Unarmed = new Rule({
 	name: `Unarmed`, 
 	description: [
-		`Successful Unarmed ATKs do Damage = [(ATK - DEF) / 2]. Always round down. DR is not depleted.`,
+		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2]. Always round down. DR is not depleted.`,
 	]
 })
 
 export const Unconscious = new Rule({
 	name: `Unconscious`, 
 	description: [
-		`Unaware and unable to do anything. You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive DEF of 0.`,
+		`Unaware and unable to do anything. You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive Defense of 0.`,
 	]
 })
 
@@ -199,7 +199,7 @@ export const Unstable = new Rule({
 export const Visibility = new Rule({
 	name: `Visibility`, 
 	description: [
-		`-1 to -6 to all rolls involving seeing, including ATK and DEF. A Visibility penalty of -6 imposes the effect of being temporarily Blind.`,
+		`-1 to -6 to all rolls involving seeing, including Attack and Defense. A Visibility penalty of -6 imposes the effect of being temporarily Blind.`,
 	]
 })
 
