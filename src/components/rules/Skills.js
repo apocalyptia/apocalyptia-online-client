@@ -19,7 +19,7 @@ export const Acrobatics = new Skill({
 		dodge: new Specialty({
 			name: `Dodge`,
 			description: [
-				`Roll vs [Melee or RATK].`,
+				`Roll vs [Melee or Ranged].`,
 			]
 		}),
 		jump: new Specialty({
@@ -242,7 +242,7 @@ export const Build = new Skill({
 		customize: new Specialty({
 			name: `Customize`,
 			description: [
-				`(#hrs) 3 per item. Each must be unique. Weapons: +1 RATK, +1 Melee Damage, or a new Attribute. Armor: +1 DR or a new Attribute.`,
+				`(#hrs) 3 per item. Each must be unique. Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Attribute. Armor: +1 DR or a new Attribute.`,
 			]
 		}),
 		repair: new Specialty({
@@ -288,7 +288,7 @@ export const Melee = new Skill({
 		block: new Specialty({
 			name: `Block`,
 			description: [
-				`Roll vs [Melee or RATK (if you have a Shield)].`,
+				`Roll vs [Melee or Ranged (if you have a Shield)].`,
 			]
 		}),
 		strike: new Specialty({

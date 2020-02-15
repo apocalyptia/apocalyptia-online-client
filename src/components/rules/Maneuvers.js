@@ -19,7 +19,7 @@ export const Aim = new Rule({
 export const Block = new Rule({
 	name: `Block`, 
 	description: [
-		`Roll [Melee vs Melee or RATK when using a Shield] for DEF.`,
+		`Roll [Melee vs Melee or Ranged when using a Shield] for DEF.`,
 	]
 })
 
@@ -55,14 +55,14 @@ export const Distract = new Rule({
 export const Dodge = new Rule({
 	name: `Dodge`, 
 	description: [
-		`Roll [Acrobatics vs Melee or RATK (Throw)] for DEF. As part of a Dodge, you may elect to go Prone for free if you wish.`,
+		`Roll [Acrobatics vs Melee or Ranged (Throw)] for DEF. As part of a Dodge, you may elect to go Prone for free if you wish.`,
 	]
 })
 
 export const Duck = new Rule({
 	name: `Duck`, 
 	description: [
-		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) RATK. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
+		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) Attack. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
 	]
 })
 

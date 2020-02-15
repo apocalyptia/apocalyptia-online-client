@@ -50,7 +50,7 @@ export const HollowPoint = new AmmoAttribute({
 export const Match = new AmmoAttribute({
 	name: 'Match',
 	description: [
-		'+1 RATK.',
+		'+1 Ranged Attack.',
 	],
 	calibers: [
 		'.22',

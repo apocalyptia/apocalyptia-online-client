@@ -13,7 +13,7 @@ export const Actions = new Rule({
 export const Attack = new Rule({
 	name: `Attack`, 
 	description: [
-		`There are Melee Attacks and Ranged Attacks. Roll [d6 + Melee Attack or RATK] vs Defense (DEF).`,
+		`There are Melee Attacks and Ranged Attacks. Roll [d6 + Melee Attack or Ranged Attack] vs Defense (DEF).`,
 		`Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total.`,
 		`Deal bonus Damage = [ATK - DEF] up to your Melee or Ranged score.`,
 	]
@@ -117,7 +117,7 @@ export const Conditions = new Rule({
 export const Occupants = new Rule({
 	name: `Occupants`, 
 	description: [
-		`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from RATKs with its DR.`,
+		`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from Ranged Attacks with its DR.`,
 	]
 })
 

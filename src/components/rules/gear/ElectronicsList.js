@@ -22,7 +22,7 @@ export const EmergencyRadio = new Electronic({
 export const Flashlight = new Electronic({
 	name: `Flashlight`,
 	description: [
-		`10yd light. -3 RATK to Blind 1rnd.`,
+		`10yd light. -3 Ranged Attack to Blind 1rnd.`,
 	],
 	sz: 1,
 	hours: 3

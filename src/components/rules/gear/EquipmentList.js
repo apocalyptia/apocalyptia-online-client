@@ -244,7 +244,7 @@ export const GrapplingHook = new Equipment({
 export const GunCleaningKit = new Equipment({
 	name: `Gun Cleaning Kit`,
 	description: [
-		`Gun gets +1 RATK for 1day. Takes 1hr/gun.`,
+		`Gun gets +1 Ranged for 1 day. Takes 1hr/gun.`,
 	],
 	sz: 1
 })
@@ -524,7 +524,7 @@ export const SpottingScope = new Equipment({
 export const SprayPaint = new Equipment({
 	name: `Spray Paint`,
 	description: [
-		`RATK Called Shot:Head. Blind d6rnds. 10 uses.`,
+		`Ranged Attack, Called Shot: Head. Blind d6rnds. 10 uses.`,
 	],
 	sz: 1
 })

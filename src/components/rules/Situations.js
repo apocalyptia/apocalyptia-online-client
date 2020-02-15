@@ -85,7 +85,7 @@ export const Falling = new Rule({
 export const FriendlyFire = new Rule({
 	name: `Friendly Fire`, 
 	description: [
-		`-3 RATK against targets within 1yd of your ally. If the RATK Fails, re-roll the RATK vs the ally’s Reflexive Dodge.`,
+		`-3 Ranged against targets within 1yd of your ally. If the Ranged Attack Fails, re-roll the Ranged Attack vs the ally’s Reflexive Dodge.`,
 	]
 })
 
@@ -143,7 +143,7 @@ export const Prone = new Rule({
 export const Range = new Rule({
 	name: `Range`, 
 	description: [
-		`RATKs take a -1 penalty per additional RNG increment. Melee Attacks take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`,
+		`Ranged Attacks take a -1 penalty per additional RNG increment. Melee Attacks take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`,
 	]
 })
 
@@ -192,7 +192,7 @@ export const Unconscious = new Rule({
 export const Unstable = new Rule({
 	name: `Unstable`, 
 	description: [
-		`-3 penalty to physical rolls. -3 to RATKs at or from you.`,
+		`-3 penalty to physical rolls. -3 to Ranged Attacks at or from you.`,
 	]
 })
 

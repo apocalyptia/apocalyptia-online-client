@@ -5,7 +5,7 @@ import { Unarmed } from '../../Situations'
 export const OneHanded = new WeaponAttribute({
 	name: '1h',
 	description: [
-		'Used one-handed. +1 RATK if used with both hands.',
+		'Used one-handed. +1 Ranged Attack if used with both hands.',
 	]
 })
 
@@ -19,7 +19,7 @@ export const TwoHanded = new WeaponAttribute({
 export const Auto = new WeaponAttribute({
 	name: 'Auto',
 	description: [
-		'[+3 RATK vs one target] or 3yd Blast. Uses 10 bullets.',
+		'[+3 Ranged Attack vs one target] or 3yd Blast. Uses 10 bullets.',
 	]
 })
 

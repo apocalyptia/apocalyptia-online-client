@@ -44,7 +44,7 @@ export const HollowPoint22 = new Ammo({
 export const Match22 = new Ammo({
 	name: `.22 Match`,
 	description: [
-		`+1 RATK.`,
+		`+1 Ranged Attack.`,
 	],
 	sz: 0.005,
 	cal: `.22`,
@@ -74,7 +74,7 @@ export const HollowPoint9mm = new Ammo({
 export const Match9mm = new Ammo({
 	name: `9mm Match`,
 	description: [
-		`+1 RATK.`,
+		`+1 Ranged Attack.`,
 	],
 	sz: 0.01,
 	cal: `9mm`,
@@ -134,7 +134,7 @@ export const HollowPoint556 = new Ammo({
 export const Match556 = new Ammo({
 	name: `5.56mm Match`,
 	description: [
-		`+1 RATK.`,
+		`+1 Ranged Attack.`,
 	],
 	sz: 0.02,
 	cal: `5.56`,
@@ -174,7 +174,7 @@ export const HollowPoint308 = new Ammo({
 export const Match308 = new Ammo({
 	name: `.308 Match`,
 	description: [
-		`+1 RATK.`,
+		`+1 Ranged Attack.`,
 	],
 	sz: 0.02,
 	cal: `.308`,

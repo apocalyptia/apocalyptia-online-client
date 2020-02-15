@@ -36,7 +36,7 @@ export const Foregrip = new Accessory({
 export const Holosight = new Accessory({
 	name: `Holosight`,
 	description: [
-		`+1 RATK.`,
+		`+1 Ranged Attack.`,
 	],
 	sz: 0
 })
@@ -44,7 +44,7 @@ export const Holosight = new Accessory({
 export const Laser = new Accessory({
 	name: `Laser`,
 	description: [
-		`+1 RATK. -6 RATK to Blind for d6rnds.`,
+		`+1 Ranged Attack. -6 Ranged Attack to Blind for d6rnds.`,
 	],
 	sz: 0
 })
@@ -52,7 +52,7 @@ export const Laser = new Accessory({
 export const Scope = new Accessory({
 	name: `Scope`,
 	description: [
-		`+3 Aimed RATKs and Perception(See).`,
+		`+3 Aimed Ranged Attacks and Perception(See).`,
 	],
 	sz: 1
 })
