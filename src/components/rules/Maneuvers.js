@@ -19,7 +19,7 @@ export const Aim = new Rule({
 export const Block = new Rule({
 	name: `Block`, 
 	description: [
-		`Roll [Melee vs MATK or RATK when using a Shield] for DEF.`,
+		`Roll [Melee vs Melee or RATK when using a Shield] for DEF.`,
 	]
 })
 
@@ -41,7 +41,7 @@ export const DefensivePosture = new Rule({
 export const Disarm = new Rule({
 	name: `Disarm`, 
 	description: [
-		`Roll [MATK vs Melee (+ Constitution if the weapon is used two-handed)]. The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
+		`Roll [Melee vs Melee (+ Constitution if the weapon is used two-handed)]. The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
 	]
 })
 
@@ -55,7 +55,7 @@ export const Distract = new Rule({
 export const Dodge = new Rule({
 	name: `Dodge`, 
 	description: [
-		`Roll [Acrobatics vs MATK or RATK (Throw)] for DEF. As part of a Dodge, you may elect to go Prone for free if you wish.`,
+		`Roll [Acrobatics vs Melee or RATK (Throw)] for DEF. As part of a Dodge, you may elect to go Prone for free if you wish.`,
 	]
 })
 
@@ -104,7 +104,7 @@ export const Negotiate = new Rule({
 export const NonLethalForce = new Rule({
 	name: `Non-Lethal Force`,
 	description: [
-		`Declare that you are using this Maneuver before rolling an MATK. On a Success, you do half Damage.`,
+		`Declare that you are using this Maneuver before rolling a Melee Attack. On a Success, you do half Damage.`,
 	]
 })
 
@@ -139,7 +139,7 @@ export const Reload = new Rule({
 export const Shove = new Rule({
 	name: `Shove`,
 	description: [
-		`Roll [MATK vs Constitution] to shove an enemy up to [Constitution/2] yds away from you, knocking them Prone. No Damage.`,
+		`Roll [Melee vs Constitution] to shove an enemy up to [Constitution/2] yds away from you, knocking them Prone. No Damage.`,
 	]
 })
 
@@ -181,7 +181,7 @@ export const Torture = new Rule({
 export const Trip = new Rule({
 	name: `Trip`,
 	description: [
-		`Roll [MATK vs Agility] to knock an enemy Prone. 1 Damage.`,
+		`Roll [Melee vs Agility] to knock an enemy Prone. 1 Damage.`,
 	]
 })
 

@@ -121,7 +121,7 @@ export const SolarLamp = new Electronic({
 export const StunGun = new Electronic({
 	name: `Stun Gun`,
 	description: [
-		`MATK. C9# or Stun for 1rnd.`,
+		`Melee Attack. C9# or Stun for 1rnd.`,
 	],
 	sz: 1,
 	hours: .25

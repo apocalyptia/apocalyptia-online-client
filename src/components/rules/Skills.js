@@ -19,7 +19,7 @@ export const Acrobatics = new Skill({
 		dodge: new Specialty({
 			name: `Dodge`,
 			description: [
-				`Roll vs [MATK or RATK].`,
+				`Roll vs [Melee or RATK].`,
 			]
 		}),
 		jump: new Specialty({
@@ -288,7 +288,7 @@ export const Melee = new Skill({
 		block: new Specialty({
 			name: `Block`,
 			description: [
-				`Roll vs [MATK or RATK (if you have a Shield)].`,
+				`Roll vs [Melee or RATK (if you have a Shield)].`,
 			]
 		}),
 		strike: new Specialty({
