@@ -10,8 +10,8 @@
 
 	let melee, ranged, armor
 
-	const meleeList = ['DMG', 'RNG',]
-	const rangedList = ['DMG', 'RNG', 'cal', 'mag',]
+	const meleeList = ['Damage', 'RNG',]
+	const rangedList = ['Damage', 'RNG', 'cal', 'mag',]
 	const armorList = ['DR', 'location',]
 
 	const rollMelee = () => {

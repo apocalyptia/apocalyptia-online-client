@@ -62,7 +62,7 @@ export const Dodge = new Rule({
 export const Duck = new Rule({
 	name: `Duck`, 
 	description: [
-		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) RATK. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
+		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) RATK. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
 	]
 })
 
@@ -83,7 +83,7 @@ export const Hide = new Rule({
 export const Hostage = new Rule({
 	name: `Hostage`,
 	description: [
-		`Use a Grabbed or Restrained enemy as Cover. The Grappled enemy's DR acts as the Material DR and any excess DMG is applied to the Grappled enemy instead of you. If the DMG is enough to kill the Grappled enemy, any excess DMG passes through to you. This does not make you Concealed.`,
+		`Use a Grabbed or Restrained enemy as Cover. The Grappled enemy's DR acts as the Material DR and any excess Damage is applied to the Grappled enemy instead of you. If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you. This does not make you Concealed.`,
 	]
 })
 
@@ -104,7 +104,7 @@ export const Negotiate = new Rule({
 export const NonLethalForce = new Rule({
 	name: `Non-Lethal Force`,
 	description: [
-		`Declare that you are using this Maneuver before rolling an MATK. On a Success, you do half DMG.`,
+		`Declare that you are using this Maneuver before rolling an MATK. On a Success, you do half Damage.`,
 	]
 })
 
@@ -118,7 +118,7 @@ export const Protect = new Rule({
 export const Push = new Rule({
 	name: `Push`,
 	description: [
-		`Roll [Constitution vs Constitution] to push an enemy in front of you. While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. 0DMG.`,
+		`Roll [Constitution vs Constitution] to push an enemy in front of you. While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. No Damage.`,
 	]
 })
 
@@ -139,7 +139,7 @@ export const Reload = new Rule({
 export const Shove = new Rule({
 	name: `Shove`,
 	description: [
-		`Roll [MATK vs Constitution] to shove an enemy up to [Constitution/2] yds away from you, knocking them Prone. 0DMG.`,
+		`Roll [MATK vs Constitution] to shove an enemy up to [Constitution/2] yds away from you, knocking them Prone. No Damage.`,
 	]
 })
 
@@ -167,21 +167,21 @@ export const Taunt = new Rule({
 export const Throw = new Rule({
 	name: `Throw`,
 	description: [
-		`Throw a Grabbed or Restrained enemy up to [Constitution] yds. They take Falling DMG and land Prone.`,
+		`Throw a Grabbed or Restrained enemy up to [Constitution] yds. They take Falling Damage and land Prone.`,
 	]
 })
 
 export const Torture = new Rule({
 	name: `Torture`,
 	description: [
-		`Roll [Medicine vs prisoner’s Constitution] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 DMG to the captive. Roll [Demeanor vs Demeanor] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`,
+		`Roll [Medicine vs prisoner’s Constitution] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 Damage to the captive. Roll [Demeanor vs Demeanor] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`,
 	]
 })
 
 export const Trip = new Rule({
 	name: `Trip`,
 	description: [
-		`Roll [MATK vs Agility] to knock an enemy Prone. 1DMG.`,
+		`Roll [MATK vs Agility] to knock an enemy Prone. 1 Damage.`,
 	]
 })
 
@@ -193,7 +193,7 @@ export const Grapple = new Rule({
 		`1) Grab`,
 		`2) Restrain`,
 		`3) Pin`,
-		`To Grapple an opponent, you must have at least one free hand and make a Melee(Unarmed) Attack roll, which does no DMG.`,
+		`To Grapple an opponent, you must have at least one free hand and make a Melee(Unarmed) Attack roll, which does no Damage.`,
 		`With a Successful Grapple roll, that combatant may alter the current Grapple step by 1.`,
 		`With each new Grapple roll, the difference between the combatants' results is a modifier to the Attacker's next Grapple roll.`,
 		`Each round the Attacker must choose to either spend 1 Action just to retain the Grapple, make another Grapple roll, or let go.`,

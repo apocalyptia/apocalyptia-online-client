@@ -4,7 +4,7 @@ import Ammo from '../../../classes/Ammo'
 export const ArrowBroadhead = new Ammo({
 	name: `Broadhead Arrow`,
 	description: [
-		`+1 DMG. Pierce.`,
+		`+1 Damage. Pierce.`,
 	],
 	sz: 0.1,
 	cal: `Arrow`,
@@ -34,7 +34,7 @@ export const Standard22 = new Ammo({
 export const HollowPoint22 = new Ammo({
 	name: `.22 Hollow Point`,
 	description: [
-		`+1 DMG.`,
+		`+1 Damage.`,
 	],
 	sz: .005,
 	cal: `.22`,
@@ -64,7 +64,7 @@ export const Standard9mm = new Ammo({
 export const HollowPoint9mm = new Ammo({
 	name: `9mm Hollow Point`,
 	description: [
-		`+1 DMG.`,
+		`+1 Damage.`,
 	],
 	sz: 0.01,
 	cal: `9mm`,
@@ -94,7 +94,7 @@ export const Standard357 = new Ammo({
 export const HollowPoint357 = new Ammo({
 	name: `.357 Hollow Point`,
 	description: [
-		`+1 DMG.`,
+		`+1 Damage.`,
 	],
 	sz: 0.01,
 	cal: `.357`,
@@ -124,7 +124,7 @@ export const Standard556 = new Ammo({
 export const HollowPoint556 = new Ammo({
 	name: `5.56mm Hollow Point`,
 	description: [
-		`+1 DMG.`,
+		`+1 Damage.`,
 	],
 	sz: 0.02,
 	cal: `5.56`,
@@ -164,7 +164,7 @@ export const Standard308 = new Ammo({
 export const HollowPoint308 = new Ammo({
 	name: `.308 Hollow Point`,
 	description: [
-		`+1 DMG.`,
+		`+1 Damage.`,
 	],
 	sz: 0.02,
 	cal: `.308`,
@@ -230,6 +230,6 @@ export default [
 // OLD AMMO
 // new Ammo(`.22`,	 `Tracer`,			`+1 Auto RATK.`,.005),
 // new Ammo(`12g`,	 `Birdshot`,		  `Basic ammo. Scatter.`,.05),
-// new Ammo(`12g`,	 `Flare`,			 `3FDMG/rnd for 3rnds. 50yd light radius.`,.05),
+// new Ammo(`12g`,	 `Flare`,			 `3 Fire Damage/rnd for 3rnds. 50yd light radius.`,.05),
 // new Ammo(`12g`,	 `Rubber`,			`Blunt.`,.05),
 // new Ammo(`5.56`,	`Tracer`,			`+1 Auto RATK.`,.02),

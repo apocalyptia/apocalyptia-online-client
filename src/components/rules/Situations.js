@@ -19,7 +19,7 @@ export const Blind = new Rule({
 export const Burning = new Rule({
 	name: `Burning`, 
 	description: [
-		`1 FDMG per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`,
+		`1 Fire Damage per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`,
 	]
 })
 
@@ -33,14 +33,14 @@ export const Chase = new Rule({
 export const Concealed = new Rule({
 	name: `Concealed`, 
 	description: [
-		`If an opponent knows your position but cannot see you, they are considered to be Blind to you. This means that their ATK is at a -6 penalty. Blasts are unaffected by this penalty, though Blast DMG may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against ATKs from Concealed opponents.`,
+		`If an opponent knows your position but cannot see you, they are considered to be Blind to you. This means that their ATK is at a -6 penalty. Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against ATKs from Concealed opponents.`,
 	]
 })
 
 export const Cover = new Rule({
 	name: `Cover`, 
 	description: [
-		`All DMG is negated against targets that are behind Cover unless the weapon's base DMG exceeds the Material DR, in which case the Material DR acts as an Armor bonus for DMG reduction.`,
+		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material DR, in which case the Material DR acts as an Armor bonus for Damage reduction.`,
 		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
 		`You can lean in and out of Cover to ATK as part of an Action. If an opponent ATKs simultaneously when you ATK from Cover, they must make a Called Shot to hit an exposed Location.`,
 	],
@@ -78,7 +78,7 @@ export const Exhaustion = new Rule({
 export const Falling = new Rule({
 	name: `Falling`, 
 	description: [
-		`1 Wound per 2yds. Roll [Acrobatics # = yds] as a Defense Action to halve Falling DMG.`,
+		`1 Wound per 2yds. Roll [Acrobatics # = yds] as a Defense Action to halve Falling Damage.`,
 	]
 })
 
@@ -178,7 +178,7 @@ export const Asphyxiation = new Rule({
 export const Unarmed = new Rule({
 	name: `Unarmed`, 
 	description: [
-		`Successful Unarmed ATKs do DMG = [(ATK - DEF) / 2]. Always round down. DR is not depleted.`,
+		`Successful Unarmed ATKs do Damage = [(ATK - DEF) / 2]. Always round down. DR is not depleted.`,
 	]
 })
 

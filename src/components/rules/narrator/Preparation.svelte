@@ -60,7 +60,7 @@
 		</div>
 		<button id='SurgeryPreparationBtn' class='Btn'>SURGERY</button>
 		<div id='SurgeryPreparationSec' class='Sec4'>
-			<p>Medicine(Surgery) is done one Location at a time and can only be used once per Location per wound. It requires 15min/DMG and a Surgery Kit. # = total DMG. Successful Surgery allows a wounded to fully heal during Recovery. 1: d6DMG and Bleeding.</p>
+			<p>Medicine(Surgery) is done one Location at a time and can only be used once per Location per wound. It requires 15min/DMG and a Surgery Kit. # = total DMG. Successful Surgery allows a wounded to fully heal during Recovery. 1: d6 Damage and Bleeding.</p>
 		</div>
 		<button id='TreatmentPreparationBtn' class='Btn'>TREATMENT</button>
 		<div id='TreatmentPreparationSec' class='Sec4'>

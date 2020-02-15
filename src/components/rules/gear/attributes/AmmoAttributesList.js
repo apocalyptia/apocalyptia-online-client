@@ -15,7 +15,7 @@ export const ArmorPiercing = new AmmoAttribute({
 export const Broadhead = new AmmoAttribute({
 	name: 'Broadhead',
 	description: [
-		'+1 DMG. Pierce',
+		'+1 Damage. Pierce',
 	],
 	calibers: [
 		'Arrow',
@@ -35,7 +35,7 @@ export const Buckshot = new AmmoAttribute({
 export const HollowPoint = new AmmoAttribute({
 	name: 'Hollow Point',
 	description: [
-		'+1 DMG.',
+		'+1 Damage.',
 	],
 	calibers: [
 		'.22',

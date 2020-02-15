@@ -12,7 +12,7 @@ export const Bandage = new Medical({
 export const Crutch = new Medical({
 	name: `Crutch`,
 	description: [
-		`Halves Leg DMG Pain penalty to Speed.`,
+		`Halves Leg Damage Pain penalty to Speed.`,
 	],
 	sz: 3
 })

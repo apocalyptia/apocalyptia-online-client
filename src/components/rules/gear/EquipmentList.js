@@ -252,7 +252,7 @@ export const GunCleaningKit = new Equipment({
 export const Hacksaw = new Equipment({
 	name: `Hacksaw`,
 	description: [
-		`1DMG/rnd of sawing to almost any material.`,
+		`1 Damage/rnd of sawing to almost any material.`,
 	],
 	sz: 2
 })
@@ -460,7 +460,7 @@ export const RatTrap = new Equipment({
 export const RoadFlare = new Equipment({
 	name: `Road Flare`,
 	description: [
-		`3FDMG. 10yd light radius for 20mins.`,
+		`3 Fire Damage. 10yd light radius for 20mins.`,
 	],
 	sz: 1
 })
@@ -596,7 +596,7 @@ export const WaterFilter = new Equipment({
 export const Whetstone = new Equipment({
 	name: `Whetstone`,
 	description: [
-		`Blade gets +1 DMG for 1day. Takes 1hr/blade.`,
+		`Blade gets +1 Damage for 1day. Takes 1hr/blade.`,
 	],
 	sz: 1
 })
@@ -612,7 +612,7 @@ export const Whistle = new Equipment({
 export const WireSaw = new Equipment({
 	name: `Wire Saw`,
 	description: [
-		`1DMG/rnd of sawing to wood or bone.`,
+		`1 Damage/rnd of sawing to wood or bone.`,
 	],
 	sz: 1
 })

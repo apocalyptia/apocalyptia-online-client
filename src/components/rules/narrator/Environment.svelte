@@ -71,7 +71,7 @@
 						<div class='cellDiv'>Tornado</div>
 						<button class='cellDiv cen'>-3 (Cloud)</button>
 						<button class='cellDiv cen'>-</button>
-						<button class='cellDiv cen'>d6DMG/min</button>
+						<button class='cellDiv cen'>d6 Damage/min</button>
 						<div class='cellDiv'>1 hour</div>
 					</div>
 					<div class='rowDiv'>

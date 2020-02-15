@@ -15,7 +15,7 @@ export const Attack = new Rule({
 	description: [
 		`There are MATKs (Melee) and RATKs (Ranged). Roll [d6 + MATK or RATK] vs Defense (DEF).`,
 		`Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the ATK total.`,
-		`Deal bonus DMG = [ATK - DEF] up to your Melee or Ranged score.`,
+		`Deal bonus Damage = [ATK - DEF] up to your Melee or Ranged score.`,
 	]
 })
 
@@ -66,14 +66,14 @@ export const Rounds = new Rule({
 export const DamageReduction = new Rule({
 	name: `Damage Reduction`, 
 	description: [
-		`DR reduces DMG. Armor is reduced by -1 DR after taking DMG that exceeds its DR.`,
+		`DR reduces Damage. Armor is reduced by -1 DR after taking Damage that exceeds its DR.`,
 	]
 })
 
 export const FireDamage = new Rule({
 	name: `Fire Damage`, 
 	description: [
-		`Whenever you take FDMG, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces FDMG.`,
+		`Whenever you take Fire Damage, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces Fire Damage.`,
 	]
 })
 
@@ -88,7 +88,7 @@ export const Pain = new Rule({
 export const Damage = new Rule({
 	name: `Damage`, 
 	description: [
-		`Damage causes Wounds. You die when Wounds = Health. Successful ATKs do DMG = [(ATK - DEF) + Weapon DMG]. All Wounds cause Pain penalties.`,
+		`Damage causes Wounds. You die when Wounds = Health. Successful ATKs do Damage = [(ATK - DEF) + Weapon Damage]. All Wounds cause Pain penalties.`,
 	],
 	subrules: [
 		DamageReduction,
@@ -103,7 +103,7 @@ export const Damage = new Rule({
 export const Burning = new Rule({
 	name: `Burning`, 
 	description: [
-		`If the Vehicle is at 0DR, it bursts into flames doing 1FDMG per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`,
+		`If the Vehicle is at 0DR, it bursts into flames doing 1 Fire Damage per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`,
 	]
 })
 
@@ -124,7 +124,7 @@ export const Occupants = new Rule({
 export const Pedestrians = new Rule({
 	name: `Pedestrians`, 
 	description: [
-		`Hitting a pedestrian does DMG = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`,
+		`Hitting a pedestrian does Damage = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`,
 	]
 })
 
@@ -139,14 +139,14 @@ export const Tires = new Rule({
 export const Wreck = new Rule({
 	name: `Wreck`, 
 	description: [
-		`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 DMG per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the DMG is halved and they remain in their seats.`,
+		`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 Damage per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the Damage is halved and they remain in their seats.`,
 	]
 })
 
 export const Vehicles = new Rule({
 	name: `Vehicles`, 
 	description: [
-		`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [DMG > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`,
+		`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [Damage > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`,
 	],
 	subrules: [
 		Conditions,

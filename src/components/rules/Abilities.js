@@ -258,7 +258,7 @@ export const FirmGrip = new Ability({
 export const HardHeaded = new Ability({
 	name: `Hard Headed`,
 	description: [
-		`Ignore Stun from Head DMG.`,
+		`Ignore Stun from Head Damage.`,
 	],
 	max: 1,
 	xp: 15
@@ -267,7 +267,7 @@ export const HardHeaded = new Ability({
 export const PowerfulStrike = new Ability({
 	name: `Powerful Strike`,
 	description: [
-		`+1 DMG with a specified Melee weapon type.`,
+		`+1 Damage with a specified Melee weapon type.`,
 	],
 	max: 1,
 	xp: 15,
@@ -285,7 +285,7 @@ export const XP15Abilities = [
 export const Assassin = new Ability({
 	name: `Assassin`,
 	description: [
-		`+3 DMG to ATKs from Concealment.`,
+		`+3 Damage to ATKs from Concealment.`,
 	],
 	max: 1,
 	xp: 18

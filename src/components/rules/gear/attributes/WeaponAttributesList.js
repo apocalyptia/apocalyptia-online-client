@@ -26,7 +26,7 @@ export const Auto = new WeaponAttribute({
 export const Blast = new WeaponAttribute({
 	name: 'Blast',
 	description: [
-		'[d6 vs Reflexive Dodge] in radius. [DMG / 2] on a miss (minimum 1).',
+		'[d6 vs Reflexive Dodge] in radius. [Damage / 2] on a miss (minimum 1).',
 	]
 })
 
@@ -40,21 +40,21 @@ export const Blunt = new WeaponAttribute({
 export const Chop = new WeaponAttribute({
 	name: 'Chop',
 	description: [
-		'+1 DMG to Locations with no Armor.',
+		'+1 Damage to Locations with no Armor.',
 	]
 })
 
-export const FDMG = new WeaponAttribute({
-	name: 'FDMG',
+export const FireDamage = new WeaponAttribute({
+	name: 'Fire Damage',
 	description: [
-		'Fire DMG. FDMG can only be prevented with FR Armor.',
+		'Fire Damage. Fire Damage can only be prevented with FR Armor.',
 	]
 })
 
 export const Pierce = new WeaponAttribute({
 	name: 'Pierce',
 	description: [
-		'+1 DMG to Locations with Armor.',
+		'+1 Damage to Locations with Armor.',
 	]
 })
 
@@ -75,7 +75,7 @@ export const Sawnoff = new WeaponAttribute({
 export const Scatter = new WeaponAttribute({
 	name: 'Scatter',
 	description: [
-		'Ignore RNG penalties. -1 DMG per extended RNG.',
+		'Ignore RNG penalties. -1 Damage per extended RNG.',
 	]
 })
 
@@ -101,7 +101,7 @@ export default [
 	Blast,
 	Blunt,
 	Chop,
-	FDMG,
+	FireDamage,
 	Pierce,
 	Rapid,
 	Shield,

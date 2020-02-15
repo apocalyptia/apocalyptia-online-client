@@ -4,7 +4,7 @@ import Accessory from '../../../classes/Accessory'
 export const Bayonet = new Accessory({
 	name: `Bayonet`,
 	description: [
-		`Knife. +1 DMG and Pierce for MATKs.`,
+		`Knife. +1 Damage and Pierce for MATKs.`,
 	],
 	sz: 1
 })

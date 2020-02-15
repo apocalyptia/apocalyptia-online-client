@@ -188,4 +188,4 @@ export default [
 // new MeleeWeapon(`Screwdriver`, 1, 1, `Lever. Pierce. Rapid.`, 1),
 // new MeleeWeapon(`Shovel`, 3, 2, `+1 Block`, 4),
 // new MeleeWeapon(`Tire Iron`, 2, 1, `Lever.`, 2),
-// new MeleeWeapon(`Torch`, 1, 1, `Blunt. +1 FDMG. 5yd light radius 1hr.`, 2),
+// new MeleeWeapon(`Torch`, 1, 1, `Blunt. +1 Fire Damage. 5yd light radius 1hr.`, 2),

@@ -20,7 +20,7 @@
 			</div>
 			<button id='IndustrialMachineryHazardBtn' class='Btn'>INDUSTRIAL MACHINERY</button>
 			<div id='IndustrialMachineryHazardSec' class='Sec5'>
-				<p>d6DMG/rnd, Stun</p>
+				<p>d6 Damage/rnd, Stun</p>
 			</div>
 			<button id='PoleTransformerHazardBtn' class='Btn'>POLE TRANSFORMER</button>
 			<div id='PoleTransformerHazardSec' class='Sec5'>

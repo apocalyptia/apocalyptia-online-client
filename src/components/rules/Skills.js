@@ -125,7 +125,7 @@ export const Medicine = new Skill({
 		surgery: new Specialty({
 			name: `Surgery`,
 			description: [
-				`Heal 1 Wound. Cannot be performed again on the same patient until they are fully healed. d6DMG on a Botch.`,
+				`Heal 1 Wound. Cannot be performed again on the same patient until they are fully healed. d6 Damage on a Botch.`,
 			]
 		})
 	}
@@ -242,7 +242,7 @@ export const Build = new Skill({
 		customize: new Specialty({
 			name: `Customize`,
 			description: [
-				`(#hrs) 3 per item. Each must be unique. Weapons: +1 RATK, +1 Melee DMG, or a new Attribute. Armor: +1 DR or a new Attribute.`,
+				`(#hrs) 3 per item. Each must be unique. Weapons: +1 RATK, +1 Melee Damage, or a new Attribute. Armor: +1 DR or a new Attribute.`,
 			]
 		}),
 		repair: new Specialty({
@@ -294,7 +294,7 @@ export const Melee = new Skill({
 		strike: new Specialty({
 			name: `Strike`,
 			description: [
-				`Roll vs [DEF]. DMG = [weapon DMG + Success].`,
+				`Roll vs [DEF]. Damage = [weapon Damage + Success].`,
 			]
 		})
 	}
@@ -371,7 +371,7 @@ export const Socialize = new Skill({
 		therapy: new Specialty({
 			name: `Therapy`,
 			description: [
-				`Heal 1 Trauma. Cannot be performed again on the same day. d6DMG on a Botch.`,
+				`Heal 1 Trauma. Cannot be performed again on the same day. d6 Damage on a Botch.`,
 			]
 		})
 	}

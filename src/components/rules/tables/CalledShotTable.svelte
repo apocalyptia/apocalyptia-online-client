@@ -2,7 +2,7 @@
 	<tr>
 		<th>Location</th>
 		<th>ATK</th>
-		<th>DMG</th>
+		<th>Damage</th>
 		<th>Notes</th>
 	</tr>
 	<tr>

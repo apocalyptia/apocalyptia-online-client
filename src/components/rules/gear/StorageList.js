@@ -76,7 +76,7 @@ export const DuffelBag = new Storage({
 export const FuelCan = new Storage({
 	name: `Fuel Can`,
 	description: [
-		`5gal Fuel. d6FDMG/gal, 1min, 1yd/gal Blast.`,
+		`5gal Fuel. d6 Fire Damage/gal, 1min, 1yd/gal Blast.`,
 	],
 	sz: 2,
 	slots: 5

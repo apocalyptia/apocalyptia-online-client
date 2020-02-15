@@ -1,7 +1,7 @@
 import Bomb from '../../../classes/Bomb'
 import {
 	Blast,
-	FDMG,
+	FireDamage,
 	Pierce
 } from '../attributes/WeaponAttributesList'
 import {
@@ -42,11 +42,11 @@ export const Frag = new Bomb({
 export const Molotov = new Bomb({
 	name: `Molotov`,
 	sz: 2,
-	dmg: `d6 + 1FDMG/rnd`,
+	dmg: `d6 + 1 Fire Damage/rnd`,
 	rng: `3yd`,
 	attributes: [
 		Blast,
-		FDMG
+		FireDamage
 	],
 	fuse: `1rnd`,
 	duration: `1min`,
@@ -88,7 +88,7 @@ export const Thermite = new Bomb({
 	rng: `1yd`,
 	attributes: [
 		Blast,
-		FDMG
+		FireDamage
 	],
 	fuse: `1rnd`,
 	duration: `6rnds`,
