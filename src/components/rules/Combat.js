@@ -41,7 +41,7 @@ export const Defense = new Rule({
 export const Movement = new Rule({
 	name: `Movement`, 
 	description: [
-		`It costs 1 Action to move up to your Speed [A x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn.`,
+		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn.`,
 		`You may divide up your movement around other Actions on your turn however you wish.`,
 		`It costs 1 Action to stand up. You may go Prone at any time on your turn or as part of a Dodge for free.`,
 	]
@@ -50,7 +50,7 @@ export const Movement = new Rule({
 export const Recovery = new Rule({
 	name: `Recovery`, 
 	description: [
-		`After 3 days of rest, roll [C vs total Wounds] to heal 1 Wound, and [D vs total Trauma] to heal 1 Trauma.`,
+		`After 3 days of rest, roll [Constitution vs total Wounds] to heal 1 Wound, and [Demeanor vs total Trauma] to heal 1 Trauma.`,
 		`On a Fail, you take 1 additional Wound or Trauma, depending on what you were rolling to Recover.`,
 	]
 })

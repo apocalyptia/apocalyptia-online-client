@@ -41,7 +41,7 @@ export const DefensivePosture = new Rule({
 export const Disarm = new Rule({
 	name: `Disarm`, 
 	description: [
-		`Roll [MATK vs Melee (+ C if the weapon is used two-handed)]. The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
+		`Roll [MATK vs Melee (+ Constitution if the weapon is used two-handed)]. The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
 	]
 })
 
@@ -69,7 +69,7 @@ export const Duck = new Rule({
 export const Encourage = new Rule({
 	name: `Encourage`,
 	description: [
-		`Roll [Leadership vs groups’ total D scores]. The group gets a bonus = [your D] for one specific roll each. A Botch is -1 to all rolls.`,
+		`Roll [Leadership vs groups’ total Demeanor scores]. The group gets a bonus = [your Demeanor] for one specific roll each. A Botch is -1 to all rolls.`,
 	]
 })
 
@@ -90,7 +90,7 @@ export const Hostage = new Rule({
 export const Interrogate = new Rule({
 	name: `Interrogate`,
 	description: [
-		`Roll [Leadership vs D] to get information out of a subject who does not want to help, but without resorting to violence. Each roll takes d6 mins of conversation. If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly). If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts. After Fails = [D], the interrogator gives up or the subject cracks and tells everything they know.`,
+		`Roll [Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence. Each roll takes d6 mins of conversation. If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly). If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts. After Fails = [Demeanor], the interrogator gives up or the subject cracks and tells everything they know.`,
 	]
 })
 
@@ -118,14 +118,14 @@ export const Protect = new Rule({
 export const Push = new Rule({
 	name: `Push`,
 	description: [
-		`Roll [C vs C] to push an enemy in front of you. While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. 0DMG.`,
+		`Roll [Constitution vs Constitution] to push an enemy in front of you. While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. 0DMG.`,
 	]
 })
 
 export const Recruit = new Rule({
 	name: `Recruit`,
 	description: [
-		`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and other contextual modifiers should be applied at the Narrator's discretion.`,
+		`Roll [Socialize vs Demeanor] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and other contextual modifiers should be applied at the Narrator's discretion.`,
 	]
 })
 
@@ -139,7 +139,7 @@ export const Reload = new Rule({
 export const Shove = new Rule({
 	name: `Shove`,
 	description: [
-		`Roll [MATK vs C] to shove an enemy up to [C/2] yds away from you, knocking them Prone. 0DMG.`,
+		`Roll [MATK vs Constitution] to shove an enemy up to [Constitution/2] yds away from you, knocking them Prone. 0DMG.`,
 	]
 })
 
@@ -160,28 +160,28 @@ export const Tackle = new Rule({
 export const Taunt = new Rule({
 	name: `Taunt`,
 	description: [
-		`Roll [Leadership vs D]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1rnd if [penalty > enemy’s D].`,
+		`Roll [Leadership vs Demeanor]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1rnd if [penalty > enemy’s Demeanor].`,
 	]
 })
 
 export const Throw = new Rule({
 	name: `Throw`,
 	description: [
-		`Throw a Grabbed or Restrained enemy up to [C] yds. They take Falling DMG and land Prone.`,
+		`Throw a Grabbed or Restrained enemy up to [Constitution] yds. They take Falling DMG and land Prone.`,
 	]
 })
 
 export const Torture = new Rule({
 	name: `Torture`,
 	description: [
-		`Roll [Medicine vs prisoner’s C] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 DMG to the captive. Roll [D vs D] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`,
+		`Roll [Medicine vs prisoner’s Constitution] once per hour to cause a captive d6 Pain to soften their resolve without killing them. Failure does d6 DMG to the captive. Roll [Demeanor vs Demeanor] at the end of each hour (Pain penalty applies). Failure causes -1 Psyche loss. At 0 Psyche, either the torturer cannot do it anymore and gives up, or the captive is broken and can be controlled with Demeanor Skills automatically until freed.`,
 	]
 })
 
 export const Trip = new Rule({
 	name: `Trip`,
 	description: [
-		`Roll [MATK vs A] to knock an enemy Prone. 1DMG.`,
+		`Roll [MATK vs Agility] to knock an enemy Prone. 1DMG.`,
 	]
 })
 

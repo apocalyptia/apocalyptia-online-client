@@ -140,7 +140,7 @@
 				<div class='rowDiv'>
 					<button class='cellDiv cen'>3</button>
 					<div class='cellDiv'>Cultist</div>
-					<button class='cellDiv'>Sermon forces Entertain v D roll. -1 Psyche on c Fail.</button>
+					<button class='cellDiv'>Sermon forces Entertain v Demeanor roll. -1 Psyche on c Fail.</button>
 				</div>
 				<div class='rowDiv'>
 					<button class='cellDiv cen'>4</button>

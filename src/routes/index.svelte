@@ -37,7 +37,6 @@
 			<button on:click={()=>sapper.goto('/signin')}>
 				Login
 			</button>
-			<button on:click={()=>sapper.goto('/dashboard')}>Dashboard</button>
 		</div>
 	</div>
 {/if}

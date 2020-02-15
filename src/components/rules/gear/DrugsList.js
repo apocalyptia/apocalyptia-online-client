@@ -44,7 +44,7 @@ export const Painkiller = new Drug({
 export const Sedative = new Drug({
 	name: `Sedative`,
 	description: [
-		`D#6/rnd to take any action.`,
+		`Demeanor#6/rnd to take any action.`,
 	],
 	sz: 0,
 	mix: 12,

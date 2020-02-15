@@ -5,7 +5,7 @@ import CoverTable from './tables/CoverTable.svelte'
 export const Bleeding = new Rule({
 	name: `Bleeding`, 
 	description: [
-		`When you take Wounds = [C] or more, you begin taking an additional 1 Wound per minute. When you take Wounds = [Cx2], the rate of Bleeding increases to 1 Wound per rnd. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
+		`When you take Wounds = [Constitution] or more, you begin taking an additional 1 Wound per minute. When you take Wounds = [Constitution x2], the rate of Bleeding increases to 1 Wound per rnd. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
 	]
 })
 
@@ -64,14 +64,14 @@ export const Defenseless = new Rule({
 export const Dehydration = new Rule({
 	name: `Dehydration`, 
 	description: [
-		`People need 1 Water per day. 1 Pain per day without Water. This penalty is reduced by 1 per day with Water. Going without Water for a number of days = [C] is lethal.`,
+		`People need 1 Water per day. 1 Pain per day without Water. This penalty is reduced by 1 per day with Water. Going without Water for a number of days = [Constitution] is lethal.`,
 	]
 })
 
 export const Exhaustion = new Rule({
 	name: `Exhaustion`, 
 	description: [
-		`People need 8 hours of sleep per day. 1 Pain per day without sufficient sleep. Go unconscious for 8 hours after days = [C] without sleep. Penalties go away after 8 hours of sleep.`,
+		`People need 8 hours of sleep per day. 1 Pain per day without sufficient sleep. Go unconscious for 8 hours after days = [Constitution] without sleep. Penalties go away after 8 hours of sleep.`,
 	]
 })
 
@@ -106,7 +106,7 @@ export const Harmless = new Rule({
 export const Hypothermia = new Rule({
 	name: `Hypothermia`, 
 	description: [
-		`People need warmth to stay alive. 1 Pain per hour of Hypothermia.  Reduce penalty by 1 per hour of warmth. Hypothermia for hours = [C] is lethal.`,
+		`People need warmth to stay alive. 1 Pain per hour of Hypothermia.  Reduce penalty by 1 per hour of warmth. Hypothermia for hours = [Constitution] is lethal.`,
 	]
 })
 
@@ -157,7 +157,7 @@ export const Restrained = new Rule({
 export const Starvation = new Rule({
 	name: `Starvation`, 
 	description: [
-		`People need 1 Food per day. 1 Pain per week without Food. This penalty is reduced by 1 per day with Food. Going without Food for a number of weeks = [C] is lethal.`,
+		`People need 1 Food per day. 1 Pain per week without Food. This penalty is reduced by 1 per day with Food. Going without Food for a number of weeks = [Constitution] is lethal.`,
 	]
 })
 
@@ -171,7 +171,7 @@ export const Stun = new Rule({
 export const Asphyxiation = new Rule({
 	name: `Asphyxiation`, 
 	description: [
-		`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [C] is lethal.`,
+		`People need constant air supply. 1 Pain per minute without air. This penalty is reduced by 1 per minute with air. Going without air for a number of minutes = [Constitution] is lethal.`,
 	]
 })
 

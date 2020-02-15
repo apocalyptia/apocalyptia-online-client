@@ -20,7 +20,7 @@ export const Balaclava = new Equipment({
 export const Bandanna = new Equipment({
 	name: `Bandanna`,
 	description: [
-		`+1 C vs airborne toxins. Can use as Bandage.`,
+		`+1 Constitution vs airborne toxins. Can use as Bandage.`,
 	],
 	sz: 0
 })
@@ -132,7 +132,7 @@ export const Chemical = new Equipment({
 export const ChokerLeash = new Equipment({
 	name: `Choker Leash`,
 	description: [
-		`+3 Tame. Grabbed. C +3 vs C to control.`,
+		`+3 Tame. Grabbed. Constitution +3 vs Constitution to control.`,
 	],
 	sz: 1
 })
@@ -148,7 +148,7 @@ export const DuctTape = new Equipment({
 export const DustMask = new Equipment({
 	name: `Dust Mask`,
 	description: [
-		`+3 C vs airborne toxins. Mask.`,
+		`+3 Constitution vs airborne toxins. Mask.`,
 	],
 	sz: 1
 })
@@ -212,7 +212,7 @@ export const Food = new Equipment({
 export const GasMask = new Equipment({
 	name: `Gas Mask`,
 	description: [
-		`+6 C vs airborne toxins. Mask. -1 Perception.`,
+		`+6 Constitution vs airborne toxins. Mask. -1 Perception.`,
 	],
 	sz: 1
 })
@@ -228,7 +228,7 @@ export const GlassCutter = new Equipment({
 export const Goggles = new Equipment({
 	name: `Goggles`,
 	description: [
-		`+3 C to resist toxins in eyes.`,
+		`+3 Constitution to resist toxins in eyes.`,
 	],
 	sz: 1
 })
@@ -532,7 +532,7 @@ export const SprayPaint = new Equipment({
 export const Sunglasses = new Equipment({
 	name: `Sunglasses`,
 	description: [
-		`No Visibility(Sun) penalty. +1 C vs light.`,
+		`No Visibility(Sun) penalty. +1 Constitution vs light.`,
 	],
 	sz: 0
 })
