@@ -41,7 +41,7 @@ export const DefensivePosture = new Rule({
 export const Disarm = new Rule({
 	name: `Disarm`, 
 	description: [
-		`Roll [MATK vs Melee (+ C if the weapon is used two-handed)]. The weapon flies d6 yds away. Attacker gets the weapon if Unarmed.`,
+		`Roll [MATK vs Melee (+ C if the weapon is used two-handed)]. The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
 	]
 })
 
@@ -62,7 +62,7 @@ export const Dodge = new Rule({
 export const Duck = new Rule({
 	name: `Duck`, 
 	description: [
-		`Roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) RATK. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
+		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs ATK] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) RATK. As part of this Dodge, you may elect to go Prone. If the ATK still hits, the Cover Material’s DR reduces the DMG. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
 	]
 })
 
@@ -80,10 +80,10 @@ export const Hide = new Rule({
 	]
 })
 
-export const Hold = new Rule({
-	name: `Hold`,
+export const Hostage = new Rule({
+	name: `Hostage`,
 	description: [
-		`Block ATKs using a Grabbed enemy as a Shield.`,
+		`Use a Grabbed or Restrained enemy as Cover. The Grappled enemy's DR acts as the Material DR and any excess DMG is applied to the Grappled enemy instead of you. If the DMG is enough to kill the Grappled enemy, any excess DMG passes through to you. This does not make you Concealed.`,
 	]
 })
 
@@ -118,14 +118,14 @@ export const Protect = new Rule({
 export const Push = new Rule({
 	name: `Push`,
 	description: [
-		`Roll [C vs C] to push an enemy in front of you as you move up to [C] yds. 0DMG.`,
+		`Roll [C vs C] to push an enemy in front of you. While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. 0DMG.`,
 	]
 })
 
 export const Recruit = new Rule({
 	name: `Recruit`,
 	description: [
-		`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and situational modifiers should be applied by the Narrator.`,
+		`Roll [Socialize vs D] to convince someone to join your side. If they are someone’s follower, roll [Leadership vs Leadership]. Attitude and other contextual modifiers should be applied at the Narrator's discretion.`,
 	]
 })
 
@@ -153,7 +153,7 @@ export const Sneak = new Rule({
 export const Tackle = new Rule({
 	name: `Tackle`,
 	description: [
-		`Roll [C vs C] to go Prone with Grabbed enemy.`,
+		`Spend 2 Actions and make a Grapple Attack roll to move up to your Speed and Pin an enemy. If you Fail, you go Prone in front of them.`,
 	]
 })
 
@@ -167,7 +167,7 @@ export const Taunt = new Rule({
 export const Throw = new Rule({
 	name: `Throw`,
 	description: [
-		`Throw a Grabbed enemy up to [C] yds and they take Falling DMG. Prone.`,
+		`Throw a Grabbed or Restrained enemy up to [C] yds. They take Falling DMG and land Prone.`,
 	]
 })
 
@@ -186,13 +186,21 @@ export const Trip = new Rule({
 })
 
 
-export const Grab = new Rule({
-	name: `Grab`,
+export const Grapple = new Rule({
+	name: `Grapple`,
 	description: [
-		`0DMG MATK to render an enemy Defenseless and unable to take actions except attempting escape [(Acrobatics or Melee) vs Grab]. You must have a free hand to Grab. Spend 1 Action per rnd to retain a Grab.`,
+		`There are three steps to Grappling:`,
+		`1) Grab`,
+		`2) Restrain`,
+		`3) Pin`,
+		`To Grapple an opponent, you must have at least one free hand and make a Melee(Unarmed) Attack roll, which does no DMG.`,
+		`With a Successful Grapple roll, that combatant may alter the current Grapple step by 1.`,
+		`With each new Grapple roll, the difference between the combatants' results is a modifier to the Attacker's next Grapple roll.`,
+		`Each round the Attacker must choose to either spend 1 Action just to retain the Grapple, make another Grapple roll, or let go.`,
+		`When the Defender reduces the Grapple step to 0 they escape.`,
 	],
 	subrules: [
-		Hold, 
+		Hostage, 
 		Tackle, 
 		Throw
 	]
@@ -214,7 +222,7 @@ export const OffensiveManeuvers = [
 	Aim,
 	CalledShot,
 	Disarm,
-	Grab,
+	Grapple,
 	NonLethalForce,
 	Push,
 	Reload,

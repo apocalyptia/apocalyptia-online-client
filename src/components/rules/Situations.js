@@ -12,7 +12,7 @@ export const Bleeding = new Rule({
 export const Blind = new Rule({
 	name: `Blind`, 
 	description: [
-		`-6 to sight-based rolls, including ATK and DEF.`,
+		`You are considered to be Defenseless. You automatically Fail any Perception roll that involves seeing. You have a -6 penalty to all other rolls that involve seeing. This includes Attacks, in which case all opponents are considered to be Concealed from you.`,
 	]
 })
 
@@ -33,7 +33,7 @@ export const Chase = new Rule({
 export const Concealed = new Rule({
 	name: `Concealed`, 
 	description: [
-		`If an opponent knows your position but cannot see you, their ATK is at a -6 penalty. Blasts are unaffected by this penalty, though Blast DMG may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against ATKs from Concealed opponents.`,
+		`If an opponent knows your position but cannot see you, they are considered to be Blind to you. This means that their ATK is at a -6 penalty. Blasts are unaffected by this penalty, though Blast DMG may be negated or reduced if the Concealment is due to Cover. Targets are Defenseless against ATKs from Concealed opponents.`,
 	]
 })
 
@@ -41,9 +41,17 @@ export const Cover = new Rule({
 	name: `Cover`, 
 	description: [
 		`All DMG is negated against targets that are behind Cover unless the weapon's base DMG exceeds the Material DR, in which case the Material DR acts as an Armor bonus for DMG reduction.`,
-		`All Cover except Glass makes you Concealed while behind Cover. You can lean in and out of Cover to ATK as part of an Action. If an opponent ATKs simultaneously when you ATK from Cover, they must make a Called Shot to hit an exposed Location.`,
+		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
+		`You can lean in and out of Cover to ATK as part of an Action. If an opponent ATKs simultaneously when you ATK from Cover, they must make a Called Shot to hit an exposed Location.`,
 	],
 	table: CoverTable
+})
+
+export const Deaf = new Rule({
+	name: `Deaf`,
+	description: [
+		`You automatically Fail any roll that involves hearing.`
+	]
 })
 
 export const Defenseless = new Rule({
@@ -81,10 +89,31 @@ export const FriendlyFire = new Rule({
 	]
 })
 
+export const Grabbed = new Rule({
+	name: `Grabbed`,
+	description: [
+		`Being Grabbed is the first step of Grappling. While Grabbed, you are considered to be Immobilized. The attacker who is Grappling you can choose to bring you along with them if they take a Movement action, otherwise they let go.`,
+	]
+})
+
+export const Harmless = new Rule({
+	name: `Harmless`,
+	description: [
+		`You are cannot Attack.`,
+	]
+})
+
 export const Hypothermia = new Rule({
 	name: `Hypothermia`, 
 	description: [
 		`People need warmth to stay alive. 1 Pain per hour of Hypothermia.  Reduce penalty by 1 per hour of warmth. Hypothermia for hours = [C] is lethal.`,
+	]
+})
+
+export const Immobilized = new Rule({
+	name: `Immobilized`,
+	description: [
+		`Your Speed is temporarily considered to be 0.`
 	]
 })
 
@@ -95,10 +124,19 @@ export const OffHand = new Rule({
 	]
 })
 
+export const Pinned = new Rule({
+	name: `Pinned`,
+	description: [
+		`Pinned is the third and final step of Grappling. While Pinned, you are considered to be Defenseless, Harmless, Immobilized, and Prone. The Attacker is also considered to be Immobilized and Prone.`,
+	]
+})
+
 export const Prone = new Rule({
 	name: `Prone`, 
 	description: [
-		`You may drop Prone at any time for free on your turn or as part of a Dodge action. Standing up takes 1 Action. +1 RATK. -3 DEF vs MATKs. +3 Stealth. Speed 1yd.`,
+		`You may drop Prone at any time for free on your turn or as part of a Dodge action. Standing up takes 1 Action.`,
+		`The benefits of being Prone are that you get +3 Ranged and +3 Stealth, and attackers take a -3 Ranged penalty to hit you.`,
+		`The drawbacks of being Prone are that your Speed drops to 1yrd and attackers get a +3 Melee bonus to hit you.`,
 	]
 })
 
@@ -106,6 +144,13 @@ export const Range = new Rule({
 	name: `Range`, 
 	description: [
 		`RATKs take a -1 penalty per additional RNG increment. MATKs take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`,
+	]
+})
+
+export const Restrained = new Rule({
+	name: `Restrained`,
+	description: [
+		`Restrained is the second step of Grappling. While Restrained, you are considered to be Harmless and Immobilized.`,
 	]
 })
 
@@ -119,7 +164,7 @@ export const Starvation = new Rule({
 export const Stun = new Rule({
 	name: `Stun`, 
 	description: [
-		`Defenseless and cannot take Actions. Prone if [Stunned > 1rnd].`,
+		`Defenseless, Harmless, and Immobilized. You fall Prone if Stunned for longer than 1rnd.`,
 	]
 })
 
@@ -140,7 +185,7 @@ export const Unarmed = new Rule({
 export const Unconscious = new Rule({
 	name: `Unconscious`, 
 	description: [
-		`Unaware and unable to take Actions. 0 DEF. Prone.`,
+		`Unaware and unable to do anything. You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive DEF of 0.`,
 	]
 })
 
@@ -154,7 +199,7 @@ export const Unstable = new Rule({
 export const Visibility = new Rule({
 	name: `Visibility`, 
 	description: [
-		`-1 to -6 (Blind) to sight-based rolls, including ATK and DEF.`,
+		`-1 to -6 to all rolls involving seeing, including ATK and DEF. A Visibility penalty of -6 imposes the effect of being temporarily Blind.`,
 	]
 })
 
@@ -181,13 +226,19 @@ export default [
 	Chase,
 	Concealed,
 	Cover,
+	Deaf,
 	Defenseless,
 	Falling,
 	FriendlyFire,
+	Grabbed,
+	Harmless,
+	Immobilized,
 	Needs,
 	OffHand,
+	Pinned,
 	Prone,
 	Range,
+	Restrained,
 	Stun,
 	Unarmed,
 	Unconscious,

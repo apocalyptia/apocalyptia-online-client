@@ -268,7 +268,7 @@ export const Hammock = new Equipment({
 export const Handcuffs = new Equipment({
 	name: `Handcuffs`,
 	description: [
-		`Grabbed. A15# to escape. Larceny(Disable) 12#.`,
+		`Restrained if placed on Arms. Speed = 1 if placed on Legs. A15# to escape. Larceny(Disable) 12#.`,
 	],
 	sz: 1
 })
@@ -476,7 +476,7 @@ export const Rollerblades = new Equipment({
 export const Rope = new Equipment({
 	name: `Rope`,
 	description: [
-		`30yd nylon coil. Holds 100Sz.`,
+		`30yd nylon coil. Holds 100Sz. Survival 6# to use as Handcuffs.`,
 	],
 	sz: 2
 })

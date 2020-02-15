@@ -1,7 +1,7 @@
 apply ability mods to character
 finish gear step
 set up database
-set up user login
+finish user auth features
 make narrator dashboard
 make game group functionality
 write the combat system 

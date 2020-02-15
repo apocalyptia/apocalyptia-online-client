@@ -214,7 +214,7 @@ export const XP9Abilities = [
 export const Fencing = new Ability({
 	name: `Fencing`,
 	description: [
-		`Free Block roll once per rnd.`,
+		`Free Block Action once per rnd.`,
 	],
 	max: 1,
 	xp: 12
@@ -223,7 +223,7 @@ export const Fencing = new Ability({
 export const Sidestep = new Ability({
 	name: `Side-step`,
 	description: [
-		`Free Dodge roll once per rnd.`,
+		`Free Dodge Action once per rnd.`,
 	],
 	max: 1,
 	xp: 12
@@ -232,7 +232,7 @@ export const Sidestep = new Ability({
 export const Wrestling = new Ability({
 	name: `Wrestling`,
 	description: [
-		`Free Grab roll once per rnd.`,
+		`Free Grapple Action once per rnd.`,
 	],
 	max: 1,
 	xp: 12
