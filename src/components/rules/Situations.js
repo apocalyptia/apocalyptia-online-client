@@ -5,7 +5,7 @@ import CoverTable from './tables/CoverTable.svelte'
 export const Bleeding = new Rule({
 	name: `Bleeding`, 
 	description: [
-		`When you take Wounds = [Constitution] or more, you begin taking an additional 1 Wound per minute. When you take Wounds = [Constitution x2], the rate of Bleeding increases to 1 Wound per rnd. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
+		`When you take Wounds = [Constitution] or more, you begin taking an additional 1 Wound per minute. When you take Wounds = [Constitution x2], the rate of Bleeding increases to 1 Wound per round. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
 	]
 })
 
@@ -19,14 +19,14 @@ export const Blind = new Rule({
 export const Burning = new Rule({
 	name: `Burning`, 
 	description: [
-		`1 Fire Damage per rnd. It takes a d6rnds to stop, drop Prone, and roll Survival 6# to put out the flames.`,
+		`1 Fire Damage per round. It takes a d6 rounds to stop, drop Prone, and roll Survival 6# to put out the flames.`,
 	]
 })
 
 export const Chase = new Rule({
 	name: `Chase`, 
 	description: [
-		`Roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each rnd. Chase ends when one side gets 3 Successes over the other.`,
+		`Roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each round. Chase ends when one side gets 3 Successes over the other.`,
 	]
 })
 
@@ -164,7 +164,7 @@ export const Starvation = new Rule({
 export const Stun = new Rule({
 	name: `Stun`, 
 	description: [
-		`Defenseless, Harmless, and Immobilized. You fall Prone if Stunned for longer than 1rnd.`,
+		`Defenseless, Harmless, and Immobilized. You fall Prone if Stunned for longer than 1 round.`,
 	]
 })
 

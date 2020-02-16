@@ -12,7 +12,7 @@ export const Bayonet = new Accessory({
 export const Bipod = new Accessory({
 	name: `Bipod`,
 	description: [
-		`Ignore Size requirement. 1rnd setup.`,
+		`Ignore Size requirement. 1 round setup.`,
 	],
 	sz: 1
 })
@@ -44,7 +44,7 @@ export const Holosight = new Accessory({
 export const Laser = new Accessory({
 	name: `Laser`,
 	description: [
-		`+1 Ranged Attack. -6 Ranged Attack to Blind for d6rnds.`,
+		`+1 Ranged Attack. -6 Ranged Attack to Blind for d6 rounds.`,
 	],
 	sz: 0
 })

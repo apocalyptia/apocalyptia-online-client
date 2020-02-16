@@ -230,6 +230,6 @@ export default [
 // OLD AMMO
 // new Ammo(`.22`,	 `Tracer`,			`+1 Auto RAttack.`,.005),
 // new Ammo(`12g`,	 `Birdshot`,		  `Basic ammo. Scatter.`,.05),
-// new Ammo(`12g`,	 `Flare`,			 `3 Fire Damage/rnd for 3rnds. 50yd light radius.`,.05),
+// new Ammo(`12g`,	 `Flare`,			 `3 Fire Damage/round for 3 rounds. 50yd light radius.`,.05),
 // new Ammo(`12g`,	 `Rubber`,			`Blunt.`,.05),
 // new Ammo(`5.56`,	`Tracer`,			`+1 Auto RATK.`,.02),

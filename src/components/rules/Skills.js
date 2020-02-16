@@ -42,7 +42,7 @@ export const Larceny = new Skill({
 		mechanical: new Specialty({
 			name: `Mechanical`,
 			description: [
-				`(d6rnds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms. # by item.`,
+				`(d6 rounds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms. # by item.`,
 			]
 		}),
 		trick: new Specialty({
@@ -119,7 +119,7 @@ export const Medicine = new Skill({
 		firstaid: new Specialty({
 			name: `First-Aid`,
 			description: [
-				`Stop Bleeding. Takes 1d6rnds.`,
+				`Stop Bleeding. Takes 1d6 rounds.`,
 			]
 		}),
 		surgery: new Specialty({
@@ -342,7 +342,7 @@ export const Perform = new Skill({
 		distract: new Specialty({
 			name: `Distract`,
 			description: [
-				`Target is Defenseless for 1rnd.`,
+				`Target is Defenseless for 1 round.`,
 			]
 		}),
 		deceive: new Specialty({

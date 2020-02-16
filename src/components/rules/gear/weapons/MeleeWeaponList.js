@@ -163,7 +163,7 @@ export default [
 // new MeleeWeapon(`Bowie Knife`, 2, 1, `Chop. Rapid.`, 1),
 // new MeleeWeapon(`Broadsword`, 4, 2, `Chop or Pierce.`, 4),
 // new MeleeWeapon(`Catch Pole`, 0, 2, `+1 Block. Blunt. +1 Grab.`, 3),
-// new MeleeWeapon(`Chainsaw`, 6, 2, `.5gal Fuel. d6rnd start. 1: Empty. Loud.`, 4),
+// new MeleeWeapon(`Chainsaw`, 6, 2, `.5gal Fuel. d6 rounds to start. 1: Empty. Loud.`, 4),
 // new MeleeWeapon(`Ice Ax`, 3, 1, `Lever. Pierce.`, 2),
 // new MeleeWeapon(`Katana`, 5, 2, `Chop or Pierce. Rapid.`, 3),
 // new MeleeWeapon(`Kukri`, 3, 1, `Chop`, 2),

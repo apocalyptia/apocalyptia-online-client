@@ -9,7 +9,7 @@
 		<td>Head</td>
 		<td>-3</td>
 		<td>x2</td>
-		<td>Stun for 1rnd</td>
+		<td>Stun for 1 round</td>
 	</tr>
 	<tr>
 		<td>Arm</td>

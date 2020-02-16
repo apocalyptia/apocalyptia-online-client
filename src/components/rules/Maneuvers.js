@@ -48,7 +48,7 @@ export const Disarm = new Rule({
 export const Distract = new Rule({
 	name: `Distract`,
 	description: [
-		`Roll [Perform vs Perception]. Stun target for 1rnd.`,
+		`Roll [Perform vs Perception]. Stun target for 1 round.`,
 	]
 })
 
@@ -111,7 +111,7 @@ export const NonLethalForce = new Rule({
 export const Protect = new Rule({
 	name: `Protect`, 
 	description: [
-		`Become the new target of all Attacks targeting someone within 1yd of you for 1rnd. You may still Block, but you cannot Dodge the Attack.`,
+		`Become the new target of all Attacks targeting someone within 1yd of you for 1 round. You may still Block, but you cannot Dodge the Attack.`,
 	]
 })
 
@@ -160,7 +160,7 @@ export const Tackle = new Rule({
 export const Taunt = new Rule({
 	name: `Taunt`,
 	description: [
-		`Roll [Leadership vs Demeanor]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1rnd if [penalty > enemy’s Demeanor].`,
+		`Roll [Leadership vs Demeanor]. Provoke the enemy into exclusively attacking you. The degree of Success is a penalty to the loser’s next roll. The enemy is Stunned for 1 round if [penalty > enemy’s Demeanor].`,
 	]
 })
 

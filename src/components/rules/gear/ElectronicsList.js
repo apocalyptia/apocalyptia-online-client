@@ -22,7 +22,7 @@ export const EmergencyRadio = new Electronic({
 export const Flashlight = new Electronic({
 	name: `Flashlight`,
 	description: [
-		`10yd light. -3 Ranged Attack to Blind 1rnd.`,
+		`10yd light. -3 Ranged Attack to Blind 1 round.`,
 	],
 	sz: 1,
 	hours: 3
@@ -121,7 +121,7 @@ export const SolarLamp = new Electronic({
 export const StunGun = new Electronic({
 	name: `Stun Gun`,
 	description: [
-		`Melee Attack. C9# or Stun for 1rnd.`,
+		`Melee Attack. C9# or Stun for 1 round.`,
 	],
 	sz: 1,
 	hours: .25

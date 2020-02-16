@@ -4,7 +4,7 @@ import Storage from '../../classes/Storage'
 export const Backpack = new Storage({
 	name: `Backpack`,
 	description: [
-		`2rnds to access.`,
+		`2 rounds to access.`,
 	],
 	sz: 1,
 	slots: 30
@@ -67,7 +67,7 @@ export const Cooler = new Storage({
 export const DuffelBag = new Storage({
 	name: `Duffel Bag`,
 	description: [
-		`2rnds to access.`,
+		`2 rounds to access.`,
 	],
 	sz: 3,
 	slots: 40
@@ -112,7 +112,7 @@ export const Lockbox = new Storage({
 export const MessengerBag = new Storage({
 	name: `Messenger Bag`,
 	description: [
-		`1rnd to access.`,
+		`1 round to access.`,
 	],
 	sz: 2,
 	slots: 4
@@ -130,7 +130,7 @@ export const PlasticJug = new Storage({
 export const Purse = new Storage({
 	name: `Purse`,
 	description: [
-		`1rnd to access.`,
+		`1 round to access.`,
 	],
 	sz: 1,
 	slots: 3

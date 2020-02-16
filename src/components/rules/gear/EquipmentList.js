@@ -252,7 +252,7 @@ export const GunCleaningKit = new Equipment({
 export const Hacksaw = new Equipment({
 	name: `Hacksaw`,
 	description: [
-		`1 Damage/rnd of sawing to almost any material.`,
+		`1 Damage/round of sawing to almost any material.`,
 	],
 	sz: 2
 })
@@ -348,7 +348,7 @@ export const Marker = new Equipment({
 export const Matchbook = new Equipment({
 	name: `Matchbook`,
 	description: [
-		`+1 Survival(Camp). 1yd light radius, 3rnds.`,
+		`+1 Survival(Camp). 1yd light radius, 3 rounds.`,
 	],
 	sz: 0
 })
@@ -468,7 +468,7 @@ export const RoadFlare = new Equipment({
 export const Rollerblades = new Equipment({
 	name: `Rollerblades`,
 	description: [
-		`Athletics 6#. Speed x3. 1rnd equip. Fail:Prone.`,
+		`Athletics 6#. Speed x3. 1 round equip. Fail:Prone.`,
 	],
 	sz: 2
 })
@@ -524,7 +524,7 @@ export const SpottingScope = new Equipment({
 export const SprayPaint = new Equipment({
 	name: `Spray Paint`,
 	description: [
-		`Ranged Attack, Called Shot: Head. Blind d6rnds. 10 uses.`,
+		`Ranged Attack, Called Shot: Head. Blind d6 rounds. 10 uses.`,
 	],
 	sz: 1
 })
@@ -612,7 +612,7 @@ export const Whistle = new Equipment({
 export const WireSaw = new Equipment({
 	name: `Wire Saw`,
 	description: [
-		`1 Damage/rnd of sawing to wood or bone.`,
+		`1 Damage/round of sawing to wood or bone.`,
 	],
 	sz: 1
 })

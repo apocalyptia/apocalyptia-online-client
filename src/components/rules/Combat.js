@@ -33,7 +33,7 @@ export const Defense = new Rule({
 		`A Botch means you fall Prone if Dodging, or drop your weapon if Blocking.`,
 		`If you are unaware or unable to avoid the Attack, you are Defenseless and must the appropriate Reflexive Defense.`,
 		`There is one Reflexive form of each Defense Action which are used as your default Defense, equal to your Acrobatics score for Dodge and your Melee score for Block.`,
-		`Reflexive Defenses act as static Difficulties for enemy Attacks after you have already used your Defense Actions in that rnd.`,
+		`Reflexive Defenses act as static Difficulties for enemy Attacks after you have already used your Defense Actions in that round.`,
 		`Use Reflexive Dodge against Ranged Attacks and Reflexive Block against Melee Attacks.`,
 	]
 })
@@ -58,7 +58,7 @@ export const Recovery = new Rule({
 export const Rounds = new Rule({
 	name: `Rounds`, 
 	description: [
-		`Combat time occurs in 3-second “rounds” (rnds). Each Player rolls [d6 + Speed] to determine the turn order at the start of each new rnd.`,
+		`Combat time occurs in 3-second “rounds”. Each Player rolls [d6 + Speed] to determine the turn order at the start of each new round.`,
 		`This Speed roll may Explode or Botch. On a Botch, you lose your turn.`,
 	]
 })
@@ -103,7 +103,7 @@ export const Damage = new Rule({
 export const Burning = new Rule({
 	name: `Burning`, 
 	description: [
-		`If the Vehicle is at 0 Damage Resistance, it bursts into flames doing 1 Fire Damage per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`,
+		`If the Vehicle is at 0 Damage Resistance, it bursts into flames doing 1 Fire Damage per round to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`,
 	]
 })
 
@@ -139,7 +139,7 @@ export const Tires = new Rule({
 export const Wreck = new Rule({
 	name: `Wreck`, 
 	description: [
-		`The vehicle comes to a violent stop suddenly this rnd. Occupants take [d6 Damage per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the Damage is halved and they remain in their seats.`,
+		`The vehicle comes to a violent stop suddenly this round. Occupants take [d6 Damage per 20mph or 30yds of Speed] and are ejected from the vehicle, unless they are wearing seat belts, in which case the Damage is halved and they remain in their seats.`,
 	]
 })
 

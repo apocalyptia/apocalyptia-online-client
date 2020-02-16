@@ -20,7 +20,7 @@ export const health = new Property({
 	description: [
 		`[Constitution x 3]. This is a measure of how many Wounds you can withstand. Damage is the cause of most Wounds.`,
 		`You start Bleeding 1 Wound/min when you have Wounds = [Constitution].`,
-		`The rate of Bleeding increases to 1 Wound/rnd and you fall Unconscious when you have Wounds = [Constitution x 2].`,
+		`The rate of Bleeding increases to 1 Wound/round and you fall Unconscious when you have Wounds = [Constitution x 2].`,
 		`You die when you have Wounds = [Constitution x 3].`,
 	],
 	formula: (character) => character.traits.constitution.score * 3,

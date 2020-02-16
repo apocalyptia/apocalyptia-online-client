@@ -31,7 +31,7 @@ export const HyperImmunity = new Ability({
 export const PackMentality = new Ability({
 	name: `Pack Mentality`,
 	description: [
-		`+1 Attack at a target a Comrade Attacks this rnd.`,
+		`+1 Attack at a target a Comrade Attacks this round.`,
 	],
 	max: 1,
 	xp: 3
@@ -40,7 +40,7 @@ export const PackMentality = new Ability({
 export const QuickReload = new Ability({
 	name: `Quick Reload`,
 	description: [
-		`Free Reload once per rnd.`,
+		`Free Reload once per round.`,
 	],
 	max: 1,
 	xp: 3
@@ -90,7 +90,7 @@ export const EfficientWork = new Ability({
 export const FastDraw = new Ability({
 	name: `Fast Draw`,
 	description: [
-		`Free item draw once per rnd.`,
+		`Free item draw once per round.`,
 	],
 	max: 1,
 	xp: 6
@@ -214,7 +214,7 @@ export const XP9Abilities = [
 export const Fencing = new Ability({
 	name: `Fencing`,
 	description: [
-		`Free Block Action once per rnd.`,
+		`Free Block Action once per round.`,
 	],
 	max: 1,
 	xp: 12
@@ -223,7 +223,7 @@ export const Fencing = new Ability({
 export const Sidestep = new Ability({
 	name: `Side-step`,
 	description: [
-		`Free Dodge Action once per rnd.`,
+		`Free Dodge Action once per round.`,
 	],
 	max: 1,
 	xp: 12
@@ -232,7 +232,7 @@ export const Sidestep = new Ability({
 export const Wrestling = new Ability({
 	name: `Wrestling`,
 	description: [
-		`Free Grapple Action once per rnd.`,
+		`Free Grapple Action once per round.`,
 	],
 	max: 1,
 	xp: 12
