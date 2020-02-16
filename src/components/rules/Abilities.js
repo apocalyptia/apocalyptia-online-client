@@ -211,8 +211,8 @@ export const XP9Abilities = [
 
 // 12 XP Abilities
 
-export const Fencing = new Ability({
-	name: `Fencing`,
+export const Parry = new Ability({
+	name: `Parry`,
 	description: [
 		`Free Block Action once per round.`,
 	],
@@ -239,7 +239,7 @@ export const Wrestling = new Ability({
 })
 
 export const XP12Abilities = [
-	Fencing,
+	Parry,
 	Sidestep,
 	Wrestling
 ]
@@ -285,7 +285,7 @@ export const XP15Abilities = [
 export const Assassin = new Ability({
 	name: `Assassin`,
 	description: [
-		`+3 Damage to Attacks from Concealment.`,
+		`+3 Damage for Attacks made while Concealed.`,
 	],
 	max: 1,
 	xp: 18

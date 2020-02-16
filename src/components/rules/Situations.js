@@ -99,7 +99,7 @@ export const Grabbed = new Rule({
 export const Harmless = new Rule({
 	name: `Harmless`,
 	description: [
-		`You are cannot Attack.`,
+		`You cannot Attack.`,
 	]
 })
 
