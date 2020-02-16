@@ -6,16 +6,17 @@ import Rule from '../classes/Rule'
 export const Actions = new Rule({
 	name: `Actions`, 
 	description: [
-		`On your turn, you can take up to 2 Actions. Unless otherwise noted, all Skills take 1 Action.`,
+		`You get 3 Actions per round starting on your turn. Most things cost 1 Action unless otherwise noted.`,
 	]
 })
 
 export const Attack = new Rule({
 	name: `Attack`, 
 	description: [
-		`There are Melee Attacks and Ranged Attacks. Roll [d6 + Melee Attack or Ranged Attack] vs Defense.`,
+		`There are two types of Attacks: Melee and Ranged.`,
+		`Spend an Action on your turn to roll [d6 + Melee or Ranged] vs Defense.`,
 		`Rolling a 6 on the die is an Explosion, which is re-rolled and added cumulatively to the Attack total.`,
-		`Deal bonus Damage = [Attack - Defense] up to your Melee or Ranged score.`,
+		`On a Successful Attack, you do bonus Damage = [Attack - Defense] up to your Melee or Ranged score.`,
 	]
 })
 
@@ -29,12 +30,14 @@ export const Communication = new Rule({
 export const Defense = new Rule({
 	name: `Defense`, 
 	description: [
-		`You get 2 Defense Actions per round that you may spend to roll on your enemy's turn to Block [d6 + Melee] or Dodge [d6 + Acrobatics].`,
-		`A Botch means you fall Prone if Dodging, or drop your weapon if Blocking.`,
-		`If you are unaware or unable to avoid the Attack, you are Defenseless and must the appropriate Reflexive Defense.`,
-		`There is one Reflexive form of each Defense Action which are used as your default Defense, equal to your Acrobatics score for Dodge and your Melee score for Block.`,
-		`Reflexive Defenses act as static Difficulties for enemy Attacks after you have already used your Defense Actions in that round.`,
-		`Use Reflexive Dodge against Ranged Attacks and Reflexive Block against Melee Attacks.`,
+		`There are two types of Defenses: Block and Dodge.`,
+		`Spend an Action on your enemy's turn to roll [d6 + Melee] vs Melee Attacks to Block, or [d6 + Acrobatics] vs Melee or Ranged Attacks to Dodge.`,
+		`A Botch means you fall Prone.`,
+		`If you are unaware or unable to avoid the Attack, you are Defenseless and defer to your Reflexive Defenses.`,
+		`There is a Reflexive form of each Defense that are used as your default Defenses.`,
+		`Reflexive Defenses equal your Acrobatics score for Dodge and your Melee score for Block.`,
+		`These are your last line of Defense against enemy Attacks after you have spent all of your Actions in a round.`,
+		`Use Reflexive Block against Melee Attacks and Reflexive Dodge against either Melee or Ranged Attacks.`,
 	]
 })
 
@@ -42,8 +45,8 @@ export const Movement = new Rule({
 	name: `Movement`, 
 	description: [
 		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn.`,
-		`You may divide up your movement around other Actions on your turn however you wish.`,
-		`It costs 1 Action to stand up. You may go Prone at any time on your turn or as part of a Dodge for free.`,
+		`You may divide up your Movement around other Actions on your turn however you wish.`,
+		`When you take a Movement Action, you may go Prone at any time for free. It costs 1 Action to stand up.`,
 	]
 })
 

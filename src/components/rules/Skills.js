@@ -19,7 +19,7 @@ export const Acrobatics = new Skill({
 		dodge: new Specialty({
 			name: `Dodge`,
 			description: [
-				`Roll vs [Melee or Ranged].`,
+				`Roll vs [Melee or Ranged(Throw)].`,
 			]
 		}),
 		jump: new Specialty({
@@ -65,13 +65,13 @@ export const Ranged = new Skill({
 		shoot: new Specialty({
 			name: `Shoot`,
 			description: [
-				`Roll vs [Dodge or Block (with a Shield)].`,
+				`Roll vs [Reflexive Dodge or Block (with a Shield)].`,
 			]
 		}),
 		throw: new Specialty({
 			name: `Throw`,
 			description: [
-				`Roll vs [Dodge or Block]. Range is [Constitution x 2yds]`,
+				`Roll vs [Dodge or Block]. Range is [Constitution x 3yds]`,
 			]
 		})
 	}

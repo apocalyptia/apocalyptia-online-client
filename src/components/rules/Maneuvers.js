@@ -2,13 +2,6 @@ import Rule from '../classes/Rule'
 import CalledShotTable from './tables/CalledShotTable.svelte'
 
 
-export const AggressivePosture = new Rule({
-	name: `Aggressive Posture`, 
-	description: [
-		`Get 1 extra Attack Action (for a total of 3) this turn by foregoing both of your normal Defense Actions until your next turn.`,
-	]
-})
-
 export const Aim = new Rule({
 	name: `Aim`, 
 	description: [
@@ -29,13 +22,6 @@ export const CalledShot = new Rule({
 		`Attacks target the Torso by default. A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects based on Location.`,
 	],
 	table: CalledShotTable
-})
-
-export const DefensivePosture = new Rule({
-	name: `Defensive Posture`, 
-	description: [
-		`Forego both normal Actions on your turn to get 1 extra Defense Action (for a total of 3) until your next turn.`,
-	]
 })
 
 export const Disarm = new Rule({
@@ -209,7 +195,6 @@ export const Grapple = new Rule({
 
 export const DefensiveManeuvers = [
 	Block,
-	DefensivePosture,
 	Dodge,
 	Duck,
 	Hide,
@@ -218,7 +203,6 @@ export const DefensiveManeuvers = [
 ]
 
 export const OffensiveManeuvers = [
-	AggressivePosture,
 	Aim,
 	CalledShot,
 	Disarm,
