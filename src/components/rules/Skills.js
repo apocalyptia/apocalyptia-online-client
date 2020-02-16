@@ -242,7 +242,7 @@ export const Build = new Skill({
 		customize: new Specialty({
 			name: `Customize`,
 			description: [
-				`(#hrs) 3 per item. Each must be unique. Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Attribute. Armor: +1 DR or a new Attribute.`,
+				`(#hrs) 3 per item. Each must be unique. Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Attribute. Armor: +1 Damage Resistance or a new Attribute.`,
 			]
 		}),
 		repair: new Specialty({

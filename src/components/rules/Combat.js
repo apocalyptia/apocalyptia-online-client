@@ -63,10 +63,10 @@ export const Rounds = new Rule({
 	]
 })
 
-export const DamageReduction = new Rule({
-	name: `Damage Reduction`, 
+export const DamageResistance = new Rule({
+	name: `Damage Resistance`, 
 	description: [
-		`DR reduces Damage. Armor is reduced by -1 DR after taking Damage that exceeds its DR.`,
+		`Reduce the amount of Damage you take from any individual Attack by your Armor's Damage Resistance for that Location. Armor is reduced by -1 Damage Resistance after taking Damage that exceeds its Damage Resistance.`,
 	]
 })
 
@@ -91,7 +91,7 @@ export const Damage = new Rule({
 		`Damage causes Wounds. You die when Wounds = Health. Successful Attacks do Damage = [(Attack - Defense) + Weapon Damage]. All Wounds cause Pain penalties.`,
 	],
 	subrules: [
-		DamageReduction,
+		DamageResistance,
 		FireDamage,
 		Pain
 	]
@@ -103,28 +103,28 @@ export const Damage = new Rule({
 export const Burning = new Rule({
 	name: `Burning`, 
 	description: [
-		`If the Vehicle is at 0DR, it bursts into flames doing 1 Fire Damage per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`,
+		`If the Vehicle is at 0 Damage Resistance, it bursts into flames doing 1 Fire Damage per rnd to all Occupants. It continues to burn for 1 minute per gallon of Fuel.`,
 	]
 })
 
 export const Conditions = new Rule({
 	name: `Conditions`, 
 	description: [
-		`-1 DR and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`,
+		`-1 Damage Resistance and -1 Handling. Roll [Drive 9#] to maintain control upon getting a Condition, otherwise the vehicle Wrecks.`,
 	]
 })
 
 export const Occupants = new Rule({
 	name: `Occupants`, 
 	description: [
-		`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from Ranged Attacks with its DR.`,
+		`Passengers in a moving vehicle are Unstable. A vehicle provides Cover from Ranged Attacks with its Damage Resistance.`,
 	]
 })
 
 export const Pedestrians = new Rule({
 	name: `Pedestrians`, 
 	description: [
-		`Hitting a pedestrian does Damage = [vehicle DR]. -1 DR after hitting pedestrians = [vehicle DR].`,
+		`Hitting a pedestrian does Damage = [vehicle Damage Resistance]. -1 Damage Resistance after hitting pedestrians = [vehicle Damage Resistance].`,
 	]
 })
 
@@ -146,7 +146,7 @@ export const Wreck = new Rule({
 export const Vehicles = new Rule({
 	name: `Vehicles`, 
 	description: [
-		`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s DR <= winner’s DR], or if a vehicle takes [Damage > DR], the vehicle gets a Condition. 0 DR disables a vehicle. A Botch is a Wreck.`,
+		`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle. If [loser’s Damage Resistance <= winner’s Damage Resistance], or if a vehicle takes [Damage > Damage Resistance], the vehicle gets a Condition. 0 Damage Resistance disables a vehicle. A Botch is a Wreck.`,
 	],
 	subrules: [
 		Conditions,

@@ -404,7 +404,7 @@ export const Notebook = new Equipment({
 export const Padlock = new Equipment({
 	name: `Padlock`,
 	description: [
-		`2DR. Larceny(Disable) 9#.`,
+		`2 Damage Resistance. Larceny(Disable) 9#.`,
 	],
 	sz: 1
 })

@@ -12,7 +12,7 @@
 
 	const meleeList = ['Damage', 'Range',]
 	const rangedList = ['Damage', 'Range', 'cal', 'mag',]
-	const armorList = ['DR', 'location',]
+	const armorList = ['Damage Resistance', 'location',]
 
 	const rollMelee = () => {
 		melee = RandomRoll(MeleeWeaponList)

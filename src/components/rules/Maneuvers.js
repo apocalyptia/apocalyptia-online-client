@@ -62,7 +62,7 @@ export const Dodge = new Rule({
 export const Duck = new Rule({
 	name: `Duck`, 
 	description: [
-		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs Attack] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) Attack. As part of this Dodge, you may elect to go Prone. If the Attack still hits, the Cover Material’s DR reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
+		`If there is Cover within ove Movement Action of your current position, you may roll [Dodge vs Attack] to move up to your Speed to get behind Cover. This is the only way to Dodge a Ranged(Shoot) Attack. As part of this Dodge, you may elect to go Prone. If the Attack still hits, the Cover Material’s Damage Resistance reduces the Damage. You will keep the benefits of Cover as long as it remains between you and the opponent.`,
 	]
 })
 
@@ -83,7 +83,7 @@ export const Hide = new Rule({
 export const Hostage = new Rule({
 	name: `Hostage`,
 	description: [
-		`Use a Grabbed or Restrained enemy as Cover. The Grappled enemy's DR acts as the Material DR and any excess Damage is applied to the Grappled enemy instead of you. If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you. This does not make you Concealed.`,
+		`Use a Grabbed or Restrained enemy as Cover. The Grappled enemy's Damage Resistance acts as the Material Damage Resistance and any excess Damage is applied to the Grappled enemy instead of you. If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you. This does not make you Concealed.`,
 	]
 })
 

@@ -1,5 +1,5 @@
 <table class='cover-table'>
-	<tr><th>Material</th><th>DR</th></tr>
+	<tr><th>Material</th><th>Damage Resistance</th></tr>
 	<tr><td>Drywall</td><td>0</td></tr>
 	<tr><td>Glass</td><td>1</td></tr>
 	<tr><td>Plywood</td><td>1</td></tr>

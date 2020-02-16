@@ -40,7 +40,7 @@ export const Concealed = new Rule({
 export const Cover = new Rule({
 	name: `Cover`, 
 	description: [
-		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material DR, in which case the Material DR acts as an Armor bonus for Damage reduction.`,
+		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance, in which case the Material Damage Resistance acts as an Armor bonus for Damage reduction.`,
 		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
 		`You can lean in and out of Cover to Attack as part of an Action. If an opponent Attacks simultaneously when you Attack from Cover, they must make a Called Shot to hit an exposed Location.`,
 	],
@@ -178,7 +178,7 @@ export const Asphyxiation = new Rule({
 export const Unarmed = new Rule({
 	name: `Unarmed`, 
 	description: [
-		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2]. Always round down. DR is not depleted.`,
+		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2]. Always round down. Damage Resistance is not depleted.`,
 	]
 })
 

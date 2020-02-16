@@ -82,7 +82,7 @@ export const Scatter = new WeaponAttribute({
 export const Shield = new WeaponAttribute({
 	name: 'Shield',
 	description: [
-		'Provides 3DR Cover. +3 to Block.',
+		'Provides 3 Damage Resistance Cover. +3 to Block.',
 	]
 })
 

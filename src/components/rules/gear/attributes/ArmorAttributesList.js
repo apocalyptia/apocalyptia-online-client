@@ -18,7 +18,7 @@ export const CR = new ArmorAttribute({
 export const FR = new ArmorAttribute({
 	name: 'FR',
 	description: [
-		'Armor DR reduces Fire Damage.',
+		'Armor Damage Resistance reduces Fire Damage.',
 	]
 })
 
