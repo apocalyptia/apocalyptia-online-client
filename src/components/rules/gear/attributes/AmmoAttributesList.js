@@ -64,7 +64,7 @@ export const Match = new AmmoAttribute({
 export const Slug = new AmmoAttribute({
 	name: 'Slug',
 	description: [
-		'RNG x2.',
+		'Range x2.',
 	],
 	calibers: [
 		'12g',

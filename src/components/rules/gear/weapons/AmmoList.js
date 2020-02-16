@@ -194,7 +194,7 @@ export const Buckshot12g = new Ammo({
 export const Slug12g = new Ammo({
 	name: `12g Slug`,
 	description: [
-		`RNG x2.`,
+		`Range x2.`,
 	],
 	sz: 0.05,
 	cal: `12g`,

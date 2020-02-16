@@ -188,7 +188,7 @@ export const FishingPole = new Equipment({
 export const FlareGun = new Equipment({
 	name: `Flare Gun`,
 	description: [
-		`Pistol. RNG:3. Ammo: 12g Flares or 1 use 12g.`,
+		`Pistol. Range:3. Ammo: 12g Flares or 1 use 12g.`,
 	],
 	sz: 1
 })
@@ -428,7 +428,7 @@ export const Part = new Equipment({
 export const PepperSpray = new Equipment({
 	name: `Pepper Spray`,
 	description: [
-		`+1 Ranged(Gun). RNG:1. 3 Pain. 3 uses. Toxin.`,
+		`+1 Ranged(Gun). Range:1. 3 Pain. 3 uses. Toxin.`,
 	],
 	sz: 0
 })

@@ -167,14 +167,14 @@ export default [
 // new MeleeWeapon(`Ice Ax`, 3, 1, `Lever. Pierce.`, 2),
 // new MeleeWeapon(`Katana`, 5, 2, `Chop or Pierce. Rapid.`, 3),
 // new MeleeWeapon(`Kukri`, 3, 1, `Chop`, 2),
-// new MeleeWeapon(`Lasso`, 0, 2, `Blunt. +1 Grab. Throw (RNG:3)`, 2),
+// new MeleeWeapon(`Lasso`, 0, 2, `Blunt. +1 Grab. Throw (Range:3)`, 2),
 // new MeleeWeapon(`Net`, 0, 2, `+6 Grab.`, 3),
 // new MeleeWeapon(`Rapier`, 3, 1, `Pierce. Rapid.`, 2),
 // new MeleeWeapon(`Scythe`, 6, 2, `Chop. Pierce.`, 4),
 // new MeleeWeapon(`Sign Shield`, 2, 1, `+3 Block. Cover 6DR.`, 4),
 // new MeleeWeapon(`Switchblade`, 1, 1, `Pierce. Rapid.`, 0),
 // new MeleeWeapon(`Trench Knife`, 2, 1, `Blunt Punch. Pierce. Rapid.`, 1),
-// new MeleeWeapon(`Whip`, 0, 1, `Blunt. +1 Disarm. +1 Grab. RNG:3.`, 1),
+// new MeleeWeapon(`Whip`, 0, 1, `Blunt. +1 Disarm. +1 Grab. Range:3.`, 1),
 
 // OLD MELEE
 // new MeleeWeapon(`Baton`, 2, 1, `Blunt. Rapid.`, 2),

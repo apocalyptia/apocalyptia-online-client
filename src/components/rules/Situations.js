@@ -143,7 +143,7 @@ export const Prone = new Rule({
 export const Range = new Rule({
 	name: `Range`, 
 	description: [
-		`Ranged Attacks take a -1 penalty per additional RNG increment. Melee Attacks take a modifier against Melee weapons that have a different RNG = [your weapon’s RNG - enemy weapon’s RNG].`,
+		`Ranged Attacks take a -1 penalty per additional Range increment. Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range].`,
 	]
 })
 

@@ -47,7 +47,7 @@
 						<div class='cellDiv'>Gale Winds</div>
 						<button class='cellDiv cen'>-</button>
 						<button class='cellDiv cen'>-</button>
-						<button class='cellDiv cen'>RATK RNG/2</button>
+						<button class='cellDiv cen'>RATK Range/2</button>
 						<div class='cellDiv'>d6hrs</div>
 					</div>
 					<div class='rowDiv'>

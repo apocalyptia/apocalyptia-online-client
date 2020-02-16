@@ -68,14 +68,14 @@ export const Rapid = new WeaponAttribute({
 export const Sawnoff = new WeaponAttribute({
 	name: 'Sawn-off',
 	description: [
-		'[RNG / 2] and -1 Size.',
+		'[Range / 2] and -1 Size.',
 	]
 })
 
 export const Scatter = new WeaponAttribute({
 	name: 'Scatter',
 	description: [
-		'Ignore RNG penalties. -1 Damage per extended RNG.',
+		'Ignore Range penalties. -1 Damage per extended Range.',
 	]
 })
 
