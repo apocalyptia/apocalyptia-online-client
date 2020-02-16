@@ -8,8 +8,8 @@ export const Camo = new ArmorAttribute({
 	]
 })
 
-export const CR = new ArmorAttribute({
-	name: 'CR',
+export const ColdResistance = new ArmorAttribute({
+	name: 'Cold Resistance',
 	description: [
 		'Delay Hypothermia for 1hr per Location.',
 	]
@@ -39,7 +39,7 @@ export const Mask = new ArmorAttribute({
 
 export default [
 	Camo,
-	CR,
+	ColdResistance,
 	FireResistance,
 	Impermeable,
 	Mask,

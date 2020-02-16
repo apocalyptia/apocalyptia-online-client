@@ -85,7 +85,7 @@ export const FuelCan = new Storage({
 export const Hoody = new Storage({
 	name: `Hoody`,
 	description: [
-		`CR.`,
+		`Cold Resistance.`,
 	],
 	sz: 0,
 	slots: 2
@@ -157,7 +157,7 @@ export const ToolBelt = new Storage({
 export const TrenchCoat = new Storage({
 	name: `Trench Coat`,
 	description: [
-		`CR. +1 Stealth.`,
+		`Cold Resistance. +1 Stealth.`,
 	],
 	sz: 1,
 	slots: 4

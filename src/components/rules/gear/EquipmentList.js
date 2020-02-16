@@ -12,7 +12,7 @@ export const AirHorn = new Equipment({
 export const Balaclava = new Equipment({
 	name: `Balaclava`,
 	description: [
-		`+1 Stealth. Mask. CR.`,
+		`+1 Stealth. Mask. Cold Resistance.`,
 	],
 	sz: 0
 })
@@ -388,7 +388,7 @@ export const MusicalInstrument = new Equipment({
 export const MylarBlanket = new Equipment({
 	name: `Mylar Blanket`,
 	description: [
-		`CR. 1yd x 2yd reflective foil sheet.`,
+		`Cold Resistance. 1yd x 2yd reflective foil sheet.`,
 	],
 	sz: 0
 })
@@ -444,7 +444,7 @@ export const PocketMirror = new Equipment({
 export const Poncho = new Equipment({
 	name: `Poncho`,
 	description: [
-		`CR. Waterproof.`,
+		`Cold Resistance. Waterproof.`,
 	],
 	sz: 0
 })
@@ -500,7 +500,7 @@ export const Skateboard = new Equipment({
 export const SleepingBag = new Equipment({
 	name: `Sleeping Bag`,
 	description: [
-		`Insulated bag for up to 2 people. CR +3hrs.`,
+		`Insulated bag for up to 2 people. Cold Resistance +3hrs.`,
 	],
 	sz: 3
 })
@@ -556,7 +556,7 @@ export const TapeMeasure = new Equipment({
 export const Tarp = new Equipment({
 	name: `Tarp`,
 	description: [
-		`3yd x 3yd plastic sheet. CR. Waterproof.`,
+		`3yd x 3yd plastic sheet. Cold Resistance. Waterproof.`,
 	],
 	sz: 1
 })
@@ -564,7 +564,7 @@ export const Tarp = new Equipment({
 export const Tent = new Equipment({
 	name: `Tent`,
 	description: [
-		`4 person. 5min setup/take-down. CR +3hrs.`,
+		`4 person. 5min setup/take-down. Cold Resistance +3hrs.`,
 	],
 	sz: 6
 })
@@ -572,7 +572,7 @@ export const Tent = new Equipment({
 export const ThermalUnderwear = new Equipment({
 	name: `Thermal Underwear`,
 	description: [
-		`CR. Can use as 6 Bandages.`,
+		`Cold Resistance. Can use as 6 Bandages.`,
 	],
 	sz: 1
 })

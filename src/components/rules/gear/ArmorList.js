@@ -1,7 +1,7 @@
 import Armor from '../../classes/Armor'
 import {
 	Camo,
-	CR,
+	ColdResistance,
 	FireResistance,
 	Impermeable,
 	Mask
@@ -39,7 +39,7 @@ export const Coveralls = new Armor({
 	location: `Arms, Torso, Legs`,
 	attributes: [
 		Camo,
-		CR
+		ColdResistance
 	]
 })
 
@@ -49,7 +49,7 @@ export const FirefighterSuit = new Armor({
 	dr: 2,
 	location: `Full Body`,
 	attributes: [
-		CR,
+		ColdResistance,
 		FireResistance,
 		Mask
 	]
@@ -72,7 +72,7 @@ export const GhillieSuit = new Armor({
 	location: `Full Body`,
 	attributes: [
 		Camo,
-		CR
+		ColdResistance
 	]
 })
 
@@ -82,7 +82,7 @@ export const HikingBoots = new Armor({
 	dr: 1,
 	location: `Legs`,
 	attributes: [
-		CR,
+		ColdResistance,
 		FireResistance
 	]
 })
@@ -93,7 +93,7 @@ export const KevlarVest = new Armor({
 	dr: 3,
 	location: `Torso`,
 	attributes: [
-		CR,
+		ColdResistance,
 		FireResistance
 	]
 })
@@ -134,7 +134,7 @@ export const PlateCarrier = new Armor({
 	location: `Torso`,
 	attributes: [
 		Camo,
-		CR,
+		ColdResistance,
 		FireResistance
 	]
 })
@@ -145,7 +145,7 @@ export const WinterCoat = new Armor({
 	dr: 1,
 	location: `Arms, Torso`,
 	attributes: [
-		CR
+		ColdResistance
 	]
 })
 
@@ -182,7 +182,7 @@ export default [
 
 // OLD ARMOR
 // new Armor(`Denim Jacket`, `1,1`, `Arms, Torso`, ``, 2)
-// new Armor(`Interceptor Armor`, `3,6`, `Arms, Torso`, `Camo. CR. Fire Resistance.`, 5)
+// new Armor(`Interceptor Armor`, `3,6`, `Arms, Torso`, `Camo. Cold Resistance. Fire Resistance.`, 5)
 // new Armor(`Kevlar Gloves`, `2`, `Arms`, `Fire Resistance.`, 1)
 // new Armor(`Knee Pads`, `1`, `Legs`, ``, 1)
 // new Armor(`Paintball Mask`, `1`, `Head`, `Mask.`, 1)
@@ -192,9 +192,9 @@ export default [
 // new Armor(`Undercover Vest`, `3`, `Torso`, `Fire Resistance.`, 3)
 
 // RARE ARMOR
-// new Armor(`Black Robe`, `1,1,1,1`, `Head, Torso, Arms, Legs`, `CR. +1 Stealth.`, 1)
+// new Armor(`Black Robe`, `1,1,1,1`, `Head, Torso, Arms, Legs`, `Cold Resistance. +1 Stealth.`, 1)
 // new Armor(`Chainmail Shirt`, `3,3,3`, `Head, Torso, Arms`, `Ignore Chop.`, 6)
-// new Armor(`Dragonskin Vest`, `8`, `Torso`, `CR. Fire Resistance.`, 3)
+// new Armor(`Dragonskin Vest`, `8`, `Torso`, `Cold Resistance. Fire Resistance.`, 3)
 // new Armor(`Knuckle Gloves`, `2`, `Arms`, `2DMG Punch. Blunt. Fire Resistance.`, 1)
 // new Armor(`Land Warrior Helmet`, `4`, `Head`, `Fire Resistance. Nightvision Goggles. Radio.`, 2)
 // new Armor(`Spiked Jacket`, `2, 2`, `Torso, Arms`, `+1 DMG Grab.`, 3)
