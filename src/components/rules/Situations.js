@@ -5,7 +5,7 @@ import CoverTable from './tables/CoverTable.svelte'
 export const Bleeding = new Rule({
 	name: `Bleeding`, 
 	description: [
-		`When you take Wounds = [Constitution] or more, you begin taking an additional 1 Wound per minute. When you take Wounds = [Constitution x2], the rate of Bleeding increases to 1 Wound per round. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
+		`When you take Wounds = [Constitution] or more, you begin taking an additional 1 Wound per minute. When you take Wounds = [Constitution x 2], the rate of Bleeding increases to 1 Wound per round. Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
 	]
 })
 

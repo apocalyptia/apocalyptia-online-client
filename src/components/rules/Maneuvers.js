@@ -125,7 +125,7 @@ export const Reload = new Rule({
 export const Shove = new Rule({
 	name: `Shove`,
 	description: [
-		`Roll [Melee vs Constitution] to shove an enemy up to [Constitution/2] yds away from you, knocking them Prone. No Damage.`,
+		`Roll [Melee vs Constitution] to shove an enemy up to [Constitution / 2] yds away from you, knocking them Prone. No Damage.`,
 	]
 })
 
