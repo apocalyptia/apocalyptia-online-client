@@ -15,8 +15,8 @@ export const CR = new ArmorAttribute({
 	]
 })
 
-export const FR = new ArmorAttribute({
-	name: 'FR',
+export const FireResistance = new ArmorAttribute({
+	name: 'Fire Resistance',
 	description: [
 		'Armor Damage Resistance reduces Fire Damage.',
 	]
@@ -40,7 +40,7 @@ export const Mask = new ArmorAttribute({
 export default [
 	Camo,
 	CR,
-	FR,
+	FireResistance,
 	Impermeable,
 	Mask,
 ]

@@ -73,7 +73,7 @@ export const DamageResistance = new Rule({
 export const FireDamage = new Rule({
 	name: `Fire Damage`, 
 	description: [
-		`Whenever you take Fire Damage, 1 Wound is permanent. Only Fire-Resistant (FR) Armor reduces Fire Damage.`,
+		`Whenever you take Fire Damage, 1 Wound is permanent. Only Fire-Resistant Armor reduces Fire Damage.`,
 	]
 })
 

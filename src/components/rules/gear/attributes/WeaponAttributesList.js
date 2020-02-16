@@ -47,7 +47,7 @@ export const Chop = new WeaponAttribute({
 export const FireDamage = new WeaponAttribute({
 	name: 'Fire Damage',
 	description: [
-		'Fire Damage. Fire Damage can only be prevented with FR Armor.',
+		'Fire Damage. Fire Damage can only be prevented with Armor that has Fire Resistance.',
 	]
 })
 
