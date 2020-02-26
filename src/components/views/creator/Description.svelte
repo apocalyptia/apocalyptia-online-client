@@ -120,6 +120,7 @@ const descriptions = [
 	max-width: 45%;
 }
 .small-button {
+	font-size: calc(var(--base-unit) * .75);
 	height: var(--double-unit);
 	max-width: 45%;
 	padding: var(--third-unit);

@@ -30,6 +30,10 @@ const rollLuck = () => {
 				{Capitalize($character.properties.psyche.name)}: 
 				{$character.properties.psyche.score}
 			</div>
+			<div class='prop-item'>
+				{Capitalize($character.properties.block.name)}: 
+				{$character.properties.block.score}
+			</div>
 		</div>
 		<div class='right-col'>
 			<div class='prop-item'>
@@ -40,18 +44,7 @@ const rollLuck = () => {
 				{Capitalize($character.properties.intellect.name)}: 
 				{$character.properties.intellect.score}
 			</div>
-		</div>
-	</div>
-	<div class='def-list'>
-		<div class='def-header centered'>Defenses</div>
-		<div class='left-col'>
-			<div class='prop-item centered'>
-				{Capitalize($character.properties.block.name)}: 
-				{$character.properties.block.score}
-			</div>
-		</div>
-		<div class='right-col'>
-			<div class='prop-item centered'>
+			<div class='prop-item'>
 				{Capitalize($character.properties.dodge.name)}: 
 				{$character.properties.dodge.score}
 			</div>
@@ -84,22 +77,6 @@ const rollLuck = () => {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-}
-.def-list {
-	border: var(--smallest-unit) solid;
-	margin: var(--half-unit);
-	padding: var(--half-unit);
-}
-.def-list .prop-item {
-	display: inline-block;
-}
-@media only screen and (max-width: 768px) {
-	.def-list .prop-item {
-		display: block;
-	}
-}
-.def-header {
-	font-size: calc(var(--base-unit) * 1.25);
 }
 .prop-col {
 	border: var(--smallest-unit) solid;
