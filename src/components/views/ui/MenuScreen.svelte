@@ -1,14 +1,11 @@
 <script>
-	export let ToC
+export let ToC
 </script>
 
 
-<div class='menu-page'>
+<div class='menu-screen'>
 	{#each $ToC.chapters as chapter, index}
-		<button
-			class='display-button'
-			on:click={$ToC.go(index)}
-		>
+		<button on:click={$ToC.go(index)}>
 			{chapter}
 		</button>
 	{/each}
@@ -16,7 +13,8 @@
 
 
 <style>
-	.menu-page {
-		margin-bottom: calc(3rem + 5vh);
-	}
+button {
+	margin-bottom: var(--base-unit);
+	width: 100%;
+}
 </style>

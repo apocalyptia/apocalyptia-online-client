@@ -1,42 +1,37 @@
 <script>
-	import { beforeUpdate } from 'svelte'
-	import { character } from '../../../stores'
-	import ToggleVisible from '../../helpers/ToggleVisible'
-	import {
-		AbilitiesList,
-		AbilitiesExplanation,
-		AbilityGroups
-	} from '../../rules/Abilities'
-	import AbilityGroup from '../ui/creator/AbilityGroup.svelte'
-	import AbilityCard from '../ui/creator/AbilityCard.svelte'
-	import AbilityCurrent from '../ui/creator/AbilityCurrent.svelte'
+import { beforeUpdate } from 'svelte'
+import { character } from '../../../stores'
+import ToggleVisible from '../../helpers/ToggleVisible'
+import { AbilitiesList, AbilitiesExplanation, AbilityGroups } from '../../rules/Abilities'
+import AbilityGroup from './ui/AbilityGroup.svelte'
+import AbilityCard from './ui/AbilityCard.svelte'
+import AbilityCurrent from './ui/AbilityCurrent.svelte'
 
-	let spentXP = 0
+let remaining = $character.remainingXP()
 
-	const getRemaining = () => $character.properties.experience.score - spentXP
+let MasterAbilityList = AbilitiesList
 
-	let remaining = getRemaining()
-
-	let MasterAbilityList = AbilitiesList
-
-	const resetAbilities = () => {
-		for (let a = 0; a < $character.abilities.length; ++a) {
-			$character.abilities[a].taken = 0
-		}
+const resetAbilities = () => {
+	for (let a = 0; a < $character.abilities.length; ++a) {
+		$character.abilities[a].taken = 0
 	}
+}
 
-	beforeUpdate(() => {
-		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-		spentXP = $character.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
-		remaining = getRemaining()
-	})
+beforeUpdate(() => {
+	$character.abilities = MasterAbilityList.filter(ability => ability.taken)
+	remaining = $character.remainingXP()
+})
 </script>
 
 
 <div class='abilities-step'>
-	<div class='step-title'><h2>Abilities</h2></div>
-	<div class='explanation'><p>{AbilitiesExplanation}</p></div>
-	<div class='remaining'><h3>Starting XP Remaining: {remaining}</h3></div>
+	<h1>Abilities</h1>
+	<div class='explanation'>
+		<p>{AbilitiesExplanation}</p>
+	</div>
+	<div class='remaining'>
+		<h3>Starting XP Remaining: {remaining}</h3>
+	</div>
 	{#if $character.abilities.length}
 		<div class='section-card'>
 			<AbilityCurrent {MasterAbilityList}/>
@@ -58,20 +53,17 @@
 
 
 <style>
-	.ability-group {
-		margin: 1rem;
-	}
-	.explanation {
-		padding: 1rem;
-	}
-	.abilities-step {
-		text-align: left;
-	}
-	.abilities-list {
-		width: 100%;
-	}
-	.remaining,
-	.button-row {
-		text-align: center;
-	}
+.ability-group {
+	margin: var(--base-unit);
+}
+.explanation {
+	padding: var(--base-unit);
+}
+.abilities-list {
+	width: 100%;
+}
+.remaining,
+.button-row {
+	text-align: center;
+}
 </style>

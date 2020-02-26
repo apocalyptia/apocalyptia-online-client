@@ -5,7 +5,7 @@ export default (
 		starting, 
 		conditional
 	) => {
-	let pointCount = pointTally(char, attribute)
+	const pointCount = pointTally(char, attribute)
 	let remaining = starting - pointCount
 	if (remaining < 0 || conditional) {
 		char[attribute][event.target.name].score -= 1

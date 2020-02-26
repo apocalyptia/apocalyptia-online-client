@@ -1,195 +1,94 @@
-/* Variables */
-:root {
-	--txt-color: lime;
-	--scr-color: rgb(15, 30, 15);
+/*
+	http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 
-/* Page Level */
 
-* {
-	margin: 0;
-	padding: 0;
+/* ----- GLOBAL VARIABLES ----- */
+
+:root {
+	/* Global Units */
+	--smallest-unit: 1px;
+	--base-unit: 1rem;
+	--double-unit: calc(var(--base-unit) * 2);
+	--half-unit: calc(var(--base-unit) / 2);
+	--triple-unit: calc(var(--base-unit) * 3);
+	--third-unit: calc(var(--base-unit) / 3);
+
+	/* Global Colors */
+	--scr-color: rgba(15, 30, 15, 1);
+	--scr-trans: rgba(15, 30, 15, .1);
+	--txt-color: lime;
+	--alt-color: coral;
+
+	/* Global Font */
+	--global-font: Arial, Helvetica, sans-serif;
+}
+
+
+/* ----- PAGE ----- */
+
+html,
+body {
+	background: var(--scr-color);
+	color: var(--txt-color);
+	font-family: var(--global-font);
+	font-size: var(--base-unit);
+	scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
 	display: none;
 }
 
-html,
-body {
-	background: rgb(15, 30, 15);
-	color: var(--txt-color);
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 2vh;
-	height: 100vh;
-	width: 100%;
-}
 
-.page-container {
-	height: calc(100% - 6rem);
-	margin: auto;
-	padding: 1rem;
-}
-
-.ref-page {
-	height: calc(100% - 6rem);
-	margin-bottom: 50px;
-}
-
-
-/* Layout Level */
-
-table {
-	border-collapse: collapse;
-	margin: 0 auto;
-}
-
-table td {
-	border: 1px solid var(--txt-color);
-	padding: .5rem;
-}
-
-.section-card {
-	align-items: center;
-	border-style: dotted;
-	border-width: 2px;
-	display: flex;
-	justify-content: space-between;
-	margin: .5rem;
-	padding: 1rem;
-}
-
-.full-block {
-	display: block;
-	width: 100%;
-}
-
-@media (max-width: 500px) {
-	.pair-block {
-		display: block;
-		padding: 5px;
-		width: 55%;
-	}
-}
-
-@media (min-width: 500px) {
-	.pair-block {
-		text-align: center;
-		width: 50%;
-	}
-}
-
-.pair-container {
-	display: inline-block;
-	text-align: left;
-}
-
-.center-card {
-	border: 1px solid;
-	display: block;
-	left: 50%;
-	padding: 1rem;
-	position: absolute;
-	top: calc(50% - 3rem);
-	transform: translateY(-50%) translateX(-50%);
-	width: 66vw;
-}
-
-.center-card .title-row {
-	margin: 2rem;
-}
-
-.center-card .input-section {
-	margin: 2rem;
-}
-
-.center-card input {
-	color: var(--txt-color) !important;
-	height: 2rem;
-	margin-bottom: 2rem;
-}
-
-.center-card .button-row {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	margin: 2rem;
-	text-align: center;
-}
-
-.center-card button {
-	width: 40%;
-}
-
-
-/* Control Level */
-
-input,
-button,
-select,
-textarea {
-	background: var(--scr-color);
-	border: 1px solid var(--txt-color);
-	border-radius: 3px;
-	color: var(--txt-color);
-	cursor: pointer;
-	font-family: Arial, Helvetica, sans-serif;
-	text-align: center;
-}
-
-input:invalid {
-	background-color: var(--scr-color) !important;
-	border-color: red;
-}
-
-button {
-	padding: .5rem;
-}
-
-button:active {
-	background: var(--txt-color);
-	color: rgb(15, 30, 15);
-}
-
-input[type="number"] {
-	width: 100px;
-}
-
-input[type="text"] {
-	height: 2rem;
-	min-width: 40%;
-}
-
-select {
-	height: 2rem;
-}
-
-.pair-input {
-	width: 45%;
-}
-
-.display-button {
-	height: 5rem;
-	margin: 5vh auto 0 auto;
-	width: 70vw;
-}
-
-.center-button {
-	margin: auto;
-	text-align: center;
-}
-
-.ref-back {
-	bottom: 0;
-	height: 3rem;
-	left: 0;
-	position: fixed;
-	width: 33.3vw;
-}
-
-
-/* Text Level */
+/* ----- TEXT ----- */
 
 a {
 	color: var(--txt-color);
@@ -200,17 +99,130 @@ label {
 	display: block;
 }
 
-@media (max-width: 500px) {
-	.stat-label {
-		display: block;
-	}
-}
-
-.step-title {
+h1 {
+	font-size: calc(var(--base-unit) * 1.5);
 	text-align: center;
 }
 
-.ref-header {
-	font-size: 1.5rem;
+
+/* ----- CONTROLS ----- */
+
+button,
+input,
+select {
+	background: var(--scr-color);
+	border: var(--smallest-unit) solid var(--txt-color);
+	border-radius: var(--third-unit);
+	color: var(--txt-color);
+	cursor: pointer;
+	font-size: var(--base-unit);
 	text-align: center;
+}
+button:active, button:hover,
+input:active, input:hover,
+select:active {
+	background: var(--txt-color);
+	color: var(--scr-color);
+}
+
+
+select:hover {
+	background: var(--txt-color);
+	border: var(--smallest-unit) solid var(--scr-color);
+	color: var(--scr-color);
+}
+button:invalid,
+input:invalid,
+select:invalid {
+	background-color: var(--scr-color) !important;
+	border-color: var(--alt-color);
+}
+
+/* Button */
+button {
+	height: var(--triple-unit);
+	padding: var(--half-unit);
+}
+
+/* Input */
+input[type="number"] {
+	width: 100px;
+}
+input[type="text"] {
+	height: var(--double-unit);
+	min-width: 40%;
+}
+
+/* Range */
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 100%;
+}
+input[type="range"]::-moz-range-thumb {
+	-webkit-appearance: none;
+	background: var(--txt-color);
+	border-radius: var(--third-unit);
+	border: var(--smallest-unit) solid var(--scr-color);
+	height: var(--double-unit);
+	width: var(--double-unit);
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background: var(--txt-color);
+	border-radius: var(--third-unit);
+	border: var(--smallest-unit) solid var(--scr-color);
+	height: var(--double-unit);
+	width: var(--double-unit);
+}
+
+/* Select */
+select {
+	height: var(--double-unit);
+}
+
+
+/* ----- LAYOUT ----- */
+
+/* Table */
+table td {
+	border: var(--smallest-unit) solid var(--txt-color);
+	padding: var(--half-unit);
+}
+
+/* Section Card */
+.section-card {
+	align-items: center;
+	border: var(--smallest-unit) dotted;
+	display: flex;
+	justify-content: space-between;
+	margin: var(--half-unit);
+	padding: var(--base-unit);
+}
+
+/* Center Card */
+.center-card {
+	border: var(--smallest-unit) solid var(--txt-color);
+	left: 50vw;
+	max-width: 500px;
+	padding: var(--base-unit);
+	position: absolute;
+	text-align: center;
+	top: 50vh;
+	transform: translateY(-60%) translateX(-50%);
+	width: 66vw;
+}
+.center-card .card-title {
+	margin: var(--base-unit);
+}
+.center-card a {
+	display: block;
+}
+.center-card input {
+	height: var(--double-unit);
+	margin: var(--base-unit);
+	width: 80%;
+}
+.center-card button {
+	margin: var(--base-unit);
+	width: 60%;
 }

@@ -4,7 +4,7 @@ import Traits from '../rules/Traits'
 import Skills from '../rules/Skills'
 import Properties from '../rules/Properties'
 
-class Character {
+export default class Character {
 	constructor() {
 		this.completed = false,
 		this.options = {
@@ -48,6 +48,10 @@ class Character {
 			this.setStat(`properties`, property)
 		})
 	}
+	spentXP() {
+		this.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+	}
+	remainingXP() {
+		this.properties.experience.score - this.spentXP()
+	}
 }
-
-export default Character

@@ -1,14 +1,13 @@
 import { writable } from 'svelte/store'
-
 import Character from './components/classes/Character'
 import TableOfContents from './components/helpers/TableOfContents'
-
 import Abilities from './components/rules/Abilities'
 import Combat from './components/rules/Combat'
+import Complications from './components/rules/Complications'
 import Core from './components/rules/Core'
 import Maneuvers from './components/rules/Maneuvers'
 import Properties from './components/rules/Properties'
-import Situations from './components/rules/Situations'
+import Status from './components/rules/Status'
 import Skills from './components/rules/Skills'
 import Traits from './components/rules/Traits'
 
@@ -42,7 +41,8 @@ const referenceToC = new TableOfContents(
 		'Properties',
 		'Combat',
 		'Maneuvers',
-		'Situations',
+		'Status',
+		'Complications',
 		'Abilities',
 	],
 	[
@@ -52,7 +52,8 @@ const referenceToC = new TableOfContents(
 		Properties,
 		Combat,
 		Maneuvers,
-		Situations,
+		Status,
+		Complications,
 		Abilities,
 	]
 )
@@ -100,5 +101,3 @@ export const refToC = writable(referenceToC)
 // 	]
 // )
 // export const narToC = writable(narratorToC)
-
-

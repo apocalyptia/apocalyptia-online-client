@@ -1,7 +1,7 @@
 import Rule from '../classes/Rule'
 
 
-// Single Rules
+// Independent Rules
 
 export const Actions = new Rule({
 	name: `Actions`, 
@@ -23,38 +23,7 @@ export const Attack = new Rule({
 export const Communication = new Rule({
 	name: `Communication`, 
 	description: [
-		`You can speak or shout up to 6 words per round.`
-	]
-})
-
-export const Defense = new Rule({
-	name: `Defense`, 
-	description: [
-		`There are two types of Defenses: Block and Dodge.`,
-		`Spend an Action on your enemy's turn to roll [d6 + Melee] vs Melee Attacks to Block, or [d6 + Acrobatics] vs Melee or Ranged Attacks to Dodge.`,
-		`A Botch means you fall Prone.`,
-		`If you are unaware or unable to avoid the Attack, you are Defenseless and defer to your Reflexive Defenses.`,
-		`There is a Reflexive form of each Defense that are used as your default Defenses.`,
-		`Reflexive Defenses equal your Acrobatics score for Dodge and your Melee score for Block.`,
-		`These are your last line of Defense against enemy Attacks after you have spent all of your Actions in a round.`,
-		`Use Reflexive Block against Melee Attacks and Reflexive Dodge against either Melee or Ranged Attacks.`,
-	]
-})
-
-export const Movement = new Rule({
-	name: `Movement`, 
-	description: [
-		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn.`,
-		`You may divide up your Movement around other Actions on your turn however you wish.`,
-		`When you take a Movement Action, you may go Prone at any time for free. It costs 1 Action to stand up.`,
-	]
-})
-
-export const Recovery = new Rule({
-	name: `Recovery`, 
-	description: [
-		`After 3 days of rest, roll [Constitution vs total Wounds] to heal 1 Wound, and [Demeanor vs total Trauma] to heal 1 Trauma.`,
-		`On a Fail, you take 1 additional Wound or Trauma, depending on what you were rolling to Recover.`,
+		`You can speak or shout up to 6 words per round.`,
 	]
 })
 
@@ -63,6 +32,16 @@ export const Rounds = new Rule({
 	description: [
 		`Combat time occurs in 3-second “rounds”. Each Player rolls [d6 + Speed] to determine the turn order at the start of each new round.`,
 		`This Speed roll may Explode or Botch. On a Botch, you lose your turn.`,
+	]
+})
+
+
+// Sub Rules
+
+export const Chase = new Rule({
+	name: `Chase`, 
+	description: [
+		`When a combatant attempts to flee and another chooses to pursue, they roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each round, depending on the type of mobility in use. The chase ends when one side gets 3 Successes over the other.`,
 	]
 })
 
@@ -88,6 +67,27 @@ export const Pain = new Rule({
 	]
 })
 
+export const Recovery = new Rule({
+	name: `Recovery`, 
+	description: [
+		`After 3 days of rest, roll [Constitution vs total Wounds] to heal 1 Wound, and [Demeanor vs total Trauma] to heal 1 Trauma.`,
+		`On a Fail, you take 1 additional Wound or Trauma, depending on what you were rolling to Recover.`,
+	]
+})
+
+export const ReflexiveDefense = new Rule({
+	name: `Reflexive Defense`,
+	description: [
+		`If you are unaware or unable to avoid an Attack, you are Defenseless and so must fall back on your Reflexive Defenses.`,
+		`Both Defenses have a Reflexive form, which acts as your default Defense score when you are not actively rolling.`,
+		`Reflexive Block equals your Melee(Block) score. Reflexive Dodge equals your Acrobatics(Dodge) score.`,
+		`Use Reflexive Block against Melee Attacks and Reflexive Dodge against either Melee or Ranged Attacks.`,
+	]
+})
+
+
+// Composite Rules
+
 export const Damage = new Rule({
 	name: `Damage`, 
 	description: [
@@ -96,7 +96,33 @@ export const Damage = new Rule({
 	subrules: [
 		DamageResistance,
 		FireDamage,
-		Pain
+		Pain,
+		Recovery
+	]
+})
+
+export const Defense = new Rule({
+	name: `Defense`, 
+	description: [
+		`Spend an Action on your enemy's turn to use either type of Defense: Block or Dodge.`,
+		`To Block, roll [d6 + Melee] vs Melee Attacks.`,
+		`To Dodge, roll [d6 + Acrobatics] vs either Melee or Ranged Attacks.`,
+		`Botching a Defense roll makes you fall Prone.`,
+	],
+	subrules: [
+		ReflexiveDefense
+	]
+})
+
+export const Movement = new Rule({
+	name: `Movement`, 
+	description: [
+		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn.`,
+		`You may divide up your Movement around other Actions on your turn however you wish.`,
+		`When you take a Movement Action, you may go Prone at any time for free. It costs 1 Action to stand up.`,
+	],
+	subrules: [
+		Chase
 	]
 })
 
@@ -172,6 +198,5 @@ export default [
 	Attack,
 	Defense,
 	Damage,
-	Recovery,
 	Vehicles
 ]

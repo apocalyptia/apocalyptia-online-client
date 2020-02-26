@@ -3,5 +3,8 @@ export function userFromNetlify(serverUser) {
 }
 
 function getUser(user) {
-	return { email: user.email, displayName: user.displayName }
+	return {
+		email: user.email,
+		displayName: user.displayName
+	}
 }

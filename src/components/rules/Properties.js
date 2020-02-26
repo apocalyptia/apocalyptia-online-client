@@ -1,7 +1,6 @@
 import Property from '../classes/Property'
-import { Block, Dodge } from './Maneuvers'
+import { Block, Dodge } from './maneuvers/DefensiveManeuvers'
 import { d6 } from '../helpers/Random'
-
 
 export const block = new Property({
 	name: `block`,
@@ -37,8 +36,7 @@ export const experience = new Property({
 		`You may spend XP to buy Abilities to improve your Character. You may also spend 1XP per round to regain 1 Luck Point.`,
 	],
 	formula: (character) => character.traits.brains.score * 3,
-	score: 3,
-	remaining: 3
+	score: 3
 })
 
 export const intellect = new Property({
@@ -55,8 +53,8 @@ export const luck = new Property({
 	name: `luck`,
 	description: [
 		`Roll a d6 during Character Creation to determine your Luck. Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance.`,
-		`You may spend 1 Luck Point per round in dramatic moments for various effects listed below. You regain 1 spent Luck Point at dawn each day.`,
-		`• Take a re-roll with a +6 bonus.`,
+		`You may spend 1 Luck Point per round in a dramatic moment for one of the three effects listed below. You regain 1 spent Luck Point at dawn each day.`,
+		`• Re-roll the last die you rolled with a +6 bonus.`,
 		`• Take an extra Action on your turn.`,
 		`• Give a Luck point to a Comrade.`,
 	],

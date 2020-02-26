@@ -1,3 +1,16 @@
+--- DEV PATH ---
+
+finish user auth features
+apply ability mods to character
+finish gear step
+set up database (faunadb)
+make narrator dashboard
+make game group functionality
+write the combat system (based on lambda functions)
+make game group chat
+
+
+
 --- SPECIFIC BUGS AND FEATURES ---
 
 Abilities.js:
@@ -17,30 +30,9 @@ Reference:
 
 Combat:
   Actions:
-    Maybe you get 3 Actions per round to spend however you like between Atk, Def, Mov or any other action. This replaces the 2 on your turn and 2 for defense system and removes the need for Aggressive Posture and Defensive Posture. 
-	Grappling
-		Step 1: Grab
-			Defender can't move
-			Attacker can ATK, DEF, MOV
-		Step 2: Restrain
-			Defender can't move or ATK/DEF
-			Attacker can ATK, DEF (Hostage), or MOV
-		Step 3: Pin
-			Defender can't ATK, DEF, or MOV (Prone)
-			Attacker can ATK
-		Attack Options while Grappling
-			MATK w/ 1h weapon
-			RATK w/ 1h weapon
-			Throw
-			Grapple +1 Step
-			Unarmed ATK
-			Disarm
-			Trip
-			Called Shot
-			Choke
-			Break
-		Roll UMATK vs Dodge or Block(Unarmed) to Grab as an action. From Grab you may spend another action to upgrade to Restrain and another to Pin. Grappled opponent spends action and rolls Melee vs Melee to degrade Grapple by -1 step. They may also ATK if they are only Grabbed.
-		When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.
+		Grappling: What about Submissions? Both Grabbed?
+		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
+		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
 
 --- BRAINSTORMING ---
 
@@ -52,5 +44,7 @@ Combat:
 
 - What kind of Abilities could I make to deal with Trauma/Psyche?
 
+
+UX/UI:
 - Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health?
 - Likewise set a blur effect that reflects the character psyche?

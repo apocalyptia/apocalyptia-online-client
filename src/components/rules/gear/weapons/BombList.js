@@ -8,7 +8,7 @@ import {
 	Asphyxiation,
 	Blind,
 	Stun
-} from '../../Situations'
+} from '../../Status'
 
 
 export const Flashbang = new Bomb({

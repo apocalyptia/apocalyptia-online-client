@@ -1,139 +1,152 @@
 <script>
-	import { character } from '../../../stores'
-	import Capitalize from '../../helpers/Capitalize'
-	import RandomRoll from '../../helpers/Random'
-	import Names, { FemaleNames, MaleNames } from '../../helpers/Names'
+import { character } from '../../../stores'
+import Capitalize from '../../helpers/Capitalize'
+import RandomRoll,
+	{ 
+		RandomName,
+		RandomHeight,
+		RandomWeight,
+		RandomHair,
+		RandomSkin,
+		RandomSex,
+		RandomAge
+	} from '../../helpers/Random'
 
-	const randomName = () => {
-		if ($character.description.sex.value == 'Male') {
-			$character.description.character.value = RandomRoll(MaleNames)
-		}
-		else if ($character.description.sex.value == 'Female') {
-			$character.description.character.value = RandomRoll(FemaleNames)
-		} 
-		else {
-			$character.description.character.value = RandomRoll(Names)
-		}
-	}
+const randomName = () => {
+	$character.description.character.value = RandomName($character.description.sex.value)
+}
 
-	const randomHeight = () => {
-		const totalInches = Math.ceil((Math.random() * 14) + 60) // 5ft low, 5ft7in median, 6ft2in high
-		const feet = Math.floor(totalInches / 12)
-		const inches = Math.floor(totalInches % 12)
-		$character.description.height.value = `${feet}ft ${inches}in`
-	}
+const randomHeight = () => $character.description.height.value = RandomHeight()
 
-	const randomWeight = () => {
-		$character.description.weight.value = `${Math.ceil(Math.random() * 100) + 100}lbs`
-	} // 101 to 200 lbs
+const randomWeight = () => $character.description.weight.value = RandomWeight()
 
-	const randomHair = () => {
-		$character.description.hair.value = RandomRoll(
-			[
-				'Auburn',
-				'Bald',
-				'Black',
-				'Blonde',
-				'Brunette',
-				'Gray',
-				'Red',
-				'White',
-			]
-		)
-	}
+const randomHair = () => $character.description.hair.value = RandomHair()
 
-	const randomSkin = () => {
-		$character.description.skin.value = RandomRoll(
-			[
-				'Black',
-				'Brown',
-				'Olive',
-				'Pale',
-				'Tan',
-				'White',
-			]
-		) 
-	}
+const randomSkin = () => $character.description.skin.value = RandomSkin()
 
-	const randomSex = () => {
-		$character.description.sex.value = RandomRoll(['Female', 'Male'])
-	}
+const randomSex = () => $character.description.sex.value = RandomSex()
 
-	const randomAge = () => {
-		$character.description.age.value = Math.ceil((Math.random() * 33) + 17)
-	}
+const randomAge = () => $character.description.age.value = RandomAge()
 
-	const randomDescription = () => {
-		randomAge()
-		randomSex()
-		randomSkin()
-		randomHair()
-		randomWeight()
-		randomHeight()
-		randomName()
-	}
+const randomDescription = () => {
+	randomAge()
+	randomSex()
+	randomSkin()
+	randomHair()
+	randomWeight()
+	randomHeight()
+	randomName()
+}
 
-	const resetDescription = () => {
-		Object.keys($character.description).forEach((d) => {
-			$character.description[d].value = ``
-		})
-	}
+const resetDescription = () => {
+	Object.keys($character.description).forEach((d) => {
+		$character.description[d].value = ``
+	})
+}
 
-	const descriptions = [
-		[
-			{ name: "age", random: randomAge },
-			{ name: "sex", random: randomSex }
-		],
-		[
-			{ name: "skin", random: randomSkin },
-			{ name: "hair", random: randomHair }
-		],
-		[
-			{ name: "height", random: randomHeight },
-			{ name: "weight", random: randomWeight }
-		],
-	]
+const descriptions = [
+	[
+		{ name: `age`, random: randomAge },
+		{ name: `sex`, random: randomSex }
+	],
+	[
+		{ name: `skin`, random: randomSkin },
+		{ name: `hair`, random: randomHair }
+	],
+	[
+		{ name: `height`, random: randomHeight },
+		{ name: `weight`, random: randomWeight }
+	],
+]
 </script>
 
 
-<div class='description-step'>
-	<div class='step-title'>
-		<h2>Description</h2>
-	</div>
-	<div class='section-card'>
-		<span class='stat-label'>Player:</span>
-		<input
-			type='text'
-			class='full-block'
-			bind:value={$character.description.player.value}
-		>
-	</div>
-	<div class='section-card'>
-		<span class='stat-label'>Character:</span>
-		<input
-			type='text'
-			class='full-block'
-			bind:value={$character.description.character.value}
-		>
-		<button on:click={randomName}>Random</button>
-	</div>
-	{#each descriptions as pair, index}
-		<div class='section-card'>
-			{#each pair as {name, random}}
-				<div class='pair-block'>
-					<div class='pair-container'>
-						<span class='stat-label'>{Capitalize(name)}:</span>
-						<input
-							type='text'
-							class='pair-input'
-							bind:value={$character.description[name].value}
-						>
-						<button on:click={random}>Random</button>
-					</div>
-				</div>
-			{/each}
-		</div>
-	{/each}
-	<button class='center-button' on:click={resetDescription}>Reset Description</button>
-	<button class='center-button' on:click={randomDescription}>Random Description</button>
+<h1>Description</h1>
+<div class='section-card'>
+	<span class='stat-label'>Player:</span>
+	<input
+		type='text'
+		class='full-block'
+		bind:value={$character.description.player.value}
+	>
 </div>
+<div class='section-card'>
+	<span class='stat-label'>Character:</span>
+	<input
+		type='text'
+		class='full-block'
+		bind:value={$character.description.character.value}
+	>
+	&nbsp;
+	<button class='small-button' on:click={randomName}>
+		Random
+	</button>
+</div>
+{#each descriptions as pair}
+	<div class='section-card'>
+		{#each pair as {name, random}}
+			<div class='pair-block'>
+				<div class='pair-container'>
+					<span class='stat-label'>{Capitalize(name)}:</span>
+					<input
+						type='text'
+						class='pair-input'
+						bind:value={$character.description[name].value}
+					>
+					<button class='small-button' on:click={random}>
+						Random
+					</button>
+				</div>
+			</div>
+		{/each}
+	</div>
+{/each}
+<div class='button-row'>
+	<button class='center-button' on:click={resetDescription}>
+		Reset Description
+	</button>
+	<button class='center-button' on:click={randomDescription}>
+		Random Description
+	</button>
+</div>
+
+
+<style>
+.pair-container {
+	display: inline-block;
+	text-align: left;
+}
+.pair-container input {
+	max-width: 45%;
+}
+.small-button {
+	height: var(--double-unit);
+	max-width: 45%;
+	padding: var(--third-unit);
+}
+.pair-input {
+	width: 45%;
+}
+@media only screen and (max-width: 768px) {
+	.pair-block {
+		display: block;
+		padding: var(--third-unit);
+		width: 55%;
+	}
+	.stat-label {
+		display: block;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.pair-block {
+		width: 50%;
+	}
+}
+.full-block {
+	display: block;
+	width: 100%;
+}
+.button-row {
+	text-align: center;
+}
+</style>

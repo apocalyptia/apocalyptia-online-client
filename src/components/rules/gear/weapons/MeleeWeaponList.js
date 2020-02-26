@@ -8,7 +8,7 @@ import {
 	Slow,
 	TwoHanded
 } from '../attributes/WeaponAttributesList'
-import { Unarmed } from '../../Situations'
+import { Unarmed } from '../../Status'
 
 
 export const Ax = new MeleeWeapon({

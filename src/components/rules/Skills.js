@@ -19,7 +19,7 @@ export const Acrobatics = new Skill({
 		dodge: new Specialty({
 			name: `Dodge`,
 			description: [
-				`Roll vs [Melee or Ranged(Throw)].`,
+				`Roll vs [Melee or Ranged].`,
 			]
 		}),
 		jump: new Specialty({
@@ -65,7 +65,7 @@ export const Ranged = new Skill({
 		shoot: new Specialty({
 			name: `Shoot`,
 			description: [
-				`Roll vs [Reflexive Dodge or Block (with a Shield)].`,
+				`Roll vs [Dodge or Block (with a Shield)].`,
 			]
 		}),
 		throw: new Specialty({
@@ -426,7 +426,9 @@ specList.sort(DynamicSort('name'))
 export const SpecialtyList = specList
 
 
-export const SkillExplanation = `The ${Skills.length} Skills range from 0 to 6. You get [Brains x 6] points for Skills. Skill rolls are [d6 + Skill]. Trait scores set the upper limit for their Skills. Specialties (listed below their Skills) equal their parent Skill by default. Specialties can exceed the parent Skill by taking the Specialize Ability. Unless otherwise noted, a Skill takes one Action.`
+export const SkillExplanation = `Skills range from 0 to 6. You get [Brains x 6] points for Skills. Skill rolls are [d6 + Skill]. Trait scores set the upper limit for their Skills.`
+
+export const SpecialtyExplanation = `Specialties (listed below their Skills) equal their parent Skill by default. Specialties can exceed the parent Skill by taking the Specialize Ability. Unless otherwise noted, a Skill takes one Action.`
 
 export const SkillFlowExplanation = `Skill Flow: Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
 

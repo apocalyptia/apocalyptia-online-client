@@ -1,0 +1,80 @@
+<script>
+import * as sapper from '@sapper/app'
+import ClickOutside from './ClickOutside.svelte'
+import { logout } from '../../../stores/netlifyUserStore'
+
+let pendingApiCall = false
+let showMenu = false
+let trigger
+
+const toggle = () => {
+	showMenu = !showMenu
+}
+
+const hide = () => {
+	showMenu = false
+}
+
+const logOut = () => {
+	pendingApiCall = true
+	logout(email, password).catch(e => {
+		pendingApiCall = false
+		showMenu = false
+		isSpreadProperty.goto('/')
+	})
+}
+</script>
+
+
+<button class='user-button' bind:this={trigger} on:click={toggle}>
+	&#9776;
+</button>
+<ClickOutside on:clickoutside={hide} exclude={[trigger]}>
+	<div hidden={!showMenu} class='user-menu'>
+		<button href='/' class='log-out' on:click={logOut}>Logout</button>
+		<button href='/' class='log-out' on:click={logOut}>Account</button>
+	</div>
+</ClickOutside>
+<div class='{showMenu ? "shadow" : "invisible"}'></div>
+
+
+<style>
+.user-button {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: var(--triple-unit);
+	width: 10%;
+	max-width: 50px;
+	min-width: 50px;
+	z-index: 3;
+}
+.user-menu {
+	background: var(--scr-color);
+	border: 1px solid var(--txt-color);
+	position: absolute;
+	right: 0vw;
+	top: var(--triple-unit);
+	width: 30vw;
+	min-width: 200px;
+	z-index: 4;
+}
+.log-out {
+	border: none;
+	height: var(--triple-unit);
+	width: 30vw;
+	min-width: 200px;
+}
+.shadow {
+	background: rgba(0, 0, 0, .5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 2;
+}
+.invisible {
+	display: none;
+}
+</style>

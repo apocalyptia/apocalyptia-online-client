@@ -3,7 +3,8 @@ import GoTrue from "gotrue-js"
 import { userFromNetlify } from "../components/helpers/User"
 import { writable } from "svelte/store"
 
-const url = "https://apocalyptiaonline.com/"
+const url = `https://apocalyptiaonline.com/`
+
 const goTrueInstance = new GoTrue({
 	APIUrl: `${url}/.netlify/identity`,
 	setCookie: true
@@ -17,20 +18,18 @@ export function logout() {
 	goTrueUser
 		.logout()
 		.then(() => {
-			console.log(authUserStore)
 			authUserStore.update(() => undefined)
-			sapper.goto('/')
 		})
 		.catch(e => {
 			alert(e.message)
 		})
 }
 
-export async function signin(email, password) {
+export async function login(email, password) {
 	try {
 		await goTrueInstance.login(email, password, true).then(user => {
 			authUserStore.update(() => userFromNetlify(user))
-			window.location.assign("/")
+			window.location.assign(`/`)
 		})
 	} catch (e) {
 		alert(e.message)
@@ -38,11 +37,11 @@ export async function signin(email, password) {
 	}
 }
 
-export function register(email, password) {
+export function signup(email, password) {
 	return goTrueInstance.signup(email, password)
 }
 
-export function requestPasswordRecovery(email) {
+export function recover(email) {
 	return goTrueInstance.requestPasswordRecovery(email)
 }
 
@@ -51,7 +50,7 @@ export function confirm(token) {
 		.confirm(token)
 		.then(function(response) {
 			alert(
-				"Account confirmed! Welcome to the party! You can now login with your details",
+				`Account confirmed. Welcome to Apocalyptia Online. You can now login with your username and password.`,
 				JSON.stringify({ response })
 			)
 		})
@@ -59,18 +58,3 @@ export function confirm(token) {
 			alert(e.message)
 		})
 }
-
-// custom logic for registration
-
-// var hash = window.location.hash.substr(1)
-// var result = hash.split("&").reduce(function(acc, item) {
-// 	var parts = item.split("=")
-// 	acc[parts[0]] = parts[1]
-// 	return acc
-// }, {})
-// if (result.confirmation_token) {
-// 	confirm(result.confirmation_token)
-// } else if (result.recovery_token) {
-// 	console.log("recovering account")
-// 	recover(result.recovery_token)
-// }

@@ -1,5 +1,5 @@
 import WeaponAttribute from '../../../classes/WeaponAttribute'
-import { Unarmed } from '../../Situations'
+import { Unarmed } from '../../Status'
 
 
 export const OneHanded = new WeaponAttribute({
