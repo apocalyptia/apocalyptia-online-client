@@ -1,5 +1,5 @@
 import Maneuver from '../../classes/Maneuver'
-import CalledShotTable from '../tables/CalledShotTable.svelte'
+import CalledShotTable from '../../views/tables/CalledShotTable.svelte'
 
 
 // Independent Rules

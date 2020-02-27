@@ -1,5 +1,5 @@
 import Rule from '../classes/Rule'
-import CoverTable from './tables/CoverTable.svelte'
+import CoverTable from '../views/tables/CoverTable.svelte'
 
 
 export const Cover = new Rule({
