@@ -1,6 +1,6 @@
 <script>
 import { character } from '../../../stores'
-import Capitalize from '../../helpers/Capitalize'
+import Capitalize from '../../functions/Capitalize'
 import RandomRoll,
 	{ 
 		RandomName,
@@ -10,7 +10,7 @@ import RandomRoll,
 		RandomSkin,
 		RandomSex,
 		RandomAge
-	} from '../../helpers/Random'
+	} from '../../functions/Random'
 
 const randomName = () => {
 	$character.description.character.value = RandomName($character.description.sex.value)

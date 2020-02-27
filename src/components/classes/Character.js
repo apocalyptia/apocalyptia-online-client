@@ -1,4 +1,4 @@
-import ArrayToObject from '../helpers/ArrayToObject'
+import ArrayToObject from '../functions/ArrayToObject'
 import Descriptions from '../rules/Descriptions'
 import Traits from '../rules/Traits'
 import Skills from '../rules/Skills'

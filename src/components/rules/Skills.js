@@ -1,6 +1,6 @@
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
-import DynamicSort from '../helpers/DynamicSort'
+import DynamicSort from '../functions/DynamicSort'
 
 
 export const startingSkillPoints = (character) => {

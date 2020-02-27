@@ -3,8 +3,8 @@ import Traits from './Traits'
 import Skills, { SpecialtyList } from './Skills'
 import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
 import { WeaponList } from './Gear'
-import Capitalize from '../helpers/Capitalize'
-import Languages from '../helpers/Languages'
+import Capitalize from '../functions/Capitalize'
+import Languages from '../functions/Languages'
 
 
 // 3 XP Abilities

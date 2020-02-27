@@ -1,6 +1,6 @@
 <script>
 import { fade } from 'svelte/transition'
-import { d6Roll } from '../../../helpers/Random'
+import { d6Roll } from '../../../functions/Random'
 
 /*
 	HTML CHARACTER CODES FOR DICE

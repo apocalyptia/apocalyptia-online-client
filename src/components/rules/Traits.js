@@ -5,7 +5,7 @@ import {
 	ConstitutionSkills,
 	DemeanorSkills
 } from './Skills'
-import Capitalize from '../helpers/Capitalize'
+import Capitalize from '../functions/Capitalize'
 
 
 const AgilitySkillList = AgilitySkills

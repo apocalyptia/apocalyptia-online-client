@@ -1,6 +1,6 @@
 <script>
-import Capitalize from '../../helpers/Capitalize'
-import ToggleVisible from '../../helpers/ToggleVisible'
+import Capitalize from '../../functions/Capitalize'
+import ToggleVisible from '../../functions/ToggleVisible'
 
 export let list
 </script>

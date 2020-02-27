@@ -1,6 +1,6 @@
 <script>
 import { createEventDispatcher } from 'svelte'
-import OuterClick from '../../helpers/OuterClick'
+import OuterClick from '../../functions/OuterClick'
 
 export let exclude = []
 

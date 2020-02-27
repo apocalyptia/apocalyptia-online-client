@@ -1,7 +1,7 @@
 <script>
 import { character } from '../../../../stores'
-import Capitalize from '../../../helpers/Capitalize'
-import ToggleVisible from '../../../helpers/ToggleVisible'
+import Capitalize from '../../../functions/Capitalize'
+import ToggleVisible from '../../../functions/ToggleVisible'
 import AbilityModal from './AbilityModal.svelte'
 
 export let ability

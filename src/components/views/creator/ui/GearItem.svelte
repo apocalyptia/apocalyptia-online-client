@@ -1,6 +1,6 @@
 <script>
 import { character } from '../../../../stores'
-import { Nd6, RandomRoll } from '../../../helpers/Random'
+import { Nd6, RandomRoll } from '../../../functions/Random'
 import AmmoList from '../../../rules/gear/weapons/AmmoList'
 import ArmorList from '../../../rules/gear/ArmorList'
 import MeleeWeaponList from '../../../rules/gear/weapons/MeleeWeaponList'

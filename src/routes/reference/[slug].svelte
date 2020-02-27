@@ -7,7 +7,7 @@ export function preload(page) {
 
 <script>
 import * as sapper from '@sapper/app'
-import Capitalize from '../../components/helpers/Capitalize'
+import Capitalize from '../../components/functions/Capitalize'
 import RefList from '../../components/views/reference/RefList.svelte'
 import { refToC } from '../../stores'
 

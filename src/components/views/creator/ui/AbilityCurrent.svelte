@@ -1,6 +1,6 @@
 <script>
 import { character } from '../../../../stores'
-import Capitalize from '../../../helpers/Capitalize'
+import Capitalize from '../../../functions/Capitalize'
 
 export let MasterAbilityList
 

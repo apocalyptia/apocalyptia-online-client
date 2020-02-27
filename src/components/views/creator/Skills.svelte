@@ -1,9 +1,9 @@
 <script>
 import { onMount } from 'svelte'
 import { character } from '../../../stores'
-import Capitalize from '../../helpers/Capitalize'
-import ToggleVisible from '../../helpers/ToggleVisible'
-import RandomRoll from '../../helpers/Random'
+import Capitalize from '../../functions/Capitalize'
+import ToggleVisible from '../../functions/ToggleVisible'
+import RandomRoll from '../../functions/Random'
 import { traitMax } from '../../rules/Traits'
 import { startingSkillPoints, SkillExplanation } from '../../rules/Skills'
 import Slider from '../controls/Slider.svelte'

@@ -1,7 +1,7 @@
 <script>
 import { character } from '../../../stores'
-import { d6 } from '../../helpers/Random'
-import Capitalize from '../../helpers/Capitalize'
+import { d6 } from '../../functions/Random'
+import Capitalize from '../../functions/Capitalize'
 import { PropertyExplanation } from '../../rules/Properties'
 
 const properties = Object.keys($character.properties)

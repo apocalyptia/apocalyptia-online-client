@@ -1,8 +1,8 @@
-export function userFromNetlify(serverUser) {
+export const userFromNetlify = (serverUser) => {
 	return getUser(serverUser)
 }
 
-function getUser(user) {
+const getUser = (user) => {
 	return {
 		email: user.email,
 		displayName: user.displayName

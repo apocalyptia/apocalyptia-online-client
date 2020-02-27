@@ -1,6 +1,6 @@
 import Property from '../classes/Property'
 import { Block, Dodge } from './maneuvers/DefensiveManeuvers'
-import { d6 } from '../helpers/Random'
+import { d6 } from '../functions/Random'
 
 export const block = new Property({
 	name: `block`,
