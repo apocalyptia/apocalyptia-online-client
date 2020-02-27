@@ -17,7 +17,7 @@
 /components/views/creator/ui/AbilityModal
 /components/views/creator/ui/AbilityModalOptions
 /components/views/creator/ui/AbilityModalSingle
-/components/views/creator/ui/GearTable
+/components/views/creator/ui/GearStats
 
 /components/views/reference/RefList
 

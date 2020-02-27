@@ -21,16 +21,20 @@ export default class Character {
 				name: `Armor`,
 				inventory: []
 			},
-			weapons: {
-				name: `Weapons`,
+			meleeWeapons: {
+				name: `Melee Weapons`,
 				inventory: []
 			},
-			backpack: {
-				name: `Backpack`,
+			rangedWeapons: {
+				name: `Ranged Weapons`,
 				inventory: []
 			},
 			ammo: {
 				name: `Ammo`,
+				inventory: []
+			},
+			backpack: {
+				name: `Backpack`,
 				inventory: []
 			},
 		}

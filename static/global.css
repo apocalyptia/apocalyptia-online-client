@@ -101,7 +101,10 @@ label {
 
 h1 {
 	font-size: calc(var(--base-unit) * 1.5);
-	text-align: center;
+}
+
+h2 {
+	font-size: calc(var(--base-unit) * 1.25);
 }
 
 
@@ -142,6 +145,9 @@ select:invalid {
 button {
 	height: var(--triple-unit);
 	padding: var(--half-unit);
+}
+.center-button {
+	text-align: center;
 }
 
 /* Input */
@@ -184,9 +190,26 @@ select {
 /* ----- LAYOUT ----- */
 
 /* Table */
-table td {
+table {
+	table-layout: fixed;
+	text-align: left;
+	width: 100%;
+}
+tr {
+	align-content: center;
+	align-items: start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	height: var(--double-unit);
+	min-width: 100%;
+}
+td {
 	border: var(--smallest-unit) solid var(--txt-color);
+	flex: 1;
+	overflow-wrap: normal;
 	padding: var(--half-unit);
+	word-wrap: break-word;
 }
 
 /* Section Card */

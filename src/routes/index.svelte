@@ -4,7 +4,7 @@ import Dashboard from '../components/views/ui/Dashboard.svelte'
 import Landing from '../components/views/ui/Landing.svelte'
 import { authUserStore, confirm, logout } from '../stores/userStore'
 
-const prod = false
+const production = true
 
 onMount(() => {
 	let hash = window.location.hash.substr(1)
@@ -21,7 +21,7 @@ onMount(() => {
 <svelte:head>
 	<title>Apocalyptia Online</title>
 </svelte:head>
-{#if prod}
+{#if production}
 	{#if $authUserStore}
 		<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
 		<Dashboard />

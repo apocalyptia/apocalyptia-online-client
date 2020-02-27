@@ -4,6 +4,12 @@ export const d6 = () => {
 	return Math.ceil(Math.random() * 6)
 }
 
+export const Nd6 = (n) => {
+	let total = 0
+	for (let i = 0; i < n; i++) total += d6()
+	return total
+}
+
 export const d6Roll = () => {
 	let roll = d6()
 	let result = roll

@@ -6,7 +6,7 @@ export default class Ammo extends Gear {
 		description,
 		sz,
 		cal,
-		type
+		attributes
 	}) {
 		super({
 			name,
@@ -14,6 +14,6 @@ export default class Ammo extends Gear {
 			sz
 		})
 		this.cal = cal
-		this.type = type
+		this.attributes = attributes
 	}
 }

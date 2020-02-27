@@ -12,9 +12,7 @@ export const BoltActionRifle = new RangedWeapon({
 	sz: 4,
 	dmg: 3,
 	rng: 200,
-	attributes: [
-		TwoHanded
-	],
+	attributes: [TwoHanded],
 	mag: 5,
 	cal: `.308`,
 	reg: `C`
@@ -25,9 +23,7 @@ export const CompoundBow = new RangedWeapon({
 	sz: 4,
 	dmg: 1,
 	rng: 15,
-	attributes: [
-		TwoHanded
-	],
+	attributes: [TwoHanded],
 	mag: 1,
 	cal: `Arrow`,
 	reg: `C`
@@ -38,9 +34,7 @@ export const Crossbow = new RangedWeapon({
 	sz: 4,
 	dmg: 2,
 	rng: 20,
-	attributes: [
-		TwoHanded
-	],
+	attributes: [TwoHanded],
 	mag: 1,
 	cal: `Arrow`,
 	reg: `C`
@@ -52,9 +46,9 @@ export const DoubleBarrelShotgun = new RangedWeapon({
 	dmg: 4,
 	rng: 20,
 	attributes: [
+		TwoHanded,
 		Rapid,
 		Scatter,
-		TwoHanded
 	],
 	mag: 2,
 	cal: `12g`,
@@ -66,9 +60,7 @@ export const LeverActionRifle = new RangedWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 50,
-	attributes: [
-		TwoHanded
-	],
+	attributes: [TwoHanded],
 	mag: 10,
 	cal: `.357`,
 	reg: `C`
@@ -80,8 +72,8 @@ export const PumpShotgun = new RangedWeapon({
 	dmg: 4,
 	rng: 20,
 	attributes: [
+		TwoHanded,
 		Scatter,
-		TwoHanded
 	],
 	mag: 6,
 	cal: `12g`,
@@ -93,9 +85,7 @@ export const Revolver = new RangedWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 10,
-	attributes: [
-		OneHanded
-	],
+	attributes: [OneHanded],
 	mag: 6,
 	cal: `.357`,
 	reg: `C`
@@ -107,8 +97,8 @@ export const SemiAutoCarbine = new RangedWeapon({
 	dmg: 1,
 	rng: 30,
 	attributes: [
+		TwoHanded,
 		Rapid,
-		TwoHanded
 	],
 	mag: 30,
 	cal: `9mm`,
@@ -122,7 +112,7 @@ export const SemiAutoPistol = new RangedWeapon({
 	rng: 10,
 	attributes: [
 		OneHanded,
-		Rapid
+		Rapid,
 	],
 	mag: 15,
 	cal: `9mm`,
@@ -135,8 +125,8 @@ export const SemiAutoRifle = new RangedWeapon({
 	dmg: 2,
 	rng: 100,
 	attributes: [
+		TwoHanded,
 		Rapid,
-		TwoHanded
 	],
 	mag: 30,
 	cal: `5.56`,
@@ -149,9 +139,9 @@ export const SemiAutoShotgun = new RangedWeapon({
 	dmg: 4,
 	rng: 20,
 	attributes: [
+		TwoHanded,
 		Rapid,
 		Scatter,
-		TwoHanded
 	],
 	mag: 6,
 	cal: `12g`,
@@ -178,8 +168,8 @@ export const TargetRifle = new RangedWeapon({
 	dmg: 1,
 	rng: 50,
 	attributes: [
+		TwoHanded,
 		Rapid,
-		TwoHanded
 	],
 	mag: 10,
 	cal: `.22`,

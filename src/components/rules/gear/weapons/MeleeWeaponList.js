@@ -28,9 +28,7 @@ export const BaseballBat = new MeleeWeapon({
 	sz: 3,
 	dmg: 3,
 	rng: 2,
-	attributes: [
-		TwoHanded
-	]
+	attributes: [TwoHanded]
 })
 
 export const BrassKnuckles = new MeleeWeapon({
@@ -49,9 +47,7 @@ export const Crowbar = new MeleeWeapon({
 	sz: 3,
 	dmg: 3,
 	rng: 2,
-	attributes: [
-		OneHanded
-	]
+	attributes: [OneHanded]
 })
 
 export const Hammer = new MeleeWeapon({
@@ -59,9 +55,7 @@ export const Hammer = new MeleeWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 1,
-	attributes: [
-		OneHanded
-	]
+	attributes: [OneHanded]
 })
 
 export const Hatchet = new MeleeWeapon({
@@ -136,9 +130,7 @@ export const Staff = new MeleeWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 3,
-	attributes: [
-		TwoHanded
-	]
+	attributes: [TwoHanded]
 })
 
 

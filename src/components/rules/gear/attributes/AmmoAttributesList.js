@@ -1,34 +1,13 @@
 import AmmoAttribute from '../../../classes/AmmoAttribute'
 
 
-export const ArmorPiercing = new AmmoAttribute({
-	name: 'Armor Piercing',
-	description: [
-		'Pierce.',
-	],
-	calibers: [
-		'5.56',
-		'.308',
-	]
-})
-
 export const Broadhead = new AmmoAttribute({
 	name: 'Broadhead',
 	description: [
-		'+1 Damage. Pierce',
+		'+1 Damage.',
 	],
 	calibers: [
 		'Arrow',
-	]
-})
-
-export const Buckshot = new AmmoAttribute({
-	name: 'Buckshot',
-	description: [
-		'Scatter.',
-	],
-	calibers: [
-		'12g',
 	]
 })
 
@@ -43,7 +22,6 @@ export const HollowPoint = new AmmoAttribute({
 		'.357',
 		'5.56',
 		'.308',
-		'12g',
 	]
 })
 
@@ -73,9 +51,7 @@ export const Slug = new AmmoAttribute({
 
 
 export default [
-	ArmorPiercing,
 	Broadhead,
-	Buckshot,
 	HollowPoint,
 	Match,
 	Slug,
