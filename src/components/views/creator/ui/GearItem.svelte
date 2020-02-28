@@ -1,5 +1,5 @@
 <script>
-import { character } from '../../../../stores'
+import { character } from '../../../../stores/characterStore'
 import { Nd6, RandomRoll } from '../../../functions/Random'
 import AmmoList from '../../../rules/gear/weapons/AmmoList'
 import ArmorList from '../../../rules/gear/ArmorList'

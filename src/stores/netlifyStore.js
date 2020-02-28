@@ -1,7 +1,5 @@
-import * as sapper from '@sapper/app'
-import GoTrue from "gotrue-js"
-import { userFromNetlify } from "../components/helpers/User"
-import { writable } from "svelte/store"
+import { writable } from 'svelte/store'
+import GoTrue from 'gotrue-js'
 
 const url = `https://apocalyptiaonline.com/`
 
@@ -12,9 +10,16 @@ const goTrueInstance = new GoTrue({
 
 const goTrueUser = goTrueInstance.currentUser() || undefined
 
+const getUser = (user) => {
+	return {
+		email: user.email,
+		displayName: user.displayName
+	}
+}
+
 export const authUserStore = writable(goTrueUser)
 
-export function logout() {
+export const logout = () => {
 	goTrueUser
 		.logout()
 		.then(() => {
@@ -27,25 +32,27 @@ export function logout() {
 
 export async function login(email, password) {
 	try {
-		await goTrueInstance.login(email, password, true).then(user => {
-			authUserStore.update(() => userFromNetlify(user))
-			window.location.assign(`/`)
-		})
+		await goTrueInstance
+				.login(email, password, true)
+				.then(user => {
+					authUserStore.update(() => getUser(user))
+					window.location.assign(`/`)
+				})
 	} catch (e) {
 		alert(e.message)
 		throw e.message
 	}
 }
 
-export function signup(email, password) {
+export const signup = (email, password) => {
 	return goTrueInstance.signup(email, password)
 }
 
-export function recover(email) {
+export const recover = (email) => {
 	return goTrueInstance.requestPasswordRecovery(email)
 }
 
-export function confirm(token) {
+export const confirm = (token) => {
 	goTrueInstance
 		.confirm(token)
 		.then(function(response) {
@@ -54,7 +61,7 @@ export function confirm(token) {
 				JSON.stringify({ response })
 			)
 		})
-		.catch(function(e) {
+		.catch((e) => {
 			alert(e.message)
 		})
 }

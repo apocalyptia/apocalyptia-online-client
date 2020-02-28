@@ -1,7 +1,7 @@
 <script>
 import * as sapper from '@sapper/app'
 import ClickOutside from './ClickOutside.svelte'
-import { logout } from '../../../stores/netlifyUserStore'
+import { logout } from '../../../stores/netlifyStore'
 
 let pendingApiCall = false
 let showMenu = false

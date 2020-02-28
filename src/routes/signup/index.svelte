@@ -1,8 +1,7 @@
 <script>
 	import * as sapper from '@sapper/app'
 	import Spinner from '../../components/views/ui/Spinner.svelte'
-	import { authUserStore } from '../../stores/userStore'
-	import { signup } from '../../stores/userStore'
+	import { authUserStore, signup } from '../../stores/netlifyStore'
 
 	if ($authUserStore) sapper.goto(`/`)
 

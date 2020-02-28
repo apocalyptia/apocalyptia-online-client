@@ -1,5 +1,5 @@
 <script>
-import { character } from '../../../stores'
+import { character } from '../../../stores/characterStore'
 import GearItem from './ui/GearItem.svelte'
 </script>
 

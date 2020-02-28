@@ -1,5 +1,5 @@
 <script>
-import { character } from '../../../../stores'
+import { character } from '../../../../stores/characterStore'
 import Capitalize from '../../../functions/Capitalize'
 
 export let MasterAbilityList

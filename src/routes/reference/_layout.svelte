@@ -1,8 +1,8 @@
 <script>
 import NavBar from '../../components/views/controls/NavBar.svelte'
-import { refToC } from '../../stores'
+import referenceStore from '../../stores/referenceStore'
 </script>
 
 
 <slot />
-<NavBar routed={true} store={$refToC}/>
+<NavBar routed={true} store={$referenceStore}/>

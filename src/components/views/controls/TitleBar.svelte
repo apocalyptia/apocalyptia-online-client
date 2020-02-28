@@ -1,10 +1,8 @@
 <script>
 import * as sapper from '@sapper/app'
-import { refToC } from '../../../stores'
 import UserMenu from './UserMenu.svelte'
 
 const goHome = () => {
-	$refToC.reset()
 	sapper.goto('/')
 }
 </script>

@@ -1,6 +1,6 @@
 <script>
 import { onMount } from 'svelte'
-import { character } from '../../../stores'
+import { character } from '../../../stores/characterStore'
 import Capitalize from '../../functions/Capitalize'
 import RandomRoll from '../../functions/Random'
 import { traitMax, TraitExplanation } from '../../rules/Traits'

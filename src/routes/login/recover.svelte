@@ -1,7 +1,7 @@
 <script>
 import * as sapper from '@sapper/app'
 import Spinner from '../../components/views/ui/Spinner.svelte'
-import { authUserStore, recover } from '../../stores/userStore'
+import { authUserStore, recover } from '../../stores/netlifyStore'
 
 if ($authUserStore) sapper.goto(`/`)
 

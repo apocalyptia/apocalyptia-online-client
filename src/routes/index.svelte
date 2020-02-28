@@ -2,14 +2,14 @@
 import { onMount } from 'svelte'
 import Dashboard from '../components/views/ui/Dashboard.svelte'
 import Landing from '../components/views/ui/Landing.svelte'
-import { authUserStore, confirm, logout } from '../stores/userStore'
+import { authUserStore, confirm, logout } from '../stores/netlifyStore'
 
 const production = true
 
 onMount(() => {
-	let hash = window.location.hash.substr(1)
-	let result = hash.split('&').reduce((result, item) => {
-		let parts = item.split('=')
+	const hash = window.location.hash.substr(1)
+	const result = hash.split('&').reduce((result, item) => {
+		const parts = item.split('=')
 		result[parts[0]] = parts[1]
 		return result
 	}, {})

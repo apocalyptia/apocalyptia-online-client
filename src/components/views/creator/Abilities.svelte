@@ -1,6 +1,6 @@
 <script>
 import { beforeUpdate } from 'svelte'
-import { character } from '../../../stores'
+import { character } from '../../../stores/characterStore'
 import ToggleVisible from '../../functions/ToggleVisible'
 import { AbilitiesList, AbilitiesExplanation, AbilityGroups } from '../../rules/Abilities'
 import AbilityGroup from './ui/AbilityGroup.svelte'

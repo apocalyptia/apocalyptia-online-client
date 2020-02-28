@@ -1,5 +1,5 @@
 <script>
-import { character } from '../../../stores'
+import { character } from '../../../stores/characterStore'
 import { d6 } from '../../functions/Random'
 import Capitalize from '../../functions/Capitalize'
 import { PropertyExplanation } from '../../rules/Properties'
