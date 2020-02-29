@@ -4,8 +4,6 @@ import Dashboard from '../components/views/ui/Dashboard.svelte'
 import Landing from '../components/views/ui/Landing.svelte'
 import { authUserStore, confirm, logout } from '../stores/netlifyStore'
 
-const production = true
-
 onMount(() => {
 	const hash = window.location.hash.substr(1)
 	const result = hash.split('&').reduce((result, item) => {
@@ -21,13 +19,9 @@ onMount(() => {
 <svelte:head>
 	<title>Apocalyptia Online</title>
 </svelte:head>
-{#if production}
-	{#if $authUserStore}
-		<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
-		<Dashboard />
-	{:else}
-		<Landing />
-	{/if}
-{:else}
+{#if $authUserStore}
+	<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
 	<Dashboard />
+{:else}
+	<Landing />
 {/if}
