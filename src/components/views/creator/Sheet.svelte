@@ -136,25 +136,44 @@ const skills = Object.keys($character.skills)
 
 
 <style>
+@media only screen and (max-width: 768px) {
+	.section-block {
+		display: block;
+		padding: var(--third-unit);
+		width: 100%;
+	}
+	.section-block span {
+		display: block;
+	}
+	.prop-item {
+		width: 100%;
+	}
+	.trait-column,
+	.skill-column {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.section-block {
+		display: flex;
+		justify-content: space-between;
+		padding: var(--third-unit);
+		width: 100%;
+	}
+	.prop-item {
+		width: 25%;
+	}
+	.trait-column,
+	.skill-column {
+		width: 25%;
+	}
+}
 .section-card {
 	display: block;
-}
-.section-block {
-	display: flex;
-	justify-content: space-between;
-	padding: var(--third-unit);
-	width: 100%;
-}
-.trait-column,
-.skill-column {
-	width: 25%;
 }
 .trait-name,
 .skill-name {
 	padding: var(--third-unit);
-}
-.prop-item {
-	width: 25%;
 }
 .current-abilities-header,
 .current-ability-row {
