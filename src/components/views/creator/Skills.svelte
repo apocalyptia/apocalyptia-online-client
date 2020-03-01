@@ -92,20 +92,20 @@ onMount(() => calculateResults())
 						$character.skills[s].parent
 					}
 						<br>
-							<div class='stat-column name-column'>
-								<span class='stat-label'>
-									{Capitalize($character.skills[s].name)}
-								</span>
-							</div>
-							<div class='stat-column'>
-								<Slider
-									name='{s.toLowerCase()}'
-									min={parseInt(0)}
-									max={parseInt(6)}
-									bind:value={$character.skills[s].base}
-									on:input={event => assignSkill(s, event.target.value)}
-								/>
-							</div>
+						<div class='stat-column name-column'>
+							<span class='stat-label'>
+								{Capitalize($character.skills[s].name)}
+							</span>
+						</div>
+						<div class='stat-column'>
+							<Slider
+								name='{s.toLowerCase()}'
+								min={parseInt(0)}
+								max={parseInt(6)}
+								bind:value={$character.skills[s].base}
+								on:input={event => assignSkill(s, event.target.value)}
+							/>
+						</div>
 					{/if}
 				{/each}
 			{/if}

@@ -220,6 +220,13 @@ export const XP12Abilities = [
 
 // 15 XP Abilities
 
+export const Charge = new Ability({
+	name: `Charge`,
+	description: [`Ignore Prone effect from Leg Damage. Ignore Unstable penalty to Melee Attacks when you Run.`,],
+	max: 1,
+	xp: 15
+})
+
 export const FirmGrip = new Ability({
 	name: `Firm Grip`,
 	description: [`Use 2h weapons in 1h, up to Size 3. Ignore Drop effect from Arm Damage.`,],
@@ -234,17 +241,10 @@ export const HardHeaded = new Ability({
 	xp: 15
 })
 
-export const Charge = new Ability({
-	name: `Charge`,
-	description: [`Ignore Prone effect from Leg Damage. Ignore Unstable penalty to Melee Attacks when you Run.`,],
-	max: 1,
-	xp: 15
-})
-
 export const XP15Abilities = [
+	Charge,
 	FirmGrip,
 	HardHeaded,
-	PowerfulStrike,
 ]
 
 // 18 XP Abilities
