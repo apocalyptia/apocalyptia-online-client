@@ -5,7 +5,7 @@ import Capitalize from '../../functions/Capitalize'
 import ToggleVisible from '../../functions/ToggleVisible'
 import RandomRoll from '../../functions/Random'
 import { traitMax } from '../../rules/Traits'
-import { startingSkillPoints, SkillExplanation } from '../../rules/Skills'
+import Skills from '../../rules/Skills'
 import Slider from '../controls/Slider.svelte'
 
 let skillGroups = Object.keys($character.traits).map(t => {
@@ -15,7 +15,7 @@ let skillGroups = Object.keys($character.traits).map(t => {
 const skills = Object.keys($character.skills)
 
 const getRemaining = () => {
-	return startingSkillPoints($character) -
+	return Skills.startingPoints($character) -
 		Object.values($character.skills).reduce(
 			(s, { base }) => s += base, 0
 		)
@@ -71,7 +71,7 @@ onMount(() => calculateResults())
 
 <h1>Skills</h1>
 <div class='explanation'>
-	<p>{SkillExplanation}</p>
+	<p>{Skills.explanation}</p>
 </div>
 <div class='remaining'>
 	<h3>Points Remaining: {remaining}</h3>

@@ -88,13 +88,15 @@ export const speed = new Property({
 export const PropertyExplanation = `Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
 
 
-export default [
-	block,
-	dodge,
-	experience,
-	intellect,
-	luck,
-	health,
-	psyche,
-	speed
-]
+export default {
+	list: [
+		block,
+		dodge,
+		experience,
+		intellect,
+		luck,
+		health,
+		psyche,
+		speed
+	]
+}

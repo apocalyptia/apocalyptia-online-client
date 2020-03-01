@@ -72,9 +72,11 @@ export const TraitExplanation = (traitPoints) => {
 export const TraitFlowExplanation = `Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. Recalculate any associated Properties.`
 
 
-export default [
-	{ ...Agility },
-	{ ...Brains },
-	{ ...Constitution },
-	{ ...Demeanor }
-]
+export default {
+	list: [
+		{ ...Agility },
+		{ ...Brains },
+		{ ...Constitution },
+		{ ...Demeanor }
+	]
+}

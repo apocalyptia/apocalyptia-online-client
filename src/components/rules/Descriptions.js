@@ -41,13 +41,15 @@ export const Weight = new Description({
 	value: ``
 })
 
-export default [
-	Player,
-	Character,
-	Age,
-	Sex,
-	Hair,
-	Skin,
-	Height,
-	Weight
-]
+export default {
+	list: [
+		Player,
+		Character,
+		Age,
+		Sex,
+		Hair,
+		Skin,
+		Height,
+		Weight
+	]
+}

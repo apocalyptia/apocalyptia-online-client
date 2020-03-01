@@ -11,8 +11,8 @@ import {
 } from '../../Status'
 
 
-export const Flashbang = new Bomb({
-	name: `Flashbang`,
+export const FlashbangGrenade = new Bomb({
+	name: `Flashbang Grenade`,
 	sz: 1,
 	dmg: `0`,
 	rng: `6yd`,
@@ -25,8 +25,8 @@ export const Flashbang = new Bomb({
 	mix: 9
 })
 
-export const Frag = new Bomb({
-	name: `Frag`,
+export const FragGrenade = new Bomb({
+	name: `Frag Grenade`,
 	sz: 1,
 	dmg: `d6x3`,
 	rng: `15yd`,
@@ -39,8 +39,8 @@ export const Frag = new Bomb({
 	mix: 9
 })
 
-export const Molotov = new Bomb({
-	name: `Molotov`,
+export const MolotovCocktail = new Bomb({
+	name: `Molotov Cocktail`,
 	sz: 2,
 	dmg: `d6 + 1 Fire Damage/round`,
 	rng: `3yd`,
@@ -53,8 +53,8 @@ export const Molotov = new Bomb({
 	mix: 3
 })
 
-export const Smoke = new Bomb({
-	name: `Smoke`, 
+export const SmokeGrenade = new Bomb({
+	name: `Smoke Grenade`, 
 	sz: 1,
 	dmg: `0`,
 	rng: `1yd/round`,
@@ -66,8 +66,8 @@ export const Smoke = new Bomb({
 	mix: 6
 })
 
-export const Teargas = new Bomb({
-	name: `Teargas`,
+export const TeargasGrenade = new Bomb({
+	name: `Teargas Grenade`,
 	sz: 1,
 	dmg: `1`,
 	rng: `1yd/round`,
@@ -97,12 +97,12 @@ export const Thermite = new Bomb({
 
 
 export default [
-	Flashbang,
-	Frag,
-	Molotov,
-	Smoke,
-	Teargas,
-	Thermite
+	{...FlashbangGrenade},
+	{...FragGrenade},
+	{...MolotovCocktail},
+	{...SmokeGrenade},
+	{...TeargasGrenade},
+	{...Thermite},
 ]
 
 

@@ -3,8 +3,10 @@ import OffensiveManeuvers from './maneuvers/OffensiveManeuvers'
 import SocialManeuvers from './maneuvers/SocialManeuvers'
 
 
-export default [
-	...DefensiveManeuvers,
-	...OffensiveManeuvers,
-	...SocialManeuvers
-]
+export default {
+	list: [
+		...DefensiveManeuvers,
+		...OffensiveManeuvers,
+		...SocialManeuvers
+	]
+}

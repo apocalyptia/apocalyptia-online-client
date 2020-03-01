@@ -10,6 +10,7 @@ import MedicalList from './gear/MedicalList'
 import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
 import RangedWeaponList from './gear/weapons/RangedWeaponList'
 import StorageList from './gear/StorageList'
+import PropSort from '../functions/PropSort'
 // export { VehicleList } from '../../components/rules//gear/Vehicles'
 
 export const WeaponList = [
@@ -17,16 +18,22 @@ export const WeaponList = [
 	...RangedWeaponList
 ]
 
-export default [
-	...AccessoryList,
-	...AmmoList,
-	...ArmorList,
-	...BombList,
-	...DocumentList,
-	...DrugsList,
-	...ElectronicsList,
-	...EquipmentList,
-	...MedicalList,
-	...StorageList,
-	...WeaponList
-]
+const Gear = {
+	list: [
+		...AccessoryList,
+		...AmmoList,
+		...ArmorList,
+		...BombList,
+		...DocumentList,
+		...DrugsList,
+		...ElectronicsList,
+		...EquipmentList,
+		...MedicalList,
+		...StorageList,
+		...WeaponList
+	].sort((a, b) => PropSort(a, b, 'name'))
+}
+
+export default Gear
+
+console.log(Gear.list)

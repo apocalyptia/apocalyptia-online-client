@@ -34,9 +34,11 @@ export const Visibility = new Rule({
 })
 
 
-export default [
-	Cover,
-	FriendlyFire,
-	Range,
-	Visibility
-]
+export default {
+	list: [
+		Cover,
+		FriendlyFire,
+		Range,
+		Visibility
+	]
+}

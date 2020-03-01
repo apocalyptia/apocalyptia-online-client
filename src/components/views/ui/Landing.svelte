@@ -1,7 +1,7 @@
 <script>
 import * as sapper from '@sapper/app'
 import { onMount } from 'svelte'
-import { typewriter } from '../../functions/Typewriter'
+import Typewriter from '../../functions/Typewriter'
 
 let show = false
 
@@ -11,7 +11,7 @@ onMount(() => show = true)
 
 {#if show}
 	<div class='center-card'>
-		<div class='title-row' in:typewriter>
+		<div class='title-row' in:Typewriter>
 			Connection established...
 		</div>
 		<div class='button-row'>

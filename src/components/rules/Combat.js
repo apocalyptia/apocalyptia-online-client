@@ -190,13 +190,15 @@ export const Vehicles = new Rule({
 
 // Rule List
 
-export default [
-	Rounds,
-	Actions,
-	Communication,
-	Movement,
-	Attack,
-	Defense,
-	Damage,
-	Vehicles
-]
+export default {
+	list: [
+		Rounds,
+		Actions,
+		Communication,
+		Movement,
+		Attack,
+		Defense,
+		Damage,
+		Vehicles
+	]
+}

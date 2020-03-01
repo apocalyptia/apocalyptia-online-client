@@ -11,10 +11,10 @@ export default class Character {
 			scenario: ``,
 			startingTraits: 14
 		},
-		this.description = ArrayToObject(Descriptions, `name`),
-		this.traits = ArrayToObject(Traits, `name`),
-		this.skills = ArrayToObject(Skills, `name`),
-		this.properties = ArrayToObject(Properties, `name`),
+		this.description = ArrayToObject(Descriptions.list, `name`),
+		this.traits = ArrayToObject(Traits.list, `name`),
+		this.skills = ArrayToObject(Skills.list, `name`),
+		this.properties = ArrayToObject(Properties.list, `name`),
 		this.abilities = [],
 		this.gear = {
 			armor: {
@@ -53,9 +53,14 @@ export default class Character {
 		})
 	}
 	spentXP() {
-		this.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+		let spent = 0
+		if (this.abilities.length) {
+			spent = this.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+		}
+		return spent
 	}
 	remainingXP() {
-		this.properties.experience.score - this.spentXP()
+		const remaining = this.properties.experience.score - this.spentXP()
+		return remaining
 	}
 }

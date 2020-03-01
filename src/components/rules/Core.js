@@ -68,10 +68,13 @@ export const Botch = new Rule({
 })
 
 
-export default [
-	Difficulty,
-	Success,
-	Fail,
-	Explode,
-	Botch
-]
+export default {
+	explanation: CoreExplanation,
+	list: [
+		Difficulty,
+		Success,
+		Fail,
+		Explode,
+		Botch
+	]
+}

@@ -135,18 +135,18 @@ export const Staff = new MeleeWeapon({
 
 
 export default [
-	Ax,
-	BaseballBat,
-	BrassKnuckles,
-	Crowbar,
-	Hammer,
-	Hatchet,
-	Knife,
-	Machete,
-	RiotShield,
-	Sledgehammer,
-	Spear,
-	Staff
+	{...Ax},
+	{...BaseballBat},
+	{...BrassKnuckles},
+	{...Crowbar},
+	{...Hammer},
+	{...Hatchet},
+	{...Knife},
+	{...Machete},
+	{...RiotShield},
+	{...Sledgehammer},
+	{...Spear},
+	{...Staff},
 ]
 
 

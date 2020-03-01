@@ -10,9 +10,7 @@ const dispatch = createEventDispatcher()
 
 const close = () => dispatch('close')
 
-const handle_keydown = e => {
-	if (e.key === 'Escape') close()
-}
+const handle_keydown = e => { if (e.key === 'Escape') close() }
 
 const previously_focused = typeof document !== 'undefined' && document.activeElement
 
@@ -29,7 +27,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 		<span class='ability-description'>{ability.description}</span>
 	</div>
 	<div class='stats-section'>
-		{#if ability.options[0]}
+		{#if ability.options.length}
 			<AbilityModalOptions {ability} {MasterAbilityList} />
 		{:else}
 			<AbilityModalSingle {ability} {MasterAbilityList} />

@@ -63,12 +63,12 @@ export const Stimulant = new Drug({
 
 
 export default [
-	Alcohol,
-	Antibiotic,
-	Hallucinogen,
-	Painkiller,
-	Sedative,
-	Stimulant
+	{...Alcohol},
+	{...Antibiotic},
+	{...Hallucinogen},
+	{...Painkiller},
+	{...Sedative},
+	{...Stimulant},
 ]
 
 

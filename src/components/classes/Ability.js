@@ -9,7 +9,7 @@ export default class Ability extends Rule {
 		max,
 		xp,
 		taken=0,
-		options=[``],
+		options=[],
 		selection=0,
 		notes=``,
 		id=null

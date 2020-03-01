@@ -16,4 +16,4 @@ export let slug
 
 
 <h1>{Capitalize(slug)}</h1>
-<RefList list={$referenceStore.modules[$referenceStore.chapters.indexOf(Capitalize(slug))]} />
+<RefList chapter={$referenceStore.modules[$referenceStore.chapters.indexOf(Capitalize(slug))]} />

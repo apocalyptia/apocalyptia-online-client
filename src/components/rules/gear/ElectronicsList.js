@@ -129,20 +129,20 @@ export const StunGun = new Electronic({
 
 
 export default [
-	Cellphone,
-	EmergencyRadio,
-	Flashlight,
-	GeigerCounter,
-	HandRadio,
-	Headlamp,
-	Lantern,
-	Megaphone,
-	Multimeter,
-	NightvisionGoggles,
-	QuadcopterDrone,
-	RCCar,
-	SolarLamp,
-	StunGun
+	{...Cellphone},
+	{...EmergencyRadio},
+	{...Flashlight},
+	{...GeigerCounter},
+	{...HandRadio},
+	{...Headlamp},
+	{...Lantern},
+	{...Megaphone},
+	{...Multimeter},
+	{...NightvisionGoggles},
+	{...QuadcopterDrone},
+	{...RCCar},
+	{...SolarLamp},
+	{...StunGun},
 ]
 
 

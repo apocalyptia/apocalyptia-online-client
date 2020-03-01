@@ -2,14 +2,14 @@
 import { beforeUpdate } from 'svelte'
 import { character } from '../../../stores/characterStore'
 import ToggleVisible from '../../functions/ToggleVisible'
-import { AbilitiesList, AbilitiesExplanation, AbilityGroups } from '../../rules/Abilities'
+import Abilities from '../../rules/Abilities'
 import AbilityGroup from './ui/AbilityGroup.svelte'
 import AbilityCard from './ui/AbilityCard.svelte'
 import AbilityCurrent from './ui/AbilityCurrent.svelte'
 
 let remaining = $character.remainingXP()
 
-let MasterAbilityList = AbilitiesList
+let MasterAbilityList = Abilities.masterList
 
 const resetAbilities = () => {
 	for (let a = 0; a < $character.abilities.length; ++a) {
@@ -27,7 +27,7 @@ beforeUpdate(() => {
 <div class='abilities-step'>
 	<h1>Abilities</h1>
 	<div class='explanation'>
-		<p>{AbilitiesExplanation}</p>
+		<p>{Abilities.explanation}</p>
 	</div>
 	<div class='remaining'>
 		<h3>Starting XP Remaining: {remaining}</h3>
@@ -39,7 +39,7 @@ beforeUpdate(() => {
 	{/if}
 	<div class='section-card'>
 		<div class='abilities-list'>
-			{#each AbilityGroups as group, index}
+			{#each Abilities.groups as group, index}
 				<div class='ability-group'>
 					<AbilityGroup {group} {MasterAbilityList}/>
 				</div>

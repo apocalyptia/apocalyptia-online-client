@@ -6,6 +6,7 @@ export let ability
 export let MasterAbilityList
 
 let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
+console.log(OptionList)
 
 const updateAbilities = () => {
 	$character.abilities = MasterAbilityList.filter(ability => ability.taken)

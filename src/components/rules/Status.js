@@ -180,24 +180,26 @@ export const Needs = new Rule({
 })
 
 
-export default [
-	Bleeding,
-	Blind,
-	Burning,
-	Concealed,
-	Deaf,
-	Defenseless,
-	Falling,
-	Grabbed,
-	Harmless,
-	Immobilized,
-	Needs,
-	OffHand,
-	Pinned,
-	Prone,
-	Restrained,
-	Stun,
-	Unarmed,
-	Unconscious,
-	Unstable
-]
+export default {
+	list: [
+		Bleeding,
+		Blind,
+		Burning,
+		Concealed,
+		Deaf,
+		Defenseless,
+		Falling,
+		Grabbed,
+		Harmless,
+		Immobilized,
+		Needs,
+		OffHand,
+		Pinned,
+		Prone,
+		Restrained,
+		Stun,
+		Unarmed,
+		Unconscious,
+		Unstable
+	]
+}
