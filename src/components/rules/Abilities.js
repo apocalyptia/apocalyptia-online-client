@@ -61,10 +61,10 @@ export const XP3Abilities = [
 	PackMentality,
 	QuickReload,
 	Specialize,
-	WeaponTraining
+	WeaponTraining,
 ]
 
-// 6 XP Abilities ---> TODO: Add 1 more
+// 6 XP Abilities
 
 export const EfficientWork = new Ability({
 	name: `Efficient Work`,
@@ -104,17 +104,21 @@ export const Practice = new Ability({
 	options: Skills.list
 })
 
-// OPEN SLOT FOR NEW 6XP ABILITY
+export const VehicleOperation = new Ability({
+	name: `Vehicle Operation`,
+	description: [`Proficiently operate a class of vehicle.`,],
+	max: 1,
+	xp: 6
+}) // TODO: Need to add VehicleList when it is made
 
 export const XP6Abilities = [
 	EfficientWork,
 	FastDraw,
 	FleetFooted,
 	Multilingual,
-	Practice
+	Practice,
+	VehicleOperation,
 ]
-
-// 9 XP Abilities ---> TODO: Add 1 more
 
 export const DangerSense = new Ability({
 	name: `Danger Sense`,
@@ -139,7 +143,7 @@ export const Fortunate = new Ability({
 
 export const FreeRunning = new Ability({
 	name: `Free Running`,
-	description: [`Acrobatics 9# to Climb as a Run action.`,],
+	description: [`Acrobatics 9# to Climb your Speed as a Movement action.`,],
 	max: 1,
 	xp: 9
 })
@@ -150,11 +154,11 @@ export const Unorthodox = new Ability({
 	max: 1,
 	xp: 9,
 	options: (function() {
-		let uList = []
+		const uList = []
 		Traits.list.forEach((trait) => {
 			Skills.list.forEach((skill) => {
-				let tname = trait.name
-				let sname = skill.name
+				const tname = trait.name
+				const sname = skill.name
 				if (skill.parent != trait.name) {
 					uList.push(
 						{
@@ -168,6 +172,13 @@ export const Unorthodox = new Ability({
 	})()
 })
 
+export const Resilient = new Ability({
+	name: `Resilient`,
+	description: [`Reduce any Trauma by 1.`],
+	max: 3,
+	xp: 9
+})
+
 // OPEN SLOT FOR NEW 9XP ABILITY
 
 export const XP9Abilities = [
@@ -175,7 +186,7 @@ export const XP9Abilities = [
 	Discipline,
 	Fortunate,
 	FreeRunning,
-	Unorthodox
+	Unorthodox,
 ]
 
 // 12 XP Abilities
@@ -204,40 +215,46 @@ export const Wrestling = new Ability({
 export const XP12Abilities = [
 	Parry,
 	Sidestep,
-	Wrestling
+	Wrestling,
 ]
 
 // 15 XP Abilities
 
 export const FirmGrip = new Ability({
 	name: `Firm Grip`,
-	description: [`Use 2h weapons in 1h, up to Size 3.`,],
+	description: [`Use 2h weapons in 1h, up to Size 3. Ignore Drop effect from Arm Damage.`,],
 	max: 1,
 	xp: 15
 })
 
 export const HardHeaded = new Ability({
 	name: `Hard Headed`,
-	description: [`Ignore Stun from Head Damage.`,],
+	description: [`Ignore Stun effect from Head Damage.`,],
 	max: 1,
 	xp: 15
 })
 
-export const PowerfulStrike = new Ability({
-	name: `Powerful Strike`,
-	description: [`+1 Damage with a specified Melee weapon type.`,],
+export const Charge = new Ability({
+	name: `Charge`,
+	description: [`Ignore Prone effect from Leg Damage. Ignore Unstable penalty to Melee Attacks when you Run.`,],
 	max: 1,
-	xp: 15,
-	options: MeleeWeaponList
+	xp: 15
 })
 
 export const XP15Abilities = [
 	FirmGrip,
 	HardHeaded,
-	PowerfulStrike
+	PowerfulStrike,
 ]
 
 // 18 XP Abilities
+
+export const Ambidextrous = new Ability({
+	name: `Ambidextrous`,
+	description: [`Off-hand penalty is -1 instead of -3.`,],
+	max: 1,
+	xp: 18
+})
 
 export const Assassin = new Ability({
 	name: `Assassin`,
@@ -246,24 +263,17 @@ export const Assassin = new Ability({
 	xp: 18
 })
 
-export const VehicleOperation = new Ability({
-	name: `Vehicle Operation`,
-	description: [`Proficiently operate a class of vehicle.`,],
-	max: 1,
-	xp: 18
-}) // TODO: Need to add VehicleList when it is made
-
 export const XP18Abilities = [
+	Ambidextrous,
 	Assassin,
-	VehicleOperation
 ]
 
 // 24 XP Abilities
 
-export const Ambidextrous = new Ability({
-	name: `Ambidextrous`,
-	description: [`Off-hand penalty is -1 instead of -3.`,],
-	max: 1,
+export const Rational = new Ability({
+	name: `Rational`,
+	description: [`+1 Psyche.`,],
+	max: 3,
 	xp: 24
 })
 
@@ -275,8 +285,8 @@ export const Tough = new Ability({
 })
 
 export const XP24Abilities = [
-	Ambidextrous,
-	Tough
+	Rational,
+	Tough,
 ]
 
 // 30 XP Abilities
@@ -298,18 +308,18 @@ export const CloseCall = new Ability({
 
 export const XP30Abilities = [
 	SelfImprovement,
-	CloseCall
+	CloseCall,
 ]
 
 export const AbilitiesExplanation = `Abilities are Character upgrades purchased with XP.`
 
 const IdTag = (list) => {
 	let id = 0
-	let newList = []
+	const newList = []
 	for (let i = 0; i < list.length; ++i) {
 		if (list[i].options[0]) {
 			for (let o = 0; o < list[i].options.length; ++o) {
-				let newAbility = new Ability({
+				const newAbility = new Ability({
 					name: list[i].name,
 					description: list[i].description,
 					max: list[i].max,
@@ -321,7 +331,7 @@ const IdTag = (list) => {
 				newList.push(newAbility)
 			}
 		} else {
-			let newAbility = new Ability({
+			const newAbility = new Ability({
 				name: list[i].name,
 				description: list[i].description,
 				max: list[i].max,

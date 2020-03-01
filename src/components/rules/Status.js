@@ -160,7 +160,7 @@ export const Unconscious = new Rule({
 export const Unstable = new Rule({
 	name: `Unstable`, 
 	description: [
-		`-3 penalty to physical rolls. -3 to Ranged Attacks at or from you.`,
+		`-3 penalty to Agility or Constitution Skill rolls. Ranged Attacks targeting you take a -3 penalty.`,
 	]
 })
 

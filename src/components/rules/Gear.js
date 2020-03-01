@@ -35,5 +35,3 @@ const Gear = {
 }
 
 export default Gear
-
-console.log(Gear.list)

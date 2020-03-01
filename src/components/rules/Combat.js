@@ -117,7 +117,7 @@ export const Defense = new Rule({
 export const Movement = new Rule({
 	name: `Movement`, 
 	description: [
-		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn.`,
+		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn. You may spend up to 2 of your Actions on Movement per turn to Run, however this will cause you to have the Unstable Status effect until your next turn.`,
 		`You may divide up your Movement around other Actions on your turn however you wish.`,
 		`When you take a Movement Action, you may go Prone at any time for free. It costs 1 Action to stand up.`,
 	],
