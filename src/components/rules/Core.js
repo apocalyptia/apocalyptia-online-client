@@ -1,15 +1,13 @@
 import Rule from '../classes/Rule'
 
 
-export const CoreExplanation = `When you want to attempt a difficult action, roll one six-sided die (“d6”) to decide a fair outcome. Added to the d6 roll is the Character’s score in a Trait or Skill, depending on the action. Finally, add or subtract from the roll any modifiers relevant to the circumstances, as determined by the Narrator. The formula for a roll is always shown in [brackets]. Calculate the Result of a d6 roll as follows:`
-
-export const ResultFormula = `[d6 Roll + Score ± Modifiers] = Result`
+export const CoreExplanation = `When you want to attempt a difficult action, roll one six-sided die (“d6”) to decide a fair outcome. Added to the d6 roll is the Character’s score in a Trait or Skill, depending on the action. Finally, add or subtract from the roll any modifiers relevant to the circumstances, as determined by the Narrator. The formula for a roll is always shown in [brackets]. Calculate the Result of a d6 roll as follows: [d6 Roll + Score ± Modifiers] = Result`
 
 
 export const Difficulty = new Rule({
 	name: `Difficulty`,
 	description: [
-		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success. Difficulties are indicated by the # symbol. The Narrator or an opposing roll sets the # for your rolls.`,
+		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success. If the roll is opposed, re-roll ties. Difficulties are indicated by the # symbol. The Narrator or an opposing roll sets the # for your rolls.`,
 		`3# = Trivial`,
 		`6# = Routine`,
 		`9# = Challenging`,
@@ -22,7 +20,7 @@ export const Difficulty = new Rule({
 export const RoteActions = new Rule({
 	name: `Rote Actions`,
 	description: [
-		`If your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.`,
+		`If the roll is unopposed and your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.`,
 	]
 })
 
