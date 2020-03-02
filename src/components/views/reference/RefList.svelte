@@ -5,11 +5,10 @@ import ToggleVisible from '../../functions/ToggleVisible'
 export let chapter
 </script>
 
-
+{#if chapter.explanation}
+	<p>{chapter.explanation}</p>
+{/if}
 {#each chapter.list as rule}
-	{#if chapter.explanation}
-		<p>{chapter.explanation}</p>
-	{/if}
 	<div class='box' on:click={() => chapter.list = ToggleVisible(rule, chapter.list)}>
 		<span class='name'>{Capitalize(rule.name)}</span>
 		{#if rule.visible}
