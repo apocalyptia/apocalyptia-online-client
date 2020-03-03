@@ -320,14 +320,14 @@ export const SpecialtyExplanation = `Specialties (listed below their Skills) equ
 
 export const SkillFlowExplanation = `Skill Flow: Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
 
-const SpecialtiesList = SkillList.map((skill) => {
-	return {...skill.specialties}
+const SpecialtyList = Object.values(SkillList).filter((skill) => {
+	return Object.values(skill.specialties)
 }).sort((a, b) => PropSort(a, b, 'name'))
 
 export default {
 	explanation: SkillExplanation,
 	list: SkillList,
-	specialties: SpecialtiesList,
+	specialties: SpecialtyList,
 	startingPoints: (character) => {
 		return character.traits.brains.base * 6
 	}

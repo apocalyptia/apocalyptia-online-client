@@ -1,6 +1,5 @@
 ------ KNOWN BUGS ------
 
-Specialize Ability broke from last refactor.
 Clayton can't open the Abilities modal in Chrome or Firefox (Android 7.0, not a problem for Eric on Android 8.1)
 Margin/Padding is too big on Abilities for mobile.
 Clayton and Kyle's phones froze when they went to 3xp Abilities.

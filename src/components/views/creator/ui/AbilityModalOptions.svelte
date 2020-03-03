@@ -6,7 +6,6 @@ export let ability
 export let MasterAbilityList
 
 let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
-console.log(OptionList)
 
 const updateAbilities = () => {
 	$character.abilities = MasterAbilityList.filter(ability => ability.taken)
@@ -17,7 +16,9 @@ const updateAbilities = () => {
 <div class='options-section'>
 	{#each OptionList as ability}
 		<div class='ability-section'>
-			<span class='ability-option-label'>{Capitalize(ability.options[0].name)}</span>
+			<span class='ability-option-label'>
+				{Capitalize(ability.options[0].name)}
+			</span>
 			<span class='taken-label'>Taken:
 				<select
 					name={ability.name}
