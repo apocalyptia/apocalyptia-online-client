@@ -40,10 +40,9 @@ export default class Character {
 		}
 	}
 	setStat(type, stat) {
-		if (type == `properties` && stat != `luck`) {
+		if (type == `properties`) {
 			this[type][stat].base = this[type][stat].formula(this)
 		}
-		if (stat == `luck`) this.properties.luck.base = 0
 		this[type][stat].score = this[type][stat].base + this[type][stat].mods
 		return this[type][stat].score
 	}
