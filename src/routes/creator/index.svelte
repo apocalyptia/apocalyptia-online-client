@@ -18,7 +18,7 @@ const options = [
 	{ name: `Sheet`, content: Sheet},
 ]
 
-let selected = Abilities
+let selected = Description
 </script>
 
 
