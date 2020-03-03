@@ -2,6 +2,13 @@ import PropSort from '../functions/PropSort'
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
 
+export const SkillExplanation = [
+	`Skills range from 0 to 6.`,
+	`You get [Brains x 6] points for Skills.`,
+	`Skill rolls are [d6 + Skill].`,
+	`Trait scores set the upper limit for their Skills.`
+]
+
 export const Acrobatics = new Skill({
 	name: `acrobatics`,
 	description: [`Gymnastic prowess.`,],
@@ -10,7 +17,7 @@ export const Acrobatics = new Skill({
 	specialties: {
 		dodge: new Specialty({
 			name: `Dodge`,
-			description: [`Roll vs [Melee or Ranged].`,]
+			description: [`Roll vs [Melee or Ranged]. Reflexive Dodge is your Dodge score with no roll.`,]
 		}),
 		jump: new Specialty({
 			name: `Jump`,
@@ -76,7 +83,6 @@ export const AgilitySkills = [
 	{ ...Ranged },
 	{ ...Stealth }
 ]
-
 
 export const Medicine = new Skill({
 	name: `medicine`,
@@ -153,7 +159,6 @@ export const BrainsSkills = [
 	{ ...Survival }
 ]
 
-
 export const Athletics = new Skill({
 	name: `athletics`,
 	description: [`Physically difficult forms of motion.`,],
@@ -213,7 +218,7 @@ export const Melee = new Skill({
 	specialties: {
 		block: new Specialty({
 			name: `Block`,
-			description: [`Roll vs [Melee or Ranged (if you have a Shield)].`,]
+			description: [`Roll vs [Melee or Ranged (if you have a Shield)]. Reflexive Block is your Block score with no roll.`,]
 		}),
 		strike: new Specialty({
 			name: `Strike`,
@@ -228,7 +233,6 @@ export const ConstitutionSkills = [
 	{ ...Drive },
 	{ ...Melee }
 ]
-
 
 export const Leadership = new Skill({
 	name: `leadership`,
@@ -305,28 +309,26 @@ export const DemeanorSkills = [
 	{ ...Tame }
 ]
 
+export const SkillList = [
+	...AgilitySkills,
+	...BrainsSkills,
+	...ConstitutionSkills,
+	...DemeanorSkills
+]
 
 export const SpecialtyExplanation = `Specialties (listed below their Skills) equal their parent Skill by default. Specialties can exceed the parent Skill by taking the Specialize Ability. Unless otherwise noted, a Skill takes one Action.`
 
 export const SkillFlowExplanation = `Skill Flow: Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
 
+const SpecialtiesList = SkillList.map((skill) => {
+	return {...skill.specialties}
+}).sort((a, b) => PropSort(a, b, 'name'))
 
-function SkillObject() {
-	this.explanation = [`Skills range from 0 to 6. You get [Brains x 6] points for Skills. Skill rolls are [d6 + Skill]. Trait scores set the upper limit for their Skills.`]
-	this.list = [
-		...AgilitySkills,
-		...BrainsSkills,
-		...ConstitutionSkills,
-		...DemeanorSkills
-	]
-	this.specialties = this.list.map((skill)=>{
-		return {...skill.specialties}
-	}).sort((a, b) => PropSort(a, b, 'name'))
-	this.startingPoints = (character) => {
+export default {
+	explanation: SkillExplanation,
+	list: SkillList,
+	specialties: SpecialtiesList,
+	startingPoints: (character) => {
 		return character.traits.brains.base * 6
 	}
 }
-
-const Skills = new SkillObject()
-
-export default Skills

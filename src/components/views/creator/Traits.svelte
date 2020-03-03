@@ -3,7 +3,7 @@ import { onMount } from 'svelte'
 import { character } from '../../../stores/characterStore'
 import Capitalize from '../../functions/Capitalize'
 import RandomRoll from '../../functions/Random'
-import { traitMax, TraitExplanation } from '../../rules/Traits'
+import Traits from '../../rules/Traits'
 import Slider from '../controls/Slider.svelte'
 
 const traits = Object.keys($character.traits)
@@ -57,7 +57,7 @@ const randomTraits = () => {
 	resetTraits()
 	while(remaining > 0) {
 		let t = RandomRoll(traits)
-		if ($character.traits[t].base < traitMax) {
+		if ($character.traits[t].base < Traits.max) {
 			$character.traits[t].base++
 			sumTraits()
 		}
@@ -73,7 +73,9 @@ onMount(() => calculateResults())
 
 <h1>Traits</h1>
 <div class='explanation'>
-	<p>{TraitExplanation($character.options.startingTraits)}</p>
+	{#each Traits.explanation as line}
+		<p>{line}</p>
+	{/each}
 </div>
 <div class='remaining'>
 	<h3>Points Remaining: {remaining}</h3>
@@ -90,7 +92,7 @@ onMount(() => calculateResults())
 				<Slider
 					name='{t.toLowerCase()}'
 					min={parseInt(1)}
-					max={parseInt(traitMax)}
+					max={parseInt(Traits.max)}
 					bind:value={$character.traits[t].base}
 					on:input={event => assignTrait(t, event.target.value)}
 				/>

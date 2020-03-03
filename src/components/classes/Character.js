@@ -9,7 +9,7 @@ export default class Character {
 		this.completed = false,
 		this.options = {
 			scenario: ``,
-			startingTraits: 14
+			startingTraits: Traits.startingPoints
 		},
 		this.description = ArrayToObject(Descriptions.list, `name`),
 		this.traits = ArrayToObject(Traits.list, `name`),

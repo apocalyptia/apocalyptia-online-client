@@ -1,7 +1,9 @@
 import Property from '../classes/Property'
 import { Block, Dodge } from './maneuvers/DefensiveManeuvers'
 
-export const PropertyExplanation = `Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
+export const PropertyExplanation = [
+	`Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
+]
 
 export const block = new Property({
 	name: `block`,

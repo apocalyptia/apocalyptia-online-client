@@ -7,7 +7,9 @@ import Properties from '../../rules/Properties'
 
 <h1>Properties</h1>
 <div class='explanation'>
-	<p>{Properties.explanation}</p>
+	{#each Properties.explanation as line}
+		<p>{line}</p>
+	{/each}
 </div>
 <div class='section-card properties-list'>
 	<div class='section-block'>

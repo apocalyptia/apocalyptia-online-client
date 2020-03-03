@@ -1,6 +1,5 @@
 import Description from '../classes/Description'
 
-
 export const Age = new Description({
 	name: `age`,
 	value: ``

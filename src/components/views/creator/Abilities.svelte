@@ -27,7 +27,9 @@ beforeUpdate(() => {
 <div class='abilities-step'>
 	<h1>Abilities</h1>
 	<div class='explanation'>
-		<p>{Abilities.explanation}</p>
+		{#each Abilities.explanation as line}
+			<p>{line}</p>
+		{/each}
 	</div>
 	<div class='remaining'>
 		<h3>Starting XP Remaining: {remaining}</h3>

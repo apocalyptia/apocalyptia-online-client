@@ -7,6 +7,9 @@ import Skills from './Skills'
 import Traits from './Traits'
 import { WeaponList } from './Gear'
 
+export const AbilitiesExplanation = [
+	`Abilities are Character upgrades purchased with XP.`
+]
 
 // 3 XP Abilities
 
@@ -310,8 +313,6 @@ export const XP30Abilities = [
 	SelfImprovement,
 	CloseCall,
 ]
-
-export const AbilitiesExplanation = `Abilities are Character upgrades purchased with XP.`
 
 const IdTag = (list) => {
 	let id = 0

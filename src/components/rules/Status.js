@@ -1,6 +1,5 @@
 import Rule from '../classes/Rule'
 
-
 export const Bleeding = new Rule({
 	name: `Bleeding`, 
 	description: [
@@ -164,7 +163,6 @@ export const Unstable = new Rule({
 	]
 })
 
-
 export const Needs = new Rule({
 	name: `Needs`, 
 	description: [
@@ -178,7 +176,6 @@ export const Needs = new Rule({
 		Starvation
 	]
 })
-
 
 export default {
 	list: [

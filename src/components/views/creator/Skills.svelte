@@ -4,7 +4,6 @@ import { character } from '../../../stores/characterStore'
 import Capitalize from '../../functions/Capitalize'
 import ToggleVisible from '../../functions/ToggleVisible'
 import RandomRoll from '../../functions/Random'
-import { traitMax } from '../../rules/Traits'
 import Skills from '../../rules/Skills'
 import Slider from '../controls/Slider.svelte'
 
@@ -71,7 +70,9 @@ onMount(() => calculateResults())
 
 <h1>Skills</h1>
 <div class='explanation'>
-	<p>{Skills.explanation}</p>
+	{#each Skills.explanation as line}
+		<p>{line}</p>
+	{/each}
 </div>
 <div class='remaining'>
 	<h3>Points Remaining: {remaining}</h3>
