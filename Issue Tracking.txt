@@ -14,6 +14,12 @@ Slider bar middle line shows up in Firefox only. Clayton likes it.
 
 
 
+------ RULES FIXES ------
+
+Need to add Radiation rules.
+
+
+
 ------ BRAINSTORMING ------
 
 - Bonus XP each session? Some is given by Narrator. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage dealt, move successes, etc)?
