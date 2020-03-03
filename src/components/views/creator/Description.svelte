@@ -63,7 +63,7 @@ const descriptions = [
 
 <h1>Description</h1>
 <div class='section-card'>
-	<span class='stat-label'>Player:</span>
+	<span class='stat-label'>Player:&nbsp;</span>
 	<input
 		type='text'
 		class='full-block'
@@ -71,7 +71,7 @@ const descriptions = [
 	>
 </div>
 <div class='section-card'>
-	<span class='stat-label'>Character:</span>
+	<span class='stat-label'>Character:&nbsp;</span>
 	<input
 		type='text'
 		class='full-block'
