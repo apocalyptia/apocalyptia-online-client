@@ -1,23 +1,26 @@
 ------ KNOWN BUGS ------
 
-Clayton can't open the Abilities modal in Chrome or Firefox (Android 7.0, not a problem for Eric on Android 8.1)
 Margin/Padding is too big on Abilities for mobile.
-Clayton and Kyle's phones froze when they went to 3xp Abilities.
-Beta in title bar gets pushed behind menu button on Kyle's phone.
-Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
 Login input fields not styling correctly while typing.
 Logout still not working.
 Refresh swipe gives a page load fail error in the creator.
 Slider bar styling goes fully green when moving.
+
+- Suspected device issues
+Beta in title bar gets pushed behind menu button on Kyle's phone.
+Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
+
+- Suspected software (OS or browser) issues
+Clayton can't open the Abilities modal in Chrome or Firefox (Android 7.0, not a problem for Eric on Android 8.1)
 Slider bar middle line shows up in Firefox only. Clayton likes it.
 
-
+---------------------------------------------------------------------------------------------------
 
 ------ RULES FIXES ------
 
 Need to add Radiation rules.
 
-
+---------------------------------------------------------------------------------------------------
 
 ------ BRAINSTORMING ------
 
@@ -29,7 +32,7 @@ Combat:
 		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
 		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
 
-
+---------------------------------------------------------------------------------------------------
 
 ------ TODO LIST ------
 
@@ -47,7 +50,7 @@ Gear.js:
 Reference:
 	Put Expand/Collapse All button on reference.
 
-
+---------------------------------------------------------------------------------------------------
 
 ------ DEV PATH ------
 
@@ -60,3 +63,5 @@ make narrator dashboard
 make game group functionality
 write the combat system methods (based on lambda functions)
 make game group chat
+
+---------------------------------------------------------------------------------------------------
