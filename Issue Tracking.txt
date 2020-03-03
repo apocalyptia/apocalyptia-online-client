@@ -1,21 +1,36 @@
---- DEV PATH ---
+------ KNOWN BUGS ------
 
-finish user auth features
-apply ability mods to character
-finish gear step (need equipment selection, xp purchasing)
-create search and sorting options for all list pages
-set up database (faunadb)
-make narrator dashboard
-make game group functionality
-write the combat system (based on lambda functions)
-make game group chat
+Specialize Ability broke from last refactor.
+Clayton can't open the Abilities modal in Chrome or Firefox (Android 7.0, not a problem for Eric on Android 8.1)
+Margin/Padding is too big on Abilities for mobile.
+Clayton and Kyle's phones froze when they went to 3xp Abilities.
+Beta in title bar gets pushed behind menu button on Kyle's phone.
+Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
+Login input fields not styling correctly while typing.
+Logout still not working.
+Refresh swipe gives a page load fail error in the creator.
+Slider bar styling goes fully green when moving.
+Slider bar middle line shows up in Firefox only. Clayton likes it.
 
 
 
---- SPECIFIC BUGS AND FEATURES ---
+------ BRAINSTORMING ------
 
-Abilities.js:
-	Add a 9xp Ability.
+- Bonus XP each session? Some is given by Narrator. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage dealt, move successes, etc)?
+
+Combat:
+  Actions:
+		Grappling: What about Submissions? Both Grabbed?
+		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
+		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
+
+
+
+------ TODO LIST ------
+
+UX/UI:
+	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
+	Likewise set a blur effect that reflects the character psyche
 
 Gear.js:
 	Check all item Notes.
@@ -27,19 +42,16 @@ Gear.js:
 Reference:
 	Put Expand/Collapse All button on reference.
 
-Combat:
-  Actions:
-		Grappling: What about Submissions? Both Grabbed?
-		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
-		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
-
---- BRAINSTORMING ---
-
-- Bonus XP each session? Some is given by Narrator. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage, etc).
-
-- Adaptive Skill Points: Normal Skill points are permanent once assigned. You have Adaptive Skill points = Brains as additional Skill points that can be moved around at a rate of 1 per week. This replaces the current Floating Skills rules. Also, remove Floating Traits. Normal Skill Points = B x 3. Adaptive Skill Points = B x 3. Maybe 5 and 6 cost more? Maybe Adaptive Skills only = B x 1?
 
 
-UX/UI:
-- Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health?
-- Likewise set a blur effect that reflects the character psyche?
+------ DEV PATH ------
+
+finish user auth features
+apply ability mods to character
+finish gear step (need equipment selection, xp purchasing)
+create search and sorting options for all list pages
+finish integrating database (faunadb) with client app
+make narrator dashboard
+make game group functionality
+write the combat system methods (based on lambda functions)
+make game group chat
