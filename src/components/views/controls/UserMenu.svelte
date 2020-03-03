@@ -27,7 +27,7 @@ const logOut = () => {
 
 
 <button class='user-button' bind:this={trigger} on:click={toggle}>
-	&#9776;
+	<h1>&#9776;</h1>
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
