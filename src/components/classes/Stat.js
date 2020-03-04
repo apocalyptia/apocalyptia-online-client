@@ -7,7 +7,8 @@ export default class Stat extends Rule {
 		formula,
 		base=0,
 		mods=0,
-		score=0
+		score=0,
+		parent=''
 	}) {
 		super({
 			name,
@@ -17,5 +18,6 @@ export default class Stat extends Rule {
 		this.base = base
 		this.mods = mods
 		this.score = score
+		this.parent = parent
 	}
 }

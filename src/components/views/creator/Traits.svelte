@@ -1,73 +1,31 @@
 <script>
-import { onMount } from 'svelte'
+import { beforeUpdate } from 'svelte'
 import { character } from '../../../stores/characterStore'
-import Capitalize from '../../functions/Capitalize'
-import RandomRoll from '../../functions/Random'
 import Traits from '../../rules/Traits'
 import Slider from '../controls/Slider.svelte'
 
-const traits = Object.keys($character.traits)
+let remaining = Traits.remaining($character)
 
-const getRemaining = () => {
-	return $character.options.startingTraits -
-		Object.values($character.traits).reduce(
-			(t, { base }) => t += base, 0
-		)
+const assign = (event) => {
+	Traits.assign($character, event.target.name, event.target.value)
+	$character = $character
 }
 
-const sumTraits = () => remaining = getRemaining()
-
-const assignTrait = (t, value) => {
-	$character.traits[t].base = parseInt(value)
-	checkTrait(t)
+const random = () => {
+	Traits.random($character)
+	$character = $character
 }
 
-const checkTrait = t => {
-	sumTraits()
-	while (remaining < 0) {
-		$character.traits[t].base--
-		sumTraits()
-	}
-	calculateResults()
+const reset = () => {
+	Traits.reset($character)
+	$character = $character
 }
 
-const calculateResults = () => {
-	Object.keys($character.traits).forEach(t => {
-		$character.setStat('traits', t)
-		Object.keys($character.skills).forEach(s => {
-			if (
-				$character.skills[s].parent == $character.traits[t].name &&
-				$character.skills[s].max != $character.traits[t].base
-			) {
-				$character.skills[s].max = $character.traits[t].base
-			}
-		})
-	})
-	$character.updateProperties()
-}
-
-const resetTraits = () => {
-	Object.keys($character.traits).forEach(
-		t => $character.traits[t].base = 1
-	)
-	sumTraits()
-}
-
-const randomTraits = () => {
-	resetTraits()
-	while(remaining > 0) {
-		let t = RandomRoll(traits)
-		if ($character.traits[t].base < Traits.max) {
-			$character.traits[t].base++
-			sumTraits()
-		}
-	}
-	calculateResults()
-}
-
-let remaining = getRemaining()
-
-onMount(() => calculateResults())
+beforeUpdate(() => {
+	Traits.setScores($character)
+	remaining = Traits.remaining($character)
+	$character = $character
+})
 </script>
 
 
@@ -81,11 +39,11 @@ onMount(() => calculateResults())
 	<h3>Points Remaining: {remaining}</h3>
 </div>
 <div class='list'>
-	{#each traits as t}
+	{#each Object.keys($character.traits) as t}
 		<div class='section-card'>
 			<div>
 				<span class='stat-label'>
-					{Capitalize($character.traits[t].name)}
+					{$character.traits[t].name}
 				</span>
 			</div>
 			<div class='stat-column'>
@@ -94,15 +52,19 @@ onMount(() => calculateResults())
 					min={parseInt(1)}
 					max={parseInt(Traits.max)}
 					bind:value={$character.traits[t].base}
-					on:input={event => assignTrait(t, event.target.value)}
+					on:input={(event) => assign(event)}
 				/>
 			</div>
 		</div>
 	{/each}
 </div>
 <div class='button-row'>
-	<button on:click={resetTraits}>Reset Traits</button>
-	<button on:click={randomTraits}>Random Traits</button>
+	<button on:click={reset}>
+		Reset
+	</button>
+	<button on:click={random}>
+		Random
+	</button>
 </div>
 
 

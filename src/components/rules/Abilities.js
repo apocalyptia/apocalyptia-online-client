@@ -1,7 +1,5 @@
 import Ability from '../classes/Ability'
-import Capitalize from '../functions/Capitalize'
 import Languages from '../functions/Languages'
-import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
 import PropSort from '../functions/PropSort'
 import Skills from './Skills'
 import Traits from './Traits'
@@ -163,11 +161,7 @@ export const Unorthodox = new Ability({
 				const tname = trait.name
 				const sname = skill.name
 				if (skill.parent != trait.name) {
-					uList.push(
-						{
-							name: `${Capitalize(tname)} - ${Capitalize(sname)}`
-						}
-					)
+					uList.push({ name: `${tname} - ${sname}` })
 				}
 			})
 		})

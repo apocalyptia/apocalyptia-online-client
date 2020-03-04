@@ -6,7 +6,7 @@ export const PropertyExplanation = [
 ]
 
 export const block = new Property({
-	name: `block`,
+	name: `Block`,
 	description: [
 		`Block = [Melee]`,
 		...Block.description
@@ -17,7 +17,7 @@ export const block = new Property({
 })
 
 export const dodge = new Property({
-	name: `dodge`,
+	name: `Dodge`,
 	description: [
 		`Dodge = [Acrobatics].`,
 		...Dodge.description
@@ -28,7 +28,7 @@ export const dodge = new Property({
 })
 
 export const health = new Property({
-	name: `health`,
+	name: `Health`,
 	description: [
 		`Health = [Constitution x 3].`,
 		`Health is a measure of how many Wounds you can withstand. Damage is the cause of most Wounds.`,
@@ -42,7 +42,7 @@ export const health = new Property({
 })
 
 export const experience = new Property({
-	name: `experience`,
+	name: `Experience`,
 	description: [
 		`Experience = [Brains x 6].`,
 		`Experience represents how much you have learned up to now.`,
@@ -56,7 +56,7 @@ export const experience = new Property({
 })
 
 export const intellect = new Property({
-	name: `intellect`,
+	name: `Intellect`,
 	description: [
 		`Intellect = [Brains].`,
 		`Intellect is the amount of Experience that is earned automatically for each game session that you survive.`,
@@ -67,7 +67,7 @@ export const intellect = new Property({
 })
 
 export const luck = new Property({
-	name: `luck`,
+	name: `Luck`,
 	description: [
 		`Luck = [Demeanor].`,
 		`Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance.`,
@@ -82,7 +82,7 @@ export const luck = new Property({
 })
 
 export const psyche = new Property({
-	name: `psyche`,
+	name: `Psyche`,
 	description: [
 		`Psyche = [Demeanor x 3].`,
 		`This is a measure of how much Trauma you can withstand. Any number of horrible events can cause Trauma.`,
@@ -94,7 +94,7 @@ export const psyche = new Property({
 })
 
 export const speed = new Property({
-	name: `speed`,
+	name: `Speed`,
 	description: [
 		`[Agility x 3]. Roll this Property against all other participants at the beginning of each round of combat to determine the order in which turns are resolved.`,
 		`This is also the number of yards you can Walk as 1 Action.`,

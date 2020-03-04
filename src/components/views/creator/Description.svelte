@@ -1,152 +1,116 @@
 <script>
 import { character } from '../../../stores/characterStore'
-import Capitalize from '../../functions/Capitalize'
-import RandomRoll,
-	{ 
-		RandomName,
-		RandomHeight,
-		RandomWeight,
-		RandomHair,
-		RandomSkin,
-		RandomSex,
-		RandomAge
-	} from '../../functions/Random'
-
-const randomName = () => {
-	$character.description.character.value = RandomName($character.description.sex.value)
-}
-
-const randomHeight = () => $character.description.height.value = RandomHeight()
-
-const randomWeight = () => $character.description.weight.value = RandomWeight()
-
-const randomHair = () => $character.description.hair.value = RandomHair()
-
-const randomSkin = () => $character.description.skin.value = RandomSkin()
-
-const randomSex = () => $character.description.sex.value = RandomSex()
-
-const randomAge = () => $character.description.age.value = RandomAge()
-
-const randomDescription = () => {
-	randomAge()
-	randomSex()
-	randomSkin()
-	randomHair()
-	randomWeight()
-	randomHeight()
-	randomName()
-}
-
-const resetDescription = () => {
-	Object.keys($character.description).forEach((d) => {
-		$character.description[d].value = ``
-	})
-}
-
-const descriptions = [
-	[
-		{ name: `age`, random: randomAge },
-		{ name: `sex`, random: randomSex }
-	],
-	[
-		{ name: `skin`, random: randomSkin },
-		{ name: `hair`, random: randomHair }
-	],
-	[
-		{ name: `height`, random: randomHeight },
-		{ name: `weight`, random: randomWeight }
-	],
-]
+import Description from '../../rules/Descriptions'
 </script>
 
 
 <h1>Description</h1>
 <div class='section-card'>
-	<span class='stat-label'>Player:&nbsp;</span>
-	<input
-		type='text'
-		class='full-block'
-		bind:value={$character.description.player.value}
-	>
+	<div class='player-container'>
+		<span>Player:</span>
+		<input type='text' bind:value={$character.description.player.value}>
+	</div>
 </div>
 <div class='section-card'>
-	<span class='stat-label'>Character:&nbsp;</span>
-	<input
-		type='text'
-		class='full-block'
-		bind:value={$character.description.character.value}
-	>
-	&nbsp;
-	<button class='small-button' on:click={randomName}>
-		Random
-	</button>
-</div>
-{#each descriptions as pair}
-	<div class='section-card'>
-		{#each pair as {name, random}}
-			<div class='pair-block'>
-				<div class='pair-container'>
-					<span class='stat-label'>{Capitalize(name)}:</span>
-					<input
-						type='text'
-						class='pair-input'
-						bind:value={$character.description[name].value}
-					>
-					<button class='small-button' on:click={random}>
-						Random
-					</button>
-				</div>
-			</div>
-		{/each}
+	<div class='character-container'>
+		<span>Character:</span>
+		<input type='text'bind:value={$character.description.identity.value}>
+		<button on:click={() => $character = Description.list[1].random($character)}>Random</button>
 	</div>
-{/each}
+</div>
+
+
+<div class='section-card'>
+	{#each Description.list as _, index}
+	{#if index % 2 == 0 && index < Description.list.length - 2}
+		<div class='pair-block'>
+			<div class='item-container'>
+				<span>{Description.list[index + 2].name}:</span>
+				<input type='text' bind:value={
+					$character.description[Description.list[index + 2].name.toLowerCase()].value}>
+				<button on:click={
+					() => $character = Description.list[index + 2].random($character)
+				}>Random</button>
+			</div>
+			<div class='item-container'>
+				<span>{Description.list[index + 3].name}:</span>
+				<input type='text' bind:value={
+					$character.description[Description.list[index + 3].name.toLowerCase()].value}>
+				<button on:click={
+					() => $character = Description.list[index + 3].random($character)
+				}>Random</button>
+			</div>
+		</div>
+	{/if}
+	{/each}
+</div>
+
+
 <div class='button-row'>
-	<button class='center-button' on:click={resetDescription}>
-		Reset Description
-	</button>
-	<button class='center-button' on:click={randomDescription}>
-		Random Description
-	</button>
+	<button class='center-button'
+		on:click={() => $character = Description.reset($character)}
+	>Reset</button>
+	<button class='center-button'
+		on:click={() => $character = Description.random($character)}
+	>Random</button>
 </div>
 
 
 <style>
-.pair-container {
-	display: inline-block;
-	text-align: left;
+.section-card {
+	display: block;
 }
-.pair-container input {
-	max-width: 45%;
+input[type='text'] {
+	margin-left: var(--half-unit);
+	margin-right: var(--half-unit);
 }
-.small-button {
-	font-size: calc(var(--base-unit) * .75);
-	height: var(--double-unit);
-	max-width: 45%;
-	padding: var(--third-unit);
+div[class*='-container'] {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
 }
-.pair-input {
-	width: 45%;
+div[class*='-container'] span {
+	flex: 1;
 }
+.player-container input[type='text'] {
+	flex: 5;
+}
+.character-container button,
+.item-container button {
+	flex: 1;
+}
+
+/* MOBILE */
 @media only screen and (max-width: 768px) {
 	.pair-block {
 		display: block;
-		padding: var(--third-unit);
-		width: 55%;
+		width: 100%;
 	}
-	.stat-label {
-		display: block;
+	.item-container {
+		margin: var(--base-unit) 0;
+		width: 100%;
+	}
+	input[type='text'] {
+		flex: 1;
 	}
 }
+
+/* DESKTOP */
 @media only screen and (min-width: 768px) {
 	.pair-block {
+		display: flex;
+		max-width: 100%;
+	}
+	.item-container {
+		margin: var(--half-unit);
 		width: 50%;
 	}
+	input[type='text'] {
+		flex: 4;
+	}
 }
-.full-block {
-	display: block;
-	width: 100%;
-}
+
 .button-row {
 	text-align: center;
 }

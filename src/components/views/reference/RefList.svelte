@@ -1,5 +1,4 @@
 <script>
-import Capitalize from '../../functions/Capitalize'
 import ToggleVisible from '../../functions/ToggleVisible'
 
 export let chapter
@@ -10,7 +9,7 @@ export let chapter
 {/if}
 {#each chapter.list as rule}
 	<div class='box' on:click={() => chapter.list = ToggleVisible(rule, chapter.list)}>
-		<span class='name'>{Capitalize(rule.name)}</span>
+		<span class='name'>{rule.name}</span>
 		{#if rule.visible}
 			<div class='description'>
 				{#each rule.description as desc}
@@ -24,7 +23,7 @@ export let chapter
 						{#each rule.subrules as subrule}
 							<li>
 								<span class='sub-name'>
-									{Capitalize(subrule.name)}
+									{subrule.name}
 								</span>
 								<div>
 									{@html subrule.description}
@@ -38,7 +37,7 @@ export let chapter
 						{#each Object.values(rule.specialties) as specialty}
 							<li>
 								<span class='sub-name'>
-									{Capitalize(specialty.name)}
+									{specialty.name}
 								</span>
 								<div>
 									{@html specialty.description}

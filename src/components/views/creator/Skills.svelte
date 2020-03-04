@@ -1,7 +1,6 @@
 <script>
 import { onMount } from 'svelte'
 import { character } from '../../../stores/characterStore'
-import Capitalize from '../../functions/Capitalize'
 import ToggleVisible from '../../functions/ToggleVisible'
 import RandomRoll from '../../functions/Random'
 import Skills from '../../rules/Skills'
@@ -84,7 +83,7 @@ onMount(() => calculateResults())
 				class='parent-trait-title'
 				on:click={() => skillGroups = ToggleVisible(group, skillGroups)}
 			>
-				<h3>{Capitalize($character.traits[group.name].name)} Skills</h3>
+				<h3>{$character.traits[group.name].name} Skills</h3>
 			</div>
 			{#if group.visible}
 				{#each skills as s}
@@ -95,7 +94,7 @@ onMount(() => calculateResults())
 						<br>
 						<div class='stat-column name-column'>
 							<span class='stat-label'>
-								{Capitalize($character.skills[s].name)}
+								{$character.skills[s].name}
 							</span>
 						</div>
 						<div class='stat-column'>

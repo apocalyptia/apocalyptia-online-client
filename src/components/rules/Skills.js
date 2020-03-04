@@ -9,10 +9,10 @@ export const SkillExplanation = [
 	`Trait scores set the upper limit for their Skills.`
 ]
 
-export const Acrobatics = new Skill({
-	name: `acrobatics`,
+export const acrobatics = new Skill({
+	name: `Acrobatics`,
 	description: [`Gymnastic prowess.`,],
-	parent: `agility`,
+	parent: `Agility`,
 	difficulty: 6,
 	specialties: {
 		dodge: new Specialty({
@@ -26,8 +26,8 @@ export const Acrobatics = new Skill({
 	}
 })
 
-export const Larceny = new Skill({
-	name: `larceny`,
+export const larceny = new Skill({
+	name: `Larceny`,
 	description: [`Delicate manual operations.`,],
 	parent: `agility`,
 	difficulty: 'varies',
@@ -43,10 +43,10 @@ export const Larceny = new Skill({
 	}
 })
 
-export const Ranged = new Skill({
-	name: `ranged`,
+export const ranged = new Skill({
+	name: `Ranged`,
 	description: [`Projectile combat.`,],
-	parent: `agility`,
+	parent: `Agility`,
 	difficulty: 'Defense',
 	specialties: {
 		shoot: new Specialty({
@@ -60,10 +60,10 @@ export const Ranged = new Skill({
 	}
 })
 
-export const Stealth = new Skill({
-	name: `stealth`,
+export const stealth = new Skill({
+	name: `Stealth`,
 	description: [`Conceal your presence.`,],
-	parent: `agility`,
+	parent: `Agility`,
 	difficulty: 'Perception',
 	specialties: {
 		hide: new Specialty({
@@ -78,16 +78,16 @@ export const Stealth = new Skill({
 })
 
 export const AgilitySkills = [
-	{ ...Acrobatics },
-	{ ...Larceny },
-	{ ...Ranged },
-	{ ...Stealth }
+	{ ...acrobatics },
+	{ ...larceny },
+	{ ...ranged },
+	{ ...stealth }
 ]
 
-export const Medicine = new Skill({
-	name: `medicine`,
+export const medicine = new Skill({
+	name: `Medicine`,
 	description: [`Diagnosing and treating wounds.`,],
-	parent: `brains`,
+	parent: `Brains`,
 	difficulty: 'Wounds',
 	specialties: {
 		firstaid: new Specialty({
@@ -101,10 +101,10 @@ export const Medicine = new Skill({
 	}
 })
 
-export const Perception = new Skill({
-	name: `perception`,
+export const perception = new Skill({
+	name: `Perception`,
 	description: [`Processing sensory input.`,],
-	parent: `brains`,
+	parent: `Brains`,
 	difficulty: 'varies',
 	specialties: {
 		search: new Specialty({
@@ -118,10 +118,10 @@ export const Perception = new Skill({
 	}
 })
 
-export const Science = new Skill({
-	name: `science`,
+export const science = new Skill({
+	name: `Science`,
 	description: [`Knowledge of physical laws.`,],
-	parent: `brains`,
+	parent: `Brains`,
 	difficulty: 'varies',
 	specialties: {
 		chemistry: new Specialty({
@@ -135,10 +135,10 @@ export const Science = new Skill({
 	}
 })
 
-export const Survival = new Skill({
-	name: `survival`,
+export const survival = new Skill({
+	name: `Survival`,
 	description: [`Primitive practices for living outdoors.`,],
-	parent: `brains`,
+	parent: `Brains`,
 	difficulty: 'Biome',
 	specialties: {
 		forage: new Specialty({
@@ -153,16 +153,16 @@ export const Survival = new Skill({
 })
 
 export const BrainsSkills = [
-	{ ...Medicine },
-	{ ...Perception },
-	{ ...Science },
-	{ ...Survival }
+	{ ...medicine },
+	{ ...perception },
+	{ ...science },
+	{ ...survival }
 ]
 
-export const Athletics = new Skill({
-	name: `athletics`,
+export const athletics = new Skill({
+	name: `Athletics`,
 	description: [`Physically difficult forms of motion.`,],
-	parent: `constitution`,
+	parent: `Constitution`,
 	difficulty: 'varies',
 	specialties: {
 		climb: new Specialty({
@@ -176,10 +176,10 @@ export const Athletics = new Skill({
 	}
 })
 
-export const Build = new Skill({
-	name: `build`,
+export const build = new Skill({
+	name: `Build`,
 	description: [`Make an item from [d6 + #] Parts.`,],
-	parent: `constitution`,
+	parent: `Constitution`,
 	difficulty: 'varies',
 	specialties: {
 		customize: new Specialty({
@@ -193,10 +193,10 @@ export const Build = new Skill({
 	}
 })
 
-export const Drive = new Skill({
-	name: `drive`,
+export const drive = new Skill({
+	name: `Drive`,
 	description: [`Operate vehicles.`,],
-	parent: `constitution`,
+	parent: `Constitution`,
 	difficulty: 'varies',
 	specialties: {
 		ram: new Specialty({
@@ -210,10 +210,10 @@ export const Drive = new Skill({
 	}
 })
 
-export const Melee = new Skill({
-	name: `melee`,
+export const melee = new Skill({
+	name: `Melee`,
 	description: [`Hand-to-hand combat.`,],
-	parent: `constitution`,
+	parent: `Constitution`,
 	difficulty: 'Attack or Defense',
 	specialties: {
 		block: new Specialty({
@@ -228,16 +228,16 @@ export const Melee = new Skill({
 })
 
 export const ConstitutionSkills = [
-	{ ...Athletics },
-	{ ...Build },
-	{ ...Drive },
-	{ ...Melee }
+	{ ...athletics },
+	{ ...build },
+	{ ...drive },
+	{ ...melee }
 ]
 
-export const Leadership = new Skill({
-	name: `leadership`,
+export const leadership = new Skill({
+	name: `Leadership`,
 	description: [`Directing the efforts of others. Modifiers from multiple uses of the same Leadership Specialty do not stack.`,],
-	parent: `demeanor`,
+	parent: `Demeanor`,
 	difficulty: 'Demeanor',
 	specialties: {
 		encourage: new Specialty({
@@ -251,10 +251,10 @@ export const Leadership = new Skill({
 	}
 })
 
-export const Perform = new Skill({
-	name: `perform`,
+export const perform = new Skill({
+	name: `Perform`,
 	description: [`Captivating an audience.`,],
-	parent: `demeanor`,
+	parent: `Demeanor`,
 	difficulty: 'Perception',
 	specialties: {
 		distract: new Specialty({
@@ -268,10 +268,10 @@ export const Perform = new Skill({
 	}
 })
 
-export const Socialize = new Skill({
-	name: `socialize`,
+export const socialize = new Skill({
+	name: `Socialize`,
 	description: [`Alter a person’s Attitude by one step.`,],
-	parent: `demeanor`,
+	parent: `Demeanor`,
 	difficulty: 'Demeanor',
 	specialties: {
 		persuade: new Specialty({
@@ -285,10 +285,10 @@ export const Socialize = new Skill({
 	}
 })
 
-export const Tame = new Skill({
-	name: `tame`,
+export const tame = new Skill({
+	name: `Tame`,
 	description: [`Alter an animal’s Attitude by one step.`,],
-	parent: `demeanor`,
+	parent: `Demeanor`,
 	difficulty: 'Demeanor',
 	specialties: {
 		command: new Specialty({
@@ -303,10 +303,10 @@ export const Tame = new Skill({
 })
 
 export const DemeanorSkills = [
-	{ ...Leadership },
-	{ ...Perform },
-	{ ...Socialize },
-	{ ...Tame }
+	{ ...leadership },
+	{ ...perform },
+	{ ...socialize },
+	{ ...tame }
 ]
 
 export const SkillList = [

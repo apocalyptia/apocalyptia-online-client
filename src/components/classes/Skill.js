@@ -16,9 +16,9 @@ export default class Skill extends Stat {
 			description,
 			base,
 			mods,
-			score
+			score,
+			parent
 		})
-		this.parent = parent
 		this.difficulty = difficulty
 		this.specialties = specialties
 	}

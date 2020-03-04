@@ -40,10 +40,13 @@ const logOut = () => {
 
 <style>
 .user-button {
-	position: fixed;
-	top: 0;
-	right: 0;
+	align-content: center;
+	display: flex;
 	height: var(--triple-unit);
+	justify-content: center;
+	position: fixed;
+	right: 0;
+	top: 0;
 	width: 10%;
 	max-width: 50px;
 	min-width: 50px;

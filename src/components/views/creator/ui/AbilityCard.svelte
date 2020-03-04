@@ -1,6 +1,5 @@
 <script>
 import { character } from '../../../../stores/characterStore'
-import Capitalize from '../../../functions/Capitalize'
 import ToggleVisible from '../../../functions/ToggleVisible'
 import AbilityModal from './AbilityModal.svelte'
 

@@ -1,9 +1,10 @@
 <script>
 import { character } from '../../../stores/characterStore'
-import Capitalize from '../../functions/Capitalize'
 
 const traits = Object.keys($character.traits)
 const skills = Object.keys($character.skills)
+
+console.log($character)
 </script>
 
 
@@ -14,7 +15,7 @@ const skills = Object.keys($character.skills)
 		</div>
 		<div class='section-block'>
 			<span>Player: {$character.description.player.value}</span>
-			<span>Character: {$character.description.character.value}</span>
+			<span>Character: {$character.description.identity.value}</span>
 		</div>
 		<div class='section-block'>
 			<span>Age: {$character.description.age.value}</span>
@@ -36,7 +37,7 @@ const skills = Object.keys($character.skills)
 			{#each traits as t}
 				<div class='trait-column'>
 					<span class='trait-name'>
-						{Capitalize($character.traits[t].name)}: 
+						{$character.traits[t].name}: 
 						{$character.traits[t].score}
 					</span>
 				</div>
@@ -54,7 +55,7 @@ const skills = Object.keys($character.skills)
 					{#each skills as s}
 						{#if t == $character.skills[s].parent}
 							<div class='skill-name'>
-								{Capitalize($character.skills[s].name)}: 
+								{$character.skills[s].name}: 
 								{$character.skills[s].score}
 							</div>
 						{/if}
@@ -70,37 +71,37 @@ const skills = Object.keys($character.skills)
 		</div>
 		<div class='section-block'>
 			<div class='prop-item'>
-				{Capitalize($character.properties.health.name)}: 
+				{$character.properties.health.name}: 
 				{$character.properties.health.score}
 			</div>
 			<div class='prop-item'>
-				{Capitalize($character.properties.psyche.name)}: 
+				{$character.properties.psyche.name}: 
 				{$character.properties.psyche.score}
 			</div>
 			<div class='prop-item'>
-				{Capitalize($character.properties.luck.name)}: 
+				{$character.properties.luck.name}: 
 				{$character.properties.luck.score}
 			</div>
 			<div class='prop-item'>
-				{Capitalize($character.properties.block.name)}: 
+				{$character.properties.block.name}: 
 				{$character.properties.block.score}
 			</div>
 		</div>
 		<div class='section-block'>
 			<div class='prop-item'>
-				{Capitalize($character.properties.speed.name)}: 
+				{$character.properties.speed.name}: 
 				{$character.properties.speed.score}
 			</div>
 			<div class='prop-item'>
-				{Capitalize($character.properties.experience.name)}: 
+				{$character.properties.experience.name}: 
 				{$character.properties.experience.score}
 			</div>
 			<div class='prop-item'>
-				{Capitalize($character.properties.intellect.name)}: 
+				{$character.properties.intellect.name}: 
 				{$character.properties.intellect.score}
 			</div>
 			<div class='prop-item'>
-				{Capitalize($character.properties.dodge.name)}: 
+				{$character.properties.dodge.name}: 
 				{$character.properties.dodge.score}
 			</div>
 		</div>
@@ -122,7 +123,7 @@ const skills = Object.keys($character.skills)
 					<span class='l-col'>
 						{ability.name}
 						{#if ability.options[0]}
-							&nbsp;({Capitalize(ability.options[0].name)})
+							&nbsp;({ability.options[0].name})
 						{/if}
 					</span>
 					<span class='s-col'>{ability.xp}</span>

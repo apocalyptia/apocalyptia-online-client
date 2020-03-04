@@ -1,6 +1,5 @@
 <script>
 import { character } from '../../../stores/characterStore'
-import Capitalize from '../../functions/Capitalize'
 import Properties from '../../rules/Properties'
 </script>
 
@@ -14,37 +13,37 @@ import Properties from '../../rules/Properties'
 <div class='section-card properties-list'>
 	<div class='section-block'>
 		<div class='prop-item'>
-			{Capitalize($character.properties.speed.name)}: 
+			{$character.properties.speed.name}: 
 			{$character.properties.speed.score}
 		</div>
 		<div class='prop-item'>
-			{Capitalize($character.properties.experience.name)}: 
+			{$character.properties.experience.name}: 
 			{$character.properties.experience.score}
 		</div>
 		<div class='prop-item'>
-			{Capitalize($character.properties.health.name)}: 
+			{$character.properties.health.name}: 
 			{$character.properties.health.score}
 		</div>
 		<div class='prop-item'>
-			{Capitalize($character.properties.psyche.name)}: 
+			{$character.properties.psyche.name}: 
 			{$character.properties.psyche.score}
 		</div>
 	</div>
 	<div class='section-block'>
 		<div class='prop-item'>
-			{Capitalize($character.properties.dodge.name)}: 
+			{$character.properties.dodge.name}: 
 			{$character.properties.dodge.score}
 		</div>
 		<div class='prop-item'>
-			{Capitalize($character.properties.intellect.name)}: 
+			{$character.properties.intellect.name}: 
 			{$character.properties.intellect.score}
 		</div>
 		<div class='prop-item'>
-			{Capitalize($character.properties.block.name)}: 
+			{$character.properties.block.name}: 
 			{$character.properties.block.score}
 		</div>
 		<div class='prop-item'>
-			{Capitalize($character.properties.luck.name)}: 
+			{$character.properties.luck.name}: 
 			{$character.properties.luck.score}
 		</div>
 	</div>

@@ -1,6 +1,5 @@
 <script>
 import { character } from '../../../../stores/characterStore'
-import Capitalize from '../../../functions/Capitalize'
 
 export let MasterAbilityList
 
@@ -25,7 +24,7 @@ const updateAbilities = () => {
 					<span class='l-col'>
 						{ability.name}
 						{#if ability.options[0]}
-							&nbsp;({Capitalize(ability.options[0].name)})
+							&nbsp;({ability.options[0].name})
 						{/if}
 					</span>
 					<span class='s-col'>{ability.xp}</span>

@@ -1,6 +1,5 @@
 <script>
 import { character } from '../../../../stores/characterStore'
-import Capitalize from '../../../functions/Capitalize'
 
 export let ability
 export let MasterAbilityList
@@ -17,7 +16,7 @@ const updateAbilities = () => {
 	{#each OptionList as ability}
 		<div class='ability-section'>
 			<span class='ability-option-label'>
-				{Capitalize(ability.options[0].name)}
+				{ability.options[0].name}
 			</span>
 			<span class='taken-label'>Taken:
 				<select

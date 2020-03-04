@@ -5,8 +5,8 @@ export default class Ammo extends Gear {
 		name,
 		description,
 		sz,
-		cal,
-		attributes
+		cal=``,
+		attributes=[]
 	}) {
 		super({
 			name,
