@@ -106,6 +106,7 @@ export const speed = new Property({
 })
 
 export default {
+	name: `Properties`,
 	explanation: PropertyExplanation,
 	list: [
 		block,

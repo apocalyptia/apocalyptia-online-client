@@ -21,7 +21,8 @@ onMount(() => {
 </svelte:head>
 {#if $authUserStore}
 	<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
-	<Dashboard />
+	<Dashboard/>
 {:else}
-	<Landing />
+	<!-- <Landing /> -->
+	<Dashboard/>
 {/if}

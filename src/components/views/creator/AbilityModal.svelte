@@ -57,7 +57,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	max-height: 75vh;
 	overflow: scroll;
 	padding: var(--base-unit);
-	border-radius: var(--third-unit);
+	border-radius: var(--radius);
 	background: rgba(0,0,0,0.9);
 	border: var(--smallest-unit) solid;
 }

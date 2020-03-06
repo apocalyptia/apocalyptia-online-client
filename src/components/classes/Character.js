@@ -10,7 +10,7 @@ export default class Character {
 				value: ``
 			},
 			identity: {
-				name: `Name`,
+				name: `Identity`,
 				value: ``
 			},
 			hair: {

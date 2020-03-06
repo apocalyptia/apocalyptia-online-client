@@ -1,6 +1,6 @@
 <script>
-import { character } from '../../../stores/characterStore'
-import Properties from '../../rules/Properties'
+import { character } from '../../stores/characterStore'
+import Properties from '../../components/rules/Properties'
 </script>
 
 
@@ -58,7 +58,7 @@ import Properties from '../../rules/Properties'
 	display: flex;
 	text-align: left;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
 	.section-block {
 		padding: var(--third-unit);
 		width: 100%;
@@ -68,7 +68,7 @@ import Properties from '../../rules/Properties'
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
 	.section-block {
 		display: flex;
 		justify-content: space-between;

@@ -27,7 +27,7 @@ onMount(() => show = true)
 
 
 <style>
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
 	button {
 		display: block;
 		margin: auto;
@@ -35,7 +35,7 @@ onMount(() => show = true)
 		width: 60%;
 	}
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
 	.button-row {
 		display: flex;
 		justify-content: space-around;

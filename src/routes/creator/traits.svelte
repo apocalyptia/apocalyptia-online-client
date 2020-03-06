@@ -1,8 +1,8 @@
 <script>
 import { beforeUpdate } from 'svelte'
-import { character } from '../../../stores/characterStore'
-import Traits from '../../rules/Traits'
-import Slider from '../controls/Slider.svelte'
+import { character } from '../../stores/characterStore'
+import Traits from '../../components/rules/Traits'
+import Slider from '../../components/views/controls/Slider.svelte'
 
 let remaining = Traits.remaining($character)
 
@@ -39,19 +39,17 @@ beforeUpdate(() => {
 	<h3>Points Remaining: {remaining}</h3>
 </div>
 <div class='list'>
-	{#each Object.keys($character.traits) as t}
+	{#each Traits.list as trait}
 		<div class='section-card'>
-			<div>
-				<span class='stat-label'>
-					{$character.traits[t].name}
-				</span>
-			</div>
+			<div class='stat-label'>{trait.name}</div>
 			<div class='stat-column'>
 				<Slider
-					name='{t.toLowerCase()}'
+					name='{trait.name.toLowerCase()}'
 					min={parseInt(1)}
 					max={parseInt(Traits.max)}
-					bind:value={$character.traits[t].base}
+					bind:value={
+						$character.traits[trait.name.toLowerCase()].base
+					}
 					on:input={(event) => assign(event)}
 				/>
 			</div>
@@ -69,21 +67,13 @@ beforeUpdate(() => {
 
 
 <style>
-@media only screen and (max-width: 768px) {
-	.section-card {
-		display: block;
-	}
-	.stat-column {
-		width: 100%;
-	}
-	.stat-label {
-		display: block;
-	}
+.section-card {
+	display: block;
+	margin: var(--double-unit) var(--base-unit);
 }
-@media only screen and (min-width: 768px) {
-	.stat-column {
-		width: 50%;
-	}
+.stat-label {
+	text-align: center;
+	width: 100%;
 }
 .explanation {
 	padding: var(--base-unit);
@@ -92,8 +82,18 @@ beforeUpdate(() => {
 	margin-top: var(--base-unit);
 }
 .remaining,
-.stat-label,
-.button-row {
+.stat-label{
 	text-align: center;
+}
+
+.button-row {
+	display:flex;
+	justify-content: space-evenly;
+	text-align: center;
+	width: 100%;
+}
+.button-row button {
+	width: 20%;
+	min-width: 100px;
 }
 </style>

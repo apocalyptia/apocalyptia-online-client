@@ -1,10 +1,10 @@
 import { writable } from 'svelte/store'
 import TableOfContents from '../components/functions/TableOfContents'
 
-const narratorToC = new TableOfContents(
-	'Contents',
-	'/narrator',
-	[
+const narratorToC = new TableOfContents({
+	label: 'Contents',
+	root: '/narrator',
+	pages: [
 		'Areas',
 		'Bases',
 		'Difficulties',
@@ -22,7 +22,7 @@ const narratorToC = new TableOfContents(
 		'Settlements',
 		'Wasteland',
 	],
-	[
+	modules: [
 		Areas,
 		Bases,
 		Difficulties,
@@ -40,5 +40,8 @@ const narratorToC = new TableOfContents(
 		Settlements,
 		Wasteland,
 	]
-)
-export const narToC = writable(narratorToC)
+})
+
+const narratorStore = writable(narratorToC)
+
+export default narratorStore

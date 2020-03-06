@@ -4,6 +4,7 @@ import SocialManeuvers from './maneuvers/SocialManeuvers'
 
 
 export default {
+	name: `Maneuvers`,
 	list: [
 		...DefensiveManeuvers,
 		...OffensiveManeuvers,

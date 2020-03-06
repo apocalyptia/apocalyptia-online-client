@@ -35,7 +35,7 @@ const dieRoller = () => {
 	height: 50px;
 	width: 50px;
 	border: var(--third-unit) solid var(--char-color);
-	border-radius: 10px;
+	border-radius: var(--radius);
 	text-align: center;
 }
 .die_number {

@@ -1,10 +1,12 @@
 <script>
-import { character } from '../../../stores/characterStore'
+import { character } from '../../stores/characterStore'
+import AmmoItemTable from '../../components/views/tables/AmmoItemTable.svelte'
+import ArmorItemTable from '../../components/views/tables/ArmorItemTable.svelte'
+import MeleeWeaponItemTable from '../../components/views/tables/MeleeWeaponItemTable.svelte'
+import RangedWeaponItemTable from '../../components/views/tables/RangedWeaponItemTable.svelte'
 
-const traits = Object.keys($character.traits)
-const skills = Object.keys($character.skills)
-
-console.log($character)
+const traits = Object.values($character.traits)
+const skills = Object.values($character.skills)
 </script>
 
 
@@ -15,7 +17,7 @@ console.log($character)
 		</div>
 		<div class='section-block'>
 			<span>Player: {$character.description.player.value}</span>
-			<span>Character: {$character.description.identity.value}</span>
+			<span>Identity: {$character.description.identity.value}</span>
 		</div>
 		<div class='section-block'>
 			<span>Age: {$character.description.age.value}</span>
@@ -37,8 +39,8 @@ console.log($character)
 			{#each traits as t}
 				<div class='trait-column'>
 					<span class='trait-name'>
-						{$character.traits[t].name}: 
-						{$character.traits[t].score}
+						{t.name}: 
+						{t.score}
 					</span>
 				</div>
 			{/each}
@@ -53,10 +55,10 @@ console.log($character)
 			{#each traits as t}
 				<div class='skill-column'>
 					{#each skills as s}
-						{#if t == $character.skills[s].parent}
+						{#if t.name == s.parent}
 							<div class='skill-name'>
-								{$character.skills[s].name}: 
-								{$character.skills[s].score}
+								{s.name}: 
+								{s.score}
 							</div>
 						{/if}
 					{/each}
@@ -133,11 +135,29 @@ console.log($character)
 			{/each}
 		</div>
 	</div>
+
+	<div class='section-card gear-section'>
+		<div class='centered'>
+			<h2>Gear</h2>
+		</div>
+		<div class='gear-item'>
+			<MeleeWeaponItemTable item={$character.gear.meleeWeapons.inventory[0]}/>
+		</div>
+		<div class='gear-item'>
+			<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
+		</div>
+		<div class='gear-item'>
+			<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
+		</div>
+		<div class='gear-item'>
+			<ArmorItemTable item={$character.gear.armor.inventory[0]}/>
+		</div>
+	</div>
 </div>
 
 
 <style>
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
 	.section-block {
 		display: block;
 		padding: var(--third-unit);
@@ -154,7 +174,7 @@ console.log($character)
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
 	.section-block {
 		display: flex;
 		justify-content: space-between;
@@ -186,6 +206,10 @@ console.log($character)
 .current-abilities-header {
 	font-weight: bold;
 	text-decoration: underline;
+}
+.gear-item {
+	margin-top: var(--base-unit);
+	margin-bottom: var(--base-unit);
 }
 .l-col {
 	flex: 3;

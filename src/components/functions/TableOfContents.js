@@ -1,33 +1,64 @@
 import * as sapper from '@sapper/app'
 
 export default class TableOfContents {
-	constructor(name='', root='/', chapters=[], modules=[]) {
-		this.name = name,
-		this.root = root,
-		this.chapters = chapters,
-		this.modules = modules,
-		this.starting = -1,
-		this.current = this.starting
+	constructor({
+		currentIndex=0,
+		endAddress='/',
+		label='',
+		pages=[],
+		startAddress='/',
+		startIndex=0
+	}) {
+		this.currentIndex = currentIndex
+		this.endAddress = endAddress
+		this.label = label
+		this.pages = pages
+		this.startAddress = startAddress
+		this.startIndex = startIndex
 	}
 	back() {
-		this.current--
-		if (this.current > this.starting) this.go(this.current)
-		else this.home()
+		this.currentIndex--
+		if (
+			this.currentIndex >= this.startIndex &&
+			this.currentIndex < this.pages.length
+		) {
+			this.go(this.currentIndex)
+		}
+		if (this.currentIndex < this.startIndex) {
+			this.currentIndex = this.startIndex
+			sapper.goto('/')
+		}
+		if (this.currentIndex > this.pages.length) {
+			this.go(this.endAddress)
+		}
 	}
 	go(index) {
-		this.current = index
-		sapper.goto(`${this.root}/${this.chapters[index].toLowerCase()}`)
+		this.currentIndex = index
+		let destination = this.pages[index].name.toLowerCase()
+		if (destination.includes('_1')) destination = destination.slice(0, -2)
+		sapper.goto(`${this.startAddress}/${destination}`)
 	}
 	home() {
 		this.reset()
-		sapper.goto(this.root)
+		sapper.goto(this.endAddress)
 	}
 	next() {
-		this.current++
-		if (this.current < this.chapters.length) this.go(this.current)
+		this.currentIndex++
+		if (this.currentIndex < this.pages.length) this.go(this.currentIndex)
 		else this.home()
 	}
 	reset() {
-		this.current = this.starting
+		this.currentIndex = this.startIndex
+	}
+	translate(slug) {
+		for(let i = 0; i < this.pages.length; i++) {
+			if (this.pages[i].name.toLowerCase() == slug) {
+				this.currentIndex = i
+				break
+			}
+			else {
+				this.currentIndex = 0
+			}
+		}
 	}
 }

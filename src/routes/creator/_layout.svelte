@@ -1,8 +1,8 @@
 <script>
 import NavBar from '../../components/views/controls/NavBar.svelte'
-import referenceStore from '../../stores/referenceStore'
+import creatorStore from '../../stores/creatorStore'
 </script>
 
 
 <slot />
-<NavBar store={$referenceStore}/>
+<NavBar store={$creatorStore}/>

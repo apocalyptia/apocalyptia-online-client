@@ -5,7 +5,6 @@ import {
 	ConstitutionSkills,
 	DemeanorSkills
 } from './Skills'
-import Properties from './Properties'
 import RandomRoll from '../functions/Random'
 
 export const traitMax = 6
@@ -70,6 +69,7 @@ export const demeanor = new Trait({
 export const TraitFlowExplanation = `Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. ResetScores any associated Properties.`
 
 export default {
+	name: `Traits`,
 	explanation: TraitsExplanation,
 	list: [
 		{ ...agility },
@@ -79,16 +79,15 @@ export default {
 	],
 	max: traitMax,
 	startingPoints: traitPoints,
-	assign: function(c, t, v){
+	assign: function(c, t, v) {
 		c.traits[t].base = parseInt(v)
 		this.limit(c, t)
 	},
-	limit: function(c, t){
-		while (this.remaining(c) < 0) c.traits[t].base--
-		console.log(c.traits[t].base)
+	limit: function(c, t) {
+		while(this.remaining(c) < 0) c.traits[t].base--
 		this.setScores(c)
 	},
-	random: function(c){
+	random: function(c) {
 		this.reset(c)
 		while(this.remaining(c) > 0) {
 			let t = RandomRoll(Object.keys(c.traits))
@@ -96,18 +95,14 @@ export default {
 		}
 		this.setScores(c)
 	},
-	remaining: function(c){
+	remaining: function(c) {
 		return this.startingPoints -
-			Object.values(c.traits).reduce(
-				(t, { base }) => t += base, 0
-			)
+			Object.values(c.traits).reduce((t, { base }) => t += base, 0)
 	},
-	reset: function(c){
-		Object.keys(c.traits).forEach(
-			t => c.traits[t].base = 1
-		)
+	reset: function(c) {
+		Object.keys(c.traits).forEach(t => c.traits[t].base = 1)
 	},
-	setScores: function(c){
+	setScores: function(c) {
 		Object.keys(c.traits).forEach(t => {
 			c.traits[t].score = c.traits[t].base + c.traits[t].mods
 		})

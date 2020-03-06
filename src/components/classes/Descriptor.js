@@ -1,4 +1,4 @@
-export default class Description {
+export default class Descriptor {
 	constructor({
 		name,
 		random,

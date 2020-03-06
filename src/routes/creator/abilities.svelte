@@ -1,13 +1,13 @@
 <script>
 import { beforeUpdate } from 'svelte'
-import { character } from '../../../stores/characterStore'
-import ToggleVisible from '../../functions/ToggleVisible'
-import Abilities from '../../rules/Abilities'
-import AbilityGroup from './ui/AbilityGroup.svelte'
-import AbilityCard from './ui/AbilityCard.svelte'
-import AbilityCurrent from './ui/AbilityCurrent.svelte'
+import { character } from '../../stores/characterStore'
+import ToggleVisible from '../../components/functions/ToggleVisible'
+import Abilities from '../../components/rules/Abilities'
+import AbilityGroup from '../../components/views/creator/AbilityGroup.svelte'
+import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
+import AbilityCurrent from '../../components/views/creator/AbilityCurrent.svelte'
 
-let remaining = $character.remainingXP()
+let remaining = Abilities.remainingXP($character)
 
 let MasterAbilityList = Abilities.masterList
 
@@ -15,11 +15,12 @@ const resetAbilities = () => {
 	for (let a = 0; a < $character.abilities.length; ++a) {
 		$character.abilities[a].taken = 0
 	}
+	remaining = Abilities.remainingXP($character)
 }
 
 beforeUpdate(() => {
 	$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-	remaining = $character.remainingXP()
+	remaining = Abilities.remainingXP($character)
 })
 </script>
 
@@ -49,7 +50,7 @@ beforeUpdate(() => {
 		</div>
 	</div>
 	<div class='button-row'>
-		<button on:click={resetAbilities}>Reset Abilities</button>
+		<button on:click={resetAbilities}>Reset</button>
 	</div>
 </div>
 
@@ -64,8 +65,18 @@ beforeUpdate(() => {
 .abilities-list {
 	width: 100%;
 }
-.remaining,
-.button-row {
+.remaining {
 	text-align: center;
+}
+
+.button-row {
+	display:flex;
+	justify-content: space-evenly;
+	text-align: center;
+	width: 100%;
+}
+.button-row button {
+	width: 20%;
+	min-width: 100px;
 }
 </style>

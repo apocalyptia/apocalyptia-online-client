@@ -10,23 +10,14 @@ import Properties from '../components/rules/Properties'
 import Status from '../components/rules/Status'
 import Skills from '../components/rules/Skills'
 import Traits from '../components/rules/Traits'
+import ContentMenu from '../components/views/ui/ContentMenu.svelte'
 
-const referenceToC = new TableOfContents(
-	'Contents',
-	'/reference',
-	[
-		'Core',
-		'Traits',
-		'Skills',
-		'Properties',
-		'Combat',
-		'Maneuvers',
-		'Status',
-		'Complications',
-		'Abilities',
-		'Gear',
-	],
-	[
+const referenceToC = new TableOfContents({
+	label: 'Contents',
+	startAddress: '/reference',
+	endAddress: '/reference',
+	pages: [
+		ContentMenu,
 		Core,
 		Traits,
 		Skills,
@@ -38,7 +29,7 @@ const referenceToC = new TableOfContents(
 		Abilities,
 		Gear
 	]
-)
+})
 
 const referenceStore = writable(referenceToC)
 

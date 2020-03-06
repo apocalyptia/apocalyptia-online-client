@@ -1,4 +1,5 @@
 import PropSort from '../functions/PropSort'
+import RandomRoll from '../functions/Random'
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
 
@@ -325,10 +326,107 @@ const SpecialtyList = Object.values(SkillList).filter((skill) => {
 }).sort((a, b) => PropSort(a, b, 'name'))
 
 export default {
+	name: `Skills`,
 	explanation: SkillExplanation,
 	list: SkillList,
+	groups: [
+		{
+			name: `Agility`,
+			list: AgilitySkills
+		},
+		{
+			name: `Brains`,
+			list: BrainsSkills
+		},
+		{
+			name: `Constitution`,
+			list: ConstitutionSkills
+		},
+		{
+			name: `Demeanor`,
+			list: DemeanorSkills
+		},
+	],
 	specialties: SpecialtyList,
-	startingPoints: (character) => {
-		return character.traits.brains.base * 6
+	startingPoints: (c) => {
+		return c.traits.brains.base * 6
+	},
+	assign: function(c, t, v) {
+		c.skills[t].base = parseInt(v)
+		this.limit(c, t)
+	},
+	limit: function(c, t) {
+		while(
+			this.remaining(c) < 0 ||
+			c.skills[t].base > c.traits[c.skills[t].parent.toLowerCase()].base
+		) c.skills[t].base--
+		this.setScores(c)
+	},
+	random: function(c) {
+		this.reset(c)
+		while(this.remaining(c) > 0) {
+			let t = RandomRoll(Object.keys(c.skills))
+			let parentScore = c.traits[c.skills[t].parent.toLowerCase()].base
+			if (c.skills[t].base < parentScore) c.skills[t].base++
+		}
+		this.setScores(c)
+	},
+	remaining: function(c) {
+		return this.startingPoints(c) -
+			Object.values(c.skills).reduce((t, { base }) => t += base, 0)
+	},
+	reset: function(c) {
+		Object.keys(c.skills).forEach(t => c.skills[t].base = 0)
+	},
+	setScores: function(c) {
+		Object.keys(c.skills).forEach(t => {
+			c.skills[t].score = c.skills[t].base + c.skills[t].mods
+		})
 	}
 }
+
+// const sumSkills = () => remaining = getRemaining()
+
+// const assignSkill = (s, value) => {
+// 	$character.skills[s].base = parseInt(value)
+// 	checkSkill(s)
+// }
+
+// const checkSkill = s => {
+// 	sumSkills()
+// 	while (remaining < 0 || $character.skills[s].base > $character.skills[s].max) {
+// 		$character.skills[s].base--
+// 		sumSkills()
+// 	}
+// 	calculateResults()
+// }
+
+// const calculateResults = () => {
+// 	Object.keys($character.skills).forEach(s => {
+// 		$character.setStat('skills', s)
+// 	})
+// 	$character.updateProperties()
+// }
+
+// const resetSkills = () => {
+// 	Object.keys($character.skills).forEach(
+// 		s => $character.skills[s].base = 0
+// 	)
+// 	sumSkills()
+// }
+
+// const randomSkills = () => {
+// 	resetSkills()
+// 	while(remaining > 0) {
+// 		let s = RandomRoll(skills)
+// 		if ($character.skills[s].base < $character.skills[s].max) {
+// 			$character.skills[s].base++
+// 			sumSkills()
+// 		}
+// 	}
+// 	calculateResults()
+// }
+
+// let remaining = getRemaining()
+
+// onMount(() => calculateResults())

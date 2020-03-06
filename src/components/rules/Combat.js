@@ -191,6 +191,7 @@ export const Vehicles = new Rule({
 // Rule List
 
 export default {
+	name: `Combat`,
 	list: [
 		Rounds,
 		Actions,

@@ -35,6 +35,7 @@ export const Visibility = new Rule({
 
 
 export default {
+	name: `Complications`,
 	list: [
 		Cover,
 		FriendlyFire,

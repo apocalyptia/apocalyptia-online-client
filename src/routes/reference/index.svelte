@@ -1,7 +1,7 @@
 <script>
-import MenuScreen from '../../components/views/ui/MenuScreen.svelte'
 import referenceStore from '../../stores/referenceStore'
+import ContentMenu from '../../components/views/ui/ContentMenu.svelte'
 </script>
 
 
-<MenuScreen ToC={referenceStore}/>
+<ContentMenu ToC={referenceStore}/>

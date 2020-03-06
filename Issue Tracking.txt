@@ -3,8 +3,6 @@
 Margin/Padding is too big on Abilities for mobile.
 Login input fields not styling correctly while typing.
 Logout still not working.
-Refresh swipe gives a page load fail error in the creator.
-Slider bar styling goes fully green when moving.
 
 - Suspected device issues
 Beta in title bar gets pushed behind menu button on Kyle's phone.

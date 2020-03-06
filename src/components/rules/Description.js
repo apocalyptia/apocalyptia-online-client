@@ -1,4 +1,4 @@
-import Description from '../classes/Description'
+import Descriptor from '../classes/Descriptor'
 import { 
 	RandomName,
 	RandomHeight,
@@ -9,7 +9,7 @@ import {
 	RandomAge
 } from '../functions/Random'
 
-export const age = new Description({
+export const age = new Descriptor({
 	name: `Age`,
 	value: ``,
 	random: (c) => {
@@ -18,7 +18,7 @@ export const age = new Description({
 	}
 })
 
-export const identity = new Description({
+export const identity = new Descriptor({
 	name: `Name`,
 	value: ``,
 	random: (c) => {
@@ -27,7 +27,7 @@ export const identity = new Description({
 	}
 })
 
-export const hair = new Description({
+export const hair = new Descriptor({
 	name: `Hair`,
 	value: ``,
 	random: (c) => {
@@ -36,7 +36,7 @@ export const hair = new Description({
 	}
 })
 
-export const height = new Description({
+export const height = new Descriptor({
 	name: `Height`,
 	value: ``,
 	random: (c) => {
@@ -45,12 +45,12 @@ export const height = new Description({
 	}
 })
 
-export const player = new Description({
+export const player = new Descriptor({
 	name: `Player`,
 	value: ``
 })
 
-export const sex = new Description({
+export const sex = new Descriptor({
 	name: `Sex`,
 	value: ``,
 	random: (c) => {
@@ -59,7 +59,7 @@ export const sex = new Description({
 	}
 })
 
-export const skin = new Description({
+export const skin = new Descriptor({
 	name: `Skin`,
 	value: ``,
 	random: (c) => {
@@ -68,7 +68,7 @@ export const skin = new Description({
 	}
 })
 
-export const weight = new Description({
+export const weight = new Descriptor({
 	name: `Weight`,
 	value: ``,
 	random: (c) => {
@@ -78,15 +78,16 @@ export const weight = new Description({
 })
 
 export default {
+	name: `Description`,
 	list: [
 		player,
 		identity,
 		age,
 		sex,
-		skin,
-		hair,
 		height,
-		weight
+		weight,
+		skin,
+		hair
 	],
 	random: function(c){
 		for (let i = 1; i < this.list.length; i++) {
@@ -96,9 +97,7 @@ export default {
 	},
 	reset: function(c){
 		Object.keys(c.description).forEach((d) => {
-			console.log(c.description[d].value)
 			c.description[d].value = ``
-			console.log(c.description[d].value)
 		})
 		return c
 	}

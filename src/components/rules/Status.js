@@ -178,6 +178,7 @@ export const Needs = new Rule({
 })
 
 export default {
+	name: `Status`,
 	list: [
 		Bleeding,
 		Blind,

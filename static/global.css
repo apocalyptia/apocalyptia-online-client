@@ -60,6 +60,7 @@ table {
 	--half-unit: calc(var(--base-unit) / 2);
 	--triple-unit: calc(var(--base-unit) * 3);
 	--third-unit: calc(var(--base-unit) / 3);
+	--radius: 0;
 
 	/* Global Colors */
 	--scr-color: rgba(15, 30, 15, 1);
@@ -115,12 +116,13 @@ input,
 select {
 	background: var(--scr-color);
 	border: var(--smallest-unit) solid var(--txt-color);
-	border-radius: var(--third-unit);
+	border-radius: var(--radius);
 	color: var(--txt-color);
 	cursor: pointer;
 	font-size: var(--base-unit);
 	text-align: center;
 }
+
 button:active, button:hover,
 input:active, input:hover,
 select:active {
@@ -128,12 +130,12 @@ select:active {
 	color: var(--scr-color);
 }
 
-
 select:hover {
 	background: var(--txt-color);
 	border: var(--smallest-unit) solid var(--scr-color);
 	color: var(--scr-color);
 }
+
 button:invalid,
 input:invalid,
 select:invalid {
@@ -159,28 +161,6 @@ input[type="text"] {
 	min-width: 40%;
 }
 
-/* Range */
-input[type="range"] {
-	-webkit-appearance: none;
-	width: 100%;
-}
-input[type="range"]::-moz-range-thumb {
-	-webkit-appearance: none;
-	background: var(--txt-color);
-	border-radius: var(--third-unit);
-	border: var(--smallest-unit) solid var(--scr-color);
-	height: var(--double-unit);
-	width: var(--double-unit);
-}
-input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	background: var(--txt-color);
-	border-radius: var(--third-unit);
-	border: var(--smallest-unit) solid var(--scr-color);
-	height: var(--double-unit);
-	width: var(--double-unit);
-}
-
 /* Select */
 select {
 	height: var(--double-unit);
@@ -188,6 +168,27 @@ select {
 
 
 /* ----- LAYOUT ----- */
+
+/* Details */
+details:focus {
+	border-radius: var(--radius);
+}
+details {
+	border: var(--smallest-unit) dotted;
+	border-radius: var(--radius);
+	margin: var(--base-unit);
+}
+summary {
+	justify-content: left;
+	padding: var(--base-unit);
+}
+summary:hover {
+	color: var(--scr-color);
+	background: var(--txt-color);
+}
+.details-content {
+	padding: var(--base-unit);
+}
 
 /* Table */
 table {
@@ -234,7 +235,7 @@ td {
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
 }
-.center-card .card-title {
+.card-title {
 	margin: var(--base-unit);
 }
 .center-card a {

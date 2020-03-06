@@ -344,6 +344,7 @@ const IdTag = (list) => {
 }
 
 export const Abilities = {
+	name: `Abilities`,
 	explanation: AbilitiesExplanation,
 	groups: [
 		{
@@ -406,7 +407,17 @@ export const Abilities = {
 		...XP18Abilities,
 		...XP24Abilities,
 		...XP30Abilities
-	]).sort((a, b) => PropSort(a, b, 'name'))
+	]).sort((a, b) => PropSort(a, b, 'name')),
+	remainingXP: (c) => {
+		let starting = c.properties.experience.score
+		let spent = 0
+		if (c.abilities.length) {
+			spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+		}
+		let remaining = starting - spent
+		c.current = remaining
+		return c.current
+	}
 }
 
 export const AbilitiesList = IdTag(Abilities)

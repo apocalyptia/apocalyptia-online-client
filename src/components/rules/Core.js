@@ -71,6 +71,7 @@ export const Botch = new Rule({
 })
 
 export default {
+	name: `Core`,
 	explanation: CoreExplanation,
 	list: [
 		Difficulty,

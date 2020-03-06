@@ -19,6 +19,7 @@ export const WeaponList = [
 ]
 
 const Gear = {
+	name: `Gear`,
 	list: [
 		...AccessoryList,
 		...AmmoList,
