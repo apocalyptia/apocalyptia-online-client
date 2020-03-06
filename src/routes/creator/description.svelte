@@ -8,7 +8,7 @@ const random = () => $character = Description.random($character)
 
 const reset = () => $character = Description.reset($character)
 
-const name = `Description`
+export const name = `Description`
 </script>
 
 
