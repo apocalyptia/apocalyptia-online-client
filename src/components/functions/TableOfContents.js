@@ -51,6 +51,8 @@ export default class TableOfContents {
 		this.currentIndex = this.startIndex
 	}
 	translate(slug) {
+		console.log(slug)
+		console.log(this)
 		for(let i = 0; i < this.pages.length; i++) {
 			if (this.pages[i].name.toLowerCase() == slug) {
 				this.currentIndex = i
@@ -60,5 +62,6 @@ export default class TableOfContents {
 				this.currentIndex = 0
 			}
 		}
+		console.log(this.pages[this.currentIndex].name.toLowerCase())
 	}
 }
