@@ -4,9 +4,9 @@ export let store
 
 
 <div class='nav-bar'>
-	<button on:click={() => store.back()}>&lt;</button>
-	<button on:click={() => store.home()}>{store.label}</button>
-	<button on:click={() => store.next()}>&gt;</button>
+	<button on:click={() => store.back()}>&#9664;</button>
+	<button class='home-button' on:click={() => store.home()}>{store.label}</button>
+	<button on:click={() => store.next()}>&#9654;</button>
 </div>
 
 
@@ -20,7 +20,10 @@ export let store
 }
 button {
 	flex: 1;
-	font-size: 1.25rem;
+	font-size: var(--base-unit);
 	font-weight: bold;
+}
+.home-button {
+	font-size: calc(var(--base-unit) * 1.25);
 }
 </style>

@@ -1,8 +1,9 @@
 <script>
-import { onMount } from 'svelte'
 import Dashboard from '../components/views/ui/Dashboard.svelte'
 import Landing from '../components/views/ui/Landing.svelte'
 import { authUserStore, confirm, logout } from '../stores/netlifyStore'
+import { character } from '../stores/characterStore'
+import { onMount } from 'svelte'
 
 onMount(() => {
 	const hash = window.location.hash.substr(1)
@@ -23,6 +24,5 @@ onMount(() => {
 	<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
 	<Dashboard/>
 {:else}
-	<!-- <Landing /> -->
-	<Dashboard/>
+	<Landing />
 {/if}

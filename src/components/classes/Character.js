@@ -1,9 +1,6 @@
 export default class Character {
 	constructor() {
 		this.completed = false,
-		this.options = {
-			scenario: ``
-		},
 		this.description = {
 			age: {
 				name: `Age`,

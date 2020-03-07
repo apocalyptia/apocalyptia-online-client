@@ -69,9 +69,10 @@ beforeUpdate(() => {
 <style>
 .section-card {
 	display: block;
-	margin: var(--double-unit) var(--base-unit);
+	margin-bottom: var(--double-unit);
 }
 .stat-label {
+	font-weight: bold;
 	text-align: center;
 	width: 100%;
 }

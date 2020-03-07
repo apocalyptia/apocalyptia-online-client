@@ -1,7 +1,7 @@
 <script>
 import * as sapper from '@sapper/app'
-import { onMount } from 'svelte'
 import Typewriter from '../../functions/Typewriter'
+import { onMount } from 'svelte'
 
 let show = false
 

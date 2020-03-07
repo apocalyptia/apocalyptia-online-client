@@ -1,6 +1,15 @@
 <script>
+import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 import Properties from '../../components/rules/Properties'
+
+console.log('PROPERTIES!')
+Properties.setScores($character)
+
+beforeUpdate(() => {
+	Properties.setScores($character)
+	$character = $character
+})
 </script>
 
 

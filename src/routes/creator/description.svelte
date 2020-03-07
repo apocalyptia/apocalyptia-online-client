@@ -68,9 +68,16 @@ div[class*='-container'] > span,
 .item-container > button {
 	flex: 1;
 }
+
 div[class*='-container'] > input {
 	margin-left: var(--third-unit);
 	margin-right: var(--third-unit);
+}
+.player-container > input[type='text'] {
+	margin-left: var(--third-unit);
+	margin-right: 0;
+	padding-left: var(--half-unit);
+	padding-right: var(--half-unit);
 }
 
 /* MOBILE */

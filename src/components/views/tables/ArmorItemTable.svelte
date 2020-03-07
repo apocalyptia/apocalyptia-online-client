@@ -6,7 +6,7 @@ export let item
 {#if item != undefined}
 <table>
 	<tr>
-		<td>Name: {item.name}</td>
+		<td>{item.name}</td>
 	</tr>
 	<tr>
 		<td>Dr: {item.dr}</td>

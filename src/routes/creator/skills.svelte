@@ -43,8 +43,10 @@ beforeUpdate(() => {
 <div class='list'>
 	{#each Skills.groups as group}
 		<details>
-			<summary class='parent-trait-title'>
-				{group.name} Skills
+			<summary>
+				<span class='group-label'>
+					{group.name} Skills
+				</span>
 			</summary>
 			<div class='details-content'>
 				Max Score: {$character.traits[group.name.toLowerCase()].score}
@@ -81,11 +83,15 @@ details {
 	margin-top: var(--double-unit);
 	margin-bottom: var(--double-unit);
 }
+.group-label {
+	font-weight: bold;
+}
 .stat-range {
 	margin-top: var(--double-unit);
 	margin-bottom: var(--double-unit);
 }
 .stat-label {
+	font-weight: bold;
 	text-align: center;
 	width: 100%;
 }

@@ -5,7 +5,7 @@ import Specialty from '../classes/Specialty'
 
 export const SkillExplanation = [
 	`Skills range from 0 to 6.`,
-	`You get [Brains x 6] points for Skills.`,
+	`You get Brains x 6 points for Skills.`,
 	`Skill rolls are [d6 + Skill].`,
 	`Trait scores set the upper limit for their Skills.`
 ]
@@ -384,49 +384,3 @@ export default {
 		})
 	}
 }
-
-// const sumSkills = () => remaining = getRemaining()
-
-// const assignSkill = (s, value) => {
-// 	$character.skills[s].base = parseInt(value)
-// 	checkSkill(s)
-// }
-
-// const checkSkill = s => {
-// 	sumSkills()
-// 	while (remaining < 0 || $character.skills[s].base > $character.skills[s].max) {
-// 		$character.skills[s].base--
-// 		sumSkills()
-// 	}
-// 	calculateResults()
-// }
-
-// const calculateResults = () => {
-// 	Object.keys($character.skills).forEach(s => {
-// 		$character.setStat('skills', s)
-// 	})
-// 	$character.updateProperties()
-// }
-
-// const resetSkills = () => {
-// 	Object.keys($character.skills).forEach(
-// 		s => $character.skills[s].base = 0
-// 	)
-// 	sumSkills()
-// }
-
-// const randomSkills = () => {
-// 	resetSkills()
-// 	while(remaining > 0) {
-// 		let s = RandomRoll(skills)
-// 		if ($character.skills[s].base < $character.skills[s].max) {
-// 			$character.skills[s].base++
-// 			sumSkills()
-// 		}
-// 	}
-// 	calculateResults()
-// }
-
-// let remaining = getRemaining()
-
-// onMount(() => calculateResults())
