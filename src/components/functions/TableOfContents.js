@@ -6,6 +6,7 @@ export default class TableOfContents {
 		endAddress='/',
 		label='',
 		pages=[],
+		pageNames=[],
 		startAddress='/',
 		startIndex=0
 	}) {
@@ -13,6 +14,7 @@ export default class TableOfContents {
 		this.endAddress = endAddress
 		this.label = label
 		this.pages = pages
+		this.pageNames = pageNames
 		this.startAddress = startAddress
 		this.startIndex = startIndex
 	}
@@ -34,7 +36,7 @@ export default class TableOfContents {
 	}
 	go(index) {
 		this.currentIndex = index
-		let destination = this.pages[index].name.toLowerCase()
+		let destination = this.pageNames[index]
 		if (destination.includes('_1')) destination = destination.slice(0, -2)
 		sapper.goto(`${this.startAddress}/${destination}`)
 	}
@@ -54,7 +56,7 @@ export default class TableOfContents {
 		console.log(slug)
 		console.log(this)
 		for(let i = 0; i < this.pages.length; i++) {
-			if (this.pages[i].name.toLowerCase() == slug) {
+			if (this.pageNames[i] == slug) {
 				this.currentIndex = i
 				break
 			}
@@ -62,6 +64,6 @@ export default class TableOfContents {
 				this.currentIndex = 0
 			}
 		}
-		console.log(this.pages[this.currentIndex].name.toLowerCase())
+		console.log(this.pagesNames[this.currentIndex])
 	}
 }

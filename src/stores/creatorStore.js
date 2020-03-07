@@ -22,6 +22,16 @@ const creatorToC = new TableOfContents({
 		Abilities,
 		Gear,
 		Sheet
+	],
+	pageNames: [
+		'creation',
+		'description',
+		'traits',
+		'skills',
+		'properties',
+		'abilities',
+		'gear',
+		'sheet'
 	]
 })
 

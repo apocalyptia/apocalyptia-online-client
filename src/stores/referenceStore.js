@@ -28,6 +28,19 @@ const referenceToC = new TableOfContents({
 		Complications,
 		Abilities,
 		Gear
+	],
+	pageNames: [
+		'creator',
+		'core',
+		'traits',
+		'skills',
+		'properties',
+		'combat',
+		'maneuvers',
+		'status',
+		'complications',
+		'abilities',
+		'gear'
 	]
 })
 

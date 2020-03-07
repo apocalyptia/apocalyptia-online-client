@@ -3,12 +3,8 @@ import { character } from '../../stores/characterStore'
 import Description from '../../components/rules/Description'
 
 const randomItem = (i) => $character = Description.list[i].random($character)
-
 const random = () => $character = Description.random($character)
-
 const reset = () => $character = Description.reset($character)
-
-export const name = `Description`
 </script>
 
 
