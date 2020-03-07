@@ -53,9 +53,7 @@ export default class TableOfContents {
 		this.currentIndex = this.startIndex
 	}
 	translate(slug) {
-		console.log(slug)
-		console.log(this)
-		for(let i = 0; i < this.pages.length; i++) {
+		for(let i = 0; i < this.pageNames.length; i++) {
 			if (this.pageNames[i] == slug) {
 				this.currentIndex = i
 				break
@@ -64,6 +62,5 @@ export default class TableOfContents {
 				this.currentIndex = 0
 			}
 		}
-		console.log(this.pagesNames[this.currentIndex])
 	}
 }
