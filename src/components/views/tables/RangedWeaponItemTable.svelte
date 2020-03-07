@@ -2,6 +2,8 @@
 export let item
 </script>
 
+
+{#if item != undefined}
 <table>
 	<tr>
 		<td>Name: {item.name}</td>
@@ -26,3 +28,4 @@ export let item
 		</tr>
 	{/if}
 </table>
+{/if}
