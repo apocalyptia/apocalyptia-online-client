@@ -63,6 +63,11 @@ import Traits from '../../components/rules/Traits'
 		<h3>Step 6: Gear</h3>
 		<p>Equip your Character with a random Melee weapon, a random Ranged weapon (with some random Ammo), and a random piece of Armor.</p>
 	</div>
+	<div class='nav-bar'>
+		<a class='nav-button' href='/'>&#9664;</a>
+		<a class='nav-button home-button' href='/'>Home</a>
+		<a class='nav-button' href='/creator/description'>&#9654;</a>
+	</div>
 
 
 <style>
@@ -88,4 +93,5 @@ import Traits from '../../components/rules/Traits'
 		list-style-position: inside;
 		list-style-type: disc;
 	}
+
 </style>

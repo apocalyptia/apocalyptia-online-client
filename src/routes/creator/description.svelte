@@ -42,11 +42,14 @@ const reset = () => $character = Description.reset($character)
 	{/if}
 	{/each}
 </div>
-
-
 <div class='button-row'>
 	<button class='center-button' on:click={reset}>Reset</button>
 	<button class='center-button' on:click={random}>Random</button>
+</div>
+<div class='nav-bar'>
+	<a class='nav-button' href='/creator/creation'>&#9664;</a>
+	<a class='nav-button home-button' href='/'>Home</a>
+	<a class='nav-button' href='/creator/traits'>&#9654;</a>
 </div>
 
 
