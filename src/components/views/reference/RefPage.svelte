@@ -1,12 +1,5 @@
 <script>
-import ToggleVisible from '../../functions/ToggleVisible'
-
 export let chapter
-
-const open = (rule) => {
-	if (rule.visible) return 'open'
-	else return ''
-}
 </script>
 
 
@@ -17,11 +10,8 @@ const open = (rule) => {
 	</div>
 {/if}
 {#each chapter.list as rule}
-	<details use:open={rule}>
-		<summary
-			on:click={()=>{rule.visible = !rule.visible}}
-			class='name'
-		>
+	<details>
+		<summary class='name'>
 			{rule.name}
 		</summary>
 		<div class='details-content'>

@@ -261,7 +261,6 @@ td {
 	flex: 1;
 	font-size: var(--base-unit);
 	font-weight: bold;
-	/* height: var(--triple-unit); */
 	line-height: var(--double-unit);
 	padding: var(--half-unit);
 	text-align: center;
@@ -274,4 +273,26 @@ td {
 }
 .home-button {
 	font-size: calc(var(--base-unit) * 1.25);
+}
+
+/* Menu Screen */
+.menu-button {
+	background: var(--scr-color);
+	border-radius: var(--radius);
+	border: var(--smallest-unit) solid var(--txt-color);
+	display: block;
+	font-size: var(--base-unit);
+	font-weight: bold;
+	/* height: var(--triple-unit); */
+	line-height: var(--double-unit);
+	margin: auto;
+	margin-bottom: var(--double-unit);
+	padding: var(--half-unit);
+	text-align: center;
+	width: 80%;
+}
+.menu-button:active,
+.menu-button:hover {
+	background: var(--txt-color);
+	color: var(--scr-color);
 }
