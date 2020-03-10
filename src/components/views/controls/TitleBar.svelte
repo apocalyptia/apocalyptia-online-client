@@ -1,15 +1,11 @@
 <script>
 import * as sapper from '@sapper/app'
 import UserMenu from './UserMenu.svelte'
-
-const goHome = () => {
-	sapper.goto('/')
-}
 </script>
 
 
 <div class='title-bar'>
-	<button on:click={goHome}>
+	<button on:click={()=>sapper.goto('/')}>
 		<h1>Apocalyptia Online</h1>
 		<span>beta</span>
 	</button>
