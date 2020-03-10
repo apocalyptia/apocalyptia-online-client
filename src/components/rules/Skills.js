@@ -79,10 +79,10 @@ export const stealth = new Skill({
 })
 
 export const AgilitySkills = [
-	{ ...acrobatics },
-	{ ...larceny },
-	{ ...ranged },
-	{ ...stealth }
+	acrobatics,
+	larceny,
+	ranged,
+	stealth
 ]
 
 export const medicine = new Skill({
@@ -154,10 +154,10 @@ export const survival = new Skill({
 })
 
 export const BrainsSkills = [
-	{ ...medicine },
-	{ ...perception },
-	{ ...science },
-	{ ...survival }
+	medicine,
+	perception,
+	science,
+	survival
 ]
 
 export const athletics = new Skill({
@@ -229,10 +229,10 @@ export const melee = new Skill({
 })
 
 export const ConstitutionSkills = [
-	{ ...athletics },
-	{ ...build },
-	{ ...drive },
-	{ ...melee }
+	athletics,
+	build,
+	drive,
+	melee
 ]
 
 export const leadership = new Skill({
@@ -304,10 +304,10 @@ export const tame = new Skill({
 })
 
 export const DemeanorSkills = [
-	{ ...leadership },
-	{ ...perform },
-	{ ...socialize },
-	{ ...tame }
+	leadership,
+	perform,
+	socialize,
+	tame
 ]
 
 export const SkillList = [
@@ -348,39 +348,38 @@ export default {
 		},
 	],
 	specialties: SpecialtyList,
-	startingPoints: (c) => {
-		return c.traits.brains.base * 6
+	startingPoints: (c) => c.traits.brains.base * 6,
+	assign: function(c, target) {
+		c.skills[target.name].base = parseInt(target.value)
+		return this.limit(c, target.name)
 	},
-	assign: function(c, t, v) {
-		c.skills[t].base = parseInt(v)
-		this.limit(c, t)
-	},
-	limit: function(c, t) {
-		while(
-			this.remaining(c) < 0 ||
-			c.skills[t].base > c.traits[c.skills[t].parent.toLowerCase()].base
-		) c.skills[t].base--
-		this.setScores(c)
+	limit: function(c, targetName) {
+		console.log(targetName)
+		const max = c.traits[c.skills[targetName].parent.toLowerCase()].base
+		while(this.remaining(c) < 0 || c.skills[targetName].base > max) c.skills[t].base--
+		return this.setScores(c)
 	},
 	random: function(c) {
-		this.reset(c)
+		c = this.reset(c)
 		while(this.remaining(c) > 0) {
-			let t = RandomRoll(Object.keys(c.skills))
-			let parentScore = c.traits[c.skills[t].parent.toLowerCase()].base
+			const t = RandomRoll(Object.keys(c.skills))
+			const parentScore = c.traits[c.skills[t].parent.toLowerCase()].base
 			if (c.skills[t].base < parentScore) c.skills[t].base++
 		}
-		this.setScores(c)
+		return this.setScores(c)
 	},
 	remaining: function(c) {
-		return this.startingPoints(c) -
-			Object.values(c.skills).reduce((t, { base }) => t += base, 0)
+		const spent = Object.values(c.skills).reduce((t, { base }) => t += base, 0)
+		return this.startingPoints(c) - spent
 	},
 	reset: function(c) {
 		Object.keys(c.skills).forEach(t => c.skills[t].base = 0)
+		return c
 	},
 	setScores: function(c) {
 		Object.keys(c.skills).forEach(t => {
 			c.skills[t].score = c.skills[t].base + c.skills[t].mods
 		})
+		return c
 	}
 }

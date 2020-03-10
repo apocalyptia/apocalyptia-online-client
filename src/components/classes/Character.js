@@ -178,39 +178,56 @@ export default class Character {
 		this.properties = {
 			block: {
 				name: `Block`,
+				base: 0,
+				mods: 0,
 				score: 0
 			},
 			dodge: {
 				name: `Dodge`,
+				base: 0,
+				mods: 0,
 				score: 0
 			},
 			experience: {
 				name: `Experience`,
-				current: 3,
-				score: 3
+				base: 3,
+				mods: 0,
+				score: 3,
+				current: 3
 			},
 			health: {
 				name: `Health`,
-				current: 3,
-				score: 3
+				base: 3,
+				mods: 0,
+				score: 3,
+				current: 3
 			},
 			intellect: {
 				name: `Intellect`,
+				base: 1,
+				mods: 0,
 				score: 1
 			},
 			luck: {
 				name: `Luck`,
-				current: 1,
-				score: 1
+				base: 1,
+				mods: 0,
+				score: 1,
+				current: 1
 			},
 			psyche: {
 				name: `Psyche`,
-				current: 3,
-				score: 3
+				base: 1,
+				mods: 0,
+				score: 3,
+				current: 3
 			},
 			speed: {
 				name: `Speed`,
-				score: 3
+				base: 1,
+				mods: 0,
+				score: 3,
+				current: 0
 			}
 		},
 		this.abilities = [],

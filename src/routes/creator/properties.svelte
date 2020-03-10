@@ -4,12 +4,7 @@ import { character } from '../../stores/characterStore'
 import Properties from '../../components/rules/Properties'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
-Properties.setScores($character)
-
-beforeUpdate(() => {
-	Properties.setScores($character)
-	$character = $character
-})
+beforeUpdate(() => $character = Properties.setScores($character))
 </script>
 
 

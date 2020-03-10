@@ -47,8 +47,10 @@ export const experience = new Property({
 		`Experience = Brains x 3.`,
 		`Experience represents how much you have learned up to now.`,
 		`You accumulate additional Experience Points ("XP") = [Intellect] for each game session that you survive.`,
-		`You also get +1 XP every time you roll a Botch. The Narrator may also give bonus XP.`,
-		`You may spend XP to buy Abilities to improve your Character. You may also spend 1XP per round to regain 1 Luck Point.`,
+		`You also get +1 XP every time you roll a Botch.`,
+		`The Narrator may choose to give bonus XP.`,
+		`You may spend XP to buy Abilities to improve your Character.`,
+		`You may also spend 1XP per round to regain 1 Luck Point.`,
 	],
 	formula: (character) => character.traits.brains.score * 3,
 	base: 3,
@@ -106,24 +108,27 @@ export const speed = new Property({
 	score: 3
 })
 
+export const PropertyList = [
+	block,
+	dodge,
+	experience,
+	health,
+	intellect,
+	luck,
+	psyche,
+	speed
+]
+
 export default {
 	name: `Properties`,
 	explanation: PropertyExplanation,
-	list: [
-		block,
-		dodge,
-		experience,
-		intellect,
-		luck,
-		health,
-		psyche,
-		speed
-	],
+	list: PropertyList,
 	setScores: function(c) {
 		Object.keys(c.properties).forEach((p, i) => {
 			if (c.properties[p].name == this.list[i].name) {
 				c.properties[p].score = this.list[i].formula(c)
 			}
 		})
+		return c
 	}
 }

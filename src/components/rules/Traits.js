@@ -66,45 +66,49 @@ export const demeanor = new Trait({
 	]
 })
 
+export const TraitList = [
+	agility,
+	brains,
+	constitution,
+	demeanor,
+]
+
 export const TraitFlowExplanation = `Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. ResetScores any associated Properties.`
 
 export default {
 	name: `Traits`,
 	explanation: TraitsExplanation,
-	list: [
-		{ ...agility },
-		{ ...brains },
-		{ ...constitution },
-		{ ...demeanor },
-	],
+	list: TraitList,
 	max: traitMax,
-	startingPoints: traitPoints,
-	assign: function(c, t, v) {
-		c.traits[t].base = parseInt(v)
-		this.limit(c, t)
+	startingPoints: () => traitPoints,
+	assign: function(c, target) {
+		c.traits[target.name].base = parseInt(target.value)
+		return this.limit(c, target.name)
 	},
-	limit: function(c, t) {
-		while(this.remaining(c) < 0) c.traits[t].base--
-		this.setScores(c)
+	limit: function(c, targetName) {
+		while(this.remaining(c) < 0) c.traits[targetName].base--
+		return this.setScores(c)
 	},
 	random: function(c) {
-		this.reset(c)
+		c = this.reset(c)
 		while(this.remaining(c) > 0) {
-			let t = RandomRoll(Object.keys(c.traits))
+			const t = RandomRoll(Object.keys(c.traits))
 			if (c.traits[t].base < this.max) c.traits[t].base++
 		}
-		this.setScores(c)
+		return this.setScores(c)
 	},
 	remaining: function(c) {
-		return this.startingPoints -
-			Object.values(c.traits).reduce((t, { base }) => t += base, 0)
+		const spent = Object.values(c.traits).reduce((t, { base }) => t += base, 0)
+		return this.startingPoints() - spent
 	},
 	reset: function(c) {
 		Object.keys(c.traits).forEach(t => c.traits[t].base = 1)
+		return c
 	},
 	setScores: function(c) {
 		Object.keys(c.traits).forEach(t => {
 			c.traits[t].score = c.traits[t].base + c.traits[t].mods
 		})
+		return c
 	}
 }

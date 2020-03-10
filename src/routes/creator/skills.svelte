@@ -9,25 +9,15 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let remaining = Skills.remaining($character)
 
-const assign = (event) => {
-	Skills.assign($character, event.target.name, event.target.value)
-	$character = $character
-}
+const assign = (event) => $character = Skills.assign($character, event.target)
 
-const random = () => {
-	Skills.random($character)
-	$character = $character
-}
+const random = () => $character = Skills.random($character)
 
-const reset = () => {
-	Skills.reset($character)
-	$character = $character
-}
+const reset = () => $character = Skills.reset($character)
 
 beforeUpdate(() => {
-	Skills.setScores($character)
+	$character = Skills.setScores($character)
 	remaining = Skills.remaining($character)
-	$character = $character
 })
 </script>
 
@@ -58,9 +48,7 @@ beforeUpdate(() => {
 							name='{skill.name.toLowerCase()}'
 							min={parseInt(0)}
 							max={parseInt(6)}
-							bind:value={
-								$character.skills[skill.name.toLowerCase()].base
-							}
+							bind:value={$character.skills[skill.name.toLowerCase()].base}
 							on:input={event => assign(event)}
 						/>
 					</div>
