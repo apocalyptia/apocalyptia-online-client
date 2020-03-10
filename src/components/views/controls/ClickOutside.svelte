@@ -16,7 +16,7 @@ const ClickOutside = (event) => {
 </script>
 
 
-<svelte:body on:click={ClickOutside} />
+<svelte:body on:click={ClickOutside}/>
 <div bind:this={child}>
-	<slot />
+	<slot/>
 </div>

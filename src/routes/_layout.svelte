@@ -5,8 +5,8 @@ import DisplayWindow from '../components/views/ui/DisplayWindow.svelte'
 
 
 <main>
-	<TitleBar />
+	<TitleBar/>
 	<DisplayWindow>
-		<slot />
+		<slot/>
 	</DisplayWindow>
 </main>

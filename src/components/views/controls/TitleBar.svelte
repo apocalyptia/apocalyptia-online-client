@@ -13,7 +13,7 @@ const goHome = () => {
 		<h1>Apocalyptia Online</h1>
 		<span>beta</span>
 	</button>
-	<UserMenu />
+	<UserMenu/>
 </div>
 
 

@@ -9,6 +9,7 @@ import RangedWeaponItemTable from '../../components/views/tables/RangedWeaponIte
 import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
 import { Nd6, RandomRoll } from '../../components/functions/Random'
 import { character } from '../../stores/characterStore'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
 const randomMelee = () => {
 	$character.gear.meleeWeapons.inventory.push(RandomRoll(MeleeWeaponList))
@@ -80,11 +81,7 @@ const randomArmor = () => {
 		</div>
 	{/if}
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/creator/abilities'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/creator/sheet'>&#9654;</a>
-</div>
+<NavBar links={{back: '/creator/abilities', next: '/creator/sheet'}}/>
 
 
 <style>

@@ -3,6 +3,7 @@ import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 import Traits from '../../components/rules/Traits'
 import Slider from '../../components/views/controls/Slider.svelte'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let remaining = Traits.remaining($character)
 
@@ -64,11 +65,7 @@ beforeUpdate(() => {
 		Random
 	</button>
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/creator/description'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/creator/skills'>&#9654;</a>
-</div>
+<NavBar links={{back: '/creator/description', next: '/creator/skills'}}/>
 
 
 <style>

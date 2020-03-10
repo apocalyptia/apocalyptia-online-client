@@ -24,5 +24,5 @@ onMount(() => {
 	<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
 	<Dashboard/>
 {:else}
-	<Landing />
+	<Landing/>
 {/if}

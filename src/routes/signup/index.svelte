@@ -54,7 +54,7 @@
 		/>
 		<button>
 			{#if pendingApiCall}
-				<Spinner />
+				<Spinner/>
 			{:else}
 				Signup
 			{/if}

@@ -247,33 +247,7 @@ td {
 }
 
 /* Nav Bar */
-.nav-bar {
-	bottom: 0;
-	display: flex;
-	left: 0;
-	position: fixed;
-	width: 100%;
-}
-.nav-button {
-	background: var(--scr-color);
-	border-radius: var(--radius);
-	border: var(--smallest-unit) solid var(--txt-color);
-	flex: 1;
-	font-size: var(--base-unit);
-	font-weight: bold;
-	line-height: var(--double-unit);
-	padding: var(--half-unit);
-	text-align: center;
-	vertical-align: middle;
-}
-.nav-button:active,
-.nav-button:hover {
-	background: var(--txt-color);
-	color: var(--scr-color);
-}
-.home-button {
-	font-size: calc(var(--base-unit) * 1.25);
-}
+
 
 /* Menu Screen */
 .menu-button {

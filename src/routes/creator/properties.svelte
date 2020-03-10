@@ -2,8 +2,8 @@
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 import Properties from '../../components/rules/Properties'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
-console.log('PROPERTIES!')
 Properties.setScores($character)
 
 beforeUpdate(() => {
@@ -57,11 +57,7 @@ beforeUpdate(() => {
 		</div>
 	</div>
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/creator/skills'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/creator/abilities'>&#9654;</a>
-</div>
+<NavBar links={{back: '/creator/skills', next: '/creator/abilities'}}/>
 
 
 <style>

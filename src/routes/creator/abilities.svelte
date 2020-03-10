@@ -6,6 +6,7 @@ import Abilities from '../../components/rules/Abilities'
 import AbilityGroup from '../../components/views/creator/AbilityGroup.svelte'
 import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
 import AbilityCurrent from '../../components/views/creator/AbilityCurrent.svelte'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let remaining = Abilities.remainingXP($character)
 
@@ -54,11 +55,7 @@ beforeUpdate(() => {
 		<button on:click={resetAbilities}>Reset</button>
 	</div>
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/creator/properties'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/creator/gear'>&#9654;</a>
-</div>
+<NavBar links={{back: '/creator/properties', next: '/creator/gear'}}/>
 
 
 <style>

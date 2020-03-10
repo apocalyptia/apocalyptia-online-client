@@ -28,9 +28,9 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	</div>
 	<div class='stats-section'>
 		{#if ability.options.length}
-			<AbilityModalOptions {ability} {MasterAbilityList} />
+			<AbilityModalOptions {ability} {MasterAbilityList}/>
 		{:else}
-			<AbilityModalSingle {ability} {MasterAbilityList} />
+			<AbilityModalSingle {ability} {MasterAbilityList}/>
 		{/if}
 	</div>
 	<div class='button-row'>

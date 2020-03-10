@@ -1,6 +1,7 @@
 <script>
 import referenceStore from '../../stores/referenceStore'
 import ContentMenu from '../../components/views/ui/ContentMenu.svelte'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
 const pages = [
 	'core',
@@ -22,11 +23,7 @@ const pages = [
 		<a class='menu-button' href='/reference/{page}'>{page.toUpperCase()}</a>
 	{/each}
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/reference/core'>&#9654;</a>
-</div>
+<NavBar links={{back: '/', next: '/reference/core'}}/>
 
 
 <style>

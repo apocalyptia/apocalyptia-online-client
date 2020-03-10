@@ -39,7 +39,7 @@ const submit = (event) => {
 		/>
 		<button>
 			{#if pendingApiCall}
-				<Spinner />
+				<Spinner/>
 			{:else}
 				Login
 			{/if}

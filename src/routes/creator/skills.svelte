@@ -5,6 +5,7 @@ import RandomRoll from '../../components/functions/Random'
 import Skills from '../../components/rules/Skills'
 import Traits from '../../components/rules/Traits'
 import Slider from '../../components/views/controls/Slider.svelte'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let remaining = Skills.remaining($character)
 
@@ -76,11 +77,7 @@ beforeUpdate(() => {
 		Random
 	</button>
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/creator/traits'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/creator/properties'>&#9654;</a>
-</div>
+<NavBar links={{back: '/creator/traits', next: '/creator/properties'}}/>
 
 
 <style>

@@ -1,6 +1,7 @@
 <script>
 import { character } from '../../stores/characterStore'
 import Description from '../../components/rules/Description'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 
 const randomItem = (i) => $character = Description.list[i].random($character)
 const random = () => $character = Description.random($character)
@@ -46,11 +47,7 @@ const reset = () => $character = Description.reset($character)
 	<button class='center-button' on:click={reset}>Reset</button>
 	<button class='center-button' on:click={random}>Random</button>
 </div>
-<div class='nav-bar'>
-	<a class='nav-button' href='/creator/creation'>&#9664;</a>
-	<a class='nav-button home-button' href='/'>Home</a>
-	<a class='nav-button' href='/creator/traits'>&#9654;</a>
-</div>
+<NavBar links={{back: '/creator/creation', next: '/creator/traits'}}/>
 
 
 <style>

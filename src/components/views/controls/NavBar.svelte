@@ -1,12 +1,12 @@
 <script>
-export let store
+export let links
 </script>
 
 
 <div class='nav-bar'>
-	<button on:click={() => store.back()}>&larr;</button>
-	<button class='home-button' on:click={() => store.home()}>{store.label}</button>
-	<button on:click={() => store.next()}>&rarr;</button>
+	<a class='nav-button' href={links.back}>&ltrif;</a>
+	<a class='nav-button home-button' href='/'>Home</a>
+	<a class='nav-button' href={links.next}>&rtrif;</a>
 </div>
 
 
@@ -18,12 +18,21 @@ export let store
 	position: fixed;
 	width: 100%;
 }
-button {
+.nav-button {
+	background: var(--scr-color);
+	border-radius: var(--radius);
+	border: var(--smallest-unit) solid var(--txt-color);
 	flex: 1;
-	font-size: var(--base-unit);
+	font-size: calc(var(--base-unit) * 1.5);
 	font-weight: bold;
+	line-height: var(--double-unit);
+	padding: var(--half-unit);
+	text-align: center;
+	vertical-align: middle;
 }
-.home-button {
-	font-size: calc(var(--base-unit) * 1.25);
+.nav-button:active,
+.nav-button:hover {
+	background: var(--txt-color);
+	color: var(--scr-color);
 }
 </style>

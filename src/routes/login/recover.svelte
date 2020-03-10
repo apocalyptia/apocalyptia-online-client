@@ -36,7 +36,7 @@ const submit = (event) => {
 		/>
 		<button>
 			{#if pendingApiCall}
-				<Spinner />
+				<Spinner/>
 			{:else}
 				Recover
 			{/if}

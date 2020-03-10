@@ -1,6 +1,6 @@
 <div class='display-window'>
 	<div class='page-container'>
-		<slot />
+		<slot/>
 	</div>
 </div>
 
