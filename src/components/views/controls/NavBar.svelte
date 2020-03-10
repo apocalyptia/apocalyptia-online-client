@@ -4,9 +4,9 @@ export let store
 
 
 <div class='nav-bar'>
-	<button on:click={() => store.back()}>&#9664;</button>
+	<button on:click={() => store.back()}>&larr;</button>
 	<button class='home-button' on:click={() => store.home()}>{store.label}</button>
-	<button on:click={() => store.next()}>&#9654;</button>
+	<button on:click={() => store.next()}>&rarr;</button>
 </div>
 
 
