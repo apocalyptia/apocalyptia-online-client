@@ -34,7 +34,7 @@ const dieRoller = () => {
 	margin: 30px auto;
 	height: 50px;
 	width: 50px;
-	border: var(--third-unit) solid var(--char-color);
+	border: var(--s33) solid var(--char-color);
 	border-radius: var(--radius);
 	text-align: center;
 }

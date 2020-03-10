@@ -56,10 +56,10 @@ ul {
 	list-style: none;
 }
 li {
-	margin: var(--base-unit);
+	margin: var(--s100);
 }
 .explanation {
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 .name {
 	font-weight: bold;

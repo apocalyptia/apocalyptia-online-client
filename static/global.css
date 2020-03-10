@@ -53,12 +53,25 @@ table {
 
 :root {
 	/* Global Units */
-	--smallest-unit: 1px;
-	--base-unit: 1rem;
-	--double-unit: calc(var(--base-unit) * 2);
-	--half-unit: calc(var(--base-unit) / 2);
-	--triple-unit: calc(var(--base-unit) * 3);
-	--third-unit: calc(var(--base-unit) / 3);
+	--s1: 1px;
+	--s2: 2px;
+	--s10: calc(var(--s100) * .1);
+	--s25: calc(var(--s100) * .25);
+	--s33: calc(var(--s100) * .33);
+	--s50: calc(var(--s100) * .5);
+	--s66: calc(var(--s100) * .66);
+	--s75: calc(var(--s100) * .75);
+	--s100: 1rem;
+	--s110: calc(var(--s100) * 1.1);
+	--s125: calc(var(--s100) * 1.25);
+	--s150: calc(var(--s100) * 1.5);
+	--s175: calc(var(--s100) * 1.75);
+	--s200: calc(var(--s100) * 2);
+	--s250: calc(var(--s100) * 2.5);
+	--s300: calc(var(--s100) * 3);
+	--s400: calc(var(--s100) * 4);
+	--s500: calc(var(--s100) * 5);
+	--s600: calc(var(--s100) * 6);
 	--radius: 0;
 
 	/* Global Colors */
@@ -79,7 +92,7 @@ body {
 	background: var(--scr-color);
 	color: var(--txt-color);
 	font-family: var(--global-font);
-	font-size: var(--base-unit);
+	font-size: var(--s100);
 	scrollbar-width: none;
 }
 ::-webkit-scrollbar {
@@ -97,13 +110,13 @@ label {
 	display: block;
 }
 h1 {
-	font-size: calc(var(--base-unit) * 1.5);
+	font-size: var(--s150);
 }
 h2 {
-	font-size: calc(var(--base-unit) * 1.25);
+	font-size: var(--s125);
 }
 h3 {
-	font-size: calc(var(--base-unit) * 1.1);
+	font-size: var(--s110);
 }
 
 
@@ -113,11 +126,11 @@ button,
 input,
 select {
 	background: var(--scr-color);
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	border-radius: var(--radius);
 	color: var(--txt-color);
 	cursor: pointer;
-	font-size: var(--base-unit);
+	font-size: var(--s100);
 	text-align: center;
 }
 button:active, button:hover,
@@ -128,7 +141,7 @@ select:active {
 }
 select:hover {
 	background: var(--txt-color);
-	border: var(--smallest-unit) solid var(--scr-color);
+	border: var(--s1) solid var(--scr-color);
 	color: var(--scr-color);
 }
 button:invalid,
@@ -140,8 +153,8 @@ select:invalid {
 
 /* Button */
 button {
-	height: var(--triple-unit);
-	padding: var(--half-unit);
+	height: var(--s300);
+	padding: var(--s50);
 }
 .center-button {
 	text-align: center;
@@ -152,13 +165,13 @@ input[type="number"] {
 	width: 100px;
 }
 input[type="text"] {
-	height: var(--double-unit);
+	height: var(--s200);
 	min-width: 40%;
 }
 
 /* Select */
 select {
-	height: var(--double-unit);
+	height: var(--s200);
 }
 
 
@@ -169,20 +182,20 @@ details:focus {
 	border-radius: var(--radius);
 }
 details {
-	border: var(--smallest-unit) dotted;
+	border: var(--s1) dotted;
 	border-radius: var(--radius);
-	margin: var(--base-unit);
+	margin: var(--s100);
 }
 summary {
 	justify-content: left;
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 summary:hover {
 	color: var(--scr-color);
 	background: var(--txt-color);
 }
 .details-content {
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 
 /* Table */
@@ -197,33 +210,33 @@ tr {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	height: var(--double-unit);
+	height: var(--s200);
 	min-width: 100%;
 }
 td {
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	flex: 1;
 	overflow-wrap: normal;
-	padding: var(--half-unit);
+	padding: var(--s50);
 	word-wrap: break-word;
 }
 
 /* Section Card */
 .section-card {
 	align-items: center;
-	border: var(--smallest-unit) dotted;
+	border: var(--s1) dotted;
 	display: flex;
 	justify-content: space-between;
-	margin: var(--half-unit);
-	padding: var(--base-unit);
+	margin: var(--s50);
+	padding: var(--s100);
 }
 
 /* Center Card */
 .center-card {
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	left: 50vw;
 	max-width: 500px;
-	padding: var(--base-unit);
+	padding: var(--s100);
 	position: absolute;
 	text-align: center;
 	top: 50vh;
@@ -231,18 +244,18 @@ td {
 	width: 66vw;
 }
 .card-title {
-	margin: var(--base-unit);
+	margin: var(--s100);
 }
 .center-card a {
 	display: block;
 }
 .center-card input {
-	height: var(--double-unit);
-	margin: var(--base-unit);
+	height: var(--s200);
+	margin: var(--s100);
 	width: 80%;
 }
 .center-card button {
-	margin: var(--base-unit);
+	margin: var(--s100);
 	width: 75%;
 }
 
@@ -253,15 +266,15 @@ td {
 .menu-button {
 	background: var(--scr-color);
 	border-radius: var(--radius);
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	display: block;
-	font-size: var(--base-unit);
+	font-size: var(--s100);
 	font-weight: bold;
-	/* height: var(--triple-unit); */
-	line-height: var(--double-unit);
+	/* height: var(--s300); */
+	line-height: var(--s200);
 	margin: auto;
-	margin-bottom: var(--double-unit);
-	padding: var(--half-unit);
+	margin-bottom: var(--s200);
+	padding: var(--s50);
 	text-align: center;
 	width: 80%;
 }

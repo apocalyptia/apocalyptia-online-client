@@ -89,6 +89,6 @@ const randomArmor = () => {
 	display: block;
 }
 h2 {
-	margin-bottom: var(--half-unit);
+	margin-bottom: var(--s50);
 }
 </style>

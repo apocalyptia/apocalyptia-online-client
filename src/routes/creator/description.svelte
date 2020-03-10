@@ -70,14 +70,14 @@ div[class*='-container'] > span,
 }
 
 div[class*='-container'] > input {
-	margin-left: var(--third-unit);
-	margin-right: var(--third-unit);
+	margin-left: var(--s33);
+	margin-right: var(--s33);
 }
 .player-container > input[type='text'] {
-	margin-left: var(--third-unit);
+	margin-left: var(--s33);
 	margin-right: 0;
-	padding-left: var(--half-unit);
-	padding-right: var(--half-unit);
+	padding-left: var(--s50);
+	padding-right: var(--s50);
 }
 
 /* MOBILE */
@@ -88,7 +88,7 @@ div[class*='-container'] > input {
 		max-width: 100%;
 	}
 	div[class*='-container'] {
-		margin: var(--half-unit) 0;
+		margin: var(--s50) 0;
 		width: 100%;
 	}
 	.player-container > input[type='text'] {
@@ -107,7 +107,7 @@ div[class*='-container'] > input {
 		max-width: 100%;
 	}
 	div[class*='-container'] {
-		margin: var(--half-unit);
+		margin: var(--s50);
 		width: 100%;
 	}
 	.player-container > input[type='text'] {

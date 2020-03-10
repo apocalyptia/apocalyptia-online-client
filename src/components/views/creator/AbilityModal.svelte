@@ -56,10 +56,10 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	height: fit-content;
 	max-height: 75vh;
 	overflow: scroll;
-	padding: var(--base-unit);
+	padding: var(--s100);
 	border-radius: var(--radius);
 	background: rgba(0,0,0,0.9);
-	border: var(--smallest-unit) solid;
+	border: var(--s1) solid;
 }
 .button-row {
 	text-align: center;
@@ -68,10 +68,10 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	align-items: baseline;
 	display: flex;
 	justify-content: space-between;
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 .description-section {
-	margin-top: var(--base-unit);
+	margin-top: var(--s100);
 }
 .description-label {
 	font-weight: bold;

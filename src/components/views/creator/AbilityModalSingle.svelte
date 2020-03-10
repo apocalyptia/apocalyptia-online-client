@@ -33,7 +33,7 @@ const updateAbilities = () => {
 .ability-section {
 	align-items: center;
 	display: flex;
-	margin: var(--base-unit);
+	margin: var(--s100);
 	justify-content: space-between;
 	width: 100%;
 }

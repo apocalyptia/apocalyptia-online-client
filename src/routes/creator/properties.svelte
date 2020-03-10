@@ -62,7 +62,7 @@ beforeUpdate(() => {
 
 <style>
 .explanation {
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 .properties-list {
 	display: flex;
@@ -70,11 +70,11 @@ beforeUpdate(() => {
 }
 @media only screen and (max-width: 900px) {
 	.section-block {
-		padding: var(--third-unit);
+		padding: var(--s33);
 		width: 100%;
 	}
 	.prop-item {
-		margin: var(--half-unit);
+		margin: var(--s50);
 		width: 100%;
 	}
 }
@@ -82,11 +82,11 @@ beforeUpdate(() => {
 	.section-block {
 		display: flex;
 		justify-content: space-between;
-		padding: var(--third-unit);
+		padding: var(--s33);
 		width: 100%;
 	}
 	.prop-item {
-		margin: var(--half-unit);
+		margin: var(--s50);
 		width: 25%;
 	}
 }

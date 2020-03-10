@@ -26,16 +26,16 @@ export let MasterAbilityList
 
 <style>
 .xp-group-section {
-	border: var(--smallest-unit) solid;
-	padding: var(--base-unit);
+	border: var(--s1) solid;
+	padding: var(--s100);
 }
 .xp-group-title {
-	font-size: calc(var(--base-unit) * 1.25);
+	font-size: var(--s125);
 	text-align: center;
 }
 .ability-card {
-	margin: var(--base-unit);
-	padding: var(--half-unit);
-	border: var(--smallest-unit) solid;
+	margin: var(--s100);
+	padding: var(--s50);
+	border: var(--s1) solid;
 }
 </style>

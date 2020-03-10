@@ -60,10 +60,10 @@ beforeUpdate(() => {
 
 <style>
 .ability-group {
-	margin: var(--base-unit);
+	margin: var(--s100);
 }
 .explanation {
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 .abilities-list {
 	width: 100%;

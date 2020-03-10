@@ -164,7 +164,7 @@ const skills = Object.values($character.skills)
 	justify-content: space-around;
 }
 .section-block {
-	margin: var(--base-unit);
+	margin: var(--s100);
 }
 div[class*='-item'] {
 	display: block;
@@ -174,7 +174,7 @@ div[class*='-item'] {
 	align-items: baseline;
 	display: flex;
 	justify-content: space-between;
-	margin: var(--base-unit);
+	margin: var(--s100);
 }
 .abilities-header {
 	font-weight: bold;
@@ -189,8 +189,8 @@ div[class*='-item'] {
 	text-align: center;
 }
 .gear-item {
-	margin-bottom: var(--base-unit);
-	margin-top: var(--base-unit);
+	margin-bottom: var(--s100);
+	margin-top: var(--s100);
 }
 .centered {
 	font-weight: bold;

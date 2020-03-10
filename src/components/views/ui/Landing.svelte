@@ -31,7 +31,7 @@ onMount(() => show = true)
 	button {
 		display: block;
 		margin: auto;
-		margin-bottom: var(--base-unit);
+		margin-bottom: var(--s100);
 		width: 60%;
 	}
 }

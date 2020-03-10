@@ -29,6 +29,6 @@ const pages = [
 <style>
 .content-menu {
 	height: 100%;
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 </style>

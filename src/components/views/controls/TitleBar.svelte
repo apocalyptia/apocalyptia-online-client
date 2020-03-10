@@ -7,7 +7,7 @@ import UserMenu from './UserMenu.svelte'
 <div class='title-bar'>
 	<button on:click={()=>sapper.goto('/')}>
 		<h1>Apocalyptia Online</h1>
-		<span>beta</span>
+		<span>0.1a</span>
 	</button>
 	<UserMenu/>
 </div>
@@ -16,7 +16,7 @@ import UserMenu from './UserMenu.svelte'
 <style>
 .title-bar {
 	display: flex;
-	height: var(--triple-unit);
+	height: var(--s300);
 	position: fixed;
 	top: 0;
 	transition: top 0.3s linear;
@@ -32,8 +32,8 @@ h1 {
 }
 span {
 	color: var(--alt-color);
-	border: var(--smallest-unit) dotted var(--alt-color);
-	font-size: calc(var(--base-unit) * .75);
-	padding: calc(var(--base-unit) * .25);
+	border: var(--s1) dotted var(--alt-color);
+	font-size: var(--s75);
+	padding: var(--s1);
 }
 </style>

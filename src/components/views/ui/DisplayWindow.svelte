@@ -8,13 +8,13 @@
 <style>
 .display-window {
 	position: absolute;
-	top: var(--triple-unit);
-	height: calc(100vh - (var(--triple-unit) * 2));
-	bottom: var(--triple-unit);
+	top: var(--s300);
+	height: calc(100vh - var(--s600));
+	bottom: var(--s300);
 	width: 100vw;
 }
 .page-container {
-	margin: var(--base-unit);
-	margin-bottom: calc(var(--base-unit) * 5);
+	margin: var(--s100);
+	margin-bottom: var(--s500);
 }
 </style>

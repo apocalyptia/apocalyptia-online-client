@@ -52,7 +52,7 @@ const updateAbilities = () => {
 	width: 100%;
 }
 .current-abilities-title {
-	font-size: calc(var(--base-unit) * 1.25);
+	font-size: var(--s125);
 	text-align: center;
 	width: 100%;
 }
@@ -61,7 +61,7 @@ const updateAbilities = () => {
 	align-items: baseline;
 	display: flex;
 	justify-content: space-between;
-	margin: var(--base-unit) 0;
+	margin: var(--s100) 0;
 }
 .current-abilities-header {
 	font-weight: bold;

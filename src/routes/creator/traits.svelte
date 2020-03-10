@@ -71,7 +71,7 @@ beforeUpdate(() => {
 <style>
 .section-card {
 	display: block;
-	margin-bottom: var(--double-unit);
+	margin-bottom: var(--s200);
 }
 .stat-label {
 	font-weight: bold;
@@ -79,10 +79,10 @@ beforeUpdate(() => {
 	width: 100%;
 }
 .explanation {
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 .list {
-	margin-top: var(--base-unit);
+	margin-top: var(--s100);
 }
 .remaining,
 .stat-label{

@@ -40,10 +40,10 @@ const updateAbilities = () => {
 }
 .ability-section {
 	align-items: center;
-	border: var(--smallest-unit) dashed;
+	border: var(--s1) dashed;
 	display: flex;
-	margin: var(--base-unit) auto;
-	padding: var(--half-unit);
+	margin: var(--s100) auto;
+	padding: var(--s50);
 }
 .ability-option-label {
 	flex: 2;

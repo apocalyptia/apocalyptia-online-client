@@ -21,12 +21,12 @@ export let links
 .nav-button {
 	background: var(--scr-color);
 	border-radius: var(--radius);
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	flex: 1;
-	font-size: calc(var(--base-unit) * 1.5);
+	font-size: var(--s150);
 	font-weight: bold;
-	line-height: var(--double-unit);
-	padding: var(--half-unit);
+	line-height: var(--s200);
+	padding: var(--s50);
 	text-align: center;
 	vertical-align: middle;
 }

@@ -70,17 +70,17 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 <style>
 	.section-card {
 		display: block;
-		margin-bottom: var(--base-unit);
+		margin-bottom: var(--s100);
 	}
 	p {
 		line-height: 1.5;
 	}
 	.explanation {
-		padding: var(--base-unit);
+		padding: var(--s100);
 	}
 	h3 {
 		font-weight: bold;
-		margin-bottom: var(--half-unit);
+		margin-bottom: var(--s50);
 		text-decoration: underline;
 	}
 	.skill-type {

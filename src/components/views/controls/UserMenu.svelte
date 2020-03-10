@@ -42,7 +42,7 @@ const logOut = () => {
 .user-button {
 	align-content: center;
 	display: flex;
-	height: var(--triple-unit);
+	height: var(--s300);
 	justify-content: center;
 	position: fixed;
 	right: 0;
@@ -57,14 +57,14 @@ const logOut = () => {
 	border: 1px solid var(--txt-color);
 	position: absolute;
 	right: 0vw;
-	top: var(--triple-unit);
+	top: var(--s300);
 	width: 30vw;
 	min-width: 200px;
 	z-index: 4;
 }
 .log-out {
 	border: none;
-	height: var(--triple-unit);
+	height: var(--s300);
 	width: 30vw;
 	min-width: 200px;
 }

@@ -15,12 +15,12 @@ export let ToC
 <style>
 .content-menu {
 	height: 100%;
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 button {
 	display: block;
 	margin: auto;
-	margin-bottom: var(--double-unit);
+	margin-bottom: var(--s200);
 	width: 80%;
 }
 </style>

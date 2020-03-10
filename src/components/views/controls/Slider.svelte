@@ -28,36 +28,36 @@ export let name, value, min, max
 input[type="range"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	margin-top: var(--base-unit);
-	margin-bottom: var(--base-unit);
-	height: var(--base-unit);
+	margin-top: var(--s100);
+	margin-bottom: var(--s100);
+	height: var(--s100);
 	width: 100%;
 }
 input[type="range"]::-moz-range-thumb {
 	-moz-appearance: none;
 	background: var(--txt-color);
 	border-radius: var(--radius);
-	border: var(--smallest-unit) solid var(--scr-color);
-	height: var(--double-unit);
-	width: var(--double-unit);
+	border: var(--s1) solid var(--scr-color);
+	height: var(--s200);
+	width: var(--s200);
 }
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	background: var(--txt-color);
 	border-radius: var(--radius);
-	border: var(--smallest-unit) solid var(--scr-color);
-	height: var(--double-unit);
-	width: var(--double-unit);
+	border: var(--s1) solid var(--scr-color);
+	height: var(--s200);
+	width: var(--s200);
 }
 input[type="range"]:hover::-moz-range-thumb {
 	-moz-appearance: none;
 	background: var(--scr-color);
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 }
 input[type="range"]:hover::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	background: var(--scr-color);
-	border: var(--smallest-unit) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 }
 .range-indicator {
 	display: flex;

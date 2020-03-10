@@ -82,15 +82,15 @@ beforeUpdate(() => {
 
 <style>
 details {
-	margin-top: var(--double-unit);
-	margin-bottom: var(--double-unit);
+	margin-top: var(--s200);
+	margin-bottom: var(--s200);
 }
 .group-label {
 	font-weight: bold;
 }
 .stat-range {
-	margin-top: var(--double-unit);
-	margin-bottom: var(--double-unit);
+	margin-top: var(--s200);
+	margin-bottom: var(--s200);
 }
 .stat-label {
 	font-weight: bold;
@@ -98,10 +98,10 @@ details {
 	width: 100%;
 }
 .explanation {
-	padding: var(--base-unit);
+	padding: var(--s100);
 }
 .list {
-	margin-top: var(--base-unit);
+	margin-top: var(--s100);
 }
 .remaining {
 	text-align: center;

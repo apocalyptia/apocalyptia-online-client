@@ -28,12 +28,12 @@ export let MasterAbilityList
 
 <style>
 .ability-card {
-	margin: var(--base-unit) auto;
+	margin: var(--s100) auto;
 }
 .card-row {
 	display: flex;
 	justify-content: space-between;
-	margin: var(--half-unit) auto;
+	margin: var(--s50) auto;
 }
 .ability-name{
 	flex: 2;
