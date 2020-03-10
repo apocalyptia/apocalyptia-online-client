@@ -35,4 +35,7 @@ export let links
 	background: var(--txt-color);
 	color: var(--scr-color);
 }
+.home-button {
+	font-size: var(--s125);
+}
 </style>
