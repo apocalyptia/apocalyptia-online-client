@@ -11,10 +11,10 @@ export let chapter
 {/if}
 {#each chapter.list as rule}
 	<details>
-		<summary class='name'>
+		<summary>
 			{rule.name}
 		</summary>
-		<div class='details-content'>
+		<div>
 			{#each rule.description as desc}
 				<p>{@html desc}</p>
 			{/each}
@@ -49,24 +49,6 @@ export let chapter
 
 
 <style>
-p {
-	line-height: 1.5;
-}
-ul {
-	list-style: none;
-}
-li {
-	margin: var(--s100);
-}
-.explanation {
-	padding: var(--s100);
-}
-.name {
-	font-weight: bold;
-}
-.details-content {
-	text-align: left;
-}
 .sub-name {
 	font-weight: bold;
 	text-decoration: underline;

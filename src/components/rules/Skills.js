@@ -5,9 +5,9 @@ import Specialty from '../classes/Specialty'
 
 export const SkillExplanation = [
 	`Skills range from 0 to 6.`,
-	`You get Brains x 6 points for Skills.`,
+	`You get Brains x 6 Skill points.`,
 	`Skill rolls are [d6 + Skill].`,
-	`Trait scores set the upper limit for their Skills.`
+	`Trait scores set the limit for their Skills.`
 ]
 
 export const acrobatics = new Skill({

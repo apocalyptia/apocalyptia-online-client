@@ -102,6 +102,9 @@ body {
 
 /* ----- TEXT ----- */
 
+p {
+	line-height: 1.5;
+}
 a {
 	color: var(--txt-color);
 	text-decoration: none;
@@ -151,7 +154,7 @@ select:invalid {
 	border-color: var(--alt-color);
 }
 
-/* Button */
+/* Buttons */
 button {
 	height: var(--s300);
 	padding: var(--s50);
@@ -159,8 +162,18 @@ button {
 .center-button {
 	text-align: center;
 }
+.button-row {
+	display:flex;
+	justify-content: space-evenly;
+	text-align: center;
+	width: 100%;
+}
+.button-row button {
+	width: 20%;
+	min-width: 100px;
+}
 
-/* Input */
+/* Inputs */
 input[type="number"] {
 	width: 100px;
 }
@@ -178,15 +191,16 @@ select {
 /* ----- LAYOUT ----- */
 
 /* Details */
-details:focus {
-	border-radius: var(--radius);
-}
 details {
 	border: var(--s1) dotted;
 	border-radius: var(--radius);
 	margin: var(--s100);
 }
+details:focus {
+	border-radius: var(--radius);
+}
 summary {
+	font-weight: bold;
 	justify-content: left;
 	padding: var(--s100);
 }
@@ -194,8 +208,17 @@ summary:hover {
 	color: var(--scr-color);
 	background: var(--txt-color);
 }
-.details-content {
+details > div {
 	padding: var(--s100);
+	text-align: left;
+}
+
+/* Lists */
+ul {
+	list-style: none;
+}
+li {
+	margin: var(--s100);
 }
 
 /* Table */
@@ -230,6 +253,11 @@ td {
 	margin: var(--s50);
 	padding: var(--s100);
 }
+.section-card .stat-label {
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+}
 
 /* Center Card */
 .center-card {
@@ -243,7 +271,7 @@ td {
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
 }
-.card-title {
+.center-card .card-title {
 	margin: var(--s100);
 }
 .center-card a {
@@ -259,9 +287,6 @@ td {
 	width: 75%;
 }
 
-/* Nav Bar */
-
-
 /* Menu Screen */
 .menu-button {
 	background: var(--scr-color);
@@ -270,7 +295,6 @@ td {
 	display: block;
 	font-size: var(--s100);
 	font-weight: bold;
-	/* height: var(--s300); */
 	line-height: var(--s200);
 	margin: auto;
 	margin-bottom: var(--s200);
@@ -282,4 +306,15 @@ td {
 .menu-button:hover {
 	background: var(--txt-color);
 	color: var(--scr-color);
+}
+
+/* Misc */
+.explanation {
+	padding: var(--s100);
+}
+.list {
+	margin-top: var(--s100);
+}
+.remaining {
+	text-align: center;;
 }

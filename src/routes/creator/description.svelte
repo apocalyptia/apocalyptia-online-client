@@ -4,7 +4,9 @@ import Description from '../../components/rules/Description'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
 const randomItem = (i) => $character = Description.list[i].random($character)
+
 const random = () => $character = Description.random($character)
+
 const reset = () => $character = Description.reset($character)
 </script>
 
@@ -119,16 +121,5 @@ div[class*='-container'] > input {
 	.item-container > input[type='text'] {
 		flex: 2;
 	}
-}
-
-.button-row {
-	display:flex;
-	justify-content: space-evenly;
-	text-align: center;
-	width: 100%;
-}
-.button-row button {
-	width: 20%;
-	min-width: 100px;
 }
 </style>

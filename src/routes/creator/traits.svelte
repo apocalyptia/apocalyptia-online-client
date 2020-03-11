@@ -59,32 +59,5 @@ beforeUpdate(() => {
 <style>
 .section-card {
 	display: block;
-	margin-bottom: var(--s200);
-}
-.stat-label {
-	font-weight: bold;
-	text-align: center;
-	width: 100%;
-}
-.explanation {
-	padding: var(--s100);
-}
-.list {
-	margin-top: var(--s100);
-}
-.remaining,
-.stat-label{
-	text-align: center;
-}
-
-.button-row {
-	display:flex;
-	justify-content: space-evenly;
-	text-align: center;
-	width: 100%;
-}
-.button-row button {
-	width: 20%;
-	min-width: 100px;
 }
 </style>

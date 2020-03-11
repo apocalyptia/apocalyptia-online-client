@@ -40,7 +40,9 @@ beforeUpdate(() => {
 				</span>
 			</summary>
 			<div class='details-content'>
-				Max Score: {$character.traits[group.name.toLowerCase()].score}
+				<div class='max-score'>
+					Max Score: {$character.traits[group.name.toLowerCase()].score}
+				</div>
 				{#each group.list as skill}
 					<div class='stat-range'>
 						<div class='stat-label'>{skill.name}</div>
@@ -69,40 +71,14 @@ beforeUpdate(() => {
 
 
 <style>
-details {
-	margin-top: var(--s200);
-	margin-bottom: var(--s200);
-}
 .group-label {
 	font-weight: bold;
 }
+.max-score {
+	text-align: center;
+}
 .stat-range {
-	margin-top: var(--s200);
+	margin: var(--s100);
 	margin-bottom: var(--s200);
-}
-.stat-label {
-	font-weight: bold;
-	text-align: center;
-	width: 100%;
-}
-.explanation {
-	padding: var(--s100);
-}
-.list {
-	margin-top: var(--s100);
-}
-.remaining {
-	text-align: center;
-}
-
-.button-row {
-	display:flex;
-	justify-content: space-evenly;
-	text-align: center;
-	width: 100%;
-}
-.button-row button {
-	width: 20%;
-	min-width: 100px;
 }
 </style>

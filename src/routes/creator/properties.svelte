@@ -56,9 +56,6 @@ beforeUpdate(() => $character = Properties.setScores($character))
 
 
 <style>
-.explanation {
-	padding: var(--s100);
-}
 .properties-list {
 	display: flex;
 	text-align: left;

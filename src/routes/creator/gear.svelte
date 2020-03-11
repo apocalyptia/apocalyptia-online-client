@@ -40,7 +40,9 @@ const randomArmor = () => {
 
 <h1>Gear</h1>
 <div class='section-card'>
-	<h2>Melee Weapon</h2>
+	<div class='item-category'>
+		<h2>Melee Weapon</h2>
+	</div>
 	{#if $character.gear.meleeWeapons.inventory.length > 0}
 		<MeleeWeaponItemTable item={$character.gear.meleeWeapons.inventory[0]}/>
 	{:else}
@@ -50,7 +52,9 @@ const randomArmor = () => {
 	{/if}
 </div>
 <div class='section-card'>
-	<h2>Ranged Weapon</h2>
+	<div class='item-category'>
+		<h2>Ranged Weapon</h2>
+	</div>
 	{#if $character.gear.rangedWeapons.inventory.length}
 		<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
 	{:else}
@@ -61,7 +65,9 @@ const randomArmor = () => {
 </div>
 {#if $character.gear.rangedWeapons.inventory.length}
 <div class='section-card'>
-	<h2>Ammo</h2>
+	<div class='item-category'>
+		<h2>Ammo</h2>
+	</div>
 	{#if $character.gear.ammo.inventory.length}
 		<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
 	{:else}
@@ -72,7 +78,9 @@ const randomArmor = () => {
 </div>
 {/if}
 <div class='section-card'>
-	<h2>Armor</h2>
+	<div class='item-category'>
+		<h2>Armor</h2>
+	</div>
 	{#if $character.gear.armor.inventory.length}
 		<ArmorItemTable item={$character.gear.armor.inventory[0]}/>
 	{:else}
@@ -88,7 +96,7 @@ const randomArmor = () => {
 .section-card {
 	display: block;
 }
-h2 {
+.item-category {
 	margin-bottom: var(--s50);
 }
 </style>

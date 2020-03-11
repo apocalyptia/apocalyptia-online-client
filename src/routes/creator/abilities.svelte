@@ -62,24 +62,7 @@ beforeUpdate(() => {
 .ability-group {
 	margin: var(--s100);
 }
-.explanation {
-	padding: var(--s100);
-}
 .abilities-list {
 	width: 100%;
-}
-.remaining {
-	text-align: center;
-}
-
-.button-row {
-	display:flex;
-	justify-content: space-evenly;
-	text-align: center;
-	width: 100%;
-}
-.button-row button {
-	width: 20%;
-	min-width: 100px;
 }
 </style>
