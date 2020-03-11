@@ -5,10 +5,10 @@ import UserMenu from './UserMenu.svelte'
 
 
 <div class='title-bar'>
-	<button on:click={()=>sapper.goto('/')}>
+	<a href='/' class='link-button title-link'>
 		<h1>Apocalyptia Online</h1>
 		<span>0.1a</span>
-	</button>
+	</a>
 	<UserMenu/>
 </div>
 
@@ -23,7 +23,7 @@ import UserMenu from './UserMenu.svelte'
 	width: 100vw;
 	z-index: 2;
 }
-button {
+.title-link {
 	display: inline-block;
 	width: 100%;
 }

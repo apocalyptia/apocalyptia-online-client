@@ -1,27 +1,21 @@
 <script>
 import * as sapper from '@sapper/app'
 import ClickOutside from './ClickOutside.svelte'
-import { logout } from '../../../stores/netlifyStore'
+import { authUserStore, logout } from '../../../stores/netlifyStore'
 
-let pendingApiCall = false
 let showMenu = false
 let trigger
 
-const toggle = () => {
-	showMenu = !showMenu
-}
+const toggle = () => showMenu = !showMenu
 
-const hide = () => {
-	showMenu = false
-}
+const hide = () => showMenu = false
 
 const logOut = () => {
-	pendingApiCall = true
-	logout(email, password).catch(e => {
-		pendingApiCall = false
-		showMenu = false
-		isSpreadProperty.goto('/')
-	})
+	logout()
+		.catch(e => {
+			showMenu = false
+			isSpreadProperty.goto('/')
+		})
 }
 </script>
 
@@ -31,8 +25,8 @@ const logOut = () => {
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
-		<button href='/' class='log-out' on:click={logOut}>Logout</button>
-		<button href='/' class='log-out' on:click={logOut}>Account</button>
+		<a href='/account' class='link-button log-out' on:click={logOut}>Account</a>
+		<a href='/' class='link-button log-out' on:click={logOut}>Logout</a>
 	</div>
 </ClickOutside>
 <div class='{showMenu ? "shadow" : "invisible"}'></div>

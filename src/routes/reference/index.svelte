@@ -2,25 +2,17 @@
 import referenceStore from '../../stores/referenceStore'
 import ContentMenu from '../../components/views/ui/ContentMenu.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
-
-const pages = [
-	'core',
-	'traits',
-	'skills',
-	'properties',
-	'combat',
-	'maneuvers',
-	'status',
-	'complications',
-	'abilities',
-	'gear'
-]
+import Capitalize from '../../components/functions/Capitalize'
 </script>
 
 
 <div class='content-menu'>
-	{#each pages as page}
-		<a class='menu-button' href='/reference/{page}'>{page.toUpperCase()}</a>
+	{#each $referenceStore.pageNames as page, i}
+		{#if i}
+			<a href='/reference/{page}' class='link-button menu-button'>
+				{Capitalize(page)}
+			</a>
+		{/if}
 	{/each}
 </div>
 <NavBar links={{back: '/', next: '/reference/core'}}/>

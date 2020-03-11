@@ -15,24 +15,29 @@ onMount(() => show = true)
 			Connection established...
 		</div>
 		<div class='button-row'>
-			<button on:click={()=>sapper.goto(`/signup`)}>
+			<a class='link-button' href='/signup'>
 				Signup
-			</button>
-			<button on:click={()=>sapper.goto(`/login`)}>
+			</a>
+			<a class='link-button' href='/login'>
 				Login
-			</button>
+			</a>
 		</div>
 	</div>
 {/if}
 
 
 <style>
+.title-row {
+	margin: var(--s100);
+}
 @media only screen and (max-width: 900px) {
-	button {
+	.button-row {
 		display: block;
-		margin: auto;
-		margin-bottom: var(--s100);
-		width: 60%;
+	}
+	.link-button {
+		display: block;
+		margin: var(--s100) auto;
+		width: 70%;
 	}
 }
 @media only screen and (min-width: 900px) {
@@ -40,7 +45,7 @@ onMount(() => show = true)
 		display: flex;
 		justify-content: space-around;
 	}
-	button {
+	.link-button {
 		width: 40%;
 	}
 }

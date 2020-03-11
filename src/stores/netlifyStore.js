@@ -22,12 +22,8 @@ export const authUserStore = writable(goTrueUser)
 export const logout = () => {
 	goTrueUser
 		.logout()
-		.then(() => {
-			authUserStore.update(() => undefined)
-		})
-		.catch(e => {
-			alert(e.message)
-		})
+		.then(() => authUserStore.update(() => undefined))
+		.catch(e => alert(e.message))
 }
 
 export async function login(email, password) {
@@ -61,7 +57,5 @@ export const confirm = (token) => {
 				JSON.stringify({ response })
 			)
 		})
-		.catch((e) => {
-			alert(e.message)
-		})
+		.catch((e) => alert(e.message))
 }
