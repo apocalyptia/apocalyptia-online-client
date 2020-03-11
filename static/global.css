@@ -236,7 +236,7 @@ ul {
 	list-style: none;
 }
 li {
-	margin: var(--s100);
+	margin: var(--s50);
 }
 
 /* Table */
