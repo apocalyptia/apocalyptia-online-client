@@ -10,7 +10,7 @@ export let item
 	</tr>
 	<tr>
 		<td>Dr: {item.dr}</td>
-		<td>Loc: {item.location}</td>
+		<td class='wide-column'>Loc: {item.location}</td>
 	</tr>
 	{#if item.attributes.length}
 	<tr>
@@ -24,3 +24,10 @@ export let item
 	{/if}
 </table>
 {/if}
+
+
+<style>
+	.wide-column {
+		flex: 2;
+	}
+</style>
