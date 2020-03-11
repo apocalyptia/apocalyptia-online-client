@@ -354,9 +354,10 @@ export default {
 		return this.limit(c, target.name)
 	},
 	limit: function(c, targetName) {
-		console.log(targetName)
 		const max = c.traits[c.skills[targetName].parent.toLowerCase()].base
-		while(this.remaining(c) < 0 || c.skills[targetName].base > max) c.skills[t].base--
+		while(this.remaining(c) < 0 || c.skills[targetName].base > max) {
+			c.skills[targetName].base--
+		}
 		return this.setScores(c)
 	},
 	random: function(c) {

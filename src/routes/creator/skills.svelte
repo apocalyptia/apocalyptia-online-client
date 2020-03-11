@@ -79,6 +79,5 @@ beforeUpdate(() => {
 }
 .stat-range {
 	margin: var(--s100);
-	margin-bottom: var(--s200);
 }
 </style>
