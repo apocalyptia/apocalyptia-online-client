@@ -58,7 +58,7 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 	{#each Abilities.explanation as line}
 		<p>{line}</p>
 	{/each}
-	<p>Buy Abilities for your Character using Experience Points (XP), or save some or all of your starting XP for later.</p>
+	<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>
 </div>
 <div class='section-card'>
 	<h3>Step 6: Gear</h3>
