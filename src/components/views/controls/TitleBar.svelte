@@ -1,6 +1,7 @@
 <script>
 import * as sapper from '@sapper/app'
 import UserMenu from './UserMenu.svelte'
+import { authUserStore } from '../../../stores/netlifyStore'
 </script>
 
 
@@ -9,7 +10,9 @@ import UserMenu from './UserMenu.svelte'
 		<h1>Apocalyptia Online</h1>
 		<span>0.1a</span>
 	</a>
-	<UserMenu/>
+	{#if $authUserStore}
+		<UserMenu/>
+	{/if}
 </div>
 
 

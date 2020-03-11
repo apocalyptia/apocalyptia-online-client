@@ -25,7 +25,6 @@ const logOut = () => {
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
-		<a href='/account' class='link-button log-out' on:click={logOut}>Account</a>
 		<a href='/' class='link-button log-out' on:click={logOut}>Logout</a>
 	</div>
 </ClickOutside>
@@ -48,19 +47,19 @@ const logOut = () => {
 }
 .user-menu {
 	background: var(--scr-color);
-	border: 1px solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	position: absolute;
-	right: 0vw;
+	right: var(--s1);
 	top: var(--s300);
 	width: 30vw;
 	min-width: 200px;
 	z-index: 4;
 }
+a {
+	display: block;
+}
 .log-out {
 	border: none;
-	height: var(--s300);
-	width: 30vw;
-	min-width: 200px;
 }
 .shadow {
 	background: rgba(0, 0, 0, .5);
