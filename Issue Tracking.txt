@@ -2,10 +2,9 @@
 
 Margin/Padding is too big on Abilities for mobile.
 Login input fields not styling correctly while typing.
-Logout still not working.
 
 - Suspected device issues
-Beta in title bar gets pushed behind menu button on Kyle's phone.
+Alpha in title bar gets pushed behind menu button on Kyle's phone.
 Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
 
 - Suspected software (OS or browser) issues
@@ -52,7 +51,7 @@ Reference:
 
 ------ DEV PATH ------
 
-finish user auth features
+finish user auth features (recovery, account settings)
 apply ability mods to character
 finish gear step (need equipment selection, xp purchasing)
 create search and sorting options for all list pages
