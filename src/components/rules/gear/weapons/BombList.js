@@ -13,6 +13,9 @@ import {
 
 export const FlashbangGrenade = new Bomb({
 	name: `Flashbang Grenade`,
+	description: [
+		`Non-lethal stun grenade.`
+	],
 	sz: 1,
 	dmg: `0`,
 	rng: `6yd`,
@@ -27,6 +30,9 @@ export const FlashbangGrenade = new Bomb({
 
 export const FragGrenade = new Bomb({
 	name: `Frag Grenade`,
+	description: [
+		`Explosive fragmentation grenade.`
+	],
 	sz: 1,
 	dmg: `d6x3`,
 	rng: `15yd`,
@@ -41,6 +47,9 @@ export const FragGrenade = new Bomb({
 
 export const MolotovCocktail = new Bomb({
 	name: `Molotov Cocktail`,
+	description: [
+		`Glass bottle of fuel with rag wick.`
+	],
 	sz: 2,
 	dmg: `d6 + 1 Fire Damage/round`,
 	rng: `3yd`,
@@ -55,6 +64,9 @@ export const MolotovCocktail = new Bomb({
 
 export const SmokeGrenade = new Bomb({
 	name: `Smoke Grenade`, 
+	description: [
+		`Visibility denial grenade.`
+	],
 	sz: 1,
 	dmg: `0`,
 	rng: `1yd/round`,
@@ -68,6 +80,9 @@ export const SmokeGrenade = new Bomb({
 
 export const TeargasGrenade = new Bomb({
 	name: `Teargas Grenade`,
+	description: [
+		`Non-lethal chemical irritant grenade.`
+	],
 	sz: 1,
 	dmg: `1`,
 	rng: `1yd/round`,
@@ -83,6 +98,9 @@ export const TeargasGrenade = new Bomb({
 
 export const Thermite = new Bomb({
 	name: `Thermite`,
+	description: [
+		`High-temperature incendiary bomb.`
+	],
 	sz: 1,
 	dmg: `d6x6`,
 	rng: `1yd`,
@@ -97,12 +115,12 @@ export const Thermite = new Bomb({
 
 
 export default [
-	{...FlashbangGrenade},
-	{...FragGrenade},
-	{...MolotovCocktail},
-	{...SmokeGrenade},
-	{...TeargasGrenade},
-	{...Thermite},
+	FlashbangGrenade,
+	FragGrenade,
+	MolotovCocktail,
+	SmokeGrenade,
+	TeargasGrenade,
+	Thermite,
 ]
 
 

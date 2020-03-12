@@ -178,19 +178,19 @@ export const TargetRifle = new RangedWeapon({
 
 
 export default [
-	{...BoltActionRifle},
-	{...CompoundBow},
-	{...Crossbow},
-	{...DoubleBarrelShotgun},
-	{...LeverActionRifle},
-	{...PumpShotgun},
-	{...Revolver},
-	{...SemiAutoCarbine},
-	{...SemiAutoPistol},
-	{...SemiAutoRifle},
-	{...SemiAutoShotgun},
-	{...TargetPistol},
-	{...TargetRifle},
+	BoltActionRifle,
+	CompoundBow,
+	Crossbow,
+	DoubleBarrelShotgun,
+	LeverActionRifle,
+	PumpShotgun,
+	Revolver,
+	SemiAutoCarbine,
+	SemiAutoPistol,
+	SemiAutoRifle,
+	SemiAutoShotgun,
+	TargetPistol,
+	TargetRifle,
 ]
 
 

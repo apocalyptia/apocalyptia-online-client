@@ -75,13 +75,13 @@ export const Suppressor = new Accessory({
 
 
 export default [
-	{...Bayonet},
-	{...Bipod},
-	{...DrumMagazine},
-	{...Foregrip},
-	{...Holosight},
-	{...Laser},
-	{...Scope},
-	{...SinglePointSling},
-	{...Suppressor},
+	Bayonet,
+	Bipod,
+	DrumMagazine,
+	Foregrip,
+	Holosight,
+	Laser,
+	Scope,
+	SinglePointSling,
+	Suppressor,
 ]

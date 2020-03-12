@@ -75,13 +75,13 @@ export const TransfusionKit = new Medical({
 
 
 export default [
-	{...Bandage},
-	{...Crutch},
-	{...EMTBag},
-	{...FirstAidKit},
-	{...PressureCuff},
-	{...Stethoscope},
-	{...SurgeryKit},
-	{...Thermometer},
-	{...TransfusionKit},
+	Bandage,
+	Crutch,
+	EMTBag,
+	FirstAidKit,
+	PressureCuff,
+	Stethoscope,
+	SurgeryKit,
+	Thermometer,
+	TransfusionKit,
 ]

@@ -161,21 +161,21 @@ export const WorkGloves = new Armor({
 
 
 export default [
-	{...AthleticHelmet},
-	{...AthleticPads},
-	{...CombatHelmet},
-	{...Coveralls},
-	{...FirefighterSuit},
-	{...FlakJacket},
-	{...GhillieSuit},
-	{...HikingBoots},
-	{...KevlarVest},
-	{...LeatherJacket},
-	{...MotorcycleHelmet},
-	{...HazmatSuit},
-	{...PlateCarrier},
-	{...WinterCoat},
-	{...WorkGloves},
+	AthleticHelmet,
+	AthleticPads,
+	CombatHelmet,
+	Coveralls,
+	FirefighterSuit,
+	FlakJacket,
+	GhillieSuit,
+	HikingBoots,
+	KevlarVest,
+	LeatherJacket,
+	MotorcycleHelmet,
+	HazmatSuit,
+	PlateCarrier,
+	WinterCoat,
+	WorkGloves,
 ]
 
 
