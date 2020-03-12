@@ -10,7 +10,7 @@ export let chapter
 	</div>
 {/if}
 {#each chapter.list as rule}
-	<details>
+	<details bind:open={rule.visible}>
 		<summary>
 			{rule.name}
 		</summary>
@@ -25,8 +25,8 @@ export let chapter
 				<ul>
 					{#each rule.subrules as subrule}
 						<li>
-							<span class='sub-name'>{subrule.name}</span>
-							<div>{@html subrule.description}</div>
+							<div class='sub-name'>{subrule.name}</div>
+							<p class='sub-desc'>{@html subrule.description}</p>
 						</li>
 					{/each}
 				</ul>
@@ -35,9 +35,9 @@ export let chapter
 				<ul>
 					{#each Object.values(rule.specialties) as specialty}
 						<li>
-							<span class='sub-name'>{specialty.name}</span>
+							<div class='sub-name'>{specialty.name}</div>
 							{#each specialty.description as spec_desc}
-								<p>{spec_desc}</p>
+								<p class='spec-desc'>{spec_desc}</p>
 							{/each}
 						</li>
 					{/each}
@@ -51,6 +51,8 @@ export let chapter
 <style>
 .sub-name {
 	font-weight: bold;
-	text-decoration: underline;
+}
+.sub-name, .sub-desc, .spec-desc {
+	margin: var(--s100);
 }
 </style>
