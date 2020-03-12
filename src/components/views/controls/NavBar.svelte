@@ -4,9 +4,9 @@ export let links
 
 
 <div class='nav-bar'>
-	<a class='link-button nav-button' href={links.back}>&ltrif;</a>
-	<a class='link-button nav-button home-button' href='/'>Home</a>
-	<a class='link-button nav-button' href={links.next}>&rtrif;</a>
+	<a href={links.back} class='link-button nav-button'>&ltrif;</a>
+	<a href='/' class='link-button nav-button home-button'>Home</a>
+	<a href={links.next} class='link-button nav-button'>&rtrif;</a>
 </div>
 
 

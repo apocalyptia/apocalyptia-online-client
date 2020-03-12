@@ -1,5 +1,4 @@
 <script>
-import * as sapper from '@sapper/app'
 import UserMenu from './UserMenu.svelte'
 import { authUserStore } from '../../../stores/netlifyStore'
 </script>
@@ -8,7 +7,7 @@ import { authUserStore } from '../../../stores/netlifyStore'
 <div class='title-bar'>
 	<a href='/' class='link-button title-link'>
 		<h1>Apocalyptia Online</h1>
-		<span>0.1a</span>
+		<sub>0.1a</sub>
 	</a>
 	{#if $authUserStore}
 		<UserMenu/>
@@ -23,7 +22,7 @@ import { authUserStore } from '../../../stores/netlifyStore'
 	position: fixed;
 	top: 0;
 	transition: top 0.3s linear;
-	width: 100vw;
+	width: calc(100vw - (var(--s1) * 2));
 	z-index: 2;
 }
 .title-link {
@@ -33,7 +32,7 @@ import { authUserStore } from '../../../stores/netlifyStore'
 h1 {
 	display: inline;
 }
-span {
+sub {
 	color: var(--alt-color);
 	border: var(--s1) dotted var(--alt-color);
 	font-size: var(--s75);

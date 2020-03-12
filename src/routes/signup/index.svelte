@@ -1,9 +1,8 @@
 <script>
-	import * as sapper from '@sapper/app'
 	import Spinner from '../../components/views/ui/Spinner.svelte'
 	import { authUserStore, signup } from '../../stores/netlifyStore'
 
-	if ($authUserStore) sapper.goto(`/`)
+	if ($authUserStore) window.location.href = `/`
 
 	let email = ``
 	let password = ``

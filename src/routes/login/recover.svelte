@@ -1,9 +1,8 @@
 <script>
-import * as sapper from '@sapper/app'
 import Spinner from '../../components/views/ui/Spinner.svelte'
 import { authUserStore, recover } from '../../stores/netlifyStore'
 
-if ($authUserStore) sapper.goto(`/`)
+if ($authUserStore) window.location.href = `/`
 
 let email = ``
 let showSuccessMessage = false
@@ -31,6 +30,7 @@ const submit = (event) => {
 		<input
 			type='email'
 			required
+			autocomplete='email'
 			placeholder='Email'
 			bind:value={email}
 		/>

@@ -20,16 +20,14 @@ const getUser = (user) => {
 export const authUserStore = writable(goTrueUser)
 
 export const logout = () => {
-	goTrueUser
-		.logout()
+	goTrueUser.logout()
 		.then(() => authUserStore.update(() => undefined))
 		.catch(e => alert(e.message))
 }
 
 export async function login(email, password) {
 	try {
-		await goTrueInstance
-				.login(email, password, true)
+		await goTrueInstance.login(email, password, true)
 				.then(user => {
 					authUserStore.update(() => getUser(user))
 					window.location.assign(`/`)
@@ -49,8 +47,7 @@ export const recover = (email) => {
 }
 
 export const confirm = (token) => {
-	goTrueInstance
-		.confirm(token)
+	goTrueInstance.confirm(token)
 		.then(function(response) {
 			alert(
 				`Account confirmed. Welcome to Apocalyptia Online. You can now login with your username and password.`,

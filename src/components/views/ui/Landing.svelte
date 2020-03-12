@@ -1,5 +1,4 @@
 <script>
-import * as sapper from '@sapper/app'
 import Typewriter from '../../functions/Typewriter'
 import { onMount } from 'svelte'
 
@@ -15,10 +14,10 @@ onMount(() => show = true)
 			Connection established...
 		</div>
 		<div class='button-row'>
-			<a class='link-button' href='/signup'>
+			<a href='/signup' class='link-button'>
 				Signup
 			</a>
-			<a class='link-button' href='/login'>
+			<a href='/login' class='link-button'>
 				Login
 			</a>
 		</div>

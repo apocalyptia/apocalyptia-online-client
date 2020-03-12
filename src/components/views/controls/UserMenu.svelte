@@ -1,5 +1,4 @@
 <script>
-import * as sapper from '@sapper/app'
 import ClickOutside from './ClickOutside.svelte'
 import { authUserStore, logout } from '../../../stores/netlifyStore'
 

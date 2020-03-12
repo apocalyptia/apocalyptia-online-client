@@ -1,9 +1,8 @@
 <script>
-import * as sapper from '@sapper/app'
 import Spinner from '../../components/views/ui/Spinner.svelte'
 import { authUserStore, login } from '../../stores/netlifyStore'
 
-if ($authUserStore) sapper.goto(`/`)
+if ($authUserStore) window.location.href = `/`
 
 let email = ``
 let password = ``
@@ -51,3 +50,13 @@ const submit = (event) => {
 		{/if}
 	</form>
 </div>
+
+
+<style>
+	button, input {
+		width: 90%;
+	}
+	button {
+		font-size: var(--s125);
+	}
+</style>

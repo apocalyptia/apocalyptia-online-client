@@ -1,5 +1,3 @@
-import * as sapper from '@sapper/app'
-
 export default class TableOfContents {
 	constructor({
 		currentIndex=0,
@@ -28,7 +26,7 @@ export default class TableOfContents {
 		}
 		if (this.currentIndex < this.startIndex) {
 			this.currentIndex = this.startIndex
-			sapper.goto('/')
+			window.location.href = `/`
 		}
 		if (this.currentIndex > this.pages.length) {
 			this.go(this.endAddress)
@@ -38,11 +36,11 @@ export default class TableOfContents {
 		this.currentIndex = index
 		let destination = this.pageNames[index]
 		if (destination.includes('_1')) destination = destination.slice(0, -2)
-		sapper.goto(`${this.startAddress}/${destination}`)
+		window.location.href = `${this.startAddress}/${destination}`
 	}
 	home() {
 		this.reset()
-		sapper.goto(this.endAddress)
+		window.location.href = this.endAddress
 	}
 	next() {
 		this.currentIndex++

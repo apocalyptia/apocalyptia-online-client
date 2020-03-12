@@ -1,22 +1,25 @@
 <script>
-import * as sapper from '@sapper/app'
 import { character } from '../../../stores/characterStore'
 </script>
 
 
 <div class='center-card'>
 	{#if $character.completed}
-		<button on:click={()=>sapper.goto('/sheet')}>
+		<a href='/sheet' class='link-button'>
 			Character Sheet
-		</button>
+		</a>
 	{/if}
-	<button on:click={()=>sapper.goto('/creator')}>
+	<a href='/creator' class='link-button'>
 		Character Creator
-	</button>
-	<button on:click={()=>sapper.goto('/reference')}>
+	</a>
+	<a href='/reference' class='link-button'>
 		Rules Reference
-	</button>
-	<!-- <button class='display-button'>
-		Narrator Section
-	</button> -->
+	</a>
 </div>
+
+
+<style>
+	.link-button {
+		margin: var(--s300);
+	}
+</style>
