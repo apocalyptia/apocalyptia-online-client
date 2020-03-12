@@ -28,8 +28,7 @@ export let name, value, min, max
 input[type="range"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	margin-top: var(--s100);
-	margin-bottom: var(--s100);
+	margin: var(--s100) auto;
 	height: var(--s100);
 	width: 100%;
 }

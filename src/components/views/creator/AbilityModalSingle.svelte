@@ -43,4 +43,7 @@ const updateAbilities = () => {
 .taken-label {
 	flex: 1;
 }
+select {
+	width: var(--s300);
+}
 </style>

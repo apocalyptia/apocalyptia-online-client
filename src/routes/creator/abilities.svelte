@@ -1,7 +1,6 @@
 <script>
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import ToggleVisible from '../../components/functions/ToggleVisible'
 import Abilities from '../../components/rules/Abilities'
 import AbilityGroup from '../../components/views/creator/AbilityGroup.svelte'
 import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
@@ -42,14 +41,10 @@ beforeUpdate(() => {
 			<AbilityCurrent {MasterAbilityList}/>
 		</div>
 	{/if}
-	<div class='section-card'>
-		<div class='abilities-list'>
-			{#each Abilities.groups as group, index}
-				<div class='ability-group'>
-					<AbilityGroup {group} {MasterAbilityList}/>
-				</div>
-			{/each}
-		</div>
+	<div class='abilities-list'>
+		{#each Abilities.groups as group, index}
+			<AbilityGroup {group} {MasterAbilityList}/>
+		{/each}
 	</div>
 	<div class='button-row'>
 		<button on:click={resetAbilities}>Reset</button>
@@ -59,9 +54,6 @@ beforeUpdate(() => {
 
 
 <style>
-.ability-group {
-	margin: var(--s100);
-}
 .abilities-list {
 	width: 100%;
 }
