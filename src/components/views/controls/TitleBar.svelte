@@ -5,7 +5,7 @@ import { authUserStore } from '../../../stores/netlifyStore'
 
 
 <div class='title-bar'>
-	<a href='/' class='link-button title-link'>
+	<a href='/' class='link-btn title-link'>
 		<h1>Apocalyptia Online</h1>
 		<sub>0.1a</sub>
 	</a>

@@ -1,13 +1,28 @@
 <script>
+import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 import Description from '../../components/rules/Description'
 import NavBar from '../../components/views/controls/NavBar.svelte'
+
+let proceed = false
 
 const randomItem = (i) => $character = Description.list[i].random($character)
 
 const random = () => $character = Description.random($character)
 
 const reset = () => $character = Description.reset($character)
+
+beforeUpdate(() => {
+	let desc = Object.keys($character.description)
+	for (let i = 0; i < desc.length; i++) {
+		console.log($character.description[desc[i]].value)
+		if (desc[i] = "") {
+			proceed = false
+			return
+		}
+	}
+	proceed = true
+})
 </script>
 
 
@@ -45,11 +60,11 @@ const reset = () => $character = Description.reset($character)
 	{/if}
 	{/each}
 </div>
-<div class='button-row'>
-	<button class='center-button' on:click={reset}>Reset</button>
-	<button class='center-button' on:click={random}>Random</button>
+<div class='btn-row'>
+	<button class='cntr-btn' on:click={reset}>Reset</button>
+	<button class='cntr-btn' on:click={random}>Random</button>
 </div>
-<NavBar links={{back: '/creator/creation', next: '/creator/traits'}}/>
+<NavBar links={{back: '/creator/creation', next: '/creator/traits'}} {proceed}/>
 
 
 <style>

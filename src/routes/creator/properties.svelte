@@ -52,7 +52,7 @@ beforeUpdate(() => $character = Properties.setScores($character))
 		</div>
 	</div>
 </div>
-<NavBar links={{back: '/creator/skills', next: '/creator/abilities'}}/>
+<NavBar links={{back: '/creator/skills', next: '/creator/abilities'}} proceed={true}/>
 
 
 <style>

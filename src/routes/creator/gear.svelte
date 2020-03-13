@@ -10,6 +10,11 @@ import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponLi
 import { Nd6, RandomRoll } from '../../components/functions/Random'
 import { character } from '../../stores/characterStore'
 import NavBar from '../../components/views/controls/NavBar.svelte'
+import { beforeUpdate } from 'svelte'
+
+let proceed = false
+
+let next = '/creator/gear'
 
 const randomMelee = () => {
 	$character.gear.meleeWeapons.inventory.push(RandomRoll(MeleeWeaponList))
@@ -35,6 +40,14 @@ const randomArmor = () => {
 	$character.gear.armor.inventory.push(RandomRoll(ArmorList))
 	$character = $character
 }
+
+beforeUpdate(() => {
+	proceed = Object.values($character.gear).every(item_type => {
+		item_type.inventory.length
+	})
+	if (proceed) next = '/creator/sheet'
+	else next = '/creator/gear'
+})
 </script>
 
 
@@ -46,7 +59,7 @@ const randomArmor = () => {
 	{#if $character.gear.meleeWeapons.inventory.length > 0}
 		<MeleeWeaponItemTable item={$character.gear.meleeWeapons.inventory[0]}/>
 	{:else}
-		<div class='center-button'>
+		<div class='cntr-btn'>
 			<button on:click={randomMelee}>Random</button>
 		</div>
 	{/if}
@@ -58,7 +71,7 @@ const randomArmor = () => {
 	{#if $character.gear.rangedWeapons.inventory.length}
 		<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
 	{:else}
-		<div class='center-button'>
+		<div class='cntr-btn'>
 			<button on:click={randomRanged}>Random</button>
 		</div>
 	{/if}
@@ -71,7 +84,7 @@ const randomArmor = () => {
 	{#if $character.gear.ammo.inventory.length}
 		<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
 	{:else}
-		<div class='center-button'>
+		<div class='cntr-btn'>
 			<button on:click={randomAmmo}>Random</button>
 		</div>
 	{/if}
@@ -84,12 +97,12 @@ const randomArmor = () => {
 	{#if $character.gear.armor.inventory.length}
 		<ArmorItemTable item={$character.gear.armor.inventory[0]}/>
 	{:else}
-		<div class='center-button'>
+		<div class='cntr-btn'>
 			<button on:click={randomArmor}>Random</button>
 		</div>
 	{/if}
 </div>
-<NavBar links={{back: '/creator/abilities', next: '/creator/sheet'}}/>
+<NavBar links={{back: '/creator/abilities', next: next}} {proceed}/>
 
 
 <style>

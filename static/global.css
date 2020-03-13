@@ -168,16 +168,16 @@ button {
 	height: var(--s300);
 	padding: var(--s50);
 }
-.center-button {
+.cntr-btn {
 	text-align: center;
 }
-.button-row {
+.btn-row {
 	display:flex;
 	justify-content: space-evenly;
 	text-align: center;
 	width: 100%;
 }
-.button-row button {
+.btn-row button {
 	width: 20%;
 	min-width: 100px;
 }
@@ -197,10 +197,10 @@ select {
 }
 
 /* Link Buttons */
-.link-button {
+.link-btn {
 	background: var(--scr-color);
 	border-radius: var(--radius);
-	border: var(--s1) solid var(--txt-color);
+	border: var(--s10) solid var(--txt-color);
 	font-size: var(--s125);
 	font-weight: bold;
 	line-height: var(--s200);
@@ -208,8 +208,8 @@ select {
 	text-align: center;
 	vertical-align: middle;
 }
-.link-button:active,
-.link-button:hover {
+.link-btn:active,
+.link-btn:hover {
 	background: var(--txt-color);
 	color: var(--scr-color);
 }
@@ -287,7 +287,7 @@ td {
 }
 
 /* Center Card */
-.center-card {
+.cntr-card {
 	border: var(--s1) solid var(--txt-color);
 	display: block;
 	left: 50vw;
@@ -299,24 +299,24 @@ td {
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
 }
-.center-card .card-title {
+.cntr-card .card-title {
 	margin: var(--s100);
 }
-.center-card a {
+.cntr-card a {
 	display: block;
 }
-.center-card input {
+.cntr-card input {
 	height: var(--s200);
 	margin: var(--s100);
 	width: 80%;
 }
-.center-card button {
+.cntr-card button {
 	margin: var(--s100);
 	width: 75%;
 }
 
 /* Menu Screen */
-.menu-button {
+.menu-btn {
 	display: block;
 	margin: auto;
 	margin-bottom: var(--s200);

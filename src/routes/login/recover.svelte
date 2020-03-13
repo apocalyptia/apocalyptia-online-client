@@ -22,7 +22,7 @@ const submit = (event) => {
 </script>
 
 
-<div class='center-card'>
+<div class='cntr-card'>
 	<div class='card-title'>
 		Request Account Recovery
 	</div>

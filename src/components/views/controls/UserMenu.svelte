@@ -24,7 +24,7 @@ const logOut = () => {
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
-		<a href='/' class='link-button log-out' on:click={logOut}>Logout</a>
+		<a href='/' class='link-btn log-out' on:click={logOut}>Logout</a>
 	</div>
 </ClickOutside>
 <div class='{showMenu ? "shadow" : "invisible"}'></div>

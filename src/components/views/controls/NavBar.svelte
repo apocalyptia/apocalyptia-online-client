@@ -1,12 +1,19 @@
 <script>
 export let links
+export let proceed
 </script>
 
 
 <div class='nav-bar'>
-	<a href={links.back} class='link-button nav-button'>&ltrif;</a>
-	<a href='/' class='link-button nav-button home-button'>Home</a>
-	<a href={links.next} class='link-button nav-button'>&rtrif;</a>
+	<a href={links.back} class='link-btn nav-button'>&ltrif;</a>
+	<a href='/' class='link-btn nav-button home-button'>Home</a>
+	<a href={links.next} class='link-btn nav-button'>
+		{#if proceed}
+			&rtrif;
+		{:else}
+			X
+		{/if}
+	</a>
 </div>
 
 

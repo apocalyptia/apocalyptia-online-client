@@ -46,11 +46,11 @@ beforeUpdate(() => {
 			<AbilityGroup {group} {MasterAbilityList}/>
 		{/each}
 	</div>
-	<div class='button-row'>
+	<div class='btn-row'>
 		<button on:click={resetAbilities}>Reset</button>
 	</div>
 </div>
-<NavBar links={{back: '/creator/properties', next: '/creator/gear'}}/>
+<NavBar links={{back: '/creator/properties', next: '/creator/gear'}} proceed={true}/>
 
 
 <style>

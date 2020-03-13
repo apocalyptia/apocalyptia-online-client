@@ -20,7 +20,7 @@ const submit = (event) => {
 </script>
 
 
-<div class='center-card'>
+<div class='cntr-card'>
 	<form on:submit|preventDefault={submit}>
 		<input
 			type='email'

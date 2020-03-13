@@ -33,7 +33,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 			<AbilityModalSingle {ability} {MasterAbilityList}/>
 		{/if}
 	</div>
-	<div class='button-row'>
+	<div class='btn-row'>
 		<button on:click={close}>Close</button>
 	</div>
 </div>
@@ -61,7 +61,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	background: rgba(0,0,0,0.9);
 	border: var(--s1) solid;
 }
-.button-row {
+.btn-row {
 	text-align: center;
 }
 .stats-section {

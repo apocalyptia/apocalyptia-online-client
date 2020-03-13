@@ -9,15 +9,15 @@ onMount(() => show = true)
 
 
 {#if show}
-	<div class='center-card'>
+	<div class='cntr-card'>
 		<div class='title-row' in:Typewriter>
 			Connection established...
 		</div>
-		<div class='button-row'>
-			<a href='/signup' class='link-button'>
+		<div class='btn-row'>
+			<a href='/signup' class='link-btn'>
 				Signup
 			</a>
-			<a href='/login' class='link-button'>
+			<a href='/login' class='link-btn'>
 				Login
 			</a>
 		</div>
@@ -30,21 +30,21 @@ onMount(() => show = true)
 	margin: var(--s100);
 }
 @media only screen and (max-width: 900px) {
-	.button-row {
+	.btn-row {
 		display: block;
 	}
-	.link-button {
+	.link-btn {
 		display: block;
 		margin: var(--s100) auto;
 		width: 70%;
 	}
 }
 @media only screen and (min-width: 900px) {
-	.button-row {
+	.btn-row {
 		display: flex;
 		justify-content: space-around;
 	}
-	.link-button {
+	.link-btn {
 		width: 40%;
 	}
 }

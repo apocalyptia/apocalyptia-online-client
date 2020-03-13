@@ -9,7 +9,7 @@ import Capitalize from '../../components/functions/Capitalize'
 <div class='content-menu'>
 	{#each $referenceStore.pageNames as page, i}
 		{#if i}
-			<a href='/reference/{page}' class='link-button menu-button'>
+			<a href='/reference/{page}' class='link-btn menu-btn'>
 				{Capitalize(page)}
 			</a>
 		{/if}

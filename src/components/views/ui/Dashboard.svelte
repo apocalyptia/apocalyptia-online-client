@@ -3,23 +3,23 @@ import { character } from '../../../stores/characterStore'
 </script>
 
 
-<div class='center-card'>
+<div class='cntr-card'>
 	{#if $character.completed}
-		<a href='/sheet' class='link-button'>
+		<a href='/sheet' class='link-btn'>
 			Character Sheet
 		</a>
 	{/if}
-	<a href='/creator' class='link-button'>
+	<a href='/creator' class='link-btn'>
 		Character Creator
 	</a>
-	<a href='/reference' class='link-button'>
+	<a href='/reference' class='link-btn'>
 		Rules Reference
 	</a>
 </div>
 
 
 <style>
-	.link-button {
+	.link-btn {
 		margin: var(--s300);
 	}
 </style>

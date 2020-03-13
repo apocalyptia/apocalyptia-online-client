@@ -64,7 +64,7 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 	<h3>Step 6: Gear</h3>
 	<p>Equip your Character with a random Melee weapon, a random Ranged weapon (with some random Ammo), and a random piece of Armor.</p>
 </div>
-<NavBar links={{back: '/', next: '/creator/description'}}/>
+<NavBar links={{back: '/', next: '/creator/description'}} proceed={true}/>
 
 
 <style>

@@ -6,6 +6,7 @@ import Slider from '../../components/views/controls/Slider.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let remaining = Traits.remaining($character)
+let next = '/creator/traits'
 
 const assign = (event) => $character = Traits.assign($character, event.target)
 
@@ -16,6 +17,8 @@ const reset = () => $character = Traits.reset($character)
 beforeUpdate(() => {
 	$character = Traits.setScores($character)
 	remaining = Traits.remaining($character)
+	if (remaining == 0) next = '/creator/skills'
+	else next = '/creator/traits'
 })
 </script>
 
@@ -45,7 +48,7 @@ beforeUpdate(() => {
 		</div>
 	{/each}
 </div>
-<div class='button-row'>
+<div class='btn-row'>
 	<button on:click={reset}>
 		Reset
 	</button>
@@ -53,7 +56,7 @@ beforeUpdate(() => {
 		Random
 	</button>
 </div>
-<NavBar links={{back: '/creator/description', next: '/creator/skills'}}/>
+<NavBar links={{ back: '/creator/description', next: next }} proceed={remaining == 0}/>
 
 
 <style>
