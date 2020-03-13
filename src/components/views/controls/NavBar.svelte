@@ -1,6 +1,6 @@
 <script>
 export let links
-export let proceed
+export let proceed = true
 </script>
 
 

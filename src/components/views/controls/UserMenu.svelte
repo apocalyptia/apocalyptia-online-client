@@ -19,7 +19,7 @@ const logOut = () => {
 </script>
 
 
-<button class='user-button' bind:this={trigger} on:click={toggle}>
+<button class='user-btn' bind:this={trigger} on:click={toggle}>
 	<h1>&#9776;</h1>
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
@@ -31,8 +31,9 @@ const logOut = () => {
 
 
 <style>
-.user-button {
+.user-btn {
 	align-content: center;
+	border: var(--s10) solid var(--txt-color);
 	display: flex;
 	height: var(--s300);
 	justify-content: center;

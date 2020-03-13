@@ -248,10 +248,6 @@ export default class Character {
 				name: `Ammo`,
 				inventory: []
 			},
-			backpack: {
-				name: `Backpack`,
-				inventory: []
-			},
 		}
 	}
 }

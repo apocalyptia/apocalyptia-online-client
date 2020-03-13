@@ -6,6 +6,8 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let proceed = false
 
+let next = '/creator/description'
+
 const randomItem = (i) => $character = Description.list[i].random($character)
 
 const random = () => $character = Description.random($character)
@@ -13,15 +15,15 @@ const random = () => $character = Description.random($character)
 const reset = () => $character = Description.reset($character)
 
 beforeUpdate(() => {
-	let desc = Object.keys($character.description)
-	for (let i = 0; i < desc.length; i++) {
-		console.log($character.description[desc[i]].value)
-		if (desc[i] = "") {
+	for (let desc of Object.values($character.description)) {
+		if (desc.value == "") {
 			proceed = false
-			return
+			break
 		}
+		else proceed = true
 	}
-	proceed = true
+	if (proceed) next = '/creator/traits'
+	else next = '/creator/description'
 })
 </script>
 
@@ -42,29 +44,29 @@ beforeUpdate(() => {
 		</div>
 	</div>
 	{#each Description.list as _, index}
-	{#if index % 2 == 0 && index < Description.list.length - 2}
-		<div class='item-block'>
-			<div class='item-container'>
-				<span>{Description.list[index + 2].name}:</span>
-				<input type='text' bind:value={
-					$character.description[Description.list[index + 2].name.toLowerCase()].value}>
-				<button on:click={() => randomItem(index + 2)}>Random</button>
+		{#if index % 2 == 0 && index < Description.list.length - 2}
+			<div class='item-block'>
+				<div class='item-container'>
+					<span>{Description.list[index + 2].name}:</span>
+					<input type='text' bind:value={
+						$character.description[Description.list[index + 2].name.toLowerCase()].value}>
+					<button on:click={() => randomItem(index + 2)}>Random</button>
+				</div>
+				<div class='item-container'>
+					<span>{Description.list[index + 3].name}:</span>
+					<input type='text' bind:value={
+						$character.description[Description.list[index + 3].name.toLowerCase()].value}>
+					<button on:click={() => randomItem(index + 3)}>Random</button>
+				</div>
 			</div>
-			<div class='item-container'>
-				<span>{Description.list[index + 3].name}:</span>
-				<input type='text' bind:value={
-					$character.description[Description.list[index + 3].name.toLowerCase()].value}>
-				<button on:click={() => randomItem(index + 3)}>Random</button>
-			</div>
-		</div>
-	{/if}
+		{/if}
 	{/each}
 </div>
 <div class='btn-row'>
 	<button class='cntr-btn' on:click={reset}>Reset</button>
 	<button class='cntr-btn' on:click={random}>Random</button>
 </div>
-<NavBar links={{back: '/creator/creation', next: '/creator/traits'}} {proceed}/>
+<NavBar links={{back: '/creator/creation', next: next}} {proceed}/>
 
 
 <style>

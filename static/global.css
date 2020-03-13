@@ -54,6 +54,9 @@ table {
 	/* Global Units */
 	--s1: 1px;
 	--s2: 2px;
+	--s3: 3px;
+	--s4: 4px;
+	--s5: 5px;
 	--s10: calc(var(--s100) * .1);
 	--s25: calc(var(--s100) * .25);
 	--s33: calc(var(--s100) * .33);
@@ -200,7 +203,7 @@ select {
 .link-btn {
 	background: var(--scr-color);
 	border-radius: var(--radius);
-	border: var(--s10) solid var(--txt-color);
+	border: var(--s2) solid var(--txt-color);
 	font-size: var(--s125);
 	font-weight: bold;
 	line-height: var(--s200);
@@ -288,7 +291,7 @@ td {
 
 /* Center Card */
 .cntr-card {
-	border: var(--s1) solid var(--txt-color);
+	border: var(--s3) solid var(--txt-color);
 	display: block;
 	left: 50vw;
 	max-width: 500px;
