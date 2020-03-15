@@ -15,7 +15,9 @@
     "compression": "^1.7.1",
     "cypress": "^4.1.0",
     "express": "^4.17.1",
+    "g": "^2.0.1",
     "gotrue-js": "^0.9.25",
+    "netlify-cli": "^2.39.0",
     "sirv": "^0.4.2",
     "svelte-spinner": "^2.0.2"
   },

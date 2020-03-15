@@ -1,4 +1,6 @@
 <script>
+import GearBlock from '../ui/GearBlock.svelte'
+
 export let chapter
 </script>
 
@@ -15,23 +17,22 @@ export let chapter
 			{rule.name}
 		</summary>
 		<div>
-			{#each rule.description as desc}
-				<p>{@html desc}</p>
-			{/each}
-			{#if rule.table}
-				<svelte:component this={rule.table}/>
-			{/if}
+			<GearBlock {rule}/>
+
 			{#if rule.subrules}
 				<ul>
 					{#each rule.subrules as subrule}
 						<li>
 							<div class='sub-name'>{subrule.name}</div>
-							<p class='sub-desc'>{@html subrule.description}</p>
+							{#each subrule.description as sub_desc}
+								<p class='sub-desc'>{sub_desc}</p>
+							{/each}
 						</li>
 					{/each}
 				</ul>
 			{/if}
-			{#if rule.hasOwnProperty('specialties')}
+
+			{#if rule.specialties}
 				<ul>
 					{#each Object.values(rule.specialties) as specialty}
 						<li>

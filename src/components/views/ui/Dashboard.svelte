@@ -15,11 +15,14 @@ import { character } from '../../../stores/characterStore'
 	<a href='/reference' class='link-btn'>
 		Rules Reference
 	</a>
+	<a href='/random' class='link-btn'>
+		Random Roller
+	</a>
 </div>
 
 
 <style>
 	.link-btn {
-		margin: var(--s300);
+		margin: var(--s100);
 	}
 </style>

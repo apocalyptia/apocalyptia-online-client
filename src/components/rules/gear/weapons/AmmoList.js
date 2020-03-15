@@ -222,7 +222,6 @@ export default [
 	Standard308,
 	HollowPoint308,
 	Match308,
-	Match308,
 	Buckshot12g,
 	Slug12g,
 ]

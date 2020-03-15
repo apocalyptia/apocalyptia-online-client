@@ -43,17 +43,14 @@ const randomArmor = () => {
 
 beforeUpdate(function() {
 	for (let item of Object.values($character.gear)) {
-		console.log(item.name, item.inventory)
 		if (item.inventory.length == 0) {
 			proceed = false
 			break
 		}
 		else proceed = true
 	}
-	console.log(proceed)
 	if (proceed) next = '/creator/sheet'
 	else next = '/creator/gear'
-	console.log(next)
 })
 </script>
 

@@ -58,7 +58,7 @@ export const GeneralScienceKnowledge = new Document({
 })
 
 export const GraysAnatomy = new Document({
-	name: `Gray\`s Anatomy`,
+	name: `Gray's Anatomy`,
 	description: [
 		`+1 Medicine`,
 	],

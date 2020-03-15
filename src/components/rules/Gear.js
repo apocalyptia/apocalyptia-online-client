@@ -30,8 +30,9 @@ const Gear = {
 		...ElectronicsList,
 		...EquipmentList,
 		...MedicalList,
-		...StorageList,
-		...WeaponList
+		...MeleeWeaponList,
+		...RangedWeaponList,
+		...StorageList
 	].sort((a, b) => PropSort(a, b, 'name'))
 }
 
