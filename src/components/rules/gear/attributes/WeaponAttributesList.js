@@ -61,7 +61,7 @@ export const Pierce = new WeaponAttribute({
 export const Rapid = new WeaponAttribute({
 	name: 'Rapid',
 	description: [
-		'2 AttackS for 1 Action.',
+		'2 Attacks for 1 Action.',
 	]
 })
 
