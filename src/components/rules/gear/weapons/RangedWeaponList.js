@@ -1,6 +1,5 @@
 import RangedWeapon from '../../../classes/RangedWeapon'
 import {
-	OneHanded,
 	Rapid,
 	Scatter,
 	TwoHanded
@@ -12,7 +11,9 @@ export const BoltActionRifle = new RangedWeapon({
 	sz: 4,
 	dmg: 3,
 	rng: 200,
-	attributes: [TwoHanded],
+	attributes: [
+		TwoHanded
+	],
 	mag: 5,
 	cal: `.308`,
 	reg: `C`
@@ -23,7 +24,9 @@ export const CompoundBow = new RangedWeapon({
 	sz: 4,
 	dmg: 1,
 	rng: 15,
-	attributes: [TwoHanded],
+	attributes: [
+		TwoHanded
+	],
 	mag: 1,
 	cal: `Arrow`,
 	reg: `C`
@@ -34,7 +37,9 @@ export const Crossbow = new RangedWeapon({
 	sz: 4,
 	dmg: 2,
 	rng: 20,
-	attributes: [TwoHanded],
+	attributes: [
+		TwoHanded
+	],
 	mag: 1,
 	cal: `Arrow`,
 	reg: `C`
@@ -60,7 +65,9 @@ export const LeverActionRifle = new RangedWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 50,
-	attributes: [TwoHanded],
+	attributes: [
+		TwoHanded
+	],
 	mag: 10,
 	cal: `.357`,
 	reg: `C`
@@ -85,7 +92,9 @@ export const Revolver = new RangedWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 10,
-	attributes: [OneHanded],
+	attributes: [
+		TwoHanded
+	],
 	mag: 6,
 	cal: `.357`,
 	reg: `C`
@@ -111,7 +120,7 @@ export const SemiAutoPistol = new RangedWeapon({
 	dmg: 1,
 	rng: 10,
 	attributes: [
-		OneHanded,
+		TwoHanded,
 		Rapid,
 	],
 	mag: 15,
@@ -154,7 +163,7 @@ export const TargetPistol = new RangedWeapon({
 	dmg: 1,
 	rng: 30,
 	attributes: [
-		OneHanded,
+		TwoHanded,
 		Rapid
 	],
 	mag: 10,

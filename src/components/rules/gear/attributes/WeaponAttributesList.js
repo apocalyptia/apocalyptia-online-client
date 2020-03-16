@@ -5,7 +5,7 @@ import { Unarmed } from '../../Status'
 export const OneHanded = new WeaponAttribute({
 	name: '1h',
 	description: [
-		'Used one-handed. +1 Ranged Attack if used with both hands.',
+		'Used one-handed.',
 	]
 })
 
