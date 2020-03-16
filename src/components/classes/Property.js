@@ -8,16 +8,16 @@ export default class Property extends Stat {
 		base,
 		mods,
 		score,
-		parent
+		parent=``
 	}) {
 		super({
 			name,
 			description,
 			formula,
-			mods,
-			parent
+			mods
 		})
 		this.base = base
 		this.score = score
+		this.parent = parent
 	}
 }

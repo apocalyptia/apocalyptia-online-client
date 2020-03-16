@@ -12,14 +12,15 @@ export const Aim = new Maneuver({
 	],
 })
 
-export const CalledShot = new Maneuver({
+const CalledShot = new Maneuver({
 	category: `Offensive`,
 	name: `Called Shot`, 
 	description: [
 		`Attacks target the Torso by default. A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects based on Location.`,
-	],
-	table: CalledShotTable
+	]
 })
+CalledShot.table = CalledShotTable
+export { CalledShot }
 
 export const Disarm = new Maneuver({
 	category: `Offensive`,
@@ -107,7 +108,7 @@ export const Throw = new Maneuver({
 
 // Composite Rules
 
-export const Grapple = new Maneuver({
+const Grapple = new Maneuver({
 	category: `Offensive`,
 	name: `Grapple`,
 	description: [
@@ -120,14 +121,15 @@ export const Grapple = new Maneuver({
 		`With each new Grapple roll, the difference between the combatants' results is a modifier to the Attacker's next Grapple roll.`,
 		`Each round the Attacker must choose to either spend 1 Action just to retain the Grapple, make another Grapple roll, or let go.`,
 		`When the Defender reduces the Grapple step to 0 they escape.`,
-	],
-	subrules: [
-		Grab,
-		Hostage, 
-		Tackle, 
-		Throw
 	]
 })
+Grapple.subrules = [
+	Grab,
+	Hostage, 
+	Tackle, 
+	Throw
+]
+export { Grapple }
 
 
 export default [

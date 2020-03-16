@@ -1,4 +1,4 @@
-import RangedWeapon from '../../../classes/RangedWeapon'
+import RangedWeapon from '../../../classes/gear/RangedWeapon'
 import {
 	Rapid,
 	Scatter,

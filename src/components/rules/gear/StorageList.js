@@ -1,4 +1,4 @@
-import Storage from '../../classes/Storage'
+import Storage from '../../classes/gear/Storage'
 
 
 export const Backpack = new Storage({

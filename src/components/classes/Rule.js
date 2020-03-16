@@ -1,16 +1,14 @@
 export default class Rule {
 	constructor({
 		name=``,
-		description=[``],
+		description=[],
 		subrules=[],
-		table=null,
 		visible=false,
-		formula=null
+		formula
 	}) {
 		this.name = name
 		this.description = description
 		this.subrules = subrules
-		this.table = table
 		this.visible = visible,
 		this.formula = formula
 	}

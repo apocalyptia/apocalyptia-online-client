@@ -1,4 +1,4 @@
-import Equipment from '../../classes/Equipment'
+import Equipment from '../../classes/gear/Equipment'
 
 
 export const AirHorn = new Equipment({

@@ -197,19 +197,20 @@ export const Unstable = new Rule({
 	]
 })
 
-export const Needs = new Rule({
+const Needs = new Rule({
 	name: `Needs`, 
 	description: [
 		`1 Pain for each lacking Need over a given period of time:`,
-	],
-	subrules: [
-		Asphyxiation,
-		Dehydration,
-		Exhaustion,
-		Hypothermia,
-		Starvation,
 	]
 })
+Needs.subrules = [
+	Asphyxiation,
+	Dehydration,
+	Exhaustion,
+	Hypothermia,
+	Starvation,
+]
+export { Needs }
 
 export default {
 	name: `Status`,

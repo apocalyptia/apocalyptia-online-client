@@ -1,4 +1,4 @@
-import Armor from '../../classes/Armor'
+import Armor from '../../classes/gear/Armor'
 import {
 	Camo,
 	ColdResistance,

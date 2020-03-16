@@ -1,4 +1,4 @@
-import AmmoAttribute from '../../../classes/AmmoAttribute'
+import AmmoAttribute from '../../../classes/gear/AmmoAttribute'
 
 
 export const Broadhead = new AmmoAttribute({

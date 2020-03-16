@@ -97,35 +97,37 @@ export const ReflexiveDefense = new Rule({
 
 // Composite Rules
 
-export const Damage = new Rule({
+const Damage = new Rule({
 	name: `Damage`, 
 	description: [
 		`Damage causes Wounds. You die when Wounds = Health.`,
 		`Successful Attacks do Damage = [(Attack - Defense) + Weapon Damage].`,
 		`All Wounds cause Pain penalties.`,
-	],
-	subrules: [
-		DamageResistance,
-		FireDamage,
-		Pain,
-		Recovery,
 	]
 })
+Damage.subrules = [
+	DamageResistance,
+	FireDamage,
+	Pain,
+	Recovery,
+]
+export { Damage }
 
-export const Defense = new Rule({
+const Defense = new Rule({
 	name: `Defense`, 
 	description: [
 		`Spend an Action on your enemy's turn to use either type of Defense: Block or Dodge.`,
 		`To Block, roll [d6 + Melee] vs Melee Attacks.`,
 		`To Dodge, roll [d6 + Acrobatics] vs either Melee or Ranged Attacks.`,
 		`Botching a Defense roll makes you fall Prone.`,
-	],
-	subrules: [
-		ReflexiveDefense,
 	]
 })
+Defense.subrules = [
+	ReflexiveDefense
+]
+export { Defense }
 
-export const Movement = new Rule({
+const Movement = new Rule({
 	name: `Movement`, 
 	description: [
 		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn.`,
@@ -134,11 +136,12 @@ export const Movement = new Rule({
 		`You may divide up your Movement around other Actions on your turn however you wish.`,
 		`When you take a Movement Action, you may go Prone at any time for free.`,
 		`Standing up counts as Movement and costs 1 Action.`,
-	],
-	subrules: [
-		Chase,
 	]
 })
+Movement.subrules = [
+	Chase,
+]
+export { Movement }
 
 
 // Vehicle Rules

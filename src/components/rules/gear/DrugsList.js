@@ -1,4 +1,4 @@
-import Drug from '../../classes/Drug'
+import Drug from '../../classes/gear/Drug'
 
 
 export const Alcohol = new Drug({

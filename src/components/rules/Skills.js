@@ -41,7 +41,7 @@ export const larceny = new Skill({
 		`Delicate manual operations.`,
 	],
 	parent: `agility`,
-	difficulty: 'varies',
+	difficulty: `varies`,
 	specialties: {
 		mechanical: new Specialty({
 			name: `Mechanical`,
@@ -65,7 +65,7 @@ export const ranged = new Skill({
 		`Projectile combat.`,
 	],
 	parent: `Agility`,
-	difficulty: 'Defense',
+	difficulty: `Defense`,
 	specialties: {
 		shoot: new Specialty({
 			name: `Shoot`,
@@ -89,7 +89,7 @@ export const stealth = new Skill({
 		`Conceal your presence.`,
 	],
 	parent: `Agility`,
-	difficulty: 'Perception',
+	difficulty: `Perception`,
 	specialties: {
 		hide: new Specialty({
 			name: `Hide`,
@@ -118,7 +118,7 @@ export const medicine = new Skill({
 		`Diagnosing and treating wounds.`,
 	],
 	parent: `Brains`,
-	difficulty: 'Wounds',
+	difficulty: `Wounds`,
 	specialties: {
 		firstaid: new Specialty({
 			name: `First-Aid`,
@@ -144,7 +144,7 @@ export const perception = new Skill({
 		`Processing sensory input.`,
 	],
 	parent: `Brains`,
-	difficulty: 'varies',
+	difficulty: `varies`,
 	specialties: {
 		search: new Specialty({
 			name: `Search`,
@@ -167,7 +167,7 @@ export const science = new Skill({
 		`Knowledge of physical laws.`,
 	],
 	parent: `Brains`,
-	difficulty: 'varies',
+	difficulty: `varies`,
 	specialties: {
 		chemistry: new Specialty({
 			name: `Chemistry`,
@@ -190,7 +190,7 @@ export const survival = new Skill({
 		`Primitive practices for living outdoors.`,
 	],
 	parent: `Brains`,
-	difficulty: 'Biome',
+	difficulty: `Biome`,
 	specialties: {
 		forage: new Specialty({
 			name: `Forage`,
@@ -221,7 +221,7 @@ export const athletics = new Skill({
 		`Physically difficult forms of motion.`,
 	],
 	parent: `Constitution`,
-	difficulty: 'varies',
+	difficulty: `varies`,
 	specialties: {
 		climb: new Specialty({
 			name: `Climb`,
@@ -244,7 +244,7 @@ export const build = new Skill({
 		`Make an item from [d6 + #] Parts.`,
 	],
 	parent: `Constitution`,
-	difficulty: 'varies',
+	difficulty: `varies`,
 	specialties: {
 		customize: new Specialty({
 			name: `Customize`,
@@ -271,7 +271,7 @@ export const drive = new Skill({
 		`Operate vehicles.`,
 	],
 	parent: `Constitution`,
-	difficulty: 'varies',
+	difficulty: `varies`,
 	specialties: {
 		ram: new Specialty({
 			name: `Ram`,
@@ -294,7 +294,7 @@ export const melee = new Skill({
 		`Hand-to-hand combat.`,
 	],
 	parent: `Constitution`,
-	difficulty: 'Attack or Defense',
+	difficulty: `Attack or Defense`,
 	specialties: {
 		block: new Specialty({
 			name: `Block`,
@@ -327,7 +327,7 @@ export const leadership = new Skill({
 		`Modifiers from multiple uses of the same Leadership Specialty do not stack.`,
 	],
 	parent: `Demeanor`,
-	difficulty: 'Demeanor',
+	difficulty: `Demeanor`,
 	specialties: {
 		encourage: new Specialty({
 			name: `Encourage`,
@@ -352,7 +352,7 @@ export const perform = new Skill({
 		`Captivating an audience.`,
 	],
 	parent: `Demeanor`,
-	difficulty: 'Perception',
+	difficulty: `Perception`,
 	specialties: {
 		distract: new Specialty({
 			name: `Distract`,
@@ -375,7 +375,7 @@ export const socialize = new Skill({
 		`Alter a person’s Attitude by one step.`,
 	],
 	parent: `Demeanor`,
-	difficulty: 'Demeanor',
+	difficulty: `Demeanor`,
 	specialties: {
 		persuade: new Specialty({
 			name: `Persuade`,
@@ -400,7 +400,7 @@ export const tame = new Skill({
 		`Alter an animal’s Attitude by one step.`,
 	],
 	parent: `Demeanor`,
-	difficulty: 'Demeanor',
+	difficulty: `Demeanor`,
 	specialties: {
 		command: new Specialty({
 			name: `Command`,
@@ -435,9 +435,11 @@ export const SpecialtyExplanation = `Specialties (listed below their Skills) equ
 
 export const SkillFlowExplanation = `Skill Flow: Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
 
-const SpecialtyList = Object.values(SkillList).filter((skill) => {
-	return Object.values(skill.specialties)
-}).sort((a, b) => PropSort(a, b, 'name'))
+const SpecialtyList = Object.values(SkillList)
+						.map((s) => Object.values(s.specialties))
+						.reduce((a, b) =>  a.concat(b), [])
+						.sort((a, b) => PropSort(a, b, `name`))
+
 
 export default {
 	name: `Skills`,

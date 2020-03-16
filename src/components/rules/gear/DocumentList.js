@@ -1,4 +1,4 @@
-import Document from '../../classes/Document'
+import Document from '../../classes/gear/Document'
 
 
 export const BodyInBalance = new Document({

@@ -2,16 +2,17 @@ import Rule from '../classes/Rule'
 import CoverTable from '../views/tables/CoverTable.svelte'
 
 
-export const Cover = new Rule({
+const Cover = new Rule({
 	name: `Cover`, 
 	description: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance, in which case the Material Damage Resistance acts as an Armor bonus for Damage reduction.`,
 		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
 		`You can lean in and out of Cover to Attack as part of an Action.`,
 		`If an opponent Attacks simultaneously when you Attack from Cover, they must make a Called Shot to hit an exposed Location.`,
-	],
-	table: CoverTable
+	]
 })
+Cover.table = CoverTable
+export { Cover }
 
 export const FriendlyFire = new Rule({
 	name: `Friendly Fire`, 

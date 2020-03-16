@@ -1,4 +1,4 @@
-import Bomb from '../../../classes/Bomb'
+import Bomb from '../../../classes/gear/Bomb'
 import {
 	Blast,
 	FireDamage,

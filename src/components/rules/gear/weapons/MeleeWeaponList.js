@@ -1,4 +1,4 @@
-import MeleeWeapon from '../../../classes/MeleeWeapon'
+import MeleeWeapon from '../../../classes/gear/MeleeWeapon'
 import {
 	Chop,
 	OneHanded,

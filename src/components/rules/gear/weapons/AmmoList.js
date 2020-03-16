@@ -1,4 +1,4 @@
-import Ammo from '../../../classes/Ammo'
+import Ammo from '../../../classes/gear/Ammo'
 import {
 	Broadhead,
 	HollowPoint,

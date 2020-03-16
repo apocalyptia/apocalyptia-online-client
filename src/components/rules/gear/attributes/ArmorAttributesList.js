@@ -1,4 +1,4 @@
-import ArmorAttribute from '../../../classes/ArmorAttribute'
+import ArmorAttribute from '../../../classes/gear/ArmorAttribute'
 
 
 export const Camo = new ArmorAttribute({

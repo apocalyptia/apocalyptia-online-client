@@ -1,4 +1,4 @@
-import Accessory from '../../../classes/Accessory'
+import Accessory from '../../../classes/gear/Accessory'
 
 
 export const Bayonet = new Accessory({

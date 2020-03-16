@@ -1,4 +1,4 @@
-import Medical from '../../classes/Medical'
+import Medical from '../../classes/gear/Medical'
 
 
 export const Bandage = new Medical({

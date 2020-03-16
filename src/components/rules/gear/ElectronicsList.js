@@ -1,4 +1,4 @@
-import Electronic from '../../classes/Electronic'
+import Electronic from '../../classes/gear/Electronic'
 
 
 export const Cellphone = new Electronic({

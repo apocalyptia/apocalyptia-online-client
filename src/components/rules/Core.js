@@ -40,18 +40,19 @@ export const Cooperation = new Rule({
 	]
 })
 
-export const Success = new Rule({
+const Success = new Rule({
 	name: `Success`,
 	description: [
 		`Your roll is a Success when if the Result is greater than or equal to the Difficulty.`,
 		`Re-roll ties on opposed rolls.`,
 		`The degree of Success (the amount by which the Result exceeded the Difficulty) is important for some rolls, such as Attacks.`,
-	],
-	subrules: [
-		RoteActions,
-		Cooperation,
 	]
 })
+Success.subrules = [
+	RoteActions,
+	Cooperation,
+]
+export { Success }
 
 export const Fail = new Rule({
 	name: `Fail`,

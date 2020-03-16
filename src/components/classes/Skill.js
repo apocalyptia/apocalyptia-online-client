@@ -7,19 +7,19 @@ export default class Skill extends Stat {
 		base,
 		mods,
 		score,
-		parent,
 		difficulty,
-		specialties=[]
+		specialties=[],
+		parent=``
 	}) {
 		super({
 			name,
 			description,
 			base,
 			mods,
-			score,
-			parent
+			score
 		})
 		this.difficulty = difficulty
 		this.specialties = specialties
+		this.parent = parent
 	}
 }

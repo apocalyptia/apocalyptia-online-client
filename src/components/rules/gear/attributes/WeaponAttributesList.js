@@ -1,4 +1,4 @@
-import WeaponAttribute from '../../../classes/WeaponAttribute'
+import WeaponAttribute from '../../../classes/gear/WeaponAttribute'
 import { Unarmed } from '../../Status'
 
 
