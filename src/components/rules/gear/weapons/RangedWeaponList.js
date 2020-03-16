@@ -12,11 +12,10 @@ export const BoltActionRifle = new RangedWeapon({
 	dmg: 3,
 	rng: 200,
 	attributes: [
-		TwoHanded
+		TwoHanded,
 	],
 	mag: 5,
-	cal: `.308`,
-	reg: `C`
+	cal: `.308`
 })
 
 export const CompoundBow = new RangedWeapon({
@@ -25,11 +24,10 @@ export const CompoundBow = new RangedWeapon({
 	dmg: 1,
 	rng: 15,
 	attributes: [
-		TwoHanded
+		TwoHanded,
 	],
 	mag: 1,
-	cal: `Arrow`,
-	reg: `C`
+	cal: `Arrow`
 })
 
 export const Crossbow = new RangedWeapon({
@@ -38,11 +36,10 @@ export const Crossbow = new RangedWeapon({
 	dmg: 2,
 	rng: 20,
 	attributes: [
-		TwoHanded
+		TwoHanded,
 	],
 	mag: 1,
-	cal: `Arrow`,
-	reg: `C`
+	cal: `Arrow`
 })
 
 export const DoubleBarrelShotgun = new RangedWeapon({
@@ -56,8 +53,7 @@ export const DoubleBarrelShotgun = new RangedWeapon({
 		Scatter,
 	],
 	mag: 2,
-	cal: `12g`,
-	reg: `C`
+	cal: `12g`
 })
 
 export const LeverActionRifle = new RangedWeapon({
@@ -66,11 +62,10 @@ export const LeverActionRifle = new RangedWeapon({
 	dmg: 2,
 	rng: 50,
 	attributes: [
-		TwoHanded
+		TwoHanded,
 	],
 	mag: 10,
-	cal: `.357`,
-	reg: `C`
+	cal: `.357`
 })
 
 export const PumpShotgun = new RangedWeapon({
@@ -83,8 +78,7 @@ export const PumpShotgun = new RangedWeapon({
 		Scatter,
 	],
 	mag: 6,
-	cal: `12g`,
-	reg: `C`
+	cal: `12g`
 })
 
 export const Revolver = new RangedWeapon({
@@ -93,11 +87,10 @@ export const Revolver = new RangedWeapon({
 	dmg: 2,
 	rng: 10,
 	attributes: [
-		TwoHanded
+		TwoHanded,
 	],
 	mag: 6,
-	cal: `.357`,
-	reg: `C`
+	cal: `.357`
 })
 
 export const SemiAutoCarbine = new RangedWeapon({
@@ -110,8 +103,7 @@ export const SemiAutoCarbine = new RangedWeapon({
 		Rapid,
 	],
 	mag: 30,
-	cal: `9mm`,
-	reg: `C`
+	cal: `9mm`
 })
 
 export const SemiAutoPistol = new RangedWeapon({
@@ -124,8 +116,7 @@ export const SemiAutoPistol = new RangedWeapon({
 		Rapid,
 	],
 	mag: 15,
-	cal: `9mm`,
-	reg: `C`
+	cal: `9mm`
 })
 
 export const SemiAutoRifle = new RangedWeapon({
@@ -138,8 +129,7 @@ export const SemiAutoRifle = new RangedWeapon({
 		Rapid,
 	],
 	mag: 30,
-	cal: `5.56`,
-	reg: `C`
+	cal: `5.56`
 })
 
 export const SemiAutoShotgun = new RangedWeapon({
@@ -153,8 +143,7 @@ export const SemiAutoShotgun = new RangedWeapon({
 		Scatter,
 	],
 	mag: 6,
-	cal: `12g`,
-	reg: `C`
+	cal: `12g`
 })
 
 export const TargetPistol = new RangedWeapon({
@@ -164,11 +153,10 @@ export const TargetPistol = new RangedWeapon({
 	rng: 30,
 	attributes: [
 		TwoHanded,
-		Rapid
+		Rapid,
 	],
 	mag: 10,
-	cal: `.22`,
-	reg: `C`
+	cal: `.22`
 })
 
 export const TargetRifle = new RangedWeapon({
@@ -181,8 +169,7 @@ export const TargetRifle = new RangedWeapon({
 		Rapid,
 	],
 	mag: 10,
-	cal: `.22`,
-	reg: `C`
+	cal: `.22`
 })
 
 

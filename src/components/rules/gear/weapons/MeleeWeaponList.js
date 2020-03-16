@@ -19,7 +19,7 @@ export const Ax = new MeleeWeapon({
 	attributes: [
 		TwoHanded,
 		Chop,
-		Slow
+		Slow,
 	]
 })
 
@@ -28,7 +28,9 @@ export const BaseballBat = new MeleeWeapon({
 	sz: 3,
 	dmg: 3,
 	rng: 2,
-	attributes: [TwoHanded]
+	attributes: [
+		TwoHanded,
+	]
 })
 
 export const BrassKnuckles = new MeleeWeapon({
@@ -38,7 +40,7 @@ export const BrassKnuckles = new MeleeWeapon({
 	rng: 1,
 	attributes: [
 		OneHanded,
-		Unarmed
+		Unarmed,
 	]
 })
 
@@ -47,7 +49,9 @@ export const Crowbar = new MeleeWeapon({
 	sz: 3,
 	dmg: 3,
 	rng: 2,
-	attributes: [OneHanded]
+	attributes: [
+		OneHanded,
+	]
 })
 
 export const Hammer = new MeleeWeapon({
@@ -55,7 +59,9 @@ export const Hammer = new MeleeWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 1,
-	attributes: [OneHanded]
+	attributes: [
+		OneHanded,
+	]
 })
 
 export const Hatchet = new MeleeWeapon({
@@ -65,7 +71,7 @@ export const Hatchet = new MeleeWeapon({
 	rng: 1,
 	attributes: [
 		OneHanded,
-		Chop
+		Chop,
 	]
 })
 
@@ -77,7 +83,7 @@ export const Knife = new MeleeWeapon({
 	attributes: [
 		OneHanded,
 		Pierce,
-		Rapid
+		Rapid,
 	]
 })
 
@@ -88,7 +94,7 @@ export const Machete = new MeleeWeapon({
 	rng: 2,
 	attributes: [
 		OneHanded,
-		Chop
+		Chop,
 	]
 })
 
@@ -99,7 +105,7 @@ export const RiotShield = new MeleeWeapon({
 	rng: 1,
 	attributes: [
 		OneHanded,
-		Shield
+		Shield,
 	]
 })
 
@@ -110,7 +116,7 @@ export const Sledgehammer = new MeleeWeapon({
 	rng: 2,
 	attributes: [
 		TwoHanded,
-		Slow
+		Slow,
 	]
 })
 
@@ -121,7 +127,7 @@ export const Spear = new MeleeWeapon({
 	rng: 3,
 	attributes: [
 		TwoHanded,
-		Pierce
+		Pierce,
 	]
 })
 
@@ -130,7 +136,9 @@ export const Staff = new MeleeWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 3,
-	attributes: [TwoHanded]
+	attributes: [
+		TwoHanded,
+	]
 })
 
 

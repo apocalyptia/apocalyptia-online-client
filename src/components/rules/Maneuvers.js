@@ -8,6 +8,6 @@ export default {
 	list: [
 		...DefensiveManeuvers,
 		...OffensiveManeuvers,
-		...SocialManeuvers
+		...SocialManeuvers,
 	]
 }

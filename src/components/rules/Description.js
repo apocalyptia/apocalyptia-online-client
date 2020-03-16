@@ -87,7 +87,7 @@ export default {
 		height,
 		weight,
 		skin,
-		hair
+		hair,
 	],
 	random: function(c){
 		for (let i = 1; i < this.list.length; i++) {

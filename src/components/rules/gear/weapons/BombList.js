@@ -14,14 +14,14 @@ import {
 export const FlashbangGrenade = new Bomb({
 	name: `Flashbang Grenade`,
 	description: [
-		`Non-lethal stun grenade.`
+		`Non-lethal stun grenade.`,
 	],
 	sz: 1,
 	dmg: `0`,
 	rng: `6yd`,
 	attributes: [
 		Blind,
-		Stun
+		Stun,
 	],
 	fuse: `1 round`,
 	duration: `d6 rounds`,
@@ -31,14 +31,14 @@ export const FlashbangGrenade = new Bomb({
 export const FragGrenade = new Bomb({
 	name: `Frag Grenade`,
 	description: [
-		`Explosive fragmentation grenade.`
+		`Explosive fragmentation grenade.`,
 	],
 	sz: 1,
 	dmg: `d6x3`,
 	rng: `15yd`,
 	attributes: [
 		Blast,
-		Pierce
+		Pierce,
 	],
 	fuse: `1 round`,
 	duration: `instant`,
@@ -48,14 +48,14 @@ export const FragGrenade = new Bomb({
 export const MolotovCocktail = new Bomb({
 	name: `Molotov Cocktail`,
 	description: [
-		`Glass bottle of fuel with rag wick.`
+		`Glass bottle of fuel with rag wick.`,
 	],
 	sz: 2,
 	dmg: `d6 + 1 Fire Damage/round`,
 	rng: `3yd`,
 	attributes: [
 		Blast,
-		FireDamage
+		FireDamage,
 	],
 	fuse: `1 round`,
 	duration: `1min`,
@@ -65,13 +65,13 @@ export const MolotovCocktail = new Bomb({
 export const SmokeGrenade = new Bomb({
 	name: `Smoke Grenade`, 
 	description: [
-		`Visibility denial grenade.`
+		`Visibility denial grenade.`,
 	],
 	sz: 1,
 	dmg: `0`,
 	rng: `1yd/round`,
 	attributes: [
-		Blind
+		Blind,
 	],
 	fuse: `1 round`,
 	duration: `d6mins`,
@@ -81,7 +81,7 @@ export const SmokeGrenade = new Bomb({
 export const TeargasGrenade = new Bomb({
 	name: `Teargas Grenade`,
 	description: [
-		`Non-lethal chemical irritant grenade.`
+		`Non-lethal chemical irritant grenade.`,
 	],
 	sz: 1,
 	dmg: `1`,
@@ -89,7 +89,7 @@ export const TeargasGrenade = new Bomb({
 	attributes: [
 		Blind,
 		Stun,
-		Asphyxiation
+		Asphyxiation,
 	],
 	fuse: `1 round`,
 	duration: `d6mins`,
@@ -99,14 +99,14 @@ export const TeargasGrenade = new Bomb({
 export const Thermite = new Bomb({
 	name: `Thermite`,
 	description: [
-		`High-temperature incendiary bomb.`
+		`High-temperature incendiary bomb.`,
 	],
 	sz: 1,
 	dmg: `d6x6`,
 	rng: `1yd`,
 	attributes: [
 		Blast,
-		FireDamage
+		FireDamage,
 	],
 	fuse: `1 round`,
 	duration: `6 rounds`,

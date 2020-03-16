@@ -15,7 +15,7 @@ export const TraitsExplanation = [
 	`Traits range from 1 to ${traitMax}.`,
 	`You get ${traitPoints} Trait points.`,
 	`Trait rolls are [d6 + Trait].`,
-	`Trait scores set the limit for their Skills.`
+	`Trait scores set the limit for their Skills.`,
 ]
 
 const AgilitySkillList = AgilitySkills.map(skill => skill.name).join(', ')

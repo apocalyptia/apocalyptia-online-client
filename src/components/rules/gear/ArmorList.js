@@ -28,7 +28,7 @@ export const CombatHelmet = new Armor({
 	dr: 3,
 	location: `Head`,
 	attributes: [
-		Camo
+		Camo,
 	]
 })
 
@@ -39,7 +39,7 @@ export const Coveralls = new Armor({
 	location: `Arms, Torso, Legs`,
 	attributes: [
 		Camo,
-		ColdResistance
+		ColdResistance,
 	]
 })
 
@@ -51,7 +51,7 @@ export const FirefighterSuit = new Armor({
 	attributes: [
 		ColdResistance,
 		FireResistance,
-		Mask
+		Mask,
 	]
 })
 
@@ -61,7 +61,7 @@ export const FlakJacket = new Armor({
 	dr: 2,
 	location: `Torso`,
 	attributes: [
-		Camo
+		Camo,
 	]
 })
 
@@ -72,7 +72,7 @@ export const GhillieSuit = new Armor({
 	location: `Full Body`,
 	attributes: [
 		Camo,
-		ColdResistance
+		ColdResistance,
 	]
 })
 
@@ -83,7 +83,7 @@ export const HikingBoots = new Armor({
 	location: `Legs`,
 	attributes: [
 		ColdResistance,
-		FireResistance
+		FireResistance,
 	]
 })
 
@@ -94,7 +94,7 @@ export const KevlarVest = new Armor({
 	location: `Torso`,
 	attributes: [
 		ColdResistance,
-		FireResistance
+		FireResistance,
 	]
 })
 
@@ -112,7 +112,7 @@ export const MotorcycleHelmet = new Armor({
 	location: `Head`,
 	attributes: [
 		FireResistance,
-		Mask
+		Mask,
 	]
 })
 
@@ -123,7 +123,7 @@ export const HazmatSuit = new Armor({
 	location: `Full Body`,
 	attributes: [
 		Mask,
-		Impermeable
+		Impermeable,
 	]
 })
 
@@ -135,7 +135,7 @@ export const PlateCarrier = new Armor({
 	attributes: [
 		Camo,
 		ColdResistance,
-		FireResistance
+		FireResistance,
 	]
 })
 
@@ -145,7 +145,7 @@ export const WinterCoat = new Armor({
 	dr: 1,
 	location: `Arms, Torso`,
 	attributes: [
-		ColdResistance
+		ColdResistance,
 	]
 })
 
@@ -155,7 +155,7 @@ export const WorkGloves = new Armor({
 	dr: 1,
 	location: `Arms`,
 	attributes: [
-		FireResistance
+		FireResistance,
 	]
 })
 

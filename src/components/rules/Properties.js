@@ -9,7 +9,7 @@ export const block = new Property({
 	name: `Block`,
 	description: [
 		`Block = Melee`,
-		...Block.description
+		...Block.description,
 	],
 	formula: (character) => character.skills.melee.score,
 	base: 0,
@@ -20,7 +20,7 @@ export const dodge = new Property({
 	name: `Dodge`,
 	description: [
 		`Dodge = Acrobatics.`,
-		...Dodge.description
+		...Dodge.description,
 	],
 	formula: (character) => character.skills.acrobatics.score,
 	base: 0,
@@ -119,7 +119,7 @@ export const PropertyList = [
 	intellect,
 	luck,
 	psyche,
-	speed
+	speed,
 ]
 
 export default {

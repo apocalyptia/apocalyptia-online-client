@@ -15,7 +15,7 @@ import PropSort from '../functions/PropSort'
 
 export const WeaponList = [
 	...MeleeWeaponList,
-	...RangedWeaponList
+	...RangedWeaponList,
 ]
 
 const Gear = {
@@ -32,7 +32,7 @@ const Gear = {
 		...MedicalList,
 		...MeleeWeaponList,
 		...RangedWeaponList,
-		...StorageList
+		...StorageList,
 	].sort((a, b) => PropSort(a, b, 'name'))
 }
 

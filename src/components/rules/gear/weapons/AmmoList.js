@@ -11,17 +11,20 @@ import { Pierce, Scatter } from '../attributes/WeaponAttributesList'
 export const ArrowBroadhead = new Ammo({
 	name: `Broadhead Arrow`,
 	description: [
-		`Hunting arrow.`
+		`Hunting arrow.`,
 	],
 	sz: 0.1,
 	cal: `Arrow`,
-	attributes: [Broadhead, Pierce],
+	attributes: [
+		Broadhead,
+		Pierce,
+	],
 })
 
 export const ArrowStandard = new Ammo({
 	name: `Target Arrow`,
 	description: [
-		`Practice arrow.`
+		`Practice arrow.`,
 	],
 	sz: 0.1,
 	cal: `Arrow`,
@@ -30,7 +33,7 @@ export const ArrowStandard = new Ammo({
 export const Standard22 = new Ammo({
 	name: `.22 Standard`,
 	description: [
-		`Basic ammunition.`
+		`Basic ammunition.`,
 	],
 	sz: 0.005,
 	cal: `.22`,
@@ -39,27 +42,31 @@ export const Standard22 = new Ammo({
 export const HollowPoint22 = new Ammo({
 	name: `.22 Hollow Point`,
 	description: [
-		`Self-defense ammunition.`
+		`Self-defense ammunition.`,
 	],
 	sz: .005,
 	cal: `.22`,
-	attributes: [HollowPoint],
+	attributes: [
+		HollowPoint,
+	],
 })
 
 export const Match22 = new Ammo({
 	name: `.22 Match`,
 	description: [
-		`Competition-grade ammunition.`
+		`Competition-grade ammunition.`,
 	],
 	sz: 0.005,
 	cal: `.22`,
-	attributes: [Match],
+	attributes: [
+		Match,
+	],
 })
 
 export const Standard9mm = new Ammo({
 	name: `9mm Standard`,
 	description: [
-		`Basic ammunition.`
+		`Basic ammunition.`,
 	],
 	sz: 0.01,
 	cal: `9mm`,
@@ -68,27 +75,31 @@ export const Standard9mm = new Ammo({
 export const HollowPoint9mm = new Ammo({
 	name: `9mm Hollow Point`,
 	description: [
-		`Self-defense ammunition.`
+		`Self-defense ammunition.`,
 	],
 	sz: 0.01,
 	cal: `9mm`,
-	attributes: [HollowPoint]
+	attributes: [
+		HollowPoint,
+	]
 })
 
 export const Match9mm = new Ammo({
 	name: `9mm Match`,
 	description: [
-		`Competition-grade ammunition.`
+		`Competition-grade ammunition.`,
 	],
 	sz: 0.01,
 	cal: `9mm`,
-	attributes: [Match]
+	attributes: [
+		Match,
+	]
 })
 
 export const Standard357 = new Ammo({
 	name: `.357 Standard`,
 	description: [
-		`Basic ammunition.`
+		`Basic ammunition.`,
 	],
 	sz: 0.01,
 	cal: `.357`,
@@ -97,27 +108,31 @@ export const Standard357 = new Ammo({
 export const HollowPoint357 = new Ammo({
 	name: `.357 Hollow Point`,
 	description: [
-		`Self-defense ammunition.`
+		`Self-defense ammunition.`,
 	],
 	sz: 0.01,
 	cal: `.357`,
-	attributes: [HollowPoint]
+	attributes: [
+		HollowPoint,
+	]
 })
 
 export const ArmorPiercing556 = new Ammo({
 	name: `5.56mm Armor Piercing`,
 	description: [
-		`Battlefield ammunition.`
+		`Battlefield ammunition.`,
 	],
 	sz: 0.02,
 	cal: `5.56`,
-	attributes: [Pierce]
+	attributes: [
+		Pierce,
+	]
 })
 
 export const Standard556 = new Ammo({
 	name: `5.56mm Standard`,
 	description: [
-		`Basic ammunition.`
+		`Basic ammunition.`,
 	],
 	sz: 0.02,
 	cal: `5.56`,
@@ -126,37 +141,43 @@ export const Standard556 = new Ammo({
 export const HollowPoint556 = new Ammo({
 	name: `5.56mm Hollow Point`,
 	description: [
-		`Self-defense ammunition.`
+		`Self-defense ammunition.`,
 	],
 	sz: 0.02,
 	cal: `5.56`,
-	attributes: [HollowPoint]
+	attributes: [
+		HollowPoint,
+	]
 })
 
 export const Match556 = new Ammo({
 	name: `5.56mm Match`,
 	description: [
-		`Competition-grade ammunition.`
+		`Competition-grade ammunition.`,
 	],
 	sz: 0.02,
 	cal: `5.56`,
-	attributes: [Match]
+	attributes: [
+		Match,
+	]
 })
 
 export const ArmorPiercing308 = new Ammo({
 	name: `.308 Armor Piercing`,
 	description: [
-		`Battlefield ammunition.`
+		`Battlefield ammunition.`,
 	],
 	sz: 0.02,
 	cal: `.308`,
-	attributes: [Pierce]
+	attributes: [
+		Pierce,
+	]
 })
 
 export const Standard308 = new Ammo({
 	name: `.308 Standard`,
 	description: [
-		`Basic ammunition.`
+		`Basic ammunition.`,
 	],
 	sz: 0.02,
 	cal: `.308`,
@@ -165,41 +186,49 @@ export const Standard308 = new Ammo({
 export const HollowPoint308 = new Ammo({
 	name: `.308 Hollow Point`,
 	description: [
-		`Self-defense ammunition.`
+		`Self-defense ammunition.`,
 	],
 	sz: 0.02,
 	cal: `.308`,
-	attributes: [HollowPoint]
+	attributes: [
+		HollowPoint,
+	]
 })
 
 export const Match308 = new Ammo({
 	name: `.308 Match`,
 	description: [
-		`Competition-grade ammunition.`
+		`Competition-grade ammunition.`,
 	],
 	sz: 0.02,
 	cal: `.308`,
-	attributes: [Match]
+	attributes: [
+		Match,
+	]
 })
 
 export const Buckshot12g = new Ammo({
 	name: `12g Buckshot`,
 	description: [
-		`Scatter-shot ammunition.`
+		`Scatter-shot ammunition.`,
 	],
 	sz: 0.05,
 	cal: `12g`,
-	attributes: [Scatter]
+	attributes: [
+		Scatter,
+	]
 })
 
 export const Slug12g = new Ammo({
 	name: `12g Slug`,
 	description: [
-		`Single-projectile ammunition.`
+		`Single-projectile ammunition.`,
 	],
 	sz: 0.05,
 	cal: `12g`,
-	attributes: [Slug]
+	attributes: [
+		Slug,
+	]
 })
 
 
