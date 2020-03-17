@@ -11,6 +11,7 @@ const toggle = () => showMenu = !showMenu
 const hide = () => showMenu = false
 
 const logOut = () => {
+	hide()
 	logout()
 		.catch(e => {
 			showMenu = false
@@ -26,11 +27,11 @@ const logOut = () => {
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
 		{#if $character.completed}
-			<a href='/sheet' class='link-btn'>Character Sheet</a>
+			<a href='/sheet' class='link-btn' on:click={hide}>Character Sheet</a>
 		{/if}
-		<a href='/creator' class='link-btn'>Character Creator</a>
-		<a href='/reference' class='link-btn'>Rules Reference</a>
-		<a href='/random' class='link-btn'>Random Roller</a>
+		<a href='/creator' class='link-btn' on:click={hide}>Character Creator</a>
+		<a href='/reference' class='link-btn' on:click={hide}>Rules Reference</a>
+		<a href='/random' class='link-btn' on:click={hide}>Random Roller</a>
 		<a href='/' class='link-btn log-out' on:click={logOut}>Logout</a>
 	</div>
 </ClickOutside>
