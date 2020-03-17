@@ -1,6 +1,7 @@
 <script>
 import ClickOutside from './ClickOutside.svelte'
 import { authUserStore, logout } from '../../../stores/netlifyStore'
+import { character } from '../../../stores/characterStore'
 
 let showMenu = false
 let trigger
@@ -24,6 +25,12 @@ const logOut = () => {
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
+		{#if $character.completed}
+			<a href='/sheet' class='link-btn'>Character Sheet</a>
+		{/if}
+		<a href='/creator' class='link-btn'>Character Creator</a>
+		<a href='/reference' class='link-btn'>Rules Reference</a>
+		<a href='/random' class='link-btn'>Random Roller</a>
 		<a href='/' class='link-btn log-out' on:click={logOut}>Logout</a>
 	</div>
 </ClickOutside>
@@ -49,17 +56,18 @@ const logOut = () => {
 	background: var(--scr-color);
 	border: var(--s1) solid var(--txt-color);
 	position: absolute;
-	right: var(--s1);
+	right: 0;
 	top: var(--s300);
 	width: 30vw;
 	min-width: 200px;
 	z-index: 4;
 }
 a {
-	display: block;
-}
-.log-out {
 	border: none;
+	display: block;
+	font-weight: normal;
+	margin: 0;
+	padding: var(--s50);
 }
 .shadow {
 	background: rgba(0, 0, 0, .5);
