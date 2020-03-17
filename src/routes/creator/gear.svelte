@@ -5,12 +5,12 @@ import ArmorItemTable from '../../components/views/tables/ArmorItemTable.svelte'
 import ArmorList from '../../components/rules/gear/ArmorList'
 import MeleeWeaponItemTable from '../../components/views/tables/MeleeWeaponItemTable.svelte'
 import MeleeWeaponList from '../../components/rules/gear/weapons/MeleeWeaponList'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 import RangedWeaponItemTable from '../../components/views/tables/RangedWeaponItemTable.svelte'
 import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
 import { Nd6, RandomRoll } from '../../components/functions/Random'
-import { character } from '../../stores/characterStore'
-import NavBar from '../../components/views/controls/NavBar.svelte'
 import { beforeUpdate } from 'svelte'
+import { character } from '../../stores/characterStore'
 
 let proceed = false
 

@@ -8,8 +8,8 @@ export default class RangedWeapon extends Weapon {
 		dmg,
 		rng,
 		attributes,
-		mag,
-		cal
+		cal,
+		mag
 	}) {
 		super({
 			name,
@@ -19,7 +19,7 @@ export default class RangedWeapon extends Weapon {
 			rng,
 			attributes
 		})
-		this.mag = mag
 		this.cal = cal
+		this.mag = mag
 	}
 }

@@ -4,8 +4,8 @@ export default class Ability extends Rule {
 	constructor({
 		name,
 		description,
-		visible,
 		formula,
+		visible,
 		max,
 		xp,
 		taken=0,

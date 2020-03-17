@@ -8,7 +8,7 @@ export default class Skill extends Stat {
 		mods,
 		score,
 		difficulty,
-		specialties=[],
+		specialties={},
 		parent=``
 	}) {
 		super({

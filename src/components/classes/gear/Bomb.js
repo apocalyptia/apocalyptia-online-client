@@ -8,8 +8,8 @@ export default class Bomb extends Weapon {
 		dmg,
 		rng,
 		attributes,
-		fuse,
 		duration,
+		fuse,
 		mix
 	}) {
 		super({
@@ -20,8 +20,8 @@ export default class Bomb extends Weapon {
 			rng,
 			attributes
 		})
-		this.fuse = fuse
 		this.duration = duration
+		this.fuse = fuse
 		this.mix = mix
 	}
 }
