@@ -13,7 +13,7 @@ import MeleeWeaponList from '../../components/rules/gear/weapons/MeleeWeaponList
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
 import StorageList from '../../components/rules/gear/StorageList'
-import { d6Roll, Nd6, RandomRoll } from '../../components/functions/Random'
+import { d6Roll, Nd6, RandomRoll } from '../../components/helpers/Random'
 
 
 let roll = 0

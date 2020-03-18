@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import TableOfContents from '../components/functions/TableOfContents'
+import TableOfContents from '../components/helpers/TableOfContents'
 import Abilities from '../components/rules/Abilities'
 import Combat from '../components/rules/Combat'
 import Complications from '../components/rules/Complications'

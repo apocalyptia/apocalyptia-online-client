@@ -7,7 +7,7 @@ import {
 	RandomSkin,
 	RandomSex,
 	RandomAge
-} from '../functions/Random'
+} from '../helpers/Random'
 
 export const age = new Descriptor({
 	name: `Age`,

@@ -1,6 +1,6 @@
 <script>
 import { character } from '../../../stores/characterStore'
-import ToggleVisible from '../../functions/ToggleVisible'
+import ToggleVisible from '../../helpers/ToggleVisible'
 import AbilityModal from './AbilityModal.svelte'
 
 export let ability

@@ -2,7 +2,7 @@
 import referenceStore from '../../stores/referenceStore'
 import ContentMenu from '../../components/views/ui/ContentMenu.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
-import Capitalize from '../../components/functions/Capitalize'
+import Capitalize from '../../components/helpers/Capitalize'
 </script>
 
 

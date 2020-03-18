@@ -1,5 +1,5 @@
 <script>
-import ToggleVisible from '../../functions/ToggleVisible'
+import ToggleVisible from '../../helpers/ToggleVisible'
 import AbilityCard from './AbilityCard.svelte'
 
 export let group

@@ -8,7 +8,7 @@ import MeleeWeaponList from '../../components/rules/gear/weapons/MeleeWeaponList
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import RangedWeaponItemTable from '../../components/views/tables/RangedWeaponItemTable.svelte'
 import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
-import { Nd6, RandomRoll } from '../../components/functions/Random'
+import { Nd6, RandomRoll } from '../../components/helpers/Random'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 

@@ -10,7 +10,7 @@ import MedicalList from './gear/MedicalList'
 import MeleeWeaponList from './gear/weapons/MeleeWeaponList'
 import RangedWeaponList from './gear/weapons/RangedWeaponList'
 import StorageList from './gear/StorageList'
-import PropSort from '../functions/PropSort'
+import PropSort from '../helpers/PropSort'
 // export { VehicleList } from '../../components/rules//gear/Vehicles'
 
 export const WeaponList = [

@@ -1,5 +1,5 @@
-import PropSort from '../functions/PropSort'
-import RandomRoll from '../functions/Random'
+import PropSort from '../helpers/PropSort'
+import RandomRoll from '../helpers/Random'
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
 

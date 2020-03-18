@@ -5,7 +5,7 @@ import {
 	ConstitutionSkills,
 	DemeanorSkills
 } from './Skills'
-import RandomRoll from '../functions/Random'
+import RandomRoll from '../helpers/Random'
 
 export const traitMax = 6
 

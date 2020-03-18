@@ -1,6 +1,6 @@
 import Ability from '../classes/Ability'
-import Languages from '../functions/Languages'
-import PropSort from '../functions/PropSort'
+import Languages from '../helpers/Languages'
+import PropSort from '../helpers/PropSort'
 import Skills from './Skills'
 import Traits from './Traits'
 import { WeaponList } from './Gear'

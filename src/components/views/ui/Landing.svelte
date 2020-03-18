@@ -1,5 +1,5 @@
 <script>
-import Typewriter from '../../functions/Typewriter'
+import Typewriter from '../../helpers/Typewriter'
 import { onMount } from 'svelte'
 
 let show = false

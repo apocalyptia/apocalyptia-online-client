@@ -1,7 +1,7 @@
 <script>
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import RandomRoll from '../../components/functions/Random'
+import RandomRoll from '../../components/helpers/Random'
 import Skills from '../../components/rules/Skills'
 import Traits from '../../components/rules/Traits'
 import Slider from '../../components/views/controls/Slider.svelte'
