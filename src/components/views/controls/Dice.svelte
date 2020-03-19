@@ -1,6 +1,6 @@
 <script>
 import { fade } from 'svelte/transition'
-import { d6Roll } from '../../../helpers/Random'
+import { dieRoller } from '../../../helpers/Random'
 
 /*
 	HTML CHARACTER CODES FOR DICE
@@ -13,17 +13,11 @@ import { d6Roll } from '../../../helpers/Random'
 */
 
 let result = 6
-
-const dieRoller = () => {
-	for (let i = 0; i < 60000; i++) {
-		setTimeout(() => { result = d6Roll() }, 50)
-	}
-}
 </script>
 
 
 <div class='sheet-section'>
-	<button class='die' on:click={dieRoller}>
+	<button class='die' on:click={() => result = dieRoller()}>
 		<div class='die_number' transition:fade={{duration: 1000}}>{result}</div>
 	</button>
 </div>
