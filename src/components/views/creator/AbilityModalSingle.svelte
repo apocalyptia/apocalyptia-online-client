@@ -5,10 +5,6 @@ export let ability
 export let MasterAbilityList
 
 ability = MasterAbilityList.filter(a => a.name == ability.name)[0]
-
-const updateAbilities = () => {
-	$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-}
 </script>
 
 
@@ -18,7 +14,7 @@ const updateAbilities = () => {
 		<select
 			name={ability.name}
 			bind:value={ability.taken}
-			on:change={updateAbilities}
+			on:change={() => $character.abilities = MasterAbilityList.filter(a => a.taken)}
 		>
 			{#each Array(ability.max+1) as _, i}
 				<option value={i}>{i}</option>

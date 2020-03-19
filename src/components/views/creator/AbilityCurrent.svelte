@@ -2,10 +2,6 @@
 import { character } from '../../../stores/characterStore'
 
 export let MasterAbilityList
-
-const updateAbilities = () => {
-	$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-}
 </script>
 
 
@@ -33,7 +29,7 @@ const updateAbilities = () => {
 						<select
 							class='taken-number'
 							bind:value={ability.taken}
-							on:change={updateAbilities}
+							on:change={() => $character.abilities = MasterAbilityList.filter(ability => ability.taken)}
 						>
 							{#each Array(ability.max+1) as _, i}
 								<option value={i}>{i}</option>

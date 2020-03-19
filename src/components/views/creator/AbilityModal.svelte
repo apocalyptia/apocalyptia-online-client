@@ -8,9 +8,7 @@ export let MasterAbilityList
 
 const dispatch = createEventDispatcher()
 
-const close = () => dispatch('close')
-
-const handle_keydown = e => { if (e.key === 'Escape') close() }
+const handle_keydown = e => { if (e.key === 'Escape') dispatch('close') }
 
 const previously_focused = typeof document !== 'undefined' && document.activeElement
 
@@ -19,7 +17,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 
 
 <svelte:window on:keydown={handle_keydown}/>
-<div class="modal-background" on:click={close}></div>
+<div class="modal-background" on:click={() => dispatch('close')}></div>
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='ability-name'><h2>{ability.name}</h2></div>
 	<div class='description-section'>
@@ -34,7 +32,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 		{/if}
 	</div>
 	<div class='btn-row'>
-		<button on:click={close}>Close</button>
+		<button on:click={() => dispatch('close')}>Close</button>
 	</div>
 </div>
 
