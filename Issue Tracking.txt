@@ -1,6 +1,5 @@
 ------ KNOWN BUGS ------
 
-Margin/Padding is too big on Abilities for mobile.
 Login input fields not styling correctly while typing.
 
 - Suspected device issues

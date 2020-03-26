@@ -41,12 +41,6 @@ let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 	margin: var(--s100) auto;
 	padding: var(--s50);
 }
-.ability-option-label {
-	flex: 2;
-}
-.taken-label {
-	flex: 1;
-}
 select {
 	width: var(--s300);
 }

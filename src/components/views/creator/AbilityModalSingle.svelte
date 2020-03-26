@@ -10,7 +10,8 @@ ability = MasterAbilityList.filter(a => a.name == ability.name)[0]
 
 <div class='ability-section'>
 	<span class='ability-name-label'>{ability.name}</span>
-	<span class='taken-label'>Taken:
+	<span>
+		Taken:
 		<select
 			name={ability.name}
 			bind:value={ability.taken}
@@ -32,12 +33,6 @@ ability = MasterAbilityList.filter(a => a.name == ability.name)[0]
 	margin: var(--s100);
 	justify-content: space-between;
 	width: 100%;
-}
-.ability-name-label {
-	flex: 2;
-}
-.taken-label {
-	flex: 1;
 }
 select {
 	width: var(--s300);
