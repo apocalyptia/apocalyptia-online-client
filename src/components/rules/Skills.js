@@ -4,8 +4,8 @@ import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
 
 export const SkillExplanation = [
+	`You get to assign Brains x 6 Skill points.`,
 	`Skills range from 0 to 6.`,
-	`You get Brains x 6 Skill points.`,
 	`Skill rolls are [d6 + Skill].`,
 	`Trait scores set the limit for their Skills.`,
 ]

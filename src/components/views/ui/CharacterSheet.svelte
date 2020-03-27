@@ -17,8 +17,7 @@ const skills = Object.values($character.skills)
 			<h2>Description</h2>
 		</div>
 		<div class='section-block'>
-			<div>Player: {$character.description.player.value}</div>
-			<div>Identity: {$character.description.identity.value}</div>
+			<div>Character: {$character.description.identity.value}</div>
 		</div>
 		<div class='flex-block'>
 			<div class='section-block'>
@@ -162,6 +161,11 @@ const skills = Object.values($character.skills)
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+}
+@media only screen and (max-width: 900px) {
+	.section-block {
+		min-width: 40%;
+	}
 }
 .section-block {
 	margin: var(--s100);

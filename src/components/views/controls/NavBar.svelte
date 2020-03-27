@@ -1,17 +1,37 @@
 <script>
-export let links
-export let proceed = true
+import Spinner from '../ui/Spinner.svelte'
+
+export let links = true
+export let status = `go`
+export let onNext = true
+export let onBack = true
+export let onHome = true
 </script>
 
 
 <div class='nav-bar'>
-	<a href={links.back} class='link-btn nav-button'>&ltrif;</a>
-	<a href='/' class='link-btn nav-button home-button'>Home</a>
-	<a href={links.next} class='link-btn nav-button'>
-		{#if proceed}
+	<a href={links.back}
+		class='link-btn nav-button'
+		on:click={onBack}
+	>
+		&ltrif;
+	</a>
+	<a href='/'
+		class='link-btn nav-button home-button'
+		on:click={onHome}
+	>
+		Home
+	</a>
+	<a href={links.next} 
+		class='link-btn nav-button'
+		on:click={onNext}
+	>
+		{#if status == 'go'}
 			&rtrif;
-		{:else}
+		{:else if status == 'stop'}
 			X
+		{:else if status == 'wait'}
+			<Spinner />
 		{/if}
 	</a>
 </div>

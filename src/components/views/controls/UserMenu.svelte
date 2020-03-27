@@ -1,4 +1,5 @@
 <script>
+import * as sapper from '@sapper/app'
 import ClickOutside from './ClickOutside.svelte'
 import { authUserStore, logout } from '../../../stores/netlifyStore'
 import { character } from '../../../stores/characterStore'
@@ -12,11 +13,13 @@ const hide = () => showMenu = false
 
 const logOut = () => {
 	hide()
-	logout()
-		.catch(e => {
-			showMenu = false
-			isSpreadProperty.goto('/')
-		})
+	try {
+		logout()
+	}
+	catch {
+		showMenu = false
+		sapper.goto('/')
+	}
 }
 </script>
 
@@ -27,11 +30,12 @@ const logOut = () => {
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
 		{#if $character.completed}
-			<a href='/sheet' class='link-btn' on:click={hide}>Character Sheet</a>
+			<a href='/sheet' class='link-btn' on:click={hide}>Character</a>
+		{:else}
+			<a href='/creator' class='link-btn' on:click={hide}>Character</a>
 		{/if}
-		<a href='/creator' class='link-btn' on:click={hide}>Character Creator</a>
-		<a href='/reference' class='link-btn' on:click={hide}>Rules Reference</a>
-		<a href='/random' class='link-btn' on:click={hide}>Random Roller</a>
+		<a href='/reference' class='link-btn' on:click={hide}>Rules</a>
+		<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
 		<a href='/' class='link-btn log-out' on:click={logOut}>Logout</a>
 	</div>
 </ClickOutside>

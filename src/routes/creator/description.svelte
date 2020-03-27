@@ -1,12 +1,19 @@
 <script>
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
 import Description from '../../components/rules/Description'
 import NavBar from '../../components/views/controls/NavBar.svelte'
+import { authUserStore, signup } from '../../stores/netlifyStore'
+import { beforeUpdate } from 'svelte'
+import { character } from '../../stores/characterStore'
 
-let proceed = false
+let status = `stop`
 
 let next = '/creator/description'
+
+const player = {
+	email: ``,
+	password: ``,
+	confirm: ``
+}
 
 const randomItem = (i) => $character = Description.list[i].random($character)
 
@@ -14,31 +21,70 @@ const random = () => $character = Description.random($character)
 
 const reset = () => $character = Description.reset($character)
 
+const submit = () => {
+	if (status == `stop`) {
+		if (player.password != player.confirm) {
+			alert('Password does not match!')
+		}
+		else {
+			alert('Please fill out all fields.')
+		}
+		return
+	}
+	status = `wait`
+	signup(
+		player.email,
+		player.password,
+	)
+	.then(() => status = `go`)
+	.catch(e => status = `stop`)
+}
+
 beforeUpdate(() => {
-	for (let desc of Object.values($character.description)) {
-		if (desc.value == "") {
-			proceed = false
+	status = `go`
+	for (let d of Object.values($character.description)) {
+		if (d.value == ``) {
+			status = `stop`
 			break
 		}
-		else proceed = true
 	}
-	if (proceed) next = '/creator/traits'
-	else next = '/creator/description'
+	if ($authUserStore == undefined && (!player.email || !player.password || !player.confirm)) {
+		status = `stop`
+	}
+	if (player.password != player.confirm) status = `stop`
+	if (status == `go`) next = `/creator/traits`
+	else next = `/creator/description`
 })
 </script>
 
 
 <h1>Description</h1>
 <div class='section-card'>
-	<div class='item-block'>
-		<div class='player-container'>
-			<span>Player:</span>
-			<input type='text'bind:value={$character.description.player.value}>
+	{#if $authUserStore == undefined}
+		<div class='signup-card'>
+			<div class='item-block'>
+				<div class='email-container'>
+					<span>Email:</span>
+					<input type='email'bind:value={player.email}>
+				</div>
+			</div>
+			<div class='item-block'>
+				<div class='password-container'>
+					<span>Password:</span>
+					<input type='password'bind:value={player.password}>
+				</div>
+			</div>
+			<div class='item-block'>
+				<div class='password-container'>
+					<span>Confirm Password:</span>
+					<input type='password'bind:value={player.confirm}>
+				</div>
+			</div>
 		</div>
-	</div>
+	{/if}
 	<div class='item-block'>
 		<div class='character-container'>
-			<span>Identity:</span>
+			<span>Character:</span>
 			<input type='text'bind:value={$character.description.identity.value}>
 			<button on:click={() => randomItem(1)}>Random</button>
 		</div>
@@ -66,7 +112,7 @@ beforeUpdate(() => {
 	<button class='cntr-btn' on:click={reset}>Reset</button>
 	<button class='cntr-btn' on:click={random}>Random</button>
 </div>
-<NavBar links={{back: '/creator/creation', next: next}} {proceed}/>
+<NavBar links={{back: '/creator/creation', next: next}} {status} onNext={submit}/>
 
 
 <style>
@@ -87,16 +133,9 @@ div[class*='-container'] > span,
 .item-container > button {
 	flex: 1;
 }
-
 div[class*='-container'] > input {
 	margin-left: var(--s33);
 	margin-right: var(--s33);
-}
-.player-container > input[type='text'] {
-	margin-left: var(--s33);
-	margin-right: 0;
-	padding-left: var(--s50);
-	padding-right: var(--s50);
 }
 
 /* MOBILE */
@@ -110,12 +149,12 @@ div[class*='-container'] > input {
 		margin: var(--s50) 0;
 		width: 100%;
 	}
-	.player-container > input[type='text'] {
-		flex: 3;
-	}
 	.character-container > input[type='text'],
 	.item-container input[type='text'] {
 		flex: 2;
+	}
+	.signup-card input {
+		flex: 3;
 	}
 }
 
@@ -129,14 +168,14 @@ div[class*='-container'] > input {
 		margin: var(--s50);
 		width: 100%;
 	}
-	.player-container > input[type='text'] {
-		flex: 7;
-	}
 	.character-container > input[type='text'] {
 		flex: 6
 	}
 	.item-container > input[type='text'] {
 		flex: 2;
+	}
+	.signup-card input {
+		flex: 7;
 	}
 }
 </style>

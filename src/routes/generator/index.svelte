@@ -61,7 +61,7 @@ const rolld6 = () => {
 </script>
 
 
-<h1>Random Roller</h1>
+<h1>Random Generator</h1>
 <div class='section-card'>
 	<p><span class='gear-category'>d6 Roll</span></p>
 	<p>Modifier: <input type='number' bind:value='{mod}'></p>

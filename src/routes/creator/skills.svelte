@@ -9,7 +9,7 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 
 let remaining = Skills.remaining($character)
 
-let next = '/creator/skills'
+let next = `/creator/skills`
 
 const assign = (event) => $character = Skills.assign($character, event.target)
 
@@ -20,8 +20,8 @@ const reset = () => $character = Skills.reset($character)
 beforeUpdate(() => {
 	$character = Skills.setScores($character)
 	remaining = Skills.remaining($character)
-	if (remaining == 0) next = '/creator/properties'
-	else next = '/creator/skills'
+	if (remaining == 0) next = `/creator/properties`
+	else next = `/creator/skills`
 })
 </script>
 
@@ -71,7 +71,7 @@ beforeUpdate(() => {
 		Random
 	</button>
 </div>
-<NavBar links={{back: '/creator/traits', next: next}} proceed={remaining == 0}/>
+<NavBar links={{back: '/creator/traits', next: next}} status={remaining == 0 ? `go` : `stop`}/>
 
 
 <style>

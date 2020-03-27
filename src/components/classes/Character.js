@@ -18,10 +18,6 @@ export default class Character {
 				name: `Height`,
 				value: ``
 			},
-			player: {
-				name: `Player`,
-				value: ``
-			},
 			sex: {
 				name: `Sex`,
 				value: ``

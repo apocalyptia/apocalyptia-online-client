@@ -50,7 +50,7 @@ beforeUpdate(() => {
 		<button on:click={resetAbilities}>Reset</button>
 	</div>
 </div>
-<NavBar links={{back: '/creator/properties', next: '/creator/gear'}} proceed={true}/>
+<NavBar links={{back: '/creator/properties', next: '/creator/gear'}} />
 
 
 <style>

@@ -19,7 +19,7 @@ export const block = new Property({
 export const dodge = new Property({
 	name: `Dodge`,
 	description: [
-		`Dodge = Acrobatics.`,
+		`Dodge = Acrobatics`,
 		...Dodge.description,
 	],
 	formula: (character) => character.skills.acrobatics.score,
@@ -30,7 +30,7 @@ export const dodge = new Property({
 export const health = new Property({
 	name: `Health`,
 	description: [
-		`Health = Constitution x 3.`,
+		`Health = Constitution x 3`,
 		`Health is a measure of how many Wounds you can withstand.`,
 		`Damage is the cause of most Wounds.`,
 		`You start Bleeding 1 Wound/min when you have Wounds = [Constitution].`,
@@ -45,7 +45,7 @@ export const health = new Property({
 export const experience = new Property({
 	name: `Experience`,
 	description: [
-		`Experience (XP) = Brains x 3.`,
+		`Experience (XP) = Brains x 3`,
 		`Experience represents how much you have learned up to now.`,
 		`You get additional XP = Intellect for each game session you survive.`,
 		`You also get +1 XP every time you roll a Botch.`,
@@ -61,7 +61,7 @@ export const experience = new Property({
 export const intellect = new Property({
 	name: `Intellect`,
 	description: [
-		`Intellect = Brains.`,
+		`Intellect = Brains`,
 		`Intellect is the amount of Experience that is earned automatically for each game session that you survive.`,
 	],
 	formula: (character) => character.traits.brains.score,
@@ -72,7 +72,7 @@ export const intellect = new Property({
 export const luck = new Property({
 	name: `Luck`,
 	description: [
-		`Luck = Demeanor.`,
+		`Luck = Demeanor`,
 		`Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance.`,
 		`You may spend 1 Luck Point per round in a dramatic moment for one of the three effects listed below.`,
 		`You regain 1 spent Luck Point at dawn each day.`,
@@ -88,7 +88,7 @@ export const luck = new Property({
 export const psyche = new Property({
 	name: `Psyche`,
 	description: [
-		`Psyche = Demeanor x 3.`,
+		`Psyche = Demeanor x 3`,
 		`This is a measure of how much Trauma you can withstand.`,
 		`Any number of horrible events can cause Trauma.`,
 		`When Trauma = [Demeanor x 3] you lose all hope and seek out death at the earliest opportunity, unless someone can restrain you until you have Recovered from at least 1 Trauma.`,
@@ -101,7 +101,7 @@ export const psyche = new Property({
 export const speed = new Property({
 	name: `Speed`,
 	description: [
-		`Speed = Agility x 3.`,
+		`Speed = Agility x 3`,
 		`Roll this Property against all other participants at the beginning of each round of combat to determine the order in which turns are resolved.`,
 		`This is also the number of yards you can Walk as 1 Action.`,
 		`When traveling long distances overland, you can March at [Speed / 2] mph for up to [Constitution x 3] hrs per day.`,

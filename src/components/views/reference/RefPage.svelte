@@ -5,7 +5,7 @@ export let chapter
 </script>
 
 
-<h1>{chapter.name}</h1>
+<h2>{chapter.name}</h2>
 {#if chapter.explanation}
 	<div class='explanation'>
 		<p>{chapter.explanation}</p>
@@ -50,6 +50,9 @@ export let chapter
 
 
 <style>
+h2 {
+	margin-left: var(--s100);
+}
 .sub-name {
 	font-weight: bold;
 }

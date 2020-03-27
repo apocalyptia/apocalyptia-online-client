@@ -12,9 +12,9 @@ import { Nd6, RandomRoll } from '../../components/helpers/Random'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 
-let proceed = false
+let status = `stop`
 
-let next = '/creator/gear'
+let next = `/creator/gear`
 
 const randomMelee = () => {
 	$character.gear.meleeWeapons.inventory.push(RandomRoll(MeleeWeaponList))
@@ -42,15 +42,17 @@ const randomArmor = () => {
 }
 
 beforeUpdate(function() {
-	for (let item of Object.values($character.gear)) {
-		if (item.inventory.length == 0) {
-			proceed = false
+	status = `go`
+	for (let i of Object.values($character.gear)) {
+		console.log(i.inventory.length)
+		if (i.inventory.length == 0) {
+			status = `stop`
 			break
 		}
-		else proceed = true
 	}
-	if (proceed) next = '/creator/sheet'
-	else next = '/creator/gear'
+	console.log('STATUS = ', status)
+	if (status == `go`) next = `/creator/sheet`
+	else next = `/creator/gear`
 })
 </script>
 
@@ -106,7 +108,7 @@ beforeUpdate(function() {
 		</div>
 	{/if}
 </div>
-<NavBar links={{back: '/creator/abilities', next: next}} {proceed}/>
+<NavBar links={{back: '/creator/abilities', next: next}} {status}/>
 
 
 <style>
