@@ -30,8 +30,8 @@ export const Burning = new Rule({
 export const Concealed = new Rule({
 	name: `Concealed`, 
 	description: [
-		`If an opponent knows your position but cannot see you, they are considered to be Blind to you.`,
-		`This means that their Attack is at a -6 penalty.`,
+		`If an opponent cannot see you, they are considered to be Blind to you.`,
+		`Any Attack they make targeting you is at a -6 penalty.`,
 		`Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover.`,
 		`Targets are Defenseless against Attacks from Concealed opponents.`,
 	]

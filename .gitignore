@@ -7,3 +7,5 @@ yarn-error.log
 book/
 # Local Netlify folder
 .netlify
+# Local linting config
+/jsconfig.json

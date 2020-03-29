@@ -50,7 +50,7 @@ export const MolotovCocktail = new Bomb({
 	description: [
 		`Glass bottle of fuel with rag wick.`,
 	],
-	sz: 2,
+	sz: 1,
 	dmg: `d6 + 1 Fire Damage/round`,
 	rng: `3yd`,
 	attributes: [

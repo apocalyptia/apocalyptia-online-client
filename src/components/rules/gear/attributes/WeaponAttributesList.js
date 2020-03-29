@@ -26,7 +26,7 @@ export const Auto = new WeaponAttribute({
 export const Blast = new WeaponAttribute({
 	name: 'Blast',
 	description: [
-		'[d6 vs Reflexive Dodge] in radius. [Damage / 2] on a miss (minimum 1).',
+		'Roll [d6 vs Reflexive Dodge] against everyone in the Blast radius. [Damage / 2] on a miss (minimum 1).',
 	]
 })
 

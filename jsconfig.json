@@ -4,7 +4,12 @@
 		"target": "es2018"
 	},
 	"exclude": [
-		"node_modules",
-		"**/node_modules/*"
+		"/.git/*",
+		"/.netlify/*",
+		"/.vscode/*",
+		"/__sapper__/*",
+		"/node_modules/*",
+		"/src/node_modules/*",
+		"/static/*",
 	]
 }
