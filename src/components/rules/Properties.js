@@ -5,6 +5,16 @@ export const PropertyExplanation = [
 	`Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
 ]
 
+export const carry = new Property({
+	name: `Carry`,
+	description: [
+		`Carry = Constitution x 6`,
+	],
+	formula: (character) => character.traits.constitution.score * 6,
+	base: 6,
+	score: 6
+})
+
 export const block = new Property({
 	name: `Block`,
 	description: [
@@ -91,11 +101,22 @@ export const psyche = new Property({
 		`Psyche = Demeanor x 3`,
 		`This is a measure of how much Trauma you can withstand.`,
 		`Any number of horrible events can cause Trauma.`,
-		`When Trauma = [Demeanor x 3] you lose all hope and seek out death at the earliest opportunity, unless someone can restrain you until you have Recovered from at least 1 Trauma.`,
+		`When Trauma = [Demeanor x 3] you lose all hope and seek out death at the earliest opportunity.`,
+		`Someone must protect you from yourself until you have Recovered from at least 1 Trauma.`,
 	],
 	formula: (character) => character.traits.demeanor.score * 3,
 	base: 3,
 	score: 3
+})
+
+export const skillPoints = new Property({
+	name: `Skill Points`,
+	description: [
+		`Skill Points = Brains x 6`,
+	],
+	formula: (character) => character.traits.brains.score * 6,
+	base: 6,
+	score: 6
 })
 
 export const speed = new Property({

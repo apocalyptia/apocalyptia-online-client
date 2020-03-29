@@ -2,9 +2,10 @@ import PropSort from '../helpers/PropSort'
 import RandomRoll from '../helpers/Random'
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
+import { skillPoints } from './Properties'
 
 export const SkillExplanation = [
-	`You get to assign Brains x 6 Skill points.`,
+	`You get ${skillPoints.description[0]} to assign.`,
 	`Skills range from 0 to 6.`,
 	`Skill rolls are [d6 + Skill].`,
 	`Trait scores set the limit for their Skills.`,
@@ -28,8 +29,8 @@ export const acrobatics = new Skill({
 		jump: new Specialty({
 			name: `Jump`,
 			description: [
-				`Running Jump [Speed].`,
-				`Vertical [Speed x 3"].`,
+				`Running Jump distance is yards = [Agility].`,
+				`Vertical Jump distance is [Agility x 6] inches.`,
 			]
 		})
 	}
@@ -99,7 +100,7 @@ export const stealth = new Skill({
 		sneak: new Specialty({
 			name: `Sneak`,
 			description: [
-				`Move [Speed / 2] while Concealed.`,
+				`Move Walk Speed while Concealed.`,
 			]
 		})
 	}
@@ -226,7 +227,7 @@ export const athletics = new Skill({
 		climb: new Specialty({
 			name: `Climb`,
 			description: [
-				`Move along vertical surfaces at [Speed / 2].`,
+				`Move along vertical surfaces at [Walk Speed / 2].`,
 			]
 		}),
 		swim: new Specialty({

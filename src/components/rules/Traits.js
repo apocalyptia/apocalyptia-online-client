@@ -12,7 +12,7 @@ export const traitMax = 6
 export const traitPoints = 14
 
 export const TraitsExplanation = [
-	`You get to assign ${traitPoints} Trait points.`,
+	`You get ${traitPoints} Trait points to assign.`,
 	`Traits range from 1 to ${traitMax}.`,
 	`Trait rolls are [d6 + Trait].`,
 	`Trait scores set the limit for their Skills.`,

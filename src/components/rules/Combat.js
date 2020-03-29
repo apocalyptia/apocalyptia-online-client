@@ -32,8 +32,8 @@ export const Rounds = new Rule({
 	name: `Rounds`, 
 	description: [
 		`Combat time occurs in 3-second “rounds”.`,
-		`Each Player rolls [d6 + Speed] to determine the turn order at the start of each new round.`,
-		`This Speed roll may Explode or Botch. On a Botch, you lose your turn.`,
+		`Players have 30 seconds to decide what their Character's Actions will be for the round.`,
+		`Any new Complication or Status modifiers that come into play during a round go into effect at the start of the next round.`,
 	]
 })
 
@@ -43,7 +43,7 @@ export const Rounds = new Rule({
 export const Chase = new Rule({
 	name: `Chase`, 
 	description: [
-		`When a combatant attempts to flee and another chooses to pursue, they roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Speed] each round, depending on the type of mobility in use.`,
+		`When a combatant attempts to flee and another chooses to pursue, they roll opposed [(Acrobatics, Athletics, Drive, or Tame) + Run Speed] each round, depending on the type of mobility in use.`,
 		`The chase ends when one side gets 3 Successes over the other.`,
 	]
 })
@@ -130,12 +130,17 @@ export { Defense }
 const Movement = new Rule({
 	name: `Movement`, 
 	description: [
-		`It costs 1 Action to move up to your Speed [Agility x 3] on your turn.`,
-		`You may spend up to 2 of your Actions on Movement per turn to Run`,
+		`You may make one Movement Action per turn.`,
+		`This Movement always costs 1 Action, no matter what type of Movement it is.`,
+		`Your Movement Action may be any one of the following:`,
+		` 1) Walk Speed = [Agility x 3] yards`,
+		` 2) Run Speed = [Agility x 6] yards`,
+		` 3) Climb Speed = [Agility] yards`,
+		` 4) Swim Speed = [Agility / 2] yards`,
+		` 5) Stand up from Prone = 1 yard`,
+		`When you take a Movement Action, you may go Prone at any time for free.`,
 		`Running imposes the Unstable Status effect until your next turn.`,
 		`You may divide up your Movement around other Actions on your turn however you wish.`,
-		`When you take a Movement Action, you may go Prone at any time for free.`,
-		`Standing up counts as Movement and costs 1 Action.`,
 	]
 })
 Movement.subrules = [
