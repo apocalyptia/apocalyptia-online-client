@@ -44,6 +44,16 @@ export const BrassKnuckles = new MeleeWeapon({
 	]
 })
 
+export const Club = new MeleeWeapon({
+	name: `Club`,
+	sz: 2,
+	dmg: 2,
+	rng: 2,
+	attributes: [
+		OneHanded,
+	]
+})
+
 export const Crowbar = new MeleeWeapon({
 	name: `Crowbar`,
 	sz: 3,
@@ -146,6 +156,7 @@ export default [
 	Ax,
 	BaseballBat,
 	BrassKnuckles,
+	Club,
 	Crowbar,
 	Hammer,
 	Hatchet,
