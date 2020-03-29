@@ -41,7 +41,6 @@ Gear.js:
 	Attributes: Figure out rules to specify weapon categories that attributes qualify for.
 	Ranged: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
 	Storage: Unit conversions still need work.
-	Pepper Spray takes time to start working but lasts 15 to 30 mins
 
 Reference:
 	Put Expand/Collapse All button on reference.
