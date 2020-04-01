@@ -44,6 +44,13 @@ Gear.js:
 
 Reference:
 	Put Expand/Collapse All button on reference.
+	Revise Location Damage.
+	Figure out topical organization. Health for example.
+	Painkiller required for a night's sleep to Recover?
+
+Combat.js:
+	Bring back Location HP and Damage?
+	Is "Wounds" really a useful term?
 
 ---------------------------------------------------------------------------------------------------
 
