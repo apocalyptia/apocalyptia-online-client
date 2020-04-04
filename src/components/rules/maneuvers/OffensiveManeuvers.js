@@ -16,7 +16,8 @@ const CalledShot = new Maneuver({
 	category: `Offensive`,
 	name: `Called Shot`, 
 	description: [
-		`Attacks target the Torso by default. A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects based on Location.`,
+		`Attacks target the Torso by default.`,
+		`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects based on Location.`,
 	]
 })
 CalledShot.table = CalledShotTable
@@ -26,7 +27,8 @@ export const Disarm = new Maneuver({
 	category: `Offensive`,
 	name: `Disarm`, 
 	description: [
-		`Roll [Melee vs Melee (+ Constitution if the weapon is used two-handed)]. The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
+		`Roll [Melee vs Melee (+ Constitution if the weapon is used two-handed)].`,
+		`The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
 	]
 })
 
@@ -34,7 +36,8 @@ export const NonLethalForce = new Maneuver({
 	category: `Offensive`,
 	name: `Non-Lethal Force`,
 	description: [
-		`Declare that you are using this Maneuver before rolling a Melee Attack. On a Success, you do half Damage.`,
+		`Declare that you are using this Maneuver before rolling a Melee Attack.`,
+		`On a Success, you do half Damage.`,
 	]
 })
 
@@ -42,7 +45,8 @@ export const Push = new Maneuver({
 	category: `Offensive`,
 	name: `Push`,
 	description: [
-		`Roll [Constitution vs Constitution] to push an enemy in front of you. While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. No Damage.`,
+		`Roll [Constitution vs Constitution] to push an enemy in front of you.`,
+		`While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. No Damage.`,
 	]
 })
 
@@ -85,7 +89,10 @@ export const Hostage = new Maneuver({
 	category: `Offensive`,
 	name: `Hostage`,
 	description: [
-		`Use a Grabbed or Restrained enemy as Cover. The Grappled enemy's Damage Resistance acts as the Material Damage Resistance and any excess Damage is applied to the Grappled enemy instead of you. If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you. This does not make you Concealed.`,
+		`Use a Grabbed or Restrained enemy as Cover.`,
+		`The Grappled enemy's Damage Resistance acts as the Material Damage Resistance and any excess Damage is applied to the Grappled enemy instead of you.`,
+		`If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you.`,
+		`This does not make you Concealed.`,
 	]
 })
 
@@ -93,7 +100,8 @@ export const Tackle = new Maneuver({
 	category: `Offensive`,
 	name: `Tackle`,
 	description: [
-		`Spend 2 Actions and make a Grapple Attack roll to move up to your Speed and Pin an enemy. If you Fail, you go Prone in front of them.`,
+		`Spend 2 Actions and make a Grapple Attack roll to move up to your Speed and Pin an enemy.`,
+		`If you Fail, you go Prone in front of them.`,
 	]
 })
 
@@ -101,7 +109,8 @@ export const Throw = new Maneuver({
 	category: `Offensive`,
 	name: `Throw`,
 	description: [
-		`Throw a Grabbed or Restrained enemy up to [Constitution] yds. They take Falling Damage and land Prone.`,
+		`Throw a Grabbed or Restrained enemy up to [Constitution] yds.`,
+		`The target takes 1 point of Blunt Damage to a random Location and land Prone.`,
 	]
 })
 

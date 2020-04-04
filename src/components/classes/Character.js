@@ -193,10 +193,48 @@ export default class Character {
 			},
 			health: {
 				name: `Health`,
-				base: 3,
-				mods: 0,
-				score: 3,
-				current: 3
+				head: {
+					name: `Head`,
+					base: 3,
+					mods: 0,
+					score: 3,
+					current: 3,
+				},
+				rightArm: {
+					name: `Right Arm`,
+					base: 3,
+					mods: 0,
+					score: 3,
+					current: 3,
+				},
+				leftArm: {
+					name: `Left Arm`,
+					base: 3,
+					mods: 0,
+					score: 3,
+					current: 3,
+				},
+				torso: {
+					name: `Torso`,
+					base: 6,
+					mods: 0,
+					score: 6,
+					current: 6,
+				},
+				leftLeg: {
+					name: `Left Leg`,
+					base: 3,
+					mods: 0,
+					score: 3,
+					current: 3,
+				},
+				rightLeg: {
+					name: `Right Leg`,
+					base: 3,
+					mods: 0,
+					score: 3,
+					current: 3,
+				},
 			},
 			intellect: {
 				name: `Intellect`,

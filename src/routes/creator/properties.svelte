@@ -26,7 +26,8 @@ beforeUpdate(() => $character = Properties.setScores($character))
 		</div>
 		<div class='prop-item'>
 			{$character.properties.health.name}: 
-			{$character.properties.health.score}
+			{$character.properties.health.torso.score} /
+			{$character.properties.health.head.score}
 		</div>
 		<div class='prop-item'>
 			{$character.properties.psyche.name}: 

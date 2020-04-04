@@ -51,15 +51,15 @@ export const Chase = new Rule({
 export const DamageResistance = new Rule({
 	name: `Damage Resistance`, 
 	description: [
-		`Reduce the amount of Damage you take from any individual Attack by your Armor's Damage Resistance for that Location.`,
-		`Armor is reduced by -1 Damage Resistance after taking Damage that exceeds its Damage Resistance.`,
+		`Armor's Damage Resistance reduces the Damage inflicted by any individual Attack on that Location.`,
+		`Reduce a piece of Armor's Damage Resistance by 1 after taking Damage that exceeds its Damage Resistance.`,
 	]
 })
 
 export const FireDamage = new Rule({
 	name: `Fire Damage`, 
 	description: [
-		`Whenever you take Fire Damage, 1 Wound is permanent.`,
+		`1 point of Fire Damage is always permanent.`,
 		`Only Fire-Resistant Armor reduces Fire Damage.`,
 	]
 })
@@ -85,12 +85,21 @@ export const Recovery = new Rule({
 export const ReflexiveDefense = new Rule({
 	name: `Reflexive Defense`,
 	description: [
-		`If you are unaware or unable to avoid an Attack, you are Defenseless and so must fall back on your Reflexive Defenses.`,
-		`Both Defenses have a Reflexive form, which acts as your default Defense score when you are not actively rolling.`,
-		`Reflexive Block equals your Melee(Block) score.`,
-		`Reflexive Dodge equals your Acrobatics(Dodge) score.`,
+		`Reflexive Defenses = the Skill Specialty they are based on.`,
+		`These are your default Defenses when not actively rolling.`,
 		`Use Reflexive Block against Melee Attacks.`,
 		`Use Reflexive Dodge against either Melee or Ranged Attacks.`,
+	]
+})
+
+export const Wounds = new Rule({
+	name: `Wounds`,
+	description: [
+		`A Wound is an injury to particular Location constituting 1 or more Damage.`,
+		`Every time you take Damage, you get a new Wound.`,
+		`A Location may have multiple Wounds.`,
+		`The severity of the Wound depends on how much Damage was taken.`,
+		`Treat each Wound separately for purposes of Recovery or the application of the Medicine Skill.`
 	]
 })
 
@@ -100,9 +109,10 @@ export const ReflexiveDefense = new Rule({
 const Damage = new Rule({
 	name: `Damage`, 
 	description: [
-		`Damage causes Wounds. You die when Wounds = Health.`,
+		`Damage causes Wounds.`,
+		`You die when Damage = Health.`,
 		`Successful Attacks do Damage = [(Attack - Defense) + Weapon Damage].`,
-		`All Wounds cause Pain penalties.`,
+		`All Damage cause Pain penalties.`,
 	]
 })
 Damage.subrules = [
@@ -110,6 +120,7 @@ Damage.subrules = [
 	FireDamage,
 	Pain,
 	Recovery,
+	Wounds,
 ]
 export { Damage }
 

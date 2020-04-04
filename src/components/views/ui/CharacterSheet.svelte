@@ -79,7 +79,10 @@ const skills = Object.values($character.skills)
 				</div>
 				<div class='prop-item'>
 					{$character.properties.health.name}: 
-					{$character.properties.health.score}
+					{$character.properties.health.head.score} /
+					{$character.properties.health.leftArm.score} /
+					{$character.properties.health.torso.score} /
+					{$character.properties.health.leftLeg.score}
 				</div>
 				<div class='prop-item'>
 					{$character.properties.experience.name}: 
@@ -96,12 +99,12 @@ const skills = Object.values($character.skills)
 					{$character.properties.dodge.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.intellect.name}: 
-					{$character.properties.intellect.score}
-				</div>
-				<div class='prop-item'>
 					{$character.properties.block.name}: 
 					{$character.properties.block.score}
+				</div>
+				<div class='prop-item'>
+					{$character.properties.intellect.name}: 
+					{$character.properties.intellect.score}
 				</div>
 				<div class='prop-item'>
 					{$character.properties.luck.name}: 
@@ -161,11 +164,6 @@ const skills = Object.values($character.skills)
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
-@media only screen and (max-width: 900px) {
-	.section-block {
-		min-width: 40%;
-	}
 }
 .section-block {
 	margin: var(--s100);
