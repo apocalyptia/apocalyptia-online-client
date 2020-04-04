@@ -1,11 +1,12 @@
 import Rule from '../classes/Rule'
+import Needs from './Needs'
 
 export const Bleeding = new Rule({
 	name: `Bleeding`, 
 	description: [
-		`When you take Wounds = [Constitution] or more, you begin taking an additional 1 Wound per minute.`,
-		`When you take Wounds = [Constitution x 2], the rate of Bleeding increases to 1 Wound per round.`,
-		`Roll Medicine(First-Aid) vs Wounds to stop Bleeding.`,
+		`Whenever you get a new Wound, you begin taking an additional 1 Damage per minute to the Torso.`,
+		`Bleeding Damage can only heal from natural Recovery or from a blood donation using a Transfusion Kit.`,
+		`Roll Medicine(First-Aid) vs Damage to stop a Wound from Bleeding.`,
 	]
 })
 
@@ -52,30 +53,12 @@ export const Defenseless = new Rule({
 	]
 })
 
-export const Dehydration = new Rule({
-	name: `Dehydration`, 
-	description: [
-		`People need 1 Water per day.`,
-		`1 Pain per day without Water.`,
-		`This penalty is reduced by 1 per day with Water.`,
-		`Going without Water for a number of days = [Constitution] is lethal.`,
-	]
-})
-
-export const Exhaustion = new Rule({
-	name: `Exhaustion`, 
-	description: [
-		`People need 8 hours of sleep per day.`,
-		`1 Pain per day without sufficient sleep.`,
-		`Go unconscious for 8 hours after days = [Constitution] without sleep.`,
-		`Penalties go away after 8 hours of sleep.`,
-	]
-})
-
 export const Falling = new Rule({
 	name: `Falling`, 
 	description: [
-		`1 Wound per 2yds.`,
+		`1 Damage per 2yds.`,
+		`Each point of Falling Damage is inflicted on a random Location.`,
+		`Multiple points of Falling Damage on the same Location count as a single Wound.`,
 		`Roll [Acrobatics # = yds] as a Defense Action to halve Falling Damage.`,
 	]
 })
@@ -91,16 +74,6 @@ export const Harmless = new Rule({
 	name: `Harmless`,
 	description: [
 		`You cannot Attack.`,
-	]
-})
-
-export const Hypothermia = new Rule({
-	name: `Hypothermia`, 
-	description: [
-		`People need warmth to stay alive.`,
-		`1 Pain per hour of Hypothermia.`,
-		` Reduce penalty by 1 per hour of warmth.`,
-		`Hypothermia for hours = [Constitution] is lethal.`,
 	]
 })
 
@@ -145,31 +118,11 @@ export const Restrained = new Rule({
 	]
 })
 
-export const Starvation = new Rule({
-	name: `Starvation`, 
-	description: [
-		`People need 1 Food per day.`,
-		`1 Pain per week without Food.`,
-		`This penalty is reduced by 1 per day with Food.`,
-		`Going without Food for a number of weeks = [Constitution] is lethal.`,
-	]
-})
-
 export const Stun = new Rule({
 	name: `Stun`, 
 	description: [
 		`Defenseless, Harmless, and Immobilized.`,
 		`You fall Prone if Stunned for longer than 1 round.`,
-	]
-})
-
-export const Asphyxiation = new Rule({
-	name: `Asphyxiation`, 
-	description: [
-		`People need constant air supply.`,
-		`1 Pain per minute without air.`,
-		`This penalty is reduced by 1 per minute with air.`,
-		`Going without air for a number of minutes = [Constitution] is lethal.`,
 	]
 })
 
@@ -196,21 +149,6 @@ export const Unstable = new Rule({
 		`Ranged Attacks targeting you take a -3 penalty.`,
 	]
 })
-
-const Needs = new Rule({
-	name: `Needs`, 
-	description: [
-		`1 Pain for each lacking Need over a given period of time:`,
-	]
-})
-Needs.subrules = [
-	Asphyxiation,
-	Dehydration,
-	Exhaustion,
-	Hypothermia,
-	Starvation,
-]
-export { Needs }
 
 export default {
 	name: `Status`,

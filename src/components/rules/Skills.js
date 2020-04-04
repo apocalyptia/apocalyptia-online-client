@@ -2,10 +2,9 @@ import PropSort from '../helpers/PropSort'
 import RandomRoll from '../helpers/Random'
 import Skill from '../classes/Skill'
 import Specialty from '../classes/Specialty'
-import { skillPoints } from './Properties'
 
 export const SkillExplanation = [
-	`You get ${skillPoints.description[0]} to assign.`,
+	`You get Brains x 6 Skill points to assign.`,
 	`Skills range from 0 to 6.`,
 	`Skill rolls are [d6 + Skill].`,
 	`Trait scores set the limit for their Skills.`,
@@ -22,7 +21,8 @@ export const acrobatics = new Skill({
 		dodge: new Specialty({
 			name: `Dodge`,
 			description: [
-				`Roll vs [Melee or Ranged].`,
+				`Roll Acrobatics(Dodge) vs [Melee or Ranged].`,
+				`As part of a Dodge, you may drop Prone for free if you wish.`,
 				`Reflexive Dodge is your Dodge score with no roll.`,
 			]
 		}),
@@ -116,24 +116,24 @@ export const AgilitySkills = [
 export const medicine = new Skill({
 	name: `Medicine`,
 	description: [
-		`Diagnosing and treating wounds.`,
+		`Diagnosing and treating Wounds and Diseases.`,
 	],
 	parent: `Brains`,
-	difficulty: `Wounds`,
+	difficulty: `Damage`,
 	specialties: {
 		firstaid: new Specialty({
 			name: `First-Aid`,
 			description: [
-				`Stop Bleeding`,
-				`Takes 1d6 rounds.`,
+				`Stop a Wound from Bleeding.`,
+				`Takes 1d6 minutes.`,
 			]
 		}),
 		surgery: new Specialty({
 			name: `Surgery`,
 			description: [
-				`Heal 1 Wound.`,
-				`Cannot be performed again on the same patient until they are fully healed.`,
-				`d6 Damage on a Botch.`,
+				`Heal 1 Damage on a Wound.`,
+				`Cannot be performed again on the same Wound until it is fully healed.`,
+				`Inflict an additional d6 Damage on a Botch.`,
 			]
 		})
 	}

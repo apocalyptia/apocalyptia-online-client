@@ -212,14 +212,13 @@ export const Resilient = new Ability({
 	xp: 9
 })
 
-// OPEN SLOT FOR NEW 9XP ABILITY
-
 export const XP9Abilities = [
 	DangerSense,
 	Discipline,
 	Fortunate,
 	FreeRunning,
 	Unorthodox,
+	Resilient,
 ]
 
 // 12 XP Abilities
@@ -262,7 +261,8 @@ export const XP12Abilities = [
 export const Charge = new Ability({
 	name: `Charge`,
 	description: [
-		`Ignore Prone effect from Leg Damage. Ignore Unstable penalty to Melee Attacks when you Run.`,
+		`Ignore Unstable penalty to Melee Attacks when you Run.`,
+		`Ignore Prone effect from Leg Damage.`,
 	],
 	max: 1,
 	xp: 15
@@ -271,7 +271,8 @@ export const Charge = new Ability({
 export const FirmGrip = new Ability({
 	name: `Firm Grip`,
 	description: [
-		`Use 2h weapons in 1h, up to Size 3. Ignore Drop effect from Arm Damage.`,
+		`Ignore penalty to use 2h weapons in 1h, up to Size = Constitution.`,
+		`Ignore Drop effect from Arm Damage.`,
 	],
 	max: 1,
 	xp: 15
@@ -331,7 +332,7 @@ export const Rational = new Ability({
 export const Tough = new Ability({
 	name: `Tough`,
 	description: [
-		`+1 Health.`,
+		`+1 Health for each Location.`,
 	],
 	max: 3,
 	xp: 24
