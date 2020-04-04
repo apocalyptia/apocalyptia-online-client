@@ -4,7 +4,8 @@ import Drug from '../../classes/gear/Drug'
 export const Alcohol = new Drug({
 	name: `Alcohol`,
 	description: [
-		`Antibiotic or Fuel. C9# or Unstable.`,
+		`Can be used as an Antibiotic or Fuel.`,
+		`C9# or Unstable.`,
 	],
 	sz: 1,
 	mix: 9,
@@ -24,7 +25,7 @@ export const Antibiotic = new Drug({
 export const Hallucinogen = new Drug({
 	name: `Hallucinogen`,
 	description: [
-		`+1 Perform and Tame. -3 all other rolls. -1 Psyche.`,
+		`+1 Perform and Tame, -3 to all other rolls, and -1 Psyche.`,
 	],
 	sz: 0,
 	mix: 15,

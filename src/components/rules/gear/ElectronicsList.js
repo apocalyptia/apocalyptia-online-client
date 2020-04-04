@@ -13,7 +13,8 @@ export const Cellphone = new Electronic({
 export const EmergencyRadio = new Electronic({
 	name: `Emergency Radio`,
 	description: [
-		`AM/FM/Shortwave. 1yd light.`,
+		`AM/FM/Shortwave.`,
+		`1yd light.`,
 	],
 	sz: 1,
 	hours: 6
@@ -40,7 +41,8 @@ export const GeigerCounter = new Electronic({
 export const HandRadio = new Electronic({
 	name: `Hand Radio`,
 	description: [
-		`9-channel 2-way radio. 3 mile range.`,
+		`9-channel 2-way radio.`,
+		`3 mile range.`,
 	],
 	sz: 1,
 	hours: 9
@@ -76,7 +78,8 @@ export const Megaphone = new Electronic({
 export const Multimeter = new Electronic({
 	name: `Multimeter`,
 	description: [
-		`+3 Science(Technology). Detect voltage.`,
+		`+3 Science(Technology).`,
+		`Detects voltage, battery life, and closed circuits.`,
 	],
 	sz: 1,
 	hours: 48
@@ -94,7 +97,9 @@ export const NightvisionGoggles = new Electronic({
 export const QuadcopterDrone = new Electronic({
 	name: `Quadcopter Drone`,
 	description: [
-		`Science 6# to use. Camera. 90yd Speed.`,
+		`Science 6# to use.`,
+		`Onboard camera.`,
+		`90yd Speed.`,
 	],
 	sz: 2,
 	hours: .25
@@ -103,7 +108,8 @@ export const QuadcopterDrone = new Electronic({
 export const RCCar = new Electronic({
 	name: `RC Car`,
 	description: [
-		`Science 3# to use. 45yd Speed.`,
+		`Science 3# to use.`,
+		`45yd Speed.`,
 	],
 	sz: 3,
 	hours: .5
@@ -112,7 +118,8 @@ export const RCCar = new Electronic({
 export const SolarLamp = new Electronic({
 	name: `Solar Lamp`,
 	description: [
-		`1yd light radius. 1day charge.`,
+		`1yd light radius.`,
+		`1 day charge.`,
 	],
 	sz: 1,
 	hours: 9
@@ -121,10 +128,11 @@ export const SolarLamp = new Electronic({
 export const StunGun = new Electronic({
 	name: `Stun Gun`,
 	description: [
-		`Melee Attack. C9# or Stun for 1 round.`,
+		`Melee Attack.`,
+		`C9# or Stun next round.`,
 	],
 	sz: 1,
-	hours: .25
+	hours: .1
 })
 
 

@@ -12,7 +12,9 @@ export const AirHorn = new Equipment({
 export const Balaclava = new Equipment({
 	name: `Balaclava`,
 	description: [
-		`+1 Stealth. Mask. Cold Resistance.`,
+		`+1 Stealth.`,
+		`Mask.`,
+		`Cold Resistance.`,
 	],
 	sz: 0
 })
@@ -20,7 +22,8 @@ export const Balaclava = new Equipment({
 export const Bandanna = new Equipment({
 	name: `Bandanna`,
 	description: [
-		`+1 Constitution vs airborne toxins. Can use as Bandage.`,
+		`+1 Constitution vs airborne toxins.`,
+		`Can use as Bandage.`,
 	],
 	sz: 0
 })
@@ -36,7 +39,9 @@ export const BaseballCap = new Equipment({
 export const Bicycle = new Equipment({
 	name: `Bicycle`,
 	description: [
-		`Athletics 3#. Speed x3yds (x.7mph). 2h.`,
+		`Athletics 3#.`,
+		`Speed x3yds (x.7mph).`,
+		`2h.`,
 	],
 	sz: 8
 })
@@ -68,7 +73,8 @@ export const BoltCutters = new Equipment({
 export const CageTrap = new Equipment({
 	name: `Cage Trap`,
 	description: [
-		`+3 Survival(Forage). Takes 1day.`,
+		`+3 Survival(Forage).`,
+		`Takes 1day.`,
 	],
 	sz: 6
 })
@@ -84,7 +90,8 @@ export const Candle = new Equipment({
 export const Candy = new Equipment({
 	name: `Candy`,
 	description: [
-		`Restores 1 Luck point. 1/day.`,
+		`Restores 1 Luck point.`,
+		`1/day.`,
 	],
 	sz: 0
 })
@@ -92,7 +99,8 @@ export const Candy = new Equipment({
 export const Carabiner = new Equipment({
 	name: `Carabiner`,
 	description: [
-		`+1 Athletics(Climb and Rappel). Holds 50Sz.`,
+		`+1 Athletics(Climb and Rappel).`,
+		`Holds 50Sz.`,
 	],
 	sz: 0
 })
@@ -100,7 +108,8 @@ export const Carabiner = new Equipment({
 export const Compass = new Equipment({
 	name: `Compass`,
 	description: [
-		`+3 Survival(Navigate). Always points North.`,
+		`+3 Survival(Navigate).`,
+		`Always points North.`,
 	],
 	sz: 0
 })
@@ -132,7 +141,9 @@ export const Chemical = new Equipment({
 export const ChokerLeash = new Equipment({
 	name: `Choker Leash`,
 	description: [
-		`+3 Tame. Grabbed. Constitution +3 vs Constitution to control.`,
+		`+3 Tame.`,
+		`Grabbed.`,
+		`Constitution +3 vs Constitution to control.`,
 	],
 	sz: 1
 })
@@ -140,7 +151,8 @@ export const ChokerLeash = new Equipment({
 export const DuctTape = new Equipment({
 	name: `Duct Tape`,
 	description: [
-		`+1 Build/1yd or use 2yds as Handcuffs. 60yds.`,
+		`+1 Build/1yd or use 2yds as Handcuffs.`,
+		`60yds.`,
 	],
 	sz: 1
 })
@@ -148,7 +160,8 @@ export const DuctTape = new Equipment({
 export const DustMask = new Equipment({
 	name: `Dust Mask`,
 	description: [
-		`+3 Constitution vs airborne toxins. Mask.`,
+		`+3 Constitution vs airborne toxins.`,
+		`Mask.`,
 	],
 	sz: 1
 })
@@ -156,7 +169,8 @@ export const DustMask = new Equipment({
 export const EarPlugs = new Equipment({
 	name: `Ear Plugs`,
 	description: [
-		`No Deafness from noise. -3 Perception(Hear).`,
+		`No Deafness from noise.`,
+		`-3 Perception(Hear).`,
 	],
 	sz: 9
 })
@@ -164,7 +178,8 @@ export const EarPlugs = new Equipment({
 export const EggTimer = new Equipment({
 	name: `Egg Timer`,
 	description: [
-		`Set up to 60mins. Loud ringing for 1min.`,
+		`Set up to 60mins.`,
+		`Loud ringing for 1min.`,
 	],
 	sz: 1
 })
@@ -172,7 +187,8 @@ export const EggTimer = new Equipment({
 export const Firestick = new Equipment({
 	name: `Fire-stick`,
 	description: [
-		`+3 Survival(Camp). Magnesium rod and steel.`,
+		`+3 Survival(Camp).`,
+		`Magnesium rod and steel.`,
 	],
 	sz: 0
 })
@@ -188,7 +204,9 @@ export const FishingPole = new Equipment({
 export const FlareGun = new Equipment({
 	name: `Flare Gun`,
 	description: [
-		`Pistol. Range:3. Ammo: 12g Flares or 1 use 12g.`,
+		`Pistol.`,
+		`Range:3.`,
+		`Ammo: 12g Flares or 1 use 12g.`,
 	],
 	sz: 1
 })
@@ -196,7 +214,8 @@ export const FlareGun = new Equipment({
 export const Flippers = new Equipment({
 	name: `Flippers`,
 	description: [
-		`+3 Athletics(Swim). -6 walking Speed.`,
+		`+3 Athletics(Swim).`,
+		`-6 walking Speed.`,
 	],
 	sz: 2
 })
@@ -212,7 +231,9 @@ export const Food = new Equipment({
 export const GasMask = new Equipment({
 	name: `Gas Mask`,
 	description: [
-		`+6 Constitution vs airborne toxins. Mask. -1 Perception.`,
+		`+6 Constitution vs airborne toxins.`,
+		`Mask.`,
+		`-1 Perception.`,
 	],
 	sz: 1
 })
@@ -236,7 +257,8 @@ export const Goggles = new Equipment({
 export const GrapplingHook = new Equipment({
 	name: `Grappling Hook`,
 	description: [
-		`+3 Athletics(Climb and Rappel). Holds 100Sz.`,
+		`+3 Athletics(Climb and Rappel).`,
+		`Holds 100Sz.`,
 	],
 	sz: 2
 })
@@ -244,7 +266,8 @@ export const GrapplingHook = new Equipment({
 export const GunCleaningKit = new Equipment({
 	name: `Gun Cleaning Kit`,
 	description: [
-		`Gun gets +1 Ranged for 1 day. Takes 1hr/gun.`,
+		`Gun gets +1 Ranged for 1 day.`,
+		`Takes 1hr/gun.`,
 	],
 	sz: 1
 })
@@ -268,7 +291,10 @@ export const Hammock = new Equipment({
 export const Handcuffs = new Equipment({
 	name: `Handcuffs`,
 	description: [
-		`Restrained if placed on Arms. Speed = 1 if placed on Legs. A15# to escape. Larceny(Disable) 12#.`,
+		`Restrained if placed on Arms.`,
+		`Speed = 1 if placed on Legs.`,
+		`A15# to escape.`,
+		`Larceny(Disable) 12#.`,
 	],
 	sz: 1
 })
@@ -276,7 +302,9 @@ export const Handcuffs = new Equipment({
 export const LeatherBelt = new Equipment({
 	name: `Leather Belt`,
 	description: [
-		`1yd strap. Stops Limb Bleeding. Holds 50Sz.`,
+		`1yd strap.`,
+		`Stops Limb Bleeding.`,
+		`Holds 50Sz.`,
 	],
 	sz: 1
 })
@@ -284,7 +312,8 @@ export const LeatherBelt = new Equipment({
 export const Lifejacket = new Equipment({
 	name: `Lifejacket`,
 	description: [
-		`+6 Athletics(Swim). Prevents drowning.`,
+		`+6 Athletics(Swim).`,
+		`Prevents drowning.`,
 	],
 	sz: 2
 })
@@ -292,7 +321,8 @@ export const Lifejacket = new Equipment({
 export const Lighter = new Equipment({
 	name: `Lighter`,
 	description: [
-		`Makes a small fire. 1yd radius light.`,
+		`Makes a small fire.`,
+		`1yd radius light.`,
 	],
 	sz: 0
 })
@@ -300,7 +330,8 @@ export const Lighter = new Equipment({
 export const Lockpicks = new Equipment({
 	name: `Lockpicks`,
 	description: [
-		`+3 Larceny(Disable) key locks. 6 picks.`,
+		`+3 Larceny(Disable) key locks.`,
+		`6 picks.`,
 	],
 	sz: 1
 })
@@ -308,7 +339,8 @@ export const Lockpicks = new Equipment({
 export const LuxuryItem = new Equipment({
 	name: `Luxury Item`,
 	description: [
-		`Toilet paper, cigarette, etc. +1 Psyche 1/wk.`,
+		`Toilet paper, cigarette, etc.`,
+		`+1 Psyche 1/wk.`,
 	],
 	sz: 0
 })
@@ -324,7 +356,8 @@ export const MagnifyingGlass = new Equipment({
 export const Makeup = new Equipment({
 	name: `Makeup`,
 	description: [
-		`+1 Socialize and Entertain for 6hrs. 30 uses.`,
+		`+1 Socialize and Entertain for 6hrs.`,
+		`30 uses.`,
 	],
 	sz: 0
 })
@@ -332,7 +365,9 @@ export const Makeup = new Equipment({
 export const Marbles = new Equipment({
 	name: `Marbles`,
 	description: [
-		`30/bag. 2sqyd area. A12# or fall Prone.`,
+		`30/bag.`,
+		`2sqyd area.`,
+		`A12# or fall Prone.`,
 	],
 	sz: 1
 })
@@ -348,7 +383,8 @@ export const Marker = new Equipment({
 export const Matchbook = new Equipment({
 	name: `Matchbook`,
 	description: [
-		`+1 Survival(Camp). 1yd light radius, 3 rounds.`,
+		`+1 Survival(Camp).`,
+		`1yd light radius, 3 rounds.`,
 	],
 	sz: 0
 })
@@ -356,7 +392,8 @@ export const Matchbook = new Equipment({
 export const MeasuringCup = new Equipment({
 	name: `Measuring Cup`,
 	description: [
-		`+3 Science(Chemistry). Marked glass cup.`,
+		`+3 Science(Chemistry).`,
+		`Marked glass cup.`,
 	],
 	sz: 1
 })
@@ -388,7 +425,8 @@ export const MusicalInstrument = new Equipment({
 export const MylarBlanket = new Equipment({
 	name: `Mylar Blanket`,
 	description: [
-		`Cold Resistance. 1yd x 2yd reflective foil sheet.`,
+		`Cold Resistance.`,
+		`1yd x 2yd reflective foil sheet.`,
 	],
 	sz: 0
 })
@@ -404,7 +442,8 @@ export const Notebook = new Equipment({
 export const Padlock = new Equipment({
 	name: `Padlock`,
 	description: [
-		`2 Damage Resistance. Larceny(Disable) 9#.`,
+		`2 Damage Resistance.`,
+		`Larceny(Disable) 9#.`,
 	],
 	sz: 1
 })
@@ -412,7 +451,8 @@ export const Padlock = new Equipment({
 export const Paracord = new Equipment({
 	name: `Paracord`,
 	description: [
-		`60yd coil. Holds 50Sz.`,
+		`60yd coil.`,
+		`Holds 50Sz.`,
 	],
 	sz: 1
 })
@@ -428,9 +468,13 @@ export const Part = new Equipment({
 export const PepperSpray = new Equipment({
 	name: `Pepper Spray`,
 	description: [
-		`+3 Ranged(Shoot) with this weapon. Range:1.`,
-		`Successful Called Shot: Head causes 6 Pain. Takes 1 round for Pain to start. Pain lasts for d6x5 minutes.`,
-		`3 uses. Toxin.`,
+		`+3 Ranged(Shoot) with this weapon.`,
+		`Range:1.`,
+		`Successful Called Shot: Head causes 6 Pain.`,
+		`Takes 1 round for Pain to start.`,
+		`Pain lasts for d6x5 minutes.`,
+		`3 uses.`,
+		`Toxin.`,
 	],
 	sz: 0
 })
@@ -446,7 +490,8 @@ export const PocketMirror = new Equipment({
 export const Poncho = new Equipment({
 	name: `Poncho`,
 	description: [
-		`Cold Resistance. Waterproof.`,
+		`Cold Resistance.`,
+		`Waterproof.`,
 	],
 	sz: 0
 })
@@ -454,7 +499,8 @@ export const Poncho = new Equipment({
 export const RatTrap = new Equipment({
 	name: `Rat Trap`,
 	description: [
-		`+1 Survival(Forage). Takes 1day.`,
+		`+1 Survival(Forage).`,
+		`Takes 1day.`,
 	],
 	sz: 1
 })
@@ -462,7 +508,8 @@ export const RatTrap = new Equipment({
 export const RoadFlare = new Equipment({
 	name: `Road Flare`,
 	description: [
-		`3 Fire Damage. 10yd light radius for 20mins.`,
+		`3 Fire Damage.`,
+		`10yd light radius for 20mins.`,
 	],
 	sz: 1
 })
@@ -470,7 +517,10 @@ export const RoadFlare = new Equipment({
 export const Rollerblades = new Equipment({
 	name: `Rollerblades`,
 	description: [
-		`Athletics 6#. Speed x3. 1 round equip. Fail:Prone.`,
+		`Athletics 6#.`,
+		`Speed x3.`,
+		`1 round equip.`,
+		`Fail:Prone.`,
 	],
 	sz: 2
 })
@@ -478,7 +528,9 @@ export const Rollerblades = new Equipment({
 export const Rope = new Equipment({
 	name: `Rope`,
 	description: [
-		`30yd nylon coil. Holds 100Sz. Survival 6# to use as Handcuffs.`,
+		`30yd nylon coil.`,
+		`Holds 100Sz.`,
+		`Survival 6# to use as Handcuffs.`,
 	],
 	sz: 2
 })
@@ -494,7 +546,9 @@ export const RunningShoes = new Equipment({
 export const Skateboard = new Equipment({
 	name: `Skateboard`,
 	description: [
-		`Athletics 6#. Speed x3. Fail:Prone.`,
+		`Athletics 6#.`,
+		`Speed x3.`,
+		`Fail:Prone.`,
 	],
 	sz: 3
 })
@@ -502,7 +556,8 @@ export const Skateboard = new Equipment({
 export const SleepingBag = new Equipment({
 	name: `Sleeping Bag`,
 	description: [
-		`Insulated bag for up to 2 people. Cold Resistance +3hrs.`,
+		`Insulated bag for up to 2 people.`,
+		`Cold Resistance +3hrs.`,
 	],
 	sz: 3
 })
@@ -526,7 +581,9 @@ export const SpottingScope = new Equipment({
 export const SprayPaint = new Equipment({
 	name: `Spray Paint`,
 	description: [
-		`Ranged Attack, Called Shot: Head. Blind d6 rounds. 10 uses.`,
+		`Ranged Attack, Called Shot: Head.`,
+		`Blind d6 rounds.`,
+		`10 uses.`,
 	],
 	sz: 1
 })
@@ -534,7 +591,8 @@ export const SprayPaint = new Equipment({
 export const Sunglasses = new Equipment({
 	name: `Sunglasses`,
 	description: [
-		`No Visibility(Sun) penalty. +1 Constitution vs light.`,
+		`No Visibility(Sun) penalty.`,
+		`+1 Constitution vs light.`,
 	],
 	sz: 0
 })
@@ -550,7 +608,8 @@ export const SwissArmyKnife = new Equipment({
 export const TapeMeasure = new Equipment({
 	name: `Tape Measure`,
 	description: [
-		`+1 Build. 10yd long wind-up metal tape.`,
+		`+1 Build.`,
+		`10yd long wind-up metal tape.`,
 	],
 	sz: 2
 })
@@ -558,7 +617,9 @@ export const TapeMeasure = new Equipment({
 export const Tarp = new Equipment({
 	name: `Tarp`,
 	description: [
-		`3yd x 3yd plastic sheet. Cold Resistance. Waterproof.`,
+		`3yd x 3yd plastic sheet.`,
+		`Cold Resistance.`,
+		`Waterproof.`,
 	],
 	sz: 1
 })
@@ -566,7 +627,9 @@ export const Tarp = new Equipment({
 export const Tent = new Equipment({
 	name: `Tent`,
 	description: [
-		`4 person. 5min setup/take-down. Cold Resistance +3hrs.`,
+		`4 person.`,
+		`5min setup/take-down.`,
+		`Cold Resistance +3hrs.`,
 	],
 	sz: 6
 })
@@ -574,7 +637,8 @@ export const Tent = new Equipment({
 export const ThermalUnderwear = new Equipment({
 	name: `Thermal Underwear`,
 	description: [
-		`Cold Resistance. Can use as 6 Bandages.`,
+		`Cold Resistance.`,
+		`Can use as 6 Bandages.`,
 	],
 	sz: 1
 })
@@ -582,7 +646,8 @@ export const ThermalUnderwear = new Equipment({
 export const ToolBag = new Equipment({
 	name: `Tool Bag`,
 	description: [
-		`+3 Build. Pliers, wrenches, level, etc.`,
+		`+3 Build.`,
+		`Pliers, wrenches, level, etc.`,
 	],
 	sz: 3
 })
@@ -598,7 +663,8 @@ export const WaterFilter = new Equipment({
 export const Whetstone = new Equipment({
 	name: `Whetstone`,
 	description: [
-		`Blade gets +1 Damage for 1day. Takes 1hr/blade.`,
+		`Blade gets +1 Damage for 1day.`,
+		`Takes 1hr/blade.`,
 	],
 	sz: 1
 })
@@ -606,7 +672,8 @@ export const Whetstone = new Equipment({
 export const Whistle = new Equipment({
 	name: `Whistle`,
 	description: [
-		`+1 Tame(Train). Loud shriek 500yd radius.`,
+		`+1 Tame(Train).`,
+		`Loud shriek 500yd radius.`,
 	],
 	sz: 0
 })
@@ -630,7 +697,9 @@ export const Wristwatch = new Equipment({
 export const ZipTie = new Equipment({
 	name: `Zip Tie`,
 	description: [
-		`Place on Arms behind target's back to make them Harmless. Place on Legs to make target Immobilized. Constitution or Acrobatics 12# to escape.`,
+		`Place on Arms behind target's back to make them Harmless.`,
+		`Place on Legs to make target Immobilized.`,
+		`Constitution or Acrobatics 12# to escape.`,
 		`Use for +1 Build.`,
 	],
 	sz: 0

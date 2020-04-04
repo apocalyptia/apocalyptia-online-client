@@ -2,37 +2,37 @@ import ArmorAttribute from '../../../classes/gear/ArmorAttribute'
 
 
 export const Camo = new ArmorAttribute({
-	name: 'Camo',
+	name: `Camo`,
 	description: [
-		'+1 Stealth per Location when in a given Biome.',
+		`+1 Stealth per Location when in a given Biome.`,
 	]
 })
 
 export const ColdResistance = new ArmorAttribute({
-	name: 'Cold Resistance',
+	name: `Cold Resistance`,
 	description: [
-		'Delay Hypothermia for 1hr per Location.',
+		`Delay Hypothermia for 1hr per Location.`,
 	]
 })
 
 export const FireResistance = new ArmorAttribute({
-	name: 'Fire Resistance',
+	name: `Fire Resistance`,
 	description: [
-		'Armor Damage Resistance reduces Fire Damage.',
+		`Armor Damage Resistance reduces Fire Damage.`,
 	]
 })
 
 export const Impermeable = new ArmorAttribute({
-	name: 'Impermeable',
+	name: `Impermeable`,
 	description: [
-		'Automatic Success to resist exposure to Diseases and Toxins.',
+		`Automatic Success to resist exposure to Diseases and Toxins.`,
 	]
 })
 
 export const Mask = new ArmorAttribute({
-	name: 'Mask',
+	name: `Mask`,
 	description: [
-		'Obscures identity and protects face. -1 Perception.',
+		`Obscures identity and protects face. -1 Perception.`,
 	]
 })
 

@@ -4,7 +4,8 @@ import Accessory from '../../../classes/gear/Accessory'
 export const Bayonet = new Accessory({
 	name: `Bayonet`,
 	description: [
-		`Knife. +1 Damage and Pierce for Melee Attacks.`,
+		`Counts as a Knife.`,
+		`+1 Damage and Pierce for Melee Attacks.`,
 	],
 	sz: 1
 })
@@ -12,7 +13,8 @@ export const Bayonet = new Accessory({
 export const Bipod = new Accessory({
 	name: `Bipod`,
 	description: [
-		`Ignore Size requirement. 1 round setup.`,
+		`Ignore Size requirement.`,
+		`1 round setup.`,
 	],
 	sz: 1
 })
@@ -20,7 +22,8 @@ export const Bipod = new Accessory({
 export const DrumMagazine = new Accessory({
 	name: `Drum Magazine`,
 	description: [
-		`Gun specific. 3x Ammo magazine capacity.`,
+		`Gun specific.`,
+		`3x Ammo magazine capacity.`,
 	],
 	sz: 1
 })
@@ -44,7 +47,8 @@ export const Holosight = new Accessory({
 export const Laser = new Accessory({
 	name: `Laser`,
 	description: [
-		`+1 Ranged Attack. -6 Ranged Attack to Blind for d6 rounds.`,
+		`+1 Ranged Attack.`,
+		`-6 Ranged Attack to Blind for d6 rounds.`,
 	],
 	sz: 0
 })

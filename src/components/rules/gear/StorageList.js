@@ -40,7 +40,8 @@ export const CargoPants = new Storage({
 export const Canteen = new Storage({
 	name: `Canteen`,
 	description: [
-		`Holds 1 unit (.5gal) of liquid. Metal.`,
+		`Holds 1 unit (.5gal) of liquid.`,
+		`Metal.`,
 	],
 	sz: 1,
 	slots: 1
@@ -76,7 +77,8 @@ export const DuffelBag = new Storage({
 export const FuelCan = new Storage({
 	name: `Fuel Can`,
 	description: [
-		`5gal Fuel. d6 Fire Damage/gal, 1min, 1yd/gal Blast.`,
+		`5gal Fuel.`,
+		`d6 Fire Damage/gal, 1min, 1yd/gal Blast.`,
 	],
 	sz: 2,
 	slots: 5
@@ -103,7 +105,9 @@ export const HydrationPack = new Storage({
 export const Lockbox = new Storage({
 	name: `Lockbox`,
 	description: [
-		`2 Damage Resistance. Fire Resistance. Larceny(Disable) 9#.`,
+		`2 Damage Resistance.`,
+		`Fire Resistance.`,
+		`Larceny(Disable) 9#.`,
 	],
 	sz: 2,
 	slots: 1
@@ -148,7 +152,9 @@ export const Speedloader = new Storage({
 export const ToolBelt = new Storage({
 	name: `Tool Belt`,
 	description: [
-		`6x 1 Slots. +1 Build. Miscellaneous small tools.`,
+		`6x 1 Slots.`,
+		`+1 Build.`,
+		`Miscellaneous small tools.`,
 	],
 	sz: 2,
 	slots: 6
@@ -157,7 +163,8 @@ export const ToolBelt = new Storage({
 export const TrenchCoat = new Storage({
 	name: `Trench Coat`,
 	description: [
-		`Cold Resistance. +1 Stealth.`,
+		`Cold Resistance.`,
+		`+1 Stealth.`,
 	],
 	sz: 1,
 	slots: 4

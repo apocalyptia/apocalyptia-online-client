@@ -1,14 +1,7 @@
 import Bomb from '../../../classes/gear/Bomb'
-import {
-	Blast,
-	FireDamage,
-	Pierce
-} from '../attributes/WeaponAttributesList'
-import {
-	Asphyxiation,
-	Blind,
-	Stun
-} from '../../Status'
+import { Blast, FireDamage, Pierce } from '../attributes/WeaponAttributesList'
+import { Blind, Stun } from '../../Status'
+import Asphyxiation from '../../Needs'
 
 
 export const FlashbangGrenade = new Bomb({

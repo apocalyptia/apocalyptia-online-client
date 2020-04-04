@@ -132,7 +132,7 @@ export const TaoOfJeetKuneDo = new Document({
 export const YellowPages = new Document({
 	name: `Yellow Pages`,
 	description: [
-		`+1 Scavenging. Regional.`,
+		`+1 Scavenging in a given Region.`,
 	],
 	sz: 1
 })
@@ -180,7 +180,7 @@ export const MapAtlas = new Document({
 export const MapLocal = new Document({
 	name: `Map (Local)`,
 	description: [
-		`+1 Survival(Navigate). Regional.`,
+		`+1 Survival(Navigate) in a given Region.`,
 	],
 	sz: 0
 })
@@ -188,7 +188,7 @@ export const MapLocal = new Document({
 export const MapTopographic = new Document({
 	name: `Map (Topographic)`,
 	description: [
-		`+3 Survival(Navigate). Regional.`,
+		`+3 Survival(Navigate) in a given Region.`,
 	],
 	sz: 0
 })

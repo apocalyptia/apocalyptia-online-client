@@ -1,6 +1,7 @@
 import MeleeWeapon from '../../../classes/gear/MeleeWeapon'
 import {
 	Chop,
+	Blunt,
 	OneHanded,
 	Pierce,
 	Rapid,
@@ -30,6 +31,7 @@ export const BaseballBat = new MeleeWeapon({
 	rng: 2,
 	attributes: [
 		TwoHanded,
+		Blunt,
 	]
 })
 
@@ -40,6 +42,7 @@ export const BrassKnuckles = new MeleeWeapon({
 	rng: 1,
 	attributes: [
 		OneHanded,
+		Blunt,
 		Unarmed,
 	]
 })
@@ -51,6 +54,7 @@ export const Club = new MeleeWeapon({
 	rng: 2,
 	attributes: [
 		OneHanded,
+		Blunt,
 	]
 })
 
@@ -71,6 +75,7 @@ export const Hammer = new MeleeWeapon({
 	rng: 1,
 	attributes: [
 		OneHanded,
+		Blunt,
 	]
 })
 
@@ -115,6 +120,7 @@ export const RiotShield = new MeleeWeapon({
 	rng: 1,
 	attributes: [
 		OneHanded,
+		Blunt,
 		Shield,
 	]
 })
@@ -126,6 +132,7 @@ export const Sledgehammer = new MeleeWeapon({
 	rng: 2,
 	attributes: [
 		TwoHanded,
+		Blunt,
 		Slow,
 	]
 })
@@ -148,6 +155,7 @@ export const Staff = new MeleeWeapon({
 	rng: 3,
 	attributes: [
 		TwoHanded,
+		Blunt,
 	]
 })
 
