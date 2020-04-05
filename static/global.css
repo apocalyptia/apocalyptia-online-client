@@ -205,7 +205,7 @@ select {
 .link-btn {
 	background: var(--scr-color);
 	border-radius: var(--radius);
-	border: var(--s2) solid var(--txt-color);
+	border: var(--s1) solid var(--txt-color);
 	font-size: var(--s125);
 	font-weight: bold;
 	line-height: var(--s200);
