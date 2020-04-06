@@ -59,28 +59,13 @@ beforeUpdate(() => $character = Properties.setScores($character))
 <style>
 .properties-list {
 	display: flex;
+	justify-content: space-around;
 	text-align: left;
 }
-@media only screen and (max-width: 900px) {
-	.section-block {
-		padding: var(--s33);
-		width: 100%;
-	}
-	.prop-item {
-		margin: var(--s50);
-		width: 100%;
-	}
+.section-block {
+	padding: var(--s33);
 }
-@media only screen and (min-width: 900px) {
-	.section-block {
-		display: flex;
-		justify-content: space-between;
-		padding: var(--s33);
-		width: 100%;
-	}
-	.prop-item {
-		margin: var(--s50);
-		width: 25%;
-	}
+.prop-item {
+	margin: var(--s50);
 }
 </style>
