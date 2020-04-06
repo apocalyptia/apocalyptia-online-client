@@ -5,8 +5,6 @@ export default class Property extends Stat {
 		name,
 		description,
 		formula,
-		base,
-		mods,
 		score,
 		parent=``
 	}) {
@@ -14,9 +12,7 @@ export default class Property extends Stat {
 			name,
 			description,
 			formula,
-			mods
 		})
-		this.base = base
 		this.score = score
 		this.parent = parent
 	}

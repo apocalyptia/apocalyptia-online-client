@@ -82,18 +82,18 @@ export default {
 	max: traitMax,
 	startingPoints: () => traitPoints,
 	assign: function(c, target) {
-		c.traits[target.name].base = parseInt(target.value)
+		c.traits[target.name].score = parseInt(target.value)
 		return this.limit(c, target.name)
 	},
 	limit: function(c, targetName) {
-		while(this.remaining(c) < 0) c.traits[targetName].base--
+		while(this.remaining(c) < 0) c.traits[targetName].score--
 		return this.setScores(c)
 	},
 	random: function(c) {
 		c = this.reset(c)
 		while(this.remaining(c) > 0) {
 			const t = RandomRoll(Object.keys(c.traits))
-			if (c.traits[t].base < this.max) c.traits[t].base++
+			if (c.traits[t].score < this.max) c.traits[t].score++
 		}
 		return this.setScores(c)
 	},
@@ -102,12 +102,12 @@ export default {
 		return this.startingPoints() - spent
 	},
 	reset: function(c) {
-		Object.keys(c.traits).forEach(t => c.traits[t].base = 1)
+		Object.keys(c.traits).forEach(t => c.traits[t].score = 1)
 		return c
 	},
 	setScores: function(c) {
 		Object.keys(c.traits).forEach(t => {
-			c.traits[t].score = c.traits[t].base + c.traits[t].mods
+			c.traits[t].score = c.traits[t].score + c.traits[t].mods
 		})
 		return c
 	}

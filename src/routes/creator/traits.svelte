@@ -41,7 +41,7 @@ beforeUpdate(() => {
 					name='{trait.name.toLowerCase()}'
 					min={parseInt(1)}
 					max={parseInt(Traits.max)}
-					bind:value={$character.traits[trait.name.toLowerCase()].base}
+					bind:value={$character.traits[trait.name.toLowerCase()].score}
 					on:input={(event) => assign(event)}
 				/>
 			</div>

@@ -11,7 +11,9 @@ export const carry = new Property({
 		`Carry = Constitution x 6`,
 		`1 Pain per Size above Carry.`
 	],
-	formula: (character) => character.traits.constitution.score * 6,
+	formula: (c) => {
+		c.properties.carry.score = c.traits.constitution.score * 6
+	},
 	base: 6,
 	score: 6
 })
@@ -22,7 +24,9 @@ export const block = new Property({
 		`Block = Melee`,
 		...melee.specialties.block.description,
 	],
-	formula: (c) => c.properties.block.base = c.properties.block.score = c.skills.melee.score,
+	formula: (c) => {
+		c.properties.block.score = c.skills.melee.score
+	},
 	base: 0,
 	score: 0
 })
@@ -33,7 +37,9 @@ export const dodge = new Property({
 		`Dodge = Acrobatics`,
 		...acrobatics.specialties.dodge.description,
 	],
-	formula: (c) => c.properties.dodge.base = c.properties.dodge.score = c.skills.acrobatics.score,
+	formula: (c) => {
+		c.properties.dodge.score = c.skills.acrobatics.score
+	}
 })
 
 export const health = new Property({
@@ -43,21 +49,21 @@ export const health = new Property({
 		`Torso Health = Constitution x 2`,
 		`Head, Arm, and Leg Health = Constitution`,
 		`Health is a measure of how much Damage you can withstand.`,
-		`You fall Unconscious when you have total Damage = Constitution x 2.`,
-		`You die when Head or Torso Damage = Head or Torso Health.`,
+		`You fall Unconscious when you have taken total Damage = Constitution x 2.`,
+		`You die when Head or Torso Health = 0.`,
 	],
 	formula: (c) => {
-		const con = c.traits.constitution.score
 		Object.values(c.properties.health).forEach((h) => {
-			console.log(h)
 			if (h.name == `Torso`) {
-				c.properties.health.torso.base = c.properties.health.torso.score = c.properties.health.torso.current = con * 2
+				c.properties.health.torso.score = c.traits.constitution.score * 2
+				c.properties.health.torso.current = c.traits.constitution.score * 2
 			}
 			else if (h != `Health`) {
-				h.base = h.score = h.current = con
+				h.score = c.traits.constitution.score
+				h.current = c.traits.constitution.score
 			}
 		})
-	},
+	}
 })
 
 export const experience = new Property({
@@ -71,7 +77,10 @@ export const experience = new Property({
 		`You may spend XP to buy Abilities to improve your Character.`,
 		`You may also spend 1XP per round to regain 1 Luck Point.`,
 	],
-	formula: (c) => c.properties.experience.base = c.properties.experience.score = c.properties.experience.current = c.traits.brains.score * 3,
+	formula: (c) => {
+		c.properties.experience.score = c.traits.brains.score * 3
+		c.properties.experience.current = c.traits.brains.score * 3
+	}
 })
 
 export const intellect = new Property({
@@ -80,7 +89,9 @@ export const intellect = new Property({
 		`Intellect = Brains`,
 		`Intellect is the amount of Experience that is earned automatically for each game session that you survive.`,
 	],
-	formula: (c) => c.properties.intellect.base = c.properties.intellect.score = c.traits.brains.score,
+	formula: (c) => {
+		c.properties.intellect.score = c.traits.brains.score
+	}
 })
 
 export const luck = new Property({
@@ -94,7 +105,10 @@ export const luck = new Property({
 		`• Take an extra Action on your turn.`,
 		`• Give a Luck point to a Comrade.`,
 	],
-	formula: (c) => c.properties.luck.base = c.properties.luck.score = c.properties.luck.score = c.traits.demeanor.score,
+	formula: (c) => {
+		c.properties.luck.score = c.traits.demeanor.score
+		c.properties.luck.current = c.traits.demeanor.score
+	}
 })
 
 export const psyche = new Property({
@@ -106,7 +120,10 @@ export const psyche = new Property({
 		`When Trauma = [Demeanor x 3] you lose all hope and seek out death at the earliest opportunity.`,
 		`Someone must protect you from yourself until you have Recovered from at least 1 Trauma.`,
 	],
-	formula: (c) => c.properties.psyche.base = c.properties.psyche.score = c.properties.psyche.current = c.traits.demeanor.score * 3,
+	formula: (c) => {
+		c.properties.psyche.score = c.traits.demeanor.score * 3
+		c.properties.psyche.current = c.traits.demeanor.score * 3
+	}
 })
 
 export const speed = new Property({
@@ -117,7 +134,9 @@ export const speed = new Property({
 		`This is also the number of yards you can Walk as 1 Action.`,
 		`When traveling long distances overland, you can March at [Speed / 2] mph for up to [Constitution x 3] hrs per day.`,
 	],
-	formula: (c) => c.properties.speed.base = c.properties.speed.score = c.traits.agility.score * 3,
+	formula: (c) => {
+		c.properties.speed.score = c.traits.agility.score * 3
+	}
 })
 
 export const PropertyList = [

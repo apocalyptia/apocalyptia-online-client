@@ -465,15 +465,15 @@ export default {
 		},
 	],
 	specialties: SpecialtyList,
-	startingPoints: (c) => c.traits.brains.base * 6,
+	startingPoints: (c) => c.traits.brains.score * 6,
 	assign: function(c, target) {
-		c.skills[target.name].base = parseInt(target.value)
+		c.skills[target.name].score = parseInt(target.value)
 		return this.limit(c, target.name)
 	},
 	limit: function(c, targetName) {
-		const max = c.traits[c.skills[targetName].parent.toLowerCase()].base
-		while(this.remaining(c) < 0 || c.skills[targetName].base > max) {
-			c.skills[targetName].base--
+		const max = c.traits[c.skills[targetName].parent.toLowerCase()].score
+		while(this.remaining(c) < 0 || c.skills[targetName].score > max) {
+			c.skills[targetName].score--
 		}
 		return this.setScores(c)
 	},
@@ -481,8 +481,8 @@ export default {
 		c = this.reset(c)
 		while(this.remaining(c) > 0) {
 			const t = RandomRoll(Object.keys(c.skills))
-			const parentScore = c.traits[c.skills[t].parent.toLowerCase()].base
-			if (c.skills[t].base < parentScore) c.skills[t].base++
+			const parentScore = c.traits[c.skills[t].parent.toLowerCase()].score
+			if (c.skills[t].score < parentScore) c.skills[t].score++
 		}
 		return this.setScores(c)
 	},
@@ -491,12 +491,12 @@ export default {
 		return this.startingPoints(c) - spent
 	},
 	reset: function(c) {
-		Object.keys(c.skills).forEach(t => c.skills[t].base = 0)
+		Object.keys(c.skills).forEach(t => c.skills[t].score = 0)
 		return c
 	},
 	setScores: function(c) {
 		Object.keys(c.skills).forEach(t => {
-			c.skills[t].score = c.skills[t].base + c.skills[t].mods
+			c.skills[t].score = c.skills[t].score + c.skills[t].mods
 		})
 		return c
 	}

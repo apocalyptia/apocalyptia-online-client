@@ -5,8 +5,6 @@ export default class Stat extends Rule {
 		name,
 		description,
 		formula,
-		base=0,
-		mods=0,
 		score=0
 	}) {
 		super({
@@ -14,8 +12,6 @@ export default class Stat extends Rule {
 			description,
 			formula
 		})
-		this.base = base
-		this.mods = mods
 		this.score = score
 	}
 }
