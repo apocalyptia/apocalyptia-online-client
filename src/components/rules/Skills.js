@@ -475,7 +475,7 @@ export default {
 		while(this.remaining(c) < 0 || c.skills[targetName].score > max) {
 			c.skills[targetName].score--
 		}
-		return this.setScores(c)
+		return c
 	},
 	random: function(c) {
 		c = this.reset(c)
@@ -484,20 +484,14 @@ export default {
 			const parentScore = c.traits[c.skills[t].parent.toLowerCase()].score
 			if (c.skills[t].score < parentScore) c.skills[t].score++
 		}
-		return this.setScores(c)
+		return c
 	},
 	remaining: function(c) {
-		const spent = Object.values(c.skills).reduce((t, { base }) => t += base, 0)
+		const spent = Object.values(c.skills).reduce((t, { score }) => t += score, 0)
 		return this.startingPoints(c) - spent
 	},
 	reset: function(c) {
 		Object.keys(c.skills).forEach(t => c.skills[t].score = 0)
 		return c
 	},
-	setScores: function(c) {
-		Object.keys(c.skills).forEach(t => {
-			c.skills[t].score = c.skills[t].score + c.skills[t].mods
-		})
-		return c
-	}
 }

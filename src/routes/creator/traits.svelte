@@ -15,7 +15,6 @@ const random = () => $character = Traits.random($character)
 const reset = () => $character = Traits.reset($character)
 
 beforeUpdate(() => {
-	$character = Traits.setScores($character)
 	remaining = Traits.remaining($character)
 	if (remaining == 0) next = `/creator/skills`
 	else next = `/creator/traits`

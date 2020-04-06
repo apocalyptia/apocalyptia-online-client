@@ -87,7 +87,7 @@ export default {
 	},
 	limit: function(c, targetName) {
 		while(this.remaining(c) < 0) c.traits[targetName].score--
-		return this.setScores(c)
+		return c
 	},
 	random: function(c) {
 		c = this.reset(c)
@@ -95,20 +95,14 @@ export default {
 			const t = RandomRoll(Object.keys(c.traits))
 			if (c.traits[t].score < this.max) c.traits[t].score++
 		}
-		return this.setScores(c)
+		return c
 	},
 	remaining: function(c) {
-		const spent = Object.values(c.traits).reduce((t, { base }) => t += base, 0)
+		const spent = Object.values(c.traits).reduce((t, { score }) => t += score, 0)
 		return this.startingPoints() - spent
 	},
 	reset: function(c) {
 		Object.keys(c.traits).forEach(t => c.traits[t].score = 1)
-		return c
-	},
-	setScores: function(c) {
-		Object.keys(c.traits).forEach(t => {
-			c.traits[t].score = c.traits[t].score + c.traits[t].mods
-		})
 		return c
 	}
 }
