@@ -136,6 +136,11 @@ export default class Character {
 				name: `Block`,
 				score: 0
 			},
+			carry: {
+				name: `Carry`,
+				score: 6,
+				current: 0
+			},
 			dodge: {
 				name: `Dodge`,
 				score: 0
@@ -145,39 +150,6 @@ export default class Character {
 				score: 3,
 				spent: 0,
 				remaining: 3
-			},
-			health: {
-				name: `Health`,
-				head: {
-					name: `Head`,
-					score: 3,
-					current: 3
-				},
-				rightArm: {
-					name: `Right Arm`,
-					score: 3,
-					current: 3
-				},
-				leftArm: {
-					name: `Left Arm`,
-					score: 3,
-					current: 3
-				},
-				torso: {
-					name: `Torso`,
-					score: 6,
-					current: 6
-				},
-				leftLeg: {
-					name: `Left Leg`,
-					score: 3,
-					current: 3
-				},
-				rightLeg: {
-					name: `Right Leg`,
-					score: 3,
-					current: 3
-				},
 			},
 			intellect: {
 				name: `Intellect`,
@@ -197,6 +169,38 @@ export default class Character {
 				name: `Speed`,
 				score: 3
 			}
+		},
+		this.health = {
+			head: {
+				name: `Head`,
+				score: 3,
+				current: 3
+			},
+			rightArm: {
+				name: `Right Arm`,
+				score: 3,
+				current: 3
+			},
+			leftArm: {
+				name: `Left Arm`,
+				score: 3,
+				current: 3
+			},
+			torso: {
+				name: `Torso`,
+				score: 6,
+				current: 6
+			},
+			leftLeg: {
+				name: `Left Leg`,
+				score: 3,
+				current: 3
+			},
+			rightLeg: {
+				name: `Right Leg`,
+				score: 3,
+				current: 3
+			},
 		},
 		this.abilities = [],
 		this.gear = {

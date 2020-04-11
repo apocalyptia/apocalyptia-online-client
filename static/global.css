@@ -281,7 +281,7 @@ td {
 	align-items: center;
 	border: var(--s1) dotted;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin: var(--s50);
 	padding: var(--s100);
 }

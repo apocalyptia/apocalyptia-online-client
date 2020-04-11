@@ -44,13 +44,11 @@ const randomArmor = () => {
 beforeUpdate(function() {
 	status = `go`
 	for (let i of Object.values($character.gear)) {
-		console.log(i.inventory.length)
 		if (i.inventory.length == 0) {
 			status = `stop`
 			break
 		}
 	}
-	console.log('STATUS = ', status)
 	if (status == `go`) next = `/creator/sheet`
 	else next = `/creator/gear`
 })

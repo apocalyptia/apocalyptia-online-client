@@ -1,6 +1,7 @@
 <script>
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
+import BodyLocations from '../../components/views/ui/BodyLocations.svelte'
 import Properties from '../../components/rules/Properties'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
@@ -25,9 +26,8 @@ beforeUpdate(() => $character = Properties.setScores($character))
 			{$character.properties.experience.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.health.name}: 
-			{$character.properties.health.torso.score} /
-			{$character.properties.health.head.score}
+			{$character.properties.carry.name}:
+			{$character.properties.carry.score}
 		</div>
 		<div class='prop-item'>
 			{$character.properties.psyche.name}: 
@@ -53,6 +53,9 @@ beforeUpdate(() => $character = Properties.setScores($character))
 		</div>
 	</div>
 </div>
+<div class='section-card'>
+	<BodyLocations character={$character} />
+</div>
 <NavBar links={{back: '/creator/skills', next: '/creator/abilities'}}/>
 
 
@@ -62,10 +65,7 @@ beforeUpdate(() => $character = Properties.setScores($character))
 	justify-content: space-around;
 	text-align: left;
 }
-.section-block {
-	padding: var(--s33);
-}
 .prop-item {
-	margin: var(--s50);
+	margin: var(--s10);
 }
 </style>

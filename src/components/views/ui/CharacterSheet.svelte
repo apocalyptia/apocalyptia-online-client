@@ -4,6 +4,7 @@ import AmmoItemTable from '../tables/AmmoItemTable.svelte'
 import ArmorItemTable from '../tables/ArmorItemTable.svelte'
 import MeleeWeaponItemTable from '../tables/MeleeWeaponItemTable.svelte'
 import RangedWeaponItemTable from '../tables/RangedWeaponItemTable.svelte'
+import BodyLocations from './BodyLocations.svelte'
 
 const traits = Object.values($character.traits)
 const skills = Object.values($character.skills)
@@ -78,18 +79,18 @@ const skills = Object.values($character.skills)
 					{$character.properties.speed.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.health.name}: 
-					{$character.properties.health.head.score} /
-					{$character.properties.health.leftArm.score} /
-					{$character.properties.health.torso.score} /
-					{$character.properties.health.leftLeg.score}
+					{$character.properties.carry.name}: 
+					{$character.properties.carry.current} / 
+					{$character.properties.carry.score}
 				</div>
 				<div class='prop-item'>
 					{$character.properties.experience.name}: 
+					{$character.properties.experience.remaining} / 
 					{$character.properties.experience.score}
 				</div>
 				<div class='prop-item'>
 					{$character.properties.psyche.name}: 
+					{$character.properties.psyche.current} / 
 					{$character.properties.psyche.score}
 				</div>
 			</div>
@@ -108,8 +109,20 @@ const skills = Object.values($character.skills)
 				</div>
 				<div class='prop-item'>
 					{$character.properties.luck.name}: 
+					{$character.properties.luck.current} / 
 					{$character.properties.luck.score}
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='section-card health-section'>
+		<div class='centered'>
+			<h2>Health</h2>
+		</div>
+		<div class='flex-block'>
+			<div class='section-block locations'>
+				<BodyLocations character={$character} />
 			</div>
 		</div>
 	</div>
@@ -167,6 +180,9 @@ const skills = Object.values($character.skills)
 }
 .section-block {
 	margin: var(--s100);
+}
+.locations {
+	width: 100%;
 }
 div[class*='-item'] {
 	display: block;

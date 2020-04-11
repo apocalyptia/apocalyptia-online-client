@@ -7,7 +7,7 @@ import api from '../../../utils/api'
 $character.completed = true
 
 const createMyCharacter = (c) => {
-	console.log(c)
+	// console.log(c)
 	// api.createCharacter(c)
 }
 </script>

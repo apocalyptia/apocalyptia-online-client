@@ -28,6 +28,13 @@ Combat:
 		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
 		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
 
+Character:
+	Properties:
+		Maybe I should come up with a good way to present Psyche as the mental part of Health, which would be the parent Property. Treat Psyche like a "Mental" Location along with all of the body parts under Health.
+	
+	Character Sheet:
+		Combine Health with Armor somehow.
+
 ---------------------------------------------------------------------------------------------------
 
 ------ TODO LIST ------
@@ -48,9 +55,8 @@ Reference:
 	Figure out topical organization. Health for example.
 	Painkiller required for a night's sleep to Recover?
 
-Combat.js:
-	Bring back Location HP and Damage?
-	Is "Wounds" really a useful term?
+Markup:
+	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 ---------------------------------------------------------------------------------------------------
 

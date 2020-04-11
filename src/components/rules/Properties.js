@@ -5,19 +5,6 @@ export const PropertyExplanation = [
 	`Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
 ]
 
-export const carry = new Property({
-	name: `Carry`,
-	description: [
-		`Carry = Constitution x 6`,
-		`1 Pain per Size above Carry.`
-	],
-	formula: (c) => {
-		c.properties.carry.score = c.traits.constitution.score * 6
-	},
-	base: 6,
-	score: 6
-})
-
 export const block = new Property({
 	name: melee.specialties.block.name,
 	description: [
@@ -29,6 +16,20 @@ export const block = new Property({
 	},
 	base: 0,
 	score: 0
+})
+
+export const carry = new Property({
+	name: `Carry`,
+	description: [
+		`Carry = Constitution x 3`,
+		`1 Pain per Size above Carry.`
+	],
+	formula: (c) => {
+		c.properties.carry.current = 0
+		c.properties.carry.score = c.traits.constitution.score * 3
+	},
+	base: 3,
+	score: 3
 })
 
 export const dodge = new Property({
@@ -53,12 +54,12 @@ export const health = new Property({
 		`You die when Head or Torso Health = 0.`,
 	],
 	formula: (c) => {
-		Object.values(c.properties.health).forEach((h) => {
+		Object.values(c.health).forEach((h) => {
 			if (h.name == `Torso`) {
-				c.properties.health.torso.score = c.traits.constitution.score * 2
-				c.properties.health.torso.current = c.traits.constitution.score * 2
+				h.score = c.traits.constitution.score * 2
+				h.current = c.traits.constitution.score * 2
 			}
-			else if (h != `Health`) {
+			else {
 				h.score = c.traits.constitution.score
 				h.current = c.traits.constitution.score
 			}
@@ -141,6 +142,7 @@ export const speed = new Property({
 
 export const PropertyList = [
 	block,
+	carry,
 	dodge,
 	experience,
 	health,
