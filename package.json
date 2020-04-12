@@ -4,8 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
+    "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
     "build": "sapper build",
     "export": "sapper export",
+    "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
@@ -13,6 +15,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "faunadb": "^2.13.1",
     "gotrue-js": "^0.9.25",
     "polka": "next",
     "sirv": "^0.4.0",
