@@ -12,17 +12,14 @@
 		"start": "npm-run-all --parallel start:app start:server",
 		"start:app": "node __sapper__/build",
 		"start:server": "netlify-lambda serve functions -c ./rollup.config.js",
-		"prebuild": "echo 'setup faunaDB' && npm run bootstrap",
-		"cy:run": "cypress run",
-		"cy:open": "cypress open",
-		"test": "run-p --race dev cy:run"
+		"prebuild": "echo 'setup faunaDB' && npm run bootstrap"
 	},
 	"dependencies": {
 		"compression": "^1.7.1",
-		"express": "^4.17.1",
 		"faunadb": "^2.13.1",
 		"gotrue-js": "^0.9.25",
 		"netlify-lambda": "^1.6.3",
+		"polka": "^0.5.2",
 		"sirv": "^0.4.2",
 		"svelte-spinner": "^2.0.2"
 	},
