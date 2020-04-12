@@ -1,11 +1,14 @@
 .DS_Store
-/node_modules/
-/src/node_modules/@sapper/
-yarn-error.log
-/cypress/screenshots/
-/__sapper__/
-book/
-# Local Netlify folder
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
 .netlify
-# Local linting config
+/__sapper__/
+/cypress/screenshots/
 /jsconfig.json
+/node_modules/
+/src/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
