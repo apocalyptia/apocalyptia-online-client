@@ -1,5 +1,6 @@
 import RangedWeapon from '../../../classes/gear/RangedWeapon'
 import {
+	Auto,
 	Rapid,
 	Scatter,
 	TwoHanded
