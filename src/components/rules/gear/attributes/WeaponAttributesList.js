@@ -12,15 +12,17 @@ export const OneHanded = new WeaponAttribute({
 export const TwoHanded = new WeaponAttribute({
 	name: `2h`,
 	description: [
-		`Used two-handed.`,
-		`Penalty = [Sz] if used one-handed.`,
+		`Must be used two-handed.`,
+		`Can be used one-handed at a penalty = Size.`,
 	]
 })
 
 export const Auto = new WeaponAttribute({
 	name: `Auto`,
 	description: [
-		`[+3 Ranged Attack vs one target] or 3yd Blast.`,
+		`Choose either Burst or Spray.`,
+		`Burst: +3 Ranged Attack vs one target.`,
+		`Spray: 3yd Blast Attack.`,
 		`Uses 10 bullets.`,
 	]
 })
@@ -50,7 +52,7 @@ export const Chop = new WeaponAttribute({
 export const FireDamage = new WeaponAttribute({
 	name: `Fire Damage`,
 	description: [
-		`Fire Damage can only be prevented with Armor that has Fire Resistance.`,
+		`Fire Damage can only be prevented with Fire Resistant Armor.`,
 	]
 })
 
@@ -68,10 +70,10 @@ export const Rapid = new WeaponAttribute({
 	]
 })
 
-export const Sawnoff = new WeaponAttribute({
-	name: `Sawn-off`,
+export const ShortBarrel = new WeaponAttribute({
+	name: `Short-Barrel`,
 	description: [
-		`[Range / 2] and -1 Size.`,
+		`[Range / 2] and [Size / 2].`,
 	]
 })
 
@@ -110,8 +112,8 @@ export default [
 	Pierce,
 	Rapid,
 	Shield,
-	Sawnoff,
 	Scatter,
+	ShortBarrel,
 	Slow,
 	Unarmed,
 ]

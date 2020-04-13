@@ -35,6 +35,14 @@ Character:
 	Character Sheet:
 		Combine Health with Armor somehow.
 
+Status:
+	undefined tab in place of Needs
+
+Put XP cost on Rules Reference.
+Order everything alphabetically.
+Figure out a quick Jury-Rig version of Build.
+Social actions multiple times per round.
+
 ---------------------------------------------------------------------------------------------------
 
 ------ TODO LIST ------
@@ -42,6 +50,7 @@ Character:
 UX/UI:
 	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
 	Likewise set a blur effect that reflects the character psyche
+	Need to work on more uniform paragraph spacing.
 
 Gear.js:
 	Check all item Notes.

@@ -6,21 +6,60 @@ import {
 } from '../attributes/WeaponAttributesList'
 
 
-export const BoltActionRifle = new RangedWeapon({
-	name: `Bolt-Action Rifle`,
+export const AR15 = new RangedWeapon({
+	name: `AR-15`,
+	sz: 3,
+	dmg: 2,
+	rng: 30,
+	attributes: [
+		TwoHanded,
+		Rapid,
+	],
+	mag: 30,
+	cal: `5.56`
+})
+
+export const BenelliM4 = new RangedWeapon({
+	name: `BenelliM4`,
+	sz: 4,
+	dmg: 4,
+	rng: 15,
+	attributes: [
+		TwoHanded,
+		Rapid,
+		Scatter,
+	],
+	mag: 6,
+	cal: `12g`
+})
+
+export const BrowningABolt = new RangedWeapon({
+	name: `Browning A-Bolt`,
 	sz: 4,
 	dmg: 3,
-	rng: 200,
+	rng: 60,
 	attributes: [
 		TwoHanded,
 	],
 	mag: 5,
-	cal: `.308`
+	cal: `5.56`
+})
+
+export const ColtPython = new RangedWeapon({
+	name: `Colt Python`,
+	sz: 1,
+	dmg: 2,
+	rng: 10,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 6,
+	cal: `.357`
 })
 
 export const CompoundBow = new RangedWeapon({
 	name: `Compound Bow`,
-	sz: 4,
+	sz: 3,
 	dmg: 1,
 	rng: 15,
 	attributes: [
@@ -32,9 +71,9 @@ export const CompoundBow = new RangedWeapon({
 
 export const Crossbow = new RangedWeapon({
 	name: `Crossbow`,
-	sz: 4,
+	sz: 3,
 	dmg: 2,
-	rng: 20,
+	rng: 15,
 	attributes: [
 		TwoHanded,
 	],
@@ -46,7 +85,7 @@ export const DoubleBarrelShotgun = new RangedWeapon({
 	name: `Double-Barrel Shotgun`,
 	sz: 4,
 	dmg: 4,
-	rng: 20,
+	rng: 15,
 	attributes: [
 		TwoHanded,
 		Rapid,
@@ -56,58 +95,8 @@ export const DoubleBarrelShotgun = new RangedWeapon({
 	cal: `12g`
 })
 
-export const LeverActionRifle = new RangedWeapon({
-	name: `Lever-Action Rifle`,
-	sz: 3,
-	dmg: 2,
-	rng: 50,
-	attributes: [
-		TwoHanded,
-	],
-	mag: 10,
-	cal: `.357`
-})
-
-export const PumpShotgun = new RangedWeapon({
-	name: `Pump Shotgun`,
-	sz: 4,
-	dmg: 4,
-	rng: 20,
-	attributes: [
-		TwoHanded,
-		Scatter,
-	],
-	mag: 6,
-	cal: `12g`
-})
-
-export const Revolver = new RangedWeapon({
-	name: `Revolver`,
-	sz: 2,
-	dmg: 2,
-	rng: 10,
-	attributes: [
-		TwoHanded,
-	],
-	mag: 6,
-	cal: `.357`
-})
-
-export const SemiAutoCarbine = new RangedWeapon({
-	name: `Semi-Auto Carbine`,
-	sz: 3,
-	dmg: 1,
-	rng: 30,
-	attributes: [
-		TwoHanded,
-		Rapid,
-	],
-	mag: 30,
-	cal: `9mm`
-})
-
-export const SemiAutoPistol = new RangedWeapon({
-	name: `Semi-Auto Pistol`,
+export const Glock17 = new RangedWeapon({
+	name: `Glock 17`,
 	sz: 1,
 	dmg: 1,
 	rng: 10,
@@ -115,40 +104,101 @@ export const SemiAutoPistol = new RangedWeapon({
 		TwoHanded,
 		Rapid,
 	],
-	mag: 15,
+	mag: 17,
 	cal: `9mm`
 })
 
-export const SemiAutoRifle = new RangedWeapon({
-	name: `Semi-Auto Rifle`,
+export const HenryGoldenBoy = new RangedWeapon({
+	name: `Henry Golden Boy`,
+	sz: 3,
+	dmg: 1,
+	rng: 30,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 16,
+	cal: `.357`
+})
+
+export const HKMP5 = new RangedWeapon({
+	name: `H&K MP5`,
+	sz: 3,
+	dmg: 1,
+	rng: 20,
+	attributes: [
+		TwoHanded,
+		Auto,
+		Rapid,
+	],
+	mag: 30,
+	cal: `9mm`
+})
+
+export const Marlin1894 = new RangedWeapon({
+	name: `Marlin 1894`,
 	sz: 3,
 	dmg: 2,
+	rng: 30,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 9,
+	cal: `.357`
+})
+
+export const Mossberg500 = new RangedWeapon({
+	name: `Mossberg 500`,
+	sz: 2,
+	dmg: 4,
+	rng: 10,
+	attributes: [
+		TwoHanded,
+		Scatter,
+	],
+	mag: 5,
+	cal: `12g`
+})
+
+export const RecurveBow = new RangedWeapon({
+	name: `Recurve Bow`,
+	sz: 2,
+	dmg: 1,
+	rng: 10,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 1,
+	cal: `Arrow`
+})
+
+export const Remington700 = new RangedWeapon({
+	name: `Remington 700`,
+	sz: 4,
+	dmg: 3,
 	rng: 100,
 	attributes: [
 		TwoHanded,
-		Rapid,
 	],
-	mag: 30,
-	cal: `5.56`
+	mag: 5,
+	cal: `.308`
 })
 
-export const SemiAutoShotgun = new RangedWeapon({
-	name: `Semi-Auto Shotgun`,
+export const Remington870 = new RangedWeapon({
+	name: `Remington870`,
 	sz: 4,
 	dmg: 4,
-	rng: 20,
+	rng: 15,
 	attributes: [
 		TwoHanded,
-		Rapid,
 		Scatter,
 	],
 	mag: 6,
 	cal: `12g`
 })
 
-export const TargetPistol = new RangedWeapon({
-	name: `Target Pistol`,
-	sz: 1,
+export const Ruger1022 = new RangedWeapon({
+	name: `Ruger 10/22`,
+	sz: 3,
 	dmg: 1,
 	rng: 30,
 	attributes: [
@@ -159,34 +209,91 @@ export const TargetPistol = new RangedWeapon({
 	cal: `.22`
 })
 
-export const TargetRifle = new RangedWeapon({
-	name: `Target Rifle`,
-	sz: 3,
+export const RugerMkIII = new RangedWeapon({
+	name: `Ruger Mk.III`,
+	sz: 1,
 	dmg: 1,
-	rng: 50,
+	rng: 15,
 	attributes: [
 		TwoHanded,
 		Rapid,
 	],
 	mag: 10,
 	cal: `.22`
+})
+
+export const SavageMkII = new RangedWeapon({
+	name: `Savage Mk.II`,
+	sz: 3,
+	dmg: 1,
+	rng: 40,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 10,
+	cal: `.22`
+})
+
+export const SIGSauerP290 = new RangedWeapon({
+	name: `SIG Sauer P290`,
+	sz: 1,
+	dmg: 1,
+	rng: 5,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 6,
+	cal: `9mm`
+})
+
+export const SpringfieldM1A = new RangedWeapon({
+	name: `Springfield M1A`,
+	sz: 4,
+	dmg: 3,
+	rng: 80,
+	attributes: [
+		TwoHanded,
+		Rapid,
+	],
+	mag: 20,
+	cal: `.308`
+})
+
+export const SWBodyguard = new RangedWeapon({
+	name: `S&W Bodyguard`,
+	sz: 1,
+	dmg: 2,
+	rng: 5,
+	attributes: [
+		TwoHanded,
+	],
+	mag: 5,
+	cal: `.357`
 })
 
 
 export default [
-	BoltActionRifle,
+	AR15,
+	BenelliM4,
+	BrowningABolt,
+	ColtPython,
 	CompoundBow,
 	Crossbow,
 	DoubleBarrelShotgun,
-	LeverActionRifle,
-	PumpShotgun,
-	Revolver,
-	SemiAutoCarbine,
-	SemiAutoPistol,
-	SemiAutoRifle,
-	SemiAutoShotgun,
-	TargetPistol,
-	TargetRifle,
+	Glock17,
+	HenryGoldenBoy,
+	HKMP5,
+	Marlin1894,
+	Mossberg500,
+	RecurveBow,
+	Remington700,
+	Remington870,
+	Ruger1022,
+	RugerMkIII,
+	SavageMkII,
+	SIGSauerP290,
+	SpringfieldM1A,
+	SWBodyguard,
 ]
 
 
@@ -215,26 +322,9 @@ export default [
 
 // OLD RANGED
 // new RangedWeapon(`AK-47`, 4, 50, `7.62`, `30mag`, 2, `Auto. Rapid.`, 4),
-// new RangedWeapon(`AR-15`, 4, 100, `5.56`, `30mag`, 2, `Rapid.`, 3),
-// new RangedWeapon(`Benelli M4`, 6, 15, `12g`, 7, 2, `Rapid. Scatter.`, 4),
-// new RangedWeapon(`Browning A-Bolt`, 4, 100, `5.56`, `5mag`, 2, `+1 RATK. Scope.`, 3),
-// new RangedWeapon(`Colt Python`, 3, 25, `.357`, `6cyl`, 1, `Revolver.`, 2),
-// new RangedWeapon(`Compound Bow`, 1, 25, `Arrow`, 1, 2, `DMG Mod. -1 RATK.`, 4),
-// new RangedWeapon(`Crossbow`, 6, 50, `Arrow`, 1, 2, `1 round Reload.`, 4),
-// new RangedWeapon(`Glock 17`, 2, 25, `9mm`, `17mag`, 1, `Rapid.`, 1),
-// new RangedWeapon(`H&ampK MP5`, 2, 50, `9mm`, `30mag`, 2, `Auto. Rapid.`, 2),
-// new RangedWeapon(`Henry Golden Boy`, 1, 50, `.22`, 16, 2, `+1 RATK.`, 3),
+// new RangedWeapon(`Norinco SKS`, 4, 50, `7.62`, 10, 2, `Rapid. Bayonet.`, 4),
 // new RangedWeapon(`Kimber 1911`, 2, 25, `.45`, 7, 1, `Rapid.`, 1),
 // new RangedWeapon(`MAC-10`, 2, 5, `.45`, 30, 2, `Auto. Rapid. -1 RATK`, 2),
-// new RangedWeapon(`Marlin 1894C`, 3, 50, `.357`, 9, 2, `+1 RATK.`, 3),
-// new RangedWeapon(`Mossberg 500`, 6, 10, `12g`, 5, 2, `Scatter.`, 2),
-// new RangedWeapon(`Norinco SKS`, 4, 50, `7.62`, 10, 2, `Rapid. Bayonet.`, 4),
-// new RangedWeapon(`Remington 700`, 5, 100, `.308`, 6, 2, `+1 RATK. Scope.`, 4),
-// new RangedWeapon(`Remington 870`, `var`, 15, `12g`, 7, 2, `Scatter.`, 4),
-// new RangedWeapon(`Ruger 10/22`, 1, 50, `.22`, `10mag`, 2, `Rapid.`, 3),
-// new RangedWeapon(`Ruger Mk.III`, 1, 25, `.22`, `10mag`, 1, `Rapid.`, 1),
-// new RangedWeapon(`SIG Sauer P290`, 2, 10, `9mm`, `6mag`, 1, `Rapid.`, 1),
-// new RangedWeapon(`Savage Mk.II`, 1, 50, `.22`, `10mag`, 2, `+1 RATK.`, 3),
-// new RangedWeapon(`Springfield M1A`, 5, 100, `.308`, `20mag`, 2, `Rapid.`, 4),
-// new RangedWeapon(`S&ampW Snubnose`, 3, 5, `.357`, `5cyl`, 1, `Revolver.`, 1),
-// new RangedWeapon(`Winchester Sawn-off`, 6, 5, `12g`, 2, 2, `Rapid. Scatter.`, 2)
+
+
+
