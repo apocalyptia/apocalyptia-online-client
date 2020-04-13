@@ -6,6 +6,7 @@ import Complications from '../components/rules/Complications'
 import Core from '../components/rules/Core'
 import Gear from '../components/rules/Gear'
 import Maneuvers from '../components/rules/Maneuvers'
+import Needs from '../components/rules/Needs'
 import Properties from '../components/rules/Properties'
 import Status from '../components/rules/Status'
 import Skills from '../components/rules/Skills'
@@ -26,6 +27,7 @@ const referenceToC = new TableOfContents({
 		Maneuvers,
 		Status,
 		Complications,
+		Needs,
 		Abilities,
 		Gear
 	],
@@ -39,6 +41,7 @@ const referenceToC = new TableOfContents({
 		'maneuvers',
 		'status',
 		'complications',
+		'needs',
 		'abilities',
 		'gear'
 	]

@@ -163,7 +163,6 @@ export default {
 		Grabbed,
 		Harmless,
 		Immobilized,
-		Needs,
 		OffHand,
 		Pinned,
 		Prone,
