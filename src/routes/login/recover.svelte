@@ -26,26 +26,25 @@ const submit = (event) => {
 	<div class='card-title'>
 		Request Account Recovery
 	</div>
-	<form on:submit|preventDefault={submit}>
-		<input
-			type='email'
-			required
-			autocomplete='email'
-			placeholder='Email'
-			bind:value={email}
-		/>
-		<button>
-			{#if pendingApiCall}
-				<Spinner/>
-			{:else}
-				Recover
-			{/if}
-		</button>
-	</form>
+	{#if pendingApiCall}
+		<Spinner />
+	{:else}
+		<form on:submit|preventDefault={submit}>
+			<input
+				type='email'
+				required
+				autocomplete='email'
+				placeholder='Email'
+				bind:value={email}
+			/>
+			<input
+				type='submit'
+				class='link-btn'
+				value='Recover'
+			>
+		</form>
+	{/if}
 	{#if showSuccessMessage}
-		<p>
-			An email has been sent if that account exists to allow you to log in one time. You will
-			need to set your password immediately in order to log in again.
-		</p>
+		<p>An email has been sent if that account exists to allow you to log in one time. You will need to set your password immediately in order to log in again.</p>
 	{/if}
 </div>

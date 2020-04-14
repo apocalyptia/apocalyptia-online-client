@@ -14,5 +14,22 @@ const createMyCharacter = (c) => {
 
 
 <CharacterSheet/>
-<button on:click={()=>createMyCharacter($character)}>Save</button>
+<div class='save-button'>
+	<button on:click={()=>createMyCharacter($character)}>
+		Save Character
+	</button>
+</div>
 <NavBar links={{back: '/creator/gear', next: '/'}}/>
+
+
+<style>
+.save-button {
+	display: flex;
+	justify-content: center;
+	margin-top: var(--s100);
+}
+.save-button button {
+	font-size: var(--s150);
+	font-weight: bold;
+}
+</style>

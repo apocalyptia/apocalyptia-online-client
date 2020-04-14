@@ -4,14 +4,17 @@ import { authUserStore, login } from '../../stores/netlifyStore'
 
 if ($authUserStore) window.location.href = `/`
 
-let email = ``
-let password = ``
+const user = {
+	email: ``,
+	password: ``
+}
+
 let pendingApiCall = false
 let forgotPassword = false
 
 const submit = (event) => {
 	pendingApiCall = true
-	login(email, password)
+	login(user)
 		.catch(e => {
 			pendingApiCall = false
 			forgotPassword = true
@@ -21,42 +24,34 @@ const submit = (event) => {
 
 
 <div class='cntr-card'>
-	<form on:submit|preventDefault={submit}>
-		<input
-			type='email'
-			required
-			autocomplete='email'
-			placeholder='Email'
-			bind:value={email}
-		/>
-		<input
-			type='password'
-			required
-			autocomplete='current-password'
-			placeholder='Password'
-			bind:value={password}
-		/>
-		<button>
-			{#if pendingApiCall}
-				<Spinner/>
-			{:else}
-				Login
+	{#if pendingApiCall}
+		<Spinner />
+	{:else}
+		<form on:submit|preventDefault={submit}>
+			<input
+				type='email'
+				required
+				autocomplete='email'
+				placeholder='Email'
+				bind:value={user.email}
+			/>
+			<input
+				type='password'
+				required
+				autocomplete='current-password'
+				placeholder='Password'
+				bind:value={user.password}
+			/>
+			<input
+				type='submit'
+				class='link-btn'
+				value='Login'
+			>
+			{#if forgotPassword}
+				<a href='/login/recover'>
+					Forgot your password?
+				</a>
 			{/if}
-		</button>
-		{#if forgotPassword}
-			<a href='/login/recover'>
-				Forgot your password?
-			</a>
-		{/if}
-	</form>
+		</form>
+	{/if}
 </div>
-
-
-<style>
-	button, input {
-		width: 90%;
-	}
-	button {
-		font-size: var(--s125);
-	}
-</style>

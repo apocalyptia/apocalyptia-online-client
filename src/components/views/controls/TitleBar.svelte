@@ -26,7 +26,6 @@ import { authUserStore } from '../../../stores/netlifyStore'
 	z-index: 2;
 }
 .title-link {
-	display: inline-block;
 	width: 100%;
 }
 h1 {

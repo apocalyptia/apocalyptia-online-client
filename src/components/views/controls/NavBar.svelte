@@ -28,10 +28,8 @@ export let onHome = true
 	>
 		{#if status == 'go'}
 			&rtrif;
-		{:else if status == 'stop'}
+		{:else}
 			X
-		{:else if status == 'wait'}
-			<Spinner />
 		{/if}
 	</a>
 </div>
@@ -41,6 +39,7 @@ export let onHome = true
 .nav-bar {
 	bottom: 0;
 	display: flex;
+	height: var(--s300);
 	left: 0;
 	position: fixed;
 	width: 100%;

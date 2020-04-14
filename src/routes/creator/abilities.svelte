@@ -30,7 +30,7 @@ beforeUpdate(() => {
 		{/each}
 	</div>
 	<div class='remaining'>
-		<h3>Starting XP Remaining: {$character.properties.experience.remaining}</h3>
+		<h3>Remaining: {$character.properties.experience.remaining}</h3>
 	</div>
 	{#if $character.abilities.length}
 		<div class='section-card'>

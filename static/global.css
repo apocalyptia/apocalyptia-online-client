@@ -162,6 +162,7 @@ select:hover {
 button:invalid,
 input:invalid,
 select:invalid {
+	color: var(--txt-color);
 	background-color: var(--scr-color) !important;
 	border-color: var(--alt-color);
 }
@@ -203,15 +204,15 @@ select {
 
 /* Link Buttons */
 .link-btn {
+	align-items: center;
 	background: var(--scr-color);
 	border-radius: var(--radius);
 	border: var(--s1) solid var(--txt-color);
+	display: flex;
+	justify-content: center;
 	font-size: var(--s125);
 	font-weight: bold;
-	line-height: var(--s200);
-	padding: var(--s50);
 	text-align: center;
-	vertical-align: middle;
 }
 .link-btn:active,
 .link-btn:hover {
@@ -294,7 +295,9 @@ td {
 /* Center Card */
 .cntr-card {
 	border: var(--s3) solid var(--txt-color);
-	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	left: 50vw;
 	max-width: 500px;
 	padding: var(--s100);
@@ -307,22 +310,20 @@ td {
 .cntr-card .card-title {
 	margin: var(--s100);
 }
-.cntr-card a {
-	display: block;
-}
+.cntr-card a,
+.cntr-card button,
 .cntr-card input {
-	height: var(--s200);
-	margin: var(--s100);
+	height: var(--s300);
+	margin: var(--s150) auto;
 	width: 80%;
-}
-.cntr-card button {
-	margin: var(--s100);
-	width: 75%;
 }
 
 /* Menu Screen */
 .menu-btn {
-	display: block;
+	align-items: center;
+	display: flex;
+	height: var(--s300);
+	justify-content: center;
 	margin: auto;
 	margin-bottom: var(--s200);
 	width: 80%;
