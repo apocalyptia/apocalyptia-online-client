@@ -43,6 +43,9 @@ const logOut = () => {
 
 
 <style>
+h1 {
+	color: var(--txt-color) !important;
+}
 .user-btn {
 	align-content: center;
 	border: var(--s10) solid var(--txt-color);
@@ -71,8 +74,7 @@ a {
 	border: none;
 	display: block;
 	font-weight: normal;
-	margin: 0;
-	padding: var(--s50);
+	padding: var(--s100);
 }
 .shadow {
 	background: rgba(0, 0, 0, .5);
