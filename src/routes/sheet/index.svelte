@@ -30,6 +30,5 @@ const createMyCharacter = (c, u) => {
 .save-button button {
 	font-size: var(--s150);
 	font-weight: bold;
-	width: 50%;
 }
 </style>
