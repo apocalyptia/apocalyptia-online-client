@@ -1,4 +1,5 @@
 <script>
+import Spinner from '../../components/views/ui/Spinner.svelte'
 import { FemaleNames } from './../../components/helpers/Names.js';
 import { authUserStore, login, signup } from '../../stores/netlifyStore'
 
@@ -37,37 +38,41 @@ const proceed = () => window.location.href = `/login`
 
 
 <div class='cntr-card'>
-	<form on:submit|preventDefault={submit}>
-		<input
-			type='email'
-			required
-			autocomplete='email'
-			placeholder='Email'
-			bind:value={user.email}
-		/>
-		<input
-			type='password'
-			required
-			placeholder='Password'
-			bind:value={user.password}
-		/>
-		<input
-			type='password'
-			required
-			placeholder='Confirm Password'
-			bind:value={user.confirm}
-		/>
-		{#if !message}
+	{#if pendingApiCall}
+		<Spinner />
+	{:else}
+		<form on:submit|preventDefault={submit}>
 			<input
-				type='submit'
-				class='link-btn'
-				value='Creat Account'
-			>
-		{:else}
-			<h3>{message}</h3>
-			<a href='/login' class='link-btn'>
-				Proceed To Login
-			</a>
-		{/if}
-	</form>
+				type='email'
+				required
+				autocomplete='email'
+				placeholder='Email'
+				bind:value={user.email}
+			/>
+			<input
+				type='password'
+				required
+				placeholder='Password'
+				bind:value={user.password}
+			/>
+			<input
+				type='password'
+				required
+				placeholder='Confirm Password'
+				bind:value={user.confirm}
+			/>
+			{#if !message}
+				<input
+					type='submit'
+					class='link-btn'
+					value='Creat Account'
+				>
+			{:else}
+				<h3>{message}</h3>
+				<a href='/login' class='link-btn'>
+					Proceed To Login
+				</a>
+			{/if}
+		</form>
+	{/if}
 </div>
