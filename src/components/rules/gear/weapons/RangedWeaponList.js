@@ -21,7 +21,7 @@ export const AR15 = new RangedWeapon({
 })
 
 export const BenelliM4 = new RangedWeapon({
-	name: `BenelliM4`,
+	name: `Benelli M4`,
 	sz: 4,
 	dmg: 4,
 	rng: 15,
@@ -185,7 +185,7 @@ export const Remington700 = new RangedWeapon({
 })
 
 export const Remington870 = new RangedWeapon({
-	name: `Remington870`,
+	name: `Remington 870`,
 	sz: 4,
 	dmg: 4,
 	rng: 15,
