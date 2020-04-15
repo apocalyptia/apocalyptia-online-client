@@ -21,9 +21,7 @@ const submit = () => {
 	}
 	pendingApiCall = true
 	signup(user)
-		.then(() => {
-			message = `Confirmation email sent. Please confirm your account.`
-		})
+		.then(() => message = `Confirmation email sent. Please confirm your account.`)
 		.catch(e => {
 			pendingApiCall = false
 			alert(e)
