@@ -1,5 +1,6 @@
 export default class Character {
 	constructor() {
+		this.user = ``,
 		this.completed = false,
 		this.description = {
 			age: {
