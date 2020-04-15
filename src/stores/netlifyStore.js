@@ -25,21 +25,21 @@ export const logout = () => {
 		.catch(e => alert(e.message))
 }
 
-export async function login(email, password) {
+export async function login(user) {
 	try {
-		await goTrueInstance.login(email, password, true)
-				.then(user => {
-					authUserStore.update(() => getUser(user))
-					window.location.assign(`/`)
-				})
+		await goTrueInstance.login(user.email, user.password, true)
+			.then(user => {
+				authUserStore.update(() => getUser(user))
+				window.location.assign(`/`)
+			})
 	} catch (e) {
 		alert(e.message)
 		throw e.message
 	}
 }
 
-export const signup = (email, password) => {
-	return goTrueInstance.signup(email, password)
+export const signup = (user) => {
+	return goTrueInstance.signup(user.email, user.password)
 }
 
 export const recover = (email) => {
