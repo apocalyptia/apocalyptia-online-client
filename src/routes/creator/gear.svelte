@@ -23,10 +23,6 @@ const randomMelee = () => {
 
 const randomRanged = () => {
 	$character.gear.rangedWeapons.inventory.push(RandomRoll(RangedWeaponList))
-	$character = $character
-}
-
-const randomAmmo = () => {
 	let ammo = RandomRoll(AmmoList)
 	while (ammo.cal != $character.gear.rangedWeapons.inventory[0].cal) {
 		ammo = RandomRoll(AmmoList)
@@ -74,26 +70,16 @@ beforeUpdate(function() {
 	</div>
 	{#if $character.gear.rangedWeapons.inventory.length}
 		<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
+		<div class='item-category ammo-heading'>
+			<h2>Ammo</h2>
+		</div>
+		<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
 	{:else}
 		<div class='cntr-btn'>
 			<button on:click={randomRanged}>Random</button>
 		</div>
 	{/if}
 </div>
-{#if $character.gear.rangedWeapons.inventory.length}
-<div class='section-card'>
-	<div class='item-category'>
-		<h2>Ammo</h2>
-	</div>
-	{#if $character.gear.ammo.inventory.length}
-		<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
-	{:else}
-		<div class='cntr-btn'>
-			<button on:click={randomAmmo}>Random</button>
-		</div>
-	{/if}
-</div>
-{/if}
 <div class='section-card'>
 	<div class='item-category'>
 		<h2>Armor</h2>
@@ -111,6 +97,9 @@ beforeUpdate(function() {
 
 <style>
 .item-category {
-	margin-bottom: var(--s50);
+	margin-bottom: var(--s100);
+}
+.ammo-heading {
+	margin-top: var(--s100);
 }
 </style>
