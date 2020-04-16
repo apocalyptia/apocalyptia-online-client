@@ -44,11 +44,11 @@ const logOut = () => {
 
 <style>
 h1 {
-	color: var(--txt-color) !important;
+	color: lime !important;
 }
 .user-btn {
 	align-content: center;
-	border: var(--s10) solid var(--txt-color);
+	border: var(--s10) solid lime;
 	display: flex;
 	height: var(--s300);
 	justify-content: center;
@@ -61,8 +61,8 @@ h1 {
 	z-index: 3;
 }
 .user-menu {
-	background: var(--scr-color);
-	border: var(--s1) solid var(--txt-color);
+	background: rgba(15, 30, 15, 1);
+	border: var(--s1) solid lime;
 	position: absolute;
 	right: 0;
 	top: var(--s300);

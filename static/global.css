@@ -76,12 +76,6 @@ table {
 	--s600: calc(var(--s100) * 6);
 	--radius: 0;
 
-	/* Global Colors */
-	--scr-color: rgba(15, 30, 15, 1);
-	--scr-trans: rgba(15, 30, 15, .1);
-	--txt-color: lime;
-	--alt-color: coral;
-
 	/* Global Font */
 	--global-font: Arial, Helvetica, sans-serif;
 }
@@ -95,8 +89,8 @@ table {
 }
 html,
 body {
-	background: var(--scr-color);
-	color: var(--txt-color);
+	background: rgba(15, 30, 15, 1);
+	color: lime;
 	font-family: var(--global-font);
 	font-size: var(--s100);
 	scrollbar-width: none;
@@ -105,7 +99,7 @@ form {
 	width: 100%;
 }
 fieldset {
-	border: 1px dotted var(--txt-color);
+	border: 1px dotted lime;
 	width: 100%;
 }
 
@@ -124,7 +118,7 @@ p {
 	line-height: 1.5;
 }
 a {
-	color: var(--txt-color);
+	color: lime;
 	text-decoration: none;
 }
 label {
@@ -140,10 +134,10 @@ legend {
 button,
 input,
 select {
-	background: var(--scr-color);
-	border: var(--s1) solid var(--txt-color);
+	background: rgba(15, 30, 15, 1);
+	border: var(--s1) solid lime;
 	border-radius: var(--radius);
-	color: var(--txt-color);
+	color: lime;
 	cursor: pointer;
 	font-size: var(--s100);
 	text-align: center;
@@ -151,20 +145,20 @@ select {
 button:active, button:hover,
 input:active, input:hover,
 select:active {
-	background: var(--txt-color);
-	color: var(--scr-color);
+	background: lime;
+	color: rgba(15, 30, 15, 1);
 }
 select:hover {
-	background: var(--txt-color);
-	border: var(--s1) solid var(--scr-color);
-	color: var(--scr-color);
+	background: lime;
+	border: var(--s1) solid rgba(15, 30, 15, 1);
+	color: rgba(15, 30, 15, 1);
 }
 button:invalid,
 input:invalid,
 select:invalid {
-	color: var(--txt-color);
-	background-color: var(--scr-color) !important;
-	border-color: var(--alt-color);
+	color: lime;
+	background-color: rgba(15, 30, 15, 1) !important;
+	border-color: coral;
 }
 
 /* Buttons */
@@ -205,9 +199,9 @@ select {
 /* Link Buttons */
 .link-btn {
 	align-items: center;
-	background: var(--scr-color);
+	background: rgba(15, 30, 15, 1);
 	border-radius: var(--radius);
-	border: var(--s1) solid var(--txt-color);
+	border: var(--s1) solid lime;
 	display: flex;
 	justify-content: center;
 	font-size: var(--s125);
@@ -216,8 +210,8 @@ select {
 }
 .link-btn:active,
 .link-btn:hover {
-	background: var(--txt-color);
-	color: var(--scr-color);
+	background: lime;
+	color: rgba(15, 30, 15, 1);
 }
 
 
@@ -238,8 +232,8 @@ summary {
 	padding: var(--s100);
 }
 summary:hover {
-	color: var(--scr-color);
-	background: var(--txt-color);
+	color: rgba(15, 30, 15, 1);
+	background: lime;
 }
 details > div {
 	padding: var(--s100);
@@ -270,7 +264,7 @@ tr {
 	min-width: 100%;
 }
 td {
-	border: var(--s1) solid var(--txt-color);
+	border: var(--s1) solid lime;
 	flex: 1;
 	overflow-wrap: normal;
 	padding: var(--s50);
@@ -292,7 +286,7 @@ td {
 
 /* Center Card */
 .cntr-card {
-	border: var(--s3) solid var(--txt-color);
+	border: var(--s3) solid lime;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

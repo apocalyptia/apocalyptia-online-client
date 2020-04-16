@@ -77,7 +77,7 @@ div[class*=-label] {
 	top: 140px;
 }
 .torso-label {
-	color: var(--scr-color);
+	color: rgba(15, 30, 15, 1);
 	left: 50%;
 	top: 50px;
 	transform: translate(-50%, -50%);
@@ -125,7 +125,7 @@ div[class*=level] {
 	border-top-right-radius: 30px;
 }
 .torso {
-	color: var(--scr-color);
+	color: rgba(15, 30, 15, 1);
 	height: 150px;
 	margin: 0 5px;
 	width: 70px;

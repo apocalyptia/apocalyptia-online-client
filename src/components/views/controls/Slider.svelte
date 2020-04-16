@@ -34,29 +34,29 @@ input[type="range"] {
 }
 input[type="range"]::-moz-range-thumb {
 	-moz-appearance: none;
-	background: var(--txt-color);
+	background: lime;
 	border-radius: var(--radius);
-	border: var(--s1) solid var(--scr-color);
+	border: var(--s1) solid rgba(15, 30, 15, 1);
 	height: var(--s200);
 	width: var(--s200);
 }
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
-	background: var(--txt-color);
+	background: lime;
 	border-radius: var(--radius);
-	border: var(--s1) solid var(--scr-color);
+	border: var(--s1) solid rgba(15, 30, 15, 1);
 	height: var(--s200);
 	width: var(--s200);
 }
 input[type="range"]:hover::-moz-range-thumb {
 	-moz-appearance: none;
-	background: var(--scr-color);
-	border: var(--s1) solid var(--txt-color);
+	background: rgba(15, 30, 15, 1);
+	border: var(--s1) solid lime;
 }
 input[type="range"]:hover::-webkit-slider-thumb {
 	-webkit-appearance: none;
-	background: var(--scr-color);
-	border: var(--s1) solid var(--txt-color);
+	background: rgba(15, 30, 15, 1);
+	border: var(--s1) solid lime;
 }
 .range-indicator {
 	display: flex;

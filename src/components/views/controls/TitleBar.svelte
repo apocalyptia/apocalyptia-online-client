@@ -32,8 +32,8 @@ h1 {
 	display: inline;
 }
 sub {
-	color: var(--alt-color);
-	border: var(--s1) dotted var(--alt-color);
+	color: coral;
+	border: var(--s1) dotted coral;
 	font-size: var(--s75);
 	padding: var(--s1);
 }
