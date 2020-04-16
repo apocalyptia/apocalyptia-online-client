@@ -46,9 +46,8 @@ export const dodge = new Property({
 export const health = new Property({
 	name: `Health`,
 	description: [
-		`There are 6 body Locations, each with its own Health.`,
-		`Torso Health = Constitution x 2`,
-		`Head, Arm, and Leg Health = Constitution`,
+		`Head, Arm, Leg Health = Constitution.`,
+		`Torso Health = Constitution x 2.`,
 		`Health is a measure of how much Damage you can withstand.`,
 		`You fall Unconscious when you have taken total Damage = Constitution x 2.`,
 		`You die when Head or Torso Health = 0.`,

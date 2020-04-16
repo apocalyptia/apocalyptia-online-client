@@ -49,7 +49,12 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 	<p>Your Character's Properties are calculated automatically:</p>
 	<ul>
 		{#each Properties.list as property}
-			<li>{property.description[0]}</li>
+			{#if property.name == 'Health'}
+				<li>{property.description[0]}</li>
+				<li>{property.description[1]}</li>
+			{:else}
+				<li>{property.description[0]}</li>
+			{/if}
 		{/each}
 	</ul>
 </div>
