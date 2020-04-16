@@ -27,7 +27,7 @@ const randomRanged = () => {
 	while (ammo.cal != $character.gear.rangedWeapons.inventory[0].cal) {
 		ammo = RandomRoll(AmmoList)
 	}
-	ammo.qty = Nd6(3)
+	ammo.qty = Nd6(1)
 	$character.gear.ammo.inventory.push(ammo)
 	$character = $character
 }

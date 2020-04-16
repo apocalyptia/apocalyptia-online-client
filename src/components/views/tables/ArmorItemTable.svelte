@@ -9,7 +9,7 @@ export let item
 		<td>{item.name}</td>
 	</tr>
 	<tr>
-		<td>Dr: {item.dr}</td>
+		<td>DR: {item.dr}</td>
 		<td class='wide-column'>Loc: {item.location}</td>
 	</tr>
 	{#if item.attributes.length}

@@ -9,12 +9,12 @@ export let item
 		<td>{item.name}</td>
 	</tr>
 	<tr>
-		<td>Dmg: {item.dmg}</td>
-		<td>Rng: {item.rng}</td>
+		<td>DMG: {item.dmg}</td>
+		<td>RNG: {item.rng}</td>
 		<td>Sz: {item.sz}</td>
 	</tr>
 	<tr>
-		<td>Mag: {item.mag}</td>
+		<td>Capacity: {item.cap}</td>
 		<td>Cal: {item.cal}</td>
 	</tr>
 	{#if item.attributes.length}
