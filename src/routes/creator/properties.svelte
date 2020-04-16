@@ -14,7 +14,24 @@ beforeUpdate(() => $character = Properties.setScores($character))
 	{#each Properties.explanation as line}
 		<p>{line}</p>
 	{/each}
+	<p>Your Character's Properties are calculated automatically:</p>
+	
 </div>
+<details>
+		<summary>Properties Formulae</summary>
+		<div>
+			<ul>
+				{#each Properties.list as property}
+					{#if property.name == 'Health'}
+						<li>{property.description[0]}</li>
+						<li>{property.description[1]}</li>
+					{:else}
+						<li>{property.description[0]}</li>
+					{/if}
+				{/each}
+			</ul>
+		</div>
+	</details>
 <div class='section-card properties-list'>
 	<div class='section-block'>
 		<div class='prop-item'>

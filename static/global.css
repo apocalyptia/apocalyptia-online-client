@@ -323,7 +323,7 @@ td {
 
 /* Misc */
 .explanation {
-	padding: var(--s100);
+	margin: var(--s100);
 }
 .list {
 	margin-top: var(--s100);

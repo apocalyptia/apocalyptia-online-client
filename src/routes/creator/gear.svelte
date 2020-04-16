@@ -51,46 +51,51 @@ beforeUpdate(function() {
 </script>
 
 
-<h1>Gear</h1>
-<div class='section-card'>
-	<div class='item-category'>
-		<h2>Melee Weapon</h2>
+<div class='gear-step'>
+	<h1>Gear</h1>
+	<div class='explanation'>
+		<p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p>
 	</div>
-	{#if $character.gear.meleeWeapons.inventory.length > 0}
-		<MeleeWeaponItemTable item={$character.gear.meleeWeapons.inventory[0]}/>
-	{:else}
-		<div class='cntr-btn'>
-			<button on:click={randomMelee}>Random</button>
+	<div class='section-card'>
+		<div class='item-category'>
+			<h2>Melee Weapon</h2>
 		</div>
-	{/if}
-</div>
-<div class='section-card'>
-	<div class='item-category'>
-		<h2>Ranged Weapon</h2>
+		{#if $character.gear.meleeWeapons.inventory.length > 0}
+			<MeleeWeaponItemTable item={$character.gear.meleeWeapons.inventory[0]}/>
+		{:else}
+			<div class='cntr-btn'>
+				<button on:click={randomMelee}>Random</button>
+			</div>
+		{/if}
 	</div>
-	{#if $character.gear.rangedWeapons.inventory.length}
-		<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
-		<div class='item-category ammo-heading'>
-			<h2>Ammo</h2>
+	<div class='section-card'>
+		<div class='item-category'>
+			<h2>Ranged Weapon</h2>
 		</div>
-		<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
-	{:else}
-		<div class='cntr-btn'>
-			<button on:click={randomRanged}>Random</button>
-		</div>
-	{/if}
-</div>
-<div class='section-card'>
-	<div class='item-category'>
-		<h2>Armor</h2>
+		{#if $character.gear.rangedWeapons.inventory.length}
+			<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
+			<div class='item-category ammo-heading'>
+				<h2>Ammo</h2>
+			</div>
+			<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
+		{:else}
+			<div class='cntr-btn'>
+				<button on:click={randomRanged}>Random</button>
+			</div>
+		{/if}
 	</div>
-	{#if $character.gear.armor.inventory.length}
-		<ArmorItemTable item={$character.gear.armor.inventory[0]}/>
-	{:else}
-		<div class='cntr-btn'>
-			<button on:click={randomArmor}>Random</button>
+	<div class='section-card'>
+		<div class='item-category'>
+			<h2>Armor</h2>
 		</div>
-	{/if}
+		{#if $character.gear.armor.inventory.length}
+			<ArmorItemTable item={$character.gear.armor.inventory[0]}/>
+		{:else}
+			<div class='cntr-btn'>
+				<button on:click={randomArmor}>Random</button>
+			</div>
+		{/if}
+	</div>
 </div>
 <NavBar links={{back: '/creator/abilities', next: next}} {status}/>
 

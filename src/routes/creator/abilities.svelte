@@ -28,6 +28,7 @@ beforeUpdate(() => {
 		{#each Abilities.explanation as line}
 			<p>{line}</p>
 		{/each}
+		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>
 	</div>
 	<div class='remaining'>
 		<h3>Remaining: {$character.properties.experience.remaining}</h3>

@@ -1,5 +1,5 @@
 <script>
-import Creation from './creation.svelte'
+import Description from './description.svelte'
 </script>
 
-<Creation/>
+<Description/>

@@ -59,7 +59,7 @@ beforeUpdate(() => {
 	<button class='cntr-btn' on:click={reset}>Reset</button>
 	<button class='cntr-btn' on:click={random}>Random</button>
 </div>
-<NavBar links={{back: '/creator/creation', next: next}} {status}/>
+<NavBar links={{back: '/', next: next}} {status}/>
 
 
 <style>
