@@ -11,10 +11,10 @@ let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 <div class='options-section'>
 	{#each OptionList as ability}
 		<div class='ability-section'>
-			<span class='ability-option-label'>
+			<div class='ability-name-label'>
 				{ability.options[0].name}
-			</span>
-			<span class='taken-label'>Taken:
+			</div>
+			<div class='taken-label'>Taken:
 				<select
 					name={ability.name}
 					bind:value={ability.taken}
@@ -24,7 +24,7 @@ let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 						<option value={i}>{i}</option>
 					{/each}
 				</select>
-			</span>
+			</div>
 		</div>
 	{/each}
 </div>
@@ -38,6 +38,7 @@ let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 	align-items: center;
 	border: var(--s1) dashed;
 	display: flex;
+	justify-content: space-between;
 	margin: var(--s100) auto;
 	padding: var(--s50);
 }

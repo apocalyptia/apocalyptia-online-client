@@ -8,31 +8,37 @@ ability = MasterAbilityList.filter(a => a.name == ability.name)[0]
 </script>
 
 
-<div class='ability-section'>
-	<span class='ability-name-label'>{ability.name}</span>
-	<span>
-		Taken:
-		<select
-			name={ability.name}
-			bind:value={ability.taken}
-			on:change={() => $character.abilities = MasterAbilityList.filter(a => a.taken)}
-		>
-			{#each Array(ability.max+1) as _, i}
-				<option value={i}>{i}</option>
-			{/each}
-		</select>
-	</span>
-	<span class='taken-selector'></span>
+<div class='options-section'>
+	<div class='ability-section'>
+		<div class='ability-name-label'>
+			{ability.name}
+		</div>
+		<div class='taken-label'>Taken:
+			<select
+				name={ability.name}
+				bind:value={ability.taken}
+				on:change={() => $character.abilities = MasterAbilityList.filter(a => a.taken)}
+			>
+				{#each Array(ability.max+1) as _, i}
+					<option value={i}>{i}</option>
+				{/each}
+			</select>
+		</div>
+	</div>
 </div>
 
 
 <style>
+.options-section {
+	width: 100%;
+}
 .ability-section {
 	align-items: center;
+	border: var(--s1) dashed;
 	display: flex;
-	margin: var(--s100);
 	justify-content: space-between;
-	width: 100%;
+	margin: var(--s100) auto;
+	padding: var(--s50);
 }
 select {
 	width: var(--s300);

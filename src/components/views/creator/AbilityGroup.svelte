@@ -22,7 +22,6 @@ export let MasterAbilityList
 <style>
 .ability-card {
 	margin: var(--s100);
-	padding: var(--s50);
 	border: var(--s1) solid;
 }
 </style>
