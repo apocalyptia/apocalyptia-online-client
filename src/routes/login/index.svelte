@@ -16,13 +16,6 @@ let forgotPassword = false
 const submit = (event) => {
 	pendingApiCall = true
 	login(user)
-		.then(() => {
-			console.log('LOGIN SUCCESS!')
-			if (window.localStorage.getItem('character')) {
-				$character = JSON.parse(window.localStorage.getItem('character'))
-				console.log('CHARACTER LOADED = ', $character)
-			}
-		})
 		.catch(e => {
 			pendingApiCall = false
 			forgotPassword = true

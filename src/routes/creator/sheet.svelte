@@ -1,16 +1,20 @@
 <script>
-import { character } from '../../stores/characterStore'
-import { authUserStore } from '../../stores/netlifyStore'
+import Character from '../../components/classes/Character'
 import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import api from '../../../utils/api'
+import { authUserStore } from '../../stores/netlifyStore'
+import { character } from '../../stores/characterStore'
 
-const createMyCharacter = () => {
+const saveCharacter = () => {
 	$character.user = $authUserStore.id
-	window.localStorage.setItem('character', JSON.stringify($character))
-	const storedCharacter = window.localStorage.getItem('character')
-	const retrievedCharacter = JSON.parse(storedCharacter)
 	$character.completed = true
+	window.localStorage.setItem('character', JSON.stringify($character))
+}
+
+const deleteCharacter = () => {
+	$character = new Character()
+	window.localStorage.removeItem('character')
 }
 </script>
 
@@ -20,8 +24,11 @@ const createMyCharacter = () => {
 	{#if $character.completed}
 		<h2>{$character.description.identity.value} saved successfully!</h2>
 	{:else}
-		<button on:click={createMyCharacter}>
-			Save Character
+		<button on:click={deleteCharacter}>
+			Delete
+		</button>
+		<button on:click={saveCharacter}>
+			Save
 		</button>
 	{/if}
 </div>
@@ -31,7 +38,7 @@ const createMyCharacter = () => {
 <style>
 .save-button {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	margin-top: var(--s100);
 }
 .save-button button {

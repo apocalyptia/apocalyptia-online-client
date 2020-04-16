@@ -11,6 +11,9 @@ onMount(() => {
 		return result
 	}, {})
 	if (result.confirmation_token) confirm(result.confirmation_token)
+	if (window.localStorage.getItem('character')) {
+		$character = JSON.parse(window.localStorage.getItem('character'))
+	}
 })
 </script>
 
