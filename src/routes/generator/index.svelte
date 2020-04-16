@@ -94,9 +94,6 @@ const rolld6 = () => {
 
 
 <style>
-.section-card {
-	display: block;
-}
 .item-category {
 	display: flex;
 	justify-content: space-between;

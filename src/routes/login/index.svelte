@@ -1,6 +1,7 @@
 <script>
 import Spinner from '../../components/views/ui/Spinner.svelte'
 import { authUserStore, login } from '../../stores/netlifyStore'
+import { character } from '../../stores/characterStore'
 
 if ($authUserStore) window.location.href = `/`
 
@@ -15,6 +16,13 @@ let forgotPassword = false
 const submit = (event) => {
 	pendingApiCall = true
 	login(user)
+		.then(() => {
+			console.log('LOGIN SUCCESS!')
+			if (window.localStorage.getItem('character')) {
+				$character = JSON.parse(window.localStorage.getItem('character'))
+				console.log('CHARACTER LOADED = ', $character)
+			}
+		})
 		.catch(e => {
 			pendingApiCall = false
 			forgotPassword = true

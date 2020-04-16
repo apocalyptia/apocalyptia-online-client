@@ -55,89 +55,89 @@
 
 
 <style>
-	.body-locations-section {
-		display: flex;
-		width: 100%;
-	}
-	div[class*=-label] {
-		display: inline-block;
-		height: 10px;
-		text-align: center;
-		width: 100%;
-		position: relative;
-	}
-	.head-label {
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	.right-arm-label {
-		top: 140px;
-	}
-	.left-arm-label {
-		top: 140px;
-	}
-	.torso-label {
-		color: var(--scr-color);
-		left: 50%;
-		top: 50px;
-		transform: translate(-50%, -50%);
-	}
-	.left-leg-label {
-		top: 250px;
-	}
-	.right-leg-label {
-		top: 250px;
-	}
-	
-	.locations {
-		display: block;
-		margin-top: 10px;
-		text-align: center;
-		width: 100%;
-	}
-	.location {
-		background: lime;
-	}
-	.location-numbers {
-		margin: 5px;
-	}
-	div[class*=level] {
-		display: flex;
-		justify-content: center;
-	}
-	.head {
-		border-radius: 50%;
-		border: 1px;
-		height: 50px;
-		margin-bottom: 5px;
-		width: 50px;
-	}
-	.arm {
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
-		height: 140px;
-		width: 20px;
-	}
-	.left-arm {
-		border-top-left-radius: 30px;
-	}
-	.right-arm {
-		border-top-right-radius: 30px;
-	}
-	.torso {
-		color: var(--scr-color);
-		height: 150px;
-		margin: 0 5px;
-		width: 70px;
-		text-align: center;
-	}
-	.leg {
-		border-bottom-right-radius: 15px;
-		border-bottom-left-radius: 15px;
-		height: 160px;
-		width: 28px;
-	}
-	.left-leg {
-		margin-right: 14px;
-	}
+.body-locations-section {
+	display: flex;
+	width: 100%;
+}
+div[class*=-label] {
+	display: inline-block;
+	height: 10px;
+	text-align: center;
+	width: 100%;
+	position: relative;
+}
+.head-label {
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.right-arm-label {
+	top: 140px;
+}
+.left-arm-label {
+	top: 140px;
+}
+.torso-label {
+	color: var(--scr-color);
+	left: 50%;
+	top: 50px;
+	transform: translate(-50%, -50%);
+}
+.left-leg-label {
+	top: 250px;
+}
+.right-leg-label {
+	top: 250px;
+}
+
+.locations {
+	display: block;
+	margin-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+.location {
+	background: lime;
+}
+.location-numbers {
+	margin: 5px;
+}
+div[class*=level] {
+	display: flex;
+	justify-content: center;
+}
+.head {
+	border-radius: 50%;
+	border: 1px;
+	height: 50px;
+	margin-bottom: 5px;
+	width: 50px;
+}
+.arm {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	height: 140px;
+	width: 20px;
+}
+.left-arm {
+	border-top-left-radius: 30px;
+}
+.right-arm {
+	border-top-right-radius: 30px;
+}
+.torso {
+	color: var(--scr-color);
+	height: 150px;
+	margin: 0 5px;
+	width: 70px;
+	text-align: center;
+}
+.leg {
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	height: 160px;
+	width: 28px;
+}
+.left-leg {
+	margin-right: 14px;
+}
 </style>

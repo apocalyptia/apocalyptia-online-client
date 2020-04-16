@@ -110,9 +110,6 @@ beforeUpdate(function() {
 
 
 <style>
-.section-card {
-	display: block;
-}
 .item-category {
 	margin-bottom: var(--s50);
 }

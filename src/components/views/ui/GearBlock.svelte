@@ -39,8 +39,8 @@ export let rule
 
 
 <style>
-	ul {
-		list-style: disc;
-		margin-left: var(--s100);
-	}
+ul {
+	list-style: disc;
+	margin-left: var(--s100);
+}
 </style>

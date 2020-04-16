@@ -27,7 +27,7 @@ export let item
 
 
 <style>
-	.wide-column {
-		flex: 2;
-	}
+.wide-column {
+	flex: 2;
+}
 </style>

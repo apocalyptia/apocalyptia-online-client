@@ -63,9 +63,6 @@ beforeUpdate(() => {
 
 
 <style>
-.section-card {
-	display: block;
-}
 div[class*='-container'] {
 	align-items: center;
 	display: flex;

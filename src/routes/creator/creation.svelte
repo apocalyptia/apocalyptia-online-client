@@ -68,27 +68,22 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 
 
 <style>
-	.section-card {
-		display: block;
-		margin-bottom: var(--s100);
-	}
-	p {
-		line-height: 1.5;
-	}
-	.explanation {
-		padding: var(--s100);
-	}
-	h3 {
-		font-weight: bold;
-		margin-bottom: var(--s50);
-		text-decoration: underline;
-	}
-	.skill-type {
-		text-decoration: underline;
-	}
-	ul {
-		list-style-position: inside;
-		list-style-type: disc;
-	}
-
+p {
+	line-height: 1.5;
+}
+.explanation {
+	padding: var(--s100);
+}
+h3 {
+	font-weight: bold;
+	margin-bottom: var(--s50);
+	text-decoration: underline;
+}
+.skill-type {
+	text-decoration: underline;
+}
+ul {
+	list-style-position: inside;
+	list-style-type: disc;
+}
 </style>

@@ -279,11 +279,9 @@ td {
 
 /* Section Card */
 .section-card {
-	align-items: center;
 	border: var(--s1) dotted;
-	display: flex;
-	justify-content: space-around;
-	margin: var(--s50);
+	display: block;
+	margin: var(--s100);
 	padding: var(--s100);
 }
 .section-card .stat-label {

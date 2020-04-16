@@ -170,9 +170,6 @@ const skills = Object.values($character.skills)
 
 
 <style>
-.section-card {
-	display: block;
-}
 .flex-block {
 	display: flex;
 	flex-wrap: wrap;

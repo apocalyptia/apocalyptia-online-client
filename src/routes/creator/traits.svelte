@@ -56,10 +56,3 @@ beforeUpdate(() => {
 	</button>
 </div>
 <NavBar links={{ back: '/creator/description', next: next }} status={remaining == 0 ? `go` : `stop`}/>
-
-
-<style>
-.section-card {
-	display: block;
-}
-</style>
