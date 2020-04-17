@@ -3,6 +3,7 @@ import { character } from '../../../stores/characterStore'
 import ToggleVisible from '../../helpers/ToggleVisible'
 import AbilityModal from './AbilityModal.svelte'
 
+
 export let ability
 export let MasterAbilityList
 </script>
@@ -14,7 +15,7 @@ export let MasterAbilityList
 		<span class='ability-name'>{ability.name}</span>
 	</div>
 	<div class='card-row'>
-		<span class='ability-description'>{ability.description}</span>
+		<span class='ability-description'>{ability.desc}</span>
 	</div>
 </div>
 {#if ability.visible == true}

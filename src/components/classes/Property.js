@@ -3,14 +3,14 @@ import Stat from './Stat'
 export default class Property extends Stat {
 	constructor({
 		name,
-		description,
+		desc,
 		formula,
 		score,
 		parent=``
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			formula,
 		})
 		this.score = score

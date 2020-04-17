@@ -3,15 +3,15 @@ import Gear from './Gear'
 export default class CombatGear extends Gear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
-		attributes=[]
+		attr=[]
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz
 		})
-		this.attributes = attributes
+		this.attr = attr
 	}
 }

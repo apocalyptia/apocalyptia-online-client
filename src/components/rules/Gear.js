@@ -13,6 +13,7 @@ import StorageList from './gear/StorageList'
 import PropSort from '../helpers/PropSort'
 // export { VehicleList } from '../../components/rules//gear/Vehicles'
 
+
 export const WeaponList = [
 	...MeleeWeaponList,
 	...RangedWeaponList,
@@ -35,5 +36,6 @@ const Gear = {
 		...StorageList,
 	].sort((a, b) => PropSort(a, b, `name`))
 }
+
 
 export default Gear

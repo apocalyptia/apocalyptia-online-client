@@ -1,22 +1,22 @@
-import AmmoAttribute from '../../../classes/gear/AmmoAttribute'
+import AmmoAttr from '../../../classes/gear/attributes/AmmoAttr'
 
 
-export const Broadhead = new AmmoAttribute({
+export const Broadhead = new AmmoAttr({
 	name: `Broadhead`,
-	description: [
+	desc: [
 		`+1 Damage.`,
 	],
-	calibers: [
+	cal: [
 		`Arrow`,
 	]
 })
 
-export const HollowPoint = new AmmoAttribute({
+export const HollowPoint = new AmmoAttr({
 	name: `Hollow Point`,
-	description: [
+	desc: [
 		`+1 Damage.`,
 	],
-	calibers: [
+	cal: [
 		`.22`,
 		`9mm`,
 		`.357`,
@@ -25,12 +25,12 @@ export const HollowPoint = new AmmoAttribute({
 	]
 })
 
-export const Match = new AmmoAttribute({
+export const Match = new AmmoAttr({
 	name: `Match`,
-	description: [
+	desc: [
 		`+1 Ranged Attack.`,
 	],
-	calibers: [
+	cal: [
 		`.22`,
 		`9mm`,
 		`.357`,
@@ -39,12 +39,12 @@ export const Match = new AmmoAttribute({
 	]
 })
 
-export const Slug = new AmmoAttribute({
+export const Slug = new AmmoAttr({
 	name: `Slug`,
-	description: [
+	desc: [
 		`Range x2.`,
 	],
-	calibers: [
+	cal: [
 		`12g`,
 	]
 })

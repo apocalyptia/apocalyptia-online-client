@@ -5,7 +5,9 @@ import Traits from '../../components/rules/Traits'
 import Slider from '../../components/views/controls/Slider.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
+
 let remaining = Traits.remaining($character)
+
 let next = `/creator/traits`
 
 const assign = (event) => $character = Traits.assign($character, event.target)

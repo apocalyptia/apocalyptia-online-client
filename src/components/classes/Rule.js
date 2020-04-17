@@ -1,12 +1,12 @@
 export default class Rule {
 	constructor({
 		name=``,
-		description=[],
+		desc=[],
 		formula,
 		visible=false,
 	}) {
 		this.name = name
-		this.description = description
+		this.desc = desc
 		this.formula = formula
 		this.visible = visible
 	}

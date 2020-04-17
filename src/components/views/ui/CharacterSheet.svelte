@@ -6,6 +6,7 @@ import MeleeWeaponItemTable from '../tables/MeleeWeaponItemTable.svelte'
 import RangedWeaponItemTable from '../tables/RangedWeaponItemTable.svelte'
 import BodyLocations from './BodyLocations.svelte'
 
+
 const traits = Object.values($character.traits)
 const skills = Object.values($character.skills)
 </script>
@@ -18,18 +19,18 @@ const skills = Object.values($character.skills)
 			<h2>Description</h2>
 		</div>
 		<div class='section-block'>
-			<div>Character: {$character.description.identity.value}</div>
+			<div>Character: {$character.desc.identity.value}</div>
 		</div>
 		<div class='flex-block'>
 			<div class='section-block'>
-				<div>Age: {$character.description.age.value}</div>
-				<div>Height: {$character.description.height.value}</div>
-				<div>Weight: {$character.description.weight.value}</div>
+				<div>Age: {$character.desc.age.value}</div>
+				<div>Height: {$character.desc.height.value}</div>
+				<div>Weight: {$character.desc.weight.value}</div>
 			</div>
 			<div class='section-block'>
-				<div>Sex: {$character.description.sex.value}</div>
-				<div>Skin: {$character.description.skin.value}</div>
-				<div>Hair: {$character.description.hair.value}</div>
+				<div>Sex: {$character.desc.sex.value}</div>
+				<div>Skin: {$character.desc.skin.value}</div>
+				<div>Hair: {$character.desc.hair.value}</div>
 			</div>
 		</div>
 	</div>
@@ -75,42 +76,42 @@ const skills = Object.values($character.skills)
 		<div class='flex-block'>
 			<div class='section-block'>
 				<div class='prop-item'>
-					{$character.properties.speed.name}: 
-					{$character.properties.speed.score}
+					{$character.props.speed.name}: 
+					{$character.props.speed.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.carry.name}: 
-					{$character.properties.carry.current} / 
-					{$character.properties.carry.score}
+					{$character.props.carry.name}: 
+					{$character.props.carry.current} / 
+					{$character.props.carry.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.experience.name}: 
-					{$character.properties.experience.remaining} / 
-					{$character.properties.experience.score}
+					{$character.props.experience.name}: 
+					{$character.props.experience.remaining} / 
+					{$character.props.experience.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.psyche.name}: 
-					{$character.properties.psyche.current} / 
-					{$character.properties.psyche.score}
+					{$character.props.psyche.name}: 
+					{$character.props.psyche.current} / 
+					{$character.props.psyche.score}
 				</div>
 			</div>
 			<div class='section-block'>
 				<div class='prop-item'>
-					{$character.properties.dodge.name}: 
-					{$character.properties.dodge.score}
+					{$character.props.dodge.name}: 
+					{$character.props.dodge.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.block.name}: 
-					{$character.properties.block.score}
+					{$character.props.block.name}: 
+					{$character.props.block.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.intellect.name}: 
-					{$character.properties.intellect.score}
+					{$character.props.intellect.name}: 
+					{$character.props.intellect.score}
 				</div>
 				<div class='prop-item'>
-					{$character.properties.luck.name}: 
-					{$character.properties.luck.current} / 
-					{$character.properties.luck.score}
+					{$character.props.luck.name}: 
+					{$character.props.luck.current} / 
+					{$character.props.luck.score}
 				</div>
 			</div>
 		</div>
@@ -140,7 +141,7 @@ const skills = Object.values($character.skills)
 		{#each $character.abilities as ability}
 			<div class='ability-row'>
 				<span class='l-col'>
-					{ability.name}{ability.options[0] ? ` (${ability.options[0].name})` : ``}
+					{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}
 				</span>
 				<span class='s-col'>{ability.xp}</span>
 				<span class='s-col'>{ability.max}</span>

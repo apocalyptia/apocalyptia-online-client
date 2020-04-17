@@ -3,13 +3,13 @@ import Gear from './Gear'
 export default class Storage extends Gear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
 		slots
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz
 		})
 		this.slots = slots

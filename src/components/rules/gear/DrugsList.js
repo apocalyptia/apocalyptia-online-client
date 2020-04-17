@@ -3,63 +3,63 @@ import Drug from '../../classes/gear/Drug'
 
 export const Alcohol = new Drug({
 	name: `Alcohol`,
-	description: [
+	desc: [
 		`Can be used as an Antibiotic or Fuel.`,
 		`C9# or Unstable.`,
 	],
 	sz: 1,
 	mix: 9,
-	overdose: true
+	od: true
 })
 
 export const Antibiotic = new Drug({
 	name: `Antibiotic`,
-	description: [
+	desc: [
 		`Prevents infection in Recovery for 1 day.`,
 	],
 	sz: 0,
 	mix: 12,
-	overdose: false
+	od: false
 })
 
 export const Hallucinogen = new Drug({
 	name: `Hallucinogen`,
-	description: [
+	desc: [
 		`+1 Perform and Tame, -3 to all other rolls, and -1 Psyche.`,
 	],
 	sz: 0,
 	mix: 15,
-	overdose: false
+	od: false
 })
 
 export const Painkiller = new Drug({
 	name: `Painkiller`,
-	description: [
+	desc: [
 		`Ignore 1 Pain penalty.`,
 	],
 	sz: 0,
 	mix: 9,
-	overdose: true
+	od: true
 })
 
 export const Sedative = new Drug({
 	name: `Sedative`,
-	description: [
+	desc: [
 		`Demeanor#6/round to take any action.`,
 	],
 	sz: 0,
 	mix: 12,
-	overdose: true
+	od: true
 })
 
 export const Stimulant = new Drug({
 	name: `Stimulant`,
-	description: [
+	desc: [
 		`Ignore Exhaustion penalties for 6hrs.`,
 	],
 	sz: 0,
 	mix: 9,
-	overdose: true
+	od: true
 })
 
 

@@ -7,6 +7,7 @@ import {
 } from './Skills'
 import RandomRoll from '../helpers/Random'
 
+
 export const traitMax = 6
 
 export const traitPoints = 14
@@ -28,7 +29,7 @@ const DemeanorSkillList = DemeanorSkills.map(skill => skill.name).join(', ')
 
 export const agility = new Trait({
 	name: `Agility`,
-	description: [
+	desc: [
 		`Agility is a Character’s talent for physical coordination.`,
 		`High Agility indicates balance, flexibility, and fine motor skill.`,
 		`This Trait is a factor in the Speed and Dodge Properties.`,
@@ -38,7 +39,7 @@ export const agility = new Trait({
 
 export const brains = new Trait({
 	name: `Brains`,
-	description: [
+	desc: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
 		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
 		`This Trait is a factor in the Experience and Intellect Properties.`,
@@ -48,7 +49,7 @@ export const brains = new Trait({
 
 export const constitution = new Trait({
 	name: `Constitution`,
-	description: [
+	desc: [
 		`Constitution is a Character’s talent for physical power and durability.`,
 		`High Constitution indicates good health, high stamina, and strong muscles.`,
 		`This Trait is a factor in the Health and Block Properties.`,
@@ -58,7 +59,7 @@ export const constitution = new Trait({
 
 export const demeanor = new Trait({
 	name: `Demeanor`,
-	description: [
+	desc: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
 		`High Demeanor indicates charisma, self-motivation, and confidence.`,
 		`This Trait is a factor in the Psyche and Luck Properties.`,

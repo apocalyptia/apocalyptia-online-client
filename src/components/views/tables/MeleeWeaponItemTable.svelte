@@ -13,12 +13,12 @@ export let item
 		<td>RNG: {item.rng}</td>
 		<td>Sz: {item.sz}</td>
 	</tr>
-	{#if item.attributes.length}
+	{#if item.attr.length}
 		<tr>
 			<td>
 				Attributes:
-				{#each item.attributes as attr, index}
-					{attr.name}{#if index < item.attributes.length - 1},&nbsp;{/if}
+				{#each item.attr as attr, index}
+					{attr.name}{#if index < item.attr.length - 1},&nbsp;{/if}
 				{/each}
 			</td>
 		</tr>

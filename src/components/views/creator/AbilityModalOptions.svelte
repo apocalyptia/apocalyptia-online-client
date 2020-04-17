@@ -12,7 +12,7 @@ let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 	{#each OptionList as ability}
 		<div class='ability-section'>
 			<div class='ability-name-label'>
-				{ability.options[0].name}
+				{ability.opts[0].name}
 			</div>
 			<div class='taken-label'>Taken:
 				<select

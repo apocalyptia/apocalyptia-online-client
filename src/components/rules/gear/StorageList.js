@@ -3,7 +3,7 @@ import Storage from '../../classes/gear/Storage'
 
 export const Backpack = new Storage({
 	name: `Backpack`,
-	description: [
+	desc: [
 		`2 rounds to access.`,
 	],
 	sz: 1,
@@ -12,7 +12,7 @@ export const Backpack = new Storage({
 
 export const Bandoleer = new Storage({
 	name: `Bandoleer`,
-	description: [
+	desc: [
 		`Holds 50 bullets of any caliber.`,
 	],
 	sz: 0,
@@ -21,7 +21,7 @@ export const Bandoleer = new Storage({
 
 export const BDUJacket = new Storage({
 	name: `BDU Jacket`,
-	description: [
+	desc: [
 		`Camo.`,
 	],
 	sz: 0,
@@ -30,7 +30,7 @@ export const BDUJacket = new Storage({
 
 export const CargoPants = new Storage({
 	name: `Cargo Pants`,
-	description: [
+	desc: [
 		`Camo.`,
 	],
 	sz: 1,
@@ -39,7 +39,7 @@ export const CargoPants = new Storage({
 
 export const Canteen = new Storage({
 	name: `Canteen`,
-	description: [
+	desc: [
 		`Holds 1 unit (.5gal) of liquid.`,
 		`Metal.`,
 	],
@@ -49,7 +49,7 @@ export const Canteen = new Storage({
 
 export const ConcealedHolster = new Storage({
 	name: `Concealed Holster`,
-	description: [
+	desc: [
 		`Perception 12# to spot a Size 1 Gun.`,
 	],
 	sz: 0,
@@ -58,7 +58,7 @@ export const ConcealedHolster = new Storage({
 
 export const Cooler = new Storage({
 	name: `Cooler`,
-	description: [
+	desc: [
 		`Hunted or Foraged Food lasts 6 days.`,
 	],
 	sz: 4,
@@ -67,7 +67,7 @@ export const Cooler = new Storage({
 
 export const DuffelBag = new Storage({
 	name: `Duffel Bag`,
-	description: [
+	desc: [
 		`2 rounds to access.`,
 	],
 	sz: 3,
@@ -76,7 +76,7 @@ export const DuffelBag = new Storage({
 
 export const FuelCan = new Storage({
 	name: `Fuel Can`,
-	description: [
+	desc: [
 		`5gal Fuel.`,
 		`d6 Fire Damage/gal, 1min, 1yd/gal Blast.`,
 	],
@@ -86,7 +86,7 @@ export const FuelCan = new Storage({
 
 export const Hoody = new Storage({
 	name: `Hoody`,
-	description: [
+	desc: [
 		`Cold Resistance.`,
 	],
 	sz: 0,
@@ -95,7 +95,7 @@ export const Hoody = new Storage({
 
 export const HydrationPack = new Storage({
 	name: `Hydration Pack`,
-	description: [
+	desc: [
 		`Holds 4 units (2gal) of liquid.`,
 	],
 	sz: 1,
@@ -104,7 +104,7 @@ export const HydrationPack = new Storage({
 
 export const Lockbox = new Storage({
 	name: `Lockbox`,
-	description: [
+	desc: [
 		`2 Damage Resistance.`,
 		`Fire Resistance.`,
 		`Larceny(Disable) 9#.`,
@@ -115,7 +115,7 @@ export const Lockbox = new Storage({
 
 export const MessengerBag = new Storage({
 	name: `Messenger Bag`,
-	description: [
+	desc: [
 		`1 round to access.`,
 	],
 	sz: 2,
@@ -124,7 +124,7 @@ export const MessengerBag = new Storage({
 
 export const PlasticJug = new Storage({
 	name: `Plastic Jug`,
-	description: [
+	desc: [
 		`Holds 2 units (1gal) of liquid.`,
 	],
 	sz: 1,
@@ -133,7 +133,7 @@ export const PlasticJug = new Storage({
 
 export const Purse = new Storage({
 	name: `Purse`,
-	description: [
+	desc: [
 		`1 round to access.`,
 	],
 	sz: 1,
@@ -142,7 +142,7 @@ export const Purse = new Storage({
 
 export const Speedloader = new Storage({
 	name: `Speed-loader`,
-	description: [
+	desc: [
 		`Reload a revolver cylinder as 1 action.`,
 	],
 	sz: 0,
@@ -151,7 +151,7 @@ export const Speedloader = new Storage({
 
 export const ToolBelt = new Storage({
 	name: `Tool Belt`,
-	description: [
+	desc: [
 		`6x 1 Slots.`,
 		`+1 Build.`,
 		`Miscellaneous small tools.`,
@@ -162,7 +162,7 @@ export const ToolBelt = new Storage({
 
 export const TrenchCoat = new Storage({
 	name: `Trench Coat`,
-	description: [
+	desc: [
 		`Cold Resistance.`,
 		`+1 Stealth.`,
 	],
@@ -172,7 +172,7 @@ export const TrenchCoat = new Storage({
 
 export const WaterBottle = new Storage({
 	name: `Water Bottle`,
-	description: [
+	desc: [
 		`Holds 1 unit (.5gal) of liquid.`,
 	],
 	sz: 1,

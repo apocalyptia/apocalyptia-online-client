@@ -1,4 +1,4 @@
-import MeleeWeapon from '../../../classes/gear/MeleeWeapon'
+import MeleeWeapon from '../../../classes/gear/weapons/MeleeWeapon'
 import {
 	Chop,
 	Blunt,
@@ -8,7 +8,7 @@ import {
 	Shield,
 	Slow,
 	TwoHanded
-} from '../attributes/WeaponAttributesList'
+} from '../attributes/WeaponAttrList'
 import { Unarmed } from '../../Status'
 
 
@@ -17,7 +17,7 @@ export const Ax = new MeleeWeapon({
 	sz: 4,
 	dmg: 4,
 	rng: 2,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Chop,
 		Slow,
@@ -29,7 +29,7 @@ export const BaseballBat = new MeleeWeapon({
 	sz: 3,
 	dmg: 3,
 	rng: 2,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Blunt,
 	]
@@ -40,7 +40,7 @@ export const BrassKnuckles = new MeleeWeapon({
 	sz: 1,
 	dmg: 1,
 	rng: 1,
-	attributes: [
+	attr: [
 		OneHanded,
 		Blunt,
 		Unarmed,
@@ -52,7 +52,7 @@ export const Club = new MeleeWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 2,
-	attributes: [
+	attr: [
 		OneHanded,
 		Blunt,
 	]
@@ -63,7 +63,7 @@ export const Crowbar = new MeleeWeapon({
 	sz: 3,
 	dmg: 3,
 	rng: 2,
-	attributes: [
+	attr: [
 		OneHanded,
 	]
 })
@@ -73,7 +73,7 @@ export const Hammer = new MeleeWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 1,
-	attributes: [
+	attr: [
 		OneHanded,
 		Blunt,
 	]
@@ -84,7 +84,7 @@ export const Hatchet = new MeleeWeapon({
 	sz: 2,
 	dmg: 2,
 	rng: 1,
-	attributes: [
+	attr: [
 		OneHanded,
 		Chop,
 	]
@@ -95,7 +95,7 @@ export const Knife = new MeleeWeapon({
 	sz: 1,
 	dmg: 1,
 	rng: 1,
-	attributes: [
+	attr: [
 		OneHanded,
 		Pierce,
 		Rapid,
@@ -107,7 +107,7 @@ export const Machete = new MeleeWeapon({
 	sz: 2,
 	dmg: 3,
 	rng: 2,
-	attributes: [
+	attr: [
 		OneHanded,
 		Chop,
 	]
@@ -118,7 +118,7 @@ export const RiotShield = new MeleeWeapon({
 	sz: 4,
 	dmg: 0,
 	rng: 1,
-	attributes: [
+	attr: [
 		OneHanded,
 		Blunt,
 		Shield,
@@ -130,7 +130,7 @@ export const Sledgehammer = new MeleeWeapon({
 	sz: 5,
 	dmg: 4,
 	rng: 2,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Blunt,
 		Slow,
@@ -142,7 +142,7 @@ export const Spear = new MeleeWeapon({
 	sz: 3,
 	dmg: 4,
 	rng: 3,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Pierce,
 	]
@@ -153,7 +153,7 @@ export const Staff = new MeleeWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 3,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Blunt,
 	]

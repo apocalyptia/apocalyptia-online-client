@@ -3,13 +3,13 @@ import Rule from './Rule'
 export default class Stat extends Rule {
 	constructor({
 		name,
-		description,
+		desc,
 		formula,
 		score=0
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			formula
 		})
 		this.score = score

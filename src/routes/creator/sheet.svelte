@@ -6,6 +6,7 @@ import api from '../../../utils/api'
 import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 
+
 const saveCharacter = () => {
 	$character.user = $authUserStore.id
 	$character.completed = true
@@ -19,10 +20,10 @@ const deleteCharacter = () => {
 </script>
 
 
-<CharacterSheet/>
+<CharacterSheet />
 <div class='save-button'>
 	{#if $character.completed}
-		<h2>{$character.description.identity.value} saved successfully!</h2>
+		<h2>{$character.desc.identity.value} saved successfully!</h2>
 	{:else}
 		<button on:click={deleteCharacter}>
 			Delete

@@ -1,13 +1,15 @@
 import Attribute from './Attribute'
 
-export default class WeaponAttribute extends Attribute {
+export default class AmmoAttr extends Attribute {
 	constructor({
 		name,
-		description
+		desc,
+		cal
 	}) {
 		super({
 			name,
-			description
+			desc
 		})
+		this.cal = cal
 	}
 }

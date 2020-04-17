@@ -1,21 +1,25 @@
 import Weapon from './Weapon'
 
-export default class MeleeWeapon extends Weapon {
+export default class RangedWeapon extends Weapon {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
 		dmg,
 		rng,
-		attributes
+		attr,
+		cap,
+		cal
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz,
 			dmg,
 			rng,
-			attributes
+			attr
 		})
+		this.cap = cap
+		this.cal = cal
 	}
 }

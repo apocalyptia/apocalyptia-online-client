@@ -3,23 +3,23 @@ import Stat from './Stat'
 export default class Skill extends Stat {
 	constructor({
 		name,
-		description,
+		desc,
 		base,
 		mods,
 		score,
-		difficulty,
-		specialties={},
+		diff,
+		specs={},
 		parent=``
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			base,
 			mods,
 			score
 		})
-		this.difficulty = difficulty
-		this.specialties = specialties
+		this.diff = diff
+		this.specs = specs
 		this.parent = parent
 	}
 }

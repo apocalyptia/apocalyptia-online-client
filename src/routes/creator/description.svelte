@@ -4,7 +4,9 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 
+
 let status = `stop`
+
 let next
 
 const randomItem = (i) => $character = Description.list[i].random($character)
@@ -15,7 +17,7 @@ const reset = () => $character = Description.reset($character)
 
 beforeUpdate(() => {
 	status = `go`
-	for (let d of Object.values($character.description)) {
+	for (let d of Object.values($character.desc)) {
 		if (d.value == ``) {
 			status = `stop`
 			break
@@ -32,7 +34,7 @@ beforeUpdate(() => {
 	<div class='item-block'>
 		<div class='character-container'>
 			<span>Character:</span>
-			<input type='text' bind:value={$character.description.identity.value}>
+			<input type='text' bind:value={$character.desc.identity.value}>
 			<button on:click={() => randomItem(1)}>Random</button>
 		</div>
 	</div>
@@ -42,13 +44,13 @@ beforeUpdate(() => {
 				<div class='item-container'>
 					<span>{Description.list[index + 2].name}:</span>
 					<input type='text' bind:value={
-						$character.description[Description.list[index + 2].name.toLowerCase()].value}>
+						$character.desc[Description.list[index + 2].name.toLowerCase()].value}>
 					<button on:click={() => randomItem(index + 2)}>Random</button>
 				</div>
 				<div class='item-container'>
 					<span>{Description.list[index + 3].name}:</span>
 					<input type='text' bind:value={
-						$character.description[Description.list[index + 3].name.toLowerCase()].value}>
+						$character.desc[Description.list[index + 3].name.toLowerCase()].value}>
 					<button on:click={() => randomItem(index + 3)}>Random</button>
 				</div>
 			</div>

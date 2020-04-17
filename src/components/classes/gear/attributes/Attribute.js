@@ -1,13 +1,13 @@
-import Rule from '../Rule'
+import Rule from '../../Rule'
 
 export default class Attribute extends Rule {
 	constructor({
 		name,
-		description
+		desc
 	}) {
 		super({
 			name,
-			description
+			desc
 		})
 	}
 }

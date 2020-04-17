@@ -5,17 +5,17 @@ import CalledShotTable from '../../views/tables/CalledShotTable.svelte'
 // Independent Rules
 
 export const Aim = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Aim`, 
-	description: [
+	desc: [
 		`Spend an Action to get +3 to your next Attack against a specific target.`,
 	],
 })
 
 const CalledShot = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Called Shot`, 
-	description: [
+	desc: [
 		`Attacks target the Torso by default.`,
 		`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects based on Location.`,
 	]
@@ -24,52 +24,52 @@ CalledShot.table = CalledShotTable
 export { CalledShot }
 
 export const Disarm = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Disarm`, 
-	description: [
+	desc: [
 		`Roll [Melee vs Melee (+ Constitution if the weapon is used two-handed)].`,
 		`The weapon flies d6 yds away in a random direction or the Attacker may choose to grab the weapon if they are Unarmed.`,
 	]
 })
 
 export const NonLethalForce = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Non-Lethal Force`,
-	description: [
+	desc: [
 		`Declare that you are using this Maneuver before rolling a Melee Attack.`,
 		`On a Success, you do half Damage.`,
 	]
 })
 
 export const Push = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Push`,
-	description: [
+	desc: [
 		`Roll [Constitution vs Constitution] to push an enemy in front of you.`,
 		`While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. No Damage.`,
 	]
 })
 
 export const Reload = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Reload`,
-	description: [
+	desc: [
 		`Replace a magazine or a single piece of ammunition (depending on the weapon) in a Ranged weapon.`,
 	]
 })
 
 export const Shove = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Shove`,
-	description: [
+	desc: [
 		`Roll [Melee vs Constitution] to shove an enemy up to [Constitution / 2] yds away from you, knocking them Prone. No Damage.`,
 	]
 })
 
 export const Trip = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Trip`,
-	description: [
+	desc: [
 		`Roll [Melee vs Agility] to knock an enemy Prone. 1 Damage.`,
 	]
 })
@@ -78,17 +78,17 @@ export const Trip = new Maneuver({
 // Sub Rules
 
 export const Grab = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Grab`,
-	description: [
+	desc: [
 		`Roll [Melee(Unarmed) vs DEF] to impose the 'Grabbed' Status.`,
 	]
 })
 
 export const Hostage = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Hostage`,
-	description: [
+	desc: [
 		`Use a Grabbed or Restrained enemy as Cover.`,
 		`The Grappled enemy's Damage Resistance acts as the Material Damage Resistance and any excess Damage is applied to the Grappled enemy instead of you.`,
 		`If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you.`,
@@ -97,18 +97,18 @@ export const Hostage = new Maneuver({
 })
 
 export const Tackle = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Tackle`,
-	description: [
+	desc: [
 		`Spend 2 Actions and make a Grapple Attack roll to move up to your Speed and Pin an enemy.`,
 		`If you Fail, you go Prone in front of them.`,
 	]
 })
 
 export const Throw = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Throw`,
-	description: [
+	desc: [
 		`Throw a Grabbed or Restrained enemy up to [Constitution] yds.`,
 		`The target takes 1 point of Blunt Damage to a random Location and land Prone.`,
 	]
@@ -118,9 +118,9 @@ export const Throw = new Maneuver({
 // Composite Rules
 
 const Grapple = new Maneuver({
-	category: `Offensive`,
+	cat: `Offensive`,
 	name: `Grapple`,
-	description: [
+	desc: [
 		`There are three steps to Grappling:`,
 		`1) Grab`,
 		`2) Restrain`,

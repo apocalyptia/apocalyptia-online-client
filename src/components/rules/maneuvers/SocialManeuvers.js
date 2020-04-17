@@ -2,18 +2,18 @@ import Maneuver from '../../classes/Maneuver'
 
 
 export const Distract = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Distract`,
-	description: [
+	desc: [
 		`Roll [Perform vs Perception].`,
 		`Stun target for 1 round.`,
 	]
 })
 
 export const Encourage = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Encourage`,
-	description: [
+	desc: [
 		`Roll [Leadership vs groups’ total Demeanor scores].`,
 		`The group gets a bonus = [your Demeanor] for one specific roll each.`,
 		`A Botch is -1 to all rolls.`,
@@ -21,9 +21,9 @@ export const Encourage = new Maneuver({
 })
 
 export const Interrogate = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Interrogate`,
-	description: [
+	desc: [
 		`Roll [Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence.`,
 		`Each roll takes d6 mins of conversation.`,
 		`If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly).`,
@@ -33,9 +33,9 @@ export const Interrogate = new Maneuver({
 })
 
 export const Negotiate = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Negotiate`,
-	description: [
+	desc: [
 		`If opposed parties are willing to talk out their differences, each side start with a list of demands.`,
 		`Roll [Socialize vs Socialize] once per demand.`,
 		`Attitude and situational modifiers should be applied by the Narrator.`,
@@ -45,9 +45,9 @@ export const Negotiate = new Maneuver({
 })
 
 export const Recruit = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Recruit`,
-	description: [
+	desc: [
 		`Roll [Socialize vs Demeanor] to convince someone to join your side.`,
 		`If they are someone’s follower, roll [Leadership vs Leadership].`,
 		`Attitude and other contextual modifiers should be applied at the Narrator's discretion.`,
@@ -55,9 +55,9 @@ export const Recruit = new Maneuver({
 })
 
 export const Taunt = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Taunt`,
-	description: [
+	desc: [
 		`Roll [Leadership vs Demeanor].`,
 		`Provoke the enemy into exclusively attacking you.`,
 		`The degree of Success is a penalty to the loser’s next roll.`,
@@ -66,9 +66,9 @@ export const Taunt = new Maneuver({
 })
 
 export const Torture = new Maneuver({
-	category: `Social`,
+	cat: `Social`,
 	name: `Torture`,
-	description: [
+	desc: [
 		`Roll [Medicine vs prisoner’s Constitution] once per hour to cause a captive d6 Pain to soften their resolve without killing them.`,
 		`Failure does d6 Damage to the captive.`,
 		`Roll [Demeanor vs Demeanor] at the end of each hour (Pain penalty applies).`,

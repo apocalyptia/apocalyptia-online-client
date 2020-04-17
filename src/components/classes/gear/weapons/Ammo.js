@@ -1,19 +1,19 @@
-import CombatGear from './CombatGear'
+import CombatGear from '../CombatGear'
 
 export default class Ammo extends CombatGear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
-		attributes,
+		attr,
 		cal=``,
 		qty=0
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz,
-			attributes
+			attr
 		})
 		this.cal = cal
 		this.qty = qty

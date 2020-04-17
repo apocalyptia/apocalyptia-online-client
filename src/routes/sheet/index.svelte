@@ -6,6 +6,7 @@ import api from '../../../utils/api'
 import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 
+
 const deleteCharacter = () => {
 	$character = new Character()
 	window.localStorage.removeItem('character')

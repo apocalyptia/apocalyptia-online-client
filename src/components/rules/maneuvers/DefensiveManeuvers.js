@@ -3,21 +3,21 @@ import { acrobatics, melee } from '../Skills'
 
 
 export const Block = new Maneuver({
-	category: `Defensive`,
-	name: melee.specialties.block.name, 
-	description: melee.specialties.block.description
+	cat: `Defensive`,
+	name: melee.specs.block.name, 
+	desc: melee.specs.block.desc
 })
 
 export const Dodge = new Maneuver({
-	category: `Defensive`,
-	name: acrobatics.specialties.dodge.name, 
-	description: acrobatics.specialties.dodge.description
+	cat: `Defensive`,
+	name: acrobatics.specs.dodge.name, 
+	desc: acrobatics.specs.dodge.desc
 })
 
 export const Duck = new Maneuver({
-	category: `Defensive`,
+	cat: `Defensive`,
 	name: `Duck`, 
-	description: [
+	desc: [
 		`You may roll [Dodge vs Attack] to move up to your Speed to get behind Cover.`,
 		`This is the only way to Dodge a Ranged(Shoot) Attack.`,
 		`As part of this Dodge, you may elect to go Prone.`,
@@ -27,9 +27,9 @@ export const Duck = new Maneuver({
 })
 
 export const Hide = new Maneuver({
-	category: `Defensive`,
+	cat: `Defensive`,
 	name: `Hide`, 
-	description: [
+	desc: [
 		`Roll [Stealth vs Perception] to be Concealed.`,
 		`Your Speed is 0.`,
 		`+3 Stealth if Prone.`,
@@ -37,9 +37,9 @@ export const Hide = new Maneuver({
 })
 
 export const Protect = new Maneuver({
-	category: `Defensive`,
+	cat: `Defensive`,
 	name: `Protect`, 
-	description: [
+	desc: [
 		`You become the new target of all Attacks targeting someone you choose within 1yd of you for 1 round.`,
 		`You may still Block, but you cannot Dodge the Attack.`,
 		// How does this work with Reflexive Defenses?
@@ -47,14 +47,12 @@ export const Protect = new Maneuver({
 })
 
 export const Sneak = new Maneuver({
-	category: `Defensive`,
+	cat: `Defensive`,
 	name: `Sneak`, 
-	description: [
+	desc: [
 		`Roll [Stealth vs Perception] to move Concealed at [Speed / 2].`,
 	]
 })
-
-
 
 
 export default [

@@ -3,7 +3,7 @@ import Medical from '../../classes/gear/Medical'
 
 export const Bandage = new Medical({
 	name: `Bandage`,
-	description: [
+	desc: [
 		`+1 Medicine(First-Aid).`,
 		`1 use.`,
 	],
@@ -12,7 +12,7 @@ export const Bandage = new Medical({
 
 export const Crutch = new Medical({
 	name: `Crutch`,
-	description: [
+	desc: [
 		`Halves Leg Damage Pain penalty to Speed.`,
 	],
 	sz: 3
@@ -20,7 +20,7 @@ export const Crutch = new Medical({
 
 export const EMTBag = new Medical({
 	name: `EMT Bag`,
-	description: [
+	desc: [
 		`+3 Medicine(First-Aid).`,
 		`30 uses.`,
 	],
@@ -29,7 +29,7 @@ export const EMTBag = new Medical({
 
 export const FirstAidKit = new Medical({
 	name: `First-Aid Kit`,
-	description: [
+	desc: [
 		`+1 Medicine(First-Aid).`,
 		`5 uses.`,
 	],
@@ -38,7 +38,7 @@ export const FirstAidKit = new Medical({
 
 export const PressureCuff = new Medical({
 	name: `Pressure Cuff`,
-	description: [
+	desc: [
 		`+1 Medicine.`,
 	],
 	sz: 1
@@ -46,7 +46,7 @@ export const PressureCuff = new Medical({
 
 export const Stethoscope = new Medical({
 	name: `Stethoscope`,
-	description: [
+	desc: [
 		`+1 Medicine.`,
 		`Perception(Hear) 6# through doors.`,
 	],
@@ -55,7 +55,7 @@ export const Stethoscope = new Medical({
 
 export const SurgeryKit = new Medical({
 	name: `Surgery Kit`,
-	description: [
+	desc: [
 		`+3 Medicine(Surgery).`,
 	],
 	sz: 3
@@ -63,7 +63,7 @@ export const SurgeryKit = new Medical({
 
 export const Thermometer = new Medical({
 	name: `Thermometer`,
-	description: [
+	desc: [
 		`+1 Medicine.`,
 		`Accurately reads temperature.`,
 	],
@@ -72,7 +72,7 @@ export const Thermometer = new Medical({
 
 export const TransfusionKit = new Medical({
 	name: `Transfusion Kit`,
-	description: [
+	desc: [
 		`Medicine 9#.`,
 		`Inflict 1 Bleeding Damage on the donor to heal 1 Bleeding Damage on the recipient.`,
 		`Takes 1hr.`,

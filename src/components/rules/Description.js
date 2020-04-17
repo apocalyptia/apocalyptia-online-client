@@ -13,7 +13,7 @@ export const age = new Descriptor({
 	name: `Age`,
 	value: ``,
 	random: (c) => {
-		c.description.age.value = RandomAge()
+		c.desc.age.value = RandomAge()
 		return c
 	}
 })
@@ -22,7 +22,7 @@ export const identity = new Descriptor({
 	name: `Name`,
 	value: ``,
 	random: (c) => {
-		c.description.identity.value = RandomName(c.description.sex.value)
+		c.desc.identity.value = RandomName(c.desc.sex.value)
 		return c
 	}
 })
@@ -31,7 +31,7 @@ export const hair = new Descriptor({
 	name: `Hair`,
 	value: ``,
 	random: (c) => {
-		c.description.hair.value = RandomHair()
+		c.desc.hair.value = RandomHair()
 		return c
 	}
 })
@@ -40,7 +40,7 @@ export const height = new Descriptor({
 	name: `Height`,
 	value: ``,
 	random: (c) => {
-		c.description.height.value = RandomHeight()
+		c.desc.height.value = RandomHeight()
 		return c
 	}
 })
@@ -54,7 +54,7 @@ export const sex = new Descriptor({
 	name: `Sex`,
 	value: ``,
 	random: (c) => {
-		c.description.sex.value = RandomSex()
+		c.desc.sex.value = RandomSex()
 		return c
 	}
 })
@@ -63,7 +63,7 @@ export const skin = new Descriptor({
 	name: `Skin`,
 	value: ``,
 	random: (c) => {
-		c.description.skin.value = RandomSkin()
+		c.desc.skin.value = RandomSkin()
 		return c
 	}
 })
@@ -72,13 +72,14 @@ export const weight = new Descriptor({
 	name: `Weight`,
 	value: ``,
 	random: (c) => {
-		c.description.weight.value = RandomWeight()
+		c.desc.weight.value = RandomWeight()
 		return c
 	}
 })
 
+
 export default {
-	name: `Description`,
+	name: `desc:`,
 	list: [
 		player,
 		identity,
@@ -96,8 +97,8 @@ export default {
 		return c
 	},
 	reset: function(c){
-		Object.keys(c.description).forEach((d) => {
-			c.description[d].value = ``
+		Object.keys(c.desc).forEach((d) => {
+			c.desc[d].value = ``
 		})
 		return c
 	}

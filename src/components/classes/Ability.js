@@ -3,27 +3,27 @@ import Rule from './Rule'
 export default class Ability extends Rule {
 	constructor({
 		name,
-		description,
+		desc,
 		formula,
 		visible,
 		max,
 		xp,
 		taken=0,
-		options=[],
+		opts=[],
 		selection=0,
 		notes=``,
 		id=null
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			visible,
 			formula
 		})
 		this.max = max
 		this.xp = xp
 		this.taken = taken
-		this.options = options
+		this.opts = opts
 		this.selection = selection,
 		this.notes = notes,
 		this.id = id

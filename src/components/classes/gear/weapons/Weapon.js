@@ -1,19 +1,19 @@
-import CombatGear from './CombatGear'
+import CombatGear from '../CombatGear'
 
 export default class Weapon extends CombatGear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
-		attributes,
+		attr,
 		dmg,
 		rng
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz,
-			attributes
+			attr
 		})
 		this.dmg = dmg
 		this.rng = rng

@@ -3,12 +3,12 @@ import Rule from '../Rule'
 export default class Gear extends Rule {
 	constructor({
 		name,
-		description,
+		desc,
 		sz
 	}) {
 		super({
 			name,
-			description
+			desc
 		})
 		this.sz = sz
 	}

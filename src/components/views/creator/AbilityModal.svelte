@@ -3,8 +3,10 @@ import { createEventDispatcher, onDestroy } from 'svelte'
 import AbilityModalSingle from './AbilityModalSingle.svelte'
 import AbilityModalOptions from './AbilityModalOptions.svelte'
 
+
 export let ability
 export let MasterAbilityList
+
 
 const dispatch = createEventDispatcher()
 
@@ -22,10 +24,10 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	<div class='ability-name'><h2>{ability.name}</h2></div>
 	<div class='description-section'>
 		<span class='description-label'>Descripiton:</span>
-		<span class='ability-description'>{ability.description}</span>
+		<span class='ability-description'>{ability.desc}</span>
 	</div>
 	<div class='stats-section'>
-		{#if ability.options.length}
+		{#if ability.opts.length}
 			<AbilityModalOptions {ability} {MasterAbilityList}/>
 		{:else}
 			<AbilityModalSingle {ability} {MasterAbilityList}/>

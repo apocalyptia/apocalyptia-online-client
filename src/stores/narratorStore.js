@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store'
 import TableOfContents from '../components/helpers/TableOfContents'
 
+
 const narratorToC = new TableOfContents({
 	label: 'Contents',
 	root: '/narrator',
@@ -43,5 +44,6 @@ const narratorToC = new TableOfContents({
 })
 
 const narratorStore = writable(narratorToC)
+
 
 export default narratorStore

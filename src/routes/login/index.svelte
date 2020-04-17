@@ -3,6 +3,7 @@ import Spinner from '../../components/views/ui/Spinner.svelte'
 import { authUserStore, login } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 
+
 if ($authUserStore) window.location.href = `/`
 
 const user = {
@@ -11,6 +12,7 @@ const user = {
 }
 
 let pendingApiCall = false
+
 let forgotPassword = false
 
 const submit = (event) => {
@@ -49,9 +51,7 @@ const submit = (event) => {
 				value='Login'
 			>
 			{#if forgotPassword}
-				<a href='/login/recover'>
-					Forgot your password?
-				</a>
+				<a href='/login/recover'>Forgot your password?</a>
 			{/if}
 		</form>
 	{/if}

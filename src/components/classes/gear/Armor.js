@@ -3,19 +3,19 @@ import CombatGear from './CombatGear'
 export default class Armor extends CombatGear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
-		attributes,
+		attr,
 		dr,
-		location
+		loc
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz,
-			attributes
+			attr
 		})
 		this.dr = dr
-		this.location = location
+		this.loc = loc
 	}
 }

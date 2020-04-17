@@ -3,14 +3,14 @@ import Stat from './Stat'
 export default class Specialty extends Stat {
 	constructor({
 		name,
-		description,
+		desc,
 		base,
 		mods,
 		score
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			base,
 			mods,
 			score

@@ -3,15 +3,15 @@ import Gear from './Gear'
 export default class Electronic extends Gear {
 	constructor ({
 		name,
-		hours,
-		description,
+		hrs,
+		desc,
 		sz
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz
 		})
-		this.hours = hours
+		this.hrs = hrs
 	}
 }

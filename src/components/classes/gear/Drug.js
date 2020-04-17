@@ -3,17 +3,17 @@ import Gear from './Gear'
 export default class Drug extends Gear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
 		mix,
-		overdose
+		od
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz
 		})
 		this.mix = mix
-		this.overdose = overdose
+		this.od = od
 	}
 }

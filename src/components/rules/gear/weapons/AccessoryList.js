@@ -1,9 +1,9 @@
-import Accessory from '../../../classes/gear/Accessory'
+import Accessory from '../../../classes/gear/weapons/Accessory'
 
 
 export const Bayonet = new Accessory({
 	name: `Bayonet`,
-	description: [
+	desc: [
 		`Counts as a Knife.`,
 		`+1 Damage and Pierce for Melee Attacks.`,
 	],
@@ -12,7 +12,7 @@ export const Bayonet = new Accessory({
 
 export const Bipod = new Accessory({
 	name: `Bipod`,
-	description: [
+	desc: [
 		`Ignore Size requirement.`,
 		`1 round setup.`,
 	],
@@ -21,7 +21,7 @@ export const Bipod = new Accessory({
 
 export const DrumMagazine = new Accessory({
 	name: `Drum Magazine`,
-	description: [
+	desc: [
 		`Gun specific.`,
 		`3x Ammo magazine capacity.`,
 	],
@@ -30,7 +30,7 @@ export const DrumMagazine = new Accessory({
 
 export const Foregrip = new Accessory({
 	name: `Foregrip`,
-	description: [
+	desc: [
 		`-1 Size requirement for 2h Gun.`,
 	],
 	sz: 0
@@ -38,7 +38,7 @@ export const Foregrip = new Accessory({
 
 export const Holosight = new Accessory({
 	name: `Holosight`,
-	description: [
+	desc: [
 		`+1 Ranged Attack.`,
 	],
 	sz: 0
@@ -46,7 +46,7 @@ export const Holosight = new Accessory({
 
 export const Laser = new Accessory({
 	name: `Laser`,
-	description: [
+	desc: [
 		`+1 Ranged Attack.`,
 		`-6 Ranged Attack to Blind for d6 rounds.`,
 	],
@@ -55,7 +55,7 @@ export const Laser = new Accessory({
 
 export const Scope = new Accessory({
 	name: `Scope`,
-	description: [
+	desc: [
 		`+3 Aimed Ranged Attacks and Perception(See).`,
 	],
 	sz: 1
@@ -63,7 +63,7 @@ export const Scope = new Accessory({
 
 export const SinglePointSling = new Accessory({
 	name: `Single-Point Sling`,
-	description: [
+	desc: [
 		`Draw or stow a 2h Gun without using an Action.`,
 	],
 	sz: 0
@@ -71,7 +71,7 @@ export const SinglePointSling = new Accessory({
 
 export const Suppressor = new Accessory({
 	name: `Suppressor`,
-	description: [
+	desc: [
 		`Firing a Gun does not break Concealment.`,
 	],
 	sz: 0

@@ -12,6 +12,7 @@ import { Nd6, RandomRoll } from '../../components/helpers/Random'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 
+
 let status = `stop`
 
 let next = `/creator/gear`
@@ -37,7 +38,7 @@ const randomArmor = () => {
 	$character = $character
 }
 
-beforeUpdate(function() {
+beforeUpdate(() => {
 	status = `go`
 	for (let i of Object.values($character.gear)) {
 		if (i.inventory.length == 0) {

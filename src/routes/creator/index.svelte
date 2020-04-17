@@ -2,4 +2,5 @@
 import Description from './description.svelte'
 </script>
 
-<Description/>
+
+<Description />

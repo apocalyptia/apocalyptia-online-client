@@ -3,24 +3,24 @@ import Weapon from './Weapon'
 export default class Bomb extends Weapon {
 	constructor({
 		name,
-		description,
+		desc,
 		sz,
 		dmg,
 		rng,
-		attributes,
-		duration,
+		attr,
+		dur,
 		fuse,
 		mix
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz,
 			dmg,
 			rng,
-			attributes
+			attr
 		})
-		this.duration = duration
+		this.dur = dur
 		this.fuse = fuse
 		this.mix = mix
 	}

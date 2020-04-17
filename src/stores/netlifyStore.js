@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store'
 import GoTrue from 'gotrue-js'
 
+
 const url = `https://apocalyptiaonline.com/`
 
 const goTrueInstance = new GoTrue({

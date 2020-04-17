@@ -3,7 +3,9 @@ import Spinner from '../../components/views/ui/Spinner.svelte'
 import { FemaleNames } from './../../components/helpers/Names.js';
 import { authUserStore, login, signup } from '../../stores/netlifyStore'
 
+
 if ($authUserStore) window.location.href = `/`
+
 let message = ``
 
 const user = {
@@ -26,7 +28,6 @@ const submit = () => {
 			pendingApiCall = false
 			alert(e)
 		})
-		
 }
 
 const proceed = () => window.location.href = `/login`
@@ -67,9 +68,7 @@ const proceed = () => window.location.href = `/login`
 				>
 			{:else}
 				<h3>{message}</h3>
-				<a href='/login' class='link-btn'>
-					Proceed To Login
-				</a>
+				<a href='/login' class='link-btn'>Proceed To Login</a>
 			{/if}
 		</form>
 	{/if}

@@ -3,15 +3,15 @@ import Rule from './Rule'
 export default class Maneuver extends Rule {
 	constructor({
 		name,
-		description,
+		desc,
 		formula,
-		category
+		cat
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			formula
 		})
-		this.category = category
+		this.cat = cat
 	}
 }

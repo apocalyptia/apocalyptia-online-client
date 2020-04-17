@@ -1,7 +1,9 @@
 <script>
 let dash
+
 $: dash = Math.PI * 12
 </script>
+
 
 <div>
 	<svg

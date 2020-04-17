@@ -1,9 +1,9 @@
 import Rule from '../classes/Rule'
-import Needs from './Needs'
+
 
 export const Bleeding = new Rule({
 	name: `Bleeding`, 
-	description: [
+	desc: [
 		`Whenever you get a new Wound, you begin taking an additional 1 Damage per minute to the Torso.`,
 		`Bleeding Damage can only heal from natural Recovery or from a blood donation using a Transfusion Kit.`,
 		`Roll Medicine(First-Aid) vs Damage to stop a Wound from Bleeding.`,
@@ -12,7 +12,7 @@ export const Bleeding = new Rule({
 
 export const Blind = new Rule({
 	name: `Blind`, 
-	description: [
+	desc: [
 		`You are considered to be Defenseless.`,
 		`You automatically Fail any Perception roll that involves seeing.`,
 		`You have a -6 penalty to all other rolls that involve seeing.`,
@@ -22,7 +22,7 @@ export const Blind = new Rule({
 
 export const Burning = new Rule({
 	name: `Burning`, 
-	description: [
+	desc: [
 		`1 Fire Damage per round.`,
 		`It takes a d6 rounds to stop, drop Prone, and roll Survival 6# to put out the flames.`,
 	]
@@ -30,7 +30,7 @@ export const Burning = new Rule({
 
 export const Concealed = new Rule({
 	name: `Concealed`, 
-	description: [
+	desc: [
 		`If an opponent cannot see you, they are considered to be Blind to you.`,
 		`Any Attack they make targeting you is at a -6 penalty.`,
 		`Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover.`,
@@ -40,14 +40,14 @@ export const Concealed = new Rule({
 
 export const Deaf = new Rule({
 	name: `Deaf`,
-	description: [
+	desc: [
 		`You automatically Fail any roll that involves hearing.`
 	]
 })
 
 export const Defenseless = new Rule({
 	name: `Defenseless`, 
-	description: [
+	desc: [
 		`You must use a Reflexive Defense.`,
 		`Use your Block score against Melee Attacks and you Dodge score against Ranged Attacks.`,
 	]
@@ -55,7 +55,7 @@ export const Defenseless = new Rule({
 
 export const Falling = new Rule({
 	name: `Falling`, 
-	description: [
+	desc: [
 		`1 Damage per 2yds.`,
 		`Each point of Falling Damage is inflicted on a random Location.`,
 		`Multiple points of Falling Damage on the same Location count as a single Wound.`,
@@ -65,35 +65,35 @@ export const Falling = new Rule({
 
 export const Grabbed = new Rule({
 	name: `Grabbed`,
-	description: [
+	desc: [
 		`A Grabbed opponent is considered to be Immobilized.`,
 	]
 })
 
 export const Harmless = new Rule({
 	name: `Harmless`,
-	description: [
+	desc: [
 		`You cannot Attack.`,
 	]
 })
 
 export const Immobilized = new Rule({
 	name: `Immobilized`,
-	description: [
+	desc: [
 		`Your Speed is temporarily considered to be 0.`
 	]
 })
 
 export const OffHand = new Rule({
 	name: `Off-Hand`, 
-	description: [
+	desc: [
 		`-3 penalty to Attack with your Off-Hand.`,
 	]
 })
 
 export const Pinned = new Rule({
 	name: `Pinned`,
-	description: [
+	desc: [
 		`Pinned is the third and final step of Grappling.`,
 		`While Pinned, you are considered to be Defenseless, Harmless, Immobilized, and Prone.`,
 		`The Attacker is also considered to be Immobilized and Prone.`,
@@ -102,7 +102,7 @@ export const Pinned = new Rule({
 
 export const Prone = new Rule({
 	name: `Prone`, 
-	description: [
+	desc: [
 		`You may drop Prone at any time for free on your turn or as part of a Dodge action.`,
 		`Standing up takes 1 Action.`,
 		`The benefits of being Prone are that you get +3 Ranged and +3 Stealth, and attackers take a -3 Ranged penalty to hit you.`,
@@ -112,7 +112,7 @@ export const Prone = new Rule({
 
 export const Restrained = new Rule({
 	name: `Restrained`,
-	description: [
+	desc: [
 		`Restrained is the second step of Grappling.`,
 		`While Restrained, you are considered to be Harmless and Immobilized.`,
 	]
@@ -120,7 +120,7 @@ export const Restrained = new Rule({
 
 export const Stun = new Rule({
 	name: `Stun`, 
-	description: [
+	desc: [
 		`Defenseless, Harmless, and Immobilized.`,
 		`You fall Prone if Stunned for longer than 1 round.`,
 	]
@@ -128,7 +128,7 @@ export const Stun = new Rule({
 
 export const Unarmed = new Rule({
 	name: `Unarmed`, 
-	description: [
+	desc: [
 		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2] (always round down).`,
 		`Damage Resistance is not depleted.`,
 	]
@@ -136,7 +136,7 @@ export const Unarmed = new Rule({
 
 export const Unconscious = new Rule({
 	name: `Unconscious`, 
-	description: [
+	desc: [
 		`Unaware and unable to do anything.`,
 		`You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive Defense of 0.`,
 	]
@@ -144,11 +144,12 @@ export const Unconscious = new Rule({
 
 export const Unstable = new Rule({
 	name: `Unstable`, 
-	description: [
+	desc: [
 		`-3 penalty to Agility or Constitution Skill rolls.`,
 		`Ranged Attacks targeting you take a -3 penalty.`,
 	]
 })
+
 
 export default {
 	name: `Status`,

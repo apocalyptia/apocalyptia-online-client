@@ -2,7 +2,7 @@ export default class Character {
 	constructor() {
 		this.user = ``,
 		this.completed = false,
-		this.description = {
+		this.desc = {
 			age: {
 				name: `Age`,
 				value: ``
@@ -132,7 +132,7 @@ export default class Character {
 				parent: 'Demeanor'
 			}
 		},
-		this.properties = {
+		this.props = {
 			block: {
 				name: `Block`,
 				score: 0

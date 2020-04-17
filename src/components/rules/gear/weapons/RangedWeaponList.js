@@ -1,10 +1,10 @@
-import RangedWeapon from '../../../classes/gear/RangedWeapon'
+import RangedWeapon from '../../../classes/gear/weapons/RangedWeapon'
 import {
 	Auto,
 	Rapid,
 	Scatter,
 	TwoHanded
-} from '../attributes/WeaponAttributesList'
+} from '../attributes/WeaponAttrList'
 
 
 export const AR15 = new RangedWeapon({
@@ -12,7 +12,7 @@ export const AR15 = new RangedWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 30,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 	],
@@ -25,7 +25,7 @@ export const BenelliM4 = new RangedWeapon({
 	sz: 4,
 	dmg: 4,
 	rng: 15,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 		Scatter,
@@ -39,7 +39,7 @@ export const BrowningABolt = new RangedWeapon({
 	sz: 4,
 	dmg: 3,
 	rng: 60,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 5,
@@ -51,7 +51,7 @@ export const ColtPython = new RangedWeapon({
 	sz: 1,
 	dmg: 2,
 	rng: 10,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 6,
@@ -63,7 +63,7 @@ export const CompoundBow = new RangedWeapon({
 	sz: 3,
 	dmg: 1,
 	rng: 15,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 1,
@@ -75,7 +75,7 @@ export const Crossbow = new RangedWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 15,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 1,
@@ -87,7 +87,7 @@ export const DoubleBarrelShotgun = new RangedWeapon({
 	sz: 4,
 	dmg: 4,
 	rng: 15,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 		Scatter,
@@ -101,7 +101,7 @@ export const Glock17 = new RangedWeapon({
 	sz: 1,
 	dmg: 1,
 	rng: 10,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 	],
@@ -114,7 +114,7 @@ export const HenryGoldenBoy = new RangedWeapon({
 	sz: 3,
 	dmg: 1,
 	rng: 30,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 16,
@@ -126,7 +126,7 @@ export const HKMP5 = new RangedWeapon({
 	sz: 3,
 	dmg: 1,
 	rng: 20,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Auto,
 		Rapid,
@@ -140,7 +140,7 @@ export const Marlin1894 = new RangedWeapon({
 	sz: 3,
 	dmg: 2,
 	rng: 30,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 9,
@@ -152,7 +152,7 @@ export const Mossberg500 = new RangedWeapon({
 	sz: 2,
 	dmg: 4,
 	rng: 10,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Scatter,
 	],
@@ -165,7 +165,7 @@ export const RecurveBow = new RangedWeapon({
 	sz: 2,
 	dmg: 1,
 	rng: 10,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 1,
@@ -177,7 +177,7 @@ export const Remington700 = new RangedWeapon({
 	sz: 4,
 	dmg: 3,
 	rng: 100,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 5,
@@ -189,7 +189,7 @@ export const Remington870 = new RangedWeapon({
 	sz: 4,
 	dmg: 4,
 	rng: 15,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Scatter,
 	],
@@ -202,7 +202,7 @@ export const Ruger1022 = new RangedWeapon({
 	sz: 3,
 	dmg: 1,
 	rng: 30,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 	],
@@ -215,7 +215,7 @@ export const RugerMkIII = new RangedWeapon({
 	sz: 1,
 	dmg: 1,
 	rng: 15,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 	],
@@ -228,7 +228,7 @@ export const SavageMkII = new RangedWeapon({
 	sz: 3,
 	dmg: 1,
 	rng: 40,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 10,
@@ -240,7 +240,7 @@ export const SIGSauerP290 = new RangedWeapon({
 	sz: 1,
 	dmg: 1,
 	rng: 5,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 6,
@@ -252,7 +252,7 @@ export const SpringfieldM1A = new RangedWeapon({
 	sz: 4,
 	dmg: 3,
 	rng: 80,
-	attributes: [
+	attr: [
 		TwoHanded,
 		Rapid,
 	],
@@ -265,7 +265,7 @@ export const SWBodyguard = new RangedWeapon({
 	sz: 1,
 	dmg: 2,
 	rng: 5,
-	attributes: [
+	attr: [
 		TwoHanded,
 	],
 	cap: 5,

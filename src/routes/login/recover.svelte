@@ -2,10 +2,13 @@
 import Spinner from '../../components/views/ui/Spinner.svelte'
 import { authUserStore, recover } from '../../stores/netlifyStore'
 
+
 if ($authUserStore) window.location.href = `/`
 
 let email = ``
+
 let showSuccessMessage = false
+
 let pendingApiCall = false
 
 const submit = (event) => {

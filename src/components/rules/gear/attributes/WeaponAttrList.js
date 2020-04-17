@@ -1,25 +1,25 @@
-import WeaponAttribute from '../../../classes/gear/WeaponAttribute'
+import WeaponAttr from '../../../classes/gear/attributes/WeaponAttr'
 import { Unarmed } from '../../Status'
 
 
-export const OneHanded = new WeaponAttribute({
+export const OneHanded = new WeaponAttr({
 	name: `1h`,
-	description: [
+	desc: [
 		`Used one-handed.`,
 	]
 })
 
-export const TwoHanded = new WeaponAttribute({
+export const TwoHanded = new WeaponAttr({
 	name: `2h`,
-	description: [
+	desc: [
 		`Must be used two-handed.`,
 		`Can be used one-handed at a penalty = Size.`,
 	]
 })
 
-export const Auto = new WeaponAttribute({
+export const Auto = new WeaponAttr({
 	name: `Auto`,
-	description: [
+	desc: [
 		`Choose either Burst or Spray.`,
 		`Burst: +3 Ranged Attack vs one target.`,
 		`Spray: 3yd Blast Attack.`,
@@ -27,75 +27,75 @@ export const Auto = new WeaponAttribute({
 	]
 })
 
-export const Blast = new WeaponAttribute({
+export const Blast = new WeaponAttr({
 	name: `Blast`,
-	description: [
+	desc: [
 		`Roll [d6 vs Reflexive Dodge] against everyone in the Blast radius.`,
 		`[Damage / 2] on a miss (minimum 1).`,
 	]
 })
 
-export const Blunt = new WeaponAttribute({
+export const Blunt = new WeaponAttr({
 	name: `Blunt`,
-	description: [
+	desc: [
 		`Does not cause Bleeding.`,
 	]
 })
 
-export const Chop = new WeaponAttribute({
+export const Chop = new WeaponAttr({
 	name: `Chop`,
-	description: [
+	desc: [
 		`+1 Damage to Locations with no Armor.`,
 	]
 })
 
-export const FireDamage = new WeaponAttribute({
+export const FireDamage = new WeaponAttr({
 	name: `Fire Damage`,
-	description: [
+	desc: [
 		`Fire Damage can only be prevented with Fire Resistant Armor.`,
 	]
 })
 
-export const Pierce = new WeaponAttribute({
+export const Pierce = new WeaponAttr({
 	name: `Pierce`,
-	description: [
+	desc: [
 		`+1 Damage to Locations with Armor.`,
 	]
 })
 
-export const Rapid = new WeaponAttribute({
+export const Rapid = new WeaponAttr({
 	name: `Rapid`,
-	description: [
+	desc: [
 		`2 Attacks for 1 Action.`,
 	]
 })
 
-export const ShortBarrel = new WeaponAttribute({
+export const ShortBarrel = new WeaponAttr({
 	name: `Short-Barrel`,
-	description: [
+	desc: [
 		`[Range / 2] and [Size / 2].`,
 	]
 })
 
-export const Scatter = new WeaponAttribute({
+export const Scatter = new WeaponAttr({
 	name: `Scatter`,
-	description: [
+	desc: [
 		`Ignore Range penalties.`,
 		`-1 Damage per extended Range.`,
 	]
 })
 
-export const Shield = new WeaponAttribute({
+export const Shield = new WeaponAttr({
 	name: `Shield`,
-	description: [
+	desc: [
 		`Provides 3 Damage Resistance Cover.`,
 		`+3 to Block.`,
 	]
 })
 
-export const Slow = new WeaponAttribute({
+export const Slow = new WeaponAttr({
 	name: `Slow`,
-	description: [
+	desc: [
 		`Penalty to Speed = Size.`,
 	]
 })

@@ -1,13 +1,13 @@
 import Attribute from './Attribute'
 
-export default class ArmorAttribute extends Attribute {
+export default class WeaponAttr extends Attribute {
 	constructor({
 		name,
-		description
+		desc
 	}) {
 		super({
 			name,
-			description
+			desc
 		})
 	}
 }

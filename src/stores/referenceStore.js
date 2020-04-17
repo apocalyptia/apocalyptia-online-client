@@ -13,6 +13,7 @@ import Skills from '../components/rules/Skills'
 import Traits from '../components/rules/Traits'
 import ContentMenu from '../components/views/ui/ContentMenu.svelte'
 
+
 const referenceToC = new TableOfContents({
 	label: 'Contents',
 	startAddress: '/reference',

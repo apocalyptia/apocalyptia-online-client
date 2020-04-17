@@ -7,6 +7,7 @@ import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
 import AbilityCurrent from '../../components/views/creator/AbilityCurrent.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
+
 let MasterAbilityList = Abilities.masterList
 
 const resetAbilities = () => {
@@ -31,7 +32,7 @@ beforeUpdate(() => {
 		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>
 	</div>
 	<div class='remaining'>
-		<h3>Remaining: {$character.properties.experience.remaining}</h3>
+		<h3>Remaining: {$character.props.experience.remaining}</h3>
 	</div>
 	{#if $character.abilities.length}
 		<div class='section-card'>

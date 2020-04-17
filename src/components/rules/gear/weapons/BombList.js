@@ -1,108 +1,108 @@
-import Bomb from '../../../classes/gear/Bomb'
-import { Blast, FireDamage, Pierce } from '../attributes/WeaponAttributesList'
+import Bomb from '../../../classes/gear/weapons/Bomb'
+import { Blast, FireDamage, Pierce } from '../attributes/WeaponAttrList'
 import { Blind, Stun } from '../../Status'
 import Asphyxiation from '../../Needs'
 
 
 export const FlashbangGrenade = new Bomb({
 	name: `Flashbang Grenade`,
-	description: [
+	desc: [
 		`Non-lethal stun grenade.`,
 	],
 	sz: 1,
 	dmg: `0`,
 	rng: `6yd`,
-	attributes: [
+	attr: [
 		Blind,
 		Stun,
 	],
 	fuse: `1 round`,
-	duration: `d6 rounds`,
+	dur: `d6 rounds`,
 	mix: 9
 })
 
 export const FragGrenade = new Bomb({
 	name: `Frag Grenade`,
-	description: [
+	desc: [
 		`Explosive fragmentation grenade.`,
 	],
 	sz: 1,
 	dmg: `d6x3`,
 	rng: `15yd`,
-	attributes: [
+	attr: [
 		Blast,
 		Pierce,
 	],
 	fuse: `1 round`,
-	duration: `instant`,
+	dur: `instant`,
 	mix: 9
 })
 
 export const MolotovCocktail = new Bomb({
 	name: `Molotov Cocktail`,
-	description: [
+	desc: [
 		`Glass bottle of fuel with rag wick.`,
 	],
 	sz: 1,
 	dmg: `d6 + 1 Fire Damage/round`,
 	rng: `3yd`,
-	attributes: [
+	attr: [
 		Blast,
 		FireDamage,
 	],
 	fuse: `1 round`,
-	duration: `1min`,
+	dur: `1min`,
 	mix: 3
 })
 
 export const SmokeGrenade = new Bomb({
 	name: `Smoke Grenade`, 
-	description: [
+	desc: [
 		`Visibility denial grenade.`,
 	],
 	sz: 1,
 	dmg: `0`,
 	rng: `1yd/round`,
-	attributes: [
+	attr: [
 		Blind,
 	],
 	fuse: `1 round`,
-	duration: `d6mins`,
+	dur: `d6mins`,
 	mix: 6
 })
 
 export const TeargasGrenade = new Bomb({
 	name: `Teargas Grenade`,
-	description: [
+	desc: [
 		`Non-lethal chemical irritant grenade.`,
 	],
 	sz: 1,
 	dmg: `1`,
 	rng: `1yd/round`,
-	attributes: [
+	attr: [
 		Blind,
 		Stun,
 		Asphyxiation,
 	],
 	fuse: `1 round`,
-	duration: `d6mins`,
+	dur: `d6mins`,
 	mix: 15
 })
 
 export const Thermite = new Bomb({
 	name: `Thermite`,
-	description: [
+	desc: [
 		`High-temperature incendiary bomb.`,
 	],
 	sz: 1,
 	dmg: `d6x6`,
 	rng: `1yd`,
-	attributes: [
+	attr: [
 		Blast,
 		FireDamage,
 	],
 	fuse: `1 round`,
-	duration: `6 rounds`,
+	dur: `6 rounds`,
 	mix: 6
 })
 

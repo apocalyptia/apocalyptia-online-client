@@ -19,8 +19,8 @@ export let MasterAbilityList
 				<div class='current-ability-row'>
 					<span class='l-col'>
 						{ability.name}
-						{#if ability.options[0]}
-							&nbsp;({ability.options[0].name})
+						{#if ability.opts[0]}
+							&nbsp;({ability.opts[0].name})
 						{/if}
 					</span>
 					<span class='s-col'>{ability.xp}</span>

@@ -3,12 +3,12 @@ import Gear from './Gear'
 export default class Equipment extends Gear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz
 		})
 	}

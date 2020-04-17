@@ -7,7 +7,7 @@ export const NeedsExplanation = [
 
 export const Asphyxiation = new Rule({
 	name: `Asphyxiation`, 
-	description: [
+	desc: [
 		`Constant air supply is required.`,
 		`1 Pain per minute without air.`,
 		`This penalty is reduced by 1 per minute with air.`,
@@ -17,7 +17,7 @@ export const Asphyxiation = new Rule({
 
 export const Dehydration = new Rule({
 	name: `Dehydration`, 
-	description: [
+	desc: [
 		`1 Water per day is required.`,
 		`1 Pain per day without Water.`,
 		`This penalty is reduced by 1 per day with Water.`,
@@ -27,7 +27,7 @@ export const Dehydration = new Rule({
 
 export const Exhaustion = new Rule({
 	name: `Exhaustion`, 
-	description: [
+	desc: [
 		`8 hours of sleep per day is required.`,
 		`1 Pain per day without sufficient sleep.`,
 		`Go unconscious for 8 hours after days = [Constitution] without sleep.`,
@@ -37,7 +37,7 @@ export const Exhaustion = new Rule({
 
 export const Hypothermia = new Rule({
 	name: `Hypothermia`, 
-	description: [
+	desc: [
 		`Warmth is required.`,
 		`1 Pain per hour of Hypothermia.`,
 		`Reduce penalty by 1 per hour of warmth.`,
@@ -47,7 +47,7 @@ export const Hypothermia = new Rule({
 
 export const Starvation = new Rule({
 	name: `Starvation`, 
-	description: [
+	desc: [
 		`1 Food per day is required.`,
 		`1 Pain per week without Food.`,
 		`This penalty is reduced by 1 per day with Food.`,

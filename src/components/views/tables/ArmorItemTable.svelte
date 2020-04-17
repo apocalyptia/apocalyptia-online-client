@@ -10,14 +10,14 @@ export let item
 	</tr>
 	<tr>
 		<td>DR: {item.dr}</td>
-		<td class='wide-column'>Loc: {item.location}</td>
+		<td class='wide-column'>Loc: {item.loc}</td>
 	</tr>
-	{#if item.attributes.length}
+	{#if item.attr.length}
 	<tr>
 		<td>
 			Attributes:
-			{#each item.attributes as attr, index}
-				{attr.name}{#if index < item.attributes.length - 1},&nbsp;{/if}
+			{#each item.attr as attr, index}
+				{attr.name}{#if index < item.attr.length - 1},&nbsp;{/if}
 			{/each}
 		</td>
 	</tr>

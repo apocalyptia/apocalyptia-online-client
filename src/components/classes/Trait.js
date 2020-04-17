@@ -3,14 +3,14 @@ import Stat from './Stat'
 export default class Trait extends Stat {
 	constructor({
 		name,
-		description,
+		desc,
 		base=1,
 		mods,
 		score=1
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			base,
 			mods,
 			score

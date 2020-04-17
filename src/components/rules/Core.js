@@ -1,5 +1,6 @@
 import Rule from '../classes/Rule'
 
+
 export const CoreExplanation = [
 	`When you want to attempt a difficult action, roll one six-sided die (“d6”) to decide a fair outcome.`,
 	`Added to the d6 roll is the Character’s score in a Trait or Skill, depending on the action.`,
@@ -11,7 +12,7 @@ export const CoreExplanation = [
 
 export const Difficulty = new Rule({
 	name: `Difficulty`,
-	description: [
+	desc: [
 		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success.`,
 		`If the roll is opposed, re-roll ties.`,
 		`Difficulties are indicated by the # symbol.`,
@@ -27,14 +28,14 @@ export const Difficulty = new Rule({
 
 export const RoteActions = new Rule({
 	name: `Rote Actions`,
-	description: [
+	desc: [
 		`If the roll is unopposed and your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.`,
 	]
 })
 
 export const Cooperation = new Rule({
 	name: `Cooperation`,
-	description: [
+	desc: [
 		`If Characters want to help each other perform a task, one of them makes the roll and the rest add their Scores together as a Modifier to the main Character’s Result.`,
 		`The Narrator should use their judgement to determine the time to completion.`,
 	]
@@ -42,7 +43,7 @@ export const Cooperation = new Rule({
 
 const Success = new Rule({
 	name: `Success`,
-	description: [
+	desc: [
 		`Your roll is a Success when if the Result is greater than or equal to the Difficulty.`,
 		`Re-roll ties on opposed rolls.`,
 		`The degree of Success (the amount by which the Result exceeded the Difficulty) is important for some rolls, such as Attacks.`,
@@ -56,14 +57,14 @@ export { Success }
 
 export const Fail = new Rule({
 	name: `Fail`,
-	description: [
+	desc: [
 		`Your roll is a Fail when the Result is less than the Difficulty.`,
 	]
 })
 
 export const Explode = new Rule({
 	name: `Explode`,
-	description: [
+	desc: [
 		`An Exploding die offers the possibility of doing extraordinarily well at a Trait, Skill, or Property roll.`,
 		`If a 6 is rolled, roll it again and keep rolling as long as the die continues to roll a 6.`,
 		`When the die finally stops Exploding, add all of these rolls together, then add scores and modifiers as usual to get your Result.`,
@@ -72,7 +73,7 @@ export const Explode = new Rule({
 
 export const Botch = new Rule({
 	name: `Botch`,
-	description: [
+	desc: [
 		`A Botch is when you have failed very very badly at a Trait, Skill, or Property roll.`,
 		`If you roll 1 on a die and that die is not Exploding, re-roll to check for a Botch.`,
 		`If a 1 is rolled again, you Botch.`,
@@ -81,6 +82,7 @@ export const Botch = new Rule({
 		`Whenever a Character Botches, they get +1 XP because we learn the most from our greatest failures.`,
 	]
 })
+
 
 export default {
 	name: `Core`,

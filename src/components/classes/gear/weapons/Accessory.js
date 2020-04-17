@@ -1,14 +1,14 @@
-import Gear from './Gear'
+import Gear from '../Gear'
 
 export default class Accessory extends Gear {
 	constructor({
 		name,
-		description,
+		desc,
 		sz
 	}) {
 		super({
 			name,
-			description,
+			desc,
 			sz
 		})
 	}
