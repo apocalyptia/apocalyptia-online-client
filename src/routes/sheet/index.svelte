@@ -10,12 +10,13 @@ import { character } from '../../stores/characterStore'
 const deleteCharacter = () => {
 	$character = new Character()
 	window.localStorage.removeItem('character')
+	window.location.href = '/'
 }
 </script>
 
 
 <CharacterSheet/>
-<div class='delete-button'>
+<div class='sheet-buttons'>
 	<button on:click={deleteCharacter}>
 		Delete
 	</button>
@@ -24,13 +25,14 @@ const deleteCharacter = () => {
 
 
 <style>
-.delete-button {
+.sheet-buttons {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	margin-top: var(--s100);
 }
-.delete-button button {
+.sheet-buttons button {
 	font-size: var(--s125);
 	font-weight: bold;
+	width: calc(100% / 3);
 }
 </style>

@@ -4,7 +4,7 @@
 
 
 <div class='body-locations-section'>
-	<div class='left-labels'>
+	<div class='left-column'>
 		<div class='left-arm-label'>
 			<div class='location-name'>
 				{character.health.leftArm.name} Health
@@ -14,14 +14,22 @@
 			</div>
 		</div>
 		<div class='left-leg-label'>
-			<div class='location-name'>{character.health.leftLeg.name} Health</div>
-			<div class='location-numbers'>{character.health.leftLeg.current}/{character.health.leftLeg.score}</div>
+			<div class='location-name'>
+				{character.health.leftLeg.name} Health
+			</div>
+			<div class='location-numbers'>
+				{character.health.leftLeg.current}/{character.health.leftLeg.score}
+			</div>
 		</div>
 	</div>
-	<div class='locations'>
+	<div class='center-column'>
 		<div class='head-label'>
-			<div class='location-name'>{character.health.head.name} Health</div>
-			<div class='location-numbers'>{character.health.head.current}/{character.health.head.score}</div>
+			<div class='location-name'>
+				{character.health.head.name} Health
+			</div>
+			<div class='location-numbers'>
+				{character.health.head.current}/{character.health.head.score}
+			</div>
 		</div>
 		<div class='head-level'>
 			<div class='head location' />
@@ -30,8 +38,12 @@
 			<div class='left-arm arm location' />
 			<div class='torso location'>
 				<div class='torso-label'>
-					<div class='location-name'>{character.health.torso.name} Health</div>
-					<div class='location-numbers'>{character.health.torso.current}/{character.health.torso.score}</div>
+					<div class='location-name'>
+						{character.health.torso.name} Health
+					</div>
+					<div class='location-numbers'>
+						{character.health.torso.current}/{character.health.torso.score}
+					</div>
 				</div>
 			</div>
 			<div class='right-arm arm location' />
@@ -41,14 +53,22 @@
 			<div class='right-leg leg location' />
 		</div>
 	</div>
-	<div class='right-labels'>
+	<div class='right-column'>
 		<div class='right-arm-label'>
-			<div class='location-name'>{character.health.rightArm.name} Health</div>
-			<div class='location-numbers'>{character.health.rightArm.current}/{character.health.rightArm.score}</div>
+			<div class='location-name'>
+				{character.health.rightArm.name} Health
+			</div>
+			<div class='location-numbers'>
+				{character.health.rightArm.current}/{character.health.rightArm.score}
+			</div>
 		</div>
 		<div class='right-leg-label'>
-			<div class='location-name'>{character.health.rightLeg.name} Health</div>
-			<div class='location-numbers'>{character.health.rightLeg.current}/{character.health.rightLeg.score}</div>
+			<div class='location-name'>
+				{character.health.rightLeg.name} Health
+			</div>
+			<div class='location-numbers'>
+				{character.health.rightLeg.current}/{character.health.rightLeg.score}
+			</div>
 		</div>
 	</div>
 </div>
@@ -59,6 +79,17 @@
 	display: flex;
 	width: 100%;
 }
+
+div[class*=column] {
+	display: block;
+	height: 100%;
+}
+.center-column {
+	margin-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+
 div[class*=-label] {
 	display: inline-block;
 	height: 10px;
@@ -89,12 +120,6 @@ div[class*=-label] {
 	top: 250px;
 }
 
-.locations {
-	display: block;
-	margin-top: 10px;
-	text-align: center;
-	width: 100%;
-}
 .location {
 	background: lime;
 }

@@ -11,17 +11,19 @@ const saveCharacter = () => {
 	$character.user = $authUserStore.id
 	$character.completed = true
 	window.localStorage.setItem('character', JSON.stringify($character))
+	window.location.href = '/'
 }
 
 const deleteCharacter = () => {
 	$character = new Character()
 	window.localStorage.removeItem('character')
+	window.location.href = '/'
 }
 </script>
 
 
 <CharacterSheet />
-<div class='save-button'>
+<div class='sheet-buttons'>
 	{#if $character.completed}
 		<h2>{$character.desc.identity.value} saved successfully!</h2>
 	{:else}
@@ -37,12 +39,14 @@ const deleteCharacter = () => {
 
 
 <style>
-.save-button {
+.sheet-buttons {
 	display: flex;
 	justify-content: space-between;
 	margin-top: var(--s100);
 }
-.save-button button {
-	font-size: var(--s150);
+.sheet-buttons button {
+	font-size: var(--s125);
+	font-weight: bold;
+	width: calc(100% / 3);
 }
 </style>

@@ -1,10 +1,3 @@
-<script>
-let dash
-
-$: dash = Math.PI * 12
-</script>
-
-
 <div>
 	<svg
 		class="spinner"
@@ -19,7 +12,7 @@ $: dash = Math.PI * 12
 			fill="none"
 			r="10"
 			role="presentation"
-			stroke-dasharray="{dash}, 100"
+			stroke-dasharray="{Math.PI * 12}, 100"
 			stroke-linecap="square"
 			stroke-width="2"
 			stroke="lime"

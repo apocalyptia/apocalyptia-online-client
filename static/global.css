@@ -93,7 +93,9 @@ body {
 	color: lime;
 	font-family: var(--global-font);
 	font-size: var(--s100);
+	overflow: scroll;
 	scrollbar-width: none;
+	width: 100%;
 }
 form {
 	width: 100%;

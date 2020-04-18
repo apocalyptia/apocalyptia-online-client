@@ -34,6 +34,7 @@ h1 {
 sub {
 	color: coral;
 	border: var(--s1) dotted coral;
+	
 	font-size: var(--s75);
 	padding: var(--s1);
 }

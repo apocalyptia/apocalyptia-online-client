@@ -1,7 +1,5 @@
 ------ KNOWN BUGS ------
 
-Login input fields not styling correctly while typing.
-
 - Suspected device issues
 Alpha in title bar gets pushed behind menu button on Kyle's phone.
 Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
@@ -35,13 +33,10 @@ Character:
 	Character Sheet:
 		Combine Health with Armor somehow.
 
-Status:
-	undefined tab in place of Needs
-
 Put XP cost on Rules Reference.
 Order everything alphabetically.
 Figure out a quick Jury-Rig version of Build.
-Social actions multiple times per round.
+Social actions multiple times per round?
 
 ---------------------------------------------------------------------------------------------------
 
@@ -71,11 +66,11 @@ Markup:
 
 ------ DEV PATH ------
 
+finish integrating database (faunadb) with client app
 finish user auth features (recovery, account settings)
 apply ability mods to character
-finish gear step (need equipment selection, xp purchasing)
+finish gear step (need equipment selection, xp purchasing)?
 create search and sorting options for all list pages
-finish integrating database (faunadb) with client app
 make narrator dashboard
 make game group functionality
 write the combat system methods (based on lambda functions)
