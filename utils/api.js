@@ -1,21 +1,22 @@
-const createCharacter = (data) => {
+const createCharacter = (character) => {
 	return fetch('/.netlify/functions/character-create', {
-		body: JSON.stringify(data),
+		body: character,
 		method: 'POST'
 	}).then(response => {
+		console.log('CREATE CHARACTER! => ', response.json())
 		return response.json()
 	})
 }
 
-const readCharacter = (characterId) => {
-	return fetch(`/.netlify/functions/character-read/${characterId}`, {
+const readCharacter = (user) => {
+	return fetch(`/.netlify/functions/character-read/${user}`, {
 		mothod: 'POST',
 	}).then(response => {
 		return response.json()
 	})
 }
 
-const updateCharacter = (characterId, data) => {
+const updateCharacter = (user, character) => {
 	return fetch(`/.netlify/functions/character-update/${characterId}`, {
 		body: JSON.stringify(data),
 		method: 'POST'

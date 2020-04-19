@@ -8,10 +8,16 @@ import { character } from '../../stores/characterStore'
 
 
 const saveCharacter = () => {
+	console.log('SAVING...')
 	$character.user = $authUserStore.id
-	$character.completed = true
-	window.localStorage.setItem('character', JSON.stringify($character))
+	$character.step = `complete`
+	const jsonChar = JSON.stringify($character)
+
+	window.localStorage.setItem('character', jsonChar)
 	window.location.href = '/'
+
+	api.create(jsonChar)
+	console.log('SAVE COMPLETE')
 }
 
 const deleteCharacter = () => {
