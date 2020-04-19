@@ -1,45 +1,81 @@
+type User {
+	email: String! @unique
+	character: Character
+}
+
 type Character {
 	_id: String! @unique
-	user: String
-	completed: Boolean
-	age: Number
-	identity: String
-	hair: String
-	height: String
-	sex: String
-	skin: String
-	weight: Number
-	agility: Number
-	brains: Number
-	constitution: Number
-	demeanor: Number
-	acrobatics: Number
-	larceny: Number
-	ranged: Number
-	stealth: Number
-	medicine: Number
-	perception: Number
-	science: Number
-	survival: Number
-	athletics: Number
-	build: Number
-	drive: Number
-	melee: Number
-	leadership: Number
-	perform: Number
-	socialize: Number
-	tame: Number
-	luck: Number
-	psyche: Number
-	head: Number
-	rightArm: Number
-	leftArm: Number
-	torso: Number
-	leftLeg: Number
-	rightLeg: Number
-	abilities: Array
-	armor: Array
-	meleeWeapons: Array
-	rangedWeapons: Array
-	ammo: Array
+	user: String!
+	completed: Boolean!
+	description: Description!
+	traits: Traits!
+	skills: Skills!
+	properties: Properties!
+	abilities: [Ability!]
+	gear: Gear!
+}
+
+type Description {
+	age: Number!
+	identity: String!
+	hair: String!
+	height: String!
+	sex: String!
+	skin: String!
+	weight: Number!
+}
+
+type Traits {
+	agility: Number!
+	brains: Number!
+	constitution: Number!
+	demeanor: Number!
+}
+
+type Skills {
+	acrobatics: Number!
+	larceny: Number!
+	ranged: Number!
+	stealth: Number!
+	medicine: Number!
+	perception: Number!
+	science: Number!
+	survival: Number!
+	athletics: Number!
+	build: Number!
+	drive: Number!
+	melee: Number!
+	leadership: Number!
+	perform: Number!
+	socialize: Number!
+	tame: Number!
+}
+
+type Properties {
+	luck: Number!
+	psyche: Number!
+	head: Number!
+	rightArm: Number!
+	leftArm: Number!
+	torso: Number!
+	leftLeg: Number!
+	rightLeg: Number!
+}
+
+type Ability {
+	name: String!
+	taken: Number!
+	options: String
+}
+
+type Gear {
+	armor: [String]
+	meleeWeapons: [String]
+	rangedWeapons: [String]
+	ammo: [Ammo]
+}
+
+type Ammo {
+	name: String
+	qty: Number
 }
