@@ -1,12 +1,8 @@
-import Trait from '../classes/Trait'
-import {
-	AgilitySkills,
-	BrainsSkills,
-	ConstitutionSkills,
-	DemeanorSkills
-} from './Skills'
+import agility from './traits/Agility'
+import brains from './traits/Brains'
+import constitution from './traits/Constitution'
+import demeanor from './traits/Demeanor'
 import RandomRoll from '../helpers/Random'
-
 
 export const traitMax = 6
 
@@ -18,54 +14,6 @@ export const TraitsExplanation = [
 	`Trait rolls are [d6 + Trait].`,
 	`Trait scores set the limit for their Skills.`,
 ]
-
-const AgilitySkillList = AgilitySkills.map(skill => skill.name).join(', ')
-
-const BrainsSkillList = BrainsSkills.map(skill => skill.name).join(', ')
-
-const ConstitutionSkillList = ConstitutionSkills.map(skill => skill.name).join(', ')
-
-const DemeanorSkillList = DemeanorSkills.map(skill => skill.name).join(', ')
-
-export const agility = new Trait({
-	name: `Agility`,
-	desc: [
-		`Agility is a Character’s talent for physical coordination.`,
-		`High Agility indicates balance, flexibility, and fine motor skill.`,
-		`This Trait is a factor in the Speed and Dodge Properties.`,
-		`Agility is the parent Trait for the following Skills: ${AgilitySkillList}.`,
-	]
-})
-
-export const brains = new Trait({
-	name: `Brains`,
-	desc: [
-		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
-		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
-		`This Trait is a factor in the Experience and Intellect Properties.`,
-		`Brains is the parent Trait for the following Skills: ${BrainsSkillList}.`,
-	]
-})
-
-export const constitution = new Trait({
-	name: `Constitution`,
-	desc: [
-		`Constitution is a Character’s talent for physical power and durability.`,
-		`High Constitution indicates good health, high stamina, and strong muscles.`,
-		`This Trait is a factor in the Health and Block Properties.`,
-		`Constitution is the parent Trait for the following Skills: ${ConstitutionSkillList}.`,
-	]
-})
-
-export const demeanor = new Trait({
-	name: `Demeanor`,
-	desc: [
-		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
-		`High Demeanor indicates charisma, self-motivation, and confidence.`,
-		`This Trait is a factor in the Psyche and Luck Properties.`,
-		`Demeanor is the parent Trait for the following Skills: ${DemeanorSkillList}.`,
-	]
-})
 
 export const TraitList = [
 	agility,
