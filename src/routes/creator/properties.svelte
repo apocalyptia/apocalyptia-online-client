@@ -71,7 +71,7 @@ beforeUpdate(() => $character = Properties.setScores($character))
 	</div>
 </div>
 <div class='section-card'>
-	<BodyLocations character={$character} />
+	<BodyLocations {character} />
 </div>
 <NavBar links={{back: '/creator/skills', next: '/creator/abilities'}}/>
 

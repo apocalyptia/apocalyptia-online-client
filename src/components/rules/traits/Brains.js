@@ -1,9 +1,10 @@
 import Trait from '../../classes/Trait'
-import { BrainsSkills } from './Skills'
+import { BrainsSkills } from '../Skills'
+
 
 const BrainsSkillList = BrainsSkills.map(skill => skill.name).join(', ')
 
-export const brains = new Trait({
+const brains = new Trait({
 	name: `Brains`,
 	desc: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
@@ -12,3 +13,5 @@ export const brains = new Trait({
 		`Brains is the parent Trait for the following Skills: ${BrainsSkillList}.`,
 	]
 })
+
+export default brains

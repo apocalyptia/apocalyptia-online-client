@@ -15,7 +15,7 @@ const deleteCharacter = () => {
 </script>
 
 
-<CharacterSheet/>
+<CharacterSheet character={$character} />
 <div class='sheet-buttons'>
 	<button on:click={deleteCharacter}>
 		Delete

@@ -37,5 +37,4 @@ const Gear = {
 	].sort((a, b) => PropSort(a, b, `name`))
 }
 
-
 export default Gear

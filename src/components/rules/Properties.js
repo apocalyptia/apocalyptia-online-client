@@ -1,5 +1,6 @@
 import Property from '../classes/Property'
-import { acrobatics, melee } from './Skills'
+import acrobatics from './skills/Acrobatics'
+import melee from './skills/Melee'
 
 
 export const PropertyExplanation = [
@@ -47,8 +48,8 @@ export const dodge = new Property({
 export const health = new Property({
 	name: `Health`,
 	desc: [
-		`Head, Arm, Leg Health = Constitution.`,
-		`Torso Health = Constitution x 2.`,
+		`Head, Arm, Leg Health = Constitution`,
+		`Torso Health = Constitution x 2`,
 		`Health is a measure of how much Damage you can withstand.`,
 		`You fall Unconscious when you have taken total Damage = Constitution x 2.`,
 		`You die when Head or Torso Health = 0.`,

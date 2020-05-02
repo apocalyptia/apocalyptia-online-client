@@ -1,7 +1,21 @@
 import PropSort from '../helpers/PropSort'
 import RandomRoll from '../helpers/Random'
-import Skill from '../classes/Skill'
-import Specialty from '../classes/Specialty'
+import acrobatics from './skills/Acrobatics'
+import athletics from './skills/Athletics'
+import build from './skills/Build'
+import drive from './skills/Drive'
+import larceny from './skills/Larceny'
+import leadership from './skills/Leadership'
+import medicine from './skills/Medicine'
+import melee from './skills/Melee'
+import perception from './skills/Perception'
+import perform from './skills/Perform'
+import ranged from './skills/Ranged'
+import science from './skills/Science'
+import socialize from './skills/Socialize'
+import stealth from './skills/Stealth'
+import survival from './skills/Survival'
+import tame from './skills/Tame'
 
 
 export const SkillExplanation = [
@@ -11,204 +25,12 @@ export const SkillExplanation = [
 	`Trait scores set the limit for their Skills.`,
 ]
 
-export const acrobatics = new Skill({
-	name: `Acrobatics`,
-	desc: [
-		`Gymnastic prowess.`,
-	],
-	parent: `Agility`,
-	diff: 6,
-	specs: {
-		dodge: new Specialty({
-			name: `Dodge`,
-			desc: [
-				`Roll Acrobatics(Dodge) vs [Melee or Ranged].`,
-				`As part of a Dodge, you may drop Prone for free if you wish.`,
-				`Reflexive Dodge is your Dodge score with no roll.`,
-			]
-		}),
-		jump: new Specialty({
-			name: `Jump`,
-			desc: [
-				`Running Jump distance is yards = [Agility].`,
-				`Vertical Jump distance is [Agility x 6] inches.`,
-			]
-		})
-	}
-})
-
-export const larceny = new Skill({
-	name: `Larceny`,
-	desc: [
-		`Delicate manual operations.`,
-	],
-	parent: `agility`,
-	diff: `varies`,
-	specs: {
-		mechanical: new Specialty({
-			name: `Mechanical`,
-			desc: [
-				`(d6 rounds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms`,
-				`# by item.`,
-			]
-		}),
-		trick: new Specialty({
-			name: `Trick`,
-			desc: [
-				`Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand.`,
-			]
-		})
-	}
-})
-
-export const ranged = new Skill({
-	name: `Ranged`,
-	desc: [
-		`Projectile combat.`,
-	],
-	parent: `Agility`,
-	diff: `Defense`,
-	specs: {
-		shoot: new Specialty({
-			name: `Shoot`,
-			desc: [
-				`Roll vs [Dodge or Block (with a Shield)].`,
-			]
-		}),
-		throw: new Specialty({
-			name: `Throw`,
-			desc: [
-				`Roll vs [Dodge or Block]`,
-				`Range is [Constitution x 3yds]`,
-			]
-		})
-	}
-})
-
-export const stealth = new Skill({
-	name: `Stealth`,
-	desc: [
-		`Conceal your presence.`,
-	],
-	parent: `Agility`,
-	diff: `Perception`,
-	specs: {
-		hide: new Specialty({
-			name: `Hide`,
-			desc: [`Stay motionless and Concealed`,
-				`+3 if Prone.`,]
-		}),
-		sneak: new Specialty({
-			name: `Sneak`,
-			desc: [
-				`Move Walk Speed while Concealed.`,
-			]
-		})
-	}
-})
-
 export const AgilitySkills = [
 	acrobatics,
 	larceny,
 	ranged,
 	stealth,
 ]
-
-export const medicine = new Skill({
-	name: `Medicine`,
-	desc: [
-		`Diagnosing and treating Wounds and Diseases.`,
-	],
-	parent: `Brains`,
-	diff: `Damage`,
-	specs: {
-		firstaid: new Specialty({
-			name: `First-Aid`,
-			desc: [
-				`Stop a Wound from Bleeding.`,
-				`Takes 1d6 minutes.`,
-			]
-		}),
-		surgery: new Specialty({
-			name: `Surgery`,
-			desc: [
-				`Heal 1 Damage on a Wound.`,
-				`Cannot be performed again on the same Wound until it is fully healed.`,
-				`Inflict an additional d6 Damage on a Botch.`,
-			]
-		})
-	}
-})
-
-export const perception = new Skill({
-	name: `Perception`,
-	desc: [
-		`Processing sensory input.`,
-	],
-	parent: `Brains`,
-	diff: `varies`,
-	specs: {
-		search: new Specialty({
-			name: `Search`,
-			desc: [
-				`Roll vs [Stealth (or Survival if tracking)].`,
-			]
-		}),
-		intuition: new Specialty({
-			name: `Intuition`,
-			desc: [
-				`Roll vs [Socialize or Perform].`,
-			]
-		})
-	}
-})
-
-export const science = new Skill({
-	name: `Science`,
-	desc: [
-		`Knowledge of physical laws.`,
-	],
-	parent: `Brains`,
-	diff: `varies`,
-	specs: {
-		chemistry: new Specialty({
-			name: `Chemistry`,
-			desc: [
-				`(# x 10mins) Use [d6 + # Chemicals].`,
-			]
-		}),
-		technology: new Specialty({
-			name: `Technology`,
-			desc: [
-				`(varies) Make or use electronic devices.`,
-			]
-		})
-	}
-})
-
-export const survival = new Skill({
-	name: `Survival`,
-	desc: [
-		`Primitive practices for living outdoors.`,
-	],
-	parent: `Brains`,
-	diff: `Biome`,
-	specs: {
-		forage: new Specialty({
-			name: `Forage`,
-			desc: [
-				`(1hr) Provide 1 Need for 1 person.`,
-			]
-		}),
-		navigate: new Specialty({
-			name: `Navigate`,
-			desc: [
-				`(1min) Plot course`,
-				`Roll vs [Perception] if tracked.`,
-			]
-		})
-	}
-})
 
 export const BrainsSkills = [
 	medicine,
@@ -217,207 +39,12 @@ export const BrainsSkills = [
 	survival,
 ]
 
-export const athletics = new Skill({
-	name: `Athletics`,
-	desc: [
-		`Physically difficult forms of motion.`,
-	],
-	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
-		climb: new Specialty({
-			name: `Climb`,
-			desc: [
-				`Move along vertical surfaces at [Walk Speed / 2].`,
-			]
-		}),
-		swim: new Specialty({
-			name: `Swim`,
-			desc: [
-				`Move in water at [Speed / 4].`,
-			]
-		})
-	}
-})
-
-export const build = new Skill({
-	name: `Build`,
-	desc: [
-		`Make an item from [d6 + #] Parts.`,
-	],
-	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
-		customize: new Specialty({
-			name: `Customize`,
-			desc: [
-				`(#hrs) 3 per item`,
-				`Each must be unique`,
-				`Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Attribute`,
-				`Armor: +1 Damage Resistance or a new Attribute.`,
-			]
-		}),
-		repair: new Specialty({
-			name: `Repair`,
-			desc: [
-				`(#hrs) Fix broken item`,
-				`+1 with same Parts.`,
-			]
-		})
-	}
-})
-
-export const drive = new Skill({
-	name: `Drive`,
-	desc: [
-		`Operate vehicles.`,
-	],
-	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
-		ram: new Specialty({
-			name: `Ram`,
-			desc: [
-				`Roll vs [Drive(Stunt)] to Attack with a vehicle.`,
-			]
-		}),
-		stunt: new Specialty({
-			name: `Stunt`,
-			desc: [
-				`Roll vs [Drive(Ram)] for Defense with a vehicle.`,
-			]
-		})
-	}
-})
-
-export const melee = new Skill({
-	name: `Melee`,
-	desc: [
-		`Hand-to-hand combat.`,
-	],
-	parent: `Constitution`,
-	diff: `Attack or Defense`,
-	specs: {
-		block: new Specialty({
-			name: `Block`,
-			desc: [
-				`Roll vs [Melee or Ranged (if you have a Shield)].`,
-				`Reflexive Block is your Block score with no roll.`,
-			]
-		}),
-		strike: new Specialty({
-			name: `Strike`,
-			desc: [
-				`Roll vs [Defense].`,
-				`Damage = [weapon Damage + Success].`,
-			]
-		})
-	}
-})
-
 export const ConstitutionSkills = [
 	athletics,
 	build,
 	drive,
 	melee,
 ]
-
-export const leadership = new Skill({
-	name: `Leadership`,
-	desc: [
-		`Directing the efforts of others`,
-		`Modifiers from multiple uses of the same Leadership Specialty do not stack.`,
-	],
-	parent: `Demeanor`,
-	diff: `Demeanor`,
-	specs: {
-		encourage: new Specialty({
-			name: `Encourage`,
-			desc: [
-				`Roll vs [total target(s) Demeanor]`,
-				`Target(s) get a bonus = [your Demeanor] to one roll you choose.`,
-			]
-		}),
-		intimidate: new Specialty({
-			name: `Intimidate`,
-			desc: [
-				`Roll vs [total target(s) Demeanor]`,
-				`Target(s) take a penalty = [your Demeanor] to any roll except one you choose.`
-			]
-		})
-	}
-})
-
-export const perform = new Skill({
-	name: `Perform`,
-	desc: [
-		`Captivating an audience.`,
-	],
-	parent: `Demeanor`,
-	diff: `Perception`,
-	specs: {
-		distract: new Specialty({
-			name: `Distract`,
-			desc: [
-				`Target is Defenseless for 1 round.`,
-			]
-		}),
-		deceive: new Specialty({
-			name: `Deceive`,
-			desc: [
-				`Target believes your plausible falsehood.`,
-			]
-		})
-	}
-})
-
-export const socialize = new Skill({
-	name: `Socialize`,
-	desc: [
-		`Alter a person’s Attitude by one step.`,
-	],
-	parent: `Demeanor`,
-	diff: `Demeanor`,
-	specs: {
-		persuade: new Specialty({
-			name: `Persuade`,
-			desc: [
-				`(d6mins) Target seriously considers your opinion.`,
-			]
-		}),
-		therapy: new Specialty({
-			name: `Therapy`,
-			desc: [
-				`Heal 1 Trauma`,
-				`Cannot be performed again on the same day.`,
-				`d6 Trauma on a Botch.`,
-			]
-		})
-	}
-})
-
-export const tame = new Skill({
-	name: `Tame`,
-	desc: [
-		`Alter an animal’s Attitude by one step.`,
-	],
-	parent: `Demeanor`,
-	diff: `Demeanor`,
-	specs: {
-		command: new Specialty({
-			name: `Command`,
-			desc: [
-				`Animal obeys your command.`,
-			]
-		}),
-		train: new Specialty({
-			name: `Train`,
-			desc: [
-				`(1wk) Animals learn commands = [its Brains x 2].`,
-			]
-		})
-	}
-})
 
 export const DemeanorSkills = [
 	leadership,

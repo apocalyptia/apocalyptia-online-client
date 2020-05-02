@@ -1,9 +1,10 @@
 import Trait from '../../classes/Trait'
-import { DemeanorSkills } from './Skills'
+import { DemeanorSkills } from '../Skills'
+
 
 const DemeanorSkillList = DemeanorSkills.map(skill => skill.name).join(', ')
 
-export const demeanor = new Trait({
+const demeanor = new Trait({
 	name: `Demeanor`,
 	desc: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
@@ -12,3 +13,5 @@ export const demeanor = new Trait({
 		`Demeanor is the parent Trait for the following Skills: ${DemeanorSkillList}.`,
 	]
 })
+
+export default demeanor

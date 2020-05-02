@@ -1,9 +1,10 @@
 import Trait from '../../classes/Trait'
-import { ConstitutionSkills } from './Skills'
+import { ConstitutionSkills } from '../Skills'
+
 
 const ConstitutionSkillList = ConstitutionSkills.map(skill => skill.name).join(', ')
 
-export const constitution = new Trait({
+const constitution = new Trait({
 	name: `Constitution`,
 	desc: [
 		`Constitution is a Character’s talent for physical power and durability.`,
@@ -12,3 +13,5 @@ export const constitution = new Trait({
 		`Constitution is the parent Trait for the following Skills: ${ConstitutionSkillList}.`,
 	]
 })
+
+export default constitution

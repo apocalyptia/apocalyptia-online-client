@@ -333,3 +333,74 @@ td {
 .remaining {
 	text-align: center;;
 }
+.section-block {
+	margin: var(--s100);
+}
+.flex-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.sheet-section-header {
+	font-weight: bold;
+	text-align: center;
+}
+
+
+/* ----- CHARACTER SHEETS ----- */
+
+.sheet-card {
+	border: var(--s1) dotted;
+	display: block;
+	margin: var(--s100);
+}
+.sheet-card-title {
+	font-weight: bold;
+	font-size: var(--s110);
+}
+.sheet-card-block {
+	margin: var(--s100);
+}
+.sheet-card-table {
+	display: block;
+}
+.sheet-card-table-header,
+.sheet-card-table-row {
+	align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+	margin: var(--s100);
+}
+.sheet-card-table-header {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.sheet-item-long-column {
+	flex: 3;
+	text-align: left;
+}
+.sheet-item-short-column {
+	flex: 1;
+	text-align: center;
+}
+/* TINY */
+@media only screen and (max-width: 400px) {
+	.sheet-card-body {
+		display: block;
+	}
+}
+/* MOBILE */
+@media only screen and (min-width: 400px) and (max-width: 650px) {
+	.sheet-card-body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-evenly;
+	}
+}
+/* DESKTOP */
+@media only screen and (min-width: 650px) {
+	.sheet-card-body {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}

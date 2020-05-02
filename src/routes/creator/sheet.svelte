@@ -28,7 +28,7 @@ const deleteCharacter = () => {
 </script>
 
 
-<CharacterSheet />
+<CharacterSheet {character} />
 <div class='sheet-buttons'>
 	{#if $character.completed}
 		<h2>{$character.desc.identity.value} saved successfully!</h2>

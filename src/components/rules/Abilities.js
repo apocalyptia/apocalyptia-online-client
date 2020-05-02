@@ -1,477 +1,75 @@
-import Ability from '../classes/Ability'
-import Languages from '../helpers/Languages'
+import IdTagger from '../helpers/IdTagger'
 import PropSort from '../helpers/PropSort'
-import Skills from './Skills'
-import Traits from './Traits'
-import { WeaponList } from './Gear'
+import XP3Abilities from './abilities/lists/XP3Abilities'
+import XP6Abilities from './abilities/lists/XP6Abilities'
+import XP9Abilities from './abilities/lists/XP9Abilities'
+import XP12Abilities from './abilities/lists/XP12Abilities'
+import XP15Abilities from './abilities/lists/XP15Abilities'
+import XP18Abilities from './abilities/lists/XP18Abilities'
+import XP24Abilities from './abilities/lists/XP24Abilities'
+import XP30Abilities from './abilities/lists/XP30Abilities'
 
 
-export const AbilitiesExplanation = [
-	`Abilities are Character upgrades purchased with XP.`
+const abilityArray = [
+	...XP3Abilities,
+	...XP6Abilities,
+	...XP9Abilities,
+	...XP12Abilities,
+	...XP15Abilities,
+	...XP18Abilities,
+	...XP24Abilities,
+	...XP30Abilities
 ]
-
-// 3 XP Abilities
-
-export const FavoriteWeapon = new Ability({
-	name: `Favorite Weapon`,
-	desc: [
-		`Any Botch with a specified weapon type is reduced in severity to a normal Fail.`,
-	],
-	max: 1,
-	xp: 3,
-	opts: WeaponList
-})
-
-export const HyperImmunity = new Ability({
-	name: `Hyper Immunity`,
-	desc: [
-		`+1 to resist Diseases.`,
-	],
-	max: 3,
-	xp: 3
-})
-
-export const PackMentality = new Ability({
-	name: `Pack Mentality`,
-	desc: [
-		`+1 Attack at a target a Comrade Attacks this round.`,
-	],
-	max: 1,
-	xp: 3
-})
-
-export const QuickReload = new Ability({
-	name: `Quick Reload`,
-	desc: [
-		`Free Reload once per round.`,
-	],
-	max: 1,
-	xp: 3
-})
-
-export const Specialize = new Ability({
-	name: `Specialize`,
-	desc: [
-		`+1 to a Skill Specialty.`,
-	],
-	max: 1,
-	xp: 3,
-	opts: Skills.specs
-})
-
-export const WeaponTraining = new Ability({
-	name: `Weapon Training`,
-	desc: [
-		`+1 Attack with a specified weapon type.`,
-	],
-	max: 1,
-	xp: 3,
-	opts: WeaponList
-})
-
-export const XP3Abilities = [
-	FavoriteWeapon,
-	HyperImmunity,
-	PackMentality,
-	QuickReload,
-	Specialize,
-	WeaponTraining,
-]
-
-// 6 XP Abilities
-
-export const EfficientWork = new Ability({
-	name: `Efficient Work`,
-	desc: [
-		`[Time / 2] for a Skill (minimum 1 action).`,
-	],
-	max: 1,
-	xp: 6,
-	opts: Skills.list
-})
-
-export const FastDraw = new Ability({
-	name: `Fast Draw`,
-	desc: [
-		`Free item draw once per round.`,
-	],
-	max: 1,
-	xp: 6
-})
-
-export const FleetFooted = new Ability({
-	name: `Fleet Footed`,
-	desc: [
-		`+1 Speed.`,
-	],
-	max: 3,
-	xp: 6
-})
-
-export const Multilingual = new Ability({
-	name: `Multilingual`,
-	desc: [
-		`Learn a different form of communication.`,
-	],
-	max: 1,
-	xp: 6,
-	opts: Languages
-})
-
-export const Practice = new Ability({
-	name: `Practice`,
-	desc: [
-		`+1 to a Skill (up to the parent Trait).`,
-	],
-	max: 1,
-	xp: 6,
-	opts: Skills.list
-})
-
-export const VehicleOperation = new Ability({
-	name: `Vehicle Operation`,
-	desc: [
-		`Proficiently operate a class of vehicle.`,
-	],
-	max: 1,
-	xp: 6
-}) // TODO: Need to add VehicleList when it is made
-
-export const XP6Abilities = [
-	EfficientWork,
-	FastDraw,
-	FleetFooted,
-	Multilingual,
-	Practice,
-	VehicleOperation,
-]
-
-export const DangerSense = new Ability({
-	name: `Danger Sense`,
-	desc: [
-		`+1 to Reflexive Defenses.`,
-	],
-	max: 1,
-	xp: 9
-})
-
-export const Discipline = new Ability({
-	name: `Discipline`,
-	desc: [
-		`Ignore 1 Pain penalty.`,
-	],
-	max: 3,
-	xp: 9
-})
-
-export const Fortunate = new Ability({
-	name: `Fortunate`,
-	desc: [
-		`+1 Luck.`,
-	],
-	max: 1,
-	xp: 9
-})
-
-export const FreeRunning = new Ability({
-	name: `Free Running`,
-	desc: [
-		`Acrobatics 9# to Climb your Speed as a Movement action.`,
-	],
-	max: 1,
-	xp: 9
-})
-
-export const Unorthodox = new Ability({
-	name: `Unorthodox`,
-	desc: [
-		`Pick a new parent Trait for a Skill.`,
-	],
-	max: 1,
-	xp: 9,
-	opts: (function() {
-		const uList = []
-		Traits.list.forEach((trait) => {
-			Skills.list.forEach((skill) => {
-				const tname = trait.name
-				const sname = skill.name
-				if (skill.parent != trait.name) {
-					uList.push({ name: `${tname} - ${sname}` })
-				}
-			})
-		})
-		return [...uList]
-	})()
-})
-
-export const Resilient = new Ability({
-	name: `Resilient`,
-	desc: [
-		`Reduce any Trauma by 1.`
-	],
-	max: 3,
-	xp: 9
-})
-
-export const XP9Abilities = [
-	DangerSense,
-	Discipline,
-	Fortunate,
-	FreeRunning,
-	Unorthodox,
-	Resilient,
-]
-
-// 12 XP Abilities
-
-export const Parry = new Ability({
-	name: `Parry`,
-	desc: [
-		`Free Block Action once per round.`,
-	],
-	max: 1,
-	xp: 12
-})
-
-export const Sidestep = new Ability({
-	name: `Side-step`,
-	desc: [
-		`Free Dodge Action once per round.`,
-	],
-	max: 1,
-	xp: 12
-})
-
-export const Wrestling = new Ability({
-	name: `Wrestling`,
-	desc: [
-		`Free Grapple Action once per round.`,
-	],
-	max: 1,
-	xp: 12
-})
-
-export const XP12Abilities = [
-	Parry,
-	Sidestep,
-	Wrestling,
-]
-
-// 15 XP Abilities
-
-export const Charge = new Ability({
-	name: `Charge`,
-	desc: [
-		`Ignore Unstable penalty to Melee Attacks when you Run.`,
-		`Ignore Prone effect from Leg Damage.`,
-	],
-	max: 1,
-	xp: 15
-})
-
-export const FirmGrip = new Ability({
-	name: `Firm Grip`,
-	desc: [
-		`Ignore penalty to use 2h weapons in 1h, up to Size = Constitution.`,
-		`Ignore Drop effect from Arm Damage.`,
-	],
-	max: 1,
-	xp: 15
-})
-
-export const HardHeaded = new Ability({
-	name: `Hard Headed`,
-	desc: [
-		`Ignore Stun effect from Head Damage.`,
-	],
-	max: 1,
-	xp: 15
-})
-
-export const XP15Abilities = [
-	Charge,
-	FirmGrip,
-	HardHeaded,
-]
-
-// 18 XP Abilities
-
-export const Ambidextrous = new Ability({
-	name: `Ambidextrous`,
-	desc: [
-		`Off-hand penalty is -1 instead of -3.`,
-	],
-	max: 1,
-	xp: 18
-})
-
-export const Assassin = new Ability({
-	name: `Assassin`,
-	desc: [
-		`+3 Damage for Attacks made while Concealed.`,
-	],
-	max: 1,
-	xp: 18
-})
-
-export const XP18Abilities = [
-	Ambidextrous,
-	Assassin,
-]
-
-// 24 XP Abilities
-
-export const Rational = new Ability({
-	name: `Rational`,
-	desc: [
-		`+1 Psyche.`,
-	],
-	max: 3,
-	xp: 24
-})
-
-export const Tough = new Ability({
-	name: `Tough`,
-	desc: [
-		`+1 Health for each Location.`,
-	],
-	max: 3,
-	xp: 24
-})
-
-export const XP24Abilities = [
-	Rational,
-	Tough,
-]
-
-// 30 XP Abilities
-
-export const SelfImprovement = new Ability({
-	name: `Self Improvement`,
-	desc: [
-		`+1 to a Trait (max 6).`,
-	],
-	max: 1,
-	xp: 30,
-	opts: Traits.list
-})
-
-export const CloseCall = new Ability({
-	name: `Close Call`,
-	desc: [
-		`Spend this Ability to survive an otherwise lethal encounter.`,
-	],
-	max: 1,
-	xp: 30,
-})
-
-export const XP30Abilities = [
-	SelfImprovement,
-	CloseCall,
-]
-
-const IdTag = (list) => {
-	let id = 0
-	const newList = []
-	for (let i = 0; i < list.length; ++i) {
-		if (list[i].opts[0]) {
-			for (let o = 0; o < list[i].opts.length; ++o) {
-				const newAbility = new Ability({
-					name: list[i].name,
-					desc: list[i].desc,
-					max: list[i].max,
-					xp: list[i].xp,
-					taken: list[i].taken,
-					opts: [
-						list[i].opts[o],
-					],
-					selection: o
-				})
-				newList.push(newAbility)
-			}
-		} else {
-			const newAbility = new Ability({
-				name: list[i].name,
-				desc: list[i].desc,
-				max: list[i].max,
-				xp: list[i].xp,
-				taken: list[i].taken
-			})
-			newList.push(newAbility)
-		}
-	}
-	for (let a = 0; a < newList.length; ++a) {
-		newList[a].id = id
-		id++
-	}
-	return newList
-}
 
 export const Abilities = {
 	name: `Abilities`,
-	explanation: AbilitiesExplanation,
+	explanation: [
+		`Abilities are Character upgrades purchased with XP.`
+	],
 	groups: [
 		{
 			name: 3,
 			visible: false,
-			list: [...XP3Abilities]
+			list: XP3Abilities
 		},
 		{
 			name: 6,
 			visible: false,
-			list: [...XP6Abilities]
+			list: XP6Abilities
 		},
 		{
 			name: 9,
 			visible: false,
-			list: [...XP9Abilities]
+			list: XP9Abilities
 		},
 		{
 			name: 12,
 			visible: false,
-			list: [...XP12Abilities]
+			list: XP12Abilities
 		},
 		{
 			name: 15,
 			visible: false,
-			list: [...XP15Abilities]
+			list: XP15Abilities
 		},
 		{
 			name: 18,
 			visible: false,
-			list: [...XP18Abilities]
+			list: XP18Abilities
 		},
 		{
 			name: 24,
 			visible: false,
-			list: [...XP24Abilities]
+			list: XP24Abilities
 		},
 		{
 			name: 30,
 			visible: false,
-			list: [...XP30Abilities]
+			list: XP30Abilities
 		},
 	],
-	list: [
-		...XP3Abilities,
-		...XP6Abilities,
-		...XP9Abilities,
-		...XP12Abilities,
-		...XP15Abilities,
-		...XP18Abilities,
-		...XP24Abilities,
-		...XP30Abilities
-	].sort((a, b) => PropSort(a, b, 'name')),
-	masterList: IdTag([
-		...XP3Abilities,
-		...XP6Abilities,
-		...XP9Abilities,
-		...XP12Abilities,
-		...XP15Abilities,
-		...XP18Abilities,
-		...XP24Abilities,
-		...XP30Abilities
-	]).sort((a, b) => PropSort(a, b, 'name')),
+	list: abilityArray.sort((a, b) => PropSort(a, b, 'name')),
+	masterList: IdTagger(abilityArray).sort((a, b) => PropSort(a, b, 'name')),
 	remainingXP: (c) => {
 		if (c.abilities.length) {
 			c.props.experience.spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
@@ -481,6 +79,6 @@ export const Abilities = {
 	}
 }
 
-export const AbilitiesList = IdTag(Abilities)
+export const AbilitiesList = IdTagger(Abilities)
 
 export default Abilities

@@ -1,9 +1,10 @@
 import Trait from '../../classes/Trait'
-import { AgilitySkills } from './Skills'
+import { AgilitySkills } from '../Skills'
+
 
 const AgilitySkillList = AgilitySkills.map(skill => skill.name).join(', ')
 
-export const agility = new Trait({
+const agility = new Trait({
 	name: `Agility`,
 	desc: [
 		`Agility is a Character’s talent for physical coordination.`,
@@ -12,3 +13,5 @@ export const agility = new Trait({
 		`Agility is the parent Trait for the following Skills: ${AgilitySkillList}.`,
 	]
 })
+
+export default agility

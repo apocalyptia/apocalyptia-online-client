@@ -83,7 +83,6 @@ div[class*='-container'] > input {
 	margin-left: var(--s33);
 	margin-right: var(--s33);
 }
-
 /* MOBILE */
 @media only screen and (max-width: 900px) {
 	.item-block {
@@ -100,7 +99,6 @@ div[class*='-container'] > input {
 		flex: 2;
 	}
 }
-
 /* DESKTOP */
 @media only screen and (min-width: 900px) {
 	.item-block {

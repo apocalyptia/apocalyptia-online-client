@@ -1,121 +1,121 @@
 <script>
-	import AccessoryList from '../../components/rules/gear/weapons/AccessoryList'
-	import AmmoList from '../../components/rules/gear/weapons/AmmoList'
-	import ArmorList from '../../components/rules/gear/ArmorList'
-	import BombList from '../../components/rules/gear/weapons/BombList'
-	import DocumentList from '../../components/rules/gear/DocumentList'
-	import DrugsList from '../../components/rules/gear/DrugsList'
-	import ElectronicsList from '../../components/rules/gear/ElectronicsList'
-	import EquipmentList from '../../components/rules/gear/EquipmentList'
-	import GearBlock from '../../components/views/ui/GearBlock.svelte'
-	import MedicalList from '../../components/rules/gear/MedicalList'
-	import MeleeWeaponList from '../../components/rules/gear/weapons/MeleeWeaponList'
-	import NavBar from '../../components/views/controls/NavBar.svelte'
-	import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
-	import StorageList from '../../components/rules/gear/StorageList'
-	import {
-		d6Roll,
-		Nd6,
-		RandomRoll
-	} from '../../components/helpers/Random'
+import AccessoryList from '../../components/rules/gear/weapons/AccessoryList'
+import AmmoList from '../../components/rules/gear/weapons/AmmoList'
+import ArmorList from '../../components/rules/gear/ArmorList'
+import BombList from '../../components/rules/gear/weapons/BombList'
+import DocumentList from '../../components/rules/gear/DocumentList'
+import DrugsList from '../../components/rules/gear/DrugsList'
+import ElectronicsList from '../../components/rules/gear/ElectronicsList'
+import EquipmentList from '../../components/rules/gear/EquipmentList'
+import GearBlock from '../../components/views/ui/GearBlock.svelte'
+import MedicalList from '../../components/rules/gear/MedicalList'
+import MeleeWeaponList from '../../components/rules/gear/weapons/MeleeWeaponList'
+import NavBar from '../../components/views/controls/NavBar.svelte'
+import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
+import StorageList from '../../components/rules/gear/StorageList'
+import {
+	d6Roll,
+	Nd6,
+	RandomRoll
+} from '../../components/helpers/Random'
 
 
-	let roll = 0
+let roll = 0
 
-	let mod = 0
+let mod = 0
 
-	let result = 0
+let result = 0
 
-	let GearList = [
-		{
-			name: 'Master Gear List',
-			value: undefined,
-			list: [
-				...AccessoryList,
-				...AmmoList,
-				...ArmorList,
-				...BombList,
-				...DocumentList,
-				...DrugsList,
-				...ElectronicsList,
-				...EquipmentList,
-				...MedicalList,
-				...MeleeWeaponList,
-				...RangedWeaponList,
-				...StorageList
-			]
-		},
-		{
-			name: 'Accessory',
-			value: undefined,
-			list: AccessoryList
-		},
-		{
-			name: 'Ammo',
-			value: undefined,
-			list: AmmoList
-		},
-		{
-			name: 'Armor',
-			value: undefined,
-			list: ArmorList
-		},
-		{
-			name: 'Bomb',
-			value: undefined,
-			list: BombList
-		},
-		{
-			name: 'Document',
-			value: undefined,
-			list: DocumentList
-		},
-		{
-			name: 'Drug',
-			value: undefined,
-			list: DrugsList
-		},
-		{
-			name: 'Electronics',
-			value: undefined,
-			list: ElectronicsList
-		},
-		{
-			name: 'Equipment',
-			value: undefined,
-			list: EquipmentList
-		},
-		{
-			name: 'Medical',
-			value: undefined,
-			list: MedicalList
-		},
-		{
-			name: 'Melee',
-			value: undefined,
-			list: MeleeWeaponList
-		},
-		{
-			name: 'Ranged',
-			value: undefined,
-			list: RangedWeaponList
-		},
-		{
-			name: 'Storage',
-			value: undefined,
-			list: StorageList
-		},
-	]
+let GearList = [
+	{
+		name: 'Master Gear List',
+		value: undefined,
+		list: [
+			...AccessoryList,
+			...AmmoList,
+			...ArmorList,
+			...BombList,
+			...DocumentList,
+			...DrugsList,
+			...ElectronicsList,
+			...EquipmentList,
+			...MedicalList,
+			...MeleeWeaponList,
+			...RangedWeaponList,
+			...StorageList
+		]
+	},
+	{
+		name: 'Accessory',
+		value: undefined,
+		list: AccessoryList
+	},
+	{
+		name: 'Ammo',
+		value: undefined,
+		list: AmmoList
+	},
+	{
+		name: 'Armor',
+		value: undefined,
+		list: ArmorList
+	},
+	{
+		name: 'Bomb',
+		value: undefined,
+		list: BombList
+	},
+	{
+		name: 'Document',
+		value: undefined,
+		list: DocumentList
+	},
+	{
+		name: 'Drug',
+		value: undefined,
+		list: DrugsList
+	},
+	{
+		name: 'Electronics',
+		value: undefined,
+		list: ElectronicsList
+	},
+	{
+		name: 'Equipment',
+		value: undefined,
+		list: EquipmentList
+	},
+	{
+		name: 'Medical',
+		value: undefined,
+		list: MedicalList
+	},
+	{
+		name: 'Melee',
+		value: undefined,
+		list: MeleeWeaponList
+	},
+	{
+		name: 'Ranged',
+		value: undefined,
+		list: RangedWeaponList
+	},
+	{
+		name: 'Storage',
+		value: undefined,
+		list: StorageList
+	},
+]
 
-	const randomItem = (item) => {
-		item.value = RandomRoll(item.list)
-		return item
-	}
+const randomItem = (item) => {
+	item.value = RandomRoll(item.list)
+	return item
+}
 
-	const rolld6 = () => {
-		roll = d6Roll()
-		result = roll + mod
-	}
+const rolld6 = () => {
+	roll = d6Roll()
+	result = roll + mod
+}
 </script>
 
 

@@ -20,22 +20,25 @@ if (!process.env.FAUNADB_SERVER_SECRET) {
 				console.log(`Please supply a faunaDB server key`)
 				process.exit(1)
 			}
-			createFaunaDB(process.env.FAUNADB_SERVER_SECRET).then(() => console.log(`Database created`))
+			createFaunaDB(process.env.FAUNADB_SERVER_SECRET)
+				.then(() => console.log(`Database created`))
 		})
 	}
 }
 
-if (process.env.FAUNADB_SERVER_SECRET) createFaunaDB(process.env.FAUNADB_SERVER_SECRET).then(() => console.log(`Database created`))
+if (process.env.FAUNADB_SERVER_SECRET) {
+	createFaunaDB(process.env.FAUNADB_SERVER_SECRET)
+		.then(() => console.log(`Database created`))
+}
 
 function createFaunaDB(key) {
 	console.log(`Create the database!`)
 	const client = new faunadb.Client({ secret: key })
-
 	/* Based on your requirements, change the schema here */
 	return client.query(
 		q.Create(
-			q.Ref(`classes`), {
-				name: `characters`
+			q.Ref(`apocalyptia-online`), {
+				name: `users`
 			}
 		)
 	)
@@ -43,8 +46,8 @@ function createFaunaDB(key) {
 		return client.query(
 			q.Create(
 				q.Ref(`indexes`), {
-					name: `all_characters`,
-					source: q.Ref(`classes/characters`)
+					name: `all_users`,
+					source: q.Ref(`apocalyptia-online/users`)
 				}
 			)
 		)
