@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const ranged = new Skill({
+const Ranged = new Skill({
 	name: `Ranged`,
 	desc: [
 		`Projectile combat.`,
@@ -26,4 +26,4 @@ const ranged = new Skill({
 	}
 })
 
-export default ranged
+export default Ranged

@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const melee = new Skill({
+const Melee = new Skill({
 	name: `Melee`,
 	desc: [
 		`Hand-to-hand combat.`,
@@ -27,4 +27,4 @@ const melee = new Skill({
 	}
 })
 
-export default melee
+export default Melee

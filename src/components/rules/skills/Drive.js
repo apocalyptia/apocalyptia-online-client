@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const drive = new Skill({
+const Drive = new Skill({
 	name: `Drive`,
 	desc: [
 		`Operate vehicles.`,
@@ -25,4 +25,4 @@ const drive = new Skill({
 	}
 })
 
-export default drive
+export default Drive

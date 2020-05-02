@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const tame = new Skill({
+const Tame = new Skill({
 	name: `Tame`,
 	desc: [
 		`Alter an animal’s Attitude by one step.`,
@@ -25,4 +25,4 @@ const tame = new Skill({
 	}
 })
 
-export default tame
+export default Tame

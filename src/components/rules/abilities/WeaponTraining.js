@@ -1,5 +1,5 @@
 import Ability from '../../classes/Ability'
-import { WeaponList } from '../Gear'
+import WeaponList from '../gear/weapons/WeaponList'
 
 
 const WeaponTraining = new Ability({

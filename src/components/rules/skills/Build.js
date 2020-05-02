@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const build = new Skill({
+const Build = new Skill({
 	name: `Build`,
 	desc: [
 		`Make an item from [d6 + #] Parts.`,
@@ -29,4 +29,4 @@ const build = new Skill({
 	}
 })
 
-export default build
+export default Build

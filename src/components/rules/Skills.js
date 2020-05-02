@@ -1,64 +1,11 @@
 import PropSort from '../helpers/PropSort'
 import RandomRoll from '../helpers/Random'
-import acrobatics from './skills/Acrobatics'
-import athletics from './skills/Athletics'
-import build from './skills/Build'
-import drive from './skills/Drive'
-import larceny from './skills/Larceny'
-import leadership from './skills/Leadership'
-import medicine from './skills/Medicine'
-import melee from './skills/Melee'
-import perception from './skills/Perception'
-import perform from './skills/Perform'
-import ranged from './skills/Ranged'
-import science from './skills/Science'
-import socialize from './skills/Socialize'
-import stealth from './skills/Stealth'
-import survival from './skills/Survival'
-import tame from './skills/Tame'
+import AgilitySkills from './skills/lists/AgilitySkills'
+import BrainsSkills from './skills/lists/BrainsSkills'
+import ConstitutionSkills from './skills/lists/ConstitutionSkills'
+import DemeanorSkills from './skills/lists/DemeanorSkills'
+import SkillList from './skills/lists/SkillList'
 
-
-export const SkillExplanation = [
-	`You get Brains x 6 Skill points to assign.`,
-	`Skills range from 0 to 6.`,
-	`Skill rolls are [d6 + Skill].`,
-	`Trait scores set the limit for their Skills.`,
-]
-
-export const AgilitySkills = [
-	acrobatics,
-	larceny,
-	ranged,
-	stealth,
-]
-
-export const BrainsSkills = [
-	medicine,
-	perception,
-	science,
-	survival,
-]
-
-export const ConstitutionSkills = [
-	athletics,
-	build,
-	drive,
-	melee,
-]
-
-export const DemeanorSkills = [
-	leadership,
-	perform,
-	socialize,
-	tame,
-]
-
-export const SkillList = [
-	...AgilitySkills,
-	...BrainsSkills,
-	...ConstitutionSkills,
-	...DemeanorSkills,
-]
 
 export const SpecialtyExplanation = `Specialties (listed below their Skills) equal their parent Skill by default. Specialties can exceed the parent Skill by taking the Specialize Ability. Unless otherwise noted, a Skill takes one Action.`
 
@@ -73,7 +20,12 @@ const SpecialtyList = Object.values(SkillList)
 
 export default {
 	name: `Skills`,
-	explanation: SkillExplanation,
+	explanation: [
+		`You get Brains x 6 Skill points to assign.`,
+		`Skills range from 0 to 6.`,
+		`Skill rolls are [d6 + Skill].`,
+		`Trait scores set the limit for their Skills.`,
+	],
 	list: SkillList,
 	groups: [
 		{

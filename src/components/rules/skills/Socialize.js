@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const socialize = new Skill({
+const Socialize = new Skill({
 	name: `Socialize`,
 	desc: [
 		`Alter a person’s Attitude by one step.`,
@@ -27,4 +27,4 @@ const socialize = new Skill({
 	}
 })
 
-export default socialize
+export default Socialize

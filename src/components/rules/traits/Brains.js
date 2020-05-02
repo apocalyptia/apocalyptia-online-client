@@ -1,17 +1,15 @@
 import Trait from '../../classes/Trait'
-import { BrainsSkills } from '../Skills'
+import BrainsSkills from '../skills/lists/BrainsSkills'
 
 
-const BrainsSkillList = BrainsSkills.map(skill => skill.name).join(', ')
-
-const brains = new Trait({
+const Brains = new Trait({
 	name: `Brains`,
 	desc: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
 		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
 		`This Trait is a factor in the Experience and Intellect Properties.`,
-		`Brains is the parent Trait for the following Skills: ${BrainsSkillList}.`,
+		`Brains is the parent Trait for the following Skills: ${BrainsSkills.map(skill => skill.name).join(', ')}.`,
 	]
 })
 
-export default brains
+export default Brains

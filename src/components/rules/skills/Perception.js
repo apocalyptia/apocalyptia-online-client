@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const perception = new Skill({
+const Perception = new Skill({
 	name: `Perception`,
 	desc: [
 		`Processing sensory input.`,
@@ -25,4 +25,4 @@ const perception = new Skill({
 	}
 })
 
-export default perception
+export default Perception

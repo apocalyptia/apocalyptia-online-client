@@ -14,11 +14,6 @@ import PropSort from '../helpers/PropSort'
 // export { VehicleList } from '../../components/rules//gear/Vehicles'
 
 
-export const WeaponList = [
-	...MeleeWeaponList,
-	...RangedWeaponList,
-]
-
 const Gear = {
 	name: `Gear`,
 	list: [

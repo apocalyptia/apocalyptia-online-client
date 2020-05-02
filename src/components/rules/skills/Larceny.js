@@ -2,7 +2,7 @@ import Skill from '../../classes/Skill'
 import Specialty from '../../classes/Specialty'
 
 
-const larceny = new Skill({
+const Larceny = new Skill({
 	name: `Larceny`,
 	desc: [
 		`Delicate manual operations.`,
@@ -26,4 +26,4 @@ const larceny = new Skill({
 	}
 })
 
-export default larceny
+export default Larceny
