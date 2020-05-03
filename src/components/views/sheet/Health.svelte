@@ -1,7 +1,6 @@
 <script>
 import BodyLocations from '../ui/BodyLocations.svelte'
-
-export let character
+import { character } from '../../../stores/characterStore'
 </script>
 
 

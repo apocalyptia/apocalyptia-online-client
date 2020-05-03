@@ -3,8 +3,7 @@ import AmmoItemTable from '../tables/AmmoItemTable.svelte'
 import ArmorItemTable from '../tables/ArmorItemTable.svelte'
 import MeleeWeaponItemTable from '../tables/MeleeWeaponItemTable.svelte'
 import RangedWeaponItemTable from '../tables/RangedWeaponItemTable.svelte'
-
-export let character
+import { character } from '../../../stores/characterStore'
 </script>
 
 

@@ -10,6 +10,7 @@ import { character } from '../../stores/characterStore'
 const saveCharacter = () => {
 	console.log('SAVING...')
 	$character.user = $authUserStore.id
+	$character.completed = true
 	$character.step = `complete`
 	const jsonChar = JSON.stringify($character)
 

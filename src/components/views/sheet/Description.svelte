@@ -1,5 +1,5 @@
 <script>
-export let character
+import { character } from '../../../stores/characterStore'
 </script>
 
 
@@ -7,31 +7,56 @@ export let character
 	<summary class='sheet-card-title'>
 		Description
 	</summary>
+	<div class='name-block'>
+		<span>Character:</span> 
+		<input type='text' class='sheet-value' bind:value={$character.desc.identity.value} />
+	</div>
 	<div class='sheet-card-body'>
 		<div class='sheet-card-block'>
 			<div class='sheet-card-item'>
-				Character: {$character.desc.identity.value}
+				<span>Age:</span> 
+				<input type='text' class='sheet-value' bind:value={$character.desc.age.value} />
 			</div>
 			<div class='sheet-card-item'>
-				Age: {$character.desc.age.value}
+				<span>Height:</span> 
+				<input type='text' class='sheet-value' bind:value={$character.desc.height.value} />
 			</div>
 			<div class='sheet-card-item'>
-				Height: {$character.desc.height.value}
-			</div>
-			<div class='sheet-card-item'>
-				Weight: {$character.desc.weight.value}
+				<span>Weight:</span> 
+				<input type='text' class='sheet-value' bind:value={$character.desc.weight.value} />
 			</div>
 		</div>
 		<div class='section-block'>
 			<div class='sheet-card-item'>
-				Sex: {$character.desc.sex.value}
+				<span>Sex:</span> 
+				<input type='text' class='sheet-value' bind:value={$character.desc.sex.value} />
 			</div>
 			<div class='sheet-card-item'>
-				Skin: {$character.desc.skin.value}
+				<span>Skin:</span> 
+				<input type='text' class='sheet-value' bind:value={$character.desc.skin.value} />
 			</div>
 			<div class='sheet-card-item'>
-				Hair: {$character.desc.hair.value}
+				<span>Hair:</span> 
+				<input type='text' class='sheet-value' bind:value={$character.desc.hair.value} />
 			</div>
 		</div>
 	</div>
 </details>
+
+
+<style>
+.name-block {
+	align-items: center;
+	display: flex;
+	margin: 0 var(--s100);
+	padding-bottom: 0;
+}
+.sheet-card-item {
+	align-items: center;
+	display: flex;
+	margin-bottom: var(--s50);
+}
+.sheet-value {
+	width: 100%;
+}
+</style>

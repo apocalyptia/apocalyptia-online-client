@@ -7,6 +7,14 @@ import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 
 
+const saveCharacter = () => {
+	console.log('SAVING...')
+	const jsonChar = JSON.stringify($character)
+	window.localStorage.setItem('character', jsonChar)
+	api.create(jsonChar)
+	console.log('SAVE COMPLETE')
+}
+
 const deleteCharacter = () => {
 	$character = new Character()
 	window.localStorage.removeItem('character')
@@ -15,10 +23,13 @@ const deleteCharacter = () => {
 </script>
 
 
-<CharacterSheet character={$character} />
+<CharacterSheet {character} writable={true} />
 <div class='sheet-buttons'>
 	<button on:click={deleteCharacter}>
 		Delete
+	</button>
+	<button on:click={saveCharacter}>
+		Save
 	</button>
 </div>
 <NavBar links={{back: '/', next: '/'}}/>

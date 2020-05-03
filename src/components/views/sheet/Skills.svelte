@@ -1,5 +1,5 @@
 <script>
-export let character
+import { character } from '../../../stores/characterStore'
 </script>
 
 

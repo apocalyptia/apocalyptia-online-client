@@ -93,7 +93,7 @@ body {
 	color: lime;
 	font-family: var(--global-font);
 	font-size: var(--s100);
-	overflow: scroll;
+	overflow: hidden;
 	scrollbar-width: none;
 	width: 100%;
 }

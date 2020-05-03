@@ -10,7 +10,8 @@ export let character
 				{$character.health.leftArm.name} Health
 			</div>
 			<div class='location-numbers'>
-				{$character.health.leftArm.current}/{$character.health.leftArm.score}
+				<input type='number' bind:value='{$character.health.leftArm.current}' />/
+				{$character.health.leftArm.score}
 			</div>
 		</div>
 		<div class='left-leg-label'>
@@ -18,7 +19,8 @@ export let character
 				{$character.health.leftLeg.name} Health
 			</div>
 			<div class='location-numbers'>
-				{$character.health.leftLeg.current}/{$character.health.leftLeg.score}
+				<input type='number' bind:value='{$character.health.leftLeg.current}' />/
+				{$character.health.leftLeg.score}
 			</div>
 		</div>
 	</div>
@@ -28,7 +30,8 @@ export let character
 				{$character.health.head.name} Health
 			</div>
 			<div class='location-numbers'>
-				{$character.health.head.current}/{$character.health.head.score}
+				<input type='number' bind:value='{$character.health.head.current}' />/
+				{$character.health.head.score}
 			</div>
 		</div>
 		<div class='head-level'>
@@ -42,7 +45,8 @@ export let character
 						{$character.health.torso.name} Health
 					</div>
 					<div class='location-numbers'>
-						{$character.health.torso.current}/{$character.health.torso.score}
+						<input type='number' bind:value='{$character.health.torso.current}' />/
+						{$character.health.torso.score}
 					</div>
 				</div>
 			</div>
@@ -59,7 +63,8 @@ export let character
 				{$character.health.rightArm.name} Health
 			</div>
 			<div class='location-numbers'>
-				{$character.health.rightArm.current}/{$character.health.rightArm.score}
+				<input type='number' bind:value='{$character.health.rightArm.current}' />/
+				{$character.health.rightArm.score}
 			</div>
 		</div>
 		<div class='right-leg-label'>
@@ -67,7 +72,8 @@ export let character
 				{$character.health.rightLeg.name} Health
 			</div>
 			<div class='location-numbers'>
-				{$character.health.rightLeg.current}/{$character.health.rightLeg.score}
+				<input type='number' bind:value='{$character.health.rightLeg.current}' />/
+				{$character.health.rightLeg.score}
 			</div>
 		</div>
 	</div>
@@ -75,6 +81,10 @@ export let character
 
 
 <style>
+input[type='number'] {
+	width: var(--s200);
+}
+
 .body-locations-section {
 	display: flex;
 	max-width: 100%;
