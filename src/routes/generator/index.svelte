@@ -1,23 +1,21 @@
 <script>
-import AccessoryList from '../../components/rules/gear/weapons/AccessoryList'
-import AmmoList from '../../components/rules/gear/weapons/AmmoList'
-import ArmorList from '../../components/rules/gear/ArmorList'
-import BombList from '../../components/rules/gear/weapons/BombList'
+import AccessoryList from '../../components/rules/gear/weapons/accessories/lists/AccessoryList'
+import AmmoList from '../../components/rules/gear/weapons/ammo/lists/AmmoList'
+import ArmorList from '../../components/rules/gear/armor/lists/ArmorList'
+import BombList from '../../components/rules/gear/weapons/bombs/lists/BombList'
 import DocumentList from '../../components/rules/gear/DocumentList'
 import DrugsList from '../../components/rules/gear/DrugsList'
 import ElectronicsList from '../../components/rules/gear/ElectronicsList'
 import EquipmentList from '../../components/rules/gear/EquipmentList'
 import GearBlock from '../../components/views/ui/GearBlock.svelte'
 import MedicalList from '../../components/rules/gear/MedicalList'
-import MeleeWeaponList from '../../components/rules/gear/weapons/MeleeWeaponList'
+import MeleeWeaponList from '../../components/rules/gear/weapons/melee/lists/MeleeWeaponList'
 import NavBar from '../../components/views/controls/NavBar.svelte'
-import RangedWeaponList from '../../components/rules/gear/weapons/RangedWeaponList'
+import RangedWeaponList from '../../components/rules/gear/weapons/ranged/lists/RangedWeaponList'
 import StorageList from '../../components/rules/gear/StorageList'
-import {
-	d6Roll,
-	Nd6,
-	RandomRoll
-} from '../../components/helpers/Random'
+import d6Roll from '../../components/helpers/random/d6Roll'
+import Nd6 from '../../components/helpers/random/Nd6'
+import RandomRoll from '../../components/helpers/random/RandomRoll'
 
 
 let roll = 0

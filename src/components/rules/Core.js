@@ -1,8 +1,4 @@
-import Difficulty from './core/Difficulty'
-import Success from './core/Success'
-import Fail from './core/Fail'
-import Explode from './core/Explode'
-import Botch from './core/Botch'
+import CoreList from './core/lists/CoreList'
 
 
 export default {
@@ -15,11 +11,5 @@ export default {
 		`Calculate the Result of a d6 roll as follows:`,
 		`[d6 Roll + Score ± Modifiers] = Result`,
 	],
-	list: [
-		Difficulty,
-		Success,
-		Fail,
-		Explode,
-		Botch,
-	]
+	list: CoreList
 }

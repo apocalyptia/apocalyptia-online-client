@@ -1,33 +1,23 @@
-import agility from './traits/Agility'
-import brains from './traits/Brains'
-import constitution from './traits/Constitution'
-import demeanor from './traits/Demeanor'
-import RandomRoll from '../helpers/Random'
+
+import RandomRoll from '../helpers/random/RandomRoll'
+import TraitsList from './traits/lists/TraitsList'
+
 
 export const traitMax = 6
 
 export const traitPoints = 14
 
-export const TraitsExplanation = [
-	`You get ${traitPoints} Trait points to assign.`,
-	`Traits range from 1 to ${traitMax}.`,
-	`Trait rolls are [d6 + Trait].`,
-	`Trait scores set the limit for their Skills.`,
-]
-
-export const TraitList = [
-	agility,
-	brains,
-	constitution,
-	demeanor,
-]
-
 export const TraitFlowExplanation = `Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. ResetScores any associated Properties.`
 
 export default {
 	name: `Traits`,
-	explanation: TraitsExplanation,
-	list: TraitList,
+	explanation: [
+		`You get ${traitPoints} Trait points to assign.`,
+		`Traits range from 1 to ${traitMax}.`,
+		`Trait rolls are [d6 + Trait].`,
+		`Trait scores set the limit for their Skills.`,
+	],
+	list: TraitsList,
 	max: traitMax,
 	startingPoints: () => traitPoints,
 	assign: function(c, target) {

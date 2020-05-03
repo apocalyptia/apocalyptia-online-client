@@ -1,13 +1,7 @@
-import DefensiveManeuvers from './maneuvers/DefensiveManeuvers'
-import OffensiveManeuvers from './maneuvers/OffensiveManeuvers'
-import SocialManeuvers from './maneuvers/SocialManeuvers'
+import ManeuversList from './maneuvers/lists/ManeuversList'
 
 
 export default {
 	name: `Maneuvers`,
-	list: [
-		...DefensiveManeuvers,
-		...OffensiveManeuvers,
-		...SocialManeuvers,
-	]
+	list: ManeuversList
 }

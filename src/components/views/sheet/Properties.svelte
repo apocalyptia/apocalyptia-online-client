@@ -19,7 +19,7 @@ export let character
 				{$character.props.carry.score}
 			</div>
 			<div class='sheet-card-item'>
-				{$character.props.experience.name}: 
+				XP: 
 				{$character.props.experience.remaining} / 
 				{$character.props.experience.score}
 			</div>
