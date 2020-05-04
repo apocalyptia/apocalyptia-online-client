@@ -21,7 +21,7 @@ Need to add Radiation rules.
 - Bonus XP each session? Some is given by Narrator. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage dealt, move successes, etc)?
 
 Combat:
-  Actions:
+	Actions:
 		Grappling: What about Submissions? Both Grabbed?
 		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
 		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
@@ -62,6 +62,12 @@ Reference:
 Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
+Creator:
+	List Skill (Specialty) and list alpha by Skill.
+	Ability modal has scrollbar showing and doesn't scroll down far enough.
+	Health location numbers need to be closer to the dude's body.
+	Make a pointer finger mouse cursor for both the XP section dropdown as well as for the Ability links. Invert colors as well.
+
 ---------------------------------------------------------------------------------------------------
 
 ------ DEV PATH ------
@@ -77,3 +83,6 @@ write the combat system methods (based on lambda functions)
 make game group chat
 
 ---------------------------------------------------------------------------------------------------
+
+
+make first aid take 1 minute per dmg
