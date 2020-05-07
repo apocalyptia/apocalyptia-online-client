@@ -1,4 +1,4 @@
-import Ability from '../../classes/Ability'
+import Ability from './Ability'
 
 
 const HyperImmunity = new Ability({

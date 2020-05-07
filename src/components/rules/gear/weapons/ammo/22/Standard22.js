@@ -1,4 +1,4 @@
-import Ammo from '../../../../../classes/gear/weapons/Ammo'
+import Ammo from '../Ammo'
 
 
 const Standard22 = new Ammo({

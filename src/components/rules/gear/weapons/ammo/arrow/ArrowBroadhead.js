@@ -1,4 +1,4 @@
-import Ammo from '../../../../../classes/gear/weapons/Ammo'
+import Ammo from '../Ammo'
 import Broadhead from '../../../attributes/weapon/Broadhead'
 import Pierce from '../../../attributes/weapon/Pierce'
 

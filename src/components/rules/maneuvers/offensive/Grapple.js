@@ -1,4 +1,4 @@
-import Maneuver from '../../../classes/Maneuver'
+import Maneuver from '../Maneuver'
 import Grab from './Grab'
 import Hostage from './Hostage'
 import Tackle from './Tackle'

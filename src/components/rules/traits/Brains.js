@@ -1,5 +1,5 @@
-import Trait from '../../classes/Trait'
-import BrainsSkills from '../skills/lists/BrainsSkills'
+import Trait from './Trait'
+import BrainsSkills from '../skills/BrainsSkills'
 
 
 const Brains = new Trait({

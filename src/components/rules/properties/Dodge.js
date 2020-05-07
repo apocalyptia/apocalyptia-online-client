@@ -1,4 +1,4 @@
-import Property from '../../classes/Property'
+import Property from './Property'
 import Acrobatics from '../skills/Acrobatics'
 
 

@@ -1,6 +1,6 @@
-import Ability from '../../classes/Ability'
-import Skills from '../Skills'
-import Traits from '../Traits'
+import Ability from './Ability'
+import Skills from '../skills/Skills'
+import Traits from '../traits/Traits'
 
 
 const Unorthodox = new Ability({

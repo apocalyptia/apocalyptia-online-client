@@ -1,4 +1,4 @@
-import Accessory from '../../../../classes/gear/weapons/Accessory'
+import Accessory from './Accessory'
 
 
 const Scope = new Accessory({

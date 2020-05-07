@@ -1,5 +1,5 @@
-import Skill from '../../classes/Skill'
-import Specialty from '../../classes/Specialty'
+import Skill from './Skill'
+import Specialty from './Specialty'
 
 
 const Science = new Skill({

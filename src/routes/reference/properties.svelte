@@ -1,6 +1,6 @@
 <script>
 import RefPage from '../../components/views/reference/RefPage.svelte'
-import Properties from '../../components/rules/Properties'
+import Properties from '../../components/rules/properties/Properties'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 </script>
 

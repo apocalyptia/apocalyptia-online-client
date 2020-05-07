@@ -1,4 +1,4 @@
-import Character from '../../classes/Character'
+import Character from '../../rules/Character'
 
 
 export default (c) => {

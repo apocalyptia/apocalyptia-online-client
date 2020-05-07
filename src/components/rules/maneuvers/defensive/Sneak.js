@@ -1,4 +1,4 @@
-import Maneuver from '../../../classes/Maneuver'
+import Maneuver from '../Maneuver'
 
 
 const Sneak = new Maneuver({

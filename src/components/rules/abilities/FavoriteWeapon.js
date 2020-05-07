@@ -1,5 +1,5 @@
-import Ability from '../../classes/Ability'
-import WeaponList from '../gear/weapons/lists/WeaponList'
+import Ability from './Ability'
+import WeaponList from '../gear/weapons/WeaponList'
 
 
 const FavoriteWeapon = new Ability({

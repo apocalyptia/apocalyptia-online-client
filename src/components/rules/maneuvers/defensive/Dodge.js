@@ -1,4 +1,4 @@
-import Maneuver from '../../../classes/Maneuver'
+import Maneuver from '../Maneuver'
 import acrobatics from '../../skills/Acrobatics'
 
 

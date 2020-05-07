@@ -1,4 +1,4 @@
-import Descriptor from '../../classes/Descriptor'
+import Descriptor from './Descriptor'
 import RandomAge from '../../helpers/random/RandomAge'
 
 const Age = new Descriptor({

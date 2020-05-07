@@ -1,4 +1,4 @@
-import Descriptor from '../../classes/Descriptor'
+import Descriptor from './Descriptor'
 import RandomHair from '../../helpers/random/RandomHair'
 
 

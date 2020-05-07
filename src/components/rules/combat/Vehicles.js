@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule'
+import Rule from '../../rules/Rule'
 import Conditions from './vehicles/Conditions'
 import Occupants from './vehicles/Occupants'
 import Pedestrians from './vehicles/Pedestrians'

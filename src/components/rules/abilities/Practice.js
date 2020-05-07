@@ -1,5 +1,5 @@
-import Ability from '../../classes/Ability'
-import Skills from '../Skills'
+import Ability from './Ability'
+import Skills from '../skills/Skills'
 
 
 const Practice = new Ability({

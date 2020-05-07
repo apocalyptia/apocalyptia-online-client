@@ -1,4 +1,4 @@
-import AmmoAttr from '../../../../classes/gear/attributes/AmmoAttr'
+import AmmoAttr from './AmmoAttr'
 
 
 const HollowPoint = new AmmoAttr({

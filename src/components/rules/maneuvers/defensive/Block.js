@@ -1,4 +1,4 @@
-import Maneuver from '../../../classes/Maneuver'
+import Maneuver from '../Maneuver'
 import melee from '../../skills/Melee'
 
 const Block = new Maneuver({

@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule'
+import Rule from '../../rules/Rule'
 
 
 const Defenseless = new Rule({

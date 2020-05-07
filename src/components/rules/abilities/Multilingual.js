@@ -1,4 +1,4 @@
-import Ability from '../../classes/Ability'
+import Ability from './Ability'
 import Languages from '../../helpers/Languages'
 
 

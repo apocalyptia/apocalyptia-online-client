@@ -1,4 +1,4 @@
-import Armor from '../../../classes/gear/Armor'
+import Armor from './Armor'
 import Impermeable from '../attributes/armor/Impermeable'
 import Mask from '../attributes/armor/Mask'
 

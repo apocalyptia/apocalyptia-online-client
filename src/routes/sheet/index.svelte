@@ -1,5 +1,5 @@
 <script>
-import Character from '../../components/classes/Character'
+import Character from '../../components/rules/Character'
 import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import api from '../../../utils/api'

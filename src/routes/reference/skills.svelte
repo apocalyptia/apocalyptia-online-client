@@ -1,6 +1,6 @@
 <script>
 import RefPage from '../../components/views/reference/RefPage.svelte'
-import Skills from '../../components/rules/Skills'
+import Skills from '../../components/rules/skills/Skills'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 </script>
 

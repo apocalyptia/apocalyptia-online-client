@@ -1,4 +1,4 @@
-import Property from '../../classes/Property'
+import Property from './Property'
 
 
 const Speed = new Property({

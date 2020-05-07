@@ -1,4 +1,4 @@
-import Bomb from '../../../../classes/gear/weapons/Bomb'
+import Bomb from './Bomb'
 import Blind from '../../../status/Blind'
 
 

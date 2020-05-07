@@ -1,4 +1,4 @@
-import Armor from '../../../classes/gear/Armor'
+import Armor from './Armor'
 
 
 const AthleticPads = new Armor({

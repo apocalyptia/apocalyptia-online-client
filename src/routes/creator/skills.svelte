@@ -2,8 +2,8 @@
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 import RandomRoll from '../../components/helpers/random/RandomRoll'
-import Skills from '../../components/rules/Skills'
-import Traits from '../../components/rules/Traits'
+import Skills from '../../components/rules/skills/Skills'
+import Traits from '../../components/rules/traits/Traits'
 import Slider from '../../components/views/controls/Slider.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 

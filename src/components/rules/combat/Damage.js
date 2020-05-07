@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule'
+import Rule from '../../rules/Rule'
 import DamageResistance from './DamageResistance'
 import FireDamage from './FireDamage'
 import Pain from './Pain'

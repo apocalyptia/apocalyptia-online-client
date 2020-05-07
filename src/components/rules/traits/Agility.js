@@ -1,5 +1,5 @@
-import Trait from '../../classes/Trait'
-import AgilitySkills from '../skills/lists/AgilitySkills'
+import Trait from './Trait'
+import AgilitySkills from '../skills/AgilitySkills'
 
 
 const Agility = new Trait({

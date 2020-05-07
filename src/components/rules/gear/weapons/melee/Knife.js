@@ -1,4 +1,4 @@
-import MeleeWeapon from '../../../../classes/gear/weapons/MeleeWeapon'
+import MeleeWeapon from './MeleeWeapon'
 import OneHanded from '../../attributes/weapon/OneHanded'
 import Pierce from '../../attributes/weapon/Pierce'
 import Rapid from '../../attributes/weapon/Rapid'

@@ -1,5 +1,5 @@
-import Trait from '../../classes/Trait'
-import DemeanorSkills from '../skills/lists/ConstitutionSkills'
+import Trait from './Trait'
+import DemeanorSkills from '../skills/ConstitutionSkills'
 
 
 const Demeanor = new Trait({

@@ -1,4 +1,4 @@
-import ArmorAttr from '../../../../classes/gear/attributes/AmmoAttr'
+import ArmorAttr from './ArmorAttr'
 
 
 const ColdResistance = new ArmorAttr({

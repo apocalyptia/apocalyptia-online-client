@@ -1,5 +1,5 @@
-import Trait from '../../classes/Trait'
-import ConstitutionSkills from '../skills/lists/ConstitutionSkills'
+import Trait from './Trait'
+import ConstitutionSkills from '../skills/ConstitutionSkills'
 
 
 const Constitution = new Trait({

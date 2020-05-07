@@ -1,4 +1,4 @@
-import RangedWeapon from '../../../../classes/gear/weapons/RangedWeapon'
+import RangedWeapon from './RangedWeapon'
 import TwoHanded from '../../attributes/weapon/TwoHanded'
 import Auto from '../../attributes/weapon/Auto'
 import Rapid from '../../attributes/weapon/Rapid'

@@ -1,4 +1,4 @@
-import Character from '../components/classes/Character'
+import Character from '../components/rules/Character'
 import { writable } from 'svelte/store'
 
 

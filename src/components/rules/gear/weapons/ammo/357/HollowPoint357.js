@@ -1,4 +1,4 @@
-import Ammo from '../../../../../classes/gear/weapons/Ammo'
+import Ammo from '../Ammo'
 import HollowPoint from '../../../attributes/weapon/HollowPoint'
 
 

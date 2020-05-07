@@ -1,6 +1,6 @@
 <script>
 import RefPage from '../../components/views/reference/RefPage.svelte'
-import Combat from '../../components/rules/Combat'
+import Combat from '../../components/rules/combat/Combat'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 </script>
 

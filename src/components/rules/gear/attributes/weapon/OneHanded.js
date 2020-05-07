@@ -1,4 +1,4 @@
-import WeaponAttr from '../../../../classes/gear/attributes/WeaponAttr'
+import WeaponAttr from './WeaponAttr'
 
 
 const OneHanded = new WeaponAttr({

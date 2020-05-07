@@ -1,5 +1,5 @@
-import Ability from '../../classes/Ability'
-import Traits from '../Traits'
+import Ability from './Ability'
+import Traits from '../traits/Traits'
 
 
 const SelfImprovement = new Ability({

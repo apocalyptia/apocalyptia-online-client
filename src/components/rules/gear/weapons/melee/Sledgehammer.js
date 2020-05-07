@@ -1,4 +1,4 @@
-import MeleeWeapon from '../../../../classes/gear/weapons/MeleeWeapon'
+import MeleeWeapon from './MeleeWeapon'
 import TwoHanded from '../../attributes/weapon/TwoHanded'
 import Blunt from '../../attributes/weapon/Blunt'
 import Slow from '../../attributes/weapon/Slow'
