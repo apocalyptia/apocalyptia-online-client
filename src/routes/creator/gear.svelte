@@ -53,6 +53,9 @@ beforeUpdate(() => {
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online Character Creator - Gear</title>
+</svelte:head>
 <div class='gear-step'>
 	<h1>Gear</h1>
 	<div class='explanation'>

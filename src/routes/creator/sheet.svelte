@@ -29,6 +29,9 @@ const deleteCharacter = () => {
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online Character Creator - Character Sheet</title>
+</svelte:head>
 <CharacterSheet {character} />
 <div class='sheet-buttons'>
 	{#if $character.completed}

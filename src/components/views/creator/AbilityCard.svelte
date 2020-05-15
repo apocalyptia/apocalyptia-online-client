@@ -9,8 +9,7 @@ export let MasterAbilityList
 </script>
 
 
-<div class='ability-card' 
-	on:click={() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
+<div class='ability-card' on:click={() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
 	<div class='card-row'>
 		<span class='ability-name'>{ability.name}</span>
 	</div>
@@ -19,8 +18,7 @@ export let MasterAbilityList
 	</div>
 </div>
 {#if ability.visible == true}
-	<AbilityModal
-		on:close='{() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}'
+	<AbilityModal on:close='{() => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}'
 		{ability}
 		{MasterAbilityList}
 	/>

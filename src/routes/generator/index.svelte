@@ -118,6 +118,9 @@ const rolld6 = () => {
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online Random Generator</title>
+</svelte:head>
 <h1>Random Generator</h1>
 <div class='section-card'>
 	<p><span class='gear-category'>d6 Roll</span></p>

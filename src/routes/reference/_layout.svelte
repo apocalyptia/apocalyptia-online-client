@@ -1,4 +1,3 @@
-<h1>Rules Reference</h1>
 <slot/>
 
 

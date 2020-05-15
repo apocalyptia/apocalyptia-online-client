@@ -23,6 +23,9 @@ beforeUpdate(() => {
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online Character Creator - Abilities</title>
+</svelte:head>
 <div class='abilities-step'>
 	<h1>Abilities</h1>
 	<div class='explanation'>

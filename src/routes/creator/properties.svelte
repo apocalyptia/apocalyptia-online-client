@@ -10,6 +10,9 @@ beforeUpdate(() => $character = Properties.setScores($character))
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online Character Creator - Properties</title>
+</svelte:head>
 <h1>Properties</h1>
 <div class='explanation'>
 	{#each Properties.explanation as line}
