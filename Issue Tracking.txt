@@ -34,7 +34,6 @@ Character:
 		Combine Health with Armor somehow.
 
 Put XP cost on Rules Reference.
-Order everything alphabetically.
 Figure out a quick Jury-Rig version of Build.
 Social actions multiple times per round?
 
@@ -48,14 +47,10 @@ UX/UI:
 	Need to work on more uniform paragraph spacing.
 
 Gear.js:
-	Check all item Notes.
-	Attributes: Figure out rules to specify weapon categories that attributes qualify for.
-	Ranged: Finish `Military` Ranged Weapons, .reg = `G` for `Government`?
 	Storage: Unit conversions still need work.
 
 Reference:
 	Put Expand/Collapse All button on reference.
-	Revise Location Damage.
 	Figure out topical organization. Health for example.
 	Painkiller required for a night's sleep to Recover?
 
