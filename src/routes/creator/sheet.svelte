@@ -5,6 +5,7 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 import api from '../../../utils/api'
 import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
+import { referenceStore } from '../../stores/referenceStore'
 
 
 const saveCharacter = () => {

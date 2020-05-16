@@ -1,11 +1,12 @@
 <script>
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
+import NavBar from '../../components/views/controls/NavBar.svelte'
 import RandomRoll from '../../components/helpers/random/RandomRoll'
 import Skills from '../../components/rules/skills/Skills'
-import Traits from '../../components/rules/traits/Traits'
 import Slider from '../../components/views/controls/Slider.svelte'
-import NavBar from '../../components/views/controls/NavBar.svelte'
+import Traits from '../../components/rules/traits/Traits'
+import { beforeUpdate } from 'svelte'
+import { character } from '../../stores/characterStore'
+import { referenceStore } from '../../stores/referenceStore'
 
 
 let remaining = Skills.remaining($character)

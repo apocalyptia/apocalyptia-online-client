@@ -43,6 +43,7 @@ export let onHome = true
 	left: 0;
 	position: fixed;
 	width: 100%;
+	z-index: 2;
 }
 .nav-button {
 	flex: 1;

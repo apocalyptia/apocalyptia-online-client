@@ -6,4 +6,4 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 
 
 <RefPage chapter={Properties}/>
-<NavBar links={{back: '/reference/skills', next: '/reference/combat'}}/>
+<NavBar links={{back: '/reference/needs', next: '/reference/skills'}}/>

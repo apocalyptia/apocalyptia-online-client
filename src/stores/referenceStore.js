@@ -19,7 +19,6 @@ const referenceToC = new TableOfContents({
 	startAddress: '/reference',
 	endAddress: '/reference',
 	pages: [
-		ContentMenu,
 		Abilities,
 		Combat,
 		Complications,
@@ -33,7 +32,6 @@ const referenceToC = new TableOfContents({
 		Traits,
 	],
 	pageNames: [
-		'menu',
 		'abilities',
 		'combat',
 		'complications',

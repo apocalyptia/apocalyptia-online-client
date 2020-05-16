@@ -6,15 +6,13 @@ import Capitalize from '../../components/helpers/Capitalize'
 
 
 <div class='content-menu'>
-	{#each $referenceStore.pageNames as page, i}
-		{#if i}
-			<a href='/reference/{page}' class='link-btn menu-btn'>
-				{Capitalize(page)}
-			</a>
-		{/if}
+	{#each $referenceStore.pageNames as page}
+		<a href='/reference/{page}' class='link-btn menu-btn'>
+			{Capitalize(page)}
+		</a>
 	{/each}
 </div>
-<NavBar links={{back: '/', next: '/reference/core'}}/>
+<NavBar links={{back: '/', next: '/reference/abilities'}}/>
 
 
 <style>

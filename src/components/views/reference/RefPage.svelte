@@ -1,4 +1,5 @@
 <script>
+import { SkillFlowExplanation } from './../../rules/skills/Skills.js';
 import { beforeUpdate } from 'svelte'
 import GearBlock from '../ui/GearBlock.svelte'
 
@@ -25,76 +26,88 @@ beforeUpdate(() => {
 <svelte:head>
 	<title>Apocalyptia Online Reference - {chapter.name}</title>
 </svelte:head>
-<div class='search-section'>
+<div class='ref-header-section'>
+	<div class='chapter-name'>
+		{chapter.name}
+	</div>
 	<input type='text' class='search-bar' placeholder='Search' bind:value='{searchTerm}' />
 </div>
-<h2>{chapter.name}</h2>
-{#if chapter.explanation}
-	<div class='explanation'>
-		<p>{chapter.explanation}</p>
-	</div>
-{/if}
-{#if ruleList.length}
-	{#each ruleList as rule}
-		<details bind:open={rule.visible}>
-			<summary>
-				{rule.name}
-			</summary>
-			<div>
-				<GearBlock {rule}/>
-				{#if rule.subrules}
-					<ul>
+<div class='ref-body-section'>
+	{#if chapter.explanation}
+		<div class='explanation'>
+			{#each chapter.explanation as explanation}
+				<p>{explanation}</p>
+			{/each}
+		</div>
+	{/if}
+	{#if ruleList.length}
+		{#each ruleList as rule}
+			<details bind:open={rule.visible}>
+				<summary>
+					{rule.name}
+				</summary>
+				<div>
+					<GearBlock {rule}/>
+					{#if rule.subrules}
 						{#each rule.subrules as subrule}
-							<li>
-								<div class='sub-name'>{subrule.name}</div>
+							<details>
+								<summary class='sub-name'>{subrule.name}</summary>
 								{#each subrule.desc as sub_desc}
 									<p class='sub-desc'>{sub_desc}</p>
 								{/each}
-							</li>
+							</details>
 						{/each}
-					</ul>
-				{/if}
-				{#if rule.specs}
-					<ul>
-						{#each Object.values(rule.specs) as spec}
-							<li>
-								<div class='sub-name'>{spec.name}</div>
-								{#each spec.desc as spec_desc}
-									<p class='spec-desc'>{spec_desc}</p>
-								{/each}
-							</li>
-						{/each}
-					</ul>
-				{/if}
-			</div>
-		</details>
-	{/each}
-{:else}
-	<div class='no-results'>
-		<p>No results.</p>
-	</div>
-{/if}
+					{/if}
+					{#if rule.specs}
+						<ul>
+							{#each Object.values(rule.specs) as spec}
+								<li>
+									<div class='sub-name'>{spec.name}</div>
+									{#each spec.desc as spec_desc}
+										<p class='spec-desc'>{spec_desc}</p>
+									{/each}
+								</li>
+							{/each}
+						</ul>
+					{/if}
+				</div>
+			</details>
+		{/each}
+	{:else}
+		<div class='no-results'>
+			<p>No results.</p>
+		</div>
+	{/if}
+</div>
 
 
 <style>
-h2 {
-	margin-left: var(--s100);
+.ref-header-section {
+	display: block;
+	height: var(--s300);
 }
+.chapter-name {
+	position: absolute;
+	font-weight: bold;
+	font-size: var(--s150);
+	top: var(--s150);
+	left: var(--s100);
+}
+.search-bar {
+	position: absolute;
+	top: var(--s100);
+	right: var(--s100);
+	width: 33%;
+	min-width: 100px;
+	padding: var(--s25) var(--s100);
+	text-align: left;
+}
+
 .sub-name {
 	font-weight: bold;
 }
-.sub-name, .sub-desc, .spec-desc {
+.sub-desc, .spec-desc {
 	margin: var(--s100);
-}
-.search-section {
-	margin: var(--s100);
-	text-align: right;
-}
-.search-bar {
-	padding: var(--s25);
-	padding-left: var(--s100);
-	text-align: left;
-	width: 50%;
 }
 .no-results {
 	padding-left: 10vw;

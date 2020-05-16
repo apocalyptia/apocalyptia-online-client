@@ -1,6 +1,7 @@
 <script>
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
+import { referenceStore } from '../../stores/referenceStore'
 import BodyLocations from '../../components/views/ui/BodyLocations.svelte'
 import Properties from '../../components/rules/properties/Properties'
 import NavBar from '../../components/views/controls/NavBar.svelte'
