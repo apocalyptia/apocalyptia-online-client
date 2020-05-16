@@ -80,8 +80,6 @@ make game group chat
 ---------------------------------------------------------------------------------------------------
 
 
-make first aid take 1 minute per dmg
-
 make a new set of general gear attributes: Electronic, Consumable, Wearable
 
 add fishing line

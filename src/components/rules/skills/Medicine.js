@@ -14,7 +14,7 @@ const Medicine = new Skill({
 			name: `First-Aid`,
 			desc: [
 				`Stop a Wound from Bleeding.`,
-				`Takes 1d6 minutes.`,
+				`Takes 1 minute per Damage.`,
 			]
 		}),
 		surgery: new Specialty({
@@ -23,6 +23,7 @@ const Medicine = new Skill({
 				`Heal 1 Damage on a Wound.`,
 				`Cannot be performed again on the same Wound until it is fully healed.`,
 				`Inflict an additional d6 Damage on a Botch.`,
+				`Takes [Damage x 20] minutes.`,
 			]
 		})
 	}
