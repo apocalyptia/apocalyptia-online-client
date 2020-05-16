@@ -12,7 +12,6 @@ import Nd6 from '../../components/helpers/random/Nd6'
 import RandomRoll from '../../components/helpers/random/RandomRoll'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import { referenceStore } from '../../stores/referenceStore'
 
 
 let status = `stop`

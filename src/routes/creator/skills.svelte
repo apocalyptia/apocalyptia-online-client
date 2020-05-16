@@ -6,7 +6,6 @@ import Slider from '../../components/views/controls/Slider.svelte'
 import Traits from '../../components/rules/traits/Traits'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import { referenceStore } from '../../stores/referenceStore'
 
 
 let remaining = Skills.remaining($character)

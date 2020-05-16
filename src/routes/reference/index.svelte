@@ -1,12 +1,25 @@
 <script>
-import referenceStore from '../../stores/referenceStore'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import Capitalize from '../../components/helpers/Capitalize'
+
+const referencePages = [
+	'abilities',
+	'combat',
+	'complications',
+	'core',
+	'gear',
+	'maneuvers',
+	'needs',
+	'properties',
+	'skills',
+	'status',
+	'traits',
+]
 </script>
 
 
 <div class='content-menu'>
-	{#each $referenceStore.pageNames as page}
+	{#each referencePages as page}
 		<a href='/reference/{page}' class='link-btn menu-btn'>
 			{Capitalize(page)}
 		</a>

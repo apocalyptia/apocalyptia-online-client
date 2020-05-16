@@ -3,7 +3,6 @@ import Description from '../../components/rules/description/Description'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import { referenceStore } from '../../stores/referenceStore'
 
 
 let status = `stop`

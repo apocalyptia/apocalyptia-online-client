@@ -1,7 +1,6 @@
 <script>
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import { referenceStore } from '../../stores/referenceStore'
 import Abilities from '../../components/rules/abilities/Abilities'
 import AbilityGroup from '../../components/views/creator/AbilityGroup.svelte'
 import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
