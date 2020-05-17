@@ -10,7 +10,11 @@ export let character
 				{$character.health.leftArm.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number' bind:value='{$character.health.leftArm.current}' />/
+				<input type='number'
+					bind:value='{$character.health.leftArm.current}'
+					min='-{$character.health.leftArm.score}'
+					max='{$character.health.leftArm.score}'
+				/>/
 				{$character.health.leftArm.score}
 			</div>
 		</div>
@@ -19,7 +23,11 @@ export let character
 				{$character.health.leftLeg.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number' bind:value='{$character.health.leftLeg.current}' />/
+				<input type='number'
+					bind:value='{$character.health.leftLeg.current}'
+					min='-{$character.health.leftLeg.score}'
+					max='{$character.health.leftLeg.score}'
+				/>/
 				{$character.health.leftLeg.score}
 			</div>
 		</div>
@@ -30,7 +38,11 @@ export let character
 				{$character.health.head.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number' bind:value='{$character.health.head.current}' />/
+				<input type='number'
+					bind:value='{$character.health.head.current}'
+					min='-{$character.health.head.score}'
+					max='{$character.health.head.score}'
+				/>/
 				{$character.health.head.score}
 			</div>
 		</div>
@@ -45,7 +57,11 @@ export let character
 						{$character.health.torso.name} Health
 					</div>
 					<div class='location-numbers'>
-						<input type='number' bind:value='{$character.health.torso.current}' />/
+						<input type='number'
+							bind:value='{$character.health.torso.current}'
+							min='-{$character.health.torso.score}'
+							max='{$character.health.torso.score}'
+						/>/
 						{$character.health.torso.score}
 					</div>
 				</div>
@@ -63,7 +79,11 @@ export let character
 				{$character.health.rightArm.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number' bind:value='{$character.health.rightArm.current}' />/
+				<input type='number'
+					bind:value='{$character.health.rightArm.current}'
+					min='-{$character.health.rightArm.score}'
+					max='{$character.health.rightArm.score}'
+				/>/
 				{$character.health.rightArm.score}
 			</div>
 		</div>
@@ -72,7 +92,11 @@ export let character
 				{$character.health.rightLeg.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number' bind:value='{$character.health.rightLeg.current}' />/
+				<input type='number'
+					bind:value='{$character.health.rightLeg.current}'
+					min='-{$character.health.rightLeg.score}'
+					max='{$character.health.rightLeg.score}'
+				/>/
 				{$character.health.rightLeg.score}
 			</div>
 		</div>
@@ -131,7 +155,7 @@ div[class*=-label] {
 }
 
 .location {
-	background: lime;
+	background-color: lime;
 }
 .location-numbers {
 	margin: 5px;
