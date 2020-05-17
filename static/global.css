@@ -69,6 +69,7 @@ table {
 	--s150: calc(var(--s100) * 1.5);
 	--s175: calc(var(--s100) * 1.75);
 	--s200: calc(var(--s100) * 2);
+	--s225: calc(var(--s100) * 2.25);
 	--s250: calc(var(--s100) * 2.5);
 	--s300: calc(var(--s100) * 3);
 	--s400: calc(var(--s100) * 4);
