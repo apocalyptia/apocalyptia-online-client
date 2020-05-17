@@ -24,4 +24,9 @@ export let MasterAbilityList
 	margin: var(--s100);
 	border: var(--s1) solid;
 }
+.ability-card:hover {
+	background-color: lime;
+	color: rgba(15, 30, 15, 1);
+	cursor: pointer;
+}
 </style>

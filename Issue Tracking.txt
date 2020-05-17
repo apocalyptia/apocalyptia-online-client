@@ -29,11 +29,10 @@ Combat:
 Character:
 	Properties:
 		Maybe I should come up with a good way to present Psyche as the mental part of Health, which would be the parent Property. Treat Psyche like a "Mental" Location along with all of the body parts under Health.
-	
+
 	Character Sheet:
 		Combine Health with Armor somehow.
 
-Put XP cost on Rules Reference.
 Figure out a quick Jury-Rig version of Build.
 Social actions multiple times per round?
 
@@ -44,7 +43,6 @@ Social actions multiple times per round?
 UX/UI:
 	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
 	Likewise set a blur effect that reflects the character psyche
-	Need to work on more uniform paragraph spacing.
 
 Gear.js:
 	Storage: Unit conversions still need work.
@@ -58,10 +56,8 @@ Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
-	List Skill (Specialty) and list alpha by Skill.
-	Ability modal has scrollbar showing and doesn't scroll down far enough.
+	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 	Health location numbers need to be closer to the dude's body.
-	Make a pointer finger mouse cursor for both the XP section dropdown as well as for the Ability links. Invert colors as well.
 
 ---------------------------------------------------------------------------------------------------
 
@@ -71,7 +67,7 @@ finish integrating database (faunadb) with client app
 finish user auth features (recovery, account settings)
 apply ability mods to character
 finish gear step (need equipment selection, xp purchasing)?
-create search and sorting options for all list pages
+create sorting options for all list pages
 make narrator dashboard
 make game group functionality
 write the combat system methods (based on lambda functions)

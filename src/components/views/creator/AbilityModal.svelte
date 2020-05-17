@@ -43,7 +43,7 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 
 <style>
 .modal-background {
-	background: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.3);
 	height: 100vh;
 	left: 0;
 	position: fixed;
@@ -51,9 +51,10 @@ if (previously_focused) onDestroy(() => previously_focused.focus())
 	width: 100vw;
 }
 .modal {
-	background: rgba(0,0,0,0.9);
+	background-color: rgba(0,0,0,0.9);
 	border-radius: var(--radius);
 	border: var(--s1) solid;
+	color: lime;
 	height: fit-content;
 	left: 50vw;
 	max-height: 75vh;
