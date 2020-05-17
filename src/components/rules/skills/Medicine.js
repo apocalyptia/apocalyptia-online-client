@@ -5,7 +5,7 @@ import Specialty from './Specialty'
 const Medicine = new Skill({
 	name: `Medicine`,
 	desc: [
-		`Diagnosing and treating Wounds and Diseases.`,
+		`Diagnosing and treating wounds and Diseases.`,
 	],
 	parent: `Brains`,
 	diff: `Damage`,

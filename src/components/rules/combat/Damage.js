@@ -3,7 +3,6 @@ import DamageResistance from './DamageResistance'
 import FireDamage from './FireDamage'
 import Pain from './Pain'
 import Recovery from './Recovery'
-import Wounds from './Wounds'
 
 
 const Damage = new Rule({
@@ -24,7 +23,6 @@ Damage.subrules = [
 	FireDamage,
 	Pain,
 	Recovery,
-	Wounds,
 ]
 
 export default Damage
