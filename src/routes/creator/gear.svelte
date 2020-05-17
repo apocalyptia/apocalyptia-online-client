@@ -3,6 +3,7 @@ import AmmoItemTable from '../../components/views/tables/AmmoItemTable.svelte'
 import AmmoList from '../../components/rules/gear/weapons/ammo/AmmoList'
 import ArmorItemTable from '../../components/views/tables/ArmorItemTable.svelte'
 import ArmorList from '../../components/rules/gear/armor/ArmorList'
+import EquipmentList from '../../components/rules/gear/equipment/EquipmentList'
 import MeleeWeaponItemTable from '../../components/views/tables/MeleeWeaponItemTable.svelte'
 import MeleeWeaponList from '../../components/rules/gear/weapons/melee/MeleeWeaponList'
 import NavBar from '../../components/views/controls/NavBar.svelte'
@@ -12,11 +13,14 @@ import Nd6 from '../../components/helpers/random/Nd6'
 import RandomRoll from '../../components/helpers/random/RandomRoll'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
+import { getModulesArrayBounds } from 'webpack/lib/Template'
 
 
 let status = `stop`
 
 let next = `/creator/gear`
+
+let carriedGear = []
 
 const randomMelee = () => {
 	$character.gear.meleeWeapons.inventory.push(RandomRoll(MeleeWeaponList))
@@ -36,6 +40,15 @@ const randomRanged = () => {
 
 const randomArmor = () => {
 	$character.gear.armor.inventory.push(RandomRoll(ArmorList))
+	$character = $character
+}
+
+const randomEquipment = () => {
+	for (let i = 0; i < $character.props.luck.score; i++) {
+		const randomItem = RandomRoll(EquipmentList)
+		carriedGear.push(randomItem)
+	}
+	$character.gear.equipment.inventory = [...carriedGear]
 	$character = $character
 }
 
@@ -98,6 +111,20 @@ beforeUpdate(() => {
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomArmor}>Random</button>
+			</div>
+		{/if}
+	</div>
+	<div class='section-card'>
+		<div class='item-category'>
+			<h2>Equipment</h2>
+		</div>
+		{#if $character.gear.equipment.inventory.length}
+			{#each $character.gear.equipment.inventory as equipment}
+				<p>{equipment.name}</p>
+			{/each}
+		{:else}
+			<div class='cntr-btn'>
+				<button on:click={randomEquipment}>Random</button>
 			</div>
 		{/if}
 	</div>

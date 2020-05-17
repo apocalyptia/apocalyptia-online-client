@@ -221,6 +221,11 @@ export default class Character {
 				name: `Ammo`,
 				inventory: []
 			},
-		}
+			equipment: {
+				name: `Equipment`,
+				inventory: []
+			},
+		},
+		this.notes = ``
 	}
 }
