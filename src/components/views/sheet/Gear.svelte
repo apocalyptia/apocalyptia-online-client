@@ -1,18 +1,34 @@
 <script>
+import Capitalize from '../../helpers/Capitalize'
+import CharacterSheet from '../ui/CharacterSheet.svelte'
 import CoverTable from '../tables/CoverTable.svelte'
+import Equipment from '../../rules/gear/equipment/Equipment'
 import GearBlock from '../ui/GearBlock'
+import ItemModal from './ItemModal.svelte'
 import { character } from '../../../stores/characterStore'
 
 
-const trashItem = (item) => {
-	if (item == 'melee') $character.gear.meleeWeapons.inventory.shift()
-	else if (item == 'ranged') $character.gear.rangedWeapons.inventory.shift()
-	else if (item == 'ammo') $character.gear.ammo.inventory.shift()
-	else if (item == 'armor') $character.gear.armor.inventory.shift()
+const gearList = [
+	'melee',
+	'ranged',
+	'ammo',
+	'armor',
+	'equipment'
+]
+
+let modalVisible = false
+
+const trashItem = (item, i=0) => {
+	if (item == 'melee') $character.gear.melee.inventory.splice(i)
+	else if (item == 'ranged') $character.gear.ranged.inventory.splice(i)
+	else if (item == 'ammo') $character.gear.ammo.inventory.splice(i)
+	else if (item == 'armor') $character.gear.armor.inventory.splice(i)
+	else if (item == 'equipment') $character.gear.equipment.inventory.splice(i)
 	$character = $character
 }
 
-const addItem = () => {
+const toggleModal = () => {
+	modalVisible = !modalVisible
 }
 </script>
 
@@ -21,47 +37,63 @@ const addItem = () => {
 	<summary class='sheet-card-title'>
 		Gear
 	</summary>
-	<div class='sheet-card-table'>
-		{#if $character.gear.meleeWeapons.inventory.length}
-			<div class='gear-item'>
-				<GearBlock rule={$character.gear.meleeWeapons.inventory[0]}/>
-				<div class='trash'>
-					<button on:click={() => trashItem('melee')} class='trash-item-button'>X</button>
+	<div class='gear-category-list'>
+		{#each gearList as gearType}
+			<details class='gear-category'>
+				<summary>{Capitalize(gearType)} Weapons</summary>
+				<div class='gear-item-list'>
+					{#each $character.gear[gearType].inventory as item, i}
+						<div class='gear-item'>
+							<GearBlock rule={item} />
+							<div class='trash'>
+								<button on:click={() => trashItem(gearType, i)} class='trash-item-button'>
+									<div class='button-icon'>&#10006;</div>
+								</button>
+							</div>
+						</div>
+					{/each}
 				</div>
-			</div>
-		{/if}
-		{#if $character.gear.rangedWeapons.inventory.length}
-			<div class='gear-item'>
-				<GearBlock rule={$character.gear.rangedWeapons.inventory[0]}/>
-				<div class='trash'>
-					<button on:click={() => trashItem('ranged')} class='trash-item-button'>X</button>
+				<div class='add-item-section'>
+					<button on:click={toggleModal} class='add-item-button'>
+						<div class='button-icon'>+</div>
+					</button>
+					{#if modalVisible}
+						<ItemModal on:close={toggleModal} {gearType} />
+					{/if}
 				</div>
-			</div>
-		{/if}
-		{#if $character.gear.ammo.inventory.length}
-			<div class='gear-item'>
-				<GearBlock rule={$character.gear.ammo.inventory[0]}/>
-				<div class='trash'>
-					<button on:click={() => trashItem('ammo')} class='trash-item-button'>X</button>
-				</div>
-			</div>
-		{/if}
-		{#if $character.gear.armor.inventory.length}
-			<div class='gear-item'>
-				<GearBlock rule={$character.gear.armor.inventory[0]}/>
-				<div class='trash'>
-					<button on:click={() => trashItem('armor')} class='trash-item-button'>X</button>
-				</div>
-			</div>
-		{/if}
-		<div class='add-item-section'>
-			<button on:click={() => addItem()} class='add-item-button'>+</button>
-		</div>
+			</details>
+		{/each}
 	</div>
 </details>
 
 
 <style>
+details {
+	margin: 0;
+}
+
+.sheet-card {
+	margin: var(--s100);
+	padding: 0;
+}
+
+.gear-category-list {
+	padding: var(--s100);
+}
+
+.gear-category {
+	border: 1px solid lime;
+	box-sizing: border-box;
+	display: block;
+	margin-bottom: var(--s100);
+	width: 100%;
+}
+
+.gear-item-list {
+	padding: var(--s100);
+	padding-bottom: 0;
+}
+
 .gear-item {
 	border: 1px solid lime;
 	box-sizing: border-box;
@@ -79,8 +111,8 @@ const addItem = () => {
 	background-color: crimson;
 	border: 1px solid crimson;
 	color: rgba(15, 30, 15, 1);
-	font-weight: bold;
 	height: var(--s250);
+	padding: 0;
 	width: var(--s250);
 }
 .trash-item-button:hover {
@@ -88,11 +120,14 @@ const addItem = () => {
 	color: crimson;
 }
 
+.add-item-section {
+	padding-top: 0;
+}
 .add-item-button {
 	background-color: lime;
 	border: 1px solid lime;
 	color: rgba(15, 30, 15, 1);
-	font-size: var(--s200);
+	font-size: var(--s150);
 	font-weight: bold;
 	height: var(--s250);
 	padding: 0;

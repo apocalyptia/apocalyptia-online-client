@@ -20,14 +20,14 @@ let next = `/creator/gear`
 let carriedGear = []
 
 const randomMelee = () => {
-	$character.gear.meleeWeapons.inventory.push(RandomRoll(MeleeWeaponList))
+	$character.gear.melee.inventory.push(RandomRoll(MeleeWeaponList))
 	$character = $character
 }
 
 const randomRanged = () => {
-	$character.gear.rangedWeapons.inventory.push(RandomRoll(RangedWeaponList))
+	$character.gear.ranged.inventory.push(RandomRoll(RangedWeaponList))
 	let ammo = RandomRoll(AmmoList)
-	while (ammo.cal != $character.gear.rangedWeapons.inventory[0].cal) {
+	while (ammo.cal != $character.gear.ranged.inventory[0].cal) {
 		ammo = RandomRoll(AmmoList)
 	}
 	ammo.qty = Nd6(1)
@@ -75,8 +75,8 @@ beforeUpdate(() => {
 		<div class='item-category'>
 			<h2>Melee Weapon</h2>
 		</div>
-		{#if $character.gear.meleeWeapons.inventory.length > 0}
-			<GearBlock rule={$character.gear.meleeWeapons.inventory[0]} />
+		{#if $character.gear.melee.inventory.length > 0}
+			<GearBlock rule={$character.gear.melee.inventory[0]} />
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomMelee}>Random</button>
@@ -87,8 +87,8 @@ beforeUpdate(() => {
 		<div class='item-category'>
 			<h2>Ranged Weapon</h2>
 		</div>
-		{#if $character.gear.rangedWeapons.inventory.length}
-			<GearBlock rule={$character.gear.rangedWeapons.inventory[0]} />
+		{#if $character.gear.ranged.inventory.length}
+			<GearBlock rule={$character.gear.ranged.inventory[0]} />
 			<div class='item-category ammo-heading'>
 				<h2>Ammo</h2>
 			</div>

@@ -8,11 +8,9 @@ import { character } from '../../stores/characterStore'
 
 
 const saveCharacter = () => {
-	console.log('SAVING...')
 	const jsonChar = JSON.stringify($character)
 	window.localStorage.setItem('character', jsonChar)
 	api.create(jsonChar)
-	console.log('SAVE COMPLETE')
 }
 
 const deleteCharacter = () => {

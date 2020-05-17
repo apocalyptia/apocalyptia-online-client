@@ -38,9 +38,12 @@ export default (c) => {
 		leftLeg = c.health.leftLeg.current,
 		rightLeg = c.health.rightLeg.current,
 		abilities: [...c.abilities],
-		armor: [...c.gear.armor],
-		meleeWeapons: [...c.gear.meleeWeapons],
-		rangedWeapons: [...c.gear.rangedWeapons],
-		ammo: [...c.gear.ammo]
+		gear: {
+			armor: [...c.gear.armor],
+			melee: [...c.gear.melee],
+			ranged: [...c.gear.ranged],
+			ammo: [...c.gear.ammo],
+			equipment: [...c.gear.equipment]
+		}
 	}
 }

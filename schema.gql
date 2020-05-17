@@ -70,8 +70,8 @@ type Ability {
 
 type Gear {
 	armor: [String]
-	meleeWeapons: [String]
-	rangedWeapons: [String]
+	melee: [String]
+	ranged: [String]
 	ammo: [Ammo]
 }
 

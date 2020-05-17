@@ -3,7 +3,6 @@ const createCharacter = (character) => {
 		body: character,
 		method: 'POST'
 	}).then(response => {
-		console.log('CREATE CHARACTER! => ', response.json())
 		return response.json()
 	})
 }

@@ -4,52 +4,55 @@ export let rule
 
 
 <div class='gear-block'>
-	{#if rule != undefined}
-		{#if rule.name != undefined}
+	{#if rule != null}
+		{#if rule.name != null}
 			<p><strong>{rule.name}</strong></p>
 		{/if}
-		{#if rule.desc != undefined}
+		{#if rule.desc != null}
 			{#each rule.desc as desc}
 				<p>{desc}</p>
 			{/each}
 		{/if}
-		{#if rule.dmg != undefined}
+		{#if rule.dmg != null}
 			<p><u>Damage</u>: {rule.dmg}</p>
 		{/if}
-		{#if rule.rng != undefined}
+		{#if rule.rng != null}
 			<p><u>Range</u>: {rule.rng}</p>
 		{/if}
-		{#if rule.cap != undefined}
+		{#if rule.cap != null}
 			<p><u>Magazine</u>: {rule.cap}</p>
 		{/if}
-		{#if rule.cal != undefined}
+		{#if rule.cal != null}
 			<p><u>Caliber</u>: {rule.cal}</p>
 		{/if}
-		{#if rule.fuse != undefined}
+		{#if rule.qty != null}
+			<p><u>Quantity</u>: <input type='number' class='ammo-qty' min='0' bind:value={rule.qty} /></p>
+		{/if}
+		{#if rule.fuse != null}
 			<p><u>Fuse</u>: {rule.fuse}</p>
 		{/if}
-		{#if rule.dur != undefined}
+		{#if rule.dur != null}
 			<p><u>Duration</u>: {rule.dur}</p>
 		{/if}
-		{#if rule.mix != undefined}
+		{#if rule.mix != null}
 			<p><u>Mix Difficulty</u>: {rule.mix}#</p>
 		{/if}
-		{#if rule.od != undefined}
+		{#if rule.od != null}
 			<p><u>Overdose Possible</u>: {rule.od.toString()}</p>
 		{/if}
-		{#if rule.hrs != undefined}
+		{#if rule.hrs != null}
 			<p><u>Hours</u>: {rule.hrs}</p>
 		{/if}
-		{#if rule.slots != undefined}
+		{#if rule.slots != null}
 			<p><u>Slots</u>: {rule.slots}</p>
 		{/if}
-		{#if rule.dr != undefined}
+		{#if rule.dr != null}
 			<p><u>Damage Resistance</u>: {rule.dr}</p>
 		{/if}
-		{#if rule.loc != undefined}
+		{#if rule.loc != null}
 			<p><u>Location</u>: {rule.loc}</p>
 		{/if}
-		{#if rule != undefined && rule.hasOwnProperty('attr') && rule.attr.length > 0}
+		{#if rule != null && rule.hasOwnProperty('attr') && rule.attr.length > 0}
 			<p><u>Attributes</u>:</p>
 			<div class='attributes'>
 				<ul>
@@ -62,10 +65,10 @@ export let rule
 				</ul>
 			</div>
 		{/if}
-		{#if rule.sz != undefined}
+		{#if rule.sz != null}
 			<p><u>Size</u>: {rule.sz}</p>
 		{/if}
-		{#if rule.table != undefined}
+		{#if rule.table != null}
 			<svelte:component this={rule.table}/>
 		{/if}
 	{/if}

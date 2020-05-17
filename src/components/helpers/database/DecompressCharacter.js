@@ -40,9 +40,10 @@ export default (c) => {
 	n.health.leftLeg.current = c.leftLeg
 	n.health.rightLeg.current = c.rightLeg
 	n.abilities = [...c.abilities]
-	n.gear.armor = [...c.armor]
-	n.gear.meleeWeapons = [...c.meleeWeapons]
-	n.gear.rangedWeapons = [...c.rangedWeapons]
-	n.gear.ammo = [...c.ammo]
+	n.gear.armor = [...c.gear.armor]
+	n.gear.melee = [...c.gear.melee]
+	n.gear.ranged = [...c.gear.ranged]
+	n.gear.ammo = [...c.gear.ammo]
+	n.gear.equipment = [...c.gear.equipment]
 	return n
 }

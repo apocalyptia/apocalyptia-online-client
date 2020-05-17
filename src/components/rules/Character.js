@@ -209,11 +209,11 @@ export default class Character {
 				name: `Armor`,
 				inventory: []
 			},
-			meleeWeapons: {
+			melee: {
 				name: `Melee Weapons`,
 				inventory: []
 			},
-			rangedWeapons: {
+			ranged: {
 				name: `Ranged Weapons`,
 				inventory: []
 			},

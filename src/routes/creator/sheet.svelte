@@ -8,7 +8,6 @@ import { character } from '../../stores/characterStore'
 
 
 const saveCharacter = () => {
-	console.log('SAVING...')
 	$character.user = $authUserStore.id
 	$character.completed = true
 	$character.step = `complete`
@@ -18,7 +17,6 @@ const saveCharacter = () => {
 	window.location.href = '/'
 
 	api.create(jsonChar)
-	console.log('SAVE COMPLETE')
 }
 
 const deleteCharacter = () => {

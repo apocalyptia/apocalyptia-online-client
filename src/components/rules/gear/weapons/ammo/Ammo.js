@@ -7,7 +7,7 @@ export default class Ammo extends CombatGear {
 		sz,
 		attr,
 		cal=``,
-		qty=0
+		qty=null
 	}) {
 		super({
 			name,
