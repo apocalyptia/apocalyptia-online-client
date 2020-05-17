@@ -32,8 +32,8 @@ h1 {
 	display: inline;
 }
 sub {
-	color: coral;
-	border: var(--s1) dotted coral;
+	color: crimson;
+	border: var(--s1) dotted crimson;
 	
 	font-size: var(--s75);
 	padding: var(--s1);

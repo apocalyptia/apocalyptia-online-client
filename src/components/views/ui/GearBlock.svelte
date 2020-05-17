@@ -3,8 +3,11 @@ export let rule
 </script>
 
 
-<div>
+<div class='gear-block'>
 	{#if rule != undefined}
+		{#if rule.name != undefined}
+			<p><strong>{rule.name}</strong></p>
+		{/if}
 		{#if rule.desc != undefined}
 			{#each rule.desc as desc}
 				<p>{desc}</p>
@@ -47,7 +50,7 @@ export let rule
 			<p><u>Location</u>: {rule.loc}</p>
 		{/if}
 		{#if rule != undefined && rule.hasOwnProperty('attr') && rule.attr.length > 0}
-			<u>Attributes</u>:
+			<p><u>Attributes</u>:</p>
 			<div class='attributes'>
 				<ul>
 					{#each rule.attr as attr}
@@ -70,6 +73,9 @@ export let rule
 
 
 <style>
+strong {
+	font-weight: bold;
+}
 ul {
 	list-style: disc;
 	margin-left: var(--s100);

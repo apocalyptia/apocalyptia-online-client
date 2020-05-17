@@ -164,7 +164,7 @@ button:invalid,
 input:invalid,
 select:invalid {
 	background-color: rgba(15, 30, 15, 1) !important;
-	border-color: coral;
+	border-color: crimson;
 	color: lime;
 }
 

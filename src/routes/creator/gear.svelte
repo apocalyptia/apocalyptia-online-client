@@ -1,16 +1,13 @@
 <script>
-import AmmoItemTable from '../../components/views/tables/AmmoItemTable.svelte'
 import AmmoList from '../../components/rules/gear/weapons/ammo/AmmoList'
-import ArmorItemTable from '../../components/views/tables/ArmorItemTable.svelte'
 import ArmorList from '../../components/rules/gear/armor/ArmorList'
 import EquipmentList from '../../components/rules/gear/equipment/EquipmentList'
-import MeleeWeaponItemTable from '../../components/views/tables/MeleeWeaponItemTable.svelte'
 import MeleeWeaponList from '../../components/rules/gear/weapons/melee/MeleeWeaponList'
 import NavBar from '../../components/views/controls/NavBar.svelte'
-import RangedWeaponItemTable from '../../components/views/tables/RangedWeaponItemTable.svelte'
 import RangedWeaponList from '../../components/rules/gear/weapons/ranged/RangedWeaponList'
 import Nd6 from '../../components/helpers/random/Nd6'
 import RandomRoll from '../../components/helpers/random/RandomRoll'
+import GearBlock from '../../components/views/ui/GearBlock'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
 import { getModulesArrayBounds } from 'webpack/lib/Template'
@@ -79,7 +76,7 @@ beforeUpdate(() => {
 			<h2>Melee Weapon</h2>
 		</div>
 		{#if $character.gear.meleeWeapons.inventory.length > 0}
-			<MeleeWeaponItemTable item={$character.gear.meleeWeapons.inventory[0]}/>
+			<GearBlock rule={$character.gear.meleeWeapons.inventory[0]} />
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomMelee}>Random</button>
@@ -91,11 +88,11 @@ beforeUpdate(() => {
 			<h2>Ranged Weapon</h2>
 		</div>
 		{#if $character.gear.rangedWeapons.inventory.length}
-			<RangedWeaponItemTable item={$character.gear.rangedWeapons.inventory[0]}/>
+			<GearBlock rule={$character.gear.rangedWeapons.inventory[0]} />
 			<div class='item-category ammo-heading'>
 				<h2>Ammo</h2>
 			</div>
-			<AmmoItemTable item={$character.gear.ammo.inventory[0]}/>
+			<GearBlock rule={$character.gear.ammo.inventory[0]} />
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomRanged}>Random</button>
@@ -107,7 +104,7 @@ beforeUpdate(() => {
 			<h2>Armor</h2>
 		</div>
 		{#if $character.gear.armor.inventory.length}
-			<ArmorItemTable item={$character.gear.armor.inventory[0]}/>
+			<GearBlock rule={$character.gear.armor.inventory[0]}/>
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomArmor}>Random</button>
@@ -120,7 +117,7 @@ beforeUpdate(() => {
 		</div>
 		{#if $character.gear.equipment.inventory.length}
 			{#each $character.gear.equipment.inventory as equipment}
-				<p>{equipment.name}</p>
+				<GearBlock rule={equipment} />
 			{/each}
 		{:else}
 			<div class='cntr-btn'>
