@@ -13,15 +13,15 @@ const Medicine = new Skill({
 		firstaid: new Specialty({
 			name: `First-Aid`,
 			desc: [
-				`Stop a Wound from Bleeding.`,
-				`Takes 1 minute per Damage.`,
+				`Stop a person from Bleeding for a number of hours equal to your roll.`,
+				`Inflict an additional 1 Damage on a Botch.`,
+				`Takes 1 round per Damage.`,
 			]
 		}),
 		surgery: new Specialty({
 			name: `Surgery`,
 			desc: [
-				`Heal 1 Damage on a Wound.`,
-				`Cannot be performed again on the same Wound until it is fully healed.`,
+				`Stop a person from Bleeding as long as they do not take any more Damage.`,
 				`Inflict an additional d6 Damage on a Botch.`,
 				`Takes [Damage x 20] minutes.`,
 			]
