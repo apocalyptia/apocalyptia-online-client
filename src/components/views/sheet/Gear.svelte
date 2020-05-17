@@ -40,7 +40,7 @@ const toggleModal = () => {
 	<div class='gear-category-list'>
 		{#each gearList as gearType}
 			<details class='gear-category'>
-				<summary>{Capitalize(gearType)} Weapons</summary>
+				<summary>{Capitalize(gearType)}</summary>
 				<div class='gear-item-list'>
 					{#each $character.gear[gearType].inventory as item, i}
 						<div class='gear-item'>
