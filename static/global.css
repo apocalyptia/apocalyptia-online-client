@@ -74,6 +74,10 @@ table {
 	--s400: calc(var(--s100) * 4);
 	--s500: calc(var(--s100) * 5);
 	--s600: calc(var(--s100) * 6);
+	--s700: calc(var(--s100) * 7);
+	--s800: calc(var(--s100) * 8);
+	--s900: calc(var(--s100) * 9);
+	--s1000: calc(var(--s100) * 10);
 	--radius: 0;
 
 	/* Global Font */

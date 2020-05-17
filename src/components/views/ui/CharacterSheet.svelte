@@ -6,6 +6,7 @@ import Properties from '../sheet/Properties.svelte'
 import Health from '../sheet/Health.svelte'
 import Abilities from '../sheet/Abilities.svelte'
 import Gear from '../sheet/Gear.svelte'
+import Notes from '../sheet/Notes.svelte'
 </script>
 
 
@@ -17,4 +18,5 @@ import Gear from '../sheet/Gear.svelte'
 	<Health />
 	<Abilities />
 	<Gear />
+	<Notes />
 </div>
