@@ -19,11 +19,11 @@ const gearList = [
 let modalVisible = false
 
 const trashItem = (item, i=0) => {
-	if (item == 'melee') $character.gear.melee.inventory.splice(i)
-	else if (item == 'ranged') $character.gear.ranged.inventory.splice(i)
-	else if (item == 'ammo') $character.gear.ammo.inventory.splice(i)
-	else if (item == 'armor') $character.gear.armor.inventory.splice(i)
-	else if (item == 'equipment') $character.gear.equipment.inventory.splice(i)
+	if (item == 'melee') $character.gear.melee.inventory.splice(i, 1)
+	else if (item == 'ranged') $character.gear.ranged.inventory.splice(i, 1)
+	else if (item == 'ammo') $character.gear.ammo.inventory.splice(i, 1)
+	else if (item == 'armor') $character.gear.armor.inventory.splice(i, 1)
+	else if (item == 'equipment') $character.gear.equipment.inventory.splice(i, 1)
 	$character = $character
 }
 

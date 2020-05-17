@@ -82,3 +82,4 @@ add fishing line
 add metal cup
 add firelog
 add trauma sheers
+add antiseptic of some kind
