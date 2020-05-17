@@ -46,8 +46,20 @@ beforeUpdate(() => {
 				<summary>
 					{rule.name}
 				</summary>
-				<div>
-					<GearBlock {rule}/>
+				<div class='rule-body'>
+					{#if chapter.name == 'Gear'}
+						<GearBlock {rule}/>
+					{:else}
+						{#if rule.desc != undefined}
+							{#each rule.desc as desc}
+								<p>{desc}</p>
+							{/each}
+							{#if chapter.name == 'Abilities'}
+								<p><span class='bold'>Max:</span> {rule.max}</p>
+								<p><span class='bold'>XP:</span> {rule.xp}</p>
+							{/if}
+						{/if}
+					{/if}
 					{#if rule.subrules}
 						{#each rule.subrules as subrule}
 							<details>
@@ -112,5 +124,9 @@ beforeUpdate(() => {
 .no-results {
 	padding-left: 10vw;
 	padding-top: 2vh;
+}
+
+.bold {
+	font-weight: bold;
 }
 </style>
