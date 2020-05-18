@@ -22,11 +22,11 @@ let selectedItem = itemList[0]
 
 const dispatch = createEventDispatcher()
 
-const handle_keydown = e => { if (e.key === 'Escape') dispatch('close') }
+const handleKeydown = e => { if (e.key === 'Escape') dispatch('close') }
 
-const previously_focused = typeof document !== 'undefined' && document.activeElement
+const previouslyFocused = typeof document !== 'undefined' && document.activeElement
 
-if (previously_focused) onDestroy(() => previously_focused.focus())
+if (previouslyFocused) onDestroy(() => previouslyFocused.focus())
 
 const save = () => {
 	if (gearType == 'ammo') selectedItem.qty = 0
@@ -37,7 +37,7 @@ const save = () => {
 </script>
 
 
-<svelte:window on:keydown={handle_keydown}/>
+<svelte:window on:keydown={handleKeydown}/>
 <div class="modal-background" on:click={() => dispatch('close')}></div>
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='modal-content'>
