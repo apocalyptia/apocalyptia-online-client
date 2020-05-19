@@ -1,9 +1,25 @@
-import DescriptionList from './DescriptionList'
+import Age from './Age'
+import Hair from './Hair'
+import Height from './Height'
+import Identity from './Identity'
+import Player from './Player'
+import Sex from './Sex'
+import Skin from './Skin'
+import Weight from './Weight'
 
 
 export default {
-	name: `desc:`,
-	list: DescriptionList,
+	name: `Description`,
+	list: [
+		Player,
+		Identity,
+		Age,
+		Sex,
+		Height,
+		Weight,
+		Skin,
+		Hair,
+	],
 	random: function(c){
 		for (let i = 1; i < this.list.length; i++) {
 			this.list[i].random(c)

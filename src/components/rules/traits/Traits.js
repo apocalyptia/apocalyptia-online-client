@@ -1,6 +1,8 @@
-
+import Agility from './Agility'
+import Brains from './Brains'
+import Constitution from './Constitution'
+import Demeanor from './Demeanor'
 import RandomRoll from '../../helpers/random/RandomRoll'
-import TraitsList from './TraitsList'
 
 
 export const traitMax = 6
@@ -17,7 +19,12 @@ export default {
 		`Trait rolls are [d6 + Trait].`,
 		`Trait scores set the limit for their Skills.`,
 	],
-	list: TraitsList,
+	list: [
+		Agility,
+		Brains,
+		Constitution,
+		Demeanor,
+	],
 	max: traitMax,
 	startingPoints: () => traitPoints,
 	assign: function(c, target) {

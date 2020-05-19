@@ -1,4 +1,8 @@
-import NeedsList from './NeedsList'
+import Asphyxiation from './Asphyxiation'
+import Dehydration from './Dehydration'
+import Exhaustion from './Exhaustion'
+import Hypothermia from './Hypothermia'
+import Starvation from './Starvation'
 
 
 export default {
@@ -6,5 +10,11 @@ export default {
 	explanation: [
 		`Take 1 Pain for each unmet requirement over a given period of time.`,
 	],
-	list: NeedsList
+	list: [
+		Asphyxiation,
+		Dehydration,
+		Exhaustion,
+		Hypothermia,
+		Starvation,
+	]
 }

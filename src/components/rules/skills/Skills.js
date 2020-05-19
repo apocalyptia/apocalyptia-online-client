@@ -4,13 +4,18 @@ import ConstitutionSkills from './ConstitutionSkills'
 import DemeanorSkills from './DemeanorSkills'
 import PropSort from '../../helpers/PropSort'
 import RandomRoll from '../../helpers/random/RandomRoll'
-import SkillsList from './SkillsList'
 
 
 export const SpecialtyExplanation = `Specialties (listed below their Skills) equal their parent Skill by default. Specialties can exceed the parent Skill by taking the Specialize Ability. Unless otherwise noted, a Skill takes one Action.`
 
 export const SkillFlowExplanation = `Skill Flow: Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
 
+const SkillList = [
+	...AgilitySkills,
+	...BrainsSkills,
+	...ConstitutionSkills,
+	...DemeanorSkills,
+]
 
 export default {
 	name: `Skills`,
@@ -20,7 +25,7 @@ export default {
 		`Skill rolls are [d6 + Skill].`,
 		`Trait scores set the limit for their Skills.`,
 	],
-	list: SkillsList,
+	list: SkillList,
 	groups: [
 		{
 			name: `Agility`,
@@ -39,7 +44,7 @@ export default {
 			list: DemeanorSkills
 		},
 	],
-	specs: Object.values(SkillsList)
+	specs: Object.values(SkillList)
 				.map((s) => Object.values(s.specs))
 				.reduce((a, b) => a.concat(b), [])
 				.sort((a, b) => PropSort(a, b, `name`)),
