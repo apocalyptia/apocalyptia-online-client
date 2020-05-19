@@ -1,5 +1,8 @@
 <script>
+import Health from "../sheet/Health.svelte"
+
 export let character
+export let readonly = false
 </script>
 
 
@@ -10,12 +13,16 @@ export let character
 				{$character.health.leftArm.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number'
-					bind:value='{$character.health.leftArm.current}'
-					min='-{$character.health.leftArm.score}'
-					max='{$character.health.leftArm.score}'
-				/>/
-				{$character.health.leftArm.score}
+				{#if readonly}
+					{$character.health.leftArm.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.leftArm.current}'
+						min='-{$character.health.leftArm.score}'
+						max='{$character.health.leftArm.score}'
+					/>
+				{/if}
+				/{$character.health.leftArm.score}
 			</div>
 		</div>
 		<div class='left-leg-label'>
@@ -23,12 +30,16 @@ export let character
 				{$character.health.leftLeg.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number'
-					bind:value='{$character.health.leftLeg.current}'
-					min='-{$character.health.leftLeg.score}'
-					max='{$character.health.leftLeg.score}'
-				/>/
-				{$character.health.leftLeg.score}
+				{#if readonly}
+					{$character.health.leftLeg.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.leftLeg.current}'
+						min='-{$character.health.leftLeg.score}'
+						max='{$character.health.leftLeg.score}'
+					/>
+				{/if}
+				/{$character.health.leftLeg.score}
 			</div>
 		</div>
 	</div>
@@ -38,12 +49,16 @@ export let character
 				{$character.health.head.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number'
-					bind:value='{$character.health.head.current}'
-					min='-{$character.health.head.score}'
-					max='{$character.health.head.score}'
-				/>/
-				{$character.health.head.score}
+				{#if readonly}
+					{$character.health.head.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.head.current}'
+						min='-{$character.health.head.score}'
+						max='{$character.health.head.score}'
+					/>
+				{/if}
+				/{$character.health.head.score}
 			</div>
 		</div>
 		<div class='head-level'>
@@ -57,12 +72,16 @@ export let character
 						{$character.health.torso.name} Health
 					</div>
 					<div class='location-numbers'>
-						<input type='number'
-							bind:value='{$character.health.torso.current}'
-							min='-{$character.health.torso.score}'
-							max='{$character.health.torso.score}'
-						/>/
-						{$character.health.torso.score}
+						{#if readonly}
+							{$character.health.torso.score}
+						{:else}
+							<input type='number'
+								bind:value='{$character.health.torso.current}'
+								min='-{$character.health.torso.score}'
+								max='{$character.health.torso.score}'
+							/>
+						{/if}
+						/{$character.health.torso.score}
 					</div>
 				</div>
 			</div>
@@ -79,12 +98,16 @@ export let character
 				{$character.health.rightArm.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number'
-					bind:value='{$character.health.rightArm.current}'
-					min='-{$character.health.rightArm.score}'
-					max='{$character.health.rightArm.score}'
-				/>/
-				{$character.health.rightArm.score}
+				{#if readonly}
+					{$character.health.rightArm.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.rightArm.current}'
+						min='-{$character.health.rightArm.score}'
+						max='{$character.health.rightArm.score}'
+					/>
+				{/if}
+				/{$character.health.rightArm.score}
 			</div>
 		</div>
 		<div class='right-leg-label'>
@@ -92,12 +115,16 @@ export let character
 				{$character.health.rightLeg.name} Health
 			</div>
 			<div class='location-numbers'>
-				<input type='number'
-					bind:value='{$character.health.rightLeg.current}'
-					min='-{$character.health.rightLeg.score}'
-					max='{$character.health.rightLeg.score}'
-				/>/
-				{$character.health.rightLeg.score}
+				{#if readonly}
+					{$character.health.rightLeg.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.rightLeg.current}'
+						min='-{$character.health.rightLeg.score}'
+						max='{$character.health.rightLeg.score}'
+					/>
+				{/if}
+				/{$character.health.rightLeg.score}
 			</div>
 		</div>
 	</div>

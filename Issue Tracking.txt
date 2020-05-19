@@ -59,6 +59,7 @@ Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
+	Change Creator routing to SPA style. Make sure character data persists through reloads.
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 	Health location numbers need to be closer to the dude's body.
 

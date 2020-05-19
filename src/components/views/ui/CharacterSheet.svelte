@@ -7,6 +7,8 @@ import Health from '../sheet/Health.svelte'
 import Abilities from '../sheet/Abilities.svelte'
 import Gear from '../sheet/Gear.svelte'
 import Notes from '../sheet/Notes.svelte'
+
+export let readonly = false
 </script>
 
 
@@ -14,9 +16,9 @@ import Notes from '../sheet/Notes.svelte'
 	<Description />
 	<Traits />
 	<Skills />
-	<Properties />
-	<Health />
+	<Properties {readonly} />
+	<Health {readonly} />
 	<Abilities />
-	<Gear />
+	<Gear {readonly} />
 	<Notes />
 </div>

@@ -1,6 +1,8 @@
 <script>
 import BodyLocations from '../ui/BodyLocations.svelte'
 import { character } from '../../../stores/characterStore'
+
+export let readonly = false
 </script>
 
 
@@ -8,5 +10,5 @@ import { character } from '../../../stores/characterStore'
 	<summary class='sheet-card-title'>
 		Health
 	</summary>
-	<BodyLocations {character} />
+	<BodyLocations {character} {readonly} />
 </details>

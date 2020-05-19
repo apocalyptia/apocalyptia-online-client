@@ -1,5 +1,6 @@
 <script>
 export let rule
+export let readonly
 </script>
 
 
@@ -26,7 +27,14 @@ export let rule
 			<p><u>Caliber</u>: {rule.cal}</p>
 		{/if}
 		{#if rule.qty != null}
-			<p><u>Quantity</u>: <input type='number' class='ammo-qty' min='0' bind:value={rule.qty} /></p>
+			<p>
+				<u>Quantity</u>: 
+				{#if readonly}
+					{rule.qty}
+				{:else}
+					<input type='number' class='ammo-qty' min='0' bind:value={rule.qty} />
+				{/if}
+			</p>
 		{/if}
 		{#if rule.fuse != null}
 			<p><u>Fuse</u>: {rule.fuse}</p>

@@ -13,6 +13,8 @@ import { character } from '../../stores/characterStore'
 import { getModulesArrayBounds } from 'webpack/lib/Template'
 
 
+export let readonly = true
+
 let status = `stop`
 
 let next = `/creator/gear`
@@ -97,7 +99,7 @@ beforeUpdate(() => {
 				<h2>Ammo</h2>
 			</div>
 			<div class='item'>
-				<GearBlock rule={$character.gear.ammo.inventory[0]} />
+				<GearBlock rule={$character.gear.ammo.inventory[0]} {readonly} />
 			</div>
 		{:else}
 			<div class='cntr-btn'>

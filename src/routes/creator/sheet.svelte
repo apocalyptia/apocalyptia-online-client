@@ -30,7 +30,7 @@ const deleteCharacter = () => {
 <svelte:head>
 	<title>Apocalyptia Online Character Creator - Character Sheet</title>
 </svelte:head>
-<CharacterSheet {character} />
+<CharacterSheet {character} readonly={true} />
 <div class='sheet-buttons'>
 	{#if $character.completed}
 		<h2>{$character.desc.identity.value} saved successfully!</h2>
