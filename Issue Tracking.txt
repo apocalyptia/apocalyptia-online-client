@@ -20,6 +20,9 @@ Need to add Radiation rules.
 
 - Bonus XP each session? Some is given by Narrator. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage dealt, move successes, etc)?
 
+Abilities:
+	Some kind of CQB Ability allowing you to split Rapid attacks between two targets.
+
 Combat:
 	Actions:
 		Grappling: What about Submissions? Both Grabbed?
