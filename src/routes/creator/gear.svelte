@@ -76,7 +76,9 @@ beforeUpdate(() => {
 			<h2>Melee Weapon</h2>
 		</div>
 		{#if $character.gear.melee.inventory.length > 0}
-			<GearBlock rule={$character.gear.melee.inventory[0]} />
+			<div class='item'>
+				<GearBlock rule={$character.gear.melee.inventory[0]} />
+			</div>
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomMelee}>Random</button>
@@ -88,11 +90,15 @@ beforeUpdate(() => {
 			<h2>Ranged Weapon</h2>
 		</div>
 		{#if $character.gear.ranged.inventory.length}
-			<GearBlock rule={$character.gear.ranged.inventory[0]} />
+			<div class='item'>
+				<GearBlock rule={$character.gear.ranged.inventory[0]} />
+			</div>
 			<div class='item-category ammo-heading'>
 				<h2>Ammo</h2>
 			</div>
-			<GearBlock rule={$character.gear.ammo.inventory[0]} />
+			<div class='item'>
+				<GearBlock rule={$character.gear.ammo.inventory[0]} />
+			</div>
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomRanged}>Random</button>
@@ -104,7 +110,9 @@ beforeUpdate(() => {
 			<h2>Armor</h2>
 		</div>
 		{#if $character.gear.armor.inventory.length}
-			<GearBlock rule={$character.gear.armor.inventory[0]}/>
+			<div class='item'>
+				<GearBlock rule={$character.gear.armor.inventory[0]} />
+			</div>
 		{:else}
 			<div class='cntr-btn'>
 				<button on:click={randomArmor}>Random</button>
@@ -117,7 +125,9 @@ beforeUpdate(() => {
 		</div>
 		{#if $character.gear.equipment.inventory.length}
 			{#each $character.gear.equipment.inventory as equipment}
-				<GearBlock rule={equipment} />
+				<div class='item'>
+					<GearBlock rule={equipment} />
+				</div>
 			{/each}
 		{:else}
 			<div class='cntr-btn'>
@@ -135,5 +145,9 @@ beforeUpdate(() => {
 }
 .ammo-heading {
 	margin-top: var(--s100);
+}
+.item {
+	border: 1px dotted lime;
+	padding: var(--s100);
 }
 </style>
