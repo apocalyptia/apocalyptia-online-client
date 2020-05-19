@@ -138,12 +138,14 @@ input[type='number'] {
 
 .body-locations-section {
 	display: flex;
+	justify-content: center;
 	max-width: 100%;
 }
 
 div[class*=column] {
 	display: block;
 	height: 100%;
+	width: auto;
 }
 .center-column {
 	margin-top: 10px;
@@ -154,9 +156,9 @@ div[class*=column] {
 div[class*=-label] {
 	display: inline-block;
 	height: 10px;
+	position: relative;
 	text-align: center;
 	width: 100%;
-	position: relative;
 }
 .head-label {
 	left: 50%;
@@ -214,8 +216,8 @@ div[class*=level] {
 	color: rgba(15, 30, 15, 1);
 	height: 150px;
 	margin: 0 5px;
-	width: 70px;
 	text-align: center;
+	width: 70px;
 }
 .leg {
 	border-bottom-right-radius: 15px;
