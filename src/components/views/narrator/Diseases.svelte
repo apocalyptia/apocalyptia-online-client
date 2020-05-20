@@ -56,7 +56,7 @@
 		<p>Duration: d6x4 days</p>
 		<p>Symptoms: fever, aches, hydrophobia, low blood pressure, sweating, vomiting, drooling foam, convulsions, photophobia, pupil dilation, agitation, dehydration, fatigue, delirium, paralysis, stupor, coma</p>
 		<p>Effect: Take 1 Head DMG every day while infection lasts. Natural Recovery is halted during infection.</p>
-		<p>Treatment: Amputation of exposed Location within d6 minutes prevents infection of the entire body. No further Treatment. Contagion: Luck 3# 1/day.</p>
+		<p>Treatment: Amputation of exposed Body Part within d6 minutes prevents infection of the entire body. No further Treatment. Contagion: Luck 3# 1/day.</p>
 	</div>
 	<button id='SmallpoxDiseasesBtn' class='Btn'>SMALLPOX</button>
 	<div id='SmallpoxDiseasesSec' class='Sec3'>

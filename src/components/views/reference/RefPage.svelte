@@ -2,6 +2,8 @@
 import { SkillFlowExplanation } from './../../rules/skills/Skills.js';
 import { beforeUpdate } from 'svelte'
 import GearBlock from '../ui/GearBlock.svelte'
+import Table from '../../rules/Table.js';
+import { values } from 'faunadb';
 
 
 export let chapter
@@ -70,6 +72,23 @@ beforeUpdate(() => {
 							</details>
 						{/each}
 					{/if}
+					{#if rule.table}
+						<table>
+							<caption>{rule.table.name}</caption>
+							<tr>
+								{#each rule.table.headers as header}
+									<th>{header}</th>
+								{/each}
+							</tr>
+							{#each rule.table.contents as content}
+								<tr>
+								{#each content as content_item}
+									<td>{content_item}</td>
+								{/each}
+								</tr>
+							{/each}
+						</table>
+					{/if}
 					{#if rule.specs}
 						<ul>
 							{#each Object.values(rule.specs) as spec}
@@ -128,5 +147,10 @@ beforeUpdate(() => {
 
 .bold {
 	font-weight: bold;
+}
+
+table {
+	border: 1px solid lime;
+	border-collapse: collapse;
 }
 </style>

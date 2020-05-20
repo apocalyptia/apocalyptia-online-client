@@ -4,7 +4,7 @@ import Ability from './Ability'
 const Tough = new Ability({
 	name: `Tough`,
 	desc: [
-		`+1 Health for each Location.`,
+		`+1 Health for each Body Part.`,
 	],
 	max: 3,
 	xp: 24

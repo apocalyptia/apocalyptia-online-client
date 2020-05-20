@@ -58,7 +58,7 @@ export let readonly
 			<p><u>Damage Resistance</u>: {rule.dr}</p>
 		{/if}
 		{#if rule.loc != null}
-			<p><u>Location</u>: {rule.loc}</p>
+			<p><u>Body Part</u>: {rule.loc}</p>
 		{/if}
 		{#if rule != null && rule.hasOwnProperty('attr') && rule.attr.length > 0}
 			<p><u>Attributes</u>:</p>

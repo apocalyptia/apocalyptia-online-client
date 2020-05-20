@@ -1,7 +1,7 @@
 <script>
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import BodyLocations from '../../components/views/ui/BodyLocations.svelte'
+import BodyParts from '../../components/views/ui/BodyParts.svelte'
 import Properties from '../../components/rules/properties/Properties'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 
@@ -74,7 +74,7 @@ beforeUpdate(() => $character = Properties.setScores($character))
 	</div>
 </div>
 <div class='section-card'>
-	<BodyLocations {character} readonly={true}/>
+	<BodyParts {character} readonly={true}/>
 </div>
 <NavBar links={{back: '/creator/skills', next: '/creator/abilities'}}/>
 

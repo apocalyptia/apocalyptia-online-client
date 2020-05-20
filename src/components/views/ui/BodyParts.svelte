@@ -6,13 +6,13 @@ export let readonly = false
 </script>
 
 
-<div class='body-locations-section'>
+<div class='body-parts-section'>
 	<div class='left-column'>
 		<div class='left-arm-label'>
-			<div class='location-name'>
+			<div class='body-part-name'>
 				{$character.health.leftArm.name} Health
 			</div>
-			<div class='location-numbers'>
+			<div class='body-part-numbers'>
 				{#if readonly}
 					{$character.health.leftArm.score}
 				{:else}
@@ -26,10 +26,10 @@ export let readonly = false
 			</div>
 		</div>
 		<div class='left-leg-label'>
-			<div class='location-name'>
+			<div class='body-part-name'>
 				{$character.health.leftLeg.name} Health
 			</div>
-			<div class='location-numbers'>
+			<div class='body-part-numbers'>
 				{#if readonly}
 					{$character.health.leftLeg.score}
 				{:else}
@@ -45,10 +45,10 @@ export let readonly = false
 	</div>
 	<div class='center-column'>
 		<div class='head-label'>
-			<div class='location-name'>
+			<div class='body-part-name'>
 				{$character.health.head.name} Health
 			</div>
-			<div class='location-numbers'>
+			<div class='body-part-numbers'>
 				{#if readonly}
 					{$character.health.head.score}
 				{:else}
@@ -62,16 +62,16 @@ export let readonly = false
 			</div>
 		</div>
 		<div class='head-level'>
-			<div class='head location' />
+			<div class='head body-part' />
 		</div>
 		<div class='torso-level'>
-			<div class='left-arm arm location' />
-			<div class='torso location'>
+			<div class='left-arm arm body-part' />
+			<div class='torso body-part'>
 				<div class='torso-label'>
-					<div class='location-name'>
+					<div class='body-part-name'>
 						{$character.health.torso.name} Health
 					</div>
-					<div class='location-numbers'>
+					<div class='body-part-numbers'>
 						{#if readonly}
 							{$character.health.torso.score}
 						{:else}
@@ -85,19 +85,19 @@ export let readonly = false
 					</div>
 				</div>
 			</div>
-			<div class='right-arm arm location' />
+			<div class='right-arm arm body-part' />
 		</div>
 		<div class='legs-level'>
-			<div class='left-leg leg location' />
-			<div class='right-leg leg location' />
+			<div class='left-leg leg body-part' />
+			<div class='right-leg leg body-part' />
 		</div>
 	</div>
 	<div class='right-column'>
 		<div class='right-arm-label'>
-			<div class='location-name'>
+			<div class='body-part-name'>
 				{$character.health.rightArm.name} Health
 			</div>
-			<div class='location-numbers'>
+			<div class='body-part-numbers'>
 				{#if readonly}
 					{$character.health.rightArm.score}
 				{:else}
@@ -111,10 +111,10 @@ export let readonly = false
 			</div>
 		</div>
 		<div class='right-leg-label'>
-			<div class='location-name'>
+			<div class='body-part-name'>
 				{$character.health.rightLeg.name} Health
 			</div>
-			<div class='location-numbers'>
+			<div class='body-part-numbers'>
 				{#if readonly}
 					{$character.health.rightLeg.score}
 				{:else}
@@ -136,7 +136,7 @@ input[type='number'] {
 	width: var(--s200);
 }
 
-.body-locations-section {
+.body-parts-section {
 	display: flex;
 	justify-content: center;
 	max-width: 100%;
@@ -183,10 +183,10 @@ div[class*=-label] {
 	top: 250px;
 }
 
-.location {
+.body-part {
 	background-color: lime;
 }
-.location-numbers {
+.body-part-numbers {
 	margin: 5px;
 }
 div[class*=level] {

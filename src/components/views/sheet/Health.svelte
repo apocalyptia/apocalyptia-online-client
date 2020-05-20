@@ -1,5 +1,5 @@
 <script>
-import BodyLocations from '../ui/BodyLocations.svelte'
+import BodyParts from '../ui/BodyParts.svelte'
 import { character } from '../../../stores/characterStore'
 
 export let readonly = false
@@ -10,5 +10,5 @@ export let readonly = false
 	<summary class='sheet-card-title'>
 		Health
 	</summary>
-	<BodyLocations {character} {readonly} />
+	<BodyParts {character} {readonly} />
 </details>

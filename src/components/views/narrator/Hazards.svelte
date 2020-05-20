@@ -38,11 +38,11 @@
 	</div>
 	<button id='FallingHazardBtn' class='Btn'>FALLING</button>
 	<div id='FallingHazardSec' class='Sec3'>
-		<p>1 BDMG/yd. Fast, roll Acrobatics(Tumble) # = height in yds to take falling BDMG/2 and choose which Location(s) take the BDMG. Excess BDMG from a destroyed Location must be applied to another Location. On a Botch, you go Prone and get Stunned for d6 rounds. Falling objects deal BDMG equal to their Size.</p>
+		<p>1 BDMG/yd. Fast, roll Acrobatics(Tumble) # = height in yds to take falling BDMG/2 and choose which Body Part(s) take the BDMG. Excess BDMG from a destroyed Body Part must be applied to another Body Part. On a Botch, you go Prone and get Stunned for d6 rounds. Falling objects deal BDMG equal to their Size.</p>
 	</div>
 	<button id='FireHazardBtn' class='Btn'>FIRE</button>
 	<div id='FireHazardSec' class='Sec3'>
-		<p>When a Location drops to 0HP from FDMG, 1FDMG never heals. FDMG heals at 1/week. A burning Character takes d6 rounds to put out. Fire-Resistant (FR) ARMOR reduces and amount of FDMG equal to it’s AR and does not lose AR if the FDMG exceeds it.</p>
+		<p>When a Body Part drops to 0HP from FDMG, 1FDMG never heals. FDMG heals at 1/week. A burning Character takes d6 rounds to put out. Fire-Resistant (FR) ARMOR reduces and amount of FDMG equal to it’s AR and does not lose AR if the FDMG exceeds it.</p>
 		<button id='FireSourcesHazardBtn' class='Btn'>FIRE SOURCES</button>
 		<div id='FireSourcesHazardSec' class='Sec4'>
 			<button id='TorchHazardBtn' class='Btn'>TORCH</button>

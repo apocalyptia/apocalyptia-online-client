@@ -6,7 +6,7 @@ const Throw = new Maneuver({
 	name: `Throw`,
 	desc: [
 		`Throw a Grabbed or Restrained enemy up to [Constitution] yds.`,
-		`The target takes 1 point of Blunt Damage to a random Location and land Prone.`,
+		`The target takes 1 point of Blunt Damage to a random Body Part and land Prone.`,
 	]
 })
 

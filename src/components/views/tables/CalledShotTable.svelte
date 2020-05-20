@@ -1,7 +1,7 @@
 <table class='called-shot-table'>
 	<tr>
 		<th>Roll</th>
-		<th>Location</th>
+		<th>Body Part</th>
 		<th>Attack</th>
 		<th>Health</th>
 		<th>Notes</th>
