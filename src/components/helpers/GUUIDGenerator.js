@@ -8,4 +8,4 @@ const randomChar = (num) => {
 	return result
 }
 
-const test = () => `${randomChar(8)}-${randomChar(4)}-${randomChar(4)}-${randomChar(4)}-${randomChar(12)}`
+export default () => `${randomChar(8)}-${randomChar(4)}-${randomChar(4)}-${randomChar(4)}-${randomChar(12)}`
