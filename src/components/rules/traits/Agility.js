@@ -3,6 +3,7 @@ import AgilitySkills from '../skills/AgilitySkills'
 
 
 const Agility = new Trait({
+	id: `c84ca95a-9f01-476f-897c-e6ad07231551`,
 	name: `Agility`,
 	desc: [
 		`Agility is a Character’s talent for physical coordination.`,

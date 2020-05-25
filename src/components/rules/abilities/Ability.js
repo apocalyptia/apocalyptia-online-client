@@ -2,6 +2,7 @@ import Rule from '../Rule'
 
 export default class Ability extends Rule {
 	constructor({
+		id,
 		name,
 		desc,
 		formula,
@@ -12,20 +13,19 @@ export default class Ability extends Rule {
 		opts=[],
 		selection=0,
 		notes=``,
-		id=null
 	}) {
 		super({
+			id,
 			name,
 			desc,
 			visible,
-			formula
+			formula,
 		})
 		this.max = max
 		this.xp = xp
 		this.taken = taken
 		this.opts = opts
 		this.selection = selection,
-		this.notes = notes,
-		this.id = id
+		this.notes = notes
 	}
 }

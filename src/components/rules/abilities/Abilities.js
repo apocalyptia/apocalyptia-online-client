@@ -1,4 +1,4 @@
-import IdTagger from '../../helpers/IdTagger'
+import Ability from './Ability'
 import PropSort from '../../helpers/PropSort'
 import XP3Abilities from './XP3Abilities'
 import XP6Abilities from './XP6Abilities'
@@ -8,6 +8,7 @@ import XP15Abilities from './XP15Abilities'
 import XP18Abilities from './XP18Abilities'
 import XP24Abilities from './XP24Abilities'
 import XP30Abilities from './XP30Abilities'
+import AppendToGUUID from '../../helpers/AppendToGUUID'
 
 
 const abilityArray = [
@@ -20,6 +21,41 @@ const abilityArray = [
 	...XP24Abilities,
 	...XP30Abilities
 ]
+
+const completeAbilityListBuilder = (list) => {
+	const newList = []
+	for (let i = 0; i < list.length; ++i) {
+		if (list[i].opts[0]) {
+			for (let o = 0; o < list[i].opts.length; ++o) {
+				let newGUUID = AppendToGUUID(list[i].id, list[i].opts[o].name)
+				const newAbility = new Ability({
+					id: newGUUID,
+					name: list[i].name,
+					desc: list[i].desc,
+					max: list[i].max,
+					xp: list[i].xp,
+					taken: list[i].taken,
+					opts: [
+						list[i].opts[o],
+					],
+					selection: o
+				})
+				newList.push(newAbility)
+			}
+		} else {
+			const newAbility = new Ability({
+				id: list[i].id,
+				name: list[i].name,
+				desc: list[i].desc,
+				max: list[i].max,
+				xp: list[i].xp,
+				taken: list[i].taken
+			})
+			newList.push(newAbility)
+		}
+	}
+	return newList
+}
 
 export const Abilities = {
 	name: `Abilities`,
@@ -69,7 +105,7 @@ export const Abilities = {
 		},
 	],
 	list: abilityArray.sort((a, b) => PropSort(a, b, 'name')),
-	masterList: IdTagger(abilityArray).sort((a, b) => PropSort(a, b, 'name')),
+	masterList: completeAbilityListBuilder(abilityArray).sort((a, b) => PropSort(a, b, 'name')),
 	remainingXP: (c) => {
 		if (c.abilities.length) {
 			c.props.experience.spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
@@ -79,6 +115,6 @@ export const Abilities = {
 	}
 }
 
-export const AbilitiesList = IdTagger(Abilities)
+export const AbilitiesList = completeAbilityListBuilder(Abilities)
 
 export default Abilities

@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Bleeding = new Rule({
-	name: `Bleeding`, 
+	id: `1a2a047c-128c-4136-ad65-0afd81c9362d`,
+	name: `Bleeding`,
 	desc: [
 		`You begin Bleeding whenever you take Damage that isn't Blunt.`,
 		`Bleeding Damage is dealt to the Torso, regardless of which Body Part took the initial Damage.`,

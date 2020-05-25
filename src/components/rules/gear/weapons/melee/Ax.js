@@ -5,6 +5,7 @@ import Slow from '../../attributes/weapon/Slow'
 
 
 const Ax = new MeleeWeapon({
+	id: `a9aead5f-27f8-4727-84b0-6fdd536d52f8`,
 	name: `Ax`,
 	sz: 4,
 	dmg: 4,

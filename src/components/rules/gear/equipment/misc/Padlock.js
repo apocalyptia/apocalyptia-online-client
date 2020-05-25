@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const Padlock = new Equipment({
+	id: `3036a514-0773-4bbe-99ab-37e73ae37adb`,
 	name: `Padlock`,
 	desc: [
 		`2 Damage Resistance.`,

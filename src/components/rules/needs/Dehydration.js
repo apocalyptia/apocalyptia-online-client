@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Dehydration = new Rule({
-	name: `Dehydration`, 
+	id: `34974574-6455-4c07-8456-8f7bdc78ec9b`,
+	name: `Dehydration`,
 	desc: [
 		`1 Water per day is required.`,
 		`1 Pain per day without Water.`,

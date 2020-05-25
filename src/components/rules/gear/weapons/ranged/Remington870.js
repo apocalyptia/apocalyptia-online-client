@@ -4,6 +4,7 @@ import Scatter from '../../attributes/weapon/Scatter'
 
 
 const Remington870 = new RangedWeapon({
+	id: `6398a22b-e4a9-4c9f-a984-3bf6aaa09146`,
 	name: `Remington 870`,
 	sz: 4,
 	dmg: 4,

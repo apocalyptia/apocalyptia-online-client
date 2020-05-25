@@ -2,6 +2,7 @@ import Storage from './Storage'
 
 
 const Cooler = new Storage({
+	id: `3305d4c0-1049-48fd-a478-76f487280f71`,
 	name: `Cooler`,
 	desc: [
 		`Hunted or Foraged Food lasts 6 days.`,

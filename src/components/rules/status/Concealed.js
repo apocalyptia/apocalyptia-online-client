@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Concealed = new Rule({
-	name: `Concealed`, 
+	id: `56037ac2-9ad0-4097-9cef-621ea8d171e7`,
+	name: `Concealed`,
 	desc: [
 		`If an opponent cannot see you, they are considered to be Blind to you.`,
 		`Any Attack they make targeting you is at a -6 penalty.`,

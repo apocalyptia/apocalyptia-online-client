@@ -2,6 +2,7 @@ import Property from './Property'
 
 
 const Experience = new Property({
+	id: `3bee3f4e-dce9-4943-a2d0-1d3a4edc5920`,
 	name: `Experience`,
 	desc: [
 		`Experience (XP) = Brains x 3`,

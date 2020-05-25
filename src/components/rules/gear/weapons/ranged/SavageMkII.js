@@ -3,6 +3,7 @@ import TwoHanded from '../../attributes/weapon/TwoHanded'
 
 
 const SavageMkII = new RangedWeapon({
+	id: `8465b895-4bd0-4c54-b1bb-f411a962ddbb`,
 	name: `Savage Mk.II`,
 	sz: 3,
 	dmg: 1,

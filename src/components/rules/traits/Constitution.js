@@ -3,6 +3,7 @@ import ConstitutionSkills from '../skills/ConstitutionSkills'
 
 
 const Constitution = new Trait({
+	id: `da48b9f5-de7d-44b3-bb24-392e69bebe90`,
 	name: `Constitution`,
 	desc: [
 		`Constitution is a Character’s talent for physical power and durability.`,

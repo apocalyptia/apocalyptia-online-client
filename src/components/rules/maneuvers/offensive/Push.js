@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Push = new Maneuver({
+	id: `d12992e8-2616-45ad-b909-e8315de8d0a9`,
 	cat: `Offensive`,
 	name: `Push`,
 	desc: [

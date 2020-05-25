@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Blind = new Rule({
-	name: `Blind`, 
+	id: `5fb3123f-b7f0-4e09-acfb-10ed93b675a8`,
+	name: `Blind`,
 	desc: [
 		`You are considered to be Defenseless.`,
 		`You automatically Fail any Perception roll that involves seeing.`,

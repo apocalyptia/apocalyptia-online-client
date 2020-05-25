@@ -5,6 +5,7 @@ import Shield from '../../attributes/weapon/Shield'
 
 
 const RiotShield = new MeleeWeapon({
+	id: `0e48721b-f535-483a-8bba-1d9e167c38fa`,
 	name: `Riot Shield`,
 	sz: 4,
 	dmg: 0,

@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const ChokerLeash = new Equipment({
+	id: `e384ba68-ba77-41b4-87bc-3cb557e756d7`,
 	name: `Choker Leash`,
 	desc: [
 		`+3 Tame.`,

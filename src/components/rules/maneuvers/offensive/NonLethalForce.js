@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const NonLethalForce = new Maneuver({
+	id: `76fb1603-4c1d-4b07-a128-c73927f2f036`,
 	cat: `Offensive`,
 	name: `Non-Lethal Force`,
 	desc: [

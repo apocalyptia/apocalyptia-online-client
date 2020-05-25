@@ -2,6 +2,7 @@ import Rule from '../../rules/Rule'
 
 
 const FriendlyFire = new Rule({
+	id: `63808ef6-3fc3-411c-54c9-edcc41ba8a7b`,
 	name: `Friendly Fire`, 
 	desc: [
 		`-3 Ranged against targets within 1yd of your ally.`,

@@ -2,6 +2,7 @@ import Medical from './Medical'
 
 
 const TransfusionKit = new Medical({
+	id: `4cccec0d-4732-4421-dec9-12fd84a54611`,
 	name: `Transfusion Kit`,
 	desc: [
 		`Medicine 9#.`,

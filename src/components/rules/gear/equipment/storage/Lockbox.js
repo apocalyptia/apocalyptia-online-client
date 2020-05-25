@@ -2,6 +2,7 @@ import Storage from './Storage'
 
 
 const Lockbox = new Storage({
+	id: `84a145e0-51b4-423b-bb39-2ef9672a1768`,
 	name: `Lockbox`,
 	desc: [
 		`2 Damage Resistance.`,

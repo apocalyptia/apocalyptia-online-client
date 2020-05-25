@@ -46,6 +46,7 @@ Social actions multiple times per round?
 UX/UI:
 	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
 	Likewise set a blur effect that reflects the character psyche
+	Figure out what to do about Tables.
 
 Gear.js:
 	Storage: Unit conversions still need work.

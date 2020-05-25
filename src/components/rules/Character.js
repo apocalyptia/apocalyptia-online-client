@@ -1,5 +1,9 @@
+import GUUIDGenerator from '../helpers/GUUIDGenerator'
+
+
 export default class Character {
 	constructor() {
+		this.id = GUUIDGenerator(),
 		this.user = ``,
 		this.completed = false,
 		this.desc = {

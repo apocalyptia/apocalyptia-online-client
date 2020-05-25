@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Tackle = new Maneuver({
+	id: `cbc7ab2c-3122-4ab9-b990-c7296e7c66ef`,
 	cat: `Offensive`,
 	name: `Tackle`,
 	desc: [

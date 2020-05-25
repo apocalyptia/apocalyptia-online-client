@@ -4,6 +4,7 @@ import Rapid from '../../attributes/weapon/Rapid'
 
 
 const SpringfieldM1A = new RangedWeapon({
+	id: `ea8867ac-4563-425f-b999-1195cd6f350e`,
 	name: `Springfield M1A`,
 	sz: 4,
 	dmg: 3,

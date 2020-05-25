@@ -2,6 +2,7 @@ import Weapon from '../Weapon'
 
 export default class Bomb extends Weapon {
 	constructor({
+		id,
 		name,
 		desc,
 		sz,
@@ -13,6 +14,7 @@ export default class Bomb extends Weapon {
 		mix
 	}) {
 		super({
+			id,
 			name,
 			desc,
 			sz,

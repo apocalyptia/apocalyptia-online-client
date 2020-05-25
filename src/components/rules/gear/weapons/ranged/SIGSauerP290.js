@@ -3,6 +3,7 @@ import TwoHanded from '../../attributes/weapon/TwoHanded'
 
 
 const SIGSauerP290 = new RangedWeapon({
+	id: `16cffbd6-54af-49d2-a531-2d950435250b`,
 	name: `SIG Sauer P290`,
 	sz: 1,
 	dmg: 1,

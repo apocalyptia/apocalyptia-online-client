@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Starvation = new Rule({
-	name: `Starvation`, 
+	id: `93f70ef3-b00f-4e52-9e11-5225262b27e4`,
+	name: `Starvation`,
 	desc: [
 		`1 Food per day is required.`,
 		`1 Pain per week without Food.`,

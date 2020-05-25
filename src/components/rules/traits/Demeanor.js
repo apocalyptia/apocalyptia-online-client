@@ -3,6 +3,7 @@ import DemeanorSkills from '../skills/ConstitutionSkills'
 
 
 const Demeanor = new Trait({
+	id: `2f73a727-6149-482e-9c36-70cccbfd03d4`,
 	name: `Demeanor`,
 	desc: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,

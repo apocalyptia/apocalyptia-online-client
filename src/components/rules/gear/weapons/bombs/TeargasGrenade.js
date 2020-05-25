@@ -5,6 +5,7 @@ import Asphyxiation from '../../../needs/Asphyxiation'
 
 
 const TeargasGrenade = new Bomb({
+	id: `892817b8-625f-4ef8-a6be-08716a6267c5`,
 	name: `Teargas Grenade`,
 	desc: [
 		`Non-lethal chemical irritant grenade.`,

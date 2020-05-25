@@ -14,12 +14,12 @@ import { character } from '../../../stores/characterStore'
 
 
 <style>
-textarea {
-	background-color: rgba(15, 30, 15, 1);
-	border: 1px solid lime;
-	color: lime;
-	height: var(--s1000);
-	resize: none;
-	width: 100%;
-}
+	textarea {
+		background-color: rgba(15, 30, 15, 1);
+		border: 1px solid lime;
+		color: lime;
+		height: var(--s1000);
+		resize: none;
+		width: 100%;
+	}
 </style>

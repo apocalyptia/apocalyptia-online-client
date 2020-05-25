@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const EarPlugs = new Equipment({
+	id: `2ae22454-3213-4596-95ba-ed2c45148900`,
 	name: `Ear Plugs`,
 	desc: [
 		`No Deafness from noise.`,

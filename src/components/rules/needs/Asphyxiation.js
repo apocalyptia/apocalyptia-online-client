@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Asphyxiation = new Rule({
-	name: `Asphyxiation`, 
+	id: `b3c3fa84-e24d-4112-82ff-7c346a207e47`,
+	name: `Asphyxiation`,
 	desc: [
 		`Constant air supply is required.`,
 		`1 Pain per minute without air.`,

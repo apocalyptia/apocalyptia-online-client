@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Hypothermia = new Rule({
-	name: `Hypothermia`, 
+	id: `1625c80c-5630-4f20-b909-ed91dbce371b`,
+	name: `Hypothermia`,
 	desc: [
 		`Warmth is required.`,
 		`1 Pain per hour of Hypothermia.`,

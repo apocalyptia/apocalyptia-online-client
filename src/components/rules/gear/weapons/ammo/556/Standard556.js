@@ -2,6 +2,7 @@ import Ammo from '../Ammo'
 
 
 const Standard556 = new Ammo({
+	id: `2e3ef39f-b6f8-4d79-b2f6-a73186f0fa6c`,
 	name: `5.56mm Standard`,
 	desc: [
 		`Basic ammunition.`,

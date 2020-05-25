@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Throw = new Maneuver({
+	id: `cd4abf3b-f40f-401e-8824-9a10cce729c9`,
 	cat: `Offensive`,
 	name: `Throw`,
 	desc: [

@@ -3,6 +3,7 @@ import Table from '../../Table'
 
 
 const CalledShot = new Maneuver({
+	id: `7b5ac4ec-c58a-48bd-aaed-c0fbf6716874`,
 	cat: `Offensive`,
 	name: `Called Shot`, 
 	desc: [
@@ -28,51 +29,52 @@ class CalledShotTarget {
 CalledShot.table = new Table({
 	name: `Called Shot Table`,
 	headers: [
-		`Roll`,
-		`Body Part`,
+		`d6`,
+		`Part`,
 		`Penalty`,
-		`Health`,
 		`Effect`,
 	],
-	content: [
+	contents: [
 		new CalledShotTarget({
 			roll: 6,
 			name: `Head`,
 			penalty: -3,
 			health: `Constitution`,
-			effect: `Stun for 1 round`
+			effect: `Stun 1 round`
 		}),
 		new CalledShotTarget({
 			roll: 5,
-			name: `Right Arm`,
+			name: `R Arm`,
 			penalty: -1,
-			effect: `Target drops held item`
+			effect: `Drop item`
 		}),
 		new CalledShotTarget({
 			roll: 4,
-			name: `Left Arm`,
+			name: `L Arm`,
 			penalty: -1,
-			effect: `Target drops held item`
+			effect: `Drop item`
 		}),
 		new CalledShotTarget({
 			roll: 3,
 			name: `Torso`,
 			penalty: 0,
-			effect: `No additional effect`
+			effect: `None`
 		}),
 		new CalledShotTarget({
 			roll: 2,
-			name: `Left Leg`,
+			name: `L Leg`,
 			penalty: -1,
-			effect: `Target falls Prone`
+			effect: `Fall Prone`
 		}),
 		new CalledShotTarget({
 			roll: 1,
-			name: `Right Leg`,
+			name: `R Leg`,
 			penalty: -1,
-			effect: `Target falls Prone`
+			effect: `Fall Prone`
 		}),
-	]
+	],
+	widths: [5, 15, 20, 50]
 })
+
 
 export default CalledShot

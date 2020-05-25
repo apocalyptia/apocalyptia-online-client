@@ -2,6 +2,7 @@ import Stat from '../Stat'
 
 export default class Skill extends Stat {
 	constructor({
+		id,
 		name,
 		desc,
 		base,
@@ -12,6 +13,7 @@ export default class Skill extends Stat {
 		parent=``
 	}) {
 		super({
+			id,
 			name,
 			desc,
 			base,

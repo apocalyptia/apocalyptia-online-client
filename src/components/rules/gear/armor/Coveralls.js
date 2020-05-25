@@ -4,6 +4,7 @@ import ColdResistance from '../attributes/armor/ColdResistance'
 
 
 const Coveralls = new Armor({
+	id: `71ede3ad-c8a7-4556-86f1-c4037244757e`,
 	name: `Coveralls`,
 	sz: 3,
 	dr: 1,

@@ -2,6 +2,7 @@ import Weapon from '../Weapon'
 
 export default class RangedWeapon extends Weapon {
 	constructor({
+		id,
 		name,
 		desc,
 		sz,
@@ -12,6 +13,7 @@ export default class RangedWeapon extends Weapon {
 		cal
 	}) {
 		super({
+			id,
 			name,
 			desc,
 			sz,

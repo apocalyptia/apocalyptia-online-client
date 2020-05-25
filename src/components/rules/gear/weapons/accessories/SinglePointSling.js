@@ -2,6 +2,7 @@ import Accessory from './Accessory'
 
 
 const SinglePointSling = new Accessory({
+	id: `2baca903-28be-44a0-bfcc-5a78ab4ebf40`,
 	name: `Single-Point Sling`,
 	desc: [
 		`Draw or stow a 2h Gun without using an Action.`,

@@ -2,6 +2,7 @@ import Rule from '../../../rules/Rule'
 
 
 const Conditions = new Rule({
+	id: `cc809ab8-2747-4095-073b-8214df756d3d`,
 	name: `Conditions`, 
 	desc: [
 		`-1 Damage Resistance and -1 Handling.`,

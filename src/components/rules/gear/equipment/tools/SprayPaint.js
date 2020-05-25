@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const SprayPaint = new Equipment({
+	id: `9dd8ffb9-9e74-4aec-b355-0dc1d13eab54`,
 	name: `Spray Paint`,
 	desc: [
 		`Ranged Attack, Called Shot: Head.`,

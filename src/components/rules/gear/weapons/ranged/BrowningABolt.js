@@ -3,6 +3,7 @@ import TwoHanded from '../../attributes/weapon/TwoHanded'
 
 
 const BrowningABolt = new RangedWeapon({
+	id: `dc61759b-4432-456b-91c5-981c3b34fc65`,
 	name: `Browning A-Bolt`,
 	sz: 4,
 	dmg: 3,

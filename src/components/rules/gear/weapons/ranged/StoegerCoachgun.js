@@ -5,6 +5,7 @@ import Scatter from '../../attributes/weapon/Scatter'
 
 
 const StoegerCoachgun = new RangedWeapon({
+	id: `045bf20f-49ff-4fb5-b300-6088553c066d`,
 	name: `Stoeger Coach Gun`,
 	sz: 3,
 	dmg: 4,

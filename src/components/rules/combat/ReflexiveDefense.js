@@ -2,6 +2,7 @@ import Rule from '../../rules/Rule'
 
 
 const ReflexiveDefense = new Rule({
+	id: `feae7482-800b-47d1-f17c-3a103d83b70b`,
 	name: `Reflexive Defense`,
 	desc: [
 		`Reflexive Defenses = the Skill Specialty they are based on.`,

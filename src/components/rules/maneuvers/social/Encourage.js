@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Encourage = new Maneuver({
+	id: `46b57ab5-e31d-4d60-902b-b9f56d95168d`,
 	cat: `Social`,
 	name: `Encourage`,
 	desc: [

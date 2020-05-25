@@ -4,6 +4,7 @@ import Rapid from '../../attributes/weapon/Rapid'
 
 
 const RugerMkIII = new RangedWeapon({
+	id: `739a925f-6d37-4e3f-a15d-af15248fbe1e`,
 	name: `Ruger Mk.III`,
 	sz: 1,
 	dmg: 1,

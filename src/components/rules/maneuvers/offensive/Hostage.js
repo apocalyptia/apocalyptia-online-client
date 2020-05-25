@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Hostage = new Maneuver({
+	id: `43e2df6c-320a-404a-9381-52b6a441df44`,
 	cat: `Offensive`,
 	name: `Hostage`,
 	desc: [

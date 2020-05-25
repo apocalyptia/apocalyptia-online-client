@@ -1,15 +1,17 @@
 import Gear from '../../Gear'
 
 export default class Medical extends Gear {
-	constructor(
+	constructor({
+		id,
 		name,
 		desc,
 		sz
-	) {
-		super(
+	}) {
+		super({
+			id,
 			name,
 			desc,
 			sz
-		)
+		})
 	}
 }

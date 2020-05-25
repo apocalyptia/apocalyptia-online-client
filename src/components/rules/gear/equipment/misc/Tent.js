@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const Tent = new Equipment({
+	id: `68073937-9618-405f-b4c5-5b80a08bde6f`,
 	name: `Tent`,
 	desc: [
 		`4 person.`,

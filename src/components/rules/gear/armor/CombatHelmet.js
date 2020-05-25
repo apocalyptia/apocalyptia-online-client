@@ -4,6 +4,7 @@ import FireResistance from '../attributes/armor/FireResistance'
 
 
 const CombatHelmet = new Armor({
+	id: `6b26c241-5fef-463f-bfc6-cadab2281711`,
 	name: `Combat Helmet`,
 	sz: 2,
 	dr: 3,

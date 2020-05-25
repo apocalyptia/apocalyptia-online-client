@@ -4,6 +4,7 @@ import Stun from '../../../status/Stun'
 
 
 const FlashbangGrenade = new Bomb({
+	id: `f158de9a-ef27-4c24-9d38-6a2f665c941e`,
 	name: `Flashbang Grenade`,
 	desc: [
 		`Non-lethal stun grenade.`,

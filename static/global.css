@@ -270,7 +270,7 @@ tr {
 	height: var(--s200);
 	min-width: 100%;
 }
-td {
+td, th {
 	border: var(--s1) solid lime;
 	flex: 1;
 	overflow-wrap: normal;

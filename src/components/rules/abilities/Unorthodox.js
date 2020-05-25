@@ -4,6 +4,7 @@ import Traits from '../traits/Traits'
 
 
 const Unorthodox = new Ability({
+	id: `9fb108fd-b6ba-4f9a-b225-da7ef4994e80`,
 	name: `Unorthodox`,
 	desc: [
 		`Pick a new parent Trait for a Skill.`,

@@ -4,6 +4,7 @@ import Rapid from '../../attributes/weapon/Rapid'
 
 
 const AR15 = new RangedWeapon({
+	id: `69cd0033-60ad-4d4c-aac2-d9584e5766a1`,
 	name: `AR-15`,
 	sz: 3,
 	dmg: 2,

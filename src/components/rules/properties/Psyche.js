@@ -2,6 +2,7 @@ import Property from './Property'
 
 
 const Psyche = new Property({
+	id: `59f47468-200a-45ab-b8ca-a3cfa78ab1f8`,
 	name: `Psyche`,
 	desc: [
 		`Psyche = Demeanor x 3`,

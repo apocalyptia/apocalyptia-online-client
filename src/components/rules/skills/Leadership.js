@@ -3,6 +3,7 @@ import Specialty from './Specialty'
 
 
 const Leadership = new Skill({
+	id: `7596f84f-d625-409d-a7b0-4e0775d96719`,
 	name: `Leadership`,
 	desc: [
 		`Directing the efforts of others`,
@@ -12,6 +13,7 @@ const Leadership = new Skill({
 	diff: `Demeanor`,
 	specs: {
 		encourage: new Specialty({
+			id: `95b70f3c-d67e-41ae-99ff-2d5864356a59`,
 			name: `Encourage`,
 			desc: [
 				`Roll vs [total target(s) Demeanor]`,
@@ -19,6 +21,7 @@ const Leadership = new Skill({
 			]
 		}),
 		intimidate: new Specialty({
+			id: `ff3e883c-2952-459e-8dbf-d3f666383ec9`,
 			name: `Intimidate`,
 			desc: [
 				`Roll vs [total target(s) Demeanor]`,

@@ -1,5 +1,6 @@
 import BilingualDictionary from './BilingualDictionary'
 import BodyInBalance from './BodyInBalance'
+import BookOfFiveRings from './BookOfFiveRings'
 import BookOfNinja from './ClassicNovel'
 import BriefHistoryOfTime from './BriefHistoryOfTime'
 import ClassicNovel from './ClassicNovel'
@@ -19,7 +20,6 @@ import MapTopographic from './MapTopographic'
 import PersonalDefense from './PersonalDefense'
 import SASSurvivalGuide from './SASSurvivalGuide'
 import StandupComedy from './StandupComedy'
-import TaoOfJeetKuneDo from './TaoOfJeetKuneDo'
 import YellowPages from './YellowPages'
 import ZenMind from './ZenMind'
 
@@ -27,6 +27,7 @@ import ZenMind from './ZenMind'
 const DocumentList = [
 	BilingualDictionary,
 	BodyInBalance,
+	BookOfFiveRings,
 	BookOfNinja,
 	BriefHistoryOfTime,
 	ClassicNovel,
@@ -46,7 +47,6 @@ const DocumentList = [
 	PersonalDefense,
 	SASSurvivalGuide,
 	StandupComedy,
-	TaoOfJeetKuneDo,
 	YellowPages,
 	ZenMind,
 ]

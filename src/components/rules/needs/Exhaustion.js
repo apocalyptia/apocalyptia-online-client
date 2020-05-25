@@ -2,7 +2,8 @@ import Rule from '../../rules/Rule'
 
 
 const Exhaustion = new Rule({
-	name: `Exhaustion`, 
+	id: `0494a41e-f8f8-45f5-a1ef-5660900e37db`,
+	name: `Exhaustion`,
 	desc: [
 		`8 hours of sleep per day is required.`,
 		`1 Pain per day without sufficient sleep.`,

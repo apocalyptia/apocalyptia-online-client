@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Shove = new Maneuver({
+	id: `0c791227-b8d2-42a6-b5c1-b2aedcab0aad`,
 	cat: `Offensive`,
 	name: `Shove`,
 	desc: [

@@ -3,6 +3,7 @@ import BrainsSkills from '../skills/BrainsSkills'
 
 
 const Brains = new Trait({
+	id: `ac0d45e3-221c-4cf3-ab70-a19908b86bd7`,
 	name: `Brains`,
 	desc: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,

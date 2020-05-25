@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Interrogate = new Maneuver({
+	id: `28849e94-5c31-4b49-a84b-63a1b8cec363`,
 	cat: `Social`,
 	name: `Interrogate`,
 	desc: [

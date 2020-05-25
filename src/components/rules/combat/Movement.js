@@ -3,6 +3,7 @@ import Chase from './Chase'
 
 
 const Movement = new Rule({
+	id: `66094467-f795-4c02-49e9-0bf193dacaa6`,
 	name: `Movement`, 
 	desc: [
 		`You may make one Movement Action per turn.`,

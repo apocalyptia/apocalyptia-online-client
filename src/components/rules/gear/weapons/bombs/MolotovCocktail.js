@@ -4,6 +4,7 @@ import FireDamage from '../../attributes/weapon/FireDamage'
 
 
 const MolotovCocktail = new Bomb({
+	id: `1b954e5d-fed1-4df7-905a-aed3fa9d2eec`,
 	name: `Molotov Cocktail`,
 	desc: [
 		`Glass bottle of fuel with rag wick.`,

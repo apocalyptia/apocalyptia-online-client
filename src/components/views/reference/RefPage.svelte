@@ -72,22 +72,23 @@ beforeUpdate(() => {
 							</details>
 						{/each}
 					{/if}
-					{#if rule.table}
-						<table>
-							<caption>{rule.table.name}</caption>
-							<tr>
-								{#each rule.table.headers as header}
-									<th>{header}</th>
-								{/each}
-							</tr>
-							{#each rule.table.contents as content}
-								<tr>
-								{#each content as content_item}
-									<td>{content_item}</td>
-								{/each}
+					{#if rule.table != undefined}
+						<div class='rule-table'>
+							<table>
+								<tr class='header'>
+									{#each rule.table.headers as h, i}
+										<td style='max-width: {rule.table.widths[i]}%; width: {rule.table.widths[i]}%;'>{h}</td>
+									{/each}
 								</tr>
-							{/each}
-						</table>
+								{#each rule.table.contents as c, i}
+									<tr>
+									{#each Object.values(c) as c, i}
+										<td style='max-width: {rule.table.widths[i]}%; width: {rule.table.widths[i]}%;'>{c}</td>
+									{/each}
+									</tr>
+								{/each}
+							</table>
+						</div>
 					{/if}
 					{#if rule.specs}
 						<ul>
@@ -149,8 +150,18 @@ beforeUpdate(() => {
 	font-weight: bold;
 }
 
+.rule-table {
+	margin-top: var(--s100);
+}
+.header {
+	font-weight: bold;
+	text-align: center;
+}
+tr {
+	display: flex;
+	width: 100%;
+}
 table {
-	border: 1px solid lime;
-	border-collapse: collapse;
+	width: 100%;
 }
 </style>

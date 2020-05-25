@@ -2,6 +2,7 @@ import Medical from './Medical'
 
 
 const Crutch = new Medical({
+	id: `9d4b5d7f-59fd-4a9f-a7f1-59c60f4a8dc3`,
 	name: `Crutch`,
 	desc: [
 		`Halves Leg Damage Pain penalty to Speed.`,

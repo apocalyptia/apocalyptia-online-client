@@ -2,6 +2,7 @@ import CombatGear from '../../CombatGear'
 
 export default class Ammo extends CombatGear {
 	constructor({
+		id,
 		name,
 		desc,
 		sz,
@@ -10,6 +11,7 @@ export default class Ammo extends CombatGear {
 		qty=null
 	}) {
 		super({
+			id,
 			name,
 			desc,
 			sz,

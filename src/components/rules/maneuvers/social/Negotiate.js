@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Negotiate = new Maneuver({
+	id: `5d88546a-77df-402d-a9b5-bcab8a62fa6c`,
 	cat: `Social`,
 	name: `Negotiate`,
 	desc: [

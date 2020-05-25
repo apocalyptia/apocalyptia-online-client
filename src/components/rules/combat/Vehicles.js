@@ -8,6 +8,7 @@ import Burning from './vehicles/Burning'
 
 
 const Vehicles = new Rule({
+	id: `c2660769-4cdf-4822-74d1-cdd443e33324`,
 	name: `Vehicles`, 
 	desc: [
 		`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle.`,

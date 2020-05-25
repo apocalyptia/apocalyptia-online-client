@@ -5,6 +5,7 @@ import Mask from '../attributes/armor/Mask'
 
 
 const FirefighterSuit = new Armor({
+	id: `eefc5c02-3139-42cd-b5f9-fe055a915098`,
 	name: `Firefighter Suit`,
 	sz: 5,
 	dr: 2,

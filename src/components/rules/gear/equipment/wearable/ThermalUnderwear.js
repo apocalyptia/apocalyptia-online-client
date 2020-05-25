@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const ThermalUnderwear = new Equipment({
+	id: `0c9b6cba-f1e2-4538-96c4-15340ab5e5e3`,
 	name: `Thermal Underwear`,
 	desc: [
 		`Cold Resistance.`,

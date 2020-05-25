@@ -2,6 +2,7 @@ import Property from './Property'
 
 
 const Carry = new Property({
+	id: `c35b76a8-9912-46fc-b1d3-b0b23b71ef3d`,
 	name: `Carry`,
 	desc: [
 		`Carry = Constitution x 3`,

@@ -3,6 +3,7 @@ import ReflexiveDefense from './ReflexiveDefense'
 
 
 const Defense = new Rule({
+	id: `69987b3f-518a-4f96-643c-c82cbd1c1a98`,
 	name: `Defense`, 
 	desc: [
 		`Spend an Action on your enemy's turn to use either type of Defense: Block or Dodge.`,

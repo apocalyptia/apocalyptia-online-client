@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Taunt = new Maneuver({
+	id: `a00cbcf0-3593-493b-9fd8-575846d182bb`,
 	cat: `Social`,
 	name: `Taunt`,
 	desc: [

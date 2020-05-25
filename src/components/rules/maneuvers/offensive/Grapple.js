@@ -6,6 +6,7 @@ import Throw from './Throw'
 
 
 const Grapple = new Maneuver({
+	id: `974d2b5c-67e0-4e5d-8dd8-883d98a5926e`,
 	cat: `Offensive`,
 	name: `Grapple`,
 	desc: [

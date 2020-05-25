@@ -2,6 +2,7 @@ import Storage from './Storage'
 
 
 const MessengerBag = new Storage({
+	id: `6002e120-8d3c-448a-a6cf-e96a53e9cd5d`,
 	name: `Messenger Bag`,
 	desc: [
 		`1 round to access.`,

@@ -2,6 +2,7 @@ import Maneuver from '../Maneuver'
 
 
 const Recruit = new Maneuver({
+	id: `9599dc01-9940-44d8-ae36-e4623810fe5d`,
 	cat: `Social`,
 	name: `Recruit`,
 	desc: [

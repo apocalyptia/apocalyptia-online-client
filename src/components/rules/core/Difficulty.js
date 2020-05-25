@@ -2,6 +2,7 @@ import Rule from '../../rules/Rule'
 
 
 const Difficulty = new Rule({
+	id: `cacf928a-d180-4428-c809-233b8776473e`,
 	name: `Difficulty`,
 	desc: [
 		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success.`,

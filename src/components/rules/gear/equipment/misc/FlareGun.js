@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const FlareGun = new Equipment({
+	id: `5821a2de-279f-483d-876c-b3635e4d4df3`,
 	name: `Flare Gun`,
 	desc: [
 		`Pistol.`,

@@ -3,6 +3,7 @@ import Table from '../Table'
 
 
 const Cover = new Rule({
+	id: `9fd0a556-f4c0-4aba-6814-c371f0a8ead0`,
 	name: `Cover`, 
 	desc: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance.`,
@@ -35,7 +36,8 @@ Cover.table = new Table({
 		new CoverType({ material: 'Brick', dr: 3 }),
 		new CoverType({ material: 'Concrete', dr: 4 }),
 		new CoverType({ material: 'Steel', dr: 5 }),
-	]
+	],
+	widths: [50, 50]
 })
 
 export default Cover

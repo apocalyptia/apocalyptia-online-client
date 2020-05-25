@@ -2,6 +2,7 @@ import Equipment from '../Equipment'
 
 
 const Bicycle = new Equipment({
+	id: `b368d8c5-e9f7-4c65-efba-60146a39be78`,
 	name: `Bicycle`,
 	desc: [
 		`Athletics 3#.`,
