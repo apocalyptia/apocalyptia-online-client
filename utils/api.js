@@ -9,7 +9,7 @@ const createCharacter = (character) => {
 
 const readCharacter = (user) => {
 	return fetch(`/.netlify/functions/character-read/${user}`, {
-		mothod: 'POST',
+		method: 'POST',
 	}).then(response => {
 		return response.json()
 	})
