@@ -17,7 +17,7 @@ exports.handler = async (event) => {
 			body: JSON.stringify(res)
 		}
 	}).catch(err => {
-		console.log('Failed to create new character.')
+		console.log(`Failed to create new character. ERROR: ${JSON.stringify(err)}`)
 		return {
 			statusCode: 400,
 			body: JSON.stringify(err)
