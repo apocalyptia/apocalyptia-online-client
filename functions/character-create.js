@@ -6,7 +6,7 @@ exports.handler = async (event) => {
 	console.log('Creating a new character.')
 	return client.query(
 		q.Create(
-			q.Collection('characters'),
+			q.Ref('characters'),
 			{ data: JSON.parse(event.body) }
 		)
 	)
