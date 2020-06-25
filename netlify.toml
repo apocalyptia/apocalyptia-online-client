@@ -1,4 +1,4 @@
 [build]
-	functions = "/lambdas"
+	functions = "/functions"
 	command = "npm run export"
 	publish = "__sapper__/export"

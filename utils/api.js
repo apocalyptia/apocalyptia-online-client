@@ -1,5 +1,5 @@
 const createCharacter = (character) => {
-	return fetch('/.netlify/lambdas/character-create', {
+	return fetch('/.netlify/functions/character-create', {
 		body: character,
 		method: 'POST'
 	}).then(response => {
@@ -8,7 +8,7 @@ const createCharacter = (character) => {
 }
 
 const readCharacter = (user) => {
-	return fetch(`/.netlify/lambdas/character-read/${user}`, {
+	return fetch(`/.netlify/functions/character-read/${user}`, {
 		method: 'POST',
 	}).then(response => {
 		return response.json()
@@ -16,7 +16,7 @@ const readCharacter = (user) => {
 }
 
 const updateCharacter = (user, character) => {
-	return fetch(`/.netlify/lambdas/character-update/${characterId}`, {
+	return fetch(`/.netlify/functions/character-update/${characterId}`, {
 		body: JSON.stringify(data),
 		method: 'POST'
 	}).then(response => {
@@ -25,7 +25,7 @@ const updateCharacter = (user, character) => {
 }
 
 const deleteCharacter = (characterId) => {
-	return fetch(`/.netlify/lambdas/character-delete/${characterId}`, {
+	return fetch(`/.netlify/functions/character-delete/${characterId}`, {
 		method: 'POST',
 	}).then(response => {
 		return response.json()
