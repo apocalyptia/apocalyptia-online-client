@@ -3,13 +3,11 @@ const q = faunadb.query
 const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 
 exports.handler = async (event) => {
-	const data = JSON.parse(event.body)
-	const characterItem = { data: data }
 	console.log('Creating a new character.')
 	return client.query(
 		q.Create(
 			q.Collection('characters'),
-			characterItem
+			{ data: JSON.parse(event.body) }
 		)
 	)
 	.then(res => {
