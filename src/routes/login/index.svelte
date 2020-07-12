@@ -26,6 +26,9 @@ const submit = (event) => {
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online - Login</title>
+</svelte:head>
 <div class='cntr-card'>
 	{#if pendingApiCall}
 		<Spinner />

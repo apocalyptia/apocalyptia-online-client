@@ -1,6 +1,5 @@
 <script>
 import Spinner from '../../components/views/ui/Spinner.svelte'
-import { FemaleNames } from './../../components/helpers/Names.js';
 import { authUserStore, login, signup } from '../../stores/netlifyStore'
 
 
@@ -34,8 +33,9 @@ const proceed = () => window.location.href = `/login`
 </script>
 
 
-
-
+<svelte:head>
+	<title>Apocalyptia Online - Signup</title>
+</svelte:head>
 <div class='cntr-card'>
 	{#if pendingApiCall}
 		<Spinner />

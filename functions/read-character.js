@@ -4,13 +4,11 @@ const q = faunadb.query
 const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 
 exports.handler = (event) => {
-	const data = JSON.parse(event.body)
 	const id = getId(event.path)
 	return client.query(
-		q.Update(
-			q.Ref(`classes/character/${id}`),
-			{ data }
-		)
+		// q.Get(
+		// 	q.Ref(`classes/character/${id}`)
+		// )
 	)
 	.then(res => {
 		return {

@@ -1,28 +1,20 @@
 <script>
 import Character from '../../components/rules/Character'
 import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
+import DeleteCharacter from '../../components/helpers/database/DeleteCharacter'
 import NavBar from '../../components/views/controls/NavBar.svelte'
+import SaveCharacter from '../../components/helpers/database/SaveCharacter'
 import api from '../../../utils/api'
 import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 
 
 const saveCharacter = () => {
-	$character.user = $authUserStore.id
-	$character.completed = true
-	$character.step = `complete`
-	const jsonChar = JSON.stringify($character)
-
-	window.localStorage.setItem('character', jsonChar)
-	window.location.href = '/'
-
-	api.create(jsonChar)
+	$character = SaveCharacter($character, $authUserStore.id)
 }
 
 const deleteCharacter = () => {
-	$character = new Character()
-	window.localStorage.removeItem('character')
-	window.location.href = '/'
+	$character = DeleteCharacter($character)
 }
 </script>
 

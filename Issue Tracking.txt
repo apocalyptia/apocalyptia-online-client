@@ -1,18 +1,58 @@
------- KNOWN BUGS ------
+---------------------------------------------------------------------------------------------------
 
-- Suspected device issues
-Alpha in title bar gets pushed behind menu button on Kyle's phone.
-Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
+------ DEV PATH ------
 
-- Suspected software (OS or browser) issues
-Clayton can't open the Abilities modal in Chrome or Firefox (Android 7.0, not a problem for Eric on Android 8.1)
-Slider bar middle line shows up in Firefox only. Clayton likes it.
+finish integrating database (faunadb) with client app
+*** Need to figure out netlify lambda function paths
+*** Need to figure out query commands
+*** Need to figure out how to save Character stringified JSON as a document
+
+finish user auth features (recovery, account settings)
+apply ability mods to character
+add random gear roll purchasing for xp?
+create sorting options for all list pages
+make narrator dashboard
+make game group functionality
+write the combat system methods (based on lambda functions)
+make game group chat
 
 ---------------------------------------------------------------------------------------------------
 
------- RULES FIXES ------
+------ TODO LIST ------
 
-Need to add Radiation rules.
+UX/UI:
+	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
+	Likewise set a blur effect that reflects the character psyche
+	Figure out what to do about Tables.
+
+Gear.js:
+	Storage: Unit conversions still need work.
+	make a new set of general gear attributes: Electronic, Consumable, Wearable
+	add fishing line
+	add metal cup
+	add firelog
+	add trauma sheers
+	add antiseptic of some kind
+
+Hazards.js:
+	Create Hazards file.
+	Create Radiation rules.
+	Put Falling here.
+	Put Burning rule here.
+	Put Friendly Fire here.
+	Put Needs rules here. Requires some rewording.
+
+Reference:
+	Put Expand/Collapse All button on reference.
+	Figure out topical organization. Health for example.
+	Painkiller required for a night's sleep to Recover?
+
+Markup:
+	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
+
+Creator:
+	Change Creator routing to SPA style. Make sure character data persists through reloads.
+	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 
 ---------------------------------------------------------------------------------------------------
 
@@ -41,49 +81,13 @@ Social actions multiple times per round?
 
 ---------------------------------------------------------------------------------------------------
 
------- TODO LIST ------
+------ KNOWN BUGS ------
 
-UX/UI:
-	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
-	Likewise set a blur effect that reflects the character psyche
-	Figure out what to do about Tables.
+- Suspected device issues
+Alpha in title bar gets pushed behind menu button on Kyle's phone.
+Kyle's phone can't scroll down to the Random Description. Make them smaller side by side.
 
-Gear.js:
-	Storage: Unit conversions still need work.
-
-Reference:
-	Put Expand/Collapse All button on reference.
-	Figure out topical organization. Health for example.
-	Painkiller required for a night's sleep to Recover?
-
-Markup:
-	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
-
-Creator:
-	Change Creator routing to SPA style. Make sure character data persists through reloads.
-	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
+- Suspected software (OS or browser) issues
+Slider bar middle line shows up in Firefox only. Clayton likes it.
 
 ---------------------------------------------------------------------------------------------------
-
------- DEV PATH ------
-
-finish integrating database (faunadb) with client app
-finish user auth features (recovery, account settings)
-apply ability mods to character
-add random gear roll purchasing for xp?
-create sorting options for all list pages
-make narrator dashboard
-make game group functionality
-write the combat system methods (based on lambda functions)
-make game group chat
-
----------------------------------------------------------------------------------------------------
-
-
-make a new set of general gear attributes: Electronic, Consumable, Wearable
-
-add fishing line
-add metal cup
-add firelog
-add trauma sheers
-add antiseptic of some kind
