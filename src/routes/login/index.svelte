@@ -17,7 +17,7 @@ let forgotPassword = false
 
 const submit = (event) => {
 	pendingApiCall = true
-	login(user)
+	let loginResult = login(user)
 		.catch(e => {
 			pendingApiCall = false
 			forgotPassword = true

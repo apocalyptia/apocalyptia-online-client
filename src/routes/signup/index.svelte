@@ -5,7 +5,7 @@ import { authUserStore, login, signup } from '../../stores/netlifyStore'
 
 if ($authUserStore) window.location.href = `/`
 
-let message = ``
+let confirmMessage = ``
 
 const user = {
 	email: ``,
@@ -15,21 +15,26 @@ const user = {
 
 let pendingApiCall = false
 
-const submit = () => {
-	if (user.password != user.confirm) {
-		alert('Password does not match!')
-		return
-	}
-	pendingApiCall = true
-	signup(user)
-		.then(() => message = `Confirmation email sent. Please confirm your account.`)
-		.catch(e => {
-			pendingApiCall = false
-			alert(e)
-		})
+let failedMatch = ``
+
+const checkMatch = () => {
+	if (
+		(user.password && user.confirm) &&
+		(user.password != user.confirm) 
+	) failedMatch = 'Password does not match!'
 }
 
-const proceed = () => window.location.href = `/login`
+const submit = () => {
+	if (user.email && (user.password == user.confirm)) {
+		pendingApiCall = true
+		signup(user)
+			.then(() => confirmMessage = `Confirmation email sent. Please confirm your account.`)
+			.catch(e => {
+				pendingApiCall = false
+				alert(e)
+			})
+	}
+}
 </script>
 
 
@@ -53,21 +58,27 @@ const proceed = () => window.location.href = `/login`
 				required
 				placeholder='Password'
 				bind:value={user.password}
+				on:blur={checkMatch}
 			/>
 			<input
 				type='password'
 				required
 				placeholder='Confirm Password'
 				bind:value={user.confirm}
+				on:blur={checkMatch}
 			/>
-			{#if !message}
+			{#if failedMatch}
+				<div class='error'>{failedMatch}</div>
+			{/if}
+			{#if !confirmMessage}
 				<input
 					type='submit'
 					class='link-btn'
 					value='Creat Account'
+					disabled={failedMatch}
 				>
 			{:else}
-				<h3>{message}</h3>
+				<h3>{confirmMessage}</h3>
 				<a href='/login' class='link-btn'>Proceed To Login</a>
 			{/if}
 		</form>
