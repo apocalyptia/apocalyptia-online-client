@@ -25,7 +25,7 @@ const logOut = () => {
 
 
 <button class='user-btn' bind:this={trigger} on:click={toggle}>
-	<h1>&#9776;</h1>
+	&#9776;
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
@@ -43,13 +43,13 @@ const logOut = () => {
 
 
 <style>
-h1 {
-	color: lime !important;
-}
 .user-btn {
 	align-content: center;
 	border: var(--s10) solid lime;
+	background-color: rgba(15, 30, 15, 1);
+	color: lime;
 	display: flex;
+	font-size: 150%;
 	height: var(--s300);
 	justify-content: center;
 	position: fixed;
@@ -59,6 +59,10 @@ h1 {
 	max-width: 50px;
 	min-width: 50px;
 	z-index: 3;
+}
+.user-btn:hover {
+	background-color: lime;
+	color: rgba(15, 30, 15, 1);
 }
 .user-menu {
 	background: rgba(15, 30, 15, 1);
