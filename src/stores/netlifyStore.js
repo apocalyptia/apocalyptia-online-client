@@ -9,7 +9,7 @@ const goTrueInstance = new GoTrue({
 	setCookie: true
 })
 
-const goTrueUser = goTrueInstance.currentUser() || undefined
+const goTrueUser = goTrueInstance.currentUser()
 
 const getUser = (user) => {
 	return {

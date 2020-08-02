@@ -15,7 +15,7 @@
   "dependencies": {
     "compression": "^1.7.1",
     "faunadb": "^2.14.1",
-    "gotrue-js": "^0.9.25",
+    "gotrue-js": "^0.9.26",
     "polka": "next",
     "rollup": "^2.23.0",
     "sirv": "^1.0.0",
