@@ -1,9 +1,12 @@
 import Character from '../../rules/Character'
 
-
 export default (c) => {
 	const n = new Character()
+	n.id = c.id
+	n.user = c.user
 	n.completed = c.completed
+	n.created = c.created
+	n.modified = c.modified
 	n.desc.age.value = c.age
 	n.desc.identity.value = c.identity
 	n.desc.hair.value = c.hair

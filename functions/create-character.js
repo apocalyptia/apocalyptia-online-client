@@ -5,10 +5,10 @@ const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 exports.handler = async (event) => {
 	console.log('Creating a new character.')
 	return client.query(
-		q.Create(
-			q.Ref('characters'),
-			{ data: JSON.parse(event.body) }
-		)
+		// q.Create(
+		// 	q.Ref('characters'),
+		// 	{ data: event.body }
+		// )
 	)
 	.then(res => {
 		console.log('New character created successfully.')

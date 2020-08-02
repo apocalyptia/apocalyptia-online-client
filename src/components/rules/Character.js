@@ -6,6 +6,8 @@ export default class Character {
 		this.id = GUUIDGenerator(),
 		this.user = ``,
 		this.completed = false,
+		this.created = null,
+		this.modified = null,
 		this.desc = {
 			age: {
 				name: `Age`,

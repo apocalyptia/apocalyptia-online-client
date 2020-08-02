@@ -10,5 +10,6 @@
 /node_modules/
 /src/node_modules/
 npm-debug.log*
+secrets.js
 yarn-debug.log*
 yarn-error.log*

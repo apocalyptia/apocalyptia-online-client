@@ -3,12 +3,12 @@ const getId = require('./utils/getId')
 const q = faunadb.query
 const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 
-exports.handler = (event) => {
+exports.handler = async (event) => {
 	const id = getId(event.path)
 	return client.query(
-		q.Get(
-			q.Ref(`classes/character/${id}`)
-		)
+		// q.Delete(
+		// 	q.Ref(`classes/character/${id}`)
+		// )
 	)
 	.then(res => {
 		return {

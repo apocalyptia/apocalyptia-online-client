@@ -7,10 +7,9 @@ import NavBar from '../../components/views/controls/NavBar.svelte'
 import RangedWeaponList from '../../components/rules/gear/weapons/ranged/RangedWeaponList'
 import Nd6 from '../../components/helpers/random/Nd6'
 import RandomRoll from '../../components/helpers/random/RandomRoll'
-import GearBlock from '../../components/views/ui/GearBlock'
+import GearBlock from '../../components/views/ui/GearBlock.svelte'
 import { beforeUpdate } from 'svelte'
 import { character } from '../../stores/characterStore'
-import { getModulesArrayBounds } from 'webpack/lib/Template'
 
 
 export let readonly = true

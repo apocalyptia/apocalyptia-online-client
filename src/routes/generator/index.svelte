@@ -145,7 +145,6 @@ const rolld6 = () => {
 			</button>
 		</div>
 		{#if gear.value != undefined}
-			<h2>{gear.value.name}</h2>
 			<GearBlock rule={gear.value}/>
 		{/if}
 	</div>
@@ -157,12 +156,9 @@ const rolld6 = () => {
 .item-category {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: var(--s50);
 }
 .gear-category {
 	font-size: var(--s125);
-}
-h2 {
-	margin-bottom: var(--s50);
+	margin: auto;
 }
 </style>
