@@ -2,7 +2,7 @@
   "name": "apocalyptia-online",
   "description": "A post-apocalyptic digital tabletop role-playing game about the end of the world.",
   "repository": "https://github.com/apocalyptia/apocalyptia-online",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "scripts": {
     "dev": "run-p routify rollup",
     "dev:nollup": "run-p routify nollup",
