@@ -4,7 +4,6 @@ import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
 import DeleteCharacter from '../../components/helpers/database/DeleteCharacter'
 import NavBar from '../../components/views/controls/NavBar.svelte'
 import SaveCharacter from '../../components/helpers/database/SaveCharacter'
-import { api } from '../../../utils/api'
 import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 
