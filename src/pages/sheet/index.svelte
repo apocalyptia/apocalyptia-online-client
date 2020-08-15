@@ -8,11 +8,11 @@ import SaveCharacter from '../../components/helpers/database/SaveCharacter.js'
 import DeleteCharacter from '../../components/helpers/database/DeleteCharacter.js'
 
 const saveCharacter = () => {
-	$character = SaveCharacter($character, $authUserStore.id)
+	$character = SaveCharacter($authUserStore.id, $character)
 }
 
 const deleteCharacter = () => {
-	$character = DeleteCharacter($character)
+	$character = DeleteCharacter($authUserStore.id, $character)
 }
 </script>
 
