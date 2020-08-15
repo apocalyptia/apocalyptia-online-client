@@ -17,7 +17,7 @@ let forgotPassword = false
 
 const submit = (event) => {
 	pendingApiCall = true
-	login(user)
+	let loginResult = login(user)
 		.catch(e => {
 			pendingApiCall = false
 			forgotPassword = true
@@ -26,6 +26,9 @@ const submit = (event) => {
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online - Login</title>
+</svelte:head>
 <div class='cntr-card'>
 	{#if pendingApiCall}
 		<Spinner />

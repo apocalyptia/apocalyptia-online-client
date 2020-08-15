@@ -134,13 +134,18 @@ label {
 legend {
 	margin-left: var(--s150);
 }
+.error {
+	color: crimson;
+}
 
 
 /* ----- CONTROLS ----- */
 
 button,
-input,
-select {
+input, input:-webkit-autofill,
+input:-internal-autofill-selected,
+select, select:-webkit-autofill,
+textarea, text:-webkit-autofill {
 	background-color: rgba(15, 30, 15, 1);
 	border: var(--s1) solid lime;
 	border-radius: var(--radius);
@@ -148,24 +153,33 @@ select {
 	cursor: pointer;
 	font-size: var(--s100);
 	text-align: center;
+	-webkit-text-fill-color: lime;
 }
 button:active, button:hover,
-input:active, input:hover,
-select:active {
+input:active, input:focus, input:-webkit-autofill:focus,
+input:hover, input:-webkit-autofill:hover,
+select:active, select:focus, select:-webkit-autofill:focus,
+select:hover, select:-webkit-autofill:hover,
+textarea:active, textarea:focus, textarea:-webkit-autofill:focus,
+textarea:hover, textarea:-webkit-autofill:hover {
 	background-color: lime;
 	color: rgba(15, 30, 15, 1);
+	-webkit-text-fill-color: rgba(15, 30, 15, 1);
 }
-select:hover {
-	background-color: lime;
-	border: var(--s1) solid rgba(15, 30, 15, 1);
-	color: rgba(15, 30, 15, 1);
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+	border-color: green;
+	color: green;
 }
 button:invalid,
-input:invalid,
-select:invalid {
-	background-color: rgba(15, 30, 15, 1) !important;
+select:invalid,
+textarea:invalid {
 	border-color: crimson;
-	color: lime;
+	color: crimson;
+	-webkit-text-fill-color: crimson;
+	font-weight: bold;
 }
 
 /* Buttons */
@@ -345,10 +359,6 @@ td, th {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
-.sheet-section-header {
-	font-weight: bold;
-	text-align: center;
 }
 
 

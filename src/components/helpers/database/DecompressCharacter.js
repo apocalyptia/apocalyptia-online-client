@@ -1,6 +1,5 @@
 import Character from '../../rules/Character'
 
-
 export default (c) => {
 	const n = new Character()
 	n.id = c.id
