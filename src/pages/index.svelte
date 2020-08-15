@@ -1,12 +1,7 @@
 <script>
-    import RoutifyIntro from './example/_components/RoutifyIntro.svelte'
-    import { metatags } from '@sveltech/routify'
     import { authUserStore, confirm } from '../stores/netlifyStore'
     import { character } from '../stores/characterStore'
     import { onMount } from 'svelte'
-
-    metatags.title = 'Apocalyptia Online'
-    metatags.description = 'Apocalyptia Online is a virtual tabletop role-playing game about surviving together after the world as we know it has come to an end.'
 
     onMount(() => {
         const hash = window.location.hash.substr(1)
@@ -15,7 +10,9 @@
             result[parts[0]] = parts[1]
             return result
         }, {})
-        if (result.confirmation_token) confirm(result.confirmation_token)
+        if (result.confirmation_token) {
+            confirm(result.confirmation_token)
+        }
         if (window.localStorage.getItem('character')) {
             $character = JSON.parse(window.localStorage.getItem('character'))
         }
