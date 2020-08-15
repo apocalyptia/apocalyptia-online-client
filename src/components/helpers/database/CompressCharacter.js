@@ -1,7 +1,10 @@
 export default (c) => {
 	return {
+		id = c.id,
 		user = c.user,
 		completed = c.completed,
+		created = c.created,
+		modified = c.modified,
 		age = c.desc.age.value,
 		identity = c.desc.identity.value,
 		hair = c.desc.hair.value,

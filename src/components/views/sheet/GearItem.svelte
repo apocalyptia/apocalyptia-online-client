@@ -1,5 +1,5 @@
 <script>
-import GearBlock from '../ui/GearBlock'
+import GearBlock from '../ui/GearBlock.svelte'
 import { character } from '../../../stores/characterStore'
 
 

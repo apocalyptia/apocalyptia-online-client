@@ -1,5 +1,5 @@
 <script>
-import * as sapper from '@sapper/app'
+import * as routify from '@sveltech/routify'
 import ClickOutside from './ClickOutside.svelte'
 import { authUserStore, logout } from '../../../stores/netlifyStore'
 import { character } from '../../../stores/characterStore'

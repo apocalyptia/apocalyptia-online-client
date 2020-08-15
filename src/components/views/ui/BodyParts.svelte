@@ -1,6 +1,4 @@
 <script>
-import Health from "../sheet/Health.svelte"
-
 export let character
 export let readonly = false
 </script>
