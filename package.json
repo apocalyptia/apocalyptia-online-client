@@ -43,7 +43,6 @@
     "rollup-plugin-node-polyfills": "^0.2.1",
     "svelte": "^3.23.2",
     "svelte-preprocess": "^4.0.12",
-    "svelte-spinner": "^2.0.2",
     "websocket": "^1.0.31",
     "workbox-cli": "^5.1.3"
   },
