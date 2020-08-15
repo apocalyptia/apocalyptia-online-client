@@ -2,7 +2,6 @@
 import Character from '../../components/rules/Character'
 import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
 import NavBar from '../../components/views/controls/NavBar.svelte'
-import { api } from '../../../utils/api'
 import { authUserStore } from '../../stores/netlifyStore'
 import { character } from '../../stores/characterStore'
 import SaveCharacter from '../../components/helpers/database/SaveCharacter.js'

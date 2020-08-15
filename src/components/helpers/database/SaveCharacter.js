@@ -1,4 +1,4 @@
-import { api } from '../../../../utils/api'
+import { api } from '../../../../scripts/netlify/api/api'
 
 export default (character, user) => {
     if (!character.created) character.created = new Date()
@@ -8,7 +8,6 @@ export default (character, user) => {
 	character.modified = new Date()
 	const jsonChar = JSON.stringify(character)
     window.localStorage.setItem('character', jsonChar)
-    if (api.check(user)) api.create(jsonChar)
-    else api.new(user)
+    api.createCharacter(jsonChar)
     return character
 }
