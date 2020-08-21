@@ -1,20 +1,19 @@
 <script>
-import Character from '../../components/rules/Character'
-import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
-import DeleteCharacter from '../../components/helpers/database/DeleteCharacter'
-import NavBar from '../../components/views/controls/NavBar.svelte'
-import SaveCharacter from '../../components/helpers/database/SaveCharacter'
-import { authUserStore } from '../../stores/netlifyStore'
-import { character } from '../../stores/characterStore'
+	import Character from '../../components/rules/Character'
+	import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
+	import DeleteCharacter from '../../components/helpers/database/DeleteCharacter'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import SaveCharacter from '../../components/helpers/database/SaveCharacter'
+	import { authUserStore } from '../../stores/netlifyStore'
+	import { character } from '../../stores/characterStore'
 
+	const saveCharacter = () => {
+		$character = saveCharacter($character, $authUserStore.id)
+	}
 
-const saveCharacter = () => {
-	$character = saveCharacter($character, $authUserStore.id)
-}
-
-const deleteCharacter = () => {
-	$character = DeleteCharacter($character)
-}
+	const deleteCharacter = () => {
+		$character = DeleteCharacter($character)
+	}
 </script>
 
 
@@ -38,14 +37,14 @@ const deleteCharacter = () => {
 
 
 <style>
-.sheet-buttons {
-	display: flex;
-	justify-content: space-between;
-	margin-top: var(--s100);
-}
-.sheet-buttons button {
-	font-size: var(--s125);
-	font-weight: bold;
-	width: calc(100% / 3);
-}
+	.sheet-buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: var(--s100);
+	}
+	.sheet-buttons button {
+		font-size: var(--s125);
+		font-weight: bold;
+		width: calc(100% / 3);
+	}
 </style>

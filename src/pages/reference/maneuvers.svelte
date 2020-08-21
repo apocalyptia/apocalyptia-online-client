@@ -1,7 +1,7 @@
 <script>
-import RefPage from '../../components/views/reference/RefPage.svelte'
-import Maneuvers from '../../components/rules/maneuvers/Maneuvers'
-import NavBar from '../../components/views/controls/NavBar.svelte'
+    import RefPage from '../../components/views/reference/RefPage.svelte'
+    import Maneuvers from '../../components/rules/maneuvers/Maneuvers'
+    import NavBar from '../../components/views/controls/NavBar.svelte'
 </script>
 
 

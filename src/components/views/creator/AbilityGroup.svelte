@@ -1,9 +1,9 @@
 <script>
-import ToggleVisible from '../../helpers/ToggleVisible'
-import AbilityCard from './AbilityCard.svelte'
+	import ToggleVisible from '../../helpers/ToggleVisible'
+	import AbilityCard from './AbilityCard.svelte'
 
-export let group
-export let MasterAbilityList
+	export let group
+	export let MasterAbilityList
 </script>
 
 
@@ -20,13 +20,13 @@ export let MasterAbilityList
 
 
 <style>
-.ability-card {
-	margin: var(--s100);
-	border: var(--s1) solid;
-}
-.ability-card:hover {
-	background-color: lime;
-	color: rgba(15, 30, 15, 1);
-	cursor: pointer;
-}
+	.ability-card {
+		margin: var(--s100);
+		border: var(--s1) solid;
+	}
+	.ability-card:hover {
+		background-color: lime;
+		color: rgba(15, 30, 15, 1);
+		cursor: pointer;
+	}
 </style>

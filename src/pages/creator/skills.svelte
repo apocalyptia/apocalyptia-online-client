@@ -1,28 +1,27 @@
 <script>
-import NavBar from '../../components/views/controls/NavBar.svelte'
-import RandomRoll from '../../components/helpers/random/RandomRoll'
-import Skills from '../../components/rules/skills/Skills'
-import Slider from '../../components/views/controls/Slider.svelte'
-import Traits from '../../components/rules/traits/Traits'
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import RandomRoll from '../../components/helpers/random/RandomRoll'
+	import Skills from '../../components/rules/skills/Skills'
+	import Slider from '../../components/views/controls/Slider.svelte'
+	import Traits from '../../components/rules/traits/Traits'
+	import { beforeUpdate } from 'svelte'
+	import { character } from '../../stores/characterStore'
 
+	let remaining = Skills.remaining($character)
 
-let remaining = Skills.remaining($character)
+	let next = `/creator/skills`
 
-let next = `/creator/skills`
+	const assign = (event) => $character = Skills.assign($character, event.target)
 
-const assign = (event) => $character = Skills.assign($character, event.target)
+	const random = () => $character = Skills.random($character)
 
-const random = () => $character = Skills.random($character)
+	const reset = () => $character = Skills.reset($character)
 
-const reset = () => $character = Skills.reset($character)
-
-beforeUpdate(() => {
-	remaining = Skills.remaining($character)
-	if (remaining == 0) next = `/creator/properties`
-	else next = `/creator/skills`
-})
+	beforeUpdate(() => {
+		remaining = Skills.remaining($character)
+		if (remaining == 0) next = `/creator/properties`
+		else next = `/creator/skills`
+	})
 </script>
 
 
@@ -78,13 +77,13 @@ beforeUpdate(() => {
 
 
 <style>
-.group-label {
-	font-weight: bold;
-}
-.max-score {
-	text-align: center;
-}
-.stat-range {
-	margin: var(--s100);
-}
+	.group-label {
+		font-weight: bold;
+	}
+	.max-score {
+		text-align: center;
+	}
+	.stat-range {
+		margin: var(--s100);
+	}
 </style>

@@ -1,8 +1,8 @@
 <script>
-import BodyParts from '../ui/BodyParts.svelte'
-import { character } from '../../../stores/characterStore'
+	import BodyParts from '../ui/BodyParts.svelte'
+	import { character } from '../../../stores/characterStore'
 
-export let readonly = false
+	export let readonly = false
 </script>
 
 

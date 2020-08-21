@@ -1,6 +1,6 @@
 <script>
-export let rule
-export let readonly
+	export let rule
+	export let readonly
 </script>
 
 
@@ -84,11 +84,11 @@ export let readonly
 
 
 <style>
-strong {
-	font-weight: bold;
-}
-ul {
-	list-style: disc;
-	margin-left: var(--s100);
-}
+	strong {
+		font-weight: bold;
+	}
+	ul {
+		list-style: disc;
+		margin-left: var(--s100);
+	}
 </style>

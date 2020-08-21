@@ -1,27 +1,26 @@
 <script>
-import Spinner from '../../components/views/ui/Spinner.svelte'
-import { authUserStore, recover } from '../../stores/netlifyStore'
+	import Spinner from '../../components/views/ui/Spinner.svelte'
+	import { authUserStore, recover } from '../../stores/netlifyStore'
 
+	if ($authUserStore) window.location.href = `/`
 
-if ($authUserStore) window.location.href = `/`
+	let email = ``
 
-let email = ``
+	let showSuccessMessage = false
 
-let showSuccessMessage = false
+	let pendingApiCall = false
 
-let pendingApiCall = false
-
-const submit = (event) => {
-	pendingApiCall = true
-	recover(email)
-		.then(newUser => {
-			showSuccessMessage = true
-			pendingApiCall = false
-		})
-		.catch(e => {
-			pendingApiCall = false
-		})
-}
+	const submit = (event) => {
+		pendingApiCall = true
+		recover(email)
+			.then(newUser => {
+				showSuccessMessage = true
+				pendingApiCall = false
+			})
+			.catch(e => {
+				pendingApiCall = false
+			})
+	}
 </script>
 
 

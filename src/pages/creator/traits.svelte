@@ -1,26 +1,25 @@
 <script>
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
-import Traits from '../../components/rules/traits/Traits'
-import Slider from '../../components/views/controls/Slider.svelte'
-import NavBar from '../../components/views/controls/NavBar.svelte'
+	import { beforeUpdate } from 'svelte'
+	import { character } from '../../stores/characterStore'
+	import Traits from '../../components/rules/traits/Traits'
+	import Slider from '../../components/views/controls/Slider.svelte'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
 
+	let remaining = Traits.remaining($character)
 
-let remaining = Traits.remaining($character)
+	let next = `/creator/traits`
 
-let next = `/creator/traits`
+	const assign = (event) => $character = Traits.assign($character, event.target)
 
-const assign = (event) => $character = Traits.assign($character, event.target)
+	const random = () => $character = Traits.random($character)
 
-const random = () => $character = Traits.random($character)
+	const reset = () => $character = Traits.reset($character)
 
-const reset = () => $character = Traits.reset($character)
-
-beforeUpdate(() => {
-	remaining = Traits.remaining($character)
-	if (remaining == 0) next = `/creator/skills`
-	else next = `/creator/traits`
-})
+	beforeUpdate(() => {
+		remaining = Traits.remaining($character)
+		if (remaining == 0) next = `/creator/skills`
+		else next = `/creator/traits`
+	})
 </script>
 
 
@@ -60,4 +59,4 @@ beforeUpdate(() => {
 		Random
 	</button>
 </div>
-<NavBar links={{ back: '/creator/description', next: next }} status={remaining == 0 ? `go` : `stop`}/>
+<NavBar links={{back: '/creator/description', next: next}} status={remaining == 0 ? `go` : `stop`}/>

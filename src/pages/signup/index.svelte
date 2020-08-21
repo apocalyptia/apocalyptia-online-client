@@ -1,40 +1,40 @@
 <script>
-import Spinner from '../../components/views/ui/Spinner.svelte'
-import { authUserStore, login, signup } from '../../stores/netlifyStore'
+	import { url } from '@sveltech/routify'
+	import Spinner from '../../components/views/ui/Spinner.svelte'
+	import { authUserStore, login, signup } from '../../stores/netlifyStore'
 
+	if ($authUserStore) window.location.href = `/`
 
-if ($authUserStore) window.location.href = `/`
+	let confirmMessage = ``
 
-let confirmMessage = ``
-
-const user = {
-	email: ``,
-	password: ``,
-	confirm: ``
-}
-
-let pendingApiCall = false
-
-let failedMatch = ``
-
-const checkMatch = () => {
-	if (
-		(user.password && user.confirm) &&
-		(user.password != user.confirm) 
-	) failedMatch = 'Password does not match!'
-}
-
-const submit = () => {
-	if (user.email && (user.password == user.confirm)) {
-		pendingApiCall = true
-		signup(user)
-			.then(() => confirmMessage = `Confirmation email sent. Please confirm your account.`)
-			.catch(e => {
-				pendingApiCall = false
-				alert(e)
-			})
+	const user = {
+		email: ``,
+		password: ``,
+		confirm: ``
 	}
-}
+
+	let pendingApiCall = false
+
+	let failedMatch = ``
+
+	const checkMatch = () => {
+		if (
+			(user.password && user.confirm) &&
+			(user.password != user.confirm) 
+		) failedMatch = 'Password does not match!'
+	}
+
+	const submit = () => {
+		if (user.email && (user.password == user.confirm)) {
+			pendingApiCall = true
+			signup(user)
+				.then(() => confirmMessage = `Confirmation email sent. Please confirm your account.`)
+				.catch(e => {
+					pendingApiCall = false
+					alert(e)
+				})
+		}
+	}
 </script>
 
 
@@ -79,7 +79,7 @@ const submit = () => {
 				>
 			{:else}
 				<h3>{confirmMessage}</h3>
-				<a href='/login' class='link-btn'>Proceed To Login</a>
+				<a href={$url('/login')} class='link-btn'>Proceed To Login</a>
 			{/if}
 		</form>
 	{/if}

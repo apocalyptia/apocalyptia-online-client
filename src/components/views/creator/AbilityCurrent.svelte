@@ -1,7 +1,7 @@
 <script>
-import { character } from '../../../stores/characterStore'
+	import { character } from '../../../stores/characterStore'
 
-export let MasterAbilityList
+	export let MasterAbilityList
 </script>
 
 
@@ -44,30 +44,30 @@ export let MasterAbilityList
 
 
 <style>
-.current-abilities {
-	width: 100%;
-}
-.current-abilities-title {
-	font-size: var(--s125);
-	text-align: center;
-	width: 100%;
-}
-.current-abilities-header,
-.current-ability-row {
-	align-items: baseline;
-	display: flex;
-	justify-content: space-between;
-	margin: var(--s100) 0;
-}
-.current-abilities-header {
-	font-weight: bold;
-	text-decoration: underline;
-}
-.l-col {
-	flex: 3;
-}
-.s-col {
-	flex: 1;
-	text-align: center;
-}
+	.current-abilities {
+		width: 100%;
+	}
+	.current-abilities-title {
+		font-size: var(--s125);
+		text-align: center;
+		width: 100%;
+	}
+	.current-abilities-header,
+	.current-ability-row {
+		align-items: baseline;
+		display: flex;
+		justify-content: space-between;
+		margin: var(--s100) 0;
+	}
+	.current-abilities-header {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.l-col {
+		flex: 3;
+	}
+	.s-col {
+		flex: 1;
+		text-align: center;
+	}
 </style>

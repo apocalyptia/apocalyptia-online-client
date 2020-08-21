@@ -1,10 +1,10 @@
 <script>
-import { character } from '../../../stores/characterStore'
+	import { character } from '../../../stores/characterStore'
 
-export let ability
-export let MasterAbilityList
+	export let ability
+	export let MasterAbilityList
 
-let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
+	let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 </script>
 
 
@@ -31,18 +31,18 @@ let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 
 
 <style>
-.options-section {
-	width: 100%;
-}
-.ability-section {
-	align-items: center;
-	border: var(--s1) dashed;
-	display: flex;
-	justify-content: space-between;
-	margin: var(--s100) auto;
-	padding: var(--s50);
-}
-select {
-	width: var(--s300);
-}
+	.options-section {
+		width: 100%;
+	}
+	.ability-section {
+		align-items: center;
+		border: var(--s1) dashed;
+		display: flex;
+		justify-content: space-between;
+		margin: var(--s100) auto;
+		padding: var(--s50);
+	}
+	select {
+		width: var(--s300);
+	}
 </style>

@@ -1,66 +1,65 @@
 <script>
-import AmmoList from '../../components/rules/gear/weapons/ammo/AmmoList'
-import ArmorList from '../../components/rules/gear/armor/ArmorList'
-import EquipmentList from '../../components/rules/gear/equipment/EquipmentList'
-import MeleeWeaponList from '../../components/rules/gear/weapons/melee/MeleeWeaponList'
-import NavBar from '../../components/views/controls/NavBar.svelte'
-import RangedWeaponList from '../../components/rules/gear/weapons/ranged/RangedWeaponList'
-import Nd6 from '../../components/helpers/random/Nd6'
-import RandomRoll from '../../components/helpers/random/RandomRoll'
-import GearBlock from '../../components/views/ui/GearBlock.svelte'
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
+	import AmmoList from '../../components/rules/gear/weapons/ammo/AmmoList'
+	import ArmorList from '../../components/rules/gear/armor/ArmorList'
+	import EquipmentList from '../../components/rules/gear/equipment/EquipmentList'
+	import MeleeWeaponList from '../../components/rules/gear/weapons/melee/MeleeWeaponList'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import RangedWeaponList from '../../components/rules/gear/weapons/ranged/RangedWeaponList'
+	import Nd6 from '../../components/helpers/random/Nd6'
+	import RandomRoll from '../../components/helpers/random/RandomRoll'
+	import GearBlock from '../../components/views/ui/GearBlock.svelte'
+	import { beforeUpdate } from 'svelte'
+	import { character } from '../../stores/characterStore'
 
+	export let readonly = true
 
-export let readonly = true
+	let status = `stop`
 
-let status = `stop`
+	let next = `/creator/gear`
 
-let next = `/creator/gear`
+	let carriedGear = []
 
-let carriedGear = []
-
-const randomMelee = () => {
-	$character.gear.melee.inventory.push(RandomRoll(MeleeWeaponList))
-	$character = $character
-}
-
-const randomRanged = () => {
-	$character.gear.ranged.inventory.push(RandomRoll(RangedWeaponList))
-	let ammo = RandomRoll(AmmoList)
-	while (ammo.cal != $character.gear.ranged.inventory[0].cal) {
-		ammo = RandomRoll(AmmoList)
+	const randomMelee = () => {
+		$character.gear.melee.inventory.push(RandomRoll(MeleeWeaponList))
+		$character = $character
 	}
-	ammo.qty = Nd6(1)
-	$character.gear.ammo.inventory.push(ammo)
-	$character = $character
-}
 
-const randomArmor = () => {
-	$character.gear.armor.inventory.push(RandomRoll(ArmorList))
-	$character = $character
-}
-
-const randomEquipment = () => {
-	for (let i = 0; i < $character.props.luck.score; i++) {
-		const randomItem = RandomRoll(EquipmentList)
-		carriedGear.push(randomItem)
-	}
-	$character.gear.equipment.inventory = [...carriedGear]
-	$character = $character
-}
-
-beforeUpdate(() => {
-	status = `go`
-	for (let i of Object.values($character.gear)) {
-		if (i.inventory.length == 0) {
-			status = `stop`
-			break
+	const randomRanged = () => {
+		$character.gear.ranged.inventory.push(RandomRoll(RangedWeaponList))
+		let ammo = RandomRoll(AmmoList)
+		while (ammo.cal != $character.gear.ranged.inventory[0].cal) {
+			ammo = RandomRoll(AmmoList)
 		}
+		ammo.qty = Nd6(1)
+		$character.gear.ammo.inventory.push(ammo)
+		$character = $character
 	}
-	if (status == `go`) next = `/creator/sheet`
-	else next = `/creator/gear`
-})
+
+	const randomArmor = () => {
+		$character.gear.armor.inventory.push(RandomRoll(ArmorList))
+		$character = $character
+	}
+
+	const randomEquipment = () => {
+		for (let i = 0; i < $character.props.luck.score; i++) {
+			const randomItem = RandomRoll(EquipmentList)
+			carriedGear.push(randomItem)
+		}
+		$character.gear.equipment.inventory = [...carriedGear]
+		$character = $character
+	}
+
+	beforeUpdate(() => {
+		status = `go`
+		for (let i of Object.values($character.gear)) {
+			if (i.inventory.length == 0) {
+				status = `stop`
+				break
+			}
+		}
+		if (status == `go`) next = `/creator/sheet`
+		else next = `/creator/gear`
+	})
 </script>
 
 
@@ -141,14 +140,14 @@ beforeUpdate(() => {
 
 
 <style>
-.item-category {
-	margin-bottom: var(--s100);
-}
-.ammo-heading {
-	margin-top: var(--s100);
-}
-.item {
-	border: 1px dotted lime;
-	padding: var(--s100);
-}
+	.item-category {
+		margin-bottom: var(--s100);
+	}
+	.ammo-heading {
+		margin-top: var(--s100);
+	}
+	.item {
+		border: 1px dotted lime;
+		padding: var(--s100);
+	}
 </style>

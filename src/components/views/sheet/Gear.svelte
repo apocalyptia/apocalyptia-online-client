@@ -1,15 +1,15 @@
 <script>
-import { character } from '../../../stores/characterStore'
-import GearCategory from './GearCategory.svelte'
+	import { character } from '../../../stores/characterStore'
+	import GearCategory from './GearCategory.svelte'
 
 
-const gearList = [
-	'melee',
-	'ranged',
-	'ammo',
-	'armor',
-	'equipment'
-]
+	const gearList = [
+		'melee',
+		'ranged',
+		'ammo',
+		'armor',
+		'equipment'
+	]
 </script>
 
 
@@ -24,16 +24,14 @@ const gearList = [
 
 
 <style>
-details {
-	margin: 0;
-}
-
-.sheet-card {
-	margin: var(--s100);
-	padding: 0;
-}
-
-.gear-category-list {
-	padding: var(--s100);
-}
+	details {
+		margin: 0;
+	}
+	.sheet-card {
+		margin: var(--s100);
+		padding: 0;
+	}
+	.gear-category-list {
+		padding: var(--s100);
+	}
 </style>

@@ -1,5 +1,5 @@
 <script>
-export let ToC
+	export let ToC
 </script>
 
 

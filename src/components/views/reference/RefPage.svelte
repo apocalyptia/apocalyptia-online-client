@@ -1,26 +1,25 @@
 <script>
-import { SkillFlowExplanation } from './../../rules/skills/Skills.js';
-import { beforeUpdate } from 'svelte'
-import GearBlock from '../ui/GearBlock.svelte'
-import Table from '../../rules/Table.js';
+	import { SkillFlowExplanation } from './../../rules/skills/Skills.js';
+	import { beforeUpdate } from 'svelte'
+	import GearBlock from '../ui/GearBlock.svelte'
+	import Table from '../../rules/Table.js';
 
+	export let chapter
 
-export let chapter
+	let ruleList = [...chapter.list]
 
-let ruleList = [...chapter.list]
+	$: searchTerm = ''
 
-$: searchTerm = ''
-
-beforeUpdate(() => {
-	ruleList = [...chapter.list]
-	if (searchTerm) {
-		ruleList = ruleList.filter(rule => {
-			const ruleName = rule.name.toLocaleLowerCase()
-			const searchName = searchTerm.toLocaleLowerCase()
-			return ruleName.includes(searchName)
-		})
-	}
-})
+	beforeUpdate(() => {
+		ruleList = [...chapter.list]
+		if (searchTerm) {
+			ruleList = ruleList.filter(rule => {
+				const ruleName = rule.name.toLocaleLowerCase()
+				const searchName = searchTerm.toLocaleLowerCase()
+				return ruleName.includes(searchName)
+			})
+		}
+	})
 </script>
 
 
@@ -113,54 +112,51 @@ beforeUpdate(() => {
 
 
 <style>
-.ref-header-section {
-	display: block;
-	height: var(--s300);
-}
-.chapter-name {
-	position: absolute;
-	font-weight: bold;
-	font-size: var(--s150);
-	top: var(--s150);
-	left: var(--s100);
-}
-.search-bar {
-	position: absolute;
-	top: var(--s100);
-	right: var(--s100);
-	width: 33%;
-	min-width: 100px;
-	padding: var(--s25) var(--s100);
-	text-align: left;
-}
-
-.sub-name {
-	font-weight: bold;
-}
-.sub-desc, .spec-desc {
-	margin: var(--s100);
-}
-.no-results {
-	padding-left: 10vw;
-	padding-top: 2vh;
-}
-
-.bold {
-	font-weight: bold;
-}
-
-.rule-table {
-	margin-top: var(--s100);
-}
-.header {
-	font-weight: bold;
-	text-align: center;
-}
-tr {
-	display: flex;
-	width: 100%;
-}
-table {
-	width: 100%;
-}
+	.ref-header-section {
+		display: block;
+		height: var(--s300);
+	}
+	.chapter-name {
+		position: absolute;
+		font-weight: bold;
+		font-size: var(--s150);
+		top: var(--s150);
+		left: var(--s100);
+	}
+	.search-bar {
+		position: absolute;
+		top: var(--s100);
+		right: var(--s100);
+		width: 33%;
+		min-width: 100px;
+		padding: var(--s25) var(--s100);
+		text-align: left;
+	}
+	.sub-name {
+		font-weight: bold;
+	}
+	.sub-desc, .spec-desc {
+		margin: var(--s100);
+	}
+	.no-results {
+		padding-left: 10vw;
+		padding-top: 2vh;
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.rule-table {
+		margin-top: var(--s100);
+	}
+	.header {
+		font-weight: bold;
+		text-align: center;
+	}
+	tr {
+		display: flex;
+		width: 100%;
+	}
+	table {
+		width: 100%;
+	}
 </style>

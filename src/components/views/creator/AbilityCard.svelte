@@ -1,11 +1,10 @@
 <script>
-import { character } from '../../../stores/characterStore'
-import ToggleVisible from '../../helpers/ToggleVisible'
-import AbilityModal from './AbilityModal.svelte'
+	import { character } from '../../../stores/characterStore'
+	import ToggleVisible from '../../helpers/ToggleVisible'
+	import AbilityModal from './AbilityModal.svelte'
 
-
-export let ability
-export let MasterAbilityList
+	export let ability
+	export let MasterAbilityList
 </script>
 
 
@@ -26,18 +25,18 @@ export let MasterAbilityList
 
 
 <style>
-.ability-card {
-	margin: var(--s100) auto;
-}
-.card-row {
-	display: flex;
-	justify-content: space-between;
-	margin: var(--s50) auto;
-}
-.ability-name{
-	flex: 2;
-	font-weight: bold;
-	text-decoration: underline;
-	text-align: center;
-}
+	.ability-card {
+		margin: var(--s100) auto;
+	}
+	.card-row {
+		display: flex;
+		justify-content: space-between;
+		margin: var(--s50) auto;
+	}
+	.ability-name{
+		flex: 2;
+		font-weight: bold;
+		text-decoration: underline;
+		text-align: center;
+	}
 </style>

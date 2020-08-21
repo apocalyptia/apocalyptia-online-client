@@ -1,5 +1,5 @@
 <script>
-import { character } from '../../../stores/characterStore'
+	import { character } from '../../../stores/characterStore'
 </script>
 
 

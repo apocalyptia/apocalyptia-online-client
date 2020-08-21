@@ -1,5 +1,5 @@
 <script>
-import Description from './description.svelte'
+    import Description from './description.svelte'
 </script>
 
 

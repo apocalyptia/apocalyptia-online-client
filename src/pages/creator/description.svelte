@@ -1,31 +1,30 @@
 <script>
-import Description from '../../components/rules/description/Description'
-import NavBar from '../../components/views/controls/NavBar.svelte'
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
+	import Description from '../../components/rules/description/Description'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import { beforeUpdate } from 'svelte'
+	import { character } from '../../stores/characterStore'
 
+	let status = `stop`
 
-let status = `stop`
+	let next
 
-let next
+	const randomItem = (i) => $character = Description.list[i].random($character)
 
-const randomItem = (i) => $character = Description.list[i].random($character)
+	const random = () => $character = Description.random($character)
 
-const random = () => $character = Description.random($character)
+	const reset = () => $character = Description.reset($character)
 
-const reset = () => $character = Description.reset($character)
-
-beforeUpdate(() => {
-	status = `go`
-	for (let d of Object.values($character.desc)) {
-		if (d.value == ``) {
-			status = `stop`
-			break
+	beforeUpdate(() => {
+		status = `go`
+		for (let d of Object.values($character.desc)) {
+			if (d.value == ``) {
+				status = `stop`
+				break
+			}
 		}
-	}
-	if (status == `go`) next = `/creator/traits`
-	else next = `/creator/description`
-})
+		if (status == `go`) next = `/creator/traits`
+		else next = `/creator/description`
+	})
 </script>
 
 
@@ -68,55 +67,55 @@ beforeUpdate(() => {
 
 
 <style>
-div[class*='-container'] {
-	align-items: center;
-	display: flex;
-	justify-content: space-evenly;
-	max-width: 100%;
-}
-div[class*='-container'] > span {
-	text-align: right;
-}
-div[class*='-container'] > span,
-.character-container > button,
-.item-container > button {
-	flex: 1;
-}
-div[class*='-container'] > input {
-	margin-left: var(--s33);
-	margin-right: var(--s33);
-}
-/* MOBILE */
-@media only screen and (max-width: 900px) {
-	.item-block {
-		display: block;
-		width: 100%;
-		max-width: 100%;
-	}
 	div[class*='-container'] {
-		margin: var(--s50) 0;
-		width: 100%;
-	}
-	.character-container > input[type='text'],
-	.item-container input[type='text'] {
-		flex: 2;
-	}
-}
-/* DESKTOP */
-@media only screen and (min-width: 900px) {
-	.item-block {
+		align-items: center;
 		display: flex;
+		justify-content: space-evenly;
 		max-width: 100%;
 	}
-	div[class*='-container'] {
-		margin: var(--s50);
-		width: 100%;
+	div[class*='-container'] > span {
+		text-align: right;
 	}
-	.character-container > input[type='text'] {
-		flex: 6
+	div[class*='-container'] > span,
+	.character-container > button,
+	.item-container > button {
+		flex: 1;
 	}
-	.item-container > input[type='text'] {
-		flex: 2;
+	div[class*='-container'] > input {
+		margin-left: var(--s33);
+		margin-right: var(--s33);
 	}
-}
+	/* MOBILE */
+	@media only screen and (max-width: 900px) {
+		.item-block {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+		}
+		div[class*='-container'] {
+			margin: var(--s50) 0;
+			width: 100%;
+		}
+		.character-container > input[type='text'],
+		.item-container input[type='text'] {
+			flex: 2;
+		}
+	}
+	/* DESKTOP */
+	@media only screen and (min-width: 900px) {
+		.item-block {
+			display: flex;
+			max-width: 100%;
+		}
+		div[class*='-container'] {
+			margin: var(--s50);
+			width: 100%;
+		}
+		.character-container > input[type='text'] {
+			flex: 6
+		}
+		.item-container > input[type='text'] {
+			flex: 2;
+		}
+	}
 </style>

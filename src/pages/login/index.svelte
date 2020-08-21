@@ -1,28 +1,28 @@
 <script>
-import Spinner from '../../components/views/ui/Spinner.svelte'
-import { authUserStore, login } from '../../stores/netlifyStore'
-import { character } from '../../stores/characterStore'
+	import { url } from '@sveltech/routify'
+	import Spinner from '../../components/views/ui/Spinner.svelte'
+	import { authUserStore, login } from '../../stores/netlifyStore'
+	import { character } from '../../stores/characterStore'
 
+	if ($authUserStore) window.location.href = `/`
 
-if ($authUserStore) window.location.href = `/`
+	const user = {
+		email: ``,
+		password: ``
+	}
 
-const user = {
-	email: ``,
-	password: ``
-}
+	let pendingApiCall = false
 
-let pendingApiCall = false
+	let forgotPassword = false
 
-let forgotPassword = false
-
-const submit = (event) => {
-	pendingApiCall = true
-	let loginResult = login(user)
-		.catch(e => {
-			pendingApiCall = false
-			forgotPassword = true
-		})
-}
+	const submit = (event) => {
+		pendingApiCall = true
+		let loginResult = login(user)
+			.catch(e => {
+				pendingApiCall = false
+				forgotPassword = true
+			})
+	}
 </script>
 
 
@@ -54,7 +54,7 @@ const submit = (event) => {
 				value='Login'
 			>
 			{#if forgotPassword}
-				<a href='/login/recover'>Forgot your password?</a>
+				<a href={$url('/login/recover')}>Forgot your password?</a>
 			{/if}
 		</form>
 	{/if}

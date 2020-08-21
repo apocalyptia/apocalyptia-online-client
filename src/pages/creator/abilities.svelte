@@ -1,25 +1,24 @@
 <script>
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
-import Abilities from '../../components/rules/abilities/Abilities'
-import AbilityGroup from '../../components/views/creator/AbilityGroup.svelte'
-import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
-import AbilityCurrent from '../../components/views/creator/AbilityCurrent.svelte'
-import NavBar from '../../components/views/controls/NavBar.svelte'
+	import { beforeUpdate } from 'svelte'
+	import { character } from '../../stores/characterStore'
+	import Abilities from '../../components/rules/abilities/Abilities'
+	import AbilityGroup from '../../components/views/creator/AbilityGroup.svelte'
+	import AbilityCard from '../../components/views/creator/AbilityCard.svelte'
+	import AbilityCurrent from '../../components/views/creator/AbilityCurrent.svelte'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
 
+	let MasterAbilityList = Abilities.masterList
 
-let MasterAbilityList = Abilities.masterList
-
-const resetAbilities = () => {
-	for (let a = 0; a < $character.abilities.length; ++a) {
-		$character.abilities[a].taken = 0
+	const resetAbilities = () => {
+		for (let a = 0; a < $character.abilities.length; ++a) {
+			$character.abilities[a].taken = 0
+		}
 	}
-}
 
-beforeUpdate(() => {
-	$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-	$character = Abilities.remainingXP($character)
-})
+	beforeUpdate(() => {
+		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
+		$character = Abilities.remainingXP($character)
+	})
 </script>
 
 
@@ -55,7 +54,7 @@ beforeUpdate(() => {
 
 
 <style>
-.abilities-list {
-	width: 100%;
-}
+	.abilities-list {
+		width: 100%;
+	}
 </style>

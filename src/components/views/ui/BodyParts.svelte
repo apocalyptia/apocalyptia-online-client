@@ -1,6 +1,6 @@
 <script>
-export let character
-export let readonly = false
+	export let character
+	export let readonly = false
 </script>
 
 
@@ -130,100 +130,96 @@ export let readonly = false
 
 
 <style>
-input[type='number'] {
-	width: var(--s200);
-}
-
-.body-parts-section {
-	display: flex;
-	justify-content: center;
-	max-width: 100%;
-}
-
-div[class*=column] {
-	display: block;
-	height: 100%;
-	width: auto;
-}
-.center-column {
-	margin-top: 10px;
-	text-align: center;
-	width: 100%;
-}
-
-div[class*=-label] {
-	display: inline-block;
-	height: 10px;
-	position: relative;
-	text-align: center;
-	width: 100%;
-}
-.head-label {
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-.right-arm-label {
-	top: 140px;
-}
-.left-arm-label {
-	top: 140px;
-}
-.torso-label {
-	color: rgba(15, 30, 15, 1);
-	left: 50%;
-	top: 50px;
-	transform: translate(-50%, -50%);
-}
-.left-leg-label {
-	top: 250px;
-}
-.right-leg-label {
-	top: 250px;
-}
-
-.body-part {
-	background-color: lime;
-}
-.body-part-numbers {
-	margin: 5px;
-}
-div[class*=level] {
-	display: flex;
-	justify-content: center;
-}
-.head {
-	border-radius: 50%;
-	border: 1px;
-	height: 50px;
-	margin-bottom: 5px;
-	width: 50px;
-}
-.arm {
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-	height: 140px;
-	width: 20px;
-}
-.left-arm {
-	border-top-left-radius: 30px;
-}
-.right-arm {
-	border-top-right-radius: 30px;
-}
-.torso {
-	color: rgba(15, 30, 15, 1);
-	height: 150px;
-	margin: 0 5px;
-	text-align: center;
-	width: 70px;
-}
-.leg {
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	height: 160px;
-	width: 28px;
-}
-.left-leg {
-	margin-right: 14px;
-}
+	input[type='number'] {
+		width: var(--s200);
+	}
+	.body-parts-section {
+		display: flex;
+		justify-content: center;
+		max-width: 100%;
+	}
+	div[class*=column] {
+		display: block;
+		height: 100%;
+		width: auto;
+	}
+	.center-column {
+		margin-top: 10px;
+		text-align: center;
+		width: 100%;
+	}
+	div[class*=-label] {
+		display: inline-block;
+		height: 10px;
+		position: relative;
+		text-align: center;
+		width: 100%;
+	}
+	.head-label {
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.right-arm-label {
+		top: 140px;
+	}
+	.left-arm-label {
+		top: 140px;
+	}
+	.torso-label {
+		color: rgba(15, 30, 15, 1);
+		left: 50%;
+		top: 50px;
+		transform: translate(-50%, -50%);
+	}
+	.left-leg-label {
+		top: 250px;
+	}
+	.right-leg-label {
+		top: 250px;
+	}
+	.body-part {
+		background-color: lime;
+	}
+	.body-part-numbers {
+		margin: 5px;
+	}
+	div[class*=level] {
+		display: flex;
+		justify-content: center;
+	}
+	.head {
+		border-radius: 50%;
+		border: 1px;
+		height: 50px;
+		margin-bottom: 5px;
+		width: 50px;
+	}
+	.arm {
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		height: 140px;
+		width: 20px;
+	}
+	.left-arm {
+		border-top-left-radius: 30px;
+	}
+	.right-arm {
+		border-top-right-radius: 30px;
+	}
+	.torso {
+		color: rgba(15, 30, 15, 1);
+		height: 150px;
+		margin: 0 5px;
+		text-align: center;
+		width: 70px;
+	}
+	.leg {
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+		height: 160px;
+		width: 28px;
+	}
+	.left-leg {
+		margin-right: 14px;
+	}
 </style>

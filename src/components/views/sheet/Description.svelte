@@ -1,5 +1,5 @@
 <script>
-import { character } from '../../../stores/characterStore'
+	import { character } from '../../../stores/characterStore'
 </script>
 
 
@@ -45,18 +45,18 @@ import { character } from '../../../stores/characterStore'
 
 
 <style>
-.name-block {
-	align-items: center;
-	display: flex;
-	margin: 0 var(--s100);
-	padding-bottom: 0;
-}
-.sheet-card-item {
-	align-items: center;
-	display: flex;
-	margin-bottom: var(--s50);
-}
-.sheet-value {
-	width: 100%;
-}
+	.name-block {
+		align-items: center;
+		display: flex;
+		margin: 0 var(--s100);
+		padding-bottom: 0;
+	}
+	.sheet-card-item {
+		align-items: center;
+		display: flex;
+		margin-bottom: var(--s50);
+	}
+	.sheet-value {
+		width: 100%;
+	}
 </style>

@@ -1,18 +1,18 @@
 <script>
-import { createEventDispatcher } from 'svelte'
-import OuterClick from '../../helpers/OuterClick'
+	import { createEventDispatcher } from 'svelte'
+	import OuterClick from '../../helpers/OuterClick'
 
-export let exclude = []
+	export let exclude = []
 
-let child
+	let child
 
-const dispatch = createEventDispatcher()
+	const dispatch = createEventDispatcher()
 
-const ClickOutside = (event) => {
-	if (OuterClick(event.target, child, exclude)) {
-		dispatch('clickoutside')
+	const ClickOutside = (event) => {
+		if (OuterClick(event.target, child, exclude)) {
+			dispatch('clickoutside')
+		}
 	}
-}
 </script>
 
 

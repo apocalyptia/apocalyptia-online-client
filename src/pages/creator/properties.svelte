@@ -1,12 +1,11 @@
 <script>
-import { beforeUpdate } from 'svelte'
-import { character } from '../../stores/characterStore'
-import BodyParts from '../../components/views/ui/BodyParts.svelte'
-import Properties from '../../components/rules/properties/Properties'
-import NavBar from '../../components/views/controls/NavBar.svelte'
+	import { beforeUpdate } from 'svelte'
+	import { character } from '../../stores/characterStore'
+	import BodyParts from '../../components/views/ui/BodyParts.svelte'
+	import Properties from '../../components/rules/properties/Properties'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
 
-
-beforeUpdate(() => $character = Properties.setScores($character))
+	beforeUpdate(() => $character = Properties.setScores($character))
 </script>
 
 
@@ -80,12 +79,12 @@ beforeUpdate(() => $character = Properties.setScores($character))
 
 
 <style>
-.properties-list {
-	display: flex;
-	justify-content: space-around;
-	text-align: left;
-}
-.prop-item {
-	margin: var(--s10);
-}
+	.properties-list {
+		display: flex;
+		justify-content: space-around;
+		text-align: left;
+	}
+	.prop-item {
+		margin: var(--s10);
+	}
 </style>
