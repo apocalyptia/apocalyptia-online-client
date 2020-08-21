@@ -3,10 +3,7 @@
 	import AbilityModalSingle from './AbilityModalSingle.svelte'
 	import AbilityModalOptions from './AbilityModalOptions.svelte'
 
-
-	export let ability
-	export let MasterAbilityList
-
+	export let ability, MasterAbilityList
 
 	const dispatch = createEventDispatcher()
 

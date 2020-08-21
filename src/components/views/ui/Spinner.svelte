@@ -22,14 +22,14 @@
 
 
 <style>
-.spinner {
-	animation-iteration-count: infinite;
-	animation-name: spin;
-	animation-timing-function: linear;
-	transition-property: transform;
-}
-@keyframes spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
+	.spinner {
+		animation-iteration-count: infinite;
+		animation-name: spin;
+		animation-timing-function: linear;
+		transition-property: transform;
+	}
+	@keyframes spin {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
 </style>

@@ -4,7 +4,6 @@
 	import ItemModal from './ItemModal.svelte'
 	import { character } from '../../../stores/characterStore'
 
-
 	export let gearType
 
 	let modalVisible = false

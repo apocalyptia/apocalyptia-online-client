@@ -2,12 +2,7 @@
 	import GearBlock from '../ui/GearBlock.svelte'
 	import { character } from '../../../stores/characterStore'
 
-
-	export let gearType
-
-	export let item
-
-	export let index
+	export let gearType, item, index
 
 	const trashItem = (item, index=0) => {
 		if (item == 'melee') $character.gear.melee.inventory.splice(index, 1)

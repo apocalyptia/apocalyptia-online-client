@@ -1,8 +1,7 @@
 <script>
 	import { character } from '../../../stores/characterStore'
 
-	export let ability
-	export let MasterAbilityList
+	export let ability, MasterAbilityList
 
 	let OptionList = MasterAbilityList.filter(a => a.name == ability.name)
 </script>

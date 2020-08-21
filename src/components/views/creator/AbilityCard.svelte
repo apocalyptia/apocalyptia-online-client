@@ -3,8 +3,7 @@
 	import ToggleVisible from '../../helpers/ToggleVisible'
 	import AbilityModal from './AbilityModal.svelte'
 
-	export let ability
-	export let MasterAbilityList
+	export let ability, MasterAbilityList
 </script>
 
 

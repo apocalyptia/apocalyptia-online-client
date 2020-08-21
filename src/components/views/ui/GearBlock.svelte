@@ -1,6 +1,5 @@
 <script>
-	export let rule
-	export let readonly
+	export let rule, readonly
 </script>
 
 

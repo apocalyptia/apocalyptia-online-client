@@ -7,7 +7,6 @@
 	import { character } from '../../../stores/characterStore'
 	import { createEventDispatcher, onDestroy } from 'svelte'
 
-
 	export let gearType
 
 	let itemList = []
