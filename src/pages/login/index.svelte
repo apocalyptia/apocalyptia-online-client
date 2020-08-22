@@ -1,10 +1,10 @@
 <script>
-	import { url } from '@sveltech/routify'
+	import { goto, url } from '@sveltech/routify'
 	import Spinner from '../../components/views/ui/Spinner.svelte'
 	import { authUserStore, login } from '../../stores/netlifyStore'
 	import { character } from '../../stores/characterStore'
 
-	if ($authUserStore) window.location.href = `/`
+	if ($authUserStore) $goto(`/`)
 
 	const user = {
 		email: ``,

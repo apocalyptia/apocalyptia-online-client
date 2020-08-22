@@ -1,8 +1,9 @@
 <script>
+	import { goto } from '@sveltech/routify'
 	import Spinner from '../../components/views/ui/Spinner.svelte'
 	import { authUserStore, recover } from '../../stores/netlifyStore'
 
-	if ($authUserStore) window.location.href = `/`
+	if ($authUserStore) $goto(`/`)
 
 	let email = ``
 

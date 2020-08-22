@@ -10,11 +10,11 @@ export default (user, character) => {
 	character.modified = new Date()
 	const jsonChar = JSON.stringify(character)
     window.localStorage.setItem('character', jsonChar)
-    if (api.readCharacter(user, jsonChar)) {
-        api.updateCharacter(user, jsonChar)
-    }
-    else {
-        api.createCharacter(user, jsonChar)
-    }
+    // if (api.readCharacter(user, jsonChar)) {
+    //     api.updateCharacter(user, jsonChar)
+    // }
+    // else {
+    //     api.createCharacter(user, jsonChar)
+    // }
     return character
 }

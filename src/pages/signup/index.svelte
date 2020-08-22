@@ -1,9 +1,9 @@
 <script>
-	import { url } from '@sveltech/routify'
+	import { goto, url } from '@sveltech/routify'
 	import Spinner from '../../components/views/ui/Spinner.svelte'
 	import { authUserStore, login, signup } from '../../stores/netlifyStore'
 
-	if ($authUserStore) window.location.href = `/`
+	if ($authUserStore) $goto(`/`)
 
 	let confirmMessage = ``
 

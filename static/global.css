@@ -223,6 +223,7 @@ select {
 	background-color: rgba(15, 30, 15, 1);
 	border-radius: var(--radius);
 	border: var(--s1) solid lime;
+	color: lime;
 	display: flex;
 	font-size: var(--s125);
 	font-weight: bold;
