@@ -21,7 +21,7 @@
 
 <div class='content-menu'>
 	{#each referencePages as page}
-		<a href={$url('/reference/:page')} class='link-btn menu-btn'>
+		<a href={$url('/reference/:page', {page: page})} class='link-btn menu-btn'>
 			{Capitalize(page)}
 		</a>
 	{/each}
