@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte'
-    import { url } from '@sveltech/routify'
+    import { url } from '@roxi/routify'
     import { authUserStore, confirm } from '../stores/netlifyStore'
     import { character } from '../stores/characterStore'
 

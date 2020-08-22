@@ -1,5 +1,5 @@
 <script>
-	import { url } from '@sveltech/routify'
+	import { url } from '@roxi/routify'
 	import UserMenu from './UserMenu.svelte'
 	import { authUserStore } from '../../../stores/netlifyStore'
 	import { app_version } from '../../../main'

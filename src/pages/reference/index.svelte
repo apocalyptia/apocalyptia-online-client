@@ -1,5 +1,5 @@
 <script>
-	import { url } from '@sveltech/routify'
+	import { url } from '@roxi/routify'
 	import NavBar from '../../components/views/controls/NavBar.svelte'
 	import Capitalize from '../../components/helpers/Capitalize'
 

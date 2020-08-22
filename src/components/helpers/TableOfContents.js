@@ -1,4 +1,4 @@
-import { goto } from '@sveltech/routify'
+import { goto } from '@roxi/routify'
 
 export default class TableOfContents {
 	constructor({

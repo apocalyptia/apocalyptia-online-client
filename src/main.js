@@ -1,4 +1,4 @@
-import HMR from '@sveltech/routify/hmr'
+import HMR from '@roxi/routify/hmr'
 import App from './App.svelte';
 
 export const app_version = 'ver 0.2a'

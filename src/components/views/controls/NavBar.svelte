@@ -1,5 +1,5 @@
 <script>
-	import { url } from '@sveltech/routify'
+	import { url } from '@roxi/routify'
 	import Spinner from '../ui/Spinner.svelte'
 
 	export let links = true

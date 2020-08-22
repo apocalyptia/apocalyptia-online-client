@@ -1,5 +1,5 @@
 <script>
-	import { metatags, Router } from "@sveltech/routify";
+	import { Router, metatags } from "@roxi/routify";
 	import { routes } from "../.routify/routes";
 
 	metatags.title = 'Apocalyptia Online'
