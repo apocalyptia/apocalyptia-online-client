@@ -14,7 +14,7 @@
 	}
 
 	const deleteCharacter = () => {
-		$character = DeleteCharacter($character)
+		$character = DeleteCharacter($authUserStore.id, $character)
 		$goto('/')
 	}
 </script>

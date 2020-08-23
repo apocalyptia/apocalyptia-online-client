@@ -1,6 +1,5 @@
 const createCharacter = (user, character) => {
-	console.log('API CREATE CHARACTER')
-	console.log(character)
+	console.log('CREATE API CALL!')
 	return fetch(`/.netlify/functions/character-create/${user}/${character.id}`, {
 		body: character,
 		method: `POST`
@@ -27,8 +26,8 @@ const deleteCharacter = (user, character) => {
 }
 
 export const api = {
-	createCharacter: createCharacter,
-	readCharacter: readCharacter,
-	updateCharacter: updateCharacter,
-	deleteCharacter: deleteCharacter,
+	createCharacter,
+	readCharacter,
+	updateCharacter,
+	deleteCharacter
 }

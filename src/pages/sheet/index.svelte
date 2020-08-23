@@ -10,6 +10,7 @@
 
 	const saveCharacter = () => {
 		$character = SaveCharacter($authUserStore.id, $character)
+		$goto('/')
 	}
 
 	const deleteCharacter = () => {

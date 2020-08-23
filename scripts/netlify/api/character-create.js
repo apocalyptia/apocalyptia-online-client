@@ -17,6 +17,7 @@ const characterCreateQuery = (event, id) => {
 }
 
 exports.handler = async (event) => {
+	console.log('CREATE EVENT!')
 	return client.query(characterCreateQuery(event, getId(event.path)))
 		.then(successResponse(res))
 		.catch(failureResponse(res))
