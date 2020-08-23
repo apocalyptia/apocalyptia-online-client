@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '@roxi/routify'
 	import Character from '../../components/rules/Character'
 	import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
 	import NavBar from '../../components/views/controls/NavBar.svelte'
@@ -13,6 +14,7 @@
 
 	const deleteCharacter = () => {
 		$character = DeleteCharacter($authUserStore.id, $character)
+		$goto('/')
 	}
 </script>
 

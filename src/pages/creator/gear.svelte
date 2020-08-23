@@ -80,60 +80,61 @@
 	<h1>Gear</h1>
 	<div class='explanation'>
 		<p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p>
-		{#if !$character.gear.melee.inventory.length}
-			<div class='cntr-btn'>
-				<button on:click={randomStartingGear}>Random</button>
-			</div>
-		{/if}
 	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Melee Weapon</h2>
+	{#if !$character.gear.melee.inventory.length}
+		<div class='cntr-btn'>
+			<button on:click={randomStartingGear}>Random</button>
 		</div>
-		{#if $character.gear.melee.inventory.length > 0}
-			<div class='item'>
-				<GearBlock rule={$character.gear.melee.inventory[0]} />
+	{:else}
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Melee Weapon</h2>
 			</div>
-		{/if}
-	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Ranged Weapon</h2>
-		</div>
-		{#if $character.gear.ranged.inventory.length}
-			<div class='item'>
-				<GearBlock rule={$character.gear.ranged.inventory[0]} />
-			</div>
-			<div class='item-category ammo-heading'>
-				<h2>Ammo</h2>
-			</div>
-			<div class='item'>
-				<GearBlock rule={$character.gear.ammo.inventory[0]} {readonly} />
-			</div>
-		{/if}
-	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Armor</h2>
-		</div>
-		{#if $character.gear.armor.inventory.length}
-			<div class='item'>
-				<GearBlock rule={$character.gear.armor.inventory[0]} />
-			</div>
-		{/if}
-	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Equipment</h2>
-		</div>
-		{#if $character.gear.equipment.inventory.length}
-			{#each $character.gear.equipment.inventory as equipment}
+			{#if $character.gear.melee.inventory.length > 0}
 				<div class='item'>
-					<GearBlock rule={equipment} />
+					<GearBlock rule={$character.gear.melee.inventory[0]} />
 				</div>
-			{/each}
-		{/if}
-	</div>
+			{/if}
+		</div>
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Ranged Weapon</h2>
+			</div>
+			{#if $character.gear.ranged.inventory.length}
+				<div class='item'>
+					<GearBlock rule={$character.gear.ranged.inventory[0]} />
+				</div>
+				<div class='item-category ammo-heading'>
+					<h2>Ammo</h2>
+				</div>
+				<div class='item'>
+					<GearBlock rule={$character.gear.ammo.inventory[0]} {readonly} />
+				</div>
+			{/if}
+		</div>
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Armor</h2>
+			</div>
+			{#if $character.gear.armor.inventory.length}
+				<div class='item'>
+					<GearBlock rule={$character.gear.armor.inventory[0]} />
+				</div>
+			{/if}
+		</div>
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Equipment</h2>
+			</div>
+			{#if $character.gear.equipment.inventory.length}
+				{#each $character.gear.equipment.inventory as equipment}
+					<div class='item'>
+						<GearBlock rule={equipment} />
+					</div>
+				{/each}
+			{/if}
+		</div>
+	{/if}
 </div>
 <NavBar links={{back: '/creator/abilities', next: next}} {status}/>
 
