@@ -10,13 +10,14 @@ const finalizeCharacter = (user, character) => {
     return character
 }
 
-// const saveLocal = (character) => {
-//     const jsonChar = JSON.stringify(character)
-//     window.localStorage.setItem(`character`, jsonChar)
-// }
+const saveLocal = (character) => {
+    const jsonChar = JSON.stringify(character)
+    window.localStorage.setItem(`character`, jsonChar)
+}
 
 export default (user, character) => {
     character = finalizeCharacter(user, character)
+    saveLocal(character)
     fetch(`/.netlify/functions/create-character`, {
 		body: JSON.stringify(CompressCharacter(character)),
 		method: `POST`
