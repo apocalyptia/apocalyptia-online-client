@@ -12,7 +12,7 @@ const deleteRemote = (user, character) => {
 }
 
 export default (user, character) => {
-    deleteLocal()
+    // deleteLocal()
     deleteRemote(user, character)
     return new Character()
 }

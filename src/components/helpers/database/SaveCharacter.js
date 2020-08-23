@@ -23,7 +23,7 @@ const saveRemote = (user, character) => {
 
 export default (user, character) => {
     character = finalizeCharacter(user, character)
-    saveLocal(character)
+    // saveLocal(character)
     saveRemote(user, character)
     return character
 }
