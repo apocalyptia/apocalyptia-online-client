@@ -1,4 +1,3 @@
-import api from './api'
 import CompressCharacter from './CompressCharacter'
 
 
@@ -11,19 +10,16 @@ const finalizeCharacter = (user, character) => {
     return character
 }
 
-const saveLocal = (character) => {
-    const jsonChar = JSON.stringify(character)
-    window.localStorage.setItem(`character`, jsonChar)
-}
-
-const saveRemote = (user, character) => {
-    const compressedCharacter = CompressCharacter(character)
-    api('create-character', user, compressedCharacter)
-}
+// const saveLocal = (character) => {
+//     const jsonChar = JSON.stringify(character)
+//     window.localStorage.setItem(`character`, jsonChar)
+// }
 
 export default (user, character) => {
     character = finalizeCharacter(user, character)
-    // saveLocal(character)
-    saveRemote(user, character)
+    fetch(`/.netlify/functions/create-character`, {
+		body: JSON.stringify(CompressCharacter(character)),
+		method: `POST`
+	}).then(res => res.json())
     return character
 }

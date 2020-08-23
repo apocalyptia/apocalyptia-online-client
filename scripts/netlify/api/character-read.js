@@ -5,7 +5,9 @@ const faunadb = require('faunadb')
 
 const q = faunadb.query
 
-const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
+const client = new faunadb.Client({
+	secret: process.env.FAUNADB_SERVER_SECRET
+})
 
 const characterGetQuery = (event, id) => {
 	return q.Get(
@@ -17,7 +19,9 @@ const characterGetQuery = (event, id) => {
 }
 
 exports.handler = async (event) => {
-	return client.query(characterGetQuery(event, getId(event.path)))
+	return client.query(
+		characterGetQuery(event, getId(event.path))
+	)
 		.then(successResponse(res))
 		.catch(failureResponse(res))
 }

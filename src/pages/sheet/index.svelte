@@ -1,12 +1,12 @@
 <script>
-	import { goto } from '@roxi/routify'
 	import Character from '../../components/rules/Character'
 	import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
+	import DeleteCharacter from '../../components/helpers/database/DeleteCharacter.js'
 	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import SaveCharacter from '../../components/helpers/database/SaveCharacter.js'
 	import { authUserStore } from '../../stores/netlifyStore'
 	import { character } from '../../stores/characterStore'
-	import SaveCharacter from '../../components/helpers/database/SaveCharacter.js'
-	import DeleteCharacter from '../../components/helpers/database/DeleteCharacter.js'
+	import { goto } from '@roxi/routify'
 
 	const saveCharacter = () => {
 		$character = SaveCharacter($authUserStore.id, $character)

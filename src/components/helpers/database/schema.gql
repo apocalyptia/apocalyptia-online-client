@@ -32,6 +32,10 @@ type Character {
 	luck: Int!
 }
 
-type Query {
+type query {
 	findCharacterById(id: String!): Character!
+}
+
+type mutation {
+	createCharacter(character: Character!): Character!
 }
