@@ -8,10 +8,12 @@ export default (user, character) => {
     character.user = user
     character.completed = true
     character.step = `complete`
-	character.modified = new Date()
-	const jsonChar = JSON.stringify(character)
-    window.localStorage.setItem('character', jsonChar)
+    character.modified = new Date()
     const compressedCharacter = CompressCharacter(character)
+	const jsonChar = JSON.stringify(compressedCharacter)
+    window.localStorage.setItem('character', jsonChar)
+    console.log('SAVING CHARACTER!')
+    console.log(compressedCharacter)
     // if (api.readCharacter(user, jsonChar)) {
     //     api.updateCharacter(user, jsonChar)
     // }

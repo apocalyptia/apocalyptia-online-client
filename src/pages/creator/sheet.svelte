@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '@roxi/routify'
 	import Character from '../../components/rules/Character'
 	import CharacterSheet from '../../components/views/ui/CharacterSheet.svelte'
 	import DeleteCharacter from '../../components/helpers/database/DeleteCharacter'
@@ -9,10 +10,12 @@
 
 	const saveCharacter = () => {
 		$character = SaveCharacter($authUserStore.id, $character)
+		$goto('/')
 	}
 
 	const deleteCharacter = () => {
 		$character = DeleteCharacter($character)
+		$goto('/')
 	}
 </script>
 

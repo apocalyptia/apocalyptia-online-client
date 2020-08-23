@@ -20,12 +20,14 @@
 	let carriedGear = []
 
 	const randomMelee = () => {
-		$character.gear.melee.inventory.push(RandomRoll(MeleeWeaponList))
+		const randomMeleeWeaponItem = RandomRoll(MeleeWeaponList)
+		$character.gear.melee.inventory.push(randomMeleeWeaponItem)
 		$character = $character
 	}
 
 	const randomRanged = () => {
-		$character.gear.ranged.inventory.push(RandomRoll(RangedWeaponList))
+		const randomRangedWeaponItem = RandomRoll(RangedWeaponList)
+		$character.gear.ranged.inventory.push(randomRangedWeaponItem)
 		let ammo = RandomRoll(AmmoList)
 		while (ammo.cal != $character.gear.ranged.inventory[0].cal) {
 			ammo = RandomRoll(AmmoList)
@@ -36,17 +38,25 @@
 	}
 
 	const randomArmor = () => {
-		$character.gear.armor.inventory.push(RandomRoll(ArmorList))
+		const randomArmorItem = RandomRoll(ArmorList)
+		$character.gear.armor.inventory.push(randomArmorItem)
 		$character = $character
 	}
 
 	const randomEquipment = () => {
 		for (let i = 0; i < $character.props.luck.score; i++) {
-			const randomItem = RandomRoll(EquipmentList)
-			carriedGear.push(randomItem)
+			const randomEquipmentItem = RandomRoll(EquipmentList)
+			carriedGear.push(randomEquipmentItem)
 		}
 		$character.gear.equipment.inventory = [...carriedGear]
 		$character = $character
+	}
+
+	const randomStartingGear = () => {
+		randomMelee()
+		randomRanged()
+		randomArmor()
+		randomEquipment()
 	}
 
 	beforeUpdate(() => {
@@ -70,6 +80,11 @@
 	<h1>Gear</h1>
 	<div class='explanation'>
 		<p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p>
+		{#if !$character.gear.melee.inventory.length}
+			<div class='cntr-btn'>
+				<button on:click={randomStartingGear}>Random</button>
+			</div>
+		{/if}
 	</div>
 	<div class='section-card'>
 		<div class='item-category'>
@@ -78,10 +93,6 @@
 		{#if $character.gear.melee.inventory.length > 0}
 			<div class='item'>
 				<GearBlock rule={$character.gear.melee.inventory[0]} />
-			</div>
-		{:else}
-			<div class='cntr-btn'>
-				<button on:click={randomMelee}>Random</button>
 			</div>
 		{/if}
 	</div>
@@ -99,10 +110,6 @@
 			<div class='item'>
 				<GearBlock rule={$character.gear.ammo.inventory[0]} {readonly} />
 			</div>
-		{:else}
-			<div class='cntr-btn'>
-				<button on:click={randomRanged}>Random</button>
-			</div>
 		{/if}
 	</div>
 	<div class='section-card'>
@@ -112,10 +119,6 @@
 		{#if $character.gear.armor.inventory.length}
 			<div class='item'>
 				<GearBlock rule={$character.gear.armor.inventory[0]} />
-			</div>
-		{:else}
-			<div class='cntr-btn'>
-				<button on:click={randomArmor}>Random</button>
 			</div>
 		{/if}
 	</div>
@@ -129,10 +132,6 @@
 					<GearBlock rule={equipment} />
 				</div>
 			{/each}
-		{:else}
-			<div class='cntr-btn'>
-				<button on:click={randomEquipment}>Random</button>
-			</div>
 		{/if}
 	</div>
 </div>
