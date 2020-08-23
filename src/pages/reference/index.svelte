@@ -34,4 +34,9 @@
 		height: 100%;
 		padding: var(--s100);
 	}
+	@media only screen and (min-width: 650px) {
+		.menu-btn {
+			max-width: 50%;
+		}
+	}
 </style>

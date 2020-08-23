@@ -159,4 +159,11 @@
 	table {
 		width: 100%;
 	}
+	@media only screen and (min-width: 650px) {
+		details {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 50%;
+		}
+	}
 </style>
