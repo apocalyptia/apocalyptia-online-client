@@ -10,7 +10,7 @@ export default (user, character) => {
     character.step = `complete`
     character.modified = new Date()
     const compressedCharacter = CompressCharacter(character)
-	const jsonChar = JSON.stringify(compressedCharacter)
+	const jsonChar = JSON.stringify(character)
     window.localStorage.setItem('character', jsonChar)
     console.log('SAVING CHARACTER!')
     console.log(compressedCharacter)
