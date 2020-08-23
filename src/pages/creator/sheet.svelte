@@ -8,7 +8,7 @@
 	import { character } from '../../stores/characterStore'
 
 	const saveCharacter = () => {
-		$character = SaveCharacter($character, $authUserStore.id)
+		$character = SaveCharacter($authUserStore.id, $character)
 	}
 
 	const deleteCharacter = () => {

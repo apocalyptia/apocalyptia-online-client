@@ -25,8 +25,8 @@ const deleteCharacter = (user, character) => {
 }
 
 export const api = {
-	create: createCharacter,
-	read: readCharacter,
-	update: updateCharacter,
-	delete: deleteCharacter,
+	createCharacter: createCharacter,
+	readCharacter: readCharacter,
+	updateCharacter: updateCharacter,
+	deleteCharacter: deleteCharacter,
 }
