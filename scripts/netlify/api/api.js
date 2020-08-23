@@ -1,4 +1,6 @@
 const createCharacter = (user, character) => {
+	console.log('API CREATE CHARACTER')
+	console.log(character)
 	return fetch(`/.netlify/functions/character-create/${user}/${character.id}`, {
 		body: character,
 		method: `POST`

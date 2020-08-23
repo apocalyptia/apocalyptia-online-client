@@ -12,9 +12,6 @@ export default (user, character) => {
     const compressedCharacter = CompressCharacter(character)
 	const jsonChar = JSON.stringify(character)
     window.localStorage.setItem('character', jsonChar)
-    console.log(typeof jsonChar)
-    console.log('SAVING CHARACTER!')
-    console.log(compressedCharacter)
     // if (api.readCharacter(user, jsonChar)) {
     //     api.updateCharacter(user, jsonChar)
     // }
