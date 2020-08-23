@@ -1,4 +1,4 @@
-import { api } from './api'
+import api from './api'
 import Character from "../../rules/Character"
 
 
@@ -8,7 +8,7 @@ const deleteLocal = () => {
 
 const deleteRemote = (user, character) => {
     const jsonChar = JSON.stringify(character)
-    api.deleteCharacter(user, jsonChar)
+    api('delete-character', user, jsonChar)
 }
 
 export default (user, character) => {

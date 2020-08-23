@@ -1,4 +1,4 @@
-import { api } from './api'
+import api from './api'
 import CompressCharacter from './CompressCharacter'
 
 
@@ -18,7 +18,7 @@ const saveLocal = (character) => {
 
 const saveRemote = (user, character) => {
     const compressedCharacter = CompressCharacter(character)
-    api.createCharacter(user, compressedCharacter)
+    api('create-character', user, compressedCharacter)
 }
 
 export default (user, character) => {
