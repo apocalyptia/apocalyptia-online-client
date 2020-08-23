@@ -1,7 +1,9 @@
 const createCharacter = (user, character) => {
-	console.log('CREATE API CALL!')
-	return fetch(`/.netlify/functions/character-create/${user}/${character.id}`, {
-		body: character,
+	return fetch(`/.netlify/functions/character-create`, {
+		body: {
+			user: user,
+			character: character
+		},
 		method: `POST`
 	}).then(res => res.json())
 }
