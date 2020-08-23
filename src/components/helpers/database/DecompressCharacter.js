@@ -1,4 +1,5 @@
 import Character from '../../rules/Character'
+import Properties from '../../rules/properties/Properties'
 
 export default (c) => {
 	const n = new Character()
@@ -48,5 +49,6 @@ export default (c) => {
 	n.gear.ranged = [...c.gear.ranged]
 	n.gear.ammo = [...c.gear.ammo]
 	n.gear.equipment = [...c.gear.equipment]
+	n = Properties.setScores(n)
 	return n
 }

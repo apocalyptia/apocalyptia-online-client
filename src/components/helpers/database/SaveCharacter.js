@@ -14,7 +14,7 @@ export default (user, character) => {
     //     api.updateCharacter(user, jsonChar)
     // }
     // else {
-    //     api.createCharacter(user, jsonChar)
+        api.createCharacter(user, jsonChar)
     // }
     return character
 }

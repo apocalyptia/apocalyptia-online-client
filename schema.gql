@@ -1,62 +1,37 @@
-type User {
-	character: [Character] @relation
-	email: String @unique
-	role: String
-}
-
-
 type Character {
-	user: String
+	id: String!
+	user: String!
 	completed: Boolean!
-	age: Number
-	identity: String
-	hair: String
-	height: String
-	sex: String
-	skin: String
-	weight: Number
-	agility: Number
-	brains: Number
-	constitution: Number
-	demeanor: Number
-	acrobatics: Number
-	larceny: Number
-	ranged: Number
-	stealth: Number
-	medicine: Number
-	perception: Number
-	science: Number
-	survival: Number
-	athletics: Number
-	build: Number
-	drive: Number
-	melee: Number
-	leadership: Number
-	perform: Number
-	socialize: Number
-	tame: Number
-	luck: Number
-	psyche: Number
-	head: Number
-	rightArm: Number
-	leftArm: Number
-	torso: Number
-	leftLeg: Number
-	rightLeg: Number
-	abilities: [Ability]
-	armor: [String]
-	melee: [String]
-	ranged: [String]
-	ammo: [Ammo]
+	age: Int!
+	identity: String!
+	hair: String!
+	height: String!
+	sex: String!
+	skin: String!
+	weight: Int!
+	agility: Int!
+	brains: Int!
+	constitution: Int!
+	demeanor: Int!
+	acrobatics: Int!
+	larceny: Int!
+	ranged: Int!
+	stealth: Int!
+	medicine: Int!
+	perception: Int!
+	science: Int!
+	survival: Int!
+	athletics: Int!
+	build: Int!
+	drive: Int!
+	melee: Int!
+	leadership: Int!
+	perform: Int!
+	socialize: Int!
+	tame: Int!
+	luck: Int!
 }
 
-type Ability {
-	name: String
-	taken: Number
-	options: String
-}
-
-type Ammo {
-	name: String
-	qty: Number
+type Query {
+	findCharacterById(id: String!): Character!
 }

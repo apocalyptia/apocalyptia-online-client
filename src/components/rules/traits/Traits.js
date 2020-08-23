@@ -9,8 +9,6 @@ export const traitMax = 6
 
 export const traitPoints = 14
 
-export const TraitFlowExplanation = `Once per year (in-game), you may choose to move 1 point from one Trait to another for 30XP. Traits can only be changed by ±1 in this way. ResetScores any associated Properties.`
-
 export default {
 	name: `Traits`,
 	explanation: [
