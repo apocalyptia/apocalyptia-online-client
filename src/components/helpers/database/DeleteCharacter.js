@@ -1,4 +1,4 @@
-import { api } from '../../../../scripts/netlify/api/api'
+import { api } from './api'
 import Character from "../../rules/Character"
 
 
