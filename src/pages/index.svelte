@@ -24,7 +24,7 @@
 <div class='cntr-card'>
 	{#if $authUserStore}
 		<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
-		{#if window.localStorage.getItem('character')}
+		{#if $character.completed}
 			<a href={$url('/sheet')} class='link-btn'>Character</a>
 		{:else}
 			<a href={$url('/creator')} class='link-btn'>Character</a>
