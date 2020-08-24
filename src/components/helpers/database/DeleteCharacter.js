@@ -1,4 +1,3 @@
-import api from './api'
 import Character from "../../rules/Character"
 
 
@@ -6,13 +5,11 @@ const deleteLocal = () => {
     window.localStorage.removeItem(`character`)
 }
 
-const deleteRemote = (user, character) => {
-    const jsonChar = JSON.stringify(character)
-    api('delete-character', user, jsonChar)
-}
-
 export default (user, character) => {
-    // deleteLocal()
-    deleteRemote(user, character)
+    deleteLocal()
+    // fetch(`/.netlify/functions/character-delete`, {
+	// 	body: JSON.stringify(CompressCharacter(character)),
+	// 	method: `POST`
+	// }).then(res => console.log(res))
     return new Character()
 }
