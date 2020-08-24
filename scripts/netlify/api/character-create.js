@@ -1,7 +1,4 @@
-const successResponse = require('./utils/successResponse')
-const failureResponse = require('./utils/failureResponse')
 const faunadb = require('faunadb')
-
 
 const q = faunadb.query
 
@@ -10,14 +7,24 @@ const client = new faunadb.Client({
 })
 
 exports.handler = async (event) => {
-	console.log('CREATE EVENT HANDLER!')
-	const data = JSON.parse(event.body)
 	return client.query(
 		q.Create(
 			q.Ref(`characters/createCharacter`),
-			{ data: data }
+			{
+				data: JSON.parse(event.body)
+			}
 		)
 	)
-		.then(successResponse(res))
-		.catch(failureResponse(res))
+		.then((res) => {
+			return {
+				statusCode: 200,
+				body: JSON.stringify(res)
+			}
+		})
+		.catch((err) => {
+			return {
+				statusCode: 400,
+				body: JSON.stringify(err)
+			}
+		})
 }
