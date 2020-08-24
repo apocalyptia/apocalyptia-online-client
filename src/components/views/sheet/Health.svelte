@@ -6,7 +6,7 @@
 </script>
 
 
-<details class='sheet-card'>
+<details class='sheet-card' open>
 	<summary class='sheet-card-title'>
 		Health
 	</summary>

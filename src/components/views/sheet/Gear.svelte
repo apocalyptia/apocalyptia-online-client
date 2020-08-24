@@ -13,7 +13,7 @@
 </script>
 
 
-<details class='sheet-card'>
+<details class='sheet-card' open>
 	<summary class='sheet-card-title'>Gear</summary>
 	<div class='gear-category-list'>
 		{#each gearList as gearType}

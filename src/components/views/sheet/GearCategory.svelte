@@ -12,7 +12,7 @@
 </script>
 
 
-<details class='gear-category'>
+<details class='gear-category' open>
 	<summary>{Capitalize(gearType)}</summary>
 	<div class='gear-item-list'>
 		{#each $character.gear[gearType].inventory as item, index}
