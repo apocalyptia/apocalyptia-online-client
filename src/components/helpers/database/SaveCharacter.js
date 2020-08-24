@@ -21,6 +21,10 @@ export default (user, character) => {
     fetch(`/.netlify/functions/character-create`, {
 		body: JSON.stringify(CompressCharacter(character)),
 		method: `POST`
-	}).then(res => console.log(res))
+    })
+        .then(res => {
+            console.log(res)
+            return res.json()
+        })
     return character
 }
