@@ -26,6 +26,7 @@ UX/UI:
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.
 	Probably also a sidenav for character sheet.
+	Fix sheet gear section add and delete buttons.
 
 Gear.js:
 	Storage: Unit conversions still need work.
