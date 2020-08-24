@@ -15,13 +15,13 @@ exports.handler = async (event) => {
 			}
 		)
 	)
-		.then((res) => {
+		.then(res => {
 			return {
 				statusCode: 200,
 				body: JSON.stringify(res)
 			}
 		})
-		.catch((err) => {
+		.catch(err => {
 			return {
 				statusCode: 400,
 				body: JSON.stringify(err)
