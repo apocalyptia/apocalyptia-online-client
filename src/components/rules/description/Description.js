@@ -21,9 +21,13 @@ export default {
 		Hair,
 	],
 	random: function(c){
-		for (let i = 1; i < this.list.length; i++) {
-			this.list[i].random(c)
-		}
+		Age.random(c)
+		Sex.random(c)
+		Height.random(c)
+		Weight.random(c)
+		Skin.random(c)
+		Hair.random(c)
+		Identity.random(c)
 		return c
 	},
 	reset: function(c){

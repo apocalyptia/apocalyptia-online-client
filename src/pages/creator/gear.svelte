@@ -1,15 +1,9 @@
 <script>
-	import AmmoList from '../../components/rules/gear/weapons/ammo/AmmoList'
-	import ArmorList from '../../components/rules/gear/armor/ArmorList'
-	import EquipmentList from '../../components/rules/gear/equipment/EquipmentList'
-	import MeleeWeaponList from '../../components/rules/gear/weapons/melee/MeleeWeaponList'
 	import NavBar from '../../components/views/controls/NavBar.svelte'
-	import RangedWeaponList from '../../components/rules/gear/weapons/ranged/RangedWeaponList'
-	import Nd6 from '../../components/helpers/random/Nd6'
-	import RandomRoll from '../../components/helpers/random/RandomRoll'
 	import GearBlock from '../../components/views/ui/GearBlock.svelte'
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores/characterStore'
+	import RandomStartingGear from '../../components/helpers/random/RandomStartingGear'
 
 	export let readonly = true
 
@@ -17,46 +11,8 @@
 
 	let next = `/creator/gear`
 
-	let carriedGear = []
-
-	const randomMelee = () => {
-		const randomMeleeWeaponItem = RandomRoll(MeleeWeaponList)
-		$character.gear.melee.inventory.push(randomMeleeWeaponItem)
-		$character = $character
-	}
-
-	const randomRanged = () => {
-		const randomRangedWeaponItem = RandomRoll(RangedWeaponList)
-		$character.gear.ranged.inventory.push(randomRangedWeaponItem)
-		let ammo = RandomRoll(AmmoList)
-		while (ammo.cal != $character.gear.ranged.inventory[0].cal) {
-			ammo = RandomRoll(AmmoList)
-		}
-		ammo.qty = Nd6(1)
-		$character.gear.ammo.inventory.push(ammo)
-		$character = $character
-	}
-
-	const randomArmor = () => {
-		const randomArmorItem = RandomRoll(ArmorList)
-		$character.gear.armor.inventory.push(randomArmorItem)
-		$character = $character
-	}
-
-	const randomEquipment = () => {
-		for (let i = 0; i < $character.props.luck.score; i++) {
-			const randomEquipmentItem = RandomRoll(EquipmentList)
-			carriedGear.push(randomEquipmentItem)
-		}
-		$character.gear.equipment.inventory = [...carriedGear]
-		$character = $character
-	}
-
 	const randomStartingGear = () => {
-		randomMelee()
-		randomRanged()
-		randomArmor()
-		randomEquipment()
+		$character = RandomStartingGear($character, $character.props.luck.score)
 	}
 
 	beforeUpdate(() => {

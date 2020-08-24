@@ -7,7 +7,7 @@ const Identity = new Descriptor({
 	name: `Name`,
 	value: ``,
 	random: (c) => {
-		c.desc.identity.value = RandomName(c.desc.sex.value)
+		c.desc.identity.value = RandomName(c)
 		return c
 	}
 })

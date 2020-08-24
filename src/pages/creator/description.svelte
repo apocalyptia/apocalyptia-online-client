@@ -1,8 +1,10 @@
 <script>
 	import Description from '../../components/rules/description/Description'
 	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import RandomCharacter from '../../components/helpers/random/RandomCharacter'
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores/characterStore'
+	import { goto } from '@roxi/routify'
 
 	let status = `stop`
 
@@ -13,6 +15,11 @@
 	const random = () => $character = Description.random($character)
 
 	const reset = () => $character = Description.reset($character)
+
+	const randomCharacter = () => {
+		$character = RandomCharacter($character)
+		$goto('/creator/sheet')
+	}
 
 	beforeUpdate(() => {
 		status = `go`
@@ -62,6 +69,10 @@
 <div class='btn-row'>
 	<button class='cntr-btn' on:click={reset}>Reset</button>
 	<button class='cntr-btn' on:click={random}>Random</button>
+</div>
+<br>
+<div class='btn-row'>
+	<button class='cntr-btn' on:click={randomCharacter}>Random Character</button>
 </div>
 <NavBar links={{back: '/', next: next}} {status}/>
 

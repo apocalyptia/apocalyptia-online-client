@@ -9,6 +9,7 @@ import XP18Abilities from './XP18Abilities'
 import XP24Abilities from './XP24Abilities'
 import XP30Abilities from './XP30Abilities'
 import AppendToGUUID from '../../helpers/AppendToGUUID'
+import RandomRoll from '../../helpers/random/RandomRoll'
 
 
 const abilityArray = [
@@ -111,6 +112,27 @@ export const Abilities = {
 			c.props.experience.spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
 		}
 		c.props.experience.remaining = c.props.experience.score - c.props.experience.spent
+		return c
+	},
+	random: function(c) {
+		c = this.reset(c)
+		while(c.props.experience.remaining > 0) {
+			const remainingAbilities = this.masterList.filter(m => {
+				return m.xp <= c.props.experience.remaining &&
+					!c.abilities.includes(m)
+			})
+			if (remainingAbilities.length) {
+				const a = RandomRoll(remainingAbilities)
+				a.taken++
+				c.abilities.push(a)
+				c.props.experience.remaining -= a.xp
+			}
+			else break
+		}
+		return c
+	},
+	reset: function(c) {
+		c.abilities = []
 		return c
 	}
 }
