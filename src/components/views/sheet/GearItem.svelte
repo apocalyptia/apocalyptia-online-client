@@ -5,11 +5,7 @@
 	export let gearType, item, index
 
 	const trashItem = (item, index=0) => {
-		if (item == 'melee') $character.gear.melee.inventory.splice(index, 1)
-		else if (item == 'ranged') $character.gear.ranged.inventory.splice(index, 1)
-		else if (item == 'ammo') $character.gear.ammo.inventory.splice(index, 1)
-		else if (item == 'armor') $character.gear.armor.inventory.splice(index, 1)
-		else if (item == 'equipment') $character.gear.equipment.inventory.splice(index, 1)
+		$character.gear[item].inventory.splice(index, 1)
 		$character = $character
 	}
 </script>
@@ -45,9 +41,14 @@
 		height: var(--s250);
 		padding: 0;
 		width: var(--s250);
+		-webkit-text-fill-color: rgba(15, 30, 15, 1);
 	}
 	.trash-item-button:hover {
 		background-color: rgba(15, 30, 15, 1);
 		color: crimson;
+		-webkit-text-fill-color: crimson;
+	}
+	.button-icon {
+		font-size: var(--s150);
 	}
 </style>

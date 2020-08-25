@@ -1,7 +1,19 @@
 /*
-	http://meyerweb.com/eric/tools/css/reset/ 
-	v2.0 | 20110126
-	License: none (public domain)
+	----- ICONS ----------- HTML CODE -----
+	Heavy Greek Cross:		&#10010;
+	Heavy X:				&#10006;
+	Circled Plus:			&#8853;
+	Circled Dot:			&#8857;
+	Squared Plus:			&#8862;
+	Squared Minus:			&#8863;
+	Squared Times:			&#8864;
+	Squared Dot:			&#8865;
+	Hermitian Matrix:		&#8889;
+	Counter Circle Arrow:	&#10226;
+	Clockwise Circle Arrow:	&#10227;
+	Black Right Arrow:		&#10148;
+	Undo Arrow:				&#8630;
+	Redo Arrow:				&#8631;
 */
 
 html, body, div, span, applet, object, iframe,
@@ -23,7 +35,6 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;

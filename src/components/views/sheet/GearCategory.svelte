@@ -1,14 +1,14 @@
 <script>
+	import AddItemModal from './AddItemModal.svelte'
 	import Capitalize from '../../helpers/Capitalize'
 	import GearItem from './GearItem.svelte'
-	import ItemModal from './ItemModal.svelte'
 	import { character } from '../../../stores/characterStore'
 
 	export let gearType
 
 	let modalVisible = false
 
-	const toggleModal = () => modalVisible = !modalVisible
+	const toggleAddItemModal = () => modalVisible = !modalVisible
 </script>
 
 
@@ -20,11 +20,11 @@
 		{/each}
 	</div>
 	<div class='add-item-section'>
-		<button class='add-item-button' on:click={toggleModal}>
-			<div class='button-icon'>+</div>
+		<button class='add-item-button' on:click={toggleAddItemModal}>
+			<div class='button-icon'>&#10010;</div>
 		</button>
 		{#if modalVisible}
-			<ItemModal on:close={toggleModal} {gearType} />
+			<AddItemModal on:close={toggleAddItemModal} {gearType} />
 		{/if}
 	</div>
 </details>
@@ -36,7 +36,6 @@
 		box-sizing: border-box;
 		display: block;
 		margin-bottom: var(--s100);
-		width: 100%;
 	}
 	.gear-item-list {
 		padding: var(--s100);
@@ -54,8 +53,17 @@
 		height: var(--s250);
 		padding: 0;
 		width: var(--s250);
-	}.add-item-button:hover {
+		-webkit-text-fill-color: rgba(15, 30, 15, 1);
+	}
+	.add-item-button:hover {
 		background-color: rgba(15, 30, 15, 1);
 		color: lime;
+		-webkit-text-fill-color: lime;
+	}
+	.button-icon {
+		font-size: var(--s150);
+		display: flex;
+		justify-content: space-evenly;
+		align-content: bottom;
 	}
 </style>

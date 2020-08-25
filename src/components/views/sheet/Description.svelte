@@ -9,7 +9,7 @@
 	</summary>
 	<div class='name-block'>
 		<span>Character:</span> 
-		<input type='text' class='sheet-value' bind:value={$character.desc.identity.value} />
+		<input type='text' class='sheet-value-long' bind:value={$character.desc.identity.value} />
 	</div>
 	<div class='sheet-card-body'>
 		<div class='sheet-card-block'>
@@ -26,7 +26,7 @@
 				<input type='text' class='sheet-value' bind:value={$character.desc.weight.value} />
 			</div>
 		</div>
-		<div class='section-block'>
+		<div class='sheet-card-block'>
 			<div class='sheet-card-item'>
 				<span>Sex:</span> 
 				<input type='text' class='sheet-value' bind:value={$character.desc.sex.value} />
@@ -51,12 +51,17 @@
 		margin: 0 var(--s100);
 		padding-bottom: 0;
 	}
+	.sheet-card-block {
+		width: 50%;
+	}
 	.sheet-card-item {
-		align-items: center;
-		display: flex;
 		margin-bottom: var(--s50);
+		text-align: right;
+	}
+	.sheet-value-long {
+		width: 100%;
 	}
 	.sheet-value {
-		width: 100%;
+		width: 70%;
 	}
 </style>

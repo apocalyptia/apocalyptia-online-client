@@ -27,7 +27,7 @@
 
 	if (previouslyFocused) onDestroy(() => previouslyFocused.focus())
 
-	const save = () => {
+	const add = () => {
 		if (gearType == 'ammo') selectedItem.qty = 0
 		$character.gear[gearType].inventory.push(selectedItem)
 		$character = $character
@@ -48,7 +48,7 @@
 			</select>
 		</div>
 		<div class='btn-row'>
-			<button on:click={() => save()}>Save</button>
+			<button on:click={() => add()}>Add</button>
 			<button on:click={() => dispatch('close')}>Close</button>
 		</div>
 	</div>
