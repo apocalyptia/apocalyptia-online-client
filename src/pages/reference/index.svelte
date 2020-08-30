@@ -1,7 +1,7 @@
 <script>
-	import { url } from '@roxi/routify'
-	import NavBar from '../../components/views/controls/NavBar.svelte'
 	import Capitalize from '../../components/helpers/Capitalize'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import { url } from '@roxi/routify'
 
 	const referencePages = [
 		'abilities',

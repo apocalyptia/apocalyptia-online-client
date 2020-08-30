@@ -1,9 +1,9 @@
 <script>
-	import NavBar from '../../components/views/controls/NavBar.svelte'
 	import GearBlock from '../../components/views/ui/GearBlock.svelte'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import RandomStartingGear from '../../components/helpers/random/RandomStartingGear'
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores/characterStore'
-	import RandomStartingGear from '../../components/helpers/random/RandomStartingGear'
 
 	export let readonly = true
 

@@ -1,8 +1,8 @@
 <script>
-	import { goto, url } from '@roxi/routify'
 	import ClickOutside from './ClickOutside.svelte'
 	import { authUserStore, logout } from '../../../stores/netlifyStore'
 	import { character } from '../../../stores/characterStore'
+	import { goto, url } from '@roxi/routify'
 
 	let showMenu = false
 	let trigger

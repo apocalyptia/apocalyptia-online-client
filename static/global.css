@@ -153,29 +153,24 @@ legend {
 /* ----- CONTROLS ----- */
 
 button,
-input, input:-webkit-autofill,
-input:-internal-autofill-selected,
+input, input:-webkit-autofill, input:-internal-autofill-selected,
 select, select:-webkit-autofill,
 textarea, text:-webkit-autofill {
-	background-color: rgba(15, 30, 15, 1);
+	background-color: rgba(15, 30, 15, 1) !important;
 	border: var(--s1) solid lime;
 	border-radius: var(--radius);
-	color: lime;
+	color: lime !important;
 	cursor: pointer;
 	font-size: var(--s100);
 	text-align: center;
-	-webkit-text-fill-color: lime;
+	-webkit-text-fill-color: lime !important;
 }
 button:active, button:hover,
-input:active, input:focus, input:-webkit-autofill:focus,
-input:hover, input:-webkit-autofill:hover,
-select:active, select:focus, select:-webkit-autofill:focus,
-select:hover, select:-webkit-autofill:hover,
-textarea:active, textarea:focus, textarea:-webkit-autofill:focus,
-textarea:hover, textarea:-webkit-autofill:hover {
-	background-color: lime;
-	color: rgba(15, 30, 15, 1);
-	-webkit-text-fill-color: rgba(15, 30, 15, 1);
+input:active, input:focus, input:hover, input:-webkit-autofill:focus, input:-webkit-autofill:hover,
+select:active, select:focus, select:hover, select:-webkit-autofill:focus, select:-webkit-autofill:hover,
+textarea:active, textarea:focus, textarea:hover, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:hover {
+	background-color: lime !important;
+	color: rgba(15, 30, 15, 1) !important;
 }
 button:disabled,
 input:disabled,

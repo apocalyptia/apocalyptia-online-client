@@ -1,9 +1,9 @@
 <script>
+	import BodyParts from '../../components/views/ui/BodyParts.svelte'
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import Properties from '../../components/rules/properties/Properties'
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores/characterStore'
-	import BodyParts from '../../components/views/ui/BodyParts.svelte'
-	import Properties from '../../components/rules/properties/Properties'
-	import NavBar from '../../components/views/controls/NavBar.svelte'
 
 	beforeUpdate(() => $character = Properties.setScores($character))
 </script>

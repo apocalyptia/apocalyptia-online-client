@@ -1,6 +1,6 @@
 <script>
-	import { fade } from 'svelte/transition'
 	import DieRoller from '../../../helpers/random/DieRoller'
+	import { fade } from 'svelte/transition'
 
 	/*
 		HTML CHARACTER CODES FOR DICE

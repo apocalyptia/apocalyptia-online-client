@@ -1,0 +1,41 @@
+/components/
+    /views/
+        /controls/
+            Dice
+            NavBar
+            Slider
+            TitleBar
+            UserMenu
+        /creator/
+            AbilityCard
+            AbilityCurrent
+            AbilityGroup
+            AbilityModalOptions
+            AbilityModalSingle
+        /reference/
+            RefPage
+        /sheet/
+            AddItemModal
+            CharacterSheet
+            Gear
+            GearCategory
+            GearItem
+            Notes
+        /ui/
+            BodyParts
+            DisplayWindow
+            GearBlock
+            Spinner
+
+/pages/
+    _fallback
+    /creator/
+        abilities
+        description
+        gear
+        properties
+        skills
+    /generator/
+        index
+    /reference/
+        index

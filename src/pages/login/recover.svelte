@@ -1,7 +1,7 @@
 <script>
-	import { goto } from '@roxi/routify'
 	import Spinner from '../../components/views/ui/Spinner.svelte'
 	import { authUserStore, recover } from '../../stores/netlifyStore'
+	import { goto } from '@roxi/routify'
 
 	if ($authUserStore) $goto(`/`)
 

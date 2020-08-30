@@ -9,16 +9,3 @@
 	<tr><td>Concrete</td><td>4</td></tr>
 	<tr><td>Steel</td><td>5</td></tr>
 </table>
-
-
-[
-	['Material', 'Damage Resistance'],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[],
-]

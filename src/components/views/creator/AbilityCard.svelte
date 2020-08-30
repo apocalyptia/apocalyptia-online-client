@@ -1,7 +1,7 @@
 <script>
-	import { character } from '../../../stores/characterStore'
-	import ToggleVisible from '../../helpers/ToggleVisible'
 	import AbilityModal from './AbilityModal.svelte'
+	import ToggleVisible from '../../helpers/ToggleVisible'
+	import { character } from '../../../stores/characterStore'
 
 	export let ability, MasterAbilityList
 </script>

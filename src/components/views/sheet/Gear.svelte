@@ -1,7 +1,6 @@
 <script>
-	import { character } from '../../../stores/characterStore'
 	import GearCategory from './GearCategory.svelte'
-
+	import { character } from '../../../stores/characterStore'
 
 	const gearList = [
 		'melee',

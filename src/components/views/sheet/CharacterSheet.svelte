@@ -38,10 +38,10 @@
 	<Notes />
 </div>
 <div class='sheet-buttons'>
-	<button on:click={deleteCharacter}>
+	<button class='sheet-button' on:click={deleteCharacter}>
 		Delete
 	</button>
-	<button on:click={saveCharacter}>
+	<button class='sheet-button' on:click={saveCharacter}>
 		Save
 	</button>
 </div>
@@ -53,7 +53,7 @@
 		justify-content: space-between;
 		margin-top: var(--s100);
 	}
-	.sheet-buttons button {
+	.sheet-button {
 		font-size: var(--s125);
 		font-weight: bold;
 		width: calc(100% / 3);

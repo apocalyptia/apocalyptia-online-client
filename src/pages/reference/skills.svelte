@@ -1,7 +1,7 @@
 <script>
+    import NavBar from '../../components/views/controls/NavBar.svelte'
     import RefPage from '../../components/views/reference/RefPage.svelte'
     import Skills from '../../components/rules/skills/Skills'
-    import NavBar from '../../components/views/controls/NavBar.svelte'
 
     Skills.list = Skills.list.sort((a, b) => (a.name > b.name))
 </script>

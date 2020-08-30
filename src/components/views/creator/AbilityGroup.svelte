@@ -1,6 +1,6 @@
 <script>
-	import ToggleVisible from '../../helpers/ToggleVisible'
 	import AbilityCard from './AbilityCard.svelte'
+	import ToggleVisible from '../../helpers/ToggleVisible'
 
 	export let group, MasterAbilityList
 </script>

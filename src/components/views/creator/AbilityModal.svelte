@@ -21,7 +21,7 @@
 	<div class='modal-content'>
 		<div class='ability-name'><h2>{ability.name}</h2></div>
 		<div class='description-section'>
-			<span class='description-label'>Descripiton:</span>
+			<span class='description-label'>Description:</span>
 			<span class='ability-description'>{ability.desc}</span>
 		</div>
 		<div class='stats-section'>

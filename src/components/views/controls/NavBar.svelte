@@ -1,6 +1,6 @@
 <script>
-	import { url } from '@roxi/routify'
 	import Spinner from '../ui/Spinner.svelte'
+	import { url } from '@roxi/routify'
 
 	export let links = true
 	export let status = `go`

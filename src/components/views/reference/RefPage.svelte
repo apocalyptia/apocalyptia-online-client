@@ -1,8 +1,7 @@
 <script>
-	import { SkillFlowExplanation } from './../../rules/skills/Skills.js';
-	import { beforeUpdate } from 'svelte'
 	import GearBlock from '../ui/GearBlock.svelte'
 	import Table from '../../rules/Table.js';
+	import { beforeUpdate } from 'svelte'
 
 	export let chapter
 

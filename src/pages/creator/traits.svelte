@@ -1,9 +1,9 @@
 <script>
+	import NavBar from '../../components/views/controls/NavBar.svelte'
+	import Slider from '../../components/views/controls/Slider.svelte'
+	import Traits from '../../components/rules/traits/Traits'
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../stores/characterStore'
-	import Traits from '../../components/rules/traits/Traits'
-	import Slider from '../../components/views/controls/Slider.svelte'
-	import NavBar from '../../components/views/controls/NavBar.svelte'
 
 	let remaining = Traits.remaining($character)
 
