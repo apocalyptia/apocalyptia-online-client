@@ -10,6 +10,7 @@ export default class Character {
 			completed: false,
 			created: null,
 			modified: null,
+			notes: ``,
 			coordinates: {
 				map: ``,
 				x: 0,
@@ -239,7 +240,6 @@ export default class Character {
 				name: `Equipment`,
 				inventory: []
 			},
-		},
-		this.notes = ``
+		}
 	}
 }

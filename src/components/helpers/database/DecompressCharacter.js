@@ -9,6 +9,7 @@ export default (c) => {
 	n.data.completed = c.c
 	n.data.created = c.d
 	n.data.modified = c.m
+	n.data.notes = c.n
 	n.data.coordinates.map = c.p
 	n.data.coordinates.x = c.x
 	n.data.coordinates.y = c.y

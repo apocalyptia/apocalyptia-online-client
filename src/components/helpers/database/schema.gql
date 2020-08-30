@@ -1,10 +1,11 @@
 type Character {
-	i: String! @key
+	i: String!
 	u: String!
 	s: String!
 	c: Boolean!
 	d: String!
 	m: String!
+	n: String
 	p: String!
 	x: Int!
 	y: Int!
@@ -43,14 +44,26 @@ type Character {
 	tO: Int!
 	lL: Int!
 	rL: Int!
-	Ab: []!
+	Ab: [Ability]
 	Gr: {
-		a: []!
-		m: []!
-		r: []!
-		o: []!
-		e: []!
-	}!
+		a: [Gear]
+		m: [Gear]
+		r: [Gear]
+		o: [Gear]
+		e: [Gear]
+	}
+}
+
+type Ability {
+	i: String!
+	q: Int!
+	n: String
+}
+
+type Gear {
+	i: String!
+	q: Int!
+	n: String
 }
 
 type Query {

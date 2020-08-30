@@ -6,6 +6,7 @@ export default (c) => {
 		c: c.data.completed,
 		d: c.data.created,
 		m: c.data.modified,
+		n: c.data.notes,
 		p: c.data.coordinates.map,
 		x: c.data.coordinates.x,
 		y: c.data.coordinates.y,
