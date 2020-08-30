@@ -3,10 +3,10 @@ import CompressCharacter from './CompressCharacter'
 
 const finalizeCharacter = (user, character) => {
     if (!character.created) character.created = new Date()
-    character.user = user
-    character.completed = true
-    character.step = `complete`
-    character.modified = new Date()
+    character.data.user = user
+    character.data.completed = true
+    character.data.step = `complete`
+    character.data.modified = new Date()
     return character
 }
 
@@ -18,8 +18,6 @@ const saveLocal = (character) => {
 export default (user, character) => {
     character = finalizeCharacter(user, character)
     saveLocal(character)
-    console.log('SENDING:')
-    console.log(JSON.stringify(CompressCharacter(character)))
     fetch(`/.netlify/functions/character-create`, {
 		body: JSON.stringify(CompressCharacter(character)),
 		method: `POST`

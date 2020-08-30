@@ -3,11 +3,19 @@ import GUUIDGenerator from '../helpers/GUUIDGenerator'
 
 export default class Character {
 	constructor() {
-		this.id = GUUIDGenerator(),
-		this.user = ``,
-		this.completed = false,
-		this.created = null,
-		this.modified = null,
+		this.data = {
+			id: GUUIDGenerator(),
+			user: ``,
+			step: 0,
+			completed = false,
+			created = null,
+			modified = null,
+			coordinates: {
+				map: ``,
+				x: 0,
+				y: 0
+			}
+		},
 		this.desc = {
 			age: {
 				name: `Age`,
