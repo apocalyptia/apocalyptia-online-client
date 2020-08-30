@@ -18,8 +18,12 @@ const saveLocal = (character) => {
 export default (user, character) => {
     character = finalizeCharacter(user, character)
     saveLocal(character)
-    fetch(`/.netlify/functions/character-create`, {
-		body: JSON.stringify(CompressCharacter(character)),
+    fetch(`/.netlify/functions/api`, {
+		body: {
+            action: 'create',
+            user: user,
+            character: JSON.stringify(CompressCharacter(character))
+        },
 		method: `POST`
     })
         .then(res => {

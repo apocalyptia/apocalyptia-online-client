@@ -6,15 +6,15 @@ const client = new faunadb.Client({
 	secret: process.env.FAUNADB_SERVER_SECRET
 })
 
-exports.handler = async (event) => {
-	return client.query(
-		q.Create(
-			q.Ref(`characters/createCharacter`),
-			{
-				data: JSON.parse(event.body)
-			}
-		)
+const CreateCharacterQuery = (event) => {
+	q.Create(
+		q.Ref(`characters/CreateCharacter`),
+		{ data: JSON.parse(event.body.character) }
 	)
+}
+
+exports.handler = async (event) => {
+	client.query(CreateCharacterQuery(event))
 		.then(res => {
 			return {
 				statusCode: 200,

@@ -1,5 +1,5 @@
 type Character {
-	i: String!
+	i: String! @key
 	u: String!
 	s: String!
 	c: Boolean!
@@ -53,10 +53,10 @@ type Character {
 	}!
 }
 
-type query {
-	findCharacterById(i: String!): Character!
+type Query {
+	getCharacter(i: String!): Character!
 }
 
-type mutation {
-	createCharacter(character: Character!): Character!
+mutation CreateCharacter {
+	createCharacer(data: Character!): Character!
 }
