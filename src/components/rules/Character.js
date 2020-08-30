@@ -7,9 +7,9 @@ export default class Character {
 			id: GUUIDGenerator(),
 			user: ``,
 			step: 0,
-			completed = false,
-			created = null,
-			modified = null,
+			completed: false,
+			created: null,
+			modified: null,
 			coordinates: {
 				map: ``,
 				x: 0,
