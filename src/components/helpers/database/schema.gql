@@ -44,14 +44,14 @@ type Character {
 	tO: Int!
 	lL: Int!
 	rL: Int!
-	Ab: [Ability]
-	Gr: {
-		a: [Gear]
-		m: [Gear]
-		r: [Gear]
-		o: [Gear]
-		e: [Gear]
-	}
+	# Ab: [Ability]
+	# Gr: {
+	# 	a: [Gear]
+	# 	m: [Gear]
+	# 	r: [Gear]
+	# 	o: [Gear]
+	# 	e: [Gear]
+	# }
 }
 
 type Ability {
@@ -67,9 +67,9 @@ type Gear {
 }
 
 type Query {
-	getCharacter(i: String!): Character!
+	getCharacter(i: String): Character
 }
 
 mutation CreateCharacter {
-	createCharacer(data: Character!): Character!
+	createCharacter(data: Value): Character
 }
