@@ -6,13 +6,15 @@ export default class Electronic extends Gear {
 		name,
 		hrs,
 		desc,
-		sz
+		sz,
+		qty
 	}) {
 		super({
 			id,
 			name,
 			desc,
-			sz
+			sz,
+			qty
 		})
 		this.hrs = hrs
 	}

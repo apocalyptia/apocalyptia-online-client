@@ -6,6 +6,7 @@ export default class MeleeWeapon extends Weapon {
 		name,
 		desc,
 		sz,
+		qty,
 		dmg,
 		rng,
 		attr
@@ -15,6 +16,7 @@ export default class MeleeWeapon extends Weapon {
 			name,
 			desc,
 			sz,
+			qty,
 			dmg,
 			rng,
 			attr

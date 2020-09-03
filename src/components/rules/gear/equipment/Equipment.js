@@ -6,13 +6,15 @@ export default class Equipment extends Gear {
 		id,
 		name,
 		desc,
-		sz
+		sz,
+		qty
 	}) {
 		super({
 			id,
 			name,
 			desc,
-			sz
+			sz,
+			qty
 		})
 	}
 }

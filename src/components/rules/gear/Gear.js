@@ -5,7 +5,8 @@ export default class Gear extends Rule {
 		id,
 		name,
 		desc,
-		sz
+		sz,
+		qty=0
 	}) {
 		super({
 			id,
@@ -13,5 +14,6 @@ export default class Gear extends Rule {
 			desc
 		})
 		this.sz = sz
+		this.qty = qty
 	}
 }

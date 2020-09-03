@@ -8,7 +8,7 @@
 		Notes
 	</summary>
 	<div class='sheet-notes-block'>
-		<textarea wrap='soft' placeholder='Notes' bind:value={$character.data.notes} />
+		<textarea wrap='soft' placeholder='Notes' bind:value={$character.meta.notes} />
 	</div>
 </details>
 

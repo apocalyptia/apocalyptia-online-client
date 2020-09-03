@@ -6,13 +6,15 @@ export default class CombatGear extends Gear {
 		name,
 		desc,
 		sz,
+		qty,
 		attr=[]
 	}) {
 		super({
 			id,
 			name,
 			desc,
-			sz
+			sz,
+			qty
 		})
 		this.attr = attr
 	}

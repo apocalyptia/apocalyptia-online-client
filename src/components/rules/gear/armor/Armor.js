@@ -5,6 +5,7 @@ export default class Armor extends CombatGear {
 		name,
 		desc,
 		sz,
+		qty,
 		attr,
 		dr,
 		loc
@@ -13,6 +14,7 @@ export default class Armor extends CombatGear {
 			name,
 			desc,
 			sz,
+			qty,
 			attr
 		})
 		this.dr = dr

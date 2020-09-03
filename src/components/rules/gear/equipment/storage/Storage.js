@@ -6,13 +6,15 @@ export default class Storage extends Gear {
 		name,
 		desc,
 		sz,
+		qty,
 		slots
 	}) {
 		super({
 			id,
 			name,
 			desc,
-			sz
+			sz,
+			qty
 		})
 		this.slots = slots
 	}

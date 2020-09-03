@@ -6,6 +6,7 @@ export default class Bomb extends Weapon {
 		name,
 		desc,
 		sz,
+		qty,
 		dmg,
 		rng,
 		attr,
@@ -18,6 +19,7 @@ export default class Bomb extends Weapon {
 			name,
 			desc,
 			sz,
+			qty,
 			dmg,
 			rng,
 			attr

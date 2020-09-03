@@ -6,6 +6,7 @@ export default class Weapon extends CombatGear {
 		name,
 		desc,
 		sz,
+		qty,
 		attr,
 		dmg,
 		rng
@@ -15,6 +16,7 @@ export default class Weapon extends CombatGear {
 			name,
 			desc,
 			sz,
+			qty,
 			attr
 		})
 		this.dmg = dmg

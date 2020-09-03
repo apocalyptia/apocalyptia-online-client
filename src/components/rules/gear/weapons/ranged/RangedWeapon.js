@@ -6,6 +6,7 @@ export default class RangedWeapon extends Weapon {
 		name,
 		desc,
 		sz,
+		qty,
 		dmg,
 		rng,
 		attr,
@@ -17,6 +18,7 @@ export default class RangedWeapon extends Weapon {
 			name,
 			desc,
 			sz,
+			qty,
 			dmg,
 			rng,
 			attr

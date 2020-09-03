@@ -5,13 +5,15 @@ export default class Document extends Gear {
 		id,
 		name,
 		desc,
-		sz
+		sz,
+		qty
 	}) {
 		super({
 			id,
 			name,
 			desc,
-			sz
+			sz,
+			qty
 		})
 	}
 }

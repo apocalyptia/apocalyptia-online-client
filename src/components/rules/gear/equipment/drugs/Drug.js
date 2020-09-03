@@ -6,6 +6,7 @@ export default class Drug extends Gear {
 		name,
 		desc,
 		sz,
+		qty,
 		mix,
 		od
 	}) {
@@ -13,7 +14,8 @@ export default class Drug extends Gear {
 			id,
 			name,
 			desc,
-			sz
+			sz,
+			qty
 		})
 		this.mix = mix
 		this.od = od

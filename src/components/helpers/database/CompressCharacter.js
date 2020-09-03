@@ -1,15 +1,15 @@
 export default (c) => {
-	return {
-		i: c.data.id,
-		u: c.data.user,
-		s: c.data.step,
-		c: c.data.completed,
-		d: c.data.created,
-		m: c.data.modified,
-		n: c.data.notes,
-		p: c.data.coordinates.map,
-		x: c.data.coordinates.x,
-		y: c.data.coordinates.y,
+	let compressedCharacter = {
+		id: c.meta.id,
+		u: c.meta.user,
+		s: c.meta.step,
+		c: c.meta.completed,
+		d: c.meta.created,
+		m: c.meta.modified,
+		n: c.meta.notes,
+		p: c.meta.coordinates.map,
+		x: c.meta.coordinates.x,
+		y: c.meta.coordinates.y,
 		Da: c.desc.age.value,
 		Di: c.desc.identity.value,
 		Dh: c.desc.hair.value,
@@ -45,13 +45,35 @@ export default (c) => {
 		tO: c.health.torso.current,
 		lL: c.health.leftLeg.current,
 		rL: c.health.rightLeg.current,
-		Ab: [...c.abilities],
+		Ab: [],
 		Gr: {
-			a: [{...c.gear.armor}],
-			m: [{...c.gear.melee}],
-			r: [{...c.gear.ranged}],
-			o: [{...c.gear.ammo}],
-			e: [{...c.gear.equipment}]
+			a: [],
+			m: [],
+			r: [],
+			o: [],
+			e: []
 		}
 	}
+	c.abilities.forEach(ability => {
+		compressedCharacter.Ab.push({
+			i: ability.id,
+			t: ability.taken
+		})
+	})
+	const gearTypes = [
+		{ 'armor':		'a' },
+		{ 'melee':		'm' },
+		{ 'ranged':		'r' },
+		{ 'ammo':		'o' },
+		{ 'equipment':	'e' }
+	]
+	for (const [key, value] of Object.entries(gearTypes)) {
+		c.gear[key].inventory.forEach(item => {
+			compressedCharacter.Gr[value].push({
+				i: item.id,
+				q: item.qty
+			})
+		})
+	}
+	return compressedCharacter
 }

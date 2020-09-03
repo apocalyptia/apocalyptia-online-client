@@ -6,18 +6,18 @@ export default class Ammo extends CombatGear {
 		name,
 		desc,
 		sz,
+		qty,
 		attr,
-		cal=``,
-		qty=null
+		cal=``
 	}) {
 		super({
 			id,
 			name,
 			desc,
 			sz,
+			qty,
 			attr
 		})
 		this.cal = cal
-		this.qty = qty
 	}
 }

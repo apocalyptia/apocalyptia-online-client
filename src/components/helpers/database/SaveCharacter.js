@@ -1,28 +1,27 @@
 import CompressCharacter from './CompressCharacter'
 
 
-const finalizeCharacter = (user, character) => {
-    if (!character.created) character.created = new Date()
-    character.data.user = user
-    character.data.completed = true
-    character.data.step = `complete`
-    character.data.modified = new Date()
-    return character
+const finalizeCharacter = (user, c) => {
+    if (!c.created) c.created = new Date()
+    c.meta.user = user
+    c.meta.completed = true
+    c.meta.step = `complete`
+    c.meta.modified = new Date()
+    return c
 }
 
-const saveLocal = (character) => {
-    const jsonChar = JSON.stringify(character)
-    window.localStorage.setItem(`character`, jsonChar)
+const saveLocal = (c) => {
+    window.localStorage.setItem(`character`, c)
 }
 
-export default (user, character) => {
-    character = finalizeCharacter(user, character)
-    saveLocal(character)
-    fetch(`/.netlify/functions/api`, {
+export default (user, c) => {
+    c = finalizeCharacter(user, c)
+    const characterFile = JSON.stringify(CompressCharacter(c))
+    saveLocal(characterFile)
+    fetch(`/.netlify/functions/character-create`, {
 		body: {
-            action: 'create',
             user: user,
-            character: JSON.stringify(CompressCharacter(character))
+            character: characterFile
         },
 		method: `POST`
     })
@@ -34,5 +33,5 @@ export default (user, character) => {
             console.log('ERROR!')
             console.log(err)
         })
-    return character
+    return c
 }
