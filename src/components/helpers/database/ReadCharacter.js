@@ -2,22 +2,22 @@ import CompressCharacter from './CompressCharacter'
 import DecompressCharacter from './DecompressCharacter'
 
 
-export default (user, c) => {
+export default (user, character) => {
     fetch(`/.netlify/functions/character-read`, {
 		body: {
             user: user,
-            character: JSON.stringify(CompressCharacter(c))
+            character: JSON.stringify(CompressCharacter(character))
         },
 		method: `POST`
     })
         .then(res => {
             console.log('SUCCESS!')
             console.log(res)
-            c = DecompressCharacter(res.body.character)
+            character = DecompressCharacter(res.body.character)
         })
         .catch(err => {
             console.log('ERROR!')
             console.log(err)
         })
-    return c
+    return character
 }

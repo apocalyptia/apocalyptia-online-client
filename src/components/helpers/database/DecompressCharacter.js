@@ -54,72 +54,40 @@ export default (c) => {
 	n.health.torso.current = c.tO
 	n.health.leftLeg.current = c.lL
 	n.health.rightLeg.current = c.rL
+
+	const convertList = (compList, ruleList, propType, compQty, decQty) => {
+		let decompList = []
+		c[compList].forEach(c => {
+			for (let i = 0; i < ruleList.length; i++) {
+				if (c.id == ruleList[i].id) {
+					let ruleItem = ruleList[i]
+					ruleItem[decQty] = c[compQty]
+					n[propType].push(ruleItem)
+					break
+				}
+			}
+		})
+	}
+
 	n.abilities = []
-	c.Ab.forEach(ab => {
-		for (let i = 0; i < AbilitiesList.length; i++) {
-			if (ab.id == AbilitiesList[i].id) {
-				let ability = AbilitiesList[i]
-				ability.taken = ab.t
-				n.abilities.push(ability)
-				break
-			}
-		}
-	})
+	convertList('Ab', AbilitiesList, 'abilities', 't', 'taken')
+
 	n.gear.armor = []
-	c.Gr.a.forEach(ar => {
-		for (let i = 0; i < ArmorList.length; i++) {
-			if (ar.id == ArmorList[i].id) {
-				let armor = ArmorList[i]
-				armor.qty = ar.q
-				n.gear.armor.push(armor)
-				break
-			}
-		}
-	})
+	convertList('Ga', ArmorList, 'armor', 'q', 'qty')
+
 	n.gear.melee = []
-	c.Gr.m.forEach(me => {
-		for (let i = 0; i < MeleeWeaponList.length; i++) {
-			if (me.id == MeleeWeaponList[i].id) {
-				let melee = MeleeWeaponList[i]
-				melee.qty = me.q
-				n.gear.melee.push(melee)
-				break
-			}
-		}
-	})
+	convertList('Gm', MeleeWeaponList, 'melee', 'q', 'qty')
+
 	n.gear.ranged = []
-	c.Gr.r.forEach(ra => {
-		for (let i = 0; i < RangedWeaponList.length; i++) {
-			if (ra.id == RangedWeaponList[i].id) {
-				let ranged = RangedWeaponList[i]
-				ranged.qty = ra.q
-				n.gear.ranged.push(ranged)
-				break
-			}
-		}
-	})
+	convertList('Gr', RangedWeaponList, 'ranged', 'q', 'qty')
+
 	n.gear.ammo = []
-	c.Gr.o.forEach(am => {
-		for (let i = 0; i < AmmoList.length; i++) {
-			if (am.id == AmmoList[i].id) {
-				let ammo = AmmoList[i]
-				ammo.qty = am.q
-				n.gear.ammo.push(ammo)
-				break
-			}
-		}
-	})
+	convertList('Go', AmmoList, 'ammo', 'q', 'qty')
+
 	n.gear.equipment = []
-	c.Gr.e.forEach(eq => {
-		for (let i = 0; i < EquipmentList.length; i++) {
-			if (eq.id == EquipmentList[i].id) {
-				let equipment = EquipmentList[i]
-				equipment.qty = eq.q
-				n.gear.equipment.push(equipment)
-				break
-			}
-		}
-	})
+	convertList('Ge', EquipmentList, 'equipment', 'q', 'qty')
+
 	n = Properties.setScores(n)
+
 	return n
 }

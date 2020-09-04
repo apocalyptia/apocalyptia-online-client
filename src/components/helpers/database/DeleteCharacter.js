@@ -6,12 +6,12 @@ const deleteLocal = () => {
     window.localStorage.removeItem(`character`)
 }
 
-export default (user, c) => {
+export default (user, character) => {
     deleteLocal()
     fetch(`/.netlify/functions/character-delete`, {
 		body: {
             user: user,
-            character: JSON.stringify(CompressCharacter(c)),
+            character: JSON.stringify(CompressCharacter(character)),
         },
         method: `POST`
     })

@@ -6,7 +6,7 @@
 	import Health from '../sheet/Health.svelte'
 	import Notes from '../sheet/Notes.svelte'
 	import Properties from '../sheet/Properties.svelte'
-	import SaveCharacter from '../../helpers/database/SaveCharacter'
+	import CreateCharacter from '../../helpers/database/CreateCharacter'
 	import Skills from '../sheet/Skills.svelte'
 	import Traits from '../sheet/Traits.svelte'
 	import { authUserStore } from '../../../stores/netlifyStore'
@@ -15,8 +15,8 @@
 
 	export let readonly = false
 
-	const saveCharacter = () => {
-		$character = SaveCharacter($authUserStore.id, $character)
+	const createCharacter = () => {
+		$character = CreateCharacter($authUserStore.id, $character)
 		$goto('/')
 	}
 
@@ -41,7 +41,7 @@
 	<button class='sheet-button' on:click={deleteCharacter}>
 		Delete
 	</button>
-	<button class='sheet-button' on:click={saveCharacter}>
+	<button class='sheet-button' on:click={createCharacter}>
 		Save
 	</button>
 </div>

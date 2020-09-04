@@ -3,7 +3,7 @@ import GUUIDGenerator from '../helpers/GUUIDGenerator'
 
 export default class Character {
 	constructor() {
-		this.data = {
+		this.meta = {
 			id: GUUIDGenerator(),
 			user: ``,
 			step: 0,

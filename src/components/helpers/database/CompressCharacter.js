@@ -46,13 +46,11 @@ export default (c) => {
 		lL: c.health.leftLeg.current,
 		rL: c.health.rightLeg.current,
 		Ab: [],
-		Gr: {
-			a: [],
-			m: [],
-			r: [],
-			o: [],
-			e: []
-		}
+		GrA: [],
+		GrM: [],
+		GrR: [],
+		GrO: [],
+		GrE: []
 	}
 	c.abilities.forEach(ability => {
 		compressedCharacter.Ab.push({
@@ -60,20 +58,23 @@ export default (c) => {
 			t: ability.taken
 		})
 	})
-	const gearTypes = [
-		{ 'armor':		'a' },
-		{ 'melee':		'm' },
-		{ 'ranged':		'r' },
-		{ 'ammo':		'o' },
-		{ 'equipment':	'e' }
-	]
-	for (const [key, value] of Object.entries(gearTypes)) {
-		c.gear[key].inventory.forEach(item => {
-			compressedCharacter.Gr[value].push({
+	const addItems = ((abv, type) => {
+		c.gear[type].inventory.forEach(i => {
+			compressedCharacter[abv].push({
 				i: item.id,
 				q: item.qty
 			})
 		})
+	})
+	const gearMap = [
+		{ 'Ga' : 'armor' },
+		{ 'Gm' : 'melee' },
+		{ 'Gr' : 'ranged' },
+		{ 'Go' : 'ammo' },
+		{ 'Ge' : 'equipment' }
+	]
+	for (const [abv, type] of Object.entries(gearMap)) {
+		addItems(abv, type)
 	}
 	return compressedCharacter
 }

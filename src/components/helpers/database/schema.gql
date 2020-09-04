@@ -1,5 +1,5 @@
 type Character {
-	id: String!
+	id: ID!
 	u: String!
 	s: String!
 	c: Boolean!
@@ -44,45 +44,49 @@ type Character {
 	tO: Int!
 	lL: Int!
 	rL: Int!
-	Ab: [Ability] @relation
-	Gr: {
-		a: [Gear] @relation
-		m: [Gear] @relation
-		r: [Gear] @relation
-		o: [Gear] @relation
-		e: [Gear] @relation
-	}
+	Ab: [Ability!]!
+	Ga: [Gear!]!
+	Gm: [Gear!]!
+	Gr: [Gear!]!
+	Go: [Gear!]!
+	Ge: [Gear!]!
 }
 
 type Ability {
-	i: String!
+	i: ID!
 	t: Int!
 }
 
 type Gear {
-	i: String!
+	i: ID!
 	q: Int!
 }
 
 
 type Query {
 	readCharacter(
-		id: String,
-		u: String
-	): Character
-	updateCharacter(
-		id: String,
-		u: String
-	): Character
-	deleteCharacter(
-		id: String,
+		id: ID,
 		u: String
 	): Character
 }
 
 mutation CreateCharacter {
 	createCharacter(
-		id: String,
+		id: ID,
+		u: String
+	): Character
+}
+
+mutation UpdateCharacter {
+	updateCharacter(
+		id: ID,
+		u: String
+	): Character
+}
+
+mutation DeleteCharacter {
+	deleteCharacter(
+		id: ID,
 		u: String
 	): Character
 }

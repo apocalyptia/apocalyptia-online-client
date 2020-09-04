@@ -1,17 +1,16 @@
 import CompressCharacter from './CompressCharacter'
 
 
-const updateLocal = (c) => {
-    window.localStorage.setItem(`character`, c)
+const updateLocal = (character) => {
+    window.localStorage.setItem(`character`, character)
 }
 
-export default (user, c) => {
-    const characterFile = JSON.stringify(CompressCharacter(c))
-    updateLocal(characterFile)
+export default (user, character) => {
+    updateLocal(character)
     fetch(`/.netlify/functions/character-update`, {
 		body: {
             user: user,
-            character: characterFile,
+            character: JSON.stringify(CompressCharacter(character)),
         },
         method: `POST`
 	})
@@ -23,5 +22,5 @@ export default (user, c) => {
             console.log('ERROR!')
             console.log(err)
         })
-    return c
+    return character
 }
