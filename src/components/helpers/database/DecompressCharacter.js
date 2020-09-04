@@ -55,37 +55,27 @@ export default (c) => {
 	n.health.leftLeg.current = c.lL
 	n.health.rightLeg.current = c.rL
 
-	const convertList = (compList, ruleList, propType, compQty, decQty) => {
+	const convertList = (compList, ruleList, compQty, decQty) => {
 		let decompList = []
 		c[compList].forEach(c => {
 			for (let i = 0; i < ruleList.length; i++) {
 				if (c.id == ruleList[i].id) {
 					let ruleItem = ruleList[i]
 					ruleItem[decQty] = c[compQty]
-					n[propType].push(ruleItem)
+					decompList.push(ruleItem)
 					break
 				}
 			}
 		})
+		return decompList
 	}
 
-	n.abilities = []
-	convertList('Ab', AbilitiesList, 'abilities', 't', 'taken')
-
-	n.gear.armor = []
-	convertList('Ga', ArmorList, 'armor', 'q', 'qty')
-
-	n.gear.melee = []
-	convertList('Gm', MeleeWeaponList, 'melee', 'q', 'qty')
-
-	n.gear.ranged = []
-	convertList('Gr', RangedWeaponList, 'ranged', 'q', 'qty')
-
-	n.gear.ammo = []
-	convertList('Go', AmmoList, 'ammo', 'q', 'qty')
-
-	n.gear.equipment = []
-	convertList('Ge', EquipmentList, 'equipment', 'q', 'qty')
+	n.abilities = convertList('Ab', AbilitiesList, 't', 'taken')
+	n.gear.armor = convertList('Ga', ArmorList, 'q', 'qty')
+	n.gear.melee = convertList('Gm', MeleeWeaponList, 'q', 'qty')
+	n.gear.ranged = convertList('Gr', RangedWeaponList, 'q', 'qty')
+	n.gear.ammo = convertList('Go', AmmoList, 'q', 'qty')
+	n.gear.equipment = convertList('Ge', EquipmentList, 'q', 'qty')
 
 	n = Properties.setScores(n)
 
