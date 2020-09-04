@@ -56,18 +56,15 @@ export default (c) => {
 	n.health.rightLeg.current = c.rL
 
 	const convertList = (compList, ruleList, compQty, decQty) => {
-		let decompList = []
-		c[compList].forEach(c => {
+		return c[compList].map(c => {
 			for (let i = 0; i < ruleList.length; i++) {
 				if (c.id == ruleList[i].id) {
 					let ruleItem = ruleList[i]
 					ruleItem[decQty] = c[compQty]
-					decompList.push(ruleItem)
-					break
+					return ruleItem
 				}
 			}
 		})
-		return decompList
 	}
 
 	n.abilities = convertList('Ab', AbilitiesList, 't', 'taken')
