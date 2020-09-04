@@ -46,11 +46,11 @@ export default (c) => {
 		lL: c.health.leftLeg.current,
 		rL: c.health.rightLeg.current,
 		Ab: [],
-		GrA: [],
-		GrM: [],
-		GrR: [],
-		GrO: [],
-		GrE: []
+		Ga: [],
+		Gm: [],
+		Gr: [],
+		Go: [],
+		Ge: []
 	}
 	c.abilities.forEach(ability => {
 		compressedCharacter.Ab.push({
