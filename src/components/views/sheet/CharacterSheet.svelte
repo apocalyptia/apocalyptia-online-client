@@ -15,7 +15,16 @@
 
 	export let readonly = false
 
+	const finalizeCharacter = () => {
+		if (!$character.created) $character.created = new Date()
+		$character.meta.user = $authUserStore.id
+		$character.meta.completed = true
+		$character.meta.step = `complete`
+		$character.meta.modified = new Date()
+	}
+
 	const createCharacter = () => {
+		finalizeCharacter()
 		$character = CreateCharacter($authUserStore.id, $character)
 		$goto('/')
 	}

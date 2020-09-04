@@ -9,15 +9,5 @@ export default (user, character) => {
             character: JSON.stringify(CompressCharacter(character))
         },
 		method: `POST`
-    })
-        .then(res => {
-            console.log('SUCCESS!')
-            console.log(res)
-            character = DecompressCharacter(res.body.character)
-        })
-        .catch(err => {
-            console.log('ERROR!')
-            console.log(err)
-        })
-    return character
+    }).then(res => DecompressCharacter(res.body.character))
 }

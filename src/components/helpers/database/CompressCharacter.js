@@ -1,15 +1,15 @@
 export default (c) => {
-	let compressedCharacter = {
-		id: c.meta.id,
-		u: c.meta.user,
-		s: c.meta.step,
-		c: c.meta.completed,
-		d: c.meta.created,
-		m: c.meta.modified,
-		n: c.meta.notes,
-		p: c.meta.coordinates.map,
-		x: c.meta.coordinates.x,
-		y: c.meta.coordinates.y,
+	let compChar = {
+		Mi: c.meta.id,
+		Mu: c.meta.user,
+		Ms: c.meta.step,
+		Mc: c.meta.completed,
+		Mr: c.meta.created,
+		Ml: c.meta.modified,
+		Mn: c.meta.notes,
+		Mm: c.meta.coordinates.map,
+		Mx: c.meta.coordinates.x,
+		My: c.meta.coordinates.y,
 		Da: c.desc.age.value,
 		Di: c.desc.identity.value,
 		Dh: c.desc.hair.value,
@@ -17,28 +17,28 @@ export default (c) => {
 		Ds: c.desc.sex.value,
 		Dk: c.desc.skin.value,
 		Dw: c.desc.weight.value,
-		A: c.traits.agility.score,
-		B: c.traits.brains.score,
-		C: c.traits.constitution.score,
-		D: c.traits.demeanor.score,
-		acr: c.skills.acrobatics.score,
-		lar: c.skills.larceny.score,
-		ran: c.skills.ranged.score,
-		ste: c.skills.stealth.score,
-		med: c.skills.medicine.score,
-		per: c.skills.perception.score,
-		sci: c.skills.science.score,
-		sur: c.skills.survival.score,
-		ath: c.skills.athletics.score,
-		bui: c.skills.build.score,
-		dri: c.skills.drive.score,
-		mel: c.skills.melee.score,
-		lea: c.skills.leadership.score,
-		prf: c.skills.perform.score,
-		soc: c.skills.socialize.score,
-		tam: c.skills.tame.score,
-		L: c.props.luck.current,
-		P: c.props.psyche.current,
+		Ta: c.traits.agility.score,
+		Tb: c.traits.brains.score,
+		Tc: c.traits.constitution.score,
+		Td: c.traits.demeanor.score,
+		ac: c.skills.acrobatics.score,
+		la: c.skills.larceny.score,
+		ra: c.skills.ranged.score,
+		st: c.skills.stealth.score,
+		md: c.skills.medicine.score,
+		pe: c.skills.perception.score,
+		sc: c.skills.science.score,
+		su: c.skills.survival.score,
+		at: c.skills.athletics.score,
+		bu: c.skills.build.score,
+		dr: c.skills.drive.score,
+		me: c.skills.melee.score,
+		le: c.skills.leadership.score,
+		pr: c.skills.perform.score,
+		so: c.skills.socialize.score,
+		ta: c.skills.tame.score,
+		Pl: c.props.luck.current,
+		Pp: c.props.psyche.current,
 		hD: c.health.head.current,
 		rA: c.health.rightArm.current,
 		lA: c.health.leftArm.current,
@@ -52,29 +52,32 @@ export default (c) => {
 		Go: [],
 		Ge: []
 	}
-	c.abilities.forEach(ability => {
-		compressedCharacter.Ab.push({
-			i: ability.id,
-			t: ability.taken
+
+	const compressAbilities = () => {
+		compChar.Ab = c.abilities.map(m => {
+			return {
+				i: m.id,
+				t: m.taken
+			}
 		})
-	})
-	const addItems = ((abv, type) => {
-		c.gear[type].inventory.forEach(i => {
-			compressedCharacter[abv].push({
-				i: item.id,
-				q: item.qty
-			})
-		})
-	})
-	const gearMap = [
-		{ 'Ga' : 'armor' },
-		{ 'Gm' : 'melee' },
-		{ 'Gr' : 'ranged' },
-		{ 'Go' : 'ammo' },
-		{ 'Ge' : 'equipment' }
-	]
-	for (const [abv, type] of Object.entries(gearMap)) {
-		addItems(abv, type)
 	}
-	return compressedCharacter
+
+	compressAbilities()
+
+	const compressGear = (abv, type) => {
+		compChar[abv] = c.gear[type].map(m => {
+			return {
+				i: m.id,
+				q: m.qty
+			}
+		})
+	}
+
+	compressGear('Ga', 'armor')
+	compressGear('Gm', 'melee')
+	compressGear('Gr', 'ranged')
+	compressGear('Go', 'ammo')
+	compressGear('Ge', 'equipment')
+
+	return compChar
 }
