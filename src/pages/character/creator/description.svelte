@@ -1,9 +1,9 @@
 <script>
-	import Description from 'src/components/rules/description/Description'
-	import NavBar from 'src/components/views/controls/NavBar.svelte'
-	import RandomCharacter from 'src/components/helpers/random/RandomCharacter'
+	import Description from '../../../rules/description/Description'
+	import NavBar from '../../../views/widgets/NavBar.svelte'
+	import RandomCharacter from '../../../helpers/random/RandomCharacter'
 	import { beforeUpdate } from 'svelte'
-	import { character } from 'src/stores/characterStore'
+	import { character } from '../../../stores/characterStore'
 	import { goto } from '@roxi/routify'
 
 	let status = `stop`

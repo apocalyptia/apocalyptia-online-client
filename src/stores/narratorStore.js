@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import TableOfContents from '../components/helpers/TableOfContents'
+import TableOfContents from '../helpers/TableOfContents'
 
 
 const narratorToC = new TableOfContents({

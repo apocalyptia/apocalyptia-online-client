@@ -1,6 +1,6 @@
 <script>
-	import CharacterSheet from 'src/components/views/character/sheet/CharacterSheet.svelte'
-	import NavBar from 'src/components/views/controls/NavBar.svelte'
+	import CharacterSheet from '../../../views/character/CharacterSheet.svelte'
+	import NavBar from '../../../views/widgets/NavBar.svelte'
 </script>
 
 

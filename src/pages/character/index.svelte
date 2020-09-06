@@ -1,8 +1,8 @@
 <script>
-    import { authUserStore } from 'src/stores/netlifyStore'
-    import { character } from 'src/stores/characterStore'
+    import { authUserStore } from '../../stores/netlifyStore'
+    import { character } from '../../stores/characterStore'
     import { goto } from '@roxi/routify'
-    import LoadCharacter from 'src/components/helpers/database/LoadCharacter'
+    import LoadCharacter from '../../helpers/database/LoadCharacter'
 
     const newCharacter = () => $goto('/character/creator')
 

@@ -1,4 +1,4 @@
-/components/
+//
     /views/
         /character/
             /creator/
@@ -23,7 +23,7 @@
             UserMenu
         /rules/
             RulesPage
-        /ui/
+        /widgets/
             DisplayWindow
             GearBlock
             Spinner

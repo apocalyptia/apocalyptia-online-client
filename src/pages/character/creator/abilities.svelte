@@ -1,11 +1,11 @@
 <script>
-	import Abilities from 'src/components/rules/abilities/Abilities'
-	import AbilityCard from 'src/components/views/character/creator/AbilityCard.svelte'
-	import AbilityCurrent from 'src/components/views/character/creator/AbilityCurrent.svelte'
-	import AbilityGroup from 'src/components/views/character/creator/AbilityGroup.svelte'
-	import NavBar from 'src/components/views/controls/NavBar.svelte'
+	import Abilities from '../../../rules/abilities/Abilities'
+	import AbilityCard from '../../../views/character/AbilityCard.svelte'
+	import AbilityCurrent from '../../../views/character/AbilityCurrent.svelte'
+	import AbilityGroup from '../../../views/character/AbilityGroup.svelte'
+	import NavBar from '../../../views/widgets/NavBar.svelte'
 	import { beforeUpdate } from 'svelte'
-	import { character } from 'src/stores/characterStore'
+	import { character } from '../../../stores/characterStore'
 
 	let MasterAbilityList = Abilities.masterList
 

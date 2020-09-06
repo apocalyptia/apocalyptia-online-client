@@ -1,5 +1,5 @@
 <script>
-	import Spinner from '../../components/views/ui/Spinner.svelte'
+	import Spinner from '../../views/widgets/Spinner.svelte'
 	import { authUserStore, login } from '../../stores/netlifyStore'
 	import { character } from '../../stores/characterStore'
 	import { goto, url } from '@roxi/routify'

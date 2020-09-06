@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte'
     import { url } from '@roxi/routify'
-    import { authUserStore, confirm } from 'src/stores/netlifyStore'
-    import { character } from 'src/stores/characterStore'
+    import { authUserStore, confirm } from '../stores/netlifyStore'
+    import { character } from '../stores/characterStore'
 
     onMount(() => {
         const hash = window.location.hash.substr(1)

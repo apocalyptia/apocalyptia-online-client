@@ -1,5 +1,5 @@
 <script>
-    import Description from 'src/pages/character/creator/description.svelte'
+    import Description from './description.svelte'
 </script>
 
 
