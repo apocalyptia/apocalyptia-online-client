@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte'
     import { url } from '@roxi/routify'
-    import { authUserStore, confirm } from '../stores/netlifyStore'
-    import { character } from '../stores/characterStore'
+    import { authUserStore, confirm } from 'src/stores/netlifyStore'
+    import { character } from 'src/stores/characterStore'
 
     onMount(() => {
         const hash = window.location.hash.substr(1)
@@ -23,13 +23,9 @@
 
 <div class='cntr-card'>
 	{#if $authUserStore}
-		<p>Logged in as {$authUserStore.displayName || $authUserStore.email}</p>
-		{#if $character.completed}
-			<a href={$url('/sheet')} class='link-btn'>Character</a>
-		{:else}
-			<a href={$url('/creator')} class='link-btn'>Character</a>
-		{/if}
-		<a href={$url('/reference')} class='link-btn'>Rules</a>
+		<p>Logged in as {$authUserStore.email}</p>
+		<a href={$url('/character')} class='link-btn'>Character</a>
+		<a href={$url('/rules')} class='link-btn'>Rules</a>
 		<a href={$url('/generator')} class='link-btn'>Generator</a>
 	{:else}
 		<a href={$url('/login')} class='link-btn'>Login</a>

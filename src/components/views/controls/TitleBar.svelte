@@ -1,15 +1,16 @@
 <script>
-	import UserMenu from './UserMenu.svelte'
-	import { app_version } from '../../../main'
-	import { authUserStore } from '../../../stores/netlifyStore'
+	import UserMenu from 'src/components/views/controls/UserMenu.svelte'
+	import { authUserStore } from 'src/stores/netlifyStore'
 	import { url } from '@roxi/routify'
+
+	export let version
 </script>
 
 
 <div class='title-bar'>
 	<a href={$url('/')} class='link-btn title-link'>
 		<h1>Apocalyptia Online</h1>
-		<sub>{app_version}</sub>
+		<sub>{version}</sub>
 	</a>
 	{#if $authUserStore}
 		<UserMenu/>
