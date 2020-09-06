@@ -405,6 +405,45 @@ td, th {
 	flex: 1;
 	text-align: center;
 }
+.add-section {
+	padding-top: 0;
+}
+.add-button {
+	background-color: lime;
+	border: 1px solid lime;
+	color: rgba(15, 30, 15, 1);
+	font-size: var(--s150);
+	font-weight: bold;
+	height: var(--s250);
+	padding: 0;
+	width: var(--s250);
+	-webkit-text-fill-color: rgba(15, 30, 15, 1);
+}
+.add-button:hover {
+	background-color: rgba(15, 30, 15, 1);
+	color: lime;
+	-webkit-text-fill-color: lime;
+}
+.button-icon {
+	font-size: var(--s150);
+	display: flex;
+	justify-content: space-evenly;
+	align-content: bottom;
+}
+.trash-button {
+	background-color: crimson;
+	border: 1px solid crimson;
+	color: rgba(15, 30, 15, 1);
+	height: var(--s250);
+	padding: 0;
+	width: var(--s250);
+	-webkit-text-fill-color: rgba(15, 30, 15, 1);
+}
+.trash-button:hover {
+	background-color: rgba(15, 30, 15, 1);
+	color: crimson;
+	-webkit-text-fill-color: crimson;
+}
 /* TINY */
 @media only screen and (max-width: 400px) {
 	.sheet-card-body {
