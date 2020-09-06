@@ -1,4 +1,4 @@
-import GUUIDGenerator from '../helpers/GUUIDGenerator'
+import GUUIDGenerator from 'src/components/helpers/GUUIDGenerator'
 
 
 export default class Character {
@@ -8,8 +8,8 @@ export default class Character {
 			user: ``,
 			step: 0,
 			completed: false,
-			created: null,
-			modified: null,
+			created: ``,
+			modified: ``,
 			notes: ``,
 			coordinates: {
 				map: ``,
