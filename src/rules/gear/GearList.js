@@ -11,7 +11,7 @@ import MeleeWeaponList from './weapons/melee/MeleeWeaponList'
 import RangedWeaponList from './weapons/ranged/RangedWeaponList'
 import StorageList from './equipment/storage/StorageList'
 // import VehicleList from './gear/VehiclesList'
-import PropSort from '../../helpers/PropSort'
+import PropSort from '../../helpers/utils/PropSort'
 
 
 const GearList = {

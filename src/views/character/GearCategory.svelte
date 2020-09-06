@@ -1,6 +1,6 @@
 <script>
 	import AddItemModal from './AddItemModal.svelte'
-	import Capitalize from '../../helpers/Capitalize'
+	import Capitalize from '../../helpers/utils/Capitalize'
 	import GearItem from './GearItem.svelte'
 	import { character } from '../../stores/characterStore'
 

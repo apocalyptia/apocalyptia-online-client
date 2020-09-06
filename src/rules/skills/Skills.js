@@ -2,7 +2,7 @@ import AgilitySkills from './AgilitySkills'
 import BrainsSkills from './BrainsSkills'
 import ConstitutionSkills from './ConstitutionSkills'
 import DemeanorSkills from './DemeanorSkills'
-import PropSort from '../../helpers/PropSort'
+import PropSort from '../../helpers/utils/PropSort'
 import RandomRoll from '../../helpers/random/RandomRoll'
 
 

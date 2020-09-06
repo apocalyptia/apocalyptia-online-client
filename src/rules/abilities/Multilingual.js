@@ -1,5 +1,5 @@
 import Ability from './Ability'
-import Languages from '../../helpers/Languages'
+import Languages from '../../helpers/lists/Languages'
 
 
 const Multilingual = new Ability({

@@ -1,5 +1,5 @@
 import Ability from './Ability'
-import PropSort from '../../helpers/PropSort'
+import PropSort from '../../helpers/utils/PropSort'
 import XP3Abilities from './XP3Abilities'
 import XP6Abilities from './XP6Abilities'
 import XP9Abilities from './XP9Abilities'
@@ -8,7 +8,7 @@ import XP15Abilities from './XP15Abilities'
 import XP18Abilities from './XP18Abilities'
 import XP24Abilities from './XP24Abilities'
 import XP30Abilities from './XP30Abilities'
-import AppendToGUUID from '../../helpers/AppendToGUUID'
+import AppendToGUUID from '../../helpers/utils/AppendToGUUID'
 import RandomRoll from '../../helpers/random/RandomRoll'
 
 

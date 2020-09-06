@@ -1,5 +1,5 @@
 <script>
-	import Capitalize from '../../helpers/Capitalize'
+	import Capitalize from '../../helpers/utils/Capitalize'
 	import NavBar from '../../views/widgets/NavBar.svelte'
 	import { url } from '@roxi/routify'
 

@@ -1,4 +1,4 @@
-import GUUIDGenerator from '../helpers/GUUIDGenerator'
+import GUUIDGenerator from '../helpers/utils/GUUIDGenerator'
 
 
 export default class Character {

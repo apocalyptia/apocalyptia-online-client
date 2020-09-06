@@ -1,5 +1,5 @@
 import RandomRoll from './RandomRoll'
-import Names, { FemaleNames, MaleNames } from '../Names'
+import Names, { FemaleNames, MaleNames } from '../lists/Names'
 
 
 const RandomName = (c) => {
