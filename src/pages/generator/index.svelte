@@ -11,7 +11,6 @@
 	import GearBlock from '../../views/widgets/GearBlock.svelte'
 	import MedicalList from '../../rules/gear/equipment/medical/MedicalList'
 	import MeleeWeaponList from '../../rules/gear/weapons/melee/MeleeWeaponList'
-	import NavBar from '../../views/widgets/NavBar.svelte'
 	import Nd6 from '../../helpers/random/Nd6'
 	import RandomRoll from '../../helpers/random/RandomRoll'
 	import RangedWeaponList from '../../rules/gear/weapons/ranged/RangedWeaponList'
@@ -144,11 +143,10 @@
 			</button>
 		</div>
 		{#if gear.value != undefined}
-			<GearBlock rule={gear.value}/>
+			<GearBlock rule={gear.value} mode={'reference'}/>
 		{/if}
 	</div>
 {/each}
-<NavBar links={{back: '/', next: '/'}} proceed={true}/>
 
 
 <style>

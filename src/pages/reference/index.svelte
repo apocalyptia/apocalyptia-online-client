@@ -1,32 +1,16 @@
 <script>
-	import Capitalize from '../../helpers/utils/Capitalize'
-	import NavBar from '../../views/widgets/NavBar.svelte'
+	import Reference from '../../rules/Reference'
 	import { url } from '@roxi/routify'
-
-	const rulesPages = [
-		'abilities',
-		'combat',
-		'complications',
-		'core',
-		'gear',
-		'maneuvers',
-		'needs',
-		'properties',
-		'skills',
-		'status',
-		'traits',
-	]
 </script>
 
 
 <div class='content-menu'>
-	{#each rulesPages as page}
-		<a href={$url('/rules/:page', {page: page})} class='link-btn menu-btn'>
-			{Capitalize(page)}
+	{#each Reference as chapter}
+		<a href={$url(`/reference/${chapter.name.toLowerCase()}`)} class='link-btn menu-btn'>
+			{chapter.name}
 		</a>
 	{/each}
 </div>
-<NavBar links={{back: '/', next: '/rules/abilities'}}/>
 
 
 <style>

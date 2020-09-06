@@ -29,12 +29,8 @@
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
-		{#if $character.completed}
-			<a href={$url('/sheet')} class='link-btn first-link' on:click={hide}>Character</a>
-		{:else}
-			<a href={$url('/creator')} class='link-btn first-link' on:click={hide}>Character</a>
-		{/if}
-		<a href={$url('/reference')} class='link-btn' on:click={hide}>Rules</a>
+		<a href={$url('/character')} class='link-btn first-link' on:click={hide}>Character</a>
+		<a href={$url('/reference')} class='link-btn' on:click={hide}>Reference</a>
 		<a href={$url('/generator')} class='link-btn' on:click={hide}>Generator</a>
 		<a href={$url('/')} class='link-btn last-link' on:click={logOut}>Logout</a>
 	</div>

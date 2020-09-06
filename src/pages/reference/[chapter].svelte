@@ -1,15 +1,20 @@
 <script>
 	import GearBlock from '../../views/widgets/GearBlock.svelte'
+	import Reference from '../../rules/Reference'
 	import { beforeUpdate } from 'svelte'
 
 	export let chapter
 
-	let ruleList = [...chapter.list]
+	let rules = Reference.filter(r => r.name.toLowerCase() == chapter)[0]
+
+	rules.list = rules.list.sort((a, b) => (a.name > b.name))
+
+	let ruleList = [...rules.list]
 
 	$: searchTerm = ''
 
 	beforeUpdate(() => {
-		ruleList = [...chapter.list]
+		ruleList = [...rules.list]
 		if (searchTerm) {
 			ruleList = ruleList.filter(rule => {
 				const ruleName = rule.name.toLocaleLowerCase()
@@ -22,18 +27,18 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online Reference - {chapter.name}</title>
+	<title>Apocalyptia Online Reference - {rules.name}</title>
 </svelte:head>
 <div class='ref-header-section'>
-	<div class='chapter-name'>
-		{chapter.name}
+	<div class='rules-name'>
+		{rules.name}
 	</div>
 	<input type='text' class='search-bar' placeholder='Search' bind:value='{searchTerm}' />
 </div>
 <div class='ref-body-section'>
-	{#if chapter.explanation}
+	{#if rules.explanation}
 		<div class='explanation'>
-			{#each chapter.explanation as explanation}
+			{#each rules.explanation as explanation}
 				<p>{explanation}</p>
 			{/each}
 		</div>
@@ -45,14 +50,16 @@
 					{rule.name}
 				</summary>
 				<div class='rule-body'>
-					{#if chapter.name == 'Gear'}
-						<GearBlock {rule}/>
+					{#if rules.name == 'Gear'}
+						<GearBlock rule={rule} mode={'reference'} />
 					{:else}
 						{#if rule.desc != undefined}
-							{#each rule.desc as desc}
-								<p>{desc}</p>
-							{/each}
-							{#if chapter.name == 'Abilities'}
+							<div class='desc-section'>
+								{#each rule.desc as desc}
+									<p class='rule-desc'>{desc}</p>
+								{/each}
+							</div>
+							{#if rules.name == 'Abilities'}
 								<p><span class='bold'>Max:</span> {rule.max}</p>
 								<p><span class='bold'>XP:</span> {rule.xp}</p>
 							{/if}
@@ -114,12 +121,15 @@
 		display: block;
 		height: var(--s300);
 	}
-	.chapter-name {
+	.rules-name {
 		position: absolute;
 		font-weight: bold;
 		font-size: var(--s150);
 		top: var(--s150);
 		left: var(--s100);
+	}
+	.explanation {
+		padding: var(--s100);
 	}
 	.search-bar {
 		position: absolute;
@@ -133,7 +143,7 @@
 	.sub-name {
 		font-weight: bold;
 	}
-	.sub-desc, .spec-desc {
+	.rule-desc, .sub-desc, .spec-desc {
 		margin: var(--s100);
 	}
 	.no-results {
@@ -161,7 +171,7 @@
 		details {
 			margin-left: auto;
 			margin-right: auto;
-			max-width: 50%;
+			max-width: 80%;
 		}
 	}
 </style>

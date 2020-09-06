@@ -48,7 +48,7 @@
 			</div>
 			{#if $character.gear.melee.inventory.length > 0}
 				<div class='item'>
-					<GearBlock rule={$character.gear.melee.inventory[0]} />
+					<GearBlock rule={$character.gear.melee.inventory[0]} mode={'edit'} />
 				</div>
 			{/if}
 		</div>
@@ -58,13 +58,13 @@
 			</div>
 			{#if $character.gear.ranged.inventory.length}
 				<div class='item'>
-					<GearBlock rule={$character.gear.ranged.inventory[0]} />
+					<GearBlock rule={$character.gear.ranged.inventory[0]} mode={'edit'} />
 				</div>
 				<div class='item-category ammo-heading'>
 					<h2>Ammo</h2>
 				</div>
 				<div class='item'>
-					<GearBlock rule={$character.gear.ammo.inventory[0]} {readonly} />
+					<GearBlock rule={$character.gear.ammo.inventory[0]} mode={'edit'} />
 				</div>
 			{/if}
 		</div>
@@ -74,7 +74,7 @@
 			</div>
 			{#if $character.gear.armor.inventory.length}
 				<div class='item'>
-					<GearBlock rule={$character.gear.armor.inventory[0]} />
+					<GearBlock rule={$character.gear.armor.inventory[0]} mode={'edit'} />
 				</div>
 			{/if}
 		</div>
@@ -85,7 +85,7 @@
 			{#if $character.gear.equipment.inventory.length}
 				{#each $character.gear.equipment.inventory as equipment}
 					<div class='item'>
-						<GearBlock rule={equipment} />
+						<GearBlock rule={equipment} mode={'edit'} />
 					</div>
 				{/each}
 			{/if}

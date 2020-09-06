@@ -25,7 +25,7 @@
 	{#if $authUserStore}
 		<p>Logged in as {$authUserStore.email}</p>
 		<a href={$url('/character')} class='link-btn'>Character</a>
-		<a href={$url('/rules')} class='link-btn'>Rules</a>
+		<a href={$url('/reference')} class='link-btn'>Reference</a>
 		<a href={$url('/generator')} class='link-btn'>Generator</a>
 	{:else}
 		<a href={$url('/login')} class='link-btn'>Login</a>
