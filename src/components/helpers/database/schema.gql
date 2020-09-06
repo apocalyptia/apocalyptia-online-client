@@ -1,3 +1,13 @@
+type Ability @embedded {
+	i: ID! @unique
+	t: Int!
+}
+
+type Gear @embedded {
+	i: ID! @unique
+	q: Int!
+}
+
 type Character {
 	Mi: ID! @unique
 	Mu: String!
@@ -44,37 +54,10 @@ type Character {
 	tO: Int!
 	lL: Int!
 	rL: Int!
-	Ab: [Ability!]! @relation
-	Ga: [Gear!]! @relation
-	Gm: [Gear!]! @relation
-	Gr: [Gear!]! @relation
-	Go: [Gear!]! @relation
-	Ge: [Gear!]! @relation
-}
-
-type Ability @embedded {
-	i: ID! @unique
-	t: Int!
-}
-
-type Gear @embedded {
-	i: ID! @unique
-	q: Int!
-}
-
-
-type Query {
-	readCharacter(user: String!, id: ID!): Character
-}
-
-mutation CreateCharacter {
-	createCharacter(user: String!, character: Character): Character
-}
-
-mutation UpdateCharacter {
-	updateCharacter(user: String!, character: Character): Character
-}
-
-mutation DeleteCharacter {
-	deleteCharacter(user: String!, character: Character): Character
+	Ab: [Ability!]!
+	Ga: [Gear!]!
+	Gm: [Gear!]!
+	Gr: [Gear!]!
+	Go: [Gear!]!
+	Ge: [Gear!]!
 }
