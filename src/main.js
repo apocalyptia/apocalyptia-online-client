@@ -1,7 +1,7 @@
 import HMR from '@roxi/routify/hmr'
 import App from './App.svelte';
 
-export const app_version = 'ver 0.2a'
+export const version = 'ver 0.2a'
 
 const app = HMR(App, { target: document.body }, 'apocalyptia-online')
 
