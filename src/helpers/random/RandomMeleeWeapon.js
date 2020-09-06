@@ -2,7 +2,9 @@ import RandomRoll from './RandomRoll'
 import MeleeWeaponList from '../../rules/gear/weapons/melee/MeleeWeaponList'
 
 const RandomMeleeWeapon = (c) => {
-    c.gear.melee.inventory.push(RandomRoll(MeleeWeaponList))
+    let randomMeleeWeapon = RandomRoll(MeleeWeaponList)
+    randomMeleeWeapon.qty = 1
+    c.gear.melee.inventory.push(randomMeleeWeapon)
     return c
 }
 

@@ -2,7 +2,9 @@ import RandomRoll from './RandomRoll'
 import ArmorList from '../../rules/gear/armor/ArmorList'
 
 const RandomArmor = (c) => {
-    c.gear.armor.inventory.push(RandomRoll(ArmorList))
+    let randomArmor = RandomRoll(ArmorList)
+    randomArmor.qty = 1
+    c.gear.armor.inventory.push(randomArmor)
     return c
 }
 
