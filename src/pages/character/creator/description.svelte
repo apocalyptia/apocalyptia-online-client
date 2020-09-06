@@ -18,7 +18,7 @@
 
 	const randomCharacter = () => {
 		$character = RandomCharacter($character)
-		$goto('/character/sheet')
+		$goto('/character/creator/sheet')
 	}
 
 	beforeUpdate(() => {

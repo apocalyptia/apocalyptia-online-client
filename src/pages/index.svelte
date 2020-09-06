@@ -15,7 +15,7 @@
             confirm(result.confirmation_token)
         }
         if (window.localStorage.getItem('character')) {
-            $character = JSON.parse(window.localStorage.getItem('character'))
+            $character = window.localStorage.getItem('character')
         }
     })
 </script>

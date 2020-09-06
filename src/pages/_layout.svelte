@@ -1,7 +1,7 @@
 <script>
 	import TitleBar from '../views/widgets/TitleBar.svelte'
 	import DisplayWindow from '../views/widgets/DisplayWindow.svelte'
-	import version from '../main'
+	import { version } from '../main'
 </script>
 
 
