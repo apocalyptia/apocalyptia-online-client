@@ -1,4 +1,4 @@
-import CompressCharacter from './CompressCharacter'
+import CompressCharacter from 'src/components/helpers/database/CompressCharacter'
 
 
 const updateLocal = (character) => {

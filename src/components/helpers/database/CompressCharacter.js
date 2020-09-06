@@ -1,5 +1,25 @@
+const compressAbilities = (char) => {
+	char.Ab = c.abilities.map(m => {
+		return {
+			i: m.id,
+			t: m.taken
+		}
+	})
+	return char
+}
+
+const compressGear = (char, abv, type) => {
+	for (const item in c.gear[type].inventory) {
+		char[abv].push({
+			i: c.gear[type].inventory[item].id,
+			q: c.gear[type].inventory[item].qty
+		})
+	}
+	return char
+}
+
 export default (c) => {
-	let compChar = {
+	let char = {
 		Mi: c.meta.id,
 		Mu: c.meta.user,
 		Ms: c.meta.step,
@@ -53,31 +73,13 @@ export default (c) => {
 		Ge: []
 	}
 
-	const compressAbilities = () => {
-		compChar.Ab = c.abilities.map(m => {
-			return {
-				i: m.id,
-				t: m.taken
-			}
-		})
-	}
+	char = compressAbilities(char)
 
-	compressAbilities()
+	char = compressGear(char, 'Ga', 'armor')
+	char = compressGear(char, 'Gm', 'melee')
+	char = compressGear(char, 'Gr', 'ranged')
+	char = compressGear(char, 'Go', 'ammo')
+	char = compressGear(char, 'Ge', 'equipment')
 
-	const compressGear = (abv, type) => {
-		compChar[abv] = c.gear[type].map(m => {
-			return {
-				i: m.id,
-				q: m.qty
-			}
-		})
-	}
-
-	compressGear('Ga', 'armor')
-	compressGear('Gm', 'melee')
-	compressGear('Gr', 'ranged')
-	compressGear('Go', 'ammo')
-	compressGear('Ge', 'equipment')
-
-	return compChar
+	return char
 }
