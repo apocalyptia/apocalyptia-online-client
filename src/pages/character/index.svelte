@@ -6,8 +6,22 @@
     import LoadCharacter from '../../helpers/database/LoadCharacter'
 
     const newCharacter = () => {
-        $character = new Character()
-        $goto('/character/creator')
+        let confirmNew = false
+        let existingCharacter = window.localStorage.getItem('character')
+        console.log(existingCharacter)
+        if (existingCharacter != null) {
+            confirmNew = window.alert(
+                `You already have an existing character.
+                \n
+                Creating a new character will overwrite your existing character.
+                \n
+                Do you wish to proceed?`
+            )
+        }
+        if (existingCharacter == null || confirmNew) {
+            $character = new Character()
+            $goto('/character/creator')
+        }
     }
 
     const loadCharacter = () => {

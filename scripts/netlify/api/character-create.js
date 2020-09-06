@@ -7,6 +7,7 @@ exports.handler = async (event) => {
 	const client = new faunadb.Client({
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
+	console.log('Saving character to FaunaDB')
 	const character = JSON.parse(event.body)
 	return client.query(
 		q.Create(
