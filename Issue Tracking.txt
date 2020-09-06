@@ -46,7 +46,7 @@ Hazards.js:
 	Put Needs rules here. Requires some rewording.
 
 Reference:
-	Put Expand/Collapse All button on reference.
+	Put Expand/Collapse All button on rules.
 	Figure out topical organization. Health for example.
 	Painkiller required for a night's sleep to Recover?
 

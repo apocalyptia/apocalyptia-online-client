@@ -1,41 +1,43 @@
 /components/
     /views/
+        /character/
+            /creator/
+                AbilityCard
+                AbilityCurrent
+                AbilityGroup
+                AbilityModalOptions
+                AbilityModalSingle
+            /sheet/
+                AddItemModal
+                CharacterSheet
+                Gear
+                GearCategory
+                GearItem
+                Notes
+            BodyParts
         /controls/
             Dice
             NavBar
             Slider
             TitleBar
             UserMenu
-        /creator/
-            AbilityCard
-            AbilityCurrent
-            AbilityGroup
-            AbilityModalOptions
-            AbilityModalSingle
-        /reference/
-            RefPage
-        /sheet/
-            AddItemModal
-            CharacterSheet
-            Gear
-            GearCategory
-            GearItem
-            Notes
+        /rules/
+            RulesPage
         /ui/
-            BodyParts
             DisplayWindow
             GearBlock
             Spinner
 
 /pages/
     _fallback
-    /creator/
-        abilities
-        description
-        gear
-        properties
-        skills
+    /character
+        /creator/
+            abilities
+            description
+            gear
+            properties
+            skills
     /generator/
         index
-    /reference/
+    /rules/
         index
