@@ -9,11 +9,9 @@
 
 	let MasterAbilityList = Abilities.masterList
 
-	const resetAbilities = () => {
-		for (let a = 0; a < $character.abilities.length; ++a) {
-			$character.abilities[a].taken = 0
-		}
-	}
+	const random = () => $character = Abilities.random($character)
+
+	const reset = () => $character = Abilities.reset($character)
 
 	beforeUpdate(() => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
@@ -47,7 +45,12 @@
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={resetAbilities}>Reset</button>
+		<button class='small-cntr-btn' on:click={reset}>
+			Reset
+		</button>
+		<button class='small-cntr-btn' on:click={random}>
+			Random
+		</button>
 	</div>
 </div>
 <NavBar links={{back: '/character/creator/properties', next: '/character/creator/gear'}} />

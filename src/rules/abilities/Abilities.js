@@ -132,6 +132,9 @@ export const Abilities = {
 		return c
 	},
 	reset: function(c) {
+		for (let a = 0; a < c.abilities.length; ++a) {
+			c.abilities[a].taken = 0
+		}
 		c.abilities = []
 		return c
 	}
