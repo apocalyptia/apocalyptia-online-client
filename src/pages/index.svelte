@@ -2,7 +2,6 @@
     import { onMount } from 'svelte'
     import { url } from '@roxi/routify'
     import { authUserStore, confirm } from '../stores/netlifyStore'
-    import { character } from '../stores/characterStore'
 
     onMount(() => {
         const hash = window.location.hash.substr(1)
@@ -13,9 +12,6 @@
         }, {})
         if (result.confirmation_token) {
             confirm(result.confirmation_token)
-        }
-        if (window.localStorage.getItem('character')) {
-            $character = window.localStorage.getItem('character')
         }
     })
 </script>

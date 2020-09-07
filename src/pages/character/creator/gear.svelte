@@ -5,8 +5,6 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../../stores/characterStore'
 
-	export let readonly = true
-
 	let status = `stop`
 
 	let next = `/character/creator/gear`
@@ -39,7 +37,7 @@
 	</div>
 	{#if !$character.gear.melee.inventory.length}
 		<div class='cntr-btn'>
-			<button on:click={randomStartingGear}>Random</button>
+			<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>
 		</div>
 	{:else}
 		<div class='section-card'>

@@ -47,7 +47,7 @@
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button on:click={resetAbilities}>Reset</button>
+		<button class='small-cntr-btn' on:click={resetAbilities}>Reset</button>
 	</div>
 </div>
 <NavBar links={{back: '/character/creator/properties', next: '/character/creator/gear'}} />

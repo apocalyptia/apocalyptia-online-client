@@ -12,7 +12,7 @@
 
 
 <div class='gear-item'>
-	<GearBlock rule={item} mode={'readonly'} />
+	<GearBlock rule={item} mode={readonly ? 'readonly' : 'display'} />
 	{#if !readonly}
 		<div class='trash'>
 			<button class='trash-button' on:click={() => trashItem(gearType, index)}>

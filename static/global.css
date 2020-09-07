@@ -202,9 +202,11 @@ button {
 	text-align: center;
 	width: 100%;
 }
-.btn-row button {
-	width: 20%;
-	min-width: 100px;
+.small-cntr-btn {
+	width: 40%;
+}
+.wide-cntr-btn {
+	width: 60%;
 }
 
 /* Inputs */
@@ -262,10 +264,6 @@ summary {
 summary:hover {
 	color: rgba(15, 30, 15, 1);
 	background-color: lime;
-}
-details > div {
-	padding: var(--s100);
-	text-align: left;
 }
 
 /* Lists */

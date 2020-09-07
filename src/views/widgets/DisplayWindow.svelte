@@ -10,7 +10,7 @@
 		display: none;
 	}
 	.display-window {
-		bottom: var(--s300);
+		height: calc(100vh - var(--s300));
 		overflow: scroll;
 		position: absolute;
 		top: var(--s300);

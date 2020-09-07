@@ -67,12 +67,12 @@
 	{/each}
 </div>
 <div class='btn-row'>
-	<button class='cntr-btn' on:click={reset}>Reset</button>
-	<button class='cntr-btn' on:click={random}>Random</button>
+	<button class='small-cntr-btn' on:click={reset}>Reset</button>
+	<button class='small-cntr-btn' on:click={random}>Random</button>
 </div>
 <br>
 <div class='btn-row'>
-	<button class='cntr-btn' on:click={randomCharacter}>Random Character</button>
+	<button class='wide-cntr-btn' on:click={randomCharacter}>Random Character</button>
 </div>
 <NavBar links={{back: '/', next: next}} {status}/>
 

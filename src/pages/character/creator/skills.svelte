@@ -66,10 +66,10 @@
 	{/each}
 </div>
 <div class='btn-row'>
-	<button on:click={reset}>
+	<button class='small-cntr-btn' on:click={reset}>
 		Reset
 	</button>
-	<button on:click={random}>
+	<button class='small-cntr-btn' on:click={random}>
 		Random
 	</button>
 </div>

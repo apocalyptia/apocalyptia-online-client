@@ -25,12 +25,12 @@
 		{#if rule.cal != null}
 			<p><u>Caliber</u>: {rule.cal}</p>
 		{/if}
-		{#if rule.qty != null && mode != 'reference'}
+		{#if rule.qty != null && (mode == 'reference' || mode == 'display')}
 			<p>
 				<u>Quantity</u>: 
 				{#if mode == 'readonly'}
 					{rule.qty}
-				{:else}
+				{:else if mode == 'display'}
 					<input type='number' class='ammo-qty' min='0' bind:value={rule.qty} />
 				{/if}
 			</p>
