@@ -40,7 +40,6 @@
 	}
 
 	const checkStatus = () => {
-		console.log(current)
 		status = 'go'
 		if (current == 1 && Object.values($character.desc).some(d => d.value == ``)) status = 'stop'
 		else if (current == 2 && Traits.remaining($character) > 0) status = 'stop'
@@ -48,7 +47,6 @@
 		else if (current == 6 && Object.values($character.gear).some(g => g.inventory.length == 0)) status = 'stop'
 		if (status == 'go') nextButton = '&rtrif;'
 		else nextButton = 'X'
-		console.log(status)
 	}
 
 	beforeUpdate(() => checkStatus())

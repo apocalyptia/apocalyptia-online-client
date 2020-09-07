@@ -35,7 +35,6 @@
 	const deleteCharacter = () => {
 		let confirmDelete = false
 		confirmDelete = confirm('Are you sure you want to delete your character?')
-		console.log(`Confirm delete = ${confirmDelete}`)
 		if (confirmDelete) {
 			DeleteCharacter($authUserStore.id)
 			$character = new Character()

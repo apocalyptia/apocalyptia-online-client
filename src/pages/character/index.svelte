@@ -5,13 +5,9 @@
     import { character } from '../../stores/characterStore'
     import { goto } from '@roxi/routify'
 
-    console.log($character)
-    console.log($authUserStore)
-
     const newCharacter = () => {
         let confirmNew = false
         let existingCharacter = window.localStorage.getItem('character')
-        console.log(existingCharacter)
         if (existingCharacter != null) {
             confirmNew = window.alert(`Delete existing character and start a new character?`)
         }
