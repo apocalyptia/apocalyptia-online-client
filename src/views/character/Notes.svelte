@@ -3,28 +3,26 @@
 </script>
 
 
-<details class='sheet-card' open>
+<details class='sheet-details' close>
 	<summary class='sheet-card-title'>
 		Notes
 	</summary>
-	<div class='sheet-notes-block'>
-		<textarea wrap='soft' placeholder='Notes' bind:value={$character.meta.notes} />
+	<div class='sheet-card'>
+		<textarea class='sheet-notes-block' wrap='soft' bind:value={$character.meta.notes} />
 	</div>
 </details>
 
 
 <style>
 	.sheet-notes-block {
-		padding-left: var(--s200);
-		padding-right: var(--s200);
-		padding-bottom: var(--s200);
-	}
-	textarea {
-		background-color: rgba(15, 30, 15, 1);
-		border: 1px solid lime;
 		color: lime;
+		font-family: var(--global-font);
+		height: 100%;
 		height: var(--s1000);
+		overflow: auto;
+		padding: var(--s100);
 		resize: none;
-		width: 99%;
+		text-align: left;
+		width: calc(100% - var(--s200));
 	}
 </style>

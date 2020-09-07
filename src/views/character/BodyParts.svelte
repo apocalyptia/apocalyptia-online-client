@@ -1,6 +1,5 @@
 <script>
-	export let character
-	export let readonly = false
+	export let character, mode
 </script>
 
 
@@ -11,7 +10,7 @@
 				{$character.health.leftArm.name} Health
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.leftArm.score}
 				{:else}
 					<input type='number'
@@ -19,8 +18,7 @@
 						min='-{$character.health.leftArm.score}'
 						max='{$character.health.leftArm.score}'
 					/>
-				{/if}
-				/{$character.health.leftArm.score}
+				{/if} / {$character.health.leftArm.score}
 			</div>
 		</div>
 		<div class='left-leg-label'>
@@ -28,7 +26,7 @@
 				{$character.health.leftLeg.name} Health
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.leftLeg.score}
 				{:else}
 					<input type='number'
@@ -36,8 +34,7 @@
 						min='-{$character.health.leftLeg.score}'
 						max='{$character.health.leftLeg.score}'
 					/>
-				{/if}
-				/{$character.health.leftLeg.score}
+				{/if} / {$character.health.leftLeg.score}
 			</div>
 		</div>
 	</div>
@@ -47,7 +44,7 @@
 				{$character.health.head.name} Health
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.head.score}
 				{:else}
 					<input type='number'
@@ -55,8 +52,7 @@
 						min='-{$character.health.head.score}'
 						max='{$character.health.head.score}'
 					/>
-				{/if}
-				/{$character.health.head.score}
+				{/if} / {$character.health.head.score}
 			</div>
 		</div>
 		<div class='head-level'>
@@ -70,7 +66,7 @@
 						{$character.health.torso.name} Health
 					</div>
 					<div class='body-part-numbers'>
-						{#if readonly}
+						{#if mode == 'readonly'}
 							{$character.health.torso.score}
 						{:else}
 							<input type='number'
@@ -78,8 +74,7 @@
 								min='-{$character.health.torso.score}'
 								max='{$character.health.torso.score}'
 							/>
-						{/if}
-						/{$character.health.torso.score}
+						{/if} / {$character.health.torso.score}
 					</div>
 				</div>
 			</div>
@@ -96,7 +91,7 @@
 				{$character.health.rightArm.name} Health
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.rightArm.score}
 				{:else}
 					<input type='number'
@@ -104,8 +99,7 @@
 						min='-{$character.health.rightArm.score}'
 						max='{$character.health.rightArm.score}'
 					/>
-				{/if}
-				/{$character.health.rightArm.score}
+				{/if} / {$character.health.rightArm.score}
 			</div>
 		</div>
 		<div class='right-leg-label'>
@@ -113,7 +107,7 @@
 				{$character.health.rightLeg.name} Health
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.rightLeg.score}
 				{:else}
 					<input type='number'
@@ -121,8 +115,7 @@
 						min='-{$character.health.rightLeg.score}'
 						max='{$character.health.rightLeg.score}'
 					/>
-				{/if}
-				/{$character.health.rightLeg.score}
+				{/if} / {$character.health.rightLeg.score}
 			</div>
 		</div>
 	</div>
@@ -168,7 +161,7 @@
 	.torso-label {
 		color: rgba(15, 30, 15, 1);
 		left: 50%;
-		top: 50px;
+		top: 45px;
 		transform: translate(-50%, -50%);
 	}
 	.left-leg-label {

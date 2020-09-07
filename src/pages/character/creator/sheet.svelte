@@ -6,4 +6,4 @@
 <svelte:head>
 	<title>Apocalyptia Online Character Creator - Character Sheet</title>
 </svelte:head>
-<CharacterSheet readonly={true} />
+<CharacterSheet mode={'edit'} />

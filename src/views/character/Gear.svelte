@@ -1,38 +1,19 @@
 <script>
+	import Gear from '../../rules/gear/GearList'
 	import GearCategory from './GearCategory.svelte'
 	import { character } from '../../stores/characterStore'
 
-	export let readonly = false
-
-	const gearList = [
-		'melee',
-		'ranged',
-		'ammo',
-		'armor',
-		'equipment'
-	]
+	export let mode = 'readonly'
 </script>
 
 
-<details class='sheet-card' open>
+<details class='sheet-details' close>
 	<summary class='sheet-card-title'>Gear</summary>
-	<div class='gear-category-list'>
-		{#each gearList as gearType}
-			<GearCategory {gearType} {readonly} />
-		{/each}
+	<div class='sheet-card'>
+		<div class='gear-category-list'>
+			{#each Gear.categories as category}
+				<GearCategory {mode} {category} />
+			{/each}
+		</div>
 	</div>
 </details>
-
-
-<style>
-	details {
-		margin: 0;
-	}
-	.sheet-card {
-		margin: var(--s100);
-		padding: 0;
-	}
-	.gear-category-list {
-		padding: var(--s100);
-	}
-</style>

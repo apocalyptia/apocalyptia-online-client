@@ -4,7 +4,7 @@
 	import GearItem from './GearItem.svelte'
 	import { character } from '../../stores/characterStore'
 
-	export let gearType, readonly = false
+	export let mode, category
 
 	let modalVisible = false
 
@@ -12,23 +12,25 @@
 </script>
 
 
-<details class='gear-category' open>
-	<summary>{Capitalize(gearType)}</summary>
-	<div class='gear-item-list'>
-		{#each $character.gear[gearType].inventory as item, index}
-			<GearItem {gearType} {item} {index} {readonly} />
-		{/each}
-	</div>
-	{#if !readonly}
-		<div class='add-section'>
-			<button class='add-button' on:click={toggleAddItemModal}>
-				<div class='button-icon'>&#10010;</div>
-			</button>
-			{#if modalVisible}
-				<AddItemModal on:close={toggleAddItemModal} {gearType} />
-			{/if}
+<details class='gear-category' close>
+	<summary>{Capitalize(category)}</summary>
+	<div class='gear-category-card'>
+		<div class='gear-item-list'>
+			{#each $character.gear[category].inventory as item, index}
+				<GearItem {mode} {category} {item} {index} />
+			{/each}
 		</div>
-	{/if}
+		{#if mode != 'readonly'}
+			<div class='add-section'>
+				<button class='add-button' on:click={toggleAddItemModal}>
+					<div class='button-icon'>&#10010;</div>
+				</button>
+				{#if modalVisible}
+					<AddItemModal on:close={toggleAddItemModal} {category} />
+				{/if}
+			</div>
+		{/if}
+	</div>
 </details>
 
 
@@ -39,8 +41,7 @@
 		display: block;
 		margin-bottom: var(--s100);
 	}
-	.gear-item-list {
-		padding: var(--s100);
-		padding-bottom: 0;
+	.gear-category-card {
+		margin: var(--s100);
 	}
 </style>

@@ -2,20 +2,20 @@
 	import GearBlock from '../widgets/GearBlock.svelte'
 	import { character } from '../../stores/characterStore'
 
-	export let gearType, item, index, readonly = false
+	export let mode, category, item, index
 
-	const trashItem = (item, index=0) => {
-		$character.gear[item].inventory.splice(index, 1)
+	const trashItem = (category, index=0) => {
+		$character.gear[category].inventory.splice(index, 1)
 		$character = $character
 	}
 </script>
 
 
 <div class='gear-item'>
-	<GearBlock rule={item} mode={readonly ? 'readonly' : 'display'} />
-	{#if !readonly}
+	<GearBlock {mode} {item} />
+	{#if mode != 'readonly'}
 		<div class='trash'>
-			<button class='trash-button' on:click={() => trashItem(gearType, index)}>
+			<button class='trash-button' on:click={() => trashItem(category, index)}>
 				<div class='button-icon'>&#10006;</div>
 			</button>
 		</div>

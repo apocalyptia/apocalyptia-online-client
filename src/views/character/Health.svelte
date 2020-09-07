@@ -2,13 +2,15 @@
 	import BodyParts from './BodyParts.svelte'
 	import { character } from '../../stores/characterStore'
 
-	export let readonly = false
+	export let mode
 </script>
 
 
-<details class='sheet-card' open>
+<details class='sheet-details' close>
 	<summary class='sheet-card-title'>
 		Health
 	</summary>
-	<BodyParts {character} {readonly} />
+	<div class='sheet-card'>
+		<BodyParts {character} {mode} />
+	</div>
 </details>

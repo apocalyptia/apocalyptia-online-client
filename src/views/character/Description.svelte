@@ -1,43 +1,75 @@
 <script>
 	import { character } from '../../stores/characterStore'
+
+	export let mode
 </script>
 
 
-<details class='sheet-card' open>
+<details class='sheet-details' close>
 	<summary class='sheet-card-title'>
 		Description
 	</summary>
-	<div class='name-block'>
-		<span>Character:</span> 
-		<input type='text' class='sheet-value-long' bind:value={$character.desc.identity.value} />
-	</div>
-	<div class='sheet-card-body'>
-		<div class='sheet-card-block'>
-			<div class='sheet-card-item'>
-				<span>Age:</span> 
-				<input type='text' class='sheet-value' bind:value={$character.desc.age.value} />
-			</div>
-			<div class='sheet-card-item'>
-				<span>Height:</span> 
-				<input type='text' class='sheet-value' bind:value={$character.desc.height.value} />
-			</div>
-			<div class='sheet-card-item'>
-				<span>Weight:</span> 
-				<input type='text' class='sheet-value' bind:value={$character.desc.weight.value} />
-			</div>
+	<div class='sheet-card'>
+		<div class='name-block'>
+			<span>Character:</span> 
+			{#if mode == 'edit'}
+				<input type='text' class='sheet-value-long' bind:value={$character.desc.identity.value} />
+			{:else if mode == 'readonly'}
+				<input type='text' class='sheet-value-long' bind:value={$character.desc.identity.value} readonly />
+			{/if}
 		</div>
-		<div class='sheet-card-block'>
-			<div class='sheet-card-item'>
-				<span>Sex:</span> 
-				<input type='text' class='sheet-value' bind:value={$character.desc.sex.value} />
+		<div class='sheet-card-body'>
+			<div class='sheet-card-block'>
+				<div class='sheet-card-item'>
+					<span>Age:</span> 
+					{#if mode == 'edit'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.age.value} />
+					{:else if mode == 'readonly'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.age.value} readonly />
+					{/if}
+				</div>
+				<div class='sheet-card-item'>
+					<span>Height:</span> 
+					{#if mode == 'edit'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.height.value} />
+					{:else if mode == 'readonly'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.height.value} readonly />
+					{/if}
+				</div>
+				<div class='sheet-card-item'>
+					<span>Weight:</span> 
+					{#if mode == 'edit'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.weight.value} />
+					{:else if mode == 'readonly'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.weight.value} readonly />
+					{/if}
+				</div>
 			</div>
-			<div class='sheet-card-item'>
-				<span>Skin:</span> 
-				<input type='text' class='sheet-value' bind:value={$character.desc.skin.value} />
-			</div>
-			<div class='sheet-card-item'>
-				<span>Hair:</span> 
-				<input type='text' class='sheet-value' bind:value={$character.desc.hair.value} />
+			<div class='sheet-card-block'>
+				<div class='sheet-card-item'>
+					<span>Sex:</span>
+					{#if mode == 'edit'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.sex.value} />
+					{:else if mode == 'readonly'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.sex.value} readonly />
+					{/if}
+				</div>
+				<div class='sheet-card-item'>
+					<span>Skin:</span>
+					{#if mode == 'edit'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.skin.value} />
+					{:else if mode == 'readonly'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.skin.value} readonly />
+					{/if}
+				</div>
+				<div class='sheet-card-item'>
+					<span>Hair:</span>
+					{#if mode == 'edit'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.hair.value} />
+					{:else if mode == 'readonly'}
+						<input type='text' class='sheet-value' bind:value={$character.desc.hair.value} readonly />
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>

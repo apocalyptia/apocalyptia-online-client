@@ -6,26 +6,20 @@
 </script>
 
 
-<details>
+<details class='ability-group-details'>
 	<summary>
 		{group.name}XP Abilities
 	</summary>
+	<div class='ability-group-card'>
 		{#each group.list as ability}
-			<div class='ability-card'>
-				<AbilityCard {ability} {MasterAbilityList}/>
-			</div>
+			<AbilityCard {ability} {MasterAbilityList}/>
 		{/each}
+	</div>
 </details>
 
 
 <style>
-	.ability-card {
+	.ability-group-details {
 		margin: var(--s100);
-		border: var(--s1) solid;
-	}
-	.ability-card:hover {
-		background-color: lime;
-		color: rgba(15, 30, 15, 1);
-		cursor: pointer;
 	}
 </style>

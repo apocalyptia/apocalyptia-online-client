@@ -30,7 +30,14 @@ const GearList = {
 		...RangedWeaponList,
 		...StorageList,
 		// ...VehicleList,
-	].sort((a, b) => PropSort(a, b, `name`))
+	].sort((a, b) => PropSort(a, b, `name`)),
+	categories: [
+		'melee',
+		'ranged',
+		'ammo',
+		'armor',
+		'equipment'
+	]
 }
 
 export default GearList

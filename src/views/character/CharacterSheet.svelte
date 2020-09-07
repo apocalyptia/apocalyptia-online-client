@@ -14,7 +14,7 @@
 	import { character } from '../../stores/characterStore'
 	import { goto } from '@roxi/routify'
 
-	export let readonly = false
+	export let mode
 
 	let confirmDelete = false
 
@@ -45,14 +45,14 @@
 
 
 <div class="character-sheet">
-	<Description />
+	<Description {mode} />
 	<Traits />
 	<Skills />
-	<Properties {readonly} />
-	<Health {readonly} />
-	<Abilities {readonly} />
-	<Gear {readonly} />
-	<Notes />
+	<Properties {mode} />
+	<Health {mode} />
+	<Abilities {mode} />
+	<Gear {mode} />
+	<Notes {mode} />
 </div>
 <div class='btn-row'>
 	<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>

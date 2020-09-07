@@ -40,7 +40,7 @@
 
 <style>
 	.modal-background {
-		background-color: rgba(0,0,0,0.3);
+		background-color: rgba(0,0,0,0.7);
 		height: 100vh;
 		left: 0;
 		position: fixed;
@@ -48,7 +48,7 @@
 		width: 100vw;
 	}
 	.modal {
-		background-color: rgba(0,0,0,0.9);
+		background-color: rgba(0,0,0,.5);
 		border-radius: var(--radius);
 		border: var(--s1) solid;
 		color: lime;

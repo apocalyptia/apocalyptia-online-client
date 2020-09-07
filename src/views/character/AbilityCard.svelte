@@ -25,7 +25,14 @@
 
 <style>
 	.ability-card {
-		margin: var(--s100) auto;
+		border: var(--s1) solid;
+		margin: var(--s100);
+		padding: var(--s100);
+	}
+	.ability-card:hover {
+		background-color: lime;
+		color: rgba(15, 30, 15, 1);
+		cursor: pointer;
 	}
 	.card-row {
 		display: flex;

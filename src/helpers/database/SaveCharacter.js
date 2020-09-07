@@ -2,7 +2,6 @@ import CompressCharacter from './CompressCharacter'
 
 export default (character) => {
 	console.log(`Attempting to save character.`)
-	console.log(character)
 	console.log(CompressCharacter(character))
 	console.log(JSON.stringify(CompressCharacter(character)))
 	fetch(

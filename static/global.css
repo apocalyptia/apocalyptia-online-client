@@ -155,20 +155,24 @@ legend {
 button,
 input, input:-webkit-autofill, input:-internal-autofill-selected,
 select, select:-webkit-autofill,
-textarea, text:-webkit-autofill {
-	background-color: rgba(15, 30, 15, 1) !important;
+textarea, textarea:-webkit-autofill {
+	background-color: rgba(15, 30, 15, 1);
 	border: var(--s1) solid lime;
 	border-radius: var(--radius);
-	color: lime !important;
+	color: lime;
 	cursor: pointer;
 	font-size: var(--s100);
 	text-align: center;
-	-webkit-text-fill-color: lime !important;
 }
-button:active, button:hover,
-input:active, input:focus, input:hover, input:-webkit-autofill:focus, input:-webkit-autofill:hover,
-select:active, select:focus, select:hover, select:-webkit-autofill:focus, select:-webkit-autofill:hover,
-textarea:active, textarea:focus, textarea:hover, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:hover {
+button:active, button:hover, button:focus,
+input[type='text']:active, input[type='text']:focus, input[type='text']:hover,
+input[type='text']:-webkit-autofill:active,
+input[type='text']:-webkit-autofill:focus,
+input[type='text']:-webkit-autofill:hover,
+select:active, select:focus, select:hover,
+select:-webkit-autofill:active, select:-webkit-autofill:focus, select:-webkit-autofill:hover,
+textarea:active, textarea:focus, textarea:hover,
+textarea:-webkit-autofill:active, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:hover {
 	background-color: lime !important;
 	color: rgba(15, 30, 15, 1) !important;
 }
@@ -250,10 +254,6 @@ select {
 /* Details */
 details {
 	border: var(--s1) dotted;
-	border-radius: var(--radius);
-	margin: var(--s100);
-}
-details:focus {
 	border-radius: var(--radius);
 }
 summary {
@@ -373,12 +373,16 @@ td, th {
 	border: var(--s1) dotted;
 	display: block;
 	margin: var(--s100);
+	padding: var(--s100);
+}
+.sheet-details {
+	margin-bottom: var(--s100);
 }
 .sheet-card-title {
 	font-weight: bold;
 	font-size: var(--s110);
 }
-.sheet-card-block {
+.sheet-card-item {
 	margin: var(--s100);
 }
 .sheet-card-table {

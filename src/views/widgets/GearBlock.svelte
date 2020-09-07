@@ -1,69 +1,69 @@
 <script>
-	export let rule, mode
+	export let mode, item
 </script>
 
 
 <div class='gear-block'>
-	{#if rule != null}
-		{#if rule.name != null}
-			<p><strong>{rule.name}</strong></p>
+	{#if item != null}
+		{#if item.name != null}
+			<p><strong>{item.name}</strong></p>
 		{/if}
-		{#if rule.desc != null}
-			{#each rule.desc as desc}
+		{#if item.desc != null}
+			{#each item.desc as desc}
 				<p>{desc}</p>
 			{/each}
 		{/if}
-		{#if rule.dmg != null}
-			<p><u>Damage</u>: {rule.dmg}</p>
+		{#if item.dmg != null}
+			<p><u>Damage</u>: {item.dmg}</p>
 		{/if}
-		{#if rule.rng != null}
-			<p><u>Range</u>: {rule.rng}</p>
+		{#if item.rng != null}
+			<p><u>Range</u>: {item.rng}</p>
 		{/if}
-		{#if rule.cap != null}
-			<p><u>Magazine</u>: {rule.cap}</p>
+		{#if item.cap != null}
+			<p><u>Magazine</u>: {item.cap}</p>
 		{/if}
-		{#if rule.cal != null}
-			<p><u>Caliber</u>: {rule.cal}</p>
+		{#if item.cal != null}
+			<p><u>Caliber</u>: {item.cal}</p>
 		{/if}
-		{#if rule.qty != null && (mode == 'reference' || mode == 'display')}
+		{#if item.qty != null && mode != 'reference'}
 			<p>
 				<u>Quantity</u>: 
 				{#if mode == 'readonly'}
-					{rule.qty}
-				{:else if mode == 'display'}
-					<input type='number' class='ammo-qty' min='0' bind:value={rule.qty} />
+					{item.qty}
+				{:else if mode == 'edit'}
+					<input type='number' class='item-qty' min='0' bind:value={item.qty} />
 				{/if}
 			</p>
 		{/if}
-		{#if rule.fuse != null}
-			<p><u>Fuse</u>: {rule.fuse}</p>
+		{#if item.fuse != null}
+			<p><u>Fuse</u>: {item.fuse}</p>
 		{/if}
-		{#if rule.dur != null}
-			<p><u>Duration</u>: {rule.dur}</p>
+		{#if item.dur != null}
+			<p><u>Duration</u>: {item.dur}</p>
 		{/if}
-		{#if rule.mix != null}
-			<p><u>Mix Difficulty</u>: {rule.mix}#</p>
+		{#if item.mix != null}
+			<p><u>Mix Difficulty</u>: {item.mix}#</p>
 		{/if}
-		{#if rule.od != null}
-			<p><u>Overdose Possible</u>: {rule.od.toString()}</p>
+		{#if item.od != null}
+			<p><u>Overdose Possible</u>: {item.od.toString()}</p>
 		{/if}
-		{#if rule.hrs != null}
-			<p><u>Hours</u>: {rule.hrs}</p>
+		{#if item.hrs != null}
+			<p><u>Hours</u>: {item.hrs}</p>
 		{/if}
-		{#if rule.slots != null}
-			<p><u>Slots</u>: {rule.slots}</p>
+		{#if item.slots != null}
+			<p><u>Slots</u>: {item.slots}</p>
 		{/if}
-		{#if rule.dr != null}
-			<p><u>Damage Resistance</u>: {rule.dr}</p>
+		{#if item.dr != null}
+			<p><u>Damage Resistance</u>: {item.dr}</p>
 		{/if}
-		{#if rule.loc != null}
-			<p><u>Body Part</u>: {rule.loc}</p>
+		{#if item.loc != null}
+			<p><u>Body Part</u>: {item.loc}</p>
 		{/if}
-		{#if rule != null && rule.hasOwnProperty('attr') && rule.attr.length > 0}
+		{#if item != null && item.hasOwnProperty('attr') && item.attr.length > 0}
 			<p><u>Attributes</u>:</p>
 			<div class='attributes'>
 				<ul>
-					{#each rule.attr as attr}
+					{#each item.attr as attr}
 						<li>{attr.name}:{#each attr.desc as line}
 											&nbsp;{line}
 										{/each}
@@ -72,11 +72,11 @@
 				</ul>
 			</div>
 		{/if}
-		{#if rule.sz != null}
-			<p><u>Size</u>: {rule.sz}</p>
+		{#if item.sz != null}
+			<p><u>Size</u>: {item.sz}</p>
 		{/if}
-		{#if rule.table != null}
-			<svelte:component this={rule.table}/>
+		{#if item.table != null}
+			<svelte:component this={item.table}/>
 		{/if}
 	{/if}
 </div>
@@ -89,5 +89,8 @@
 	ul {
 		list-style: disc;
 		margin-left: var(--s100);
+	}
+	.item-qty {
+		width: 20%;
 	}
 </style>

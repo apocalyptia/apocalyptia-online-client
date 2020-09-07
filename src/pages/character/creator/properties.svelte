@@ -18,21 +18,21 @@
 	{/each}
 	<p>Your Character's Properties are calculated automatically:</p>
 </div>
-<details>
-		<summary>Properties Formulae</summary>
-		<div>
-			<ul>
-				{#each Properties.list as property}
-					{#if property.name == 'Health'}
-						<li>{property.desc[0]}</li>
-						<li>{property.desc[1]}</li>
-					{:else}
-						<li>{property.desc[0]}</li>
-					{/if}
-				{/each}
-			</ul>
-		</div>
-	</details>
+<details class='formulae-details'>
+	<summary>Properties Formulae</summary>
+	<div class='formulae-card'>
+		<ul>
+			{#each Properties.list as property}
+				{#if property.name == 'Health'}
+					<li>{property.desc[0]}</li>
+					<li>{property.desc[1]}</li>
+				{:else}
+					<li>{property.desc[0]}</li>
+				{/if}
+			{/each}
+		</ul>
+	</div>
+</details>
 <div class='section-card properties-list'>
 	<div class='section-block'>
 		<div class='prop-item'>
@@ -77,6 +77,12 @@
 
 
 <style>
+	.formulae-details {
+		margin: var(--s100);
+	}
+	.formulae-card {
+		padding: var(--s100);
+	}
 	.properties-list {
 		display: flex;
 		justify-content: space-around;

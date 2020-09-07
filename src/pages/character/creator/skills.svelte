@@ -29,7 +29,7 @@
 </div>
 <div class='list'>
 	{#each Skills.groups as group}
-		<details>
+		<details class='skills-details'>
 			<summary>
 				<span class='group-label'>
 					{group.name} Skills
@@ -66,6 +66,9 @@
 
 
 <style>
+	.skills-details {
+		margin-bottom: var(--s100);
+	}
 	.group-label {
 		font-weight: bold;
 	}
