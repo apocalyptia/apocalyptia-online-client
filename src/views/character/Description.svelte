@@ -83,9 +83,6 @@
 		margin: 0 var(--s100);
 		padding-bottom: 0;
 	}
-	.sheet-card-block {
-		width: 50%;
-	}
 	.sheet-card-item {
 		margin-bottom: var(--s50);
 		text-align: right;
@@ -94,6 +91,6 @@
 		width: 100%;
 	}
 	.sheet-value {
-		width: 70%;
+		width: 50%;
 	}
 </style>

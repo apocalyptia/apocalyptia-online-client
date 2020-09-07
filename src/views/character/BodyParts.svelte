@@ -5,9 +5,25 @@
 
 <div class='body-parts-section'>
 	<div class='left-column'>
+		<div class='head-label'>
+			<div class='body-part-name'>
+				{$character.health.head.name}
+			</div>
+			<div class='body-part-numbers'>
+				{#if mode == 'readonly'}
+					{$character.health.head.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.head.current}'
+						min='-{$character.health.head.score}'
+						max='{$character.health.head.score}'
+					/>
+				{/if} / {$character.health.head.score}
+			</div>
+		</div>
 		<div class='left-arm-label'>
 			<div class='body-part-name'>
-				{$character.health.leftArm.name} Health
+				{$character.health.leftArm.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
@@ -23,7 +39,7 @@
 		</div>
 		<div class='left-leg-label'>
 			<div class='body-part-name'>
-				{$character.health.leftLeg.name} Health
+				{$character.health.leftLeg.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
@@ -39,45 +55,12 @@
 		</div>
 	</div>
 	<div class='center-column'>
-		<div class='head-label'>
-			<div class='body-part-name'>
-				{$character.health.head.name} Health
-			</div>
-			<div class='body-part-numbers'>
-				{#if mode == 'readonly'}
-					{$character.health.head.score}
-				{:else}
-					<input type='number'
-						bind:value='{$character.health.head.current}'
-						min='-{$character.health.head.score}'
-						max='{$character.health.head.score}'
-					/>
-				{/if} / {$character.health.head.score}
-			</div>
-		</div>
 		<div class='head-level'>
 			<div class='head body-part' />
 		</div>
 		<div class='torso-level'>
 			<div class='left-arm arm body-part' />
-			<div class='torso body-part'>
-				<div class='torso-label'>
-					<div class='body-part-name'>
-						{$character.health.torso.name} Health
-					</div>
-					<div class='body-part-numbers'>
-						{#if mode == 'readonly'}
-							{$character.health.torso.score}
-						{:else}
-							<input type='number'
-								bind:value='{$character.health.torso.current}'
-								min='-{$character.health.torso.score}'
-								max='{$character.health.torso.score}'
-							/>
-						{/if} / {$character.health.torso.score}
-					</div>
-				</div>
-			</div>
+			<div class='torso body-part' />
 			<div class='right-arm arm body-part' />
 		</div>
 		<div class='legs-level'>
@@ -86,9 +69,25 @@
 		</div>
 	</div>
 	<div class='right-column'>
+		<div class='torso-label'>
+			<div class='body-part-name'>
+				{$character.health.torso.name}
+			</div>
+			<div class='body-part-numbers'>
+				{#if mode == 'readonly'}
+					{$character.health.torso.score}
+				{:else}
+					<input type='number'
+						bind:value='{$character.health.torso.current}'
+						min='-{$character.health.torso.score}'
+						max='{$character.health.torso.score}'
+					/>
+				{/if} / {$character.health.torso.score}
+			</div>
+		</div>
 		<div class='right-arm-label'>
 			<div class='body-part-name'>
-				{$character.health.rightArm.name} Health
+				{$character.health.rightArm.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
@@ -104,7 +103,7 @@
 		</div>
 		<div class='right-leg-label'>
 			<div class='body-part-name'>
-				{$character.health.rightLeg.name} Health
+				{$character.health.rightLeg.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
@@ -148,27 +147,14 @@
 		text-align: center;
 		width: 100%;
 	}
-	.head-label {
-		left: 50%;
-		transform: translate(-50%, -50%);
+	.head-label, .torso-label {
+		top: 30px;
 	}
-	.right-arm-label {
-		top: 140px;
+	.left-arm-label, .right-arm-label {
+		top: 120px;
 	}
-	.left-arm-label {
-		top: 140px;
-	}
-	.torso-label {
-		color: rgba(15, 30, 15, 1);
-		left: 50%;
-		top: 45px;
-		transform: translate(-50%, -50%);
-	}
-	.left-leg-label {
-		top: 250px;
-	}
-	.right-leg-label {
-		top: 250px;
+	.left-leg-label, .right-leg-label {
+		top: 210px;
 	}
 	.body-part {
 		background-color: lime;

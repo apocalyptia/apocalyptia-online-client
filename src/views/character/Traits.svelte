@@ -12,10 +12,20 @@
 			{#each Object.values($character.traits) as trait}
 				<div class='sheet-card-block'>
 					<div class='sheet-card-item'>
-						{trait.name}: {trait.score}
+						<span class='trait-name'>
+							{trait.name}: {trait.score}
+						</span>
 					</div>
 				</div>
 			{/each}
 		</div>
 	</div>
 </details>
+
+
+<style>
+	.trait-name {
+		font-size: var(--s110);
+		font-weight: bold;
+	}
+</style>
