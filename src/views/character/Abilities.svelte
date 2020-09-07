@@ -40,8 +40,8 @@
 			{/each}
 			{#if mode == 'edit'}
 				<div class='add-section'>
-					<button class='add-button'>
-						<div class='button-icon'>&#10010;</div>
+					<button class='add-btn'>
+						<div class='btn-icon'>&#10010;</div>
 					</button>
 				</div>
 			{/if}

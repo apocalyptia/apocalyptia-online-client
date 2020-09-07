@@ -17,25 +17,30 @@
         '/'
 	]
 
-	let current = 1
-
 	let status
+
+	$: current = $character.meta.step
 
 	$: nextButton = 'X'
 
 	const back = () => {
-		$goto(pages[--current])
+		$character.meta.step -= 1
+		$character = $character
+		$goto(pages[$character.meta.step])
 	}
 
 	const home = () => {
-		current = 1
+		$character.meta.step = 1
+		$character = $character
 		$goto('/')
 	}
 
 	const next = () => {
 		checkStatus()
 		if (status == 'go') {
-			$goto(pages[++current])
+			$character.meta.step += 1
+			$character = $character
+			$goto(pages[$character.meta.step])
 		}
 	}
 

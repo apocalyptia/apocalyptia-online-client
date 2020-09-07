@@ -6,7 +6,7 @@ export default class Character {
 		this.meta = {
 			id: GUUIDGenerator(),
 			user: ``,
-			step: 0,
+			step: 1,
 			completed: false,
 			created: ``,
 			modified: ``,

@@ -194,8 +194,7 @@ textarea:invalid {
 
 /* Buttons */
 button {
-	height: var(--s300);
-	padding: var(--s50);
+	padding: var(--s100);
 }
 .cntr-btn {
 	text-align: center;
@@ -410,7 +409,7 @@ td, th {
 .add-section {
 	padding-top: 0;
 }
-.add-button {
+.add-btn {
 	background-color: lime;
 	border: 1px solid lime;
 	color: rgba(15, 30, 15, 1);
@@ -421,18 +420,18 @@ td, th {
 	width: var(--s250);
 	-webkit-text-fill-color: rgba(15, 30, 15, 1);
 }
-.add-button:hover {
+.add-btn:hover {
 	background-color: rgba(15, 30, 15, 1);
 	color: lime;
 	-webkit-text-fill-color: lime;
 }
-.button-icon {
+.btn-icon {
 	font-size: var(--s150);
 	display: flex;
 	justify-content: space-evenly;
 	align-content: bottom;
 }
-.trash-button {
+.trash-btn {
 	background-color: crimson;
 	border: 1px solid crimson;
 	color: rgba(15, 30, 15, 1);
@@ -441,7 +440,7 @@ td, th {
 	width: var(--s250);
 	-webkit-text-fill-color: rgba(15, 30, 15, 1);
 }
-.trash-button:hover {
+.trash-btn:hover {
 	background-color: rgba(15, 30, 15, 1);
 	color: crimson;
 	-webkit-text-fill-color: crimson;
