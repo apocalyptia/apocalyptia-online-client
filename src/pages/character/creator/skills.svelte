@@ -1,27 +1,17 @@
 <script>
-	import NavBar from '../../../views/widgets/NavBar.svelte'
 	import RandomRoll from '../../../helpers/random/RandomRoll'
 	import Skills from '../../../rules/skills/Skills'
 	import Slider from '../../../views/widgets/Slider.svelte'
 	import Traits from '../../../rules/traits/Traits'
-	import { beforeUpdate } from 'svelte'
 	import { character } from '../../../stores/characterStore'
 
-	let remaining = Skills.remaining($character)
-
-	let next = `/character/creator/skills`
+	$: remaining = Skills.remaining($character)
 
 	const assign = (event) => $character = Skills.assign($character, event.target)
 
 	const random = () => $character = Skills.random($character)
 
 	const reset = () => $character = Skills.reset($character)
-
-	beforeUpdate(() => {
-		remaining = Skills.remaining($character)
-		if (remaining == 0) next = `/character/creator/properties`
-		else next = `/character/creator/skills`
-	})
 </script>
 
 
@@ -73,7 +63,6 @@
 		Random
 	</button>
 </div>
-<NavBar links={{back: '/character/creator/traits', next: next}} status={remaining == 0 ? `go` : `stop`}/>
 
 
 <style>
@@ -81,6 +70,8 @@
 		font-weight: bold;
 	}
 	.max-score {
+		font-weight: bold;
+		margin-top: var(--s150);
 		text-align: center;
 	}
 	.stat-range {

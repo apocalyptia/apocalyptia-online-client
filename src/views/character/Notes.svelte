@@ -14,12 +14,17 @@
 
 
 <style>
+	.sheet-notes-block {
+		padding-left: var(--s200);
+		padding-right: var(--s200);
+		padding-bottom: var(--s200);
+	}
 	textarea {
 		background-color: rgba(15, 30, 15, 1);
 		border: 1px solid lime;
 		color: lime;
 		height: var(--s1000);
 		resize: none;
-		width: 100%;
+		width: 99%;
 	}
 </style>

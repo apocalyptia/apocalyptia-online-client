@@ -55,25 +55,7 @@
 	<Gear {readonly} />
 	<Notes />
 </div>
-<div class='sheet-buttons'>
-	<button class='sheet-button' on:click={deleteCharacter}>
-		Delete
-	</button>
-	<button class='sheet-button' on:click={createCharacter}>
-		Save
-	</button>
+<div class='btn-row'>
+	<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
+	<button class='small-cntr-btn' on:click={createCharacter}>Save</button>
 </div>
-
-
-<style>
-	.sheet-buttons {
-		display: flex;
-		justify-content: space-bsetween;
-		margin-top: var(--s100);
-	}
-	.sheet-button {
-		font-size: var(--s125);
-		font-weight: bold;
-		width: calc(100% / 3);
-	}
-</style>

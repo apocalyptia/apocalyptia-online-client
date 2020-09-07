@@ -1,6 +1,5 @@
 <script>
 	import BodyParts from '../../../views/character/BodyParts.svelte'
-	import NavBar from '../../../views/widgets/NavBar.svelte'
 	import Properties from '../../../rules/properties/Properties'
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../../stores/characterStore'
@@ -75,7 +74,6 @@
 <div class='section-card'>
 	<BodyParts {character} readonly={true}/>
 </div>
-<NavBar links={{back: '/character/creator/skills', next: '/character/creator/abilities'}}/>
 
 
 <style>

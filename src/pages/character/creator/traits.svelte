@@ -1,25 +1,15 @@
 <script>
-	import NavBar from '../../../views/widgets/NavBar.svelte'
 	import Slider from '../../../views/widgets/Slider.svelte'
 	import Traits from '../../../rules/traits/Traits'
-	import { beforeUpdate } from 'svelte'
 	import { character } from '../../../stores/characterStore'
 
-	let remaining = Traits.remaining($character)
-
-	let next = `/character/creator/traits`
+	$: remaining = Traits.remaining($character)
 
 	const assign = (event) => $character = Traits.assign($character, event.target)
 
 	const random = () => $character = Traits.random($character)
 
 	const reset = () => $character = Traits.reset($character)
-
-	beforeUpdate(() => {
-		remaining = Traits.remaining($character)
-		if (remaining == 0) next = `/character/creator/skills`
-		else next = `/character/creator/traits`
-	})
 </script>
 
 
@@ -59,4 +49,3 @@
 		Random
 	</button>
 </div>
-<NavBar links={{back: '/character/creator/description', next: next}} status={remaining == 0 ? `go` : `stop`}/>
