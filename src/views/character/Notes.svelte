@@ -1,5 +1,7 @@
 <script>
 	import { character } from '../../stores/characterStore'
+
+	export let mode
 </script>
 
 

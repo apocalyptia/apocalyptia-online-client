@@ -16,7 +16,6 @@
 				<span class='sheet-item-short-column'>XP</span>
 				<span class='sheet-item-short-column'>Max</span>
 				<span class='sheet-item-short-column'>Taken</span>
-				<span class='sheet-item-short-column'/>
 			</div>
 			{#each $character.abilities as ability}
 				<div class='sheet-card-table-row'>
@@ -30,21 +29,10 @@
 						{ability.max}
 					</span>
 					<span class='sheet-item-short-column'>
-						{#if mode == 'readonly'}
-							{ability.taken}
-						{:else if mode == 'edit'}
-							<input type='number' bind:value={ability.taken} min=0 max={ability.max} />
-						{/if}
+						{ability.taken}
 					</span>
 				</div>
 			{/each}
-			{#if mode == 'edit'}
-				<div class='add-section'>
-					<button class='btn-box add-btn'>
-						<div class='btn-icon'>&#10010;</div>
-					</button>
-				</div>
-			{/if}
 		</div>
 	</div>
 </details>
