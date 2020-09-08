@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 	return client.query(
 		q.Create(
 			q.Ref(
-				q.Collection(`characters`),
+				q.Collection(`apocalyptia-online/characters`),
 				character.Mi
 			),
 			{ data: JSON.parse(event.body) }
