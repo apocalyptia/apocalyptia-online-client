@@ -10,7 +10,11 @@
 		Notes
 	</summary>
 	<div class='sheet-card'>
-		<textarea class='sheet-notes-block' wrap='soft' bind:value={$character.meta.notes} />
+		{#if mode == 'edit'}
+			<textarea class='sheet-notes-block' wrap='soft' bind:value={$character.meta.notes} />
+		{:else}
+			<div class='sheet-notes-block'>{$character.meta.notes}</div>
+		{/if}
 	</div>
 </details>
 
