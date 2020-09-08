@@ -9,7 +9,7 @@
 
 <div class='title-bar'>
 	<a href={$url('/')} class='link-btn title-link'>
-		<h1>Apocalyptia Online</h1>
+		<span class='app-title'>Apocalyptia Online</span>
 		<sub>{version}</sub>
 	</a>
 	{#if $authUserStore}
@@ -21,18 +21,16 @@
 <style>
 	.title-bar {
 		display: flex;
-		height: var(--s300);
+		max-height: var(--s300);
 		position: fixed;
 		top: 0;
 		transition: top 0.3s linear;
-		width: calc(100vw - (var(--s1) * 2));
+		width: 100%;
 		z-index: 2;
 	}
 	.title-link {
+		padding: var(--s100);
 		width: 100%;
-	}
-	h1 {
-		display: inline;
 	}
 	sub {
 		color: crimson;

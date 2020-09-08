@@ -51,7 +51,7 @@
 		else if (current == 3 && Skills.remaining($character) > 0) status = 'stop'
 		else if (current == 6 && Object.values($character.gear).some(g => g.inventory.length == 0)) status = 'stop'
 		if (status == 'go') nextButton = '&rtrif;'
-		else nextButton = 'X'
+		else nextButton = '&#10006;'
 	}
 
 	beforeUpdate(() => checkStatus())

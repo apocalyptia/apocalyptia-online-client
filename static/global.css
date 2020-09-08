@@ -173,8 +173,8 @@ select:active, select:focus, select:hover,
 select:-webkit-autofill:active, select:-webkit-autofill:focus, select:-webkit-autofill:hover,
 textarea:active, textarea:focus, textarea:hover,
 textarea:-webkit-autofill:active, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:hover {
-	background-color: lime !important;
-	color: rgba(15, 30, 15, 1) !important;
+	background-color: lime;
+	color: rgba(15, 30, 15, 1);
 }
 button:disabled,
 input:disabled,
@@ -210,6 +210,11 @@ button {
 }
 .wide-cntr-btn {
 	width: 60%;
+}
+.btn-box {
+	align-content: center;
+	justify-content: center;
+	padding: 0;
 }
 
 /* Inputs */
@@ -421,15 +426,12 @@ td, th {
 	-webkit-text-fill-color: rgba(15, 30, 15, 1);
 }
 .add-btn:hover {
-	background-color: rgba(15, 30, 15, 1);
+	background-color: rgba(15, 30, 15, 1) !important;
 	color: lime;
 	-webkit-text-fill-color: lime;
 }
 .btn-icon {
 	font-size: var(--s150);
-	display: flex;
-	justify-content: space-evenly;
-	align-content: bottom;
 }
 .trash-btn {
 	background-color: crimson;

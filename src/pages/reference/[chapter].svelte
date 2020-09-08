@@ -45,13 +45,15 @@
 	{/if}
 	{#if ruleList.length}
 		{#each ruleList as rule}
-			<details bind:open={rule.visible}>
+			<details class='rule-ref' bind:open={rule.visible}>
 				<summary>
 					{rule.name}
 				</summary>
 				<div class='rule-body'>
 					{#if rules.name == 'Gear'}
-						<GearBlock rule={rule} mode={'reference'} />
+						<div class='gear-rule'>
+							<GearBlock item={rule} mode={'reference'} />
+						</div>
 					{:else}
 						{#if rule.desc != undefined}
 							<div class='desc-section'>
@@ -67,7 +69,7 @@
 					{/if}
 					{#if rule.subrules}
 						{#each rule.subrules as subrule}
-							<details>
+							<details class='subrule-details'>
 								<summary class='sub-name'>{subrule.name}</summary>
 								{#each subrule.desc as sub_desc}
 									<p class='sub-desc'>{sub_desc}</p>
@@ -117,6 +119,9 @@
 
 
 <style>
+	.rule-ref {
+		margin: var(--s100);
+	}
 	.ref-header-section {
 		display: block;
 		height: var(--s300);
@@ -140,6 +145,9 @@
 		padding: var(--s25) var(--s100);
 		text-align: left;
 	}
+	.subrule-details {
+		margin: var(--s100);
+	}
 	.sub-name {
 		font-weight: bold;
 	}
@@ -153,8 +161,11 @@
 	.bold {
 		font-weight: bold;
 	}
+	.gear-rule {
+		margin: var(--s100);
+	}
 	.rule-table {
-		margin-top: var(--s100);
+		margin: var(--s100);
 	}
 	.header {
 		font-weight: bold;
@@ -168,7 +179,7 @@
 		width: 100%;
 	}
 	@media only screen and (min-width: 650px) {
-		details {
+		.rule-ref {
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 80%;

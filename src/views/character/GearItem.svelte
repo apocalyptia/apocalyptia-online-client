@@ -15,7 +15,7 @@
 	<GearBlock {mode} {item} />
 	{#if mode != 'readonly'}
 		<div class='trash'>
-			<button class='trash-btn' on:click={() => trashItem(category, index)}>
+			<button class='btn-box trash-btn' on:click={() => trashItem(category, index)}>
 				<div class='btn-icon'>&#10006;</div>
 			</button>
 		</div>

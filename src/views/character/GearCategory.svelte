@@ -22,7 +22,7 @@
 		</div>
 		{#if mode != 'readonly'}
 			<div class='add-section'>
-				<button class='add-btn' on:click={toggleAddItemModal}>
+				<button class='btn-box add-btn' on:click={toggleAddItemModal}>
 					<div class='btn-icon'>&#10010;</div>
 				</button>
 				{#if modalVisible}

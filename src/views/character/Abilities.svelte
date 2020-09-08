@@ -5,7 +5,7 @@
 </script>
 
 
-<details class='sheet-details' close>
+<details class='sheet-details' open>
 	<summary class='sheet-card-title'>
 		Abilities
 	</summary>
@@ -40,7 +40,7 @@
 			{/each}
 			{#if mode == 'edit'}
 				<div class='add-section'>
-					<button class='add-btn'>
+					<button class='btn-box add-btn'>
 						<div class='btn-icon'>&#10010;</div>
 					</button>
 				</div>

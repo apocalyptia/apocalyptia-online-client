@@ -24,8 +24,8 @@
 </script>
 
 
-<button class='user-btn' bind:this={trigger} on:click={toggle}>
-	&#9776;
+<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>
+	<div class='btn-icon'>&#9776;</div>
 </button>
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
@@ -40,20 +40,11 @@
 
 <style>
 	.user-btn {
-		align-content: center;
-		border: var(--s10) solid lime;
-		background-color: rgba(15, 30, 15, 1);
-		color: lime;
-		display: flex;
-		font-size: 150%;
+		border: var(--s10) solid;
 		height: var(--s300);
-		justify-content: center;
 		position: fixed;
 		right: 0;
-		top: 0;
-		width: 10%;
-		max-width: 50px;
-		min-width: 50px;
+		width: var(--s300);
 		z-index: 3;
 	}
 	.user-btn:hover {
