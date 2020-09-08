@@ -5,7 +5,7 @@
 </script>
 
 
-<details class='sheet-details' open>
+<details class='sheet-details' close>
 	<summary class='sheet-card-title'>
 		Abilities
 	</summary>
