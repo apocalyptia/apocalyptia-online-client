@@ -8,14 +8,14 @@ export default (character) => {
 		`/.netlify/functions/character-create`,
 		{
 			method: `POST`,
-			headers: { 'Content-Type': 'application/json' },
+			// headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(CompressCharacter(character))
 		}
 	)
 	.then(res => {
-		let response = res.json()
 		console.log(`Successfully saved character to database.`)
 		console.log(response)
+		return res.json()
 	})
 	.catch(err => {
 		console.log(`Failed to save character to database`)
