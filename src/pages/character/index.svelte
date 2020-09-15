@@ -9,9 +9,9 @@
         let confirmNew = false
         let existingCharacter = window.localStorage.getItem('character')
         if (existingCharacter != null) {
-            confirmNew = window.alert(`Delete existing character and start a new character?`)
+            confirmNew = window.confirm(`Delete existing character and start a new character?`)
         }
-        if (existingCharacter == null || confirmNew) {
+        if (confirmNew || existingCharacter == null) {
             $character = new Character()
             $goto('/character/creator')
         }
