@@ -22,13 +22,14 @@
 		if (!$character.created) $character.created = new Date()
 		$character.meta.user = $authUserStore.id
 		$character.meta.completed = true
-		$character.meta.step = `complete`
+		$character.meta.step = 7
 		$character.meta.modified = new Date()
 	}
 
 	const createCharacter = () => {
 		finalizeCharacter()
-		$character = SaveCharacter($character)
+		let serverResponse = SaveCharacter($character)
+		console.log(serverResponse)
 		$goto('/')
 	}
 
@@ -36,7 +37,8 @@
 		let confirmDelete = false
 		confirmDelete = confirm('Are you sure you want to delete your character?')
 		if (confirmDelete) {
-			DeleteCharacter($authUserStore.id)
+			let serverResponse = DeleteCharacter($authUserStore.id)
+			console.log(serverResponse)
 			$character = new Character()
 			$goto('/')
 		}

@@ -4,6 +4,15 @@
     import { authUserStore, confirm } from '../stores/netlifyStore'
 
     onMount(() => {
+
+        fetch(
+            `/.netlify/functions/test`,
+            {
+                method: `POST`,
+                body: 'HELLO WORLD!'
+            }
+        )
+
         const hash = window.location.hash.substr(1)
         const result = hash.split(`&`).reduce((result, item) => {
             const parts = item.split(`=`)

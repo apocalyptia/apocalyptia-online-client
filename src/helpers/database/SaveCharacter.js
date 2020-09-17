@@ -5,7 +5,7 @@ export default (character) => {
 	console.log(CompressCharacter(character))
 	console.log(JSON.stringify(CompressCharacter(character)))
 	return fetch(
-		`/.netlify/api/character-create`,
+		`/.netlify/functions/character-create`,
 		{
 			method: `POST`,
 			headers: { 'Content-Type': 'application/json' },
@@ -13,13 +13,12 @@ export default (character) => {
 		}
 	)
 	.then(res => {
-		console.log(`Successfully saved character to database.`)
-		console.log(res)
+		console.log(`FETCH RESPONSE = ${res}`)
+		console.log(`FETCH RESPONSE JSON = ${res.json()}`)
 		return res.json()
 	})
 	.catch(err => {
-		console.log(`Failed to save character to database`)
-		console.warn(err)
+		console.warn(`CATCH ERROR = ${err}`)
 		window.localStorage.setItem(`character`, character)
 	})
 }
