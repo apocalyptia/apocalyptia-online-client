@@ -5,7 +5,7 @@ export default (character) => {
 	console.log(CompressCharacter(character))
 	console.log(JSON.stringify(CompressCharacter(character)))
 	return fetch(
-		`/.netlify/functions/character-create`,
+		`https://apocalyptiaonline.com/.netlify/functions/character-create`,
 		{
 			method: `POST`,
 			headers: { 'Content-Type': 'application/json' },
