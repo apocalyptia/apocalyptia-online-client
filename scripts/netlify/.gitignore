@@ -1,5 +1,5 @@
 public/
 node_modules/
-api/ssr/bundle.json
+functions/ssr/bundle.json
 .netlify/functions
 package-lock.json

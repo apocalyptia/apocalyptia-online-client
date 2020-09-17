@@ -3,19 +3,6 @@
     import { url } from '@roxi/routify'
     import { authUserStore, confirm } from '../stores/netlifyStore'
 
-    async function hello() {
-        await fetch(
-            `https://apocalyptiaonline.com/.netlify/functions/test`,
-            {
-                method: `POST`,
-                body: 'HELLO WORLD!'
-            }
-        )
-    }
-
-    hello()
-
-
     onMount(() => {
         const hash = window.location.hash.substr(1)
         const result = hash.split(`&`).reduce((result, item) => {
