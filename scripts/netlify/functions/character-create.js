@@ -8,9 +8,10 @@ exports.handler = (event) => {
 	// 	secret: process.env.FAUNADB_SERVER_SECRET
 	// })
 	console.log('Saving character to FaunaDB')
-	// console.log(event.body)
-	// const character = JSON.parse(event.body)
-	// return client.query(
+	console.log(event.body)
+	const character = JSON.parse(event.body)
+	return character
+	// client.query(
 	// 	q.Create(
 	// 		q.Ref(
 	// 			q.Collection(`characters`),
@@ -19,6 +20,6 @@ exports.handler = (event) => {
 	// 		{ data: character }
 	// 	)
 	// )
-	// 	.then(res => successResponse(res))
-	// 	.catch(err => failureResponse(err))
+		.then(res => successResponse(res))
+		.catch(err => failureResponse(err))
 }
