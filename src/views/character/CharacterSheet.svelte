@@ -19,21 +19,22 @@
 	let confirmDelete = false
 
 	const finalizeCharacter = () => {
-		console.log('FINALIZING CHARACTER')
+		console.log('CharacterSheet FINALIZING CHARACTER')
 		if (!$character.created) $character.created = new Date()
 		$character.meta.user = $authUserStore.id
 		$character.meta.completed = true
 		$character.meta.step = 7
 		$character.meta.modified = new Date()
-		console.log('FINALIZATION COMPLETED')
+		console.log('CharacterSheet FINALIZATION COMPLETED')
 	}
 
 	const createCharacter = async () => {
 		finalizeCharacter()
 		let serverResponse = await SaveCharacter($character)
-		console.log(`SERVER RESPONSE = ${serverResponse}`)
+		console.log(`CharacterSheet SERVER RESPONSE = ${serverResponse}`)
+		console.log(`CharacterSheet JSON PARSED RESPONSE = ${JSON.parse(serverResponse)}`)
 		$goto('/')
-		console.log('RETURNED TO HOME')
+		console.log('CharacterSheet RETURNED TO HOME')
 	}
 
 	const deleteCharacter = () => {

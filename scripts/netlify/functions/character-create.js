@@ -6,15 +6,15 @@ exports.handler = (event) => {
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
 
-	console.log('SAVING CHARACTER TO FAUNADB')
+	console.log('character-create SAVING CHARACTER TO FAUNADB')
 
-	console.log(`EVENT = ${event}`)
+	console.log(`character-create EVENT = ${event}`)
 
-	console.log(`EVENT.BODY = ${event.body}`)
+	console.log(`character-create EVENT.BODY = ${event.body}`)
 
 	const character = JSON.parse(event.body)
 
-	console.log(`JSON PARSED EVENT.BODY = ${character}`)
+	console.log(`character-create JSON PARSED EVENT.BODY = ${character}`)
 
 	return client.query(
 		q.Create(
@@ -25,18 +25,18 @@ exports.handler = (event) => {
 		)
 	)
 		.then(res => {
-			console.log('SUCCESS!')
-			console.log(`RES = ${res}`)
-			console.log(`JSON STRINGIFIED RES = ${JSON.stringify(res)}`)
+			console.log('character-create SUCCESS!')
+			console.log(`character-create RES = ${res}`)
+			console.log(`character-create JSON STRINGIFIED RES = ${JSON.stringify(res)}`)
 			return {
 				statusCode: 200,
 				body: JSON.stringify(res)
 			}
 		})
 		.catch(err => {
-			console.log('FAILURE!')
-			console.log(`ERR = ${err}`)
-			console.log(`JSON STRINGIFIED ERR = ${JSON.stringify(err)}`)
+			console.log('character-create FAILURE!')
+			console.log(`character-create ERR = ${err}`)
+			console.log(`character-create JSON STRINGIFIED ERR = ${JSON.stringify(err)}`)
 			return {
 				statusCode: 400,
 				body: JSON.stringify(err)
