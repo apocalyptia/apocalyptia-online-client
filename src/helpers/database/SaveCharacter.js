@@ -1,9 +1,9 @@
 import CompressCharacter from './CompressCharacter'
 
 export default (character) => {
-	console.log(`Attempting to save character.`)
-	console.log(CompressCharacter(character))
-	console.log(JSON.stringify(CompressCharacter(character)))
+	console.log(`ATTEMPTING TO SAVE`)
+	console.log(`COMPRESSED = ${CompressCharacter(character)}`)
+	console.log(`JSON STRINGIFIED = ${JSON.stringify(CompressCharacter(character))}`)
 	return fetch(
 		`https://apocalyptiaonline.com/.netlify/functions/character-create`,
 		{
@@ -12,11 +12,7 @@ export default (character) => {
 			body: JSON.stringify(CompressCharacter(character))
 		}
 	)
-	.then(res => {
-		console.log(`FETCH RESPONSE = ${res}`)
-		console.log(`FETCH RESPONSE JSON = ${res.json()}`)
-		return res.json()
-	})
+	.then(res => res.json())
 	.catch(err => {
 		console.warn(`CATCH ERROR = ${err}`)
 		window.localStorage.setItem(`character`, character)

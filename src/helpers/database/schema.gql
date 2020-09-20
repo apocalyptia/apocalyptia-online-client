@@ -1,15 +1,14 @@
 type Ability @embedded {
-	i: ID! @unique
+	i: String! @unique
 	t: Int!
 }
 
 type Gear @embedded {
-	i: ID! @unique
+	i: String! @unique
 	q: Int!
 }
 
 type Character {
-	Mi: ID! @unique
 	Mu: String!
 	Ms: String!
 	Mc: Boolean!

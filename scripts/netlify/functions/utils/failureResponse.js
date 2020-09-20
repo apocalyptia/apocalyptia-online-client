@@ -1,6 +1,6 @@
 export const failureResponse = (err) => {
 	return {
-		statusCode: 400,
+		statusCode: err.status,
 		body: JSON.stringify(err)
 	}
 }

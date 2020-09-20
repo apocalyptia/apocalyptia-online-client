@@ -1,6 +1,6 @@
 export const successResponse = (res) => {
 	return {
-		statusCode: 200,
+		statusCode: res.status,
 		body: JSON.stringify(res)
 	}
 }
