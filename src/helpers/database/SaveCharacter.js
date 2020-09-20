@@ -10,7 +10,7 @@ export default (character) => {
 		}
 	)
 	.then(res => {
-		console.log(`SaveCharacter THEN RES = ${res}`)
+		console.log(`SaveCharacter THEN RES = ${res.json()}`)
 		res.json()
 	})
 	.catch(err => {
