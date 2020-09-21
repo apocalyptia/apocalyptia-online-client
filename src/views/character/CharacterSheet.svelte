@@ -26,9 +26,7 @@
 
 	const createCharacter = () => {
 		finalizeCharacter()
-		SaveCharacter($character).then((res) => {
-			console.log(`CharacterSheet JSON PARSED RESPONSE = ${JSON.parse(res)}`)
-		})
+		SaveCharacter($character).then((res) => console.log(`CharacterSheet RES = ${res}`))
 		$goto('/')
 	}
 
