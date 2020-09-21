@@ -24,13 +24,12 @@
 		$character.meta.modified = new Date()
 	}
 
-	const createCharacter = async () => {
+	const createCharacter = () => {
 		finalizeCharacter()
-		let serverResponse = await SaveCharacter($character)
-		serverResponse.finally(() => {
-			console.log(`CharacterSheet JSON PARSED RESPONSE = ${JSON.parse(serverResponse)}`)
-			$goto('/')
+		SaveCharacter($character).then((res) => {
+			console.log(`CharacterSheet JSON PARSED RESPONSE = ${JSON.parse(res)}`)
 		})
+		$goto('/')
 	}
 
 	const deleteCharacter = () => {

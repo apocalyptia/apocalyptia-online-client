@@ -2,6 +2,8 @@ const faunadb = require('faunadb')
 const q = faunadb.query
 
 exports.handler = (event) => {
+	console.log('SAVING CHARACTER')
+
 	const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 
 	const character = JSON.parse(event.body)
