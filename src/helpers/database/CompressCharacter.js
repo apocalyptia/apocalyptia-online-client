@@ -20,6 +20,7 @@ const compressGear = (char, c, abv, type) => {
 
 export default (c) => {
 	let char = {
+		id: c.meta.id,
 		Mu: c.meta.user,
 		Ms: c.meta.step,
 		Mc: c.meta.completed,

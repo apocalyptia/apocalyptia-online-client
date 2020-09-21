@@ -28,7 +28,7 @@ const decompressGear = (char, c, prop, abv, list) => {
 
 export default (c) => {
 	const char = new Character()
-	char.meta._id = c._id
+	char.meta.id = c.id
 	char.meta.user = c.Mu
 	char.meta.step = c.Ms
 	char.meta.completed = c.Mc

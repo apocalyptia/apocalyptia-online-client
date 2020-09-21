@@ -9,6 +9,7 @@ type Gear @embedded {
 }
 
 type Character {
+	id: String! @unique
 	Mu: String!
 	Ms: String!
 	Mc: Boolean!

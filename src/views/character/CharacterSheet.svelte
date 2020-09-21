@@ -28,17 +28,14 @@
 		finalizeCharacter()
 		let serverResponse = await SaveCharacter($character)
 		serverResponse.finally(() => {
-			console.log(`CharacterSheet SERVER RESPONSE = ${serverResponse}`)
 			console.log(`CharacterSheet JSON PARSED RESPONSE = ${JSON.parse(serverResponse)}`)
 			$goto('/')
-			console.log('CharacterSheet RETURNED TO HOME')
 		})
 	}
 
 	const deleteCharacter = () => {
 		if (confirm('Are you sure you want to delete your character?')) {
 			let serverResponse = DeleteCharacter($authUserStore.id)
-			console.log(serverResponse)
 			$character = new Character()
 			$goto('/')
 		}

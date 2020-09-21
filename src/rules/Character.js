@@ -1,7 +1,9 @@
+import GUUIDGenerator from '../helpers/utils/GUUIDGenerator'
+
 export default class Character {
 	constructor() {
 		this.meta = {
-			_id: ``,
+			id: GUUIDGenerator(),
 			user: ``,
 			step: 1,
 			completed: false,

@@ -1,6 +1,7 @@
 import CompressCharacter from './CompressCharacter'
 
 export default (character) => {
+	console.log(`CHARACTER = ${character}`)
 	return fetch(
 		`https://apocalyptiaonline.com/.netlify/functions/character-create`,
 		{
