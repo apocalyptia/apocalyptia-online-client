@@ -11,7 +11,7 @@ exports.handler = (event) => {
 	return client.query(
 		q.Create(
 			q.Ref(
-				q.Collection(`characters`)
+				q.Collection(`Characters`)
 			),
 			{ data: character }
 		)
