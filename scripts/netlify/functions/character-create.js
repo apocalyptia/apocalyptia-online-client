@@ -10,9 +10,7 @@ exports.handler = async (event) => {
 
 	return client.query(
 		q.Create(
-			q.Ref(
-				q.Collection(`Characters`)
-			),
+			q.Collection(`Characters`),
 			{ data: JSON.parse(event.body) }
 		)
 	)
