@@ -24,9 +24,9 @@
 		$character.meta.modified = new Date()
 	}
 
-	const createCharacter = async () => {
+	const createCharacter = () => {
 		finalizeCharacter()
-		await SaveCharacter($character).then((res) => console.log(`CharacterSheet RES = ${res.json()}`))
+		SaveCharacter($character)
 		$goto('/')
 	}
 

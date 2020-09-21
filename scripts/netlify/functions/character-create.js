@@ -1,28 +1,30 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
 
-exports.handler = (event) => {
-	console.log('SAVING CHARACTER')
+exports.handler = async (event) => {
+	console.log(`SAVING CHARACTER = ${JSON.parse(event.body)}`)
 
-	const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
-
-	const character = JSON.parse(event.body)
+	const client = new faunadb.Client({
+		secret: process.env.FAUNADB_SERVER_SECRET
+	})
 
 	return client.query(
 		q.Create(
 			q.Ref(
 				q.Collection(`Characters`)
 			),
-			{ data: character }
+			{ data: JSON.parse(event.body) }
 		)
 	)
 		.then(res => {
+			console.log(`SUCCESS = ${res}`)
 			return {
 				statusCode: 200,
 				body: JSON.stringify(res)
 			}
 		})
 		.catch(err => {
+			console.log(`FAILURE = ${err}`)
 			return {
 				statusCode: 400,
 				body: JSON.stringify(err)
