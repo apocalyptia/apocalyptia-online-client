@@ -1,7 +1,7 @@
 import CompressCharacter from './CompressCharacter'
 
 export default (character) => {
-	console.log(`CHARACTER = ${JSON.stringify(CompressCharacter(character))}`)
+	console.log(`SAVE CHARACTER ID = ${character.id}`)
 	return fetch(
 		`/.netlify/functions/character-create`,
 		{

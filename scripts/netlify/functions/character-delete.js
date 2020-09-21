@@ -1,17 +1,18 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
 
-exports.handler = (event) => {
-	const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
+exports.handler = async (event) => {
+	const client = new faunadb.Client({
+		secret: process.env.FAUNADB_SERVER_SECRET
+	})
 
 	const character = JSON.parse(event.body)
 
 	return client.query(
 		q.Delete(
 			q.Ref(
-				q.Collection(`characters`),
-				character._id,
-				{ data: character }
+				q.Collection(`Characters`),
+				character.id
 			)
 		)
 	)

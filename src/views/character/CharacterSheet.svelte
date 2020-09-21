@@ -32,7 +32,7 @@
 
 	const deleteCharacter = () => {
 		if (confirm('Are you sure you want to delete your character?')) {
-			let serverResponse = DeleteCharacter($authUserStore.id)
+			DeleteCharacter($authUserStore.id)
 			$character = new Character()
 			$goto('/')
 		}
