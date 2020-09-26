@@ -10,8 +10,10 @@ exports.handler = async (event) => {
 
 	return client.query(
 		q.Delete(
-			q.Collection(`Characters`),
-			{ data:	characterID }
+			q.Ref(
+				q.Collection(`Characters`),
+				{ data:	characterID }
+			)
 		)
 	)
 	.then(res => {
