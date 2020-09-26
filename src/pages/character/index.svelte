@@ -1,7 +1,7 @@
 <script>
     import Character from '../../rules/Character'
     import CharacterSheet from '../../views/character/CharacterSheet.svelte'
-    import DeleteCharacter from '../../helpers/database/DeleteChatacter'
+    import DeleteCharacter from '../../helpers/database/DeleteCharacter'
     import LoadCharacter from '../../helpers/database/LoadCharacter'
     import { authUserStore } from '../../stores/netlifyStore'
     import { character } from '../../stores/characterStore'
