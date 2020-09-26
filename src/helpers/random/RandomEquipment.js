@@ -10,6 +10,7 @@ const RandomEquipment = (c, n) => {
             equipment[existingItemIndex].qty++
         }
         else {
+            randomItem.qty = 1
             equipment.push(randomItem)
         }
     }
