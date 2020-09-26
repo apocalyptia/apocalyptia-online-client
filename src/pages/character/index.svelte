@@ -11,7 +11,10 @@
         $goto('/character/creator')
     }
 
-    const loadCharacter = () => $character = LoadCharacter($authUserStore.id)
+    const loadCharacter = () => {
+        console.log(`USER ID = ${$authUserStore.id}`)
+        $character = LoadCharacter($authUserStore.id)
+    }
 </script>
 
 <svelte:head>
