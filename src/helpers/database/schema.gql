@@ -9,22 +9,23 @@ type Gear @embedded {
 }
 
 type Character {
-	id: String! @unique
+	Mi: String! @unique
 	Mu: String!
-	Ms: String!
-	Mc: Boolean!
-	Mr: String!
-	Ml: String!
-	Mn: String
+	Mc: String!
 	Mm: String!
-	Mx: Int!
-	My: Int!
+	Mn: String!
+	Cm: String!
+	Cx: Int!
+	Cy: Int!
+	Sc: Boolean!
+	So: Boolean!
+	Ss: Int!
 	Da: Int!
-	Di: String!
+	Dn: String!
 	Dh: String!
 	De: String!
 	Ds: String!
-	Sk: String!
+	Dk: String!
 	Dw: Int!
 	Ta: Int!
 	Tb: Int!

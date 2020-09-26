@@ -13,9 +13,9 @@
 		<div class='name-block'>
 			<span>Character:</span> 
 			{#if mode == 'edit'}
-				<input type='text' class='sheet-value-long' bind:value={$character.desc.identity.value} />
+				<input type='text' class='sheet-value-long' bind:value={$character.desc.name.value} />
 			{:else if mode == 'readonly'}
-				<input type='text' class='sheet-value-long' bind:value={$character.desc.identity.value} readonly />
+				<input type='text' class='sheet-value-long' bind:value={$character.desc.name.value} readonly />
 			{/if}
 		</div>
 		<div class='sheet-card-body'>

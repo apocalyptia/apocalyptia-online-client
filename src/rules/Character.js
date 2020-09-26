@@ -24,8 +24,8 @@ export default class Character {
 				name: `Age`,
 				value: ``
 			},
-			identity: {
-				name: `Identity`,
+			name: {
+				name: `Name`,
 				value: ``
 			},
 			hair: {

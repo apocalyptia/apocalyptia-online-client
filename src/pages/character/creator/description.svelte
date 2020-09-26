@@ -27,7 +27,7 @@
 	<div class='item-block'>
 		<div class='character-container'>
 			<span>Character:</span>
-			<input type='text' bind:value={$character.desc.identity.value}>
+			<input type='text' bind:value={$character.desc.name.value}>
 			<button on:click={() => randomDescriptor(1)}>Random</button>
 		</div>
 	</div>
