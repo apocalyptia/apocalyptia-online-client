@@ -12,7 +12,7 @@
 	const reset = () => $character = Description.reset($character)
 
 	const randomCharacter = () => {
-		$character.meta.step = 7
+		$character.meta.status.step = 7
 		$character = RandomCharacter($character)
 		$goto('/character/creator/sheet')
 	}

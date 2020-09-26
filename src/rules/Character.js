@@ -5,8 +5,6 @@ export default class Character {
 		this.meta = {
 			id: GUUIDGenerator(),
 			user: ``,
-			step: 1,
-			completed: false,
 			created: ``,
 			modified: ``,
 			notes: ``,
@@ -14,6 +12,11 @@ export default class Character {
 				map: ``,
 				x: 0,
 				y: 0
+			},
+			status: {
+				completed: false,
+				open: false,
+				step: 1,
 			}
 		},
 		this.desc = {

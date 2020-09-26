@@ -1,7 +1,6 @@
 <script>
 	import Spinner from '../../views/widgets/Spinner.svelte'
 	import { authUserStore, login } from '../../stores/netlifyStore'
-	import { character } from '../../stores/characterStore'
 	import { goto, url } from '@roxi/routify'
 
 	if ($authUserStore) $goto(`/`)
@@ -15,7 +14,7 @@
 
 	let forgotPassword = false
 
-	const submit = (event) => {
+	const submit = () => {
 		pendingApiCall = true
 		let loginResult = login(user)
 			.catch(e => {

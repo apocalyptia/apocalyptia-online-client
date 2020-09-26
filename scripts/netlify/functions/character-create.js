@@ -14,16 +14,16 @@ exports.handler = async (event) => {
 			{ data: character }
 		)
 	)
-		.then(res => {
-			return {
-				statusCode: 200,
-				body: JSON.stringify(res)
-			}
-		})
-		.catch(err => {
-			return {
-				statusCode: 400,
-				body: JSON.stringify(err)
-			}
-		})
+	.then(res => {
+		return {
+			statusCode: 200,
+			body: JSON.stringify(res)
+		}
+	})
+	.catch(err => {
+		return {
+			statusCode: 400,
+			body: JSON.stringify(err)
+		}
+	})
 }

@@ -19,18 +19,18 @@
 
 	let status
 
-	$: current = $character.meta.step
+	$: current = $character.meta.status.step
 
 	$: nextButton = 'X'
 
 	const back = () => {
-		$character.meta.step -= 1
+		$character.meta.status.step -= 1
 		$character = $character
-		$goto(pages[$character.meta.step])
+		$goto(pages[$character.meta.status.step])
 	}
 
 	const home = () => {
-		$character.meta.step = 1
+		$character.meta.status.step = 1
 		$character = $character
 		$goto('/')
 	}
@@ -38,9 +38,9 @@
 	const next = () => {
 		checkStatus()
 		if (status == 'go') {
-			$character.meta.step += 1
+			$character.meta.status.step += 1
 			$character = $character
-			$goto(pages[$character.meta.step])
+			$goto(pages[$character.meta.status.step])
 		}
 	}
 

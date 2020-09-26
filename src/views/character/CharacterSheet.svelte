@@ -19,8 +19,8 @@
 	const finalizeCharacter = () => {
 		if (!$character.created) $character.created = new Date()
 		$character.meta.user = $authUserStore.id
-		$character.meta.completed = true
-		$character.meta.step = 7
+		$character.meta.status.step = 7
+		$character.meta.status.completed = true
 		$character.meta.modified = new Date()
 	}
 

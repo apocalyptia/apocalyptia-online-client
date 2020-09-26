@@ -10,22 +10,20 @@ exports.handler = async (event) => {
 
 	return client.query(
 		q.Delete(
-			q.Ref(
-				q.Collection(`Characters`),
-				character.id
-			)
+			q.Collection(`Characters`),
+			{ data:	character.id }
 		)
 	)
-		.then(res => {
-			return {
-				statusCode: 200,
-				body: JSON.stringify(res)
-			}
-		})
-		.catch(err => {
-			return {
-				statusCode: 400,
-				body: JSON.stringify(err)
-			}
-		})
+	.then(res => {
+		return {
+			statusCode: 200,
+			body: JSON.stringify(res)
+		}
+	})
+	.catch(err => {
+		return {
+			statusCode: 400,
+			body: JSON.stringify(err)
+		}
+	})
 }
