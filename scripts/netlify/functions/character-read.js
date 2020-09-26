@@ -6,12 +6,12 @@ exports.handler = async (event) => {
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
 
-	const character = JSON.parse(event.body)
-
 	return client.query(
 		q.Get(
-			q.Collection(`characters`),
-			{ data: character._id }
+			q.Ref(
+				q.Collection(`Characters`),
+				{ data: JSON.parse(event.body) }
+			)
 		)
 	)
 	.then(res => {

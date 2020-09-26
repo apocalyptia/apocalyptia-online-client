@@ -1,24 +1,17 @@
 <script>
     import Character from '../../rules/Character'
     import CharacterSheet from '../../views/character/CharacterSheet.svelte'
-    import DeleteCharacter from '../../helpers/database/DeleteCharacter'
     import LoadCharacter from '../../helpers/database/LoadCharacter'
     import { authUserStore } from '../../stores/netlifyStore'
     import { character } from '../../stores/characterStore'
     import { goto } from '@roxi/routify'
 
     const newCharacter = () => {
-        const confirmNew = window.confirm(`Delete existing character and create a new character?`)
-        if (confirmNew) {
-            DeleteCharacter($character)
-            $character = new Character()
-            $goto('/character/creator')
-        }
+        $character = new Character()
+        $goto('/character/creator')
     }
 
-    const loadCharacter = () => {
-        $character = LoadCharacter($authUserStore.id)
-    }
+    const loadCharacter = () => $character = LoadCharacter($authUserStore.id)
 </script>
 
 <svelte:head>
