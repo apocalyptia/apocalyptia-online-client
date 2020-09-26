@@ -244,4 +244,11 @@ export default class Character {
 			},
 		}
 	}
+	finalize = (userId) => {
+	if (!this.created) this.created = new Date()
+		this.meta.user = userId
+		this.meta.status.step = 7
+		this.meta.status.completed = true
+		this.meta.modified = new Date()
+	}
 }

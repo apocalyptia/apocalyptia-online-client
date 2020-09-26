@@ -1,39 +1,29 @@
 <script>
 	import Abilities from './Abilities.svelte'
-	import Character from '../../rules/Character'
-	import DeleteCharacter from '../../helpers/database/DeleteCharacter'
 	import Description from './Description.svelte'
 	import Gear from './Gear.svelte'
 	import Health from './Health.svelte'
 	import Notes from './Notes.svelte'
 	import Properties from './Properties.svelte'
-	import SaveCharacter from '../../helpers/database/SaveCharacter'
 	import Skills from './Skills.svelte'
 	import Traits from './Traits.svelte'
+	import DeleteCharacter from '../../helpers/database/DeleteCharacter'
+	import SaveCharacter from '../../helpers/database/SaveCharacter'
 	import { authUserStore } from '../../stores/netlifyStore'
 	import { character } from '../../stores/characterStore'
 	import { goto } from '@roxi/routify'
 
 	export let mode
 
-	const finalizeCharacter = () => {
-		if (!$character.created) $character.created = new Date()
-		$character.meta.user = $authUserStore.id
-		$character.meta.status.step = 7
-		$character.meta.status.completed = true
-		$character.meta.modified = new Date()
-	}
-
 	const createCharacter = () => {
-		finalizeCharacter()
-		SaveCharacter($character)
+		$character.finalize($authUserStore.id)
+		$character = SaveCharacter($character)
 		$goto('/')
 	}
 
 	const deleteCharacter = () => {
 		if (confirm('Are you sure you want to delete your character?')) {
-			DeleteCharacter($authUserStore.id)
-			$character = new Character()
+			$character = DeleteCharacter($authUserStore.id)
 			$goto('/')
 		}
 	}
