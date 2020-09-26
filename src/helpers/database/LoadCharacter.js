@@ -8,7 +8,7 @@ export default (userId) => {
 			body: JSON.stringify(userId)
 		}
 	).then(res => {
-		console.log(`RESPONSE = ${res}`)
-		DecompressCharacter(res.json().body.character)
+		console.log(`RESPONSE = ${JSON.parse(res)}`)
+		return DecompressCharacter(res.json().body.character)
 	})
 }
