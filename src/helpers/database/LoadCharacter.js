@@ -7,5 +7,8 @@ export default (userId) => {
 			method: `POST`,
 			body: JSON.stringify(userId)
 		}
-	).then(res => DecompressCharacter(res.json().body.character))
+	).then(res => {
+		console.log(`RESPONSE = ${res}`)
+		DecompressCharacter(res.json().body.character)
+	})
 }
