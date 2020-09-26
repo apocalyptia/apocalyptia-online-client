@@ -1,6 +1,5 @@
 <script>
 	import Description from '../../../rules/description/Description'
-	import RandomCharacter from '../../../helpers/random/RandomCharacter'
 	import { character } from '../../../stores/characterStore'
 	import { goto } from '@roxi/routify'
 
@@ -10,17 +9,11 @@
 	const random = () => $character = Description.random($character)
 
 	const reset = () => $character = Description.reset($character)
-
-	const randomCharacter = () => {
-		$character.meta.status.step = 7
-		$character = RandomCharacter($character)
-		$goto('/character/creator/sheet')
-	}
 </script>
 
 
 <svelte:head>
-	<title>Apocalyptia Online Character Creator - Description</title>
+	<title>Apocalyptia Online - Character Creator - Description</title>
 </svelte:head>
 <h1>Description</h1>
 <div class='section-card'>
@@ -53,10 +46,6 @@
 <div class='btn-row'>
 	<button class='small-cntr-btn' on:click={reset}>Reset</button>
 	<button class='small-cntr-btn' on:click={random}>Random</button>
-</div>
-<br>
-<div class='btn-row'>
-	<button class='wide-cntr-btn' on:click={randomCharacter}>Random Character</button>
 </div>
 
 

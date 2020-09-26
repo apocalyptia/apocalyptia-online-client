@@ -20,7 +20,7 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online Character Creator - Abilities</title>
+	<title>Apocalyptia Online - Character Creator - Abilities</title>
 </svelte:head>
 <h1>Abilities</h1>
 <div class='explanation'>

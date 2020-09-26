@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Apocalyptia Online - Character Sheet</title>
+	<title>Apocalyptia Online - Character</title>
 </svelte:head>
 {#if !$character.meta.user}
     <div class='cntr-card'>

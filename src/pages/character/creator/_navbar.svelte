@@ -17,7 +17,7 @@
         '/'
 	]
 
-	let status
+	let proceed
 
 	$: current = $character.meta.status.step
 
@@ -37,7 +37,7 @@
 
 	const next = () => {
 		checkStatus()
-		if (status == 'go') {
+		if (proceed) {
 			$character.meta.status.step += 1
 			$character = $character
 			$goto(pages[$character.meta.status.step])
@@ -45,12 +45,14 @@
 	}
 
 	const checkStatus = () => {
-		status = 'go'
-		if (current == 1 && Object.values($character.desc).some(d => d.value == ``)) status = 'stop'
-		else if (current == 2 && Traits.remaining($character) > 0) status = 'stop'
-		else if (current == 3 && Skills.remaining($character) > 0) status = 'stop'
-		else if (current == 6 && Object.values($character.gear).some(g => g.inventory.length == 0)) status = 'stop'
-		if (status == 'go') nextButton = '&rtrif;'
+		proceed = true
+		if (
+			(current == 1 && Object.values($character.desc).some(d => d.value == ``)) ||
+			(current == 2 && Traits.remaining($character) > 0) ||
+			(current == 3 && Skills.remaining($character) > 0) ||
+			(current == 6 && Object.values($character.gear).some(g => g.inventory.length == 0))
+		) proceed = false
+		if (proceed) nextButton = '&rtrif;'
 		else nextButton = '&#10006;'
 	}
 

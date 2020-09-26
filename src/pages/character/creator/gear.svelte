@@ -17,7 +17,7 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online Character Creator - Gear</title>
+	<title>Apocalyptia Online - Character Creator - Gear</title>
 </svelte:head>
 <h1>Gear</h1>
 <div class='explanation'>
