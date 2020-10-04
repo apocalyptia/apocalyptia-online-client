@@ -36,7 +36,7 @@
 		console.log('------------------------------------')
 		console.log(`USER = ${$authUserStore.id}`)
 		console.log(`LOAD CHARACTER = ${LoadCharacter($authUserStore.id)}`)
-		console.log(`LOAD ALL CHARACTERS = ${LoadAllCharacters($authUserStore.id)}`)
+		// console.log(`LOAD ALL CHARACTERS = ${LoadAllCharacters($authUserStore.id)}`)
 		console.log('------------------------------------')
 	}
 </script>

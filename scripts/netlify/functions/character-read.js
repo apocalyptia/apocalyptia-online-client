@@ -8,11 +8,14 @@ exports.handler = (event) => {
 
 	const userID = event.body
 
+	console.log(`USER ID = ${userID}`)
+	console.log(`PARSED USER ID = ${JSON.parse(userID)}`)
+
 	return client.query(
 		q.Get(
 			q.Match(
 				q.Index(`userID`),
-				userID
+				JSON.parse(userID)
 			)
 		)
 	).then(res => {
