@@ -7,9 +7,7 @@
 <main>
 	<TitleBar {version} />
 	<div class='display-window'>
-		<div class='page-container'>
-			<slot/>
-		</div>
+		<slot/>
 	</div>
 </main>
 
@@ -25,10 +23,5 @@
 		scrollbar-width: none;
 		top: var(--s300);
 		width: 100vw;
-	}
-	.page-container {
-		overflow: scroll;
-		padding: var(--s100);
-		scrollbar-width: none;
 	}
 </style>

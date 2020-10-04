@@ -48,26 +48,32 @@
 
 <style>
 	.ref-header-section {
-		display: block;
+		align-items: center;
+		background-color: rgb(15, 30, 15);
+		border: 1px solid lime;
+		display: flex;
+		height: var(--s300);
+		justify-content: space-around;
+		left: 0;
 		position: fixed;
+		right: 0;
+		top: var(--s350);
+		z-index: 1;
 	}
-		.rules-name {
-			font-size: var(--s150);
-			font-weight: bold;
-			left: var(--s100);
-			position: absolute;
-			top: var(--s150);
-		}
-		.search-bar {
-			min-width: 100px;
-			padding: var(--s25) var(--s100);
-			position: absolute;
-			right: var(--s100);
-			text-align: left;
-			top: var(--s100);
-			width: 33%;
-		}
+	.rules-name {
+		font-size: var(--s150);
+		font-weight: bold;
+	}
+	.search-bar {
+		min-width: 100px;
+		padding: var(--s25) var(--s100);
+		text-align: left;
+		width: 45%;
+	}
 	.ref-page-body {
+		position: absolute;
 		top: var(--s300);
+		left: 0;
+		right: 0;
 	}
 </style>

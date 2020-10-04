@@ -189,10 +189,12 @@ select:focus,
 select:hover,
 textarea:focus,
 textarea:hover,
+summary:hover,
+details:active,
 details:focus,
 details:hover {
 	outline: none;
-	box-shadow: 0 0 var(--s250) rgba(0, 255, 0, 0.6);
+	box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.3);
 }
 select:focus {
 	outline: none;

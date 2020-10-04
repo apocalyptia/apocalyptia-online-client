@@ -11,16 +11,18 @@
 <style>
     .back-btn {
 		align-items: center;
+		background-color: rgb(15, 30, 15);
 		border: 2px solid lime;
 		bottom: 0;
 		display: flex;
 		font-size: var(--s150);
-		height: 46px;
+		height: var(--s300);
 		justify-content: center;
 		left: 0;
 		position: fixed;
 		text-align: center;
-		width: 46px;
+		width: var(--s300);
+		z-index: 1;
 	}
 	.back-btn:active,
 	.back-btn:focus,
