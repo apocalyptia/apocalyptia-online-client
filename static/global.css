@@ -57,6 +57,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+*:focus {
+	outline: double lime;
+}
 
 
 /* ----- GLOBAL VARIABLES ----- */
@@ -176,6 +179,26 @@ textarea:-webkit-autofill:active, textarea:-webkit-autofill:focus, textarea:-web
 	background-color: lime;
 	color: rgba(15, 30, 15, 1);
 }
+a:focus,
+a:hover,
+button:focus,
+button:hover,
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+textarea:focus,
+textarea:hover,
+details:focus,
+details:hover {
+	outline: none;
+	box-shadow: 0 0 var(--s250) rgba(0, 255, 0, 0.6);
+}
+select:focus {
+	outline: none;
+	border-color: lime;
+}
+
 button:disabled,
 input:disabled,
 select:disabled,
@@ -265,10 +288,12 @@ summary {
 	justify-content: left;
 	padding: var(--s100);
 }
-summary:hover {
+summary:hover, summary:active, details:active {
+	outline: none;
 	color: rgba(15, 30, 15, 1);
 	background-color: lime;
 }
+
 
 /* Lists */
 ul {
@@ -328,6 +353,7 @@ td, th {
 	top: 50vh;
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
+	box-shadow: var(--s75) var(--s100) darkgreen;
 }
 .cntr-card .card-title {
 	margin: var(--s100);
@@ -346,9 +372,7 @@ td, th {
 	display: flex;
 	height: var(--s300);
 	justify-content: center;
-	margin: auto;
 	margin-bottom: var(--s200);
-	width: 80%;
 }
 
 /* Misc */
