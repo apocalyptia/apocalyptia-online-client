@@ -8,9 +8,6 @@ exports.handler = (event) => {
 
 	const character = event.body
 
-	console.log(`CHARACTER = ${character}`)
-	console.log(`PARSED CHARACTER = ${JSON.parse(character)}`)
-
 	return client.query(
 		q.Create(
 			q.Collection(`Characters`), {
