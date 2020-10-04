@@ -32,9 +32,6 @@
 		flex-direction: column;
 		justify-content: space-around;
 	}
-		.explanation {
-			/* padding: var(--s100); */
-		}
 	.no-results {
 		padding-left: 10vw;
 		padding-top: 2vh;
