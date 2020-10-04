@@ -4,9 +4,14 @@
 </script>
 
 
+<svelte:head>
+	<title>Apocalyptia Online - Reference</title>
+</svelte:head>
 <div class='content-menu'>
 	{#each Reference as chapter}
-		<a href={$url(`/reference/${chapter.name.toLowerCase()}`)} class='link-btn menu-btn'>
+		<a href={$url(`/reference/${chapter.name.toLowerCase()}`)}
+			class='link-btn menu-btn'
+		>
 			{chapter.name}
 		</a>
 	{/each}
