@@ -101,11 +101,6 @@
 		right: 0;
 		padding: var(--s100);
 	}
-	@media only screen and (min-width: 650px) {
-		.menu-btn {
-			max-width: 50%;
-		}
-	}
 	.no-results {
 		padding-left: 10vw;
 		padding-top: 2vh;
