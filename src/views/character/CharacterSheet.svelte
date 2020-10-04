@@ -19,13 +19,13 @@
 
 	const createCharacter = () => {
 		$character.finalize($authUserStore.id)
-		$character = SaveCharacter($character)
+		SaveCharacter($character)
 		$goto('/')
 	}
 
 	const deleteCharacter = () => {
 		if (confirm('Are you sure you want to delete your character?')) {
-			$character = DeleteCharacter($authUserStore.id)
+			DeleteCharacter($authUserStore.id)
 			$goto('/')
 		}
 	}
@@ -33,7 +33,8 @@
 	const loadCharacter = () => {
 		console.log(LoadCharacter($character.meta.user))
 		console.log('------------------------------------')
-		console.log(LoadCharacter($character.meta.user))
+		console.log(LoadAllCharacters($character.meta.user))
+		$goto('/')
 	}
 </script>
 
@@ -50,7 +51,7 @@
 </div>
 <div class='btn-row'>
 	<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
-	<button class='small-cntr-btn' on:click={loadCharacter}>Delete</button>
+	<button class='small-cntr-btn' on:click={loadCharacter}>Load</button>
 	<button class='small-cntr-btn' on:click={createCharacter}>Save</button>
 </div>
 
