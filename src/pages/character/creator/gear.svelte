@@ -10,7 +10,7 @@
 		$character = RandomStartingGear($character, $character.props.luck.score)
 	}
 
-	beforeUpdate(() => {
+	beforeUpdate(_ => {
 		gearedUp = Object.values($character.gear).every(g => g.inventory.length)
 	})
 </script>

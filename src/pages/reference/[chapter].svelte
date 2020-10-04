@@ -14,7 +14,7 @@
 
 	$: searchTerm = ''
 
-	beforeUpdate(() => {
+	beforeUpdate(_ => {
 		ruleList = [...rules.list]
 		if (searchTerm) {
 			ruleList = ruleList.filter(rule => {

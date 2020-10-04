@@ -56,8 +56,8 @@
 		else nextButton = '&#10006;'
 	}
 
-	beforeUpdate(() => checkStatus())
-	onMount(() => checkStatus())
+	beforeUpdate(_ => checkStatus())
+	onMount(_ => checkStatus())
 </script>
 
 

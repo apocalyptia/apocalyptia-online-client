@@ -25,7 +25,7 @@
 
 	const previouslyFocused = typeof document !== 'undefined' && document.activeElement
 
-	if (previouslyFocused) onDestroy(() => previouslyFocused.focus())
+	if (previouslyFocused) onDestroy(_ => previouslyFocused.focus())
 
 	const add = () => {
 		if (category == 'ammo') selectedItem.qty = 0

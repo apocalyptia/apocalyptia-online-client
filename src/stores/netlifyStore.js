@@ -22,7 +22,7 @@ export const authUserStore = writable(goTrueUser)
 
 export const logout = () => {
 	goTrueUser.logout()
-		.then(() => authUserStore.update(() => undefined))
+		.then(_ => authUserStore.update(_ => undefined))
 		.catch(e => alert(e.message))
 }
 
@@ -30,7 +30,7 @@ export async function login(user) {
 	try {
 		await goTrueInstance.login(user.email, user.password, true)
 			.then(user => {
-				authUserStore.update(() => getUser(user))
+				authUserStore.update(_ => getUser(user))
 				window.location.assign(`/`)
 			})
 	} catch (e) {

@@ -11,7 +11,7 @@
 
 	const previously_focused = typeof document !== 'undefined' && document.activeElement
 
-	if (previously_focused) onDestroy(() => previously_focused.focus())
+	if (previously_focused) onDestroy(_ => previously_focused.focus())
 </script>
 
 

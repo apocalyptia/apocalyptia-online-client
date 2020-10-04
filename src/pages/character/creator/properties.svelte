@@ -4,7 +4,7 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from '../../../stores/characterStore'
 
-	beforeUpdate(() => $character = Properties.setScores($character))
+	beforeUpdate(_ => $character = Properties.setScores($character))
 </script>
 
 

@@ -3,7 +3,7 @@
     import { url } from '@roxi/routify'
     import { authUserStore, confirm } from '../stores/netlifyStore'
 
-    onMount(() => {
+    onMount(_ => {
         const hash = window.location.hash.substr(1)
         const result = hash.split(`&`).reduce((result, item) => {
             const parts = item.split(`=`)

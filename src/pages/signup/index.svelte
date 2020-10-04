@@ -28,7 +28,7 @@
 		if (user.email && (user.password == user.confirm)) {
 			pendingApiCall = true
 			signup(user)
-				.then(() => confirmMessage = `Confirmation email sent. Please confirm your account.`)
+				.then(_ => confirmMessage = `Confirmation email sent. Please confirm your account.`)
 				.catch(e => {
 					pendingApiCall = false
 					alert(e)

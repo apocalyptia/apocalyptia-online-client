@@ -12,7 +12,7 @@
 
 	const reset = () => $character = Abilities.reset($character)
 
-	beforeUpdate(() => {
+	beforeUpdate(_ => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
 		$character = Abilities.remainingXP($character)
 	})
