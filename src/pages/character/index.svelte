@@ -9,10 +9,6 @@
         $character = new Character()
         $goto('/character/new')
     }
-
-    const loadCharacter = () => {
-        $goto('/characters/load')
-    }
 </script>
 
 <svelte:head>
@@ -21,7 +17,7 @@
 {#if !$character.meta.user}
     <div class='cntr-card'>
         <button class='link-btn' on:click={newCharacter}>New Character</button>
-        <button class='link-btn' on:click={loadCharacter}>Load Character</button>
+        <button class='link-btn' on:click={$goto('/characters/load')}>Load Character</button>
     </div>
 {:else}
     <CharacterSheet mode={'edit'} />

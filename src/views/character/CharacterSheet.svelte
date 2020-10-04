@@ -8,6 +8,8 @@
 	import Skills from './Skills.svelte'
 	import Traits from './Traits.svelte'
 	import DeleteCharacter from '../../helpers/database/DeleteCharacter'
+	import LoadCharacter from '../../helpers/database/LoadCharacter'
+	import LoadAllCharacters from '../../helpers/database/LoadAllCharacters'
 	import SaveCharacter from '../../helpers/database/SaveCharacter'
 	import { authUserStore } from '../../stores/netlifyStore'
 	import { character } from '../../stores/characterStore'
@@ -27,6 +29,12 @@
 			$goto('/')
 		}
 	}
+
+	const loadCharacter = () => {
+		console.log(LoadCharacter($character.meta.user))
+		console.log('------------------------------------')
+		console.log(LoadCharacter($character.meta.user))
+	}
 </script>
 
 
@@ -42,6 +50,7 @@
 </div>
 <div class='btn-row'>
 	<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
+	<button class='small-cntr-btn' on:click={loadCharacter}>Delete</button>
 	<button class='small-cntr-btn' on:click={createCharacter}>Save</button>
 </div>
 

@@ -6,23 +6,19 @@ exports.handler = async (event) => {
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
 
-	const characterID = JSON.parse(event.body)
-
 	return client.query(
 		q.Delete(
 			q.Ref(
 				q.Collection(`Characters`),
-				{ data:	characterID }
+				{ data:	JSON.parse(event.body) }
 			)
 		)
-	)
-	.then(res => {
+	).then(res => {
 		return {
 			statusCode: 200,
 			body: JSON.stringify(res)
 		}
-	})
-	.catch(err => {
+	}).catch(err => {
 		return {
 			statusCode: 400,
 			body: JSON.stringify(err)

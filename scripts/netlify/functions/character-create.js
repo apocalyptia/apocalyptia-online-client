@@ -11,14 +11,12 @@ exports.handler = async (event) => {
 			q.Collection(`Characters`),
 			{ data: JSON.parse(event.body) }
 		)
-	)
-	.then(res => {
+	).then(res => {
 		return {
 			statusCode: 200,
 			body: JSON.stringify(res)
 		}
-	})
-	.catch(err => {
+	}).catch(err => {
 		return {
 			statusCode: 400,
 			body: JSON.stringify(err)
