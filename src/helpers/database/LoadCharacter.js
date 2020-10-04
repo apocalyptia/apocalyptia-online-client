@@ -7,8 +7,5 @@ export default async (userId) => {
 			method: `POST`,
 			body: JSON.stringify(userId)
 		}
-	).then(res => {
-		console.log(`LOAD CHARACTER = ${JSON.parse(res)}`)
-		return DecompressCharacter(res.json().body.character)
-	})
+	).then(res => res.json())
 }

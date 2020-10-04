@@ -4,11 +4,13 @@ const q = faunadb.query
 exports.handler = async (event) => {
 	const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 
+	const userID = event.body
+
 	return client.query(
 		q.Get(
-			q.Ref(
-				q.Collection(`Characters`),
-				{ data: JSON.parse(event.body) }
+			q.Match(
+				q.Index(`userID`),
+				userID
 			)
 		)
 	).then(res => {

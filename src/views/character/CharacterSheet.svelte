@@ -19,26 +19,25 @@
 
 	const createCharacter = () => {
 		$character.finalize($authUserStore.id)
-		SaveCharacter($character)
-		$goto('/')
+		console.log('------------------------------------')
+		console.log(`USER = ${$authUserStore.id}`)
+		console.log(`SAVE CHARACTER = ${SaveCharacter($character)}`)
+		console.log('------------------------------------')
 	}
 
 	const deleteCharacter = () => {
-		if (confirm('Are you sure you want to delete your character?')) {
-			DeleteCharacter($authUserStore.id)
-			$goto('/')
-		}
+		console.log('------------------------------------')
+		console.log(`USER = ${$authUserStore.id}`)
+		console.log(`SAVE CHARACTER = ${DeleteCharacter($authUserStore.id)}`)
+		console.log('------------------------------------')
 	}
 
 	const loadCharacter = () => {
 		console.log('------------------------------------')
 		console.log(`USER = ${$authUserStore.id}`)
+		console.log(`LOAD CHARACTER = ${LoadCharacter($authUserStore.id)}`)
+		console.log(`LOAD ALL CHARACTERS = ${LoadAllCharacters($authUserStore.id)}`)
 		console.log('------------------------------------')
-		console.log(LoadCharacter($authUserStore.id))
-		console.log('------------------------------------')
-		console.log(LoadAllCharacters($authUserStore.id))
-		console.log('------------------------------------')
-		$goto('/')
 	}
 </script>
 
