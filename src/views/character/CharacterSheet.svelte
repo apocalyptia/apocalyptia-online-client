@@ -31,9 +31,13 @@
 	}
 
 	const loadCharacter = () => {
-		console.log(LoadCharacter($character.meta.user))
 		console.log('------------------------------------')
-		console.log(LoadAllCharacters($character.meta.user))
+		console.log(`USER = ${$authUserStore.id}`)
+		console.log('------------------------------------')
+		console.log(LoadCharacter($authUserStore.id))
+		console.log('------------------------------------')
+		console.log(LoadAllCharacters($authUserStore.id))
+		console.log('------------------------------------')
 		$goto('/')
 	}
 </script>

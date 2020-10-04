@@ -1,7 +1,7 @@
 import DecompressCharacter from './DecompressCharacter'
 
-export default (userId) => {
-	return fetch(
+export default async (userId) => {
+	return await fetch(
 		`/.netlify/functions/character-read`,
 		{
 			method: `POST`,
