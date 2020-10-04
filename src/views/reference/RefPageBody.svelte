@@ -31,6 +31,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		margin-top: var(--s100);
 	}
 	.no-results {
 		padding-left: 10vw;

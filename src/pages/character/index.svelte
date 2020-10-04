@@ -2,8 +2,6 @@
     import BackButton from '../../views/widgets/BackButton.svelte'
     import Character from '../../rules/Character'
     import CharacterSheet from '../../views/character/CharacterSheet.svelte'
-    import LoadCharacter from '../../helpers/database/LoadCharacter'
-    import { authUserStore } from '../../stores/netlifyStore'
     import { character } from '../../stores/characterStore'
     import { goto } from '@roxi/routify'
 
@@ -13,8 +11,7 @@
     }
 
     const loadCharacter = () => {
-        console.log(`USER ID = ${$authUserStore.id}`)
-        $character = LoadCharacter($authUserStore.id)
+        $goto('/characters/load')
     }
 </script>
 

@@ -49,7 +49,7 @@
 		{/each}
 	{:else}
 	{#if ruleList.length}
-		<div class='ref-body-section'>
+		<div class='rule-body-section'>
 			{#each ruleList as rule}
 				<RefRule {rule} />
 			{/each}
@@ -78,11 +78,12 @@
 		top: var(--s350);
 		z-index: 1;
 	}
-	.ref-body-section {
+	.rule-body-section {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		margin-top: var(--s100);
 	}
 	.rules-name {
 		font-size: var(--s150);
@@ -100,6 +101,8 @@
 		left: 0;
 		right: 0;
 		padding: var(--s100);
+		margin-bottom: var(--s150);
+		margin-top: var(--s50);
 	}
 	.no-results {
 		padding-left: 10vw;
