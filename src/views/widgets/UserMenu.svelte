@@ -1,7 +1,6 @@
 <script>
 	import ClickOutside from './ClickOutside.svelte'
-	import { authUserStore, logout } from '../../stores/netlifyStore'
-	import { character } from '../../stores/characterStore'
+	import { logout } from '../../stores/netlifyStore'
 	import { goto, url } from '@roxi/routify'
 
 	let showMenu = false
@@ -40,13 +39,14 @@
 
 <style>
 	.user-btn {
-		border: var(--s10) solid;
 		height: var(--s300);
 		position: fixed;
 		right: 0;
 		width: var(--s300);
 		z-index: 3;
 	}
+	.user-btn:active,
+	.user-btn:focus,
 	.user-btn:hover {
 		background-color: lime;
 		color: rgba(15, 30, 15, 1);
@@ -67,6 +67,12 @@
 		font-weight: normal;
 		padding: var(--s100);
 	}
+	a:active,
+	a:focus,
+	a:hover {
+		background-color: lime;
+		color: rgba(15, 30, 15, 1);
+	}
 	.shadow {
 		background: rgba(0, 0, 0, .5);
 		position: absolute;
@@ -78,11 +84,5 @@
 	}
 	.invisible {
 		display: none;
-	}
-	.first-link {
-		padding-top: var(--s200);
-	}
-	.last-link {
-		padding-bottom: var(--s200);
 	}
 </style>
