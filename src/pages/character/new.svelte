@@ -1,6 +1,6 @@
 <script>
-    import RandomCharacter from '../../../helpers/random/RandomCharacter'
-    import { character } from '../../../stores/characterStore'
+    import RandomCharacter from '../../helpers/random/RandomCharacter'
+    import { character } from '../../stores/characterStore'
     import { goto } from '@roxi/routify'
 
 

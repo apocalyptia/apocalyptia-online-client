@@ -36,7 +36,7 @@
 	<Skills />
 	<Properties {mode} />
 	<Health {mode} />
-	<Abilities {mode} />
+	<Abilities />
 	<Gear {mode} />
 	<Notes {mode} />
 </div>

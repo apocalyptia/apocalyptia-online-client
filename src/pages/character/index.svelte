@@ -8,7 +8,7 @@
 
     const newCharacter = () => {
         $character = new Character()
-        $goto('/character/creator')
+        $goto('/character/new')
     }
 
     const loadCharacter = () => {
