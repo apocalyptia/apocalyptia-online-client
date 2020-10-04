@@ -1,4 +1,5 @@
 <script>
+    import BackButton from '../../views/widgets/BackButton.svelte'
     import RandomCharacter from '../../helpers/random/RandomCharacter'
     import { character } from '../../stores/characterStore'
     import { goto } from '@roxi/routify'
@@ -22,3 +23,4 @@
     <button class='link-btn' on:click={buildCharacter}>Build Character</button>
     <button class='link-btn' on:click={randomCharacter}>Random Character</button>
 </div>
+<BackButton path={'/character'} />

@@ -1,4 +1,5 @@
 <script>
+    import BackButton from '../../views/widgets/BackButton.svelte'
     import Character from '../../rules/Character'
     import CharacterSheet from '../../views/character/CharacterSheet.svelte'
     import LoadCharacter from '../../helpers/database/LoadCharacter'
@@ -28,3 +29,4 @@
 {:else}
     <CharacterSheet mode={'edit'} />
 {/if}
+<BackButton path={'/'} />

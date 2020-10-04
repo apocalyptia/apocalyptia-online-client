@@ -1,4 +1,5 @@
 <script>
+	import BackButton from '../../views/widgets/BackButton.svelte'
 	import AccessoryList from '../../rules/gear/weapons/accessories/AccessoryList'
 	import AmmoList from '../../rules/gear/weapons/ammo/AmmoList'
 	import ArmorList from '../../rules/gear/armor/ArmorList'
@@ -7,11 +8,9 @@
 	import DrugsList from '../../rules/gear/equipment/drugs/DrugsList'
 	import ElectronicsList from '../../rules/gear/equipment/electronics/ElectronicsList'
 	import EquipmentList from '../../rules/gear/equipment/EquipmentList'
-	import MiscList from '../../rules/gear/equipment/misc/MiscList'
 	import GearBlock from '../../views/widgets/GearBlock.svelte'
 	import MedicalList from '../../rules/gear/equipment/medical/MedicalList'
 	import MeleeWeaponList from '../../rules/gear/weapons/melee/MeleeWeaponList'
-	import Nd6 from '../../helpers/random/Nd6'
 	import RandomRoll from '../../helpers/random/RandomRoll'
 	import RangedWeaponList from '../../rules/gear/weapons/ranged/RangedWeaponList'
 	import StorageList from '../../rules/gear/equipment/storage/StorageList'
@@ -147,6 +146,7 @@
 		{/if}
 	</div>
 {/each}
+<BackButton path={'/'} />
 
 
 <style>

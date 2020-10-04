@@ -1,4 +1,5 @@
 <script>
+	import BackButton from '../../views/widgets/BackButton.svelte'
 	import Reference from '../../rules/Reference'
 	import RefRule from '../../views/reference/RefRule.svelte'
 	import { beforeUpdate } from 'svelte'
@@ -60,6 +61,7 @@
 	{/if}
 	{/if}
 </div>
+<BackButton path={'/'} />
 
 
 <style>
