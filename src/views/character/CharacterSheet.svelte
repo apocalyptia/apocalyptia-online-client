@@ -44,3 +44,10 @@
 	<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
 	<button class='small-cntr-btn' on:click={createCharacter}>Save</button>
 </div>
+
+
+<style>
+	.character-sheet {
+		padding: var(--s100);
+	}
+</style>

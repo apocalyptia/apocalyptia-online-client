@@ -11,6 +11,7 @@
 
 <style>
     .creator-page {
+        padding: var(--s100);
         padding-bottom: var(--s400);
     }
 </style>

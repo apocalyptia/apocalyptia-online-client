@@ -80,7 +80,7 @@
 	.name-block {
 		align-items: center;
 		display: flex;
-		margin: 0 var(--s100);
+		margin-bottom: var(--s100);
 		padding-bottom: 0;
 	}
 	.sheet-card-item {
@@ -91,6 +91,6 @@
 		width: 100%;
 	}
 	.sheet-value {
-		width: 50%;
+		width: 45%;
 	}
 </style>
