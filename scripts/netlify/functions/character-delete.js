@@ -1,22 +1,25 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
 
-exports.handler = async (event) => {
+exports.handler = (event) => {
 	const client = new faunadb.Client({
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
 
+	const character = event.body
+
 	return client.query(
 		q.Delete(
 			q.Ref(
-				q.Collection(`Characters`),
-				{ data:	JSON.parse(event.body) }
+				q.Collection(`Characters`), {
+					data: JSON.parse(character)
+				}
 			)
 		)
 	).then(res => {
 		return {
 			statusCode: 200,
-			body: JSON.stringify(res)
+			body: JSON.stringify(res.ref)
 		}
 	}).catch(err => {
 		return {
