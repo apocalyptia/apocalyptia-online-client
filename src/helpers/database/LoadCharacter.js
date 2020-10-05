@@ -7,8 +7,5 @@ export default (userId) => {
 			body: JSON.stringify(userId)
 		}
 	)
-	.then(res => {
-		console.log(`RES.JSON = ${res.json()}`)
-		return res.json()
-	})
+	.then(res => res.json())
 }

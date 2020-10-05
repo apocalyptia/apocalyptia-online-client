@@ -5,7 +5,9 @@
 
     const loadCharacter = async () => {
         let load = await LoadCharacter($authUserStore)
-        console.log(`LOAD = ${load}`)
+                            .then(() => {
+                                console.log(`LOAD = ${load}`)
+                            })
 	}
 </script>
 
