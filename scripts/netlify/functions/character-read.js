@@ -6,21 +6,21 @@ exports.handler = (event) => {
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
 
-	const userID = event.body
-
 	return client.query(
 		q.Get(
 			q.Match(
 				q.Index(`userID`),
-				JSON.parse(userID)
+				JSON.parse(event.body)
 			)
 		)
-	).then(res => {
+	)
+	.then(res => {
 		return {
 			statusCode: 200,
 			body: JSON.stringify(res.ref)
 		}
-	}).catch(err => {
+	})
+	.catch(err => {
 		return {
 			statusCode: 400,
 			body: JSON.stringify(err)

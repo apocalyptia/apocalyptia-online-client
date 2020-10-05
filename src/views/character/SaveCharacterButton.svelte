@@ -5,10 +5,7 @@
 
     const createCharacter = async () => {
 		$character.finalize($authUserStore.id)
-		console.log('------------------------------------')
-		let save = await SaveCharacter($character)
-		console.log(`SAVE CHARACTER = ${save}`)
-		console.log('------------------------------------')
+		await SaveCharacter($character)
 	}
 </script>
 

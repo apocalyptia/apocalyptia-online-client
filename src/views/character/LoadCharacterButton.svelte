@@ -1,12 +1,11 @@
 <script>
     import LoadCharacter from '../../helpers/database/LoadCharacter'
     import { authUserStore } from '../../stores/netlifyStore'
+    import { character } from '../../stores/characterStore'
 
     const loadCharacter = async () => {
-		console.log('------------------------------------')
         let load = await LoadCharacter($authUserStore)
-		console.log(`LOAD CHARACTER = ${load}`)
-		console.log('------------------------------------')
+        console.log(`LOAD = ${load}`)
 	}
 </script>
 
