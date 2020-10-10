@@ -10,7 +10,7 @@ import Skills from './skills/Skills'
 import Status from './status/Status'
 import Traits from './traits/Traits'
 
-const Reference = [
+const Manual = [
     Abilities,
     Combat,
     Complications,
@@ -24,4 +24,4 @@ const Reference = [
     Traits
 ]
 
-export default Reference
+export default Manual

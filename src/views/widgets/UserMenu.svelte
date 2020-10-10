@@ -29,7 +29,7 @@
 <ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 	<div hidden={!showMenu} class='user-menu'>
 		<a href={$url('/character')} class='link-btn first-link' on:click={hide}>Character</a>
-		<a href={$url('/reference')} class='link-btn' on:click={hide}>Reference</a>
+		<a href={$url('/manual')} class='link-btn' on:click={hide}>Manual</a>
 		<a href={$url('/generator')} class='link-btn' on:click={hide}>Generator</a>
 		<a href={$url('/')} class='link-btn last-link' on:click={logOut}>Logout</a>
 	</div>

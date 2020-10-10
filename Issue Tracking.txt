@@ -43,7 +43,7 @@ Hazards.js???:
 	Put Friendly Fire here.
 	Put Needs rules here. Requires some rewording.
 
-Reference:
+Manual:
 	Put Expand/Collapse All button on rules.
 	Figure out topical organization. Health for example.
 	Painkiller required for a night's sleep to Recover?

@@ -1,11 +1,11 @@
 <script>
-	import RefRule from './RefRule.svelte'
+	import ManRule from './ManRule.svelte'
 
 	export let rules, ruleList
 </script>
 
 
-<div class='ref-body-section'>
+<div class='man-body-section'>
 	{#if rules.explanation}
 		<div class='explanation'>
 			{#each rules.explanation as explanation}
@@ -15,7 +15,7 @@
 	{/if}
 	{#if ruleList.length}
 		{#each ruleList as rule}
-			<RefRule {rule} />
+			<ManRule {rule} />
 		{/each}
 	{:else}
 		<div class='no-results'>
@@ -26,7 +26,7 @@
 
 
 <style>
-    .ref-body-section {
+    .man-body-section {
 		align-items: center;
 		display: flex;
 		flex-direction: column;

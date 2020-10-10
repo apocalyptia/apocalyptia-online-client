@@ -1,10 +1,10 @@
 <script>
     import Gear from '../../rules/gear/Gear'
     import GearBlock from '../widgets/GearBlock.svelte'
-    import RefRuleDesc from './RefRuleDesc.svelte'
-    import RefRuleSpecs from './RefRuleSpecs.svelte'
-    import RefRuleTable from './RefRuleTable.svelte'
-    import RefSubRule from './RefSubRule.svelte'
+    import ManRuleDesc from './ManRuleDesc.svelte'
+    import ManRuleSpecs from './ManRuleSpecs.svelte'
+    import ManRuleTable from './ManRuleTable.svelte'
+    import ManSubRule from './ManSubRule.svelte'
 
     export let rule
 </script>
@@ -17,23 +17,23 @@
     <div class='rule-body'>
         {#if rule instanceof Gear }
             <div class='gear-rule'>
-                <GearBlock item={rule} mode={'reference'} />
+                <GearBlock item={rule} mode={'manual'} />
             </div>
         {:else}
             {#if rule.desc != undefined}
-                <RefRuleDesc {rule} />
+                <ManRuleDesc {rule} />
             {/if}
         {/if}
         {#if rule.subrules}
             {#each rule.subrules as subrule}
-                <RefSubRule {subrule} />
+                <ManSubRule {subrule} />
             {/each}
         {/if}
         {#if rule.table != undefined}
-            <RefRuleTable {rule} />
+            <ManRuleTable {rule} />
         {/if}
         {#if rule.specs}
-            <RefRuleSpecs {rule} />
+            <ManRuleSpecs {rule} />
         {/if}
     </div>
 </details>

@@ -142,7 +142,7 @@
 			</button>
 		</div>
 		{#if gear.value != undefined}
-			<GearBlock item={gear.value} mode={'reference'}/>
+			<GearBlock item={gear.value} mode={'manual'}/>
 		{/if}
 	</div>
 {/each}

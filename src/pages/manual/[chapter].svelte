@@ -1,12 +1,12 @@
 <script>
 	import BackButton from '../../views/widgets/BackButton.svelte'
-	import RefPageBody from '../../views/reference/RefPageBody.svelte'
-	import Reference from '../../rules/Reference'
+	import ManPageBody from '../../views/manual/ManPageBody.svelte'
+	import Manual from '../../rules/Manual'
 	import { beforeUpdate } from 'svelte'
 
 	export let chapter
 
-	let rules = Reference.filter(r => r.name.toLowerCase() == chapter)[0]
+	let rules = Manual.filter(r => r.name.toLowerCase() == chapter)[0]
 
 	rules.list = rules.list.sort((a, b) => (a.name > b.name))
 
@@ -28,9 +28,9 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online - Reference - {rules.name}</title>
+	<title>Apocalyptia Online - Manual - {rules.name}</title>
 </svelte:head>
-<div class='ref-header-section'>
+<div class='man-header-section'>
 	<div class='rules-name'>
 		{rules.name}
 	</div>
@@ -40,14 +40,14 @@
 		bind:value='{searchTerm}'
 	/>
 </div>
-<div class='ref-page-body'>
-	<RefPageBody {rules} {ruleList} />
+<div class='man-page-body'>
+	<ManPageBody {rules} {ruleList} />
 </div>
-<BackButton path={'/reference'} />
+<BackButton path={'/manual'} />
 
 
 <style>
-	.ref-header-section {
+	.man-header-section {
 		align-items: center;
 		background-color: rgb(15, 30, 15);
 		border: 1px solid lime;
@@ -70,7 +70,7 @@
 		text-align: left;
 		width: 45%;
 	}
-	.ref-page-body {
+	.man-page-body {
 		position: absolute;
 		top: var(--s300);
 		left: 0;

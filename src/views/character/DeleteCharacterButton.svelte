@@ -3,10 +3,7 @@
     import { authUserStore } from '../../stores/netlifyStore'
 
     const deleteCharacter = () => {
-      console.log('------------------------------------')
-      console.log(`USER = ${$authUserStore.id}`)
-      console.log(`DELETE CHARACTER = ${DeleteCharacter($authUserStore.id)}`)
-      console.log('------------------------------------')
+      DeleteCharacter($authUserStore.id)
     }
 </script>
 

@@ -1,12 +1,12 @@
 <script>
 	import BackButton from '../../views/widgets/BackButton.svelte'
-	import Reference from '../../rules/Reference'
-	import RefRule from '../../views/reference/RefRule.svelte'
+	import Manual from '../../rules/Manual'
+	import ManRule from '../../views/manual/ManRule.svelte'
 	import { beforeUpdate } from 'svelte'
 	import { url } from '@roxi/routify'
 
 	let masterRuleList = []
-	Reference.forEach(r => masterRuleList = masterRuleList.concat(r.list))
+	Manual.forEach(r => masterRuleList = masterRuleList.concat(r.list))
 
 	let ruleList = []
 
@@ -26,11 +26,11 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online - Reference</title>
+	<title>Apocalyptia Online - Manual</title>
 </svelte:head>
-<div class='ref-header-section'>
+<div class='man-header-section'>
 	<div class='rules-name'>
-		Reference
+		Manual
 	</div>
 	<input type='text'
 		class='search-bar'
@@ -40,8 +40,8 @@
 </div>
 <div class='content-menu'>
 	{#if !searchTerm}
-		{#each Reference as chapter}
-			<a href={$url(`/reference/${chapter.name.toLowerCase()}`)}
+		{#each Manual as chapter}
+			<a href={$url(`/manual/${chapter.name.toLowerCase()}`)}
 				class='link-btn menu-btn'
 			>
 				{chapter.name}
@@ -51,7 +51,7 @@
 	{#if ruleList.length}
 		<div class='rule-body-section'>
 			{#each ruleList as rule}
-				<RefRule {rule} />
+				<ManRule {rule} />
 			{/each}
 		</div>
 	{:else}
@@ -65,7 +65,7 @@
 
 
 <style>
-	.ref-header-section {
+	.man-header-section {
 		align-items: center;
 		background-color: rgb(15, 30, 15);
 		border: 1px solid lime;

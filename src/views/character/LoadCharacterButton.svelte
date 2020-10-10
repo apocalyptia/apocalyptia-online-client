@@ -3,11 +3,8 @@
     import { authUserStore } from '../../stores/netlifyStore'
     import { character } from '../../stores/characterStore'
 
-    const loadCharacter = async () => {
-        let load = await LoadCharacter($authUserStore)
-                            .then(() => {
-                                console.log(`LOAD = ${load}`)
-                            })
+    const loadCharacter = () => {
+        $character = LoadCharacter($authUserStore)
 	}
 </script>
 

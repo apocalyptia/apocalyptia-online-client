@@ -6,11 +6,13 @@ exports.handler = (event) => {
 		secret: process.env.FAUNADB_SERVER_SECRET
 	})
 
+	const userId = JSON.parse(event.body)
+
 	return client.query(
 		q.Get(
 			q.Match(
 				q.Index(`userID`),
-				JSON.parse(event.body)
+				{ data: userId }
 			)
 		)
 	)

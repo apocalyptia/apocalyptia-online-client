@@ -3,9 +3,10 @@
     import { authUserStore } from '../../stores/netlifyStore'
 	import { character } from '../../stores/characterStore'
 
-    const createCharacter = async () => {
+    const createCharacter = () => {
 		$character.finalize($authUserStore.id)
-		await SaveCharacter($character)
+		$character = SaveCharacter($character)
+		console.log($character)
 	}
 </script>
 
