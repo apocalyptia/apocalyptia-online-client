@@ -1,11 +1,10 @@
 <script>
 	import TitleBar from '../views/widgets/TitleBar.svelte'
-	import { version } from '../main'
 </script>
 
 
 <main>
-	<TitleBar {version} />
+	<TitleBar />
 	<div class='display-window'>
 		<slot/>
 	</div>
