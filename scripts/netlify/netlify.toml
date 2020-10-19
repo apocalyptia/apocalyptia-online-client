@@ -2,4 +2,3 @@
 [build]
   command = "npm audit fix && npm run export"
   functions = "./functions"
-  publish = "__sapper__/export"
