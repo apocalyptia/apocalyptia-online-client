@@ -1,0 +1,6 @@
+const d6 = () => {
+	return Math.ceil(Math.random() * 6)
+};
+
+export { d6 as d };
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZDYuYjY1NWEzMWYuanMiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnRzL2hlbHBlcnMvcmFuZG9tL2Q2LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGQ2ID0gKCkgPT4ge1xuXHRyZXR1cm4gTWF0aC5jZWlsKE1hdGgucmFuZG9tKCkgKiA2KVxufVxuXG5leHBvcnQgZGVmYXVsdCBkNiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBSyxNQUFDLEVBQUUsR0FBRyxNQUFNO0FBQ2pCLENBQUMsT0FBTyxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLEVBQUUsR0FBRyxDQUFDLENBQUM7QUFDcEM7Ozs7In0=

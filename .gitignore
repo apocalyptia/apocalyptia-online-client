@@ -5,8 +5,6 @@
 .env.production.local
 .env.test.local
 .netlify
-.routify
-/__sapper__/
 /dist/
 /jsconfig.json
 /node_modules/
