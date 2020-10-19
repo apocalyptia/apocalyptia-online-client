@@ -1,43 +1,124 @@
-import { createRollupConfigs } from './scripts/base.config.js'
-import autoPreprocess from 'svelte-preprocess'
-import postcssImport from 'postcss-import'
+import alias from '@rollup/plugin-alias'
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import config from 'sapper/config/rollup.js';
+import pkg from './package.json';
+import replace from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
+import svelte from 'rollup-plugin-svelte';
+import { terser } from 'rollup-plugin-terser';
 
-const production = !process.env.ROLLUP_WATCH;
+const mode = process.env.NODE_ENV;
+const dev = mode === 'development';
+const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-export const config = {
-  staticDir: 'static',
-  distDir: 'dist',
-  buildDir: `dist/build`,
-  serve: !production,
-  production,
-  rollupWrapper: rollup => rollup,
-  svelteWrapper: svelte => {
-    svelte.preprocess = [
-      autoPreprocess({
-        postcss: { plugins: [postcssImport()] },
-        defaults: { style: 'postcss' }
-      })]
-  },
-  swWrapper: worker => worker,
-}
+const onwarn = (warning, onwarn) =>
+	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+	onwarn(warning);
 
-const configs = createRollupConfigs(config)
+const aliases = alias({
+	resolve: ['.*'],
+	entries: [
+		{ find: 'auth', replacement: 'src/components/helpers/auth' },
+		{ find: 'database', replacement: 'src/components/helpers/database' },
+		{ find: 'gear', replacement: 'src/components/rules/gear' },
+		{ find: 'lists', replacement: 'src/components/helpers/lists' },
+		{ find: 'random', replacement: 'src/components/helpers/random' },
+		{ find: 'rules', replacement: 'src/components/rules' },
+		{ find: 'stores', replacement: 'src/components/stores' },
+		{ find: 'utils', replacement: 'src/components/helpers/utils' },
+		{ find: 'views', replacement: 'src/components/views' }
+	]
+});
 
-export default configs
+export default {
+	client: {
+		input: config.client.input(),
+		output: config.client.output(),
+		plugins: [
+			replace({
+				'process.browser': true,
+				'process.env.NODE_ENV': JSON.stringify(mode)
+			}),
+			svelte({
+				dev,
+				hydratable: true,
+				emitCss: true
+			}),
+			resolve({
+				browser: true,
+				dedupe: ['svelte']
+			}),
+			commonjs(),
 
-/**
-  Wrappers can either mutate or return a config
+			legacy && babel({
+				extensions: ['.js', '.mjs', '.html', '.svelte'],
+				babelHelpers: 'runtime',
+				exclude: ['node_modules/@babel/**'],
+				presets: [
+					['@babel/preset-env', {
+						targets: '> 0.25%, not dead'
+					}]
+				],
+				plugins: [
+					'@babel/plugin-syntax-dynamic-import',
+					['@babel/plugin-transform-runtime', {
+						useESModules: true
+					}]
+				]
+			}),
 
-  wrapper example 1
-  svelteWrapper: (cfg, ctx) => {
-    cfg.preprocess: mdsvex({ extension: '.md' }),
-  }
+			!dev && terser({
+				module: true
+			}),
+			aliases
+		],
 
-  wrapper example 2
-  rollupWrapper: cfg => {
-    cfg.plugins = [...cfg.plugins, myPlugin()]
-    return cfg
-  }
-*/
+		preserveEntrySignatures: false,
+		onwarn,
+	},
 
+	server: {
+		input: config.server.input(),
+		output: config.server.output(),
+		plugins: [
+			replace({
+				'process.browser': false,
+				'process.env.NODE_ENV': JSON.stringify(mode)
+			}),
+			svelte({
+				generate: 'ssr',
+				hydratable: true,
+				dev
+			}),
+			resolve({
+				dedupe: ['svelte']
+			}),
+			commonjs(),
+			aliases
+		],
+		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
+		preserveEntrySignatures: 'strict',
+		onwarn,
+	},
+
+	serviceworker: {
+		input: config.serviceworker.input(),
+		output: config.serviceworker.output(),
+		plugins: [
+			resolve(),
+			replace({
+				'process.browser': true,
+				'process.env.NODE_ENV': JSON.stringify(mode)
+			}),
+			commonjs(),
+			!dev && terser(),
+			aliases
+		],
+
+		preserveEntrySignatures: false,
+		onwarn,
+	}
+};

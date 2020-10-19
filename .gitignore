@@ -6,14 +6,15 @@
 .env.test.local
 .netlify
 .routify
+/__sapper__/
 /dist/
 /jsconfig.json
 /node_modules/
 /src/node_modules/
+/src/node_modules/@sapper/
 /src/tmp/
 npm-debug.log*
 package-lock.json
 secret.js
 yarn-debug.log*
 yarn-error.log*
-package-lock.json

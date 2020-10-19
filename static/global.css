@@ -194,7 +194,7 @@ details:active,
 details:focus,
 details:hover {
 	outline: none;
-	box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.3);
+	box-shadow: 0 0 var(--s100) var(--s50) rgba(0, 255, 0, 0.3);
 }
 select:focus {
 	outline: none;
@@ -355,7 +355,7 @@ td, th {
 	top: 50vh;
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
-	box-shadow: var(--s75) var(--s100) darkgreen;
+	box-shadow: var(--s100) var(--s100) darkgreen;
 }
 .cntr-card .card-title {
 	margin: var(--s100);
