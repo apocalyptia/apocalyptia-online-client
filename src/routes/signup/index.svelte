@@ -1,8 +1,8 @@
 <script>
 	import Spinner from 'views/widgets/Spinner.svelte'
-	import { authUserStore, signup } from 'stores/netlifyStore.js'
+	import { userId, signup } from 'stores/netlifyStore.js'
 
-	if ($authUserStore) window.location.href = `www.apocalyptiaonline.com`
+	if (userId) window.location.assign(`www.apocalyptiaonline.com`)
 
 	let confirmMessage = ``
 
@@ -20,7 +20,7 @@
 		if (
 			(user.password && user.confirm) &&
 			(user.password != user.confirm) 
-		) failedMatch = 'Password does not match!'
+		) failedMatch = `Password does not match!`
 	}
 
 	const submit = () => {

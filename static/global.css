@@ -151,6 +151,9 @@ legend {
 .error {
 	color: crimson;
 }
+::-webkit-input-placeholder {
+	color: green;
+}
 
 
 /* ----- CONTROLS ----- */

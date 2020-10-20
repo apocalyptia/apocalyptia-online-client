@@ -1,6 +1,6 @@
 <script>
 	import ClickOutside from 'views/widgets/ClickOutside.svelte'
-	import { logout } from 'stores/netlifyStore.js'
+	import { logout, userId } from 'stores/netlifyStore.js'
 
 	let showMenu = false
 	let trigger
@@ -22,18 +22,20 @@
 </script>
 
 
-<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>
-	<div class='btn-icon'>&#9776;</div>
-</button>
-<ClickOutside on:clickoutside={hide} exclude={[trigger]}>
-	<div hidden={!showMenu} class='user-menu'>
-		<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>
-		<a href='/manual' class='link-btn' on:click={hide}>Manual</a>
-		<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
-		<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>
-	</div>
-</ClickOutside>
-<div class='{showMenu ? "shadow" : "invisible"}'></div>
+{#if userId}
+	<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>
+		<div class='btn-icon'>&#9776;</div>
+	</button>
+	<ClickOutside on:clickoutside={hide} exclude={[trigger]}>
+		<div hidden={!showMenu} class='user-menu'>
+			<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>
+			<a href='/manual' class='link-btn' on:click={hide}>Manual</a>
+			<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
+			<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>
+		</div>
+	</ClickOutside>
+	<div class='{showMenu ? "shadow" : "invisible"}'></div>
+{/if}
 
 
 <style>

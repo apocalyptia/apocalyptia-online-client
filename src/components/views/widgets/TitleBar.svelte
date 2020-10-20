@@ -1,6 +1,5 @@
 <script>
 	import UserMenu from './UserMenu.svelte'
-	import { authUserStore } from 'stores/netlifyStore.js'
 </script>
 
 
@@ -8,9 +7,7 @@
 	<a href='/' class='link-btn title-link'>
 		<span class='app-title'>Apocalyptia Online</span>
 	</a>
-	{#if $authUserStore}
-		<UserMenu/>
-	{/if}
+	<UserMenu/>
 </div>
 
 

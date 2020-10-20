@@ -2,45 +2,44 @@ import { writable } from 'svelte/store'
 import GoTrue from 'gotrue-js'
 
 
-const url = `https://apocalyptiaonline.com/`
-
 const goTrueInstance = new GoTrue({
-	APIUrl: `${url}/.netlify/identity`,
-	setCookie: true
+	APIUrl: `https://apocalyptiaonline.com/.netlify/identity`,
+	audience: '',
+	setCookie: false
 })
 
-const goTrueUser = goTrueInstance.currentUser()
-
-const getUser = (user) => {
-	return {
-		email: user.email,
-		displayName: user.displayName
-	}
-}
+const goTrueUser = goTrueInstance.currentUser() || undefined
 
 export const authUserStore = writable(goTrueUser)
 
+export const userId = authUserStore.id
+
+console.log(authUserStore)
+
+
 export const logout = () => {
-	goTrueUser.logout()
-		.then(_ => authUserStore.update(_ => undefined))
-		.catch(e => alert(e.message))
+	goTrueUser.logout().then(_ => authUserStore.update(_ => undefined))
 }
 
 export async function login(user) {
 	try {
 		await goTrueInstance.login(user.email, user.password, true)
-			.then(user => {
-				authUserStore.update(_ => getUser(user))
+			.then(_ => {
+				authUserStore.update(_ => {
+					return {
+						email: goTrueUser.email,
+						displayName: goTrueUser.displayName
+					}
+				})
 				window.location.assign(`/`)
 			})
 	} catch (e) {
-		alert(e.message)
 		throw e.message
 	}
 }
 
-export const signup = (user) => {
-	return goTrueInstance.signup(user.email, user.password)
+export const signup = () => {
+	return goTrueInstance.signup(goTrueUser.email, goTrueUser.password)
 }
 
 export const recover = (email) => {
@@ -48,12 +47,5 @@ export const recover = (email) => {
 }
 
 export const confirm = (token) => {
-	goTrueInstance.confirm(token)
-		.then(function(response) {
-			alert(
-				`Account confirmed. Welcome to Apocalyptia Online. You can now login with your username and password.`,
-				JSON.stringify({ response })
-			)
-		})
-		.catch((e) => alert(e.message))
+	return goTrueInstance.confirm(token)
 }

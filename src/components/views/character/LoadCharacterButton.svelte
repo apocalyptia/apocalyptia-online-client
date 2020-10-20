@@ -1,10 +1,9 @@
 <script>
     import LoadCharacter from 'database/LoadCharacter.js'
-    import { authUserStore } from 'stores/netlifyStore.js'
     import { character } from 'stores/characterStore.js'
 
     const loadCharacter = () => {
-        $character = LoadCharacter($authUserStore)
+        $character = LoadCharacter()
 	}
 </script>
 

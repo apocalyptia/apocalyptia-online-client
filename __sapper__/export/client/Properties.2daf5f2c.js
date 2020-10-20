@@ -1,0 +1,1 @@
+import{B as a,C as r,D as s,E as e,H as t,I as i,L as o,P as n,S as p}from"./Speed.66ad8113.js";var f={name:"Properties",explanation:["Properties represent a variety of attributes that are derived from a Character's Traits and Skills."],list:[a,r,s,e,t,i,o,n,p],setScores:function(a){return this.list.forEach((r=>r.formula(a))),a}};export{f as P};

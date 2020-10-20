@@ -1,8 +1,6 @@
 <script>
     import { onMount } from 'svelte'
-    import { authUserStore, confirm } from 'stores/netlifyStore.js'
-
-    console.log($authUserStore)
+    import { userId, confirm } from 'stores/netlifyStore.js'
 
     onMount(_ => {
         const hash = window.location.hash.substr(1)
@@ -19,8 +17,7 @@
 
 
 <div class='cntr-card'>
-	{#if $authUserStore}
-		<p>Logged in as {$authUserStore.email}</p>
+	{#if userId}
 		<a href='/character' class='link-btn'>Character</a>
 		<a href='/manual' class='link-btn'>Manual</a>
 		<a href='/generator' class='link-btn'>Generator</a>

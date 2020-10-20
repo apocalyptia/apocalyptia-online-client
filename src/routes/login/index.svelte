@@ -1,8 +1,8 @@
 <script>
 	import Spinner from 'views/widgets/Spinner.svelte'
-	import { authUserStore, login } from 'stores/netlifyStore.js'
+	import { userId, login } from 'stores/netlifyStore.js'
 
-	if ($authUserStore) window.location.assign(`www.apocalyptiaonline.com`)
+	if (userId) window.location.assign(`www.apocalyptiaonline.com`)
 
 	const user = {
 		email: ``,
