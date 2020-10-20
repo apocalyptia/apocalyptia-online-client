@@ -2,19 +2,16 @@ import { writable } from 'svelte/store'
 import GoTrue from 'gotrue-js'
 
 
-const goTrueInstance = new GoTrue({
-	APIUrl: `https://apocalyptiaonline.com/.netlify/identity`,
-	audience: '',
-	setCookie: false
-})
+const goTrueInstance = new GoTrue()
+console.log(Object.keys(goTrueInstance))
+goTrueInstance.api.apiURL = `https://apocalyptiaonline.com/.netlify/identity`
+for (let i in goTrueInstance) console.log(goTrueInstance[i])
 
 const goTrueUser = goTrueInstance.currentUser() || undefined
 
 export const authUserStore = writable(goTrueUser)
 
 export const userId = authUserStore.id
-
-console.log(authUserStore)
 
 
 export const logout = () => {

@@ -154,6 +154,20 @@ legend {
 ::-webkit-input-placeholder {
 	color: green;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	background-color: rgba(15, 30, 15, 1);
+	color: lime;
+	-webkit-text-fill-color: lime;
+	box-shadow: 0 0 0px 1000px rgba(15, 30, 15, 1) inset;
+}
 
 
 /* ----- CONTROLS ----- */
@@ -358,7 +372,7 @@ td, th {
 	top: 50vh;
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
-	box-shadow: var(--s100) var(--s100) darkgreen;
+	box-shadow: var(--s100) var(--s100) 2px darkgreen;
 }
 .cntr-card .card-title {
 	margin: var(--s100);
