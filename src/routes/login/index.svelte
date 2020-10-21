@@ -1,6 +1,11 @@
 <script>
 	import Spinner from 'views/widgets/Spinner.svelte'
-	import { userId, login } from 'stores/netlifyStore.js'
+	import { go } from 'stores/netlifyStore.js'
+
+	const userId = false
+	const test = new go({})
+
+	console.dir(test.prototype.toString())
 
 	if (userId) window.location.assign(`www.apocalyptiaonline.com`)
 
@@ -14,12 +19,12 @@
 	let forgotPassword = false
 
 	const submit = () => {
-		pendingApiCall = true
-		login(user)
-			.catch(_ => {
-				pendingApiCall = false
-				forgotPassword = true
-			})
+		// pendingApiCall = true
+		// login(user)
+		// 	.catch(_ => {
+		// 		pendingApiCall = false
+		// 		forgotPassword = true
+		// 	})
 	}
 </script>
 
