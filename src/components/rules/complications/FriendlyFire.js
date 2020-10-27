@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const FriendlyFire = new Rule({
 	id: `63808ef6-3fc3-411c-54c9-edcc41ba8a7b`,
 	name: `Friendly Fire`, 

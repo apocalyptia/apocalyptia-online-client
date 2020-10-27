@@ -1,7 +1,6 @@
 import Rule from 'rules/Rule.js'
 import Table from 'rules/Table.js'
 
-
 const Cover = new Rule({
 	id: `9fd0a556-f4c0-4aba-6814-c371f0a8ead0`,
 	name: `Cover`, 

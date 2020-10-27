@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Falling = new Rule({
 	id: `064cb25d-caff-4c33-944a-849604861561`,
 	name: `Falling`,

@@ -1,7 +1,6 @@
-import Accessory from './Accessory'
+import Gear from 'gear/Gear.js'
 
-
-const Holosight = new Accessory({
+const Holosight = new Gear({
 	id: `a0309955-3f7d-4f93-9b5e-8239dd1371db`,
 	name: `Holosight`,
 	desc: [
@@ -9,5 +8,6 @@ const Holosight = new Accessory({
 	],
 	sz: 0
 })
+Holosight.dur = 28800
 
 export default Holosight

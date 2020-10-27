@@ -1,9 +1,8 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
-import melee from 'rules/skills/Melee.js'
+import Rule from 'rules/Rule.js'
+import melee from 'skills/Melee.js'
 
-const Block = new Maneuver({
+const Block = new Rule({
 	id: `af99f6bc-7db2-41ec-b35e-e709bd29d8a1`,
-	cat: `Defensive`,
 	name: melee.specs.block.name, 
 	desc: melee.specs.block.desc
 })

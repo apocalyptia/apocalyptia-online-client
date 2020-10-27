@@ -1,5 +1,4 @@
-import Property from 'rules/properties/Property.js'
-
+import Property from 'properties/Property.js'
 
 const Luck = new Property({
 	id: `58641270-0e30-4ca9-9986-7c9da1cc4d28`,

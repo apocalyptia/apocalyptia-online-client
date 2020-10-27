@@ -1,15 +1,15 @@
 <script>
-	import Abilities from './Abilities.svelte'
-	import DeleteCharacterButton from './DeleteCharacterButton.svelte'
-	import Description from './Description.svelte'
-	import Gear from './Gear.svelte'
-	import Health from './Health.svelte'
-	import LoadCharacterButton from './LoadCharacterButton.svelte'
-	import Notes from './Notes.svelte'
-	import Properties from './Properties.svelte'
-	import SaveCharacterButton from './SaveCharacterButton.svelte'
-	import Skills from './Skills.svelte'
-	import Traits from './Traits.svelte'
+	import Abilities from 'views/character/Abilities.svelte'
+	import DeleteCharacterButton from 'views/character/DeleteCharacterButton.svelte'
+	import Description from 'views/character/Description.svelte'
+	import Gear from 'views/character/Gear.svelte'
+	import Health from 'views/character/Health.svelte'
+	import LoadCharacterButton from 'views/character/LoadCharacterButton.svelte'
+	import Notes from 'views/character/Notes.svelte'
+	import Properties from 'views/character/Properties.svelte'
+	import SaveCharacterButton from 'views/character/SaveCharacterButton.svelte'
+	import Skills from 'views/character/Skills.svelte'
+	import Traits from 'views/character/Traits.svelte'
 
 	export let mode
 </script>

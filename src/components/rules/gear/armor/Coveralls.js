@@ -1,18 +1,18 @@
-import Armor from 'gear/armor/Armor.js'
-import Camo from 'gear/attributes/armor/Camo.js'
-import ColdResistance from 'gear/attributes/armor/ColdResistance.js'
+import Gear from 'gear/Gear.js'
+import Camo from 'attributes/Camo.js'
+import ColdResistance from 'attributes/ColdResistance.js'
 
-
-const Coveralls = new Armor({
+const Coveralls = new Gear({
 	id: `71ede3ad-c8a7-4556-86f1-c4037244757e`,
 	name: `Coveralls`,
 	sz: 3,
-	dr: 1,
-	loc: `Arms, Torso, Legs`,
 	attr: [
 		Camo,
 		ColdResistance,
-	]
+	],
+	type: `Armor`
 })
+Coveralls.dr = 1
+Coveralls.loc = `Arms, Torso, Legs`
 
 export default Coveralls

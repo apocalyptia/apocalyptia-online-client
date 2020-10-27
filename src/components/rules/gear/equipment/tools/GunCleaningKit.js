@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const GunCleaningKit = new Equipment({
+const GunCleaningKit = new Gear({
 	id: `ea495af3-a158-490c-84d4-bbebe3b6fb2b`,
 	name: `Gun Cleaning Kit`,
 	desc: [

@@ -1,9 +1,10 @@
 <script>
     import SaveCharacter from 'database/SaveCharacter.js'
+    // import { userStore } from 'stores/userStore.js'
 	import { character } from 'stores/characterStore.js'
 
-    const createCharacter = () => {
-		$character = SaveCharacter()
+    const createCharacter = _ => {
+		// $character = SaveCharacter($userStore.id, $character)
 	}
 </script>
 

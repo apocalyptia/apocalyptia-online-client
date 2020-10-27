@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const DuffelBag = new Storage({
+const DuffelBag = new Gear({
 	id: `8b2feee5-b9c9-4a0e-9e9b-c4971de669c3`,
 	name: `Duffel Bag`,
 	desc: [

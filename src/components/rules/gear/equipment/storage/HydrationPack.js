@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const HydrationPack = new Storage({
+const HydrationPack = new Gear({
 	id: `5287fe67-386f-43e1-9e65-5be527769990`,
 	name: `Hydration Pack`,
 	desc: [

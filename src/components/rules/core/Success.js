@@ -1,7 +1,6 @@
 import Rule from 'rules/Rule.js'
-import Cooperation from './Cooperation'
-import RoteActions from './RoteActions'
-
+import Cooperation from 'core/Cooperation.js'
+import RoteActions from 'core/RoteActions.js'
 
 const Success = new Rule({
 	id: `2fdf085b-6ec7-4b82-7442-9ecf516664aa`,

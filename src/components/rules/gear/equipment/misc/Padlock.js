@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Padlock = new Equipment({
+const Padlock = new Gear({
 	id: `3036a514-0773-4bbe-99ab-37e73ae37adb`,
 	name: `Padlock`,
 	desc: [

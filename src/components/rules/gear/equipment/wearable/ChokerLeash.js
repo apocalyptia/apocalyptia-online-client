@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const ChokerLeash = new Equipment({
+const ChokerLeash = new Gear({
 	id: `e384ba68-ba77-41b4-87bc-3cb557e756d7`,
 	name: `Choker Leash`,
 	desc: [

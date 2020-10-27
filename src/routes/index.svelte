@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte'
-    import { userId, confirm } from 'stores/netlifyStore.js'
+    // import { userStore, confirm } from 'stores/userStore.js'
 
     onMount(_ => {
         const hash = window.location.hash.substr(1)
@@ -10,19 +10,19 @@
             return result
         }, {})
         if (result.confirmation_token) {
-            confirm(result.confirmation_token)
+            // confirm(result.confirmation_token)
         }
     })
 </script>
 
 
 <div class='cntr-card'>
-	{#if userId}
+    <!-- {#if $userStore} -->
 		<a href='/character' class='link-btn'>Character</a>
 		<a href='/manual' class='link-btn'>Manual</a>
 		<a href='/generator' class='link-btn'>Generator</a>
-	{:else}
-		<a href='/login' class='link-btn'>Login</a>
-		<a href='/signup' class='link-btn'>Sign Up</a>
-	{/if}
+	<!-- {:else}
+        <a href='/signup' class='link-btn'>Sign Up</a>
+        <a href='/login' class='link-btn'>Login</a>
+	{/if} -->
 </div>

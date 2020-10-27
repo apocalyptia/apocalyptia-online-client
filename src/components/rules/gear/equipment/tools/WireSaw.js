@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const WireSaw = new Equipment({
+const WireSaw = new Gear({
 	id: `e4d0ff31-be07-4604-bc20-2bb870d62202`,
 	name: `Wire Saw`,
 	desc: [

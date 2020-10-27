@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const VehicleOperation = new Ability({
 	id: `e69f8784-1323-4468-8761-7a9f1ef9e21d`,
@@ -9,6 +8,7 @@ const VehicleOperation = new Ability({
 	],
 	max: 1,
 	xp: 6
-}) // TODO: Need to add VehicleList when it is made
+})
+// TODO: Need to add VehicleList when it is made
 
 export default VehicleOperation

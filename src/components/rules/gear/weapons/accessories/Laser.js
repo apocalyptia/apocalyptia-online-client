@@ -1,7 +1,6 @@
-import Accessory from './Accessory'
+import Gear from 'gear/Gear.js'
 
-
-const Laser = new Accessory({
+const Laser = new Gear({
 	id: `03f0ef12-bcc9-43de-aa5a-3e9cfaa51025`,
 	name: `Laser`,
 	desc: [
@@ -10,5 +9,6 @@ const Laser = new Accessory({
 	],
 	sz: 0
 })
+Laser.dur = 14400
 
 export default Laser

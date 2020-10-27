@@ -1,20 +1,20 @@
-import Armor from 'gear/armor/Armor.js'
-import Camo from 'gear/attributes/armor/Camo.js'
-import ColdResistance from 'gear/attributes/armor/ColdResistance.js'
-import FireResistance from 'gear/attributes/armor/FireResistance.js'
+import Gear from 'gear/Gear.js'
+import Camo from 'attributes/Camo.js'
+import ColdResistance from 'attributes/ColdResistance.js'
+import FireResistance from 'attributes/FireResistance.js'
 
-
-const PlateCarrier = new Armor({
+const PlateCarrier = new Gear({
 	id: `6734c9c6-d9b0-4e3d-b455-6db395645014`,
 	name: `Plate Carrier`,
 	sz: 4,
-	dr: 4,
-	loc: `Torso`,
 	attr: [
 		Camo,
 		ColdResistance,
 		FireResistance,
-	]
+	],
+	type: `Armor`
 })
+PlateCarrier.dr = 4
+PlateCarrier.loc = `Torso`
 
 export default PlateCarrier

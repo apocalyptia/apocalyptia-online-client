@@ -6,7 +6,7 @@
 
 	let gearedUp = false
 
-	const randomStartingGear = () => {
+	const randomStartingGear = _ => {
 		$character = RandomStartingGear($character, $character.props.luck.score)
 	}
 
@@ -19,58 +19,60 @@
 <svelte:head>
 	<title>Apocalyptia Online - Character Creator - Gear</title>
 </svelte:head>
-<h1>Gear</h1>
-<div class='explanation'>
-	<p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p>
-</div>
-{#if gearedUp}
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Melee Weapon</h2>
-		</div>
-		<div class='item'>
-			<GearBlock item={$character.gear.melee.inventory[0]} mode={'edit'} />
-		</div>
+<div class='creator-page'>
+	<h1>Gear</h1>
+	<div class='explanation'>
+		<p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p>
 	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Ranged Weapon</h2>
-		</div>
-		<div class='item'>
-			<GearBlock item={$character.gear.ranged.inventory[0]} mode={'edit'} />
-		</div>
-	</div>
-	<div class='section-card'>
-		<div class='item-category ammo-heading'>
-			<h2>Ammo</h2>
-		</div>
-		<div class='item'>
-			<GearBlock item={$character.gear.ammo.inventory[0]} mode={'edit'} />
-		</div>
-	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Armor</h2>
-		</div>
-		<div class='item'>
-			<GearBlock item={$character.gear.armor.inventory[0]} mode={'edit'} />
-		</div>
-	</div>
-	<div class='section-card'>
-		<div class='item-category'>
-			<h2>Equipment</h2>
-		</div>
-		{#each $character.gear.equipment.inventory as equipment}
-			<div class='item'>
-				<GearBlock item={equipment} mode={'edit'} />
+	{#if gearedUp}
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Melee Weapon</h2>
 			</div>
-		{/each}
-	</div>
-{:else}
-	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>
-	</div>
-{/if}
+			<div class='item'>
+				<GearBlock item={$character.gear.melee.inventory[0]} mode={'edit'} />
+			</div>
+		</div>
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Ranged Weapon</h2>
+			</div>
+			<div class='item'>
+				<GearBlock item={$character.gear.ranged.inventory[0]} mode={'edit'} />
+			</div>
+		</div>
+		<div class='section-card'>
+			<div class='item-category ammo-heading'>
+				<h2>Ammo</h2>
+			</div>
+			<div class='item'>
+				<GearBlock item={$character.gear.ammo.inventory[0]} mode={'edit'} />
+			</div>
+		</div>
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Armor</h2>
+			</div>
+			<div class='item'>
+				<GearBlock item={$character.gear.armor.inventory[0]} mode={'edit'} />
+			</div>
+		</div>
+		<div class='section-card'>
+			<div class='item-category'>
+				<h2>Equipment</h2>
+			</div>
+			{#each $character.gear.equipment.inventory as equipment}
+				<div class='item'>
+					<GearBlock item={equipment} mode={'edit'} />
+				</div>
+			{/each}
+		</div>
+	{:else}
+		<div class='btn-row'>
+			<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>
+		</div>
+	{/if}
+</div>
 
 
 <style>

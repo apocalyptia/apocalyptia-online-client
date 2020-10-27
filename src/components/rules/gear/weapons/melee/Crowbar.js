@@ -1,16 +1,15 @@
-import MeleeWeapon from 'gear/weapons/melee/MeleeWeapon.js'
-import OneHanded from 'gear/attributes/weapon/OneHanded.js'
+import Gear from 'gear/Gear.js'
+import OneHanded from 'attributes/OneHanded.js'
 
-
-const Crowbar = new MeleeWeapon({
+const Crowbar = new Gear({
 	id: `328afbe9-a374-486f-b41b-2f4e4e7f8958`,
 	name: `Crowbar`,
 	sz: 3,
-	dmg: 3,
-	rng: 2,
 	attr: [
 		OneHanded,
 	]
 })
+Crowbar.dmg = 3
+Crowbar.rng = 2
 
 export default Crowbar

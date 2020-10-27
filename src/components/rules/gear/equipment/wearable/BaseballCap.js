@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const BaseballCap = new Equipment({
+const BaseballCap = new Gear({
 	id: `aafd9c89-2232-46ff-b4e9-9fb0ad5c5785`,
 	name: `Baseball Cap`,
 	desc: [

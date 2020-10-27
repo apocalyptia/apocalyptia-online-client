@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const DamageResistance = new Rule({
 	id: `c5d2503f-cc78-45c6-3b23-02f4f37d54b9`,
 	name: `Damage Resistance`, 

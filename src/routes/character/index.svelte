@@ -3,14 +3,15 @@
     import Character from 'rules/Character.js'
     import CharacterSheet from 'views/character/CharacterSheet.svelte'
     import { character } from 'stores/characterStore.js'
+	import { goto } from '@sapper/app'
 
-    const newCharacter = () => {
+    const newCharacter = _ => {
         $character = new Character()
-        // window.location.assign(`www.apocalyptiaonline.com/character/new`)
+        goto(`/character/new`)
     }
 
-    const loadCharacter = () => {
-        // window.location.assign(`www.apocalyptiaonline.com/character/load`)
+    const loadCharacter = _ => {
+        goto(`/character/load`)
     }
 </script>
 

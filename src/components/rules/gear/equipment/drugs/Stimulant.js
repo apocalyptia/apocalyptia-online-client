@@ -1,15 +1,15 @@
-import Drug from './Drug'
+import Gear from 'gear/Gear.js'
 
-
-const Stimulant = new Drug({
+const Stimulant = new Gear({
 	id: `e124e538-8a31-4ed3-442e-06c040e353ce`,
 	name: `Stimulant`,
 	desc: [
 		`Ignore Exhaustion penalties for 6hrs.`,
 	],
 	sz: 0,
-	mix: 9,
-	od: true
+	type: `Drug`
 })
+Stimulant.mix = 9
+Stimulant.od = true
 
 export default Stimulant

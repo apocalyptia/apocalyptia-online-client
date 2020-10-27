@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const AirHorn = new Equipment({
+const AirHorn = new Gear({
 	id: `3227f45d-6091-4d3f-c6b3-9ad65810be80`,
 	name: `Air Horn`,
 	desc: [

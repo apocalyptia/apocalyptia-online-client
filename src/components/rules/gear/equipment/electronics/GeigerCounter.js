@@ -1,14 +1,13 @@
-import Electronic from './Electronic'
+import Gear from 'gear/Gear.js'
 
-
-const GeigerCounter = new Electronic({
+const GeigerCounter = new Gear({
 	id: `0b857eb3-3aea-44b4-34a2-93f578870af4`,
 	name: `Geiger Counter`,
 	desc: [
 		`Science 6# to detect Radiation in 1yd.`,
 	],
-	sz: 2,
-	hrs: 24
+	sz: 2
 })
+GeigerCounter.dur = 28800
 
 export default GeigerCounter

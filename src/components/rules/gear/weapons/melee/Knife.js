@@ -1,20 +1,19 @@
-import MeleeWeapon from 'gear/weapons/melee/MeleeWeapon.js'
-import OneHanded from 'gear/attributes/weapon/OneHanded.js'
-import Pierce from 'gear/attributes/weapon/Pierce.js'
-import Rapid from 'gear/attributes/weapon/Rapid.js'
+import Gear from 'gear/Gear.js'
+import OneHanded from 'attributes/OneHanded.js'
+import Pierce from 'attributes/Pierce.js'
+import Rapid from 'attributes/Rapid.js'
 
-
-const Knife = new MeleeWeapon({
+const Knife = new Gear({
 	id: `077adc37-a0e4-4282-8641-74c648c8f5cd`,
 	name: `Knife`,
 	sz: 1,
-	dmg: 1,
-	rng: 1,
 	attr: [
 		OneHanded,
 		Pierce,
 		Rapid,
 	]
 })
+Knife.dmg = 1
+Knife.rng = 1
 
 export default Knife

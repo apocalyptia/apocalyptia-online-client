@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const RoadFlare = new Equipment({
+const RoadFlare = new Gear({
 	id: `0d1618d3-a749-453a-7142-8ad0baada784`,
 	name: `Road Flare`,
 	desc: [

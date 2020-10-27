@@ -1,28 +1,28 @@
 <script>
 	import ClickOutside from 'views/widgets/ClickOutside.svelte'
-	import { logout, userId } from 'stores/netlifyStore.js'
+	// import { logout, userStore } from 'stores/userStore.js'
 
 	let showMenu = false
 	let trigger
 
-	const toggle = () => showMenu = !showMenu
+	const toggle = _ => showMenu = !showMenu
 
-	const hide = () => showMenu = false
+	const hide = _ => showMenu = false
 
-	const logOut = () => {
-		hide()
-		try {
-			logout()
-		}
-		catch {
-			showMenu = false
-			window.location.assign(`www.apocalyptiaonline.com`)
-		}
+	const logOut = _ => {
+		// hide()
+		// try {
+		// 	logout()
+		// }
+		// catch {
+		// 	showMenu = false
+		// 	window.location.assign(`/`)
+		// }
 	}
 </script>
 
 
-{#if userId}
+<!-- {#if userStore} -->
 	<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>
 		<div class='btn-icon'>&#9776;</div>
 	</button>
@@ -35,7 +35,7 @@
 		</div>
 	</ClickOutside>
 	<div class='{showMenu ? "shadow" : "invisible"}'></div>
-{/if}
+<!-- {/if} -->
 
 
 <style>

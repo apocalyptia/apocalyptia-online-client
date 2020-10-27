@@ -1,6 +1,5 @@
-import Skill from './Skill'
-import Specialty from './Specialty'
-
+import Skill from 'skills/Skill.js'
+import Stat from 'rules/Stat.js'
 
 const Socialize = new Skill({
 	id: `aa5d33c4-d9ec-4974-8064-55aba4e75d88`,
@@ -11,14 +10,14 @@ const Socialize = new Skill({
 	parent: `Demeanor`,
 	diff: `Demeanor`,
 	specs: {
-		persuade: new Specialty({
+		persuade: new Stat({
 			id: `8ad47e9b-a223-455f-9499-72a012509577`,
 			name: `Persuade`,
 			desc: [
 				`(d6mins) Target seriously considers your opinion.`,
 			]
 		}),
-		therapy: new Specialty({
+		therapy: new Stat({
 			id: `83398ae1-5fad-45ef-a523-09d2b403ac7c`,
 			name: `Therapy`,
 			desc: [

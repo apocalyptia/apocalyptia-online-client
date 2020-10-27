@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Tarp = new Equipment({
+const Tarp = new Gear({
 	id: `2d517256-6dea-42ed-1040-48247b6f4b4d`,
 	name: `Tarp`,
 	desc: [

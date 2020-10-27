@@ -1,18 +1,17 @@
-import Ammo from 'gear/weapons/ammo/Ammo.js'
-import HollowPoint from 'gear/attributes/weapon/HollowPoint.js'
+import Gear from 'gear/Gear.js'
+import HollowPoint from 'attributes/HollowPoint.js'
 
-
-const HollowPoint308 = new Ammo({
+const HollowPoint308 = new Gear({
 	id: `d9ef6e71-5f4c-4372-a1fb-70ad48637276`,
 	name: `.308 Hollow Point`,
 	desc: [
 		`Self-defense ammunition.`,
 	],
 	sz: 0.02,
-	cal: `.308`,
 	attr: [
 		HollowPoint,
 	]
 })
+HollowPoint308.cal = `.308`
 
 export default HollowPoint308

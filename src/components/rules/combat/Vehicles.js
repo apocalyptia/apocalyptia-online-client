@@ -1,11 +1,10 @@
 import Rule from 'rules/Rule.js'
-import Conditions from './vehicles/Conditions'
-import Occupants from './vehicles/Occupants'
-import Pedestrians from './vehicles/Pedestrians'
-import Tires from './vehicles/Tires'
-import Wreck from './vehicles/Wreck'
-import Burning from './vehicles/Burning'
-
+import Conditions from 'combat/vehicles/Conditions.js'
+import Occupants from 'combat/vehicles/Occupants.js'
+import Pedestrians from 'combat/vehicles/Pedestrians.js'
+import Tires from 'combat/vehicles/Tires.js'
+import Wreck from 'combat/vehicles/Wreck.js'
+import Burning from 'combat/vehicles/Burning.js'
 
 const Vehicles = new Rule({
 	id: `c2660769-4cdf-4822-74d1-cdd443e33324`,

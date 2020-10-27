@@ -1,18 +1,18 @@
-import Armor from 'gear/armor/Armor.js'
-import Camo from 'gear/attributes/armor/Camo.js'
-import ColdResistance from 'gear/attributes/armor/ColdResistance.js'
+import Gear from 'gear/Gear.js'
+import Camo from 'attributes/Camo.js'
+import ColdResistance from 'attributes/ColdResistance.js'
 
-
-const GhillieSuit = new Armor({
+const GhillieSuit = new Gear({
 	id: `6ec3af0b-27c8-4dde-b8b5-05a51633241b`,
 	name: `Ghillie Suit`,
 	sz: 4,
-	dr: 1,
-	loc: `Full Body`,
 	attr: [
 		Camo,
 		ColdResistance,
-	]
+	],
+	type: `Armor`
 })
+GhillieSuit.dr = 1
+GhillieSuit.loc = `Full Body`
 
 export default GhillieSuit

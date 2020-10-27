@@ -1,5 +1,4 @@
-import Property from 'rules/properties/Property.js'
-
+import Property from 'properties/Property.js'
 
 const Intellect = new Property({
 	id: `99433632-a504-4529-8e11-e9b9d56ec532`,

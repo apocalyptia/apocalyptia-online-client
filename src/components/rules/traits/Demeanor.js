@@ -1,8 +1,7 @@
-import Trait from 'rules/traits/Trait.js'
-import DemeanorSkills from 'rules/skills/ConstitutionSkills.js'
+import Stat from 'rules/Stat.js'
+import DemeanorSkills from 'lists/skills/ConstitutionSkills.js'
 
-
-const Demeanor = new Trait({
+const Demeanor = new Stat({
 	id: `2f73a727-6149-482e-9c36-70cccbfd03d4`,
 	name: `Demeanor`,
 	desc: [

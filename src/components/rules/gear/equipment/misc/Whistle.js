@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Whistle = new Equipment({
+const Whistle = new Gear({
 	id: `18888c68-ef39-4613-9e2d-f600cc7d000b`,
 	name: `Whistle`,
 	desc: [

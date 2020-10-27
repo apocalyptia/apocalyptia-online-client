@@ -1,5 +1,4 @@
-import Property from 'rules/properties/Property.js'
-
+import Property from 'properties/Property.js'
 
 const Health = new Property({
 	id: `7f6c7b57-75c1-48e8-b5b8-9b5c14ec8d85`,

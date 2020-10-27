@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const DangerSense = new Ability({
 	id: `08da6fd9-59ca-434c-b081-f58fc19c9def`,

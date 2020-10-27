@@ -1,10 +1,8 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 import Table from 'rules/Table.js'
 
-
-const CalledShot = new Maneuver({
+const CalledShot = new Rule({
 	id: `7b5ac4ec-c58a-48bd-aaed-c0fbf6716874`,
-	cat: `Offensive`,
 	name: `Called Shot`, 
 	desc: [
 		`Attacks target the Torso by default.`,
@@ -75,6 +73,5 @@ CalledShot.table = new Table({
 	],
 	widths: [5, 15, 20, 50]
 })
-
 
 export default CalledShot

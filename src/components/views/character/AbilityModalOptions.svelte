@@ -17,7 +17,7 @@
 				<select
 					name={ability.name}
 					bind:value={ability.taken}
-					on:blur={() => $character.abilities = MasterAbilityList.filter(a => a.taken)}
+					on:blur={_ => $character.abilities = MasterAbilityList.filter(a => a.taken)}
 				>
 					{#each Array(ability.max+1) as _, i}
 						<option value={i}>{i}</option>

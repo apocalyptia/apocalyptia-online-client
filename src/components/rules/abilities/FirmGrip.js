@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const FirmGrip = new Ability({
 	id: `c55b0940-8e72-4c5a-a7bc-0b9b27353ae7`,

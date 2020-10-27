@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Range = new Rule({
 	id: `3bca9734-b437-424e-a1e0-16b4a012af50`,
 	name: `Range`, 

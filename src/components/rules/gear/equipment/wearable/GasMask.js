@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const GasMask = new Equipment({
+const GasMask = new Gear({
 	id: `55589bfd-03b7-4773-9f3b-5ecfbd358295`,
 	name: `Gas Mask`,
 	desc: [

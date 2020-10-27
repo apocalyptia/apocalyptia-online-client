@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const Canteen = new Storage({
+const Canteen = new Gear({
 	id: `a61e20a4-89c8-438e-b483-9da4de93d112`,
 	name: `Canteen`,
 	desc: [

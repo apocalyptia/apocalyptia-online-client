@@ -1,6 +1,5 @@
-import Skill from './Skill'
-import Specialty from './Specialty'
-
+import Skill from 'skills/Skill.js'
+import Stat from 'rules/Stat.js'
 
 const Survival = new Skill({
 	id: `2d2322ff-8376-4e04-a00b-be803a9b9f02`,
@@ -11,14 +10,14 @@ const Survival = new Skill({
 	parent: `Brains`,
 	diff: `Biome`,
 	specs: {
-		forage: new Specialty({
+		forage: new Stat({
 			id: `cdb225a5-e82f-4be6-855c-bc78ef6f44fc`,
 			name: `Forage`,
 			desc: [
 				`(1hr) Provide 1 Need for 1 person.`,
 			]
 		}),
-		navigate: new Specialty({
+		navigate: new Stat({
 			id: `9c1f6a61-bc28-4dde-b89f-0c9a34555f50`,
 			name: `Navigate`,
 			desc: [

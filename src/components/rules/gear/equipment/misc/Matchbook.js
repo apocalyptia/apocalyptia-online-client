@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Matchbook = new Equipment({
+const Matchbook = new Gear({
 	id: `3c615dc7-8c73-4384-4ad3-07fa991cb899`,
 	name: `Matchbook`,
 	desc: [

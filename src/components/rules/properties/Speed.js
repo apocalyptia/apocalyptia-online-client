@@ -1,5 +1,4 @@
-import Property from 'rules/properties/Property.js'
-
+import Property from 'properties/Property.js'
 
 const Speed = new Property({
 	id: `c7081a3e-1fed-41ee-81a4-2b2fab4942e8`,

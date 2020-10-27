@@ -1,9 +1,10 @@
 <script>
     import LoadCharacter from 'database/LoadCharacter.js'
+    // import { userStore } from 'stores/userStore.js'
     import { character } from 'stores/characterStore.js'
 
-    const loadCharacter = () => {
-        $character = LoadCharacter()
+    const loadCharacter = _ => {
+        // $character = LoadCharacter($userStore.id)
 	}
 </script>
 

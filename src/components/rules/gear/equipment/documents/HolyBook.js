@@ -1,13 +1,13 @@
-import Document from './Document'
+import Gear from 'gear/Gear.js'
 
-
-const HolyBook = new Document({
+const HolyBook = new Gear({
 	id: `0d34f869-b076-48d0-39f3-9d7d01949df7`,
 	name: `Holy Book`,
 	desc: [
 		`-1 Psyche`,
 	],
-	sz: 1
+	sz: 1,
+	type: `Document`
 })
 
 export default HolyBook

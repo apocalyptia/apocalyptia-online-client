@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Botch = new Rule({
 	id: `9d933f25-f236-4674-7c40-d34764f96f72`,
 	name: `Botch`,

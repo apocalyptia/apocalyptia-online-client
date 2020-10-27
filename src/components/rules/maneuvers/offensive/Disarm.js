@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Disarm = new Maneuver({
+const Disarm = new Rule({
 	id: `b4812d24-3b7e-43aa-a2d6-7b734520c5e7`,
-	cat: `Offensive`,
 	name: `Disarm`, 
 	desc: [
 		`Roll [Melee vs Melee (+ Constitution if the weapon is used two-handed)].`,

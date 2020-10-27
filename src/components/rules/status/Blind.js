@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Blind = new Rule({
 	id: `5fb3123f-b7f0-4e09-acfb-10ed93b675a8`,
 	name: `Blind`,

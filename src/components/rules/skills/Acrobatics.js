@@ -1,6 +1,5 @@
-import Skill from './Skill'
-import Specialty from './Specialty'
-
+import Skill from 'skills/Skill.js'
+import Stat from 'rules/Stat.js'
 
 const Acrobatics = new Skill({
 	id: `f19c07a2-1371-48db-b0bc-a88e5bc4e53b`,
@@ -11,7 +10,7 @@ const Acrobatics = new Skill({
 	parent: `Agility`,
 	diff: 6,
 	specs: {
-		dodge: new Specialty({
+		dodge: new Stat({
 			id: `a7451f3a-9970-431a-8304-f36ae046e85b`,
 			name: `Dodge`,
 			desc: [
@@ -20,7 +19,7 @@ const Acrobatics = new Skill({
 				`Reflexive Dodge is your Dodge score with no roll.`,
 			]
 		}),
-		jump: new Specialty({
+		jump: new Stat({
 			id: `7a5e0273-8d72-43c3-a826-0a927e2ee0e9`,
 			name: `Jump`,
 			desc: [

@@ -1,13 +1,9 @@
 <script>
 	import Spinner from 'views/widgets/Spinner.svelte'
-	import { go } from 'stores/netlifyStore.js'
+	// import { userStore } from 'stores/userStore.js'
+	import { goto } from '@sapper/app'
 
-	const userId = false
-	const test = new go({})
-
-	console.dir(test.prototype.toString())
-
-	if (userId) window.location.assign(`www.apocalyptiaonline.com`)
+	if (userStore) goto(`/`)
 
 	const user = {
 		email: ``,
@@ -19,7 +15,7 @@
 	let forgotPassword = false
 
 	const submit = () => {
-		// pendingApiCall = true
+		pendingApiCall = true
 		// login(user)
 		// 	.catch(_ => {
 		// 		pendingApiCall = false

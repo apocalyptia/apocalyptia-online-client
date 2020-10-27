@@ -1,13 +1,11 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
-import Grab from './Grab'
-import Hostage from './Hostage'
-import Tackle from './Tackle'
-import Throw from './Throw'
+import Rule from 'rules/Rule.js'
+import Grab from 'maneuvers/offensive/Grab.js'
+import Hostage from 'maneuvers/offensive/Hostage.js'
+import Tackle from 'maneuvers/offensive/Tackle.js'
+import Throw from 'maneuvers/offensive/Throw.js'
 
-
-const Grapple = new Maneuver({
+const Grapple = new Rule({
 	id: `974d2b5c-67e0-4e5d-8dd8-883d98a5926e`,
-	cat: `Offensive`,
 	name: `Grapple`,
 	desc: [
 		`There are three steps to Grappling:`,

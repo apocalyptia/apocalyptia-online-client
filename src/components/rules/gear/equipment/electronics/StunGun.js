@@ -1,15 +1,14 @@
-import Electronic from './Electronic'
+import Gear from 'gear/Gear.js'
 
-
-const StunGun = new Electronic({
+const StunGun = new Gear({
 	id: `addf59b3-5134-4a92-770c-564f831ac30b`,
 	name: `Stun Gun`,
 	desc: [
 		`Melee Attack.`,
 		`C9# or Stun next round.`,
 	],
-	sz: 1,
-	hrs: .1
+	sz: 1
 })
+StunGun.dur = 120
 
 export default StunGun

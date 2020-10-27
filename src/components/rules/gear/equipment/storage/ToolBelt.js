@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const ToolBelt = new Storage({
+const ToolBelt = new Gear({
 	id: `f82fec74-827a-4ce7-988e-d3f7c4da2aec`,
 	name: `Tool Belt`,
 	desc: [

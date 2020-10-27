@@ -1,18 +1,18 @@
-import Armor from 'gear/armor/Armor.js'
-import ColdResistance from 'gear/attributes/armor/ColdResistance.js'
-import FireResistance from 'gear/attributes/armor/FireResistance.js'
+import Gear from 'gear/Gear.js'
+import ColdResistance from 'attributes/ColdResistance.js'
+import FireResistance from 'attributes/FireResistance.js'
 
-
-const KevlarVest = new Armor({
+const KevlarVest = new Gear({
 	id: `a4d0d99a-3546-4805-912c-4ffb2fbe0c85`,
 	name: `Kevlar Vest`,
 	sz: 4,
-	dr: 3,
-	loc: `Torso`,
 	attr: [
 		ColdResistance,
 		FireResistance,
-	]
+	],
+	type: `Armor`
 })
+KevlarVest.dr = 3
+KevlarVest.loc = `Torso`
 
 export default KevlarVest

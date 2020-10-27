@@ -1,6 +1,5 @@
-import Skill from './Skill'
-import Specialty from './Specialty'
-
+import Skill from 'skills/Skill.js'
+import Stat from 'rules/Stat.js'
 
 const Larceny = new Skill({
 	id: `f8725bd3-a40a-43b6-9b1b-4a9bcd1c957e`,
@@ -11,7 +10,7 @@ const Larceny = new Skill({
 	parent: `agility`,
 	diff: `varies`,
 	specs: {
-		mechanical: new Specialty({
+		mechanical: new Stat({
 			id: `44d2e074-3316-41f1-a3f9-5252e8e2c0c4`,
 			name: `Mechanical`,
 			desc: [
@@ -19,7 +18,7 @@ const Larceny = new Skill({
 				`# by item.`,
 			]
 		}),
-		trick: new Specialty({
+		trick: new Stat({
 			id: `959c5f50-d590-4064-bf23-65737cdafc61`,
 			name: `Trick`,
 			desc: [

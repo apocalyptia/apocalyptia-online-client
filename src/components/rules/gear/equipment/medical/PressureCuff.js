@@ -1,7 +1,6 @@
-import Medical from './Medical'
+import Gear from 'gear/Gear.js'
 
-
-const PressureCuff = new Medical({
+const PressureCuff = new Gear({
 	id: `7a5e1d36-e88e-4c93-4d1c-537ba80119bb`,
 	name: `Pressure Cuff`,
 	desc: [

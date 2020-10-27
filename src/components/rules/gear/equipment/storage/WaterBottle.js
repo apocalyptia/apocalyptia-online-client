@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const WaterBottle = new Storage({
+const WaterBottle = new Gear({
 	id: `ce28fa26-8497-4234-b2df-2b0560f8d76b`,
 	name: `Water Bottle`,
 	desc: [

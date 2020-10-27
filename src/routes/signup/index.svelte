@@ -1,8 +1,9 @@
 <script>
 	import Spinner from 'views/widgets/Spinner.svelte'
-	import { userId, signup } from 'stores/netlifyStore.js'
+	// import { userStore, signup } from 'stores/userStore.js'
+	import { goto } from '@sapper/app'
 
-	if (userId) window.location.assign(`www.apocalyptiaonline.com`)
+	// if (userStore) goto(`/`)
 
 	let confirmMessage = ``
 
@@ -25,13 +26,13 @@
 
 	const submit = () => {
 		if (user.email && (user.password == user.confirm)) {
-			pendingApiCall = true
-			signup(user)
-				.then(_ => confirmMessage = `Confirmation email sent. Please confirm your account.`)
-				.catch(e => {
-					pendingApiCall = false
-					alert(e)
-				})
+			// pendingApiCall = true
+			// signup(user)
+			// 	.then(_ => confirmMessage = `Confirmation email sent. Please confirm your account.`)
+			// 	.catch(e => {
+			// 		pendingApiCall = false
+			// 		alert(e)
+			// 	})
 		}
 	}
 </script>

@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Actions = new Rule({
 	id: `6073380c-7def-4d74-889b-ddbd5865fe69`,
 	name: `Actions`, 

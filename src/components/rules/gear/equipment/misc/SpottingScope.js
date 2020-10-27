@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const SpottingScope = new Equipment({
+const SpottingScope = new Gear({
 	id: `6f65efe9-f547-4ee4-2fea-1f1c5be8ad69`,
 	name: `Spotting Scope`,
 	desc: [

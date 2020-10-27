@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const BobbyPin = new Equipment({
+const BobbyPin = new Gear({
 	id: `e0b1000c-1ee7-470e-937a-230282a2cca5`,
 	name: `Bobby Pin`,
 	desc: [

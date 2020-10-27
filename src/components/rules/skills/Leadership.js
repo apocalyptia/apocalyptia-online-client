@@ -1,6 +1,5 @@
-import Skill from './Skill'
-import Specialty from './Specialty'
-
+import Skill from 'skills/Skill.js'
+import Stat from 'rules/Stat.js'
 
 const Leadership = new Skill({
 	id: `7596f84f-d625-409d-a7b0-4e0775d96719`,
@@ -12,7 +11,7 @@ const Leadership = new Skill({
 	parent: `Demeanor`,
 	diff: `Demeanor`,
 	specs: {
-		encourage: new Specialty({
+		encourage: new Stat({
 			id: `95b70f3c-d67e-41ae-99ff-2d5864356a59`,
 			name: `Encourage`,
 			desc: [
@@ -20,7 +19,7 @@ const Leadership = new Skill({
 				`Target(s) get a bonus = [your Demeanor] to one roll you choose.`,
 			]
 		}),
-		intimidate: new Specialty({
+		intimidate: new Stat({
 			id: `ff3e883c-2952-459e-8dbf-d3f666383ec9`,
 			name: `Intimidate`,
 			desc: [

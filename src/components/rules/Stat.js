@@ -1,4 +1,4 @@
-import Rule from './Rule'
+import Rule from 'rules/Rule.js'
 
 export default class Stat extends Rule {
 	constructor({

@@ -1,15 +1,14 @@
-import Electronic from './Electronic'
+import Gear from 'gear/Gear.js'
 
-
-const SolarLamp = new Electronic({
+const SolarLamp = new Gear({
 	id: `aa480ec7-9df9-4011-ff78-d4b34567c144`,
 	name: `Solar Lamp`,
 	desc: [
 		`1yd light radius.`,
 		`1 day charge.`,
 	],
-	sz: 1,
-	hrs: 9
+	sz: 1
 })
+SolarLamp.dur = 10800
 
 export default SolarLamp

@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const HardHeaded = new Ability({
 	id: `b02bccad-64ce-477b-9cb3-3883fc2c59f5`,

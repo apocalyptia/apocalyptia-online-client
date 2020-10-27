@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher, onDestroy } from 'svelte'
-	import AbilityModalSingle from './AbilityModalSingle.svelte'
-	import AbilityModalOptions from './AbilityModalOptions.svelte'
+	import AbilityModalSingle from 'views/character/AbilityModalSingle.svelte'
+	import AbilityModalOptions from 'views/character/AbilityModalOptions.svelte'
 
 	export let ability, MasterAbilityList
 
@@ -16,7 +16,7 @@
 
 
 <svelte:window on:keydown={handle_keydown}/>
-<div class="modal-background" on:click={() => dispatch('close')}></div>
+<div class="modal-background" on:click={_ => dispatch('close')}></div>
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='modal-content'>
 		<div class='ability-name'><h2>{ability.name}</h2></div>
@@ -32,7 +32,7 @@
 			{/if}
 		</div>
 		<div class='btn-row'>
-			<button on:click={() => dispatch('close')}>Close</button>
+			<button on:click={_ => dispatch('close')}>Close</button>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,6 @@
 <script>
-	import Gear from 'rules/gear/GearList.js'
-	import GearCategory from './GearCategory.svelte'
+	import Gear from 'lists/gear/GearList.js'
+	import GearCategory from 'views/character/GearCategory.svelte'
 
 	export let mode = 'readonly'
 </script>

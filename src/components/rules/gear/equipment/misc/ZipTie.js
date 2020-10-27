@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const ZipTie = new Equipment({
+const ZipTie = new Gear({
 	id: `3d9a0750-5858-41da-b103-99f5a31130bb`,
 	name: `Zip Tie`,
 	desc: [

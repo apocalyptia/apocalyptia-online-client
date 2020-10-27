@@ -1,9 +1,9 @@
 <script>
-	import AmmoList from 'rules/gear/weapons/ammo/AmmoList.js'
-	import ArmorList from 'rules/gear/armor/ArmorList.js'
-	import EquipmentList from 'rules/gear/equipment/EquipmentList.js'
-	import MeleeList from 'rules/gear/weapons/melee/MeleeWeaponList.js'
-	import RangedList from 'rules/gear/weapons/ranged/RangedWeaponList.js'
+	import AmmoList from 'lists/gear/AmmoList.js'
+	import ArmorList from 'lists/gear/ArmorList.js'
+	import EquipmentList from 'lists/gear/EquipmentList.js'
+	import MeleeList from 'lists/gear/MeleeWeaponList.js'
+	import RangedList from 'lists/gear/RangedWeaponList.js'
 	import { character } from 'stores/characterStore.js'
 	import { createEventDispatcher, onDestroy } from 'svelte'
 
@@ -27,7 +27,7 @@
 
 	if (previouslyFocused) onDestroy(_ => previouslyFocused.focus())
 
-	const add = () => {
+	const add = _ => {
 		if (category == 'ammo') selectedItem.qty = 0
 		$character.gear[category].inventory.push(selectedItem)
 		$character = $character
@@ -37,7 +37,7 @@
 
 
 <svelte:window on:keydown={handleKeydown}/>
-<div class="modal-background" on:click={() => dispatch('close')}></div>
+<div class="modal-background" on:click={_ => dispatch('close')}></div>
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='item-selection'>
 		<select class='item-selector' bind:value={selectedItem}>
@@ -47,8 +47,8 @@
 		</select>
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={() => add()}>Add</button>
-		<button class='small-cntr-btn' on:click={() => dispatch('close')}>Close</button>
+		<button class='small-cntr-btn' on:click={_ => add()}>Add</button>
+		<button class='small-cntr-btn' on:click={_ => dispatch('close')}>Close</button>
 	</div>
 </div>
 

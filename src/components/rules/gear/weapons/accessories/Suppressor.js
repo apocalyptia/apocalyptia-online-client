@@ -1,7 +1,6 @@
-import Accessory from './Accessory'
+import Gear from 'gear/Gear.js'
 
-
-const Suppressor = new Accessory({
+const Suppressor = new Gear({
 	id: `1b1419c3-48fd-40a5-9ad7-4279f9b6d1dc`,
 	name: `Suppressor`,
 	desc: [

@@ -1,6 +1,5 @@
-import Property from 'rules/properties/Property.js'
-import Melee from 'rules/skills/Melee.js'
-
+import Property from 'properties/Property.js'
+import Melee from 'skills/Melee.js'
 
 const Block = new Property({
 	id: `ceb4a52f-8e47-4892-8d34-4ff4de12a486`,

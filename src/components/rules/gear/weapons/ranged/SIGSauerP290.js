@@ -1,18 +1,17 @@
-import RangedWeapon from 'gear/weapons/ranged/RangedWeapon.js'
-import TwoHanded from 'gear/attributes/weapon/TwoHanded.js'
+import Gear from 'gear/Gear.js'
+import TwoHanded from 'attributes/TwoHanded.js'
 
-
-const SIGSauerP290 = new RangedWeapon({
+const SIGSauerP290 = new Gear({
 	id: `16cffbd6-54af-49d2-a531-2d950435250b`,
 	name: `SIG Sauer P290`,
 	sz: 1,
-	dmg: 1,
-	rng: 5,
 	attr: [
 		TwoHanded,
-	],
-	cap: 6,
-	cal: `9mm`
+	]
 })
+SIGSauerP290.dmg = 1
+SIGSauerP290.rng = 5
+SIGSauerP290.cap = 6
+SIGSauerP290.cal = `9mm`
 
 export default SIGSauerP290

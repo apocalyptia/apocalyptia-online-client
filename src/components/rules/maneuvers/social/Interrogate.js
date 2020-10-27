@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Interrogate = new Maneuver({
+const Interrogate = new Rule({
 	id: `28849e94-5c31-4b49-a84b-63a1b8cec363`,
-	cat: `Social`,
 	name: `Interrogate`,
 	desc: [
 		`Roll [Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence.`,

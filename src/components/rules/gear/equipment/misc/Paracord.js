@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Paracord = new Equipment({
+const Paracord = new Gear({
 	id: `db7dc950-2272-4619-d84c-0794e4ab6181`,
 	name: `Paracord`,
 	desc: [

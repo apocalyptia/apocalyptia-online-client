@@ -1,18 +1,17 @@
-import RangedWeapon from 'gear/weapons/ranged/RangedWeapon.js'
-import TwoHanded from 'gear/attributes/weapon/TwoHanded.js'
+import Gear from 'gear/Gear.js'
+import TwoHanded from 'attributes/TwoHanded.js'
 
-
-const Remington700 = new RangedWeapon({
+const Remington700 = new Gear({
 	id: `6398a22b-e4a9-4c9f-a984-3bf6aaa09146`,
 	name: `Remington 700`,
 	sz: 4,
-	dmg: 3,
-	rng: 100,
 	attr: [
 		TwoHanded,
-	],
-	cap: 5,
-	cal: `.308`
+	]
 })
+Remington700.dmg = 3
+Remington700.rng = 100
+Remington700.cap = 5
+Remington700.cal = `.308`
 
 export default Remington700

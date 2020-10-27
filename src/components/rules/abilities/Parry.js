@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const Parry = new Ability({
 	id: `4b617dee-aed3-4187-ae5a-25eb83245c20`,

@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Prone = new Rule({
 	id: `687fbf28-8198-4363-bea5-61d56f878c23`,
 	name: `Prone`,

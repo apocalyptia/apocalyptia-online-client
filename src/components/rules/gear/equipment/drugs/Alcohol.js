@@ -1,7 +1,6 @@
-import Drug from './Drug'
+import Gear from 'gear/Gear.js'
 
-
-const Alcohol = new Drug({
+const Alcohol = new Gear({
 	id: `de0dd5f5-8630-4827-121d-e39fc099a9ab`,
 	name: `Alcohol`,
 	desc: [
@@ -9,8 +8,9 @@ const Alcohol = new Drug({
 		`C9# or Unstable.`,
 	],
 	sz: 1,
-	mix: 9,
-	od: true
+	type: `Drug`
 })
+Alcohol.mix = 9
+Alcohol.od = true
 
 export default Alcohol

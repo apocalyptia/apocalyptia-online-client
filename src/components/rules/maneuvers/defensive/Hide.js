@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Hide = new Maneuver({
+const Hide = new Rule({
 	id: `f334f2c5-cc52-4296-b22d-d978f07944d4`,
-	cat: `Defensive`,
 	name: `Hide`, 
 	desc: [
 		`Roll [Stealth vs Perception] to be Concealed.`,

@@ -1,6 +1,5 @@
-import Ability from 'rules/abilities/Ability.js'
-import Skills from 'rules/skills/Skills.js'
-
+import Ability from 'abilities/Ability.js'
+import Skills from 'lists/skills/Skills.js'
 
 const EfficientWork = new Ability({
 	id: `bc5ad182-ca69-46c9-b013-b92d90d48b07`,

@@ -1,9 +1,8 @@
 import Rule from 'rules/Rule.js'
-import DamageResistance from './DamageResistance'
-import FireDamage from './FireDamage'
-import Pain from './Pain'
-import Recovery from './Recovery'
-
+import DamageResistance from 'combat/DamageResistance.js'
+import FireDamage from 'combat/FireDamage.js'
+import Pain from 'combat/Pain.js'
+import Recovery from 'combat/Recovery.js'
 
 const Damage = new Rule({
 	id: `8fbad46e-af91-424a-28c5-2e8b7ff802bd`,

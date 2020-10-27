@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const FishingPole = new Equipment({
+const FishingPole = new Gear({
 	id: `b3d467fc-fb21-43ff-8c28-036596dee4dc`,
 	name: `Fishing Pole`,
 	desc: [

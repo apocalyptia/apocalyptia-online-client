@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Water = new Equipment({
+const Water = new Gear({
 	id: `046c84cf-e2dd-4738-93b7-862c300ccd8d`,
 	name: `Water`,
 	desc: [

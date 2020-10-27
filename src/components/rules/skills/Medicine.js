@@ -1,6 +1,5 @@
-import Skill from './Skill'
-import Specialty from './Specialty'
-
+import Skill from 'skills/Skill.js'
+import Stat from 'rules/Stat.js'
 
 const Medicine = new Skill({
 	id: `8ebabc07-057f-4568-b6ed-cdb6941d14a6`,
@@ -11,7 +10,7 @@ const Medicine = new Skill({
 	parent: `Brains`,
 	diff: `Damage`,
 	specs: {
-		firstaid: new Specialty({
+		firstaid: new Stat({
 			id: `d99dcfd7-e192-463f-941f-1487ec141793`,
 			name: `First-Aid`,
 			desc: [
@@ -20,7 +19,7 @@ const Medicine = new Skill({
 				`Takes 1 round per Damage.`,
 			]
 		}),
-		surgery: new Specialty({
+		surgery: new Stat({
 			id: `84136a49-7dd1-4462-af4d-a9c8e2390f80`,
 			name: `Surgery`,
 			desc: [

@@ -1,7 +1,6 @@
-import Accessory from './Accessory'
+import Gear from 'gear/Gear.js'
 
-
-const Bayonet = new Accessory({
+const Bayonet = new Gear({
 	id: `4e4e24f4-8b09-4a85-9170-df4e5125cec2`,
 	name: `Bayonet`,
 	desc: [

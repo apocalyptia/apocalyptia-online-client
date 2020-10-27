@@ -1,8 +1,7 @@
-import Trait from 'rules/traits/Trait.js'
-import ConstitutionSkills from 'rules/skills/ConstitutionSkills.js'
+import Stat from 'rules/Stat.js'
+import ConstitutionSkills from 'lists/skills/ConstitutionSkills.js'
 
-
-const Constitution = new Trait({
+const Constitution = new Stat({
 	id: `da48b9f5-de7d-44b3-bb24-392e69bebe90`,
 	name: `Constitution`,
 	desc: [

@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Compass = new Equipment({
+const Compass = new Gear({
 	id: `af94f8fc-afed-489c-dafd-3e342c06a2af`,
 	name: `Compass`,
 	desc: [

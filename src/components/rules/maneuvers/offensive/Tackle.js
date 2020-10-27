@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Tackle = new Maneuver({
+const Tackle = new Rule({
 	id: `cbc7ab2c-3122-4ab9-b990-c7296e7c66ef`,
-	cat: `Offensive`,
 	name: `Tackle`,
 	desc: [
 		`Spend 2 Actions and make a Grapple Attack roll to move up to your Speed and Pin an enemy.`,

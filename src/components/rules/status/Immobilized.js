@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Immobilized = new Rule({
 	id: `2e7634cc-4b65-483d-8011-b12d6bee9bd5`,
 	name: `Immobilized`,

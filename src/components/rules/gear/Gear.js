@@ -5,15 +5,19 @@ export default class Gear extends Rule {
 		id,
 		name,
 		desc,
-		sz,
-		qty=0
+		attr=[],
+		qty=0,
+		sz=0,
+		type='Gear'
 	}) {
 		super({
 			id,
 			name,
 			desc
 		})
-		this.sz = sz
+		this.attr = attr
 		this.qty = qty
+		this.sz = sz
+		this.type = type
 	}
 }

@@ -1,5 +1,4 @@
-import Property from 'rules/properties/Property.js'
-
+import Property from 'properties/Property.js'
 
 const Carry = new Property({
 	id: `c35b76a8-9912-46fc-b1d3-b0b23b71ef3d`,

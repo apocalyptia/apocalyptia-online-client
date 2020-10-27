@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Concealed = new Rule({
 	id: `56037ac2-9ad0-4097-9cef-621ea8d171e7`,
 	name: `Concealed`,

@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const FireDamage = new Rule({
 	id: `0de26712-9508-40af-262e-b368e9550fa1`,
 	name: `Fire Damage`, 

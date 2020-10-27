@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const DuctTape = new Equipment({
+const DuctTape = new Gear({
 	id: `7926ac87-740e-4b46-9f87-1d85abbd90b6`,
 	name: `Duct Tape`,
 	desc: [

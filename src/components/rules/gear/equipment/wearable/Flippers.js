@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Flippers = new Equipment({
+const Flippers = new Gear({
 	id: `0b819838-ab50-41c0-864f-918dda1ab43d`,
 	name: `Flippers`,
 	desc: [

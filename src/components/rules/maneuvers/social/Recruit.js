@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Recruit = new Maneuver({
+const Recruit = new Rule({
 	id: `9599dc01-9940-44d8-ae36-e4623810fe5d`,
-	cat: `Social`,
 	name: `Recruit`,
 	desc: [
 		`Roll [Socialize vs Demeanor] to convince someone to join your side.`,

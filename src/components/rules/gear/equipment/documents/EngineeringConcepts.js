@@ -1,13 +1,13 @@
-import Document from './Document'
+import Gear from 'gear/Gear.js'
 
-
-const EngineeringConcepts = new Document({
+const EngineeringConcepts = new Gear({
 	id: `1473e9cc-aa60-432d-c963-706f6027ec3a`,
 	name: `Engineering Concepts`,
 	desc: [
 		`+1 Build`,
 	],
-	sz: 1
+	sz: 1,
+	type: `Document`
 })
 
 export default EngineeringConcepts

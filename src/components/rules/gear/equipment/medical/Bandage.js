@@ -1,7 +1,6 @@
-import Medical from './Medical'
+import Gear from 'gear/Gear.js'
 
-
-const Bandage = new Medical({
+const Bandage = new Gear({
 	id: `d886320f-a3b9-4576-9ad9-aa882e5544e3`,
 	name: `Bandage`,
 	desc: [

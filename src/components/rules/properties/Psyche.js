@@ -1,5 +1,4 @@
-import Property from 'rules/properties/Property.js'
-
+import Property from 'properties/Property.js'
 
 const Psyche = new Property({
 	id: `59f47468-200a-45ab-b8ca-a3cfa78ab1f8`,

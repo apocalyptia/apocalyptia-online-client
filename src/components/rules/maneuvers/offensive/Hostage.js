@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Hostage = new Maneuver({
+const Hostage = new Rule({
 	id: `43e2df6c-320a-404a-9381-52b6a441df44`,
-	cat: `Offensive`,
 	name: `Hostage`,
 	desc: [
 		`Use a Grabbed or Restrained enemy as Cover.`,

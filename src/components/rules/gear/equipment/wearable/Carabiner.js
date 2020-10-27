@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Carabiner = new Equipment({
+const Carabiner = new Gear({
 	id: `08b38da4-9a62-4392-b0a4-2f385170faa6`,
 	name: `Carabiner`,
 	desc: [

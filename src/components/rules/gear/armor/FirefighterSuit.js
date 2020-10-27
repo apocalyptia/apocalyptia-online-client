@@ -1,20 +1,20 @@
-import Armor from 'gear/armor/Armor.js'
-import ColdResistance from 'gear/attributes/armor/ColdResistance.js'
-import FireResistance from 'gear/attributes/armor/FireResistance.js'
-import Mask from 'gear/attributes/armor/Mask.js'
+import Gear from 'gear/Gear.js'
+import ColdResistance from 'attributes/ColdResistance.js'
+import FireResistance from 'attributes/FireResistance.js'
+import Mask from 'attributes/Mask.js'
 
-
-const FirefighterSuit = new Armor({
+const FirefighterSuit = new Gear({
 	id: `eefc5c02-3139-42cd-b5f9-fe055a915098`,
 	name: `Firefighter Suit`,
 	sz: 5,
-	dr: 2,
-	loc: `Full Body`,
 	attr: [
 		ColdResistance,
 		FireResistance,
 		Mask,
-	]
+	],
+	type: `Armor`
 })
+FirefighterSuit.dr = 2
+FirefighterSuit.loc = `Full Body`
 
 export default FirefighterSuit

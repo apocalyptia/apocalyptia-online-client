@@ -17,7 +17,7 @@
 
 
 <div class='sheet-section'>
-	<button class='die' on:click={() => result = DieRoller()}>
+	<button class='die' on:click={_ => result = DieRoller()}>
 		<div class='die_number' transition:fade={{duration: 1000}}>{result}</div>
 	</button>
 </div>

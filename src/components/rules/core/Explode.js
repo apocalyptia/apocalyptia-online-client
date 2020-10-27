@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Explode = new Rule({
 	id: `6da8a818-56c8-417a-2c98-c2f9bbde7aa5`,
 	name: `Explode`,

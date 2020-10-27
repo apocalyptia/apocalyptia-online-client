@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Throw = new Maneuver({
+const Throw = new Rule({
 	id: `cd4abf3b-f40f-401e-8824-9a10cce729c9`,
-	cat: `Offensive`,
 	name: `Throw`,
 	desc: [
 		`Throw a Grabbed or Restrained enemy up to [Constitution] yds.`,

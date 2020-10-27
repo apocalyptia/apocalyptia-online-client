@@ -1,6 +1,5 @@
-import Ability from 'rules/abilities/Ability.js'
-import WeaponList from 'gear/weapons/WeaponList.js'
-
+import Ability from 'abilities/Ability.js'
+import WeaponList from 'lists/gear/WeaponList.js'
 
 const WeaponTraining = new Ability({
 	id: `dd2f76e5-3f6b-46b9-bdc1-9c7d09768017`,

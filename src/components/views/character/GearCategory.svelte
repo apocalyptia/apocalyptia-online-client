@@ -8,7 +8,7 @@
 
 	let modalVisible = false
 
-	const toggleAddItemModal = () => modalVisible = !modalVisible
+	const toggleAddItemModal = _ => modalVisible = !modalVisible
 </script>
 
 

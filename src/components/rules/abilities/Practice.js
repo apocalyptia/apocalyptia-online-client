@@ -1,6 +1,5 @@
-import Ability from 'rules/abilities/Ability.js'
-import Skills from 'rules/skills/Skills.js'
-
+import Ability from 'abilities/Ability.js'
+import Skills from 'lists/skills/Skills.js'
 
 const Practice = new Ability({
 	id: `2e27c3fd-aaf3-4c95-9d3a-9a0ad27abdff`,

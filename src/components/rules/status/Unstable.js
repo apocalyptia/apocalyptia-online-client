@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Unstable = new Rule({
 	id: `c1da7d28-31a8-468c-a454-157fe3addb62`,
 	name: `Unstable`,

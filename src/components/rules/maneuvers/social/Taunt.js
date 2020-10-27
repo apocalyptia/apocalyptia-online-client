@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Taunt = new Maneuver({
+const Taunt = new Rule({
 	id: `a00cbcf0-3593-493b-9fd8-575846d182bb`,
-	cat: `Social`,
 	name: `Taunt`,
 	desc: [
 		`Roll [Leadership vs Demeanor].`,

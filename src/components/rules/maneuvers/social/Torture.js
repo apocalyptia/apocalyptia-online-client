@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Torture = new Maneuver({
+const Torture = new Rule({
 	id: `9da029d0-9c58-4407-812c-396fb59c764b`,
-	cat: `Social`,
 	name: `Torture`,
 	desc: [
 		`Roll [Medicine vs prisoner’s Constitution] once per hour to cause a captive d6 Pain to soften their resolve without killing them.`,

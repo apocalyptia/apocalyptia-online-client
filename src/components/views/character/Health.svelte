@@ -1,5 +1,5 @@
 <script>
-	import BodyParts from './BodyParts.svelte'
+	import BodyParts from 'views/character/BodyParts.svelte'
 	import { character } from 'stores/characterStore.js'
 
 	export let mode

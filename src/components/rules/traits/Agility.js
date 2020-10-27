@@ -1,8 +1,7 @@
-import Trait from 'rules/traits/Trait.js'
-import AgilitySkills from 'rules/skills/AgilitySkills.js'
+import Stat from 'rules/Stat.js'
+import AgilitySkills from 'lists/skills/AgilitySkills.js'
 
-
-const Agility = new Trait({
+const Agility = new Stat({
 	id: `c84ca95a-9f01-476f-897c-e6ad07231551`,
 	name: `Agility`,
 	desc: [

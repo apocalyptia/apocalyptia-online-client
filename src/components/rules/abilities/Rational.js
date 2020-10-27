@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const Rational = new Ability({
 	id: `0eb90ec1-e3ac-4e70-a8c1-e6299f1c3abf`,

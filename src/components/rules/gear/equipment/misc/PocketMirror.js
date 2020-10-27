@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const PocketMirror = new Equipment({
+const PocketMirror = new Gear({
 	id: `b61d42d4-cce8-4da4-6eae-930f7a7da673`,
 	name: `Pocket Mirror`,
 	desc: [

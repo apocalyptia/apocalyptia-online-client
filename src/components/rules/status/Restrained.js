@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Restrained = new Rule({
 	id: `a836f410-b9ef-4b32-a753-8b732b8e4b11`,
 	name: `Restrained`,

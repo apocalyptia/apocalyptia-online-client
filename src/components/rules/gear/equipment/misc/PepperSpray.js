@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const PepperSpray = new Equipment({
+const PepperSpray = new Gear({
 	id: `bc0af616-f2b7-46fe-7c40-c248950c436a`,
 	name: `Pepper Spray`,
 	desc: [

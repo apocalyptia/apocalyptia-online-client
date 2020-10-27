@@ -1,18 +1,18 @@
-import Armor from 'gear/armor/Armor.js'
-import Camo from 'gear/attributes/armor/Camo.js'
-import FireResistance from 'gear/attributes/armor/FireResistance.js'
+import Gear from 'gear/Gear.js'
+import Camo from 'attributes/Camo.js'
+import FireResistance from 'attributes/FireResistance.js'
 
-
-const CombatHelmet = new Armor({
+const CombatHelmet = new Gear({
 	id: `6b26c241-5fef-463f-bfc6-cadab2281711`,
 	name: `Combat Helmet`,
 	sz: 2,
-	dr: 3,
-	loc: `Head`,
 	attr: [
 		Camo,
 		FireResistance,
-	]
+	],
+	type: `Armor`
 })
+CombatHelmet.dr = 3
+CombatHelmet.loc = `Head`
 
 export default CombatHelmet

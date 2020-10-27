@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const EarPlugs = new Equipment({
+const EarPlugs = new Gear({
 	id: `2ae22454-3213-4596-95ba-ed2c45148900`,
 	name: `Ear Plugs`,
 	desc: [

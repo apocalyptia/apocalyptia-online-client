@@ -1,16 +1,16 @@
-import Armor from 'gear/armor/Armor.js'
-import FireResistance from 'gear/attributes/armor/FireResistance.js'
+import Gear from 'gear/Gear.js'
+import FireResistance from 'attributes/FireResistance.js'
 
-
-const WorkGloves = new Armor({
+const WorkGloves = new Gear({
 	id: `05dbfaf0-40aa-498e-a19e-d57bcdd1d6b7`,
 	name: `Work Gloves`,
 	sz: 1,
-	dr: 1,
-	loc: `Arms`,
 	attr: [
 		FireResistance,
-	]
+	],
+	type: `Armor`
 })
+WorkGloves.dr = 1
+WorkGloves.loc = `Arms`
 
 export default WorkGloves

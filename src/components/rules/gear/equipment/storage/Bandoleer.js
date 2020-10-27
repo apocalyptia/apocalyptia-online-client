@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const Bandoleer = new Storage({
+const Bandoleer = new Gear({
 	id: `ddb41f64-a0fa-43e8-a4cc-60eb2932e82b`,
 	name: `Bandoleer`,
 	desc: [

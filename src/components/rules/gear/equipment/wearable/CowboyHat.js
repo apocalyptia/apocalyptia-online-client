@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const CowboyHat = new Equipment({
+const CowboyHat = new Gear({
 	id: `f6b35c1e-c93b-46ca-8929-2cc471f04ce2`,
 	name: `Cowboy Hat`,
 	desc: [

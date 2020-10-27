@@ -1,9 +1,7 @@
-import Maneuver from 'rules/maneuvers/Maneuver.js'
+import Rule from 'rules/Rule.js'
 
-
-const Sneak = new Maneuver({
+const Sneak = new Rule({
 	id: `30425d94-d8b5-452f-a884-b145f4f4533b`,
-	cat: `Defensive`,
 	name: `Sneak`, 
 	desc: [
 		`Roll [Stealth vs Perception] to move Concealed at [Speed / 2].`,

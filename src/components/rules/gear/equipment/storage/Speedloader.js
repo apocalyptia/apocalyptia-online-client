@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const Speedloader = new Storage({
+const Speedloader = new Gear({
 	id: `11224942-3b02-412a-a8f5-294ccedd8d15`,
 	name: `Speed-loader`,
 	desc: [

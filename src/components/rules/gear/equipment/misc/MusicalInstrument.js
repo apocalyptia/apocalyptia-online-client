@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const MusicalInstrument = new Equipment({
+const MusicalInstrument = new Gear({
 	id: `901a5d7e-8731-46d1-5597-7511b52118ab`,
 	name: `Musical Instrument`,
 	desc: [

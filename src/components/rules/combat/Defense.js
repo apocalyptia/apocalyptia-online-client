@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
-import ReflexiveDefense from './ReflexiveDefense'
-
+import ReflexiveDefense from 'combat/ReflexiveDefense.js'
 
 const Defense = new Rule({
 	id: `69987b3f-518a-4f96-643c-c82cbd1c1a98`,

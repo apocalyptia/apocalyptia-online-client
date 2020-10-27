@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
-import Chase from './Chase'
-
+import Chase from 'combat/Chase.js'
 
 const Movement = new Rule({
 	id: `66094467-f795-4c02-49e9-0bf193dacaa6`,

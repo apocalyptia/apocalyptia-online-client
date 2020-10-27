@@ -1,20 +1,19 @@
-import RangedWeapon from 'gear/weapons/ranged/RangedWeapon.js'
-import TwoHanded from 'gear/attributes/weapon/TwoHanded.js'
-import Rapid from 'gear/attributes/weapon/Rapid.js'
+import Gear from 'gear/Gear.js'
+import TwoHanded from 'attributes/TwoHanded.js'
+import Rapid from 'attributes/Rapid.js'
 
-
-const Glock17 = new RangedWeapon({
+const Glock17 = new Gear({
 	id: `5f42d732-9acb-40b6-b74d-fc2e42e107c6`,
 	name: `Glock 17`,
 	sz: 1,
-	dmg: 1,
-	rng: 10,
 	attr: [
 		TwoHanded,
 		Rapid,
-	],
-	cap: 17,
-	cal: `9mm`
+	]
 })
+Glock17.dmg = 1
+Glock17.rng = 10
+Glock17.cap = 17
+Glock17.cal = `9mm`
 
 export default Glock17

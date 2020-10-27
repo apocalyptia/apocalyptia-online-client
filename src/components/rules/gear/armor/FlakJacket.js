@@ -1,16 +1,16 @@
-import Armor from 'gear/armor/Armor.js'
-import Camo from 'gear/attributes/armor/Camo.js'
+import Gear from 'gear/Gear.js'
+import Camo from 'attributes/Camo.js'
 
-
-const FlakJacket = new Armor({
+const FlakJacket = new Gear({
 	id: `31e3f366-1adf-4141-912d-0664c5644430`,
 	name: `Flak Jacket`,
 	sz: 4,
-	dr: 2,
-	loc: `Torso`,
 	attr: [
 		Camo,
-	]
+	],
+	type: `Armor`
 })
+FlakJacket.dr = 2
+FlakJacket.loc = `Torso`
 
-export default Camo
+export default FlakJacket

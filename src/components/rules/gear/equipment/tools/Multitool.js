@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const Multitool = new Equipment({
+const Multitool = new Gear({
 	id: `c17183d6-527d-482f-a83b-a2410b5e05bb`,
 	name: `Multi-tool`,
 	desc: [

@@ -1,8 +1,7 @@
-import Trait from 'rules/traits/Trait.js'
-import BrainsSkills from 'rules/skills/BrainsSkills.js'
+import Stat from 'rules/Stat.js'
+import BrainsSkills from 'lists/skills/BrainsSkills.js'
 
-
-const Brains = new Trait({
+const Brains = new Stat({
 	id: `ac0d45e3-221c-4cf3-ab70-a19908b86bd7`,
 	name: `Brains`,
 	desc: [

@@ -1,7 +1,6 @@
-import Equipment from 'gear/equipment/Equipment.js'
+import Gear from 'gear/Gear.js'
 
-
-const RatTrap = new Equipment({
+const RatTrap = new Gear({
 	id: `7f17fc95-3e41-4720-78e7-43caff07d751`,
 	name: `Rat Trap`,
 	desc: [

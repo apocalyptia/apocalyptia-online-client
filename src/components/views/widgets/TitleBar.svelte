@@ -1,5 +1,5 @@
 <script>
-	import UserMenu from './UserMenu.svelte'
+	import UserMenu from 'views/widgets/UserMenu.svelte'
 </script>
 
 

@@ -1,6 +1,5 @@
 import Rule from 'rules/Rule.js'
 
-
 const Bleeding = new Rule({
 	id: `1a2a047c-128c-4136-ad65-0afd81c9362d`,
 	name: `Bleeding`,

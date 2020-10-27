@@ -1,7 +1,6 @@
-import Storage from './Storage'
+import Gear from 'gear/Gear.js'
 
-
-const Lockbox = new Storage({
+const Lockbox = new Gear({
 	id: `84a145e0-51b4-423b-bb39-2ef9672a1768`,
 	name: `Lockbox`,
 	desc: [

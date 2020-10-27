@@ -1,7 +1,6 @@
-import Medical from './Medical'
+import Gear from 'gear/Gear.js'
 
-
-const SurgeryKit = new Medical({
+const SurgeryKit = new Gear({
 	id: `5c63537c-9b70-44cb-9244-911da739b03d`,
 	name: `Surgery Kit`,
 	desc: [

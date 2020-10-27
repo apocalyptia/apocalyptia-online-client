@@ -1,5 +1,4 @@
-import Ability from 'rules/abilities/Ability.js'
-
+import Ability from 'abilities/Ability.js'
 
 const Tough = new Ability({
 	id: `4567f11a-5ee0-4e8d-ae19-b2ebb816397e`,
