@@ -52,6 +52,7 @@
 		{#if ruleList.length}
 			<div class='rule-body-section'>
 				{#each ruleList as rule}
+				<p>t</p>
 					<ManualRule {rule} />
 				{/each}
 			</div>

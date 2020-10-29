@@ -1,15 +1,23 @@
+<script context="module">
+	export async function preload({ params }) {
+		const { chapter } = params
+		return { chapter }
+	}
+</script>
+
+
 <script>
 	import BackButton from 'views/widgets/BackButton.svelte'
 	import Manual from 'rules/lists/Manual.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
 
-	export let params
+	export let chapter
 
-	const chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == params)[0]
+	const chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == chapter)[0]
 
 	const chapterRulesList = chapterObject.list.sort((a, b) => (a.name > b.name)).flat()
 
-	const chapter = chapterObject.name
+	const chapterName = chapterObject.name
 
 	let ruleList = chapterRulesList
 
@@ -33,10 +41,10 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online - Manual - {chapter}</title>
+	<title>Apocalyptia Online - Manual - {chapterName}</title>
 </svelte:head>
 <div class='manual-header-section'>
-	<div class='rules-name'>{chapter}</div>
+	<div class='rules-name'>{chapterName}</div>
 	<input type='text'
 		class='search-bar'
 		placeholder='Search'

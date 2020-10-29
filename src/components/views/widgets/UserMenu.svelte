@@ -28,10 +28,12 @@
 	</button>
 	<ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 		<div hidden={!showMenu} class='user-menu'>
-			<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>
-			<a href='/manual' class='link-btn' on:click={hide}>Manual</a>
-			<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
-			<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>
+			<nav>
+				<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>
+				<a href='/manual' class='link-btn' on:click={hide}>Manual</a>
+				<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
+				<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>
+			</nav>
 		</div>
 	</ClickOutside>
 	<div class='{showMenu ? "shadow" : "invisible"}'></div>
