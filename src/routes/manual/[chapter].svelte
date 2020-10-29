@@ -1,17 +1,9 @@
-<script context="module">
-	export async function preload({ params }) {
-		const { chapter } = params
-		return { chapter }
-	}
-</script>
-
-
 <script>
 	import BackButton from 'views/widgets/BackButton.svelte'
 	import Manual from 'rules/lists/Manual.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
 
-	export let chapter
+	const chapter = window.location.href.substring(window.location.href.lastIndexOf('/')+1)
 
 	const chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == chapter)[0]
 

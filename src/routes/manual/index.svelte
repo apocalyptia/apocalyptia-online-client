@@ -2,6 +2,7 @@
 	import BackButton from 'views/widgets/BackButton.svelte'
 	import Manual from 'rules/lists/Manual.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
+	import { goto } from '@sapper/app'
 
 	let masterRulesList = []
 
@@ -52,7 +53,6 @@
 		{#if ruleList.length}
 			<div class='rule-body-section'>
 				{#each ruleList as rule}
-				<p>t</p>
 					<ManualRule {rule} />
 				{/each}
 			</div>
