@@ -35,6 +35,6 @@ export default {
 		'ranged',
 		'ammo',
 		'armor',
-		'equipment.js'
+		'equipment'
 	]
 }

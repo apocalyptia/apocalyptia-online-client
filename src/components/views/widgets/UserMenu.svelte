@@ -46,9 +46,7 @@
 		width: var(--s300);
 		z-index: 3;
 	}
-	.user-btn:active,
-	.user-btn:focus,
-	.user-btn:hover {
+	.user-btn:focus {
 		background-color: lime;
 		color: rgba(15, 30, 15, 1);
 	}

@@ -6,6 +6,8 @@
 
 	export let mode, category
 
+	$: inventory = $character.gear[category].inventory
+
 	let modalVisible = false
 
 	const toggleAddItemModal = _ => modalVisible = !modalVisible
@@ -16,7 +18,7 @@
 	<summary>{Capitalize(category)}</summary>
 	<div class='gear-category-card'>
 		<div class='gear-item-list'>
-			{#each $character.gear[category].inventory as item, index}
+			{#each inventory as item, index}
 				<GearItem {mode} {category} {item} {index} />
 			{/each}
 		</div>

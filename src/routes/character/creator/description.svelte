@@ -18,7 +18,7 @@
 	<div class='section-card'>
 		<div class='item-block'>
 			<div class='character-container'>
-				<span>Character:</span>
+				<span>Name:</span>
 				<input type='text' bind:value={$character.desc.name.value}>
 				<button on:click={_ => randomDescriptor(1)}>Random</button>
 			</div>

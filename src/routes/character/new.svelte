@@ -10,9 +10,11 @@
 
     const randomCharacter = _ => {
         $character.meta.status.step = 7
-		$character = RandomCharacter($character)
+        $character = RandomCharacter($character)
+        goto(`/character/creator`)
     }
 </script>
+
 
 <svelte:head>
 	<title>Apocalyptia Online - New Character</title>
