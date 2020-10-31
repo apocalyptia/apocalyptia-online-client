@@ -18,6 +18,7 @@ import Rollerblades from 'wearable/Rollerblades.js'
 import RunningShoes from 'wearable/RunningShoes.js'
 import Snorkel from 'wearable/Snorkel.js'
 import Sunglasses from 'wearable/Sunglasses.js'
+import SurgicalMask from 'wearable/SurgicalMask.js'
 import ThermalUnderwear from 'wearable/ThermalUnderwear.js'
 import Wristwatch from 'wearable/Wristwatch.js'
 
@@ -42,6 +43,7 @@ export default [
 	RunningShoes,
 	Snorkel,
 	Sunglasses,
+	SurgicalMask,
 	ThermalUnderwear,
 	Wristwatch,
 ]

@@ -2,17 +2,18 @@ import Rule from 'rules/Rule.js'
 
 export default class Ability extends Rule {
 	constructor({
-		id,
-		name,
 		desc,
 		formula,
-		visible,
+		id,
 		max,
-		xp,
-		taken=0,
+		name,
+		notes=``,
 		opts=[],
 		selection=0,
-		notes=``,
+		taken=0,
+		type=`Ability`,
+		visible,
+		xp
 	}) {
 		super({
 			id,
@@ -20,6 +21,7 @@ export default class Ability extends Rule {
 			desc,
 			visible,
 			formula,
+			type
 		})
 		this.max = max
 		this.xp = xp

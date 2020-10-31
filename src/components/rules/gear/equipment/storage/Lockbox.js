@@ -8,8 +8,8 @@ const Lockbox = new Gear({
 		`Fire Resistance.`,
 		`Larceny(Disable) 9#.`,
 	],
-	sz: 2,
-	slots: 1
+	sz: 2
 })
+Lockbox.slots = 1
 
 export default Lockbox

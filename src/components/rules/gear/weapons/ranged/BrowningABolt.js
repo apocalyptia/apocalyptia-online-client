@@ -3,7 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const BrowningABolt = new Gear({
 	id: `dc61759b-4432-456b-91c5-981c3b34fc65`,
-	name: `Browning A-Bolt`,
+	name: `Browning A-Bolt Rifle`,
 	sz: 4,
 	attr: [
 		TwoHanded,

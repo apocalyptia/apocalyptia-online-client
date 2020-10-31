@@ -3,6 +3,7 @@ import Ammo22List from 'lists/gear/Ammo22List.js'
 import Ammo9mmList from 'lists/gear/Ammo9mmList.js'
 import Ammo357List from 'lists/gear/Ammo357List.js'
 import Ammo556List from 'lists/gear/Ammo556List.js'
+import Ammo762List from 'lists/gear/Ammo762List.js'
 import Ammo308List from 'lists/gear/Ammo308List.js'
 import Ammo12gList from 'lists/gear/Ammo12gList.js'
 
@@ -12,6 +13,7 @@ export default [
 	...Ammo9mmList,
 	...Ammo357List,
 	...Ammo556List,
+	...Ammo762List,
 	...Ammo308List,
 	...Ammo12gList,
 ]

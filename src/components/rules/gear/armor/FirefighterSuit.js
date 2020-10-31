@@ -14,7 +14,7 @@ const FirefighterSuit = new Gear({
 	],
 	type: `Armor`
 })
-FirefighterSuit.dr = 2
+FirefighterSuit.dr = 1
 FirefighterSuit.loc = `Full Body`
 
 export default FirefighterSuit

@@ -6,8 +6,8 @@ const Hoody = new Gear({
 	desc: [
 		`Cold Resistance.`,
 	],
-	sz: 0,
-	slots: 2
+	sz: 0
 })
+Hoody.slots = 2
 
 export default Hoody

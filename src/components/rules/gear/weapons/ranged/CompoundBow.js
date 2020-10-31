@@ -9,7 +9,7 @@ const CompoundBow = new Gear({
 		TwoHanded,
 	]
 })
-CompoundBow.dmg = 1
+CompoundBow.dmg = 2
 CompoundBow.rng = 15
 CompoundBow.cap = 1
 CompoundBow.cal = `Arrow`

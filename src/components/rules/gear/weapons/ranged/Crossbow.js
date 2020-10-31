@@ -9,7 +9,7 @@ const Crossbow = new Gear({
 		TwoHanded,
 	]
 })
-Crossbow.dmg = 2
+Crossbow.dmg = 3
 Crossbow.rng = 15
 Crossbow.cap = 1
 Crossbow.cal = `Arrow`

@@ -1,13 +1,13 @@
 import Ability from 'abilities/Ability.js'
 
 const Discipline = new Ability({
-	id: `de3d6bc9-d188-4936-a62c-f19d2f731dad`,
+	id: `0eb90ec1-e3ac-4e70-a8c1-e6299f1c3abf`,
 	name: `Discipline`,
 	desc: [
-		`Ignore 1 Pain penalty.`,
+		`+1 Psyche.`,
 	],
 	max: 3,
-	xp: 9
+	xp: 24
 })
 
 export default Discipline

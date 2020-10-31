@@ -8,8 +8,8 @@ const ToolBelt = new Gear({
 		`+1 Build.`,
 		`Miscellaneous small tools.`,
 	],
-	sz: 2,
-	slots: 6
+	sz: 2
 })
+ToolBelt.slots = 6
 
 export default ToolBelt

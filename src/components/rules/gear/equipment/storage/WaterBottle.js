@@ -6,8 +6,8 @@ const WaterBottle = new Gear({
 	desc: [
 		`Holds 1 unit (.5gal) of liquid.`,
 	],
-	sz: 1,
-	slots: 1
+	sz: 1
 })
+WaterBottle.slots = 1
 
 export default WaterBottle

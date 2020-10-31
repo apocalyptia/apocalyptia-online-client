@@ -14,7 +14,7 @@ const PlateCarrier = new Gear({
 	],
 	type: `Armor`
 })
-PlateCarrier.dr = 4
+PlateCarrier.dr = 3
 PlateCarrier.loc = `Torso`
 
 export default PlateCarrier

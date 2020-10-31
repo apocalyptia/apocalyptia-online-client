@@ -1,4 +1,4 @@
-import AR15 from 'ranged/AR15.js'
+import ArmaliteAR15 from 'ranged/ArmaliteAR15.js'
 import BenelliM4 from 'ranged/BenelliM4.js'
 import BrowningABolt from 'ranged/BrowningABolt.js'
 import ColtPython from 'ranged/ColtPython.js'
@@ -8,6 +8,7 @@ import Glock17 from 'ranged/Glock17.js'
 import HenryGoldenBoy from 'ranged/HenryGoldenBoy.js'
 import HKMP5 from 'ranged/HKMP5.js'
 import Marlin1894 from 'ranged/Marlin1894.js'
+import NorincoSKS from 'ranged/NorincoSKS.js'
 import Mossberg500 from 'ranged/Mossberg500.js'
 import RecurveBow from 'ranged/RecurveBow.js'
 import Remington700 from 'ranged/Remington700.js'
@@ -19,9 +20,10 @@ import SIGSauerP290 from 'ranged/SIGSauerP290.js'
 import SpringfieldM1A from 'ranged/SpringfieldM1A.js'
 import StoegerCoachgun from 'ranged/StoegerCoachgun.js'
 import SWBodyguard from 'ranged/SWBodyguard.js'
+import WASRAK47 from 'ranged/WASRAK47.js'
 
 export default [
-	AR15,
+	ArmaliteAR15,
 	BenelliM4,
 	BrowningABolt,
 	ColtPython,
@@ -32,6 +34,7 @@ export default [
 	HKMP5,
 	Marlin1894,
 	Mossberg500,
+	NorincoSKS,
 	RecurveBow,
 	Remington700,
 	Remington870,
@@ -42,6 +45,7 @@ export default [
 	SpringfieldM1A,
 	StoegerCoachgun,
 	SWBodyguard,
+	WASRAK47
 ]
 
 

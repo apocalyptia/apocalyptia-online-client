@@ -5,7 +5,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const HKMP5 = new Gear({
 	id: `e9381665-1e1f-48ff-b07f-80bba3f81773`,
-	name: `H&K MP5`,
+	name: `H&K MP5 SMG`,
 	sz: 3,
 	attr: [
 		TwoHanded,

@@ -1,8 +1,8 @@
 import Ability from 'abilities/Ability.js'
 
-const QuickReload = new Ability({
+const TacticalReload = new Ability({
 	id: `5ec7eba9-31dc-49a5-88dc-75f1d1b22490`,
-	name: `Quick Reload`,
+	name: `Tactical Reload`,
 	desc: [
 		`Free Reload once per round.`,
 	],
@@ -10,4 +10,4 @@ const QuickReload = new Ability({
 	xp: 3
 })
 
-export default QuickReload
+export default TacticalReload

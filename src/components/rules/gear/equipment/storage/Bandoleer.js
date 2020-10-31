@@ -6,8 +6,8 @@ const Bandoleer = new Gear({
 	desc: [
 		`Holds 50 bullets of any caliber.`,
 	],
-	sz: 0,
-	slots: 1
+	sz: 0
 })
+Bandoleer.slots = 1
 
 export default Bandoleer

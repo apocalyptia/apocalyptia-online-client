@@ -3,13 +3,13 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const HenryGoldenBoy = new Gear({
 	id: `a0cf85b3-ead3-4460-889a-83e4938c8598`,
-	name: `Henry Golden Boy`,
+	name: `Henry Golden Boy Rifle`,
 	sz: 3,
 	attr: [
 		TwoHanded,
 	]
 })
-HenryGoldenBoy.dmg = 1
+HenryGoldenBoy.dmg = 0
 HenryGoldenBoy.rng = 30
 HenryGoldenBoy.cap = 16
 HenryGoldenBoy.cal = `.22`

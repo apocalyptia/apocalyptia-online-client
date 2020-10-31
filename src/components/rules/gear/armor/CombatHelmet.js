@@ -12,7 +12,7 @@ const CombatHelmet = new Gear({
 	],
 	type: `Armor`
 })
-CombatHelmet.dr = 3
+CombatHelmet.dr = 2
 CombatHelmet.loc = `Head`
 
 export default CombatHelmet

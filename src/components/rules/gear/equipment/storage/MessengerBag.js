@@ -6,8 +6,8 @@ const MessengerBag = new Gear({
 	desc: [
 		`1 round to access.`,
 	],
-	sz: 2,
-	slots: 4
+	sz: 2
 })
+MessengerBag.slots = 4
 
 export default MessengerBag

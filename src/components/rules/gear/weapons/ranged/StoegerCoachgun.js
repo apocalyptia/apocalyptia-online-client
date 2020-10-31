@@ -5,7 +5,7 @@ import Scatter from 'attributes/Scatter.js'
 
 const StoegerCoachgun = new Gear({
 	id: `045bf20f-49ff-4fb5-b300-6088553c066d`,
-	name: `Stoeger Coach Gun`,
+	name: `Stoeger Coach Shotgun`,
 	sz: 3,
 	attr: [
 		TwoHanded,
@@ -13,7 +13,7 @@ const StoegerCoachgun = new Gear({
 		Scatter,
 	]
 })
-StoegerCoachgun.dmg = 4
+StoegerCoachgun.dmg = 5
 StoegerCoachgun.rng = 15
 StoegerCoachgun.cap = 2
 StoegerCoachgun.cal = `12g`

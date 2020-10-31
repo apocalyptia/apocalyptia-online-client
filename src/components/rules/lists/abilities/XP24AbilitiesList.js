@@ -1,7 +1,7 @@
-import Rational from 'abilities/Rational.js'
-import Tough from 'abilities/Tough.js'
+import Discipline from 'abilities/Discipline.js'
+import Healthy from 'abilities/Healthy.js'
 
 export default [
-	Rational,
-	Tough,
+	Discipline,
+	Healthy,
 ]

@@ -3,7 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const SIGSauerP290 = new Gear({
 	id: `16cffbd6-54af-49d2-a531-2d950435250b`,
-	name: `SIG Sauer P290`,
+	name: `SIG Sauer P290 Pistol`,
 	sz: 1,
 	attr: [
 		TwoHanded,

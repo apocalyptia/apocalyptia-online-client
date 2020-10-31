@@ -6,8 +6,8 @@ const BDUJacket = new Gear({
 	desc: [
 		`Camo.`,
 	],
-	sz: 0,
-	slots: 4
+	sz: 0
 })
+BDUJacket.slots = 4
 
 export default BDUJacket

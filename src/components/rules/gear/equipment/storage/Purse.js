@@ -6,8 +6,8 @@ const Purse = new Gear({
 	desc: [
 		`1 round to access.`,
 	],
-	sz: 1,
-	slots: 3
+	sz: 1
 })
+Purse.slots = 3
 
 export default Purse

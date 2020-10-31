@@ -7,8 +7,8 @@ const Canteen = new Gear({
 		`Holds 1 unit (.5gal) of liquid.`,
 		`Metal.`,
 	],
-	sz: 1,
-	slots: 1
+	sz: 1
 })
+Canteen.slots = 1
 
 export default Canteen

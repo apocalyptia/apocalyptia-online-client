@@ -6,8 +6,8 @@ const CargoPants = new Gear({
 	desc: [
 		`Camo.`,
 	],
-	sz: 1,
-	slots: 6
+	sz: 1
 })
+CargoPants.slots = 6
 
 export default CargoPants

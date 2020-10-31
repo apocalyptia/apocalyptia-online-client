@@ -3,7 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const ColtPython = new Gear({
 	id: `8c4ba934-2850-4025-a9bf-188cc08a1c9c`,
-	name: `Colt Python`,
+	name: `Colt Python Revolver`,
 	sz: 1,
 	attr: [
 		TwoHanded,

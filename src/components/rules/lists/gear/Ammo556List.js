@@ -1,4 +1,3 @@
-
 import ArmorPiercing556 from 'ammo/556/ArmorPiercing556.js'
 import HollowPoint556 from 'ammo/556/HollowPoint556.js'
 import Match556 from 'ammo/556/Match556.js'

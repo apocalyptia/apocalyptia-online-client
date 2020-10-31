@@ -1,6 +1,5 @@
 import Abilities from 'lists/abilities/Abilities.js'
 import Combat from 'lists/Combat.js'
-import Complications from 'lists/Complications.js'
 import Core from 'lists/Core.js'
 import GearList from 'lists/gear/GearList.js'
 import Maneuvers from 'lists/maneuvers/Maneuvers.js'
@@ -13,7 +12,6 @@ import Traits from 'lists/Traits.js'
 export default [
     Abilities,
     Combat,
-    Complications,
     Core,
     GearList,
     Maneuvers,

@@ -6,8 +6,8 @@ const ConcealedHolster = new Gear({
 	desc: [
 		`Perception 12# to spot a Size 1 Gun.`,
 	],
-	sz: 0,
-	slots: 1
+	sz: 0
 })
+ConcealedHolster.slots = 1
 
 export default ConcealedHolster

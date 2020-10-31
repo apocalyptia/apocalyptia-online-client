@@ -2,17 +2,19 @@ import Rule from 'rules/Rule.js'
 
 export default class Stat extends Rule {
 	constructor({
-		id,
-		name,
 		desc,
 		formula,
-		score=0
+		id,
+		name,
+		score=0,
+		type=`Stat`
 	}) {
 		super({
 			id,
 			name,
 			desc,
-			formula
+			formula,
+			type
 		})
 		this.score = score
 	}

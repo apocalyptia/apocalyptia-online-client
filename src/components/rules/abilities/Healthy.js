@@ -1,8 +1,8 @@
 import Ability from 'abilities/Ability.js'
 
-const Tough = new Ability({
+const Healthy = new Ability({
 	id: `4567f11a-5ee0-4e8d-ae19-b2ebb816397e`,
-	name: `Tough`,
+	name: `Healthy`,
 	desc: [
 		`+1 Health for each Body Part.`,
 	],
@@ -10,4 +10,4 @@ const Tough = new Ability({
 	xp: 24
 })
 
-export default Tough
+export default Healthy

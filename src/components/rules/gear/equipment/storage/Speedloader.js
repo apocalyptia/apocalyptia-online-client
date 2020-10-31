@@ -6,8 +6,8 @@ const Speedloader = new Gear({
 	desc: [
 		`Reload a revolver cylinder as 1 action.`,
 	],
-	sz: 0,
-	slots: 0
+	sz: 0
 })
+Speedloader.slots = 0
 
 export default Speedloader

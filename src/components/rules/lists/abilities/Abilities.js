@@ -1,15 +1,15 @@
 import Ability from 'abilities/Ability.js'
+import AppendToGUUID from 'utils/AppendToGUUID.js'
 import PropSort from 'utils/PropSort.js'
-import XP3AbilitiesList from 'lists/abilities/XP3AbilitiesList.js'
-import XP6AbilitiesList from 'lists/abilities/XP6AbilitiesList.js'
-import XP9AbilitiesList from 'lists/abilities/XP9AbilitiesList.js'
+import RandomRoll from 'random/RandomRoll.js'
 import XP12AbilitiesList from 'lists/abilities/XP12AbilitiesList.js'
 import XP15AbilitiesList from 'lists/abilities/XP15AbilitiesList.js'
 import XP18AbilitiesList from 'lists/abilities/XP18AbilitiesList.js'
 import XP24AbilitiesList from 'lists/abilities/XP24AbilitiesList.js'
 import XP30AbilitiesList from 'lists/abilities/XP30AbilitiesList.js'
-import AppendToGUUID from 'utils/AppendToGUUID.js'
-import RandomRoll from 'random/RandomRoll.js'
+import XP3AbilitiesList from 'lists/abilities/XP3AbilitiesList.js'
+import XP6AbilitiesList from 'lists/abilities/XP6AbilitiesList.js'
+import XP9AbilitiesList from 'lists/abilities/XP9AbilitiesList.js'
 
 const abilityArray = [
 	...XP3AbilitiesList,

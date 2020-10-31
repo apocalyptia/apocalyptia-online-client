@@ -7,12 +7,14 @@
     import ManualSubRule from 'views/manual/ManualSubRule.svelte'
 
     export let rule
+
+    console.dir(rule)
 </script>
 
 
 <details class='rule-ref' bind:open={rule.visible}>
     <summary>
-        {rule.name}
+        {rule.name}{typeof rule == "Skill" ? " Skill" : "" }
     </summary>
     <div class='rule-body'>
         {#if rule instanceof Gear }

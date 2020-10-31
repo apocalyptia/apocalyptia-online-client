@@ -12,7 +12,7 @@ const KevlarVest = new Gear({
 	],
 	type: `Armor`
 })
-KevlarVest.dr = 3
+KevlarVest.dr = 2
 KevlarVest.loc = `Torso`
 
 export default KevlarVest
