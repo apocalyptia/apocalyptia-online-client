@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Suppressor = new Gear({
 	id: `1b1419c3-48fd-40a5-9ad7-4279f9b6d1dc`,

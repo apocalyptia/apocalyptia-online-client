@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const WaterFilter = new Gear({
 	id: `d055db56-81db-4cfe-f709-85f8de83586a`,

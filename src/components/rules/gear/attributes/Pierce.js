@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Pierce = new Rule({
 	id: `f6f168a6-d4cc-4780-19b8-0da4803bcc14`,

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import DamageResistance from 'combat/DamageResistance.js'
 import FireDamage from 'combat/FireDamage.js'
 import Pain from 'combat/Pain.js'

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Slug from 'attributes/Slug.js'
 
 const Slug12g = new Gear({

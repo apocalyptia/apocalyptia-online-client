@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const AthleticPads = new Gear({
 	id: `799b9afa-d54b-4c9e-9cf8-f498be18b1c0`,

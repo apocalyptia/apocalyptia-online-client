@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Disarm = new Rule({
 	id: `b4812d24-3b7e-43aa-a2d6-7b734520c5e7`,

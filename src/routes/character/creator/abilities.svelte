@@ -1,13 +1,15 @@
 <script>
-	import Abilities from 'lists/abilities/Abilities.js'
+	import Abilities from 'rules/Abilities.js'
+	import AbilitiesList from 'lists/AbilitiesList.js'
 	import AbilityCurrent from 'views/character/AbilityCurrent.svelte'
 	import AbilityGroup from 'views/character/AbilityGroup.svelte'
+	import RandomAbilities from 'random/RandomAbilities.js'
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
-	let MasterAbilityList = Abilities.masterList
+	let MasterAbilityList = AbilitiesList.masterList
 
-	const random = _ => $character = Abilities.random($character)
+	const random = _ => $character = RandomAbilities($character)
 
 	const reset = _ => $character = Abilities.reset($character)
 
@@ -24,7 +26,7 @@
 <div class='creator-page'>
 	<h1>Abilities</h1>
 	<div class='explanation'>
-		{#each Abilities.explanation as line}
+		{#each Abilities.text as line}
 			<p>{line}</p>
 		{/each}
 		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>
@@ -38,7 +40,7 @@
 		</div>
 	{/if}
 	<div class='abilities-list'>
-		{#each Abilities.groups as group, index}
+		{#each AbilitiesList.groups as group}
 			<AbilityGroup {group} {MasterAbilityList}/>
 		{/each}
 	</div>

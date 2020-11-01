@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const DangerSense = new Ability({
 	id: `08da6fd9-59ca-434c-b081-f58fc19c9def`,

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Bandoleer = new Gear({
 	id: `ddb41f64-a0fa-43e8-a4cc-60eb2932e82b`,

@@ -1,5 +1,7 @@
 <script>
-	import Skills from 'lists/skills/Skills.js'
+	import RandomSkills from 'random/RandomSkills.js'
+	import Skills from 'rules/Skills.js'
+	import SkillsList from 'lists/SkillsList.js'
 	import Slider from 'views/widgets/Slider.svelte'
 	import { character } from 'stores/characterStore.js'
 
@@ -7,9 +9,9 @@
 
 	const assign = (event) => $character = Skills.assign($character, event.target)
 
-	const random = _ => $character = Skills.random($character)
+	const random = _ => $character = RandomSkills($character)
 
-	const reset = _ => $character = Skills.reset($character)
+	const reset = _ => $character = $character.resetSkills()
 </script>
 
 
@@ -19,7 +21,7 @@
 <div class='creator-page'>
 	<h1>Skills</h1>
 	<div class='explanation'>
-		{#each Skills.explanation as line}
+		{#each SkillsList.text as line}
 			<p>{line}</p>
 		{/each}
 	</div>
@@ -27,7 +29,7 @@
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
 	<div class='list'>
-		{#each Skills.groups as group}
+		{#each SkillsList.groups as group}
 			<details class='skills-details'>
 				<summary>
 					<span class='group-label'>

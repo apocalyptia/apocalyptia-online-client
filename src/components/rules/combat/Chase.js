@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Chase = new Rule({
 	id: `aa44bbe5-d0e1-4bed-0125-19a3c88c587a`,

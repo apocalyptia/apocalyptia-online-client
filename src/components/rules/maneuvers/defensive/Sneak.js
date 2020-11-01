@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Sneak = new Rule({
 	id: `30425d94-d8b5-452f-a884-b145f4f4533b`,

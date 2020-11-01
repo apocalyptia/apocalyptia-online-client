@@ -1,7 +1,7 @@
 import RandomRoll from 'random/RandomRoll.js'
 import EquipmentList from 'lists/gear/EquipmentList.js'
 
-const RandomEquipment = (c, n) => {
+export default (c, n) => {
     let equipment = []
     for (let i = 0; i < n; i++) { 
         let randomItem = RandomRoll(EquipmentList)
@@ -17,5 +17,3 @@ const RandomEquipment = (c, n) => {
     c.gear.equipment.inventory = [...equipment]
     return c
 }
-
-export default RandomEquipment

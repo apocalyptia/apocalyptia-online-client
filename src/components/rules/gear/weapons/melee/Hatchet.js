@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import OneHanded from 'attributes/OneHanded.js'
 import Chop from 'attributes/Chop.js'
 

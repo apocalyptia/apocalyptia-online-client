@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Starvation = new Rule({
 	id: `93f70ef3-b00f-4e52-9e11-5225262b27e4`,

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const HollowPoint = new Rule({
 	id: `993005af-9d1a-440a-6b22-501ba1eafb28`,

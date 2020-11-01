@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Broadhead = new Rule({
 	id: `f505bab5-8584-461d-067a-ac0f45cc4eb3`,

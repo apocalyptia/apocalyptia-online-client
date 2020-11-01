@@ -1,6 +1,7 @@
 <script>
 	import BodyParts from 'views/character/BodyParts.svelte'
-	import Properties from 'lists/Properties.js'
+	import Properties from 'rules/Properties.js'
+	import PropertiesList from 'lists/PropertiesList.js'
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
@@ -14,7 +15,7 @@
 <div class='creator-page'>
 	<h1>Properties</h1>
 	<div class='explanation'>
-		{#each Properties.explanation as line}
+		{#each Properties.text as line}
 			<p>{line}</p>
 		{/each}
 		<p>Your Character's Properties are calculated automatically:</p>
@@ -23,7 +24,7 @@
 		<summary>Properties Formulae</summary>
 		<div class='formulae-card'>
 			<ul>
-				{#each Properties.list as property}
+				{#each PropertiesList.list as property}
 					{#if property.name == 'Health'}
 						<li>{property.desc[0]}</li>
 						<li>{property.desc[1]}</li>

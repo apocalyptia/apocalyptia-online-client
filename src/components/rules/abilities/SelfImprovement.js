@@ -1,5 +1,5 @@
-import Ability from 'abilities/Ability.js'
-import Traits from 'lists/Traits.js'
+import Ability from 'classes/Ability.js'
+import TraitsList from 'lists/TraitsList.js'
 
 const SelfImprovement = new Ability({
 	id: `34bdd675-5a1c-4fe1-96d4-bac61572cf74`,
@@ -9,7 +9,7 @@ const SelfImprovement = new Ability({
 	],
 	max: 1,
 	xp: 30,
-	opts: Traits.list
+	opts: TraitsList.list
 })
 
 export default SelfImprovement

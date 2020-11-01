@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Duck = new Rule({
 	id: `cac81a46-c688-4b29-a680-502f827987ed`,

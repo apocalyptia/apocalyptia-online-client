@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const FlareGun = new Gear({
 	id: `5821a2de-279f-483d-876c-b3635e4d4df3`,

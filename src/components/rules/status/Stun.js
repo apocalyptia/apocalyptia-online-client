@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Stun = new Rule({
 	id: `ba6cf397-b434-442f-a725-73ee00cf23ca`,
@@ -6,7 +6,8 @@ const Stun = new Rule({
 	desc: [
 		`Defenseless, Harmless, and Immobilized.`,
 		`You fall Prone if Stunned for longer than 1 round.`,
-	]
+	],
+	type: `Status`
 })
 
 export default Stun

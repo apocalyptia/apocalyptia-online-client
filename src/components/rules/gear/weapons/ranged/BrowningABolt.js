@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import TwoHanded from 'attributes/TwoHanded.js'
 
 const BrowningABolt = new Gear({

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Shove = new Rule({
 	id: `0c791227-b8d2-42a6-b5c1-b2aedcab0aad`,

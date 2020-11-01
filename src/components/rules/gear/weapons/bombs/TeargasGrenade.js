@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Blind from 'rules/status/Blind.js'
 import Stun from 'rules/status/Stun.js'
 import Asphyxiation from 'rules/needs/Asphyxiation.js'

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Mask = new Rule({
 	id: `5bd4ae85-eeaf-4031-8a8c-e0e712f6a236`,

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Scatter = new Rule({
 	id: `b59d0456-6b50-466d-1a78-d5446739da0b`,

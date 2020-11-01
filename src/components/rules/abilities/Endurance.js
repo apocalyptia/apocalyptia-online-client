@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Endurance = new Ability({
 	id: `de3d6bc9-d188-4936-a62c-f19d2f731dad`,

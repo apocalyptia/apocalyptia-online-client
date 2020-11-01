@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const HyperImmunity = new Ability({
 	id: `fd940b7e-8502-4aed-8630-bcdc1054216e`,

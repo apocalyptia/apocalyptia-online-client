@@ -6,7 +6,7 @@ import Starvation from 'needs/Starvation.js'
 
 export default {
 	name: `Needs`,
-	explanation: [
+	text: [
 		`Take 1 Pain for each unmet requirement over a given period of time.`,
 	],
 	list: [

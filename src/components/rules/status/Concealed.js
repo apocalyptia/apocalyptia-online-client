@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Concealed = new Rule({
 	id: `56037ac2-9ad0-4097-9cef-621ea8d171e7`,
@@ -8,7 +8,8 @@ const Concealed = new Rule({
 		`Any Attack they make targeting you is at a -6 penalty.`,
 		`Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover.`,
 		`Targets are Defenseless against Attacks from Concealed opponents.`,
-	]
+	],
+	type: `Status`
 })
 
 export default Concealed

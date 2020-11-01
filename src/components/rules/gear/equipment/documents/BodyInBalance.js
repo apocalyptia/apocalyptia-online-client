@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const BodyInBalance = new Gear({
 	id: `3355f314-57f5-4875-4496-d1e80a89bec2`,

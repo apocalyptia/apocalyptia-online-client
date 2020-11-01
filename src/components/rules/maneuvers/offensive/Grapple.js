@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import Grab from 'maneuvers/offensive/Grab.js'
 import Hostage from 'maneuvers/offensive/Hostage.js'
 import Tackle from 'maneuvers/offensive/Tackle.js'

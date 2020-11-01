@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Camo from 'attributes/Camo.js'
 
 const FlakJacket = new Gear({

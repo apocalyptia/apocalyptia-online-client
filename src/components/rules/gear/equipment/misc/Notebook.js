@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Notebook = new Gear({
 	id: `edcd3449-6b01-4e47-fef5-2e65359176ec`,

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const WaterBottle = new Gear({
 	id: `ce28fa26-8497-4234-b2df-2b0560f8d76b`,

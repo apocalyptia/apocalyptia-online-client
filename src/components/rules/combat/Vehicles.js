@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import Conditions from 'combat/vehicles/Conditions.js'
 import Occupants from 'combat/vehicles/Occupants.js'
 import Pedestrians from 'combat/vehicles/Pedestrians.js'

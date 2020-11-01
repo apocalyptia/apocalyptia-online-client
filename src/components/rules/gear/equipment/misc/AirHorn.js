@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const AirHorn = new Gear({
 	id: `3227f45d-6091-4d3f-c6b3-9ad65810be80`,

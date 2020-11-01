@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Impermeable = new Rule({
 	id: `cc89a67e-746f-48db-2466-c5f2d6bf5378`,

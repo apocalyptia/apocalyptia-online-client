@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Hallucinogen = new Gear({
 	id: `462f38ee-ef66-4f76-9110-95802de92a6b`,

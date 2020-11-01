@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Skateboard = new Gear({
 	id: `eda75200-b159-42b6-4029-6dba3d392127`,

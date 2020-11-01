@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Unstable = new Rule({
 	id: `c1da7d28-31a8-468c-a454-157fe3addb62`,
@@ -6,7 +6,8 @@ const Unstable = new Rule({
 	desc: [
 		`-3 penalty to Agility or Constitution Skill rolls.`,
 		`Ranged Attacks targeting you take a -3 penalty.`,
-	]
+	],
+	type: `Status`
 })
 
 export default Unstable

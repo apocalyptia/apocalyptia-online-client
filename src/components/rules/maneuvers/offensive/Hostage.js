@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Hostage = new Rule({
 	id: `43e2df6c-320a-404a-9381-52b6a441df44`,

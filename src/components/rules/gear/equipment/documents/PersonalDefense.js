@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const PersonalDefense = new Gear({
 	id: `8bce5059-df27-43be-aacd-94e5685fe537`,

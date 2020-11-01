@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Difficulty = new Rule({
 	id: `cacf928a-d180-4428-c809-233b8776473e`,

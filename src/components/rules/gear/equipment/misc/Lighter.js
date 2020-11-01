@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Lighter = new Gear({
 	id: `f5393228-3433-4ba1-6aee-4e0a17b276d7`,

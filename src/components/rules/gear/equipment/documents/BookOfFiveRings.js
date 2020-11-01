@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const BookOfFiveRings = new Gear({
 	id: `b8734117-d386-4a48-4547-d64733cabcd7`,

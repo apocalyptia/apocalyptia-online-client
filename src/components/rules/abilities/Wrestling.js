@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Wrestling = new Ability({
 	id: `c565d573-c281-4849-b935-f3388bcd1b1d`,

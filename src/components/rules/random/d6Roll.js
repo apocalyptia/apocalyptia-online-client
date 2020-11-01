@@ -1,6 +1,6 @@
 import d6 from 'random/d6.js'
 
-const d6Roll = (mod=0) => {
+export default (mod=0) => {
 	let roll = d6()
 	let total = roll
 	if (roll == 1) { // Botch
@@ -18,5 +18,3 @@ const d6Roll = (mod=0) => {
 	const result = total + mod
 	return result
 }
-
-export default d6Roll

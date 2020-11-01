@@ -1,6 +1,6 @@
-import Property from 'properties/Property.js'
+import Rule from 'classes/Rule.js'
 
-const Speed = new Property({
+const Speed = new Rule({
 	id: `c7081a3e-1fed-41ee-81a4-2b2fab4942e8`,
 	name: `Speed`,
 	desc: [
@@ -11,7 +11,8 @@ const Speed = new Property({
 	],
 	formula: (c) => {
 		c.props.speed.score = c.traits.agility.score * 3
-	}
+	},
+	type: `Property`
 })
 
 export default Speed

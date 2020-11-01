@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Candle = new Gear({
 	id: `3c1ae77d-8b52-452a-01a1-68aa5a6be931`,

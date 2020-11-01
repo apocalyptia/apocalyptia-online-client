@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Padlock = new Gear({
 	id: `3036a514-0773-4bbe-99ab-37e73ae37adb`,

@@ -26,6 +26,7 @@ const onwarn = (warning, onwarn) =>
 			{ find: 'armor',			replacement: 'src/components/rules/gear/armor' },
 			{ find: 'attributes',		replacement: 'src/components/rules/gear/attributes' },
 			{ find: 'bombs',			replacement: 'src/components/rules/gear/weapons/bombs' },
+			{ find: 'classes',			replacement: 'src/components/classes' },
 			{ find: 'combat',			replacement: 'src/components/rules/combat' },
 			{ find: 'complications',	replacement: 'src/components/rules/complications' },
 			{ find: 'core',				replacement: 'src/components/rules/core' },

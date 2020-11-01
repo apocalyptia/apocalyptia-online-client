@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import acrobatics from 'skills/Acrobatics.js'
 
 const Dodge = new Rule({

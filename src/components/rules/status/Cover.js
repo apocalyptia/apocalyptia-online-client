@@ -1,5 +1,5 @@
-import Rule from 'rules/Rule.js'
-import Table from 'rules/Table.js'
+import Rule from 'classes/Rule.js'
+import Table from 'classes/Table.js'
 
 const Cover = new Rule({
 	id: `9fd0a556-f4c0-4aba-6814-c371f0a8ead0`,
@@ -10,7 +10,8 @@ const Cover = new Rule({
 		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
 		`You can lean in and out of Cover to Attack as part of an Action.`,
 		`Doing so opens you up to a Called Shot against an exposed Body Part if an opponent is waiting for you to lean out of Cover.`,
-	]
+	],
+	type: `Status`
 })
 
 class CoverType {

@@ -1,6 +1,6 @@
-import Property from 'properties/Property.js'
+import Rule from 'classes/Rule.js'
 
-const Carry = new Property({
+const Carry = new Rule({
 	id: `c35b76a8-9912-46fc-b1d3-b0b23b71ef3d`,
 	name: `Carry`,
 	desc: [
@@ -11,8 +11,7 @@ const Carry = new Property({
 		c.props.carry.current = 0
 		c.props.carry.score = c.traits.constitution.score * 3
 	},
-	base: 3,
-	score: 3
+	type: `Property`
 })
 
 export default Carry

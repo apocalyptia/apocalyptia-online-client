@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Flashlight = new Gear({
 	id: `100f3da0-5b60-4a73-b828-0009c2702bf0`,

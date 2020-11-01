@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Matchbook = new Gear({
 	id: `3c615dc7-8c73-4384-4ad3-07fa991cb899`,

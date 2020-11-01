@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const PackMentality = new Ability({
 	id: `7b3b9ab6-157e-4395-ae68-3815c78ae2d4`,

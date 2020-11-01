@@ -1,6 +1,6 @@
-import Property from 'properties/Property.js'
+import Rule from 'classes/Rule.js'
 
-const Experience = new Property({
+const Experience = new Rule({
 	id: `3bee3f4e-dce9-4943-a2d0-1d3a4edc5920`,
 	name: `Experience`,
 	desc: [
@@ -15,7 +15,8 @@ const Experience = new Property({
 	formula: (c) => {
 		c.props.experience.score = c.traits.brains.score * 3
 		c.props.experience.current = c.traits.brains.score * 3
-	}
+	},
+	type: `Property`
 })
 
 export default Experience

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const PocketMirror = new Gear({
 	id: `b61d42d4-cce8-4da4-6eae-930f7a7da673`,

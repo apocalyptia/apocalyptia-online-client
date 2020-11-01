@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import Chase from 'combat/Chase.js'
 
 const Movement = new Rule({

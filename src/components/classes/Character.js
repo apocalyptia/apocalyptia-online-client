@@ -1,4 +1,5 @@
 import GUUIDGenerator from 'utils/GUUIDGenerator.js'
+import PropertiesList from 'lists/PropertiesList.js'
 
 export default class Character {
 	constructor() {
@@ -243,12 +244,36 @@ export default class Character {
 				inventory: []
 			},
 		}
-	}
-	finalize(userId) {
-		if (!this.created) this.created = new Date()
-		this.meta.user = userId
-		this.meta.status.step = 6
-		this.meta.status.completed = true
-		this.meta.modified = new Date()
+		this.resetDescription = () => {
+			for (let description in this.desc) description.value = ``
+			return this
+		}
+		this.resetTraits = () => {
+			for (let traits in this.traits) traits.score = 1
+			return this
+		}
+		this.resetSkills = () => {
+			for (let skills in this.skills) skills.score = 0
+			return this
+		}
+		this.resetProperties = () => {
+			for (let property of PropertiesList.list) property.formula(this)
+			return this
+		}
+		this.resetAbilities = () => {
+			this.abilities = []
+			return this
+		}
+		this.resetGear = () => {
+			for (let gearType in this.gear) gearType.inventory = []
+			return this
+		}
+		this.finalize = (userId) => {
+			if (!this.created) this.created = new Date()
+			this.meta.user = userId
+			this.meta.status.step = 6
+			this.meta.status.completed = true
+			this.meta.modified = new Date()
+		}
 	}
 }

@@ -1,5 +1,5 @@
-import Ability from 'abilities/Ability.js'
-import Skills from 'lists/skills/Skills.js'
+import Ability from 'classes/Ability.js'
+import SkillsList from 'lists/SkillsList.js'
 
 const EfficientWork = new Ability({
 	id: `bc5ad182-ca69-46c9-b013-b92d90d48b07`,
@@ -9,7 +9,7 @@ const EfficientWork = new Ability({
 	],
 	max: 1,
 	xp: 6,
-	opts: Skills.list
+	opts: SkillsList.list
 })
 
 export default EfficientWork

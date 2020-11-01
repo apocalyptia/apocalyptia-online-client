@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Tackle = new Rule({
 	id: `cbc7ab2c-3122-4ab9-b990-c7296e7c66ef`,

@@ -1,15 +1,17 @@
 <script>
 	import Slider from 'views/widgets/Slider.svelte'
-	import Traits from 'lists/Traits.js'
+	import TraitsList from 'lists/TraitsList.js'
+	import Traits from 'rules/Traits.js'
+	import RandomTraits from 'random/RandomTraits.js'
 	import { character } from 'stores/characterStore.js'
 
 	$: remaining = Traits.remaining($character)
 
 	const assign = (event) => $character = Traits.assign($character, event.target)
 
-	const random = _ => $character = Traits.random($character)
+	const random = _ => $character = RandomTraits($character)
 
-	const reset = _ => $character = Traits.reset($character)
+	const reset = _ => $character = $character.resetTraits()
 </script>
 
 
@@ -19,7 +21,7 @@
 <div class='creator-page'>
 	<h1>Traits</h1>
 	<div class='explanation'>
-		{#each Traits.explanation as line}
+		{#each Traits.text as line}
 			<p>{line}</p>
 		{/each}
 	</div>
@@ -27,7 +29,7 @@
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
 	<div class='list'>
-		{#each Traits.list as trait}
+		{#each TraitsList.list as trait}
 			<div class='section-card'>
 				<div class='stat-label'>{trait.name}</div>
 				<div class='stat-column'>

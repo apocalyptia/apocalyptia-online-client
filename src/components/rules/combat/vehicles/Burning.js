@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Burning = new Rule({
 	id: `99551696-bf78-4463-867e-d92dd14c4728`,

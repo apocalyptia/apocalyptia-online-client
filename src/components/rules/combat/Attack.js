@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Attack = new Rule({
 	id: `d253e0e1-36bf-4434-a78b-032196be0e73`,

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Blind = new Rule({
 	id: `5fb3123f-b7f0-4e09-acfb-10ed93b675a8`,
@@ -8,7 +8,8 @@ const Blind = new Rule({
 		`You automatically Fail any Perception roll that involves seeing.`,
 		`You have a -6 penalty to all other rolls that involve seeing.`,
 		`This includes Attacks, in which case all opponents are considered to be Concealed from you.`,
-	]
+	],
+	type: `Status`
 })
 
 export default Blind

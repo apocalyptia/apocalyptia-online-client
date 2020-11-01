@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Binoculars = new Gear({
 	id: `20b85479-d079-4fc0-44e1-dd3fd989850d`,

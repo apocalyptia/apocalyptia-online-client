@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Prone = new Rule({
 	id: `687fbf28-8198-4363-bea5-61d56f878c23`,
@@ -8,7 +8,8 @@ const Prone = new Rule({
 		`Standing up takes 1 Action.`,
 		`The benefits of being Prone are that you get +3 Ranged and +3 Stealth, and attackers take a -3 Ranged penalty to hit you.`,
 		`The drawbacks of being Prone are that your Speed drops to 1yrd and attackers get a +3 Melee bonus to hit you.`,
-	]
+	],
+	type: `Status`
 })
 
 export default Prone

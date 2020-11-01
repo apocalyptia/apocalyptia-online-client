@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const FireDamage = new Rule({
 	id: `62050739-7de6-4a45-6336-fcca96340629`,

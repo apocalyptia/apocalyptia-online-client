@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const FreeRunning = new Ability({
 	id: `6a93067f-ffd4-40dc-9dea-74fdc2a56d7e`,

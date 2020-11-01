@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Tent = new Gear({
 	id: `68073937-9618-405f-b4c5-5b80a08bde6f`,

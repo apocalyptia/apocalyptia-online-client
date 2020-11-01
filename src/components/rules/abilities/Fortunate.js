@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Fortunate = new Ability({
 	id: `0957c2e9-a743-4eca-b429-b9840f8ea931`,

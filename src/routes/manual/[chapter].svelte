@@ -1,11 +1,11 @@
 <script>
 	import BackButton from 'views/widgets/BackButton.svelte'
-	import Manual from 'rules/lists/Manual.js'
+	import ManualList from 'lists/ManualList.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
 
 	const chapter = window.location.href.substring(window.location.href.lastIndexOf('/')+1)
 
-	const chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == chapter)[0]
+	const chapterObject = ManualList.filter(r => r.name.toLocaleLowerCase() == chapter)[0]
 
 	const chapterRulesList = chapterObject.list.sort((a, b) => (a.name > b.name)).flat()
 

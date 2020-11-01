@@ -1,6 +1,6 @@
-import Property from 'properties/Property.js'
+import Rule from 'classes/Rule.js'
 
-const Health = new Property({
+const Health = new Rule({
 	id: `7f6c7b57-75c1-48e8-b5b8-9b5c14ec8d85`,
 	name: `Health`,
 	desc: [
@@ -19,7 +19,8 @@ const Health = new Property({
 				h.current = c.traits.constitution.score
 			}
 		})
-	}
+	},
+	type: `Property`
 })
 
 export default Health

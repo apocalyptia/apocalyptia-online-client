@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const ReflexiveDefense = new Rule({
 	id: `feae7482-800b-47d1-f17c-3a103d83b70b`,

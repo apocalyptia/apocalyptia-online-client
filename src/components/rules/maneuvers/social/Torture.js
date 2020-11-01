@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Torture = new Rule({
 	id: `9da029d0-9c58-4407-812c-396fb59c764b`,

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Push = new Rule({
 	id: `d12992e8-2616-45ad-b909-e8315de8d0a9`,

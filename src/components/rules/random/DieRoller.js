@@ -1,6 +1,6 @@
 import d6Roll from 'random/d6Roll.js'
 
-const DieRoller = _ => {
+export default () => {
 	let result = 6
 	const rolls = 60000
 	const waitTime = 50
@@ -9,5 +9,3 @@ const DieRoller = _ => {
 	}
 	return result
 }
-
-export default DieRoller

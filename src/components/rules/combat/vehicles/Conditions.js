@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Conditions = new Rule({
 	id: `cc809ab8-2747-4095-073b-8214df756d3d`,

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Impermeable from 'attributes/Impermeable.js'
 import Mask from 'attributes/Mask.js'
 

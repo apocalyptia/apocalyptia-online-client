@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Match from 'attributes/Match.js'
 
 const Match308 = new Gear({

@@ -4,7 +4,8 @@ import RandomWeaponAmmo from 'random/RandomWeaponAmmo.js'
 import RandomArmor from 'random/RandomArmor.js'
 import RandomEquipment from 'random/RandomEquipment.js'
 
-const RandomStartingGear = (c, n) => {
+export default (c, n) => {
+    c = c.resetGear()
     c = RandomMeleeWeapon(c)
     c = RandomRangedWeapon(c)
     c = RandomWeaponAmmo(c)
@@ -12,5 +13,3 @@ const RandomStartingGear = (c, n) => {
     c = RandomEquipment(c, n)
     return c
 }
-
-export default RandomStartingGear

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const NonLethalForce = new Rule({
 	id: `76fb1603-4c1d-4b07-a128-c73927f2f036`,

@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import Cooperation from 'core/Cooperation.js'
 import RoteActions from 'core/RoteActions.js'
 

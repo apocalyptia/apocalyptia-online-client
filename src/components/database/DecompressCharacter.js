@@ -1,11 +1,11 @@
-import Character from 'rules/Character.js'
-import AbilitiesList from 'lists/abilities/Abilities.js'
+import Character from 'classes/Character.js'
+import AbilitiesList from 'lists/AbilitiesList.js'
 import ArmorList from 'lists/gear/ArmorList.js'
 import MeleeWeaponList from 'lists/gear/MeleeWeaponList.js'
 import RangedWeaponList from 'lists/gear/RangedWeaponList.js'
 import AmmoList from 'lists/gear/AmmoList.js'
 import EquipmentList from 'lists/gear/EquipmentList.js'
-import Properties from 'lists/Properties.js'
+import Properties from 'rules/Properties.js'
 
 const decompressAbilities = (char, c) => {
 	char.abilities = c.Ab.map(m => {

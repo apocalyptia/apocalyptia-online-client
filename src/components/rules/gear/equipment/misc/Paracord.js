@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Paracord = new Gear({
 	id: `db7dc950-2272-4619-d84c-0794e4ab6181`,

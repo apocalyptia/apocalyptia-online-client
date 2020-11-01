@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Trip = new Rule({
 	id: `0f4236ef-ce76-4942-bbb0-f0f6ca5e840e`,

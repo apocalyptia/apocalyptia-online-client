@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Chalk = new Gear({
 	id: `cb6ca246-f672-499c-ac06-64f36b70d559`,

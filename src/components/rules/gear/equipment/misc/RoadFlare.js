@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const RoadFlare = new Gear({
 	id: `0d1618d3-a749-453a-7142-8ad0baada784`,

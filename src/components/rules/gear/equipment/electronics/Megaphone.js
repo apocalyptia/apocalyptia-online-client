@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Megaphone = new Gear({
 	id: `5e242eff-66c8-41d6-1350-28071590b956`,

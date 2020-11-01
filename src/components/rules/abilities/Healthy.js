@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Healthy = new Ability({
 	id: `4567f11a-5ee0-4e8d-ae19-b2ebb816397e`,

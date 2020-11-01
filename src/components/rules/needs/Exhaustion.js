@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Exhaustion = new Rule({
 	id: `0494a41e-f8f8-45f5-a1ef-5660900e37db`,

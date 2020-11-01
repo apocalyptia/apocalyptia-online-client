@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const GasMask = new Gear({
 	id: `55589bfd-03b7-4773-9f3b-5ecfbd358295`,

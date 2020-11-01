@@ -10,9 +10,6 @@ import Speed from 'properties/Speed.js'
 
 export default {
 	name: `Properties`,
-	explanation: [
-		`Properties represent a variety of attributes that are derived from a Character's Traits and Skills.`
-	],
 	list: [
 		Block,
 		Carry,
@@ -23,9 +20,5 @@ export default {
 		Luck,
 		Psyche,
 		Speed,
-	],
-	setScores: function(c) {
-		this.list.forEach(p => p.formula(c))
-		return c
-	}
+	]
 }

@@ -240,7 +240,7 @@ class Character {
 			status: {
 				completed: false,
 				open: false,
-				step: 1,
+				step: 5,
 			}
 		},
 		this.desc = {
@@ -471,7 +471,7 @@ class Character {
 	finalize(userId) {
 		if (!this.created) this.created = new Date();
 		this.meta.user = userId;
-		this.meta.status.step = 7;
+		this.meta.status.step = 6;
 		this.meta.status.completed = true;
 		this.meta.modified = new Date();
 	}
@@ -620,39 +620,41 @@ const Description = create_ssr_component(($$result, $$props, $$bindings, slots) 
 
 class Rule {
 	constructor({
-		id = null,
-		name=``,
 		desc=[],
 		formula,
+		id = null,
+		name=``,
+		type=`Rule`,
 		visible=false
 	}) {
 		this.id = id;
 		this.name = name;
 		this.desc = desc;
 		this.formula = formula;
+		this.type = type;
 		this.visible = visible;
 	}
 }
 
 class Gear extends Rule {
 	constructor({
+		attr=[],
+		desc,
 		id,
 		name,
-		desc,
-		attr=[],
 		qty=0,
 		sz=0,
-		type='Gear'
+		type=`Gear`
 	}) {
 		super({
+			desc,
 			id,
 			name,
-			desc
+			type
 		});
 		this.attr = attr;
 		this.qty = qty;
 		this.sz = sz;
-		this.type = type;
 	}
 }
 
@@ -767,7 +769,7 @@ const Pierce = new Rule({
 	id: `f6f168a6-d4cc-4780-19b8-0da4803bcc14`,
 	name: `Pierce`,
 	desc: [
-		`+1 Damage to Body Parts with Armor.`,
+		`Ignore 1 level of Damage Reduction.`,
 	]
 });
 
@@ -984,6 +986,34 @@ var Ammo556List = [
 	Standard556,
 ];
 
+const HollowPoint762 = new Gear({
+	id: `4770d5f6-df6f-49c8-8bf7-78d7d0db7584`,
+	name: `7.62mm Hollow Point`,
+	desc: [
+		`Self-defense ammunition.`,
+	],
+	sz: 0.02,
+	attr: [
+		HollowPoint,
+	]
+});
+HollowPoint762.cal = `7.62`;
+
+const Standard762 = new Gear({
+	id: `9251bf41-8b86-49b9-93b5-948b0d268e5f`,
+	name: `7.62mm Standard`,
+	desc: [
+		`Basic ammunition.`,
+	],
+	sz: 0.02
+});
+Standard762.cal = `7.62`;
+
+var Ammo762List = [
+	HollowPoint762,
+	Standard762,
+];
+
 const ArmorPiercing308 = new Gear({
 	id: `08f1864b-66cf-4d61-be54-4139b4242c02`,
 	name: `.308 Armor Piercing`,
@@ -1094,6 +1124,7 @@ var AmmoList = [
 	...Ammo9mmList,
 	...Ammo357List,
 	...Ammo556List,
+	...Ammo762List,
 	...Ammo308List,
 	...Ammo12gList,
 ];
@@ -1150,7 +1181,7 @@ const CombatHelmet = new Gear({
 	],
 	type: `Armor`
 });
-CombatHelmet.dr = 3;
+CombatHelmet.dr = 2;
 CombatHelmet.loc = `Head`;
 
 const ColdResistance = new Rule({
@@ -1193,7 +1224,7 @@ const FirefighterSuit = new Gear({
 	],
 	type: `Armor`
 });
-FirefighterSuit.dr = 2;
+FirefighterSuit.dr = 1;
 FirefighterSuit.loc = `Full Body`;
 
 const FlakJacket = new Gear({
@@ -1265,7 +1296,7 @@ const KevlarVest = new Gear({
 	],
 	type: `Armor`
 });
-KevlarVest.dr = 3;
+KevlarVest.dr = 2;
 KevlarVest.loc = `Torso`;
 
 const LeatherJacket = new Gear({
@@ -1301,7 +1332,7 @@ const PlateCarrier = new Gear({
 	],
 	type: `Armor`
 });
-PlateCarrier.dr = 4;
+PlateCarrier.dr = 3;
 PlateCarrier.loc = `Torso`;
 
 const WinterCoat = new Gear({
@@ -1375,7 +1406,8 @@ const Blind = new Rule({
 		`You automatically Fail any Perception roll that involves seeing.`,
 		`You have a -6 penalty to all other rolls that involve seeing.`,
 		`This includes Attacks, in which case all opponents are considered to be Concealed from you.`,
-	]
+	],
+	type: `Status`
 });
 
 const Stun = new Rule({
@@ -1384,7 +1416,8 @@ const Stun = new Rule({
 	desc: [
 		`Defenseless, Harmless, and Immobilized.`,
 		`You fall Prone if Stunned for longer than 1 round.`,
-	]
+	],
+	type: `Status`
 });
 
 const FlashbangGrenade = new Gear({
@@ -2858,23 +2891,23 @@ var MeleeWeaponList = [
 // new Gear(`Tire Iron`, 2, 1, `Lever.`, 2),
 // new Gear(`Torch`, 1, 1, `Blunt. +1 Fire Damage. 5yd light radius 1hr.`, 2),
 
-const AR15 = new Gear({
+const ArmaliteAR15 = new Gear({
 	id: `69cd0033-60ad-4d4c-aac2-d9584e5766a1`,
-	name: `AR-15`,
+	name: `Armalite AR-15 Rifle`,
 	sz: 3,
 	attr: [
 		TwoHanded,
 		Rapid,
 	]
 });
-AR15.dmg = 2;
-AR15.rng = 30;
-AR15.cap = 30;
-AR15.cal = `5.56`;
+ArmaliteAR15.dmg = 3;
+ArmaliteAR15.rng = 50;
+ArmaliteAR15.cap = 30;
+ArmaliteAR15.cal = `5.56`;
 
 const BenelliM4 = new Gear({
 	id: `00b5ce6e-ce91-4a68-856e-f72538af0261`,
-	name: `Benelli M4`,
+	name: `Benelli M4 Shotgun`,
 	sz: 4,
 	attr: [
 		TwoHanded,
@@ -2882,14 +2915,14 @@ const BenelliM4 = new Gear({
 		Scatter,
 	]
 });
-BenelliM4.dmg = 4;
+BenelliM4.dmg = 5;
 BenelliM4.rng = 15;
 BenelliM4.cap = 6;
 BenelliM4.cal = `12g`;
 
 const BrowningABolt = new Gear({
 	id: `dc61759b-4432-456b-91c5-981c3b34fc65`,
-	name: `Browning A-Bolt`,
+	name: `Browning A-Bolt Rifle`,
 	sz: 4,
 	attr: [
 		TwoHanded,
@@ -2902,7 +2935,7 @@ BrowningABolt.cal = `5.56`;
 
 const ColtPython = new Gear({
 	id: `8c4ba934-2850-4025-a9bf-188cc08a1c9c`,
-	name: `Colt Python`,
+	name: `Colt Python Revolver`,
 	sz: 1,
 	attr: [
 		TwoHanded,
@@ -2921,7 +2954,7 @@ const CompoundBow = new Gear({
 		TwoHanded,
 	]
 });
-CompoundBow.dmg = 1;
+CompoundBow.dmg = 2;
 CompoundBow.rng = 15;
 CompoundBow.cap = 1;
 CompoundBow.cal = `Arrow`;
@@ -2934,14 +2967,14 @@ const Crossbow = new Gear({
 		TwoHanded,
 	]
 });
-Crossbow.dmg = 2;
+Crossbow.dmg = 3;
 Crossbow.rng = 15;
 Crossbow.cap = 1;
 Crossbow.cal = `Arrow`;
 
 const Glock17 = new Gear({
 	id: `5f42d732-9acb-40b6-b74d-fc2e42e107c6`,
-	name: `Glock 17`,
+	name: `Glock 17 Pistol`,
 	sz: 1,
 	attr: [
 		TwoHanded,
@@ -2955,13 +2988,13 @@ Glock17.cal = `9mm`;
 
 const HenryGoldenBoy = new Gear({
 	id: `a0cf85b3-ead3-4460-889a-83e4938c8598`,
-	name: `Henry Golden Boy`,
+	name: `Henry Golden Boy Rifle`,
 	sz: 3,
 	attr: [
 		TwoHanded,
 	]
 });
-HenryGoldenBoy.dmg = 1;
+HenryGoldenBoy.dmg = 0;
 HenryGoldenBoy.rng = 30;
 HenryGoldenBoy.cap = 16;
 HenryGoldenBoy.cal = `.22`;
@@ -2979,7 +3012,7 @@ const Auto = new Rule({
 
 const HKMP5 = new Gear({
 	id: `e9381665-1e1f-48ff-b07f-80bba3f81773`,
-	name: `H&K MP5`,
+	name: `H&K MP5 SMG`,
 	sz: 3,
 	attr: [
 		TwoHanded,
@@ -2994,7 +3027,7 @@ HKMP5.cal = `9mm`;
 
 const Marlin1894 = new Gear({
 	id: `19c418dd-d00d-4a43-bc71-7c373d8aefe9`,
-	name: `Marlin 1894`,
+	name: `Marlin 1894 Rifle`,
 	sz: 3,
 	dmg: 2,
 	rng: 30,
@@ -3009,16 +3042,30 @@ Marlin1894.rng = 30;
 Marlin1894.cap = 9;
 Marlin1894.cal = `.357`;
 
+const NorincoSKS = new Gear({
+	id: `3e9ef3f7-ca05-4235-b6e0-6853d8304679`,
+	name: `Norinco SKS Rifle`,
+	sz: 4,
+	attr: [
+		TwoHanded,
+		Rapid,
+	]
+});
+NorincoSKS.dmg = 4;
+NorincoSKS.rng = 50;
+NorincoSKS.cap = 10;
+NorincoSKS.cal = `7.62`;
+
 const Mossberg500 = new Gear({
 	id: `6f193dc4-5a9e-4eb5-bdf6-59e0ca24c56a`,
-	name: `Mossberg 500`,
+	name: `Mossberg 500 Shotgun`,
 	sz: 2,
 	attr: [
 		TwoHanded,
 		Scatter,
 	]
 });
-Mossberg500.dmg = 4;
+Mossberg500.dmg = 5;
 Mossberg500.rng = 10;
 Mossberg500.cap = 5;
 Mossberg500.cal = `12g`;
@@ -3038,75 +3085,75 @@ RecurveBow.cal = `Arrow`;
 
 const Remington700 = new Gear({
 	id: `6398a22b-e4a9-4c9f-a984-3bf6aaa09146`,
-	name: `Remington 700`,
+	name: `Remington 700 Rifle`,
 	sz: 4,
 	attr: [
 		TwoHanded,
 	]
 });
-Remington700.dmg = 3;
+Remington700.dmg = 6;
 Remington700.rng = 100;
 Remington700.cap = 5;
 Remington700.cal = `.308`;
 
 const Remington870 = new Gear({
 	id: `6398a22b-e4a9-4c9f-a984-3bf6aaa09146`,
-	name: `Remington 870`,
+	name: `Remington 870 Shotgun`,
 	sz: 4,
 	attr: [
 		TwoHanded,
 		Scatter,
 	]
 });
-Remington870.dmg = 4;
+Remington870.dmg = 5;
 Remington870.rng = 15;
 Remington870.cap = 6;
 Remington870.cal = `12g`;
 
 const Ruger1022 = new Gear({
 	id: `94dc2629-a460-4bdc-a90f-0ade229af021`,
-	name: `Ruger 10/22`,
+	name: `Ruger 10/22 Rifle`,
 	sz: 3,
 	attr: [
 		TwoHanded,
 		Rapid,
 	]
 });
-Ruger1022.dmg = 1;
+Ruger1022.dmg = 0;
 Ruger1022.rng = 30;
 Ruger1022.cap = 10;
 Ruger1022.cal = `.22`;
 
 const RugerMkIII = new Gear({
 	id: `739a925f-6d37-4e3f-a15d-af15248fbe1e`,
-	name: `Ruger Mk.III`,
+	name: `Ruger Mk.III Pistol`,
 	sz: 1,
 	attr: [
 		TwoHanded,
 		Rapid,
 	]
 });
-RugerMkIII.dmg = 1;
+RugerMkIII.dmg = 0;
 RugerMkIII.rng = 15;
 RugerMkIII.cap = 10;
 RugerMkIII.cal = `.22`;
 
 const SavageMkII = new Gear({
 	id: `8465b895-4bd0-4c54-b1bb-f411a962ddbb`,
-	name: `Savage Mk.II`,
+	name: `Savage Mk.II Rifle`,
 	sz: 3,
 	attr: [
 		TwoHanded,
 	]
 });
-SavageMkII.dmg = 1;
+SavageMkII.dmg = 0;
 SavageMkII.rng = 40;
 SavageMkII.cap = 10;
 SavageMkII.cal = `.22`;
 
 const SIGSauerP290 = new Gear({
 	id: `16cffbd6-54af-49d2-a531-2d950435250b`,
-	name: `SIG Sauer P290`,
+	name: `SIG Sauer P290 Pistol`,
 	sz: 1,
 	attr: [
 		TwoHanded,
@@ -3119,21 +3166,21 @@ SIGSauerP290.cal = `9mm`;
 
 const SpringfieldM1A = new Gear({
 	id: `ea8867ac-4563-425f-b999-1195cd6f350e`,
-	name: `Springfield M1A`,
+	name: `Springfield M1A Rifle`,
 	sz: 4,
 	attr: [
 		TwoHanded,
 		Rapid,
 	]
 });
-SpringfieldM1A.dmg = 3;
+SpringfieldM1A.dmg = 6;
 SpringfieldM1A.rng = 80;
 SpringfieldM1A.cap = 20;
 SpringfieldM1A.cal = `.308`;
 
 const StoegerCoachgun = new Gear({
 	id: `045bf20f-49ff-4fb5-b300-6088553c066d`,
-	name: `Stoeger Coach Gun`,
+	name: `Stoeger Coach Shotgun`,
 	sz: 3,
 	attr: [
 		TwoHanded,
@@ -3141,14 +3188,14 @@ const StoegerCoachgun = new Gear({
 		Scatter,
 	]
 });
-StoegerCoachgun.dmg = 4;
+StoegerCoachgun.dmg = 5;
 StoegerCoachgun.rng = 15;
 StoegerCoachgun.cap = 2;
 StoegerCoachgun.cal = `12g`;
 
 const SWBodyguard = new Gear({
 	id: `2b58cb89-7b72-42cf-9ec0-d524e5e886a6`,
-	name: `S&W Bodyguard`,
+	name: `S&W Bodyguard Revolver`,
 	sz: 1,
 	attr: [
 		TwoHanded,
@@ -3159,8 +3206,22 @@ SWBodyguard.rng = 5;
 SWBodyguard.cap = 5;
 SWBodyguard.cal = `.357`;
 
+const WASRAK47 = new Gear({
+	id: `027eaaee-2580-47a8-8dcc-40e9905b0f17`,
+	name: `WASR AK-47 Rifle`,
+	sz: 3,
+	attr: [
+		TwoHanded,
+		Rapid,
+	]
+});
+WASRAK47.dmg = 4;
+WASRAK47.rng = 30;
+WASRAK47.cap = 30;
+WASRAK47.cal = `7.62`;
+
 var RangedWeaponList = [
-	AR15,
+	ArmaliteAR15,
 	BenelliM4,
 	BrowningABolt,
 	ColtPython,
@@ -3171,6 +3232,7 @@ var RangedWeaponList = [
 	HKMP5,
 	Marlin1894,
 	Mossberg500,
+	NorincoSKS,
 	RecurveBow,
 	Remington700,
 	Remington870,
@@ -3181,6 +3243,7 @@ var RangedWeaponList = [
 	SpringfieldM1A,
 	StoegerCoachgun,
 	SWBodyguard,
+	WASRAK47
 ];
 
 
@@ -3229,9 +3292,9 @@ const Bandoleer = new Gear({
 	desc: [
 		`Holds 50 bullets of any caliber.`,
 	],
-	sz: 0,
-	slots: 1
+	sz: 0
 });
+Bandoleer.slots = 1;
 
 const BDUJacket = new Gear({
 	id: `4288e7a8-01c0-49aa-8093-0bfaad3f9011`,
@@ -3239,9 +3302,9 @@ const BDUJacket = new Gear({
 	desc: [
 		`Camo.`,
 	],
-	sz: 0,
-	slots: 4
+	sz: 0
 });
+BDUJacket.slots = 4;
 
 const CargoPants = new Gear({
 	id: `5120d13e-d85d-4f58-a74e-e9a1d2d5c4c2`,
@@ -3249,9 +3312,9 @@ const CargoPants = new Gear({
 	desc: [
 		`Camo.`,
 	],
-	sz: 1,
-	slots: 6
+	sz: 1
 });
+CargoPants.slots = 6;
 
 const Canteen = new Gear({
 	id: `a61e20a4-89c8-438e-b483-9da4de93d112`,
@@ -3260,9 +3323,9 @@ const Canteen = new Gear({
 		`Holds 1 unit (.5gal) of liquid.`,
 		`Metal.`,
 	],
-	sz: 1,
-	slots: 1
+	sz: 1
 });
+Canteen.slots = 1;
 
 const ConcealedHolster = new Gear({
 	id: `4796d7d9-15ad-4d4f-9e5c-f85944a9de41`,
@@ -3270,19 +3333,19 @@ const ConcealedHolster = new Gear({
 	desc: [
 		`Perception 12# to spot a Size 1 Gun.`,
 	],
-	sz: 0,
-	slots: 1
+	sz: 0
 });
+ConcealedHolster.slots = 1;
 
 const Cooler = new Gear({
 	id: `3305d4c0-1049-48fd-a478-76f487280f71`,
 	name: `Cooler`,
 	desc: [
-		`Hunted or Foraged Food lasts 6 days.`,
+		`Preserves Hunted or Foraged Food for 6 days.`,
 	],
-	sz: 4,
-	slots: 30
+	sz: 4
 });
+Cooler.slots = 30;
 
 const DuffelBag = new Gear({
 	id: `8b2feee5-b9c9-4a0e-9e9b-c4971de669c3`,
@@ -3290,9 +3353,9 @@ const DuffelBag = new Gear({
 	desc: [
 		`2 rounds to access.`,
 	],
-	sz: 3,
-	slots: 40
+	sz: 3
 });
+DuffelBag.slots = 40;
 
 const FuelCan = new Gear({
 	id: `42db67a0-e9a1-44fe-99ba-e5c62a986bec`,
@@ -3301,9 +3364,9 @@ const FuelCan = new Gear({
 		`5gal Fuel.`,
 		`d6 Fire Damage/gal, 1min, 1yd/gal Blast.`,
 	],
-	sz: 2,
-	slots: 5
+	sz: 2
 });
+FuelCan.slots = 5;
 
 const Hoody = new Gear({
 	id: `cf65b23b-706d-438b-b89d-31e4eb8e6329`,
@@ -3311,9 +3374,9 @@ const Hoody = new Gear({
 	desc: [
 		`Cold Resistance.`,
 	],
-	sz: 0,
-	slots: 2
+	sz: 0
 });
+Hoody.slots = 2;
 
 const HydrationPack = new Gear({
 	id: `5287fe67-386f-43e1-9e65-5be527769990`,
@@ -3321,9 +3384,9 @@ const HydrationPack = new Gear({
 	desc: [
 		`Holds 4 units (2gal) of liquid.`,
 	],
-	sz: 1,
-	slots: 4
+	sz: 1
 });
+HydrationPack.slots = 4;
 
 const Lockbox = new Gear({
 	id: `84a145e0-51b4-423b-bb39-2ef9672a1768`,
@@ -3333,9 +3396,9 @@ const Lockbox = new Gear({
 		`Fire Resistance.`,
 		`Larceny(Disable) 9#.`,
 	],
-	sz: 2,
-	slots: 1
+	sz: 2
 });
+Lockbox.slots = 1;
 
 const MessengerBag = new Gear({
 	id: `6002e120-8d3c-448a-a6cf-e96a53e9cd5d`,
@@ -3343,19 +3406,19 @@ const MessengerBag = new Gear({
 	desc: [
 		`1 round to access.`,
 	],
-	sz: 2,
-	slots: 4
+	sz: 2
 });
+MessengerBag.slots = 4;
 
 const PlasticJug = new Gear({
 	id: `84943a54-249d-4a6e-b374-c4f4b853003c`,
 	name: `Plastic Jug`,
 	desc: [
-		`Holds 2 units (1gal) of liquid.`,
+		`Holds 2 units (1gal).`,
 	],
-	sz: 1,
-	slots: 2
+	sz: 1
 });
+PlasticJug.slots = 2;
 
 const Purse = new Gear({
 	id: `7abdf601-5d37-4d04-9187-6c145f64aa72`,
@@ -3363,9 +3426,9 @@ const Purse = new Gear({
 	desc: [
 		`1 round to access.`,
 	],
-	sz: 1,
-	slots: 3
+	sz: 1
 });
+Purse.slots = 3;
 
 const Speedloader = new Gear({
 	id: `11224942-3b02-412a-a8f5-294ccedd8d15`,
@@ -3373,9 +3436,9 @@ const Speedloader = new Gear({
 	desc: [
 		`Reload a revolver cylinder as 1 action.`,
 	],
-	sz: 0,
-	slots: 0
+	sz: 0
 });
+Speedloader.slots = 0;
 
 const ToolBelt = new Gear({
 	id: `f82fec74-827a-4ce7-988e-d3f7c4da2aec`,
@@ -3385,9 +3448,9 @@ const ToolBelt = new Gear({
 		`+1 Build.`,
 		`Miscellaneous small tools.`,
 	],
-	sz: 2,
-	slots: 6
+	sz: 2
 });
+ToolBelt.slots = 6;
 
 const TrenchCoat = new Gear({
 	id: `fbcf0beb-01c5-443d-b86f-69e0a89078e4`,
@@ -3396,9 +3459,9 @@ const TrenchCoat = new Gear({
 		`Cold Resistance.`,
 		`+1 Stealth.`,
 	],
-	sz: 1,
-	slots: 4
+	sz: 1
 });
+TrenchCoat.slots = 4;
 
 const WaterBottle = new Gear({
 	id: `ce28fa26-8497-4234-b2df-2b0560f8d76b`,
@@ -3406,9 +3469,9 @@ const WaterBottle = new Gear({
 	desc: [
 		`Holds 1 unit (.5gal) of liquid.`,
 	],
-	sz: 1,
-	slots: 1
+	sz: 1
 });
+WaterBottle.slots = 1;
 
 var StorageList = [
 	Backpack,
@@ -3460,7 +3523,7 @@ var GearList = {
 		'ranged',
 		'ammo',
 		'armor',
-		'equipment.js'
+		'equipment'
 	]
 };
 
@@ -3742,7 +3805,7 @@ const DustMask = new Gear({
 	id: `29fde8e8-bca7-4561-b366-8fde6e4ab727`,
 	name: `Dust Mask`,
 	desc: [
-		`+1 Constitution vs airborne toxins.`,
+		`+3 Constitution vs airborne toxins.`,
 		`Mask.`,
 	],
 	sz: 1
@@ -3881,6 +3944,16 @@ const Sunglasses = new Gear({
 	sz: 0
 });
 
+const SurgicalMask = new Gear({
+	id: `ae90da96-8d9d-4b71-b054-6e204cc3977e`,
+	name: `Surgical Mask`,
+	desc: [
+		`+1 Constitution vs airborne toxins.`,
+		`Mask.`
+	],
+	sz: 0
+});
+
 const ThermalUnderwear = new Gear({
 	id: `0c9b6cba-f1e2-4538-96c4-15340ab5e5e3`,
 	name: `Thermal Underwear`,
@@ -3921,6 +3994,7 @@ var WearableList = [
 	RunningShoes,
 	Snorkel,
 	Sunglasses,
+	SurgicalMask,
 	ThermalUnderwear,
 	Wristwatch,
 ];
@@ -4034,7 +4108,7 @@ const GearItem = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 
 const css$4 = {
 	code: ".gear-category.svelte-14kbeq3{border:1px solid lime;box-sizing:border-box;display:block;margin-bottom:var(--s100)}.gear-category-card.svelte-14kbeq3{margin:var(--s100)}",
-	map: "{\"version\":3,\"file\":\"GearCategory.svelte\",\"sources\":[\"GearCategory.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport AddItemModal from 'views/character/AddItemModal.svelte'\\n\\timport Capitalize from 'utils/Capitalize.js'\\n\\timport GearItem from 'views/character/GearItem.svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let mode, category\\n\\n\\tlet modalVisible = false\\n\\n\\tconst toggleAddItemModal = _ => modalVisible = !modalVisible\\n</script>\\n\\n\\n<details class='gear-category' close>\\n\\t<summary>{Capitalize(category)}</summary>\\n\\t<div class='gear-category-card'>\\n\\t\\t<div class='gear-item-list'>\\n\\t\\t\\t{#each $character.gear[category].inventory as item, index}\\n\\t\\t\\t\\t<GearItem {mode} {category} {item} {index} />\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t\\t{#if mode != 'readonly'}\\n\\t\\t\\t<div class='add-section'>\\n\\t\\t\\t\\t<button class='btn-box add-btn' on:click={toggleAddItemModal}>\\n\\t\\t\\t\\t\\t<div class='btn-icon'>&#10010;</div>\\n\\t\\t\\t\\t</button>\\n\\t\\t\\t\\t{#if modalVisible}\\n\\t\\t\\t\\t\\t<AddItemModal on:close={toggleAddItemModal} {category} />\\n\\t\\t\\t\\t{/if}\\n\\t\\t\\t</div>\\n\\t\\t{/if}\\n\\t</div>\\n</details>\\n\\n\\n<style>\\n\\t.gear-category {\\n\\t\\tborder: 1px solid lime;\\n\\t\\tbox-sizing: border-box;\\n\\t\\tdisplay: block;\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.gear-category-card {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAqCC,cAAc,eAAC,CAAC,AACf,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,UAAU,CAAE,UAAU,CACtB,OAAO,CAAE,KAAK,CACd,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,mBAAmB,eAAC,CAAC,AACpB,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"GearCategory.svelte\",\"sources\":[\"GearCategory.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport AddItemModal from 'views/character/AddItemModal.svelte'\\n\\timport Capitalize from 'utils/Capitalize.js'\\n\\timport GearItem from 'views/character/GearItem.svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let mode, category\\n\\n\\t$: inventory = $character.gear[category].inventory\\n\\n\\tlet modalVisible = false\\n\\n\\tconst toggleAddItemModal = _ => modalVisible = !modalVisible\\n</script>\\n\\n\\n<details class='gear-category' close>\\n\\t<summary>{Capitalize(category)}</summary>\\n\\t<div class='gear-category-card'>\\n\\t\\t<div class='gear-item-list'>\\n\\t\\t\\t{#each inventory as item, index}\\n\\t\\t\\t\\t<GearItem {mode} {category} {item} {index} />\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t\\t{#if mode != 'readonly'}\\n\\t\\t\\t<div class='add-section'>\\n\\t\\t\\t\\t<button class='btn-box add-btn' on:click={toggleAddItemModal}>\\n\\t\\t\\t\\t\\t<div class='btn-icon'>&#10010;</div>\\n\\t\\t\\t\\t</button>\\n\\t\\t\\t\\t{#if modalVisible}\\n\\t\\t\\t\\t\\t<AddItemModal on:close={toggleAddItemModal} {category} />\\n\\t\\t\\t\\t{/if}\\n\\t\\t\\t</div>\\n\\t\\t{/if}\\n\\t</div>\\n</details>\\n\\n\\n<style>\\n\\t.gear-category {\\n\\t\\tborder: 1px solid lime;\\n\\t\\tbox-sizing: border-box;\\n\\t\\tdisplay: block;\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.gear-category-card {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAuCC,cAAc,eAAC,CAAC,AACf,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,UAAU,CAAE,UAAU,CACtB,OAAO,CAAE,KAAK,CACd,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,mBAAmB,eAAC,CAAC,AACpB,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
 };
 
 const GearCategory = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -4043,9 +4117,11 @@ const GearCategory = create_ssr_component(($$result, $$props, $$bindings, slots)
 	if ($$props.mode === void 0 && $$bindings.mode && mode !== void 0) $$bindings.mode(mode);
 	if ($$props.category === void 0 && $$bindings.category && category !== void 0) $$bindings.category(category);
 	$$result.css.add(css$4);
+	let inventory;
+	inventory = $character.gear[category].inventory;
 
 	return `<details class="${"gear-category svelte-14kbeq3"}" close><summary>${escape(Capitalize(category))}</summary>
-	<div class="${"gear-category-card svelte-14kbeq3"}"><div class="${"gear-item-list"}">${each($character.gear[category].inventory, (item, index) => `${validate_component(GearItem, "GearItem").$$render($$result, { mode, category, item, index }, {}, {})}`)}</div>
+	<div class="${"gear-category-card svelte-14kbeq3"}"><div class="${"gear-item-list"}">${each(inventory, (item, index) => `${validate_component(GearItem, "GearItem").$$render($$result, { mode, category, item, index }, {}, {})}`)}</div>
 		${mode != "readonly"
 	? `<div class="${"add-section"}"><button class="${"btn-box add-btn"}"><div class="${"btn-icon"}">✚</div></button>
 				${ ``}</div>`
@@ -4125,17 +4201,18 @@ const Health = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 class Ability extends Rule {
 	constructor({
-		id,
-		name,
 		desc,
 		formula,
-		visible,
+		id,
 		max,
-		xp,
-		taken=0,
+		name,
+		notes=``,
 		opts=[],
 		selection=0,
-		notes=``,
+		taken=0,
+		type=`Ability`,
+		visible,
+		xp
 	}) {
 		super({
 			id,
@@ -4143,6 +4220,7 @@ class Ability extends Rule {
 			desc,
 			visible,
 			formula,
+			type
 		});
 		this.max = max;
 		this.xp = xp;
@@ -4152,6 +4230,625 @@ class Ability extends Rule {
 		this.notes = notes;
 	}
 }
+
+var AppendToGUUID = (guuid, mod) => {
+	let hash = mod.split('')
+					.map(m => m = m.charCodeAt(0))
+					.reduce((a, b) => a + b + parseInt(guuid.split(`-`)[4], 16))
+					.toString(16);
+
+	if (hash.length > 12) hash = hash.substr(hash.length - 12, hash.length);
+
+	return guuid.substr(0, guuid.lastIndexOf('-') + 1) + hash
+};
+
+const RandomRoll = (a) => {
+	return a[Math.floor(Math.random() * a.length)]
+};
+
+const Parry = new Ability({
+	id: `4b617dee-aed3-4187-ae5a-25eb83245c20`,
+	name: `Parry`,
+	desc: [
+		`Free Block Action once per round.`,
+	],
+	max: 1,
+	xp: 12
+});
+
+const Sidestep = new Ability({
+	id: `e052bd60-6e03-4d90-9bd8-8b6950a24393`,
+	name: `Side-step`,
+	desc: [
+		`Free Dodge Action once per round.`,
+	],
+	max: 1,
+	xp: 12
+});
+
+const Wrestling = new Ability({
+	id: `c565d573-c281-4849-b935-f3388bcd1b1d`,
+	name: `Wrestling`,
+	desc: [
+		`Free Grapple Action once per round.`,
+	],
+	max: 1,
+	xp: 12
+});
+
+var XP12AbilitiesList = [
+	Parry,
+	Sidestep,
+	Wrestling,
+];
+
+const Charge = new Ability({
+	id: `c44580dd-3a0a-41d5-b97f-ec1f9f4bea0d`,
+	name: `Charge`,
+	desc: [
+		`Ignore Unstable penalty to Melee Attacks when you Run.`,
+		`Ignore Prone effect from Leg Damage.`,
+	],
+	max: 1,
+	xp: 15
+});
+
+const FirmGrip = new Ability({
+	id: `c55b0940-8e72-4c5a-a7bc-0b9b27353ae7`,
+	name: `Firm Grip`,
+	desc: [
+		`Ignore penalty to use 2h weapons in 1h, up to Size = Constitution.`,
+		`Ignore Drop effect from Arm Damage.`,
+	],
+	max: 1,
+	xp: 15
+});
+
+const HardHeaded = new Ability({
+	id: `b02bccad-64ce-477b-9cb3-3883fc2c59f5`,
+	name: `Hard Headed`,
+	desc: [
+		`Ignore Stun effect from Head Damage.`,
+	],
+	max: 1,
+	xp: 15
+});
+
+var XP15AbilitiesList = [
+	Charge,
+	FirmGrip,
+	HardHeaded,
+];
+
+const Ambidextrous = new Ability({
+	id: `1460e48d-10fc-4469-a183-74f6060d0bb4`,
+	name: `Ambidextrous`,
+	desc: [
+		`Off-hand penalty is -1 instead of -3.`,
+	],
+	max: 1,
+	xp: 18
+});
+
+const Assassin = new Ability({
+	id: `742279a1-7749-49c5-b6da-d57eaaa511e4`,
+	name: `Assassin`,
+	desc: [
+		`+3 Damage for Attacks made while Concealed.`,
+	],
+	max: 1,
+	xp: 18
+});
+
+var XP18AbilitiesList = [
+	Ambidextrous,
+	Assassin,
+];
+
+const Discipline = new Ability({
+	id: `0eb90ec1-e3ac-4e70-a8c1-e6299f1c3abf`,
+	name: `Discipline`,
+	desc: [
+		`+1 Psyche.`,
+	],
+	max: 3,
+	xp: 24
+});
+
+const Healthy = new Ability({
+	id: `4567f11a-5ee0-4e8d-ae19-b2ebb816397e`,
+	name: `Healthy`,
+	desc: [
+		`+1 Health for each Body Part.`,
+	],
+	max: 3,
+	xp: 24
+});
+
+var XP24AbilitiesList = [
+	Discipline,
+	Healthy,
+];
+
+const CloseCall = new Ability({
+	id: `6d724fe0-89d1-48ad-b8a0-98bb70b1008c`,
+	name: `Close Call`,
+	desc: [
+		`Spend this Ability to survive an otherwise lethal encounter.`,
+	],
+	max: 1,
+	xp: 30
+});
+
+const Acrobatics = new Rule({
+	id: `f19c07a2-1371-48db-b0bc-a88e5bc4e53b`,
+	name: `Acrobatics`,
+	desc: [
+		`Gymnastic prowess.`,
+	],
+	type: `Skill`
+});
+Acrobatics.parent = `Agility`;
+Acrobatics.diff = 6;
+Acrobatics.specs = {
+	dodge: new Rule({
+		id: `a7451f3a-9970-431a-8304-f36ae046e85b`,
+		name: `Dodge`,
+		desc: [
+			`Roll Acrobatics(Dodge) vs [Melee or Ranged].`,
+			`As part of a Dodge, you may drop Prone for free if you wish.`,
+			`Reflexive Dodge is your Dodge score with no roll.`,
+		]
+	}),
+	jump: new Rule({
+		id: `7a5e0273-8d72-43c3-a826-0a927e2ee0e9`,
+		name: `Jump`,
+		desc: [
+			`Running Jump distance is yards = [Agility].`,
+			`Vertical Jump distance is [Agility x 6] inches.`,
+		]
+	})
+};
+
+const Larceny = new Rule({
+	id: `f8725bd3-a40a-43b6-9b1b-4a9bcd1c957e`,
+	name: `Larceny`,
+	desc: [
+		`Delicate manual operations.`,
+	],
+	type: `Skill`
+});
+Larceny.parent = `Agility`;
+Larceny.diff = `varies`;
+Larceny.specs = {
+	mechanical: new Rule({
+		id: `44d2e074-3316-41f1-a3f9-5252e8e2c0c4`,
+		name: `Mechanical`,
+		desc: [
+			`(d6 rounds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms`,
+			`# by item.`,
+		]
+	}),
+	trick: new Rule({
+		id: `959c5f50-d590-4064-bf23-65737cdafc61`,
+		name: `Trick`,
+		desc: [
+			`Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand.`,
+		]
+	})
+};
+
+const Ranged = new Rule({
+	id: `da193540-c5fc-408d-bf3a-a69aa046fa84`,
+	name: `Ranged`,
+	desc: [
+		`Projectile combat.`,
+	],
+	type: `Skill`
+});
+Ranged.parent = `Agility`;
+Ranged.diff = `Defense`;
+Ranged.spec = {
+	shoot: new Rule({
+		id: `f6a049f5-bc9e-48d2-b0d3-2df479cc7c6e`,
+		name: `Shoot`,
+		desc: [
+			`Roll vs [Dodge or Block (with a Shield)].`,
+		]
+	}),
+	throw: new Rule({
+		id: `c3e75b6f-c686-4c4f-91a8-ee10dfe66b07`,
+		name: `Throw`,
+		desc: [
+			`Roll vs [Dodge or Block]`,
+			`Range is [Constitution x 3yds]`,
+		]
+	})
+};
+
+const Stealth = new Rule({
+	id: `8acb7f56-c5c5-4918-97b9-15260024fb15`,
+	name: `Stealth`,
+	desc: [
+		`Conceal your presence.`,
+	],
+	type: `Skill`
+});
+Stealth.parent = `Agility`;
+Stealth.diff = `Perception`;
+Stealth.specs = {
+	hide: new Rule({
+		id: `bcec6762-9716-497d-894a-626f8e0d77d7`,
+		name: `Hide`,
+		desc: [`Stay motionless and Concealed`,
+			`+3 if Prone.`,]
+	}),
+	sneak: new Rule({
+		id: `7d49df11-ede2-4a18-bb20-711e44f2445b`,
+		name: `Sneak`,
+		desc: [
+			`Move Walk Speed while Concealed.`,
+		]
+	})
+};
+
+var AgilitySkills = [
+	Acrobatics,
+	Larceny,
+	Ranged,
+	Stealth,
+];
+
+const Agility = new Rule({
+	id: `c84ca95a-9f01-476f-897c-e6ad07231551`,
+	name: `Agility`,
+	desc: [
+		`Agility is a Character’s talent for physical coordination.`,
+		`High Agility indicates balance, flexibility, and fine motor skill.`,
+		`This Trait is a factor in the Speed and Dodge Properties.`,
+		`Agility is the parent Trait for the following Skills: ${AgilitySkills.map(skill => skill.name).join(', ')}.`,
+	],
+	type: `Trait`
+});
+
+const Medicine = new Rule({
+	id: `8ebabc07-057f-4568-b6ed-cdb6941d14a6`,
+	name: `Medicine`,
+	desc: [
+		`Diagnosing and treating wounds and Diseases.`,
+	],
+	type: `Skill`
+});
+Medicine.parent = `Brains`;
+Medicine.diff = `Damage`;
+Medicine.specs = {
+	firstaid: new Rule({
+		id: `d99dcfd7-e192-463f-941f-1487ec141793`,
+		name: `First-Aid`,
+		desc: [
+			`Stop a person from Bleeding for a number of hours equal to your roll.`,
+			`Inflict an additional 1 Damage on a Botch.`,
+			`Takes 1 round per Damage.`,
+		]
+	}),
+	surgery: new Rule({
+		id: `84136a49-7dd1-4462-af4d-a9c8e2390f80`,
+		name: `Surgery`,
+		desc: [
+			`Stop a person from Bleeding as long as they do not take any more Damage.`,
+			`Inflict an additional d6 Damage on a Botch.`,
+			`Takes [Damage x 20] minutes.`,
+		]
+	})
+};
+
+const Perception = new Rule({
+	id: `1dd3402d-a974-49d1-ae43-bcc63c4925bc`,
+	name: `Perception`,
+	desc: [
+		`Processing sensory input.`,
+	],
+	type: `Skill`
+});
+Perception.parent = `Brains`;
+Perception.diff = `varies`;
+Perception.specs = {
+	search: new Rule({
+		id: `68ea4f9c-12dd-4bcd-b2a3-a6d70b48a16e`,
+		name: `Search`,
+		desc: [
+			`Roll vs [Stealth (or Survival if tracking)].`,
+		]
+	}),
+	intuition: new Rule({
+		id: `61372444-6825-4ad5-967e-a2b4ce991960`,
+		name: `Intuition`,
+		desc: [
+			`Roll vs [Socialize or Perform].`,
+		]
+	})
+};
+
+const Science = new Rule({
+	id: `5da150b7-8643-4f9d-b9ad-470fa37510ae`,
+	name: `Science`,
+	desc: [
+		`Knowledge of physical laws.`,
+	],
+	type: `Skill`
+});
+Science.parent = `Brains`;
+Science.diff = `varies`;
+Science.specs = {
+	chemistry: new Rule({
+		id: `4f241948-5289-43e5-bc1f-77a04420b6bf`,
+		name: `Chemistry`,
+		desc: [
+			`(# x 10mins) Use [d6 + # Chemicals].`,
+		]
+	}),
+	technology: new Rule({
+		id: `bb45ae73-369d-420d-b949-aac209c9abc7`,
+		name: `Technology`,
+		desc: [
+			`(varies) Make or use electronic devices.`,
+		]
+	})
+};
+
+const Survival = new Rule({
+	id: `2d2322ff-8376-4e04-a00b-be803a9b9f02`,
+	name: `Survival`,
+	desc: [
+		`Primitive practices for living outdoors.`,
+	],
+	type: `Skill`
+});
+Survival.parent = `Brains`;
+Survival.diff = `Biome`;
+Survival.specs = {
+	forage: new Rule({
+		id: `cdb225a5-e82f-4be6-855c-bc78ef6f44fc`,
+		name: `Forage`,
+		desc: [
+			`(1hr) Provide 1 Need for 1 person.`,
+		]
+	}),
+	navigate: new Rule({
+		id: `9c1f6a61-bc28-4dde-b89f-0c9a34555f50`,
+		name: `Navigate`,
+		desc: [
+			`(1min) Plot course`,
+			`Roll vs [Perception] if tracked.`,
+		]
+	})
+};
+
+var BrainsSkills = [
+	Medicine,
+	Perception,
+	Science,
+	Survival,
+];
+
+const Brains = new Rule({
+	id: `ac0d45e3-221c-4cf3-ab70-a19908b86bd7`,
+	name: `Brains`,
+	desc: [
+		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
+		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
+		`This Trait is a factor in the Experience and Intellect Properties.`,
+		`Brains is the parent Trait for the following Skills: ${BrainsSkills.map(skill => skill.name).join(', ')}.`,
+	],
+	type: `Trait`
+});
+
+const Athletics = new Rule({
+	id: `b13484a3-9340-47a2-9fe4-079a886beb56`,
+	name: `Athletics`,
+	desc: [
+		`Physically difficult forms of motion.`,
+	],
+	type: `Skill`
+});
+Athletics.parent = `Constitution`;
+Athletics.diff = `varies`;
+Athletics.specs = {
+	climb: new Rule({
+		id: `fda9b21e-5ee1-448f-a7f5-3d358e9ad062`,
+		name: `Climb`,
+		desc: [
+			`Move along vertical surfaces at [Walk Speed / 2].`,
+		]
+	}),
+	swim: new Rule({
+		id: `f35bb291-4130-4cba-9841-dcc156eba70c`,
+		name: `Swim`,
+		desc: [
+			`Move in water at [Speed / 4].`,
+		]
+	})
+};
+
+const Build = new Rule({
+	id: `20af75d7-79ef-4b7d-b408-1721a7ae11c6`,
+	name: `Build`,
+	desc: [
+		`Make an item from [d6 + #] Parts.`,
+	],
+	type: `Skill`
+});
+Build.parent = `Constitution`;
+Build.diff = `varies`;
+Build.specs = {
+	customize: new Rule({
+		id: `4d055bd5-9413-482f-aeef-ec64ced8d7a0`,
+		name: `Customize`,
+		desc: [
+			`(#hrs) 3 per item`,
+			`Each must be unique`,
+			`Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Rule`,
+			`Armor: +1 Damage Resistance or a new Rule.`,
+		]
+	}),
+	repair: new Rule({
+		id: `5dcd9938-820f-40b6-b1db-051c99295997`,
+		name: `Repair`,
+		desc: [
+			`(#hrs) Fix broken item`,
+			`+1 with same Parts.`,
+		]
+	})
+};
+
+const Drive = new Rule({
+	id: `19aeb7ad-c940-4c7c-b238-cc77c05d1fc4`,
+	name: `Drive`,
+	desc: [
+		`Operate vehicles.`,
+	],
+	type: `Skill`
+});
+Drive.parent = `Constitution`;
+Drive.diff = `varies`;
+Drive.specs = {
+	ram: new Rule({
+		id: `9483457c-5e90-4225-932f-f010077fecad`,
+		name: `Ram`,
+		desc: [
+			`Roll vs [Drive(Stunt)] to Attack with a vehicle.`,
+		]
+	}),
+	stunt: new Rule({
+		id: `47a939cf-88ba-4773-bf52-4d383fb38695`,
+		name: `Stunt`,
+		desc: [
+			`Roll vs [Drive(Ram)] for Defense with a vehicle.`,
+		]
+	})
+};
+
+const Melee = new Rule({
+	id: `1f84042e-c02b-477f-8662-41d3a0ccc4d5`,
+	name: `Melee`,
+	desc: [
+		`Hand-to-hand combat.`,
+	],
+	type: `Skill`
+});
+Melee.parent = `Constitution`;
+Melee.diff = `Attack or Defense`;
+Melee.specs = {
+	block: new Rule({
+		id: `ad9c0c5a-f399-4f81-ba33-6242b17fc5e6`,
+		name: `Block`,
+		desc: [
+			`Roll vs [Melee or Ranged (if you have a Shield)].`,
+			`Reflexive Block is your Block score with no roll.`,
+		]
+	}),
+	strike: new Rule({
+		id: `1842e006-c064-4994-9f03-27e54f1d7b9f`,
+		name: `Strike`,
+		desc: [
+			`Roll vs [Defense].`,
+			`Damage = [weapon Damage + Success].`,
+		]
+	})
+};
+
+var ConstitutionSkills = [
+	Athletics,
+	Build,
+	Drive,
+	Melee,
+];
+
+const Constitution = new Rule({
+	id: `da48b9f5-de7d-44b3-bb24-392e69bebe90`,
+	name: `Constitution`,
+	desc: [
+		`Constitution is a Character’s talent for physical power and durability.`,
+		`High Constitution indicates good health, high stamina, and strong muscles.`,
+		`This Trait is a factor in the Health and Block Properties.`,
+		`Constitution is the parent Trait for the following Skills: ${ConstitutionSkills.map(skill => skill.name).join(', ')}.`,
+	],
+	type: `Trait`
+});
+
+const Demeanor = new Rule({
+	id: `2f73a727-6149-482e-9c36-70cccbfd03d4`,
+	name: `Demeanor`,
+	desc: [
+		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
+		`High Demeanor indicates charisma, self-motivation, and confidence.`,
+		`This Trait is a factor in the Psyche and Luck Properties.`,
+		`Demeanor is the parent Trait for the following Skills: ${ConstitutionSkills.map(skill => skill.name).join(', ')}.`,
+	],
+	type: `Trait`
+});
+
+const traitMax = 6;
+
+const traitPoints = 14;
+
+var Traits = {
+	name: `Traits`,
+	explanation: [
+		`You get ${traitPoints} Trait points to assign.`,
+		`Traits range from 1 to ${traitMax}.`,
+		`Trait rolls are [d6 + Trait].`,
+		`Trait scores set the limit for their Skills.`,
+	],
+	list: [
+		Agility,
+		Brains,
+		Constitution,
+		Demeanor,
+	],
+	max: traitMax,
+	startingPoints: _ => traitPoints,
+	assign: function(c, target) {
+		c.traits[target.name].score = parseInt(target.value);
+		return this.limit(c, target.name)
+	},
+	limit: function(c, targetName) {
+		while(this.remaining(c) < 0) c.traits[targetName].score--;
+		return c
+	},
+	random: function(c) {
+		c = this.reset(c);
+		while(this.remaining(c) > 0) {
+			const t = RandomRoll(Object.keys(c.traits));
+			if (c.traits[t].score < this.max) c.traits[t].score++;
+		}
+		return c
+	},
+	remaining: function(c) {
+		const spent = Object.values(c.traits).reduce((t, { score }) => t += score, 0);
+		return this.startingPoints() - spent
+	},
+	reset: function(c) {
+		Object.keys(c.traits).forEach(t => c.traits[t].score = 1);
+		return c
+	}
+};
+
+const SelfImprovement = new Ability({
+	id: `34bdd675-5a1c-4fe1-96d4-bac61572cf74`,
+	name: `Self Improvement`,
+	desc: [
+		`+1 to a Trait (max 6).`,
+	],
+	max: 1,
+	xp: 30,
+	opts: Traits.list
+});
+
+var XP30AbilitiesList = [
+	CloseCall,
+	SelfImprovement,
+];
 
 var WeaponList = [
 	...MeleeWeaponList,
@@ -4189,533 +4886,131 @@ const PackMentality = new Ability({
 	xp: 3
 });
 
-const QuickReload = new Ability({
-	id: `5ec7eba9-31dc-49a5-88dc-75f1d1b22490`,
-	name: `Quick Reload`,
-	desc: [
-		`Free Reload once per round.`,
-	],
-	max: 1,
-	xp: 3
-});
-
-class Stat extends Rule {
-	constructor({
-		id,
-		name,
-		desc,
-		formula,
-		score=0
-	}) {
-		super({
-			id,
-			name,
-			desc,
-			formula
-		});
-		this.score = score;
-	}
-}
-
-class Skill extends Stat {
-	constructor({
-		id,
-		name,
-		desc,
-		base,
-		mods,
-		score,
-		diff,
-		specs={},
-		parent=``
-	}) {
-		super({
-			id,
-			name,
-			desc,
-			base,
-			mods,
-			score
-		});
-		this.diff = diff;
-		this.specs = specs;
-		this.parent = parent;
-	}
-}
-
-const Acrobatics = new Skill({
-	id: `f19c07a2-1371-48db-b0bc-a88e5bc4e53b`,
-	name: `Acrobatics`,
-	desc: [
-		`Gymnastic prowess.`,
-	],
-	parent: `Agility`,
-	diff: 6,
-	specs: {
-		dodge: new Stat({
-			id: `a7451f3a-9970-431a-8304-f36ae046e85b`,
-			name: `Dodge`,
-			desc: [
-				`Roll Acrobatics(Dodge) vs [Melee or Ranged].`,
-				`As part of a Dodge, you may drop Prone for free if you wish.`,
-				`Reflexive Dodge is your Dodge score with no roll.`,
-			]
-		}),
-		jump: new Stat({
-			id: `7a5e0273-8d72-43c3-a826-0a927e2ee0e9`,
-			name: `Jump`,
-			desc: [
-				`Running Jump distance is yards = [Agility].`,
-				`Vertical Jump distance is [Agility x 6] inches.`,
-			]
-		})
-	}
-});
-
-const Larceny = new Skill({
-	id: `f8725bd3-a40a-43b6-9b1b-4a9bcd1c957e`,
-	name: `Larceny`,
-	desc: [
-		`Delicate manual operations.`,
-	],
-	parent: `agility`,
-	diff: `varies`,
-	specs: {
-		mechanical: new Stat({
-			id: `44d2e074-3316-41f1-a3f9-5252e8e2c0c4`,
-			name: `Mechanical`,
-			desc: [
-				`(d6 rounds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms`,
-				`# by item.`,
-			]
-		}),
-		trick: new Stat({
-			id: `959c5f50-d590-4064-bf23-65737cdafc61`,
-			name: `Trick`,
-			desc: [
-				`Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand.`,
-			]
-		})
-	}
-});
-
-const Ranged = new Skill({
-	id: `da193540-c5fc-408d-bf3a-a69aa046fa84`,
-	name: `Ranged`,
-	desc: [
-		`Projectile combat.`,
-	],
-	parent: `Agility`,
-	diff: `Defense`,
-	specs: {
-		shoot: new Stat({
-			id: `f6a049f5-bc9e-48d2-b0d3-2df479cc7c6e`,
-			name: `Shoot`,
-			desc: [
-				`Roll vs [Dodge or Block (with a Shield)].`,
-			]
-		}),
-		throw: new Stat({
-			id: `c3e75b6f-c686-4c4f-91a8-ee10dfe66b07`,
-			name: `Throw`,
-			desc: [
-				`Roll vs [Dodge or Block]`,
-				`Range is [Constitution x 3yds]`,
-			]
-		})
-	}
-});
-
-const Stealth = new Skill({
-	id: `8acb7f56-c5c5-4918-97b9-15260024fb15`,
-	name: `Stealth`,
-	desc: [
-		`Conceal your presence.`,
-	],
-	parent: `Agility`,
-	diff: `Perception`,
-	specs: {
-		hide: new Stat({
-			id: `bcec6762-9716-497d-894a-626f8e0d77d7`,
-			name: `Hide`,
-			desc: [`Stay motionless and Concealed`,
-				`+3 if Prone.`,]
-		}),
-		sneak: new Stat({
-			id: `7d49df11-ede2-4a18-bb20-711e44f2445b`,
-			name: `Sneak`,
-			desc: [
-				`Move Walk Speed while Concealed.`,
-			]
-		})
-	}
-});
-
-var AgilitySkills = [
-	Acrobatics,
-	Larceny,
-	Ranged,
-	Stealth,
-];
-
-const Medicine = new Skill({
-	id: `8ebabc07-057f-4568-b6ed-cdb6941d14a6`,
-	name: `Medicine`,
-	desc: [
-		`Diagnosing and treating wounds and Diseases.`,
-	],
-	parent: `Brains`,
-	diff: `Damage`,
-	specs: {
-		firstaid: new Stat({
-			id: `d99dcfd7-e192-463f-941f-1487ec141793`,
-			name: `First-Aid`,
-			desc: [
-				`Stop a person from Bleeding for a number of hours equal to your roll.`,
-				`Inflict an additional 1 Damage on a Botch.`,
-				`Takes 1 round per Damage.`,
-			]
-		}),
-		surgery: new Stat({
-			id: `84136a49-7dd1-4462-af4d-a9c8e2390f80`,
-			name: `Surgery`,
-			desc: [
-				`Stop a person from Bleeding as long as they do not take any more Damage.`,
-				`Inflict an additional d6 Damage on a Botch.`,
-				`Takes [Damage x 20] minutes.`,
-			]
-		})
-	}
-});
-
-const Perception = new Skill({
-	id: `1dd3402d-a974-49d1-ae43-bcc63c4925bc`,
-	name: `Perception`,
-	desc: [
-		`Processing sensory input.`,
-	],
-	parent: `Brains`,
-	diff: `varies`,
-	specs: {
-		search: new Stat({
-			id: `68ea4f9c-12dd-4bcd-b2a3-a6d70b48a16e`,
-			name: `Search`,
-			desc: [
-				`Roll vs [Stealth (or Survival if tracking)].`,
-			]
-		}),
-		intuition: new Stat({
-			id: `61372444-6825-4ad5-967e-a2b4ce991960`,
-			name: `Intuition`,
-			desc: [
-				`Roll vs [Socialize or Perform].`,
-			]
-		})
-	}
-});
-
-const Science = new Skill({
-	id: `5da150b7-8643-4f9d-b9ad-470fa37510ae`,
-	name: `Science`,
-	desc: [
-		`Knowledge of physical laws.`,
-	],
-	parent: `Brains`,
-	diff: `varies`,
-	specs: {
-		chemistry: new Stat({
-			id: `4f241948-5289-43e5-bc1f-77a04420b6bf`,
-			name: `Chemistry`,
-			desc: [
-				`(# x 10mins) Use [d6 + # Chemicals].`,
-			]
-		}),
-		technology: new Stat({
-			id: `bb45ae73-369d-420d-b949-aac209c9abc7`,
-			name: `Technology`,
-			desc: [
-				`(varies) Make or use electronic devices.`,
-			]
-		})
-	}
-});
-
-const Survival = new Skill({
-	id: `2d2322ff-8376-4e04-a00b-be803a9b9f02`,
-	name: `Survival`,
-	desc: [
-		`Primitive practices for living outdoors.`,
-	],
-	parent: `Brains`,
-	diff: `Biome`,
-	specs: {
-		forage: new Stat({
-			id: `cdb225a5-e82f-4be6-855c-bc78ef6f44fc`,
-			name: `Forage`,
-			desc: [
-				`(1hr) Provide 1 Need for 1 person.`,
-			]
-		}),
-		navigate: new Stat({
-			id: `9c1f6a61-bc28-4dde-b89f-0c9a34555f50`,
-			name: `Navigate`,
-			desc: [
-				`(1min) Plot course`,
-				`Roll vs [Perception] if tracked.`,
-			]
-		})
-	}
-});
-
-var BrainsSkills = [
-	Medicine,
-	Perception,
-	Science,
-	Survival,
-];
-
-const Athletics = new Skill({
-	id: `b13484a3-9340-47a2-9fe4-079a886beb56`,
-	name: `Athletics`,
-	desc: [
-		`Physically difficult forms of motion.`,
-	],
-	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
-		climb: new Stat({
-			id: `fda9b21e-5ee1-448f-a7f5-3d358e9ad062`,
-			name: `Climb`,
-			desc: [
-				`Move along vertical surfaces at [Walk Speed / 2].`,
-			]
-		}),
-		swim: new Stat({
-			id: `f35bb291-4130-4cba-9841-dcc156eba70c`,
-			name: `Swim`,
-			desc: [
-				`Move in water at [Speed / 4].`,
-			]
-		})
-	}
-});
-
-const Build = new Skill({
-	id: `20af75d7-79ef-4b7d-b408-1721a7ae11c6`,
-	name: `Build`,
-	desc: [
-		`Make an item from [d6 + #] Parts.`,
-	],
-	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
-		customize: new Stat({
-			id: `4d055bd5-9413-482f-aeef-ec64ced8d7a0`,
-			name: `Customize`,
-			desc: [
-				`(#hrs) 3 per item`,
-				`Each must be unique`,
-				`Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Rule`,
-				`Armor: +1 Damage Resistance or a new Rule.`,
-			]
-		}),
-		repair: new Stat({
-			id: `5dcd9938-820f-40b6-b1db-051c99295997`,
-			name: `Repair`,
-			desc: [
-				`(#hrs) Fix broken item`,
-				`+1 with same Parts.`,
-			]
-		})
-	}
-});
-
-const Drive = new Skill({
-	id: `19aeb7ad-c940-4c7c-b238-cc77c05d1fc4`,
-	name: `Drive`,
-	desc: [
-		`Operate vehicles.`,
-	],
-	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
-		ram: new Stat({
-			id: `9483457c-5e90-4225-932f-f010077fecad`,
-			name: `Ram`,
-			desc: [
-				`Roll vs [Drive(Stunt)] to Attack with a vehicle.`,
-			]
-		}),
-		stunt: new Stat({
-			id: `47a939cf-88ba-4773-bf52-4d383fb38695`,
-			name: `Stunt`,
-			desc: [
-				`Roll vs [Drive(Ram)] for Defense with a vehicle.`,
-			]
-		})
-	}
-});
-
-const Melee = new Skill({
-	id: `1f84042e-c02b-477f-8662-41d3a0ccc4d5`,
-	name: `Melee`,
-	desc: [
-		`Hand-to-hand combat.`,
-	],
-	parent: `Constitution`,
-	diff: `Attack or Defense`,
-	specs: {
-		block: new Stat({
-			id: `ad9c0c5a-f399-4f81-ba33-6242b17fc5e6`,
-			name: `Block`,
-			desc: [
-				`Roll vs [Melee or Ranged (if you have a Shield)].`,
-				`Reflexive Block is your Block score with no roll.`,
-			]
-		}),
-		strike: new Stat({
-			id: `1842e006-c064-4994-9f03-27e54f1d7b9f`,
-			name: `Strike`,
-			desc: [
-				`Roll vs [Defense].`,
-				`Damage = [weapon Damage + Success].`,
-			]
-		})
-	}
-});
-
-var DemeanorSkills = [
-	Athletics,
-	Build,
-	Drive,
-	Melee,
-];
-
-const Leadership = new Skill({
+const Leadership = new Rule({
 	id: `7596f84f-d625-409d-a7b0-4e0775d96719`,
 	name: `Leadership`,
 	desc: [
 		`Directing the efforts of others`,
 		`Modifiers from multiple uses of the same Leadership Specialty do not stack.`,
 	],
-	parent: `Demeanor`,
-	diff: `Demeanor`,
-	specs: {
-		encourage: new Stat({
-			id: `95b70f3c-d67e-41ae-99ff-2d5864356a59`,
-			name: `Encourage`,
-			desc: [
-				`Roll vs [total target(s) Demeanor]`,
-				`Target(s) get a bonus = [your Demeanor] to one roll you choose.`,
-			]
-		}),
-		intimidate: new Stat({
-			id: `ff3e883c-2952-459e-8dbf-d3f666383ec9`,
-			name: `Intimidate`,
-			desc: [
-				`Roll vs [total target(s) Demeanor]`,
-				`Target(s) take a penalty = [your Demeanor] to any roll except one you choose.`
-			]
-		})
-	}
+	type: `Skill`
 });
+Leadership.parent = `Demeanor`;
+Leadership.diff = `Demeanor`;
+Leadership.specs = {
+	encourage: new Rule({
+		id: `95b70f3c-d67e-41ae-99ff-2d5864356a59`,
+		name: `Encourage`,
+		desc: [
+			`Roll vs [total target(s) Demeanor]`,
+			`Target(s) get a bonus = [your Demeanor] to one roll you choose.`,
+		]
+	}),
+	intimidate: new Rule({
+		id: `ff3e883c-2952-459e-8dbf-d3f666383ec9`,
+		name: `Intimidate`,
+		desc: [
+			`Roll vs [total target(s) Demeanor]`,
+			`Target(s) take a penalty = [your Demeanor] to any roll except one you choose.`
+		]
+	})
+};
 
-const Perform = new Skill({
+const Perform = new Rule({
 	id: `4507c9b3-3b2e-4c05-be79-89785735180d`,
 	name: `Perform`,
 	desc: [
 		`Captivating an audience.`,
 	],
-	parent: `Demeanor`,
-	diff: `Perception`,
-	specs: {
-		distract: new Stat({
-			id: `e0029c54-6812-4b0d-b143-f1f8dbc806b0`,
-			name: `Distract`,
-			desc: [
-				`Target is Defenseless for 1 round.`,
-			]
-		}),
-		deceive: new Stat({
-			id: `f6ded447-ec92-4720-8f68-812e8d3a02f5`,
-			name: `Deceive`,
-			desc: [
-				`Target believes your plausible falsehood.`,
-			]
-		})
-	}
+	type: `Skill`
 });
+Perform.parent = `Demeanor`;
+Perform.diff = `Perception`;
+Perform.specs = {
+	distract: new Rule({
+		id: `e0029c54-6812-4b0d-b143-f1f8dbc806b0`,
+		name: `Distract`,
+		desc: [
+			`Target is Defenseless for 1 round.`,
+		]
+	}),
+	deceive: new Rule({
+		id: `f6ded447-ec92-4720-8f68-812e8d3a02f5`,
+		name: `Deceive`,
+		desc: [
+			`Target believes your plausible falsehood.`,
+		]
+	})
+};
 
-const Socialize = new Skill({
+const Socialize = new Rule({
 	id: `aa5d33c4-d9ec-4974-8064-55aba4e75d88`,
 	name: `Socialize`,
 	desc: [
 		`Alter a person’s Attitude by one step.`,
 	],
-	parent: `Demeanor`,
-	diff: `Demeanor`,
-	specs: {
-		persuade: new Stat({
-			id: `8ad47e9b-a223-455f-9499-72a012509577`,
-			name: `Persuade`,
-			desc: [
-				`(d6mins) Target seriously considers your opinion.`,
-			]
-		}),
-		therapy: new Stat({
-			id: `83398ae1-5fad-45ef-a523-09d2b403ac7c`,
-			name: `Therapy`,
-			desc: [
-				`Heal 1 Trauma`,
-				`Cannot be performed again on the same day.`,
-				`d6 Trauma on a Botch.`,
-			]
-		})
-	}
+	type: `Skill`
 });
+Socialize.parent = `Demeanor`;
+Socialize.diff = `Demeanor`;
+Socialize.specs = {
+	persuade: new Rule({
+		id: `8ad47e9b-a223-455f-9499-72a012509577`,
+		name: `Persuade`,
+		desc: [
+			`(d6mins) Target seriously considers your opinion.`,
+		]
+	}),
+	therapy: new Rule({
+		id: `83398ae1-5fad-45ef-a523-09d2b403ac7c`,
+		name: `Therapy`,
+		desc: [
+			`Heal 1 Trauma`,
+			`Cannot be performed again on the same day.`,
+			`d6 Trauma on a Botch.`,
+		]
+	})
+};
 
-const Tame = new Skill({
+const Tame = new Rule({
 	id: `1e616ba5-99fb-4f11-853f-fe938eed016b`,
 	name: `Tame`,
 	desc: [
 		`Alter an animal’s Attitude by one step.`,
 	],
-	parent: `Demeanor`,
-	diff: `Demeanor`,
-	specs: {
-		command: new Stat({
-			id: `81e355cf-c841-4c88-802b-1d4c170ef741`,
-			name: `Command`,
-			desc: [
-				`Animal obeys your command.`,
-			]
-		}),
-		train: new Stat({
-			id: `ee8cc929-151e-4f6c-abff-293379d5ee53`,
-			name: `Train`,
-			desc: [
-				`(1wk) Animals learn commands = [its Brains x 2].`,
-			]
-		})
-	}
+	type: `Skill`
 });
+Tame.parent = `Demeanor`;
+Tame.diff = `Demeanor`;
+Tame.specs = {
+	command: new Rule({
+		id: `81e355cf-c841-4c88-802b-1d4c170ef741`,
+		name: `Command`,
+		desc: [
+			`Animal obeys your command.`,
+		]
+	}),
+	train: new Rule({
+		id: `ee8cc929-151e-4f6c-abff-293379d5ee53`,
+		name: `Train`,
+		desc: [
+			`(1wk) Animals learn commands = [its Brains x 2].`,
+		]
+	})
+};
 
-var DemeanorSkills$1 = [
+var DemeanorSkills = [
 	Leadership,
 	Perform,
 	Socialize,
 	Tame,
 ];
 
-const RandomRoll = (a) => {
-	return a[Math.floor(Math.random() * a.length)]
-};
-
 const SkillList = [
 	...AgilitySkills,
 	...BrainsSkills,
+	...ConstitutionSkills,
 	...DemeanorSkills,
-	...DemeanorSkills$1,
 ];
 
 var Skills = {
@@ -4738,11 +5033,11 @@ var Skills = {
 		},
 		{
 			name: `Constitution`,
-			list: DemeanorSkills
+			list: ConstitutionSkills
 		},
 		{
 			name: `Demeanor`,
-			list: DemeanorSkills$1
+			list: DemeanorSkills
 		},
 	],
 	specs: Object.values(SkillList)
@@ -4791,6 +5086,16 @@ const Specialize = new Ability({
 	opts: Skills.specs
 });
 
+const TacticalReload = new Ability({
+	id: `5ec7eba9-31dc-49a5-88dc-75f1d1b22490`,
+	name: `Tactical Reload`,
+	desc: [
+		`Free Reload once per round.`,
+	],
+	max: 1,
+	xp: 3
+});
+
 const WeaponTraining = new Ability({
 	id: `dd2f76e5-3f6b-46b9-bdc1-9c7d09768017`,
 	name: `Weapon Training`,
@@ -4806,8 +5111,8 @@ var XP3AbilitiesList = [
 	FavoriteWeapon,
 	HyperImmunity,
 	PackMentality,
-	QuickReload,
 	Specialize,
+	TacticalReload,
 	WeaponTraining,
 ];
 
@@ -4966,16 +5271,6 @@ const DangerSense = new Ability({
 	xp: 9
 });
 
-const Discipline = new Ability({
-	id: `de3d6bc9-d188-4936-a62c-f19d2f731dad`,
-	name: `Discipline`,
-	desc: [
-		`Ignore 1 Pain penalty.`,
-	],
-	max: 3,
-	xp: 9
-});
-
 const Fortunate = new Ability({
 	id: `0957c2e9-a743-4eca-b429-b9840f8ea931`,
 	name: `Fortunate`,
@@ -4995,96 +5290,6 @@ const FreeRunning = new Ability({
 	max: 1,
 	xp: 9
 });
-
-const Agility = new Stat({
-	id: `c84ca95a-9f01-476f-897c-e6ad07231551`,
-	name: `Agility`,
-	desc: [
-		`Agility is a Character’s talent for physical coordination.`,
-		`High Agility indicates balance, flexibility, and fine motor skill.`,
-		`This Trait is a factor in the Speed and Dodge Properties.`,
-		`Agility is the parent Trait for the following Skills: ${AgilitySkills.map(skill => skill.name).join(', ')}.`,
-	]
-});
-
-const Brains = new Stat({
-	id: `ac0d45e3-221c-4cf3-ab70-a19908b86bd7`,
-	name: `Brains`,
-	desc: [
-		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
-		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
-		`This Trait is a factor in the Experience and Intellect Properties.`,
-		`Brains is the parent Trait for the following Skills: ${BrainsSkills.map(skill => skill.name).join(', ')}.`,
-	]
-});
-
-const Constitution = new Stat({
-	id: `da48b9f5-de7d-44b3-bb24-392e69bebe90`,
-	name: `Constitution`,
-	desc: [
-		`Constitution is a Character’s talent for physical power and durability.`,
-		`High Constitution indicates good health, high stamina, and strong muscles.`,
-		`This Trait is a factor in the Health and Block Properties.`,
-		`Constitution is the parent Trait for the following Skills: ${DemeanorSkills.map(skill => skill.name).join(', ')}.`,
-	]
-});
-
-const Demeanor = new Stat({
-	id: `2f73a727-6149-482e-9c36-70cccbfd03d4`,
-	name: `Demeanor`,
-	desc: [
-		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
-		`High Demeanor indicates charisma, self-motivation, and confidence.`,
-		`This Trait is a factor in the Psyche and Luck Properties.`,
-		`Demeanor is the parent Trait for the following Skills: ${DemeanorSkills.map(skill => skill.name).join(', ')}.`,
-	]
-});
-
-const traitMax = 6;
-
-const traitPoints = 14;
-
-var Traits = {
-	name: `Traits`,
-	explanation: [
-		`You get ${traitPoints} Trait points to assign.`,
-		`Traits range from 1 to ${traitMax}.`,
-		`Trait rolls are [d6 + Trait].`,
-		`Trait scores set the limit for their Skills.`,
-	],
-	list: [
-		Agility,
-		Brains,
-		Constitution,
-		Demeanor,
-	],
-	max: traitMax,
-	startingPoints: _ => traitPoints,
-	assign: function(c, target) {
-		c.traits[target.name].score = parseInt(target.value);
-		return this.limit(c, target.name)
-	},
-	limit: function(c, targetName) {
-		while(this.remaining(c) < 0) c.traits[targetName].score--;
-		return c
-	},
-	random: function(c) {
-		c = this.reset(c);
-		while(this.remaining(c) > 0) {
-			const t = RandomRoll(Object.keys(c.traits));
-			if (c.traits[t].score < this.max) c.traits[t].score++;
-		}
-		return c
-	},
-	remaining: function(c) {
-		const spent = Object.values(c.traits).reduce((t, { score }) => t += score, 0);
-		return this.startingPoints() - spent
-	},
-	reset: function(c) {
-		Object.keys(c.traits).forEach(t => c.traits[t].score = 1);
-		return c
-	}
-};
 
 const Unorthodox = new Ability({
 	id: `9fb108fd-b6ba-4f9a-b225-da7ef4994e80`,
@@ -5109,9 +5314,9 @@ const Unorthodox = new Ability({
 	})()
 });
 
-const Resilient = new Ability({
+const Resilience = new Ability({
 	id: `975e122b-2e35-4c8e-a1ed-16abc91e32fe`,
-	name: `Resilient`,
+	name: `Resilience`,
 	desc: [
 		`Reduce any Trauma by 1.`
 	],
@@ -5119,175 +5324,24 @@ const Resilient = new Ability({
 	xp: 9
 });
 
+const Endurance = new Ability({
+	id: `de3d6bc9-d188-4936-a62c-f19d2f731dad`,
+	name: `Endurance`,
+	desc: [
+		`Ignore 1 Pain penalty.`,
+	],
+	max: 3,
+	xp: 9
+});
+
 var XP9AbilitiesList = [
 	DangerSense,
-	Discipline,
+	Endurance,
 	Fortunate,
 	FreeRunning,
 	Unorthodox,
-	Resilient,
+	Resilience,
 ];
-
-const Parry = new Ability({
-	id: `4b617dee-aed3-4187-ae5a-25eb83245c20`,
-	name: `Parry`,
-	desc: [
-		`Free Block Action once per round.`,
-	],
-	max: 1,
-	xp: 12
-});
-
-const Sidestep = new Ability({
-	id: `e052bd60-6e03-4d90-9bd8-8b6950a24393`,
-	name: `Side-step`,
-	desc: [
-		`Free Dodge Action once per round.`,
-	],
-	max: 1,
-	xp: 12
-});
-
-const Wrestling = new Ability({
-	id: `c565d573-c281-4849-b935-f3388bcd1b1d`,
-	name: `Wrestling`,
-	desc: [
-		`Free Grapple Action once per round.`,
-	],
-	max: 1,
-	xp: 12
-});
-
-var XP12AbilitiesList = [
-	Parry,
-	Sidestep,
-	Wrestling,
-];
-
-const Charge = new Ability({
-	id: `c44580dd-3a0a-41d5-b97f-ec1f9f4bea0d`,
-	name: `Charge`,
-	desc: [
-		`Ignore Unstable penalty to Melee Attacks when you Run.`,
-		`Ignore Prone effect from Leg Damage.`,
-	],
-	max: 1,
-	xp: 15
-});
-
-const FirmGrip = new Ability({
-	id: `c55b0940-8e72-4c5a-a7bc-0b9b27353ae7`,
-	name: `Firm Grip`,
-	desc: [
-		`Ignore penalty to use 2h weapons in 1h, up to Size = Constitution.`,
-		`Ignore Drop effect from Arm Damage.`,
-	],
-	max: 1,
-	xp: 15
-});
-
-const HardHeaded = new Ability({
-	id: `b02bccad-64ce-477b-9cb3-3883fc2c59f5`,
-	name: `Hard Headed`,
-	desc: [
-		`Ignore Stun effect from Head Damage.`,
-	],
-	max: 1,
-	xp: 15
-});
-
-var XP15AbilitiesList = [
-	Charge,
-	FirmGrip,
-	HardHeaded,
-];
-
-const Ambidextrous = new Ability({
-	id: `1460e48d-10fc-4469-a183-74f6060d0bb4`,
-	name: `Ambidextrous`,
-	desc: [
-		`Off-hand penalty is -1 instead of -3.`,
-	],
-	max: 1,
-	xp: 18
-});
-
-const Assassin = new Ability({
-	id: `742279a1-7749-49c5-b6da-d57eaaa511e4`,
-	name: `Assassin`,
-	desc: [
-		`+3 Damage for Attacks made while Concealed.`,
-	],
-	max: 1,
-	xp: 18
-});
-
-var XP18AbilitiesList = [
-	Ambidextrous,
-	Assassin,
-];
-
-const Rational = new Ability({
-	id: `0eb90ec1-e3ac-4e70-a8c1-e6299f1c3abf`,
-	name: `Rational`,
-	desc: [
-		`+1 Psyche.`,
-	],
-	max: 3,
-	xp: 24
-});
-
-const Tough = new Ability({
-	id: `4567f11a-5ee0-4e8d-ae19-b2ebb816397e`,
-	name: `Tough`,
-	desc: [
-		`+1 Health for each Body Part.`,
-	],
-	max: 3,
-	xp: 24
-});
-
-var XP24AbilitiesList = [
-	Rational,
-	Tough,
-];
-
-const CloseCall = new Ability({
-	id: `6d724fe0-89d1-48ad-b8a0-98bb70b1008c`,
-	name: `Close Call`,
-	desc: [
-		`Spend this Ability to survive an otherwise lethal encounter.`,
-	],
-	max: 1,
-	xp: 30
-});
-
-const SelfImprovement = new Ability({
-	id: `34bdd675-5a1c-4fe1-96d4-bac61572cf74`,
-	name: `Self Improvement`,
-	desc: [
-		`+1 to a Trait (max 6).`,
-	],
-	max: 1,
-	xp: 30,
-	opts: Traits.list
-});
-
-var XP30AbilitiesList = [
-	CloseCall,
-	SelfImprovement,
-];
-
-var AppendToGUUID = (guuid, mod) => {
-	let hash = mod.split('')
-					.map(m => m = m.charCodeAt(0))
-					.reduce((a, b) => a + b + parseInt(guuid.split(`-`)[4], 16))
-					.toString(16);
-
-	if (hash.length > 12) hash = hash.substr(hash.length - 12, hash.length);
-
-	return guuid.substr(0, guuid.lastIndexOf('-') + 1) + hash
-};
 
 const abilityArray = [
 	...XP3AbilitiesList,
@@ -5393,7 +5447,7 @@ const Abilities$1 = {
 	},
 	random: function(c) {
 		c = this.reset(c);
-		while(c.props.experience.remaining > 0) {
+		while(c.props.experience.remaining) {
 			const remainingAbilities = this.masterList.filter(m => {
 				return m.xp <= c.props.experience.remaining &&
 					!c.abilities.includes(m)
@@ -5419,27 +5473,7 @@ const Abilities$1 = {
 
 const AbilitiesList = completeAbilityListBuilder(Abilities$1);
 
-class Property extends Stat {
-	constructor({
-		id,
-		name,
-		desc,
-		formula,
-		score,
-		parent=``
-	}) {
-		super({
-			id,
-			name,
-			desc,
-			formula,
-		});
-		this.score = score;
-		this.parent = parent;
-	}
-}
-
-const Block = new Property({
+const Block = new Rule({
 	id: `ceb4a52f-8e47-4892-8d34-4ff4de12a486`,
 	name: Melee.specs.block.name,
 	desc: [
@@ -5449,11 +5483,10 @@ const Block = new Property({
 	formula: (c) => {
 		c.props.block.score = c.skills.melee.score;
 	},
-	base: 0,
-	score: 0
+	type: `Property`
 });
 
-const Carry = new Property({
+const Carry = new Rule({
 	id: `c35b76a8-9912-46fc-b1d3-b0b23b71ef3d`,
 	name: `Carry`,
 	desc: [
@@ -5464,11 +5497,10 @@ const Carry = new Property({
 		c.props.carry.current = 0;
 		c.props.carry.score = c.traits.constitution.score * 3;
 	},
-	base: 3,
-	score: 3
+	type: `Property`
 });
 
-const Dodge = new Property({
+const Dodge = new Rule({
 	id: `c83be9cc-03c9-4b19-85d2-8a2e89475848`,
 	name: Acrobatics.specs.dodge.name,
 	desc: [
@@ -5477,7 +5509,8 @@ const Dodge = new Property({
 	],
 	formula: (c) => {
 		c.props.dodge.score = c.skills.acrobatics.score;
-	}
+	},
+	type: `Property`
 });
 
 const Experience = new Property({
@@ -5495,10 +5528,11 @@ const Experience = new Property({
 	formula: (c) => {
 		c.props.experience.score = c.traits.brains.score * 3;
 		c.props.experience.current = c.traits.brains.score * 3;
-	}
+	},
+	type: `Property`
 });
 
-const Health$1 = new Property({
+const Health$1 = new Rule({
 	id: `7f6c7b57-75c1-48e8-b5b8-9b5c14ec8d85`,
 	name: `Health`,
 	desc: [
@@ -5517,10 +5551,11 @@ const Health$1 = new Property({
 				h.current = c.traits.constitution.score;
 			}
 		});
-	}
+	},
+	type: `Property`
 });
 
-const Intellect = new Property({
+const Intellect = new Rule({
 	id: `99433632-a504-4529-8e11-e9b9d56ec532`,
 	name: `Intellect`,
 	desc: [
@@ -5529,10 +5564,11 @@ const Intellect = new Property({
 	],
 	formula: (c) => {
 		c.props.intellect.score = c.traits.brains.score;
-	}
+	},
+	type: `Property`
 });
 
-const Luck = new Property({
+const Luck = new Rule({
 	id: `58641270-0e30-4ca9-9986-7c9da1cc4d28`,
 	name: `Luck`,
 	desc: [
@@ -5547,10 +5583,11 @@ const Luck = new Property({
 	formula: (c) => {
 		c.props.luck.score = c.traits.demeanor.score;
 		c.props.luck.current = c.traits.demeanor.score;
-	}
+	},
+	type: `Property`
 });
 
-const Psyche = new Property({
+const Psyche = new Rule({
 	id: `59f47468-200a-45ab-b8ca-a3cfa78ab1f8`,
 	name: `Psyche`,
 	desc: [
@@ -5563,10 +5600,11 @@ const Psyche = new Property({
 	formula: (c) => {
 		c.props.psyche.score = c.traits.demeanor.score * 3;
 		c.props.psyche.current = c.traits.demeanor.score * 3;
-	}
+	},
+	type: `Property`
 });
 
-const Speed = new Property({
+const Speed = new Rule({
 	id: `c7081a3e-1fed-41ee-81a4-2b2fab4942e8`,
 	name: `Speed`,
 	desc: [
@@ -5577,7 +5615,8 @@ const Speed = new Property({
 	],
 	formula: (c) => {
 		c.props.speed.score = c.traits.agility.score * 3;
-	}
+	},
+	type: `Property`
 });
 
 var Properties = {
@@ -5763,8 +5802,8 @@ const ClickOutside_1 = create_ssr_component(($$result, $$props, $$bindings, slot
 /* src/components/views/widgets/UserMenu.svelte generated by Svelte v3.29.4 */
 
 const css$b = {
-	code: ".user-btn.svelte-1fvsods{height:var(--s300);position:fixed;right:0;width:var(--s300);z-index:3}.user-btn.svelte-1fvsods:active,.user-btn.svelte-1fvsods:focus,.user-btn.svelte-1fvsods:hover{background-color:lime;color:rgba(15, 30, 15, 1)}.user-menu.svelte-1fvsods{background:rgba(15, 30, 15, 1);border:var(--s1) solid lime;position:absolute;right:0;top:var(--s300);width:30vw;min-width:200px;z-index:4}a.svelte-1fvsods{border:none;display:block;font-weight:normal;padding:var(--s100)}a.svelte-1fvsods:active,a.svelte-1fvsods:focus,a.svelte-1fvsods:hover{background-color:lime;color:rgba(15, 30, 15, 1)}.shadow.svelte-1fvsods{background:rgba(0, 0, 0, .5);position:absolute;top:0;left:0;height:100vh;width:100vw;z-index:2}.invisible.svelte-1fvsods{display:none}",
-	map: "{\"version\":3,\"file\":\"UserMenu.svelte\",\"sources\":[\"UserMenu.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport ClickOutside from 'views/widgets/ClickOutside.svelte'\\n\\t// import { logout, userStore } from 'stores/userStore.js'\\n\\n\\tlet showMenu = false\\n\\tlet trigger\\n\\n\\tconst toggle = _ => showMenu = !showMenu\\n\\n\\tconst hide = _ => showMenu = false\\n\\n\\tconst logOut = _ => {\\n\\t\\t// hide()\\n\\t\\t// try {\\n\\t\\t// \\tlogout()\\n\\t\\t// }\\n\\t\\t// catch {\\n\\t\\t// \\tshowMenu = false\\n\\t\\t// \\twindow.location.assign(`/`)\\n\\t\\t// }\\n\\t}\\n</script>\\n\\n\\n<!-- {#if userStore} -->\\n\\t<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>\\n\\t\\t<div class='btn-icon'>&#9776;</div>\\n\\t</button>\\n\\t<ClickOutside on:clickoutside={hide} exclude={[trigger]}>\\n\\t\\t<div hidden={!showMenu} class='user-menu'>\\n\\t\\t\\t<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>\\n\\t\\t\\t<a href='/manual' class='link-btn' on:click={hide}>Manual</a>\\n\\t\\t\\t<a href='/generator' class='link-btn' on:click={hide}>Generator</a>\\n\\t\\t\\t<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>\\n\\t\\t</div>\\n\\t</ClickOutside>\\n\\t<div class='{showMenu ? \\\"shadow\\\" : \\\"invisible\\\"}'></div>\\n<!-- {/if} -->\\n\\n\\n<style>\\n\\t.user-btn {\\n\\t\\theight: var(--s300);\\n\\t\\tposition: fixed;\\n\\t\\tright: 0;\\n\\t\\twidth: var(--s300);\\n\\t\\tz-index: 3;\\n\\t}\\n\\t.user-btn:active,\\n\\t.user-btn:focus,\\n\\t.user-btn:hover {\\n\\t\\tbackground-color: lime;\\n\\t\\tcolor: rgba(15, 30, 15, 1);\\n\\t}\\n\\t.user-menu {\\n\\t\\tbackground: rgba(15, 30, 15, 1);\\n\\t\\tborder: var(--s1) solid lime;\\n\\t\\tposition: absolute;\\n\\t\\tright: 0;\\n\\t\\ttop: var(--s300);\\n\\t\\twidth: 30vw;\\n\\t\\tmin-width: 200px;\\n\\t\\tz-index: 4;\\n\\t}\\n\\ta {\\n\\t\\tborder: none;\\n\\t\\tdisplay: block;\\n\\t\\tfont-weight: normal;\\n\\t\\tpadding: var(--s100);\\n\\t}\\n\\ta:active,\\n\\ta:focus,\\n\\ta:hover {\\n\\t\\tbackground-color: lime;\\n\\t\\tcolor: rgba(15, 30, 15, 1);\\n\\t}\\n\\t.shadow {\\n\\t\\tbackground: rgba(0, 0, 0, .5);\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: 0;\\n\\t\\theight: 100vh;\\n\\t\\twidth: 100vw;\\n\\t\\tz-index: 2;\\n\\t}\\n\\t.invisible {\\n\\t\\tdisplay: none;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAyCC,SAAS,eAAC,CAAC,AACV,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,KAAK,CAAE,IAAI,MAAM,CAAC,CAClB,OAAO,CAAE,CAAC,AACX,CAAC,AACD,wBAAS,OAAO,CAChB,wBAAS,MAAM,CACf,wBAAS,MAAM,AAAC,CAAC,AAChB,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,AAC3B,CAAC,AACD,UAAU,eAAC,CAAC,AACX,UAAU,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAC/B,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,KAAK,CAAC,IAAI,CAC5B,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,CAAC,CACR,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,CAAC,AACX,CAAC,AACD,CAAC,eAAC,CAAC,AACF,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,KAAK,CACd,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACD,gBAAC,OAAO,CACR,gBAAC,MAAM,CACP,gBAAC,MAAM,AAAC,CAAC,AACR,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,AAC3B,CAAC,AACD,OAAO,eAAC,CAAC,AACR,UAAU,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAC7B,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,CAAC,CACP,MAAM,CAAE,KAAK,CACb,KAAK,CAAE,KAAK,CACZ,OAAO,CAAE,CAAC,AACX,CAAC,AACD,UAAU,eAAC,CAAC,AACX,OAAO,CAAE,IAAI,AACd,CAAC\"}"
+	code: ".user-btn.svelte-z1nbuc{height:var(--s300);position:fixed;right:0;width:var(--s300);z-index:3}.user-btn.svelte-z1nbuc:focus{background-color:lime;color:rgba(15, 30, 15, 1)}.user-menu.svelte-z1nbuc{background:rgba(15, 30, 15, 1);border:var(--s1) solid lime;position:absolute;right:0;top:var(--s300);width:30vw;min-width:200px;z-index:4}a.svelte-z1nbuc{border:none;display:block;font-weight:normal;padding:var(--s100)}a.svelte-z1nbuc:active,a.svelte-z1nbuc:focus,a.svelte-z1nbuc:hover{background-color:lime;color:rgba(15, 30, 15, 1)}.shadow.svelte-z1nbuc{background:rgba(0, 0, 0, .5);position:absolute;top:0;left:0;height:100vh;width:100vw;z-index:2}.invisible.svelte-z1nbuc{display:none}",
+	map: "{\"version\":3,\"file\":\"UserMenu.svelte\",\"sources\":[\"UserMenu.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport ClickOutside from 'views/widgets/ClickOutside.svelte'\\n\\t// import { logout, userStore } from 'stores/userStore.js'\\n\\n\\tlet showMenu = false\\n\\tlet trigger\\n\\n\\tconst toggle = _ => showMenu = !showMenu\\n\\n\\tconst hide = _ => showMenu = false\\n\\n\\tconst logOut = _ => {\\n\\t\\t// hide()\\n\\t\\t// try {\\n\\t\\t// \\tlogout()\\n\\t\\t// }\\n\\t\\t// catch {\\n\\t\\t// \\tshowMenu = false\\n\\t\\t// \\twindow.location.assign(`/`)\\n\\t\\t// }\\n\\t}\\n</script>\\n\\n\\n<!-- {#if userStore} -->\\n\\t<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>\\n\\t\\t<div class='btn-icon'>&#9776;</div>\\n\\t</button>\\n\\t<ClickOutside on:clickoutside={hide} exclude={[trigger]}>\\n\\t\\t<div hidden={!showMenu} class='user-menu'>\\n\\t\\t\\t<nav>\\n\\t\\t\\t\\t<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>\\n\\t\\t\\t\\t<a href='/manual' class='link-btn' on:click={hide}>Manual</a>\\n\\t\\t\\t\\t<a href='/generator' class='link-btn' on:click={hide}>Generator</a>\\n\\t\\t\\t\\t<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>\\n\\t\\t\\t</nav>\\n\\t\\t</div>\\n\\t</ClickOutside>\\n\\t<div class='{showMenu ? \\\"shadow\\\" : \\\"invisible\\\"}'></div>\\n<!-- {/if} -->\\n\\n\\n<style>\\n\\t.user-btn {\\n\\t\\theight: var(--s300);\\n\\t\\tposition: fixed;\\n\\t\\tright: 0;\\n\\t\\twidth: var(--s300);\\n\\t\\tz-index: 3;\\n\\t}\\n\\t.user-btn:focus {\\n\\t\\tbackground-color: lime;\\n\\t\\tcolor: rgba(15, 30, 15, 1);\\n\\t}\\n\\t.user-menu {\\n\\t\\tbackground: rgba(15, 30, 15, 1);\\n\\t\\tborder: var(--s1) solid lime;\\n\\t\\tposition: absolute;\\n\\t\\tright: 0;\\n\\t\\ttop: var(--s300);\\n\\t\\twidth: 30vw;\\n\\t\\tmin-width: 200px;\\n\\t\\tz-index: 4;\\n\\t}\\n\\ta {\\n\\t\\tborder: none;\\n\\t\\tdisplay: block;\\n\\t\\tfont-weight: normal;\\n\\t\\tpadding: var(--s100);\\n\\t}\\n\\ta:active,\\n\\ta:focus,\\n\\ta:hover {\\n\\t\\tbackground-color: lime;\\n\\t\\tcolor: rgba(15, 30, 15, 1);\\n\\t}\\n\\t.shadow {\\n\\t\\tbackground: rgba(0, 0, 0, .5);\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: 0;\\n\\t\\theight: 100vh;\\n\\t\\twidth: 100vw;\\n\\t\\tz-index: 2;\\n\\t}\\n\\t.invisible {\\n\\t\\tdisplay: none;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA2CC,SAAS,cAAC,CAAC,AACV,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,KAAK,CAAE,IAAI,MAAM,CAAC,CAClB,OAAO,CAAE,CAAC,AACX,CAAC,AACD,uBAAS,MAAM,AAAC,CAAC,AAChB,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,AAC3B,CAAC,AACD,UAAU,cAAC,CAAC,AACX,UAAU,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAC/B,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,KAAK,CAAC,IAAI,CAC5B,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,CAAC,CACR,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,CAAC,AACX,CAAC,AACD,CAAC,cAAC,CAAC,AACF,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,KAAK,CACd,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACD,eAAC,OAAO,CACR,eAAC,MAAM,CACP,eAAC,MAAM,AAAC,CAAC,AACR,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,AAC3B,CAAC,AACD,OAAO,cAAC,CAAC,AACR,UAAU,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAC7B,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,CAAC,CACP,MAAM,CAAE,KAAK,CACb,KAAK,CAAE,KAAK,CACZ,OAAO,CAAE,CAAC,AACX,CAAC,AACD,UAAU,cAAC,CAAC,AACX,OAAO,CAAE,IAAI,AACd,CAAC\"}"
 };
 
 const UserMenu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -5776,14 +5815,14 @@ const UserMenu = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 	$$result.css.add(css$b);
 
 	return `
-	<button class="${"btn-box user-btn svelte-1fvsods"}"${add_attribute("this", trigger, 1)}><div class="${"btn-icon"}">☰</div></button>
+	<button class="${"btn-box user-btn svelte-z1nbuc"}"${add_attribute("this", trigger, 1)}><div class="${"btn-icon"}">☰</div></button>
 	${validate_component(ClickOutside_1, "ClickOutside").$$render($$result, { exclude: [trigger] }, {}, {
-		default: () => `<div ${ "hidden" } class="${"user-menu svelte-1fvsods"}"><a href="${"/character"}" class="${"link-btn first-link svelte-1fvsods"}">Character</a>
-			<a href="${"/manual"}" class="${"link-btn svelte-1fvsods"}">Manual</a>
-			<a href="${"/generator"}" class="${"link-btn svelte-1fvsods"}">Generator</a>
-			<a href="${"/"}" class="${"link-btn last-link svelte-1fvsods"}">Logout</a></div>`
+		default: () => `<div ${ "hidden" } class="${"user-menu svelte-z1nbuc"}"><nav><a href="${"/character"}" class="${"link-btn first-link svelte-z1nbuc"}">Character</a>
+				<a href="${"/manual"}" class="${"link-btn svelte-z1nbuc"}">Manual</a>
+				<a href="${"/generator"}" class="${"link-btn svelte-z1nbuc"}">Generator</a>
+				<a href="${"/"}" class="${"link-btn last-link svelte-z1nbuc"}">Logout</a></nav></div>`
 	})}
-	<div class="${escape(null_to_empty( "invisible")) + " svelte-1fvsods"}"></div>
+	<div class="${escape(null_to_empty( "invisible")) + " svelte-z1nbuc"}"></div>
 `;
 });
 
@@ -5889,20 +5928,11 @@ const routes = (d => [
 	},
 
 	{
-		// character/load_character.svelte
-		pattern: /^\/character\/load_character\/?$/,
+		// character/creator/index.svelte
+		pattern: /^\/character\/creator\/?$/,
 		parts: [
 			null,
 			{ i: 2 }
-		]
-	},
-
-	{
-		// character/new_character.svelte
-		pattern: /^\/character\/new_character\/?$/,
-		parts: [
-			null,
-			{ i: 3 }
 		]
 	},
 
@@ -5912,7 +5942,7 @@ const routes = (d => [
 		parts: [
 			null,
 			null,
-			{ i: 4 }
+			{ i: 3 }
 		]
 	},
 
@@ -5922,7 +5952,7 @@ const routes = (d => [
 		parts: [
 			null,
 			null,
-			{ i: 5 }
+			{ i: 4 }
 		]
 	},
 
@@ -5932,17 +5962,7 @@ const routes = (d => [
 		parts: [
 			null,
 			null,
-			{ i: 6 }
-		]
-	},
-
-	{
-		// character/creator/creator.svelte
-		pattern: /^\/character\/creator\/creator\/?$/,
-		parts: [
-			null,
-			null,
-			{ i: 7 }
+			{ i: 5 }
 		]
 	},
 
@@ -5952,7 +5972,7 @@ const routes = (d => [
 		parts: [
 			null,
 			null,
-			{ i: 8 }
+			{ i: 6 }
 		]
 	},
 
@@ -5962,7 +5982,7 @@ const routes = (d => [
 		parts: [
 			null,
 			null,
-			{ i: 9 }
+			{ i: 7 }
 		]
 	},
 
@@ -5972,7 +5992,7 @@ const routes = (d => [
 		parts: [
 			null,
 			null,
-			{ i: 10 }
+			{ i: 8 }
 		]
 	},
 
@@ -5981,6 +6001,24 @@ const routes = (d => [
 		pattern: /^\/character\/creator\/gear\/?$/,
 		parts: [
 			null,
+			null,
+			{ i: 9 }
+		]
+	},
+
+	{
+		// character/load.svelte
+		pattern: /^\/character\/load\/?$/,
+		parts: [
+			null,
+			{ i: 10 }
+		]
+	},
+
+	{
+		// character/new.svelte
+		pattern: /^\/character\/new\/?$/,
+		parts: [
 			null,
 			{ i: 11 }
 		]
@@ -5995,10 +6033,9 @@ const routes = (d => [
 	},
 
 	{
-		// manual/manual.svelte
-		pattern: /^\/manual\/manual\/?$/,
+		// manual/index.svelte
+		pattern: /^\/manual\/?$/,
 		parts: [
-			null,
 			{ i: 13 }
 		]
 	},
@@ -6229,15 +6266,178 @@ var component_1 = /*#__PURE__*/Object.freeze({
     'default': Character_1
 });
 
-/* src/routes/character/load_character.svelte generated by Svelte v3.29.4 */
+/* src/components/views/character/AbilityCurrent.svelte generated by Svelte v3.29.4 */
 
-const Load_character = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	return ``;
+const css$e = {
+	code: ".current-abilities.svelte-35kn9a{width:100%}.current-abilities-title.svelte-35kn9a{font-size:var(--s125);text-align:center;width:100%}.current-abilities-header.svelte-35kn9a,.current-ability-row.svelte-35kn9a{align-items:baseline;display:flex;justify-content:space-between;margin:var(--s100) 0}.current-abilities-header.svelte-35kn9a{font-weight:bold;text-decoration:underline}.l-col.svelte-35kn9a{flex:3}.s-col.svelte-35kn9a{flex:1;text-align:center}",
+	map: "{\"version\":3,\"file\":\"AbilityCurrent.svelte\",\"sources\":[\"AbilityCurrent.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let MasterAbilityList\\n</script>\\n\\n\\n<div class='current-abilities'>\\n\\t<div class='current-abilities-title'>Current Abilities</div>\\n\\t<div class='current-abilities-section'>\\n\\t\\t<div class='current-abilities-header'>\\n\\t\\t\\t<span class='l-col'>Name</span>\\n\\t\\t\\t<span class='s-col'>XP</span>\\n\\t\\t\\t<span class='s-col'>Max</span>\\n\\t\\t\\t<span class='s-col'>Taken</span>\\n\\t\\t</div>\\n\\t\\t<div class='current-abilities-list'>\\n\\t\\t\\t{#each $character.abilities as ability}\\n\\t\\t\\t\\t<div class='current-ability-row'>\\n\\t\\t\\t\\t\\t<span class='l-col'>\\n\\t\\t\\t\\t\\t\\t{ability.name}\\n\\t\\t\\t\\t\\t\\t{#if ability.opts[0]}\\n\\t\\t\\t\\t\\t\\t\\t&nbsp;({ability.opts[0].name})\\n\\t\\t\\t\\t\\t\\t{/if}\\n\\t\\t\\t\\t\\t</span>\\n\\t\\t\\t\\t\\t<span class='s-col'>{ability.xp}</span>\\n\\t\\t\\t\\t\\t<span class='s-col'>{ability.max}</span>\\n\\t\\t\\t\\t\\t<span class='s-col'>\\n\\t\\t\\t\\t\\t\\t<select\\n\\t\\t\\t\\t\\t\\t\\tclass='taken-number'\\n\\t\\t\\t\\t\\t\\t\\tbind:value={ability.taken}\\n\\t\\t\\t\\t\\t\\t\\ton:blur={_ => $character.abilities = MasterAbilityList.filter(ability => ability.taken)}\\n\\t\\t\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t\\t\\t{#each Array(ability.max+1) as _, i}\\n\\t\\t\\t\\t\\t\\t\\t\\t<option value={i}>{i}</option>\\n\\t\\t\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t\\t\\t</select>\\n\\t\\t\\t\\t\\t</span>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.current-abilities {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.current-abilities-title {\\n\\t\\tfont-size: var(--s125);\\n\\t\\ttext-align: center;\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.current-abilities-header,\\n\\t.current-ability-row {\\n\\t\\talign-items: baseline;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s100) 0;\\n\\t}\\n\\t.current-abilities-header {\\n\\t\\tfont-weight: bold;\\n\\t\\ttext-decoration: underline;\\n\\t}\\n\\t.l-col {\\n\\t\\tflex: 3;\\n\\t}\\n\\t.s-col {\\n\\t\\tflex: 1;\\n\\t\\ttext-align: center;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8CC,kBAAkB,cAAC,CAAC,AACnB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,wBAAwB,cAAC,CAAC,AACzB,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,UAAU,CAAE,MAAM,CAClB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,uCAAyB,CACzB,oBAAoB,cAAC,CAAC,AACrB,WAAW,CAAE,QAAQ,CACrB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,CAAC,AACtB,CAAC,AACD,yBAAyB,cAAC,CAAC,AAC1B,WAAW,CAAE,IAAI,CACjB,eAAe,CAAE,SAAS,AAC3B,CAAC,AACD,MAAM,cAAC,CAAC,AACP,IAAI,CAAE,CAAC,AACR,CAAC,AACD,MAAM,cAAC,CAAC,AACP,IAAI,CAAE,CAAC,CACP,UAAU,CAAE,MAAM,AACnB,CAAC\"}"
+};
+
+const AbilityCurrent = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let { MasterAbilityList } = $$props;
+	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
+	$$result.css.add(css$e);
+
+	return `<div class="${"current-abilities svelte-35kn9a"}"><div class="${"current-abilities-title svelte-35kn9a"}">Current Abilities</div>
+	<div class="${"current-abilities-section"}"><div class="${"current-abilities-header svelte-35kn9a"}"><span class="${"l-col svelte-35kn9a"}">Name</span>
+			<span class="${"s-col svelte-35kn9a"}">XP</span>
+			<span class="${"s-col svelte-35kn9a"}">Max</span>
+			<span class="${"s-col svelte-35kn9a"}">Taken</span></div>
+		<div class="${"current-abilities-list"}">${each($character.abilities, ability => `<div class="${"current-ability-row svelte-35kn9a"}"><span class="${"l-col svelte-35kn9a"}">${escape(ability.name)}
+						${ability.opts[0]
+	? ` (${escape(ability.opts[0].name)})`
+	: ``}</span>
+					<span class="${"s-col svelte-35kn9a"}">${escape(ability.xp)}</span>
+					<span class="${"s-col svelte-35kn9a"}">${escape(ability.max)}</span>
+					<span class="${"s-col svelte-35kn9a"}"><select class="${"taken-number"}"${add_attribute("value", ability.taken, 1)}>${each(Array(ability.max + 1), (_, i) => `<option${add_attribute("value", i, 0)}>${escape(i)}</option>`)}</select></span>
+				</div>`)}</div></div>
+</div>`;
 });
 
-var component_2 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': Load_character
+/* src/components/views/character/AbilityModalSingle.svelte generated by Svelte v3.29.4 */
+
+const css$f = {
+	code: ".options-section.svelte-1sfjlhz{width:100%}.ability-section.svelte-1sfjlhz{align-items:center;border:var(--s1) dashed;display:flex;justify-content:space-between;margin:var(--s100) auto;padding:var(--s50)}select.svelte-1sfjlhz{width:var(--s300)}",
+	map: "{\"version\":3,\"file\":\"AbilityModalSingle.svelte\",\"sources\":[\"AbilityModalSingle.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let ability, MasterAbilityList\\n\\n\\tability = MasterAbilityList.filter(a => a.name == ability.name)[0]\\n</script>\\n\\n\\n<div class='options-section'>\\n\\t<div class='ability-section'>\\n\\t\\t<div class='ability-name-label'>\\n\\t\\t\\t{ability.name}\\n\\t\\t</div>\\n\\t\\t<div class='taken-label'>Taken:\\n\\t\\t\\t<select\\n\\t\\t\\t\\tname={ability.name}\\n\\t\\t\\t\\tbind:value={ability.taken}\\n\\t\\t\\t\\ton:blur={_ => $character.abilities = MasterAbilityList.filter(a => a.taken)}\\n\\t\\t\\t>\\n\\t\\t\\t\\t{#each Array(ability.max+1) as _, i}\\n\\t\\t\\t\\t\\t<option value={i}>{i}</option>\\n\\t\\t\\t\\t{/each}\\n\\t\\t\\t</select>\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.options-section {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.ability-section {\\n\\t\\talign-items: center;\\n\\t\\tborder: var(--s1) dashed;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s100) auto;\\n\\t\\tpadding: var(--s50);\\n\\t}\\n\\tselect {\\n\\t\\twidth: var(--s300);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8BC,gBAAgB,eAAC,CAAC,AACjB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,gBAAgB,eAAC,CAAC,AACjB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,MAAM,CACxB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,IAAI,CACxB,OAAO,CAAE,IAAI,KAAK,CAAC,AACpB,CAAC,AACD,MAAM,eAAC,CAAC,AACP,KAAK,CAAE,IAAI,MAAM,CAAC,AACnB,CAAC\"}"
+};
+
+const AbilityModalSingle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let { ability } = $$props, { MasterAbilityList } = $$props;
+	ability = MasterAbilityList.filter(a => a.name == ability.name)[0];
+	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
+	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
+	$$result.css.add(css$f);
+
+	return `<div class="${"options-section svelte-1sfjlhz"}"><div class="${"ability-section svelte-1sfjlhz"}"><div class="${"ability-name-label"}">${escape(ability.name)}</div>
+		<div class="${"taken-label"}">Taken:
+			<select${add_attribute("name", ability.name, 0)} class="${"svelte-1sfjlhz"}"${add_attribute("value", ability.taken, 1)}>${each(Array(ability.max + 1), (_, i) => `<option${add_attribute("value", i, 0)}>${escape(i)}</option>`)}</select></div></div>
+</div>`;
+});
+
+/* src/components/views/character/AbilityModalOptions.svelte generated by Svelte v3.29.4 */
+
+const css$g = {
+	code: ".options-section.svelte-1sfjlhz{width:100%}.ability-section.svelte-1sfjlhz{align-items:center;border:var(--s1) dashed;display:flex;justify-content:space-between;margin:var(--s100) auto;padding:var(--s50)}select.svelte-1sfjlhz{width:var(--s300)}",
+	map: "{\"version\":3,\"file\":\"AbilityModalOptions.svelte\",\"sources\":[\"AbilityModalOptions.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let ability, MasterAbilityList\\n\\n\\tlet OptionList = MasterAbilityList.filter(a => a.name == ability.name)\\n</script>\\n\\n\\n<div class='options-section'>\\n\\t{#each OptionList as ability}\\n\\t\\t<div class='ability-section'>\\n\\t\\t\\t<div class='ability-name-label'>\\n\\t\\t\\t\\t{ability.opts[0].name}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='taken-label'>Taken:\\n\\t\\t\\t\\t<select\\n\\t\\t\\t\\t\\tname={ability.name}\\n\\t\\t\\t\\t\\tbind:value={ability.taken}\\n\\t\\t\\t\\t\\ton:blur={_ => $character.abilities = MasterAbilityList.filter(a => a.taken)}\\n\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t{#each Array(ability.max+1) as _, i}\\n\\t\\t\\t\\t\\t\\t<option value={i}>{i}</option>\\n\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t</select>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t{/each}\\n</div>\\n\\n\\n<style>\\n\\t.options-section {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.ability-section {\\n\\t\\talign-items: center;\\n\\t\\tborder: var(--s1) dashed;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s100) auto;\\n\\t\\tpadding: var(--s50);\\n\\t}\\n\\tselect {\\n\\t\\twidth: var(--s300);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAgCC,gBAAgB,eAAC,CAAC,AACjB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,gBAAgB,eAAC,CAAC,AACjB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,MAAM,CACxB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,IAAI,CACxB,OAAO,CAAE,IAAI,KAAK,CAAC,AACpB,CAAC,AACD,MAAM,eAAC,CAAC,AACP,KAAK,CAAE,IAAI,MAAM,CAAC,AACnB,CAAC\"}"
+};
+
+const AbilityModalOptions = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let { ability } = $$props, { MasterAbilityList } = $$props;
+	let OptionList = MasterAbilityList.filter(a => a.name == ability.name);
+	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
+	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
+	$$result.css.add(css$g);
+
+	return `<div class="${"options-section svelte-1sfjlhz"}">${each(OptionList, ability => `<div class="${"ability-section svelte-1sfjlhz"}"><div class="${"ability-name-label"}">${escape(ability.opts[0].name)}</div>
+			<div class="${"taken-label"}">Taken:
+				<select${add_attribute("name", ability.name, 0)} class="${"svelte-1sfjlhz"}"${add_attribute("value", ability.taken, 1)}>${each(Array(ability.max + 1), (_, i) => `<option${add_attribute("value", i, 0)}>${escape(i)}</option>`)}</select></div>
+		</div>`)}
+</div>`;
+});
+
+/* src/components/views/character/AbilityModal.svelte generated by Svelte v3.29.4 */
+
+const css$h = {
+	code: ".modal-background.svelte-1l8191m{background-color:rgba(0,0,0,0.7);height:100vh;left:0;position:fixed;top:0;width:100vw}.modal.svelte-1l8191m{background-color:rgba(0,0,0,.5);border-radius:var(--radius);border:var(--s1) solid;color:lime;height:fit-content;left:50vw;max-height:75vh;overflow:scroll;position:fixed;scrollbar-width:none;top:50vh;transform:translate(-50%, -50%);width:80vw}.modal-content.svelte-1l8191m{margin:var(--s100)}.btn-row.svelte-1l8191m{text-align:center}.stats-section.svelte-1l8191m{align-items:baseline;display:flex;justify-content:space-between}.description-section.svelte-1l8191m{margin-top:var(--s100)}.description-label.svelte-1l8191m{font-weight:bold}.svelte-1l8191m::-webkit-scrollbar{display:none}",
+	map: "{\"version\":3,\"file\":\"AbilityModal.svelte\",\"sources\":[\"AbilityModal.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { createEventDispatcher, onDestroy } from 'svelte'\\n\\timport AbilityModalSingle from 'views/character/AbilityModalSingle.svelte'\\n\\timport AbilityModalOptions from 'views/character/AbilityModalOptions.svelte'\\n\\n\\texport let ability, MasterAbilityList\\n\\n\\tconst dispatch = createEventDispatcher()\\n\\n\\tconst handle_keydown = e => { if (e.key === 'Escape') dispatch('close') }\\n\\n\\tconst previously_focused = typeof document !== 'undefined' && document.activeElement\\n\\n\\tif (previously_focused) onDestroy(_ => previously_focused.focus())\\n</script>\\n\\n\\n<svelte:window on:keydown={handle_keydown}/>\\n<div class=\\\"modal-background\\\" on:click={_ => dispatch('close')}></div>\\n<div class=\\\"modal\\\" role=\\\"dialog\\\" aria-modal=\\\"true\\\">\\n\\t<div class='modal-content'>\\n\\t\\t<div class='ability-name'><h2>{ability.name}</h2></div>\\n\\t\\t<div class='description-section'>\\n\\t\\t\\t<span class='description-label'>Description:</span>\\n\\t\\t\\t<span class='ability-description'>{ability.desc}</span>\\n\\t\\t</div>\\n\\t\\t<div class='stats-section'>\\n\\t\\t\\t{#if ability.opts.length}\\n\\t\\t\\t\\t<AbilityModalOptions {ability} {MasterAbilityList}/>\\n\\t\\t\\t{:else}\\n\\t\\t\\t\\t<AbilityModalSingle {ability} {MasterAbilityList}/>\\n\\t\\t\\t{/if}\\n\\t\\t</div>\\n\\t\\t<div class='btn-row'>\\n\\t\\t\\t<button on:click={_ => dispatch('close')}>Close</button>\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.modal-background {\\n\\t\\tbackground-color: rgba(0,0,0,0.7);\\n\\t\\theight: 100vh;\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\ttop: 0;\\n\\t\\twidth: 100vw;\\n\\t}\\n\\t.modal {\\n\\t\\tbackground-color: rgba(0,0,0,.5);\\n\\t\\tborder-radius: var(--radius);\\n\\t\\tborder: var(--s1) solid;\\n\\t\\tcolor: lime;\\n\\t\\theight: fit-content;\\n\\t\\tleft: 50vw;\\n\\t\\tmax-height: 75vh;\\n\\t\\toverflow: scroll;\\n\\t\\tposition: fixed;\\n\\t\\tscrollbar-width: none;\\n\\t\\ttop: 50vh;\\n\\t\\ttransform: translate(-50%, -50%);\\n\\t\\twidth: 80vw;\\n\\t}\\n\\t.modal-content {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n\\t.btn-row {\\n\\t\\ttext-align: center;\\n\\t}\\n\\t.stats-section {\\n\\t\\talign-items: baseline;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\t.description-section {\\n\\t\\tmargin-top: var(--s100);\\n\\t}\\n\\t.description-label {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\t::-webkit-scrollbar {\\n\\t\\tdisplay: none;\\n\\t}\\n</style>\\n\"],\"names\":[],\"mappings\":\"AAyCC,iBAAiB,eAAC,CAAC,AAClB,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACjC,MAAM,CAAE,KAAK,CACb,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,GAAG,CAAE,CAAC,CACN,KAAK,CAAE,KAAK,AACb,CAAC,AACD,MAAM,eAAC,CAAC,AACP,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAChC,aAAa,CAAE,IAAI,QAAQ,CAAC,CAC5B,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,KAAK,CACvB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,WAAW,CACnB,IAAI,CAAE,IAAI,CACV,UAAU,CAAE,IAAI,CAChB,QAAQ,CAAE,MAAM,CAChB,QAAQ,CAAE,KAAK,CACf,eAAe,CAAE,IAAI,CACrB,GAAG,CAAE,IAAI,CACT,SAAS,CAAE,UAAU,IAAI,CAAC,CAAC,IAAI,CAAC,CAChC,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,cAAc,eAAC,CAAC,AACf,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC,AACD,QAAQ,eAAC,CAAC,AACT,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,cAAc,eAAC,CAAC,AACf,WAAW,CAAE,QAAQ,CACrB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,oBAAoB,eAAC,CAAC,AACrB,UAAU,CAAE,IAAI,MAAM,CAAC,AACxB,CAAC,AACD,kBAAkB,eAAC,CAAC,AACnB,WAAW,CAAE,IAAI,AAClB,CAAC,eACD,mBAAmB,AAAC,CAAC,AACpB,OAAO,CAAE,IAAI,AACd,CAAC\"}"
+};
+
+const AbilityModal = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let { ability } = $$props, { MasterAbilityList } = $$props;
+	const dispatch = createEventDispatcher();
+
+	const previously_focused = typeof document !== "undefined" && document.activeElement;
+	if (previously_focused) onDestroy(_ => previously_focused.focus());
+	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
+	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
+	$$result.css.add(css$h);
+
+	return `
+<div class="${"modal-background svelte-1l8191m"}"></div>
+<div class="${"modal svelte-1l8191m"}" role="${"dialog"}" aria-modal="${"true"}"><div class="${"modal-content svelte-1l8191m"}"><div class="${"ability-name svelte-1l8191m"}"><h2 class="${"svelte-1l8191m"}">${escape(ability.name)}</h2></div>
+		<div class="${"description-section svelte-1l8191m"}"><span class="${"description-label svelte-1l8191m"}">Description:</span>
+			<span class="${"ability-description svelte-1l8191m"}">${escape(ability.desc)}</span></div>
+		<div class="${"stats-section svelte-1l8191m"}">${ability.opts.length
+	? `${validate_component(AbilityModalOptions, "AbilityModalOptions").$$render($$result, { ability, MasterAbilityList }, {}, {})}`
+	: `${validate_component(AbilityModalSingle, "AbilityModalSingle").$$render($$result, { ability, MasterAbilityList }, {}, {})}`}</div>
+		<div class="${"btn-row svelte-1l8191m"}"><button class="${"svelte-1l8191m"}">Close</button></div></div>
+</div>`;
+});
+
+/* src/components/views/character/AbilityCard.svelte generated by Svelte v3.29.4 */
+
+const css$i = {
+	code: ".ability-card.svelte-kyd8dq{border:var(--s1) solid;margin:var(--s100);padding:var(--s100)}.ability-card.svelte-kyd8dq:hover{background-color:lime;color:rgba(15, 30, 15, 1);cursor:pointer}.card-row.svelte-kyd8dq{display:flex;justify-content:space-between;margin:var(--s50) auto}.ability-name.svelte-kyd8dq{flex:2;font-weight:bold;text-decoration:underline;text-align:center}",
+	map: "{\"version\":3,\"file\":\"AbilityCard.svelte\",\"sources\":[\"AbilityCard.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport AbilityModal from 'views/character/AbilityModal.svelte'\\n\\timport ToggleVisible from 'utils/ToggleVisible.js'\\n\\n\\texport let ability, MasterAbilityList\\n</script>\\n\\n\\n<div class='ability-card' on:click={_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>\\n\\t<div class='card-row'>\\n\\t\\t<span class='ability-name'>{ability.name}</span>\\n\\t</div>\\n\\t<div class='card-row'>\\n\\t\\t<span class='ability-description'>{ability.desc}</span>\\n\\t</div>\\n</div>\\n{#if ability.visible == true}\\n\\t<AbilityModal on:close='{_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}'\\n\\t\\t{ability}\\n\\t\\t{MasterAbilityList}\\n\\t/>\\n{/if}\\n\\n\\n<style>\\n\\t.ability-card {\\n\\t\\tborder: var(--s1) solid;\\n\\t\\tmargin: var(--s100);\\n\\t\\tpadding: var(--s100);\\n\\t}\\n\\t.ability-card:hover {\\n\\t\\tbackground-color: lime;\\n\\t\\tcolor: rgba(15, 30, 15, 1);\\n\\t\\tcursor: pointer;\\n\\t}\\n\\t.card-row {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s50) auto;\\n\\t}\\n\\t.ability-name{\\n\\t\\tflex: 2;\\n\\t\\tfont-weight: bold;\\n\\t\\ttext-decoration: underline;\\n\\t\\ttext-align: center;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAyBC,aAAa,cAAC,CAAC,AACd,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,KAAK,CACvB,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACD,2BAAa,MAAM,AAAC,CAAC,AACpB,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAC1B,MAAM,CAAE,OAAO,AAChB,CAAC,AACD,SAAS,cAAC,CAAC,AACV,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,AACxB,CAAC,AACD,2BAAa,CAAC,AACb,IAAI,CAAE,CAAC,CACP,WAAW,CAAE,IAAI,CACjB,eAAe,CAAE,SAAS,CAC1B,UAAU,CAAE,MAAM,AACnB,CAAC\"}"
+};
+
+const AbilityCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let { ability } = $$props, { MasterAbilityList } = $$props;
+	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
+	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
+	$$result.css.add(css$i);
+
+	return `<div class="${"ability-card svelte-kyd8dq"}"><div class="${"card-row svelte-kyd8dq"}"><span class="${"ability-name svelte-kyd8dq"}">${escape(ability.name)}</span></div>
+	<div class="${"card-row svelte-kyd8dq"}"><span class="${"ability-description"}">${escape(ability.desc)}</span></div></div>
+${ability.visible == true
+	? `${validate_component(AbilityModal, "AbilityModal").$$render($$result, { ability, MasterAbilityList }, {}, {})}`
+	: ``}`;
+});
+
+/* src/components/views/character/AbilityGroup.svelte generated by Svelte v3.29.4 */
+
+const css$j = {
+	code: ".ability-group-details.svelte-ial7of{margin:var(--s100)}",
+	map: "{\"version\":3,\"file\":\"AbilityGroup.svelte\",\"sources\":[\"AbilityGroup.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport AbilityCard from 'views/character/AbilityCard.svelte'\\n\\n\\texport let group, MasterAbilityList\\n</script>\\n\\n\\n<details class='ability-group-details'>\\n\\t<summary>\\n\\t\\t{group.name}XP Abilities\\n\\t</summary>\\n\\t<div class='ability-group-card'>\\n\\t\\t{#each group.list as ability}\\n\\t\\t\\t<AbilityCard {ability} {MasterAbilityList}/>\\n\\t\\t{/each}\\n\\t</div>\\n</details>\\n\\n\\n<style>\\n\\t.ability-group-details {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoBC,sBAAsB,cAAC,CAAC,AACvB,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
+};
+
+const AbilityGroup = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let { group } = $$props, { MasterAbilityList } = $$props;
+	if ($$props.group === void 0 && $$bindings.group && group !== void 0) $$bindings.group(group);
+	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
+	$$result.css.add(css$j);
+
+	return `<details class="${"ability-group-details svelte-ial7of"}"><summary>${escape(group.name)}XP Abilities
+	</summary>
+	<div class="${"ability-group-card"}">${each(group.list, ability => `${validate_component(AbilityCard, "AbilityCard").$$render($$result, { ability, MasterAbilityList }, {}, {})}`)}</div>
+</details>`;
+});
+
+/* src/routes/character/creator/abilities.svelte generated by Svelte v3.29.4 */
+
+const css$k = {
+	code: ".abilities-list.svelte-1147wm9{width:100%}",
+	map: "{\"version\":3,\"file\":\"abilities.svelte\",\"sources\":[\"abilities.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Abilities from 'lists/abilities/Abilities.js'\\n\\timport AbilityCurrent from 'views/character/AbilityCurrent.svelte'\\n\\timport AbilityGroup from 'views/character/AbilityGroup.svelte'\\n\\timport { beforeUpdate } from 'svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tlet MasterAbilityList = Abilities.masterList\\n\\n\\tconst random = _ => $character = Abilities.random($character)\\n\\n\\tconst reset = _ => $character = Abilities.reset($character)\\n\\n\\tbeforeUpdate(_ => {\\n\\t\\t$character.abilities = MasterAbilityList.filter(ability => ability.taken)\\n\\t\\t$character = Abilities.remainingXP($character)\\n\\t})\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Abilities</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Abilities</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Abilities.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t\\t<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>\\n\\t</div>\\n\\t<div class='remaining'>\\n\\t\\t<h3>Remaining: {$character.props.experience.remaining}</h3>\\n\\t</div>\\n\\t{#if $character.abilities.length}\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<AbilityCurrent {MasterAbilityList}/>\\n\\t\\t</div>\\n\\t{/if}\\n\\t<div class='abilities-list'>\\n\\t\\t{#each Abilities.groups as group, index}\\n\\t\\t\\t<AbilityGroup {group} {MasterAbilityList}/>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>\\n\\t\\t\\tReset\\n\\t\\t</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>\\n\\t\\t\\tRandom\\n\\t\\t</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.abilities-list {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAwDC,eAAe,eAAC,CAAC,AAChB,KAAK,CAAE,IAAI,AACZ,CAAC\"}"
+};
+
+const Abilities_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let MasterAbilityList = Abilities$1.masterList;
+
+	beforeUpdate(_ => {
+		$character.abilities = MasterAbilityList.filter(ability => ability.taken);
+		$character = Abilities$1.remainingXP($character);
+	});
+
+	$$result.css.add(css$k);
+
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Abilities</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Abilities</h1>
+	<div class="${"explanation"}">${each(Abilities$1.explanation, line => `<p>${escape(line)}</p>`)}
+		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p></div>
+	<div class="${"remaining"}"><h3>Remaining: ${escape($character.props.experience.remaining)}</h3></div>
+	${$character.abilities.length
+	? `<div class="${"section-card"}">${validate_component(AbilityCurrent, "AbilityCurrent").$$render($$result, { MasterAbilityList }, {}, {})}</div>`
+	: ``}
+	<div class="${"abilities-list svelte-1147wm9"}">${each(Abilities$1.groups, (group, index) => `${validate_component(AbilityGroup, "AbilityGroup").$$render($$result, { group, MasterAbilityList }, {}, {})}`)}</div>
+	<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Reset
+		</button>
+		<button class="${"small-cntr-btn"}">Random
+		</button></div>
+</div>`;
 });
 
 class Descriptor {
@@ -8423,36 +8623,20 @@ var Description$1 = {
 	}
 };
 
-/* src/routes/character/new_character.svelte generated by Svelte v3.29.4 */
-
-const New_character = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let $character = get_store_value(character);
-
-	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - New Character</title>`, "")}`, "")}
-<div class="${"cntr-card"}"><button class="${"link-btn"}">Build</button>
-    <button class="${"link-btn"}">Random</button></div>
-${validate_component(BackButton, "BackButton").$$render($$result, { path: "/character" }, {}, {})}`;
-});
-
-var component_3 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': New_character
-});
-
 /* src/routes/character/creator/description.svelte generated by Svelte v3.29.4 */
 
-const css$e = {
+const css$l = {
 	code: "div[class*='-container'].svelte-1gpx4d4.svelte-1gpx4d4{align-items:center;display:flex;justify-content:space-evenly;max-width:100%}div[class*='-container'].svelte-1gpx4d4>span.svelte-1gpx4d4{text-align:right}div[class*='-container'].svelte-1gpx4d4>span.svelte-1gpx4d4,.character-container.svelte-1gpx4d4>button.svelte-1gpx4d4,.item-container.svelte-1gpx4d4>button.svelte-1gpx4d4{flex:1}div[class*='-container'].svelte-1gpx4d4>input.svelte-1gpx4d4{margin-left:var(--s33);margin-right:var(--s33)}@media only screen and (max-width: 900px){.item-block.svelte-1gpx4d4.svelte-1gpx4d4{display:block;width:100%;max-width:100%}div[class*='-container'].svelte-1gpx4d4.svelte-1gpx4d4{margin:var(--s50) 0;width:100%}.character-container.svelte-1gpx4d4>input[type='text'].svelte-1gpx4d4,.item-container.svelte-1gpx4d4 input[type='text'].svelte-1gpx4d4{flex:2}}@media only screen and (min-width: 900px){.item-block.svelte-1gpx4d4.svelte-1gpx4d4{display:flex;max-width:100%}div[class*='-container'].svelte-1gpx4d4.svelte-1gpx4d4{margin:var(--s50);width:100%}.character-container.svelte-1gpx4d4>input[type='text'].svelte-1gpx4d4{flex:6\n\t\t}.item-container.svelte-1gpx4d4>input[type='text'].svelte-1gpx4d4{flex:2}}",
-	map: "{\"version\":3,\"file\":\"description.svelte\",\"sources\":[\"description.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Description from 'lists/Description.js'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tconst randomDescriptor = (i) => $character = Description.list[i].random($character)\\n\\n\\tconst random = _ => $character = Description.random($character)\\n\\n\\tconst reset = _ => $character = Description.reset($character)\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Description</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Description</h1>\\n\\t<div class='section-card'>\\n\\t\\t<div class='item-block'>\\n\\t\\t\\t<div class='character-container'>\\n\\t\\t\\t\\t<span>Character:</span>\\n\\t\\t\\t\\t<input type='text' bind:value={$character.desc.name.value}>\\n\\t\\t\\t\\t<button on:click={_ => randomDescriptor(1)}>Random</button>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t{#each Description.list as _, index}\\n\\t\\t\\t{#if index % 2 == 0 && index < Description.list.length - 2}\\n\\t\\t\\t\\t<div class='item-block'>\\n\\t\\t\\t\\t\\t<div class='item-container'>\\n\\t\\t\\t\\t\\t\\t<span>{Description.list[index + 2].name}:</span>\\n\\t\\t\\t\\t\\t\\t<input type='text' bind:value={\\n\\t\\t\\t\\t\\t\\t\\t$character.desc[Description.list[index + 2].name.toLowerCase()].value}>\\n\\t\\t\\t\\t\\t\\t<button on:click={_ => randomDescriptor(index + 2)}>Random</button>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class='item-container'>\\n\\t\\t\\t\\t\\t\\t<span>{Description.list[index + 3].name}:</span>\\n\\t\\t\\t\\t\\t\\t<input type='text' bind:value={\\n\\t\\t\\t\\t\\t\\t\\t$character.desc[Description.list[index + 3].name.toLowerCase()].value}>\\n\\t\\t\\t\\t\\t\\t<button on:click={_ => randomDescriptor(index + 3)}>Random</button>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t{/if}\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>Reset</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>Random</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\tdiv[class*='-container'] {\\n\\t\\talign-items: center;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-evenly;\\n\\t\\tmax-width: 100%;\\n\\t}\\n\\tdiv[class*='-container'] > span {\\n\\t\\ttext-align: right;\\n\\t}\\n\\tdiv[class*='-container'] > span,\\n\\t.character-container > button,\\n\\t.item-container > button {\\n\\t\\tflex: 1;\\n\\t}\\n\\tdiv[class*='-container'] > input {\\n\\t\\tmargin-left: var(--s33);\\n\\t\\tmargin-right: var(--s33);\\n\\t}\\n\\t/* MOBILE */\\n\\t@media only screen and (max-width: 900px) {\\n\\t\\t.item-block {\\n\\t\\t\\tdisplay: block;\\n\\t\\t\\twidth: 100%;\\n\\t\\t\\tmax-width: 100%;\\n\\t\\t}\\n\\t\\tdiv[class*='-container'] {\\n\\t\\t\\tmargin: var(--s50) 0;\\n\\t\\t\\twidth: 100%;\\n\\t\\t}\\n\\t\\t.character-container > input[type='text'],\\n\\t\\t.item-container input[type='text'] {\\n\\t\\t\\tflex: 2;\\n\\t\\t}\\n\\t}\\n\\t/* DESKTOP */\\n\\t@media only screen and (min-width: 900px) {\\n\\t\\t.item-block {\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tmax-width: 100%;\\n\\t\\t}\\n\\t\\tdiv[class*='-container'] {\\n\\t\\t\\tmargin: var(--s50);\\n\\t\\t\\twidth: 100%;\\n\\t\\t}\\n\\t\\t.character-container > input[type='text'] {\\n\\t\\t\\tflex: 6\\n\\t\\t}\\n\\t\\t.item-container > input[type='text'] {\\n\\t\\t\\tflex: 2;\\n\\t\\t}\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoDC,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,IAAI,eAAC,CAAC,AAChC,UAAU,CAAE,KAAK,AAClB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,mBAAI,CAC/B,mCAAoB,CAAG,qBAAM,CAC7B,8BAAe,CAAG,MAAM,eAAC,CAAC,AACzB,IAAI,CAAE,CAAC,AACR,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,KAAK,eAAC,CAAC,AACjC,WAAW,CAAE,IAAI,KAAK,CAAC,CACvB,YAAY,CAAE,IAAI,KAAK,CAAC,AACzB,CAAC,AAED,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,WAAW,8BAAC,CAAC,AACZ,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,CACpB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,mCAAoB,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,gBAAC,CACzC,8BAAe,CAAC,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACnC,IAAI,CAAE,CAAC,AACR,CAAC,AACF,CAAC,AAED,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,WAAW,8BAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,MAAM,CAAE,IAAI,KAAK,CAAC,CAClB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,mCAAoB,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AAC1C,IAAI,CAAE,CAAC;EACR,CAAC,AACD,8BAAe,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACrC,IAAI,CAAE,CAAC,AACR,CAAC,AACF,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"description.svelte\",\"sources\":[\"description.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Description from 'lists/Description.js'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tconst randomDescriptor = (i) => $character = Description.list[i].random($character)\\n\\n\\tconst random = _ => $character = Description.random($character)\\n\\n\\tconst reset = _ => $character = Description.reset($character)\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Description</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Description</h1>\\n\\t<div class='section-card'>\\n\\t\\t<div class='item-block'>\\n\\t\\t\\t<div class='character-container'>\\n\\t\\t\\t\\t<span>Name:</span>\\n\\t\\t\\t\\t<input type='text' bind:value={$character.desc.name.value}>\\n\\t\\t\\t\\t<button on:click={_ => randomDescriptor(1)}>Random</button>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t{#each Description.list as _, index}\\n\\t\\t\\t{#if index % 2 == 0 && index < Description.list.length - 2}\\n\\t\\t\\t\\t<div class='item-block'>\\n\\t\\t\\t\\t\\t<div class='item-container'>\\n\\t\\t\\t\\t\\t\\t<span>{Description.list[index + 2].name}:</span>\\n\\t\\t\\t\\t\\t\\t<input type='text' bind:value={\\n\\t\\t\\t\\t\\t\\t\\t$character.desc[Description.list[index + 2].name.toLowerCase()].value}>\\n\\t\\t\\t\\t\\t\\t<button on:click={_ => randomDescriptor(index + 2)}>Random</button>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class='item-container'>\\n\\t\\t\\t\\t\\t\\t<span>{Description.list[index + 3].name}:</span>\\n\\t\\t\\t\\t\\t\\t<input type='text' bind:value={\\n\\t\\t\\t\\t\\t\\t\\t$character.desc[Description.list[index + 3].name.toLowerCase()].value}>\\n\\t\\t\\t\\t\\t\\t<button on:click={_ => randomDescriptor(index + 3)}>Random</button>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t{/if}\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>Reset</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>Random</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\tdiv[class*='-container'] {\\n\\t\\talign-items: center;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-evenly;\\n\\t\\tmax-width: 100%;\\n\\t}\\n\\tdiv[class*='-container'] > span {\\n\\t\\ttext-align: right;\\n\\t}\\n\\tdiv[class*='-container'] > span,\\n\\t.character-container > button,\\n\\t.item-container > button {\\n\\t\\tflex: 1;\\n\\t}\\n\\tdiv[class*='-container'] > input {\\n\\t\\tmargin-left: var(--s33);\\n\\t\\tmargin-right: var(--s33);\\n\\t}\\n\\t/* MOBILE */\\n\\t@media only screen and (max-width: 900px) {\\n\\t\\t.item-block {\\n\\t\\t\\tdisplay: block;\\n\\t\\t\\twidth: 100%;\\n\\t\\t\\tmax-width: 100%;\\n\\t\\t}\\n\\t\\tdiv[class*='-container'] {\\n\\t\\t\\tmargin: var(--s50) 0;\\n\\t\\t\\twidth: 100%;\\n\\t\\t}\\n\\t\\t.character-container > input[type='text'],\\n\\t\\t.item-container input[type='text'] {\\n\\t\\t\\tflex: 2;\\n\\t\\t}\\n\\t}\\n\\t/* DESKTOP */\\n\\t@media only screen and (min-width: 900px) {\\n\\t\\t.item-block {\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tmax-width: 100%;\\n\\t\\t}\\n\\t\\tdiv[class*='-container'] {\\n\\t\\t\\tmargin: var(--s50);\\n\\t\\t\\twidth: 100%;\\n\\t\\t}\\n\\t\\t.character-container > input[type='text'] {\\n\\t\\t\\tflex: 6\\n\\t\\t}\\n\\t\\t.item-container > input[type='text'] {\\n\\t\\t\\tflex: 2;\\n\\t\\t}\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoDC,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,IAAI,eAAC,CAAC,AAChC,UAAU,CAAE,KAAK,AAClB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,mBAAI,CAC/B,mCAAoB,CAAG,qBAAM,CAC7B,8BAAe,CAAG,MAAM,eAAC,CAAC,AACzB,IAAI,CAAE,CAAC,AACR,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,KAAK,eAAC,CAAC,AACjC,WAAW,CAAE,IAAI,KAAK,CAAC,CACvB,YAAY,CAAE,IAAI,KAAK,CAAC,AACzB,CAAC,AAED,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,WAAW,8BAAC,CAAC,AACZ,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,CACpB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,mCAAoB,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,gBAAC,CACzC,8BAAe,CAAC,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACnC,IAAI,CAAE,CAAC,AACR,CAAC,AACF,CAAC,AAED,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,WAAW,8BAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,MAAM,CAAE,IAAI,KAAK,CAAC,CAClB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,mCAAoB,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AAC1C,IAAI,CAAE,CAAC;EACR,CAAC,AACD,8BAAe,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACrC,IAAI,CAAE,CAAC,AACR,CAAC,AACF,CAAC\"}"
 };
 
 const Description_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let $character = get_store_value(character);
-	$$result.css.add(css$e);
+	$$result.css.add(css$l);
 
 	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Description</title>`, "")}`, "")}
 <div class="${"creator-page"}"><h1>Description</h1>
-	<div class="${"section-card"}"><div class="${"item-block svelte-1gpx4d4"}"><div class="${"character-container svelte-1gpx4d4"}"><span class="${"svelte-1gpx4d4"}">Character:</span>
+	<div class="${"section-card"}"><div class="${"item-block svelte-1gpx4d4"}"><div class="${"character-container svelte-1gpx4d4"}"><span class="${"svelte-1gpx4d4"}">Name:</span>
 				<input type="${"text"}" class="${"svelte-1gpx4d4"}"${add_attribute("value", $character.desc.name.value, 1)}>
 				<button class="${"svelte-1gpx4d4"}">Random</button></div></div>
 		${each(Description$1.list, (_, index) => `${index % 2 == 0 && index < Description$1.list.length - 2
@@ -8469,14 +8653,55 @@ const Description_1 = create_ssr_component(($$result, $$props, $$bindings, slots
 </div>`;
 });
 
-var component_4 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': Description_1
+/* src/routes/character/creator/gear.svelte generated by Svelte v3.29.4 */
+
+const css$m = {
+	code: ".item-category.svelte-9fo0xz{margin-bottom:var(--s100)}.item.svelte-9fo0xz{border:1px dotted lime;margin-bottom:var(--s100);padding:var(--s100)}",
+	map: "{\"version\":3,\"file\":\"gear.svelte\",\"sources\":[\"gear.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Capitalize from 'utils/Capitalize.js'\\n\\timport GearBlock from 'views/widgets/GearBlock.svelte'\\n\\timport RandomStartingGear from 'random/RandomStartingGear.js'\\n\\timport { character } from 'stores/characterStore.js'\\n\\timport { beforeUpdate } from 'svelte'\\n\\n\\tlet gearedUp = false\\n\\n\\tconst randomStartingGear = _ => {\\n\\t\\t$character = RandomStartingGear($character, $character.props.luck.score)\\n\\t}\\n\\n\\tbeforeUpdate(_ => {\\n\\t\\tgearedUp = Object.values($character.gear).every(g => g.inventory.length)\\n\\t\\tconsole.log(gearedUp)\\n\\t})\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Gear</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Gear</h1>\\n\\t<div class='explanation'>\\n\\t\\t<p>You start with some random Gear:</p>\\n\\t\\t<ol>\\n\\t\\t\\t<li>One piece of Armor</li>\\n\\t\\t\\t<li>One Melee weapon</li>\\n\\t\\t\\t<li>One Ranged weapon</li>\\n\\t\\t\\t<li>1d6 rounds of Ammo</li>\\n\\t\\t\\t<li>Random items = Luck</li>\\n\\t\\t</ol>\\n\\t</div>\\n\\t{#if gearedUp}\\n\\t\\t{#each Object.keys($character.gear) as type}\\n\\t\\t\\t<div class='section-card'>\\n\\t\\t\\t\\t<div class='item-category'>\\n\\t\\t\\t\\t\\t<h2>{Capitalize(type)}</h2>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t{#if type == 'equipment'}\\n\\t\\t\\t\\t\\t{#each $character.gear.equipment.inventory as equipment}\\n\\t\\t\\t\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t\\t\\t\\t<GearBlock item={equipment} mode={'edit'} />\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t{:else}\\n\\t\\t\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t\\t\\t<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t{/if}\\n\\t\\t\\t</div>\\n\\t\\t{/each}\\n\\t{:else}\\n\\t\\t<div class='btn-row'>\\n\\t\\t\\t<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>\\n\\t\\t</div>\\n\\t{/if}\\n</div>\\n\\n\\n<style>\\n\\t.item-category {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.item {\\n\\t\\tborder: 1px dotted lime;\\n\\t\\tmargin-bottom: var(--s100);\\n\\t\\tpadding: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA+DC,cAAc,cAAC,CAAC,AACf,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,KAAK,cAAC,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,MAAM,CAAC,IAAI,CACvB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC\"}"
+};
+
+const Gear$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let gearedUp = false;
+
+	beforeUpdate(_ => {
+		gearedUp = Object.values($character.gear).every(g => g.inventory.length);
+		console.log(gearedUp);
+	});
+
+	$$result.css.add(css$m);
+
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Gear</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Gear</h1>
+	<div class="${"explanation"}"><p>You start with some random Gear:</p>
+		<ol><li>One piece of Armor</li>
+			<li>One Melee weapon</li>
+			<li>One Ranged weapon</li>
+			<li>1d6 rounds of Ammo</li>
+			<li>Random items = Luck</li></ol></div>
+	${gearedUp
+	? `${each(Object.keys($character.gear), type => `<div class="${"section-card"}"><div class="${"item-category svelte-9fo0xz"}"><h2>${escape(Capitalize(type))}</h2></div>
+				${type == "equipment"
+		? `${each($character.gear.equipment.inventory, equipment => `<div class="${"item svelte-9fo0xz"}">${validate_component(GearBlock, "GearBlock").$$render($$result, { item: equipment, mode: "edit" }, {}, {})}
+						</div>`)}`
+		: `<div class="${"item svelte-9fo0xz"}">${validate_component(GearBlock, "GearBlock").$$render(
+				$$result,
+				{
+					item: $character.gear[type].inventory[0],
+					mode: "edit"
+				},
+				{},
+				{}
+			)}
+					</div>`}
+			</div>`)}`
+	: `<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Random</button></div>`}
+</div>`;
 });
 
 /* src/routes/character/creator/properties.svelte generated by Svelte v3.29.4 */
 
-const css$f = {
+const css$n = {
 	code: ".formulae-details.svelte-1q6k0ne{margin:var(--s100)}.formulae-card.svelte-1q6k0ne{padding:var(--s100)}.properties-list.svelte-1q6k0ne{display:flex;justify-content:space-around;text-align:left}.prop-item.svelte-1q6k0ne{margin:var(--s10)}",
 	map: "{\"version\":3,\"file\":\"properties.svelte\",\"sources\":[\"properties.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BodyParts from 'views/character/BodyParts.svelte'\\n\\timport Properties from 'lists/Properties.js'\\n\\timport { beforeUpdate } from 'svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tbeforeUpdate(_ => $character = Properties.setScores($character))\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Properties</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Properties</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Properties.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t\\t<p>Your Character's Properties are calculated automatically:</p>\\n\\t</div>\\n\\t<details class='formulae-details'>\\n\\t\\t<summary>Properties Formulae</summary>\\n\\t\\t<div class='formulae-card'>\\n\\t\\t\\t<ul>\\n\\t\\t\\t\\t{#each Properties.list as property}\\n\\t\\t\\t\\t\\t{#if property.name == 'Health'}\\n\\t\\t\\t\\t\\t\\t<li>{property.desc[0]}</li>\\n\\t\\t\\t\\t\\t\\t<li>{property.desc[1]}</li>\\n\\t\\t\\t\\t\\t{:else}\\n\\t\\t\\t\\t\\t\\t<li>{property.desc[0]}</li>\\n\\t\\t\\t\\t\\t{/if}\\n\\t\\t\\t\\t{/each}\\n\\t\\t\\t</ul>\\n\\t\\t</div>\\n\\t</details>\\n\\t<div class='section-card properties-list'>\\n\\t\\t<div class='section-block'>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.speed.name}: \\n\\t\\t\\t\\t{$character.props.speed.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.experience.name}: \\n\\t\\t\\t\\t{$character.props.experience.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.carry.name}:\\n\\t\\t\\t\\t{$character.props.carry.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.psyche.name}: \\n\\t\\t\\t\\t{$character.props.psyche.score}\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t<div class='section-block'>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.dodge.name}: \\n\\t\\t\\t\\t{$character.props.dodge.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.intellect.name}: \\n\\t\\t\\t\\t{$character.props.intellect.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.block.name}: \\n\\t\\t\\t\\t{$character.props.block.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.luck.name}: \\n\\t\\t\\t\\t{$character.props.luck.score}\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t</div>\\n\\t<div class='section-card'>\\n\\t\\t<BodyParts {character} readonly={true}/>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.formulae-details {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n\\t.formulae-card {\\n\\t\\tpadding: var(--s100);\\n\\t}\\n\\t.properties-list {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-around;\\n\\t\\ttext-align: left;\\n\\t}\\n\\t.prop-item {\\n\\t\\tmargin: var(--s10);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAiFC,iBAAiB,eAAC,CAAC,AAClB,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC,AACD,cAAc,eAAC,CAAC,AACf,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACD,gBAAgB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,UAAU,eAAC,CAAC,AACX,MAAM,CAAE,IAAI,KAAK,CAAC,AACnB,CAAC\"}"
 };
@@ -8484,7 +8709,7 @@ const css$f = {
 const Properties_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let $character = get_store_value(character);
 	beforeUpdate(_ => $character = Properties.setScores($character));
-	$$result.css.add(css$f);
+	$$result.css.add(css$n);
 
 	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Properties</title>`, "")}`, "")}
 <div class="${"creator-page"}"><h1>Properties</h1>
@@ -8515,220 +8740,11 @@ const Properties_1 = create_ssr_component(($$result, $$props, $$bindings, slots)
 </div>`;
 });
 
-var component_5 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': Properties_1
-});
+/* src/routes/character/creator/sheet.svelte generated by Svelte v3.29.4 */
 
-/* src/components/views/character/AbilityCurrent.svelte generated by Svelte v3.29.4 */
-
-const css$g = {
-	code: ".current-abilities.svelte-35kn9a{width:100%}.current-abilities-title.svelte-35kn9a{font-size:var(--s125);text-align:center;width:100%}.current-abilities-header.svelte-35kn9a,.current-ability-row.svelte-35kn9a{align-items:baseline;display:flex;justify-content:space-between;margin:var(--s100) 0}.current-abilities-header.svelte-35kn9a{font-weight:bold;text-decoration:underline}.l-col.svelte-35kn9a{flex:3}.s-col.svelte-35kn9a{flex:1;text-align:center}",
-	map: "{\"version\":3,\"file\":\"AbilityCurrent.svelte\",\"sources\":[\"AbilityCurrent.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let MasterAbilityList\\n</script>\\n\\n\\n<div class='current-abilities'>\\n\\t<div class='current-abilities-title'>Current Abilities</div>\\n\\t<div class='current-abilities-section'>\\n\\t\\t<div class='current-abilities-header'>\\n\\t\\t\\t<span class='l-col'>Name</span>\\n\\t\\t\\t<span class='s-col'>XP</span>\\n\\t\\t\\t<span class='s-col'>Max</span>\\n\\t\\t\\t<span class='s-col'>Taken</span>\\n\\t\\t</div>\\n\\t\\t<div class='current-abilities-list'>\\n\\t\\t\\t{#each $character.abilities as ability}\\n\\t\\t\\t\\t<div class='current-ability-row'>\\n\\t\\t\\t\\t\\t<span class='l-col'>\\n\\t\\t\\t\\t\\t\\t{ability.name}\\n\\t\\t\\t\\t\\t\\t{#if ability.opts[0]}\\n\\t\\t\\t\\t\\t\\t\\t&nbsp;({ability.opts[0].name})\\n\\t\\t\\t\\t\\t\\t{/if}\\n\\t\\t\\t\\t\\t</span>\\n\\t\\t\\t\\t\\t<span class='s-col'>{ability.xp}</span>\\n\\t\\t\\t\\t\\t<span class='s-col'>{ability.max}</span>\\n\\t\\t\\t\\t\\t<span class='s-col'>\\n\\t\\t\\t\\t\\t\\t<select\\n\\t\\t\\t\\t\\t\\t\\tclass='taken-number'\\n\\t\\t\\t\\t\\t\\t\\tbind:value={ability.taken}\\n\\t\\t\\t\\t\\t\\t\\ton:blur={_ => $character.abilities = MasterAbilityList.filter(ability => ability.taken)}\\n\\t\\t\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t\\t\\t{#each Array(ability.max+1) as _, i}\\n\\t\\t\\t\\t\\t\\t\\t\\t<option value={i}>{i}</option>\\n\\t\\t\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t\\t\\t</select>\\n\\t\\t\\t\\t\\t</span>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.current-abilities {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.current-abilities-title {\\n\\t\\tfont-size: var(--s125);\\n\\t\\ttext-align: center;\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.current-abilities-header,\\n\\t.current-ability-row {\\n\\t\\talign-items: baseline;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s100) 0;\\n\\t}\\n\\t.current-abilities-header {\\n\\t\\tfont-weight: bold;\\n\\t\\ttext-decoration: underline;\\n\\t}\\n\\t.l-col {\\n\\t\\tflex: 3;\\n\\t}\\n\\t.s-col {\\n\\t\\tflex: 1;\\n\\t\\ttext-align: center;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8CC,kBAAkB,cAAC,CAAC,AACnB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,wBAAwB,cAAC,CAAC,AACzB,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,UAAU,CAAE,MAAM,CAClB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,uCAAyB,CACzB,oBAAoB,cAAC,CAAC,AACrB,WAAW,CAAE,QAAQ,CACrB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,CAAC,AACtB,CAAC,AACD,yBAAyB,cAAC,CAAC,AAC1B,WAAW,CAAE,IAAI,CACjB,eAAe,CAAE,SAAS,AAC3B,CAAC,AACD,MAAM,cAAC,CAAC,AACP,IAAI,CAAE,CAAC,AACR,CAAC,AACD,MAAM,cAAC,CAAC,AACP,IAAI,CAAE,CAAC,CACP,UAAU,CAAE,MAAM,AACnB,CAAC\"}"
-};
-
-const AbilityCurrent = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let $character = get_store_value(character);
-	let { MasterAbilityList } = $$props;
-	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
-	$$result.css.add(css$g);
-
-	return `<div class="${"current-abilities svelte-35kn9a"}"><div class="${"current-abilities-title svelte-35kn9a"}">Current Abilities</div>
-	<div class="${"current-abilities-section"}"><div class="${"current-abilities-header svelte-35kn9a"}"><span class="${"l-col svelte-35kn9a"}">Name</span>
-			<span class="${"s-col svelte-35kn9a"}">XP</span>
-			<span class="${"s-col svelte-35kn9a"}">Max</span>
-			<span class="${"s-col svelte-35kn9a"}">Taken</span></div>
-		<div class="${"current-abilities-list"}">${each($character.abilities, ability => `<div class="${"current-ability-row svelte-35kn9a"}"><span class="${"l-col svelte-35kn9a"}">${escape(ability.name)}
-						${ability.opts[0]
-	? ` (${escape(ability.opts[0].name)})`
-	: ``}</span>
-					<span class="${"s-col svelte-35kn9a"}">${escape(ability.xp)}</span>
-					<span class="${"s-col svelte-35kn9a"}">${escape(ability.max)}</span>
-					<span class="${"s-col svelte-35kn9a"}"><select class="${"taken-number"}"${add_attribute("value", ability.taken, 1)}>${each(Array(ability.max + 1), (_, i) => `<option${add_attribute("value", i, 0)}>${escape(i)}</option>`)}</select></span>
-				</div>`)}</div></div>
-</div>`;
-});
-
-/* src/components/views/character/AbilityModalSingle.svelte generated by Svelte v3.29.4 */
-
-const css$h = {
-	code: ".options-section.svelte-1sfjlhz{width:100%}.ability-section.svelte-1sfjlhz{align-items:center;border:var(--s1) dashed;display:flex;justify-content:space-between;margin:var(--s100) auto;padding:var(--s50)}select.svelte-1sfjlhz{width:var(--s300)}",
-	map: "{\"version\":3,\"file\":\"AbilityModalSingle.svelte\",\"sources\":[\"AbilityModalSingle.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let ability, MasterAbilityList\\n\\n\\tability = MasterAbilityList.filter(a => a.name == ability.name)[0]\\n</script>\\n\\n\\n<div class='options-section'>\\n\\t<div class='ability-section'>\\n\\t\\t<div class='ability-name-label'>\\n\\t\\t\\t{ability.name}\\n\\t\\t</div>\\n\\t\\t<div class='taken-label'>Taken:\\n\\t\\t\\t<select\\n\\t\\t\\t\\tname={ability.name}\\n\\t\\t\\t\\tbind:value={ability.taken}\\n\\t\\t\\t\\ton:blur={_ => $character.abilities = MasterAbilityList.filter(a => a.taken)}\\n\\t\\t\\t>\\n\\t\\t\\t\\t{#each Array(ability.max+1) as _, i}\\n\\t\\t\\t\\t\\t<option value={i}>{i}</option>\\n\\t\\t\\t\\t{/each}\\n\\t\\t\\t</select>\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.options-section {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.ability-section {\\n\\t\\talign-items: center;\\n\\t\\tborder: var(--s1) dashed;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s100) auto;\\n\\t\\tpadding: var(--s50);\\n\\t}\\n\\tselect {\\n\\t\\twidth: var(--s300);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8BC,gBAAgB,eAAC,CAAC,AACjB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,gBAAgB,eAAC,CAAC,AACjB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,MAAM,CACxB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,IAAI,CACxB,OAAO,CAAE,IAAI,KAAK,CAAC,AACpB,CAAC,AACD,MAAM,eAAC,CAAC,AACP,KAAK,CAAE,IAAI,MAAM,CAAC,AACnB,CAAC\"}"
-};
-
-const AbilityModalSingle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let $character = get_store_value(character);
-	let { ability } = $$props, { MasterAbilityList } = $$props;
-	ability = MasterAbilityList.filter(a => a.name == ability.name)[0];
-	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
-	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
-	$$result.css.add(css$h);
-
-	return `<div class="${"options-section svelte-1sfjlhz"}"><div class="${"ability-section svelte-1sfjlhz"}"><div class="${"ability-name-label"}">${escape(ability.name)}</div>
-		<div class="${"taken-label"}">Taken:
-			<select${add_attribute("name", ability.name, 0)} class="${"svelte-1sfjlhz"}"${add_attribute("value", ability.taken, 1)}>${each(Array(ability.max + 1), (_, i) => `<option${add_attribute("value", i, 0)}>${escape(i)}</option>`)}</select></div></div>
-</div>`;
-});
-
-/* src/components/views/character/AbilityModalOptions.svelte generated by Svelte v3.29.4 */
-
-const css$i = {
-	code: ".options-section.svelte-1sfjlhz{width:100%}.ability-section.svelte-1sfjlhz{align-items:center;border:var(--s1) dashed;display:flex;justify-content:space-between;margin:var(--s100) auto;padding:var(--s50)}select.svelte-1sfjlhz{width:var(--s300)}",
-	map: "{\"version\":3,\"file\":\"AbilityModalOptions.svelte\",\"sources\":[\"AbilityModalOptions.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\texport let ability, MasterAbilityList\\n\\n\\tlet OptionList = MasterAbilityList.filter(a => a.name == ability.name)\\n</script>\\n\\n\\n<div class='options-section'>\\n\\t{#each OptionList as ability}\\n\\t\\t<div class='ability-section'>\\n\\t\\t\\t<div class='ability-name-label'>\\n\\t\\t\\t\\t{ability.opts[0].name}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='taken-label'>Taken:\\n\\t\\t\\t\\t<select\\n\\t\\t\\t\\t\\tname={ability.name}\\n\\t\\t\\t\\t\\tbind:value={ability.taken}\\n\\t\\t\\t\\t\\ton:blur={_ => $character.abilities = MasterAbilityList.filter(a => a.taken)}\\n\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t{#each Array(ability.max+1) as _, i}\\n\\t\\t\\t\\t\\t\\t<option value={i}>{i}</option>\\n\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t</select>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t{/each}\\n</div>\\n\\n\\n<style>\\n\\t.options-section {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.ability-section {\\n\\t\\talign-items: center;\\n\\t\\tborder: var(--s1) dashed;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s100) auto;\\n\\t\\tpadding: var(--s50);\\n\\t}\\n\\tselect {\\n\\t\\twidth: var(--s300);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAgCC,gBAAgB,eAAC,CAAC,AACjB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,gBAAgB,eAAC,CAAC,AACjB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,MAAM,CACxB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,IAAI,CACxB,OAAO,CAAE,IAAI,KAAK,CAAC,AACpB,CAAC,AACD,MAAM,eAAC,CAAC,AACP,KAAK,CAAE,IAAI,MAAM,CAAC,AACnB,CAAC\"}"
-};
-
-const AbilityModalOptions = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let $character = get_store_value(character);
-	let { ability } = $$props, { MasterAbilityList } = $$props;
-	let OptionList = MasterAbilityList.filter(a => a.name == ability.name);
-	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
-	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
-	$$result.css.add(css$i);
-
-	return `<div class="${"options-section svelte-1sfjlhz"}">${each(OptionList, ability => `<div class="${"ability-section svelte-1sfjlhz"}"><div class="${"ability-name-label"}">${escape(ability.opts[0].name)}</div>
-			<div class="${"taken-label"}">Taken:
-				<select${add_attribute("name", ability.name, 0)} class="${"svelte-1sfjlhz"}"${add_attribute("value", ability.taken, 1)}>${each(Array(ability.max + 1), (_, i) => `<option${add_attribute("value", i, 0)}>${escape(i)}</option>`)}</select></div>
-		</div>`)}
-</div>`;
-});
-
-/* src/components/views/character/AbilityModal.svelte generated by Svelte v3.29.4 */
-
-const css$j = {
-	code: ".modal-background.svelte-1l8191m{background-color:rgba(0,0,0,0.7);height:100vh;left:0;position:fixed;top:0;width:100vw}.modal.svelte-1l8191m{background-color:rgba(0,0,0,.5);border-radius:var(--radius);border:var(--s1) solid;color:lime;height:fit-content;left:50vw;max-height:75vh;overflow:scroll;position:fixed;scrollbar-width:none;top:50vh;transform:translate(-50%, -50%);width:80vw}.modal-content.svelte-1l8191m{margin:var(--s100)}.btn-row.svelte-1l8191m{text-align:center}.stats-section.svelte-1l8191m{align-items:baseline;display:flex;justify-content:space-between}.description-section.svelte-1l8191m{margin-top:var(--s100)}.description-label.svelte-1l8191m{font-weight:bold}.svelte-1l8191m::-webkit-scrollbar{display:none}",
-	map: "{\"version\":3,\"file\":\"AbilityModal.svelte\",\"sources\":[\"AbilityModal.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { createEventDispatcher, onDestroy } from 'svelte'\\n\\timport AbilityModalSingle from 'views/character/AbilityModalSingle.svelte'\\n\\timport AbilityModalOptions from 'views/character/AbilityModalOptions.svelte'\\n\\n\\texport let ability, MasterAbilityList\\n\\n\\tconst dispatch = createEventDispatcher()\\n\\n\\tconst handle_keydown = e => { if (e.key === 'Escape') dispatch('close') }\\n\\n\\tconst previously_focused = typeof document !== 'undefined' && document.activeElement\\n\\n\\tif (previously_focused) onDestroy(_ => previously_focused.focus())\\n</script>\\n\\n\\n<svelte:window on:keydown={handle_keydown}/>\\n<div class=\\\"modal-background\\\" on:click={_ => dispatch('close')}></div>\\n<div class=\\\"modal\\\" role=\\\"dialog\\\" aria-modal=\\\"true\\\">\\n\\t<div class='modal-content'>\\n\\t\\t<div class='ability-name'><h2>{ability.name}</h2></div>\\n\\t\\t<div class='description-section'>\\n\\t\\t\\t<span class='description-label'>Description:</span>\\n\\t\\t\\t<span class='ability-description'>{ability.desc}</span>\\n\\t\\t</div>\\n\\t\\t<div class='stats-section'>\\n\\t\\t\\t{#if ability.opts.length}\\n\\t\\t\\t\\t<AbilityModalOptions {ability} {MasterAbilityList}/>\\n\\t\\t\\t{:else}\\n\\t\\t\\t\\t<AbilityModalSingle {ability} {MasterAbilityList}/>\\n\\t\\t\\t{/if}\\n\\t\\t</div>\\n\\t\\t<div class='btn-row'>\\n\\t\\t\\t<button on:click={_ => dispatch('close')}>Close</button>\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.modal-background {\\n\\t\\tbackground-color: rgba(0,0,0,0.7);\\n\\t\\theight: 100vh;\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\ttop: 0;\\n\\t\\twidth: 100vw;\\n\\t}\\n\\t.modal {\\n\\t\\tbackground-color: rgba(0,0,0,.5);\\n\\t\\tborder-radius: var(--radius);\\n\\t\\tborder: var(--s1) solid;\\n\\t\\tcolor: lime;\\n\\t\\theight: fit-content;\\n\\t\\tleft: 50vw;\\n\\t\\tmax-height: 75vh;\\n\\t\\toverflow: scroll;\\n\\t\\tposition: fixed;\\n\\t\\tscrollbar-width: none;\\n\\t\\ttop: 50vh;\\n\\t\\ttransform: translate(-50%, -50%);\\n\\t\\twidth: 80vw;\\n\\t}\\n\\t.modal-content {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n\\t.btn-row {\\n\\t\\ttext-align: center;\\n\\t}\\n\\t.stats-section {\\n\\t\\talign-items: baseline;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\t.description-section {\\n\\t\\tmargin-top: var(--s100);\\n\\t}\\n\\t.description-label {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\t::-webkit-scrollbar {\\n\\t\\tdisplay: none;\\n\\t}\\n</style>\\n\"],\"names\":[],\"mappings\":\"AAyCC,iBAAiB,eAAC,CAAC,AAClB,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACjC,MAAM,CAAE,KAAK,CACb,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,GAAG,CAAE,CAAC,CACN,KAAK,CAAE,KAAK,AACb,CAAC,AACD,MAAM,eAAC,CAAC,AACP,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAChC,aAAa,CAAE,IAAI,QAAQ,CAAC,CAC5B,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,KAAK,CACvB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,WAAW,CACnB,IAAI,CAAE,IAAI,CACV,UAAU,CAAE,IAAI,CAChB,QAAQ,CAAE,MAAM,CAChB,QAAQ,CAAE,KAAK,CACf,eAAe,CAAE,IAAI,CACrB,GAAG,CAAE,IAAI,CACT,SAAS,CAAE,UAAU,IAAI,CAAC,CAAC,IAAI,CAAC,CAChC,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,cAAc,eAAC,CAAC,AACf,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC,AACD,QAAQ,eAAC,CAAC,AACT,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,cAAc,eAAC,CAAC,AACf,WAAW,CAAE,QAAQ,CACrB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,oBAAoB,eAAC,CAAC,AACrB,UAAU,CAAE,IAAI,MAAM,CAAC,AACxB,CAAC,AACD,kBAAkB,eAAC,CAAC,AACnB,WAAW,CAAE,IAAI,AAClB,CAAC,eACD,mBAAmB,AAAC,CAAC,AACpB,OAAO,CAAE,IAAI,AACd,CAAC\"}"
-};
-
-const AbilityModal = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let { ability } = $$props, { MasterAbilityList } = $$props;
-	const dispatch = createEventDispatcher();
-
-	const previously_focused = typeof document !== "undefined" && document.activeElement;
-	if (previously_focused) onDestroy(_ => previously_focused.focus());
-	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
-	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
-	$$result.css.add(css$j);
-
-	return `
-<div class="${"modal-background svelte-1l8191m"}"></div>
-<div class="${"modal svelte-1l8191m"}" role="${"dialog"}" aria-modal="${"true"}"><div class="${"modal-content svelte-1l8191m"}"><div class="${"ability-name svelte-1l8191m"}"><h2 class="${"svelte-1l8191m"}">${escape(ability.name)}</h2></div>
-		<div class="${"description-section svelte-1l8191m"}"><span class="${"description-label svelte-1l8191m"}">Description:</span>
-			<span class="${"ability-description svelte-1l8191m"}">${escape(ability.desc)}</span></div>
-		<div class="${"stats-section svelte-1l8191m"}">${ability.opts.length
-	? `${validate_component(AbilityModalOptions, "AbilityModalOptions").$$render($$result, { ability, MasterAbilityList }, {}, {})}`
-	: `${validate_component(AbilityModalSingle, "AbilityModalSingle").$$render($$result, { ability, MasterAbilityList }, {}, {})}`}</div>
-		<div class="${"btn-row svelte-1l8191m"}"><button class="${"svelte-1l8191m"}">Close</button></div></div>
-</div>`;
-});
-
-/* src/components/views/character/AbilityCard.svelte generated by Svelte v3.29.4 */
-
-const css$k = {
-	code: ".ability-card.svelte-kyd8dq{border:var(--s1) solid;margin:var(--s100);padding:var(--s100)}.ability-card.svelte-kyd8dq:hover{background-color:lime;color:rgba(15, 30, 15, 1);cursor:pointer}.card-row.svelte-kyd8dq{display:flex;justify-content:space-between;margin:var(--s50) auto}.ability-name.svelte-kyd8dq{flex:2;font-weight:bold;text-decoration:underline;text-align:center}",
-	map: "{\"version\":3,\"file\":\"AbilityCard.svelte\",\"sources\":[\"AbilityCard.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport AbilityModal from 'views/character/AbilityModal.svelte'\\n\\timport ToggleVisible from 'utils/ToggleVisible.js'\\n\\n\\texport let ability, MasterAbilityList\\n</script>\\n\\n\\n<div class='ability-card' on:click={_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>\\n\\t<div class='card-row'>\\n\\t\\t<span class='ability-name'>{ability.name}</span>\\n\\t</div>\\n\\t<div class='card-row'>\\n\\t\\t<span class='ability-description'>{ability.desc}</span>\\n\\t</div>\\n</div>\\n{#if ability.visible == true}\\n\\t<AbilityModal on:close='{_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}'\\n\\t\\t{ability}\\n\\t\\t{MasterAbilityList}\\n\\t/>\\n{/if}\\n\\n\\n<style>\\n\\t.ability-card {\\n\\t\\tborder: var(--s1) solid;\\n\\t\\tmargin: var(--s100);\\n\\t\\tpadding: var(--s100);\\n\\t}\\n\\t.ability-card:hover {\\n\\t\\tbackground-color: lime;\\n\\t\\tcolor: rgba(15, 30, 15, 1);\\n\\t\\tcursor: pointer;\\n\\t}\\n\\t.card-row {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tmargin: var(--s50) auto;\\n\\t}\\n\\t.ability-name{\\n\\t\\tflex: 2;\\n\\t\\tfont-weight: bold;\\n\\t\\ttext-decoration: underline;\\n\\t\\ttext-align: center;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAyBC,aAAa,cAAC,CAAC,AACd,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,KAAK,CACvB,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACD,2BAAa,MAAM,AAAC,CAAC,AACpB,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAC1B,MAAM,CAAE,OAAO,AAChB,CAAC,AACD,SAAS,cAAC,CAAC,AACV,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,AACxB,CAAC,AACD,2BAAa,CAAC,AACb,IAAI,CAAE,CAAC,CACP,WAAW,CAAE,IAAI,CACjB,eAAe,CAAE,SAAS,CAC1B,UAAU,CAAE,MAAM,AACnB,CAAC\"}"
-};
-
-const AbilityCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let { ability } = $$props, { MasterAbilityList } = $$props;
-	if ($$props.ability === void 0 && $$bindings.ability && ability !== void 0) $$bindings.ability(ability);
-	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
-	$$result.css.add(css$k);
-
-	return `<div class="${"ability-card svelte-kyd8dq"}"><div class="${"card-row svelte-kyd8dq"}"><span class="${"ability-name svelte-kyd8dq"}">${escape(ability.name)}</span></div>
-	<div class="${"card-row svelte-kyd8dq"}"><span class="${"ability-description"}">${escape(ability.desc)}</span></div></div>
-${ability.visible == true
-	? `${validate_component(AbilityModal, "AbilityModal").$$render($$result, { ability, MasterAbilityList }, {}, {})}`
-	: ``}`;
-});
-
-/* src/components/views/character/AbilityGroup.svelte generated by Svelte v3.29.4 */
-
-const css$l = {
-	code: ".ability-group-details.svelte-ial7of{margin:var(--s100)}",
-	map: "{\"version\":3,\"file\":\"AbilityGroup.svelte\",\"sources\":[\"AbilityGroup.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport AbilityCard from 'views/character/AbilityCard.svelte'\\n\\n\\texport let group, MasterAbilityList\\n</script>\\n\\n\\n<details class='ability-group-details'>\\n\\t<summary>\\n\\t\\t{group.name}XP Abilities\\n\\t</summary>\\n\\t<div class='ability-group-card'>\\n\\t\\t{#each group.list as ability}\\n\\t\\t\\t<AbilityCard {ability} {MasterAbilityList}/>\\n\\t\\t{/each}\\n\\t</div>\\n</details>\\n\\n\\n<style>\\n\\t.ability-group-details {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoBC,sBAAsB,cAAC,CAAC,AACvB,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
-};
-
-const AbilityGroup = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let { group } = $$props, { MasterAbilityList } = $$props;
-	if ($$props.group === void 0 && $$bindings.group && group !== void 0) $$bindings.group(group);
-	if ($$props.MasterAbilityList === void 0 && $$bindings.MasterAbilityList && MasterAbilityList !== void 0) $$bindings.MasterAbilityList(MasterAbilityList);
-	$$result.css.add(css$l);
-
-	return `<details class="${"ability-group-details svelte-ial7of"}"><summary>${escape(group.name)}XP Abilities
-	</summary>
-	<div class="${"ability-group-card"}">${each(group.list, ability => `${validate_component(AbilityCard, "AbilityCard").$$render($$result, { ability, MasterAbilityList }, {}, {})}`)}</div>
-</details>`;
-});
-
-/* src/routes/character/creator/abilities.svelte generated by Svelte v3.29.4 */
-
-const css$m = {
-	code: ".abilities-list.svelte-1147wm9{width:100%}",
-	map: "{\"version\":3,\"file\":\"abilities.svelte\",\"sources\":[\"abilities.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Abilities from 'lists/abilities/Abilities.js'\\n\\timport AbilityCurrent from 'views/character/AbilityCurrent.svelte'\\n\\timport AbilityGroup from 'views/character/AbilityGroup.svelte'\\n\\timport { beforeUpdate } from 'svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tlet MasterAbilityList = Abilities.masterList\\n\\n\\tconst random = _ => $character = Abilities.random($character)\\n\\n\\tconst reset = _ => $character = Abilities.reset($character)\\n\\n\\tbeforeUpdate(_ => {\\n\\t\\t$character.abilities = MasterAbilityList.filter(ability => ability.taken)\\n\\t\\t$character = Abilities.remainingXP($character)\\n\\t})\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Abilities</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Abilities</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Abilities.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t\\t<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>\\n\\t</div>\\n\\t<div class='remaining'>\\n\\t\\t<h3>Remaining: {$character.props.experience.remaining}</h3>\\n\\t</div>\\n\\t{#if $character.abilities.length}\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<AbilityCurrent {MasterAbilityList}/>\\n\\t\\t</div>\\n\\t{/if}\\n\\t<div class='abilities-list'>\\n\\t\\t{#each Abilities.groups as group, index}\\n\\t\\t\\t<AbilityGroup {group} {MasterAbilityList}/>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>\\n\\t\\t\\tReset\\n\\t\\t</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>\\n\\t\\t\\tRandom\\n\\t\\t</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.abilities-list {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAwDC,eAAe,eAAC,CAAC,AAChB,KAAK,CAAE,IAAI,AACZ,CAAC\"}"
-};
-
-const Abilities_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let $character = get_store_value(character);
-	let MasterAbilityList = Abilities$1.masterList;
-
-	beforeUpdate(_ => {
-		$character.abilities = MasterAbilityList.filter(ability => ability.taken);
-		$character = Abilities$1.remainingXP($character);
-	});
-
-	$$result.css.add(css$m);
-
-	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Abilities</title>`, "")}`, "")}
-<div class="${"creator-page"}"><h1>Abilities</h1>
-	<div class="${"explanation"}">${each(Abilities$1.explanation, line => `<p>${escape(line)}</p>`)}
-		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p></div>
-	<div class="${"remaining"}"><h3>Remaining: ${escape($character.props.experience.remaining)}</h3></div>
-	${$character.abilities.length
-	? `<div class="${"section-card"}">${validate_component(AbilityCurrent, "AbilityCurrent").$$render($$result, { MasterAbilityList }, {}, {})}</div>`
-	: ``}
-	<div class="${"abilities-list svelte-1147wm9"}">${each(Abilities$1.groups, (group, index) => `${validate_component(AbilityGroup, "AbilityGroup").$$render($$result, { group, MasterAbilityList }, {}, {})}`)}</div>
-	<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Reset
-		</button>
-		<button class="${"small-cntr-btn"}">Random
-		</button></div>
-</div>`;
-});
-
-var component_6 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': Abilities_1
-});
-
-/* src/components/views/character/Navbar.svelte generated by Svelte v3.29.4 */
-
-const css$n = {
-	code: ".nav-bar.svelte-lvfy6h{bottom:0;display:flex;height:var(--s300);left:0;position:fixed;width:100%;z-index:2}.nav-button.svelte-lvfy6h{flex:1}.home-button.svelte-lvfy6h{font-size:var(--s125)}",
-	map: "{\"version\":3,\"file\":\"Navbar.svelte\",\"sources\":[\"Navbar.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { character } from 'stores/characterStore.js'\\n\\timport { beforeUpdate, createEventDispatcher, onMount } from 'svelte'\\n\\timport Traits from 'lists/Traits.js'\\n\\timport Skills from 'lists/skills/Skills.js'\\n\\n\\tconst dispatch = createEventDispatcher()\\n\\n\\tlet proceed\\n\\n\\t$: current = $character.meta.status.step\\n\\n\\t$: nextButton = 'X'\\n\\n\\tconst back = _ => {\\n\\t\\t$character.meta.status.step -= 1\\n\\t\\t$character = $character\\n\\t\\tdispatch('message', { step: $character.meta.status.step })\\n\\t}\\n\\n\\tconst home = _ => {\\n\\t\\twindow.location.assign('www.apocalyptiaonline.com')\\n\\t}\\n\\n\\tconst next = _ => {\\n\\t\\tproceedStatus()\\n\\t\\tif (proceed) {\\n\\t\\t\\t$character.meta.status.step += 1\\n\\t\\t\\t$character = $character\\n\\t\\t\\tdispatch('message', { step: $character.meta.status.step })\\n\\t\\t}\\n\\t}\\n\\n\\tconst proceedStatus = _ => {\\n\\t\\tproceed = true\\n\\t\\tif (\\n\\t\\t\\t(current == 1 && Object.values($character.desc).some(d => d.value == ``)) ||\\n\\t\\t\\t(current == 2 && Traits.remaining($character) > 0) ||\\n\\t\\t\\t(current == 3 && Skills.remaining($character) > 0) ||\\n\\t\\t\\t(current == 6 && Object.values($character.gear).some(g => g.inventory.length == 0))\\n\\t\\t) proceed = false\\n\\t\\tif (proceed) nextButton = '&rtrif;'\\n\\t\\telse nextButton = '&#10006;'\\n\\t}\\n\\n\\tbeforeUpdate(_ => proceedStatus())\\n\\tonMount(_ => proceedStatus())\\n</script>\\n\\n\\n<div class='nav-bar'>\\n\\t<button on:click={back} class='link-btn nav-button'>&ltrif;</button>\\n\\t<button on:click={home} class='link-btn nav-button home-button'>Home</button>\\n\\t<button on:click={next} class='link-btn nav-button'>{@html nextButton}</button>\\n</div>\\n\\n\\n<style>\\n\\t.nav-bar {\\n\\t\\tbottom: 0;\\n\\t\\tdisplay: flex;\\n\\t\\theight: var(--s300);\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\twidth: 100%;\\n\\t\\tz-index: 2;\\n\\t}\\n\\t.nav-button {\\n\\t\\tflex: 1;\\n\\t}\\n\\t.home-button {\\n\\t\\tfont-size: var(--s125);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA0DC,QAAQ,cAAC,CAAC,AACT,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,CAAC,AACX,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,IAAI,CAAE,CAAC,AACR,CAAC,AACD,YAAY,cAAC,CAAC,AACb,SAAS,CAAE,IAAI,MAAM,CAAC,AACvB,CAAC\"}"
-};
-
-const Navbar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let $character = get_store_value(character);
-	const dispatch = createEventDispatcher();
-	let proceed;
-
-	const proceedStatus = _ => {
-		proceed = true;
-		if (current == 1 && Object.values($character.desc).some(d => d.value == ``) || current == 2 && Traits.remaining($character) > 0 || current == 3 && Skills.remaining($character) > 0 || current == 6 && Object.values($character.gear).some(g => g.inventory.length == 0)) proceed = false;
-		if (proceed) nextButton = "&rtrif;"; else nextButton = "&#10006;";
-	};
-
-	beforeUpdate(_ => proceedStatus());
-	onMount(_ => proceedStatus());
-	$$result.css.add(css$n);
-	let current;
-	let nextButton;
-	current = $character.meta.status.step;
-	nextButton = "X";
-
-	return `<div class="${"nav-bar svelte-lvfy6h"}"><button class="${"link-btn nav-button svelte-lvfy6h"}">◂</button>
-	<button class="${"link-btn nav-button home-button svelte-lvfy6h"}">Home</button>
-	<button class="${"link-btn nav-button svelte-lvfy6h"}">${nextButton}</button>
-</div>`;
+const Sheet = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Character Sheet</title>`, "")}`, "")}
+${validate_component(CharacterSheet, "CharacterSheet").$$render($$result, { mode: "edit" }, {}, {})}`;
 });
 
 /* src/components/views/widgets/Slider.svelte generated by Svelte v3.29.4 */
@@ -8753,36 +8769,16 @@ const Slider = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 </div>`;
 });
 
-/* src/routes/character/creator/creator.svelte generated by Svelte v3.29.4 */
-
-const css$p = {
-	code: ".creator-page.svelte-s9i01e{padding:var(--s100);padding-bottom:var(--s400)}",
-	map: "{\"version\":3,\"file\":\"creator.svelte\",\"sources\":[\"creator.svelte\"],\"sourcesContent\":[\"<script>\\n    import NavBar from 'views/character/Navbar.svelte'\\n\\timport abilities from 'creator/abilities.svelte'\\n\\timport description from 'creator/description.svelte'\\n\\timport gear from 'creator/gear.svelte'\\n\\timport properties from 'creator/properties.svelte'\\n\\timport sheet from 'creator/sheet.svelte'\\n\\timport skills from 'creator/skills.svelte'\\n    import traits from 'creator/traits.svelte'\\n\\n    let page\\n\\n    let step = 0\\n\\n    const pages = [\\n        description,\\n        traits,\\n        skills,\\n        properties,\\n        abilities,\\n        gear,\\n        sheet\\n    ]\\n\\n    const navigate = (event) => {\\n        console.log(event)\\n        step = event.detail.message.step\\n        page = pages[step]\\n    }\\n</script>\\n\\n\\n<div class='creator-page'>\\n    <svelte:component this={page} />\\n</div>\\n<NavBar on:step={navigate} />\\n\\n\\n<style>\\n    .creator-page {\\n        padding: var(--s100);\\n        padding-bottom: var(--s400);\\n    }\\n</style>\"],\"names\":[],\"mappings\":\"AAuCI,aAAa,cAAC,CAAC,AACX,OAAO,CAAE,IAAI,MAAM,CAAC,CACpB,cAAc,CAAE,IAAI,MAAM,CAAC,AAC/B,CAAC\"}"
-};
-
-const Creator = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-
-	$$result.css.add(css$p);
-
-	return `<div class="${"creator-page svelte-s9i01e"}">${validate_component( missing_component, "svelte:component").$$render($$result, {}, {}, {})}</div>
-${validate_component(Navbar, "NavBar").$$render($$result, {}, {}, {})}`;
-});
-
-var component_7 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': Creator
-});
-
 /* src/routes/character/creator/skills.svelte generated by Svelte v3.29.4 */
 
-const css$q = {
+const css$p = {
 	code: ".skills-details.svelte-16c7r26{margin-bottom:var(--s100)}.group-label.svelte-16c7r26{font-weight:bold}.max-score.svelte-16c7r26{font-weight:bold;margin-top:var(--s150);text-align:center}.stat-range.svelte-16c7r26{margin:var(--s100)}",
 	map: "{\"version\":3,\"file\":\"skills.svelte\",\"sources\":[\"skills.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Skills from 'lists/skills/Skills.js'\\n\\timport Slider from 'views/widgets/Slider.svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\t$: remaining = Skills.remaining($character)\\n\\n\\tconst assign = (event) => $character = Skills.assign($character, event.target)\\n\\n\\tconst random = _ => $character = Skills.random($character)\\n\\n\\tconst reset = _ => $character = Skills.reset($character)\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Skills</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Skills</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Skills.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='remaining'>\\n\\t\\t<h3>Points Remaining: {remaining}</h3>\\n\\t</div>\\n\\t<div class='list'>\\n\\t\\t{#each Skills.groups as group}\\n\\t\\t\\t<details class='skills-details'>\\n\\t\\t\\t\\t<summary>\\n\\t\\t\\t\\t\\t<span class='group-label'>\\n\\t\\t\\t\\t\\t\\t{group.name} Skills\\n\\t\\t\\t\\t\\t</span>\\n\\t\\t\\t\\t</summary>\\n\\t\\t\\t\\t<div class='details-content'>\\n\\t\\t\\t\\t\\t<div class='max-score'>\\n\\t\\t\\t\\t\\t\\tMax Score: {$character.traits[group.name.toLowerCase()].score}\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t{#each group.list as skill}\\n\\t\\t\\t\\t\\t\\t<div class='stat-range'>\\n\\t\\t\\t\\t\\t\\t\\t<div class='stat-label'>{skill.name}</div>\\n\\t\\t\\t\\t\\t\\t\\t<Slider\\n\\t\\t\\t\\t\\t\\t\\t\\tname='{skill.name.toLowerCase()}'\\n\\t\\t\\t\\t\\t\\t\\t\\tmin={parseInt(0)}\\n\\t\\t\\t\\t\\t\\t\\t\\tmax={parseInt(6)}\\n\\t\\t\\t\\t\\t\\t\\t\\tbind:value={$character.skills[skill.name.toLowerCase()].score}\\n\\t\\t\\t\\t\\t\\t\\t\\ton:input={event => assign(event)}\\n\\t\\t\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t</details>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>\\n\\t\\t\\tReset\\n\\t\\t</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>\\n\\t\\t\\tRandom\\n\\t\\t</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.skills-details {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.group-label {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\t.max-score {\\n\\t\\tfont-weight: bold;\\n\\t\\tmargin-top: var(--s150);\\n\\t\\ttext-align: center;\\n\\t}\\n\\t.stat-range {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoEC,eAAe,eAAC,CAAC,AAChB,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,YAAY,eAAC,CAAC,AACb,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,UAAU,eAAC,CAAC,AACX,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,IAAI,MAAM,CAAC,CACvB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,WAAW,eAAC,CAAC,AACZ,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
 };
 
 const Skills_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let $character = get_store_value(character);
-	$$result.css.add(css$q);
+	$$result.css.add(css$p);
 	let $$settled;
 	let $$rendered;
 
@@ -8825,11 +8821,6 @@ const Skills_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 	} while (!$$settled);
 
 	return $$rendered;
-});
-
-var component_8 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': Skills_1
 });
 
 /* src/routes/character/creator/traits.svelte generated by Svelte v3.29.4 */
@@ -8875,94 +8866,359 @@ const Traits_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 	return $$rendered;
 });
 
-var component_9 = /*#__PURE__*/Object.freeze({
+/* src/routes/character/creator/index.svelte generated by Svelte v3.29.4 */
+
+const css$q = {
+	code: ".creator-page.svelte-1fvadnj{padding:var(--s100);padding-bottom:var(--s400)}.nav-bar.svelte-1fvadnj{bottom:0;display:flex;height:var(--s300);left:0;position:fixed;width:100%;z-index:2}.nav-button.svelte-1fvadnj{flex:1}.home-button.svelte-1fvadnj{font-size:var(--s125)}",
+	map: "{\"version\":3,\"file\":\"index.svelte\",\"sources\":[\"index.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Skills from 'lists/skills/Skills.js'\\n\\timport Traits from 'lists/Traits.js'\\n\\timport abilities from 'creator/abilities.svelte'\\n\\timport description from 'creator/description.svelte'\\n\\timport gear from 'creator/gear.svelte'\\n\\timport properties from 'creator/properties.svelte'\\n\\timport sheet from 'creator/sheet.svelte'\\n    import skills from 'creator/skills.svelte'\\n    import traits from 'creator/traits.svelte'\\n\\timport { beforeUpdate, onMount } from 'svelte'\\n\\timport { goto } from '@sapper/app'\\n    import { character } from 'stores/characterStore.js'\\n\\n\\n    const pages = [\\n        description,\\n        traits,\\n        skills,\\n        properties,\\n        abilities,\\n        gear,\\n        sheet\\n    ]\\n\\n    $: current = $character.meta.status.step\\n\\n\\tlet proceed\\n\\n\\t$: nextButton = '&#10006;'\\n\\n\\tconst back = _ => $character.meta.status.step--\\n\\n\\tconst next = _ => {\\n\\t\\tproceedStatus()\\n\\t\\tif (proceed) $character.meta.status.step++\\n\\t}\\n\\n\\tconst proceedStatus = _ => {\\n\\t\\tproceed = true\\n\\t\\tif (\\n\\t\\t\\t(current == 0 && Object.values($character.desc).some(d => d.value == ``)) ||\\n\\t\\t\\t(current == 1 && Traits.remaining($character) > 0) ||\\n\\t\\t\\t(current == 2 && Skills.remaining($character) > 0) ||\\n\\t\\t\\t(current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))\\n\\t\\t) proceed = false\\n\\t\\tif (proceed) nextButton = '&rtrif;'\\n\\t\\telse nextButton = '&#10006;'\\n\\t}\\n\\n    beforeUpdate(_ => proceedStatus())\\n\\n\\tonMount(_ => proceedStatus())\\n</script>\\n\\n\\n<div class='creator-page'>\\n    <svelte:component this={pages[$character.meta.status.step]} />\\n</div>\\n<div class='nav-bar'>\\n\\t<button on:click={back} class='link-btn nav-button'>&ltrif;</button>\\n\\t<button on:click={_ => goto('/')} class='link-btn nav-button home-button'>Home</button>\\n\\t<button on:click={next} class='link-btn nav-button'>{@html nextButton}</button>\\n</div>\\n\\n\\n<style>\\n    .creator-page {\\n        padding: var(--s100);\\n        padding-bottom: var(--s400);\\n    }\\n    .nav-bar {\\n\\t\\tbottom: 0;\\n\\t\\tdisplay: flex;\\n\\t\\theight: var(--s300);\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\twidth: 100%;\\n\\t\\tz-index: 2;\\n\\t}\\n\\t.nav-button {\\n\\t\\tflex: 1;\\n\\t}\\n\\t.home-button {\\n\\t\\tfont-size: var(--s125);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAmEI,aAAa,eAAC,CAAC,AACX,OAAO,CAAE,IAAI,MAAM,CAAC,CACpB,cAAc,CAAE,IAAI,MAAM,CAAC,AAC/B,CAAC,AACD,QAAQ,eAAC,CAAC,AACZ,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,CAAC,AACX,CAAC,AACD,WAAW,eAAC,CAAC,AACZ,IAAI,CAAE,CAAC,AACR,CAAC,AACD,YAAY,eAAC,CAAC,AACb,SAAS,CAAE,IAAI,MAAM,CAAC,AACvB,CAAC\"}"
+};
+
+const Creator = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	const pages = [Description_1, Traits_1, Skills_1, Properties_1, Abilities_1, Gear$1, Sheet];
+	let proceed;
+
+	const proceedStatus = _ => {
+		proceed = true;
+		if (current == 0 && Object.values($character.desc).some(d => d.value == ``) || current == 1 && Traits.remaining($character) > 0 || current == 2 && Skills.remaining($character) > 0 || current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0)) proceed = false;
+		if (proceed) nextButton = "&rtrif;"; else nextButton = "&#10006;";
+	};
+
+	beforeUpdate(_ => proceedStatus());
+	onMount(_ => proceedStatus());
+	$$result.css.add(css$q);
+	let current;
+	let nextButton;
+	current = $character.meta.status.step;
+	nextButton = "&#10006;";
+
+	return `<div class="${"creator-page svelte-1fvadnj"}">${validate_component(pages[$character.meta.status.step] || missing_component, "svelte:component").$$render($$result, {}, {}, {})}</div>
+<div class="${"nav-bar svelte-1fvadnj"}"><button class="${"link-btn nav-button svelte-1fvadnj"}">◂</button>
+	<button class="${"link-btn nav-button home-button svelte-1fvadnj"}">Home</button>
+	<button class="${"link-btn nav-button svelte-1fvadnj"}">${nextButton}</button>
+</div>`;
+});
+
+var component_2 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    'default': Traits_1
+    'default': Creator
+});
+
+/* src/routes/character/creator/description.svelte generated by Svelte v3.29.4 */
+
+const css$r = {
+	code: "div[class*='-container'].svelte-1gpx4d4.svelte-1gpx4d4{align-items:center;display:flex;justify-content:space-evenly;max-width:100%}div[class*='-container'].svelte-1gpx4d4>span.svelte-1gpx4d4{text-align:right}div[class*='-container'].svelte-1gpx4d4>span.svelte-1gpx4d4,.character-container.svelte-1gpx4d4>button.svelte-1gpx4d4,.item-container.svelte-1gpx4d4>button.svelte-1gpx4d4{flex:1}div[class*='-container'].svelte-1gpx4d4>input.svelte-1gpx4d4{margin-left:var(--s33);margin-right:var(--s33)}@media only screen and (max-width: 900px){.item-block.svelte-1gpx4d4.svelte-1gpx4d4{display:block;width:100%;max-width:100%}div[class*='-container'].svelte-1gpx4d4.svelte-1gpx4d4{margin:var(--s50) 0;width:100%}.character-container.svelte-1gpx4d4>input[type='text'].svelte-1gpx4d4,.item-container.svelte-1gpx4d4 input[type='text'].svelte-1gpx4d4{flex:2}}@media only screen and (min-width: 900px){.item-block.svelte-1gpx4d4.svelte-1gpx4d4{display:flex;max-width:100%}div[class*='-container'].svelte-1gpx4d4.svelte-1gpx4d4{margin:var(--s50);width:100%}.character-container.svelte-1gpx4d4>input[type='text'].svelte-1gpx4d4{flex:6\n\t\t}.item-container.svelte-1gpx4d4>input[type='text'].svelte-1gpx4d4{flex:2}}",
+	map: "{\"version\":3,\"file\":\"description.svelte\",\"sources\":[\"description.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Description from 'lists/Description.js'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tconst randomDescriptor = (i) => $character = Description.list[i].random($character)\\n\\n\\tconst random = _ => $character = Description.random($character)\\n\\n\\tconst reset = _ => $character = Description.reset($character)\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Description</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Description</h1>\\n\\t<div class='section-card'>\\n\\t\\t<div class='item-block'>\\n\\t\\t\\t<div class='character-container'>\\n\\t\\t\\t\\t<span>Name:</span>\\n\\t\\t\\t\\t<input type='text' bind:value={$character.desc.name.value}>\\n\\t\\t\\t\\t<button on:click={_ => randomDescriptor(1)}>Random</button>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t{#each Description.list as _, index}\\n\\t\\t\\t{#if index % 2 == 0 && index < Description.list.length - 2}\\n\\t\\t\\t\\t<div class='item-block'>\\n\\t\\t\\t\\t\\t<div class='item-container'>\\n\\t\\t\\t\\t\\t\\t<span>{Description.list[index + 2].name}:</span>\\n\\t\\t\\t\\t\\t\\t<input type='text' bind:value={\\n\\t\\t\\t\\t\\t\\t\\t$character.desc[Description.list[index + 2].name.toLowerCase()].value}>\\n\\t\\t\\t\\t\\t\\t<button on:click={_ => randomDescriptor(index + 2)}>Random</button>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class='item-container'>\\n\\t\\t\\t\\t\\t\\t<span>{Description.list[index + 3].name}:</span>\\n\\t\\t\\t\\t\\t\\t<input type='text' bind:value={\\n\\t\\t\\t\\t\\t\\t\\t$character.desc[Description.list[index + 3].name.toLowerCase()].value}>\\n\\t\\t\\t\\t\\t\\t<button on:click={_ => randomDescriptor(index + 3)}>Random</button>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t{/if}\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>Reset</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>Random</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\tdiv[class*='-container'] {\\n\\t\\talign-items: center;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-evenly;\\n\\t\\tmax-width: 100%;\\n\\t}\\n\\tdiv[class*='-container'] > span {\\n\\t\\ttext-align: right;\\n\\t}\\n\\tdiv[class*='-container'] > span,\\n\\t.character-container > button,\\n\\t.item-container > button {\\n\\t\\tflex: 1;\\n\\t}\\n\\tdiv[class*='-container'] > input {\\n\\t\\tmargin-left: var(--s33);\\n\\t\\tmargin-right: var(--s33);\\n\\t}\\n\\t/* MOBILE */\\n\\t@media only screen and (max-width: 900px) {\\n\\t\\t.item-block {\\n\\t\\t\\tdisplay: block;\\n\\t\\t\\twidth: 100%;\\n\\t\\t\\tmax-width: 100%;\\n\\t\\t}\\n\\t\\tdiv[class*='-container'] {\\n\\t\\t\\tmargin: var(--s50) 0;\\n\\t\\t\\twidth: 100%;\\n\\t\\t}\\n\\t\\t.character-container > input[type='text'],\\n\\t\\t.item-container input[type='text'] {\\n\\t\\t\\tflex: 2;\\n\\t\\t}\\n\\t}\\n\\t/* DESKTOP */\\n\\t@media only screen and (min-width: 900px) {\\n\\t\\t.item-block {\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tmax-width: 100%;\\n\\t\\t}\\n\\t\\tdiv[class*='-container'] {\\n\\t\\t\\tmargin: var(--s50);\\n\\t\\t\\twidth: 100%;\\n\\t\\t}\\n\\t\\t.character-container > input[type='text'] {\\n\\t\\t\\tflex: 6\\n\\t\\t}\\n\\t\\t.item-container > input[type='text'] {\\n\\t\\t\\tflex: 2;\\n\\t\\t}\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoDC,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,IAAI,eAAC,CAAC,AAChC,UAAU,CAAE,KAAK,AAClB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,mBAAI,CAC/B,mCAAoB,CAAG,qBAAM,CAC7B,8BAAe,CAAG,MAAM,eAAC,CAAC,AACzB,IAAI,CAAE,CAAC,AACR,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,gBAAC,CAAG,KAAK,eAAC,CAAC,AACjC,WAAW,CAAE,IAAI,KAAK,CAAC,CACvB,YAAY,CAAE,IAAI,KAAK,CAAC,AACzB,CAAC,AAED,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,WAAW,8BAAC,CAAC,AACZ,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,CACpB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,mCAAoB,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,gBAAC,CACzC,8BAAe,CAAC,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACnC,IAAI,CAAE,CAAC,AACR,CAAC,AACF,CAAC,AAED,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,WAAW,8BAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,GAAG,CAAC,KAAK,EAAE,YAAY,CAAC,8BAAC,CAAC,AACzB,MAAM,CAAE,IAAI,KAAK,CAAC,CAClB,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,mCAAoB,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AAC1C,IAAI,CAAE,CAAC;EACR,CAAC,AACD,8BAAe,CAAG,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC,eAAC,CAAC,AACrC,IAAI,CAAE,CAAC,AACR,CAAC,AACF,CAAC\"}"
+};
+
+const Description_1$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	$$result.css.add(css$r);
+
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Description</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Description</h1>
+	<div class="${"section-card"}"><div class="${"item-block svelte-1gpx4d4"}"><div class="${"character-container svelte-1gpx4d4"}"><span class="${"svelte-1gpx4d4"}">Name:</span>
+				<input type="${"text"}" class="${"svelte-1gpx4d4"}"${add_attribute("value", $character.desc.name.value, 1)}>
+				<button class="${"svelte-1gpx4d4"}">Random</button></div></div>
+		${each(Description$1.list, (_, index) => `${index % 2 == 0 && index < Description$1.list.length - 2
+	? `<div class="${"item-block svelte-1gpx4d4"}"><div class="${"item-container svelte-1gpx4d4"}"><span class="${"svelte-1gpx4d4"}">${escape(Description$1.list[index + 2].name)}:</span>
+						<input type="${"text"}" class="${"svelte-1gpx4d4"}"${add_attribute("value", $character.desc[Description$1.list[index + 2].name.toLowerCase()].value, 1)}>
+						<button class="${"svelte-1gpx4d4"}">Random</button></div>
+					<div class="${"item-container svelte-1gpx4d4"}"><span class="${"svelte-1gpx4d4"}">${escape(Description$1.list[index + 3].name)}:</span>
+						<input type="${"text"}" class="${"svelte-1gpx4d4"}"${add_attribute("value", $character.desc[Description$1.list[index + 3].name.toLowerCase()].value, 1)}>
+						<button class="${"svelte-1gpx4d4"}">Random</button></div>
+				</div>`
+	: ``}`)}</div>
+	<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Reset</button>
+		<button class="${"small-cntr-btn"}">Random</button></div>
+</div>`;
+});
+
+var component_3 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Description_1$1
+});
+
+/* src/routes/character/creator/properties.svelte generated by Svelte v3.29.4 */
+
+const css$s = {
+	code: ".formulae-details.svelte-1q6k0ne{margin:var(--s100)}.formulae-card.svelte-1q6k0ne{padding:var(--s100)}.properties-list.svelte-1q6k0ne{display:flex;justify-content:space-around;text-align:left}.prop-item.svelte-1q6k0ne{margin:var(--s10)}",
+	map: "{\"version\":3,\"file\":\"properties.svelte\",\"sources\":[\"properties.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BodyParts from 'views/character/BodyParts.svelte'\\n\\timport Properties from 'lists/Properties.js'\\n\\timport { beforeUpdate } from 'svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tbeforeUpdate(_ => $character = Properties.setScores($character))\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Properties</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Properties</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Properties.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t\\t<p>Your Character's Properties are calculated automatically:</p>\\n\\t</div>\\n\\t<details class='formulae-details'>\\n\\t\\t<summary>Properties Formulae</summary>\\n\\t\\t<div class='formulae-card'>\\n\\t\\t\\t<ul>\\n\\t\\t\\t\\t{#each Properties.list as property}\\n\\t\\t\\t\\t\\t{#if property.name == 'Health'}\\n\\t\\t\\t\\t\\t\\t<li>{property.desc[0]}</li>\\n\\t\\t\\t\\t\\t\\t<li>{property.desc[1]}</li>\\n\\t\\t\\t\\t\\t{:else}\\n\\t\\t\\t\\t\\t\\t<li>{property.desc[0]}</li>\\n\\t\\t\\t\\t\\t{/if}\\n\\t\\t\\t\\t{/each}\\n\\t\\t\\t</ul>\\n\\t\\t</div>\\n\\t</details>\\n\\t<div class='section-card properties-list'>\\n\\t\\t<div class='section-block'>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.speed.name}: \\n\\t\\t\\t\\t{$character.props.speed.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.experience.name}: \\n\\t\\t\\t\\t{$character.props.experience.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.carry.name}:\\n\\t\\t\\t\\t{$character.props.carry.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.psyche.name}: \\n\\t\\t\\t\\t{$character.props.psyche.score}\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t<div class='section-block'>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.dodge.name}: \\n\\t\\t\\t\\t{$character.props.dodge.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.intellect.name}: \\n\\t\\t\\t\\t{$character.props.intellect.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.block.name}: \\n\\t\\t\\t\\t{$character.props.block.score}\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='prop-item'>\\n\\t\\t\\t\\t{$character.props.luck.name}: \\n\\t\\t\\t\\t{$character.props.luck.score}\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t</div>\\n\\t<div class='section-card'>\\n\\t\\t<BodyParts {character} readonly={true}/>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.formulae-details {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n\\t.formulae-card {\\n\\t\\tpadding: var(--s100);\\n\\t}\\n\\t.properties-list {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-around;\\n\\t\\ttext-align: left;\\n\\t}\\n\\t.prop-item {\\n\\t\\tmargin: var(--s10);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAiFC,iBAAiB,eAAC,CAAC,AAClB,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC,AACD,cAAc,eAAC,CAAC,AACf,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACD,gBAAgB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,UAAU,eAAC,CAAC,AACX,MAAM,CAAE,IAAI,KAAK,CAAC,AACnB,CAAC\"}"
+};
+
+const Properties_1$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	beforeUpdate(_ => $character = Properties.setScores($character));
+	$$result.css.add(css$s);
+
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Properties</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Properties</h1>
+	<div class="${"explanation"}">${each(Properties.explanation, line => `<p>${escape(line)}</p>`)}
+		<p>Your Character&#39;s Properties are calculated automatically:</p></div>
+	<details class="${"formulae-details svelte-1q6k0ne"}"><summary>Properties Formulae</summary>
+		<div class="${"formulae-card svelte-1q6k0ne"}"><ul>${each(Properties.list, property => `${property.name == "Health"
+	? `<li>${escape(property.desc[0])}</li>
+						<li>${escape(property.desc[1])}</li>`
+	: `<li>${escape(property.desc[0])}</li>`}`)}</ul></div></details>
+	<div class="${"section-card properties-list svelte-1q6k0ne"}"><div class="${"section-block"}"><div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.speed.name)}: 
+				${escape($character.props.speed.score)}</div>
+			<div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.experience.name)}: 
+				${escape($character.props.experience.score)}</div>
+			<div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.carry.name)}:
+				${escape($character.props.carry.score)}</div>
+			<div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.psyche.name)}: 
+				${escape($character.props.psyche.score)}</div></div>
+		<div class="${"section-block"}"><div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.dodge.name)}: 
+				${escape($character.props.dodge.score)}</div>
+			<div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.intellect.name)}: 
+				${escape($character.props.intellect.score)}</div>
+			<div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.block.name)}: 
+				${escape($character.props.block.score)}</div>
+			<div class="${"prop-item svelte-1q6k0ne"}">${escape($character.props.luck.name)}: 
+				${escape($character.props.luck.score)}</div></div></div>
+	<div class="${"section-card"}">${validate_component(BodyParts, "BodyParts").$$render($$result, { character, readonly: true }, {}, {})}</div>
+</div>`;
+});
+
+var component_4 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Properties_1$1
+});
+
+/* src/routes/character/creator/abilities.svelte generated by Svelte v3.29.4 */
+
+const css$t = {
+	code: ".abilities-list.svelte-1147wm9{width:100%}",
+	map: "{\"version\":3,\"file\":\"abilities.svelte\",\"sources\":[\"abilities.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Abilities from 'lists/abilities/Abilities.js'\\n\\timport AbilityCurrent from 'views/character/AbilityCurrent.svelte'\\n\\timport AbilityGroup from 'views/character/AbilityGroup.svelte'\\n\\timport { beforeUpdate } from 'svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\tlet MasterAbilityList = Abilities.masterList\\n\\n\\tconst random = _ => $character = Abilities.random($character)\\n\\n\\tconst reset = _ => $character = Abilities.reset($character)\\n\\n\\tbeforeUpdate(_ => {\\n\\t\\t$character.abilities = MasterAbilityList.filter(ability => ability.taken)\\n\\t\\t$character = Abilities.remainingXP($character)\\n\\t})\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Abilities</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Abilities</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Abilities.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t\\t<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>\\n\\t</div>\\n\\t<div class='remaining'>\\n\\t\\t<h3>Remaining: {$character.props.experience.remaining}</h3>\\n\\t</div>\\n\\t{#if $character.abilities.length}\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<AbilityCurrent {MasterAbilityList}/>\\n\\t\\t</div>\\n\\t{/if}\\n\\t<div class='abilities-list'>\\n\\t\\t{#each Abilities.groups as group, index}\\n\\t\\t\\t<AbilityGroup {group} {MasterAbilityList}/>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>\\n\\t\\t\\tReset\\n\\t\\t</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>\\n\\t\\t\\tRandom\\n\\t\\t</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.abilities-list {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAwDC,eAAe,eAAC,CAAC,AAChB,KAAK,CAAE,IAAI,AACZ,CAAC\"}"
+};
+
+const Abilities_1$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let MasterAbilityList = Abilities$1.masterList;
+
+	beforeUpdate(_ => {
+		$character.abilities = MasterAbilityList.filter(ability => ability.taken);
+		$character = Abilities$1.remainingXP($character);
+	});
+
+	$$result.css.add(css$t);
+
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Abilities</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Abilities</h1>
+	<div class="${"explanation"}">${each(Abilities$1.explanation, line => `<p>${escape(line)}</p>`)}
+		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p></div>
+	<div class="${"remaining"}"><h3>Remaining: ${escape($character.props.experience.remaining)}</h3></div>
+	${$character.abilities.length
+	? `<div class="${"section-card"}">${validate_component(AbilityCurrent, "AbilityCurrent").$$render($$result, { MasterAbilityList }, {}, {})}</div>`
+	: ``}
+	<div class="${"abilities-list svelte-1147wm9"}">${each(Abilities$1.groups, (group, index) => `${validate_component(AbilityGroup, "AbilityGroup").$$render($$result, { group, MasterAbilityList }, {}, {})}`)}</div>
+	<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Reset
+		</button>
+		<button class="${"small-cntr-btn"}">Random
+		</button></div>
+</div>`;
+});
+
+var component_5 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Abilities_1$1
+});
+
+/* src/routes/character/creator/skills.svelte generated by Svelte v3.29.4 */
+
+const css$u = {
+	code: ".skills-details.svelte-16c7r26{margin-bottom:var(--s100)}.group-label.svelte-16c7r26{font-weight:bold}.max-score.svelte-16c7r26{font-weight:bold;margin-top:var(--s150);text-align:center}.stat-range.svelte-16c7r26{margin:var(--s100)}",
+	map: "{\"version\":3,\"file\":\"skills.svelte\",\"sources\":[\"skills.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Skills from 'lists/skills/Skills.js'\\n\\timport Slider from 'views/widgets/Slider.svelte'\\n\\timport { character } from 'stores/characterStore.js'\\n\\n\\t$: remaining = Skills.remaining($character)\\n\\n\\tconst assign = (event) => $character = Skills.assign($character, event.target)\\n\\n\\tconst random = _ => $character = Skills.random($character)\\n\\n\\tconst reset = _ => $character = Skills.reset($character)\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Skills</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Skills</h1>\\n\\t<div class='explanation'>\\n\\t\\t{#each Skills.explanation as line}\\n\\t\\t\\t<p>{line}</p>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='remaining'>\\n\\t\\t<h3>Points Remaining: {remaining}</h3>\\n\\t</div>\\n\\t<div class='list'>\\n\\t\\t{#each Skills.groups as group}\\n\\t\\t\\t<details class='skills-details'>\\n\\t\\t\\t\\t<summary>\\n\\t\\t\\t\\t\\t<span class='group-label'>\\n\\t\\t\\t\\t\\t\\t{group.name} Skills\\n\\t\\t\\t\\t\\t</span>\\n\\t\\t\\t\\t</summary>\\n\\t\\t\\t\\t<div class='details-content'>\\n\\t\\t\\t\\t\\t<div class='max-score'>\\n\\t\\t\\t\\t\\t\\tMax Score: {$character.traits[group.name.toLowerCase()].score}\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t{#each group.list as skill}\\n\\t\\t\\t\\t\\t\\t<div class='stat-range'>\\n\\t\\t\\t\\t\\t\\t\\t<div class='stat-label'>{skill.name}</div>\\n\\t\\t\\t\\t\\t\\t\\t<Slider\\n\\t\\t\\t\\t\\t\\t\\t\\tname='{skill.name.toLowerCase()}'\\n\\t\\t\\t\\t\\t\\t\\t\\tmin={parseInt(0)}\\n\\t\\t\\t\\t\\t\\t\\t\\tmax={parseInt(6)}\\n\\t\\t\\t\\t\\t\\t\\t\\tbind:value={$character.skills[skill.name.toLowerCase()].score}\\n\\t\\t\\t\\t\\t\\t\\t\\ton:input={event => assign(event)}\\n\\t\\t\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t</details>\\n\\t\\t{/each}\\n\\t</div>\\n\\t<div class='btn-row'>\\n\\t\\t<button class='small-cntr-btn' on:click={reset}>\\n\\t\\t\\tReset\\n\\t\\t</button>\\n\\t\\t<button class='small-cntr-btn' on:click={random}>\\n\\t\\t\\tRandom\\n\\t\\t</button>\\n\\t</div>\\n</div>\\n\\n\\n<style>\\n\\t.skills-details {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.group-label {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\t.max-score {\\n\\t\\tfont-weight: bold;\\n\\t\\tmargin-top: var(--s150);\\n\\t\\ttext-align: center;\\n\\t}\\n\\t.stat-range {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoEC,eAAe,eAAC,CAAC,AAChB,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,YAAY,eAAC,CAAC,AACb,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,UAAU,eAAC,CAAC,AACX,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,IAAI,MAAM,CAAC,CACvB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,WAAW,eAAC,CAAC,AACZ,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
+};
+
+const Skills_1$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	$$result.css.add(css$u);
+	let $$settled;
+	let $$rendered;
+
+	do {
+		$$settled = true;
+		let remaining;
+		remaining = Skills.remaining($character);
+
+		$$rendered = `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Skills</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Skills</h1>
+	<div class="${"explanation"}">${each(Skills.explanation, line => `<p>${escape(line)}</p>`)}</div>
+	<div class="${"remaining"}"><h3>Points Remaining: ${escape(remaining)}</h3></div>
+	<div class="${"list"}">${each(Skills.groups, group => `<details class="${"skills-details svelte-16c7r26"}"><summary><span class="${"group-label svelte-16c7r26"}">${escape(group.name)} Skills
+					</span></summary>
+				<div class="${"details-content"}"><div class="${"max-score svelte-16c7r26"}">Max Score: ${escape($character.traits[group.name.toLowerCase()].score)}</div>
+					${each(group.list, skill => `<div class="${"stat-range svelte-16c7r26"}"><div class="${"stat-label"}">${escape(skill.name)}</div>
+							${validate_component(Slider, "Slider").$$render(
+			$$result,
+			{
+				name: skill.name.toLowerCase(),
+				min: parseInt(0),
+				max: parseInt(6),
+				value: $character.skills[skill.name.toLowerCase()].score
+			},
+			{
+				value: $$value => {
+					$character.skills[skill.name.toLowerCase()].score = $$value;
+					$$settled = false;
+				}
+			},
+			{}
+		)}
+						</div>`)}</div>
+			</details>`)}</div>
+	<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Reset
+		</button>
+		<button class="${"small-cntr-btn"}">Random
+		</button></div>
+</div>`;
+	} while (!$$settled);
+
+	return $$rendered;
+});
+
+var component_6 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Skills_1$1
+});
+
+/* src/routes/character/creator/traits.svelte generated by Svelte v3.29.4 */
+
+const Traits_1$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+	let $$settled;
+	let $$rendered;
+
+	do {
+		$$settled = true;
+		let remaining;
+		remaining = Traits.remaining($character);
+
+		$$rendered = `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Traits</title>`, "")}`, "")}
+<div class="${"creator-page"}"><h1>Traits</h1>
+	<div class="${"explanation"}">${each(Traits.explanation, line => `<p>${escape(line)}</p>`)}</div>
+	<div class="${"remaining"}"><h3>Points Remaining: ${escape(remaining)}</h3></div>
+	<div class="${"list"}">${each(Traits.list, trait => `<div class="${"section-card"}"><div class="${"stat-label"}">${escape(trait.name)}</div>
+				<div class="${"stat-column"}">${validate_component(Slider, "Slider").$$render(
+			$$result,
+			{
+				name: trait.name.toLowerCase(),
+				min: parseInt(1),
+				max: parseInt(Traits.max),
+				value: $character.traits[trait.name.toLowerCase()].score
+			},
+			{
+				value: $$value => {
+					$character.traits[trait.name.toLowerCase()].score = $$value;
+					$$settled = false;
+				}
+			},
+			{}
+		)}</div>
+			</div>`)}</div>
+	<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Reset
+		</button>
+		<button class="${"small-cntr-btn"}">Random
+		</button></div></div>`;
+	} while (!$$settled);
+
+	return $$rendered;
+});
+
+var component_7 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Traits_1$1
 });
 
 /* src/routes/character/creator/sheet.svelte generated by Svelte v3.29.4 */
 
-const Sheet = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const Sheet$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Character Sheet</title>`, "")}`, "")}
 ${validate_component(CharacterSheet, "CharacterSheet").$$render($$result, { mode: "edit" }, {}, {})}`;
 });
 
-var component_10 = /*#__PURE__*/Object.freeze({
+var component_8 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    'default': Sheet
+    'default': Sheet$1
 });
 
 /* src/routes/character/creator/gear.svelte generated by Svelte v3.29.4 */
 
-const css$r = {
-	code: ".item-category.svelte-b70j1n{margin-bottom:var(--s100)}.ammo-heading.svelte-b70j1n{margin-top:var(--s100)}.item.svelte-b70j1n{border:1px dotted lime;margin-bottom:var(--s100);padding:var(--s100)}",
-	map: "{\"version\":3,\"file\":\"gear.svelte\",\"sources\":[\"gear.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport GearBlock from 'views/widgets/GearBlock.svelte'\\n\\timport RandomStartingGear from 'random/RandomStartingGear.js'\\n\\timport { character } from 'stores/characterStore.js'\\n\\timport { beforeUpdate } from 'svelte'\\n\\n\\tlet gearedUp = false\\n\\n\\tconst randomStartingGear = _ => {\\n\\t\\t$character = RandomStartingGear($character, $character.props.luck.score)\\n\\t}\\n\\n\\tbeforeUpdate(_ => {\\n\\t\\tgearedUp = Object.values($character.gear).every(g => g.inventory.length)\\n\\t})\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Gear</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Gear</h1>\\n\\t<div class='explanation'>\\n\\t\\t<p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p>\\n\\t</div>\\n\\t{#if gearedUp}\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<div class='item-category'>\\n\\t\\t\\t\\t<h2>Melee Weapon</h2>\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t<GearBlock item={$character.gear.melee.inventory[0]} mode={'edit'} />\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<div class='item-category'>\\n\\t\\t\\t\\t<h2>Ranged Weapon</h2>\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t<GearBlock item={$character.gear.ranged.inventory[0]} mode={'edit'} />\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<div class='item-category ammo-heading'>\\n\\t\\t\\t\\t<h2>Ammo</h2>\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t<GearBlock item={$character.gear.ammo.inventory[0]} mode={'edit'} />\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<div class='item-category'>\\n\\t\\t\\t\\t<h2>Armor</h2>\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t<GearBlock item={$character.gear.armor.inventory[0]} mode={'edit'} />\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\\t<div class='section-card'>\\n\\t\\t\\t<div class='item-category'>\\n\\t\\t\\t\\t<h2>Equipment</h2>\\n\\t\\t\\t</div>\\n\\t\\t\\t{#each $character.gear.equipment.inventory as equipment}\\n\\t\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t\\t<GearBlock item={equipment} mode={'edit'} />\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t{:else}\\n\\t\\t<div class='btn-row'>\\n\\t\\t\\t<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>\\n\\t\\t</div>\\n\\t{/if}\\n</div>\\n\\n\\n<style>\\n\\t.item-category {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.ammo-heading {\\n\\t\\tmargin-top: var(--s100);\\n\\t}\\n\\t.item {\\n\\t\\tborder: 1px dotted lime;\\n\\t\\tmargin-bottom: var(--s100);\\n\\t\\tpadding: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8EC,cAAc,cAAC,CAAC,AACf,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,aAAa,cAAC,CAAC,AACd,UAAU,CAAE,IAAI,MAAM,CAAC,AACxB,CAAC,AACD,KAAK,cAAC,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,MAAM,CAAC,IAAI,CACvB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC\"}"
+const css$v = {
+	code: ".item-category.svelte-9fo0xz{margin-bottom:var(--s100)}.item.svelte-9fo0xz{border:1px dotted lime;margin-bottom:var(--s100);padding:var(--s100)}",
+	map: "{\"version\":3,\"file\":\"gear.svelte\",\"sources\":[\"gear.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport Capitalize from 'utils/Capitalize.js'\\n\\timport GearBlock from 'views/widgets/GearBlock.svelte'\\n\\timport RandomStartingGear from 'random/RandomStartingGear.js'\\n\\timport { character } from 'stores/characterStore.js'\\n\\timport { beforeUpdate } from 'svelte'\\n\\n\\tlet gearedUp = false\\n\\n\\tconst randomStartingGear = _ => {\\n\\t\\t$character = RandomStartingGear($character, $character.props.luck.score)\\n\\t}\\n\\n\\tbeforeUpdate(_ => {\\n\\t\\tgearedUp = Object.values($character.gear).every(g => g.inventory.length)\\n\\t\\tconsole.log(gearedUp)\\n\\t})\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Character Creator - Gear</title>\\n</svelte:head>\\n<div class='creator-page'>\\n\\t<h1>Gear</h1>\\n\\t<div class='explanation'>\\n\\t\\t<p>You start with some random Gear:</p>\\n\\t\\t<ol>\\n\\t\\t\\t<li>One piece of Armor</li>\\n\\t\\t\\t<li>One Melee weapon</li>\\n\\t\\t\\t<li>One Ranged weapon</li>\\n\\t\\t\\t<li>1d6 rounds of Ammo</li>\\n\\t\\t\\t<li>Random items = Luck</li>\\n\\t\\t</ol>\\n\\t</div>\\n\\t{#if gearedUp}\\n\\t\\t{#each Object.keys($character.gear) as type}\\n\\t\\t\\t<div class='section-card'>\\n\\t\\t\\t\\t<div class='item-category'>\\n\\t\\t\\t\\t\\t<h2>{Capitalize(type)}</h2>\\n\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t{#if type == 'equipment'}\\n\\t\\t\\t\\t\\t{#each $character.gear.equipment.inventory as equipment}\\n\\t\\t\\t\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t\\t\\t\\t<GearBlock item={equipment} mode={'edit'} />\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t{/each}\\n\\t\\t\\t\\t{:else}\\n\\t\\t\\t\\t\\t<div class='item'>\\n\\t\\t\\t\\t\\t\\t<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t{/if}\\n\\t\\t\\t</div>\\n\\t\\t{/each}\\n\\t{:else}\\n\\t\\t<div class='btn-row'>\\n\\t\\t\\t<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>\\n\\t\\t</div>\\n\\t{/if}\\n</div>\\n\\n\\n<style>\\n\\t.item-category {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.item {\\n\\t\\tborder: 1px dotted lime;\\n\\t\\tmargin-bottom: var(--s100);\\n\\t\\tpadding: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA+DC,cAAc,cAAC,CAAC,AACf,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,KAAK,cAAC,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,MAAM,CAAC,IAAI,CACvB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC\"}"
 };
 
-const Gear$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const Gear$2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let $character = get_store_value(character);
 	let gearedUp = false;
 
 	beforeUpdate(_ => {
 		gearedUp = Object.values($character.gear).every(g => g.inventory.length);
+		console.log(gearedUp);
 	});
 
-	$$result.css.add(css$r);
+	$$result.css.add(css$v);
 
 	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Character Creator - Gear</title>`, "")}`, "")}
 <div class="${"creator-page"}"><h1>Gear</h1>
-	<div class="${"explanation"}"><p>You start with some random Gear: A Melee weapon, a Ranged weapon (with a little Ammo), and Armor.</p></div>
+	<div class="${"explanation"}"><p>You start with some random Gear:</p>
+		<ol><li>One piece of Armor</li>
+			<li>One Melee weapon</li>
+			<li>One Ranged weapon</li>
+			<li>1d6 rounds of Ammo</li>
+			<li>Random items = Luck</li></ol></div>
 	${gearedUp
-	? `<div class="${"section-card"}"><div class="${"item-category svelte-b70j1n"}"><h2>Melee Weapon</h2></div>
-			<div class="${"item svelte-b70j1n"}">${validate_component(GearBlock, "GearBlock").$$render(
-			$$result,
-			{
-				item: $character.gear.melee.inventory[0],
-				mode: "edit"
-			},
-			{},
-			{}
-		)}</div></div>
-		<div class="${"section-card"}"><div class="${"item-category svelte-b70j1n"}"><h2>Ranged Weapon</h2></div>
-			<div class="${"item svelte-b70j1n"}">${validate_component(GearBlock, "GearBlock").$$render(
-			$$result,
-			{
-				item: $character.gear.ranged.inventory[0],
-				mode: "edit"
-			},
-			{},
-			{}
-		)}</div></div>
-		<div class="${"section-card"}"><div class="${"item-category ammo-heading svelte-b70j1n"}"><h2>Ammo</h2></div>
-			<div class="${"item svelte-b70j1n"}">${validate_component(GearBlock, "GearBlock").$$render(
-			$$result,
-			{
-				item: $character.gear.ammo.inventory[0],
-				mode: "edit"
-			},
-			{},
-			{}
-		)}</div></div>
-		<div class="${"section-card"}"><div class="${"item-category svelte-b70j1n"}"><h2>Armor</h2></div>
-			<div class="${"item svelte-b70j1n"}">${validate_component(GearBlock, "GearBlock").$$render(
-			$$result,
-			{
-				item: $character.gear.armor.inventory[0],
-				mode: "edit"
-			},
-			{},
-			{}
-		)}</div></div>
-		<div class="${"section-card"}"><div class="${"item-category svelte-b70j1n"}"><h2>Equipment</h2></div>
-			${each($character.gear.equipment.inventory, equipment => `<div class="${"item svelte-b70j1n"}">${validate_component(GearBlock, "GearBlock").$$render($$result, { item: equipment, mode: "edit" }, {}, {})}
-				</div>`)}</div>`
+	? `${each(Object.keys($character.gear), type => `<div class="${"section-card"}"><div class="${"item-category svelte-9fo0xz"}"><h2>${escape(Capitalize(type))}</h2></div>
+				${type == "equipment"
+		? `${each($character.gear.equipment.inventory, equipment => `<div class="${"item svelte-9fo0xz"}">${validate_component(GearBlock, "GearBlock").$$render($$result, { item: equipment, mode: "edit" }, {}, {})}
+						</div>`)}`
+		: `<div class="${"item svelte-9fo0xz"}">${validate_component(GearBlock, "GearBlock").$$render(
+				$$result,
+				{
+					item: $character.gear[type].inventory[0],
+					mode: "edit"
+				},
+				{},
+				{}
+			)}
+					</div>`}
+			</div>`)}`
 	: `<div class="${"btn-row"}"><button class="${"small-cntr-btn"}">Random</button></div>`}
 </div>`;
 });
 
+var component_9 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Gear$2
+});
+
+/* src/routes/character/load.svelte generated by Svelte v3.29.4 */
+
+const Load = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	return ``;
+});
+
+var component_10 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': Load
+});
+
+/* src/routes/character/new.svelte generated by Svelte v3.29.4 */
+
+const New = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let $character = get_store_value(character);
+
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - New Character</title>`, "")}`, "")}
+<div class="${"cntr-card"}"><button class="${"link-btn"}">Build</button>
+    <button class="${"link-btn"}">Random</button></div>
+${validate_component(BackButton, "BackButton").$$render($$result, { path: "/character" }, {}, {})}`;
+});
+
 var component_11 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    'default': Gear$1
+    'default': New
 });
 
 var MasterGearList = [
@@ -9048,7 +9304,7 @@ var MasterGearList = [
 
 /* src/routes/generator.svelte generated by Svelte v3.29.4 */
 
-const css$s = {
+const css$w = {
 	code: ".item-category.svelte-oz8j6y{display:flex;justify-content:space-between}.gear-category.svelte-oz8j6y{font-size:var(--s125);margin:auto}",
 	map: "{\"version\":3,\"file\":\"generator.svelte\",\"sources\":[\"generator.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BackButton from 'views/widgets/BackButton.svelte'\\n\\timport MasterGearList from 'lists/gear/MasterGearList.js'\\n\\timport GearBlock from 'views/widgets/GearBlock.svelte'\\n\\timport RandomRoll from 'random/RandomRoll.js'\\n\\timport d6Roll from 'random/d6Roll.js'\\n\\n\\tlet roll = 0, mod = 0, result = 0\\n\\n\\tconst randomItem = (item) => {\\n\\t\\titem.value = RandomRoll(item.list)\\n\\t\\treturn item\\n\\t}\\n\\n\\tconst rolld6 = _ => {\\n\\t\\troll = d6Roll()\\n\\t\\tresult = roll + mod\\n\\t}\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online Random Generator</title>\\n</svelte:head>\\n<h1>Random Generator</h1>\\n<div class='section-card'>\\n\\t<p><span class='gear-category'>d6 Roll</span></p>\\n\\t<p>Modifier: <input type='number' bind:value='{mod}'></p>\\n\\t<p>Roll: {#if result == -666}1, 1{:else}{roll}{/if}</p>\\n\\t<div class='item-category'>\\n\\t\\t<h3>Result:</h3> {#if result == -666}Botch!{:else}{result}{/if}\\n\\t\\t<button on:click={rolld6}>Random</button>\\n\\t</div>\\n</div>\\n{#each MasterGearList as gear, i}\\n\\t<div class='section-card'>\\n\\t\\t<div class='item-category'>\\n\\t\\t\\t<span class='gear-category'>\\n\\t\\t\\t\\t{gear.name}\\n\\t\\t\\t</span>\\n\\t\\t\\t<button on:click={_ => {\\n\\t\\t\\t\\tMasterGearList[i] = randomItem(gear)\\n\\t\\t\\t\\tMasterGearList = MasterGearList\\n\\t\\t\\t}}>\\n\\t\\t\\t\\tRandom\\n\\t\\t\\t</button>\\n\\t\\t</div>\\n\\t\\t{#if gear.value != undefined}\\n\\t\\t\\t<GearBlock item={gear.value} mode={'manual'}/>\\n\\t\\t{/if}\\n\\t</div>\\n{/each}\\n<BackButton path={'/'} />\\n\\n\\n<style>\\n\\t.item-category {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\t.gear-category {\\n\\t\\tfont-size: var(--s125);\\n\\t\\tmargin: auto;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAwDC,cAAc,cAAC,CAAC,AACf,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,cAAc,cAAC,CAAC,AACf,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,MAAM,CAAE,IAAI,AACb,CAAC\"}"
 };
@@ -9056,7 +9312,7 @@ const css$s = {
 const Generator = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let roll = 0, mod = 0, result = 0;
 
-	$$result.css.add(css$s);
+	$$result.css.add(css$w);
 
 	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online Random Generator</title>`, "")}`, "")}
 <h1>Random Generator</h1>
@@ -9120,17 +9376,15 @@ const Movement = new Rule({
 	id: `66094467-f795-4c02-49e9-0bf193dacaa6`,
 	name: `Movement`, 
 	desc: [
-		`You may make one Movement Action per turn.`,
-		`This Movement always costs 1 Action, no matter what type of Movement it is.`,
-		`Your Movement Action may be any one of the following:`,
-		` 1) Walk Speed = [Agility x 3] yards`,
-		` 2) Run Speed = [Agility x 6] yards`,
-		` 3) Climb Speed = [Agility] yards`,
-		` 4) Swim Speed = [Agility / 2] yards`,
-		` 5) Stand up from Prone = 1 yard`,
-		`When you take a Movement Action, you may go Prone at any time for free.`,
-		`Running imposes the Unstable Status effect until your next turn.`,
-		`You may divide up your Movement around other Actions on your turn however you wish.`,
+		`On your turn, you have an amount of Speed equal to your [Agility x3].`,
+		`You can spend Speed to move in any of the ways listed below in any combination.`,
+		`Other Actions can be performed while moving according to the Narrator's discretion.`,
+		` 1) Walk = 1yd / 1 Speed.`,
+		` 2) Run = 2yds / 1 Speed. Unstable.`,
+		` 3) Climb = 1yd / 3 Speed.`,
+		` 4) Swim = 1yd / 6 Speed. Unstable.`,
+		` 5) Stand up = 1 Speed.`,
+		` 6) Drop Prone = 0 Speed.`,
 	]
 });
 Movement.subrules = [
@@ -9152,7 +9406,7 @@ const ReflexiveDefense = new Rule({
 	id: `feae7482-800b-47d1-f17c-3a103d83b70b`,
 	name: `Reflexive Defense`,
 	desc: [
-		`Reflexive Defenses = the Skill Specialty they are based on.`,
+		`Reflexive Defenses equal the Skill Specialty they are based on.`,
 		`These are your default Defenses when not actively rolling.`,
 		`Use Reflexive Block against Melee Attacks.`,
 		`Use Reflexive Dodge against either Melee or Ranged Attacks.`,
@@ -9177,8 +9431,8 @@ const DamageResistance = new Rule({
 	id: `c5d2503f-cc78-45c6-3b23-02f4f37d54b9`,
 	name: `Damage Resistance`, 
 	desc: [
-		`Armor's Damage Resistance reduces the Damage inflicted by any individual Attack on that Body Part.`,
-		`Reduce a piece of Armor's Damage Resistance by 1 after taking Damage that exceeds its Damage Resistance.`,
+		`Damage Resistance reduces the Damage inflicted to any Body Part the Armor covers.`,
+		`Armor loses 1 level of Damage Resistance each time it takes Damage that exceeds it's Damage Resistance.`,
 	]
 });
 
@@ -9245,96 +9499,6 @@ var Combat = {
 		Defense,
 		Damage,
 		// Vehicles,
-	]
-};
-
-class Table {
-	constructor({
-		name=``,
-		headers=[],
-		contents=[],
-		widths=[]
-	}) {
-		this.name = name;
-		this.headers = headers;
-		this.contents = contents;
-		this.widths = widths;
-	}
-}
-
-const Cover = new Rule({
-	id: `9fd0a556-f4c0-4aba-6814-c371f0a8ead0`,
-	name: `Cover`, 
-	desc: [
-		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance.`,
-		`If the weapon's base Damage is greater than the Material's Damage Resistance, then the Material Damage Resistance acts as Damage Reduction.`,
-		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
-		`You can lean in and out of Cover to Attack as part of an Action.`,
-		`Doing so opens you up to a Called Shot against an exposed Body Part if an opponent is waiting for you to lean out of Cover.`,
-	]
-});
-
-class CoverType {
-	constructor({
-		material,
-		dr
-	}) {
-		this.material = material;
-		this.dr = dr;
-	}
-}
-
-Cover.table = new Table({
-	name: `Cover Table`,
-	headers: [`Material`, `Damage Resistance`],
-	contents: [
-		new CoverType({ material: 'Drywall', dr: 1 }),
-		new CoverType({ material: 'Glass', dr: 1 }),
-		new CoverType({ material: 'Plywood', dr: 1 }),
-		new CoverType({ material: 'Hardwood', dr: 2 }),
-		new CoverType({ material: 'Sheet Metal', dr: 2 }),
-		new CoverType({ material: 'Brick', dr: 3 }),
-		new CoverType({ material: 'Concrete', dr: 4 }),
-		new CoverType({ material: 'Steel', dr: 5 }),
-	],
-	widths: [50, 50]
-});
-
-const FriendlyFire = new Rule({
-	id: `63808ef6-3fc3-411c-54c9-edcc41ba8a7b`,
-	name: `Friendly Fire`, 
-	desc: [
-		`-3 Ranged against targets within 1yd of your ally.`,
-		`If the Ranged Attack Fails, re-roll the Ranged Attack vs the ally’s Reflexive Dodge.`,
-	]
-});
-
-const Range = new Rule({
-	id: `3bca9734-b437-424e-a1e0-16b4a012af50`,
-	name: `Range`, 
-	desc: [
-		`Ranged Attacks take a -1 penalty per additional Range increment.`,
-		`Maximum Range is 10 Range increments.`,
-		`Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range].`,
-	]
-});
-
-const Visibility = new Rule({
-	id: `1ce64fb7-256c-4f7c-1750-81ded2f514e4`,
-	name: `Visibility`, 
-	desc: [
-		`-1 to -6 to all rolls involving seeing, including Attack and Defense.`,
-		`A Visibility penalty of -6 imposes the effect of being temporarily Blind.`,
-	]
-});
-
-var Complications = {
-	name: `Complications`,
-	list: [
-		Cover,
-		FriendlyFire,
-		Range,
-		Visibility,
 	]
 };
 
@@ -9504,6 +9668,20 @@ const Aim = new Rule({
 		`Spend an Action to get +3 to your next Attack against a specific target.`,
 	],
 });
+
+class Table {
+	constructor({
+		name=``,
+		headers=[],
+		contents=[],
+		widths=[]
+	}) {
+		this.name = name;
+		this.headers = headers;
+		this.contents = contents;
+		this.widths = widths;
+	}
+}
 
 const CalledShot = new Rule({
 	id: `7b5ac4ec-c58a-48bd-aaed-c0fbf6716874`,
@@ -9863,7 +10041,8 @@ const Bleeding = new Rule({
 		`If your Torso has positive Health, the rate of Bleeding is 1 Damage per minute.`,
 		`If any Body Part drops to 0 or negative Health, the rate of Bleeding is 1 Damage per round.`,
 		`A Bleeding person with positive Torso Health can roll Constitution vs total Damage once per minute to stop Bleeding on their own, otherwise the Medicine Skill is required.`,
-	]
+	],
+	type: `Status`
 });
 
 const Burning = new Rule({
@@ -9872,7 +10051,8 @@ const Burning = new Rule({
 	desc: [
 		`1 Fire Damage per round.`,
 		`It takes a d6 rounds to stop, drop Prone, and roll Survival 6# to put out the flames.`,
-	]
+	],
+	type: `Status`
 });
 
 const Concealed = new Rule({
@@ -9883,7 +10063,47 @@ const Concealed = new Rule({
 		`Any Attack they make targeting you is at a -6 penalty.`,
 		`Blasts are unaffected by this penalty, though Blast Damage may be negated or reduced if the Concealment is due to Cover.`,
 		`Targets are Defenseless against Attacks from Concealed opponents.`,
-	]
+	],
+	type: `Status`
+});
+
+const Cover = new Rule({
+	id: `9fd0a556-f4c0-4aba-6814-c371f0a8ead0`,
+	name: `Cover`, 
+	desc: [
+		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance.`,
+		`If the weapon's base Damage is greater than the Material's Damage Resistance, then the Material Damage Resistance acts as Damage Reduction.`,
+		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
+		`You can lean in and out of Cover to Attack as part of an Action.`,
+		`Doing so opens you up to a Called Shot against an exposed Body Part if an opponent is waiting for you to lean out of Cover.`,
+	],
+	type: `Status`
+});
+
+class CoverType {
+	constructor({
+		material,
+		dr
+	}) {
+		this.material = material;
+		this.dr = dr;
+	}
+}
+
+Cover.table = new Table({
+	name: `Cover Table`,
+	headers: [`Material`, `Damage Resistance`],
+	contents: [
+		new CoverType({ material: 'Drywall', dr: 1 }),
+		new CoverType({ material: 'Glass', dr: 1 }),
+		new CoverType({ material: 'Plywood', dr: 1 }),
+		new CoverType({ material: 'Hardwood', dr: 2 }),
+		new CoverType({ material: 'Sheet Metal', dr: 2 }),
+		new CoverType({ material: 'Brick', dr: 3 }),
+		new CoverType({ material: 'Concrete', dr: 4 }),
+		new CoverType({ material: 'Steel', dr: 5 }),
+	],
+	widths: [50, 50]
 });
 
 const Deaf = new Rule({
@@ -9891,7 +10111,8 @@ const Deaf = new Rule({
 	name: `Deaf`,
 	desc: [
 		`You automatically Fail any roll that involves hearing.`
-	]
+	],
+	type: `Status`
 });
 
 const Defenseless = new Rule({
@@ -9900,7 +10121,8 @@ const Defenseless = new Rule({
 	desc: [
 		`You must use a Reflexive Defense.`,
 		`Use your Block score against Melee Attacks and you Dodge score against Ranged Attacks.`,
-	]
+	],
+	type: `Status`
 });
 
 const Falling = new Rule({
@@ -9910,7 +10132,18 @@ const Falling = new Rule({
 		`1 Blunt Damage per 2yds.`,
 		`Each point of Falling Damage is inflicted on a random Body Part.`,
 		`Roll [Acrobatics # = yds] as a Defense Action to halve Falling Damage.`,
-	]
+	],
+	type: `Status`
+});
+
+const FriendlyFire = new Rule({
+	id: `63808ef6-3fc3-411c-54c9-edcc41ba8a7b`,
+	name: `Friendly Fire`, 
+	desc: [
+		`-3 Ranged against targets within 1yd of your ally.`,
+		`If the Ranged Attack Fails, re-roll the Ranged Attack vs the ally’s Reflexive Dodge.`,
+	],
+	type: `Status`
 });
 
 const Grabbed = new Rule({
@@ -9918,7 +10151,8 @@ const Grabbed = new Rule({
 	name: `Grabbed`,
 	desc: [
 		`A Grabbed opponent is considered to be Immobilized.`,
-	]
+	],
+	type: `Status`
 });
 
 const Harmless = new Rule({
@@ -9926,7 +10160,8 @@ const Harmless = new Rule({
 	name: `Harmless`,
 	desc: [
 		`You cannot Attack.`,
-	]
+	],
+	type: `Status`
 });
 
 const Immobilized = new Rule({
@@ -9934,7 +10169,8 @@ const Immobilized = new Rule({
 	name: `Immobilized`,
 	desc: [
 		`Your Speed is temporarily considered to be 0.`
-	]
+	],
+	type: `Status`
 });
 
 const OffHand = new Rule({
@@ -9942,7 +10178,8 @@ const OffHand = new Rule({
 	name: `Off-Hand`,
 	desc: [
 		`-3 penalty to Attack with your Off-Hand.`,
-	]
+	],
+	type: `Status`
 });
 
 const Pinned = new Rule({
@@ -9952,7 +10189,8 @@ const Pinned = new Rule({
 		`Pinned is the third and final step of Grappling.`,
 		`While Pinned, you are considered to be Defenseless, Harmless, Immobilized, and Prone.`,
 		`The Attacker is also considered to be Immobilized and Prone.`,
-	]
+	],
+	type: `Status`
 });
 
 const Prone = new Rule({
@@ -9963,7 +10201,19 @@ const Prone = new Rule({
 		`Standing up takes 1 Action.`,
 		`The benefits of being Prone are that you get +3 Ranged and +3 Stealth, and attackers take a -3 Ranged penalty to hit you.`,
 		`The drawbacks of being Prone are that your Speed drops to 1yrd and attackers get a +3 Melee bonus to hit you.`,
-	]
+	],
+	type: `Status`
+});
+
+const Range = new Rule({
+	id: `3bca9734-b437-424e-a1e0-16b4a012af50`,
+	name: `Range`, 
+	desc: [
+		`Ranged Attacks take a -1 penalty per additional Range increment.`,
+		`Maximum Range is 10 Range increments.`,
+		`Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range].`,
+	],
+	type: `Status`
 });
 
 const Restrained = new Rule({
@@ -9972,7 +10222,8 @@ const Restrained = new Rule({
 	desc: [
 		`Restrained is the second step of Grappling.`,
 		`While Restrained, you are considered to be Harmless and Immobilized.`,
-	]
+	],
+	type: `Status`
 });
 
 const Unarmed = new Rule({
@@ -9981,7 +10232,8 @@ const Unarmed = new Rule({
 	desc: [
 		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2] (always round down).`,
 		`Damage Resistance is not depleted.`,
-	]
+	],
+	type: `Status`
 });
 
 const Unconscious = new Rule({
@@ -9990,7 +10242,8 @@ const Unconscious = new Rule({
 	desc: [
 		`Unaware and unable to do anything.`,
 		`You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive Defense of 0.`,
-	]
+	],
+	type: `Status`
 });
 
 const Unstable = new Rule({
@@ -9999,7 +10252,18 @@ const Unstable = new Rule({
 	desc: [
 		`-3 penalty to Agility or Constitution Skill rolls.`,
 		`Ranged Attacks targeting you take a -3 penalty.`,
-	]
+	],
+	type: `Status`
+});
+
+const Visibility = new Rule({
+	id: `1ce64fb7-256c-4f7c-1750-81ded2f514e4`,
+	name: `Visibility`, 
+	desc: [
+		`-1 to -6 to all rolls involving seeing, including Attack and Defense.`,
+		`A Visibility penalty of -6 imposes the effect of being temporarily Blind.`,
+	],
+	type: `Status`
 });
 
 var Status = {
@@ -10009,27 +10273,30 @@ var Status = {
 		Blind,
 		Burning,
 		Concealed,
+		Cover,
 		Deaf,
 		Defenseless,
 		Falling,
+		FriendlyFire,
 		Grabbed,
 		Harmless,
 		Immobilized,
 		OffHand,
 		Pinned,
 		Prone,
+		Range,
 		Restrained,
 		Stun,
 		Unarmed,
 		Unconscious,
 		Unstable,
+		Visibility,
 	]
 };
 
 var Manual = [
     Abilities$1,
     Combat,
-    Complications,
     Core,
     GearList,
     Maneuvers,
@@ -10042,7 +10309,7 @@ var Manual = [
 
 /* src/components/views/manual/ManualRuleDescription.svelte generated by Svelte v3.29.4 */
 
-const css$t = {
+const css$x = {
 	code: "p.svelte-14srqf2{padding-bottom:var(--s100)}.bold.svelte-14srqf2{font-weight:bold}",
 	map: "{\"version\":3,\"file\":\"ManualRuleDescription.svelte\",\"sources\":[\"ManualRuleDescription.svelte\"],\"sourcesContent\":[\"<script>\\n    import Ability from 'abilities/Ability.js'\\n\\n    export let rule\\n</script>\\n\\n\\n<div class='desc-section'>\\n    {#each rule.desc as desc}\\n        <p>{desc}</p>\\n    {/each}\\n    {#if rule instanceof Ability}\\n        <p><span class='bold'>Max:</span> {rule.max}</p>\\n        <p><span class='bold'>XP:</span> {rule.xp}</p>\\n    {/if}\\n</div>\\n\\n\\n<style>\\n    p {\\n\\t\\tpadding-bottom: var(--s100);\\n\\t}\\n    .bold {\\n\\t\\tfont-weight: bold;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAmBI,CAAC,eAAC,CAAC,AACL,cAAc,CAAE,IAAI,MAAM,CAAC,AAC5B,CAAC,AACE,KAAK,eAAC,CAAC,AACT,WAAW,CAAE,IAAI,AAClB,CAAC\"}"
 };
@@ -10050,7 +10317,7 @@ const css$t = {
 const ManualRuleDescription = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { rule } = $$props;
 	if ($$props.rule === void 0 && $$bindings.rule && rule !== void 0) $$bindings.rule(rule);
-	$$result.css.add(css$t);
+	$$result.css.add(css$x);
 
 	return `<div class="${"desc-section"}">${each(rule.desc, desc => `<p class="${"svelte-14srqf2"}">${escape(desc)}</p>`)}
     ${rule instanceof Ability
@@ -10062,7 +10329,7 @@ const ManualRuleDescription = create_ssr_component(($$result, $$props, $$binding
 
 /* src/components/views/manual/ManualRuleSpecialization.svelte generated by Svelte v3.29.4 */
 
-const css$u = {
+const css$y = {
 	code: ".spec-desc.svelte-14xk3cs{margin-bottom:var(--s100)}",
 	map: "{\"version\":3,\"file\":\"ManualRuleSpecialization.svelte\",\"sources\":[\"ManualRuleSpecialization.svelte\"],\"sourcesContent\":[\"<script>\\n    export let rule\\n</script>\\n\\n\\n<ul>\\n    {#each Object.values(rule.specs) as spec}\\n        <li>\\n            <div class='sub-name'>{spec.name}</div>\\n            {#each spec.desc as spec_desc}\\n                <p class='spec-desc'>{spec_desc}</p>\\n            {/each}\\n        </li>\\n    {/each}\\n</ul>\\n\\n\\n<style>\\n    .spec-desc {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAkBI,UAAU,eAAC,CAAC,AACd,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC\"}"
 };
@@ -10070,7 +10337,7 @@ const css$u = {
 const ManualRuleSpecialization = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { rule } = $$props;
 	if ($$props.rule === void 0 && $$bindings.rule && rule !== void 0) $$bindings.rule(rule);
-	$$result.css.add(css$u);
+	$$result.css.add(css$y);
 
 	return `<ul>${each(Object.values(rule.specs), spec => `<li><div class="${"sub-name"}">${escape(spec.name)}</div>
             ${each(spec.desc, spec_desc => `<p class="${"spec-desc svelte-14xk3cs"}">${escape(spec_desc)}</p>`)}
@@ -10080,7 +10347,7 @@ const ManualRuleSpecialization = create_ssr_component(($$result, $$props, $$bind
 
 /* src/components/views/manual/ManualRuleTable.svelte generated by Svelte v3.29.4 */
 
-const css$v = {
+const css$z = {
 	code: ".rule-table.svelte-1vpg0vt{margin:var(--s100)}.table-header.svelte-1vpg0vt{font-weight:bold;text-align:center}tr.svelte-1vpg0vt{display:flex;width:100%}table.svelte-1vpg0vt{width:100%}",
 	map: "{\"version\":3,\"file\":\"ManualRuleTable.svelte\",\"sources\":[\"ManualRuleTable.svelte\"],\"sourcesContent\":[\"<script>\\n    export let rule\\n</script>\\n\\n\\n<div class='rule-table'>\\n    <table>\\n        <tr class='table-header'>\\n            {#each rule.table.headers as h, i}\\n                <td style='max-width: {rule.table.widths[i]}%; width: {rule.table.widths[i]}%;'>{h}</td>\\n            {/each}\\n        </tr>\\n        {#each rule.table.contents as c, i}\\n            <tr>\\n            {#each Object.values(c) as c, i}\\n                <td style='max-width: {rule.table.widths[i]}%; width: {rule.table.widths[i]}%;'>{c}</td>\\n            {/each}\\n            </tr>\\n        {/each}\\n    </table>\\n</div>\\n\\n\\n<style>\\n    .rule-table {\\n\\t\\tmargin: var(--s100);\\n\\t}\\n\\t.table-header {\\n\\t\\tfont-weight: bold;\\n\\t\\ttext-align: center;\\n\\t}\\n\\ttr {\\n\\t\\tdisplay: flex;\\n\\t\\twidth: 100%;\\n\\t}\\n\\ttable {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAwBI,WAAW,eAAC,CAAC,AACf,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC,AACD,aAAa,eAAC,CAAC,AACd,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,EAAE,eAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,KAAK,eAAC,CAAC,AACN,KAAK,CAAE,IAAI,AACZ,CAAC\"}"
 };
@@ -10088,7 +10355,7 @@ const css$v = {
 const ManualRuleTable = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { rule } = $$props;
 	if ($$props.rule === void 0 && $$bindings.rule && rule !== void 0) $$bindings.rule(rule);
-	$$result.css.add(css$v);
+	$$result.css.add(css$z);
 
 	return `<div class="${"rule-table svelte-1vpg0vt"}"><table class="${"svelte-1vpg0vt"}"><tr class="${"table-header svelte-1vpg0vt"}">${each(rule.table.headers, (h, i) => `<td style="${"max-width: " + escape(rule.table.widths[i]) + "%; width: " + escape(rule.table.widths[i]) + "%;"}">${escape(h)}</td>`)}</tr>
         ${each(rule.table.contents, (c, i) => `<tr class="${"svelte-1vpg0vt"}">${each(Object.values(c), (c, i) => `<td style="${"max-width: " + escape(rule.table.widths[i]) + "%; width: " + escape(rule.table.widths[i]) + "%;"}">${escape(c)}</td>`)}
@@ -10098,7 +10365,7 @@ const ManualRuleTable = create_ssr_component(($$result, $$props, $$bindings, slo
 
 /* src/components/views/manual/ManualSubRule.svelte generated by Svelte v3.29.4 */
 
-const css$w = {
+const css$A = {
 	code: ".subrule-details.svelte-jjci4r{margin-bottom:var(--s100)}.sub-name.svelte-jjci4r{font-weight:bold}.subrule-body.svelte-jjci4r{padding:var(--s100)}",
 	map: "{\"version\":3,\"file\":\"ManualSubRule.svelte\",\"sources\":[\"ManualSubRule.svelte\"],\"sourcesContent\":[\"<script>\\n    export let subrule\\n</script>\\n\\n\\n<details class='subrule-details'>\\n\\t<summary class='sub-name'>{subrule.name}</summary>\\n\\t<div class='subrule-body'>\\n\\t\\t{#each subrule.desc as sub_desc}\\n\\t\\t\\t<p>{sub_desc}</p>\\n\\t\\t{/each}\\n\\t</div>\\n</details>\\n\\n\\n<style>\\n    .subrule-details {\\n\\t\\tmargin-bottom: var(--s100);\\n\\t}\\n\\t.sub-name {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\t.subrule-body {\\n\\t\\tpadding: var(--s100);\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAgBI,gBAAgB,cAAC,CAAC,AACpB,aAAa,CAAE,IAAI,MAAM,CAAC,AAC3B,CAAC,AACD,SAAS,cAAC,CAAC,AACV,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,aAAa,cAAC,CAAC,AACd,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC\"}"
 };
@@ -10106,7 +10373,7 @@ const css$w = {
 const ManualSubRule = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { subrule } = $$props;
 	if ($$props.subrule === void 0 && $$bindings.subrule && subrule !== void 0) $$bindings.subrule(subrule);
-	$$result.css.add(css$w);
+	$$result.css.add(css$A);
 
 	return `<details class="${"subrule-details svelte-jjci4r"}"><summary class="${"sub-name svelte-jjci4r"}">${escape(subrule.name)}</summary>
 	<div class="${"subrule-body svelte-jjci4r"}">${each(subrule.desc, sub_desc => `<p>${escape(sub_desc)}</p>`)}</div>
@@ -10115,17 +10382,18 @@ const ManualSubRule = create_ssr_component(($$result, $$props, $$bindings, slots
 
 /* src/components/views/manual/ManualRule.svelte generated by Svelte v3.29.4 */
 
-const css$x = {
+const css$B = {
 	code: ".rule-ref.svelte-x1sr8f{margin-bottom:var(--s200);width:100%}@media only screen and (min-width: 650px){.rule-ref.svelte-x1sr8f{margin-left:auto;margin-right:auto;max-width:80%}}.rule-body.svelte-x1sr8f{padding:var(--s100)}.gear-rule.svelte-x1sr8f{margin:var(--s100)}",
-	map: "{\"version\":3,\"file\":\"ManualRule.svelte\",\"sources\":[\"ManualRule.svelte\"],\"sourcesContent\":[\"<script>\\n    import Gear from 'gear/Gear.js'\\n    import GearBlock from 'views/widgets/GearBlock.svelte'\\n    import ManualRuleDescription from 'views/manual/ManualRuleDescription.svelte'\\n    import ManualRuleSpecialization from 'views/manual/ManualRuleSpecialization.svelte'\\n    import ManualRuleTable from 'views/manual/ManualRuleTable.svelte'\\n    import ManualSubRule from 'views/manual/ManualSubRule.svelte'\\n\\n    export let rule\\n</script>\\n\\n\\n<details class='rule-ref' bind:open={rule.visible}>\\n    <summary>\\n        {rule.name}\\n    </summary>\\n    <div class='rule-body'>\\n        {#if rule instanceof Gear }\\n            <div class='gear-rule'>\\n                <GearBlock item={rule} mode={'manual'} />\\n            </div>\\n        {/if}\\n        {#if rule.desc != undefined}\\n            <ManualRuleDescription {rule} />\\n        {/if}\\n        {#if rule.subrules}\\n            {#each rule.subrules as subrule}\\n                <ManualSubRule {subrule} />\\n            {/each}\\n        {/if}\\n        {#if rule.table != undefined}\\n            <ManualRuleTable {rule} />\\n        {/if}\\n        {#if rule.specs}\\n            <ManualRuleSpecialization {rule} />\\n        {/if}\\n    </div>\\n</details>\\n\\n\\n<style>\\n    .rule-ref {\\n\\t\\tmargin-bottom: var(--s200);\\n\\t\\twidth: 100%;\\n\\t}\\n\\t@media only screen and (min-width: 650px) {\\n\\t\\t.rule-ref {\\n\\t\\t\\tmargin-left: auto;\\n\\t\\t\\tmargin-right: auto;\\n\\t\\t\\tmax-width: 80%;\\n\\t\\t}\\n\\t}\\n\\t\\t.rule-body {\\n\\t\\t\\tpadding: var(--s100);\\n\\t\\t}\\n\\t\\t\\t.gear-rule {\\n\\t\\t\\t\\tmargin: var(--s100);\\n\\t\\t\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAyCI,SAAS,cAAC,CAAC,AACb,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,SAAS,cAAC,CAAC,AACV,WAAW,CAAE,IAAI,CACjB,YAAY,CAAE,IAAI,CAClB,SAAS,CAAE,GAAG,AACf,CAAC,AACF,CAAC,AACA,UAAU,cAAC,CAAC,AACX,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACA,UAAU,cAAC,CAAC,AACX,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"ManualRule.svelte\",\"sources\":[\"ManualRule.svelte\"],\"sourcesContent\":[\"<script>\\n    import Gear from 'gear/Gear.js'\\n    import GearBlock from 'views/widgets/GearBlock.svelte'\\n    import ManualRuleDescription from 'views/manual/ManualRuleDescription.svelte'\\n    import ManualRuleSpecialization from 'views/manual/ManualRuleSpecialization.svelte'\\n    import ManualRuleTable from 'views/manual/ManualRuleTable.svelte'\\n    import ManualSubRule from 'views/manual/ManualSubRule.svelte'\\n\\n    export let rule\\n\\n    console.dir(rule)\\n</script>\\n\\n\\n<details class='rule-ref' bind:open={rule.visible}>\\n    <summary>\\n        {rule.name}{typeof rule == \\\"Skill\\\" ? \\\" Skill\\\" : \\\"\\\" }\\n    </summary>\\n    <div class='rule-body'>\\n        {#if rule instanceof Gear }\\n            <div class='gear-rule'>\\n                <GearBlock item={rule} mode={'manual'} />\\n            </div>\\n        {/if}\\n        {#if rule.desc != undefined}\\n            <ManualRuleDescription {rule} />\\n        {/if}\\n        {#if rule.subrules}\\n            {#each rule.subrules as subrule}\\n                <ManualSubRule {subrule} />\\n            {/each}\\n        {/if}\\n        {#if rule.table != undefined}\\n            <ManualRuleTable {rule} />\\n        {/if}\\n        {#if rule.specs}\\n            <ManualRuleSpecialization {rule} />\\n        {/if}\\n    </div>\\n</details>\\n\\n\\n<style>\\n    .rule-ref {\\n\\t\\tmargin-bottom: var(--s200);\\n\\t\\twidth: 100%;\\n\\t}\\n\\t@media only screen and (min-width: 650px) {\\n\\t\\t.rule-ref {\\n\\t\\t\\tmargin-left: auto;\\n\\t\\t\\tmargin-right: auto;\\n\\t\\t\\tmax-width: 80%;\\n\\t\\t}\\n\\t}\\n\\t\\t.rule-body {\\n\\t\\t\\tpadding: var(--s100);\\n\\t\\t}\\n\\t\\t\\t.gear-rule {\\n\\t\\t\\t\\tmargin: var(--s100);\\n\\t\\t\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA2CI,SAAS,cAAC,CAAC,AACb,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,KAAK,CAAE,IAAI,AACZ,CAAC,AACD,OAAO,IAAI,CAAC,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1C,SAAS,cAAC,CAAC,AACV,WAAW,CAAE,IAAI,CACjB,YAAY,CAAE,IAAI,CAClB,SAAS,CAAE,GAAG,AACf,CAAC,AACF,CAAC,AACA,UAAU,cAAC,CAAC,AACX,OAAO,CAAE,IAAI,MAAM,CAAC,AACrB,CAAC,AACA,UAAU,cAAC,CAAC,AACX,MAAM,CAAE,IAAI,MAAM,CAAC,AACpB,CAAC\"}"
 };
 
 const ManualRule = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { rule } = $$props;
+	console.dir(rule);
 	if ($$props.rule === void 0 && $$bindings.rule && rule !== void 0) $$bindings.rule(rule);
-	$$result.css.add(css$x);
+	$$result.css.add(css$B);
 
-	return `<details class="${"rule-ref svelte-x1sr8f"}"${add_attribute("open", rule.visible, 1)}><summary>${escape(rule.name)}</summary>
+	return `<details class="${"rule-ref svelte-x1sr8f"}"${add_attribute("open", rule.visible, 1)}><summary>${escape(rule.name)}${escape(typeof rule == "Skill" ? " Skill" : "")}</summary>
     <div class="${"rule-body svelte-x1sr8f"}">${rule instanceof Gear
 	? `<div class="${"gear-rule svelte-x1sr8f"}">${validate_component(GearBlock, "GearBlock").$$render($$result, { item: rule, mode: "manual" }, {}, {})}</div>`
 	: ``}
@@ -10144,18 +10412,18 @@ const ManualRule = create_ssr_component(($$result, $$props, $$bindings, slots) =
 </details>`;
 });
 
-/* src/routes/manual/manual.svelte generated by Svelte v3.29.4 */
+/* src/routes/manual/index.svelte generated by Svelte v3.29.4 */
 
-const css$y = {
+const css$C = {
 	code: ".manual-header-section.svelte-ay58r9{align-items:center;background-color:rgb(15, 30, 15);border:1px solid lime;display:flex;height:var(--s300);justify-content:space-around;left:0;position:fixed;right:0;top:var(--s350);z-index:1}.rules-name.svelte-ay58r9{font-size:var(--s150);font-weight:bold}.search-bar.svelte-ay58r9{min-width:100px;padding:var(--s25) var(--s100);text-align:left;width:45%}.manual-page-body.svelte-ay58r9{position:absolute;top:var(--s300);left:0;right:0;padding:var(--s200);margin-bottom:var(--s150);margin-top:var(--s50)}.rule-body-section.svelte-ay58r9{align-items:center;display:flex;flex-direction:column;justify-content:space-around}.no-results.svelte-ay58r9{padding-left:10vw;padding-top:2vh}",
-	map: "{\"version\":3,\"file\":\"manual.svelte\",\"sources\":[\"manual.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BackButton from 'views/widgets/BackButton.svelte'\\n\\timport Manual from 'rules/lists/Manual.js'\\n\\timport ManualRule from 'views/manual/ManualRule.svelte'\\n\\n\\tlet masterRulesList = []\\n\\n\\tmasterRulesList = Manual.map(r => [...r.list]).flat()\\n\\n\\tlet ruleList = masterRulesList\\n\\n\\t$: searchTerm = ''\\n\\n\\t$: if (searchTerm.length) {\\n\\t\\truleList = masterRulesList.filter(r => {\\n\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t.startsWith(searchTerm.toLocaleLowerCase())\\n\\t\\t})\\n\\t\\tif (!ruleList.length) {\\n\\t\\t\\truleList = masterRulesList.filter(r => {\\n\\t\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t\\t.includes(searchTerm.toLocaleLowerCase())\\n\\t\\t\\t})\\n\\t\\t}\\n\\t} else {\\n\\t\\truleList = masterRulesList\\n\\t}\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Manual</title>\\n</svelte:head>\\n<div class='manual-header-section'>\\n\\t<div class='rules-name'>Manual</div>\\n\\t<input type='text'\\n\\t\\tclass='search-bar'\\n\\t\\tplaceholder='Search'\\n\\t\\tbind:value='{searchTerm}'\\n\\t/>\\n</div>\\n<div class='manual-page-body'>\\n\\t{#if searchTerm === ''}\\n\\t\\t{#each Manual as chapter}\\n\\t\\t\\t<a href={`/manual/${chapter.name.toLowerCase()}`}\\n\\t\\t\\t\\tclass='link-btn menu-btn'\\n\\t\\t\\t>\\n\\t\\t\\t\\t{chapter.name}\\n\\t\\t\\t</a>\\n\\t\\t{/each}\\n\\t{:else}\\n\\t\\t{#if ruleList.length}\\n\\t\\t\\t<div class='rule-body-section'>\\n\\t\\t\\t\\t{#each ruleList as rule}\\n\\t\\t\\t\\t\\t<ManualRule {rule} />\\n\\t\\t\\t\\t{/each}\\n\\t\\t\\t</div>\\n\\t\\t{:else}\\n\\t\\t\\t<div class='no-results'>\\n\\t\\t\\t\\t<p>No results.</p>\\n\\t\\t\\t</div>\\n\\t\\t{/if}\\n\\t{/if}\\n</div>\\n<BackButton path={'/'} />\\n\\n\\n<style>\\n\\t.manual-header-section {\\n\\t\\talign-items: center;\\n\\t\\tbackground-color: rgb(15, 30, 15);\\n\\t\\tborder: 1px solid lime;\\n\\t\\tdisplay: flex;\\n\\t\\theight: var(--s300);\\n\\t\\tjustify-content: space-around;\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\tright: 0;\\n\\t\\ttop: var(--s350);\\n\\t\\tz-index: 1;\\n\\t}\\n\\t\\t.rules-name {\\n\\t\\t\\tfont-size: var(--s150);\\n\\t\\t\\tfont-weight: bold;\\n\\t\\t}\\n\\t\\t.search-bar {\\n\\t\\t\\tmin-width: 100px;\\n\\t\\t\\tpadding: var(--s25) var(--s100);\\n\\t\\t\\ttext-align: left;\\n\\t\\t\\twidth: 45%;\\n\\t\\t}\\n\\n\\t.manual-page-body {\\n\\t\\tposition: absolute;\\n\\t\\ttop: var(--s300);\\n\\t\\tleft: 0;\\n\\t\\tright: 0;\\n\\t\\tpadding: var(--s200);\\n\\t\\tmargin-bottom: var(--s150);\\n\\t\\tmargin-top: var(--s50);\\n\\t}\\n\\t\\t.rule-body-section {\\n\\t\\t\\talign-items: center;\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tflex-direction: column;\\n\\t\\t\\tjustify-content: space-around;\\n\\t\\t}\\n\\t\\t.no-results {\\n\\t\\t\\tpadding-left: 10vw;\\n\\t\\t\\tpadding-top: 2vh;\\n\\t\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAoEC,sBAAsB,cAAC,CAAC,AACvB,WAAW,CAAE,MAAM,CACnB,gBAAgB,CAAE,IAAI,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CACjC,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,eAAe,CAAE,YAAY,CAC7B,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,OAAO,CAAE,CAAC,AACX,CAAC,AACA,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,MAAM,CAAC,CAC/B,UAAU,CAAE,IAAI,CAChB,KAAK,CAAE,GAAG,AACX,CAAC,AAEF,iBAAiB,cAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,IAAI,CAAE,CAAC,CACP,KAAK,CAAE,CAAC,CACR,OAAO,CAAE,IAAI,MAAM,CAAC,CACpB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,UAAU,CAAE,IAAI,KAAK,CAAC,AACvB,CAAC,AACA,kBAAkB,cAAC,CAAC,AACnB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,YAAY,AAC9B,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,YAAY,CAAE,IAAI,CAClB,WAAW,CAAE,GAAG,AACjB,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"index.svelte\",\"sources\":[\"index.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BackButton from 'views/widgets/BackButton.svelte'\\n\\timport Manual from 'rules/lists/Manual.js'\\n\\timport ManualRule from 'views/manual/ManualRule.svelte'\\n\\timport { goto } from '@sapper/app'\\n\\n\\tlet masterRulesList = []\\n\\n\\tmasterRulesList = Manual.map(r => [...r.list]).flat()\\n\\n\\tlet ruleList = masterRulesList\\n\\n\\t$: searchTerm = ''\\n\\n\\t$: if (searchTerm.length) {\\n\\t\\truleList = masterRulesList.filter(r => {\\n\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t.startsWith(searchTerm.toLocaleLowerCase())\\n\\t\\t})\\n\\t\\tif (!ruleList.length) {\\n\\t\\t\\truleList = masterRulesList.filter(r => {\\n\\t\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t\\t.includes(searchTerm.toLocaleLowerCase())\\n\\t\\t\\t})\\n\\t\\t}\\n\\t} else {\\n\\t\\truleList = masterRulesList\\n\\t}\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Manual</title>\\n</svelte:head>\\n<div class='manual-header-section'>\\n\\t<div class='rules-name'>Manual</div>\\n\\t<input type='text'\\n\\t\\tclass='search-bar'\\n\\t\\tplaceholder='Search'\\n\\t\\tbind:value='{searchTerm}'\\n\\t/>\\n</div>\\n<div class='manual-page-body'>\\n\\t{#if searchTerm === ''}\\n\\t\\t{#each Manual as chapter}\\n\\t\\t\\t<a href={`/manual/${chapter.name.toLowerCase()}`}\\n\\t\\t\\t\\tclass='link-btn menu-btn'\\n\\t\\t\\t>\\n\\t\\t\\t\\t{chapter.name}\\n\\t\\t\\t</a>\\n\\t\\t{/each}\\n\\t{:else}\\n\\t\\t{#if ruleList.length}\\n\\t\\t\\t<div class='rule-body-section'>\\n\\t\\t\\t\\t{#each ruleList as rule}\\n\\t\\t\\t\\t\\t<ManualRule {rule} />\\n\\t\\t\\t\\t{/each}\\n\\t\\t\\t</div>\\n\\t\\t{:else}\\n\\t\\t\\t<div class='no-results'>\\n\\t\\t\\t\\t<p>No results.</p>\\n\\t\\t\\t</div>\\n\\t\\t{/if}\\n\\t{/if}\\n</div>\\n<BackButton path={'/'} />\\n\\n\\n<style>\\n\\t.manual-header-section {\\n\\t\\talign-items: center;\\n\\t\\tbackground-color: rgb(15, 30, 15);\\n\\t\\tborder: 1px solid lime;\\n\\t\\tdisplay: flex;\\n\\t\\theight: var(--s300);\\n\\t\\tjustify-content: space-around;\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\tright: 0;\\n\\t\\ttop: var(--s350);\\n\\t\\tz-index: 1;\\n\\t}\\n\\t\\t.rules-name {\\n\\t\\t\\tfont-size: var(--s150);\\n\\t\\t\\tfont-weight: bold;\\n\\t\\t}\\n\\t\\t.search-bar {\\n\\t\\t\\tmin-width: 100px;\\n\\t\\t\\tpadding: var(--s25) var(--s100);\\n\\t\\t\\ttext-align: left;\\n\\t\\t\\twidth: 45%;\\n\\t\\t}\\n\\n\\t.manual-page-body {\\n\\t\\tposition: absolute;\\n\\t\\ttop: var(--s300);\\n\\t\\tleft: 0;\\n\\t\\tright: 0;\\n\\t\\tpadding: var(--s200);\\n\\t\\tmargin-bottom: var(--s150);\\n\\t\\tmargin-top: var(--s50);\\n\\t}\\n\\t\\t.rule-body-section {\\n\\t\\t\\talign-items: center;\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tflex-direction: column;\\n\\t\\t\\tjustify-content: space-around;\\n\\t\\t}\\n\\t\\t.no-results {\\n\\t\\t\\tpadding-left: 10vw;\\n\\t\\t\\tpadding-top: 2vh;\\n\\t\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAqEC,sBAAsB,cAAC,CAAC,AACvB,WAAW,CAAE,MAAM,CACnB,gBAAgB,CAAE,IAAI,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CACjC,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,eAAe,CAAE,YAAY,CAC7B,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,OAAO,CAAE,CAAC,AACX,CAAC,AACA,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,MAAM,CAAC,CAC/B,UAAU,CAAE,IAAI,CAChB,KAAK,CAAE,GAAG,AACX,CAAC,AAEF,iBAAiB,cAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,IAAI,CAAE,CAAC,CACP,KAAK,CAAE,CAAC,CACR,OAAO,CAAE,IAAI,MAAM,CAAC,CACpB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,UAAU,CAAE,IAAI,KAAK,CAAC,AACvB,CAAC,AACA,kBAAkB,cAAC,CAAC,AACnB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,YAAY,AAC9B,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,YAAY,CAAE,IAAI,CAClB,WAAW,CAAE,GAAG,AACjB,CAAC\"}"
 };
 
 const Manual_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let masterRulesList = [];
 	masterRulesList = Manual.map(r => [...r.list]).flat();
 	let ruleList = masterRulesList;
-	$$result.css.add(css$y);
+	$$result.css.add(css$C);
 	let searchTerm;
 	searchTerm = "";
 
@@ -10194,19 +10462,18 @@ var component_13 = /*#__PURE__*/Object.freeze({
 
 /* src/routes/manual/[chapter].svelte generated by Svelte v3.29.4 */
 
-const css$z = {
+const css$D = {
 	code: ".manual-header-section.svelte-ay58r9{align-items:center;background-color:rgb(15, 30, 15);border:1px solid lime;display:flex;height:var(--s300);justify-content:space-around;left:0;position:fixed;right:0;top:var(--s350);z-index:1}.rules-name.svelte-ay58r9{font-size:var(--s150);font-weight:bold}.search-bar.svelte-ay58r9{min-width:100px;padding:var(--s25) var(--s100);text-align:left;width:45%}.manual-page-body.svelte-ay58r9{position:absolute;top:var(--s300);left:0;right:0;padding:var(--s200);margin-bottom:var(--s150);margin-top:var(--s50)}.rule-body-section.svelte-ay58r9{align-items:center;display:flex;flex-direction:column;justify-content:space-around}.no-results.svelte-ay58r9{padding-left:10vw;padding-top:2vh}",
-	map: "{\"version\":3,\"file\":\"[chapter].svelte\",\"sources\":[\"[chapter].svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BackButton from 'views/widgets/BackButton.svelte'\\n\\timport Manual from 'rules/lists/Manual.js'\\n\\timport ManualRule from 'views/manual/ManualRule.svelte'\\n\\n\\texport let params\\n\\n\\tconst chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == params)[0]\\n\\n\\tconst chapterRulesList = chapterObject.list.sort((a, b) => (a.name > b.name)).flat()\\n\\n\\tconst chapter = chapterObject.name\\n\\n\\tlet ruleList = chapterRulesList\\n\\n\\t$: searchTerm = ''\\n\\n\\t$: if (searchTerm.length) {\\n\\t\\truleList = chapterRulesList.filter(r => {\\n\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t.startsWith(searchTerm.toLocaleLowerCase())\\n\\t\\t})\\n\\t\\tif (!ruleList.length) {\\n\\t\\t\\truleList = chapterRulesList.filter(r => {\\n\\t\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t\\t.includes(searchTerm.toLocaleLowerCase())\\n\\t\\t\\t})\\n\\t\\t}\\n\\t} else {\\n\\t\\truleList = chapterRulesList\\n\\t}\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Manual - {chapter}</title>\\n</svelte:head>\\n<div class='manual-header-section'>\\n\\t<div class='rules-name'>{chapter}</div>\\n\\t<input type='text'\\n\\t\\tclass='search-bar'\\n\\t\\tplaceholder='Search'\\n\\t\\tbind:value='{searchTerm}'\\n\\t/>\\n</div>\\n<div class='manual-page-body'>\\n\\t{#if ruleList.length}\\n\\t\\t<div class='rule-body-section'>\\n\\t\\t\\t{#each ruleList as rule}\\n\\t\\t\\t\\t<ManualRule {rule} />\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t{:else}\\n\\t\\t<div class='no-results'>\\n\\t\\t\\t<p>No results.</p>\\n\\t\\t</div>\\n\\t{/if}\\n</div>\\n<BackButton path={'/manual'} />\\n\\n\\n<style>\\n\\t.manual-header-section {\\n\\t\\talign-items: center;\\n\\t\\tbackground-color: rgb(15, 30, 15);\\n\\t\\tborder: 1px solid lime;\\n\\t\\tdisplay: flex;\\n\\t\\theight: var(--s300);\\n\\t\\tjustify-content: space-around;\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\tright: 0;\\n\\t\\ttop: var(--s350);\\n\\t\\tz-index: 1;\\n\\t}\\n\\t\\t.rules-name {\\n\\t\\t\\tfont-size: var(--s150);\\n\\t\\t\\tfont-weight: bold;\\n\\t\\t}\\n\\t\\t.search-bar {\\n\\t\\t\\tmin-width: 100px;\\n\\t\\t\\tpadding: var(--s25) var(--s100);\\n\\t\\t\\ttext-align: left;\\n\\t\\t\\twidth: 45%;\\n\\t\\t}\\n\\n\\t.manual-page-body {\\n\\t\\tposition: absolute;\\n\\t\\ttop: var(--s300);\\n\\t\\tleft: 0;\\n\\t\\tright: 0;\\n\\t\\tpadding: var(--s200);\\n\\t\\tmargin-bottom: var(--s150);\\n\\t\\tmargin-top: var(--s50);\\n\\t}\\n\\t\\t.rule-body-section {\\n\\t\\t\\talign-items: center;\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tflex-direction: column;\\n\\t\\t\\tjustify-content: space-around;\\n\\t\\t}\\n\\t\\t.no-results {\\n\\t\\t\\tpadding-left: 10vw;\\n\\t\\t\\tpadding-top: 2vh;\\n\\t\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8DC,sBAAsB,cAAC,CAAC,AACvB,WAAW,CAAE,MAAM,CACnB,gBAAgB,CAAE,IAAI,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CACjC,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,eAAe,CAAE,YAAY,CAC7B,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,OAAO,CAAE,CAAC,AACX,CAAC,AACA,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,MAAM,CAAC,CAC/B,UAAU,CAAE,IAAI,CAChB,KAAK,CAAE,GAAG,AACX,CAAC,AAEF,iBAAiB,cAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,IAAI,CAAE,CAAC,CACP,KAAK,CAAE,CAAC,CACR,OAAO,CAAE,IAAI,MAAM,CAAC,CACpB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,UAAU,CAAE,IAAI,KAAK,CAAC,AACvB,CAAC,AACA,kBAAkB,cAAC,CAAC,AACnB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,YAAY,AAC9B,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,YAAY,CAAE,IAAI,CAClB,WAAW,CAAE,GAAG,AACjB,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"[chapter].svelte\",\"sources\":[\"[chapter].svelte\"],\"sourcesContent\":[\"<script>\\n\\timport BackButton from 'views/widgets/BackButton.svelte'\\n\\timport Manual from 'rules/lists/Manual.js'\\n\\timport ManualRule from 'views/manual/ManualRule.svelte'\\n\\n\\tconst chapter = window.location.href.substring(window.location.href.lastIndexOf('/')+1)\\n\\n\\tconst chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == chapter)[0]\\n\\n\\tconst chapterRulesList = chapterObject.list.sort((a, b) => (a.name > b.name)).flat()\\n\\n\\tconst chapterName = chapterObject.name\\n\\n\\tlet ruleList = chapterRulesList\\n\\n\\t$: searchTerm = ''\\n\\n\\t$: if (searchTerm.length) {\\n\\t\\truleList = chapterRulesList.filter(r => {\\n\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t.startsWith(searchTerm.toLocaleLowerCase())\\n\\t\\t})\\n\\t\\tif (!ruleList.length) {\\n\\t\\t\\truleList = chapterRulesList.filter(r => {\\n\\t\\t\\t\\treturn r.name.toLocaleLowerCase()\\n\\t\\t\\t\\t\\t\\t\\t.includes(searchTerm.toLocaleLowerCase())\\n\\t\\t\\t})\\n\\t\\t}\\n\\t} else {\\n\\t\\truleList = chapterRulesList\\n\\t}\\n</script>\\n\\n\\n<svelte:head>\\n\\t<title>Apocalyptia Online - Manual - {chapterName}</title>\\n</svelte:head>\\n<div class='manual-header-section'>\\n\\t<div class='rules-name'>{chapterName}</div>\\n\\t<input type='text'\\n\\t\\tclass='search-bar'\\n\\t\\tplaceholder='Search'\\n\\t\\tbind:value='{searchTerm}'\\n\\t/>\\n</div>\\n<div class='manual-page-body'>\\n\\t{#if ruleList.length}\\n\\t\\t<div class='rule-body-section'>\\n\\t\\t\\t{#each ruleList as rule}\\n\\t\\t\\t\\t<ManualRule {rule} />\\n\\t\\t\\t{/each}\\n\\t\\t</div>\\n\\t{:else}\\n\\t\\t<div class='no-results'>\\n\\t\\t\\t<p>No results.</p>\\n\\t\\t</div>\\n\\t{/if}\\n</div>\\n<BackButton path={'/manual'} />\\n\\n\\n<style>\\n\\t.manual-header-section {\\n\\t\\talign-items: center;\\n\\t\\tbackground-color: rgb(15, 30, 15);\\n\\t\\tborder: 1px solid lime;\\n\\t\\tdisplay: flex;\\n\\t\\theight: var(--s300);\\n\\t\\tjustify-content: space-around;\\n\\t\\tleft: 0;\\n\\t\\tposition: fixed;\\n\\t\\tright: 0;\\n\\t\\ttop: var(--s350);\\n\\t\\tz-index: 1;\\n\\t}\\n\\t\\t.rules-name {\\n\\t\\t\\tfont-size: var(--s150);\\n\\t\\t\\tfont-weight: bold;\\n\\t\\t}\\n\\t\\t.search-bar {\\n\\t\\t\\tmin-width: 100px;\\n\\t\\t\\tpadding: var(--s25) var(--s100);\\n\\t\\t\\ttext-align: left;\\n\\t\\t\\twidth: 45%;\\n\\t\\t}\\n\\n\\t.manual-page-body {\\n\\t\\tposition: absolute;\\n\\t\\ttop: var(--s300);\\n\\t\\tleft: 0;\\n\\t\\tright: 0;\\n\\t\\tpadding: var(--s200);\\n\\t\\tmargin-bottom: var(--s150);\\n\\t\\tmargin-top: var(--s50);\\n\\t}\\n\\t\\t.rule-body-section {\\n\\t\\t\\talign-items: center;\\n\\t\\t\\tdisplay: flex;\\n\\t\\t\\tflex-direction: column;\\n\\t\\t\\tjustify-content: space-around;\\n\\t\\t}\\n\\t\\t.no-results {\\n\\t\\t\\tpadding-left: 10vw;\\n\\t\\t\\tpadding-top: 2vh;\\n\\t\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AA8DC,sBAAsB,cAAC,CAAC,AACvB,WAAW,CAAE,MAAM,CACnB,gBAAgB,CAAE,IAAI,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CACjC,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,MAAM,CAAC,CACnB,eAAe,CAAE,YAAY,CAC7B,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,OAAO,CAAE,CAAC,AACX,CAAC,AACA,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,IAAI,MAAM,CAAC,CACtB,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,MAAM,CAAC,CAC/B,UAAU,CAAE,IAAI,CAChB,KAAK,CAAE,GAAG,AACX,CAAC,AAEF,iBAAiB,cAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,MAAM,CAAC,CAChB,IAAI,CAAE,CAAC,CACP,KAAK,CAAE,CAAC,CACR,OAAO,CAAE,IAAI,MAAM,CAAC,CACpB,aAAa,CAAE,IAAI,MAAM,CAAC,CAC1B,UAAU,CAAE,IAAI,KAAK,CAAC,AACvB,CAAC,AACA,kBAAkB,cAAC,CAAC,AACnB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,YAAY,AAC9B,CAAC,AACD,WAAW,cAAC,CAAC,AACZ,YAAY,CAAE,IAAI,CAClB,WAAW,CAAE,GAAG,AACjB,CAAC\"}"
 };
 
 const U5Bchapteru5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	let { params } = $$props;
-	const chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == params)[0];
+	const chapter = window.location.href.substring(window.location.href.lastIndexOf("/") + 1);
+	const chapterObject = Manual.filter(r => r.name.toLocaleLowerCase() == chapter)[0];
 	const chapterRulesList = chapterObject.list.sort((a, b) => a.name > b.name).flat();
-	const chapter = chapterObject.name;
+	const chapterName = chapterObject.name;
 	let ruleList = chapterRulesList;
-	if ($$props.params === void 0 && $$bindings.params && params !== void 0) $$bindings.params(params);
-	$$result.css.add(css$z);
+	$$result.css.add(css$D);
 	let searchTerm;
 	searchTerm = "";
 
@@ -10226,8 +10493,8 @@ const U5Bchapteru5D = create_ssr_component(($$result, $$props, $$bindings, slots
 		}
 	}
 
-	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Manual - ${escape(chapter)}</title>`, "")}`, "")}
-<div class="${"manual-header-section svelte-ay58r9"}"><div class="${"rules-name svelte-ay58r9"}">${escape(chapter)}</div>
+	return `${($$result.head += `${($$result.title = `<title>Apocalyptia Online - Manual - ${escape(chapterName)}</title>`, "")}`, "")}
+<div class="${"manual-header-section svelte-ay58r9"}"><div class="${"rules-name svelte-ay58r9"}">${escape(chapterName)}</div>
 	<input type="${"text"}" class="${"search-bar svelte-ay58r9"}" placeholder="${"Search"}"${add_attribute("value", searchTerm, 1)}></div>
 <div class="${"manual-page-body svelte-ay58r9"}">${ruleList.length
 	? `<div class="${"rule-body-section svelte-ay58r9"}">${each(ruleList, rule => `${validate_component(ManualRule, "ManualRule").$$render($$result, { rule }, {}, {})}`)}</div>`
@@ -10330,20 +10597,11 @@ const manifest = {
 		},
 
 		{
-			// character/load_character.svelte
-			pattern: /^\/character\/load_character\/?$/,
+			// character/creator/index.svelte
+			pattern: /^\/character\/creator\/?$/,
 			parts: [
 				null,
-				{ name: "character_load_character", file: "character/load_character.svelte", component: component_2 }
-			]
-		},
-
-		{
-			// character/new_character.svelte
-			pattern: /^\/character\/new_character\/?$/,
-			parts: [
-				null,
-				{ name: "character_new_character", file: "character/new_character.svelte", component: component_3 }
+				{ name: "character_creator", file: "character/creator/index.svelte", component: component_2 }
 			]
 		},
 
@@ -10353,7 +10611,7 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_description", file: "character/creator/description.svelte", component: component_4 }
+				{ name: "character_creator_description", file: "character/creator/description.svelte", component: component_3 }
 			]
 		},
 
@@ -10363,7 +10621,7 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_properties", file: "character/creator/properties.svelte", component: component_5 }
+				{ name: "character_creator_properties", file: "character/creator/properties.svelte", component: component_4 }
 			]
 		},
 
@@ -10373,17 +10631,7 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_abilities", file: "character/creator/abilities.svelte", component: component_6 }
-			]
-		},
-
-		{
-			// character/creator/creator.svelte
-			pattern: /^\/character\/creator\/creator\/?$/,
-			parts: [
-				null,
-				null,
-				{ name: "character_creator_creator", file: "character/creator/creator.svelte", component: component_7 }
+				{ name: "character_creator_abilities", file: "character/creator/abilities.svelte", component: component_5 }
 			]
 		},
 
@@ -10393,7 +10641,7 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_skills", file: "character/creator/skills.svelte", component: component_8 }
+				{ name: "character_creator_skills", file: "character/creator/skills.svelte", component: component_6 }
 			]
 		},
 
@@ -10403,7 +10651,7 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_traits", file: "character/creator/traits.svelte", component: component_9 }
+				{ name: "character_creator_traits", file: "character/creator/traits.svelte", component: component_7 }
 			]
 		},
 
@@ -10413,7 +10661,7 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_sheet", file: "character/creator/sheet.svelte", component: component_10 }
+				{ name: "character_creator_sheet", file: "character/creator/sheet.svelte", component: component_8 }
 			]
 		},
 
@@ -10423,7 +10671,25 @@ const manifest = {
 			parts: [
 				null,
 				null,
-				{ name: "character_creator_gear", file: "character/creator/gear.svelte", component: component_11 }
+				{ name: "character_creator_gear", file: "character/creator/gear.svelte", component: component_9 }
+			]
+		},
+
+		{
+			// character/load.svelte
+			pattern: /^\/character\/load\/?$/,
+			parts: [
+				null,
+				{ name: "character_load", file: "character/load.svelte", component: component_10 }
+			]
+		},
+
+		{
+			// character/new.svelte
+			pattern: /^\/character\/new\/?$/,
+			parts: [
+				null,
+				{ name: "character_new", file: "character/new.svelte", component: component_11 }
 			]
 		},
 
@@ -10436,11 +10702,10 @@ const manifest = {
 		},
 
 		{
-			// manual/manual.svelte
-			pattern: /^\/manual\/manual\/?$/,
+			// manual/index.svelte
+			pattern: /^\/manual\/?$/,
 			parts: [
-				null,
-				{ name: "manual_manual", file: "manual/manual.svelte", component: component_13 }
+				{ name: "manual", file: "manual/index.svelte", component: component_13 }
 			]
 		},
 

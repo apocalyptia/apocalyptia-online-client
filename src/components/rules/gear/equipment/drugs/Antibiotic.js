@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Antibiotic = new Gear({
 	id: `5d0b08ad-11c0-490d-00ca-6a8bbeb3b4fa`,

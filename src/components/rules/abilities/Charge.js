@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Charge = new Ability({
 	id: `c44580dd-3a0a-41d5-b97f-ec1f9f4bea0d`,

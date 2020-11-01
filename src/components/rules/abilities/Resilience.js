@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Resilience = new Ability({
 	id: `975e122b-2e35-4c8e-a1ed-16abc91e32fe`,

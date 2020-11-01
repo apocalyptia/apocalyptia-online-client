@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const LeatherJacket = new Gear({
 	id: `cf560d38-9a41-40c8-9f14-f7839a3ecf82`,

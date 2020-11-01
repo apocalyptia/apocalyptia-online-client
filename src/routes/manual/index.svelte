@@ -1,12 +1,11 @@
 <script>
 	import BackButton from 'views/widgets/BackButton.svelte'
-	import Manual from 'rules/lists/Manual.js'
+	import ManualList from 'lists/ManualList.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
-	import { goto } from '@sapper/app'
 
 	let masterRulesList = []
 
-	masterRulesList = Manual.map(r => [...r.list]).flat()
+	masterRulesList = ManualList.map(r => [...r.list]).flat()
 
 	let ruleList = masterRulesList
 
@@ -42,7 +41,7 @@
 </div>
 <div class='manual-page-body'>
 	{#if searchTerm === ''}
-		{#each Manual as chapter}
+		{#each ManualList as chapter}
 			<a href={`/manual/${chapter.name.toLowerCase()}`}
 				class='link-btn menu-btn'
 			>

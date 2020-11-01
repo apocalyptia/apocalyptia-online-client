@@ -1,5 +1,5 @@
 <script>
-    import Ability from 'abilities/Ability.js'
+    import Ability from 'classes/Ability.js'
 
     export let rule
 </script>

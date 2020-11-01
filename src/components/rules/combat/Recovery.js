@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Recovery = new Rule({
 	id: `a61981e8-36cb-466e-7b3a-0173b19a4c06`,

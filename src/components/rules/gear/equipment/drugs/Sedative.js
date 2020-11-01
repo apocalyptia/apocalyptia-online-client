@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Sedative = new Gear({
 	id: `4fb51505-52ff-45a1-5b73-129aabc09b83`,

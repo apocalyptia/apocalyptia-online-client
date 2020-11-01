@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Aim = new Rule({
 	id: `b203ca75-1dd4-4700-ac94-b2a02bf2988b`,

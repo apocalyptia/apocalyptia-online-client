@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Scatter from 'attributes/Scatter.js'
 
 const Buckshot12g = new Gear({

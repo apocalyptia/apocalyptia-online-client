@@ -1,6 +1,6 @@
-import Ability from 'abilities/Ability.js'
-import Skills from 'lists/skills/Skills.js'
-import Traits from 'lists/Traits.js'
+import Ability from 'classes/Ability.js'
+import SkillsList from 'lists/SkillsList.js'
+import TraitsList from 'lists/TraitsList.js'
 
 const Unorthodox = new Ability({
 	id: `9fb108fd-b6ba-4f9a-b225-da7ef4994e80`,
@@ -12,8 +12,8 @@ const Unorthodox = new Ability({
 	xp: 9,
 	opts: (function() {
 		const uList = []
-		Traits.list.forEach((trait) => {
-			Skills.list.forEach((skill) => {
+		TraitsList.list.forEach((trait) => {
+			SkillsList.list.forEach((skill) => {
 				const tname = trait.name
 				const sname = skill.name
 				if (skill.parent != trait.name) {

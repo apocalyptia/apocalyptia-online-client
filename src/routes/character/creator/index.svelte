@@ -1,6 +1,6 @@
 <script>
-	import Skills from 'lists/skills/Skills.js'
-	import Traits from 'lists/Traits.js'
+	import Skills from 'rules/Skills.js'
+	import Traits from 'rules/Traits.js'
 	import abilities from 'creator/abilities.svelte'
 	import description from 'creator/description.svelte'
 	import gear from 'creator/gear.svelte'
@@ -11,7 +11,6 @@
 	import { beforeUpdate, onMount } from 'svelte'
 	import { goto } from '@sapper/app'
     import { character } from 'stores/characterStore.js'
-
 
     const pages = [
         description,
@@ -26,6 +25,8 @@
     $: current = $character.meta.status.step
 
 	let proceed
+
+	const backButton = '&ltrif;'
 
 	$: nextButton = '&#10006;'
 
@@ -58,7 +59,7 @@
     <svelte:component this={pages[$character.meta.status.step]} />
 </div>
 <div class='nav-bar'>
-	<button on:click={back} class='link-btn nav-button'>&ltrif;</button>
+	<button on:click={back} class='link-btn nav-button'>{@html backButton}</button>
 	<button on:click={_ => goto('/')} class='link-btn nav-button home-button'>Home</button>
 	<button on:click={next} class='link-btn nav-button'>{@html nextButton}</button>
 </div>

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const TransfusionKit = new Gear({
 	id: `4cccec0d-4732-4421-dec9-12fd84a54611`,

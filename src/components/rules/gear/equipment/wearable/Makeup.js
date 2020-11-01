@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Makeup = new Gear({
 	id: `86b19d29-0416-4582-9caf-492189f4c374`,

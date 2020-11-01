@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import HollowPoint from 'attributes/HollowPoint.js'
 
 const HollowPoint9mm = new Gear({

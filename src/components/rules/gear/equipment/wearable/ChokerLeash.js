@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const ChokerLeash = new Gear({
 	id: `e384ba68-ba77-41b4-87bc-3cb557e756d7`,

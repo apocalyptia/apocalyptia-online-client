@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const ColdResistance = new Rule({
 	id: `f2fa3f07-b7ac-4c7b-fb22-2baf6f39f8cb`,

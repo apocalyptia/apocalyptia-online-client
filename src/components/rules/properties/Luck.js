@@ -1,6 +1,6 @@
-import Property from 'properties/Property.js'
+import Rule from 'classes/Rule.js'
 
-const Luck = new Property({
+const Luck = new Rule({
 	id: `58641270-0e30-4ca9-9986-7c9da1cc4d28`,
 	name: `Luck`,
 	desc: [
@@ -15,7 +15,8 @@ const Luck = new Property({
 	formula: (c) => {
 		c.props.luck.score = c.traits.demeanor.score
 		c.props.luck.current = c.traits.demeanor.score
-	}
+	},
+	type: `Property`
 })
 
 export default Luck

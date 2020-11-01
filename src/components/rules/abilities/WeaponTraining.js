@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 import WeaponList from 'lists/gear/WeaponList.js'
 
 const WeaponTraining = new Ability({

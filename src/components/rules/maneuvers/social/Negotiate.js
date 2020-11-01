@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Negotiate = new Rule({
 	id: `5d88546a-77df-402d-a9b5-bcab8a62fa6c`,

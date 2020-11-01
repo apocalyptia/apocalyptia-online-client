@@ -1,7 +1,6 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 import AppendToGUUID from 'utils/AppendToGUUID.js'
 import PropSort from 'utils/PropSort.js'
-import RandomRoll from 'random/RandomRoll.js'
 import XP12AbilitiesList from 'lists/abilities/XP12AbilitiesList.js'
 import XP15AbilitiesList from 'lists/abilities/XP15AbilitiesList.js'
 import XP18AbilitiesList from 'lists/abilities/XP18AbilitiesList.js'
@@ -57,11 +56,9 @@ const completeAbilityListBuilder = (list) => {
 	return newList
 }
 
-export const Abilities = {
+export default {
 	name: `Abilities`,
-	explanation: [
-		`Abilities are Character upgrades purchased with XP.`
-	],
+	list: abilityArray.sort((a, b) => PropSort(a, b, 'name')),
 	groups: [
 		{
 			name: 3,
@@ -104,30 +101,10 @@ export const Abilities = {
 			list: XP30AbilitiesList
 		},
 	],
-	list: abilityArray.sort((a, b) => PropSort(a, b, 'name')),
 	masterList: completeAbilityListBuilder(abilityArray).sort((a, b) => PropSort(a, b, 'name')),
 	remainingXP: (c) => {
-		if (c.abilities.length) {
-			c.props.experience.spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
-		}
+		if (c.abilities.length) c.props.experience.spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
 		c.props.experience.remaining = c.props.experience.score - c.props.experience.spent
-		return c
-	},
-	random: function(c) {
-		c = this.reset(c)
-		while(c.props.experience.remaining > 0) {
-			const remainingAbilities = this.masterList.filter(m => {
-				return m.xp <= c.props.experience.remaining &&
-					!c.abilities.includes(m)
-			})
-			if (remainingAbilities.length) {
-				const a = RandomRoll(remainingAbilities)
-				a.taken++
-				c.abilities.push(a)
-				c.props.experience.remaining -= a.xp
-			}
-			else break
-		}
 		return c
 	},
 	reset: function(c) {
@@ -140,5 +117,3 @@ export const Abilities = {
 }
 
 export const AbilitiesList = completeAbilityListBuilder(Abilities)
-
-export default Abilities

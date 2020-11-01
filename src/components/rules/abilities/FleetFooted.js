@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const FleetFooted = new Ability({
 	id: `2781978f-df68-49cb-be43-e96dbfafe199`,

@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const CloseCall = new Ability({
 	id: `6d724fe0-89d1-48ad-b8a0-98bb70b1008c`,

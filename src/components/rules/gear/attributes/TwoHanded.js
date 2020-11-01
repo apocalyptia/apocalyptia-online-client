@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const TwoHanded = new Rule({
 	id: `ff319545-04eb-431d-c344-cd8c6a38ef6a`,

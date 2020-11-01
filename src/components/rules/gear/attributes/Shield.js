@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Shield = new Rule({
 	id: `041726f9-6f64-42d4-ca8b-613fabd40bf4`,

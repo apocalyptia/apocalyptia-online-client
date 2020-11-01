@@ -1,16 +1,13 @@
 import RandomRoll from 'random/RandomRoll.js'
 
-const RandomSkin = _ => {
-	return RandomRoll(
-		[
-			`Black`,
-			`Brown`,
-			`Olive`,
-			`Pale`,
-			`Tan`,
-			`White`,
-		]
-	) 
+export default (c) => {
+	c.desc.skin.value = RandomRoll([
+		`Black`,
+		`Brown`,
+		`Olive`,
+		`Pale`,
+		`Tan`,
+		`White`,
+	])
+	return c
 }
-
-export default RandomSkin

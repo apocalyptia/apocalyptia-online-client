@@ -16,4 +16,4 @@ package-lock.json
 secret.js
 yarn-debug.log*
 yarn-error.log*
-__sapper__
+__sapper__/*

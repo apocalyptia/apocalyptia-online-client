@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const QuadcopterDrone = new Gear({
 	id: `b8de49bf-83d7-4d99-554a-bdf378b0672e`,

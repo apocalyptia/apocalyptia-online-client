@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const RCCar = new Gear({
 	id: `d7cb8c39-edbf-4dba-180f-f5a90c8a3c2c`,

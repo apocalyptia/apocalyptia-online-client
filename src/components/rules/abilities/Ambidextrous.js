@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const Ambidextrous = new Ability({
 	id: `1460e48d-10fc-4469-a183-74f6060d0bb4`,

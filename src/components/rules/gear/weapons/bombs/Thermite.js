@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Blast from 'attributes/Blast.js'
 import FireDamage from 'attributes/FireDamage.js'
 

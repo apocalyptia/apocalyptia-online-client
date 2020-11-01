@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import TwoHanded from 'attributes/TwoHanded.js'
 import Rapid from 'attributes/Rapid.js'
 import Scatter from 'attributes/Scatter.js'

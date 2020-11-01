@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import ReflexiveDefense from 'combat/ReflexiveDefense.js'
 
 const Defense = new Rule({

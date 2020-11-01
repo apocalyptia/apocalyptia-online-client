@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import TwoHanded from 'attributes/TwoHanded.js'
 import Auto from 'attributes/Auto.js'
 import Rapid from 'attributes/Rapid.js'

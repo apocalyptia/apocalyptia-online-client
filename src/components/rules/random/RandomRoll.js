@@ -1,5 +1,1 @@
-const RandomRoll = (a) => {
-	return a[Math.floor(Math.random() * a.length)]
-}
-
-export default RandomRoll
+export default (array) => array[Math.floor(Math.random() * arrray.length)]

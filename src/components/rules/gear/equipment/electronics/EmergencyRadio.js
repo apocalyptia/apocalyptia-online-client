@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const EmergencyRadio = new Gear({
 	id: `6914f941-5c30-48b4-f4ca-131e39075fb3`,

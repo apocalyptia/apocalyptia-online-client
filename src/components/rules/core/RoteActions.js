@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const RoteActions = new Rule({
 	id: `b1362980-b2b2-4c4f-870d-d7b2aeda8b47`,

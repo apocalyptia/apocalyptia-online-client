@@ -1,12 +1,14 @@
 <script>
-	import Description from 'lists/Description.js'
+	import DescriptionList from 'lists/DescriptionList.js'
+	import RandomDescriptor from 'random/RandomDescriptor.js'
+	import RandomDescription from 'random/RandomDescription.js'
 	import { character } from 'stores/characterStore.js'
 
-	const randomDescriptor = (i) => $character = Description.list[i].random($character)
+	const randomDescriptor = (i) => $character = RandomDescriptor($character, i)
 
-	const random = _ => $character = Description.random($character)
+	const random = _ => $character = RandomDescription($character)
 
-	const reset = _ => $character = Description.reset($character)
+	const reset = _ => $character = $character.resetDescription()
 </script>
 
 
@@ -23,19 +25,19 @@
 				<button on:click={_ => randomDescriptor(1)}>Random</button>
 			</div>
 		</div>
-		{#each Description.list as _, index}
-			{#if index % 2 == 0 && index < Description.list.length - 2}
+		{#each DescriptionList.list as _, index}
+			{#if index % 2 == 0 && index < DescriptionList.list.length - 2}
 				<div class='item-block'>
 					<div class='item-container'>
-						<span>{Description.list[index + 2].name}:</span>
+						<span>{DescriptionList.list[index + 2].name}:</span>
 						<input type='text' bind:value={
-							$character.desc[Description.list[index + 2].name.toLowerCase()].value}>
+							$character.desc[DescriptionList.list[index + 2].name.toLowerCase()].value}>
 						<button on:click={_ => randomDescriptor(index + 2)}>Random</button>
 					</div>
 					<div class='item-container'>
-						<span>{Description.list[index + 3].name}:</span>
+						<span>{DescriptionList.list[index + 3].name}:</span>
 						<input type='text' bind:value={
-							$character.desc[Description.list[index + 3].name.toLowerCase()].value}>
+							$character.desc[DescriptionList.list[index + 3].name.toLowerCase()].value}>
 						<button on:click={_ => randomDescriptor(index + 3)}>Random</button>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const GrapplingHook = new Gear({
 	id: `d12c1c96-ac98-4208-f602-0867e5e3bb23`,

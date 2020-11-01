@@ -1,6 +1,6 @@
 <script>
     import BackButton from 'views/widgets/BackButton.svelte'
-    import Character from 'rules/Character.js'
+    import Character from 'classes/Character.js'
     import CharacterSheet from 'views/character/CharacterSheet.svelte'
     import { character } from 'stores/characterStore.js'
 	import { goto } from '@sapper/app'

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Holosight = new Gear({
 	id: `a0309955-3f7d-4f93-9b5e-8239dd1371db`,

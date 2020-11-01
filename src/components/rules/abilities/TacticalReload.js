@@ -1,4 +1,4 @@
-import Ability from 'abilities/Ability.js'
+import Ability from 'classes/Ability.js'
 
 const TacticalReload = new Ability({
 	id: `5ec7eba9-31dc-49a5-88dc-75f1d1b22490`,

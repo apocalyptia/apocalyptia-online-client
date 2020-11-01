@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Dehydration = new Rule({
 	id: `34974574-6455-4c07-8456-8f7bdc78ec9b`,

@@ -8,7 +8,6 @@ export default class Descriptor {
 	}) {
 		this.id = id
 		this.name = name
-		this.random = random
 		this.type = type
 		this.value = value
 	}

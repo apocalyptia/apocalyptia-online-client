@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Standard22 = new Gear({
 	id: `4c09000b-23fd-4085-a49f-d16f14367ea0`,

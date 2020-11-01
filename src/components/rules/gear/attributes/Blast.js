@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Blast = new Rule({
 	id: `e0084114-b6d8-49fa-7b0f-d550d69e0590`,

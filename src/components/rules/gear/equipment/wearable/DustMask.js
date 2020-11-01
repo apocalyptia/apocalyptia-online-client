@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const DustMask = new Gear({
 	id: `29fde8e8-bca7-4561-b366-8fde6e4ab727`,

@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const Firestick = new Gear({
 	id: `97ab1837-f6ba-447f-e527-9390cea6b780`,

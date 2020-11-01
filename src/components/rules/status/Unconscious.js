@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Unconscious = new Rule({
 	id: `0f336152-640e-40b9-bd40-5a717ba9b61c`,
@@ -6,7 +6,8 @@ const Unconscious = new Rule({
 	desc: [
 		`Unaware and unable to do anything.`,
 		`You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive Defense of 0.`,
-	]
+	],
+	type: `Status`
 })
 
 export default Unconscious

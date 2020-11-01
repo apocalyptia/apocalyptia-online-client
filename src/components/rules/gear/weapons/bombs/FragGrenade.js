@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import Blast from 'attributes/Blast.js'
 import Pierce from 'attributes/Pierce.js'
 

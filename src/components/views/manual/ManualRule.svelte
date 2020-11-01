@@ -1,5 +1,5 @@
 <script>
-    import Gear from 'gear/Gear.js'
+    import Gear from 'classes/Gear.js'
     import GearBlock from 'views/widgets/GearBlock.svelte'
     import ManualRuleDescription from 'views/manual/ManualRuleDescription.svelte'
     import ManualRuleSpecialization from 'views/manual/ManualRuleSpecialization.svelte'

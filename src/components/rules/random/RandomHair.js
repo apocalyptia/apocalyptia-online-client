@@ -1,18 +1,15 @@
 import RandomRoll from 'random/RandomRoll.js'
 
-const RandomHair = _ => {
-	return RandomRoll(
-		[
-			`Auburn`,
-			`Bald`,
-			`Black`,
-			`Blonde`,
-			`Brunette`,
-			`Gray`,
-			`Red`,
-			`White`,
-		]
-	)
+export default (c) => {
+	c.desc.hair.value = RandomRoll([
+		`Auburn`,
+		`Bald`,
+		`Black`,
+		`Blonde`,
+		`Brunette`,
+		`Gray`,
+		`Red`,
+		`White`,
+	])
+	return c
 }
-
-export default RandomHair

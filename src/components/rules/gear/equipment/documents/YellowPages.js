@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const YellowPages = new Gear({
 	id: `ac4656eb-0903-4f60-f323-83a1c63f84e6`,

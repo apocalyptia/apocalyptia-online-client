@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 import melee from 'skills/Melee.js'
 
 const Block = new Rule({

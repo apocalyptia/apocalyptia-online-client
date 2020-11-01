@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 import ColdResistance from 'attributes/ColdResistance.js'
 
 const WinterCoat = new Gear({

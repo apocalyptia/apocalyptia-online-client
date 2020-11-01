@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const SinglePointSling = new Gear({
 	id: `2baca903-28be-44a0-bfcc-5a78ab4ebf40`,

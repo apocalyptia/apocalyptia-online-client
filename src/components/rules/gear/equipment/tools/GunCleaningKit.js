@@ -1,4 +1,4 @@
-import Gear from 'gear/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const GunCleaningKit = new Gear({
 	id: `ea495af3-a158-490c-84d4-bbebe3b6fb2b`,

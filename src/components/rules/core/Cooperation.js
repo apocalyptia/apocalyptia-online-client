@@ -1,4 +1,4 @@
-import Rule from 'rules/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Cooperation = new Rule({
 	id: `d54e8b0e-8f14-4426-a34e-8c889fe15413`,
