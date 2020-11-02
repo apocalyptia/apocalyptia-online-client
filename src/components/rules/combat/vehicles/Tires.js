@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Tires = new Rule({
-	id: `2be9303b-b513-4036-ba7b-923cfa027dee`,
 	name: `Tires`, 
 	desc: [
 		`Roll [-3 Attack vs Drive(Stunt)] to destroy a tire.`,

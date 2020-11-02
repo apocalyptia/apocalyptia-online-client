@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Stun = new Rule({
-	id: `ba6cf397-b434-442f-a725-73ee00cf23ca`,
 	name: `Stun`,
 	desc: [
 		`Defenseless, Harmless, and Immobilized.`,

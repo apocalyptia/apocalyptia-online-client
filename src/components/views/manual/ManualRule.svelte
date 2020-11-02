@@ -7,8 +7,6 @@
     import ManualSubRule from 'views/manual/ManualSubRule.svelte'
 
     export let rule
-
-    console.dir(rule)
 </script>
 
 
@@ -55,7 +53,4 @@
 		.rule-body {
 			padding: var(--s100);
 		}
-			.gear-rule {
-				margin: var(--s100);
-			}
 </style>

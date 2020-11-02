@@ -4,7 +4,6 @@ import Blunt from 'attributes/Blunt.js'
 import Shield from 'attributes/Shield.js'
 
 const RiotShield = new Gear({
-	id: `0e48721b-f535-483a-8bba-1d9e167c38fa`,
 	name: `Riot Shield`,
 	sz: 4,
 	attr: [

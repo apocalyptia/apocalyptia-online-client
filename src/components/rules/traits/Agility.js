@@ -2,7 +2,6 @@ import Rule from 'classes/Rule.js'
 import AgilitySkillsList from 'lists/skills/AgilitySkillsList.js'
 
 const Agility = new Rule({
-	id: `c84ca95a-9f01-476f-897c-e6ad07231551`,
 	name: `Agility`,
 	desc: [
 		`Agility is a Character’s talent for physical coordination.`,

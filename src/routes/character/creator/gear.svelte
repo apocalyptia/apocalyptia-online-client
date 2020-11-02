@@ -7,14 +7,9 @@
 
 	let gearedUp = false
 
-	const randomStartingGear = _ => {
-		$character = RandomStartingGear($character, $character.props.luck.score)
-	}
+	const randomStartingGear = () => $character = RandomStartingGear($character, $character.props.luck.score)
 
-	beforeUpdate(_ => {
-		gearedUp = Object.values($character.gear).every(g => g.inventory.length)
-		console.log(gearedUp)
-	})
+	beforeUpdate(() => gearedUp = Object.values($character.gear).every(g => g.inventory.length))
 </script>
 
 

@@ -5,7 +5,6 @@ import Pain from 'combat/Pain.js'
 import Recovery from 'combat/Recovery.js'
 
 const Damage = new Rule({
-	id: `8fbad46e-af91-424a-28c5-2e8b7ff802bd`,
 	name: `Damage`, 
 	desc: [
 		`Damage temporarily reduces Health.`,

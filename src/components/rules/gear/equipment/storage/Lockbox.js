@@ -1,7 +1,6 @@
 import Gear from 'classes/Gear.js'
 
 const Lockbox = new Gear({
-	id: `84a145e0-51b4-423b-bb39-2ef9672a1768`,
 	name: `Lockbox`,
 	desc: [
 		`2 Damage Resistance.`,

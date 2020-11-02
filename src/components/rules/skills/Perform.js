@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Perform = new Rule({
-	id: `4507c9b3-3b2e-4c05-be79-89785735180d`,
 	name: `Perform`,
 	desc: [
 		`Captivating an audience.`,

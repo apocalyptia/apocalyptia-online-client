@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Pain = new Rule({
-	id: `bff6e8fd-de70-4ad6-dd4b-b852400ab3ca`,
 	name: `Pain`, 
 	desc: [
 		`Damage (and a few other effects) cause Pain penalties.`,

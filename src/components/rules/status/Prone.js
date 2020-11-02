@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Prone = new Rule({
-	id: `687fbf28-8198-4363-bea5-61d56f878c23`,
 	name: `Prone`,
 	desc: [
 		`You may drop Prone at any time for free on your turn or as part of a Dodge action.`,

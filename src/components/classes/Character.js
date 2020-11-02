@@ -1,10 +1,9 @@
-import GUUIDGenerator from 'utils/GUUIDGenerator.js'
 import PropertiesList from 'lists/PropertiesList.js'
 
 export default class Character {
 	constructor() {
 		this.meta = {
-			id: GUUIDGenerator(),
+			id: ``,
 			user: ``,
 			created: ``,
 			modified: ``,
@@ -17,10 +16,10 @@ export default class Character {
 			status: {
 				completed: false,
 				open: false,
-				step: 5,
+				step: 0,
 			}
 		},
-		this.desc = {
+		this.description = {
 			age: {
 				name: `Age`,
 				value: ``
@@ -167,8 +166,6 @@ export default class Character {
 			experience: {
 				name: `Experience`,
 				score: 3,
-				spent: 0,
-				remaining: 3
 			},
 			intellect: {
 				name: `Intellect`,
@@ -245,28 +242,28 @@ export default class Character {
 			},
 		}
 		this.resetDescription = () => {
-			for (let description in this.desc) description.value = ``
-			return this
+			for (let d in this.desc) this.description[d].value = ``
 		}
 		this.resetTraits = () => {
-			for (let traits in this.traits) traits.score = 1
-			return this
+			for (let t in this.traits) this.traits[t].score = 1
 		}
 		this.resetSkills = () => {
-			for (let skills in this.skills) skills.score = 0
-			return this
+			for (let s in this.skills) this.skills[s].score = 0
 		}
-		this.resetProperties = () => {
-			for (let property of PropertiesList.list) property.formula(this)
-			return this
+		this.setProperties = () => {
+			for (let p of PropertiesList.list) PropertiesList[p].formula(this)
 		}
 		this.resetAbilities = () => {
 			this.abilities = []
-			return this
 		}
 		this.resetGear = () => {
-			for (let gearType in this.gear) gearType.inventory = []
-			return this
+			for (let g in this.gear) this.gear[g].inventory = []
+		}
+		this.getRemainingXP = () => {
+			if (this.abilities.length) {
+				const experienceSpent = this.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
+				return this.props.experience.score - experienceSpent
+			}
 		}
 		this.finalize = (userId) => {
 			if (!this.created) this.created = new Date()

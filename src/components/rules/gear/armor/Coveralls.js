@@ -3,7 +3,6 @@ import Camo from 'attributes/Camo.js'
 import ColdResistance from 'attributes/ColdResistance.js'
 
 const Coveralls = new Gear({
-	id: `71ede3ad-c8a7-4556-86f1-c4037244757e`,
 	name: `Coveralls`,
 	sz: 3,
 	attr: [

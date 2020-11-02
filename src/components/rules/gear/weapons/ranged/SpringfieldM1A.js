@@ -3,7 +3,6 @@ import TwoHanded from 'attributes/TwoHanded.js'
 import Rapid from 'attributes/Rapid.js'
 
 const SpringfieldM1A = new Gear({
-	id: `ea8867ac-4563-425f-b999-1195cd6f350e`,
 	name: `Springfield M1A Rifle`,
 	sz: 4,
 	attr: [

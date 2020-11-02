@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Speed = new Rule({
-	id: `c7081a3e-1fed-41ee-81a4-2b2fab4942e8`,
 	name: `Speed`,
 	desc: [
 		`Speed = Agility x 3`,

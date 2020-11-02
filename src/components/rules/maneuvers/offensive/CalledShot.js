@@ -2,7 +2,6 @@ import Rule from 'classes/Rule.js'
 import Table from 'classes/Table.js'
 
 const CalledShot = new Rule({
-	id: `7b5ac4ec-c58a-48bd-aaed-c0fbf6716874`,
 	name: `Called Shot`, 
 	desc: [
 		`Attacks target the Torso by default.`,

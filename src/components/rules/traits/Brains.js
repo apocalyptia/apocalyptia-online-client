@@ -2,7 +2,6 @@ import Rule from 'classes/Rule.js'
 import BrainsSkillsList from 'lists/skills/BrainsSkillsList.js'
 
 const Brains = new Rule({
-	id: `ac0d45e3-221c-4cf3-ab70-a19908b86bd7`,
 	name: `Brains`,
 	desc: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,

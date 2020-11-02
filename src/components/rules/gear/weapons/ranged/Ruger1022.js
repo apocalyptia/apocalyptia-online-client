@@ -3,7 +3,6 @@ import TwoHanded from 'attributes/TwoHanded.js'
 import Rapid from 'attributes/Rapid.js'
 
 const Ruger1022 = new Gear({
-	id: `94dc2629-a460-4bdc-a90f-0ade229af021`,
 	name: `Ruger 10/22 Rifle`,
 	sz: 3,
 	attr: [

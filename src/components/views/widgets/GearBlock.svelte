@@ -64,12 +64,9 @@
 
 <div class='gear-block'>
 	{#if item}
-		{#if item.name}
-			<p><strong>{item.name}</strong></p>
-		{/if}
 		{#if item.desc}
 			{#each item.desc as desc}
-				<p>{desc}</p>
+				<div class='gear-desc'>{desc}</div>
 			{/each}
 		{/if}
 		{#each itemProps as prop}
@@ -105,12 +102,12 @@
 
 
 <style>
-	strong {
-		font-weight: bold;
-	}
 	ul {
 		list-style: disc;
 		margin-left: var(--s100);
+	}
+	.gear-desc {
+		margin: var(--s100) 0;
 	}
 	.item-qty {
 		width: 20%;

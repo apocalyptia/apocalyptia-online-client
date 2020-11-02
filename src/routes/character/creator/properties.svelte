@@ -26,10 +26,10 @@
 			<ul>
 				{#each PropertiesList.list as property}
 					{#if property.name == 'Health'}
-						<li>{property.desc[0]}</li>
-						<li>{property.desc[1]}</li>
+						<li>{property.description[0]}</li>
+						<li>{property.description[1]}</li>
 					{:else}
-						<li>{property.desc[0]}</li>
+						<li>{property.description[0]}</li>
 					{/if}
 				{/each}
 			</ul>

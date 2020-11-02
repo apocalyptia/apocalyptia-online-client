@@ -2,7 +2,6 @@ import Rule from 'classes/Rule.js'
 import Chase from 'combat/Chase.js'
 
 const Movement = new Rule({
-	id: `66094467-f795-4c02-49e9-0bf193dacaa6`,
 	name: `Movement`, 
 	desc: [
 		`On your turn, you have an amount of Speed equal to your [Agility x3].`,

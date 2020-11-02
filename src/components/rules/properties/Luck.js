@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Luck = new Rule({
-	id: `58641270-0e30-4ca9-9986-7c9da1cc4d28`,
 	name: `Luck`,
 	desc: [
 		`Luck = Demeanor`,

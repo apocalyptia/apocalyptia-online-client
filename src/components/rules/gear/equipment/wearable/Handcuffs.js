@@ -1,7 +1,6 @@
 import Gear from 'classes/Gear.js'
 
 const Handcuffs = new Gear({
-	id: `e8da5e5c-f467-4ff0-88c1-6159b6be4f8a`,
 	name: `Handcuffs`,
 	desc: [
 		`Restrained if placed on Arms.`,

@@ -1,7 +1,6 @@
 import Gear from 'classes/Gear.js'
 
 const Alcohol = new Gear({
-	id: `de0dd5f5-8630-4827-121d-e39fc099a9ab`,
 	name: `Alcohol`,
 	desc: [
 		`Can be used as an Antibiotic or Fuel.`,

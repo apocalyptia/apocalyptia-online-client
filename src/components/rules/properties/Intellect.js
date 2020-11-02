@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Intellect = new Rule({
-	id: `99433632-a504-4529-8e11-e9b9d56ec532`,
 	name: `Intellect`,
 	desc: [
 		`Intellect = Brains`,

@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Leadership = new Rule({
-	id: `7596f84f-d625-409d-a7b0-4e0775d96719`,
 	name: `Leadership`,
 	desc: [
 		`Directing the efforts of others`,

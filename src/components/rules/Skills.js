@@ -1,6 +1,31 @@
 import PropSort from 'utils/PropSort.js'
 import SkillsList from 'lists/SkillsList.js'
 
+const specs = Object.values(SkillsList.list)
+					.map((s) => Object.values(s.specs))
+					.reduce((a, b) => a.concat(b), [])
+					.sort((a, b) => PropSort(a, b, `name`))
+
+const startingPoints = (c) => c.traits.brains.score * 6
+
+const assign = (c, target) => {
+	c.skills[target.name].score = parseInt(target.value)
+	return limit(c, target.name)
+}
+
+const limit = (c, targetName) => {
+	const max = c.traits[c.skills[targetName].parent.toLowerCase()].score
+	while(remaining(c) < 0 || c.skills[targetName].score > max) {
+		c.skills[targetName].score--
+	}
+	return c
+}
+
+const remaining = (c) => {
+	const spent = Object.values(c.skills).reduce((t, { score }) => t += score, 0)
+	return startingPoints(c) - spent
+}
+
 export default {
 	name: `Skills`,
 	text: [
@@ -17,24 +42,9 @@ export default {
     skillFlowExplanation: [
         `Once per month (in-game), transfer 1 point from a Skill you have not used to one that you have used.`
     ],
-	specs: Object.values(SkillsList)
-				.map((s) => Object.values(s.specs))
-				.reduce((a, b) => a.concat(b), [])
-				.sort((a, b) => PropSort(a, b, `name`)),
-	startingPoints: (c) => c.traits.brains.score * 6,
-	assign: function(c, target) {
-		c.skills[target.name].score = parseInt(target.value)
-		return this.limit(c, target.name)
-	},
-	limit: function(c, targetName) {
-		const max = c.traits[c.skills[targetName].parent.toLowerCase()].score
-		while(this.remaining(c) < 0 || c.skills[targetName].score > max) {
-			c.skills[targetName].score--
-		}
-		return c
-	},
-	remaining: function(c) {
-		const spent = Object.values(c.skills).reduce((t, { score }) => t += score, 0)
-		return this.startingPoints(c) - spent
-	}
+	specs,
+	startingPoints,
+	assign,
+	limit,
+	remaining
 }

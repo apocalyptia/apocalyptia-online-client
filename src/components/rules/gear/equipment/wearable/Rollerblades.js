@@ -1,7 +1,6 @@
 import Gear from 'classes/Gear.js'
 
 const Rollerblades = new Gear({
-	id: `9c8a233d-ad46-4061-bccb-83d0c8d3675d`,
 	name: `Rollerblades`,
 	desc: [
 		`Athletics 6#.`,

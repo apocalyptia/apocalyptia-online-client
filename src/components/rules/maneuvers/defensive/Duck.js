@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Duck = new Rule({
-	id: `cac81a46-c688-4b29-a680-502f827987ed`,
 	name: `Duck`, 
 	desc: [
 		`You may roll [Dodge vs Attack] to move up to your Speed to get behind Cover.`,

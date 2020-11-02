@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Survival = new Rule({
-	id: `2d2322ff-8376-4e04-a00b-be803a9b9f02`,
 	name: `Survival`,
 	desc: [
 		`Primitive practices for living outdoors.`,

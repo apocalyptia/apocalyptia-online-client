@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Ranged = new Rule({
-	id: `da193540-c5fc-408d-bf3a-a69aa046fa84`,
 	name: `Ranged`,
 	desc: [
 		`Projectile combat.`,

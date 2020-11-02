@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Auto = new Rule({
-	id: `5a0a12f5-55ab-474e-936a-13926dcbe470`,
 	name: `Auto`,
 	desc: [
 		`Choose either Burst or Spray.`,

@@ -1,7 +1,6 @@
 import Gear from 'classes/Gear.js'
 
 const TransfusionKit = new Gear({
-	id: `4cccec0d-4732-4421-dec9-12fd84a54611`,
 	name: `Transfusion Kit`,
 	desc: [
 		`Medicine 9#.`,

@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Tame = new Rule({
-	id: `1e616ba5-99fb-4f11-853f-fe938eed016b`,
 	name: `Tame`,
 	desc: [
 		`Alter an animal’s Attitude by one step.`,

@@ -2,7 +2,6 @@ import Rule from 'classes/Rule.js'
 import Table from 'classes/Table.js'
 
 const Cover = new Rule({
-	id: `9fd0a556-f4c0-4aba-6814-c371f0a8ead0`,
 	name: `Cover`, 
 	desc: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance.`,

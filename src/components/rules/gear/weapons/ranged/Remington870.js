@@ -3,7 +3,6 @@ import TwoHanded from 'attributes/TwoHanded.js'
 import Scatter from 'attributes/Scatter.js'
 
 const Remington870 = new Gear({
-	id: `6398a22b-e4a9-4c9f-a984-3bf6aaa09146`,
 	name: `Remington 870 Shotgun`,
 	sz: 4,
 	attr: [

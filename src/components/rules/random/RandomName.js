@@ -4,8 +4,7 @@ import NamesList from 'lists/names/NamesList.js'
 import RandomRoll from 'random/RandomRoll.js'
 
 export default (c) => {
-	if (c.desc.sex.value == `Male`) return RandomRoll(MaleNamesList)
-	if (c.desc.sex.value == `Female`) return RandomRoll(FemaleNamesList)
-	c.desc.name.value = RandomRoll(NamesList)
-	return c
+	if (c.description.sex.value == `Male`) return RandomRoll(MaleNamesList)
+	else if (c.description.sex.value == `Female`) return RandomRoll(FemaleNamesList)
+	else return RandomRoll(NamesList)
 }

@@ -139,7 +139,6 @@ p {
 	line-height: 1.5;
 }
 a {
-	color: lime;
 	text-decoration: none;
 }
 label {
@@ -261,10 +260,8 @@ select {
 /* Link Buttons */
 .link-btn {
 	align-items: center;
-	background-color: rgba(15, 30, 15, 1);
 	border-radius: var(--radius);
 	border: var(--s1) solid lime;
-	color: lime;
 	display: flex;
 	font-size: var(--s125);
 	font-weight: bold;

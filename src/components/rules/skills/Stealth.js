@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Stealth = new Rule({
-	id: `8acb7f56-c5c5-4918-97b9-15260024fb15`,
 	name: `Stealth`,
 	desc: [
 		`Conceal your presence.`,

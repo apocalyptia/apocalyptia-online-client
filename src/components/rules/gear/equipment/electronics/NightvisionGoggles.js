@@ -1,7 +1,6 @@
 import Gear from 'classes/Gear.js'
 
 const NightvisionGoggles = new Gear({
-	id: `c2506a47-bbf1-45e0-daa9-297af21a11ea`,
 	name: `Nightvision Goggles`,
 	desc: [
 		`Ignore Visibility penalties in darkness.`,

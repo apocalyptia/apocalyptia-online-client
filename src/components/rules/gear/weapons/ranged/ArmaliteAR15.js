@@ -3,7 +3,6 @@ import TwoHanded from 'attributes/TwoHanded.js'
 import Rapid from 'attributes/Rapid.js'
 
 const ArmaliteAR15 = new Gear({
-	id: `69cd0033-60ad-4d4c-aac2-d9584e5766a1`,
 	name: `Armalite AR-15 Rifle`,
 	sz: 3,
 	attr: [

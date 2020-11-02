@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Melee = new Rule({
-	id: `1f84042e-c02b-477f-8662-41d3a0ccc4d5`,
 	name: `Melee`,
 	desc: [
 		`Hand-to-hand combat.`,

@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Acrobatics = new Rule({
-	id: `f19c07a2-1371-48db-b0bc-a88e5bc4e53b`,
 	name: `Acrobatics`,
 	desc: [
 		`Gymnastic prowess.`,

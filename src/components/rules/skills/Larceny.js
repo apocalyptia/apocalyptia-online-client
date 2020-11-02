@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Larceny = new Rule({
-	id: `f8725bd3-a40a-43b6-9b1b-4a9bcd1c957e`,
 	name: `Larceny`,
 	desc: [
 		`Delicate manual operations.`,

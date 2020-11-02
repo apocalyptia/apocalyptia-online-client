@@ -3,7 +3,6 @@ import TwoHanded from 'attributes/TwoHanded.js'
 import Rapid from 'attributes/Rapid.js'
 
 const Glock17 = new Gear({
-	id: `5f42d732-9acb-40b6-b74d-fc2e42e107c6`,
 	name: `Glock 17 Pistol`,
 	sz: 1,
 	attr: [

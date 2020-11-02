@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Pinned = new Rule({
-	id: `d2e8c636-d853-4fa2-a0dd-2dad409ba5fc`,
 	name: `Pinned`,
 	desc: [
 		`Pinned is the third and final step of Grappling.`,

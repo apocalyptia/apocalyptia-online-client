@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Drive = new Rule({
-	id: `19aeb7ad-c940-4c7c-b238-cc77c05d1fc4`,
 	name: `Drive`,
 	desc: [
 		`Operate vehicles.`,

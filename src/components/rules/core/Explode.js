@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Explode = new Rule({
-	id: `6da8a818-56c8-417a-2c98-c2f9bbde7aa5`,
 	name: `Explode`,
 	desc: [
 		`An Exploding die offers the possibility of doing extraordinarily well at a Trait, Skill, or Property roll.`,

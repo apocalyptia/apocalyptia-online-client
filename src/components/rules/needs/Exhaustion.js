@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Exhaustion = new Rule({
-	id: `0494a41e-f8f8-45f5-a1ef-5660900e37db`,
 	name: `Exhaustion`,
 	desc: [
 		`8 hours of sleep per day is required.`,

@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Medicine = new Rule({
-	id: `8ebabc07-057f-4568-b6ed-cdb6941d14a6`,
 	name: `Medicine`,
 	desc: [
 		`Diagnosing and treating wounds and Diseases.`,

@@ -32,21 +32,15 @@
 		<button on:click={rolld6}>Random</button>
 	</div>
 </div>
-{#each MasterGearList as gear, i}
+{#each MasterGearList as gearItem, i}
 	<div class='section-card'>
 		<div class='item-category'>
-			<span class='gear-category'>
-				{gear.name}
-			</span>
-			<button on:click={_ => {
-				MasterGearList[i] = randomItem(gear)
-				MasterGearList = MasterGearList
-			}}>
-				Random
-			</button>
+			<h1>{gearItem.name}</h1>
+			<button on:click={() => MasterGearList[i] = randomItem(gearItem)}>Random</button>
 		</div>
-		{#if gear.value != undefined}
-			<GearBlock item={gear.value} mode={'manual'}/>
+		{#if gearItem.value != undefined}
+			<h2>{gearItem.value.name}</h2>
+			<GearBlock item={gearItem.value} mode={'manual'}/>
 		{/if}
 	</div>
 {/each}
@@ -58,8 +52,10 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	.gear-category {
-		font-size: var(--s125);
+	h1 {
 		margin: auto;
+	}
+	h2 {
+		margin: var(--s100) 0;
 	}
 </style>

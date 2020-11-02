@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Recruit = new Rule({
-	id: `9599dc01-9940-44d8-ae36-e4623810fe5d`,
 	name: `Recruit`,
 	desc: [
 		`Roll [Socialize vs Demeanor] to convince someone to join your side.`,

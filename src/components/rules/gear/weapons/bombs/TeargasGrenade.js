@@ -4,10 +4,9 @@ import Stun from 'rules/status/Stun.js'
 import Asphyxiation from 'rules/needs/Asphyxiation.js'
 
 const TeargasGrenade = new Gear({
-	id: `892817b8-625f-4ef8-a6be-08716a6267c5`,
 	name: `Teargas Grenade`,
 	desc: [
-		`Non-lethal chemical irritant grenade.`,
+		`Chemical irritant grenade.`,
 	],
 	sz: 1,
 	attr: [

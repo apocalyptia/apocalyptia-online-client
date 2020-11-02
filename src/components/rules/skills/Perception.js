@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Perception = new Rule({
-	id: `1dd3402d-a974-49d1-ae43-bcc63c4925bc`,
 	name: `Perception`,
 	desc: [
 		`Processing sensory input.`,

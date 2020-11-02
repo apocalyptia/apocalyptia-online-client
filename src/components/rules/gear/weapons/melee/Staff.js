@@ -3,7 +3,6 @@ import TwoHanded from 'attributes/TwoHanded.js'
 import Blunt from 'attributes/Blunt.js'
 
 const Staff = new Gear({
-	id: `1fab5144-0cd7-440c-93ab-2a9c849941e7`,
 	name: `Staff`,
 	sz: 3,
 	attr: [

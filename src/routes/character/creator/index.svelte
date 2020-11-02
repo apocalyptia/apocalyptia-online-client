@@ -10,7 +10,7 @@
     import traits from 'creator/traits.svelte'
 	import { beforeUpdate, onMount } from 'svelte'
 	import { goto } from '@sapper/app'
-    import { character } from 'stores/characterStore.js'
+	import { character } from 'stores/characterStore.js'
 
     const pages = [
         description,
@@ -22,7 +22,7 @@
         sheet
     ]
 
-    $: current = $character.meta.status.step
+	$: current = $character.meta.status.step
 
 	let proceed
 
@@ -30,17 +30,20 @@
 
 	$: nextButton = '&#10006;'
 
-	const back = _ => $character.meta.status.step--
+	const back = () => {
+		$character.meta.status.step--
+		if ($character.meta.status.step < 0) goto('/')
+	}
 
-	const next = _ => {
+	const next = () => {
 		proceedStatus()
 		if (proceed) $character.meta.status.step++
 	}
 
-	const proceedStatus = _ => {
+	const proceedStatus = () => {
 		proceed = true
 		if (
-			(current == 0 && Object.values($character.desc).some(d => d.value == ``)) ||
+			(current == 0 && Object.values($character.description).some(d => d.value == ``)) ||
 			(current == 1 && Traits.remaining($character) > 0) ||
 			(current == 2 && Skills.remaining($character) > 0) ||
 			(current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))
@@ -49,9 +52,9 @@
 		else nextButton = '&#10006;'
 	}
 
-    beforeUpdate(_ => proceedStatus())
+    beforeUpdate(() => proceedStatus())
 
-	onMount(_ => proceedStatus())
+	onMount(() => proceedStatus())
 </script>
 
 
@@ -60,7 +63,7 @@
 </div>
 <div class='nav-bar'>
 	<button on:click={back} class='link-btn nav-button'>{@html backButton}</button>
-	<button on:click={_ => goto('/')} class='link-btn nav-button home-button'>Home</button>
+	<button on:click={() => goto('/')} class='link-btn nav-button home-button'>Home</button>
 	<button on:click={next} class='link-btn nav-button'>{@html nextButton}</button>
 </div>
 

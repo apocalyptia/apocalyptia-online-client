@@ -3,10 +3,9 @@ import Blind from 'rules/status/Blind.js'
 import Stun from 'rules/status/Stun.js'
 
 const FlashbangGrenade = new Gear({
-	id: `f158de9a-ef27-4c24-9d38-6a2f665c941e`,
 	name: `Flashbang Grenade`,
 	desc: [
-		`Non-lethal stun grenade.`,
+		`Stun grenade.`,
 	],
 	sz: 1,
 	attr: [

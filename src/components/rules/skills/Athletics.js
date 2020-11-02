@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Athletics = new Rule({
-	id: `b13484a3-9340-47a2-9fe4-079a886beb56`,
 	name: `Athletics`,
 	desc: [
 		`Physically difficult forms of motion.`,

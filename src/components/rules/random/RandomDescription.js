@@ -1,18 +1,18 @@
-import RandomAge from 'description/Age.js'
-import RandomHair from 'description/Hair.js'
-import RandomHeight from 'description/Height.js'
-import RandomName from 'description/Name.js'
-import RandomSex from 'description/Sex.js'
-import RandomSkin from 'description/Skin.js'
-import RandomWeight from 'description/Weight.js'
+import RandomAge from 'random/RandomAge.js'
+import RandomHair from 'random/RandomHair.js'
+import RandomHeight from 'random/RandomHeight.js'
+import RandomName from 'random/RandomName.js'
+import RandomSex from 'random/RandomSex.js'
+import RandomSkin from 'random/RandomSkin.js'
+import RandomWeight from 'random/RandomWeight.js'
 
 export default (c) => {
-    c = RandomAge(c)
-    c = RandomSex(c)
-    c = RandomHeight(c)
-    c = RandomWeight(c)
-    c = RandomSkin(c)
-    c = RandomHair(c)
-    c = RandomName(c)
+    c.description.age.value = RandomAge()
+    c.description.sex.value = RandomSex()
+    c.description.height.value = RandomHeight(c)
+    c.description.weight.value = RandomWeight(c)
+    c.description.skin.value = RandomSkin()
+    c.description.hair.value = RandomHair()
+    c.description.name.value = RandomName(c)
     return c
 }

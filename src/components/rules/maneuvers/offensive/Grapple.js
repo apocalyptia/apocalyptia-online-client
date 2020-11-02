@@ -5,7 +5,6 @@ import Tackle from 'maneuvers/offensive/Tackle.js'
 import Throw from 'maneuvers/offensive/Throw.js'
 
 const Grapple = new Rule({
-	id: `974d2b5c-67e0-4e5d-8dd8-883d98a5926e`,
 	name: `Grapple`,
 	desc: [
 		`There are three steps to Grappling:`,

@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Rounds = new Rule({
-	id: `43080069-4044-4882-0b54-ca9229f09f23`,
 	name: `Rounds`, 
 	desc: [
 		`Combat time occurs in 3-second “rounds”.`,

@@ -2,7 +2,6 @@ import Gear from 'classes/Gear.js'
 import Camo from 'attributes/Camo.js'
 
 const FlakJacket = new Gear({
-	id: `31e3f366-1adf-4141-912d-0664c5644430`,
 	name: `Flak Jacket`,
 	sz: 4,
 	attr: [

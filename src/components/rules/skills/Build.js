@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Build = new Rule({
-	id: `20af75d7-79ef-4b7d-b408-1721a7ae11c6`,
 	name: `Build`,
 	desc: [
 		`Make an item from [d6 + #] Parts.`,

@@ -1,14 +1,19 @@
 <script>
 	import DescriptionList from 'lists/DescriptionList.js'
-	import RandomDescriptor from 'random/RandomDescriptor.js'
+	import RandomAge from 'random/RandomAge.js'
 	import RandomDescription from 'random/RandomDescription.js'
+	import RandomHair from 'random/RandomHair.js'
+	import RandomHeight from 'random/RandomHeight.js'
+	import RandomName from 'random/RandomName.js'
+	import RandomSex from 'random/RandomSex.js'
+	import RandomSkin from 'random/RandomSkin.js'
+	import RandomWeight from 'random/RandomWeight.js'
 	import { character } from 'stores/characterStore.js'
 
-	const randomDescriptor = (i) => $character = RandomDescriptor($character, i)
-
-	const random = _ => $character = RandomDescription($character)
-
-	const reset = _ => $character = $character.resetDescription()
+	const randomDescriptor = (descriptor, i) => {
+		$character.desc[descriptor] = RandomDescriptor($character, i)
+		$character = $character
+	}
 </script>
 
 
@@ -21,32 +26,50 @@
 		<div class='item-block'>
 			<div class='character-container'>
 				<span>Name:</span>
-				<input type='text' bind:value={$character.desc.name.value}>
-				<button on:click={_ => randomDescriptor(1)}>Random</button>
+				<input type='text' bind:value={$character.description.name.value}>
+				<button on:click={() => $character.description.name.value = RandomName($character)}>Random</button>
 			</div>
 		</div>
-		{#each DescriptionList.list as _, index}
-			{#if index % 2 == 0 && index < DescriptionList.list.length - 2}
-				<div class='item-block'>
-					<div class='item-container'>
-						<span>{DescriptionList.list[index + 2].name}:</span>
-						<input type='text' bind:value={
-							$character.desc[DescriptionList.list[index + 2].name.toLowerCase()].value}>
-						<button on:click={_ => randomDescriptor(index + 2)}>Random</button>
-					</div>
-					<div class='item-container'>
-						<span>{DescriptionList.list[index + 3].name}:</span>
-						<input type='text' bind:value={
-							$character.desc[DescriptionList.list[index + 3].name.toLowerCase()].value}>
-						<button on:click={_ => randomDescriptor(index + 3)}>Random</button>
-					</div>
-				</div>
-			{/if}
-		{/each}
+		<div class='item-block'>
+			<div class='item-container'>
+				<span>Age:</span>
+				<input type='text' bind:value={$character.description.age.value}>
+				<button on:click={() => $character.description.age.value = RandomAge()}>Random</button>
+			</div>
+			<div class='item-container'>
+				<span>Sex:</span>
+				<input type='text' bind:value={$character.description.sex.value}>
+				<button on:click={() => $character.description.sex.value = RandomSex()}>Random</button>
+			</div>
+		</div>
+		<div class='item-block'>
+			<div class='item-container'>
+				<span>Height:</span>
+				<input type='text' bind:value={$character.description.height.value}>
+				<button on:click={() => $character.description.height.value = RandomHeight($character)}>Random</button>
+			</div>
+			<div class='item-container'>
+				<span>Weight:</span>
+				<input type='text' bind:value={$character.description.weight.value}>
+				<button on:click={() => $character.description.weight.value = RandomWeight($character)}>Random</button>
+			</div>
+		</div>
+		<div class='item-block'>
+			<div class='item-container'>
+				<span>Skin:</span>
+				<input type='text' bind:value={$character.description.skin.value}>
+				<button on:click={() => $character.description.skin.value = RandomSkin()}>Random</button>
+			</div>
+			<div class='item-container'>
+				<span>Hair:</span>
+				<input type='text' bind:value={$character.description.hair.value}>
+				<button on:click={() => $character.description.hair.value = RandomHair()}>Random</button>
+			</div>
+		</div>
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={reset}>Reset</button>
-		<button class='small-cntr-btn' on:click={random}>Random</button>
+		<button class='small-cntr-btn' on:click={() => $character.resetDescription()}>Reset</button>
+		<button class='small-cntr-btn' on:click={() => $character = RandomDescription($character)}>Random</button>
 	</div>
 </div>
 

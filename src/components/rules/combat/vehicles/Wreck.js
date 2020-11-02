@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Wreck = new Rule({
-	id: `86c103b5-98fa-4a7a-630a-0d3b50a40716`,
 	name: `Wreck`, 
 	desc: [
 		`The vehicle comes to a violent stop suddenly this round.`,

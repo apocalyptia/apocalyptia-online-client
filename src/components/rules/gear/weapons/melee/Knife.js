@@ -4,7 +4,6 @@ import Pierce from 'attributes/Pierce.js'
 import Rapid from 'attributes/Rapid.js'
 
 const Knife = new Gear({
-	id: `077adc37-a0e4-4282-8641-74c648c8f5cd`,
 	name: `Knife`,
 	sz: 1,
 	attr: [

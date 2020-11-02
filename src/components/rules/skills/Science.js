@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Science = new Rule({
-	id: `5da150b7-8643-4f9d-b9ad-470fa37510ae`,
 	name: `Science`,
 	desc: [
 		`Knowledge of physical laws.`,

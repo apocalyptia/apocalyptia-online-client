@@ -7,7 +7,7 @@
     {#each Object.values(rule.specs) as spec}
         <li>
             <div class='sub-name'>{spec.name}</div>
-            {#each spec.desc as spec_desc}
+            {#each spec.description as spec_desc}
                 <p class='spec-desc'>{spec_desc}</p>
             {/each}
         </li>

@@ -4,7 +4,6 @@ import Chop from 'attributes/Chop.js'
 import Slow from 'attributes/Slow.js'
 
 const Ax = new Gear({
-	id: `a9aead5f-27f8-4727-84b0-6fdd536d52f8`,
 	name: `Ax`,
 	sz: 4,
 	attr: [

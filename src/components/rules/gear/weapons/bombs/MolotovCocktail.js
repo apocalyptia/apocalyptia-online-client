@@ -3,7 +3,6 @@ import Blast from 'attributes/Blast.js'
 import FireDamage from 'attributes/FireDamage.js'
 
 const MolotovCocktail = new Gear({
-	id: `1b954e5d-fed1-4df7-905a-aed3fa9d2eec`,
 	name: `Molotov Cocktail`,
 	desc: [
 		`Glass bottle of fuel with rag wick.`,

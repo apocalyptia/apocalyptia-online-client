@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Taunt = new Rule({
-	id: `a00cbcf0-3593-493b-9fd8-575846d182bb`,
 	name: `Taunt`,
 	desc: [
 		`Roll [Leadership vs Demeanor].`,

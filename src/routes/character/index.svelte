@@ -5,14 +5,12 @@
     import { character } from 'stores/characterStore.js'
 	import { goto } from '@sapper/app'
 
-    const newCharacter = _ => {
+    const newCharacter = () => {
         $character = new Character()
         goto(`/character/new`)
     }
 
-    const loadCharacter = _ => {
-        goto(`/character/load`)
-    }
+    const loadCharacter = () => goto(`/character/load`)
 </script>
 
 

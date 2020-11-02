@@ -1,5 +1,4 @@
 import Ability from 'classes/Ability.js'
-import AppendToGUUID from 'utils/AppendToGUUID.js'
 import PropSort from 'utils/PropSort.js'
 import XP12AbilitiesList from 'lists/abilities/XP12AbilitiesList.js'
 import XP15AbilitiesList from 'lists/abilities/XP15AbilitiesList.js'
@@ -26,9 +25,8 @@ const completeAbilityListBuilder = (list) => {
 	for (let i = 0; i < list.length; ++i) {
 		if (list[i].opts[0]) {
 			for (let o = 0; o < list[i].opts.length; ++o) {
-				let newGUUID = AppendToGUUID(list[i].id, list[i].opts[o].name)
 				const newAbility = new Ability({
-					id: newGUUID,
+					id: ``,
 					name: list[i].name,
 					desc: list[i].desc,
 					max: list[i].max,
@@ -102,18 +100,6 @@ export default {
 		},
 	],
 	masterList: completeAbilityListBuilder(abilityArray).sort((a, b) => PropSort(a, b, 'name')),
-	remainingXP: (c) => {
-		if (c.abilities.length) c.props.experience.spent = c.abilities.reduce((t, n) => t += (n.taken * n.xp), 0)
-		c.props.experience.remaining = c.props.experience.score - c.props.experience.spent
-		return c
-	},
-	reset: function(c) {
-		for (let a = 0; a < c.abilities.length; ++a) {
-			c.abilities[a].taken = 0
-		}
-		c.abilities = []
-		return c
-	}
 }
 
-export const AbilitiesList = completeAbilityListBuilder(Abilities)
+export const AbilitiesList = completeAbilityListBuilder(abilityArray)

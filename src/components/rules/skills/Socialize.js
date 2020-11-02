@@ -1,7 +1,6 @@
 import Rule from 'classes/Rule.js'
 
 const Socialize = new Rule({
-	id: `aa5d33c4-d9ec-4974-8064-55aba4e75d88`,
 	name: `Socialize`,
 	desc: [
 		`Alter a person’s Attitude by one step.`,
