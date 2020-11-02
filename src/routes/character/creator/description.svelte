@@ -9,11 +9,6 @@
 	import RandomSkin from 'random/RandomSkin.js'
 	import RandomWeight from 'random/RandomWeight.js'
 	import { character } from 'stores/characterStore.js'
-
-	const randomDescriptor = (descriptor, i) => {
-		$character.desc[descriptor] = RandomDescriptor($character, i)
-		$character = $character
-	}
 </script>
 
 
@@ -63,7 +58,7 @@
 			<div class='item-container'>
 				<span>Hair:</span>
 				<input type='text' bind:value={$character.description.hair.value}>
-				<button on:click={() => $character.description.hair.value = RandomHair()}>Random</button>
+				<button on:click={() => $character.description.hair.value = RandomHair($character)}>Random</button>
 			</div>
 		</div>
 	</div>

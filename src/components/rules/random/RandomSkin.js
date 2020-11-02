@@ -1,10 +1,10 @@
 import RandomRoll from 'random/RandomRoll.js'
 
 export default () => RandomRoll([
-	`Black`,
-	`Brown`,
+	`Dark`,
+	`Bronze`,
 	`Olive`,
-	`Pale`,
 	`Tan`,
-	`White`,
+	`Fair`,
+	`Pale`
 ])

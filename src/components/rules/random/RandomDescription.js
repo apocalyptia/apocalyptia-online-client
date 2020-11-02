@@ -12,7 +12,7 @@ export default (c) => {
     c.description.height.value = RandomHeight(c)
     c.description.weight.value = RandomWeight(c)
     c.description.skin.value = RandomSkin()
-    c.description.hair.value = RandomHair()
+    c.description.hair.value = RandomHair(c)
     c.description.name.value = RandomName(c)
     return c
 }
