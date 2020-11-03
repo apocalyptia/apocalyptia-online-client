@@ -26,7 +26,7 @@
 		position: fixed;
 		right: 0;
 		top: var(--s350);
-		z-index: 10;
+		z-index: 6;
 	}
 	.rules-name {
 		font-size: var(--s150);

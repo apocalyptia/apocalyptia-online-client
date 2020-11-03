@@ -19,7 +19,7 @@
 		top: 0;
 		transition: top 0.3s linear;
 		width: 100%;
-		z-index: 20;
+		z-index: 9;
 	}
 	.title-link {
 		padding: var(--s100);

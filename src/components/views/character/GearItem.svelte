@@ -15,7 +15,7 @@
 	<GearBlock {item} {mode} />
 	{#if mode != 'readonly'}
 		<div class='trash'>
-			<button class='btn-box trash-btn' on:click={_ => trashItem(category, index)}>
+			<button class='btn-box crimson-btn trash-btn' on:click={_ => trashItem(category, index)}>
 				<div class='btn-icon'>&#10006;</div>
 			</button>
 		</div>
@@ -35,5 +35,18 @@
 	}
 	.trash {
 		text-align: right;
+	}
+	.trash-btn {
+		color: rgba(15, 30, 15, 1);
+		height: var(--s250);
+		padding: 0;
+		width: var(--s250);
+		-webkit-text-fill-color: rgba(15, 30, 15, 1);
+	}
+	.trash-btn:hover {
+		background-color: rgba(15, 30, 15, 1);
+		box-shadow: 0 0 15px 5px rgba(220, 20, 60, 0.7);
+		color: crimson;
+		-webkit-text-fill-color: crimson;
 	}
 </style>

@@ -46,7 +46,7 @@
 		position: fixed;
 		right: 0;
 		width: var(--s300);
-		z-index: 3;
+		z-index: 9;
 	}
 	.user-btn:focus {
 		background-color: lime;
@@ -60,7 +60,7 @@
 		top: var(--s300);
 		width: 30vw;
 		min-width: 200px;
-		z-index: 4;
+		z-index: 9;
 	}
 	a {
 		border: none;
@@ -69,7 +69,6 @@
 		padding: var(--s100);
 	}
 	a:active,
-	a:focus,
 	a:hover {
 		background-color: lime;
 		color: rgba(15, 30, 15, 1);
@@ -81,7 +80,7 @@
 		left: 0;
 		height: 100vh;
 		width: 100vw;
-		z-index: 2;
+		z-index: 6;
 	}
 	.invisible {
 		display: none;

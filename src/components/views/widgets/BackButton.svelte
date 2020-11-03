@@ -16,6 +16,6 @@
 		left: 0;
 		position: fixed;
 		width: var(--s300);
-		z-index: 5;
+		z-index: 6;
 	}
 </style>
