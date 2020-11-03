@@ -12,8 +12,8 @@ const Luck = new Rule({
 		`• Give a Luck point to a Comrade.`,
 	],
 	formula: (c) => {
-		c.props.luck.score = c.traits.demeanor.score
-		c.props.luck.current = c.traits.demeanor.score
+		c.properties.luck.score = c.traits.demeanor.score
+		c.properties.luck.current = c.traits.demeanor.score
 	},
 	type: `Property`
 })

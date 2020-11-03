@@ -8,7 +8,7 @@ const Block = new Rule({
 		...Melee.specs.block.desc,
 	],
 	formula: (c) => {
-		c.props.block.score = c.skills.melee.score
+		c.properties.block.score = c.skills.melee.score
 	},
 	type: `Property`
 })

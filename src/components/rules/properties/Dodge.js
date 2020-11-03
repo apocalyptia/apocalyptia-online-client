@@ -8,7 +8,7 @@ const Dodge = new Rule({
 		...Acrobatics.specs.dodge.desc,
 	],
 	formula: (c) => {
-		c.props.dodge.score = c.skills.acrobatics.score
+		c.properties.dodge.score = c.skills.acrobatics.score
 	},
 	type: `Property`
 })

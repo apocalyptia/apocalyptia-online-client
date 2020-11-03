@@ -13,51 +13,51 @@
 		<div class='sheet-card-body'>
 			<div class='sheet-card-block'>
 				<div class='sheet-card-item'>
-					{$character.props.speed.name}: {$character.props.speed.score}
+					{$character.properties.speed.name}: {$character.properties.speed.score}
 				</div>
 				<div class='sheet-card-item'>
-					{$character.props.carry.name}: {$character.props.carry.current} / {$character.props.carry.score}
+					{$character.properties.carry.name}: {$character.properties.carry.current} / {$character.properties.carry.score}
 				</div>
 				<div class='sheet-card-item'>
-					XP: {$character.props.experience.remaining} / {$character.props.experience.score}
+					XP: {$character.properties.experience.remaining} / {$character.properties.experience.score}
 				</div>
 				<div class='sheet-card-item'>
-					{$character.props.psyche.name}: 
+					{$character.properties.psyche.name}: 
 					{#if mode == 'edit'}
 						<input type='number'
 							class='current-value'
-							bind:value={$character.props.psyche.current}
-							min=0 max={$character.props.psyche.score}
+							bind:value={$character.properties.psyche.current}
+							min=0 max={$character.properties.psyche.score}
 						/>
 					{:else if mode == 'readonly'}
-						{$character.props.psyche.current}
-					{/if} / {$character.props.psyche.score}
+						{$character.properties.psyche.current}
+					{/if} / {$character.properties.psyche.score}
 				</div>
 			</div>
 			<div class='sheet-card-block'>
 				<div class='sheet-card-item'>
-					{$character.props.dodge.name}: 
-					{$character.props.dodge.score}
+					{$character.properties.dodge.name}: 
+					{$character.properties.dodge.score}
 				</div>
 				<div class='sheet-card-item'>
-					{$character.props.block.name}: 
-					{$character.props.block.score}
+					{$character.properties.block.name}: 
+					{$character.properties.block.score}
 				</div>
 				<div class='sheet-card-item'>
-					{$character.props.intellect.name}: 
-					{$character.props.intellect.score}
+					{$character.properties.intellect.name}: 
+					{$character.properties.intellect.score}
 				</div>
 				<div class='sheet-card-item'>
-					{$character.props.luck.name}: 
+					{$character.properties.luck.name}: 
 					{#if mode == 'edit'}
 						<input type='number'
 							class='current-value'
-							bind:value={$character.props.luck.current}
-							min=0 max={$character.props.luck.score}
+							bind:value={$character.properties.luck.current}
+							min=0 max={$character.properties.luck.score}
 						/>
 					{:else if mode == 'readonly'}
-						{$character.props.luck.current}
-					{/if} / {$character.props.luck.score}
+						{$character.properties.luck.current}
+					{/if} / {$character.properties.luck.score}
 				</div>
 			</div>
 		</div>

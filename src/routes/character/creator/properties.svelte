@@ -5,7 +5,7 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
-	beforeUpdate(_ => $character = Properties.setScores($character))
+	beforeUpdate(_ => $character = $character.setProperties())
 </script>
 
 
@@ -26,10 +26,10 @@
 			<ul>
 				{#each PropertiesList.list as property}
 					{#if property.name == 'Health'}
-						<li>{property.description[0]}</li>
-						<li>{property.description[1]}</li>
+						<li>{property.desc[0]}</li>
+						<li>{property.desc[1]}</li>
 					{:else}
-						<li>{property.description[0]}</li>
+						<li>{property.desc[0]}</li>
 					{/if}
 				{/each}
 			</ul>
@@ -38,38 +38,38 @@
 	<div class='section-card properties-list'>
 		<div class='section-block'>
 			<div class='prop-item'>
-				{$character.props.speed.name}: 
-				{$character.props.speed.score}
+				{$character.properties.speed.name}: 
+				{$character.properties.speed.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.experience.name}: 
-				{$character.props.experience.score}
+				{$character.properties.experience.name}: 
+				{$character.properties.experience.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.carry.name}:
-				{$character.props.carry.score}
+				{$character.properties.carry.name}:
+				{$character.properties.carry.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.psyche.name}: 
-				{$character.props.psyche.score}
+				{$character.properties.psyche.name}: 
+				{$character.properties.psyche.score}
 			</div>
 		</div>
 		<div class='section-block'>
 			<div class='prop-item'>
-				{$character.props.dodge.name}: 
-				{$character.props.dodge.score}
+				{$character.properties.dodge.name}: 
+				{$character.properties.dodge.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.intellect.name}: 
-				{$character.props.intellect.score}
+				{$character.properties.intellect.name}: 
+				{$character.properties.intellect.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.block.name}: 
-				{$character.props.block.score}
+				{$character.properties.block.name}: 
+				{$character.properties.block.score}
 			</div>
 			<div class='prop-item'>
-				{$character.props.luck.name}: 
-				{$character.props.luck.score}
+				{$character.properties.luck.name}: 
+				{$character.properties.luck.score}
 			</div>
 		</div>
 	</div>

@@ -10,7 +10,7 @@ export default (c) => {
     c = RandomSkills(c)
     c = c.setProperties()
     c = RandomAbilities(c)
-    c = RandomStartingGear(c, c.props.luck.score)
+    c = RandomStartingGear(c, c.properties.luck.score)
     c.meta.status.step = 7
     return c
 }

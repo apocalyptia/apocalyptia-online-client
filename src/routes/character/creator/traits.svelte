@@ -6,12 +6,6 @@
 	import { character } from 'stores/characterStore.js'
 
 	$: remaining = Traits.remaining($character)
-
-	const assign = (event) => $character = Traits.assign($character, event.target)
-
-	const random = _ => $character = RandomTraits($character)
-
-	const reset = _ => $character = $character.resetTraits()
 </script>
 
 
@@ -36,19 +30,19 @@
 					<Slider
 						name='{trait.name.toLowerCase()}'
 						min={parseInt(1)}
-						max={parseInt(Traits.max)}
+						max={parseInt(Traits.maxPoints)}
 						bind:value={$character.traits[trait.name.toLowerCase()].score}
-						on:input={(event) => assign(event)}
+						on:input={(event) => $character = Traits.assign($character, event.target)}
 					/>
 				</div>
 			</div>
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={reset}>
+		<button class='small-cntr-btn' on:click={() => $character = $character.resetTraits()}>
 			Reset
 		</button>
-		<button class='small-cntr-btn' on:click={random}>
+		<button class='small-cntr-btn' on:click={() => $character = RandomTraits($character)}>
 			Random
 		</button>
 	</div>

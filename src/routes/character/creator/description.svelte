@@ -1,5 +1,4 @@
 <script>
-	import DescriptionList from 'lists/DescriptionList.js'
 	import RandomAge from 'random/RandomAge.js'
 	import RandomDescription from 'random/RandomDescription.js'
 	import RandomHair from 'random/RandomHair.js'
@@ -63,7 +62,7 @@
 		</div>
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={() => $character.resetDescription()}>Reset</button>
+		<button class='small-cntr-btn' on:click={() => $character = $character.resetDescription()}>Reset</button>
 		<button class='small-cntr-btn' on:click={() => $character = RandomDescription($character)}>Random</button>
 	</div>
 </div>

@@ -13,7 +13,8 @@ const limit = (c, t) => {
 }
 
 const remaining = (c) => {
-	const spent = Object.values(c.traits).reduce((t, { score }) => t += score, 0)
+	let spent = 0
+	Object.keys(c.traits).forEach(t => spent += c.traits[t].score)
 	return startingPoints - spent
 }
 

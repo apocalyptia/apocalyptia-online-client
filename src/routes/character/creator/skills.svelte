@@ -6,12 +6,6 @@
 	import { character } from 'stores/characterStore.js'
 
 	$: remaining = Skills.remaining($character)
-
-	const assign = (event) => $character = Skills.assign($character, event.target)
-
-	const random = _ => $character = RandomSkills($character)
-
-	const reset = _ => $character = $character.resetSkills()
 </script>
 
 
@@ -21,7 +15,7 @@
 <div class='creator-page'>
 	<h1>Skills</h1>
 	<div class='explanation'>
-		{#each SkillsList.text as line}
+		{#each Skills.text as line}
 			<p>{line}</p>
 		{/each}
 	</div>
@@ -48,7 +42,7 @@
 								min={parseInt(0)}
 								max={parseInt(6)}
 								bind:value={$character.skills[skill.name.toLowerCase()].score}
-								on:input={event => assign(event)}
+								on:input={event => $character = Skills.assign($character, event.target)}
 							/>
 						</div>
 					{/each}
@@ -57,10 +51,10 @@
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={reset}>
+		<button class='small-cntr-btn' on:click={() => $character = $character.resetSkills()}>
 			Reset
 		</button>
-		<button class='small-cntr-btn' on:click={random}>
+		<button class='small-cntr-btn' on:click={() => $character = RandomSkills($character)}>
 			Random
 		</button>
 	</div>

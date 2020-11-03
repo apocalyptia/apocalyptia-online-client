@@ -12,8 +12,8 @@ const Experience = new Rule({
 		`You may also spend 1XP per round to regain 1 Luck Point.`,
 	],
 	formula: (c) => {
-		c.props.experience.score = c.traits.brains.score * 3
-		c.props.experience.current = c.traits.brains.score * 3
+		c.properties.experience.score = c.traits.brains.score * 3
+		c.properties.experience.current = c.traits.brains.score * 3
 	},
 	type: `Property`
 })

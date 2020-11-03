@@ -64,7 +64,7 @@
 <div class='nav-bar'>
 	<button on:click={back} class='link-btn nav-button'>{@html backButton}</button>
 	<button on:click={() => goto('/')} class='link-btn nav-button home-button'>Home</button>
-	<button on:click={next} class='link-btn nav-button'>{@html nextButton}</button>
+	<button on:click={next} class='link-btn nav-button {nextButton == '&#10006;' ? 'crimson-btn' : '' }'>{@html nextButton}</button>
 </div>
 
 

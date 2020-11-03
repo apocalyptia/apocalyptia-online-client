@@ -1,18 +1,22 @@
+import AbilitiesList from 'lists/AbilitiesList.js'
 import RandomRoll from 'random/RandomRoll.js'
 
-export default (c, r) => {
+export default (c) => {
     c = c.resetAbilities()
-    while(c.props.experience.remaining) {
-        const remainingAbilities = r.filter(m => {
-            return m.xp <= c.props.experience.remaining && !c.abilities.includes(m)
+    c = c.calculateRemainingXP()
+    while(c.properties.experience.current) {
+        const remainingAbilities = AbilitiesList.list.filter(m => {
+            return (m.xp <= c.properties.experience.current) && !c.abilities.includes(m)
         })
-        if (m.length) {
+        console.log(`Random = ${c.abilities}`)
+        if (remainingAbilities.length) {
             const a = RandomRoll(remainingAbilities)
             a.taken++
             c.abilities.push(a)
-            c.props.experience.remaining -= a.xp
+            c = c.calculateRemainingXP()
         }
         else break
     }
+    console.log(`Final Random = ${c.abilities}`)
     return c
 }

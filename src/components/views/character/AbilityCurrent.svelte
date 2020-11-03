@@ -2,6 +2,8 @@
 	import { character } from 'stores/characterStore.js'
 
 	export let MasterAbilityList
+
+	console.log(`Current = ${$character.abilities}`)
 </script>
 
 
@@ -29,7 +31,7 @@
 						<select
 							class='taken-number'
 							bind:value={ability.taken}
-							on:blur={_ => $character.abilities = MasterAbilityList.filter(ability => ability.taken)}
+							on:blur={() => $character.abilities = MasterAbilityList.filter(ability => ability.taken)}
 						>
 							{#each Array(ability.max+1) as _, i}
 								<option value={i}>{i}</option>

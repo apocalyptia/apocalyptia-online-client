@@ -1,5 +1,6 @@
 <script>
 	import BackButton from 'views/widgets/BackButton.svelte'
+	import ManualHeader from 'views/manual/ManualHeader.svelte'
 	import ManualList from 'lists/ManualList.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
 
@@ -31,14 +32,7 @@
 <svelte:head>
 	<title>Apocalyptia Online - Manual</title>
 </svelte:head>
-<div class='manual-header-section'>
-	<div class='rules-name'>Manual</div>
-	<input type='text'
-		class='search-bar'
-		placeholder='Search'
-		bind:value='{searchTerm}'
-	/>
-</div>
+<ManualHeader {searchTerm} />
 <div class='manual-page-body'>
 	{#if searchTerm === ''}
 		{#each ManualList as chapter}
@@ -66,30 +60,6 @@
 
 
 <style>
-	.manual-header-section {
-		align-items: center;
-		background-color: rgb(15, 30, 15);
-		border: 1px solid lime;
-		display: flex;
-		height: var(--s300);
-		justify-content: space-around;
-		left: 0;
-		position: fixed;
-		right: 0;
-		top: var(--s350);
-		z-index: 1;
-	}
-		.rules-name {
-			font-size: var(--s150);
-			font-weight: bold;
-		}
-		.search-bar {
-			min-width: 100px;
-			padding: var(--s25) var(--s100);
-			text-align: left;
-			width: 45%;
-		}
-
 	.manual-page-body {
 		position: absolute;
 		top: var(--s300);

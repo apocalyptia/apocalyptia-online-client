@@ -7,8 +7,6 @@
 
 	let gearedUp = false
 
-	const randomStartingGear = () => $character = RandomStartingGear($character, $character.props.luck.score)
-
 	beforeUpdate(() => gearedUp = Object.values($character.gear).every(g => g.inventory.length))
 </script>
 
@@ -49,7 +47,7 @@
 		{/each}
 	{:else}
 		<div class='btn-row'>
-			<button class='small-cntr-btn' on:click={randomStartingGear}>Random</button>
+			<button class='small-cntr-btn' on:click={() => $character = RandomStartingGear($character, $character.properties.luck.score)}>Random</button>
 		</div>
 	{/if}
 </div>

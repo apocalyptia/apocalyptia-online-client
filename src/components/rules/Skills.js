@@ -22,7 +22,8 @@ const limit = (c, targetName) => {
 }
 
 const remaining = (c) => {
-	const spent = Object.values(c.skills).reduce((t, { score }) => t += score, 0)
+	let spent = 0
+	Object.keys(c.skills).forEach(s => spent += c.skills[s].score)
 	return startingPoints(c) - spent
 }
 

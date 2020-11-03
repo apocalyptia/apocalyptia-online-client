@@ -9,13 +9,14 @@
 
 	let MasterAbilityList = AbilitiesList.masterList
 
-	const random = _ => $character = RandomAbilities($character)
+	$: remainingXP = $character.properties.experience.current
 
-	const reset = _ => $character = Abilities.reset($character)
+	$: hasAbilities = $character.abilities.length
 
 	beforeUpdate(_ => {
 		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-		$character = Abilities.remainingXP($character)
+		$character = $character.calculateRemainingXP()
+		console.log(`Abilities.svelte = ${$character.abilities}`)
 	})
 </script>
 
@@ -32,9 +33,9 @@
 		<p>Buy Abilities for your Character using XP, or save some or all of your starting XP for later.</p>
 	</div>
 	<div class='remaining'>
-		<h3>Remaining: {$character.props.experience.remaining}</h3>
+		<h3>Remaining: {remainingXP}</h3>
 	</div>
-	{#if $character.abilities.length}
+	{#if hasAbilities}
 		<div class='section-card'>
 			<AbilityCurrent {MasterAbilityList}/>
 		</div>
@@ -45,10 +46,13 @@
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={reset}>
+		<button class='small-cntr-btn' on:click={() => $character = $character.resetAbilities()}>
 			Reset
 		</button>
-		<button class='small-cntr-btn' on:click={random}>
+		<button class='small-cntr-btn' on:click={() => {
+			$character = RandomAbilities($character)
+			console.log(`Post Random = ${$character.abilities}`)		
+		}}>
 			Random
 		</button>
 	</div>

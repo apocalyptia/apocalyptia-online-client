@@ -10,8 +10,8 @@ const Psyche = new Rule({
 		`Someone must protect you from yourself until you have Recovered from at least 1 Trauma.`,
 	],
 	formula: (c) => {
-		c.props.psyche.score = c.traits.demeanor.score * 3
-		c.props.psyche.current = c.traits.demeanor.score * 3
+		c.properties.psyche.score = c.traits.demeanor.score * 3
+		c.properties.psyche.current = c.traits.demeanor.score * 3
 	},
 	type: `Property`
 })
