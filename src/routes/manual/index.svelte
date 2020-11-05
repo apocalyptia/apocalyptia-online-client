@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import BackButton from 'views/widgets/BackButton.svelte'
 	import ManualHeader from 'views/manual/ManualHeader.svelte'
 	import ManualList from 'lists/ManualList.js'
@@ -26,13 +26,13 @@
 	} else {
 		ruleList = masterRulesList
 	}
-</script>
+</script> -->
 
 
 <svelte:head>
 	<title>Apocalyptia Online - Manual</title>
 </svelte:head>
-<ManualHeader {searchTerm} />
+<!-- <ManualHeader {searchTerm} />
 <div class='manual-page-body'>
 	{#if searchTerm === ''}
 		{#each ManualList as chapter}
@@ -56,10 +56,10 @@
 		{/if}
 	{/if}
 </div>
-<BackButton path={'/'} />
+<BackButton path={'/'} /> -->
 
 
-<style>
+<!-- <style>
 	.manual-page-body {
 		position: absolute;
 		top: var(--s300);
@@ -79,4 +79,4 @@
 			padding-left: 10vw;
 			padding-top: 2vh;
 		}
-</style>
+</style> -->
