@@ -8,7 +8,7 @@ const SavageMkII = new Gear({
 		TwoHanded,
 	]
 })
-SavageMkII.dmg = 0
+SavageMkII.dmg = 1
 SavageMkII.rng = 40
 SavageMkII.cap = 10
 SavageMkII.cal = `.22`

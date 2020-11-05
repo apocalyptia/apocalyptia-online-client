@@ -7,6 +7,8 @@ import Glock17 from 'ranged/Glock17.js'
 import HKMP5 from 'ranged/HKMP5.js'
 import HenryGoldenBoy from 'ranged/HenryGoldenBoy.js'
 import HoytCompoundBow from 'ranged/HoytCompoundBow.js'
+import Kimber1911 from 'ranged/Kimber1911.js'
+import MAC10 from 'ranged/MAC10.js'
 import Marlin1894 from 'ranged/Marlin1894.js'
 import Mossberg500 from 'ranged/Mossberg500.js'
 import NorincoSKS from 'ranged/NorincoSKS.js'
@@ -15,8 +17,8 @@ import Remington700 from 'ranged/Remington700.js'
 import Remington870 from 'ranged/Remington870.js'
 import Ruger1022 from 'ranged/Ruger1022.js'
 import RugerMkIII from 'ranged/RugerMkIII.js'
-import SIGSauerP290 from 'ranged/SIGSauerP290.js'
-import SWBodyguard from 'ranged/SWBodyguard.js'
+import SW686Snubnose from 'ranged/SW686Snubnose.js'
+import SWMPShield from 'ranged/SWMPShield.js'
 import SavageMkII from 'ranged/SavageMkII.js'
 import SpringfieldM1A from 'ranged/SpringfieldM1A.js'
 import StoegerCoachgun from 'ranged/StoegerCoachgun.js'
@@ -32,6 +34,8 @@ export default [
 	HKMP5,
 	HenryGoldenBoy,
 	HoytCompoundBow,
+	Kimber1911,
+	MAC10,
 	Marlin1894,
 	Mossberg500,
 	NorincoSKS,
@@ -40,8 +44,8 @@ export default [
 	Remington870,
 	Ruger1022,
 	RugerMkIII,
-	SIGSauerP290,
-	SWBodyguard,
+	SW686Snubnose,
+	SWMPShield,
 	SavageMkII,
 	SpringfieldM1A,
 	StoegerCoachgun,

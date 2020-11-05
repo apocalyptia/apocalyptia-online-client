@@ -10,7 +10,7 @@ const Ruger1022 = new Gear({
 		Rapid,
 	]
 })
-Ruger1022.dmg = 0
+Ruger1022.dmg = 1
 Ruger1022.rng = 30
 Ruger1022.cap = 10
 Ruger1022.cal = `.22`
