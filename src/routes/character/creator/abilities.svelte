@@ -1,8 +1,8 @@
 <script>
 	import Abilities from 'rules/Abilities.js'
 	import AbilitiesList from 'lists/AbilitiesList.js'
-	import AbilityCurrent from 'views/character/AbilityCurrent.svelte'
-	import AbilityGroup from 'views/character/AbilityGroup.svelte'
+	import AbilityGroup from 'views/character/creator/AbilityGroup.svelte'
+	import CurrentAbilities from 'views/character/creator/CurrentAbilities.svelte'
 	import RandomAbilities from 'random/RandomAbilities.js'
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
@@ -11,13 +11,7 @@
 
 	$: remainingXP = $character.properties.experience.current
 
-	$: hasAbilities = $character.abilities.length
-
-	beforeUpdate(_ => {
-		$character.abilities = MasterAbilityList.filter(ability => ability.taken)
-		$character = $character.calculateRemainingXP()
-		console.log(`Abilities.svelte = ${$character.abilities}`)
-	})
+	beforeUpdate(_ => $character = $character.updateAbilities())
 </script>
 
 
@@ -35,9 +29,9 @@
 	<div class='remaining'>
 		<h3>Remaining: {remainingXP}</h3>
 	</div>
-	{#if hasAbilities}
+	{#if $character.abilities.length}
 		<div class='section-card'>
-			<AbilityCurrent {MasterAbilityList}/>
+			<CurrentAbilities />
 		</div>
 	{/if}
 	<div class='abilities-list'>
@@ -46,13 +40,10 @@
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={() => $character = $character.resetAbilities()}>
+		<button class='small-cntr-btn' on:click={_ => $character = $character.resetAbilities()}>
 			Reset
 		</button>
-		<button class='small-cntr-btn' on:click={() => {
-			$character = RandomAbilities($character)
-			console.log(`Post Random = ${$character.abilities}`)		
-		}}>
+		<button class='small-cntr-btn' on:click={_ => $character = RandomAbilities($character)}>
 			Random
 		</button>
 	</div>

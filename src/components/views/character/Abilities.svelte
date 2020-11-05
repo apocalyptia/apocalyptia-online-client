@@ -8,25 +8,25 @@
 		Abilities
 	</summary>
 	<div class='sheet-card'>
-		<div class='sheet-card-table'>
-			<div class='sheet-card-table-header'>
-				<span class='sheet-item-long-column'>Name</span>
-				<span class='sheet-item-short-column'>XP</span>
-				<span class='sheet-item-short-column'>Max</span>
-				<span class='sheet-item-short-column'>Taken</span>
+		<div class='card-table'>
+			<div class='card-table-header'>
+				<span class='l-col'>Name</span>
+				<span class='s-col'>XP</span>
+				<span class='s-col'>Max</span>
+				<span class='s-col'>Taken</span>
 			</div>
 			{#each $character.abilities as ability}
-				<div class='sheet-card-table-row'>
-					<span class='sheet-item-long-column'>
+				<div class='card-table-row'>
+					<span class='l-col'>
 						{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}
 					</span>
-					<span class='sheet-item-short-column'>
+					<span class='s-col'>
 						{ability.xp}
 					</span>
-					<span class='sheet-item-short-column'>
+					<span class='s-col'>
 						{ability.max}
 					</span>
-					<span class='sheet-item-short-column'>
+					<span class='s-col'>
 						{ability.taken}
 					</span>
 				</div>
@@ -34,3 +34,29 @@
 		</div>
 	</div>
 </details>
+
+
+<style>
+	.s-col {
+		flex: 1;
+		text-align: center;
+	}
+	.l-col {
+		flex: 3;
+		text-align: left;
+	}
+	.card-table {
+		display: block;
+	}
+	.card-table-header,
+	.card-table-row {
+		align-items: baseline;
+		display: flex;
+		justify-content: space-between;
+		margin: var(--s100);
+	}
+	.card-table-header {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>

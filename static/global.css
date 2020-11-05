@@ -61,7 +61,10 @@ table {
 	outline-color: lime;
 	outline-style: double;
 	outline-width: 3px;
-	z-index: 5;
+	z-index: 3;
+}
+*:hover {
+	z-index: 6;
 }
 
 
@@ -372,7 +375,7 @@ td, th {
 	top: 50vh;
 	transform: translateY(-60%) translateX(-50%);
 	width: 66vw;
-	box-shadow: var(--s100) var(--s100) 2px darkgreen;
+	box-shadow: var(--s100) var(--s100) 2px rgba(0, 255, 0, .125);
 }
 .cntr-card .card-title {
 	margin: var(--s100);
@@ -403,9 +406,6 @@ td, th {
 }
 .remaining {
 	text-align: center;;
-}
-.section-block {
-	margin: var(--s100);
 }
 .flex-block {
 	display: flex;

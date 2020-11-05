@@ -1,5 +1,5 @@
 <script>
-	import AbilityModal from 'views/character/AbilityModal.svelte'
+	import AbilityModal from 'views/character/creator/AbilityModal.svelte'
 	import ToggleVisible from 'utils/ToggleVisible.js'
 
 	export let ability, MasterAbilityList
@@ -24,7 +24,7 @@
 
 <style>
 	.ability-card {
-		border: var(--s1) solid;
+		border: 1px solid;
 		margin: var(--s100);
 		padding: var(--s100);
 	}
@@ -36,12 +36,15 @@
 	.card-row {
 		display: flex;
 		justify-content: space-between;
-		margin: var(--s50) auto;
+		margin: var(--s100);
 	}
 	.ability-name{
 		flex: 2;
 		font-weight: bold;
 		text-decoration: underline;
 		text-align: center;
+	}
+	.ability-description {
+		line-height: 1.5;
 	}
 </style>

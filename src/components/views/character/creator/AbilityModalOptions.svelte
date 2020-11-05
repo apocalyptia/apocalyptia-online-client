@@ -35,7 +35,7 @@
 	}
 	.ability-section {
 		align-items: center;
-		border: var(--s1) dashed;
+		border: 1px dashed;
 		display: flex;
 		justify-content: space-between;
 		margin: var(--s100) auto;

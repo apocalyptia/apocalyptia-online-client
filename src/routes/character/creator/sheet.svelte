@@ -1,5 +1,5 @@
 <script>
-	import CharacterSheet from 'views/character/CharacterSheet.svelte'
+	import CharacterSheet from 'views/character/sheet/CharacterSheet.svelte'
 </script>
 
 

@@ -36,7 +36,7 @@
 		-moz-appearance: none;
 		background-color: lime;
 		border-radius: var(--radius);
-		border: var(--s1) solid rgba(15, 30, 15, 1);
+		border: 1px solid rgba(15, 30, 15, 1);
 		height: var(--s200);
 		width: var(--s200);
 	}
@@ -44,19 +44,19 @@
 		-webkit-appearance: none;
 		background-color: lime;
 		border-radius: var(--radius);
-		border: var(--s1) solid rgba(15, 30, 15, 1);
+		border: 1px solid rgba(15, 30, 15, 1);
 		height: var(--s200);
 		width: var(--s200);
 	}
 	input[type="range"]:hover::-moz-range-thumb {
 		-moz-appearance: none;
 		background: rgba(15, 30, 15, 1);
-		border: var(--s1) solid lime;
+		border: 1px solid lime;
 	}
 	input[type="range"]:hover::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		background: rgba(15, 30, 15, 1);
-		border: var(--s1) solid lime;
+		border: 1px solid lime;
 	}
 	.range-indicator {
 		display: flex;

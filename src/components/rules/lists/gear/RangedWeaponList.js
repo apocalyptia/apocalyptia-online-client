@@ -1,37 +1,37 @@
 import ArmaliteAR15 from 'ranged/ArmaliteAR15.js'
+import BarnettCrossbow from 'ranged/BarnettCrossbow.js'
 import BenelliM4 from 'ranged/BenelliM4.js'
 import BrowningABolt from 'ranged/BrowningABolt.js'
 import ColtPython from 'ranged/ColtPython.js'
-import CompoundBow from 'ranged/CompoundBow.js'
-import Crossbow from 'ranged/Crossbow.js'
 import Glock17 from 'ranged/Glock17.js'
-import HenryGoldenBoy from 'ranged/HenryGoldenBoy.js'
 import HKMP5 from 'ranged/HKMP5.js'
+import HenryGoldenBoy from 'ranged/HenryGoldenBoy.js'
+import HoytCompoundBow from 'ranged/HoytCompoundBow.js'
 import Marlin1894 from 'ranged/Marlin1894.js'
-import NorincoSKS from 'ranged/NorincoSKS.js'
 import Mossberg500 from 'ranged/Mossberg500.js'
+import NorincoSKS from 'ranged/NorincoSKS.js'
 import RecurveBow from 'ranged/RecurveBow.js'
 import Remington700 from 'ranged/Remington700.js'
 import Remington870 from 'ranged/Remington870.js'
 import Ruger1022 from 'ranged/Ruger1022.js'
 import RugerMkIII from 'ranged/RugerMkIII.js'
-import SavageMkII from 'ranged/SavageMkII.js'
 import SIGSauerP290 from 'ranged/SIGSauerP290.js'
+import SWBodyguard from 'ranged/SWBodyguard.js'
+import SavageMkII from 'ranged/SavageMkII.js'
 import SpringfieldM1A from 'ranged/SpringfieldM1A.js'
 import StoegerCoachgun from 'ranged/StoegerCoachgun.js'
-import SWBodyguard from 'ranged/SWBodyguard.js'
 import WASRAK47 from 'ranged/WASRAK47.js'
 
 export default [
 	ArmaliteAR15,
+	BarnettCrossbow,
 	BenelliM4,
 	BrowningABolt,
 	ColtPython,
-	CompoundBow,
-	Crossbow,
 	Glock17,
-	HenryGoldenBoy,
 	HKMP5,
+	HenryGoldenBoy,
+	HoytCompoundBow,
 	Marlin1894,
 	Mossberg500,
 	NorincoSKS,
@@ -40,11 +40,11 @@ export default [
 	Remington870,
 	Ruger1022,
 	RugerMkIII,
-	SavageMkII,
 	SIGSauerP290,
+	SWBodyguard,
+	SavageMkII,
 	SpringfieldM1A,
 	StoegerCoachgun,
-	SWBodyguard,
 	WASRAK47
 ]
 

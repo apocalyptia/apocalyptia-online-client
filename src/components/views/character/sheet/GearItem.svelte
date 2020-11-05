@@ -38,6 +38,7 @@
 	}
 	.trash-btn {
 		color: rgba(15, 30, 15, 1);
+		background-color: crimson;
 		height: var(--s250);
 		padding: 0;
 		width: var(--s250);

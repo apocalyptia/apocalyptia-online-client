@@ -11,7 +11,7 @@
 
 	let pendingApiCall = false
 
-	const submit = () => {
+	const submit = _ => {
 		// pendingApiCall = true
 		// recover(email)
 		// 	.then(_ => {

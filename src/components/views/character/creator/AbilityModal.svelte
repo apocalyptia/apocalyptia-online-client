@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher, onDestroy } from 'svelte'
-	import AbilityModalSingle from 'views/character/AbilityModalSingle.svelte'
-	import AbilityModalOptions from 'views/character/AbilityModalOptions.svelte'
+	import AbilityModalSingle from 'views/character/creator/AbilityModalSingle.svelte'
+	import AbilityModalOptions from 'views/character/creator/AbilityModalOptions.svelte'
 
 	export let ability, MasterAbilityList
 
@@ -19,7 +19,9 @@
 <div class="modal-background" on:click={_ => dispatch('close')}></div>
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='modal-content'>
-		<div class='ability-name'><h2>{ability.name}</h2></div>
+		<div class='ability-name'>
+			<h2>{ability.name}</h2>
+		</div>
 		<div class='description-section'>
 			<span class='description-label'>Description:</span>
 			<span class='ability-description'>{ability.desc}</span>
@@ -46,21 +48,24 @@
 		position: fixed;
 		top: 0;
 		width: 100vw;
+		z-index: 6;
 	}
 	.modal {
-		background-color: rgba(0,0,0,.5);
+		background-color: rgba(15, 30, 15, 1);
 		border-radius: var(--radius);
-		border: var(--s1) solid;
+		border: 2px solid;
 		color: lime;
 		height: fit-content;
 		left: 50vw;
 		max-height: 75vh;
 		overflow: scroll;
+		padding: var(--s100);
 		position: fixed;
 		scrollbar-width: none;
 		top: 50vh;
 		transform: translate(-50%, -50%);
 		width: 80vw;
+		z-index: 9;
 	}
 	.modal-content {
 		margin: var(--s100);
@@ -74,7 +79,8 @@
 		justify-content: space-between;
 	}
 	.description-section {
-		margin-top: var(--s100);
+		line-height: 1.5;
+		margin: var(--s100) auto;
 	}
 	.description-label {
 		font-weight: bold;

@@ -22,28 +22,37 @@
 	<div class='remaining'>
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
-	<div class='list'>
+	<div class='section-card'>
 		{#each TraitsList.list as trait}
-			<div class='section-card'>
-				<div class='stat-label'>{trait.name}</div>
-				<div class='stat-column'>
-					<Slider
-						name='{trait.name.toLowerCase()}'
-						min={parseInt(1)}
-						max={parseInt(Traits.maxPoints)}
-						bind:value={$character.traits[trait.name.toLowerCase()].score}
-						on:input={(event) => $character = Traits.assign($character, event.target)}
-					/>
+			<div class='item-block'>
+				<div class='trait-selection'>
+					<div class='stat-label'>{trait.name}</div>
+					<div class='stat-column'>
+						<Slider
+							name='{trait.name.toLowerCase()}'
+							min={parseInt(1)}
+							max={parseInt(Traits.maxPoints)}
+							bind:value={$character.traits[trait.name.toLowerCase()].score}
+							on:input={(event) => $character = Traits.assign($character, event.target)}
+						/>
+					</div>
 				</div>
 			</div>
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={() => $character = $character.resetTraits()}>
+		<button class='small-cntr-btn' on:click={_ => $character = $character.resetTraits()}>
 			Reset
 		</button>
-		<button class='small-cntr-btn' on:click={() => $character = RandomTraits($character)}>
+		<button class='small-cntr-btn' on:click={_ => $character = RandomTraits($character)}>
 			Random
 		</button>
 	</div>
 </div>
+
+
+<style>
+	.trait-selection {
+		margin: var(--s100);
+	}
+</style>

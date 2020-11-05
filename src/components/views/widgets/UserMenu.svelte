@@ -54,7 +54,7 @@
 	}
 	.user-menu {
 		background: rgba(15, 30, 15, 1);
-		border: var(--s1) solid lime;
+		border: 1px solid lime;
 		position: absolute;
 		right: 0;
 		top: var(--s300);

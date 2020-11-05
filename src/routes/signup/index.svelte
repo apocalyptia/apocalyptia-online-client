@@ -17,14 +17,14 @@
 
 	let failedMatch = ``
 
-	const checkMatch = () => {
+	const checkMatch = _ => {
 		if (
 			(user.password && user.confirm) &&
 			(user.password != user.confirm) 
 		) failedMatch = `Password does not match!`
 	}
 
-	const submit = () => {
+	const submit = _ => {
 		if (user.email && (user.password == user.confirm)) {
 			// pendingApiCall = true
 			// signup(user)

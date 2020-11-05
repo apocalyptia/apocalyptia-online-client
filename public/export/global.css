@@ -415,28 +415,7 @@ td, th {
 .sheet-card-item {
 	margin: var(--s100);
 }
-.sheet-card-table {
-	display: block;
-}
-.sheet-card-table-header,
-.sheet-card-table-row {
-	align-items: baseline;
-	display: flex;
-	justify-content: space-between;
-	margin: var(--s100);
-}
-.sheet-card-table-header {
-	font-weight: bold;
-	text-decoration: underline;
-}
-.sheet-item-long-column {
-	flex: 3;
-	text-align: left;
-}
-.sheet-item-short-column {
-	flex: 1;
-	text-align: center;
-}
+
 .add-section {
 	padding-top: 0;
 }
@@ -473,6 +452,7 @@ td, th {
 	color: crimson;
 	-webkit-text-fill-color: crimson;
 }
+
 /* TINY */
 @media only screen and (max-width: 400px) {
 	.sheet-card-body {

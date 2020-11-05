@@ -13,17 +13,17 @@
 
 	$: nextButton = '&#10006;'
 
-	const back = () => {
+	const back = _ => {
 		$character.meta.status.step--
 		if ($character.meta.status.step < 0) goto('/')
 	}
 
-	const next = () => {
+	const next = _ => {
 		proceedStatus()
 		if (proceed) $character.meta.status.step++
 	}
 
-	const proceedStatus = () => {
+	const proceedStatus = _ => {
 		proceed = true
 		if (
 			(current == 0 && Object.values($character.description).some(d => d.value == ``)) ||
@@ -35,15 +35,15 @@
 		else nextButton = '&#10006;'
 	}
 
-    beforeUpdate(() => proceedStatus())
+    beforeUpdate(_ => proceedStatus())
 
-    onMount(() => proceedStatus())
+    onMount(_ => proceedStatus())
 </script>
 
 
 <div class='nav-bar'>
 	<button on:click={back} class='link-btn nav-button'>{@html backButton}</button>
-	<button on:click={() => goto('/')} class='link-btn nav-button home-button'>Home</button>
+	<button on:click={_ => goto('/')} class='link-btn nav-button home-button'>Home</button>
 	<button on:click={next} class='link-btn nav-button {nextButton == '&#10006;' ? 'crimson-btn' : '' }'>{@html nextButton}</button>
 </div>
 

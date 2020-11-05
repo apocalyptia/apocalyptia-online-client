@@ -1,6 +1,6 @@
 import RandomRoll from 'random/RandomRoll.js'
 
-export default () => RandomRoll([
+export default _ => RandomRoll([
 	`Dark`,
 	`Bronze`,
 	`Olive`,

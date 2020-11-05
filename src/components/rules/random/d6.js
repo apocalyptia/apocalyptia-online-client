@@ -1,1 +1,1 @@
-export default () => Math.ceil(Math.random() * 6)
+export default _ => Math.ceil(Math.random() * 6)

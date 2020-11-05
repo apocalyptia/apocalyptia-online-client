@@ -1,3 +1,4 @@
+import AbilitiesList from 'lists/AbilitiesList.js'
 import PropertiesList from 'lists/PropertiesList.js'
 
 export default class Character {
@@ -242,46 +243,41 @@ export default class Character {
 				inventory: []
 			},
 		}
-		this.resetDescription = () => {
+		this.resetDescription = _ => {
 			for (let d in this.desc) {
 				this.description[d].value = ``
 			}
 			return this
 		}
-		this.resetTraits = () => {
+		this.resetTraits = _ => {
 			for (let t in this.traits) {
 				this.traits[t].score = 1
 			}
 			return this
 		}
-		this.resetSkills = () => {
+		this.resetSkills = _ => {
 			for (let s in this.skills) {
 				this.skills[s].score = 0
 			}
 			return this
 		}
-		this.setProperties = () => {
+		this.setProperties = _ => {
 			for (let p of PropertiesList.list) {
 				p.formula(this)
 			}
 			return this
 		}
-		this.calculateRemainingXP = () => {
-			this.properties.experience.current = this.properties.experience.score
-			if (this.abilities.length) {
-				this.properties.experience.current -= this.abilities.reduce((acc, n) => {
-					return acc += (n.taken * n.xp)
-				}, 0)
+		this.resetGear = _ => {
+			for (let g in this.gear) {
+				this.gear[g].inventory = []
 			}
 			return this
 		}
-		this.resetAbilities = () => {
-			this.abilities = []
-			return this
-		}
-		this.resetGear = () => {
-			for (let g in this.gear) {
-				this.gear[g].inventory = []
+		this.updateAbilities = _ => {
+			this.abilities = AbilitiesList.masterList.filter(a => a.taken)
+			this.properties.experience.current = this.properties.experience.score
+			if (this.abilities.length) {
+				this.abilities.forEach(a => this.properties.experience.current -= (a.taken * a.xp))
 			}
 			return this
 		}

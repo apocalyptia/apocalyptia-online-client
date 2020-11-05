@@ -36,7 +36,7 @@
 		</div>
 	</details>
 	<div class='section-card properties-list'>
-		<div class='section-block'>
+		<div class='prop-block'>
 			<div class='prop-item'>
 				{$character.properties.speed.name}: 
 				{$character.properties.speed.score}
@@ -54,7 +54,7 @@
 				{$character.properties.psyche.score}
 			</div>
 		</div>
-		<div class='section-block'>
+		<div class='prop-block'>
 			<div class='prop-item'>
 				{$character.properties.dodge.name}: 
 				{$character.properties.dodge.score}
@@ -88,10 +88,16 @@
 	}
 	.properties-list {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		text-align: left;
 	}
+	.prop-block {
+		width: 50%;
+	}
 	.prop-item {
-		margin: var(--s10);
+		margin: var(--s100);
+	}
+	li {
+		margin: var(--s100);
 	}
 </style>

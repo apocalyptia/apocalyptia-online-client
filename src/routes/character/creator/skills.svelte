@@ -22,39 +22,41 @@
 	<div class='remaining'>
 		<h3>Points Remaining: {remaining}</h3>
 	</div>
-	<div class='list'>
+	<div class='section-card'>
 		{#each SkillsList.groups as group}
-			<details class='skills-details'>
-				<summary>
-					<span class='group-label'>
-						{group.name} Skills
-					</span>
-				</summary>
-				<div class='details-content'>
-					<div class='max-score'>
-						Max Score: {$character.traits[group.name.toLowerCase()].score}
-					</div>
-					{#each group.list as skill}
-						<div class='stat-range'>
-							<div class='stat-label'>{skill.name}</div>
-							<Slider
-								name='{skill.name.toLowerCase()}'
-								min={parseInt(0)}
-								max={parseInt(6)}
-								bind:value={$character.skills[skill.name.toLowerCase()].score}
-								on:input={event => $character = Skills.assign($character, event.target)}
-							/>
+			<div class='item-block'>
+				<details class='skills-details'>
+					<summary>
+						<span class='group-label'>
+							{group.name} Skills
+						</span>
+					</summary>
+					<div class='details-content'>
+						<div class='max-score'>
+							Max Score: {$character.traits[group.name.toLowerCase()].score}
 						</div>
-					{/each}
-				</div>
-			</details>
+						{#each group.list as skill}
+							<div class='stat-range'>
+								<div class='stat-label'>{skill.name}</div>
+								<Slider
+									name='{skill.name.toLowerCase()}'
+									min={parseInt(0)}
+									max={parseInt(6)}
+									bind:value={$character.skills[skill.name.toLowerCase()].score}
+									on:input={event => $character = Skills.assign($character, event.target)}
+								/>
+							</div>
+						{/each}
+					</div>
+				</details>
+			</div>
 		{/each}
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={() => $character = $character.resetSkills()}>
+		<button class='small-cntr-btn' on:click={_ => $character = $character.resetSkills()}>
 			Reset
 		</button>
-		<button class='small-cntr-btn' on:click={() => $character = RandomSkills($character)}>
+		<button class='small-cntr-btn' on:click={_ => $character = RandomSkills($character)}>
 			Random
 		</button>
 	</div>
@@ -63,7 +65,7 @@
 
 <style>
 	.skills-details {
-		margin-bottom: var(--s100);
+		margin: var(--s100);
 	}
 	.group-label {
 		font-weight: bold;

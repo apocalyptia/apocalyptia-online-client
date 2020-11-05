@@ -12,7 +12,7 @@ self.addEventListener('install', event => {
 		caches
 			.open(ASSETS)
 			.then(cache => cache.addAll(to_cache))
-			.then(() => {
+			.then(_ => {
 				self.skipWaiting();
 			})
 	);

@@ -36,7 +36,7 @@
 	<div class='section-card'>
 		<div class='item-category'>
 			<h1>{gearItem.name}</h1>
-			<button on:click={() => MasterGearList[i] = randomItem(gearItem)}>Random</button>
+			<button on:click={_ => MasterGearList[i] = randomItem(gearItem)}>Random</button>
 		</div>
 		{#if gearItem.value != undefined}
 			<h2>{gearItem.value.name}</h2>

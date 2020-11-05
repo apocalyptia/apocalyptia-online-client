@@ -65,7 +65,7 @@
 	.modal {
 		background-color: rgba(0,0,0,0.5);
 		border-radius: var(--radius);
-		border: var(--s1) solid;
+		border: 1px solid;
 		color: lime;
 		height: fit-content;
 		left: 50vw;

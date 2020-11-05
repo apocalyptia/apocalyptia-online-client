@@ -1,9 +1,14 @@
 <script>
 	import { character } from 'stores/characterStore.js'
-
-	export let MasterAbilityList
+	import { onMount } from 'svelte'
 
 	console.log(`Current = ${$character.abilities}`)
+
+	const update = _ => $character = $character.updateAbilities()
+
+	$: abilities = $character.abilities
+
+	onMount(_ => update())
 </script>
 
 
@@ -17,7 +22,8 @@
 			<span class='s-col'>Taken</span>
 		</div>
 		<div class='current-abilities-list'>
-			{#each $character.abilities as ability}
+			{#each abilities as ability}
+				<h2>test</h2>
 				<div class='current-ability-row'>
 					<span class='l-col'>
 						{ability.name}
@@ -31,7 +37,7 @@
 						<select
 							class='taken-number'
 							bind:value={ability.taken}
-							on:blur={() => $character.abilities = MasterAbilityList.filter(ability => ability.taken)}
+							on:blur={_ => update()}
 						>
 							{#each Array(ability.max+1) as _, i}
 								<option value={i}>{i}</option>

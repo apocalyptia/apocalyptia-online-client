@@ -20,7 +20,7 @@ const abilityArray = [
 	...XP30AbilitiesList
 ]
 
-const completeAbilityListBuilder = (list) => {
+const listBuilder = (list) => {
 	const newList = []
 	for (let i = 0; i < list.length; ++i) {
 		if (list[i].opts[0]) {
@@ -41,7 +41,7 @@ const completeAbilityListBuilder = (list) => {
 			}
 		} else {
 			const newAbility = new Ability({
-				id: list[i].id,
+				id: ``,
 				name: list[i].name,
 				desc: list[i].desc,
 				max: list[i].max,
@@ -52,6 +52,14 @@ const completeAbilityListBuilder = (list) => {
 		}
 	}
 	return newList
+}
+
+const masterList = listBuilder(abilityArray).sort((a, b) => PropSort(a, b, 'name'))
+
+const reset = (list) => {
+	for (let i = 0; i < list.length; i++) {
+		list[i].taken = 0
+	}
 }
 
 export default {
@@ -99,7 +107,8 @@ export default {
 			list: XP30AbilitiesList
 		},
 	],
-	masterList: completeAbilityListBuilder(abilityArray).sort((a, b) => PropSort(a, b, 'name')),
+	masterList: masterList,
+	reset: _ => reset(masterList)
 }
 
-export const AbilitiesList = completeAbilityListBuilder(abilityArray)
+export const AbilitiesList = listBuilder(abilityArray)

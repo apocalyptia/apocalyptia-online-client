@@ -7,7 +7,7 @@
 
 	let gearedUp = false
 
-	beforeUpdate(() => gearedUp = Object.values($character.gear).every(g => g.inventory.length))
+	beforeUpdate(_ => gearedUp = Object.values($character.gear).every(g => g.inventory.length))
 </script>
 
 
@@ -47,7 +47,7 @@
 		{/each}
 	{:else}
 		<div class='btn-row'>
-			<button class='small-cntr-btn' on:click={() => $character = RandomStartingGear($character, $character.properties.luck.score)}>Random</button>
+			<button class='small-cntr-btn' on:click={_ => $character = RandomStartingGear($character, $character.properties.luck.score)}>Random</button>
 		</div>
 	{/if}
 </div>

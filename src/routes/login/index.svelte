@@ -14,7 +14,7 @@
 	
 	let forgotPassword = false
 
-	const submit = () => {
+	const submit = _ => {
 		pendingApiCall = true
 		// login(user)
 		// 	.catch(_ => {

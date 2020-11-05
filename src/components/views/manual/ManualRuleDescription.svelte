@@ -1,6 +1,4 @@
 <script>
-    import Ability from 'classes/Ability.js'
-
     export let rule
 </script>
 
@@ -9,7 +7,7 @@
     {#each rule.desc as desc}
         <p>{desc}</p>
     {/each}
-    {#if rule instanceof Ability}
+    {#if rule.type == 'Ability'}
         <p><span class='bold'>Max:</span> {rule.max}</p>
         <p><span class='bold'>XP:</span> {rule.xp}</p>
     {/if}

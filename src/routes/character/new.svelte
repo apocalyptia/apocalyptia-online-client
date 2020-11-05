@@ -9,7 +9,6 @@
     }
 
     const randomCharacter = _ => {
-        $character.meta.status.step = 7
         $character = RandomCharacter($character)
         goto(`/character/creator`)
     }

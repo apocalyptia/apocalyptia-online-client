@@ -1,7 +1,7 @@
 <script>
-	import AddItemModal from 'views/character/AddItemModal.svelte'
+	import AddItemModal from 'views/character/sheet/AddItemModal.svelte'
 	import Capitalize from 'utils/Capitalize.js'
-	import GearItem from 'views/character/GearItem.svelte'
+	import GearItem from 'views/character/sheet/GearItem.svelte'
 	import { character } from 'stores/characterStore.js'
 
 	export let mode, category
