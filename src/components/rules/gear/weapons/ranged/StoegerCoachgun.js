@@ -13,7 +13,7 @@ const StoegerCoachgun = new Gear({
 	]
 })
 StoegerCoachgun.dmg = 5
-StoegerCoachgun.rng = 15
+StoegerCoachgun.rng = 10
 StoegerCoachgun.cap = 2
 StoegerCoachgun.cal = `12g`
 

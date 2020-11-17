@@ -21,14 +21,13 @@
 
 <style>
 	.sheet-notes-block {
-		color: lime;
+		color: var(--pri-color);
 		font-family: var(--global-font);
-		height: 100%;
 		height: var(--s1000);
 		overflow: auto;
-		padding: var(--s100);
+		padding: var(--std-padding);
 		resize: none;
 		text-align: left;
-		width: calc(100% - var(--s200));
+		width: 100%;
 	}
 </style>

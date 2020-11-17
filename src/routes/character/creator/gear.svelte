@@ -1,4 +1,5 @@
 <script>
+	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
 	import Capitalize from 'utils/Capitalize.js'
 	import GearBlock from 'views/widgets/GearBlock.svelte'
 	import RandomStartingGear from 'random/RandomStartingGear.js'
@@ -14,52 +15,55 @@
 <svelte:head>
 	<title>Apocalyptia Online - Character Creator - Gear</title>
 </svelte:head>
-<div class='creator-page'>
-	<h1>Gear</h1>
-	<div class='explanation'>
-		<p>You start with some random Gear:</p>
-		<ol>
-			<li>One piece of Armor</li>
-			<li>One Melee weapon</li>
-			<li>One Ranged weapon</li>
-			<li>1d6 rounds of Ammo</li>
-			<li>Random items = Luck</li>
-		</ol>
-	</div>
-	{#if gearedUp}
-		{#each Object.keys($character.gear) as type}
-			<div class='section-card'>
-				<div class='item-category'>
-					<h2>{Capitalize(type)}</h2>
-				</div>
-				{#if type == 'equipment'}
-					{#each $character.gear.equipment.inventory as equipment}
-						<div class='item'>
-							<GearBlock item={equipment} mode={'edit'} />
-						</div>
-					{/each}
-				{:else}
-					<div class='item'>
-						<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />
-					</div>
-				{/if}
-			</div>
-		{/each}
-	{:else}
-		<div class='btn-row'>
-			<button class='small-cntr-btn' on:click={_ => $character = RandomStartingGear($character, $character.properties.luck.score)}>Random</button>
-		</div>
-	{/if}
+<h1>Gear</h1>
+<div class='explanation'>
+	<p>You start with some random Gear:</p>
+	<p>One piece of Armor</p>
+	<p>One Melee weapon</p>
+	<p>One Ranged weapon</p>
+	<p>1d6 rounds of Ammo</p>
+	<p>Random items = Luck</p>
 </div>
+{#if gearedUp}
+	<div class='section-card'>
+		{#each Object.keys($character.gear) as type}
+			<details class='item-details'>
+				<summary>
+					<span class='item-label'>
+						{Capitalize(type)}
+					</span>
+				<summary>
+				<div class='details-content'>
+					{#if type == 'equipment'}
+						{#each $character.gear.equipment.inventory as equipment}
+							<div class='item'>
+								<GearBlock item={equipment} mode={'edit'} />
+							</div>
+						{/each}
+					{:else}
+						<div class='item'>
+							<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />
+						</div>
+					{/if}
+				</div>
+			</details>
+		{/each}
+	</div>
+{:else}
+	<ButtonRow random={_ => $character = RandomStartingGear($character, $character.properties.luck.score)} />
+{/if}
 
 
 <style>
-	.item-category {
-		margin-bottom: var(--s100);
+	.item-details {
+		margin: var(--std-margin);
+	}
+	.item-label {
+		font-weight: bold;
 	}
 	.item {
-		border: 1px dotted lime;
-		margin-bottom: var(--s100);
-		padding: var(--s100);
+		border: 1px dotted var(--pri-color);
+		margin-bottom: var(--std-margin);
+		padding: var(--std-padding);
 	}
 </style>

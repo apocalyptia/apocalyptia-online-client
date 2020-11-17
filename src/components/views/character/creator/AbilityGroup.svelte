@@ -19,6 +19,6 @@
 
 <style>
 	.ability-group-details {
-		margin: var(--s100);
+		margin: var(--std-margin);
 	}
 </style>

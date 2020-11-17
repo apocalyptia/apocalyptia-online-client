@@ -1,28 +1,18 @@
 <script>
-    import BackButton from 'views/widgets/BackButton.svelte'
-    import Character from 'classes/Character.js'
-    import CharacterSheet from 'views/character/sheet/CharacterSheet.svelte'
-    import { character } from 'stores/characterStore.js'
-	import { goto } from '@sapper/app'
-
-    const newCharacter = _ => {
-        $character = new Character()
-        goto(`/character/new`)
-    }
-
-    const loadCharacter = _ => goto(`/character/load`)
+    import BackButton from 'views/icons/BackButton.svelte'
+    import GoTo from 'utils/GoTo.js'
+    import { user } from 'stores/userStore.js'
 </script>
 
 
 <svelte:head>
 	<title>Apocalyptia Online - Character</title>
 </svelte:head>
-{#if !$character.meta.user}
-    <div class='cntr-card'>
-        <button class='link-btn' on:click={newCharacter}>New Character</button>
-        <button class='link-btn' on:click={loadCharacter}>Load Character</button>
-    </div>
-{:else}
-    <CharacterSheet mode={'edit'} />
-{/if}
+<div class='cntr-card'>
+    {#if $user.currentCharacter}
+        <button class='link-btn' on:click={_ => GoTo(`character/sheet`)}>Character Sheet</button>
+    {/if}
+    <button class='link-btn' on:click={_ => GoTo(`character/new`)}>New Character</button>
+    <button class='link-btn' on:click={_ => GoTo(`character/load`)}>Load Character</button>
+</div>
 <BackButton path={'/'} />

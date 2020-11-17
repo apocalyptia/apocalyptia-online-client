@@ -11,11 +11,15 @@ const Health = new Rule({
 		Object.values(c.health).forEach((h) => {
 			if (h.name == `Torso`) {
 				h.score = c.traits.constitution.score * 2
-				h.current = c.traits.constitution.score * 2
+				if (h.current == null) {
+					h.current = c.traits.constitution.score * 2
+				}
 			}
 			else {
 				h.score = c.traits.constitution.score
-				h.current = c.traits.constitution.score
+				if (h.current == null) {
+					h.current = c.traits.constitution.score
+				}
 			}
 		})
 	},

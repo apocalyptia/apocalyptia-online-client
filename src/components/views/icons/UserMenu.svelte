@@ -49,12 +49,12 @@
 		z-index: 9;
 	}
 	.user-btn:focus {
-		background-color: lime;
-		color: rgba(15, 30, 15, 1);
+		background-color: var(--pri-color);
+		color: var(--sec-color);
 	}
 	.user-menu {
-		background: rgba(15, 30, 15, 1);
-		border: 1px solid lime;
+		background: var(--sec-color);
+		border: 1px solid var(--pri-color);
 		position: absolute;
 		right: 0;
 		top: var(--s300);
@@ -66,12 +66,12 @@
 		border: none;
 		display: block;
 		font-weight: normal;
-		padding: var(--s100);
+		padding: var(--std-padding);
 	}
 	a:active,
 	a:hover {
-		background-color: lime;
-		color: rgba(15, 30, 15, 1);
+		background-color: var(--pri-color);
+		color: var(--sec-color);
 	}
 	.shadow {
 		background: rgba(0, 0, 0, .5);

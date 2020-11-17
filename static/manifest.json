@@ -1,8 +1,8 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"background_color": "#333",
+	"theme_color": "#333",
+	"name": "Apocalyptia Online",
+	"short_name": "Apocalyptia",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [

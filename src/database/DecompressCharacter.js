@@ -1,32 +1,9 @@
 import Character from 'classes/Character.js'
-import AbilitiesList from 'lists/AbilitiesList.js'
-import ArmorList from 'lists/gear/ArmorList.js'
-import MeleeWeaponList from 'lists/gear/MeleeWeaponList.js'
-import RangedWeaponList from 'lists/gear/RangedWeaponList.js'
-import AmmoList from 'lists/gear/AmmoList.js'
-import EquipmentList from 'lists/gear/EquipmentList.js'
-import Properties from 'rules/Properties.js'
-
-const decompressAbilities = (char, c) => {
-	char.abilities = c.Ab.map(m => {
-		let ability = AbilitiesList.filter(f => m.i == f.id)[0]
-		ability.taken = m.t
-		return ability
-	})
-	return char
-}
-
-const decompressGear = (char, c, prop, abv, list) => {
-	char.gear[prop].inventory = c[abv].map(m => {
-		let item = list.filter(f => m.i == f.id)[0]
-		item.qty = m.q
-		return item
-	})
-	return char
-}
 
 export default (c) => {
-	const char = new Character()
+
+	let char = new Character()
+
 	char.meta.id = c.Mi
 	char.meta.user = c.Mu
 	char.meta.created = c.Mc
@@ -73,16 +50,15 @@ export default (c) => {
 	char.health.torso.current = c.tO
 	char.health.leftLeg.current = c.lL
 	char.health.rightLeg.current = c.rL
+	char.abilities = c.Ab
+	char.gear.armor.inventory = c.Ga
+	char.gear.melee.inventory = c.Gm
+	char.gear.ranged.inventory = c.Gr
+	char.gear.ammo.inventory = c.Go
+	char.gear.equipment.inventory = c.Ge
 
-	char = decompressAbilities(char, c)
-
-	char = decompressGear(char, c, 'armor', 'Ga', ArmorList)
-	char = decompressGear(char, c, 'melee', 'Gm', MeleeWeaponList)
-	char = decompressGear(char, c, 'ranged', 'Gr', RangedWeaponList)
-	char = decompressGear(char, c, 'ammo', 'Go', AmmoList)
-	char = decompressGear(char, c, 'equipment', 'Ge', EquipmentList)
-
-	char = Properties.setScores(char)
+	char = char.setProperties()
 
 	return char
+
 }

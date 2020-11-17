@@ -34,29 +34,29 @@
 	}
 	input[type="range"]::-moz-range-thumb {
 		-moz-appearance: none;
-		background-color: lime;
+		background-color: var(--pri-color);
 		border-radius: var(--radius);
-		border: 1px solid rgba(15, 30, 15, 1);
-		height: var(--s200);
+		border: 1px solid var(--sec-color);
+		height: var(--std-input-height);
 		width: var(--s200);
 	}
 	input[type="range"]::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		background-color: lime;
+		background-color: var(--pri-color);
 		border-radius: var(--radius);
-		border: 1px solid rgba(15, 30, 15, 1);
-		height: var(--s200);
+		border: 1px solid var(--sec-color);
+		height: var(--std-input-height);
 		width: var(--s200);
 	}
 	input[type="range"]:hover::-moz-range-thumb {
 		-moz-appearance: none;
-		background: rgba(15, 30, 15, 1);
-		border: 1px solid lime;
+		background: var(--sec-color);
+		border: 1px solid var(--pri-color);
 	}
 	input[type="range"]:hover::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		background: rgba(15, 30, 15, 1);
-		border: 1px solid lime;
+		background: var(--sec-color);
+		border: 1px solid var(--pri-color);
 	}
 	.range-indicator {
 		display: flex;

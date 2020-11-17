@@ -11,7 +11,9 @@ const Psyche = new Rule({
 	],
 	formula: (c) => {
 		c.properties.psyche.score = c.traits.demeanor.score * 3
-		c.properties.psyche.current = c.traits.demeanor.score * 3
+		if (c.properties.psyche.current == null) {
+			c.properties.psyche.current = c.traits.demeanor.score * 3
+		}
 	},
 	type: `Property`
 })

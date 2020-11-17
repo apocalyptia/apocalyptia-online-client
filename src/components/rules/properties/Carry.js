@@ -7,8 +7,10 @@ const Carry = new Rule({
 		`1 Pain per Size above Carry.`
 	],
 	formula: (c) => {
-		c.properties.carry.current = 0
 		c.properties.carry.score = c.traits.constitution.score * 3
+		if (c.properties.carry.current == null) {
+			c.properties.carry.current = 0
+		}
 	},
 	type: `Property`
 })

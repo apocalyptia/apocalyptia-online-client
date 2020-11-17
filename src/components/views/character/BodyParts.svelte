@@ -1,5 +1,10 @@
 <script>
+	import AdjustUIColor from 'utils/AdjustUIColor.js'
+	import { onMount } from 'svelte'
+
 	export let character, mode
+
+	onMount(_ => AdjustUIColor($character))
 </script>
 
 
@@ -17,6 +22,7 @@
 						bind:value='{$character.health.head.current}'
 						min='-{$character.health.head.score}'
 						max='{$character.health.head.score}'
+						on:change={_=>AdjustUIColor($character)}
 					/>
 				{/if} / {$character.health.head.score}
 			</div>
@@ -81,6 +87,7 @@
 						bind:value='{$character.health.torso.current}'
 						min='-{$character.health.torso.score}'
 						max='{$character.health.torso.score}'
+						on:change={_=>AdjustUIColor($character)}
 					/>
 				{/if} / {$character.health.torso.score}
 			</div>
@@ -157,7 +164,7 @@
 		top: 210px;
 	}
 	.body-part {
-		background-color: lime;
+		background-color: var(--pri-color);
 	}
 	.body-part-numbers {
 		margin: 5px;
@@ -186,7 +193,7 @@
 		border-top-right-radius: 30px;
 	}
 	.torso {
-		color: rgba(15, 30, 15, 1);
+		color: var(--sec-color);
 		height: 150px;
 		margin: 0 5px;
 		text-align: center;

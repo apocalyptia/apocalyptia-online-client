@@ -35,21 +35,21 @@ CalledShot.table = new Table({
 		new CalledShotTarget({
 			roll: 6,
 			name: `Head`,
-			penalty: -3,
+			penalty: -6,
 			health: `Constitution`,
 			effect: `Stun 1 round`
 		}),
 		new CalledShotTarget({
 			roll: 5,
 			name: `R Arm`,
-			penalty: -1,
-			effect: `Drop item`
+			penalty: -3,
+			effect: `Let go of anything held with this hand`
 		}),
 		new CalledShotTarget({
 			roll: 4,
 			name: `L Arm`,
-			penalty: -1,
-			effect: `Drop item`
+			penalty: -3,
+			effect: `Let go of anything held with this hand`
 		}),
 		new CalledShotTarget({
 			roll: 3,

@@ -1,15 +1,11 @@
 <div class="e404">
-	<div class="huge">404</div>
-	<div class="big">Page not found.
-		<a href='../'>Go back</a>
-	</div>
+	<h1>404</h1>
+	<p>Page not found.</p>
+	<p><a href='../'>Go back</a></p>
 </div>
 
 
 <style>
-	.huge {
-		font-size: 12rem;
-	}
 	.e404 {
 		left: 50%;
 		position: absolute;

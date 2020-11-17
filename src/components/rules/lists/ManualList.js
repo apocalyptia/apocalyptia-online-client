@@ -1,23 +1,23 @@
-import Abilities from 'lists/AbilitiesList.js'
-import Combat from 'lists/CombatList.js'
-import Core from 'lists/CoreList.js'
+import AbilitiesList from 'lists/AbilitiesList.js'
+import CombatList from 'lists/CombatList.js'
+import CoreList from 'lists/CoreList.js'
 import GearList from 'lists/gear/GearList.js'
-import Maneuvers from 'lists/ManeuversList.js'
-import Needs from 'lists/NeedsList.js'
-import Properties from 'lists/PropertiesList.js'
-import Skills from 'lists/SkillsList.js'
-import Status from 'lists/StatusList.js'
-import Traits from 'lists/TraitsList.js'
+import ManeuversList from 'lists/ManeuversList.js'
+import NeedsList from 'lists/NeedsList.js'
+import PropertiesList from 'lists/PropertiesList.js'
+import SkillsList from 'lists/SkillsList.js'
+import StatusList from 'lists/StatusList.js'
+import TraitsList from 'lists/TraitsList.js'
 
 export default [
-    Abilities,
-    Combat,
-    Core,
+    AbilitiesList,
+    CombatList,
+    CoreList,
     GearList,
-    Maneuvers,
-    Needs,
-    Properties,
-    Skills,
-    Status,
-    Traits
+    ManeuversList,
+    NeedsList,
+    PropertiesList,
+    SkillsList,
+    StatusList,
+    TraitsList
 ]

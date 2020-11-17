@@ -23,7 +23,7 @@
 
 <style>
     .rule-table {
-		margin: var(--s100);
+		margin: var(--std-margin);
 	}
 	.table-header {
 		font-weight: bold;

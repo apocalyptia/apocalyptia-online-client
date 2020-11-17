@@ -1,4 +1,5 @@
 <script>
+	import AddButton from 'icons/AddButton.svelte'
 	import AddItemModal from 'views/character/sheet/AddItemModal.svelte'
 	import Capitalize from 'utils/Capitalize.js'
 	import GearItem from 'views/character/sheet/GearItem.svelte'
@@ -24,9 +25,7 @@
 		</div>
 		{#if mode != 'readonly'}
 			<div class='add-section'>
-				<button class='btn-box add-btn' on:click={toggleAddItemModal}>
-					<div class='btn-icon'>&#10010;</div>
-				</button>
+				<AddButton on:click={toggleAddItemModal} />
 				{#if modalVisible}
 					<AddItemModal on:close={toggleAddItemModal} {category} />
 				{/if}
@@ -38,12 +37,12 @@
 
 <style>
 	.gear-category {
-		border: 1px solid lime;
+		border: 1px solid var(--pri-color);
 		box-sizing: border-box;
 		display: block;
 		margin-bottom: var(--s100);
 	}
 	.gear-category-card {
-		margin: var(--s100);
+		margin: var(--std-margin);
 	}
 </style>

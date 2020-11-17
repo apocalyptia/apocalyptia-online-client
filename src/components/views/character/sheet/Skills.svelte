@@ -30,13 +30,13 @@
 
 <style>
 	.sheet-card-block {
-		border: 1px dotted lime;
+		border: 1px dotted var(--pri-color);
 		width: 100%;
 	}
 	.parent-trait {
 		font-size: var(--s110);
 		font-weight: bold;
-		margin: var(--s100);
+		margin: var(--std-margin);
 		text-align: center;
 	}
 </style>

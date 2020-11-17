@@ -5,14 +5,9 @@ export default (c) => {
     AbilitiesList.reset()
     c = c.updateAbilities()
     while(c.properties.experience.current) {
-        const remainingAbilities = AbilitiesList.masterList.filter(m => {
-            const abilityTaken = c.abilities.some(a => {
-                let sameName = a.name == m.name
-                let sameOption = true
-                if (a.hasOwnProperty('opts')) sameOption = a.selection == m.selection
-                return sameName && sameOption
-            })
-            return (m.xp <= c.properties.experience.current) && !abilityTaken
+        const remainingAbilities = AbilitiesList.masterList.filter(r => {
+            const abilityTaken = c.abilities.some(a => a.name == r.name)
+            return (r.xp <= c.properties.experience.current) && !abilityTaken
         })
         if (remainingAbilities.length) {
             const a = RandomRoll(remainingAbilities)

@@ -3,13 +3,14 @@ import BarnettCrossbow from 'ranged/BarnettCrossbow.js'
 import BenelliM4 from 'ranged/BenelliM4.js'
 import BrowningABolt from 'ranged/BrowningABolt.js'
 import ColtPython from 'ranged/ColtPython.js'
+import CZUpland from 'ranged/CZUpland.js'
 import Glock17 from 'ranged/Glock17.js'
 import HKMP5 from 'ranged/HKMP5.js'
 import HenryGoldenBoy from 'ranged/HenryGoldenBoy.js'
 import HoytCompoundBow from 'ranged/HoytCompoundBow.js'
 import Kimber1911 from 'ranged/Kimber1911.js'
 import MAC10 from 'ranged/MAC10.js'
-import Marlin1894 from 'ranged/Marlin1894.js'
+import Marlin1894C from 'ranged/Marlin1894C.js'
 import Mossberg500 from 'ranged/Mossberg500.js'
 import NorincoSKS from 'ranged/NorincoSKS.js'
 import RecurveBow from 'ranged/RecurveBow.js'
@@ -30,13 +31,14 @@ export default [
 	BenelliM4,
 	BrowningABolt,
 	ColtPython,
+	CZUpland,
 	Glock17,
 	HKMP5,
 	HenryGoldenBoy,
 	HoytCompoundBow,
 	Kimber1911,
 	MAC10,
-	Marlin1894,
+	Marlin1894C,
 	Mossberg500,
 	NorincoSKS,
 	RecurveBow,
@@ -75,12 +77,6 @@ export default [
 // new Gear(`Speargun`, 4, 5, `Arrow + Rope`, 1, 2, `Pierce. 2 round Reload.`, 4),
 // new Gear(`Uzi`, 2, 10, `9mm`, `30cap`, 2, `Auto. Rapid. -1 RATK.`, 3),
 // new Gear(`W. P. Grenade`, `d6x3`, 3, `Grenade`, 1, 1, `6yd Blast. Blind. d6 rounds.`, 1),
-
-// OLD RANGED
-// new Gear(`AK-47`, 4, 50, `7.62`, `30cap`, 2, `Auto. Rapid.`, 4),
-// new Gear(`Norinco SKS`, 4, 50, `7.62`, 10, 2, `Rapid. Bayonet.`, 4),
-// new Gear(`Kimber 1911`, 2, 25, `.45`, 7, 1, `Rapid.`, 1),
-// new Gear(`MAC-10`, 2, 5, `.45`, 30, 2, `Auto. Rapid. -1 RATK`, 2),
 
 
 

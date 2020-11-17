@@ -1,5 +1,5 @@
 <script>
-	import BackButton from 'views/widgets/BackButton.svelte'
+	import BackButton from 'icons/BackButton.svelte'
 	import ManualHeader from 'views/manual/ManualHeader.svelte'
 	import ManualList from 'lists/ManualList.js'
 	import ManualRule from 'views/manual/ManualRule.svelte'
@@ -59,7 +59,7 @@
 		top: var(--s300);
 		left: 0;
 		right: 0;
-		padding: var(--s200);
+		padding-top: var(--s200);
 		margin-bottom: var(--s150);
 		margin-top: var(--s50);
 	}
@@ -67,7 +67,6 @@
 			align-items: center;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-around;
 		}
 		.no-results {
 			padding-left: 10vw;

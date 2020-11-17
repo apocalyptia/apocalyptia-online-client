@@ -25,18 +25,18 @@
 <style>
 	.ability-card {
 		border: 1px solid;
-		margin: var(--s100);
-		padding: var(--s100);
+		margin: var(--std-margin);
+		padding: var(--std-padding);
 	}
 	.ability-card:hover {
-		background-color: lime;
-		color: rgba(15, 30, 15, 1);
+		background-color: var(--pri-color);
+		color: var(--sec-color);
 		cursor: pointer;
 	}
 	.card-row {
 		display: flex;
 		justify-content: space-between;
-		margin: var(--s100);
+		margin: var(--std-margin);
 	}
 	.ability-name{
 		flex: 2;

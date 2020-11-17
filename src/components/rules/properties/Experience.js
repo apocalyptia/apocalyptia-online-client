@@ -13,7 +13,9 @@ const Experience = new Rule({
 	],
 	formula: (c) => {
 		c.properties.experience.score = c.traits.brains.score * 3
-		c.properties.experience.current = c.traits.brains.score * 3
+		if (c.properties.experience.current == null) {
+			c.properties.experience.current = c.traits.brains.score * 3
+		}
 	},
 	type: `Property`
 })

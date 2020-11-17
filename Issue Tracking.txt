@@ -8,7 +8,6 @@ finish integrating database (faunadb) with client app
 
 finish user auth features (recovery, account settings)
 apply ability mods to character
-add random gear roll purchasing for xp?
 create sorting options for all list pages
 make narrator dashboard
 make game group functionality

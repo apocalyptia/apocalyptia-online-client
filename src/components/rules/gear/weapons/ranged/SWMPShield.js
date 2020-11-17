@@ -10,7 +10,7 @@ const SWMPShield = new Gear({
 })
 SWMPShield.dmg = 1
 SWMPShield.rng = 5
-SWMPShield.cap = 6
+SWMPShield.cap = 7
 SWMPShield.cal = `9mm`
 
 export default SWMPShield

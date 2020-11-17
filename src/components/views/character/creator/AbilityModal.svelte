@@ -51,15 +51,15 @@
 		z-index: 6;
 	}
 	.modal {
-		background-color: rgba(15, 30, 15, 1);
+		background-color: var(--sec-color);
 		border-radius: var(--radius);
 		border: 2px solid;
-		color: lime;
+		color: var(--pri-color);
 		height: fit-content;
 		left: 50vw;
 		max-height: 75vh;
 		overflow: scroll;
-		padding: var(--s100);
+		padding: var(--std-padding);
 		position: fixed;
 		scrollbar-width: none;
 		top: 50vh;
@@ -68,10 +68,7 @@
 		z-index: 9;
 	}
 	.modal-content {
-		margin: var(--s100);
-	}
-	.btn-row {
-		text-align: center;
+		margin: var(--std-margin);
 	}
 	.stats-section {
 		align-items: baseline;

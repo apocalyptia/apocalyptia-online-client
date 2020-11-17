@@ -2,8 +2,6 @@
 	import { character } from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
 
-	console.log(`Current = ${$character.abilities}`)
-
 	const update = _ => $character = $character.updateAbilities()
 
 	$: abilities = $character.abilities
@@ -23,7 +21,6 @@
 		</div>
 		<div class='current-abilities-list'>
 			{#each abilities as ability}
-				<h2>test</h2>
 				<div class='current-ability-row'>
 					<span class='l-col'>
 						{ability.name}

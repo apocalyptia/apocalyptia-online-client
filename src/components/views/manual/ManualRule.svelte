@@ -51,6 +51,6 @@
 		}
 	}
 		.rule-body {
-			padding: var(--s100);
+			padding: var(--std-padding);
 		}
 </style>

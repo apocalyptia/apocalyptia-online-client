@@ -13,7 +13,9 @@ const Luck = new Rule({
 	],
 	formula: (c) => {
 		c.properties.luck.score = c.traits.demeanor.score
-		c.properties.luck.current = c.traits.demeanor.score
+		if (c.properties.luck.current == null) {
+			c.properties.luck.current = c.traits.demeanor.score
+		}
 	},
 	type: `Property`
 })

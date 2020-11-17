@@ -64,6 +64,7 @@
 
 <div class='gear-block'>
 	{#if item}
+		<h2>{item.name}</h2>
 		{#if item.desc}
 			{#each item.desc as desc}
 				<div class='gear-desc'>{desc}</div>
@@ -102,9 +103,12 @@
 
 
 <style>
+	h2 {
+		margin-bottom: var(--std-margin);
+	}
 	ul {
 		list-style: disc;
-		margin-left: var(--s100);
+		margin-left: var(--std-margin);
 	}
 	.gear-desc {
 		margin: var(--s100) 0;

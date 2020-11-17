@@ -53,7 +53,7 @@
 		align-items: baseline;
 		display: flex;
 		justify-content: space-between;
-		margin: var(--s100);
+		margin: var(--std-margin);
 	}
 	.card-table-header {
 		font-weight: bold;

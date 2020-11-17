@@ -1,5 +1,5 @@
 <script>
-	import UserMenu from 'views/widgets/UserMenu.svelte'
+	import UserMenu from 'icons/UserMenu.svelte'
 </script>
 
 
@@ -7,7 +7,7 @@
 	<a href='/' class='link-btn title-link'>
 		<span class='app-title'>Apocalyptia Online</span>
 	</a>
-	<UserMenu/>
+	<UserMenu />
 </div>
 
 
@@ -22,7 +22,7 @@
 		z-index: 9;
 	}
 	.title-link {
-		padding: var(--s100);
+		padding: var(--std-padding);
 		width: 100%;
 	}
 </style>

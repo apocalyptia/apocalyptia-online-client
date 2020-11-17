@@ -158,7 +158,7 @@ export default class Character {
 			carry: {
 				name: `Carry`,
 				score: 6,
-				current: 0
+				current: null
 			},
 			dodge: {
 				name: `Dodge`,
@@ -167,7 +167,7 @@ export default class Character {
 			experience: {
 				name: `Experience`,
 				score: 3,
-				current: 0
+				current: null
 			},
 			intellect: {
 				name: `Intellect`,
@@ -176,12 +176,12 @@ export default class Character {
 			luck: {
 				name: `Luck`,
 				score: 1,
-				current: 1
+				current: null
 			},
 			psyche: {
 				name: `Psyche`,
 				score: 3,
-				current: 3
+				current: null
 			},
 			speed: {
 				name: `Speed`,
@@ -192,32 +192,32 @@ export default class Character {
 			head: {
 				name: `Head`,
 				score: 3,
-				current: 3
+				current: null
 			},
 			rightArm: {
 				name: `Right Arm`,
 				score: 3,
-				current: 3
+				current: null
 			},
 			leftArm: {
 				name: `Left Arm`,
 				score: 3,
-				current: 3
+				current: null
 			},
 			torso: {
 				name: `Torso`,
 				score: 6,
-				current: 6
+				current: null
 			},
 			leftLeg: {
 				name: `Left Leg`,
 				score: 3,
-				current: 3
+				current: null
 			},
 			rightLeg: {
 				name: `Right Leg`,
 				score: 3,
-				current: 3
+				current: null
 			},
 		},
 		this.abilities = [],
@@ -244,7 +244,7 @@ export default class Character {
 			},
 		}
 		this.resetDescription = _ => {
-			for (let d in this.desc) {
+			for (let d in this.description) {
 				this.description[d].value = ``
 			}
 			return this
@@ -267,17 +267,23 @@ export default class Character {
 			}
 			return this
 		}
-		this.resetGear = _ => {
-			for (let g in this.gear) {
-				this.gear[g].inventory = []
-			}
-			return this
-		}
 		this.updateAbilities = _ => {
 			this.abilities = AbilitiesList.masterList.filter(a => a.taken)
 			this.properties.experience.current = this.properties.experience.score
 			if (this.abilities.length) {
-				this.abilities.forEach(a => this.properties.experience.current -= (a.taken * a.xp))
+				this.abilities.forEach(a => {
+					this.properties.experience.current -= (a.taken * a.xp)
+				})
+			}
+			return this
+		}
+		this.resetAbilities = _ => {
+			AbilitiesList.masterList.forEach(a => a.taken = 0)
+			return this.updateAbilities()
+		}
+		this.resetGear = _ => {
+			for (let g in this.gear) {
+				this.gear[g].inventory = []
 			}
 			return this
 		}

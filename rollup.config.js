@@ -26,17 +26,19 @@ const onwarn = (warning, onwarn) =>
 			{ find: 'armor',			replacement: 'src/components/rules/gear/armor' },
 			{ find: 'attributes',		replacement: 'src/components/rules/gear/attributes' },
 			{ find: 'bombs',			replacement: 'src/components/rules/gear/weapons/bombs' },
+			{ find: 'character',		replacement: 'src/routes/character' },
 			{ find: 'classes',			replacement: 'src/components/classes' },
 			{ find: 'combat',			replacement: 'src/components/rules/combat' },
 			{ find: 'complications',	replacement: 'src/components/rules/complications' },
 			{ find: 'core',				replacement: 'src/components/rules/core' },
 			{ find: 'creator',			replacement: 'src/routes/character/creator' },
-			{ find: 'database',			replacement: 'src/components/database' },
+			{ find: 'database',			replacement: 'src/database' },
 			{ find: 'description',		replacement: 'src/components/rules/description' },
 			{ find: 'documents',		replacement: 'src/components/rules/gear/equipment/documents' },
 			{ find: 'drugs',			replacement: 'src/components/rules/gear/equipment/drugs' },
 			{ find: 'electronics',		replacement: 'src/components/rules/gear/equipment/electronics' },
 			{ find: 'gear',				replacement: 'src/components/rules/gear' },
+			{ find: 'icons',			replacement: 'src/components/views/icons' },
 			{ find: 'lists',			replacement: 'src/components/rules/lists' },
 			{ find: 'maneuvers',		replacement: 'src/components/rules/maneuvers' },
 			{ find: 'medical',			replacement: 'src/components/rules/gear/equipment/medical' },
@@ -52,10 +54,10 @@ const onwarn = (warning, onwarn) =>
 			{ find: 'skills',			replacement: 'src/components/rules/skills' },
 			{ find: 'status',			replacement: 'src/components/rules/status' },
 			{ find: 'storage',			replacement: 'src/components/rules/gear/equipment/storage' },
-			{ find: 'stores',			replacement: 'src/components/stores' },
+			{ find: 'stores',			replacement: 'src/stores' },
 			{ find: 'tools',			replacement: 'src/components/rules/gear/equipment/tools' },
 			{ find: 'traits',			replacement: 'src/components/rules/traits' },
-			{ find: 'utils',			replacement: 'src/components/utils' },
+			{ find: 'utils',			replacement: 'src/utils' },
 			{ find: 'vehicles',			replacement: 'src/components/rules/gear/vehicles' },
 			{ find: 'views',			replacement: 'src/components/views' },
 			{ find: 'wearable',			replacement: 'src/components/rules/gear/equipment/wearable' },
@@ -81,7 +83,6 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
-
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				babelHelpers: 'runtime',
@@ -98,13 +99,11 @@ export default {
 					}]
 				]
 			}),
-
 			!dev && terser({
 				module: true
 			}),
 			aliases
 		],
-
 		preserveEntrySignatures: false,
 		onwarn,
 	},
@@ -129,7 +128,6 @@ export default {
 			aliases
 		],
 		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
-
 		preserveEntrySignatures: 'strict',
 		onwarn,
 	},
@@ -147,7 +145,6 @@ export default {
 			!dev && terser(),
 			aliases
 		],
-
 		preserveEntrySignatures: false,
 		onwarn,
 	}

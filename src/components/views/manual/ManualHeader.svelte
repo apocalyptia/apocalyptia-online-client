@@ -17,8 +17,8 @@
 <style>
     .manual-header-section {
 		align-items: center;
-		background-color: rgba(15, 30, 15, 1);
-		border: 1px solid lime;
+		background-color: var(--sec-color);
+		border: 1px solid var(--pri-color);
 		display: flex;
 		height: var(--s300);
 		justify-content: space-around;

@@ -21,6 +21,6 @@
 		font-weight: bold;
 	}
 	.subrule-body {
-		padding: var(--s100);
+		padding: var(--std-padding);
 	}
 </style>
