@@ -10,7 +10,7 @@
     const randomCharacter = _ => {
         $character = new Character()
         $character = RandomCharacter($character)
-        GoTo(`character/sheet`)
+        GoTo(`character/creator/finalize`)
     }
 </script>
 

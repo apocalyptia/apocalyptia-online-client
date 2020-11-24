@@ -2,6 +2,7 @@
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
 	import Capitalize from 'utils/Capitalize.js'
 	import GearBlock from 'views/widgets/GearBlock.svelte'
+	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import RandomStartingGear from 'random/RandomStartingGear.js'
 	import { character } from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
@@ -12,10 +13,7 @@
 </script>
 
 
-<svelte:head>
-	<title>Apocalyptia Online - Character Creator - Gear</title>
-</svelte:head>
-<h1>Gear</h1>
+<PageHeader rule={'Gear'} />
 <div class='explanation'>
 	<p>You start with some random Gear:</p>
 	<p>One piece of Armor</p>
@@ -26,7 +24,7 @@
 </div>
 {#if gearedUp}
 	<div class='section-card'>
-		{#each Object.keys($character.gear) as type}
+		{#each Object.keys($character.gear) as type, key}
 			<details class='item-details'>
 				<summary>
 					<span class='item-label'>

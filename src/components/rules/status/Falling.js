@@ -5,7 +5,10 @@ const Falling = new Rule({
 	desc: [
 		`1 Blunt Damage per 2yds.`,
 		`Each point of Falling Damage is inflicted on a random Body Part.`,
-		`Roll [Acrobatics # = yds] as a Defense Action to halve Falling Damage.`,
+		`Excess Damage left over after that Body Part is destroyed must be applied to another random Body Part until either no Damage remains or all Body Parts are destroyed.`,
+		`Roll [Acrobatics # = yds] to halve Falling Damage.`,
+		`On a Botch, you go Prone and get Stunned for d6 rounds.`,
+		`Falling objects deal BDMG equal to their Size.`,
 	],
 	type: `Status`
 })

@@ -77,7 +77,7 @@
 	}
 	.description-section {
 		line-height: 1.5;
-		margin: var(--s100) auto;
+		margin: var(--std-margin) auto;
 	}
 	.description-label {
 		font-weight: bold;

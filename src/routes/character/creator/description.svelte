@@ -1,5 +1,6 @@
 <script>
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
+	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import RandomAge from 'random/RandomAge.js'
 	import RandomDescription from 'random/RandomDescription.js'
 	import RandomHair from 'random/RandomHair.js'
@@ -12,10 +13,7 @@
 </script>
 
 
-<svelte:head>
-	<title>Apocalyptia Online - Character Creator - Description</title>
-</svelte:head>
-<h1>Description</h1>
+<PageHeader rule={'Description'} />
 <div class='section-card'>
 	<div class='block-row'>
 		<div class='character-container'>

@@ -1,6 +1,7 @@
 <script>
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
 	import ExplanationBlock from 'views/character/creator/ExplanationBlock.svelte'
+	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
 	import RandomSkills from 'random/RandomSkills.js'
 	import Skills from 'rules/Skills.js'
@@ -12,10 +13,7 @@
 </script>
 
 
-<svelte:head>
-	<title>Apocalyptia Online - Character Creator - Skills</title>
-</svelte:head>
-<h1>Skills</h1>
+<PageHeader rule={'Skills'} />
 <ExplanationBlock rule={Skills} />
 <PointsRemaining points={remaining} />
 <div class='section-card'>

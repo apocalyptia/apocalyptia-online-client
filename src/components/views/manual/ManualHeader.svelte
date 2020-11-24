@@ -1,6 +1,6 @@
 <script>
 	export let chapterName = 'Manual'
-	export let searchTerm
+	export let searchTerm = ''
 </script>
 
 
@@ -17,15 +17,14 @@
 <style>
     .manual-header-section {
 		align-items: center;
-		background-color: var(--sec-color);
 		border: 1px solid var(--pri-color);
 		display: flex;
-		height: var(--s300);
+		height: var(--titlebar-height);
 		justify-content: space-around;
 		left: 0;
 		position: fixed;
 		right: 0;
-		top: var(--s350);
+		top: var(--titlebar-height);
 		z-index: 6;
 	}
 	.rules-name {
@@ -37,5 +36,8 @@
 		padding: var(--s25) var(--s100);
 		text-align: left;
 		width: 45%;
+	}
+	.search-bar::placeholder {
+		color: var(--pri-color);
 	}
 </style>

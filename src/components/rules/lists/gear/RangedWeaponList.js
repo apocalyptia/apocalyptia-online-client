@@ -4,7 +4,7 @@ import BenelliM4 from 'ranged/BenelliM4.js'
 import BrowningABolt from 'ranged/BrowningABolt.js'
 import ColtPython from 'ranged/ColtPython.js'
 import CZUpland from 'ranged/CZUpland.js'
-import Glock17 from 'ranged/Glock17.js'
+import Glock19 from 'ranged/Glock19.js'
 import HKMP5 from 'ranged/HKMP5.js'
 import HenryGoldenBoy from 'ranged/HenryGoldenBoy.js'
 import HoytCompoundBow from 'ranged/HoytCompoundBow.js'
@@ -32,7 +32,7 @@ export default [
 	BrowningABolt,
 	ColtPython,
 	CZUpland,
-	Glock17,
+	Glock19,
 	HKMP5,
 	HenryGoldenBoy,
 	HoytCompoundBow,

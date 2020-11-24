@@ -12,10 +12,14 @@
     .back-btn {		
 		bottom: 0;
 		font-size: var(--s150);
-		height: var(--s300);
+		height: var(--icon-size);
 		left: 0;
+		max-height: var(--icon-size);
+		max-width: var(--icon-size);
+		min-height: var(--icon-size);
+		min-width: var(--icon-size);
 		position: fixed;
-		width: var(--s300);
+		width: var(--icon-size);
 		z-index: 6;
 	}
 </style>

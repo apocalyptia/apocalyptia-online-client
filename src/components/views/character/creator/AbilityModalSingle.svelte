@@ -36,7 +36,7 @@
 		border: 1px dashed;
 		display: flex;
 		justify-content: space-between;
-		margin: var(--s100) auto;
+		margin: var(--std-margin) auto;
 		padding: var(--s50);
 	}
 	select {

@@ -5,7 +5,7 @@
 	import { beforeUpdate, onMount } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
-	$: current = $character.meta.status.step
+	$: current = $character.meta.step
 
 	let proceed
 
@@ -14,13 +14,13 @@
 	$: nextButton = '&#10006;'
 
 	const back = _ => {
-		$character.meta.status.step--
-		if ($character.meta.status.step < 0) GoTo('/')
+		$character.meta.step--
+		if ($character.meta.step < 0) GoTo('/')
 	}
 
 	const next = _ => {
 		proceedStatus()
-		if (proceed) $character.meta.status.step++
+		if (proceed) $character.meta.step++
 	}
 
 	const proceedStatus = _ => {
@@ -52,7 +52,7 @@
     .nav-bar {
 		bottom: 0;
 		display: flex;
-		height: var(--s300);
+		height: var(--footer-height);
 		left: 0;
 		position: fixed;
 		width: 100%;

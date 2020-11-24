@@ -16,7 +16,7 @@
 
 <style>
     p {
-		padding-bottom: var(--s100);
+		margin: var(--std-margin);
 	}
     .bold {
 		font-weight: bold;

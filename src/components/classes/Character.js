@@ -9,15 +9,12 @@ export default class Character {
 			created: ``,
 			modified: ``,
 			notes: ``,
+			status: [],
+			step: 0,
 			coordinates: {
 				map: ``,
 				x: 0,
 				y: 0
-			},
-			status: {
-				completed: false,
-				open: false,
-				step: 0,
 			}
 		},
 		this.description = {
@@ -290,8 +287,7 @@ export default class Character {
 		this.finalize = (userId) => {
 			if (!this.created) this.created = new Date()
 			this.meta.user = userId
-			this.meta.status.step = 6
-			this.meta.status.completed = true
+			this.meta.step = 6
 			this.meta.modified = new Date()
 			return this
 		}

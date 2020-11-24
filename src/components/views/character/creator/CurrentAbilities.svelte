@@ -62,7 +62,7 @@
 		align-items: baseline;
 		display: flex;
 		justify-content: space-between;
-		margin: var(--s100) 0;
+		margin: var(--std-margin) 0;
 	}
 	.current-abilities-header {
 		font-weight: bold;

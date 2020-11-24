@@ -3,9 +3,9 @@
 	import NavBar from 'views/character/creator/NavBar.svelte'
 	import abilities from 'creator/abilities.svelte'
 	import description from 'creator/description.svelte'
+	import finalize from 'creator/finalize.svelte'
 	import gear from 'creator/gear.svelte'
 	import properties from 'creator/properties.svelte'
-	import sheet from 'character/sheet.svelte'
     import skills from 'creator/skills.svelte'
     import traits from 'creator/traits.svelte'
     import { character } from 'stores/characterStore.js'
@@ -18,7 +18,7 @@
         properties,
         abilities,
         gear,
-        sheet
+        finalize
     ]
 
     onMount(_ => $character = new Character() )
@@ -26,14 +26,19 @@
 
 
 <div class='creator-page'>
-    <svelte:component this={pages[$character.meta.status.step]} />
+    <svelte:component this={pages[$character.meta.step]} />
 </div>
 <NavBar />
 
 
 <style>
     .creator-page {
+        bottom: var(--footer-height);
+        left: 0;
+        overflow: scroll;
         padding: var(--std-padding);
-        padding-bottom: var(--s400);
+        position: absolute;
+        right: 0;
+        top: 0;
     }
 </style>

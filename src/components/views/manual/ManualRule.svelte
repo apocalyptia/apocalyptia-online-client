@@ -50,7 +50,4 @@
 			max-width: 80%;
 		}
 	}
-		.rule-body {
-			padding: var(--std-padding);
-		}
 </style>

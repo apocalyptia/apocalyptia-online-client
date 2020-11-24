@@ -2,17 +2,17 @@ import Gear from 'classes/Gear.js'
 import TwoHanded from 'attributes/TwoHanded.js'
 import Rapid from 'attributes/Rapid.js'
 
-const Glock17 = new Gear({
-	name: `Glock 17 Pistol`,
+const Glock19 = new Gear({
+	name: `Glock 19 Pistol`,
 	sz: 1,
 	attr: [
 		TwoHanded,
 		Rapid,
 	]
 })
-Glock17.dmg = 1
-Glock17.rng = 10
-Glock17.cap = 17
-Glock17.cal = `9mm`
+Glock19.dmg = 1
+Glock19.rng = 10
+Glock19.cap = 17
+Glock19.cal = `9mm`
 
-export default Glock17
+export default Glock19

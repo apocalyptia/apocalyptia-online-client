@@ -1,0 +1,392 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@mr-jordan-fannin
+Learn Git and GitHub without any code!
+
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+Code Issues 0 Pull requests 0 Projects 0 Wiki Security Pulse Community
+terminal-interface/terminal.html
+@mr-jordan-fannin mr-jordan-fannin fixed backspace to actually backspace at cursor position d2329d3 on Mar 31, 2018
+390 lines (360 sloc) 10.7 KB
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta content="text/html">
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: 'MorePerfectDOSVGA';
+			src: url('MorePerfectDOSVGA.ttf') format('truetype');
+		}
+		body {
+			background-color: #000;
+			font-family: "MorePerfectDOSVGA", Courier, monospace;
+			font-size: 12pt;
+		}
+		#screen {
+			background-color: rgb(0,15,0);
+			color: lime;
+			float: left;
+			height: 480px;
+			margin: 20px;
+			overflow-y: auto;
+			width: 640px;
+		}
+		#screen:before {
+			animation: hline 5s linear infinite;
+			background: lime;
+			content: '';
+			font-size: 1px;
+			height: 1px;
+			opacity: .5;
+			position: absolute;
+			width: 640px;
+		}
+        #lines {
+            background: #000;
+            background: linear-gradient(#020 1%, #333 99%);
+            background-repeat: repeat-y;
+            background-size: 100% 2px;
+            height: 480px;
+            opacity: .9;
+        }
+		@keyframes hline {
+			0%   { top: 28px; }
+			100% { top: 507px; }
+		}
+		#display {
+			padding: 20px;
+		}
+		.line {
+			white-space: pre;
+			word-wrap: break-word;
+		}
+		#android {
+			background: inherit;
+			color: orange;
+			float: right;
+			height: 440px;
+			margin: 20px;
+			padding: 20px;
+			width: 500px;
+		}
+		#android h2 {
+			text-align: center;
+		}
+		#status {
+			background: #000;
+			background: linear-gradient(#220 1%, #333 99%);
+			background-repeat: repeat-y;
+			background-size: 100% 2px;
+			opacity: .9;
+		}
+		#console {
+			width: 1300px;
+		}
+	</style>
+	<title>TERMINAL</title>
+</head>
+
+<body>
+<div id="console">
+	<div id="screen">
+        <div id="lines">
+		    <div id="display"></div>
+	    </div>
+    </div>
+	<div id="status">
+		<div id="android">
+			<h2>ANDROID STATUS</h2>
+			<p>AGE: <span id="age">0</span> SECONDS</p>
+			<p>ENERGY: <span id="energy">100</span>%</p>
+			<p>HEALTH: <span id="health">100</span>%</p>
+			<p>TEMPERATURE: <span id="temp">50</span> C</p>
+			<p>X SECTION: <span id="xsec">1</span></p>
+			<p>Y SECTION: <span id="ysec">1</span></p>
+			<p>DECK: <span id="deck">1</span></p>
+			<p>ORIENTATION: <span id="orientation">VERTICAL</span></p>
+			<p>ATTITUDE: CURIOUS</p>
+		</div>
+	</div>
+</div>
+</body>
+
+<script type="application/javascript" language="javascript">
+    // TODO: MAKE IF CONDITION TO HANDLE PUNCTUATION.
+    // TODO: MAKE CURSOR A SUPERIMPOSING RECTANGLE INSTEAD OF A CHARACTER
+    //**********GLOBALS**********
+    const version = '0.0.4';
+    const grid = {
+        row: 0,
+        column: 0
+    };
+    const input = {
+        command: '',
+        history: [],
+        index: 0
+    };
+    const settings = {
+        fontColor: 'rgba(0, 255, 0, 1)',
+        displayColor: 'rgba(0, 15, 0, 0)',
+        rate: 600,
+        wait: ['-','\\','|','/'],
+        prompt: '<span class="prompt">> </span>',
+        cursor: '<span id="cursor">█</span>'
+    };
+    const android = {
+        xsec: 1,
+        ysec: 1,
+        deck: 1,
+        age: 0,
+        energy: 100,
+        health: 100,
+        temp: 50,
+        orientation: 'VERTICAL'
+    };
+	const systemCommands = [
+	    '&nbspMOVF -X: WALK X ROOM(S) TO THE FORE END OF THE SHIP.',
+		'&nbspMOVA -X: WALK X ROOM(S) TO THE AFT END OF THE SHIP.',
+		'&nbspMOVS -X: WALK X ROOM(S) TO THE STARBOARD SIDE OF THE SHIP.',
+		'&nbspMOVP -X: WALK X ROOM(S) TO THE PORT SIDE OF THE SHIP.',
+		'&nbspMOVU -X: WALK UP X DECK(S).',
+		'&nbspMOVD -X: WALK DOWN X DECK(S).',
+		'&nbspEXAM -X: EXAMINE THE ROOM BY DEFAULT OR X TARGET OBJECT.',
+		'&nbspTAKE -X: PICK UP X TARGET OBJECT.',
+		'&nbspDIAG -X: RUN LEVEL X SELF-DIAGNOSTIC TOOL.'
+	];
+    //**********SETUPS**********
+    // ANDROID BIRTH
+    (() => {
+        setInterval(function () {
+            android.age++;
+            if (android.age % 10 === 0 && android.energy !== 0) {
+                android.energy--;
+            }
+            if (Math.round(Math.random() * 10) < 2) {
+                android.orientation = 'HORIZONTAL';
+                android.health--;
+            } else {
+                android.orientation = 'VERTICAL';
+            }
+            for (let property in android) {
+                if (android.hasOwnProperty(property)) {
+                    document.getElementById(property).innerHTML = android[property];
+                }
+            }
+        }, 1000);
+    })();
+    // BLINKER
+    (() => {
+        setInterval(function () {
+            let cursor = document.getElementById('cursor');
+            if (cursor) {
+                if (cursor.style.color === settings.displayColor) {
+                    cursor.style.color = settings.fontColor;
+                } else {
+                    cursor.style.color = settings.displayColor;
+                }
+            }
+        }, settings.rate);
+    })();
+    clear();
+    //**********LOOPS**********
+    // MAIN LOOP
+    window.addEventListener('keydown', function(event) {
+        if (event.preventDefaulted) {
+            return;
+        }
+        keyboard(event);
+        event.preventDefault();
+    }, true);
+    // WAITER
+    function waiter() {
+        grid.row++;
+        document.getElementById('display').innerHTML += '<div id="line' + grid.row + '"><span id="waiter"></span></div>';
+        grid.col = 0;
+        let i = 0;
+        let waitSpin = setInterval(function () {
+            if (document.getElementById('waiter')) {
+                document.getElementById('waiter').innerHTML = settings.wait[i];
+                i++;
+                if (i > settings.wait.length - 1) {
+                    i = 0;
+                }
+            } else {
+                clearInterval(waitSpin);
+            }
+        }, settings.rate);
+    }
+    //************KEYBOARD************
+    // KEYBOARD LISTENER
+    function keyboard(event) {
+        switch (event.code) {
+            case 'Backspace':
+                if (grid.col > 0) {
+                    grid.col--;
+                }
+                if (input.command.length > 0) {
+                    input.command = input.command.slice(0, grid.col) + input.command.slice(grid.col + 1, input.command.length);
+                }
+                break;
+            case 'ArrowLeft':
+                if (grid.col > 0) {
+                    grid.col--;
+                }
+                break;
+            case 'ArrowRight':
+                if (grid.col < input.command.length) {
+                    grid.col++;
+                }
+                break;
+            case 'Enter':
+                document.getElementById('line' + grid.row).innerHTML = settings.prompt + input.command;
+                enter();
+                break;
+            case 'ArrowUp':
+                input.command = input.history[input.index];
+                input.index--;
+                if (input.index < 0) {
+                    input.index = input.history.length - 1;
+                }
+                grid.col = input.command.length;
+                break;
+            case 'ArrowDown':
+                input.command = input.history[input.index];
+                input.index++;
+                if (input.index === input.history.length - 1) {
+                    input.index = 0;
+                }
+                grid.col = input.command.length;
+                break;
+            case 'Space':
+                input.command += ' ';
+                grid.col++;
+                break;
+            default:
+                if (event.code.startsWith('Key') || event.code.startsWith('Digit')) {
+                    input.command = input.command.slice(0, grid.col)
+                        + event.key.toUpperCase()
+                        + input.command.slice(grid.col, input.command.length);
+                    grid.col++;
+                }
+                break;
+        }
+        placeCursor();
+    }
+    // ENTER
+    function enter() {
+        switch (input.command) {
+            case 'CLEAR':
+                clear();
+                break;
+            case 'HELP':
+                help();
+                break;
+            case 'WAIT':
+                waiter();
+                break;
+            default:
+                break;
+        }
+        if (input.command.startsWith('MOV')) {
+            move();
+        } else {
+            post();
+		}
+		logHistory();
+        document.getElementById('line' + grid.row).scrollIntoView(false);
+    }
+    // POST TEXT
+    function post() {
+        grid.row++;
+        grid.col = 0;
+        document.getElementById('display').innerHTML += '<div id="line' + grid.row + '" class="line"></div>';
+        document.getElementById('line' + grid.row).innerHTML = settings.prompt + input.command;
+        placeCursor();
+    }
+    // PLACE CURSOR
+    function placeCursor() {
+        document.getElementById('line' + grid.row).innerHTML = settings.prompt + input.command.slice(0, grid.col)
+            + settings.cursor
+            + input.command.slice(grid.col,input.command.length);
+        document.getElementById('display').scrollTop = document.getElementById('display').scrollHeight;
+    }
+    //**********COMMANDS**********
+    // LOG HISTORY
+    function logHistory() {
+        input.history.push(input.command);
+        input.index = input.history.length - 1;
+        input.command = '';
+    }
+    // HELP COMMAND
+    function help() {
+        grid.row++;
+        document.getElementById('display').innerHTML += '<div id="line' + grid.row + '">ANDROID SHELL VERSION ' + version + '</div>';
+        grid.row++;
+        document.getElementById('display').innerHTML += '<div id="line' + grid.row + '">VALID COMMANDS:</div>';
+        for (let sysCommand in systemCommands) {
+            grid.row++;
+            document.getElementById('display').innerHTML += '<div id="line' + grid.row + '">' + sysCommand + '</div>';
+        }
+        post();
+    }
+    // CLEAR DISPLAY
+    function clear() {
+        document.getElementById('display').innerHTML = '<div id="line0" class="line"></div>';
+        document.getElementById('line0').innerHTML = settings.prompt;
+        grid.row = 0;
+        grid.col = 0;
+        placeCursor();
+    }
+    // MOVE COMMAND PARSER
+    function move() {
+        let change = parseInt(input.command.charAt(6));
+        switch (input.command.charAt(3)) {
+            case 'U':
+                android.deck += change;
+                break;
+            case 'D':
+                android.deck -= change;
+                break;
+            case 'F':
+                android.ysec += change;
+                break;
+            case 'A':
+                android.ysec -= change;
+                break;
+            case 'S':
+                android.xsec += change;
+                break;
+            case 'P':
+                android.xsec -= change;
+                break;
+            default:
+                break;
+        }
+        document.getElementById('xsec').innerHTML = android.xsec;
+        document.getElementById('ysec').innerHTML = android.ysec;
+        document.getElementById('deck').innerHTML = android.deck;
+        post();
+    }
+</script>
+
+</html>
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About

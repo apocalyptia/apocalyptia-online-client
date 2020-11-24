@@ -24,9 +24,18 @@
 <svelte:head>
 	<title>Apocalyptia Online - Character Creator - Character Sheet</title>
 </svelte:head>
-<CharacterSheet mode={'edit'} />
-<div class='btn-row'>
-	<button class='small-cntr-btn' on:click={saveCharacter}>Save</button>
-	<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
+<div class='sheet'>
+	<CharacterSheet mode={'edit'} />
+	<div class='btn-row'>
+		<button class='small-cntr-btn' on:click={saveCharacter}>Save</button>
+		<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
+	</div>
 </div>
 <BackButton path={'character'} />
+
+
+<style>
+	.sheet {
+		display: block;
+	}
+</style>

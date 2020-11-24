@@ -130,7 +130,7 @@
 
 <style>
 	input[type='number'] {
-		width: var(--s200);
+		width: 6ch;
 	}
 	.body-parts-section {
 		display: flex;

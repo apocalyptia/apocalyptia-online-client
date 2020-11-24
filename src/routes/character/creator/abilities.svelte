@@ -5,6 +5,7 @@
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
 	import CurrentAbilities from 'views/character/creator/CurrentAbilities.svelte'
 	import ExplanationBlock from 'views/character/creator/ExplanationBlock.svelte'
+	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
 	import RandomAbilities from 'random/RandomAbilities.js'
 	import { beforeUpdate } from 'svelte'
@@ -18,10 +19,7 @@
 </script>
 
 
-<svelte:head>
-	<title>Apocalyptia Online - Character Creator - Abilities</title>
-</svelte:head>
-<h1>Abilities</h1>
+<PageHeader rule={'Abilities'} />
 <ExplanationBlock rule={Abilities} />
 <PointsRemaining points={remainingXP} />
 {#if $character.abilities.length}

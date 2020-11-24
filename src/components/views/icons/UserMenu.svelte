@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import ClickOutside from 'views/widgets/ClickOutside.svelte'
 	// import { logout, userStore } from 'stores/userStore.js'
 
@@ -27,14 +28,16 @@
 		<div class='btn-icon'>&#9776;</div>
 	</button>
 	<ClickOutside on:clickoutside={hide} exclude={[trigger]}>
-		<div hidden={!showMenu} class='user-menu'>
-			<nav>
-				<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>
-				<a href='/manual' class='link-btn' on:click={hide}>Manual</a>
-				<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
-				<a href='/' class='link-btn last-link' on:click={logOut}>Logout</a>
-			</nav>
-		</div>
+		{#if showMenu}
+			<div class='user-menu' transition:fade>
+				<nav>
+					<a href='/character' class='link-btn first-link' on:click={hide}>Character</a>
+					<a href='/manual' class='link-btn' on:click={hide}>Manual</a>
+					<a href='/generator' class='link-btn' on:click={hide}>Generator</a>
+					<!-- <a href='/' class='link-btn last-link' on:click={logOut}>Logout</a> -->
+				</nav>
+			</div>
+		{/if}
 	</ClickOutside>
 	<div class='{showMenu ? "shadow" : "invisible"}'></div>
 <!-- {/if} -->
@@ -42,39 +45,42 @@
 
 <style>
 	.user-btn {
-		height: var(--s300);
+		height: var(--icon-size);
+		max-height: var(--icon-size);
+		max-width: var(--icon-size);
+		min-height: var(--icon-size);
+		min-width: var(--icon-size);
 		position: fixed;
 		right: 0;
-		width: var(--s300);
-		z-index: 9;
+		top: 0;
+		width: var(--icon-size);
+		width: var(--icon-size);
+		z-index: 10;
 	}
 	.user-btn:focus {
 		background-color: var(--pri-color);
 		color: var(--sec-color);
 	}
 	.user-menu {
-		background: var(--sec-color);
+		background: var(--sec-color-trans);
 		border: 1px solid var(--pri-color);
 		position: absolute;
 		right: 0;
-		top: var(--s300);
-		width: 30vw;
+		top: calc(1px + var(--s300));
+		width: 50vw;
 		min-width: 200px;
-		z-index: 9;
+		z-index: 1000;
+	}
+	nav {
+		background: red;
 	}
 	a {
 		border: none;
-		display: block;
 		font-weight: normal;
-		padding: var(--std-padding);
-	}
-	a:active,
-	a:hover {
-		background-color: var(--pri-color);
-		color: var(--sec-color);
+		height: calc(var(--icon-size) * 2);
 	}
 	.shadow {
-		background: rgba(0, 0, 0, .5);
+		background: rgba(0, 0, 0, .66);
 		position: absolute;
 		top: 0;
 		left: 0;

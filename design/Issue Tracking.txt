@@ -19,7 +19,9 @@ make game group chat
 ------ TODO LIST ------
 
 UX/UI:
-	Change all lime to white and use a filter layer that goes from green>yellow>red to reflect character health.
+	Fix Gear in Creator.
+	Fix User Menu.
+	Fix Generator.
 	Likewise set a blur effect that reflects the character psyche
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.

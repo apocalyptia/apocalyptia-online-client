@@ -67,6 +67,6 @@
 
 <style>
 	.current-value {
-		width: 20%;
+		width: 6ch;
 	}
 </style>

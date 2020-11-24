@@ -14,15 +14,15 @@
 <style>
 	.title-bar {
 		display: flex;
-		max-height: var(--s300);
+		max-height: var(--titlebar-height);
 		position: fixed;
 		top: 0;
 		transition: top 0.3s linear;
-		width: 100%;
+		width: 100vw;
 		z-index: 9;
 	}
 	.title-link {
 		padding: var(--std-padding);
-		width: 100%;
+		width: calc(100vw - var(--icon-size));
 	}
 </style>
