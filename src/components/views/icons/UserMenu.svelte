@@ -71,9 +71,6 @@
 		min-width: 200px;
 		z-index: 1000;
 	}
-	nav {
-		background: red;
-	}
 	a {
 		border: none;
 		font-weight: normal;

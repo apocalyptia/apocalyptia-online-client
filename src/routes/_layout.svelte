@@ -38,8 +38,8 @@
 		z-index: 0;
 	}
 	@keyframes flicker {
-		0%  { transform: scale(1); }
-		50% { transform: scale(.999); }
+		0%  { transform: scale(.995); }
+		50% { transform: scale(1); }
 	}
 	.lines {
 		position: absolute;
