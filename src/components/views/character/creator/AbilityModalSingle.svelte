@@ -40,6 +40,6 @@
 		padding: var(--s50);
 	}
 	select {
-		width: var(--s300);
+		width: var(--square);
 	}
 </style>

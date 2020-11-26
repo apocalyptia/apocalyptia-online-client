@@ -53,6 +53,7 @@ Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
+	NaN lbs error with random weight.
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 	Figure out how to handle taking Abilities that cost more XP than you have. Disable? Warn? Currently proceeds but with range error.
 

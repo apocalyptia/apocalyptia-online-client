@@ -10,12 +10,12 @@
 		border: 1px solid var(--pri-color);
 		font-size: var(--s150);
 		font-weight: bold;
-		height: var(--icon-size);
-		max-height: var(--icon-size);
-		max-width: var(--icon-size);
-		min-height: var(--icon-size);
-		min-width: var(--icon-size);
-		width: var(--icon-size);
+		height: var(--square);
+		max-height: var(--square);
+		max-width: var(--square);
+		min-height: var(--square);
+		min-width: var(--square);
+		width: var(--square);
 	}
 	.add-btn:hover {
 		-webkit-text-fill-color: var(--pri-color);

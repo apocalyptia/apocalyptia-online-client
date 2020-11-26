@@ -17,5 +17,5 @@
 <PropertiesFormulae />
 <PropertiesBlock />
 <div class='section-card'>
-	<BodyParts {character} readonly=false />
+	<BodyParts {character} readonly=true />
 </div>

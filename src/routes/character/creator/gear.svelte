@@ -23,30 +23,28 @@
 	<p>Random items = Luck</p>
 </div>
 {#if gearedUp}
-	<div class='section-card'>
-		{#each Object.keys($character.gear) as type, key}
-			<details class='item-details'>
-				<summary>
-					<span class='item-label'>
-						{Capitalize(type)}
-					</span>
-				<summary>
-				<div class='details-content'>
-					{#if type == 'equipment'}
-						{#each $character.gear.equipment.inventory as equipment}
-							<div class='item'>
-								<GearBlock item={equipment} mode={'edit'} />
-							</div>
-						{/each}
-					{:else}
+	{#each Object.keys($character.gear) as type, key}
+		<details class='item-details'>
+			<summary>
+				<span class='item-label'>
+					{Capitalize(type)}
+				</span>
+			<summary>
+			<div class='details-content'>
+				{#if type == 'equipment'}
+					{#each $character.gear.equipment.inventory as equipment}
 						<div class='item'>
-							<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />
+							<GearBlock item={equipment} mode={'edit'} />
 						</div>
-					{/if}
-				</div>
-			</details>
-		{/each}
-	</div>
+					{/each}
+				{:else}
+					<div class='item'>
+						<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />
+					</div>
+				{/if}
+			</div>
+		</details>
+	{/each}
 {:else}
 	<ButtonRow random={_ => $character = RandomStartingGear($character, $character.properties.luck.score)} />
 {/if}

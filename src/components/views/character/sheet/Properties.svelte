@@ -1,7 +1,7 @@
 <script>
 	import { character } from 'stores/characterStore.js'
 
-	export let mode
+	export let readonly
 </script>
 
 
@@ -23,14 +23,14 @@
 				</div>
 				<div class='sheet-card-item'>
 					{$character.properties.psyche.name}: 
-					{#if mode == 'edit'}
+					{#if readonly}
+						{$character.properties.psyche.current}
+					{:else}
 						<input type='number'
 							class='current-value'
 							bind:value={$character.properties.psyche.current}
 							min=0 max={$character.properties.psyche.score}
 						/>
-					{:else if mode == 'readonly'}
-						{$character.properties.psyche.current}
 					{/if} / {$character.properties.psyche.score}
 				</div>
 			</div>
@@ -49,14 +49,14 @@
 				</div>
 				<div class='sheet-card-item'>
 					{$character.properties.luck.name}: 
-					{#if mode == 'edit'}
+					{#if readonly}
+						{$character.properties.luck.current}
+					{:else}
 						<input type='number'
 							class='current-value'
 							bind:value={$character.properties.luck.current}
 							min=0 max={$character.properties.luck.score}
 						/>
-					{:else if mode == 'readonly'}
-						{$character.properties.luck.current}
 					{/if} / {$character.properties.luck.score}
 				</div>
 			</div>

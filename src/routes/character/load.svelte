@@ -69,7 +69,7 @@
 	}
 	.stored-character {
 		display: flex;
-		height: var(--s300);
+		height: var(--square);
 		justify-content: space-between;
 		width: 100%;
 	}

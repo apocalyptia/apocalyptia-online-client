@@ -56,7 +56,7 @@
 <style>
 	.manual-page-body {
 		position: absolute;
-		top: var(--s300);
+		top: var(--square);
 		left: 0;
 		right: 0;
 		padding-top: var(--s200);

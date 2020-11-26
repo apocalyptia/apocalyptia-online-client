@@ -16,11 +16,13 @@
 	const back = _ => {
 		$character.meta.step--
 		if ($character.meta.step < 0) GoTo('/')
+		document.getElementsByTagName('main')[0].scrollTop = 0
 	}
 
 	const next = _ => {
 		proceedStatus()
 		if (proceed) $character.meta.step++
+		document.getElementsByTagName('main')[0].scrollTop = 0
 	}
 
 	const proceedStatus = _ => {
@@ -42,9 +44,15 @@
 
 
 <div class='nav-bar'>
-	<button on:click={back} class='link-btn nav-button'>{@html backButton}</button>
-	<button on:click={_ => GoTo('/')} class='link-btn nav-button home-button'>Home</button>
-	<button on:click={next} class='link-btn nav-button {nextButton == '&#10006;' ? 'crimson-btn' : '' }'>{@html nextButton}</button>
+	<button on:click={back} class='link-btn'>
+		{@html backButton}
+	</button>
+	<button on:click={_ => GoTo('/')} class='link-btn'>
+		Home
+	</button>
+	<button on:click={next} class='{proceed ? 'link-btn' : 'crimson-btn' }'>
+		{@html nextButton}
+	</button>
 </div>
 
 
@@ -52,16 +60,14 @@
     .nav-bar {
 		bottom: 0;
 		display: flex;
-		height: var(--footer-height);
 		left: 0;
 		position: fixed;
 		width: 100%;
 		z-index: 6;
 	}
-	.nav-button {
+	.crimson-btn,
+	.link-btn {
 		flex: 1;
-	}
-	.home-button {
 		font-size: var(--s125);
 	}
 </style>

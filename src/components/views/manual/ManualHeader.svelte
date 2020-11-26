@@ -19,12 +19,12 @@
 		align-items: center;
 		border: 1px solid var(--pri-color);
 		display: flex;
-		height: var(--titlebar-height);
+		height: var(--square);
 		justify-content: space-around;
 		left: 0;
 		position: fixed;
 		right: 0;
-		top: var(--titlebar-height);
+		top: var(--square);
 		z-index: 6;
 	}
 	.rules-name {

@@ -14,7 +14,7 @@
 <style>
 	.title-bar {
 		display: flex;
-		max-height: var(--titlebar-height);
+		max-height: var(--square);
 		position: fixed;
 		top: 0;
 		transition: top 0.3s linear;
@@ -23,6 +23,6 @@
 	}
 	.title-link {
 		padding: var(--std-padding);
-		width: calc(100vw - var(--icon-size));
+		width: calc(100vw - var(--square));
 	}
 </style>

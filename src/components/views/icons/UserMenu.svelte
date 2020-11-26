@@ -45,16 +45,16 @@
 
 <style>
 	.user-btn {
-		height: var(--icon-size);
-		max-height: var(--icon-size);
-		max-width: var(--icon-size);
-		min-height: var(--icon-size);
-		min-width: var(--icon-size);
+		height: var(--square);
+		max-height: var(--square);
+		max-width: var(--square);
+		min-height: var(--square);
+		min-width: var(--square);
 		position: fixed;
 		right: 0;
 		top: 0;
-		width: var(--icon-size);
-		width: var(--icon-size);
+		width: var(--square);
+		width: var(--square);
 		z-index: 10;
 	}
 	.user-btn:focus {
@@ -66,7 +66,7 @@
 		border: 1px solid var(--pri-color);
 		position: absolute;
 		right: 0;
-		top: calc(1px + var(--s300));
+		top: calc(1px + var(--square));
 		width: 50vw;
 		min-width: 200px;
 		z-index: 1000;
@@ -74,7 +74,7 @@
 	a {
 		border: none;
 		font-weight: normal;
-		height: calc(var(--icon-size) * 2);
+		height: calc(var(--square) * 2);
 	}
 	.shadow {
 		background: rgba(0, 0, 0, .66);

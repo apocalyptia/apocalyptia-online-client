@@ -33,7 +33,7 @@
 
 <style>
     .creator-page {
-        bottom: var(--footer-height);
+        bottom: var(--square);
         left: 0;
         overflow: scroll;
         padding: var(--std-padding);

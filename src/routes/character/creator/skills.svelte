@@ -8,6 +8,7 @@
 	import SkillsList from 'lists/SkillsList.js'
 	import Slider from 'views/widgets/Slider.svelte'
 	import { character } from 'stores/characterStore.js'
+import Properties from './properties.svelte';
 
 	$: remaining = Skills.remaining($character)
 </script>
@@ -16,7 +17,6 @@
 <PageHeader rule={'Skills'} />
 <ExplanationBlock rule={Skills} />
 <PointsRemaining points={remaining} />
-<div class='section-card'>
 	{#each SkillsList.groups as group}
 		<div class='item-block'>
 			<details class='skills-details'>
@@ -45,7 +45,6 @@
 			</details>
 		</div>
 	{/each}
-</div>
 <ButtonRow
 	reset={_ => $character = $character.resetSkills()}
 	random={_ => $character = RandomSkills($character)}
@@ -53,7 +52,7 @@
 
 
 <style>
-	.skills-details {
+	.item-block {
 		margin: var(--std-margin);
 	}
 	.group-label {

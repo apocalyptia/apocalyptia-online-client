@@ -27,12 +27,10 @@
 		<CurrentAbilities />
 	</div>
 {/if}
-<div class='section-card'>
-	<div class='abilities-list'>
-		{#each AbilitiesList.groups as group}
-			<AbilityGroup {group} {MasterAbilityList}/>
-		{/each}
-	</div>
+<div class='abilities-list'>
+	{#each AbilitiesList.groups as group}
+		<AbilityGroup {group} {MasterAbilityList}/>
+	{/each}
 </div>
 <ButtonRow
 	reset={_ => $character = $character.resetAbilities()}
