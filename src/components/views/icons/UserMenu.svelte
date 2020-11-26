@@ -62,7 +62,7 @@
 		color: var(--sec-color);
 	}
 	.user-menu {
-		background: var(--sec-color-trans);
+		background: var(--sec-color);
 		border: 1px solid var(--pri-color);
 		position: absolute;
 		right: 0;
@@ -73,8 +73,7 @@
 	}
 	a {
 		border: none;
-		font-weight: normal;
-		height: calc(var(--square) * 2);
+		height: calc(var(--square) * 1.5);
 	}
 	.shadow {
 		background: rgba(0, 0, 0, .66);
@@ -83,7 +82,7 @@
 		left: 0;
 		height: 100vh;
 		width: 100vw;
-		z-index: 6;
+		z-index: 10;
 	}
 	.invisible {
 		display: none;

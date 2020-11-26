@@ -15,7 +15,7 @@
 
 	const back = _ => {
 		$character.meta.step--
-		if ($character.meta.step < 0) GoTo('/')
+		if ($character.meta.step < 0) GoTo('/character/new')
 		document.getElementsByTagName('main')[0].scrollTop = 0
 	}
 

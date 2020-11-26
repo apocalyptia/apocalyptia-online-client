@@ -85,14 +85,12 @@
 		{#if item && item.hasOwnProperty('attr') && item.attr.length > 0}
 			<p><u>Attributes</u>:</p>
 			<div class='attributes'>
-				<ul>
-					{#each item.attr as attr}
-						<li>{attr.name}:{#each attr.desc as line}
-											&nbsp;{line}
-										{/each}
-						</li>
-					{/each}
-				</ul>
+				{#each item.attr as attr}
+					<div>{attr.name}:{#each attr.desc as line}
+										<p class='attr'>{line}</p>
+									{/each}
+					</div>
+				{/each}
 			</div>
 		{/if}
 		{#if item.table}
@@ -106,9 +104,11 @@
 	h2 {
 		margin-bottom: var(--std-margin);
 	}
-	ul {
-		list-style: disc;
+	.attributes {
 		margin-left: var(--std-margin);
+	}
+	.attr {
+		margin-left: calc(var(--std-margin) * 2);
 	}
 	.gear-desc {
 		margin: var(--s100) 0;

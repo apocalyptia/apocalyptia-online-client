@@ -2,7 +2,7 @@
 	import AdjustUIColor from 'utils/AdjustUIColor.js'
 	import { onMount } from 'svelte'
 
-	export let character, readonly
+	export let character, readonly = true
 
 	onMount(_ => AdjustUIColor($character))
 </script>
@@ -134,6 +134,7 @@
 	}
 	.body-parts-section {
 		display: flex;
+		font-size: var(--s75);
 		justify-content: center;
 		max-width: 100%;
 	}
@@ -142,26 +143,31 @@
 		height: 100%;
 		width: auto;
 	}
+	.left-column {
+		text-align: left;
+	}
 	.center-column {
 		margin-top: 10px;
 		text-align: center;
 		width: 100%;
 	}
+	.right-column {
+		text-align: right;
+	}
 	div[class*=-label] {
 		display: inline-block;
 		height: 10px;
 		position: relative;
-		text-align: center;
 		width: 100%;
 	}
 	.head-label, .torso-label {
-		top: 30px;
+		top: 0;
 	}
 	.left-arm-label, .right-arm-label {
-		top: 120px;
+		top: 10vh;
 	}
 	.left-leg-label, .right-leg-label {
-		top: 210px;
+		top: 20vh;
 	}
 	.body-part {
 		background-color: var(--pri-color);
@@ -176,15 +182,15 @@
 	.head {
 		border-radius: 50%;
 		border: 1px;
-		height: 50px;
+		height: 6vh;
 		margin-bottom: 5px;
-		width: 50px;
+		width: 6vh;
 	}
 	.arm {
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-		height: 140px;
-		width: 20px;
+		height: 15vh;
+		width: 2.25vh;
 	}
 	.left-arm {
 		border-top-left-radius: 30px;
@@ -194,16 +200,15 @@
 	}
 	.torso {
 		color: var(--sec-color);
-		height: 150px;
+		height: 14vh;
 		margin: 0 5px;
-		text-align: center;
-		width: 70px;
+		width: 8vh;
 	}
 	.leg {
 		border-bottom-right-radius: 15px;
 		border-bottom-left-radius: 15px;
-		height: 160px;
-		width: 28px;
+		height: 16vh;
+		width: 3vh;
 	}
 	.left-leg {
 		margin-right: 14px;

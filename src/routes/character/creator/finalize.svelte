@@ -22,9 +22,9 @@
 </script>
 
 
-<PageHeader rule={'Finalize'} />
 <div class='sheet'>
-	<CharacterSheet mode={'edit'} />
+	<PageHeader rule={'Finalize'} />
+	<CharacterSheet mode={'readonly'} />
 	<div class='btn-row'>
 		<button class='small-cntr-btn' on:click={saveCharacter}>Save</button>
 		<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
@@ -35,7 +35,14 @@
 
 <style>
 	.sheet {
+		bottom: 0;
 		display: block;
+		left: 0;
+		overflow: scroll;
+		padding: var(--std-padding);
+		position: absolute;
+		right: 0;
+		top: 0;
 		width: 100%;
 	}
 </style>

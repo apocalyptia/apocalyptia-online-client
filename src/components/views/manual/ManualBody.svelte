@@ -27,7 +27,6 @@
         flex-direction: column;
     }
     .no-results {
-        padding-left: 10vw;
-        padding-top: 2vh;
+        padding: var(--square);
     }
 </style>

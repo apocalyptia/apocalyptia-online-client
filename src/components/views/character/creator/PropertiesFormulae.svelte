@@ -24,9 +24,6 @@
 	.formulae-details {
 		margin: var(--std-margin);
 	}
-	.formulae-card {
-		padding: var(--std-padding);
-	}
 	li {
 		margin: var(--std-margin);
 	}

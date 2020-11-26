@@ -22,7 +22,6 @@
 <style>
 	.sheet-notes-block {
 		color: var(--pri-color);
-		font-family: var(--global-font);
 		height: var(--s1000);
 		overflow: auto;
 		padding: var(--std-padding);

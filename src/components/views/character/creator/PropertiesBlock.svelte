@@ -50,9 +50,11 @@
 		text-align: left;
 	}
 	.prop-block {
+		display: flex;
+		flex-direction: column;
+		align-items: space-between;
+		justify-content: space-between;
+		height: calc(var(--s100) * 8);
 		width: 50%;
-	}
-	.prop-item {
-		margin: var(--std-margin);
 	}
 </style>
