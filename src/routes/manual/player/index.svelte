@@ -1,5 +1,6 @@
 <script>
 	import BackButton from 'icons/BackButton.svelte'
+	import GoTo from 'utils/GoTo.js'
 	import ManualHeader from 'views/manual/ManualHeader.svelte'
 	import ManualList from 'lists/ManualList.js'
 	import ManualBody from 'views/manual/ManualBody.svelte'
@@ -34,14 +35,22 @@
 {#if searchTerm === ''}
 	<div class='manual-page-body'>
 		{#each ManualList as chapter}
-			<a href={`/manual/player/${chapter.name.toLowerCase()}`}
+			<button
+				on:click={_ => GoTo(`/manual/player/${chapter.name.toLowerCase()}`)}
 				class='link-btn menu-btn'
 			>
 				{chapter.name}
-			</a>
+			</button>
 		{/each}
 	</div>
 {:else}
 	<ManualBody {ruleList} />
 {/if}
 <BackButton path={'/'} />
+
+
+<style>
+	button {
+		width: 100%;
+	}
+</style>

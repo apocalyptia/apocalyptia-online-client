@@ -182,35 +182,34 @@
 	.head {
 		border-radius: 50%;
 		border: 1px;
-		height: 6vh;
-		margin-bottom: 5px;
-		width: 6vh;
+		height: 5vh;
+		margin-bottom: .5vh;
+		width: 5vh;
 	}
 	.arm {
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 100vh;
+		border-bottom-right-radius: 100vh;
 		height: 15vh;
-		width: 2.25vh;
+		width: 2vh;
 	}
 	.left-arm {
-		border-top-left-radius: 30px;
+		border-top-left-radius: 100vh;
 	}
 	.right-arm {
-		border-top-right-radius: 30px;
+		border-top-right-radius: 100vh;
 	}
 	.torso {
-		color: var(--sec-color);
-		height: 14vh;
-		margin: 0 5px;
-		width: 8vh;
+		height: 14.5vh;
+		margin: 0 .5vh;
+		width: 7vh;
 	}
 	.leg {
-		border-bottom-right-radius: 15px;
-		border-bottom-left-radius: 15px;
-		height: 16vh;
-		width: 3vh;
+		border-bottom-right-radius: 100vh;
+		border-bottom-left-radius: 100vh;
+		height: 17vh;
+		width: 2.5vh;
 	}
 	.left-leg {
-		margin-right: 14px;
+		margin-right: 2vh;
 	}
 </style>
