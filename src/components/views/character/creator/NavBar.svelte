@@ -9,20 +9,20 @@
 
 	let proceed
 
-	const backButton = '&ltrif;'
+	const backButton = '<'
 
-	$: nextButton = '&#10006;'
+	$: nextButton = 'X'
 
 	const back = _ => {
 		$character.meta.step--
 		if ($character.meta.step < 0) GoTo('/character/new')
-		document.getElementsByTagName('main')[0].scrollTop = 0
+		window.scrollTo(0,0)
 	}
 
 	const next = _ => {
 		proceedStatus()
 		if (proceed) $character.meta.step++
-		document.getElementsByTagName('main')[0].scrollTop = 0
+		window.scrollTo(0,0)
 	}
 
 	const proceedStatus = _ => {
@@ -33,8 +33,8 @@
 			(current == 2 && Skills.remaining($character) != 0) ||
 			(current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))
 		) proceed = false
-		if (proceed) nextButton = '&rtrif;'
-		else nextButton = '&#10006;'
+		if (proceed) nextButton = '>'
+		else nextButton = 'X'
 	}
 
     beforeUpdate(_ => proceedStatus())

@@ -25,7 +25,7 @@
 
 <!-- {#if userStore} -->
 	<button class='btn-box user-btn' bind:this={trigger} on:click={toggle}>
-		<div class='btn-icon'>&#9776;</div>
+		<div class='btn-icon'>::</div>
 	</button>
 	<ClickOutside on:clickoutside={hide} exclude={[trigger]}>
 		{#if showMenu}

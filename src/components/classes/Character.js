@@ -161,8 +161,8 @@ export default class Character {
 				name: `Dodge`,
 				score: 0
 			},
-			experience: {
-				name: `Experience`,
+			xp: {
+				name: `XP`,
 				score: 3,
 				current: null
 			},
@@ -259,9 +259,9 @@ export default class Character {
 	}
 	updateAbilities() {
 		this.abilities = AbilitiesList.masterList.filter(a => a.taken)
-		this.properties.experience.current = this.properties.experience.score
+		this.properties.xp.current = this.properties.xp.score
 		if (this.abilities.length) {
-			this.abilities.forEach(a => this.properties.experience.current -= (a.taken * a.xp))
+			this.abilities.forEach(a => this.properties.xp.current -= (a.taken * a.xp))
 		}
 		return this
 	}

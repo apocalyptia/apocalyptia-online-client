@@ -19,7 +19,7 @@
 					{$character.properties.carry.name}: {$character.properties.carry.current} / {$character.properties.carry.score}
 				</div>
 				<div class='sheet-card-item'>
-					XP: {$character.properties.experience.current} / {$character.properties.experience.score}
+					XP: {$character.properties.xp.current} / {$character.properties.xp.score}
 				</div>
 				<div class='sheet-card-item'>
 					{$character.properties.psyche.name}: 

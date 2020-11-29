@@ -10,8 +10,8 @@
 			{$character.properties.speed.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.experience.name}: 
-			{$character.properties.experience.score}
+			{$character.properties.xp.name}: 
+			{$character.properties.xp.score}
 		</div>
 		<div class='prop-item'>
 			{$character.properties.carry.name}:

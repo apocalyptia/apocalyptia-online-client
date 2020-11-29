@@ -6,7 +6,7 @@ const Brains = new Rule({
 	desc: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
 		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
-		`This Trait is a factor in the Experience and Intellect Properties.`,
+		`This Trait is a factor in the XP and Intellect Properties.`,
 		`Brains is the parent Trait for the following Skills: ${BrainsSkillsList.map(skill => skill.name).join(', ')}.`,
 	],
 	type: `Trait`

@@ -13,7 +13,7 @@
 
 	let MasterAbilityList = AbilitiesList.masterList
 
-	$: remainingXP = $character.properties.experience.current
+	$: remainingXP = $character.properties.xp.current
 
 	beforeUpdate(_ => $character = $character.updateAbilities())
 </script>

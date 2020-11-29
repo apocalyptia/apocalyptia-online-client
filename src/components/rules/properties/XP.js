@@ -1,7 +1,7 @@
 import Rule from 'classes/Rule.js'
 
-const Experience = new Rule({
-	name: `Experience`,
+const XP = new Rule({
+	name: `XP`,
 	desc: [
 		`Experience (XP) = Brains x 3`,
 		`Experience represents how much you have learned up to now.`,
@@ -12,12 +12,12 @@ const Experience = new Rule({
 		`You may also spend 1XP per round to regain 1 Luck Point.`,
 	],
 	formula: (c) => {
-		c.properties.experience.score = c.traits.brains.score * 3
-		if (c.properties.experience.current == null) {
-			c.properties.experience.current = c.traits.brains.score * 3
+		c.properties.xp.score = c.traits.brains.score * 3
+		if (c.properties.xp.current == null) {
+			c.properties.xp.current = c.traits.brains.score * 3
 		}
 	},
 	type: `Property`
 })
 
-export default Experience
+export default XP

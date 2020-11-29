@@ -1,7 +1,7 @@
 import Block from 'properties/Block.js'
 import Carry from 'properties/Carry.js'
 import Dodge from 'properties/Dodge.js'
-import Experience from 'properties/Experience.js'
+import XP from 'properties/XP.js'
 import Health from 'properties/Health.js'
 import Intellect from 'properties/Intellect.js'
 import Luck from 'properties/Luck.js'
@@ -14,7 +14,7 @@ export default {
 		Block,
 		Carry,
 		Dodge,
-		Experience,
+		XP,
 		Health,
 		Intellect,
 		Luck,

@@ -38,7 +38,7 @@
 		border-radius: var(--radius);
 		border: 1px solid var(--sec-color);
 		height: var(--std-input-height);
-		width: var(--s200);
+		width: var(--s100);
 	}
 	input[type="range"]::-webkit-slider-thumb {
 		-webkit-appearance: none;
@@ -46,7 +46,7 @@
 		border-radius: var(--radius);
 		border: 1px solid var(--sec-color);
 		height: var(--std-input-height);
-		width: var(--s200);
+		width: var(--s100);
 	}
 	input[type="range"]:hover::-moz-range-thumb {
 		-moz-appearance: none;

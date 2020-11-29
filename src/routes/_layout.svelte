@@ -175,15 +175,15 @@
 		width: 100vw;
 		z-index: 5;
 	}
-	@keyframes wobble {
+	/* @keyframes wobble {
 		0.0% { transform: skew(25deg); }
 		0.1% { transform: skew(0deg); }
 		0.2% { transform: skew(-25deg); }
 		0.3% { transform: skew(0deg); }
-	}
+	} */
 
 	main {
-		height: calc(100vh - var(--square));
+		bottom: 0;
 		overflow: scroll;
 		position: absolute;
 		top: var(--square);
