@@ -15,7 +15,7 @@
 
 <style>
     .subrule-details {
-		margin-bottom: var(--s100);
+		margin: var(--s100);
 	}
 	.sub-name {
 		font-weight: bold;

@@ -1,15 +1,23 @@
 <script>
-	export let chapterName = 'Manual'
-	export let searchTerm = ''
+	import { createEventDispatcher } from 'svelte'
+
+	export let chapter = 'Manual'
+
+	let searchTerm = ''
+
+	const dispatch = createEventDispatcher()
+
+	const sendEvent = _ => dispatch('search', searchTerm)
 </script>
 
 
 <div class='manual-header-section'>
-	<div class='rules-name'>{chapterName}</div>
+	<div class='rules-name'>{chapter}</div>
 	<input type='text'
 		class='search-bar'
 		placeholder='Search'
 		bind:value='{searchTerm}'
+		on:keyup={_ => sendEvent(searchTerm)}
 	/>
 </div>
 
@@ -20,8 +28,9 @@
 		border: 1px solid var(--pri-color);
 		display: flex;
 		height: var(--square);
-		justify-content: space-around;
+		justify-content: space-between;
 		left: 0;
+		padding: 0 1ch;
 		position: fixed;
 		right: 0;
 		top: var(--square);
@@ -33,7 +42,7 @@
 	}
 	.search-bar {
 		min-width: 100px;
-		padding: var(--s25) var(--s100);
+		padding: var(--s25) 1ch;
 		text-align: left;
 		width: 45%;
 	}

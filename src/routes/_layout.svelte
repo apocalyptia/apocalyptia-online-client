@@ -40,18 +40,18 @@
 		z-index: 0;
 	}
 	.screen::after {
+		animation: flicker 0.15s infinite;
+		background: rgba(18, 16, 16, 0.1);
+		bottom: 0;
 		content: " ";
 		display: block;
-		position: absolute;
-		top: 0;
 		left: 0;
-		bottom: 0;
-		right: 0;
-		background: rgba(18, 16, 16, 0.1);
 		opacity: 0;
-		z-index: 3;
 		pointer-events: none;
-		animation: flicker 0.15s infinite;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 3;
 	}
 	@keyframes flicker {
 		0% { opacity: 0.27861; }
@@ -79,7 +79,7 @@
 
 	
 	.projection {
-		animation: textShadow .1s infinite;
+		animation: haze .1s infinite;
 		background-size: 100% 2px, 3px 100%;
 		background: 
 			linear-gradient(rgba(18, 16, 16, 0) 100%, rgba(0, 0, 0, 0.25) 100%), 
@@ -96,7 +96,7 @@
 		top: 0;
 		z-index: 1;
 	}
-	@keyframes textShadow {
+	@keyframes haze {
 		0% { text-shadow: 0.4389924193300864px 0 1px rgba(0,30,127,0.5), -0.4389924193300864px 0 1px rgba(127,0,80,0.3), 0 0 3px; }
 		5% { text-shadow: 2.7928974010788217px 0 1px rgba(0,30,127,0.5), -2.7928974010788217px 0 1px rgba(127,0,80,0.3), 0 0 3px; }
 		10% { text-shadow: 0.02956275843481219px 0 1px rgba(0,30,127,0.5), -0.02956275843481219px 0 1px rgba(127,0,80,0.3), 0 0 3px; }
@@ -119,15 +119,6 @@
 		95% { text-shadow: 2.1841838852799786px 0 1px rgba(0,30,127,0.5), -2.1841838852799786px 0 1px rgba(127,0,80,0.3), 0 0 3px; }
 		100% { text-shadow: 2.6208764473832513px 0 1px rgba(0,30,127,0.5), -2.6208764473832513px 0 1px rgba(127,0,80,0.3), 0 0 3px; }
 	}
-
-	/* @keyframes flicker {
-		0%  { transform: scale(.97); }
-		.1% { transform: scale(1); }
-		.2% { transform: scale(.97); }
-		.3% { transform: scale(1); }
-		.4% { transform: scale(.97); }
-		.5% { transform: scale(1); }
-	} */
 
 	.lines {
 		background-repeat: repeat-y;
@@ -174,7 +165,7 @@
 	}
 	
 	.program {
-		animation: wobble 19s linear infinite;
+		/* animation: wobble 19s linear infinite; */
 		height: 100vh;
 		left: 0;
 		overflow: scroll;

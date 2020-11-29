@@ -19,20 +19,19 @@
             <div class='gear-rule'>
                 <GearBlock item={rule} mode={'manual'} />
             </div>
-        {/if}
-        {#if rule.desc != undefined}
+        {:else if rule.desc != undefined}
             <ManualRuleDescription {rule} />
-        {/if}
-        {#if rule.subrules}
-            {#each rule.subrules as subrule}
-                <ManualSubRule {subrule} />
-            {/each}
-        {/if}
-        {#if rule.table != undefined}
-            <ManualRuleTable {rule} />
-        {/if}
-        {#if rule.specs}
-            <ManualRuleSpecialization {rule} />
+            {#if rule.subrules}
+                {#each rule.subrules as subrule}
+                    <ManualSubRule {subrule} />
+                {/each}
+            {/if}
+            {#if rule.table != undefined}
+                <ManualRuleTable {rule} />
+            {/if}
+            {#if rule.specs}
+                <ManualRuleSpecialization {rule} />
+            {/if}
         {/if}
     </div>
 </details>

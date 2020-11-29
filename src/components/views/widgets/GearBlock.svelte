@@ -1,5 +1,6 @@
 <script>
-	export let mode, item
+	export let mode
+	export let item
 
 	const itemProps = [
 		{
@@ -67,15 +68,19 @@
 		<h2>{item.name}</h2>
 		{#if item.desc}
 			{#each item.desc as desc}
-				<div class='gear-desc'>{desc}</div>
+				<p class='gear-desc'>{desc}</p>
 			{/each}
 		{/if}
 		{#each itemProps as prop}
 			{#if item[prop.abv]}
-				<p>
+				<p class='gear-prop'>
 					<u>{prop.name}</u>: 
 					{#if prop.name == 'Quantity' && mode == 'edit'}
-						<input type='number' class='item-qty' min='0' bind:value={item.qty} />
+						<input type='number'
+							class='item-qty'
+							min='0'
+							bind:value={item.qty}
+						/>
 					{:else}
 						{item[prop.abv]}
 					{/if}
@@ -83,12 +88,14 @@
 			{/if}
 		{/each}
 		{#if item && item.hasOwnProperty('attr') && item.attr.length > 0}
-			<p><u>Attributes</u>:</p>
+			<p class='gear-attr'><u>Attributes</u>:</p>
 			<div class='attributes'>
 				{#each item.attr as attr}
-					<div>{attr.name}:{#each attr.desc as line}
-										<p class='attr'>{line}</p>
-									{/each}
+					<div class='attr-type'>
+						{attr.name}:
+						{#each attr.desc as line}
+							<p class='attr'>{line}</p>
+						{/each}
 					</div>
 				{/each}
 			</div>
@@ -101,17 +108,18 @@
 
 
 <style>
-	h2 {
-		margin-bottom: var(--std-margin);
-	}
-	.attributes {
-		margin-left: var(--std-margin);
+
+	h2,
+	.gear-desc,
+	.gear-prop,
+	.gear-attr,
+	.attributes,
+	.attr-type,
+	.attr {
+		margin: var(--std-margin);
 	}
 	.attr {
 		margin-left: calc(var(--std-margin) * 2);
-	}
-	.gear-desc {
-		margin: var(--s100) 0;
 	}
 	.item-qty {
 		width: 20%;

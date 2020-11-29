@@ -14,7 +14,7 @@
 	--s50: calc(var(--s100) * .5);
 	--s66: calc(var(--s100) * .66);
 	--s75: calc(var(--s100) * .75);
-	--s100: 18px;
+	--s100: 3vh;
 	--s110: calc(var(--s100) * 1.1);
 	--s125: calc(var(--s100) * 1.25);
 	--s150: calc(var(--s100) * 1.5);
@@ -157,12 +157,13 @@ fieldset {
 
 /* Center Card */
 .cntr-card {
+	align-items: center;
 	border: calc(var(--std-border) * 2) solid var(--pri-color);
 	box-shadow: var(--s100) var(--s100) 2px var(--sec-color-trans);
 	display: flex;
 	flex-direction: column;
-	height: 40vh;
-	justify-content: space-around;
+	/* height: 40vh; */
+	justify-content: space-between;
 	left: 50%;
 	max-width: 800px;
 	padding: var(--std-padding);
@@ -172,7 +173,7 @@ fieldset {
 	transform: translateY(calc(-50% - var(--square))) translateX(-50%);
 	width: 70vw;
 }
-.cntr-card .card-title {
+.cntr-card a {
 	margin: var(--std-margin);
 }
 
@@ -344,6 +345,9 @@ button:invalid {
 .link-btn:hover {
 	background-color: var(--pri-color);
 	color: var(--sec-color);
+}
+.cntr-card .link-btn {
+	width: 100%;
 }
 .menu-btn {
 	align-items: center;
@@ -544,11 +548,11 @@ textarea:invalid {
 
 /* ----- MANUAL ----- */
 
-.manual-page-body {
+.manual-body {
 	height: calc(100vh - (var(--square) * 2));
 	overflow: scroll;
 	position: absolute;
 	top: var(--square);
-	padding: var(--square);
+	padding: var(--std-padding);
 	width: 100%;
 }

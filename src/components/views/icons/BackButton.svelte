@@ -10,6 +10,7 @@
 
 <style>
     .back-btn {		
+		background-color: var(--sec-color-trans);
 		bottom: 0;
 		font-size: var(--s150);
 		height: var(--square);

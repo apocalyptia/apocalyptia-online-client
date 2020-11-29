@@ -1,11 +1,11 @@
 <script>
-    import ManualRule from 'views/manual/ManualRule.svelte'
+	import ManualRule from 'views/manual/ManualRule.svelte'
 
-    export let ruleList
+	export let ruleList
 </script>
 
 
-<div class='manual-page-body'>
+<div class='manual-body'>
 	{#if ruleList.length}
 		<div class='rule-body-section'>
 			{#each ruleList as rule}
@@ -21,12 +21,12 @@
 
 
 <style>
-    .rule-body-section {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-    }
-    .no-results {
-        padding: var(--square);
-    }
+	.rule-body-section {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+	.no-results {
+		padding: var(--std-padding);
+	}
 </style>
