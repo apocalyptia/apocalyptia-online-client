@@ -16,8 +16,8 @@
 <style>
 	.title-bar {
 		display: flex;
-		max-height: var(--square);
-		position: sticky;
+		height: var(--square);
+		position: fixed;
 		top: 0;
 		transition: top 0.3s linear;
 		width: 100vw;

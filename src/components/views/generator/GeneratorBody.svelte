@@ -23,7 +23,7 @@
 		padding-right: var(--std-padding);
 		padding-top: var(--std-padding);
 		position: absolute;
-		top: 0;
+		top: var(--square);
 		width: 100%;
 	}
 	h1 {

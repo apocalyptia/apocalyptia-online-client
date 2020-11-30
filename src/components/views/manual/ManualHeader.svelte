@@ -25,7 +25,7 @@
 <style>
     .manual-header-section {
 		align-items: center;
-		background-color: var(--sec-color);
+		background-color: var(--sec-color-trans);
 		border: 1px solid var(--pri-color);
 		display: flex;
 		height: var(--square);

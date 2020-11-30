@@ -42,7 +42,7 @@
 		padding: var(--std-padding);
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: var(--square);
 		width: 100%;
 	}
 </style>

@@ -258,7 +258,7 @@ a:focus {
 
 /* Buttons */
 button {
-	background-color: transparent;
+	background-color: var(--sec-color);
 	border: var(--std-border) solid var(--pri-color);
 	border-radius: var(--radius);
 	color: var(--pri-color);
@@ -271,17 +271,17 @@ button {
 }
 button:active {
 	background-color: var(--pri-color-trans);
-	color: var(--sec-color);
+	color: var(--sec-color-trans);
 }
 button:disabled {
-	border-color: var(--sec-color);
-	color: var(--sec-color);
+	border-color: var(--sec-color-trans);
+	color: var(--sec-color-trans);
 }
 button:focus,
 button:hover {
 	background-color: var(--pri-color);
 	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
-	color: var(--sec-color);
+	color: var(--sec-color-trans);
 }
 button:invalid {
 	border-color: var(--ter-color);
