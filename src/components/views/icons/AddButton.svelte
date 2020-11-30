@@ -1,5 +1,5 @@
 <button class='btn-box add-btn'>
-	<div class='btn-icon'>&#10010;</div>
+	<div class='btn-icon'>+</div>
 </button>
 
 

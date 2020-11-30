@@ -4,7 +4,7 @@
 
 
 <a href={ path } class='back-btn'>
-	<div class='link-btn back-btn'>&#9668;</div>
+	<div class='link-btn back-btn'>&lt;</div>
 </a>
 
 

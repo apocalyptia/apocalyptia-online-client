@@ -9,7 +9,7 @@
 
 	let proceed
 
-	const backButton = '<'
+	const backButton = '&lt;'
 
 	$: nextButton = 'X'
 
@@ -33,7 +33,7 @@
 			(current == 2 && Skills.remaining($character) != 0) ||
 			(current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))
 		) proceed = false
-		if (proceed) nextButton = '>'
+		if (proceed) nextButton = '&gt;'
 		else nextButton = 'X'
 	}
 
@@ -44,15 +44,9 @@
 
 
 <div class='nav-bar'>
-	<button on:click={back} class='link-btn'>
-		{@html backButton}
-	</button>
-	<button on:click={_ => GoTo('/')} class='link-btn'>
-		Home
-	</button>
-	<button on:click={next} class='{proceed ? 'link-btn' : 'crimson-btn' }'>
-		{@html nextButton}
-	</button>
+	<button on:click={back} class='link-btn'>{@html backButton}</button>
+	<button on:click={_ => GoTo('/')} class='link-btn'>Home</button>
+	<button on:click={next} class='{proceed ? 'link-btn' : 'crimson-btn' }'>{@html nextButton}</button>
 </div>
 
 

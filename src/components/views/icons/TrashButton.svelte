@@ -1,12 +1,11 @@
 <script>
-	export let args, deleteFunction
-
-	// const callDeleteFunction = _ => deleteFunction(args)
+	export let args
+	export let deleteFunction
 </script>
 
 
 <button class='btn-box trash-btn' on:click={_ => deleteFunction(args)}>
-	<div class='btn-icon'>&#10006;</div>
+	<div class='btn-icon'>X</div>
 </button>
 
 
