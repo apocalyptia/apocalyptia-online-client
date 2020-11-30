@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import TitleBar from 'views/widgets/TitleBar.svelte'
 </script>
 
@@ -13,7 +12,7 @@
 						<header>
 							<TitleBar />
 						</header>
-						<main transition:fade>
+						<main>
 							<slot />
 						</main>
 					</div>
@@ -77,13 +76,10 @@
 		100% { opacity: 0.24387; }
 	}
 
-	
 	.projection {
 		animation: haze .1s infinite;
 		background-size: 100% 2px, 3px 100%;
-		background: 
-			linear-gradient(rgba(18, 16, 16, 0) 100%, rgba(0, 0, 0, 0.25) 100%), 
-			linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+		background: linear-gradient(rgba(18, 16, 16, 0) 100%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 		bottom: 0;
 		content: ' ';
 		display: block;
@@ -183,10 +179,10 @@
 	} */
 
 	main {
-		bottom: 0;
+		/* bottom: 0;
 		overflow: scroll;
 		position: absolute;
-		top: var(--square);
+		top: var(--square); */
 		width: 100vw;
 		z-index: 6;
 	}

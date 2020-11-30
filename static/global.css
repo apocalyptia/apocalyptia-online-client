@@ -35,9 +35,9 @@
 	/* Global Colors */
 	--pri-color: rgba(0, 255, 0, .85);
 	--pri-color-trans: rgba(0, 255, 0, .5);
-	--sec-color: rgba(15, 30, 15, .8);
+	--sec-color: rgba(15, 30, 15, .85);
 	--sec-color-trans: rgba(15, 30, 15, .5);
-	--ter-color: rgba(220, 20, 60, .8);
+	--ter-color: rgba(220, 20, 60, .85);
 	--ter-color-trans: rgba(220, 20, 60, .5);
 
 	/* Global Layout */
@@ -323,7 +323,7 @@ button:invalid {
 .crimson-btn:focus,
 .crimson-btn:hover {
 	background-color: var(--ter-color-trans);
-	box-shadow: 0 0 15px 5px var(--ter-color-trans);
+	box-shadow: 0 0 15px 5px var(--ter-color);
 	color: var(--sec-color);
 	outline: 3px double var(--ter-color);
 }

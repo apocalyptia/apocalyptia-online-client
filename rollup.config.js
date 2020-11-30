@@ -61,6 +61,7 @@ const onwarn = (warning, onwarn) =>
 			{ find: 'vehicles',			replacement: 'src/components/rules/gear/vehicles' },
 			{ find: 'views',			replacement: 'src/components/views' },
 			{ find: 'wearable',			replacement: 'src/components/rules/gear/equipment/wearable' },
+			{ find: 'widgets',			replacement: 'src/components/views/widgets' },
 		]
 	});
 

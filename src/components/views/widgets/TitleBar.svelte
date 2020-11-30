@@ -1,5 +1,6 @@
 <script>
-	import UserMenu from 'icons/UserMenu.svelte'
+	import MenuButton from 'icons/MenuButton.svelte'
+	import UserMenu from 'widgets/UserMenu.svelte'
 </script>
 
 
@@ -7,8 +8,9 @@
 	<a href='/' class='link-btn title-link'>
 		<span class='app-title'>Apocalyptia Online</span>
 	</a>
-	<UserMenu />
+	<MenuButton />
 </div>
+<UserMenu />
 
 
 <style>
