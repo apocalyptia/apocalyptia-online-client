@@ -106,9 +106,9 @@ table {
 	outline-width: 3px;
 	z-index: 3;
 }
-*:hover {
+/* *:hover {
 	z-index: 6;
-}
+} */
 
 
 /* ----- PAGE ----- */
@@ -549,10 +549,10 @@ textarea:invalid {
 /* ----- MANUAL ----- */
 
 .manual-body {
-	height: calc(100vh - (var(--square) * 2));
+	bottom: 0;
 	overflow: scroll;
 	position: absolute;
-	top: var(--square);
+	top: calc(var(--square) * 2);
 	padding: var(--std-padding);
 	width: 100%;
 }
