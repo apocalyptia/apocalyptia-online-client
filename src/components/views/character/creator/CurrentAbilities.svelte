@@ -23,10 +23,7 @@
 			{#each abilities as ability}
 				<div class='current-ability-row'>
 					<span class='l-col'>
-						{ability.name}
-						{#if ability.opts[0]}
-							&nbsp;({ability.opts[0].name})
-						{/if}
+						{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}
 					</span>
 					<span class='s-col'>{ability.xp}</span>
 					<span class='s-col'>{ability.max}</span>
