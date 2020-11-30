@@ -26,6 +26,6 @@
 
 <style>
 	.character-sheet {
-		padding: var(--std-padding);
+		padding: 0 var(--std-padding);
 	}
 </style>
