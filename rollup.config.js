@@ -40,6 +40,7 @@ const onwarn = (warning, onwarn) =>
 			{ find: 'gear',				replacement: 'src/components/rules/gear' },
 			{ find: 'icons',			replacement: 'src/components/views/icons' },
 			{ find: 'lists',			replacement: 'src/components/rules/lists' },
+			{ find: 'map',				replacement: 'src/components/views/map' },
 			{ find: 'maneuvers',		replacement: 'src/components/rules/maneuvers' },
 			{ find: 'medical',			replacement: 'src/components/rules/gear/equipment/medical' },
 			{ find: 'melee',			replacement: 'src/components/rules/gear/weapons/melee' },
