@@ -68,43 +68,45 @@
 		{#if mode != 'manual'}
 			<h2>{item.name}</h2>
 		{/if}
-		{#if item.desc}
-			{#each item.desc as desc}
-				<p class='gear-desc'>{desc}</p>
-			{/each}
-		{/if}
-		{#each itemProps as prop}
-			{#if item[prop.abv]}
-				<p class='gear-prop'>
-					<u>{prop.name}</u>: 
-					{#if prop.name == 'Quantity' && mode == 'edit'}
-						<input type='number'
-							class='item-qty'
-							min='0'
-							bind:value={item.qty}
-						/>
-					{:else}
-						{item[prop.abv]}
-					{/if}
-				</p>
-			{/if}
-		{/each}
-		{#if item && item.hasOwnProperty('attr') && item.attr.length > 0}
-			<p class='gear-attr'><u>Attributes</u>:</p>
-			<div class='attributes'>
-				{#each item.attr as attr}
-					<div class='attr-type'>
-						{attr.name}:
-						{#each attr.desc as line}
-							<p class='attr'>{line}</p>
-						{/each}
-					</div>
+		<div class='item-details {mode == "manual" ? "extra-padding" : ""}'>
+			{#if item.desc}
+				{#each item.desc as desc}
+					<p class='gear-desc'>{desc}</p>
 				{/each}
-			</div>
-		{/if}
-		{#if item.table}
-			<svelte:component this={item.table}/>
-		{/if}
+			{/if}
+			{#each itemProps as prop}
+				{#if item[prop.abv]}
+					<p class='gear-prop'>
+						<u>{prop.name}</u>: 
+						{#if prop.name == 'Quantity' && mode == 'edit'}
+							<input type='number'
+								class='item-qty'
+								min='0'
+								bind:value={item.qty}
+							/>
+						{:else}
+							{item[prop.abv]}
+						{/if}
+					</p>
+				{/if}
+			{/each}
+			{#if item && item.hasOwnProperty('attr') && item.attr.length > 0}
+				<p class='gear-attr'><u>Attributes</u>:</p>
+				<div class='attributes'>
+					{#each item.attr as attr}
+						<div class='attr-type'>
+							{attr.name}:
+							{#each attr.desc as line}
+								<p class='attr'>{line}</p>
+							{/each}
+						</div>
+					{/each}
+				</div>
+			{/if}
+			{#if item.table}
+				<svelte:component this={item.table}/>
+			{/if}
+		</div>
 	{/if}
 </div>
 
@@ -127,5 +129,8 @@
 	}
 	.item-qty {
 		width: 20%;
+	}
+	.extra-padding {
+		padding: var(--std-padding);
 	}
 </style>
