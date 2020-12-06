@@ -1,28 +1,36 @@
 <script>
 	import d6Roll from 'random/d6Roll.js'
 
+	let randomReady = true
+
+	let rollCount = 0
+
 	let roll = 1
 
 	let mod = 0
 
-	$: result = roll + mod
+	let total = roll + mod
+
+	$: result = total
 
 	let setInterval_ID
 
 	const makeRoll = _ => {
-		setInterval_ID = setInterval(diceRoller, 50)
+		if (randomReady) {
+			randomReady = false
+			rollCount = Math.ceil(Math.random() * 37) + 2
+			setInterval_ID = setInterval(diceRoller, 50)
+		}
 	}
 
-	let rolls = 0
-
 	const diceRoller = _ => {
-		let d6 = d6Roll()
-		if (d6 == -666) d6 = 1
-		roll = d6
-		rolls++
-		if (rolls == 20) {
+		roll = d6Roll()
+		if (roll[0] == 1 && roll[1] == 1) total = 'Botch!'
+		else total = roll.reduce((total, num) => total + num, 0) + mod
+		if (roll[0] == 6) total = `Explode! ${total}`
+		if (rollCount-- == 0) {
 			clearInterval(setInterval_ID)
-			rolls = 0
+			randomReady = true
 		}
 	}
 </script>
@@ -34,12 +42,18 @@
 		<button on:click={_ => makeRoll()}>Random</button>
 	</div>
 	<div class='item-content'>
-		<p class='roll'>Die Roll: {roll}</p>
-		<p>Modifier: <input type='number' 
-							class='mod' 
-							bind:value='{mod}'>
+		<p class='roll'>Die Roll{roll.length > 1 ? 's' : ''}: {roll}</p>
+		<p>Modifier: 
+			<input type='number' 
+				class='mod' 
+				bind:value='{mod}'
+			>
 		</p>
-		<p class='result'>Result: {result}</p>
+		<p class='result'>Result: 
+			<span class='total'>
+				{result}
+			</span>
+		</p>
 	</div>
 </div>
 

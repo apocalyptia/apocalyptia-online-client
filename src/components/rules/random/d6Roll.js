@@ -1,20 +1,11 @@
 import d6 from 'random/d6.js'
 
-export default (mod=0) => {
-	let roll = d6()
-	let total = roll
-	if (roll == 1) { // Botch
-		roll = d6()
-		if (roll == 1) {
-			return -666
-		}
+export default () => {
+	const rolls = [d6()]
+	if (rolls[0] == 1 && d6() == 1) rolls.push(1) // Botch
+	else if (rolls[0] == 6) { // Explode
+		while (rolls[rolls.length - 1] == 6) rolls.push(d6())
 	}
-	if (roll == 6) { // Explode
-		while (roll == 6) {
-			roll = d6()
-			total += roll
-		}
-	}
-	const result = total + mod
-	return result
+	console.log(rolls)
+	return rolls
 }
