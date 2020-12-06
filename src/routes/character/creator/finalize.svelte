@@ -10,7 +10,7 @@
 
 	const deleteCharacter = _ => {
 		GoTo('/')
-		DeleteCharacter(name)
+		DeleteCharacter()
 	}
 
 	const saveCharacter = _ => {

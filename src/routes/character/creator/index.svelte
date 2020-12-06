@@ -21,11 +21,15 @@
         finalize
     ]
 
-    onMount(_ => $character = new Character() )
+    onMount(_ => {
+        $character = new Character()
+        document.getElementById('creator-page').scrollTop = 0
+        console.log(document.getElementById('creator-page'))
+    })
 </script>
 
 
-<div class='creator-page'>
+<div id='creator-page' class='creator-page'>
     <svelte:component this={pages[$character.meta.step]} />
 </div>
 <NavBar />
@@ -39,6 +43,7 @@
         padding: var(--std-padding);
         position: absolute;
         right: 0;
-        top: var(--square);
+        top: 0;
+        margin-top: var(--square);
     }
 </style>

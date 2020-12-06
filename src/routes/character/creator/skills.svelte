@@ -8,7 +8,6 @@
 	import SkillsList from 'lists/SkillsList.js'
 	import Slider from 'views/widgets/Slider.svelte'
 	import { character } from 'stores/characterStore.js'
-import Properties from './properties.svelte';
 
 	$: remaining = Skills.remaining($character)
 </script>

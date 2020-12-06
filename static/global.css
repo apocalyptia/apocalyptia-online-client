@@ -271,9 +271,11 @@ button {
 	height: var(--std-input-height);
 	text-align: center;
 }
-button:active {
+button:active,
+button:focus,
+button:hover {
 	background-color: var(--pri-color-trans);
-	color: var(--sec-color-trans);
+	color: var(--sec-color);
 }
 button:disabled {
 	border-color: var(--sec-color-trans);
@@ -281,9 +283,7 @@ button:disabled {
 }
 button:focus,
 button:hover {
-	background-color: var(--pri-color-trans);
 	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
-	color: var(--sec-color-trans);
 }
 button:invalid {
 	border-color: var(--ter-color);
@@ -367,7 +367,7 @@ details {
 }
 details:active {
 	background-color: var(--pri-color-trans);
-	color: var(--sec-color);
+	color: var(--pri-color);
 }
 summary {
 	align-items: center;

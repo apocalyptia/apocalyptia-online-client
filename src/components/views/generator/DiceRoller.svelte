@@ -42,14 +42,18 @@
 		<button on:click={_ => makeRoll()}>Random</button>
 	</div>
 	<div class='item-content'>
-		<p class='roll'>Die Roll{roll.length > 1 ? 's' : ''}: {roll}</p>
-		<p>Modifier: 
+		<p class='roll'>
+			Die Roll{roll.length > 1 ? 's' : ''}: {roll}
+		</p>
+		<p>
+			Modifier: 
 			<input type='number' 
 				class='mod' 
 				bind:value='{mod}'
 			>
 		</p>
-		<p class='result'>Result: 
+		<p class='result'>
+			Result: 
 			<span class='total'>
 				{result}
 			</span>
