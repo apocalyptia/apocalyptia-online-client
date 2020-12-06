@@ -7,11 +7,11 @@
 
 	let searchTerm = ''
 
-	let ruleList = ManualList.map(r => [...r.list]).flat()
+	$: ruleList = ManualList
 
 	const handleSearch = event => {
 		searchTerm = event.detail
-		ruleList = SearchEngine(searchTerm, ManualList)
+		ruleList = SearchEngine(searchTerm, ManualList.map(r => [...r.list]).flat())
 	}
 </script>
 
@@ -19,24 +19,6 @@
 <svelte:head>
 	<title>Apocalyptia Online - Manual</title>
 </svelte:head>
-<ManualHeader on:search={e => handleSearch(e)} />
-{#if searchTerm}
-	<ManualBody {ruleList} />
-{:else}
-	<div class='manual-body'>
-		{#each ManualList as chapter}
-			<a href={`/manual/${chapter.name.toLowerCase()}`}
-				class='link-btn menu-btn'>
-				{chapter.name}
-			</a>
-		{/each}
-	</div>
-{/if}
+<ManualHeader chapter={'Manual'} on:search={e => handleSearch(e)} />
+<ManualBody chapter={'Manual'} ruleList={searchTerm.length ? ruleList : ManualList} />
 <BackButton path={'/'} />
-
-
-<style>
-	a {
-		width: 100%;
-	}
-</style>

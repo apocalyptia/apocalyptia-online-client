@@ -65,7 +65,9 @@
 
 <div class='gear-block'>
 	{#if item}
-		<h2>{item.name}</h2>
+		{#if mode != 'manual'}
+			<h2>{item.name}</h2>
+		{/if}
 		{#if item.desc}
 			{#each item.desc as desc}
 				<p class='gear-desc'>{desc}</p>
@@ -108,18 +110,20 @@
 
 
 <style>
-
-	h2,
+	h2 {
+		padding-bottom: var(--std-padding);
+	}
 	.gear-desc,
 	.gear-prop,
 	.gear-attr,
-	.attributes,
-	.attr-type,
-	.attr {
-		margin: var(--std-margin);
+	.attributes {
+		padding-bottom: var(--std-padding);
+	}
+	.attr-type {
+		padding-left: var(--std-padding);
 	}
 	.attr {
-		margin-left: calc(var(--std-margin) * 2);
+		padding-left: calc(var(--std-padding) * 2);
 	}
 	.item-qty {
 		width: 20%;

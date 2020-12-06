@@ -67,9 +67,6 @@
 		width: 80vw;
 		z-index: 9;
 	}
-	.modal-content {
-		margin: var(--std-margin);
-	}
 	.stats-section {
 		align-items: baseline;
 		display: flex;

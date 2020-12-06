@@ -1,27 +1,25 @@
 <script>
-    import GearBlock from 'views/widgets/GearBlock.svelte'
-    import RandomRoll from 'random/RandomRoll.js'
+	import GearBlock from 'views/widgets/GearBlock.svelte'
+	import RandomRoll from 'random/RandomRoll.js'
 
-    export let category
+	export let category
 
-    let item = ''
+	let item = ''
 
-    const randomItem = _ => item = RandomRoll(category.list)
+	const randomItem = _ => item = RandomRoll(category.list)
 </script>
 
 
 <div class='item-category'>
-    <h1>{category.name}</h1>
-    <div class='item-content'>
-        {#if item}
-            <GearBlock {item} mode={'manual'}/>
-        {/if}
-    </div>
-    <div class='btn-row'>
-        <button on:click={_ => randomItem()}>
-            Random
-        </button>
-    </div>
+	<div class='category-header'>
+		<div class='category-name'>{category.name}</div>
+		<button on:click={_ => randomItem()}>Random</button>
+	</div>
+	{#if item}
+		<div class='item-content'>
+			<GearBlock {item} mode={'generator'}/>
+		</div>
+	{/if}
 </div>
 
 
@@ -31,10 +29,18 @@
 		padding: var(--std-padding);
 		margin: var(--std-margin) 0;
 	}
-	h1 {
-		margin: auto;
+	.category-header {
+		display: flex;
+	}
+	.category-name {
+		align-items: center;
+		display: flex;
+		flex: 2;
+	}
+	button {
+		flex: 1;
 	}
 	.item-content {
-		margin: var(--std-margin) 0;
+		padding-top: var(--std-margin);
 	}
 </style>

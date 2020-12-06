@@ -26,10 +26,9 @@
 	.ability-card {
 		border: 1px solid;
 		margin: var(--std-margin);
-		padding: var(--std-padding);
 	}
 	.ability-card:hover {
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 		color: var(--sec-color);
 		cursor: pointer;
 	}

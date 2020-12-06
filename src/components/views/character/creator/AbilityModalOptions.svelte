@@ -9,11 +9,11 @@
 
 <div class='options-section'>
 	{#each OptionList as ability}
-		<div class='ability-section'>
-			<div class='ability-name-label'>
+		<div class='ability-selection'>
+			<span class='ability-name-label'>
 				{ability.opts[0].name}
-			</div>
-			<div class='taken-label'>Taken:
+			</span>
+			<span class='taken-label'>Taken:
 				<select
 					name={ability.name}
 					bind:value={ability.taken}
@@ -23,7 +23,7 @@
 						<option value={i}>{i}</option>
 					{/each}
 				</select>
-			</div>
+			</span>
 		</div>
 	{/each}
 </div>
@@ -33,13 +33,17 @@
 	.options-section {
 		width: 100%;
 	}
-	.ability-section {
+	.ability-selection {
 		align-items: center;
 		border: 1px dashed;
 		display: flex;
 		justify-content: space-between;
 		margin: var(--std-margin) auto;
 		padding: var(--s50);
+		overflow-x: hidden;
+	}
+	.ability-name-label {
+		overflow-x: hidden;
 	}
 	select {
 		width: var(--square);

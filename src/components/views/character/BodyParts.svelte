@@ -170,7 +170,7 @@
 		top: 20vh;
 	}
 	.body-part {
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 	}
 	.body-part-numbers {
 		margin: 5px;

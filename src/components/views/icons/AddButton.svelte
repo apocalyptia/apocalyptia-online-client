@@ -6,7 +6,7 @@
 <style>
 	.add-btn {
 		-webkit-text-fill-color: var(--sec-color);
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 		border: 1px solid var(--pri-color);
 		font-size: var(--s150);
 		font-weight: bold;

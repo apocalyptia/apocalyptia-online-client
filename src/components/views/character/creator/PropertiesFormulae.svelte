@@ -22,7 +22,7 @@
 
 <style>
 	.formulae-details {
-		margin: var(--std-margin);
+		margin: var(--std-margin) 0;
 	}
 	li {
 		margin: var(--std-margin);

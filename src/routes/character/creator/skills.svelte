@@ -53,17 +53,17 @@ import Properties from './properties.svelte';
 
 <style>
 	.item-block {
-		margin: var(--std-margin);
+		margin: var(--std-margin) 0;
 	}
 	.group-label {
 		font-weight: bold;
 	}
 	.max-score {
 		font-weight: bold;
-		margin-top: var(--s150);
-		margin-left: var(--std-margin);
+		margin-top: var(--std-margin);
+		text-align: center;
 	}
 	.stat-range {
-		margin: var(--std-margin);
+		padding: var(--std-padding);
 	}
 </style>

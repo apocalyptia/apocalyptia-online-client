@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
 
-	export let chapter = 'Manual'
+	export let chapter
 
 	let searchTerm = ''
 

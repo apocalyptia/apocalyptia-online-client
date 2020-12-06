@@ -33,7 +33,7 @@
 
 <style>
     .creator-page {
-        bottom: var(--square);
+        bottom: var(--std-input-height);
         left: 0;
         overflow: scroll;
         padding: var(--std-padding);

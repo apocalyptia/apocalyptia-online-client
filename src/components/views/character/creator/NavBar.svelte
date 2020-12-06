@@ -11,7 +11,7 @@
 
 	const backButton = '&lt;'
 
-	$: nextButton = 'X'
+	$: nextButton = 'x'
 
 	const back = _ => {
 		$character.meta.step--
@@ -34,7 +34,7 @@
 			(current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))
 		) proceed = false
 		if (proceed) nextButton = '&gt;'
-		else nextButton = 'X'
+		else nextButton = 'x'
 	}
 
     beforeUpdate(_ => proceedStatus())
@@ -44,9 +44,17 @@
 
 
 <div class='nav-bar'>
-	<button on:click={back} class='link-btn'>{@html backButton}</button>
-	<button on:click={_ => GoTo('/')} class='link-btn'>Home</button>
-	<button on:click={next} class='{proceed ? 'link-btn' : 'crimson-btn' }'>{@html nextButton}</button>
+	<button on:click={back}>
+		{@html backButton}
+	</button>
+	<button on:click={_ => GoTo('/')}>
+		Home
+	</button>
+	<button on:click={next}
+		class='{proceed ? '' : 'crimson-btn' }'
+	>
+		{@html nextButton}
+	</button>
 </div>
 
 
@@ -59,9 +67,10 @@
 		width: 100%;
 		z-index: 6;
 	}
-	.crimson-btn,
-	.link-btn {
+	button {
 		flex: 1;
-		font-size: var(--s125);
+	}
+	.crimson-btn {
+		font-size: var(--s150);
 	}
 </style>

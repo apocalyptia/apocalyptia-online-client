@@ -34,7 +34,7 @@
 	}
 	input[type="range"]::-moz-range-thumb {
 		-moz-appearance: none;
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 		border-radius: var(--radius);
 		border: 1px solid var(--sec-color);
 		height: var(--std-input-height);
@@ -42,7 +42,7 @@
 	}
 	input[type="range"]::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 		border-radius: var(--radius);
 		border: 1px solid var(--sec-color);
 		height: var(--std-input-height);

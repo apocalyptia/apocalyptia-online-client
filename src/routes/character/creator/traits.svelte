@@ -42,6 +42,6 @@
 
 <style>
 	.trait-selection {
-		margin: var(--std-margin);
+		padding: var(--std-padding) 0;
 	}
 </style>

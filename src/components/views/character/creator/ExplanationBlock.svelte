@@ -8,3 +8,10 @@
         <p>{line}</p>
     {/each}
 </div>
+
+
+<style>
+    .explanation {
+        margin: var(--std-margin) 0;
+    }
+</style>

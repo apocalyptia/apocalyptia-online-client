@@ -1,32 +1,31 @@
 <script>
 	import ManualRule from 'views/manual/ManualRule.svelte'
 
-	export let ruleList
+	export let chapter, ruleList
 </script>
 
 
 <div class='manual-body'>
-	{#if ruleList.length}
-		<div class='rule-body-section'>
-			{#each ruleList as rule}
-				<ManualRule {rule} />
-			{/each}
-		</div>
+	{#if chapter == 'Manual'}
+		{#each ruleList as c}
+			<div>
+				<a href={`/manual/${c.name.toLowerCase()}`} class='link-btn'>
+					{c.name}
+				</a>
+			</div>
+		{/each}
+	{:else if ruleList.length}
+		{#each ruleList as rule}
+			<ManualRule {rule} />
+		{/each}
 	{:else}
-		<div class='no-results'>
-			<p>No results.</p>
-		</div>
+		<p>No results.</p>
 	{/if}
 </div>
 
 
 <style>
-	.rule-body-section {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-	}
-	.no-results {
+	p {
 		padding: var(--std-padding);
 	}
 </style>

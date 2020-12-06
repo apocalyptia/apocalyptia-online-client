@@ -82,11 +82,11 @@
 		width: 100%;
 	}
 	.character-name:hover {
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 		color: var(--sec-color);
 	}
 	.stored-character:focus {
-		background-color: var(--pri-color);
+		background-color: var(--pri-color-trans);
 		color: var(--sec-color);
 	}
 	.controls {

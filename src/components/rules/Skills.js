@@ -30,7 +30,7 @@ const remaining = (c) => {
 export default {
 	name: `Skills`,
 	text: [
-		`You get Brains x 6 Skill points to assign.`,
+		`You get Brains x 6 Skill points.`,
 		`Skills range from 0 to 6.`,
 		`Skill rolls are [d6 + Skill].`,
 		`Trait scores set the limit for their Skills.`,

@@ -8,7 +8,7 @@
 
 
 <div class='options-section'>
-	<div class='ability-section'>
+	<div class='ability-selection'>
 		<div class='ability-name-label'>
 			{ability.name}
 		</div>
@@ -31,13 +31,16 @@
 	.options-section {
 		width: 100%;
 	}
-	.ability-section {
+	.ability-selection {
 		align-items: center;
 		border: 1px dashed;
 		display: flex;
 		justify-content: space-between;
 		margin: var(--std-margin) auto;
 		padding: var(--s50);
+	}
+	.ability-name-label {
+		overflow-x: hidden;
 	}
 	select {
 		width: var(--square);

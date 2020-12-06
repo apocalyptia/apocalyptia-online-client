@@ -1,34 +1,45 @@
 <script>
 	import d6Roll from 'random/d6Roll.js'
 
-	let roll = 0, mod = 0, result = 0
+	let roll = 1
 
-	const rolld6 = _ => {
-		roll = d6Roll()
-		if (roll == -666) {
-			roll = '1, 1'
-			result = 'Botch!'
+	let mod = 0
+
+	$: result = roll + mod
+
+	let setInterval_ID
+
+	const makeRoll = _ => {
+		setInterval_ID = setInterval(diceRoller, 50)
+	}
+
+	let rolls = 0
+
+	const diceRoller = _ => {
+		let d6 = d6Roll()
+		if (d6 == -666) d6 = 1
+		roll = d6
+		rolls++
+		if (rolls == 20) {
+			clearInterval(setInterval_ID)
+			rolls = 0
 		}
-		else result = roll + mod
 	}
 </script>
 
 
 <div class='item-category'>
-	<h1>d6 Roll</h1>
+	<div class='category-header'>
+		<div class='category-name'>d6 Roll</div>
+		<button on:click={_ => makeRoll()}>Random</button>
+	</div>
 	<div class='item-content'>
-		<p>
-			Modifier: <input type='number' 
+		<p class='roll'>Die Roll: {roll}</p>
+		<p>Modifier: <input type='number' 
 							class='mod' 
 							bind:value='{mod}'>
 		</p>
-		<p>Roll: {roll}</p>
-		<h1>Result: {result} </h1>
-	</div>
-	<div class='btn-row'>
-		<button on:click={rolld6}>
-			Random
-		</button>
+		<p class='result'>Result: {result}</p>
 	</div>
 </div>
 
@@ -39,13 +50,27 @@
 		padding: var(--std-padding);
 		margin: var(--std-margin) 0;
 	}
-	h1 {
-		margin: auto;
+	.category-header {
+		display: flex;
+	}
+	.category-name {
+		align-items: center;
+		display: flex;
+		flex: 2;
+		font-size: var(--s125);
+	}
+	button {
+		flex: 1;
 	}
 	.item-content {
-		margin: var(--std-margin) 0;
+		padding-top: var(--std-margin);
+	}
+	.result {
+		font-size: var(--s150);
+		font-weight: bold;
 	}
 	.mod {
+		margin: var(--std-margin) 0;
 		width: 6ch;
 	}
 </style>

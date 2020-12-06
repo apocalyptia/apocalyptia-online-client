@@ -1,21 +1,20 @@
 <script>
 	import { fade } from 'svelte/transition'
 	import menuStore from 'stores/menuStore.js'
-
-	$: showMenu = $menuStore.open
+	import ShadowBackground from 'widgets/ShadowBackground.svelte'
 </script>
 
 
 <div on:click={_ => $menuStore = $menuStore.toggle()}>
-	{#if showMenu}
+	{#if $menuStore.open}
 		<nav class='user-menu' transition:fade>
 			<a href='/character' class='link-btn'>Character</a>
 			<a href='/manual' class='link-btn'>Manual</a>
 			<a href='/generator' class='link-btn'>Generator</a>
 		</nav>
 	{/if}
-	</div>
-<div class='{showMenu ? "shadow" : "invisible"}'></div>
+	<ShadowBackground active={$menuStore.open} />
+</div>
 
 
 <style>
@@ -32,17 +31,5 @@
 	a {
 		border: none;
 		height: calc(var(--square) * 1.5);
-	}
-	.shadow {
-		background: rgba(0, 0, 0, .66);
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 100vw;
-		z-index: 10;
-	}
-	.invisible {
-		display: none;
 	}
 </style>

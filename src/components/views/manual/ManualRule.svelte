@@ -10,7 +10,7 @@
 </script>
 
 
-<details class='rule-ref' bind:open={rule.visible}>
+<details bind:open={rule.visible}>
     <summary>
         {rule.name}{typeof rule == "Skill" ? " Skill" : "" }
     </summary>
@@ -35,18 +35,3 @@
         {/if}
     </div>
 </details>
-
-
-<style>
-    .rule-ref {
-		margin-bottom: var(--s200);
-		width: 100%;
-	}
-	@media only screen and (min-width: 650px) {
-		.rule-ref {
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 80%;
-		}
-	}
-</style>

@@ -21,7 +21,7 @@ const remaining = (c) => {
 export default {
 	name: `Traits`,
 	text: [
-		`You get ${startingPoints} Trait points to assign.`,
+		`You get ${startingPoints} Trait points.`,
 		`Traits range from 1 to ${maxPoints}.`,
 		`Trait rolls are [d6 + Trait].`,
 		`Trait scores set the limit for their Skills.`,

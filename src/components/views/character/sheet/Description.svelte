@@ -29,7 +29,7 @@
 					{/if}
 				</div>
 				<div class='sheet-card-item'>
-					<span>Height:</span> 
+					<span>Ht:</span> 
 					{#if mode == 'edit'}
 						<input type='text' class='sheet-value' bind:value={$character.description.height.value} />
 					{:else if mode == 'readonly'}
@@ -37,7 +37,7 @@
 					{/if}
 				</div>
 				<div class='sheet-card-item'>
-					<span>Weight:</span> 
+					<span>Wt:</span> 
 					{#if mode == 'edit'}
 						<input type='text' class='sheet-value' bind:value={$character.description.weight.value} />
 					{:else if mode == 'readonly'}
