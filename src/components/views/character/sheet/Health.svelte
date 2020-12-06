@@ -2,7 +2,7 @@
 	import BodyParts from 'views/character/BodyParts.svelte'
 	import { character } from 'stores/characterStore.js'
 
-	export let mode
+	export let mode = 'edit'
 </script>
 
 

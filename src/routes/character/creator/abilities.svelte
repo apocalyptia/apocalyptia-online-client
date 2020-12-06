@@ -11,6 +11,8 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
+	export let creator
+
 	let MasterAbilityList = AbilitiesList.masterList
 
 	$: remainingXP = $character.properties.xp.current
@@ -19,7 +21,7 @@
 </script>
 
 
-<PageHeader rule={'Abilities'} />
+<PageHeader {creator} step={$character.meta.step} />
 <ExplanationBlock rule={Abilities} />
 <PointsRemaining points={remainingXP} />
 {#if $character.abilities.length}

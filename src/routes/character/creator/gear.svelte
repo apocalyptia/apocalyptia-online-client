@@ -7,13 +7,15 @@
 	import { character } from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
+	export let creator
+
 	let gearedUp = false
 
 	beforeUpdate(_ => gearedUp = Object.values($character.gear).every(g => g.inventory.length))
 </script>
 
 
-<PageHeader rule={'Gear'} />
+<PageHeader {creator} step={$character.meta.step} />
 <div class='explanation'>
 	<p>You start with some random Gear:</p>
 	<p>One piece of Armor</p>

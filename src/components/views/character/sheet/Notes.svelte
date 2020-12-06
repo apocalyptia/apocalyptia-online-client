@@ -1,7 +1,7 @@
 <script>
 	import { character } from 'stores/characterStore.js'
 
-	export let mode
+	export let mode = 'edit'
 </script>
 
 

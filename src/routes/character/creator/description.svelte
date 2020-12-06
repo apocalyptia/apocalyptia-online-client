@@ -10,10 +10,12 @@
 	import RandomSkin from 'random/RandomSkin.js'
 	import RandomWeight from 'random/RandomWeight.js'
 	import { character } from 'stores/characterStore.js'
+
+	export let creator
 </script>
 
 
-<PageHeader rule={'Description'} />
+<PageHeader {creator} step={$character.meta.step} />
 <div class='section-card'>
 	<div class='block-row'>
 		<div class='character-container'>

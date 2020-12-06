@@ -1,7 +1,7 @@
 <script>
 	import { character } from 'stores/characterStore.js'
 
-	export let readonly
+	export let mode = 'readonly'
 </script>
 
 
@@ -23,7 +23,7 @@
 				</div>
 				<div class='sheet-card-item'>
 					{$character.properties.psyche.name}: 
-					{#if readonly}
+					{#if mode == 'readonly'}
 						{$character.properties.psyche.current}
 					{:else}
 						<input type='number'
@@ -49,7 +49,7 @@
 				</div>
 				<div class='sheet-card-item'>
 					{$character.properties.luck.name}: 
-					{#if readonly}
+					{#if mode == 'readonly'}
 						{$character.properties.luck.current}
 					{:else}
 						<input type='number'

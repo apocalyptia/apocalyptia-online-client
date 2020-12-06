@@ -22,10 +22,3 @@
 	<Gear {mode} />
 	<Notes {mode} />
 </div>
-
-
-<style>
-	.character-sheet {
-		padding: 0 var(--std-padding);
-	}
-</style>

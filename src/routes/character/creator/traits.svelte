@@ -9,11 +9,13 @@
 	import TraitsList from 'lists/TraitsList.js'
 	import { character } from 'stores/characterStore.js'
 
+	export let creator
+
 	$: remaining = Traits.remaining($character)
 </script>
 
 
-<PageHeader rule={'Traits'} />
+<PageHeader {creator} step={$character.meta.step} />
 <ExplanationBlock rule={Traits} />
 <PointsRemaining points={remaining} />
 <div class='section-card'>

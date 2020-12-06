@@ -10,10 +10,12 @@
 	import { character } from 'stores/characterStore.js'
 
 	$: remaining = Skills.remaining($character)
+
+	export let creator
 </script>
 
 
-<PageHeader rule={'Skills'} />
+<PageHeader {creator} step={$character.meta.step} />
 <ExplanationBlock rule={Skills} />
 <PointsRemaining points={remaining} />
 	{#each SkillsList.groups as group}

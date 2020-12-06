@@ -2,7 +2,9 @@
 	import AdjustUIColor from 'utils/AdjustUIColor.js'
 	import { onMount } from 'svelte'
 
-	export let character, readonly = true
+	export let character
+
+	export let mode = 'readonly'
 
 	onMount(_ => AdjustUIColor($character))
 </script>
@@ -15,7 +17,7 @@
 				{$character.health.head.name}
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.head.score}
 				{:else}
 					<input type='number'
@@ -32,7 +34,7 @@
 				{$character.health.leftArm.name}
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.leftArm.score}
 				{:else}
 					<input type='number'
@@ -48,7 +50,7 @@
 				{$character.health.leftLeg.name}
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.leftLeg.score}
 				{:else}
 					<input type='number'
@@ -80,7 +82,7 @@
 				{$character.health.torso.name}
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.torso.score}
 				{:else}
 					<input type='number'
@@ -97,7 +99,7 @@
 				{$character.health.rightArm.name}
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.rightArm.score}
 				{:else}
 					<input type='number'
@@ -113,7 +115,7 @@
 				{$character.health.rightLeg.name}
 			</div>
 			<div class='body-part-numbers'>
-				{#if readonly}
+				{#if mode == 'readonly'}
 					{$character.health.rightLeg.score}
 				{:else}
 					<input type='number'
