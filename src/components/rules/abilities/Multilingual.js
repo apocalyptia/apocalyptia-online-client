@@ -4,7 +4,7 @@ import LanguageList from 'lists/LanguageList.js'
 const Multilingual = new Ability({
 	name: `Multilingual`,
 	desc: [
-		`Learn a different form of communication.`,
+		`Learn a new form of communication.`,
 	],
 	max: 1,
 	xp: 6,

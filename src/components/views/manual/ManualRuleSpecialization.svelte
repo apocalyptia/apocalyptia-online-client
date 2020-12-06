@@ -1,5 +1,7 @@
 <script>
     export let rule
+
+    console.log(rule)
 </script>
 
 
@@ -7,8 +9,8 @@
     {#each Object.values(rule.specs) as spec}
         <li>
             <div class='sub-name'>{spec.name}</div>
-            {#each spec.description as spec_desc}
-                <p class='spec-desc'>{spec_desc}</p>
+            {#each spec.desc as desc}
+                <p class='spec-desc'>{desc}</p>
             {/each}
         </li>
     {/each}
@@ -16,7 +18,10 @@
 
 
 <style>
+    li {
+		margin: var(--s100);
+    }
     .spec-desc {
-		margin-bottom: var(--s100);
+		margin-left: var(--s100);
 	}
 </style>
