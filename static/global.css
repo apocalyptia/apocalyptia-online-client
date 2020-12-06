@@ -38,6 +38,7 @@
 	--sec-color: rgba(15, 30, 15, .85);
 	--sec-color-trans: rgba(15, 30, 15, .5);
 	--ter-color: rgba(220, 20, 60, .85);
+	--ter-color-semi: rgba(220, 20, 60, .5);
 	--ter-color-trans: rgba(220, 20, 60, .15);
 
 	/* Global Layout */
@@ -322,13 +323,13 @@ button:invalid {
 .crimson-btn:active,
 .crimson-btn:focus,
 .crimson-btn:hover {
-	background-color: var(--ter-color-trans);
-	box-shadow: 0 0 15px 5px var(--ter-color);
-	color: var(--sec-color-trans);
+	background-color: var(--ter-color-semi);
+	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--ter-color);
+	color: var(--sec-color);
 }
 .crimson-btn:active,
 .crimson-btn:focus {
-	outline: 3px double var(--ter-color);
+	outline: 3px double var(--ter-color-trans);
 }
 .link-btn {
 	align-items: center;
