@@ -20,9 +20,7 @@ make game group chat
 
 UX/UI:
 	Fix Gear in Creator.
-	Fix User Menu.
-	Fix Generator.
-	Likewise set a blur effect that reflects the character psyche
+	Make some CSS effects to reflect character's current Psyche.
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.
 	Probably also a sidenav for character sheet.
@@ -46,14 +44,13 @@ Hazards.js???:
 
 Manual:
 	Put Expand/Collapse All button on rules.
-	Figure out topical organization. Health for example.
+	Figure out topical organization. Health for example?
 	Painkiller required for a night's sleep to Recover?
 
 Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
-	NaN lbs error with random weight.
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 	Figure out how to handle taking Abilities that cost more XP than you have. Disable? Warn? Currently proceeds but with range error.
 
