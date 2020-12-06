@@ -28,4 +28,7 @@
 	p {
 		padding: var(--std-padding);
 	}
+	.manual-body {
+		padding-bottom: calc(var(--square) + var(--std-padding));
+	}
 </style>

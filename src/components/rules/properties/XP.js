@@ -4,7 +4,7 @@ const XP = new Rule({
 	name: `XP`,
 	desc: [
 		`Experience (XP) = Brains x 3`,
-		`Experience represents how much you have learned up to now.`,
+		`XP represents how much you have learned up to now.`,
 		`You get additional XP = Intellect for each game session you survive.`,
 		`You also get +1 XP every time you roll a Botch.`,
 		`The Narrator may choose to give bonus XP.`,
