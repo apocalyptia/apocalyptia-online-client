@@ -19,7 +19,7 @@ make game group chat
 ------ TODO LIST ------
 
 UX/UI:
-	Fix Gear in Creator.
+	Figure out scroll to top on mount for creator pages.
 	Make some CSS effects to reflect character's current Psyche.
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.
@@ -74,6 +74,5 @@ Character:
 		Combine Health with Armor somehow.
 
 Figure out a quick Jury-Rig version of Build.
-Social actions multiple times per round?
 
 ---------------------------------------------------------------------------------------------------
