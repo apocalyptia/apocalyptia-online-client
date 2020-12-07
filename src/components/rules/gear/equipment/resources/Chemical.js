@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const Chemical = new Gear({
 	name: `Chemical`,
+	type: `Resource`,
 	desc: [
 		`Substances used for Science(Chemistry).`,
 	],

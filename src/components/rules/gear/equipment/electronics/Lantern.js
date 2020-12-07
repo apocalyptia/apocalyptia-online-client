@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const Lantern = new Gear({
 	name: `Lantern`,
+	type: `Electronics`,
 	desc: [
 		`3yd light radius.`,
 	],

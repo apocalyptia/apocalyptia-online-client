@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const EmergencyRadio = new Gear({
 	name: `Emergency Radio`,
+	type: `Electronics`,
 	desc: [
 		`AM/FM/Shortwave.`,
 		`1yd light.`,

@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const QuadcopterDrone = new Gear({
 	name: `Quadcopter Drone`,
+	type: `Electronics`,
 	desc: [
 		`Science 6# to use.`,
 		`Onboard camera.`,

@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const NightvisionGoggles = new Gear({
 	name: `Nightvision Goggles`,
+	type: `Electronics`,
 	desc: [
 		`Ignore Visibility penalties in darkness.`,
 	],

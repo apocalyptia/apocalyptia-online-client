@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const Cellphone = new Gear({
 	name: `Cellphone`,
+	type: `Electronics`,
 	desc: [
 		`1yd light, camera, remote control.`,
 	],
