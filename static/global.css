@@ -127,6 +127,7 @@ body,
 main {
 	bottom: 0;
 	font-family: TTY;
+	font-weight: bold;
 	left: 0;
 	overflow: scroll;
 	position: absolute;
@@ -176,7 +177,7 @@ fieldset {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	left: 50%;
+	left: 50vw;
 	max-width: 800px;
 	padding: var(--std-padding);
 	position: absolute;

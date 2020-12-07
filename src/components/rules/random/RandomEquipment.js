@@ -5,7 +5,7 @@ export default (c, n) => {
     let equipment = []
     for (let i = 0; i < n; i++) { 
         let randomItem = RandomRoll(EquipmentList)
-        let existingItemIndex = equipment.findIndex(item => item.id == randomItem.id)
+        let existingItemIndex = equipment.findIndex(item => item.name == randomItem.name)
         if (existingItemIndex > -1) {
             equipment[existingItemIndex].qty++
         }
@@ -13,7 +13,7 @@ export default (c, n) => {
             randomItem.qty = 1
             equipment.push(randomItem)
         }
-    }
-    c.gear.equipment.inventory = [...equipment]
+	}
+	c.gear.equipment.inventory = [...equipment]
     return c
 }

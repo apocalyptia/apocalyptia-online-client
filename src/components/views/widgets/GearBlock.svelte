@@ -69,7 +69,7 @@
 <div class='gear-block'>
 	{#if item}
 		{#if mode != 'manual'}
-			<h2>{item.name}</h2>
+			<div class='item-name'>{item.name}</div>
 		{/if}
 		<div class='item-details {mode == "manual" ? "extra-padding" : ""}'>
 			{#if item.desc}
@@ -115,17 +115,17 @@
 
 
 <style>
-	h2 {
-		padding-bottom: var(--std-padding);
-	}
-	.item-type,
+	.item-name,
 	.gear-desc,
 	.gear-prop,
-	.gear-attr {
-		padding-bottom: var(--std-padding);
-	}
+	.gear-attr,
 	.attr-type {
 		padding-bottom: var(--std-padding);
+	}
+	.item-name {
+		font-size: var(--s125);
+	}
+	.attr-type {
 		padding-left: var(--std-padding);
 	}
 	.attr-desc {

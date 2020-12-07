@@ -1,6 +1,5 @@
 <script>
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
-	import Capitalize from 'utils/Capitalize.js'
 	import GearBlock from 'views/widgets/GearBlock.svelte'
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import RandomStartingGear from 'random/RandomStartingGear.js'
@@ -11,7 +10,13 @@
 
 	let gearedUp = false
 
-	beforeUpdate(_ => gearedUp = Object.values($character.gear).every(g => g.inventory.length))
+	const randomGear = _ => {
+		$character = RandomStartingGear($character, $character.properties.luck.score)
+	}
+
+	beforeUpdate(_ => {
+		gearedUp = Object.values($character.gear).every(g => g.inventory.length)
+	})
 </script>
 
 
@@ -25,43 +30,37 @@
 	<p>Random items = Luck</p>
 </div>
 {#if gearedUp}
-	{#each Object.keys($character.gear) as type, key}
-		<details class='item-details'>
-			<summary>
-				<span class='item-label'>
-					{Capitalize(type)}
-				</span>
-			<summary>
+	{#each Object.values($character.gear) as category (category.name)}
+		<details>
+			<summary>{category.name}</summary>
 			<div class='details-content'>
-				{#if type == 'equipment'}
-					{#each $character.gear.equipment.inventory as equipment}
+				{#if category.name == 'Equipment'}
+					{#each category.inventory as equipment (equipment.name)}
 						<div class='item'>
 							<GearBlock item={equipment} mode={'edit'} />
 						</div>
 					{/each}
 				{:else}
 					<div class='item'>
-						<GearBlock item={$character.gear[type].inventory[0]} mode={'edit'} />
+						<GearBlock item={category.inventory[0]} mode={'edit'} />
 					</div>
 				{/if}
 			</div>
 		</details>
 	{/each}
 {:else}
-	<ButtonRow random={_ => $character = RandomStartingGear($character, $character.properties.luck.score)} />
+	<ButtonRow random={_ => randomGear()} />
 {/if}
 
 
 <style>
-	.item-details {
+	details {
 		margin: var(--std-margin);
 	}
-	.item-label {
-		font-weight: bold;
+	.details-content {
+		display: block;
 	}
 	.item {
-		border: 1px dotted var(--pri-color);
-		margin-bottom: var(--std-margin);
 		padding: var(--std-padding);
 	}
 </style>
