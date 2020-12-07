@@ -5,6 +5,7 @@ import Slow from 'attributes/Slow.js'
 
 const Ax = new Gear({
 	name: `Ax`,
+	type: `Melee Weapon`,
 	sz: 4,
 	attr: [
 		TwoHanded,

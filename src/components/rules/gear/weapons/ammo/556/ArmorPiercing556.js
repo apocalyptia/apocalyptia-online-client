@@ -3,6 +3,7 @@ import Pierce from 'attributes/Pierce.js'
 
 const ArmorPiercing556 = new Gear({
 	name: `5.56mm Armor Piercing`,
+	type: `Ammo`,
 	desc: [
 		`Battlefield ammunition.`,
 	],

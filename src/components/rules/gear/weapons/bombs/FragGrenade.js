@@ -4,6 +4,7 @@ import Pierce from 'attributes/Pierce.js'
 
 const FragGrenade = new Gear({
 	name: `Frag Grenade`,
+	type: `Bomb`,
 	desc: [
 		`Explosive fragmentation grenade.`,
 	],

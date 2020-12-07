@@ -4,6 +4,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const NorincoSKS = new Gear({
 	name: `Norinco SKS Rifle`,
+	type: `Ranged Weapon`,
 	sz: 4,
 	attr: [
 		TwoHanded,

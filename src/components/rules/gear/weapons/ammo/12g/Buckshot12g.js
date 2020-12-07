@@ -3,6 +3,7 @@ import Scatter from 'attributes/Scatter.js'
 
 const Buckshot12g = new Gear({
 	name: `12g Buckshot`,
+	type: `Ammo`,
 	desc: [
 		`Scatter-shot ammunition.`,
 	],

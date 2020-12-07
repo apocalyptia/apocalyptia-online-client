@@ -5,6 +5,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const Knife = new Gear({
 	name: `Knife`,
+	type: `Melee Weapon`,
 	sz: 1,
 	attr: [
 		OneHanded,

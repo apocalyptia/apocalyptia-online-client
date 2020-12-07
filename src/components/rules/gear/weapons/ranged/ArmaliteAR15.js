@@ -4,6 +4,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const ArmaliteAR15 = new Gear({
 	name: `Armalite AR-15 Rifle`,
+	type: `Ranged Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

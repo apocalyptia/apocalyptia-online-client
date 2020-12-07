@@ -4,6 +4,7 @@ import FireDamage from 'attributes/FireDamage.js'
 
 const MolotovCocktail = new Gear({
 	name: `Molotov Cocktail`,
+	type: `Bomb`,
 	desc: [
 		`Glass bottle of fuel with rag wick.`,
 	],

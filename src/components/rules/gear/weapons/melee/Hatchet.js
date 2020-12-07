@@ -4,6 +4,7 @@ import Chop from 'attributes/Chop.js'
 
 const Hatchet = new Gear({
 	name: `Hatchet`,
+	type: `Melee Weapon`,
 	sz: 2,
 	attr: [
 		OneHanded,

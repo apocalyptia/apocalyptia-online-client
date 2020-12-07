@@ -4,6 +4,7 @@ import Stun from 'rules/status/Stun.js'
 
 const FlashbangGrenade = new Gear({
 	name: `Flashbang Grenade`,
+	type: `Bomb`,
 	desc: [
 		`Stun grenade.`,
 	],

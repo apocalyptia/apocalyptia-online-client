@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const HoytCompoundBow = new Gear({
 	name: `Hoyt Compound Bow`,
+	type: `Ranged Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

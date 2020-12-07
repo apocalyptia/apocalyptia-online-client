@@ -5,6 +5,7 @@ import Asphyxiation from 'rules/needs/Asphyxiation.js'
 
 const TeargasGrenade = new Gear({
 	name: `Teargas Grenade`,
+	type: `Bomb`,
 	desc: [
 		`Chemical irritant grenade.`,
 	],

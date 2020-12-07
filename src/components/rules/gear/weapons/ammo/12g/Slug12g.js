@@ -3,6 +3,7 @@ import Slug from 'attributes/Slug.js'
 
 const Slug12g = new Gear({
 	name: `12g Slug`,
+	type: `Ammo`,
 	desc: [
 		`Single-projectile ammunition.`,
 	],

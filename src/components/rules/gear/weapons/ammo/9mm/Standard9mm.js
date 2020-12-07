@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 
 const Standard9mm = new Gear({
 	name: `9mm Standard`,
+	type: `Ammo`,
 	desc: [
 		`Basic ammunition.`,
 	],

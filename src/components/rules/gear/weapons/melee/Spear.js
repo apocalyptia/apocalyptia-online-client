@@ -4,6 +4,7 @@ import Pierce from 'attributes/Pierce.js'
 
 const Spear = new Gear({
 	name: `Spear`,
+	type: `Melee Weapon`,
 	sz: 3,
 	attr: [
 		OneHanded,

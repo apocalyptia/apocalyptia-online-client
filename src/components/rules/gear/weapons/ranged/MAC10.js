@@ -5,6 +5,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const MAC10 = new Gear({
 	name: `MAC-10 SMG`,
+	type: `Ranged Weapon`,
 	sz: 2,
 	attr: [
 		TwoHanded,

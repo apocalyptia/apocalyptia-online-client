@@ -4,6 +4,7 @@ import Blunt from 'attributes/Blunt.js'
 
 const Club = new Gear({
 	name: `Club`,
+	type: `Melee Weapon`,
 	sz: 2,
 	attr: [
 		OneHanded,

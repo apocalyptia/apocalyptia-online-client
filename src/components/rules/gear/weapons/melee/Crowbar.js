@@ -3,6 +3,7 @@ import OneHanded from 'attributes/OneHanded.js'
 
 const Crowbar = new Gear({
 	name: `Crowbar`,
+	type: `Melee Weapon`,
 	sz: 3,
 	attr: [
 		OneHanded,

@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const BarnettCrossbow = new Gear({
 	name: `Barnett Crossbow`,
+	type: `Ranged Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

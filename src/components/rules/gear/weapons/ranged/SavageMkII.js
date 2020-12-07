@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const SavageMkII = new Gear({
 	name: `Savage Mk.II Rifle`,
+	type: `Ranged Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

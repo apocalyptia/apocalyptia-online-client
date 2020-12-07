@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const Marlin1894C = new Gear({
 	name: `Marlin 1894C Rifle`,
+	type: `Ranged Weapon`,
 	sz: 3,
 	dmg: 2,
 	rng: 30,

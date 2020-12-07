@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const Sword = new Gear({
 	name: `Sword`,
+	type: `Melee Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

@@ -5,6 +5,7 @@ import Scatter from 'attributes/Scatter.js'
 
 const CZUpland = new Gear({
 	name: `CZ Upland Shotgun`,
+	type: `Ranged Weapon`,
 	sz: 4,
 	attr: [
 		TwoHanded,

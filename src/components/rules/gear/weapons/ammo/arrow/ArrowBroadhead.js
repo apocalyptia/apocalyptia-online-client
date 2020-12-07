@@ -4,6 +4,7 @@ import Pierce from 'attributes/Pierce.js'
 
 const ArrowBroadhead = new Gear({
 	name: `Broadhead Arrow`,
+	type: `Ammo`,
 	desc: [
 		`Hunting arrow.`,
 	],

@@ -5,6 +5,7 @@ import Shield from 'attributes/Shield.js'
 
 const RiotShield = new Gear({
 	name: `Riot Shield`,
+	type: `Melee Weapon`,
 	sz: 4,
 	attr: [
 		OneHanded,

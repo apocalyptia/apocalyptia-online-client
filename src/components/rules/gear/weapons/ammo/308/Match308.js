@@ -3,6 +3,7 @@ import Match from 'attributes/Match.js'
 
 const Match308 = new Gear({
 	name: `.308 Match`,
+	type: `Ammo`,
 	desc: [
 		`Competition-grade ammunition.`,
 	],

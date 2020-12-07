@@ -4,6 +4,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const Glock19 = new Gear({
 	name: `Glock 19 Pistol`,
+	type: `Ranged Weapon`,
 	sz: 1,
 	attr: [
 		TwoHanded,

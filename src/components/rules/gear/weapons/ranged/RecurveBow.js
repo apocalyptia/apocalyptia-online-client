@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const RecurveBow = new Gear({
 	name: `Recurve Bow`,
+	type: `Ranged Weapon`,
 	sz: 2,
 	attr: [
 		TwoHanded,

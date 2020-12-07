@@ -1,8 +1,11 @@
 <script>
-	export let mode
-	export let item
+	export let mode, item
 
 	const itemProps = [
+		{
+			name: 'Type',
+			abv: 'type'
+		},
 		{
 			name: 'Damage',
 			abv: 'dmg'
@@ -75,7 +78,7 @@
 				{/each}
 			{/if}
 			{#each itemProps as prop}
-				{#if item[prop.abv]}
+				{#if item[prop.abv] != undefined}
 					<p class='gear-prop'>
 						<u>{prop.name}</u>: 
 						{#if prop.name == 'Quantity' && mode == 'edit'}
@@ -97,7 +100,7 @@
 						<div class='attr-type'>
 							{attr.name}:
 							{#each attr.desc as line}
-								<p class='attr'>{line}</p>
+								<p class='attr-desc'>{line}</p>
 							{/each}
 						</div>
 					{/each}
@@ -115,16 +118,17 @@
 	h2 {
 		padding-bottom: var(--std-padding);
 	}
+	.item-type,
 	.gear-desc,
 	.gear-prop,
-	.gear-attr,
-	.attributes {
+	.gear-attr {
 		padding-bottom: var(--std-padding);
 	}
 	.attr-type {
+		padding-bottom: var(--std-padding);
 		padding-left: var(--std-padding);
 	}
-	.attr {
+	.attr-desc {
 		padding-left: calc(var(--std-padding) * 2);
 	}
 	.item-qty {

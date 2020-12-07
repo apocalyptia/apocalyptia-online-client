@@ -4,6 +4,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const WASRAK47 = new Gear({
 	name: `WASR AK-47 Rifle`,
+	type: `Ranged Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

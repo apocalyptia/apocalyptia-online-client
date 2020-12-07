@@ -4,6 +4,7 @@ import Blunt from 'attributes/Blunt.js'
 
 const BaseballBat = new Gear({
 	name: `Baseball Bat`,
+	type: `Melee Weapon`,
 	sz: 3,
 	attr: [
 		TwoHanded,

@@ -4,6 +4,7 @@ import Rapid from 'attributes/Rapid.js'
 
 const SpringfieldM1A = new Gear({
 	name: `Springfield M1A Rifle`,
+	type: `Ranged Weapon`,
 	sz: 4,
 	attr: [
 		TwoHanded,

@@ -3,6 +3,7 @@ import TwoHanded from 'attributes/TwoHanded.js'
 
 const SWMPShield = new Gear({
 	name: `S&W M&P Shield Pistol`,
+	type: `Ranged Weapon`,
 	sz: 1,
 	attr: [
 		TwoHanded,

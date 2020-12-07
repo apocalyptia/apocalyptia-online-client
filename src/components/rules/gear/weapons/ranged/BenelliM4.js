@@ -5,6 +5,7 @@ import Scatter from 'attributes/Scatter.js'
 
 const BenelliM4 = new Gear({
 	name: `Benelli M4 Shotgun`,
+	type: `Ranged Weapon`,
 	sz: 4,
 	attr: [
 		TwoHanded,

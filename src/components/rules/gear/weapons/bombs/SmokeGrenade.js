@@ -2,7 +2,8 @@ import Gear from 'classes/Gear.js'
 import Blind from 'rules/status/Blind.js'
 
 const SmokeGrenade = new Gear({
-	name: `Smoke Grenade`, 
+	name: `Smoke Grenade`,
+	type: `Bomb`,
 	desc: [
 		`Visibility denial grenade.`,
 	],

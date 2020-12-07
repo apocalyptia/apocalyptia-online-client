@@ -3,6 +3,7 @@ import HollowPoint from 'attributes/HollowPoint.js'
 
 const HollowPoint9mm = new Gear({
 	name: `9mm Hollow Point`,
+	type: `Ammo`,
 	desc: [
 		`Self-defense ammunition.`,
 	],

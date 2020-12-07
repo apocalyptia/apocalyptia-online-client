@@ -4,6 +4,7 @@ import Scatter from 'attributes/Scatter.js'
 
 const Mossberg500 = new Gear({
 	name: `Mossberg 500 Shotgun`,
+	type: `Ranged Weapon`,
 	sz: 2,
 	attr: [
 		TwoHanded,

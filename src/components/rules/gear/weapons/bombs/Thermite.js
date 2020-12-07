@@ -4,6 +4,7 @@ import FireDamage from 'attributes/FireDamage.js'
 
 const Thermite = new Gear({
 	name: `Thermite`,
+	type: `Bomb`,
 	desc: [
 		`High-temperature incendiary bomb.`,
 	],
