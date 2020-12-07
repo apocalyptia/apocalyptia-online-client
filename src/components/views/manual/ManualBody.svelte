@@ -8,7 +8,7 @@
 <div class='manual-body'>
 	{#if chapter == 'Manual'}
 		{#each ruleList as c}
-			<div>
+			<div class='link-btn-block'>
 				<a href={`/manual/${c.name.toLowerCase()}`} class='link-btn'>
 					{c.name}
 				</a>

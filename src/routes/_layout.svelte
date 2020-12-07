@@ -24,32 +24,23 @@
 
 
 <style>
+	header {
+		height: var(--square);
+	}
 	::-webkit-scrollbar {
 		display: none;
 	}
 	.screen {
 		background: radial-gradient(var(--sec-color-trans) 40%, #121 60%, #010 100%);
-		bottom: 0;
-		left: 0;
-		overflow: scroll;
-		position: absolute;
-		right: 0;
-		scrollbar-width: none;
-		top: 0;
 		z-index: 0;
 	}
 	.screen::after {
 		animation: flicker 0.15s infinite;
 		background: rgba(18, 16, 16, 0.1);
-		bottom: 0;
 		content: " ";
 		display: block;
-		left: 0;
 		opacity: 0;
 		pointer-events: none;
-		position: absolute;
-		right: 0;
-		top: 0;
 		z-index: 3;
 	}
 	@keyframes flicker {
@@ -80,16 +71,8 @@
 		animation: haze .1s infinite;
 		background-size: 100% 2px, 3px 100%;
 		background: linear-gradient(rgba(18, 16, 16, 0) 100%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-		bottom: 0;
 		content: ' ';
 		display: block;
-		height: 100vh;
-		left: 0;
-		overflow: scroll;
-		position: absolute;
-		right: 0;
-		scrollbar-width: none;
-		top: 0;
 		z-index: 1;
 	}
 	@keyframes haze {
@@ -120,9 +103,6 @@
 		background-repeat: repeat-y;
 		background-size: 100% var(--s25);
 		background-color: linear-gradient(var(--sec-color) 50%, #232 50%);
-		height: 100vh;
-		position: absolute;
-		width: 100vw;
 		z-index: 12;
 	}
 
@@ -136,8 +116,9 @@
 		background: var(--pri-color-trans);
 		content: '';
 		height: 1px;
+		left: 0;
 		position: absolute;
-		width: 100vw;
+		right: 0;
 		z-index: 3;
 	}
 	@keyframes hline {
@@ -149,41 +130,22 @@
 		background: linear-gradient(var(--pri-color-trans) 0%, var(--sec-color-trans) 20%);
 		background-repeat: repeat-y;
 		background-size: 100% 3px;
-		left: 0;
 		opacity: 1;
-		overflow: scroll;
-		position: absolute;
-		scrollbar-width: none;
-		top: 0;
-		bottom: 0;
-		right: 0;
 		z-index: 4;
 	}
 	
 	.program {
-		/* animation: wobble 19s linear infinite; */
-		height: 100vh;
-		left: 0;
-		overflow: scroll;
-		position: absolute;
-		scrollbar-width: none;
-		top: 0;
-		width: 100vw;
+		animation: wobble 19s linear infinite;
 		z-index: 5;
 	}
-	/* @keyframes wobble {
+	@keyframes wobble {
 		0.0% { transform: skew(25deg); }
 		0.1% { transform: skew(0deg); }
 		0.2% { transform: skew(-25deg); }
 		0.3% { transform: skew(0deg); }
-	} */
+	}
 
 	main {
-		/* bottom: 0;
-		overflow: scroll;
-		position: absolute;
-		top: var(--square); */
-		width: 100vw;
 		z-index: 6;
 	}
 </style>
