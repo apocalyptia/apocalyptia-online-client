@@ -3,7 +3,7 @@
 	"theme_color": "#333",
 	"name": "Apocalyptia Online",
 	"short_name": "Apocalyptia",
-	"display": "fullscreen",
+	"display": "standalone",
 	"start_url": "/",
 	"icons": [
 		{
