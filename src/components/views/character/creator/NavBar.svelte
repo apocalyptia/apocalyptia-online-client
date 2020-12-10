@@ -2,7 +2,7 @@
 	import GoTo from 'utils/GoTo.js'
 	import Skills from 'rules/Skills.js'
 	import Traits from 'rules/Traits.js'
-	import { beforeUpdate, onMount } from 'svelte'
+	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
 	$: current = $character.meta.step
@@ -14,12 +14,14 @@
 	$: nextButton = 'x'
 
 	const back = _ => {
+		document.getElementById('character-creator').scrollTo(0, 0)
 		$character.meta.step--
 		if ($character.meta.step < 0) GoTo('/character/new')
 	}
 
 	const next = _ => {
 		proceedStatus()
+		document.getElementById('character-creator').scrollTo(0, 0)
 		if (proceed) $character.meta.step++
 	}
 
@@ -35,9 +37,7 @@
 		else nextButton = 'x'
 	}
 
-    beforeUpdate(_ => proceedStatus())
-
-    onMount(_ => proceedStatus())
+	beforeUpdate(_ => proceedStatus())
 </script>
 
 

@@ -50,7 +50,6 @@ const listBuilder = (list) => {
 		}
 	}
 	newList.sort((a, b) => PropSort(a, b, 'name'))
-	console.log(newList)
 	return newList
 }
 

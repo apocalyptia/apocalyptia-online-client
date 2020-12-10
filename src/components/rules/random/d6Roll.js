@@ -6,6 +6,5 @@ export default () => {
 	else if (rolls[0] == 6) { // Explode
 		while (rolls[rolls.length - 1] == 6) rolls.push(d6())
 	}
-	console.log(rolls)
 	return rolls
 }

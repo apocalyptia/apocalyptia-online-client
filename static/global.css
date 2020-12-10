@@ -33,7 +33,7 @@
 	--radius: 0;
 
 	/* Global Colors */
-	--pri-color: rgba(0, 255, 0, .85);
+	--pri-color: rgba(0, 255, 0, .9);
 	--pri-color-trans: rgba(0, 255, 0, .5);
 	--sec-color: rgba(15, 30, 15, .85);
 	--sec-color-trans: rgba(15, 30, 15, .5);
@@ -126,7 +126,6 @@ html,
 main {
 	bottom: 0;
 	font-family: TTY;
-	font-weight: bold;
 	left: 0;
 	overflow: auto;
 	position: absolute;
@@ -142,13 +141,15 @@ body {
 }
 .page-body {
 	align-content: center;
-	bottom: 0;
+	bottom: var(--std-input-height);
 	display: flex;
 	flex-direction: column;
+	left: 0;
 	overflow: scroll;
 	padding: var(--std-padding);
 	position: absolute;
-	width: 100%;
+	right: 0;
+	top: var(--square);
 }
 .page-body > * {
 	margin: 0 auto;
