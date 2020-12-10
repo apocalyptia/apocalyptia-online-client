@@ -14,7 +14,7 @@
 	--s50: calc(var(--s100) * .5);
 	--s66: calc(var(--s100) * .66);
 	--s75: calc(var(--s100) * .75);
-	--s100: 3vh;
+	--s100: 2.75vh;
 	--s110: calc(var(--s100) * 1.1);
 	--s125: calc(var(--s100) * 1.25);
 	--s150: calc(var(--s100) * 1.5);
@@ -117,7 +117,6 @@ html {
 	background-color: #333;
 }
 html,
-body,
 #apocalyptia-online,
 .screen,
 .projection,
@@ -129,7 +128,7 @@ main {
 	font-family: TTY;
 	font-weight: bold;
 	left: 0;
-	overflow: scroll;
+	overflow: auto;
 	position: absolute;
 	right: 0;
 	scrollbar-width: none;
@@ -139,6 +138,22 @@ body {
 	background-color: var(--sec-color-trans);
 	color: var(--pri-color);
 	font-size: var(--s100);
+	height: 100%;
+}
+.page-body {
+	align-content: center;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	padding: var(--std-padding);
+	position: absolute;
+	width: 100%;
+}
+.page-body > * {
+	margin: 0 auto;
+	width: 100%;
+	max-width: var(--max-width);
 }
 form {
 	width: 100%;
@@ -160,7 +175,8 @@ fieldset {
 .section-card {
 	border: var(--std-border) dotted var(--pri-color);
 	display: block;
-	margin: var(--std-margin) 0;
+	margin-bottom: var(--std-margin);
+	margin-top: var(--std-margin);
 	padding: var(--std-padding);
 }
 .section-card .stat-label {
@@ -344,10 +360,8 @@ button:invalid {
 }
 .link-btn {
 	align-items: center;
-	background-color: var(--sec-color-trans);
 	border-radius: var(--radius);
 	border: var(--std-border) solid var(--pri-color);
-	color: var(--pri-color);
 	display: flex;
 	font-size: var(--s125);
 	font-weight: bold;
@@ -375,10 +389,6 @@ button:invalid {
 details {
 	border: var(--std-border) solid var(--pri-color);
 	border-radius: var(--radius);
-}
-details:active {
-	background-color: var(--pri-color-trans);
-	color: var(--pri-color);
 }
 summary {
 	align-items: center;
@@ -450,7 +460,9 @@ select {
 	color: var(--pri-color);
 	cursor: pointer;
 	font-size: var(--s100);
+	font-weight: 200;
 	height: var(--std-input-height);
+	min-width: 4ch;
 	text-align: center;
 }
 select:active,
@@ -564,25 +576,4 @@ textarea:invalid {
 		display: flex;
 		justify-content: space-evenly;
 	}
-}
-
-
-/* ----- MANUAL ----- */
-
-.manual-body {
-	align-content: center;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	overflow: scroll;
-	padding: var(--std-padding) auto;
-	position: absolute;
-	top: calc(var(--square) * 2);
-	width: 100%;
-}
-.manual-body > details,
-.manual-body > div {
-	margin: var(--std-margin) auto;
-	width: 80%;
-	max-width: var(--max-width);
 }

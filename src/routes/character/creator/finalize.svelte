@@ -7,8 +7,6 @@
 	import { character } from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'
 
-	export let creator
-
 	const deleteCharacter = _ => {
 		GoTo('/')
 		DeleteCharacter()
@@ -24,7 +22,7 @@
 
 
 <div class='finalize-page'>
-	<PageHeader {creator} step={$character.meta.step} />
+	<PageHeader chapter={'Finalize'} step={$character.meta.step} />
 	<div class='sheet-content'>
 		<CharacterSheet mode={'readonly'} />
 	</div>
@@ -36,17 +34,6 @@
 
 
 <style>
-	.finalize-page {
-		bottom: 0;
-		display: block;
-		left: 0;
-		overflow: scroll;
-		padding: var(--std-padding);
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 100%;
-	}
 	.sheet-content {
 		padding-top: var(--std-padding);
 	}

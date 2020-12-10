@@ -1,15 +1,15 @@
 <script>
-	export let creator, step
+	export let chapter, step
 </script>
 
 
 <svelte:head>
-	<title>Apocalyptia Online - Character Creator - {creator[step].name}</title>
+	<title>Apocalyptia Online - Character Creator - {chapter}</title>
 </svelte:head>
 <div class='page-header'>
-	<h1>{creator[step].name}</h1>
-	{#if step + 1 < creator.length}
-		<span>Step {step+1}/{creator.length-1}</span>
+	<h1>{chapter}</h1>
+	{#if step + 1 < 7}
+		<span>Step {step+1}/7</span>
 	{/if}
 </div>
 

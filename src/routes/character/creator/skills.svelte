@@ -10,46 +10,46 @@
 	import { character } from 'stores/characterStore.js'
 
 	$: remaining = Skills.remaining($character)
-
-	export let creator
 </script>
 
 
-<PageHeader {creator} step={$character.meta.step} />
-<ExplanationBlock rule={Skills} />
-<PointsRemaining points={remaining} />
-	{#each SkillsList.groups as group}
-		<div class='item-block'>
-			<details class='skills-details'>
-				<summary>
-					<span class='group-label'>
-						{group.name} Skills
-					</span>
-				</summary>
-				<div class='details-content'>
-					<div class='max-score'>
-						Max Score: {$character.traits[group.name.toLowerCase()].score}
-					</div>
-					{#each group.list as skill}
-						<div class='stat-range'>
-							<div class='stat-label'>{skill.name}</div>
-							<Slider
-								name='{skill.name.toLowerCase()}'
-								min={parseInt(0)}
-								max={parseInt(6)}
-								bind:value={$character.skills[skill.name.toLowerCase()].score}
-								on:input={event => $character = Skills.assign($character, event.target)}
-							/>
+<div class='skills-step-page'>
+	<PageHeader chapter={'Skills'} step={$character.meta.step} />
+	<ExplanationBlock rule={Skills} />
+	<PointsRemaining points={remaining} />
+		{#each SkillsList.groups as group}
+			<div class='item-block'>
+				<details class='skills-details'>
+					<summary>
+						<span class='group-label'>
+							{group.name} Skills
+						</span>
+					</summary>
+					<div class='details-content'>
+						<div class='max-score'>
+							Max Score: {$character.traits[group.name.toLowerCase()].score}
 						</div>
-					{/each}
-				</div>
-			</details>
-		</div>
-	{/each}
-<ButtonRow
-	reset={_ => $character = $character.resetSkills()}
-	random={_ => $character = RandomSkills($character)}
-/>
+						{#each group.list as skill}
+							<div class='stat-range'>
+								<div class='stat-label'>{skill.name}</div>
+								<Slider
+									name='{skill.name.toLowerCase()}'
+									min={parseInt(0)}
+									max={parseInt(6)}
+									bind:value={$character.skills[skill.name.toLowerCase()].score}
+									on:input={event => $character = Skills.assign($character, event.target)}
+								/>
+							</div>
+						{/each}
+					</div>
+				</details>
+			</div>
+		{/each}
+	<ButtonRow
+		reset={_ => $character = $character.resetSkills()}
+		random={_ => $character = RandomSkills($character)}
+	/>
+</div>
 
 
 <style>

@@ -66,7 +66,7 @@
 	.item-category {
 		border: var(--std-border) var(--pri-color) solid;
 		padding: var(--std-padding);
-		margin: var(--std-margin) 0;
+		/* margin: var(--std-margin) 0; */
 	}
 	.category-header {
 		display: flex;

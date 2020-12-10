@@ -11,8 +11,6 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
-	export let creator
-
 	let MasterAbilityList = AbilitiesList.masterList
 
 	$: remainingXP = $character.properties.xp.current
@@ -21,23 +19,25 @@
 </script>
 
 
-<PageHeader {creator} step={$character.meta.step} />
-<ExplanationBlock rule={Abilities} />
-<PointsRemaining points={remainingXP} />
-{#if $character.abilities.length}
-	<div class='section-card'>
-		<CurrentAbilities />
+<div class='abilities-step-page'>
+	<PageHeader chapter={'Abilities'} step={$character.meta.step} />
+	<ExplanationBlock rule={Abilities} />
+	<PointsRemaining points={remainingXP} />
+	{#if $character.abilities.length}
+		<div class='section-card'>
+			<CurrentAbilities />
+		</div>
+	{/if}
+	<div class='abilities-list'>
+		{#each AbilitiesList.groups as group}
+			<AbilityGroup {group} {MasterAbilityList}/>
+		{/each}
 	</div>
-{/if}
-<div class='abilities-list'>
-	{#each AbilitiesList.groups as group}
-		<AbilityGroup {group} {MasterAbilityList}/>
-	{/each}
+	<ButtonRow
+		reset={_ => $character = $character.resetAbilities()}
+		random={_ => $character = RandomAbilities($character)}
+	/>
 </div>
-<ButtonRow
-	reset={_ => $character = $character.resetAbilities()}
-	random={_ => $character = RandomAbilities($character)}
-/>
 
 
 <style>

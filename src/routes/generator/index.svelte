@@ -9,7 +9,7 @@
 <svelte:head>
 	<title>Apocalyptia Online - Generator</title>
 </svelte:head>
-<div class='generator-body'>
+<div class='generator-body page-body'>
 	<h1>Generator</h1>
 	<DiceRoller />
 	{#each MasterGearList as category}
@@ -21,17 +21,6 @@
 
 <style>
 	.generator-body {
-		bottom: 0;
-		height: calc(100vh - var(--square));
-		overflow: scroll;
-		padding-left: var(--std-padding);
-		padding-right: var(--std-padding);
-		padding-top: var(--std-padding);
-		position: absolute;
 		top: var(--square);
-		width: 100%;
-	}
-	h1 {
-		margin: auto;
 	}
 </style>

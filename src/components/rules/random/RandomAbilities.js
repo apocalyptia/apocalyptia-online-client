@@ -6,8 +6,10 @@ export default (c) => {
     c = c.updateAbilities()
     while(c.properties.xp.current) {
         const remainingAbilities = AbilitiesList.masterList.filter(r => {
-            const abilityTaken = c.abilities.some(a => a.name == r.name)
-            return (r.xp <= c.properties.xp.current) && !abilityTaken
+            return (
+				r.xp <= c.properties.xp.current) &&
+				!c.abilities.some(a => a.name == r.name
+			)
         })
         if (remainingAbilities.length) {
             const a = RandomRoll(remainingAbilities)

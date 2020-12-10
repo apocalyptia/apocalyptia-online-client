@@ -16,13 +16,11 @@
 	const back = _ => {
 		$character.meta.step--
 		if ($character.meta.step < 0) GoTo('/character/new')
-		window.scrollTo(0,0)
 	}
 
 	const next = _ => {
 		proceedStatus()
 		if (proceed) $character.meta.step++
-		window.scrollTo(0,0)
 	}
 
 	const proceedStatus = _ => {

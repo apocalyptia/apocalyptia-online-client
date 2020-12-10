@@ -8,16 +8,16 @@
 	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
-	export let creator
-
 	beforeUpdate(_ => $character = $character.setProperties())
 </script>
 
 
-<PageHeader {creator} step={$character.meta.step} />
-<ExplanationBlock rule={Properties} />
-<PropertiesFormulae />
-<PropertiesBlock />
-<div class='section-card'>
-	<BodyParts {character} mode={'readonly'} />
+<div class='properties-step-page'>
+	<PageHeader chapter={'Properties'} step={$character.meta.step} />
+	<ExplanationBlock rule={Properties} />
+	<PropertiesFormulae />
+	<PropertiesBlock />
+	<div class='section-card'>
+		<BodyParts {character} mode={'readonly'} />
+	</div>
 </div>

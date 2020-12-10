@@ -5,10 +5,10 @@
 </script>
 
 
-<div class='manual-body'>
+<div class='manual-page page-body'>
 	{#if chapter == 'Manual'}
 		{#each ruleList as c}
-			<div class='link-btn-block'>
+			<div class='manual-btn'>
 				<a href={`/manual/${c.name.toLowerCase()}`} class='link-btn'>
 					{c.name}
 				</a>
@@ -16,7 +16,9 @@
 		{/each}
 	{:else if ruleList.length}
 		{#each ruleList as rule}
-			<ManualRule {rule} />
+			<div class='manual-btn'>
+				<ManualRule {rule} />
+			</div>
 		{/each}
 	{:else}
 		<p>No results.</p>
@@ -28,7 +30,11 @@
 	p {
 		padding: var(--std-padding);
 	}
-	.manual-body {
-		padding-bottom: calc(var(--square) + var(--std-padding));
+	.manual-page {
+		padding-bottom: calc(var(--square));
+		top: calc(var(--square) * 2);
+	}
+	.manual-btn {
+		margin-bottom: var(--std-margin);
 	}
 </style>
