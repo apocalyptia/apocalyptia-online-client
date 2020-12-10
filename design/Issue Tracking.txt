@@ -19,7 +19,6 @@ make game group chat
 ------ TODO LIST ------
 
 UX/UI:
-	Figure out scroll to top on mount for creator pages.
 	Make some CSS effects to reflect character's current Psyche.
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.
