@@ -31,6 +31,7 @@
 		background-color: var(--pri-color-trans);
 		color: var(--sec-color);
 		cursor: pointer;
+		font-weight: bold;
 	}
 	.card-row {
 		display: flex;

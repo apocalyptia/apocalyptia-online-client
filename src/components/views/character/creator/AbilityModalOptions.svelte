@@ -40,10 +40,13 @@
 		justify-content: space-between;
 		margin: var(--std-margin) auto;
 		padding: var(--s50);
-		overflow-x: hidden;
 	}
 	.ability-name-label {
 		overflow-x: hidden;
+		width: 75%;
+	}
+	.taken-label {
+		width: 25%;
 	}
 	select {
 		width: var(--square);

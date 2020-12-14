@@ -9,10 +9,10 @@
 
 <div class='options-section'>
 	<div class='ability-selection'>
-		<div class='ability-name-label'>
+		<span class='ability-name-label'>
 			{ability.name}
-		</div>
-		<div class='taken-label'>Taken:
+		</span>
+		<span class='taken-label'>Taken:
 			<select
 				name={ability.name}
 				bind:value={ability.taken}
@@ -22,7 +22,7 @@
 					<option value={i}>{i}</option>
 				{/each}
 			</select>
-		</div>
+		</span>
 	</div>
 </div>
 
@@ -41,6 +41,10 @@
 	}
 	.ability-name-label {
 		overflow-x: hidden;
+		width: 75%;
+	}
+	.taken-label {
+		width: 25%;
 	}
 	select {
 		width: var(--square);
