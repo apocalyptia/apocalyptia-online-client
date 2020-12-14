@@ -50,11 +50,11 @@
 		text-align: left;
 	}
 	.prop-block {
+		align-items: space-between;
 		display: flex;
 		flex-direction: column;
-		align-items: space-between;
-		justify-content: space-between;
 		height: calc(var(--s100) * 8);
+		justify-content: space-between;
 		width: 50%;
 	}
 </style>
