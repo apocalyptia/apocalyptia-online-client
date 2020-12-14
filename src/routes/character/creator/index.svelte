@@ -31,3 +31,11 @@
 	<svelte:component this={creatorPages[step]} />
 </div>
 <NavBar />
+
+
+<style>
+	.creator-page {
+		bottom: var(--std-input-height);
+		padding-bottom: var(--square);
+	}
+</style>
