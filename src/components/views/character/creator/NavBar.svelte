@@ -48,9 +48,7 @@
 	<button on:click={_ => GoTo('/')}>
 		Home
 	</button>
-	<button on:click={next}
-		class='{proceed ? '' : 'crimson-btn' }'
-	>
+	<button on:click={next} class='{proceed ? '' : 'crimson-btn' }'>
 		{@html nextButton}
 	</button>
 </div>
