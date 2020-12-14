@@ -27,6 +27,8 @@
 		max-width: var(--square);
 		min-height: var(--square);
 		min-width: var(--square);
+		padding-left: var(--s33);
+		padding-top: var(--s20);
 		position: fixed;
 		right: 0;
 		text-align: center;
