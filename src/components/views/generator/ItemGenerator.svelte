@@ -27,7 +27,7 @@
 	.item-category {
 		border: var(--std-border) var(--pri-color) solid;
 		padding: var(--std-padding);
-		/* margin: var(--std-margin) 0; */
+		margin-bottom: var(--std-margin);
 	}
 	.category-header {
 		display: flex;
