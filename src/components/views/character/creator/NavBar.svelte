@@ -23,6 +23,7 @@
 		proceedStatus()
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if (proceed) $character.meta.step++
+		if ($character.meta.step > 6) GoTo('/')
 	}
 
 	const proceedStatus = _ => {
