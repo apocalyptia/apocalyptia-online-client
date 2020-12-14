@@ -3,8 +3,7 @@
 </script>
 
 
-<button
-    class='user-btn'
+<button class='user-btn'
     on:click={_ => $menuStore = $menuStore.toggle()}
 >
     <div class='btn-icon'>::</div>
@@ -28,13 +27,13 @@
 		min-height: var(--square);
 		min-width: var(--square);
 		padding-left: var(--s33);
-		padding-top: var(--s20);
+		padding-top: var(--s15);
 		position: fixed;
 		right: 0;
 		text-align: center;
 		top: 0;
 		width: var(--square);
-		z-index: 10;
+		z-index: 3;
 	}
 	.user-btn:active,
 	.user-btn:focus,
