@@ -41,11 +41,13 @@
 	--rgb-background: linear-gradient(rgba(18, 16, 16, 0) 100%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 	--pri-color: rgba(0, 255, 0, .9);
 	--pri-color-trans: rgba(0, 255, 0, .5);
+	--pri-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
 	--sec-color: rgba(15, 30, 15, .85);
 	--sec-color-trans: rgba(15, 30, 15, .5);
 	--ter-color: rgba(220, 20, 60, .85);
 	--ter-color-semi: rgba(220, 20, 60, .5);
 	--ter-color-trans: rgba(220, 20, 60, .15);
+	--ter-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--ter-color-semi);
 
 	/* Global Layout */
 	--square: var(--s300);
@@ -288,7 +290,7 @@ a {
 }
 a:hover,
 a:focus {
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	box-shadow: var(--pri-box-shadow);
 }
 
 /* Buttons */
@@ -320,7 +322,7 @@ button:disabled {
 }
 button:focus,
 button:hover {
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	box-shadow: var(--pri-box-shadow);
 }
 button:invalid {
 	border-color: var(--ter-color);
@@ -361,7 +363,7 @@ button:invalid {
 .crimson-btn:focus,
 .crimson-btn:hover {
 	background-color: var(--ter-color-semi);
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--ter-color-semi);
+	box-shadow: var(--ter-box-shadow);
 	color: var(--sec-color);
 }
 .crimson-btn:active,
@@ -414,7 +416,7 @@ summary {
 summary:active,
 summary:hover {
 	background-color: var(--pri-color-trans);
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
 }
 summary::-webkit-details-marker {
@@ -440,7 +442,7 @@ input:disabled {
 }
 input:focus,
 input:hover {
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	box-shadow: var(--pri-box-shadow);
 }
 input[type="number"] {
 	width: 100px;
@@ -488,7 +490,7 @@ select:focus,
 select:hover {
 	background-color: var(--pri-color-trans);
 	border-color: var(--pri-color);
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
 }
 select:disabled {
@@ -516,7 +518,7 @@ textarea:active,
 textarea:focus,
 textarea:hover {
 	background-color: var(--pri-color-trans);
-	box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
 }
 textarea:disabled {

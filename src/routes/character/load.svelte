@@ -41,9 +41,9 @@
 			<div class='character-storage-list'>
 				{#each $characterList as c}
 					<div class='stored-character'>
-						<div class='character-name' on:click={event => selectCharacter(event)}>
+						<button class='character-name' on:click={event => selectCharacter(event)}>
 							{c.description.name.value}
-						</div>
+						</button>
 						<TrashButton args={c.description.name.value} deleteFunction={deleteCharacter} />
 					</div>
 				{/each}
@@ -77,6 +77,7 @@
 		align-items: center;
 		border-bottom: 1px solid var(--pri-color);
 		display: flex;
+		height: var(--square);
 		padding-left: var(--s100);
 		text-align: left;
 		width: 100%;

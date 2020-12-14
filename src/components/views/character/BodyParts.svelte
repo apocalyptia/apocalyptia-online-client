@@ -168,11 +168,11 @@
 	}
 	.left-arm-label,
 	.right-arm-label {
-		top: 10vh;
+		top: 6vh;
 	}
 	.left-leg-label,
 	.right-leg-label {
-		top: 20vh;
+		top: 12vh;
 	}
 	.body-part {
 		background-color: var(--pri-color);
