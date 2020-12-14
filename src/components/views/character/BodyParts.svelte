@@ -136,11 +136,11 @@
 	}
 	.body-parts-section {
 		display: flex;
-		font-size: var(--s75);
+		font-size: var(--s100);
 		justify-content: center;
 		max-width: 100%;
 	}
-	div[class*=column] {
+	div[class*='column'] {
 		display: block;
 		height: 100%;
 		width: auto;
@@ -156,19 +156,22 @@
 	.right-column {
 		text-align: right;
 	}
-	div[class*=-label] {
+	div[class*='-label'] {
 		display: inline-block;
 		height: 10px;
 		position: relative;
 		width: 100%;
 	}
-	.head-label, .torso-label {
+	.head-label,
+	.torso-label {
 		top: 0;
 	}
-	.left-arm-label, .right-arm-label {
+	.left-arm-label,
+	.right-arm-label {
 		top: 10vh;
 	}
-	.left-leg-label, .right-leg-label {
+	.left-leg-label,
+	.right-leg-label {
 		top: 20vh;
 	}
 	.body-part {
@@ -178,7 +181,7 @@
 	.body-part-numbers {
 		margin: 5px;
 	}
-	div[class*=level] {
+	div[class*='level'] {
 		display: flex;
 		justify-content: center;
 	}
@@ -196,10 +199,10 @@
 		width: 2vh;
 	}
 	.left-arm {
-		border-top-left-radius: 100vh;
+		border-top-left-radius: 200vh;
 	}
 	.right-arm {
-		border-top-right-radius: 100vh;
+		border-top-right-radius: 200vh;
 	}
 	.torso {
 		height: 14.5vh;
