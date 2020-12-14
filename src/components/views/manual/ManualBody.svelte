@@ -31,7 +31,6 @@
 		padding: var(--std-padding);
 	}
 	.manual-page {
-		padding-bottom: var(--square);
 		top: calc(var(--square) * 2);
 	}
 	.manual-btn {

@@ -36,6 +36,6 @@
 
 <style>
 	.sheet {
-		display: block;
+		bottom: var(--std-input-height);
 	}
 </style>

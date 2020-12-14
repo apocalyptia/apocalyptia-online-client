@@ -149,11 +149,13 @@ body {
 }
 .page-body {
 	align-content: center;
+	bottom: 0;
 	display: flex;
 	flex-direction: column;
 	left: 0;
 	overflow: scroll;
 	padding: var(--std-padding);
+	padding-bottom: var(--square);
 	position: absolute;
 	right: 0;
 	top: var(--square);

@@ -23,7 +23,4 @@
 	h1 {
 		margin-bottom: var(--std-margin);
 	}
-	.generator-body {
-		top: var(--square);
-	}
 </style>
