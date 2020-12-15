@@ -239,6 +239,7 @@ p {
 }
 .error {
 	color: var(--ter-color);
+	text-shadow: 0 0 5px var(--ter-color-trans);
 }
 .explanation {
 	margin: var(--std-margin);
@@ -327,10 +328,10 @@ button:hover {
 	box-shadow: var(--pri-box-shadow);
 }
 button:invalid {
+	-webkit-text-fill-color: var(--ter-color);
 	border-color: var(--ter-color);
 	color: var(--ter-color);
 	font-weight: bold;
-	-webkit-text-fill-color: var(--ter-color);
 }
 .btn-box {
 	align-content: center;
@@ -409,6 +410,7 @@ details {
 }
 summary {
 	align-items: center;
+	cursor: pointer;
 	display: flex;
 	font-weight: bold;
 	height: var(--square);
@@ -447,12 +449,8 @@ input:hover {
 	box-shadow: var(--pri-box-shadow);
 }
 input[type="number"] {
-	width: 100px;
 	-moz-appearance: textfield;
-}
-::webkit-
-input[type="number"]:active {
-	color: var(--sec-color);
+	width: 100px;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

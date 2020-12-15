@@ -1,34 +1,40 @@
 <script>
+	import AdjustUIColor from 'utils/AdjustUIColor.js'
 	import BackButton from 'icons/BackButton.svelte'
 	import BackupCharacter from 'database/BackupCharacter.js'
-	import DeleteCharacter from 'database/DeleteCharacter.js'
 	import GoTo from 'utils/GoTo.js'
-	import LoadAllCharacters from 'database/LoadAllCharacters.js'
-	import LoadCharacter from 'database/LoadCharacter.js'
+	import ReadAllCharacters from 'database/ReadAllCharacters.js'
+	import ResetUIColor from 'utils/ResetUIColor.js'
 	import TrashButton from 'icons/TrashButton.svelte'
-	import { character } from 'stores/characterStore.js'
-	import { characterList } from 'stores/characterListStore.js'
 	import { beforeUpdate } from 'svelte'
+	import { character } from 'stores/characterStore.js'
+	import { player } from 'stores/playerStore.js'
 
 	let selectedCharacter = ''
 
-	const loadCharacter = _ => {
+	const loadCharacter = (_) => {
 		$character = LoadCharacter(selectedCharacter)
+		$player = $player.loadCharacter($character)
+		AdjustUIColor($character)
 		GoTo('character/sheet')
 	}
 
-	const backupCharacter = _ => BackupCharacter($character)
+	const backupCharacter = (_) => BackupCharacter($character)
 
-	const deleteCharacter = _ => {
-		DeleteCharacter(selectedCharacter)
+	const deleteCharacter = (_) => {
+		$player = $player.deleteCharacter(selectedCharacter)
+		$player.characterList = $player.characterList.filter(c => c.description.name.value != selectedCharacter)
+		$character = $player.characterList[$player.currentCharacter]
+		if ($player.characterList.length) AdjustUIColor($character)
+		else ResetUIColor()
 		GoTo('character/load')
 	}
 
-	const newCharacter = _ => GoTo('character/new')
+	const newCharacter = (_) => GoTo('character/new')
 
 	const selectCharacter = (event) => selectedCharacter = event.target.textContent
 
-	beforeUpdate(_ => $characterList = LoadAllCharacters())
+	beforeUpdate(_ => $player = $player.loadAllCharacters())
 </script>
 
 
@@ -37,14 +43,18 @@
 </svelte:head>
 <div class='cntr-card'>
 	<div class='character-storage-list-window'>
-		{#if $characterList.length}
+		{#if $player.characterList.length}
 			<div class='character-storage-list'>
-				{#each $characterList as c}
+				{#each $player.characterList as c}
 					<div class='stored-character'>
-						<button class='character-name' on:click={event => selectCharacter(event)}>
+						<button
+							class='character-name'
+							on:click={(event) => selectCharacter(event)}>
 							{c.description.name.value}
 						</button>
-						<TrashButton args={c.description.name.value} deleteFunction={deleteCharacter} />
+						<TrashButton
+							args={c.description.name.value}
+							on:click={deleteCharacter} />
 					</div>
 				{/each}
 			</div>
@@ -52,9 +62,13 @@
 	</div>
 	<div class='controls'>
 		<button class='small-cntr-btn' on:click={loadCharacter}>Load</button>
-		<button class='small-cntr-btn' on:click={backupCharacter}>Backup</button>
+		<button
+			class='small-cntr-btn'
+			on:click={backupCharacter}>Backup</button>
 		<button class='small-cntr-btn' on:click={newCharacter}>New</button>
-		<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
+		<button
+			class='small-cntr-btn'
+			on:click={deleteCharacter}>Delete</button>
 	</div>
 </div>
 <BackButton path={'character'} />

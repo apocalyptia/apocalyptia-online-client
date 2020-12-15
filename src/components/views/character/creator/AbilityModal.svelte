@@ -1,21 +1,20 @@
 <script>
 	import { createEventDispatcher, onDestroy } from 'svelte'
-	import AbilityModalSingle from 'views/character/creator/AbilityModalSingle.svelte'
-	import AbilityModalOptions from 'views/character/creator/AbilityModalOptions.svelte'
+	import AbilityModalList from 'views/character/creator/AbilityModalList.svelte'
 
 	export let ability, MasterAbilityList
 
 	const dispatch = createEventDispatcher()
 
-	const handle_keydown = e => { if (e.key === 'Escape') dispatch('close') }
+	const handleKeydown = e => { if (e.key === 'Escape') dispatch('close') }
 
-	const previously_focused = typeof document !== 'undefined' && document.activeElement
+	const previouslyFocused = typeof document !== 'undefined' && document.activeElement
 
-	if (previously_focused) onDestroy(_ => previously_focused.focus())
+	if (previouslyFocused) onDestroy(_ => previouslyFocused.focus())
 </script>
 
 
-<svelte:window on:keydown={handle_keydown}/>
+<svelte:window on:keydown={handleKeydown}/>
 <div class="modal-background" on:click={_ => dispatch('close')}></div>
 <div class="modal" role="dialog" aria-modal="true">
 	<div class='modal-content'>
@@ -27,11 +26,7 @@
 			<span class='ability-description'>{ability.desc}</span>
 		</div>
 		<div class='stats-section'>
-			{#if ability.opts.length}
-				<AbilityModalOptions {ability} {MasterAbilityList}/>
-			{:else}
-				<AbilityModalSingle {ability} {MasterAbilityList}/>
-			{/if}
+			<AbilityModalList {ability} {MasterAbilityList} options={ability.opts.length}/>
 		</div>
 		<div class='btn-row'>
 			<button on:click={_ => dispatch('close')}>Close</button>

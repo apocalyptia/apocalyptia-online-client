@@ -1,6 +1,6 @@
 <script>
     import BackButton from 'views/icons/BackButton.svelte'
-    import { user } from 'stores/userStore.js'
+    import { player } from 'stores/playerStore.js'
 </script>
 
 
@@ -8,7 +8,7 @@
 	<title>Apocalyptia Online - Character</title>
 </svelte:head>
 <div class='cntr-card'>
-    {#if $user.currentCharacter}
+    {#if $player.currentCharacter}
         <a href='character/sheet' class='link-btn'>Character Sheet</a>
     {/if}
 	<a href='character/new' class='link-btn'>New Character</a>

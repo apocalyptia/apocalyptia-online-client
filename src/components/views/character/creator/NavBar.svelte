@@ -1,17 +1,17 @@
 <script>
 	import GoTo from 'utils/GoTo.js'
-	import Skills from 'rules/Skills.js'
-	import Traits from 'rules/Traits.js'
-	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
+	import { beforeUpdate } from 'svelte'
 
-	$: current = $character.meta.step
+	export let proceedConditions
 
-	let proceed
+	export let limit
 
-	const backButton = '&lt;'
+	let backButton = '&lt;'
 
-	$: nextButton = 'x'
+	let nextButton = '&gt'
+
+	let canProceed = true
 
 	const back = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)
@@ -22,19 +22,14 @@
 	const next = _ => {
 		proceedStatus()
 		document.getElementById('character-creator').scrollTo(0, 0)
-		if (proceed) $character.meta.step++
-		if ($character.meta.step > 6) GoTo('/')
+		if (canProceed) $character.meta.step++
+		if ($character.meta.step > limit) GoTo('/')
 	}
 
-	const proceedStatus = _ => {
-		proceed = true
-		if (
-			(current == 0 && Object.values($character.description).some(d => d.value == ``)) ||
-			(current == 1 && Traits.remaining($character) != 0) ||
-			(current == 2 && Skills.remaining($character) != 0) ||
-			(current == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))
-		) proceed = false
-		if (proceed) nextButton = '&gt;'
+	$: proceedStatus = _ => {
+		canProceed = true
+		if (proceedConditions()) canProceed = false
+		if (canProceed) nextButton = '&gt;'
 		else nextButton = 'x'
 	}
 
@@ -49,7 +44,7 @@
 	<button on:click={_ => GoTo('/')}>
 		Home
 	</button>
-	<button on:click={next} class='{proceed ? '' : 'crimson-btn' }'>
+	<button on:click={next} class='{canProceed ? '' : 'crimson-btn' }'>
 		{@html nextButton}
 	</button>
 </div>

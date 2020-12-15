@@ -1,10 +1,11 @@
+import { v4 as uuidv4 } from 'uuid'
 import AbilitiesList from 'lists/AbilitiesList.js'
 import PropertiesList from 'lists/PropertiesList.js'
 
 export default class Character {
 	constructor() {
 		this.meta = {
-			id: ``,
+			id: uuidv4(),
 			user: ``,
 			created: ``,
 			modified: ``,
@@ -258,7 +259,9 @@ export default class Character {
 		return this
 	}
 	updateAbilities() {
-		this.abilities = AbilitiesList.masterList.filter(a => a.taken)
+		console.log('pre-props ', this.properties)
+		this.abilities = [...AbilitiesList.masterList.filter(a => a.taken)]
+		console.log('post-props ', this.properties)
 		this.properties.xp.current = this.properties.xp.score
 		if (this.abilities.length) {
 			this.abilities.forEach(a => this.properties.xp.current -= (a.taken * a.xp))

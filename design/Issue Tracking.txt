@@ -51,7 +51,6 @@ Markup:
 
 Creator:
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
-	Figure out how to handle taking Abilities that cost more XP than you have. Disable? Warn? Currently proceeds but with range error.
 
 ---------------------------------------------------------------------------------------------------
 

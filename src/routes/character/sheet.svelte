@@ -8,7 +8,7 @@
 	import { onDestroy } from 'svelte'
 
 	const deleteCharacter = _ => {
-		DeleteCharacter(name)
+		DeleteCharacter(characterName)
 		GoTo('/')
 	}
 
@@ -22,7 +22,7 @@
 
 
 <svelte:head>
-	<title>Apocalyptia Online - Character Creator - Character Sheet</title>
+	<title>Apocalyptia Online - Character Sheet</title>
 </svelte:head>
 <div class='sheet page-body'>
 	<CharacterSheet mode={'write'} />
@@ -32,10 +32,3 @@
 	</div>
 </div>
 <BackButton path={'character'} />
-
-
-<style>
-	.sheet {
-		bottom: var(--std-input-height);
-	}
-</style>

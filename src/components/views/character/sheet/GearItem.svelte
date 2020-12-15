@@ -3,9 +3,9 @@
 	import TrashButton from 'icons/TrashButton.svelte'
 	import { character } from 'stores/characterStore.js'
 
-	export let mode, category, item, index
+	export let mode, category, item, index = 0
 
-	const trashItem = ({ category, index=0 }) => {
+	const trashItem = _ => {
 		$character.gear[category].inventory.splice(index, 1)
 		$character = $character
 	}
@@ -15,7 +15,7 @@
 <div class='gear-item'>
 	<GearBlock {item} {mode} />
 	{#if mode != 'readonly'}
-		<TrashButton args={{ category, index }} deleteFunction={trashItem} />
+		<TrashButton on:click={trashItem} />
 	{/if}
 </div>
 
