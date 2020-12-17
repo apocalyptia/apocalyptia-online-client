@@ -15,7 +15,8 @@ export default class Character {
 			coordinates: {
 				map: ``,
 				x: 0,
-				y: 0
+				y: 0,
+				z: 0
 			}
 		}
 		this.description = {
@@ -70,82 +71,82 @@ export default class Character {
 			acrobatics: {
 				name: `Acrobatics`,
 				score: 0,
-				parent: 'Agility'
+				parent: `Agility`
 			},
 			larceny: {
 				name: `Larceny`,
 				score: 0,
-				parent: 'Agility'
+				parent: `Agility`
 			},
 			ranged: {
 				name: `Ranged`,
 				score: 0,
-				parent: 'Agility'
+				parent: `Agility`
 			},
 			stealth: {
 				name: `Stealth`,
 				score: 0,
-				parent: 'Agility'
+				parent: `Agility`
 			},
 			medicine: {
 				name: `Medicine`,
 				score: 0,
-				parent: 'Brains'
+				parent: `Brains`
 			},
 			perception: {
 				name: `Perception`,
 				score: 0,
-				parent: 'Brains'
+				parent: `Brains`
 			},
 			science: {
 				name: `Science`,
 				score: 0,
-				parent: 'Brains'
+				parent: `Brains`
 			},
 			survival: {
 				name: `Survival`,
 				score: 0,
-				parent: 'Brains'
+				parent: `Brains`
 			},
 			athletics: {
 				name: `Athletics`,
 				score: 0,
-				parent: 'Constitution'
+				parent: `Constitution`
 			},
 			build: {
 				name: `Build`,
 				score: 0,
-				parent: 'Constitution'
+				parent: `Constitution`
 			},
 			drive: {
 				name: `Drive`,
 				score: 0,
-				parent: 'Constitution'
+				parent: `Constitution`
 			},
 			melee: {
 				name: `Melee`,
 				score: 0,
-				parent: 'Constitution'
+				parent: `Constitution`
 			},
 			leadership: {
 				name: `Leadership`,
 				score: 0,
-				parent: 'Demeanor'
+				parent: `Demeanor`
 			},
 			perform: {
 				name: `Perform`,
 				score: 0,
-				parent: 'Demeanor'
+				parent: `Demeanor`
 			},
 			socialize: {
 				name: `Socialize`,
 				score: 0,
-				parent: 'Demeanor'
+				parent: `Demeanor`
 			},
 			tame: {
 				name: `Tame`,
 				score: 0,
-				parent: 'Demeanor'
+				parent: `Demeanor`
 			}
 		}
 		this.properties = {
@@ -259,9 +260,7 @@ export default class Character {
 		return this
 	}
 	updateAbilities() {
-		console.log('pre-props ', this.properties)
 		this.abilities = [...AbilitiesList.masterList.filter(a => a.taken)]
-		console.log('post-props ', this.properties)
 		this.properties.xp.current = this.properties.xp.score
 		if (this.abilities.length) {
 			this.abilities.forEach(a => this.properties.xp.current -= (a.taken * a.xp))
@@ -275,6 +274,9 @@ export default class Character {
 	resetGear() {
 		for (let g in this.gear) this.gear[g].inventory = []
 		return this
+	}
+	applyAbilities() {
+		for (let a in this.abilities) this.abilities[a].formula()
 	}
 	finalize(userId) {
 		if (!this.created) this.created = new Date()

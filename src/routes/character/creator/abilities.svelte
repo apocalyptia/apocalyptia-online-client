@@ -8,14 +8,11 @@
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
 	import RandomAbilities from 'random/RandomAbilities.js'
-	import { beforeUpdate } from 'svelte'
 	import { character } from 'stores/characterStore.js'
 
 	let MasterAbilityList = AbilitiesList.masterList
 
 	$: remainingXP = $character.properties.xp.current
-
-	beforeUpdate(_ => $character = $character.updateAbilities())
 </script>
 
 

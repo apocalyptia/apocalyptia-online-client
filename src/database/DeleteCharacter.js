@@ -1,1 +1,3 @@
-export default (name) => window.localStorage.removeItem(name)
+export default (name) => {
+	window.localStorage.removeItem(name)
+}

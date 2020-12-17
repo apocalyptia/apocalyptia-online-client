@@ -25,7 +25,7 @@
 	<title>Apocalyptia Online - Character Sheet</title>
 </svelte:head>
 <div class='sheet page-body'>
-	<CharacterSheet mode={'write'} />
+	<CharacterSheet mode={'edit'} />
 	<div class='btn-row'>
 		<button class='small-cntr-btn' on:click={saveCharacter}>Save</button>
 		<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>

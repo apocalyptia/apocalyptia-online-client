@@ -14,6 +14,7 @@ export default (c) => {
 	char.meta.coordinates.map = c.Cm
 	char.meta.coordinates.x = c.Cx
 	char.meta.coordinates.y = c.Cy
+	char.meta.coordinates.z = c.Cz
 	char.description.age.value = c.Da
 	char.description.name.value = c.Dn
 	char.description.hair.value = c.Dh

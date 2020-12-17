@@ -3,7 +3,6 @@
 	import BackButton from 'icons/BackButton.svelte'
 	import BackupCharacter from 'database/BackupCharacter.js'
 	import GoTo from 'utils/GoTo.js'
-	import ReadAllCharacters from 'database/ReadAllCharacters.js'
 	import ResetUIColor from 'utils/ResetUIColor.js'
 	import TrashButton from 'icons/TrashButton.svelte'
 	import { beforeUpdate } from 'svelte'

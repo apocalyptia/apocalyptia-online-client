@@ -11,6 +11,6 @@ export default (c) => {
     c = c.setProperties()
     c = RandomAbilities(c)
     c = RandomStartingGear(c, c.properties.luck.score)
-    c.meta.status.step = 6
+	c.meta.status.step = 6
     return c
 }

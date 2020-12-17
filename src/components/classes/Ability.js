@@ -27,7 +27,7 @@ export default class Ability extends Rule {
 		this.xp = xp
 		this.taken = taken
 		this.opts = opts
-		this.selection = selection,
+		this.selection = selection
 		this.notes = notes
 	}
 }

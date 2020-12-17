@@ -1,4 +1,5 @@
-const faunadb = require('faunadb')
+import { faunadb } from 'faunadb'
+
 const q = faunadb.query
 
 exports.handler = async (event) => {

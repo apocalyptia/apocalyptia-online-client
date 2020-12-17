@@ -1,1 +1,3 @@
-export default (key, character) => window.localStorage.setItem(key, character)
+export default (key, character) => {
+	window.localStorage.setItem(key, character)
+}

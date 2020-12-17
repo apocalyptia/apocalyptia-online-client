@@ -6,8 +6,7 @@
 	import { player } from 'stores/playerStore.js'
 
     const randomCharacter = _ => {
-        $character = new Character()
-		$character = RandomCharacter($character)
+		$character = RandomCharacter(new Character())
 		$player = $player.newCharacter($character)
     }
 </script>

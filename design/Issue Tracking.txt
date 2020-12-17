@@ -7,7 +7,7 @@ finish integrating database (faunadb) with client app
 *** Need to figure out query commands
 
 finish user auth features (recovery, account settings)
-apply ability mods to character
+apply ability mods to character (see list below)
 create sorting options for all list pages
 make narrator dashboard
 make game group functionality
@@ -74,3 +74,16 @@ Character:
 Figure out a quick Jury-Rig version of Build.
 
 ---------------------------------------------------------------------------------------------------
+
+
+Abilities that modify Character stats:
+Discipline
+Fleet Footed
+Fortunate
+Healthy
+Practice
+Self Improvement
+Situational Awareness
+Specialize
+Unorthodox
+Weapon Training

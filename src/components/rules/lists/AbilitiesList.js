@@ -53,12 +53,6 @@ const listBuilder = (list) => {
 	return newList
 }
 
-const reset = (list) => {
-	for (let i = 0; i < list.length; i++) {
-		list[i].taken = 0
-	}
-}
-
 export default {
 	name: `Abilities`,
 	list: abilityArray.sort((a, b) => PropSort(a, b, 'name')),
@@ -105,5 +99,9 @@ export default {
 		},
 	],
 	masterList: listBuilder(abilityArray),
-	reset: _ => reset(listBuilder(abilityArray))
+	reset() {
+		for (let i = 0; i < this.masterList.length; i++) {
+			this.masterList[i].taken = 0
+		}
+	}
 }
