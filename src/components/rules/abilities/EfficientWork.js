@@ -6,15 +6,6 @@ import Science from 'skills/Science.js'
 import Survival from 'skills/Survival.js'
 import Tame from 'skills/Tame.js'
 
-const LongDurationSkills = [
-	Build,
-	Larceny,
-	Medicine,
-	Science,
-	Survival,
-	Tame
-]
-
 const EfficientWork = new Ability({
 	name: `Efficient Work`,
 	desc: [
@@ -23,7 +14,14 @@ const EfficientWork = new Ability({
 	],
 	max: 1,
 	xp: 6,
-	opts: LongDurationSkills
+	opts: [
+		Build,
+		Larceny,
+		Medicine,
+		Science,
+		Survival,
+		Tame
+	]
 })
 
 export default EfficientWork

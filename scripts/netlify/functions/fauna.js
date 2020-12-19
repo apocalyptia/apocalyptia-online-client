@@ -9,7 +9,7 @@ exports.handler = (event) => {
 
 	const { userId, character, commandName } = event.body
 
-	const commands = {
+	const command = {
 		createCharacter: q.Create(
 			q.Collection(`Characters`),
 			{ data: character }
@@ -39,7 +39,7 @@ exports.handler = (event) => {
 		)
 	}
 
-	return client.query(commands[commandName]).then(res => {
+	return client.query(command[commandName]).then(res => {
 		if (commandName == `readAllCharacters`) {
 			return client.query(
 				res.data.map(ref => q.Get(ref))

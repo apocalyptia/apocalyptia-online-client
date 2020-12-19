@@ -10,6 +10,7 @@ export default (char) => {
 	c.St = char.meta.status
 	c.Sp = char.meta.step
 	c.Cm = char.meta.coordinates.map
+	c.Cf = char.meta.coordinates.f
 	c.Cx = char.meta.coordinates.x
 	c.Cy = char.meta.coordinates.y
 	c.Cz = char.meta.coordinates.z

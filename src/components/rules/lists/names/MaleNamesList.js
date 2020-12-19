@@ -76,7 +76,6 @@ export default [
 	'Aron',
 	'Arthur',
 	'Arturo',
-	'Aryan',
 	'Asa',
 	'Asher',
 	'Ashton',

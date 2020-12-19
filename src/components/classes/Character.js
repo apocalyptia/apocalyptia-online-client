@@ -14,6 +14,7 @@ export default class Character {
 			step: 0,
 			coordinates: {
 				map: ``,
+				f: 0,
 				x: 0,
 				y: 0,
 				z: 0

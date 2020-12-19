@@ -12,8 +12,8 @@
 	let selectedCharacter = ''
 
 	const loadCharacter = (_) => {
-		$character = LoadCharacter(selectedCharacter)
-		$player = $player.loadCharacter($character)
+		$player = $player.loadCharacter(selectedCharacter)
+		$character = $player.characterList[$player.currentCharacter]
 		AdjustUIColor($character)
 		GoTo('character/sheet')
 	}
@@ -42,7 +42,7 @@
 </svelte:head>
 <div class='cntr-card'>
 	<div class='character-storage-list-window'>
-		{#if $player.characterList.length}
+		{#if $player.characterList}
 			<div class='character-storage-list'>
 				{#each $player.characterList as c}
 					<div class='stored-character'>

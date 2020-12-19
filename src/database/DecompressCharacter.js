@@ -12,6 +12,7 @@ export default (c) => {
 	char.meta.status = c.St
 	char.meta.step = c.Sp
 	char.meta.coordinates.map = c.Cm
+	char.meta.coordinates.f = c.Cf
 	char.meta.coordinates.x = c.Cx
 	char.meta.coordinates.y = c.Cy
 	char.meta.coordinates.z = c.Cz
