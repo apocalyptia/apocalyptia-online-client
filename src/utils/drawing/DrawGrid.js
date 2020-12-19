@@ -9,7 +9,7 @@ export default (ctx, rows, cols, square, color) => {
 				'y': r * square.h,
 				'w': square.w,
 				'h': square.h,
-				'f': color
+				'c': color
 			})
 		}
 	}

@@ -1,14 +1,14 @@
 <script>
 	import BattleMap from 'views/map/BattleMap.svelte'
 
-	const width = 10000
+	const cols = 100
 
-	const height = 10000
+	const rows = 100
 </script>
 
 
 <div class='map-body'>
-	<BattleMap {width} {height} />
+	<BattleMap {cols} {rows} />
 </div>
 
 

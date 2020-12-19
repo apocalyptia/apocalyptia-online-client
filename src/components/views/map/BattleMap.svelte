@@ -3,27 +3,25 @@
 	// import DrawSquare from 'utils/drawing/DrawSquare.js'
 	import { onMount } from 'svelte'
 
-	export let width, height
+	export let cols, rows
 
 	const square = {
 		'w': 50,
 		'h': 50
 	}
 
-	const rows = height / square.h
-
-	const cols = width / square.w
-
 	onMount(_ => {
 		let canvas = document.getElementById('map')
 		let ctx = canvas.getContext('2d')
-		// DrawSquare({ ctx, 'x': 0, 'y': 0, 'w': width, 'h': height, 'f': 'rgba(0, 50, 0, 1)' })
 		DrawGrid(ctx, rows, cols, square, 'rgba(0, 255, 0, 1)')
 	})
 </script>
 
 
-<canvas id='map' {width} {height} />
+<canvas id='map'
+	width={cols * square.w}
+	height={rows * square.h}
+/>
 
 
 <style>
