@@ -1,5 +1,5 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 </script>
 
 
@@ -15,7 +15,7 @@
 				<span class='s-col'>Max</span>
 				<span class='s-col'>Taken</span>
 			</div>
-			{#each $character.abilities as ability}
+			{#each $characterStore.abilities as ability}
 				<div class='card-table-row'>
 					<span class='l-col'>
 						{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}

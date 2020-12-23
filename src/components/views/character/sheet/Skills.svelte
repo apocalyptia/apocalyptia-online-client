@@ -1,5 +1,5 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 </script>
 
 
@@ -9,12 +9,12 @@
 	</summary>
 	<div class='sheet-card'>
 		<div class='sheet-card-body'>
-			{#each Object.values($character.traits) as trait}
+			{#each Object.values($characterStore.traits) as trait}
 				<div class='sheet-card-block'>
 					<div class='parent-trait'>
 						{trait.name}
 					</div>
-					{#each Object.values($character.skills) as skill}
+					{#each Object.values($characterStore.skills) as skill}
 						{#if trait.name == skill.parent}
 							<div class='sheet-card-item'>
 								{skill.name}: {skill.score}

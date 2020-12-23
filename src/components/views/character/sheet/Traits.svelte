@@ -1,5 +1,5 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 </script>
 
 
@@ -9,7 +9,7 @@
 	</summary>
 	<div class='sheet-card'>
 		<div class='sheet-card-body'>
-			{#each Object.values($character.traits) as trait}
+			{#each Object.values($characterStore.traits) as trait}
 				<div class='sheet-card-block'>
 					<div class='sheet-card-item'>
 						<span class='trait-name'>

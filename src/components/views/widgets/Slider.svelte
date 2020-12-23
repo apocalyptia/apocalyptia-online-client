@@ -1,21 +1,23 @@
 <script>
-	export let name, value, min, max
+	export let name, value, min, max, indicator = false
 </script>
 
 
 <div class='range-block'>
 	<input type='range' {name} {min} {max} bind:value={value} on:input>
-	<div class='range-indicator'>
-		{#if min}
-			{#each Array(max) as _, i}
-				<span class='range-number'>{i+1}</span>
-			{/each}
-		{:else}
-			{#each Array(max+1) as _, i}
-				<span class='range-number'>{i}</span>
-			{/each}
-		{/if}
-	</div>
+	{#if indicator}
+		<div class='range-indicator'>
+			{#if min}
+				{#each Array(max) as _, i}
+					<span class='range-number'>{i+1}</span>
+				{/each}
+			{:else}
+				{#each Array(max+1) as _, i}
+					<span class='range-number'>{i}</span>
+				{/each}
+			{/if}
+		</div>
+	{/if}
 </div>
 
 

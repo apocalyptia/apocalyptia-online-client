@@ -6,14 +6,14 @@
 	import PropertiesFormulae from 'views/character/creator/PropertiesFormulae.svelte'
 	import Properties from 'rules/Properties.js'
 	import { beforeUpdate } from 'svelte'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
-	beforeUpdate(_ => $character = $character.setProperties())
+	beforeUpdate(_ => $characterStore = $characterStore.setProperties())
 </script>
 
 
 <div class='properties-step-page'>
-	<PageHeader chapter={'Properties'} step={$character.meta.step} />
+	<PageHeader chapter={'Properties'} step={$characterStore.meta.step} />
 	<ExplanationBlock rule={Properties} />
 	<PropertiesFormulae />
 	<PropertiesBlock />

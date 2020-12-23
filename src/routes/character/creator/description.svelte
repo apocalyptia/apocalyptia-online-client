@@ -9,60 +9,60 @@
 	import RandomSex from 'random/RandomSex.js'
 	import RandomSkin from 'random/RandomSkin.js'
 	import RandomWeight from 'random/RandomWeight.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 </script>
 
 
 <div class='description-step-page'>
-	<PageHeader chapter={'Description'} step={$character.meta.step} />
+	<PageHeader chapter={'Description'} step={$characterStore.meta.step} />
 	<div class='section-card'>
 		<div class='block-row'>
 			<div class='character-container'>
 				<span>Name:</span>
-				<input type='text' bind:value={$character.description.name.value}>
-				<button on:click={_ => $character.description.name.value = RandomName($character)}>Random</button>
+				<input type='text' bind:value={$characterStore.description.name.value}>
+				<button on:click={_ => $characterStore.description.name.value = RandomName($characterStore)}>Random</button>
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Age:</span>
-				<input type='text' bind:value={$character.description.age.value}>
-				<button on:click={_ => $character.description.age.value = RandomAge()}>Random</button>
+				<input type='text' bind:value={$characterStore.description.age.value}>
+				<button on:click={_ => $characterStore.description.age.value = RandomAge()}>Random</button>
 			</div>
 			<div class='item-container'>
 				<span>Sex:</span>
-				<input type='text' bind:value={$character.description.sex.value}>
-				<button on:click={_ => $character.description.sex.value = RandomSex()}>Random</button>
+				<input type='text' bind:value={$characterStore.description.sex.value}>
+				<button on:click={_ => $characterStore.description.sex.value = RandomSex()}>Random</button>
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Height:</span>
-				<input type='text' bind:value={$character.description.height.value}>
-				<button on:click={_ => $character.description.height.value = RandomHeight($character)}>Random</button>
+				<input type='text' bind:value={$characterStore.description.height.value}>
+				<button on:click={_ => $characterStore.description.height.value = RandomHeight($characterStore)}>Random</button>
 			</div>
 			<div class='item-container'>
 				<span>Weight:</span>
-				<input type='text' bind:value={$character.description.weight.value}>
-				<button on:click={_ => $character.description.weight.value = RandomWeight($character)}>Random</button>
+				<input type='text' bind:value={$characterStore.description.weight.value}>
+				<button on:click={_ => $characterStore.description.weight.value = RandomWeight($characterStore)}>Random</button>
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Skin:</span>
-				<input type='text' bind:value={$character.description.skin.value}>
-				<button on:click={_ => $character.description.skin.value = RandomSkin()}>Random</button>
+				<input type='text' bind:value={$characterStore.description.skin.value}>
+				<button on:click={_ => $characterStore.description.skin.value = RandomSkin()}>Random</button>
 			</div>
 			<div class='item-container'>
 				<span>Hair:</span>
-				<input type='text' bind:value={$character.description.hair.value}>
-				<button on:click={_ => $character.description.hair.value = RandomHair($character)}>Random</button>
+				<input type='text' bind:value={$characterStore.description.hair.value}>
+				<button on:click={_ => $characterStore.description.hair.value = RandomHair($characterStore)}>Random</button>
 			</div>
 		</div>
 	</div>
 	<ButtonRow
-		reset={_ => $character = $character.resetDescription()}
-		random={_ => $character = RandomDescription($character)}
+		reset={_ => $characterStore = $characterStore.resetDescription()}
+		random={_ => $characterStore = RandomDescription($characterStore)}
 	/>
 </div>
 

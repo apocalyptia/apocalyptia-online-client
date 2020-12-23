@@ -3,23 +3,23 @@
 	import GearBlock from 'views/widgets/GearBlock.svelte'
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import RandomStartingGear from 'random/RandomStartingGear.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
 	let gearedUp = false
 
 	const randomGear = _ => {
-		$character = RandomStartingGear($character, $character.properties.luck.score)
+		$characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)
 	}
 
 	beforeUpdate(_ => {
-		gearedUp = Object.values($character.gear).every(g => g.inventory.length)
+		gearedUp = Object.values($characterStore.gear).every(g => g.inventory.length)
 	})
 </script>
 
 
 <div class='gear-step-page'>
-	<PageHeader chapter={'Gear'} step={$character.meta.step} />
+	<PageHeader chapter={'Gear'} step={$characterStore.meta.step} />
 	<div class='explanation'>
 		<p>You start with some random Gear:</p>
 		<p>One piece of Armor</p>
@@ -29,7 +29,7 @@
 		<p>Random items = Luck</p>
 	</div>
 	{#if gearedUp}
-		{#each Object.values($character.gear) as category (category.name)}
+		{#each Object.values($characterStore.gear) as category (category.name)}
 			<details>
 				<summary>{category.name}</summary>
 				<div class='details-content'>

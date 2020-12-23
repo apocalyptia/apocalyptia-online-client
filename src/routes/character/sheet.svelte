@@ -4,7 +4,7 @@
 	import DeleteCharacter from 'database/DeleteCharacter.js'
 	import GoTo from 'utils/GoTo.js'
 	import SaveCharacter from 'database/SaveCharacter.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'
 
 	const deleteCharacter = _ => {
@@ -13,11 +13,11 @@
 	}
 
 	const saveCharacter = _ => {
-		SaveCharacter($character)
+		SaveCharacter($characterStore)
 		GoTo('/')
 	}
 
-	onDestroy(_ => SaveCharacter($character))
+	onDestroy(_ => SaveCharacter($characterStore))
 </script>
 
 

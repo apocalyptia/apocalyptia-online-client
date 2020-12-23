@@ -1,5 +1,5 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode = 'edit'
 </script>
@@ -11,9 +11,9 @@
 	</summary>
 	<div class='sheet-card'>
 		{#if mode == 'edit'}
-			<textarea class='sheet-notes-block' wrap='soft' bind:value={$character.meta.notes} />
+			<textarea class='sheet-notes-block' wrap='soft' bind:value={$characterStore.meta.notes} />
 		{:else}
-			<div class='sheet-notes-block'>{$character.meta.notes}</div>
+			<div class='sheet-notes-block'>{$characterStore.meta.notes}</div>
 		{/if}
 	</div>
 </details>

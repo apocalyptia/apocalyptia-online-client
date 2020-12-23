@@ -1,5 +1,5 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode
 </script>
@@ -13,9 +13,9 @@
 		<div class='name-block'>
 			<span>Character:</span> 
 			{#if mode == 'edit'}
-				<input type='text' class='sheet-value-long' bind:value={$character.description.name.value} />
+				<input type='text' class='sheet-value-long' bind:value={$characterStore.description.name.value} />
 			{:else if mode == 'readonly'}
-				<input type='text' class='sheet-value-long' bind:value={$character.description.name.value} readonly />
+				<input type='text' class='sheet-value-long' bind:value={$characterStore.description.name.value} readonly />
 			{/if}
 		</div>
 		<div class='sheet-card-body'>
@@ -23,25 +23,25 @@
 				<div class='sheet-card-item'>
 					<span>Age:</span> 
 					{#if mode == 'edit'}
-						<input type='text' class='sheet-value' bind:value={$character.description.age.value} />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.age.value} />
 					{:else if mode == 'readonly'}
-						<input type='text' class='sheet-value' bind:value={$character.description.age.value} readonly />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.age.value} readonly />
 					{/if}
 				</div>
 				<div class='sheet-card-item'>
 					<span>Ht:</span> 
 					{#if mode == 'edit'}
-						<input type='text' class='sheet-value' bind:value={$character.description.height.value} />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.height.value} />
 					{:else if mode == 'readonly'}
-						<input type='text' class='sheet-value' bind:value={$character.description.height.value} readonly />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.height.value} readonly />
 					{/if}
 				</div>
 				<div class='sheet-card-item'>
 					<span>Wt:</span> 
 					{#if mode == 'edit'}
-						<input type='text' class='sheet-value' bind:value={$character.description.weight.value} />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.weight.value} />
 					{:else if mode == 'readonly'}
-						<input type='text' class='sheet-value' bind:value={$character.description.weight.value} readonly />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.weight.value} readonly />
 					{/if}
 				</div>
 			</div>
@@ -49,25 +49,25 @@
 				<div class='sheet-card-item'>
 					<span>Sex:</span>
 					{#if mode == 'edit'}
-						<input type='text' class='sheet-value' bind:value={$character.description.sex.value} />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.sex.value} />
 					{:else if mode == 'readonly'}
-						<input type='text' class='sheet-value' bind:value={$character.description.sex.value} readonly />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.sex.value} readonly />
 					{/if}
 				</div>
 				<div class='sheet-card-item'>
 					<span>Skin:</span>
 					{#if mode == 'edit'}
-						<input type='text' class='sheet-value' bind:value={$character.description.skin.value} />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.skin.value} />
 					{:else if mode == 'readonly'}
-						<input type='text' class='sheet-value' bind:value={$character.description.skin.value} readonly />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.skin.value} readonly />
 					{/if}
 				</div>
 				<div class='sheet-card-item'>
 					<span>Hair:</span>
 					{#if mode == 'edit'}
-						<input type='text' class='sheet-value' bind:value={$character.description.hair.value} />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.hair.value} />
 					{:else if mode == 'readonly'}
-						<input type='text' class='sheet-value' bind:value={$character.description.hair.value} readonly />
+						<input type='text' class='sheet-value' bind:value={$characterStore.description.hair.value} readonly />
 					{/if}
 				</div>
 			</div>

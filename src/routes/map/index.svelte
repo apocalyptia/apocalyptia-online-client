@@ -1,24 +1,28 @@
 <script>
 	import BattleMap from 'views/map/BattleMap.svelte'
-
-	const cols = 100
-
-	const rows = 100
+	import MapCreator from 'views/map/MapCreator.svelte'
+	import BackButton from 'views/icons/BackButton.svelte'
+	import { mapStore } from 'stores/mapStore.js'
 </script>
 
 
-<div class='map-body'>
-	<BattleMap {cols} {rows} />
+<div class='map-page-body'>
+	{#if $mapStore.ready}
+		<BattleMap />
+	{:else}
+		<MapCreator />
+	{/if}
 </div>
+<BackButton path={'/'} />
 
 
 <style>
-	.map-body {
+	.map-page-body {
+		bottom: 0;
 		left: 0;
 		overflow: scroll;
 		position: absolute;
-		top: var(--square);
 		right: 0;
-		bottom: 0;
+		top: var(--square);
 	}
 </style>

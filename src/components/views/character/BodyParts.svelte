@@ -1,12 +1,11 @@
 <script>
 	import AdjustUIColor from 'utils/AdjustUIColor.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
-
-	export let character
 
 	export let mode = 'readonly'
 
-	onMount(_ => AdjustUIColor($character))
+	onMount(_ => AdjustUIColor($characterStore))
 </script>
 
 
@@ -14,51 +13,51 @@
 	<div class='left-column'>
 		<div class='head-label'>
 			<div class='body-part-name'>
-				{$character.health.head.name}
+				{$characterStore.health.head.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
-					{$character.health.head.score}
+					{$characterStore.health.head.score}
 				{:else}
 					<input type='number'
-						bind:value='{$character.health.head.current}'
-						min='-{$character.health.head.score}'
-						max='{$character.health.head.score}'
-						on:change={_=>AdjustUIColor($character)}
+						bind:value='{$characterStore.health.head.current}'
+						min='-{$characterStore.health.head.score}'
+						max='{$characterStore.health.head.score}'
+						on:change={_=>AdjustUIColor($characterStore)}
 					/>
-				{/if} / {$character.health.head.score}
+				{/if} / {$characterStore.health.head.score}
 			</div>
 		</div>
 		<div class='left-arm-label'>
 			<div class='body-part-name'>
-				{$character.health.leftArm.name}
+				{$characterStore.health.leftArm.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
-					{$character.health.leftArm.score}
+					{$characterStore.health.leftArm.score}
 				{:else}
 					<input type='number'
-						bind:value='{$character.health.leftArm.current}'
-						min='-{$character.health.leftArm.score}'
-						max='{$character.health.leftArm.score}'
+						bind:value='{$characterStore.health.leftArm.current}'
+						min='-{$characterStore.health.leftArm.score}'
+						max='{$characterStore.health.leftArm.score}'
 					/>
-				{/if} / {$character.health.leftArm.score}
+				{/if} / {$characterStore.health.leftArm.score}
 			</div>
 		</div>
 		<div class='left-leg-label'>
 			<div class='body-part-name'>
-				{$character.health.leftLeg.name}
+				{$characterStore.health.leftLeg.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
-					{$character.health.leftLeg.score}
+					{$characterStore.health.leftLeg.score}
 				{:else}
 					<input type='number'
-						bind:value='{$character.health.leftLeg.current}'
-						min='-{$character.health.leftLeg.score}'
-						max='{$character.health.leftLeg.score}'
+						bind:value='{$characterStore.health.leftLeg.current}'
+						min='-{$characterStore.health.leftLeg.score}'
+						max='{$characterStore.health.leftLeg.score}'
 					/>
-				{/if} / {$character.health.leftLeg.score}
+				{/if} / {$characterStore.health.leftLeg.score}
 			</div>
 		</div>
 	</div>
@@ -79,51 +78,51 @@
 	<div class='right-column'>
 		<div class='torso-label'>
 			<div class='body-part-name'>
-				{$character.health.torso.name}
+				{$characterStore.health.torso.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
-					{$character.health.torso.score}
+					{$characterStore.health.torso.score}
 				{:else}
 					<input type='number'
-						bind:value='{$character.health.torso.current}'
-						min='-{$character.health.torso.score}'
-						max='{$character.health.torso.score}'
-						on:change={_=>AdjustUIColor($character)}
+						bind:value='{$characterStore.health.torso.current}'
+						min='-{$characterStore.health.torso.score}'
+						max='{$characterStore.health.torso.score}'
+						on:change={_=>AdjustUIColor($characterStore)}
 					/>
-				{/if} / {$character.health.torso.score}
+				{/if} / {$characterStore.health.torso.score}
 			</div>
 		</div>
 		<div class='right-arm-label'>
 			<div class='body-part-name'>
-				{$character.health.rightArm.name}
+				{$characterStore.health.rightArm.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
-					{$character.health.rightArm.score}
+					{$characterStore.health.rightArm.score}
 				{:else}
 					<input type='number'
-						bind:value='{$character.health.rightArm.current}'
-						min='-{$character.health.rightArm.score}'
-						max='{$character.health.rightArm.score}'
+						bind:value='{$characterStore.health.rightArm.current}'
+						min='-{$characterStore.health.rightArm.score}'
+						max='{$characterStore.health.rightArm.score}'
 					/>
-				{/if} / {$character.health.rightArm.score}
+				{/if} / {$characterStore.health.rightArm.score}
 			</div>
 		</div>
 		<div class='right-leg-label'>
 			<div class='body-part-name'>
-				{$character.health.rightLeg.name}
+				{$characterStore.health.rightLeg.name}
 			</div>
 			<div class='body-part-numbers'>
 				{#if mode == 'readonly'}
-					{$character.health.rightLeg.score}
+					{$characterStore.health.rightLeg.score}
 				{:else}
 					<input type='number'
-						bind:value='{$character.health.rightLeg.current}'
-						min='-{$character.health.rightLeg.score}'
-						max='{$character.health.rightLeg.score}'
+						bind:value='{$characterStore.health.rightLeg.current}'
+						min='-{$characterStore.health.rightLeg.score}'
+						max='{$characterStore.health.rightLeg.score}'
 					/>
-				{/if} / {$character.health.rightLeg.score}
+				{/if} / {$characterStore.health.rightLeg.score}
 			</div>
 		</div>
 	</div>

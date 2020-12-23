@@ -1,9 +1,9 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	export let ability
 
-	const updateCharacter = _ => $character = $character.updateAbilities()
+	const updateCharacter = _ => $characterStore = $characterStore.updateAbilities()
 </script>
 
 <div class='ability-selection'>

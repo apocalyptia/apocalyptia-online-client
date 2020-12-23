@@ -4,7 +4,7 @@
 	import GoTo from 'utils/GoTo.js'
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import SaveCharacter from 'database/SaveCharacter.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'
 
 	const deleteCharacter = _ => {
@@ -14,15 +14,15 @@
 
 	const saveCharacter = _ => {
 		GoTo('/')
-		SaveCharacter($character)
+		SaveCharacter($characterStore)
 	}
 
-	onDestroy(_ => SaveCharacter($character))
+	onDestroy(_ => SaveCharacter($characterStore))
 </script>
 
 
 <div class='finalize-page'>
-	<PageHeader chapter={'Finalize'} step={$character.meta.step} />
+	<PageHeader chapter={'Finalize'} step={$characterStore.meta.step} />
 	<div class='sheet-content'>
 		<CharacterSheet mode={'readonly'} />
 	</div>

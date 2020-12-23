@@ -1,10 +1,10 @@
 <script>
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
 
-	const update = _ => $character = $character.updateAbilities()
+	const update = _ => $characterStore = $characterStore.updateAbilities()
 
-	$: abilities = $character.abilities
+	$: abilities = $characterStore.abilities
 
 	onMount(_ => update())
 </script>

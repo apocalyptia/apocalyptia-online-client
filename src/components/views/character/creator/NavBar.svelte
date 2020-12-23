@@ -1,6 +1,6 @@
 <script>
 	import GoTo from 'utils/GoTo.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
 	export let proceedConditions
@@ -15,15 +15,15 @@
 
 	const back = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)
-		$character.meta.step--
-		if ($character.meta.step < 0) GoTo('/character/new')
+		$characterStore.meta.step--
+		if ($characterStore.meta.step < 0) GoTo('/character/new')
 	}
 
 	const next = _ => {
 		proceedStatus()
 		document.getElementById('character-creator').scrollTo(0, 0)
-		if (canProceed) $character.meta.step++
-		if ($character.meta.step > limit) GoTo('/')
+		if (canProceed) $characterStore.meta.step++
+		if ($characterStore.meta.step > limit) GoTo('/')
 	}
 
 	$: proceedStatus = _ => {

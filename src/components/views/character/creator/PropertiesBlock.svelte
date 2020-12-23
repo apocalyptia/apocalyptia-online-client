@@ -1,43 +1,43 @@
 <script>
-    import { character } from 'stores/characterStore.js'
+    import { characterStore } from 'stores/characterStore.js'
 </script>
 
 
 <div class='section-card properties-list'>
 	<div class='prop-block'>
 		<div class='prop-item'>
-			{$character.properties.speed.name}: 
-			{$character.properties.speed.score}
+			{$characterStore.properties.speed.name}: 
+			{$characterStore.properties.speed.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.xp.name}: 
-			{$character.properties.xp.score}
+			{$characterStore.properties.xp.name}: 
+			{$characterStore.properties.xp.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.carry.name}:
-			{$character.properties.carry.score}
+			{$characterStore.properties.carry.name}:
+			{$characterStore.properties.carry.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.psyche.name}: 
-			{$character.properties.psyche.score}
+			{$characterStore.properties.psyche.name}: 
+			{$characterStore.properties.psyche.score}
 		</div>
 	</div>
 	<div class='prop-block'>
 		<div class='prop-item'>
-			{$character.properties.dodge.name}: 
-			{$character.properties.dodge.score}
+			{$characterStore.properties.dodge.name}: 
+			{$characterStore.properties.dodge.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.intellect.name}: 
-			{$character.properties.intellect.score}
+			{$characterStore.properties.intellect.name}: 
+			{$characterStore.properties.intellect.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.block.name}: 
-			{$character.properties.block.score}
+			{$characterStore.properties.block.name}: 
+			{$characterStore.properties.block.score}
 		</div>
 		<div class='prop-item'>
-			{$character.properties.luck.name}: 
-			{$character.properties.luck.score}
+			{$characterStore.properties.luck.name}: 
+			{$characterStore.properties.luck.score}
 		</div>
 	</div>
 </div>

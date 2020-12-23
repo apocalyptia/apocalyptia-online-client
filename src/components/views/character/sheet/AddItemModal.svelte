@@ -4,7 +4,7 @@
 	import EquipmentList from 'lists/gear/EquipmentList.js'
 	import MeleeList from 'lists/gear/MeleeWeaponList.js'
 	import RangedList from 'lists/gear/RangedWeaponList.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { createEventDispatcher, onDestroy } from 'svelte'
 
 	export let category
@@ -29,8 +29,8 @@
 
 	const add = _ => {
 		if (category == 'ammo') selectedItem.qty = 0
-		$character.gear[category].inventory.push(selectedItem)
-		$character = $character
+		$characterStore.gear[category].inventory.push(selectedItem)
+		$characterStore = $characterStore
 		dispatch('close')
 	}
 </script>

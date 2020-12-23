@@ -1,6 +1,6 @@
 <script>
 	import BodyParts from 'views/character/BodyParts.svelte'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode = 'edit'
 </script>
@@ -11,6 +11,6 @@
 		Health
 	</summary>
 	<div class='sheet-card'>
-		<BodyParts {character} {mode} />
+		<BodyParts {mode} />
 	</div>
 </details>

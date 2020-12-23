@@ -7,14 +7,14 @@
 	import Slider from 'views/widgets/Slider.svelte'
 	import Traits from 'rules/Traits.js'
 	import TraitsList from 'lists/TraitsList.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
-	$: remaining = Traits.remaining($character)
+	$: remaining = Traits.remaining($characterStore)
 </script>
 
 
 <div class='traits-step-page'>
-	<PageHeader chapter={'Traits'} step={$character.meta.step} />
+	<PageHeader chapter={'Traits'} step={$characterStore.meta.step} />
 	<ExplanationBlock rule={Traits} />
 	<PointsRemaining points={remaining} />
 	<div class='section-card'>
@@ -27,8 +27,8 @@
 							name='{trait.name.toLowerCase()}'
 							min={parseInt(1)}
 							max={parseInt(Traits.maxPoints)}
-							bind:value={$character.traits[trait.name.toLowerCase()].score}
-							on:input={(event) => $character = Traits.assign($character, event.target)}
+							bind:value={$characterStore.traits[trait.name.toLowerCase()].score}
+							on:input={(event) => $characterStore = Traits.assign($characterStore, event.target)}
 						/>
 					</div>
 				</div>
@@ -36,8 +36,8 @@
 		{/each}
 	</div>
 	<ButtonRow
-		reset={_ => $character = $character.resetTraits()}
-		random={_ => $character = RandomTraits($character)}
+		reset={_ => $characterStore = $characterStore.resetTraits()}
+		random={_ => $characterStore = RandomTraits($characterStore)}
 	/>
 </div>
 

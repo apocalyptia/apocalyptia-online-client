@@ -7,14 +7,14 @@
 	import Skills from 'rules/Skills.js'
 	import SkillsList from 'lists/SkillsList.js'
 	import Slider from 'views/widgets/Slider.svelte'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
-	$: remaining = Skills.remaining($character)
+	$: remaining = Skills.remaining($characterStore)
 </script>
 
 
 <div class='skills-step-page'>
-	<PageHeader chapter={'Skills'} step={$character.meta.step} />
+	<PageHeader chapter={'Skills'} step={$characterStore.meta.step} />
 	<ExplanationBlock rule={Skills} />
 	<PointsRemaining points={remaining} />
 		{#each SkillsList.groups as group}
@@ -27,7 +27,7 @@
 					</summary>
 					<div class='details-content'>
 						<div class='max-score'>
-							Max Score: {$character.traits[group.name.toLowerCase()].score}
+							Max Score: {$characterStore.traits[group.name.toLowerCase()].score}
 						</div>
 						{#each group.list as skill}
 							<div class='stat-range'>
@@ -36,8 +36,8 @@
 									name='{skill.name.toLowerCase()}'
 									min={parseInt(0)}
 									max={parseInt(6)}
-									bind:value={$character.skills[skill.name.toLowerCase()].score}
-									on:input={event => $character = Skills.assign($character, event.target)}
+									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
+									on:input={event => $characterStore = Skills.assign($characterStore, event.target)}
 								/>
 							</div>
 						{/each}
@@ -46,8 +46,8 @@
 			</div>
 		{/each}
 	<ButtonRow
-		reset={_ => $character = $character.resetSkills()}
-		random={_ => $character = RandomSkills($character)}
+		reset={_ => $characterStore = $characterStore.resetSkills()}
+		random={_ => $characterStore = RandomSkills($characterStore)}
 	/>
 </div>
 

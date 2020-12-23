@@ -6,25 +6,25 @@
 	import ResetUIColor from 'utils/ResetUIColor.js'
 	import TrashButton from 'icons/TrashButton.svelte'
 	import { beforeUpdate } from 'svelte'
-	import { character } from 'stores/characterStore.js'
-	import { player } from 'stores/playerStore.js'
+	import { characterStore } from 'stores/characterStore.js'
+	import { playerStore } from 'stores/playerStore.js'
 
 	let selectedCharacter = ''
 
 	const loadCharacter = (_) => {
-		$player = $player.loadCharacter(selectedCharacter)
-		$character = $player.characterList[$player.currentCharacter]
-		AdjustUIColor($character)
+		$playerStore = $playerStore.loadCharacter(selectedCharacter)
+		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
+		AdjustUIColor($characterStore)
 		GoTo('character/sheet')
 	}
 
-	const backupCharacter = (_) => BackupCharacter($character)
+	const backupCharacter = (_) => BackupCharacter($characterStore)
 
 	const deleteCharacter = (_) => {
-		$player = $player.deleteCharacter(selectedCharacter)
-		$player.characterList = $player.characterList.filter(c => c.description.name.value != selectedCharacter)
-		$character = $player.characterList[$player.currentCharacter]
-		if ($player.characterList.length) AdjustUIColor($character)
+		$playerStore = $playerStore.deleteCharacter(selectedCharacter)
+		$playerStore.characterList = $playerStore.characterList.filter(c => c.description.name.value != selectedCharacter)
+		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
+		if ($playerStore.characterList.length) AdjustUIColor($characterStore)
 		else ResetUIColor()
 		GoTo('character/load')
 	}
@@ -33,7 +33,7 @@
 
 	const selectCharacter = (event) => selectedCharacter = event.target.textContent
 
-	beforeUpdate(_ => $player = $player.loadAllCharacters())
+	beforeUpdate(_ => $playerStore = $playerStore.loadAllCharacters())
 </script>
 
 
@@ -42,9 +42,9 @@
 </svelte:head>
 <div class='cntr-card'>
 	<div class='character-storage-list-window'>
-		{#if $player.characterList}
+		{#if $playerStore.characterList}
 			<div class='character-storage-list'>
-				{#each $player.characterList as c}
+				{#each $playerStore.characterList as c}
 					<div class='stored-character'>
 						<button
 							class='character-name'

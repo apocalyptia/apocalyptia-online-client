@@ -1,13 +1,13 @@
 <script>
 	import GearBlock from 'views/widgets/GearBlock.svelte'
 	import TrashButton from 'icons/TrashButton.svelte'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode, category, item, index = 0
 
 	const trashItem = _ => {
-		$character.gear[category].inventory.splice(index, 1)
-		$character = $character
+		$characterStore.gear[category].inventory.splice(index, 1)
+		$characterStore = $characterStore
 	}
 </script>
 

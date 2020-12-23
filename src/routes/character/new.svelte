@@ -2,12 +2,12 @@
     import BackButton from 'icons/BackButton.svelte'
     import Character from 'classes/Character.js'
     import RandomCharacter from 'random/RandomCharacter.js'
-	import { character } from 'stores/characterStore.js'
-	import { player } from 'stores/playerStore.js'
+	import { characterStore } from 'stores/characterStore.js'
+	import { playerStore } from 'stores/playerStore.js'
 
     const randomCharacter = _ => {
-		$character = RandomCharacter(new Character())
-		$player = $player.newCharacter($character)
+		$characterStore = RandomCharacter(new Character())
+		$playerStore = $playerStore.newCharacter($characterStore)
     }
 </script>
 

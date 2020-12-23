@@ -1,35 +1,47 @@
 <script>
-	import DrawGrid from 'utils/drawing/DrawGrid.js'
-	// import DrawSquare from 'utils/drawing/DrawSquare.js'
-	import { onMount } from 'svelte'
-
-	export let cols, rows
-
-	const square = {
-		'w': 50,
-		'h': 50
-	}
-
-	onMount(_ => {
-		let canvas = document.getElementById('map')
-		let ctx = canvas.getContext('2d')
-		DrawGrid(ctx, rows, cols, square, 'rgba(0, 255, 0, 1)')
-	})
+	import Canvas from 'views/widgets/Canvas.svelte'
+	import { mapStore } from 'stores/mapStore.js'
 </script>
 
 
-<canvas id='map'
-	width={cols * square.w}
-	height={rows * square.h}
-/>
+<svelte:head>
+	<title>Apocalyptia Online - Map</title>
+</svelte:head>
+<div class='canvas-frame' >
+	<svelte:component this={Canvas} />
+</div>
+<div class='slide-container'>
+	-<input type='range'
+			name='Zoom'
+			min=1 max=200
+			bind:value={$mapStore.magnification}
+			on:input={_ => {
+				console.log($mapStore.magnification)
+				$mapStore = $mapStore.zoom()
+			}}
+	>+
+</div>
 
 
 <style>
-	canvas {
+	.canvas-frame {
+		align-items: middle;
+		border: 3px solid var(--pri-color);
+		display: flex;
+		justify-content: space-around;
 		left: 0;
+		margin: auto 0;
 		opacity: .6;
 		overflow: scroll;
 		position: absolute;
 		top: 0;
+		padding: var(--std-padding);
+	}
+	.slide-container {
+		bottom: var(--s100);
+		display: flex;
+		position: fixed;
+		right: var(--s100);
+		width: calc(100vw - var(--square) - var(--std-margin));
 	}
 </style>

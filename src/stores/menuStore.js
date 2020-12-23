@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-export default writable({
+export const menuStore = writable({
     open: false,
     toggle: function() {
         this.open = !this.open

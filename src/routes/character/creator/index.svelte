@@ -10,10 +10,10 @@
 	import properties from 'creator/properties.svelte'
 	import skills from 'creator/skills.svelte'
 	import traits from 'creator/traits.svelte'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
 
-	onMount(_ => $character = new Character())
+	onMount(_ => $characterStore = new Character())
 
 	const creatorPages = [
 		description,
@@ -27,15 +27,15 @@
 
 	const proceedConditions = _ => {
 		return (
-			($character.meta.step == 0 && Object.values($character.description).some(d => d.value == ``)) ||
-			($character.meta.step == 1 && Traits.remaining($character) != 0) ||
-			($character.meta.step == 2 && Skills.remaining($character) != 0) ||
-			($character.meta.step == 4 && $character.properties.xp.current < 0) ||
-			($character.meta.step == 5 && Object.values($character.gear).some(g => g.inventory.length == 0))
+			($characterStore.meta.step == 0 && Object.values($characterStore.description).some(d => d.value == ``)) ||
+			($characterStore.meta.step == 1 && Traits.remaining($characterStore) != 0) ||
+			($characterStore.meta.step == 2 && Skills.remaining($characterStore) != 0) ||
+			($characterStore.meta.step == 4 && $characterStore.properties.xp.current < 0) ||
+			($characterStore.meta.step == 5 && Object.values($characterStore.gear).some(g => g.inventory.length == 0))
 		)
 	}
 
-	$: step = $character.meta.step
+	$: step = $characterStore.meta.step
 </script>
 
 

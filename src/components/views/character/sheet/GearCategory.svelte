@@ -3,11 +3,11 @@
 	import AddItemModal from 'views/character/sheet/AddItemModal.svelte'
 	import Capitalize from 'utils/Capitalize.js'
 	import GearItem from 'views/character/sheet/GearItem.svelte'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode, category
 
-	$: inventory = $character.gear[category].inventory
+	$: inventory = $characterStore.gear[category].inventory
 
 	let modalVisible = false
 

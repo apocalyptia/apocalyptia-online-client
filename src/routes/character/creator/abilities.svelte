@@ -8,19 +8,19 @@
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
 	import RandomAbilities from 'random/RandomAbilities.js'
-	import { character } from 'stores/characterStore.js'
+	import { characterStore } from 'stores/characterStore.js'
 
 	let MasterAbilityList = AbilitiesList.masterList
 
-	$: remainingXP = $character.properties.xp.current
+	$: remainingXP = $characterStore.properties.xp.current
 </script>
 
 
 <div class='abilities-step-page'>
-	<PageHeader chapter={'Abilities'} step={$character.meta.step} />
+	<PageHeader chapter={'Abilities'} step={$characterStore.meta.step} />
 	<ExplanationBlock rule={Abilities} />
 	<PointsRemaining points={remainingXP} />
-	{#if $character.abilities.length}
+	{#if $characterStore.abilities.length}
 		<div class='section-card'>
 			<CurrentAbilities />
 		</div>
@@ -31,8 +31,8 @@
 		{/each}
 	</div>
 	<ButtonRow
-		reset={_ => $character = $character.resetAbilities()}
-		random={_ => $character = RandomAbilities($character)}
+		reset={_ => $characterStore = $characterStore.resetAbilities()}
+		random={_ => $characterStore = RandomAbilities($characterStore)}
 	/>
 </div>
 

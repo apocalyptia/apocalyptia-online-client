@@ -1,11 +1,11 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import menuStore from 'stores/menuStore.js'
+	import { menuStore } from 'stores/menuStore.js'
 	import ShadowBackground from 'widgets/ShadowBackground.svelte'
 </script>
 
 
-<div on:click={_ => $menuStore = $menuStore.toggle()}>
+<div on:click={$menuStore.toggle()}>
 	{#if $menuStore.open}
 		<nav class='user-menu' transition:fade>
 			<a href='/character' class='link-btn'>Character</a>
