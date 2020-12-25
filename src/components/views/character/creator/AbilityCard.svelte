@@ -6,14 +6,14 @@
 </script>
 
 
-<div class='ability-card' on:click={_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
+<button class='ability-card' on:click={_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
 	<div class='card-row'>
 		<span class='ability-name'>{ability.name}</span>
 	</div>
 	<div class='card-row'>
 		<span class='ability-description'>{ability.desc}</span>
 	</div>
-</div>
+</button>
 {#if ability.visible == true}
 	<AbilityModal on:close='{_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}'
 		{ability}
@@ -23,6 +23,10 @@
 
 
 <style>
+	button {
+		height: fit-content;
+		width: calc(100% - (var(--std-margin) * 2));
+	}
 	.ability-card {
 		border: 1px solid;
 		margin: var(--std-margin);

@@ -7,10 +7,10 @@
 
 <style>
 	.e404 {
-		left: 50%;
+		left: 50vw;
 		position: absolute;
 		text-align: center;
-		top: 50%;
+		top: 50vh;
 		transform: translate(-50%, -50%);
 	}
 </style>

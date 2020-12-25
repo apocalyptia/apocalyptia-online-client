@@ -76,26 +76,26 @@
 	}
 	@keyframes haze {
 		0% { text-shadow: 0.44px 0 1px var(--crt-blue), -0.44px 0 1px var(--crt-red), 0 0 3px; }
-		5% { text-shadow: 2.79px 0 1px var(--crt-blue), -2.79px 0 1px var(--crt-red), 0 0 3px; }
+		5% { text-shadow: 1.79px 0 1px var(--crt-blue), -1.79px 0 1px var(--crt-red), 0 0 3px; }
 		10% { text-shadow: 0.03px 0 1px var(--crt-blue), -0.03px 0 1px var(--crt-red), 0 0 3px; }
 		15% { text-shadow: 0.41px 0 1px var(--crt-blue), -0.41px 0 1px var(--crt-red), 0 0 3px; }
-		20% { text-shadow: 3.48px 0 1px var(--crt-blue), -3.48px 0 1px var(--crt-red), 0 0 3px; }
-		25% { text-shadow: 1.61px 0 1px var(--crt-blue), -1.61px 0 1px var(--crt-red), 0 0 3px; }
+		20% { text-shadow: 1.48px 0 1px var(--crt-blue), -1.48px 0 1px var(--crt-red), 0 0 3px; }
+		25% { text-shadow: 0.61px 0 1px var(--crt-blue), -0.61px 0 1px var(--crt-red), 0 0 3px; }
 		30% { text-shadow: 0.71px 0 1px var(--crt-blue), -0.71px 0 1px var(--crt-red), 0 0 3px; }
-		35% { text-shadow: 3.89px 0 1px var(--crt-blue), -3.89px 0 1px var(--crt-red), 0 0 3px; }
-		40% { text-shadow: 3.87px 0 1px var(--crt-blue), -3.87px 0 1px var(--crt-red), 0 0 3px; }
-		45% { text-shadow: 2.23px 0 1px var(--crt-blue), -2.23px 0 1px var(--crt-red), 0 0 3px; }
+		35% { text-shadow: 1.89px 0 1px var(--crt-blue), -1.29px 0 1px var(--crt-red), 0 0 3px; }
+		40% { text-shadow: 1.27px 0 1px var(--crt-blue), -1.87px 0 1px var(--crt-red), 0 0 3px; }
+		45% { text-shadow: 1.23px 0 1px var(--crt-blue), -1.23px 0 1px var(--crt-red), 0 0 3px; }
 		50% { text-shadow: 0.08px 0 1px var(--crt-blue), -0.08px 0 1px var(--crt-red), 0 0 3px; }
-		55% { text-shadow: 2.38px 0 1px var(--crt-blue), -2.38px 0 1px var(--crt-red), 0 0 3px; }
-		60% { text-shadow: 2.21px 0 1px var(--crt-blue), -2.21px 0 1px var(--crt-red), 0 0 3px; }
-		65% { text-shadow: 2.86px 0 1px var(--crt-blue), -2.86px 0 1px var(--crt-red), 0 0 3px; }
+		55% { text-shadow: 1.38px 0 1px var(--crt-blue), -1.38px 0 1px var(--crt-red), 0 0 3px; }
+		60% { text-shadow: 1.21px 0 1px var(--crt-blue), -1.21px 0 1px var(--crt-red), 0 0 3px; }
+		65% { text-shadow: 1.86px 0 1px var(--crt-blue), -1.86px 0 1px var(--crt-red), 0 0 3px; }
 		70% { text-shadow: 0.49px 0 1px var(--crt-blue), -0.49px 0 1px var(--crt-red), 0 0 3px; }
-		75% { text-shadow: 1.89px 0 1px var(--crt-blue), -1.89px 0 1px var(--crt-red), 0 0 3px; }
+		75% { text-shadow: 0.89px 0 1px var(--crt-blue), -0.89px 0 1px var(--crt-red), 0 0 3px; }
 		80% { text-shadow: 0.08px 0 1px var(--crt-blue), -0.08px 0 1px var(--crt-red), 0 0 3px; }
 		85% { text-shadow: 0.09px 0 1px var(--crt-blue), -0.09px 0 1px var(--crt-red), 0 0 3px; }
-		90% { text-shadow: 3.44px 0 1px var(--crt-blue), -3.44px 0 1px var(--crt-red), 0 0 3px; }
-		95% { text-shadow: 2.18px 0 1px var(--crt-blue), -2.18px 0 1px var(--crt-red), 0 0 3px; }
-		100% { text-shadow: 2.62px 0 1px var(--crt-blue), -2.62px 0 1px var(--crt-red), 0 0 3px; }
+		90% { text-shadow: 1.44px 0 1px var(--crt-blue), -1.44px 0 1px var(--crt-red), 0 0 3px; }
+		95% { text-shadow: 1.18px 0 1px var(--crt-blue), -1.18px 0 1px var(--crt-red), 0 0 3px; }
+		100% { text-shadow: 1.62px 0 1px var(--crt-blue), -1.62px 0 1px var(--crt-red), 0 0 3px; }
 	}
 	.lines {
 		background-repeat: repeat-y;
