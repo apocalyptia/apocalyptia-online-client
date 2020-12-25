@@ -37,30 +37,52 @@
 </script>
 
 
-<div class='nav-bar'>
-	<button on:click={back}>
-		{@html backButton}
-	</button>
-	<button on:click={_ => GoTo('/')}>
-		Home
-	</button>
-	<button on:click={next} class='{canProceed ? '' : 'crimson-btn' }'>
-		{@html nextButton}
-	</button>
-</div>
+<button on:click={back} class='back-btn'>
+	{@html backButton}
+</button>
+<button on:click={_ => GoTo('/')} class='home-btn'>
+	Home
+</button>
+<button on:click={next} class='next-btn {canProceed ? '' : 'crimson-btn' }'>
+	{@html nextButton}
+</button>
 
 
 <style>
-    .nav-bar {
+	button {
+		align-items: center;
+		border-radius: var(--radius);
+		border: var(--std-border) solid;
 		bottom: 0;
 		display: flex;
-		left: 0;
+		font-size: var(--s150);
+		font-weight: bold;
+		height: var(--square);
+		justify-content: center;
+		max-height: var(--square);
+		min-height: var(--square);
 		position: fixed;
-		width: 100%;
+		text-align: center;
 		z-index: 6;
 	}
-	button {
-		flex: 1;
+	.back-btn,
+	.next-btn {
+		max-width: var(--square);
+		min-width: var(--square);
+		width: var(--square);
+	}
+	.back-btn {
+		left: 0;
+	}
+	.home-btn {
+		left: 50vw;
+		max-width: calc(var(--square) * 2);
+		min-width: calc(var(--square) * 2);
+		transform: translateX(-50%);
+		width: calc(var(--square) * 2);
+	}
+	.next-btn {
+		right: 0;
 	}
 	.crimson-btn {
 		font-size: var(--s150);

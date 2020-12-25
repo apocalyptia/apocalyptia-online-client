@@ -47,6 +47,6 @@
 
 <style>
 	.creator-page {
-		bottom: var(--std-input-height);
+		padding-bottom: calc(var(--square) * 2);
 	}
 </style>
