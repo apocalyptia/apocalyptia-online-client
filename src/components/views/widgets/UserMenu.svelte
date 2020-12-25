@@ -5,7 +5,7 @@
 </script>
 
 
-<div on:click={$menuStore.toggle()}>
+<div on:click={_ => $menuStore = $menuStore.toggle()}>
 	{#if $menuStore.open}
 		<nav class='user-menu' transition:fade>
 			<a href='/character' class='link-btn'>Character</a>

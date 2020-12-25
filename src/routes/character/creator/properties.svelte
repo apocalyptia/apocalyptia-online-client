@@ -18,6 +18,6 @@
 	<PropertiesFormulae />
 	<PropertiesBlock />
 	<div class='section-card'>
-		<BodyParts {character} mode={'readonly'} />
+		<BodyParts mode={'readonly'} />
 	</div>
 </div>
