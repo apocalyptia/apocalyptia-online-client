@@ -8,9 +8,9 @@
 <div on:click={_ => $menuStore = $menuStore.toggle()}>
 	{#if $menuStore.open}
 		<nav class='user-menu' transition:fade>
-			<a href='/character' class='link-btn'>Character</a>
-			<a href='/manual' class='link-btn'>Manual</a>
-			<a href='/generator' class='link-btn'>Generator</a>
+			{#each $menuStore.links as link}
+				<a href={link.url} class='link-btn'>{link.name}</a>
+			{/each}
 		</nav>
 	{/if}
 	<ShadowBackground active={$menuStore.open} />

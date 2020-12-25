@@ -1,6 +1,10 @@
+<script>
+	import { menuStore } from 'stores/menuStore.js'
+</script>
+
+
 <div class='cntr-card'>
-	<a href='character' class='link-btn'>Character</a>
-	<a href='manual' class='link-btn'>Manual</a>
-	<a href='generator' class='link-btn'>Generator</a>
-	<a href='map' class='link-btn'>Map</a>
+	{#each $menuStore.links as link}
+		<a href={link.url} class='link-btn'>{link.name}</a>
+	{/each}
 </div>
