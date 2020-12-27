@@ -7,11 +7,11 @@
 
 
 <div class='map-page-body'>
-	{#if $mapStore.ready}
+	<!-- {#if $mapStore.ready} -->
 		<BattleMap />
-	{:else}
+	<!-- {:else}
 		<MapCreator />
-	{/if}
+	{/if} -->
 </div>
 <BackButton path={'/'} />
 

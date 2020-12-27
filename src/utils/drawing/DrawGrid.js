@@ -1,21 +1,39 @@
-export default (map, dash, color) => {
-	map.ctx.strokeStyle = color
-	if (dash) map.ctx.setLineDash(dash)
-	for (let r = 0; r < map.rows; r++) {
-		map.ctx.moveTo(0, (r * map.squareW()))
-		map.ctx.lineTo(map.w, (r * map.squareW()))
+export default (map) => {
+
+	map.ctx.beginPath()
+	map.ctx.fillStyle = 'black'
+	map.ctx.fillRect(0, 0, map.canvas.width,map.canvas.height)
+	map.ctx.stroke()
+
+	console.log(map.mag)
+	map.square = Math.round(50 * (map.mag * 1))
+	map.canvas.height = Math.round(map.pixelSize())
+	map.canvas.weight = Math.round(map.pixelSize())
+
+	map.ctx.strokeStyle = map.color
+
+	if (map.dashPattern) map.ctx.setLineDash(map.dashPattern)
+
+	for (let r = 0; r < map.gridSize; r++) {
+		map.ctx.beginPath()
+		map.ctx.moveTo(0, (r * map.square))
+		map.ctx.lineTo(map.pixelSize(), (r * map.square))
 		map.ctx.stroke()
 	}
-	map.ctx.moveTo(0, map.h)
-	map.ctx.lineTo(map.w, map.h)
+	map.ctx.beginPath()
+	map.ctx.moveTo(0, map.pixelSize())
+	map.ctx.lineTo(map.pixelSize(), map.pixelSize())
 	map.ctx.stroke()
-	for (let c = 0; c < map.cols; c++) {
-		map.ctx.moveTo((c * (map.w / map.cols)), 0)
-		map.ctx.lineTo((c * (map.w / map.cols)), map.h)
+
+	for (let c = 0; c < map.gridSize; c++) {
+		map.ctx.beginPath()
+		map.ctx.moveTo((c * map.square), 0)
+		map.ctx.lineTo((c * map.square), map.pixelSize())
 		map.ctx.stroke()
 	}
-	map.ctx.moveTo(map.w, 0)
-	map.ctx.lineTo(map.w, map.h)
+	map.ctx.beginPath()
+	map.ctx.moveTo(map.pixelSize(), 0)
+	map.ctx.lineTo(map.pixelSize(), map.pixelSize())
 	map.ctx.stroke()
-	return map
+
 }

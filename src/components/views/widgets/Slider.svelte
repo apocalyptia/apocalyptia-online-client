@@ -1,10 +1,21 @@
 <script>
-	export let name, value, min, max, indicator = false
+	export let name,
+				value,
+				min=0,
+				max=100,
+				step=1,
+				indicator=false,
+				func=null
 </script>
 
 
 <div class='range-block'>
-	<input type='range' {name} {min} {max} bind:value={value} on:input>
+	<input type='range'
+		{name}
+		{min} {max} {step}
+		bind:value={value}
+		on:input={func ? func() : ''}
+	>
 	{#if indicator}
 		<div class='range-indicator'>
 			{#if min}

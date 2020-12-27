@@ -16,7 +16,7 @@
 	--s50: calc(var(--s100) * .5);
 	--s66: calc(var(--s100) * .66);
 	--s75: calc(var(--s100) * .75);
-	--s100: 2.75vh;
+	--s100: 3vh;
 	--s110: calc(var(--s100) * 1.1);
 	--s125: calc(var(--s100) * 1.25);
 	--s150: calc(var(--s100) * 1.5);
@@ -33,6 +33,7 @@
 	--s900: calc(var(--s100) * 9);
 	--s1000: calc(var(--s100) * 10);
 	--radius: 0;
+	--cell-size: 150px;
 
 	/* Global Colors */
 	--crt-red: rgba(127,0,0,0.5);
@@ -53,8 +54,8 @@
 	--square: var(--s300);
 	--std-border: 1px;
 	--std-input-height: var(--s200);
-	--std-margin: var(--s100);
-	--std-padding: var(--s100);
+	--std-margin: var(--s75);
+	--std-padding: var(--s75);
 	--max-width: 800px;
 
 }
