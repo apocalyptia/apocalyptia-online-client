@@ -5,10 +5,9 @@ export default (map) => {
 	map.ctx.fillRect(0, 0, map.canvas.width,map.canvas.height)
 	map.ctx.stroke()
 
-	console.log(map.mag)
 	map.square = Math.round(50 * (map.mag * 1))
 	map.canvas.height = Math.round(map.pixelSize())
-	map.canvas.weight = Math.round(map.pixelSize())
+	map.canvas.width = Math.round(map.pixelSize())
 
 	map.ctx.strokeStyle = map.color
 
