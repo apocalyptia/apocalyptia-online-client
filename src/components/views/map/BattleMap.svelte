@@ -58,9 +58,6 @@
 		right: 0;
 		top: 0;
 	}
-	.cell-coordinates {
-		font-size: var(--s50);
-	}
 	.td {
 		border: 1px dotted var(--pri-color-trans);
 	}
