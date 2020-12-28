@@ -33,7 +33,7 @@
 	--s900: calc(var(--s100) * 9);
 	--s1000: calc(var(--s100) * 10);
 	--radius: 0;
-	--cell-size: 150px;
+	--cell-size: 50px;
 
 	/* Global Colors */
 	--crt-red: rgba(127,0,0,0.5);

@@ -35,7 +35,7 @@
 		z-index: 0;
 	}
 	.screen::after {
-		animation: flicker 0.15s infinite;
+		/* animation: flicker 0.15s infinite; */
 		background: rgba(18, 16, 16, 0.1);
 		content: " ";
 		display: block;
@@ -67,7 +67,7 @@
 		100% { opacity: 0.24; }
 	}
 	.projection {
-		animation: haze 1s infinite;
+		/* animation: haze 1s infinite; */
 		background-size: 100% 2px, 3px 100%;
 		background: var(--rgb-background);
 		content: ' ';
@@ -110,7 +110,7 @@
 		z-index: 3;
 	}
 	.scanline:before {
-		animation: hline 7s linear infinite;
+		/* animation: hline 7s linear infinite; */
 		background: var(--pri-color-trans);
 		content: '';
 		height: 1px;
