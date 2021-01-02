@@ -3,7 +3,7 @@
 	import ManualBody from 'views/manual/ManualBody.svelte'
 	import ManualHeader from 'views/manual/ManualHeader.svelte'
 	import SkillsList from 'lists/SkillsList.js'
-	import SearchEngine from 'utils/SearchEngine.js'
+	import SearchEngine from 'utils/search/SearchEngine.js'
 
 	let searchTerm = ''
 

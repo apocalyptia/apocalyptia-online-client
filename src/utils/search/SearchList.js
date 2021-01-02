@@ -1,4 +1,4 @@
-import SearchEngine from 'utils/SearchEngine.js'
+import SearchEngine from 'utils/search/SearchEngine.js'
 
 export default (event, list) => {
 	return SearchEngine(event.detail, list)
