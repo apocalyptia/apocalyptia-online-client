@@ -15,14 +15,14 @@
 
 	onMount(_ => $characterStore = new Character())
 
-	const creatorPages = [
+	const creationSteps = [
 		description,
 		traits,
 		skills,
 		properties,
 		abilities,
 		gear,
-		finalize
+		finalize,
 	]
 
 	const proceedConditions = _ => {
@@ -40,9 +40,9 @@
 
 
 <div id='character-creator' class='creator-page page-body'>
-	<svelte:component this={creatorPages[step]} />
+	<svelte:component this={creationSteps[step]} />
 </div>
-<NavBar {proceedConditions} limit={creatorPages.length} />
+<NavBar {proceedConditions} />
 
 
 <style>

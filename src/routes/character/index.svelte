@@ -1,5 +1,5 @@
 <script>
-    import BackButton from 'views/icons/BackButton.svelte'
+    import BackButton from 'views/buttons/BackButton.svelte'
     import { playerStore } from 'stores/playerStore.js'
 </script>
 

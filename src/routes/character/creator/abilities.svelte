@@ -4,6 +4,7 @@
 	import AbilityGroup from 'views/character/creator/AbilityGroup.svelte'
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
 	import CurrentAbilities from 'views/character/creator/CurrentAbilities.svelte'
+	import Creation from 'rules/Creation.js'
 	import ExplanationBlock from 'views/character/creator/ExplanationBlock.svelte'
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
@@ -31,7 +32,7 @@
 		{/each}
 	</div>
 	<ButtonRow
-		reset={_ => $characterStore = $characterStore.resetAbilities()}
+		reset={_ => $characterStore = Creation.resetAbilities($characterStore)}
 		random={_ => $characterStore = RandomAbilities($characterStore)}
 	/>
 </div>

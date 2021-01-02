@@ -1,6 +1,5 @@
 <script>
 	import BodyParts from 'views/character/BodyParts.svelte'
-	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode = 'edit'
 </script>

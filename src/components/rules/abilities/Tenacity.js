@@ -1,7 +1,7 @@
 import Ability from 'classes/Ability.js'
 
-const Resilience = new Ability({
-	name: `Resilience`,
+const Tenacity = new Ability({
+	name: `Tenacity`,
 	desc: [
 		`Reduce any Trauma by 1.`
 	],
@@ -9,4 +9,4 @@ const Resilience = new Ability({
 	xp: 9
 })
 
-export default Resilience
+export default Tenacity

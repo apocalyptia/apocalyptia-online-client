@@ -1,5 +1,5 @@
 <script>
-    import BackButton from 'icons/BackButton.svelte'
+    import BackButton from 'buttons/BackButton.svelte'
     import Character from 'classes/Character.js'
     import RandomCharacter from 'random/RandomCharacter.js'
 	import { characterStore } from 'stores/characterStore.js'

@@ -1,11 +1,7 @@
-import { v4 as uuidv4 } from 'uuid'
-import AbilitiesList from 'lists/AbilitiesList.js'
-import PropertiesList from 'lists/PropertiesList.js'
-
 export default class Character {
 	constructor() {
 		this.meta = {
-			id: uuidv4(),
+			id: ``,
 			user: ``,
 			created: ``,
 			modified: ``,
@@ -243,47 +239,5 @@ export default class Character {
 				inventory: []
 			},
 		}
-	}
-	resetDescription() {
-		for (let d in this.description) this.description[d].value = ``
-		return this
-	}
-	resetTraits() {
-		for (let t in this.traits) this.traits[t].score = 1
-		return this
-	}
-	resetSkills() {
-		for (let s in this.skills) this.skills[s].score = 0
-		return this
-	}
-	setProperties() {
-		for (let p of PropertiesList.list) p.formula(this)
-		return this
-	}
-	updateAbilities() {
-		this.abilities = [...AbilitiesList.masterList.filter(a => a.taken)]
-		this.properties.xp.current = this.properties.xp.score
-		if (this.abilities.length) {
-			this.abilities.forEach(a => this.properties.xp.current -= (a.taken * a.xp))
-		}
-		return this
-	}
-	resetAbilities() {
-		AbilitiesList.masterList.forEach(a => a.taken = 0)
-		return this.updateAbilities()
-	}
-	resetGear() {
-		for (let g in this.gear) this.gear[g].inventory = []
-		return this
-	}
-	applyAbilities() {
-		for (let a in this.abilities) this.abilities[a].formula()
-	}
-	finalize(userId) {
-		if (!this.created) this.created = new Date()
-		this.meta.user = userId
-		this.meta.step = 6
-		this.meta.modified = new Date()
-		return this
 	}
 }

@@ -1,5 +1,6 @@
 <script>
 	import BodyParts from 'views/character/BodyParts.svelte'
+	import Creation from 'rules/Creation.js'
 	import ExplanationBlock from 'views/character/creator/ExplanationBlock.svelte'
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import PropertiesBlock from 'views/character/creator/PropertiesBlock.svelte'
@@ -8,7 +9,7 @@
 	import { beforeUpdate } from 'svelte'
 	import { characterStore } from 'stores/characterStore.js'
 
-	beforeUpdate(_ => $characterStore = $characterStore.setProperties())
+	beforeUpdate(_ => $characterStore = Creation.setProperties($characterStore))
 </script>
 
 

@@ -38,7 +38,7 @@ const onwarn = (warning, onwarn) =>
 			{ find: 'drugs',			replacement: 'src/components/rules/gear/equipment/drugs' },
 			{ find: 'electronics',		replacement: 'src/components/rules/gear/equipment/electronics' },
 			{ find: 'gear',				replacement: 'src/components/rules/gear' },
-			{ find: 'icons',			replacement: 'src/components/views/icons' },
+			{ find: 'buttons',			replacement: 'src/components/views/buttons' },
 			{ find: 'lists',			replacement: 'src/components/rules/lists' },
 			{ find: 'map',				replacement: 'src/components/views/map' },
 			{ find: 'maneuvers',		replacement: 'src/components/rules/maneuvers' },

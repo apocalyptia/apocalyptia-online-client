@@ -1,5 +1,6 @@
 <script>
 	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
+	import Creation from 'rules/Creation.js'
 	import PageHeader from 'views/character/creator/PageHeader.svelte'
 	import RandomAge from 'random/RandomAge.js'
 	import RandomDescription from 'random/RandomDescription.js'
@@ -61,7 +62,7 @@
 		</div>
 	</div>
 	<ButtonRow
-		reset={_ => $characterStore = $characterStore.resetDescription()}
+		reset={_ => $characterStore = Creation.resetDescription($characterStore)}
 		random={_ => $characterStore = RandomDescription($characterStore)}
 	/>
 </div>

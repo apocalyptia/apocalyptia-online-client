@@ -14,8 +14,7 @@ Larceny.specs = {
 		id: `44d2e074-3316-41f1-a3f9-5252e8e2c0c4`,
 		name: `Mechanical`,
 		desc: [
-			`(d6 rounds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms`,
-			`# by item.`,
+			`(d6 rounds) Activate or deactivate Locks, Traps, Bombs, and similar mechanisms.`,
 		]
 	}),
 	trick: new Rule({

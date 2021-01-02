@@ -1,5 +1,5 @@
 <script>
-	import BackButton from 'icons/BackButton.svelte'
+	import BackButton from 'buttons/BackButton.svelte'
 	import CharacterSheet from 'views/character/sheet/CharacterSheet.svelte'
 	import DeleteCharacter from 'database/DeleteCharacter.js'
 	import GoTo from 'utils/GoTo.js'

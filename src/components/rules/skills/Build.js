@@ -14,18 +14,19 @@ Build.specs = {
 		id: `4d055bd5-9413-482f-aeef-ec64ced8d7a0`,
 		name: `Customize`,
 		desc: [
-			`(#hrs) 3 per item`,
-			`Each must be unique`,
-			`Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Rule`,
-			`Armor: +1 Damage Resistance or a new Rule.`,
+			`Customizations take a number of hours to complete equal to the Difficulty.`,
+			`Each Customization can only be applied once on per item.`,
+			`Each item can have up to 3 unique Customizations.`,
+			`Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Weapon Attribute.`,
+			`Armor: +1 Damage Resistance or a new Armor Attribute.`,
 		]
 	}),
 	repair: new Rule({
 		id: `5dcd9938-820f-40b6-b1db-051c99295997`,
 		name: `Repair`,
 		desc: [
-			`(#hrs) Fix broken item`,
-			`+1 with same Parts.`,
+			`Fixing a broken item takes a number of hours to complete equal to the Difficulty.`,
+			`+1 to the Build(Repair) roll when using Parts from the same kind of item.`,
 		]
 	})
 }

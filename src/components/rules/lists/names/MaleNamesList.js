@@ -92,7 +92,6 @@ export default [
 	'Aydan',
 	'Ayden',
 	'Aydin',
-	'Baby',
 	'Bailey',
 	'Baron',
 	'Barrett',

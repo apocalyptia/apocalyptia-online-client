@@ -3,23 +3,26 @@
 </script>
 
 
-<ul>
-    {#each Object.values(rule.specs) as spec}
-        <li>
-            <div class='sub-name'>{spec.name}</div>
-            {#each spec.desc as desc}
-                <p class='spec-desc'>{desc}</p>
-            {/each}
-        </li>
-    {/each}
-</ul>
+<div class='spec-section'>
+	{#each Object.values(rule.specs) as spec}
+		<div class='sub-name'>
+			{spec.name}
+		</div>
+		{#each spec.desc as desc}
+			<p class='spec-desc'>
+				{desc}
+			</p>
+		{/each}
+	{/each}
+</div>
 
 
 <style>
-    li {
-		margin: var(--s100);
-    }
+	.sub-name,
     .spec-desc {
-		margin-left: var(--s100);
+		margin: var(--std-margin);
+	}
+	.sub-name {
+		text-decoration: underline;
 	}
 </style>

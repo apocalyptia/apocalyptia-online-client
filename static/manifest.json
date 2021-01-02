@@ -5,7 +5,7 @@
 	"short_name": "Apocalyptia",
 	"display": "standalone",
 	"start_url": "/",
-	"icons": [
+	"buttons": [
 		{
 			"src": "logo-192.png",
 			"sizes": "192x192",

@@ -1,5 +1,5 @@
 <script>
-	import BackButton from 'icons/BackButton.svelte'
+	import BackButton from 'buttons/BackButton.svelte'
 	import DiceRoller from 'views/generator/DiceRoller.svelte'
 	import ItemGenerator from 'views/generator/ItemGenerator.svelte'
 	import MasterGearList from 'lists/gear/MasterGearList.js'

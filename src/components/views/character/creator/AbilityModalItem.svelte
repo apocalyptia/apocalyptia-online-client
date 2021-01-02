@@ -1,9 +1,8 @@
 <script>
+	import Creation from 'rules/Creation.js'
 	import { characterStore } from 'stores/characterStore.js'
 
 	export let ability
-
-	const updateCharacter = _ => $characterStore = $characterStore.updateAbilities()
 </script>
 
 <div class='ability-selection'>
@@ -14,7 +13,7 @@
 		<select
 			name={ability.name}
 			bind:value={ability.taken}
-			on:blur={updateCharacter}
+			on:blur={_ => $characterStore = Creation.updateAbilities($characterStore)}
 		>
 			{#each Array(ability.max+1) as _, i}
 				<option value={i}>{i}</option>

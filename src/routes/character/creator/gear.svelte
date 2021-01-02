@@ -8,6 +8,15 @@
 
 	let gearedUp = false
 
+	const startingGearExplanation = [
+		`You start with some random Gear:`,
+		`One piece of Armor`,
+		`One Melee weapon`,
+		`One Ranged weapon`,
+		`1d6 rounds of Ammo`,
+		`Random items = Luck`,
+	]
+
 	const randomGear = _ => {
 		$characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)
 	}
@@ -21,12 +30,9 @@
 <div class='gear-step-page'>
 	<PageHeader chapter={'Gear'} step={$characterStore.meta.step} />
 	<div class='explanation'>
-		<p>You start with some random Gear:</p>
-		<p>One piece of Armor</p>
-		<p>One Melee weapon</p>
-		<p>One Ranged weapon</p>
-		<p>1d6 rounds of Ammo</p>
-		<p>Random items = Luck</p>
+		{#each startingGearExplanation as gearLine}
+			<p>{gearLine}</p>
+		{/each}
 	</div>
 	{#if gearedUp}
 		{#each Object.values($characterStore.gear) as category (category.name)}

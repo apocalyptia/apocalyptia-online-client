@@ -1,5 +1,5 @@
 <script>
-	import MenuButton from 'icons/MenuButton.svelte'
+	import MenuButton from 'buttons/MenuButton.svelte'
 	import UserMenu from 'widgets/UserMenu.svelte'
 </script>
 

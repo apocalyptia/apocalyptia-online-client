@@ -1,12 +1,9 @@
 import Bleeding from 'status/Bleeding.js'
 import Blind from 'status/Blind.js'
-import Burning from 'status/Burning.js'
 import Concealed from 'status/Concealed.js'
 import Cover from 'status/Cover.js'
 import Deaf from 'status/Deaf.js'
 import Defenseless from 'status/Defenseless.js'
-import Falling from 'status/Falling.js'
-import FriendlyFire from 'status/FriendlyFire.js'
 import Grabbed from 'status/Grabbed.js'
 import Harmless from 'status/Harmless.js'
 import Immobilized from 'status/Immobilized.js'
@@ -26,13 +23,10 @@ export default {
 	list: [
 		Bleeding,
 		Blind,
-		Burning,
 		Concealed,
 		Cover,
 		Deaf,
 		Defenseless,
-		Falling,
-		FriendlyFire,
 		Grabbed,
 		Harmless,
 		Immobilized,

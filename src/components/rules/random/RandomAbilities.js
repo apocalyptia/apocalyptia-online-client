@@ -1,9 +1,10 @@
 import AbilitiesList from 'lists/AbilitiesList.js'
+import Creation from 'rules/Creation.js'
 import RandomRoll from 'random/RandomRoll.js'
 
 export default (c) => {
     AbilitiesList.reset()
-    c = c.updateAbilities()
+    c = Creation.updateAbilities(c)
     while(c.properties.xp.current) {
         const remainingAbilities = AbilitiesList.masterList.filter(r => {
             return (
@@ -15,7 +16,7 @@ export default (c) => {
             const a = RandomRoll(remainingAbilities)
             a.taken++
             c.abilities.push(a)
-            c = c.updateAbilities()
+            c = Creation.updateAbilities(c)
         }
         else break
     }

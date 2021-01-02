@@ -5,8 +5,8 @@ export default _ => {
 		return Object.keys(window.localStorage).map(c => {
 			const storedCharacter = window.localStorage.getItem(c)
 			const unzippedCharacter = DecompressCharacter(storedCharacter)
-			console.log('unzippedCharacter = ', unzippedCharacter)
 			return unzippedCharacter
 		})
 	}
+	return []
 }

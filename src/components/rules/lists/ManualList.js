@@ -2,6 +2,7 @@ import AbilitiesList from 'lists/AbilitiesList.js'
 import CombatList from 'lists/CombatList.js'
 import CoreList from 'lists/CoreList.js'
 import GearList from 'lists/GearList.js'
+import HazardsList from 'lists/HazardsList.js'
 import ManeuversList from 'lists/ManeuversList.js'
 import NeedsList from 'lists/NeedsList.js'
 import PropertiesList from 'lists/PropertiesList.js'
@@ -13,7 +14,8 @@ export default [
     AbilitiesList,
     CombatList,
     CoreList,
-    GearList,
+	GearList,
+	HazardsList,
     ManeuversList,
     NeedsList,
     PropertiesList,

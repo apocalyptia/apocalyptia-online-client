@@ -1,5 +1,5 @@
 <script>
-	import BackButton from 'icons/BackButton.svelte'
+	import BackButton from 'buttons/BackButton.svelte'
 	import ManualBody from 'views/manual/ManualBody.svelte'
 	import ManualHeader from 'views/manual/ManualHeader.svelte'
 	import ManeuversList from 'lists/ManeuversList.js'

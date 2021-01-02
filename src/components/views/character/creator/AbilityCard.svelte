@@ -7,11 +7,11 @@
 
 
 <button class='ability-card' on:click={_ => MasterAbilityList = ToggleVisible(ability, MasterAbilityList)}>
-	<div class='card-row'>
-		<span class='ability-name'>{ability.name}</span>
+	<div class='ability-name'>
+		{ability.name}
 	</div>
-	<div class='card-row'>
-		<span class='ability-description'>{ability.desc}</span>
+	<div class='ability-description'>
+		{ability.desc}
 	</div>
 </button>
 {#if ability.visible == true}
@@ -23,32 +23,24 @@
 
 
 <style>
-	button {
-		height: fit-content;
-		width: calc(100% - (var(--std-margin) * 2));
-	}
 	.ability-card {
+		animation: none;
 		border: 1px solid;
+		height: fit-content;
 		margin: var(--std-margin);
-	}
-	.ability-card:hover {
-		background-color: var(--pri-color-trans);
-		color: var(--sec-color);
-		cursor: pointer;
-		font-weight: bold;
-	}
-	.card-row {
-		display: flex;
-		justify-content: space-between;
-		margin: var(--std-margin);
+		position: relative;
+		width: calc(100% - (var(--std-margin) * 2));
+		z-index: 0;
 	}
 	.ability-name{
 		flex: 2;
 		font-weight: bold;
+		padding: var(--std-padding);
 		text-decoration: underline;
 		text-align: center;
 	}
 	.ability-description {
 		line-height: 1.5;
+		margin: var(--std-margin);
 	}
 </style>

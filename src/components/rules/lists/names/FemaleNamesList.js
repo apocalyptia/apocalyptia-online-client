@@ -175,7 +175,6 @@ export default [
 	'Aylin',
 	'Azaria',
 	'Azul',
-	'Baby',
 	'Bailee',
 	'Bailey',
 	'Barbara',

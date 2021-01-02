@@ -115,7 +115,9 @@
 
 
 <style>
-	.item-name,
+	.item-name {
+		font-weight: bold;
+	}
 	.gear-desc,
 	.gear-prop,
 	.gear-attr,

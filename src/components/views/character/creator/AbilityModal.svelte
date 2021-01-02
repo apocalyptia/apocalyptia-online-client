@@ -29,7 +29,7 @@
 			<AbilityModalList {ability} {MasterAbilityList} options={ability.opts.length}/>
 		</div>
 		<div class='btn-row'>
-			<button on:click={_ => dispatch('close')}>Close</button>
+			<button on:click={_ => dispatch('close')}>Save</button>
 		</div>
 	</div>
 </div>

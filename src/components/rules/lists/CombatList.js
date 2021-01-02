@@ -5,6 +5,7 @@ import Movement from 'combat/Movement.js'
 import Attack from 'combat/Attack.js'
 import Defense from 'combat/Defense.js'
 import Damage from 'combat/Damage.js'
+import Trauma from 'combat/Trauma.js'
 
 export default {
 	name: `Combat`,
@@ -16,6 +17,7 @@ export default {
 		Attack,
 		Defense,
 		Damage,
+		Trauma,
 		// Vehicles,
 	]
 }

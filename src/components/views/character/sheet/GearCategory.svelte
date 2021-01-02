@@ -1,5 +1,5 @@
 <script>
-	import AddButton from 'icons/AddButton.svelte'
+	import AddButton from 'buttons/AddButton.svelte'
 	import AddItemModal from 'views/character/sheet/AddItemModal.svelte'
 	import Capitalize from 'utils/Capitalize.js'
 	import GearItem from 'views/character/sheet/GearItem.svelte'

@@ -48,6 +48,9 @@
 		width: 45%;
 	}
 	.search-bar::placeholder {
+		color: var(--sec-color-trans);
+	}
+	.search-bar:hover::placeholder {
 		color: var(--pri-color);
 	}
 </style>

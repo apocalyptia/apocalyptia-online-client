@@ -13,8 +13,8 @@ const Damage = new Rule({
 		`Consciousness and limb functionality are restored once you have healed to at least 1 Health on that Body Part.`,
 		`You die when Head or Torso Health drops to the negative of their scores.`,
 		`You lose the limb when Arm or Leg Health drops to the negative of their scores.`,
-		`Successful Attacks do Damage = [(Attack - Defense) + Weapon Damage].`,
-		`Each point of Damage cause a -1 Pain penalty until healed.`,
+		`Successful Attacks do Damage = [(Attack total - target's Defense) + Weapon Damage].`,
+		`Each point of Damage causes a -1 Pain penalty until healed.`,
 	]
 })
 Damage.subrules = [

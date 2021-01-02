@@ -1,4 +1,5 @@
 import Character from 'classes/Character.js'
+import Creation from 'rules/Creation.js'
 
 export default (c) => {
 
@@ -58,7 +59,7 @@ export default (c) => {
 	char.gear.ammo.inventory = c.Go
 	char.gear.equipment.inventory = c.Ge
 
-	char = char.setProperties()
+	char = Creation.setProperties(char)
 
 	return char
 

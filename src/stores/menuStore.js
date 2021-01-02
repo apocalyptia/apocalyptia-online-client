@@ -15,12 +15,13 @@ export const menuStore = writable({
 			'name': 'Generator',
 			'url': '/generator'
 		},
-		{
-			'name': 'Map',
-			'url': '/map'
-		},
+		// {
+		// 	'name': 'Map',
+		// 	'url': '/map'
+		// },
 	],
-    toggle: function() {
+    toggle() {
+		console.log(this)
         this.open = !this.open
         return this
     }

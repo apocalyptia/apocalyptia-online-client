@@ -33,14 +33,6 @@ Gear.js:
 	add trauma sheers
 	add antiseptic of some kind
 
-Hazards.js???:
-	Create Hazards file.
-	Create Radiation rules.
-	Put Falling here.
-	Put Burning rule here.
-	Put Friendly Fire here.
-	Put Needs rules here. Requires some rewording.
-
 Manual:
 	Put Expand/Collapse All button on rules.
 	Figure out topical organization. Health for example?

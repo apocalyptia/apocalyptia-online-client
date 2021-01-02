@@ -1,8 +1,7 @@
 <script>
+	import Creation from 'rules/Creation.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
-
-	const update = _ => $characterStore = $characterStore.updateAbilities()
 
 	$: abilities = $characterStore.abilities
 
@@ -37,7 +36,7 @@
 						<select
 							class='taken-number'
 							bind:value={ability.taken}
-							on:blur={_ => update()}
+							on:blur={_ => $characterStore = Creation.updateAbilities($characterStore)}
 						>
 							{#each Array(ability.max+1) as _, i}
 								<option value={i}>{i}</option>

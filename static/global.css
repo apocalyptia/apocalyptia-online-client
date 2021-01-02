@@ -39,7 +39,6 @@
 	--crt-red: rgba(127,0,0,0.5);
 	--crt-green: rgba(0,127,0,0.5);
 	--crt-blue: rgba(0,0,127,0.5);
-	--rgb-background: linear-gradient(rgba(18, 16, 16, 0) 100%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 	--pri-color: rgba(0, 255, 0, .9);
 	--pri-color-trans: rgba(0, 255, 0, .5);
 	--pri-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
@@ -49,6 +48,7 @@
 	--ter-color-semi: rgba(220, 20, 60, .5);
 	--ter-color-trans: rgba(220, 20, 60, .15);
 	--ter-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--ter-color-semi);
+	--screen-background: #121;
 
 	/* Global Layout */
 	--square: var(--s300);
@@ -123,7 +123,7 @@ table {
 /* ----- PAGE ----- */
 
 html {
-	background-color: #333;
+	background-color: var(--screen-background);
 }
 html,
 #apocalyptia-online,
@@ -296,6 +296,16 @@ a:hover,
 a:focus {
 	box-shadow: var(--pri-box-shadow);
 }
+a:active,
+a:focus,
+a:hover {
+	animation: haze 1s infinite;
+	background-color: var(--pri-color-trans);
+	color: var(--sec-color);
+	font-weight: bold;
+	background-size: 100% 2px, 3px 100%;
+	z-index: 12000;
+}
 
 /* Buttons */
 button {
@@ -308,6 +318,8 @@ button {
 	font-size: var(--s100);
 	font-weight: bold;
 	height: var(--std-input-height);
+	padding-left: 1ch;
+	padding-right: 1ch;
 	text-align: center;
 }
 button:active,

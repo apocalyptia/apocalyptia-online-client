@@ -5,7 +5,7 @@ const Health = new Rule({
 	desc: [
 		`Head, Arm, and Leg Health = Constitution`,
 		`Torso Health = Constitution x 2`,
-		`Health is a measure of how much Damage you can withstand.`,
+		`Health is a measure of how much Damage your body can withstand.`,
 	],
 	formula: (c) => {
 		Object.values(c.health).forEach((h) => {

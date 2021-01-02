@@ -1,6 +1,6 @@
 <script>
 	import GearBlock from 'views/widgets/GearBlock.svelte'
-	import TrashButton from 'icons/TrashButton.svelte'
+	import TrashButton from 'buttons/TrashButton.svelte'
 	import { characterStore } from 'stores/characterStore.js'
 
 	export let mode, category, item, index = 0
