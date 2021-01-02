@@ -47,6 +47,6 @@
 
 <style>
 	.creator-page {
-		padding-bottom: calc(var(--square) * 2);
+		padding-bottom: calc(var(--square) + var(--std-padding));
 	}
 </style>
