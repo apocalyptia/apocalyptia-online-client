@@ -21,7 +21,6 @@ export const menuStore = writable({
 		}
 	],
     toggle() {
-		console.log(this)
         this.open = !this.open
         return this
     }
