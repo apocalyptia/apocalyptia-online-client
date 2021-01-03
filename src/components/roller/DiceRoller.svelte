@@ -25,9 +25,9 @@
 
 	const diceRoller = _ => {
 		roll = d6Roll()
-		if (roll[0] == 1 && roll[1] == 1) total = 'Botch!'
+		if (roll[0] == 1 && roll[1] == 1) total = 'Botched!'
 		else total = roll.reduce((total, num) => total + num, 0) + mod
-		if (roll[0] == 6) total = `Explode! ${total}`
+		if (roll[0] == 6) total = `Exploded! ${total}`
 		if (rollCount-- == 0) {
 			clearInterval(setInterval_ID)
 			randomReady = true
@@ -42,9 +42,7 @@
 		<button on:click={_ => makeRoll()}>Random</button>
 	</div>
 	<div class='item-content'>
-		<p class='roll'>
-			Die Roll{roll.length > 1 ? 's' : ''}: {roll}
-		</p>
+		<p class='roll'>Die Roll{roll.length > 1 ? 's' : ''}: {roll}</p>
 		<p>
 			Modifier: 
 			<input type='number' 
@@ -53,10 +51,7 @@
 			>
 		</p>
 		<p class='result'>
-			Result: 
-			<span class='total'>
-				{result}
-			</span>
+			Result: <span class='total'>{result}</span>
 		</p>
 	</div>
 </div>
