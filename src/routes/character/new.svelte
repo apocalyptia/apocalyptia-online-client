@@ -1,7 +1,7 @@
 <script>
-    import BackButton from 'buttons/BackButton.svelte'
+    import BackButton from 'components/buttons/BackButton.svelte'
     import Character from 'classes/Character.js'
-    import RandomCharacter from 'random/RandomCharacter.js'
+    import RandomCharacter from 'rules/random/RandomCharacter.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { playerStore } from 'stores/playerStore.js'
 

@@ -1,8 +1,8 @@
 <script>
-	import CharacterSheet from 'views/character/sheet/CharacterSheet.svelte'
+	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
 	import DeleteCharacter from 'database/DeleteCharacter.js'
 	import GoTo from 'utils/GoTo.js'
-	import PageHeader from 'views/character/creator/PageHeader.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import SaveCharacter from 'database/SaveCharacter.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'

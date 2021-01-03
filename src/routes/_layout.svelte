@@ -1,5 +1,5 @@
 <script>
-	import TitleBar from 'views/widgets/TitleBar.svelte'
+	import TitleBar from 'components/widgets/TitleBar.svelte'
 </script>
 
 

@@ -15,10 +15,10 @@ export const menuStore = writable({
 			'name': 'Generator',
 			'url': '/generator'
 		},
-		// {
-		// 	'name': 'Map',
-		// 	'url': '/map'
-		// },
+		{
+			'name': 'Campaign',
+			'url': '/campaign'
+		}
 	],
     toggle() {
 		console.log(this)

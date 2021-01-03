@@ -1,8 +1,8 @@
 <script>
-	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
-	import GearBlock from 'views/widgets/GearBlock.svelte'
-	import PageHeader from 'views/character/creator/PageHeader.svelte'
-	import RandomStartingGear from 'random/RandomStartingGear.js'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import GearBlock from 'components/widgets/GearBlock.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import RandomStartingGear from 'rules/random/RandomStartingGear.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
@@ -54,7 +54,7 @@
 			</details>
 		{/each}
 	{:else}
-		<ButtonRow random={_ => randomGear()} />
+		<ResetAndRandomButtonRow random={_ => randomGear()} />
 	{/if}
 </div>
 

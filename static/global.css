@@ -333,7 +333,7 @@ button:hover {
 }
 button:disabled {
 	border-color: var(--sec-color-trans);
-	color: var(--sec-color-trans);
+	color: var(--sec-color-trans);		
 }
 button:focus,
 button:hover {
@@ -346,10 +346,13 @@ button:invalid {
 	font-weight: bold;
 }
 .btn-box {
-	align-content: center;
+	align-items: center;
+	border: var(--std-border) solid;
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 0;
+	text-align: center;
 }
 .btn-icon {
 	font-size: var(--s150);
@@ -366,7 +369,7 @@ button:invalid {
 	align-items: center;
 	background-color: var(--ter-color-trans);
 	border-radius: var(--radius);
-	border: var(--std-border) solid var(--ter-color);
+	border-color: var(--ter-color);
 	color: var(--ter-color);
 	display: flex;
 	font-size: var(--s125);
@@ -384,6 +387,18 @@ button:invalid {
 .crimson-btn:active,
 .crimson-btn:focus {
 	outline: 3px double var(--ter-color-trans);
+}
+.green-btn {
+	background-color: var(--sec-color-trans);
+	border: var(--std-border) solid var(--pri-color);
+	color: var(--pri-color);
+	font-weight: bold;
+}
+.green-btn:active,
+.green-btn:focus,
+.green-btn:hover {
+	background-color: var(--pri-color-trans);
+	color: var(--sec-color);
 }
 .link-btn {
 	align-items: center;
@@ -414,6 +429,14 @@ button:invalid {
 .wide-cntr-btn {
 	flex-grow: 2;
 }
+.square-btn {
+	height: var(--square);
+	max-height: var(--square);
+	max-width: var(--square);
+	min-height: var(--square);
+	min-width: var(--square);
+	width: var(--square);
+}
 
 /* Details */
 details {
@@ -431,10 +454,11 @@ summary {
 }
 summary:active,
 summary:hover {
+	animation: haze 1s infinite;
 	background-color: var(--pri-color-trans);
 	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
-}
+}		
 summary::-webkit-details-marker {
 	display: none;
 }

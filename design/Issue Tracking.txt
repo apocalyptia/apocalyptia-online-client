@@ -79,3 +79,34 @@ Situational Awareness
 Specialize
 Unorthodox
 Weapon Training
+
+
+---------------------------------------------------------------------------------------------------
+
+TODO List: FEATURES
+
+campaign invitations
+public and private chat logs
+extra generator
+regional and area map editor
+dynamic lighting
+fog of war
+field of view
+visual special effects
+item passing and trading (can make promises)
+social media sharing
+user forum
+developer blog
+video conferencing
+team information
+base management
+user accounts
+sound effects library and player
+audio/video playlist
+automatic roll calculations
+push notifications
+calendar access
+vehicle building, customization, and maintenance
+first person mode
+rules bookmarking
+utility programs: calculator, stopwatch, countdown timer, sketchpad, notepad

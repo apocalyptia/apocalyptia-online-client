@@ -1,8 +1,8 @@
 <script>
-	// import BattleMap from 'views/map/BattleMapCanvas.svelte'
-	import BattleMap from 'views/map/BattleMapDom.svelte'
-	import MapCreator from 'views/map/MapCreator.svelte'
-	import BackButton from 'views/buttons/BackButton.svelte'
+	// import BattleMap from 'components/map/BattleMapCanvas.svelte'
+	import BattleMap from 'components/map/BattleMapDom.svelte'
+	import MapCreator from 'components/map/MapCreator.svelte'
+	import BackButton from 'components/buttons/BackButton.svelte'
 	import { mapStore } from 'stores/mapStoreDOM.js'
 </script>
 

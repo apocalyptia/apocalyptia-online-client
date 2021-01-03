@@ -1,8 +1,8 @@
 <script>
-	import BackButton from 'buttons/BackButton.svelte'
-	import ManualBody from 'views/manual/ManualBody.svelte'
-	import ManualHeader from 'views/manual/ManualHeader.svelte'
-	import NeedsList from 'lists/NeedsList.js'
+	import BackButton from 'components/buttons/BackButton.svelte'
+	import ManualBody from 'components/manual/ManualBody.svelte'
+	import ManualHeader from 'components/manual/ManualHeader.svelte'
+	import NeedsList from 'rules/lists/NeedsList.js'
 	import SearchEngine from 'utils/search/SearchEngine.js'
 
 	let searchTerm = ''

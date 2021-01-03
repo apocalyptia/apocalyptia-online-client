@@ -1,6 +1,6 @@
 <script>
-	import BackButton from 'buttons/BackButton.svelte'
-	import CharacterSheet from 'views/character/sheet/CharacterSheet.svelte'
+	import BackButton from 'components/buttons/BackButton.svelte'
+	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
 	import DeleteCharacter from 'database/DeleteCharacter.js'
 	import GoTo from 'utils/GoTo.js'
 	import SaveCharacter from 'database/SaveCharacter.js'

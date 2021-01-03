@@ -1,15 +1,14 @@
 <script>
-	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
-	import Creation from 'rules/Creation.js'
-	import PageHeader from 'views/character/creator/PageHeader.svelte'
-	import RandomAge from 'random/RandomAge.js'
-	import RandomDescription from 'random/RandomDescription.js'
-	import RandomHair from 'random/RandomHair.js'
-	import RandomHeight from 'random/RandomHeight.js'
-	import RandomName from 'random/RandomName.js'
-	import RandomSex from 'random/RandomSex.js'
-	import RandomSkin from 'random/RandomSkin.js'
-	import RandomWeight from 'random/RandomWeight.js'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import RandomAge from 'rules/random/RandomAge.js'
+	import RandomDescription from 'rules/random/RandomDescription.js'
+	import RandomHair from 'rules/random/RandomHair.js'
+	import RandomHeight from 'rules/random/RandomHeight.js'
+	import RandomName from 'rules/random/RandomName.js'
+	import RandomSex from 'rules/random/RandomSex.js'
+	import RandomSkin from 'rules/random/RandomSkin.js'
+	import RandomWeight from 'rules/random/RandomWeight.js'
 	import { characterStore } from 'stores/characterStore.js'
 </script>
 
@@ -61,8 +60,8 @@
 			</div>
 		</div>
 	</div>
-	<ButtonRow
-		reset={_ => $characterStore = Creation.resetDescription($characterStore)}
+	<ResetAndRandomButtonRow
+		reset={_ => $characterStore = $characterStore.resetDescription()}
 		random={_ => $characterStore = RandomDescription($characterStore)}
 	/>
 </div>

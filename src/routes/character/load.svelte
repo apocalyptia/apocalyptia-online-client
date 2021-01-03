@@ -1,8 +1,8 @@
 <script>
 	import AdjustUIColor from 'utils/AdjustUIColor.js'
-	import BackButton from 'buttons/BackButton.svelte'
-	import CharacterControls from 'views/character/load/CharacterControls.svelte'
-	import CharacterList from 'views/character/load/CharacterList.svelte'
+	import BackButton from 'components/buttons/BackButton.svelte'
+	import CharacterControls from 'components/character/load/CharacterControls.svelte'
+	import CharacterList from 'components/character/load/CharacterList.svelte'
 	import ResetUIColor from 'utils/ResetUIColor.js'
 	import { beforeUpdate } from 'svelte'
 	import { characterStore } from 'stores/characterStore.js'

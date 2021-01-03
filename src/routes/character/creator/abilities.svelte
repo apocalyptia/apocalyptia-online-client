@@ -1,14 +1,14 @@
 <script>
 	import Abilities from 'rules/Abilities.js'
-	import AbilitiesList from 'lists/AbilitiesList.js'
-	import AbilityGroup from 'views/character/creator/AbilityGroup.svelte'
-	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
-	import CurrentAbilities from 'views/character/creator/CurrentAbilities.svelte'
+	import AbilitiesList from 'rules/lists/AbilitiesList.js'
+	import AbilityGroup from 'components/character/creator/AbilityGroup.svelte'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import CurrentAbilities from 'components/character/creator/CurrentAbilities.svelte'
 	import Creation from 'rules/Creation.js'
-	import ExplanationBlock from 'views/character/creator/ExplanationBlock.svelte'
-	import PageHeader from 'views/character/creator/PageHeader.svelte'
-	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
-	import RandomAbilities from 'random/RandomAbilities.js'
+	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
+	import RandomAbilities from 'rules/random/RandomAbilities.js'
 	import { characterStore } from 'stores/characterStore.js'
 
 	let MasterAbilityList = AbilitiesList.masterList
@@ -31,7 +31,7 @@
 			<AbilityGroup {group} {MasterAbilityList}/>
 		{/each}
 	</div>
-	<ButtonRow
+	<ResetAndRandomButtonRow
 		reset={_ => $characterStore = Creation.resetAbilities($characterStore)}
 		random={_ => $characterStore = RandomAbilities($characterStore)}
 	/>

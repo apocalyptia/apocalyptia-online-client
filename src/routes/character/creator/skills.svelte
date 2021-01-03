@@ -1,13 +1,13 @@
 <script>
-	import ButtonRow from 'views/character/creator/ButtonRow.svelte'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
 	import Creation from 'rules/Creation.js'
-	import ExplanationBlock from 'views/character/creator/ExplanationBlock.svelte'
-	import PageHeader from 'views/character/creator/PageHeader.svelte'
-	import PointsRemaining from 'views/character/creator/PointsRemaining.svelte'
-	import RandomSkills from 'random/RandomSkills.js'
+	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
+	import RandomSkills from 'rules/random/RandomSkills.js'
 	import Skills from 'rules/Skills.js'
-	import SkillsList from 'lists/SkillsList.js'
-	import Slider from 'views/widgets/Slider.svelte'
+	import SkillsList from 'rules/lists/SkillsList.js'
+	import Slider from 'components/widgets/Slider.svelte'
 	import { characterStore } from 'stores/characterStore.js'
 
 	$: remaining = Skills.remaining($characterStore)
@@ -46,7 +46,7 @@
 				</details>
 			</div>
 		{/each}
-	<ButtonRow
+	<ResetAndRandomButtonRow
 		reset={_ => $characterStore = Creation.resetSkills($characterStore)}
 		random={_ => $characterStore = RandomSkills($characterStore)}
 	/>
