@@ -17,7 +17,7 @@
 	</div>
 	{#if item}
 		<div class='item-content'>
-			<GearBlock {item} mode={'generator'}/>
+			<GearBlock {item} mode={'roller'}/>
 		</div>
 	{/if}
 </div>
@@ -35,7 +35,12 @@
 	.category-name {
 		align-items: center;
 		display: flex;
-		flex: 2;
+		flex: 3;
+		font-size: var(--s125);
+		font-weight: bold;
+	}
+	.item-content {
+		padding-top: var(--std-padding);
 	}
 	button {
 		flex: 1;

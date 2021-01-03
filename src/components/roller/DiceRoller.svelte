@@ -74,8 +74,9 @@
 	.category-name {
 		align-items: center;
 		display: flex;
-		flex: 2;
+		flex: 3;
 		font-size: var(--s125);
+		font-weight: bold;
 	}
 	button {
 		flex: 1;

@@ -80,14 +80,17 @@
 			{#each itemProps as prop}
 				{#if item[prop.abv] != undefined}
 					<p class='gear-prop'>
-						<u>{prop.name}</u>: 
-						{#if prop.name == 'Quantity' && mode == 'edit'}
-							<input type='number'
-								class='item-qty'
-								min='0'
-								bind:value={item.qty}
-							/>
+						{#if prop.name == 'Quantity'}
+							{#if mode == 'edit'}
+								<span class='prop-name'>{prop.name}</span>: 
+								<input type='number'
+									class='item-qty'
+									min='0'
+									bind:value={item.qty}
+								/>
+							{/if}
 						{:else}
+							<span class='prop-name'>{prop.name}</span>: 
 							{item[prop.abv]}
 						{/if}
 					</p>
@@ -117,12 +120,16 @@
 <style>
 	.item-name {
 		font-weight: bold;
+		text-decoration: underline;
 	}
 	.gear-desc,
 	.gear-prop,
 	.gear-attr,
 	.attr-type {
 		padding-top: var(--std-padding);
+	}
+	.prop-name {
+		text-decoration: underline;
 	}
 	.attr-type {
 		padding-left: var(--std-padding);
