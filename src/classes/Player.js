@@ -1,13 +1,16 @@
-import CreateCharacter from 'database/CreateCharacter.js'
-import DeleteCharacter from 'database/DeleteCharacter.js'
-import ReadAllCharacters from 'database/ReadAllCharacters.js'
-import ReadCharacter from 'database/ReadCharacter.js'
-import UpdateCharacter from 'database/UpdateCharacter.js'
+import CreateCharacter from 'database/characters/CreateCharacter.js'
+import DeleteCharacter from 'database/characters/DeleteCharacter.js'
+import ReadAllCharacters from 'database/characters/ReadAllCharacters.js'
+import ReadCharacter from 'database/characters/ReadCharacter.js'
+import UpdateCharacter from 'database/characters/UpdateCharacter.js'
 
 export default class Player {
 	constructor() {
 		this.name = ''
 		this.email = ''
+		this.password = ''
+		this.loggedIn = false
+		this.appId = '1bc25997-0847-4317-bb7a-27c8eb265609'
 		this.currentCharacter = null
 		this.characterList = []
 	}

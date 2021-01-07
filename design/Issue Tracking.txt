@@ -18,6 +18,9 @@ make game group chat
 
 ------ TODO LIST ------
 
+Code Cleanup:
+	Decouple script code in NavBar, CharacterControls, and Character Creator index into separate modules.
+
 UX/UI:
 	Make some CSS effects to reflect character's current Psyche.
 	Figure out what to do about Tables.
@@ -35,7 +38,6 @@ Gear.js:
 
 Manual:
 	Put Expand/Collapse All button on rules.
-	Figure out topical organization. Health for example?
 	Painkiller required for a night's sleep to Recover?
 
 Markup:

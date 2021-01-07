@@ -26,12 +26,16 @@
 	]
 
 	const proceedConditions = _ => {
+		const step = $characterStore.meta.step
+		const descriptionArray = Object.values($characterStore.description)
+		const currentXP = $characterStore.properties.xp.current
+		const gearArray = Object.values($characterStore.gear)
 		return (
-			($characterStore.meta.step == 0 && Object.values($characterStore.description).some(d => d.value == ``)) ||
-			($characterStore.meta.step == 1 && Traits.remaining($characterStore) != 0) ||
-			($characterStore.meta.step == 2 && Skills.remaining($characterStore) != 0) ||
-			($characterStore.meta.step == 4 && $characterStore.properties.xp.current < 0) ||
-			($characterStore.meta.step == 5 && Object.values($characterStore.gear).some(g => g.inventory.length == 0))
+			(step == 0 && descriptionArray.some(d => d.value == ``)) ||
+			(step == 1 && Traits.remaining($characterStore)) ||
+			(step == 2 && Skills.remaining($characterStore)) ||
+			(step == 4 && currentXP < 0) ||
+			(step == 5 && gearArray.some(g => g.inventory.length == 0))
 		)
 	}
 

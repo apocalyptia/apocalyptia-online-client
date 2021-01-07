@@ -12,8 +12,8 @@ export const menuStore = writable({
 			'url': '/manual'
 		},
 		{
-			'name': 'Generator',
-			'url': '/generator'
+			'name': 'Roller',
+			'url': '/roller'
 		},
 		{
 			'name': 'Campaign',

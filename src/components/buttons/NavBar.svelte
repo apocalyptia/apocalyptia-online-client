@@ -1,5 +1,4 @@
 <script>
-	import GoTo from 'utils/GoTo.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
@@ -16,14 +15,18 @@
 	const back = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		$characterStore.meta.step--
-		if ($characterStore.meta.step < 0) GoTo('/character/new')
+		if ($characterStore.meta.step < 0) {
+			window.location.href = '/character/new'
+		}
 	}
 
 	const next = _ => {
 		proceedStatus()
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if (canProceed) $characterStore.meta.step++
-		if ($characterStore.meta.step > limit) GoTo('/')
+		if ($characterStore.meta.step > limit) {
+			window.location.href = '/'
+		}
 	}
 
 	$: proceedStatus = _ => {
@@ -41,7 +44,9 @@
 	<button on:click={back} class='back-btn btn-box square-btn'>
 		<div class='btn-icon'>{@html backButton}</div>
 	</button>
-	<button on:click={_ => GoTo('/')} class='home-btn'>Home</button>
+	<button class='home-btn'>
+		<a href='/'>Home</a>
+	</button>
 	<button on:click={next} class='next-btn btn-box square-btn {canProceed ? '' : 'crimson-btn' }'>
 		<div class='btn-icon'>{@html nextButton}</div>
 	</button>

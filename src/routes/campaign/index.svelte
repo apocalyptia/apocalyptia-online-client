@@ -1,38 +1,10 @@
 <script>
+	import CreateCampaign from 'database/campaigns/CreateCampaign.js'
+	import DeleteCampaign from 'database/campaigns/DeleteCampaign.js'
+	import ReadCampaigns from 'database/campaigns/ReadCampaigns.js'
+
 	const msg = {
 		word: ''
-	}
-
-	const list = async _ => {
-		try {
-			let data = await fetch('http://localhost:5000/').then(res => res.json())
-			console.log(data)
-		}
-		catch (err) { console.log('something went wrong', err) }
-	}
-
-	const create = async _ => {
-		try {
-			let data = await fetch('http://localhost:5000/', {
-				headers: { 'Content-Type': 'application/json' },
-				method: 'POST',
-				body: JSON.stringify(msg)
-			}).then(res => res.json())
-			console.log(data)
-		}
-		catch (err) { console.log('something went wrong', err) }
-	}
-
-	const remove = async _ => {
-		try {
-			let data = await fetch('http://localhost:5000/', {
-				headers: { 'Content-Type': 'application/json' },
-				method: 'DELETE',
-				body: JSON.stringify(msg)
-			}).then(res => res.json())
-			console.log(data)
-		}
-		catch (err) { console.log('something went wrong', err) }
 	}
 </script>
 
@@ -41,9 +13,9 @@
 	<input type='text' class='word' bind:value={msg.word} />
 	<br>
 	<div class='btn-row'>
-		<button class='get' on:click={list}>List</button>
-		<button class='post' on:click={create}>Create</button>
-		<button class='delete' on:click={remove}>Remove</button>
+		<button class='get' on:click={ReadCampaigns}>List</button>
+		<button class='post' on:click={CreateCampaign}>Create</button>
+		<button class='delete' on:click={DeleteCampaign}>Remove</button>
 	</div>
 </div>
 

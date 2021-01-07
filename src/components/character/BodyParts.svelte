@@ -1,5 +1,5 @@
 <script>
-	import AdjustUIColor from 'utils/AdjustUIColor.js'
+	import AdjustUIColor from 'utils/ui/AdjustUIColor.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
 

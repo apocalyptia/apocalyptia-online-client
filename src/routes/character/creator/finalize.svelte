@@ -1,21 +1,10 @@
 <script>
 	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
-	import DeleteCharacter from 'database/DeleteCharacter.js'
-	import GoTo from 'utils/GoTo.js'
+	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
-	import SaveCharacter from 'database/SaveCharacter.js'
+	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'
-
-	const deleteCharacter = _ => {
-		GoTo('/')
-		DeleteCharacter()
-	}
-
-	const saveCharacter = _ => {
-		GoTo('/')
-		SaveCharacter($characterStore)
-	}
 
 	onDestroy(_ => SaveCharacter($characterStore))
 </script>
@@ -27,8 +16,12 @@
 		<CharacterSheet mode={'readonly'} />
 	</div>
 	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={saveCharacter}>Save</button>
-		<button class='small-cntr-btn' on:click={deleteCharacter}>Delete</button>
+		<button class='small-cntr-btn' on:click={_ => SaveCharacter($characterStore)}>
+			<a href='/'>Save</a>
+		</button>
+		<button class='small-cntr-btn' on:click={_ => DeleteCharacter($characterStore.meta.name)}>
+			<a href='/'>Delete</a>
+		</button>
 	</div>
 </div>
 

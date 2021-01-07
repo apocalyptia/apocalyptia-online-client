@@ -10,8 +10,6 @@
 	}
 
 	const selectCharacter = e => selectedCharacter = e.target.textContent
-
-	$playerStore.characterList.forEach(c => console.log(c))
 </script>
 
 

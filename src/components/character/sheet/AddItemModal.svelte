@@ -1,21 +1,11 @@
 <script>
-	import AmmoList from 'rules/lists/gear/AmmoList.js'
-	import ArmorList from 'rules/lists/gear/ArmorList.js'
-	import EquipmentList from 'rules/lists/gear/EquipmentList.js'
-	import MeleeList from 'rules/lists/gear/MeleeWeaponList.js'
-	import RangedList from 'rules/lists/gear/RangedWeaponList.js'
+	import GetItemList from 'utils/GetItemList.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { createEventDispatcher, onDestroy } from 'svelte'
 
 	export let category
 
-	let itemList = []
-
-	if (category == 'melee') itemList = [...MeleeList]
-	else if (category == 'ranged') itemList = [...RangedList]
-	else if (category == 'ammo') itemList = [...AmmoList]
-	else if (category == 'armor') itemList = [...ArmorList]
-	else if (category == 'equipment') itemList = [...EquipmentList]
+	let itemList = GetItemList(category)
 
 	let selectedItem = itemList[0]
 

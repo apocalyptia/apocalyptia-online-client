@@ -17,18 +17,10 @@
 			</div>
 			{#each $characterStore.abilities as ability}
 				<div class='card-table-row'>
-					<span class='l-col'>
-						{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}
-					</span>
-					<span class='s-col'>
-						{ability.xp}
-					</span>
-					<span class='s-col'>
-						{ability.max}
-					</span>
-					<span class='s-col'>
-						{ability.taken}
-					</span>
+					<span class='l-col'>{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}</span>
+					<span class='s-col'>{ability.xp}</span>
+					<span class='s-col'>{ability.max}</span>
+					<span class='s-col'>{ability.taken}</span>
 				</div>
 			{/each}
 		</div>

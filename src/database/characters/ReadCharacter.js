@@ -1,4 +1,4 @@
-import DecompressCharacter from 'database/DecompressCharacter.js'
+import DecompressCharacter from 'database/characters/DecompressCharacter.js'
 
 export default (name) => {
 	const locallyStoredCharacter = window.localStorage.getItem(name)

@@ -1,5 +1,5 @@
 <script>
-	import BackupCharacter from 'database/BackupCharacter.js'
+	import BackupCharacter from 'database/characters/BackupCharacter.js'
 	import { characterStore } from 'stores/characterStore.js'
 	import { playerStore } from 'stores/playerStore.js'
 
@@ -12,12 +12,12 @@
 	const loadCharacter = _ => {
 		$playerStore = $playerStore.loadCharacter(selectedCharacter)
 		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
-		GoTo('character/sheet')
+		window.location.href = 'character/sheet'
 	}
 
 	const backupCharacter = _ => BackupCharacter($characterStore)
 
-	const newCharacter = _ => GoTo('character/new')
+	const newCharacter = _ => window.location.href = 'character/new'
 </script>
 
 

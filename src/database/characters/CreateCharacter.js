@@ -1,5 +1,5 @@
-import CompressCharacter from 'database/CompressCharacter.js'
-import SaveCharacter from 'database/SaveCharacter.js'
+import CompressCharacter from 'database/characters/CompressCharacter.js'
+import SaveCharacter from 'database/characters/SaveCharacter.js'
 
 export default (character) => {
 	const compressedCharacter = CompressCharacter(character)

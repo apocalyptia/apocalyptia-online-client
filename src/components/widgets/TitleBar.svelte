@@ -1,16 +1,19 @@
 <script>
 	import MenuButton from 'components/buttons/MenuButton.svelte'
 	import UserMenu from 'components/widgets/UserMenu.svelte'
+	import { playerStore } from 'stores/playerStore.js'
 </script>
 
 
 <div class='title-bar'>
-	<a href='/' class='link-btn title-link'>
+	<a href='/' class='link-btn title-link {$playerStore.loggedIn ? 'part-width' : 'full-width'}'>
 		<span class='app-title'>Apocalyptia Online</span>
 	</a>
-	<MenuButton />
+	{#if $playerStore.loggedIn}
+		<MenuButton />
+		<UserMenu />
+	{/if}
 </div>
-<UserMenu />
 
 
 <style>
@@ -25,6 +28,11 @@
 	}
 	.title-link {
 		padding: var(--std-padding);
+	}
+	.full-width {
+		width: 100vw;
+	}
+	.part-width {
 		width: calc(100vw - var(--square));
 	}
 </style>

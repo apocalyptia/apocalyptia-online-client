@@ -1,4 +1,4 @@
-import CompressCharacter from 'database/CompressCharacter.js'
+import CompressCharacter from 'database/characters/CompressCharacter.js'
 
 export default (character) => {
 	const compressedCharacter = CompressCharacter(character)
