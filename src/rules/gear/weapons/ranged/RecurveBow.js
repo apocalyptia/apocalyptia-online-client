@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 
 const RecurveBow = new Gear({
+	id: ``,
 	name: `Recurve Bow`,
 	type: `Ranged Weapon`,
 	sz: 2,

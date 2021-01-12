@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const ArrowTarget = new Gear({
+	id: ``,
 	name: `Target Arrow`,
 	type: `Ammo`,
 	desc: [

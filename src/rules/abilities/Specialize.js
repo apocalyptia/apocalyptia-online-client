@@ -2,6 +2,7 @@ import Ability from 'classes/Ability.js'
 import Skills from 'rules/Skills.js'
 
 const Specialize = new Ability({
+	id: ``,
 	name: `Specialize`,
 	desc: [
 		`+1 to a Skill Specialty.`,

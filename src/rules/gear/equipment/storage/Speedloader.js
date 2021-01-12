@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Speedloader = new Gear({
+	id: ``,
 	name: `Speed-loader`,
 	desc: [
 		`Reload a revolver cylinder as 1 action.`,

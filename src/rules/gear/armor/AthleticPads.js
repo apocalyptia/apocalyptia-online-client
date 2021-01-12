@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const AthleticPads = new Gear({
+	id: ``,
 	name: `Athletic Pads`,
 	sz: 2,
 	type: `Armor`

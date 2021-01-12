@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Padlock = new Gear({
+	id: ``,
 	name: `Padlock`,
 	desc: [
 		`2 Damage Resistance.`,

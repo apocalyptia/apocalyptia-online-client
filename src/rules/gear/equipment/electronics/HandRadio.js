@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const HandRadio = new Gear({
+	id: ``,
 	name: `Hand Radio`,
 	type: `Electronics`,
 	desc: [

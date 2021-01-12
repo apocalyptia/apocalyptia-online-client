@@ -3,6 +3,7 @@ import OneHanded from 'rules/gear/attributes/OneHanded.js'
 import Chop from 'rules/gear/attributes/Chop.js'
 
 const Hatchet = new Gear({
+	id: ``,
 	name: `Hatchet`,
 	type: `Melee Weapon`,
 	sz: 2,

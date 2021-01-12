@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const MapTopographic = new Gear({
+	id: ``,
 	name: `Map (Topographic)`,
 	desc: [
 		`+3 Survival(Navigate) in a given Region.`,

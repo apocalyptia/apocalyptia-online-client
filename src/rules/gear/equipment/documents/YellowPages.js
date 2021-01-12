@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const YellowPages = new Gear({
+	id: ``,
 	name: `Yellow Pages`,
 	desc: [
 		`+1 Scavenging in a given Region.`,

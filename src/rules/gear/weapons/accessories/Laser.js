@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Laser = new Gear({
+	id: ``,
 	name: `Laser`,
 	type: `Accessory`,
 	desc: [

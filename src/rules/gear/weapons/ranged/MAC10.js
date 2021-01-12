@@ -4,6 +4,7 @@ import Auto from 'rules/gear/attributes/Auto.js'
 import Rapid from 'rules/gear/attributes/Rapid.js'
 
 const MAC10 = new Gear({
+	id: ``,
 	name: `MAC-10 SMG`,
 	type: `Ranged Weapon`,
 	sz: 2,

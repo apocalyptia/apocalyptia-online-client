@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const SpottingScope = new Gear({
+	id: ``,
 	name: `Spotting Scope`,
 	desc: [
 		`+6 Perception(See) at 100+yds.`,

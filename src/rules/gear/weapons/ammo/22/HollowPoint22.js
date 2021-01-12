@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import HollowPoint from 'rules/gear/attributes/HollowPoint.js'
 
 const HollowPoint22 = new Gear({
+	id: ``,
 	name: `.22 Hollow Point`,
 	type: `Ammo`,
 	desc: [

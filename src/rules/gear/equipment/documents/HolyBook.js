@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const HolyBook = new Gear({
+	id: ``,
 	name: `Holy Book`,
 	desc: [
 		`-1 Psyche`,

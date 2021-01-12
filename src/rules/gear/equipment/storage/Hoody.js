@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Hoody = new Gear({
+	id: ``,
 	name: `Hoody`,
 	desc: [
 		`Cold Resistance.`,

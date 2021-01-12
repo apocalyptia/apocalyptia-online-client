@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Sunglasses = new Gear({
+	id: ``,
 	name: `Sunglasses`,
 	desc: [
 		`No Visibility(Sun) penalty.`,

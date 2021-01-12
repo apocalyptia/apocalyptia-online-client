@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Balaclava = new Gear({
+	id: ``,
 	name: `Balaclava`,
 	desc: [
 		`+1 Stealth.`,

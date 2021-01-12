@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const LeatherBelt = new Gear({
+	id: ``,
 	name: `Leather Belt`,
 	desc: [
 		`1yd strap.`,

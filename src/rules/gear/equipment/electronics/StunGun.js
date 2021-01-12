@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const StunGun = new Gear({
+	id: ``,
 	name: `Stun Gun`,
 	type: `Electronics`,
 	desc: [

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Carabiner = new Gear({
+	id: ``,
 	name: `Carabiner`,
 	desc: [
 		`+1 Athletics(Climb and Rappel).`,

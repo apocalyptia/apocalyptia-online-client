@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Flashlight = new Gear({
+	id: ``,
 	name: `Flashlight`,
 	type: `Electronics`,
 	desc: [

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Holosight = new Gear({
+	id: ``,
 	name: `Holosight`,
 	type: `Accessory`,
 	desc: [

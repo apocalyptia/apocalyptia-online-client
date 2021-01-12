@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Whistle = new Gear({
+	id: ``,
 	name: `Whistle`,
 	desc: [
 		`+1 Tame(Train).`,

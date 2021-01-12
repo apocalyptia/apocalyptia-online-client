@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const FuelCan = new Gear({
+	id: ``,
 	name: `Fuel Can`,
 	desc: [
 		`5gal Fuel.`,

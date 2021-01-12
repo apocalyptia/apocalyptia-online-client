@@ -3,6 +3,7 @@ import FireResistance from 'rules/gear/attributes/FireResistance.js'
 import Mask from 'rules/gear/attributes/Mask.js'
 
 const MotorcycleHelmet = new Gear({
+	id: ``,
 	name: `Motorcycle Helmet`,
 	sz: 2,
 	attr: [

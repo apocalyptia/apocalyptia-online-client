@@ -1,6 +1,7 @@
 import Ability from 'classes/Ability.js'
 
 const VehicleOperation = new Ability({
+	id: ``,
 	name: `Vehicle Operation`,
 	desc: [
 		`Proficiently operate a class of vehicle.`,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Painkiller = new Gear({
+	id: ``,
 	name: `Painkiller`,
 	desc: [
 		`Ignore 1 Pain penalty.`,

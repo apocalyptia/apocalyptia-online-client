@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const DuctTape = new Gear({
+	id: ``,
 	name: `Duct Tape`,
 	desc: [
 		`+1 Build/1yd or use 2yds as Handcuffs.`,

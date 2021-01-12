@@ -1,6 +1,7 @@
 import Rule from 'classes/Rule.js'
 
 const Scatter = new Rule({
+	id: ``,
 	name: `Scatter`,
 	desc: [
 		`Ignore Range penalties.`,

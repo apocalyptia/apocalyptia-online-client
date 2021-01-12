@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Suppressor = new Gear({
+	id: ``,
 	name: `Suppressor`,
 	type: `Accessory`,
 	desc: [

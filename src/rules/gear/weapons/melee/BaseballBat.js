@@ -3,6 +3,7 @@ import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 import Blunt from 'rules/gear/attributes/Blunt.js'
 
 const BaseballBat = new Gear({
+	id: ``,
 	name: `Baseball Bat`,
 	type: `Melee Weapon`,
 	sz: 3,

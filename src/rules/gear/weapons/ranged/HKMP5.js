@@ -4,6 +4,7 @@ import Auto from 'rules/gear/attributes/Auto.js'
 import Rapid from 'rules/gear/attributes/Rapid.js'
 
 const HKMP5 = new Gear({
+	id: ``,
 	name: `H&K MP5 SMG`,
 	type: `Ranged Weapon`,
 	sz: 3,

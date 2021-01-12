@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const WaterBottle = new Gear({
+	id: ``,
 	name: `Water Bottle`,
 	desc: [
 		`Holds 1 unit (.5gal) of liquid.`,

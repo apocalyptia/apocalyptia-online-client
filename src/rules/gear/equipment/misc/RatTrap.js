@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const RatTrap = new Gear({
+	id: ``,
 	name: `Rat Trap`,
 	desc: [
 		`+1 Survival(Forage).`,

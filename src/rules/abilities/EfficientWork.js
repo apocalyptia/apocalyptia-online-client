@@ -7,6 +7,7 @@ import Survival from 'rules/skills/Survival.js'
 import Tame from 'rules/skills/Tame.js'
 
 const EfficientWork = new Ability({
+	id: ``,
 	name: `Efficient Work`,
 	desc: [
 		`[Time / 2] for one of the following Skills (minimum 1 action): Build, Larceny, Medicine, Science, Survival, or Tame.`

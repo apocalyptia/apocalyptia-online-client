@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Stethoscope = new Gear({
+	id: ``,
 	name: `Stethoscope`,
 	type: `Medical`,
 	desc: [

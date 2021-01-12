@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Water = new Gear({
+	id: ``,
 	name: `Water`,
 	type: `Resource`,
 	desc: [

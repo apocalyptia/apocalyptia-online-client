@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Matchbook = new Gear({
+	id: ``,
 	name: `Matchbook`,
 	desc: [
 		`+1 Survival(Camp).`,

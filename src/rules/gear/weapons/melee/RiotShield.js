@@ -4,6 +4,7 @@ import Blunt from 'rules/gear/attributes/Blunt.js'
 import Shield from 'rules/gear/attributes/Shield.js'
 
 const RiotShield = new Gear({
+	id: ``,
 	name: `Riot Shield`,
 	type: `Melee Weapon`,
 	sz: 4,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Compass = new Gear({
+	id: ``,
 	name: `Compass`,
 	desc: [
 		`+3 Survival(Navigate).`,

@@ -1,6 +1,7 @@
 import Ability from 'classes/Ability.js'
 
 const Parry = new Ability({
+	id: ``,
 	name: `Parry`,
 	desc: [
 		`Free Block Action once per round.`,

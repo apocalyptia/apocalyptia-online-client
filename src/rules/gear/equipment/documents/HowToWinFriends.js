@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const HowToWinFriends = new Gear({
+	id: ``,
 	name: `How to Win Friends`,
 	desc: [
 		`+1 Socialize`,

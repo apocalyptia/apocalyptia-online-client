@@ -3,6 +3,7 @@ import OneHanded from 'rules/gear/attributes/OneHanded.js'
 import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const Spear = new Gear({
+	id: ``,
 	name: `Spear`,
 	type: `Melee Weapon`,
 	sz: 3,

@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import Match from 'rules/gear/attributes/Match.js'
 
 const Match9mm = new Gear({
+	id: ``,
 	name: `9mm Match`,
 	type: `Ammo`,
 	desc: [

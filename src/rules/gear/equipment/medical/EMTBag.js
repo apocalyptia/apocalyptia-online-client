@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const EMTBag = new Gear({
+	id: ``,
 	name: `EMT Bag`,
 	type: `Medical`,
 	desc: [

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const TapeMeasure = new Gear({
+	id: ``,
 	name: `Tape Measure`,
 	desc: [
 		`+1 Build.`,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Firestick = new Gear({
+	id: ``,
 	name: `Fire-stick`,
 	desc: [
 		`+3 Survival(Camp).`,

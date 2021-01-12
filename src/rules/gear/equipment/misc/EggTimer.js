@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const EggTimer = new Gear({
+	id: ``,
 	name: `Egg Timer`,
 	desc: [
 		`Set up to 60mins.`,

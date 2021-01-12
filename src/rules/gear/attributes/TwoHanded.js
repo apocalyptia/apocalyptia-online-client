@@ -1,6 +1,7 @@
 import Rule from 'classes/Rule.js'
 
 const TwoHanded = new Rule({
+	id: ``,
 	name: `2h`,
 	desc: [
 		`Normally used two-handed.`,

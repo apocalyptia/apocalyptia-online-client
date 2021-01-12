@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const SolarLamp = new Gear({
+	id: ``,
 	name: `Solar Lamp`,
 	type: `Electronics`,
 	desc: [

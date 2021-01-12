@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Lockpicks = new Gear({
+	id: ``,
 	name: `Lockpicks`,
 	desc: [
 		`+3 Larceny(Disable) key locks.`,

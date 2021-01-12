@@ -3,6 +3,7 @@ import Broadhead from 'rules/gear/attributes/Broadhead.js'
 import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const ArrowBroadhead = new Gear({
+	id: ``,
 	name: `Broadhead Arrow`,
 	type: `Ammo`,
 	desc: [

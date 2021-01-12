@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const RoadFlare = new Gear({
+	id: ``,
 	name: `Road Flare`,
 	desc: [
 		`3 Fire Damage.`,

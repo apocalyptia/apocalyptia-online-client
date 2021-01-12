@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const MapLocal = new Gear({
+	id: ``,
 	name: `Map (Local)`,
 	desc: [
 		`+1 Survival(Navigate) in a given Region.`,

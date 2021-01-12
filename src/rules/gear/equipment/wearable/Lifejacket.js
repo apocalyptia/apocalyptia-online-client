@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Lifejacket = new Gear({
+	id: ``,
 	name: `Lifejacket`,
 	desc: [
 		`+6 Athletics(Swim).`,

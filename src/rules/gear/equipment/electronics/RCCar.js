@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const RCCar = new Gear({
+	id: ``,
 	name: `RC Car`,
 	type: `Electronics`,
 	desc: [

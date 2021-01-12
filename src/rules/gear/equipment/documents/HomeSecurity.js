@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const HomeSecurity = new Gear({
+	id: ``,
 	name: `Home Security`,
 	desc: [
 		`+1 Larceny`,

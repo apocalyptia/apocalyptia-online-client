@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const EffectiveHabits = new Gear({
+	id: ``,
 	name: `Effective Habits`,
 	desc: [
 		`+1 to any one Skill`,

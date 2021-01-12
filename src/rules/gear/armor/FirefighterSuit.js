@@ -4,6 +4,7 @@ import FireResistance from 'rules/gear/attributes/FireResistance.js'
 import Mask from 'rules/gear/attributes/Mask.js'
 
 const FirefighterSuit = new Gear({
+	id: ``,
 	name: `Firefighter Suit`,
 	sz: 5,
 	attr: [

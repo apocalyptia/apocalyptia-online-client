@@ -3,6 +3,7 @@ import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 import Rapid from 'rules/gear/attributes/Rapid.js'
 
 const ArmaliteAR15 = new Gear({
+	id: ``,
 	name: `Armalite AR-15 Rifle`,
 	type: `Ranged Weapon`,
 	sz: 3,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const AthleticHelmet = new Gear({
+	id: ``,
 	name: `Athletic Helmet`,
 	sz: 2,
 	type: `Armor`

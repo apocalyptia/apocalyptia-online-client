@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import Blind from 'rules/status/Blind.js'
 
 const SmokeGrenade = new Gear({
+	id: ``,
 	name: `Smoke Grenade`,
 	type: `Bomb`,
 	desc: [

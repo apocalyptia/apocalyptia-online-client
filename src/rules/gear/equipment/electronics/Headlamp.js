@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Headlamp = new Gear({
+	id: ``,
 	name: `Headlamp`,
 	type: `Electronics`,
 	desc: [

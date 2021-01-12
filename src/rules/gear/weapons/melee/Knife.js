@@ -4,6 +4,7 @@ import Pierce from 'rules/gear/attributes/Pierce.js'
 import Rapid from 'rules/gear/attributes/Rapid.js'
 
 const Knife = new Gear({
+	id: ``,
 	name: `Knife`,
 	type: `Melee Weapon`,
 	sz: 1,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const DrumMagazine = new Gear({
+	id: ``,
 	name: `Drum Magazine`,
 	type: `Accessory`,
 	desc: [

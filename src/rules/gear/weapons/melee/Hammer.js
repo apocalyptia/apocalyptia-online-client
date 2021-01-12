@@ -3,6 +3,7 @@ import OneHanded from 'rules/gear/attributes/OneHanded.js'
 import Blunt from 'rules/gear/attributes/Blunt.js'
 
 const Hammer = new Gear({
+	id: ``,
 	name: `Hammer`,
 	type: `Melee Weapon`,
 	sz: 2,

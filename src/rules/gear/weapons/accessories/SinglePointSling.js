@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const SinglePointSling = new Gear({
+	id: ``,
 	name: `Single-Point Sling`,
 	type: `Accessory`,
 	desc: [

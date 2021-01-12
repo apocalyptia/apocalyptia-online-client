@@ -3,6 +3,7 @@ import SkillsList from 'rules/lists/SkillsList.js'
 import TraitsList from 'rules/lists/TraitsList.js'
 
 const Unorthodox = new Ability({
+	id: ``,
 	name: `Unorthodox`,
 	desc: [
 		`Pick a new parent Trait for a Skill.`,

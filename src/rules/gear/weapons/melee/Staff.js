@@ -3,6 +3,7 @@ import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 import Blunt from 'rules/gear/attributes/Blunt.js'
 
 const Staff = new Gear({
+	id: ``,
 	name: `Staff`,
 	type: `Melee Weapon`,
 	sz: 3,

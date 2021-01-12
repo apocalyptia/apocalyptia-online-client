@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Purse = new Gear({
+	id: ``,
 	name: `Purse`,
 	desc: [
 		`1 round to access.`,

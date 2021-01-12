@@ -112,3 +112,11 @@ vehicle building, customization, and maintenance
 first person mode
 rules bookmarking
 utility programs: calculator, stopwatch, countdown timer, sketchpad, notepad
+
+
+---------------------------------------------------------------------------------------------------
+
+Svelte Modules that could use some code decoupling:
+NavBar.svelte
+CharacterControls.svelte
+/routes/character/creator/index.svelte

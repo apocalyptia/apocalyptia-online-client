@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Bipod = new Gear({
+	id: ``,
 	name: `Bipod`,
 	type: `Accessory`,
 	desc: [

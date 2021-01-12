@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Tent = new Gear({
+	id: ``,
 	name: `Tent`,
 	desc: [
 		`4 person.`,

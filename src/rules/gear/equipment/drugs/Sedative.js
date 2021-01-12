@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Sedative = new Gear({
+	id: ``,
 	name: `Sedative`,
 	desc: [
 		`Demeanor#6/round to take any action.`,

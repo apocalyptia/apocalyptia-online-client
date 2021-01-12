@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Foregrip = new Gear({
+	id: ``,
 	name: `Foregrip`,
 	type: `Accessory`,
 	desc: [

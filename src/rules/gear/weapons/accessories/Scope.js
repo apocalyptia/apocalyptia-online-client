@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Scope = new Gear({
+	id: ``,
 	name: `Scope`,
 	type: `Accessory`,
 	desc: [

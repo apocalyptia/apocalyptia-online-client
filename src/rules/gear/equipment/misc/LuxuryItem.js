@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const LuxuryItem = new Gear({
+	id: ``,
 	name: `Luxury Item`,
 	desc: [
 		`Toilet paper, cigarette, etc.`,

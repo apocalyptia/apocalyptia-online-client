@@ -4,6 +4,7 @@ import Blunt from 'rules/gear/attributes/Blunt.js'
 import Slow from 'rules/gear/attributes/Slow.js'
 
 const Sledgehammer = new Gear({
+	id: ``,
 	name: `Sledgehammer`,
 	type: `Melee Weapon`,
 	sz: 5,

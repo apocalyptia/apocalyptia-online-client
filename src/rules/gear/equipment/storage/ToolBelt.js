@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const ToolBelt = new Gear({
+	id: ``,
 	name: `Tool Belt`,
 	desc: [
 		`6x 1 Slots.`,

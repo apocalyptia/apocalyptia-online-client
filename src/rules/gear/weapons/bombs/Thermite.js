@@ -3,6 +3,7 @@ import Blast from 'rules/gear/attributes/Blast.js'
 import FireDamage from 'rules/gear/attributes/FireDamage.js'
 
 const Thermite = new Gear({
+	id: ``,
 	name: `Thermite`,
 	type: `Bomb`,
 	desc: [

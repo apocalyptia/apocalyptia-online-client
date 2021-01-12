@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Part = new Gear({
+	id: ``,
 	name: `Part`,
 	type: `Resource`,
 	desc: [

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Makeup = new Gear({
+	id: ``,
 	name: `Makeup`,
 	desc: [
 		`+1 Socialize and Entertain for 6hrs.`,

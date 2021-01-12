@@ -3,6 +3,7 @@ import Camo from 'rules/gear/attributes/Camo.js'
 import ColdResistance from 'rules/gear/attributes/ColdResistance.js'
 
 const GhillieSuit = new Gear({
+	id: ``,
 	name: `Ghillie Suit`,
 	sz: 4,
 	attr: [

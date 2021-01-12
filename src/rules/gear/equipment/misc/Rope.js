@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Rope = new Gear({
+	id: ``,
 	name: `Rope`,
 	desc: [
 		`30yd nylon coil.`,

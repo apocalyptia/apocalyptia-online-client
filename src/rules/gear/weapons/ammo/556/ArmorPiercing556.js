@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const ArmorPiercing556 = new Gear({
+	id: ``,
 	name: `5.56mm Armor Piercing`,
 	type: `Ammo`,
 	desc: [

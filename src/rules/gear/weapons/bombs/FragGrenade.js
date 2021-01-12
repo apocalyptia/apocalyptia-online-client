@@ -3,6 +3,7 @@ import Blast from 'rules/gear/attributes/Blast.js'
 import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const FragGrenade = new Gear({
+	id: ``,
 	name: `Frag Grenade`,
 	type: `Bomb`,
 	desc: [

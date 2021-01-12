@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import ColdResistance from 'rules/gear/attributes/ColdResistance.js'
 
 const WinterCoat = new Gear({
+	id: ``,
 	name: `Winter Coat`,
 	sz: 2,
 	attr: [

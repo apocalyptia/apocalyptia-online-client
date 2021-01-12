@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Chalk = new Gear({
+	id: ``,
 	name: `Chalk`,
 	desc: [
 		`Used to temporarily write on any surface.`,

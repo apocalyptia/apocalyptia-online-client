@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 
 const Marlin1894C = new Gear({
+	id: ``,
 	name: `Marlin 1894C Rifle`,
 	type: `Ranged Weapon`,
 	sz: 3,

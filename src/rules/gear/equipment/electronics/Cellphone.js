@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Cellphone = new Gear({
+	id: ``,
 	name: `Cellphone`,
 	type: `Electronics`,
 	desc: [

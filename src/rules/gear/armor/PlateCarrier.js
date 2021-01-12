@@ -4,6 +4,7 @@ import ColdResistance from 'rules/gear/attributes/ColdResistance.js'
 import FireResistance from 'rules/gear/attributes/FireResistance.js'
 
 const PlateCarrier = new Gear({
+	id: ``,
 	name: `Plate Carrier`,
 	sz: 4,
 	attr: [

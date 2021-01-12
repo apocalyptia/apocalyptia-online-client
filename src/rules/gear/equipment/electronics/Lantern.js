@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Lantern = new Gear({
+	id: ``,
 	name: `Lantern`,
 	type: `Electronics`,
 	desc: [

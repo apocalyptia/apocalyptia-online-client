@@ -4,6 +4,7 @@ import Rapid from 'rules/gear/attributes/Rapid.js'
 import Scatter from 'rules/gear/attributes/Scatter.js'
 
 const StoegerCoachgun = new Gear({
+	id: ``,
 	name: `Stoeger Coach Shotgun`,
 	type: `Ranged Weapon`,
 	sz: 3,

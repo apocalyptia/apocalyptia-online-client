@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const ZipTie = new Gear({
+	id: ``,
 	name: `Zip Tie`,
 	desc: [
 		`Place on Arms behind target's back to make them Harmless.`,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const GrapplingHook = new Gear({
+	id: ``,
 	name: `Grappling Hook`,
 	desc: [
 		`+3 Athletics(Climb and Rappel).`,

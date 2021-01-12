@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const AirHorn = new Gear({
+	id: ``,
 	name: `Air Horn`,
 	desc: [
 		`Emits a loud shriek up to a 1 mile radius.`,

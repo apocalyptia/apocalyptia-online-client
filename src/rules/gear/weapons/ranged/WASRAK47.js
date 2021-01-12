@@ -3,6 +3,7 @@ import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 import Rapid from 'rules/gear/attributes/Rapid.js'
 
 const WASRAK47 = new Gear({
+	id: ``,
 	name: `WASR AK-47 Rifle`,
 	type: `Ranged Weapon`,
 	sz: 3,

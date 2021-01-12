@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const WaterFilter = new Gear({
+	id: ``,
 	name: `Water Filter`,
 	type: `Medical`,
 	desc: [

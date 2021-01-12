@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import Slug from 'rules/gear/attributes/Slug.js'
 
 const Slug12g = new Gear({
+	id: ``,
 	name: `12g Slug`,
 	type: `Ammo`,
 	desc: [

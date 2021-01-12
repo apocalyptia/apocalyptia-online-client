@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Bayonet = new Gear({
+	id: ``,
 	name: `Bayonet`,
 	type: `Accessory`,
 	desc: [

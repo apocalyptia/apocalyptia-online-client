@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Chemical = new Gear({
+	id: ``,
 	name: `Chemical`,
 	type: `Resource`,
 	desc: [

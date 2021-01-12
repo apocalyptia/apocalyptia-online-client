@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Marbles = new Gear({
+	id: ``,
 	name: `Marbles`,
 	desc: [
 		`30/bag.`,

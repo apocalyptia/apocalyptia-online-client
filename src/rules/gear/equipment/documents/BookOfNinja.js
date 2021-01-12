@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const BookOfNinja = new Gear({
+	id: ``,
 	name: `Book of Ninja`,
 	desc: [
 		`+1 Stealth`,

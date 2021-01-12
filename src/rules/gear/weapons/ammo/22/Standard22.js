@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Standard22 = new Gear({
+	id: ``,
 	name: `.22 Standard`,
 	type: `Ammo`,
 	desc: [

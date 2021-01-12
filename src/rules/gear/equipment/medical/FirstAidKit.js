@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const FirstAidKit = new Gear({
+	id: ``,
 	name: `First-Aid Kit`,
 	type: `Medical`,
 	desc: [

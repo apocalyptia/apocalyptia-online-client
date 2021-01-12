@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const TransfusionKit = new Gear({
+	id: ``,
 	name: `Transfusion Kit`,
 	type: `Medical`,
 	desc: [

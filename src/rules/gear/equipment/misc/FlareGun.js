@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const FlareGun = new Gear({
+	id: ``,
 	name: `Flare Gun`,
 	desc: [
 		`Pistol.`,

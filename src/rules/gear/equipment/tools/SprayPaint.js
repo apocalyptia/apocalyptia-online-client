@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const SprayPaint = new Gear({
+	id: ``,
 	name: `Spray Paint`,
 	desc: [
 		`Ranged Attack, Called Shot: Head.`,

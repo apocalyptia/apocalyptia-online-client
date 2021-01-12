@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Bandoleer = new Gear({
+	id: ``,
 	name: `Bandoleer`,
 	desc: [
 		`Holds 50 bullets of any caliber.`,

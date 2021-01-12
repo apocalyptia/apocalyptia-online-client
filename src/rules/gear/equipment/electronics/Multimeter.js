@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Multimeter = new Gear({
+	id: ``,
 	name: `Multimeter`,
 	type: `Electronics`,
 	desc: [

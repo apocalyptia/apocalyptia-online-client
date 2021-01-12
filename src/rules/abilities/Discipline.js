@@ -1,6 +1,7 @@
 import Ability from 'classes/Ability.js'
 
 const Discipline = new Ability({
+	id: ``,
 	name: `Discipline`,
 	desc: [
 		`+1 Psyche.`,

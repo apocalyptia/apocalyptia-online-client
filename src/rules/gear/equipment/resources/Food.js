@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Food = new Gear({
+	id: ``,
 	name: `Food`,
 	type: `Resource`,
 	desc: [

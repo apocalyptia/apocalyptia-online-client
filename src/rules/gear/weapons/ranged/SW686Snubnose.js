@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 
 const SW686Snubnose = new Gear({
+	id: ``,
 	name: `S&W 686 Snubnose Revolver`,
 	type: `Ranged Weapon`,
 	sz: 1,

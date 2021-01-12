@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Hallucinogen = new Gear({
+	id: ``,
 	name: `Hallucinogen`,
 	desc: [
 		`+1 Perform and Tame, -3 to all other rolls, and -1 Psyche.`,

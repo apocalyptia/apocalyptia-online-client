@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Bandanna = new Gear({
+	id: ``,
 	name: `Bandanna`,
 	desc: [
 		`+1 Constitution vs airborne toxins.`,

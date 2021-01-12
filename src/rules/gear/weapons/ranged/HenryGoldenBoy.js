@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
 
 const HenryGoldenBoy = new Gear({
+	id: ``,
 	name: `Henry Golden Boy Rifle`,
 	type: `Ranged Weapon`,
 	sz: 3,

@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const MeasuringCup = new Gear({
+	id: ``,
 	name: `Measuring Cup`,
 	desc: [
 		`+3 Science(Chemistry).`,

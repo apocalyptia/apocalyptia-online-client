@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const PepperSpray = new Gear({
+	id: ``,
 	name: `Pepper Spray`,
 	desc: [
 		`+3 Ranged(Shoot) with this weapon.`,

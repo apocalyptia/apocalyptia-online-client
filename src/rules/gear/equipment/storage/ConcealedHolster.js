@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const ConcealedHolster = new Gear({
+	id: ``,
 	name: `Concealed Holster`,
 	desc: [
 		`Perception 12# to spot a Size 1 Gun.`,

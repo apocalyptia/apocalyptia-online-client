@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Candy = new Gear({
+	id: ``,
 	name: `Candy`,
 	desc: [
 		`Restores 1 Luck point.`,

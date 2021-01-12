@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const GeigerCounter = new Gear({
+	id: ``,
 	name: `Geiger Counter`,
 	type: `Electronics`,
 	desc: [

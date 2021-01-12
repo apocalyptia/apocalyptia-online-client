@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const MylarBlanket = new Gear({
+	id: ``,
 	name: `Mylar Blanket`,
 	desc: [
 		`Cold Resistance.`,

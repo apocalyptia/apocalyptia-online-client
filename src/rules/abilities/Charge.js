@@ -1,6 +1,7 @@
 import Ability from 'classes/Ability.js'
 
 const Charge = new Ability({
+	id: ``,
 	name: `Charge`,
 	desc: [
 		`Ignore Unstable penalty to Melee Attacks when you Run.`,

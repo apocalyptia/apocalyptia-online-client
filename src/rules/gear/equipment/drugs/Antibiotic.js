@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Antibiotic = new Gear({
+	id: ``,
 	name: `Antibiotic`,
 	desc: [
 		`Prevents infection in Recovery for 1 day.`,

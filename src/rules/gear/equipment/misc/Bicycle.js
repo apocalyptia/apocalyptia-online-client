@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Bicycle = new Gear({
+	id: ``,
 	name: `Bicycle`,
 	desc: [
 		`Athletics 3#.`,

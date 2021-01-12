@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const BaseballCap = new Gear({
+	id: ``,
 	name: `Baseball Cap`,
 	desc: [
 		`Reduce Visibility(Rain and Sun) penalty by 1.`,

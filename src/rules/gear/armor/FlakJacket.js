@@ -2,6 +2,7 @@ import Gear from 'classes/Gear.js'
 import Camo from 'rules/gear/attributes/Camo.js'
 
 const FlakJacket = new Gear({
+	id: ``,
 	name: `Flak Jacket`,
 	sz: 4,
 	attr: [

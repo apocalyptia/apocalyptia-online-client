@@ -1,6 +1,7 @@
 import Ability from 'classes/Ability.js'
 
 const Healthy = new Ability({
+	id: ``,
 	name: `Healthy`,
 	desc: [
 		`+1 Health for each Body Part.`,

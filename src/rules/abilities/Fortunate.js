@@ -1,6 +1,7 @@
 import Ability from 'classes/Ability.js'
 
 const Fortunate = new Ability({
+	id: ``,
 	name: `Fortunate`,
 	desc: [
 		`+1 Luck.`,

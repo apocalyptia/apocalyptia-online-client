@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Megaphone = new Gear({
+	id: ``,
 	name: `Megaphone`,
 	type: `Electronics`,
 	desc: [

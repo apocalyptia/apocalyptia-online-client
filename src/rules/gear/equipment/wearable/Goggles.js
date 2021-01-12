@@ -1,6 +1,7 @@
 import Gear from 'classes/Gear.js'
 
 const Goggles = new Gear({
+	id: ``,
 	name: `Goggles`,
 	desc: [
 		`+3 Constitution to resist toxins in eyes.`,
