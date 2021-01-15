@@ -71,14 +71,14 @@
 		{#if mode != 'manual'}
 			<p class='item-name'>{item.name}</p>
 		{/if}
-		<div class='item-details {mode == "manual" ? "extra-padding" : ""}'>
+		<div class='item-details'>
 			{#if item.desc}
 				{#each item.desc as desc}
 					<p class='gear-desc'>{desc}</p>
 				{/each}
 			{/if}
 			{#each itemProps as prop}
-				{#if item[prop.abv] != undefined}
+				{#if item[prop.abv] != undefined && item[prop.abv].toString().length}
 					<p class='gear-prop'>
 						{#if prop.name == 'Quantity'}
 							{#if mode == 'edit'}
@@ -126,7 +126,7 @@
 	.gear-prop,
 	.gear-attr,
 	.attr-type {
-		padding-top: var(--std-padding);
+		margin: var(--std-margin);
 	}
 	.prop-name {
 		text-decoration: underline;
@@ -139,8 +139,5 @@
 	}
 	.item-qty {
 		width: 20%;
-	}
-	.extra-padding {
-		padding: var(--std-padding);
 	}
 </style>
