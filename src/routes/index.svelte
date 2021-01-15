@@ -15,8 +15,8 @@
 </script>
 
 
-{#if $playerStore.loggedIn }
+<!-- {#if $playerStore.loggedIn } -->
 	<MainMenu />
-{:else}
+<!-- {:else}
 	<UserLogin />
-{/if}
+{/if} -->

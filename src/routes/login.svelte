@@ -26,6 +26,10 @@
 
 
 <style>
+	button,
+	input {
+		max-width: 50vw;
+	}
 	.email,
 	.password {
 		margin-bottom: var(--std-margin);
