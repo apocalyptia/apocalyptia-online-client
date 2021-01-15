@@ -1,6 +1,7 @@
 <script>
     import Gear from 'classes/Gear.js'
-    import GearBlock from 'components/widgets/GearBlock.svelte'
+	import GearBlock from 'components/widgets/GearBlock.svelte'
+	import ManualDiseaseRule from 'components/manual/ManualDiseaseRule.svelte'
     import ManualRuleDescription from 'components/manual/ManualRuleDescription.svelte'
     import ManualRuleSpecialization from 'components/manual/ManualRuleSpecialization.svelte'
     import ManualRuleTable from 'components/manual/ManualRuleTable.svelte'
@@ -18,7 +19,9 @@
         {#if rule instanceof Gear }
             <div class='gear-rule'>
                 <GearBlock item={rule} mode={'manual'} />
-            </div>
+			</div>
+		{:else if rule.type == `Disease`}
+			<ManualDiseaseRule {rule} />
         {:else if rule.desc != undefined}
             <ManualRuleDescription {rule} />
             {#if rule.subrules}

@@ -13,7 +13,7 @@ export default class Disease extends Rule {
 		duration,
 		symptoms=[],
 		effects=[],
-		treatments=[]
+		treatment=[]
 	}) {
 		super({
 			desc,
@@ -28,6 +28,6 @@ export default class Disease extends Rule {
 		this.duration = duration
 		this.symptoms = symptoms
 		this.effects = effects
-		this.treatments = treatments
+		this.treatment = treatment
 	}
 }
