@@ -9,10 +9,10 @@ const Difficulty = new Rule({
 		`The Narrator or an opposing roll sets the # for your rolls.`,
 		`3# = Trivial`,
 		`6# = Routine`,
-		`9# = Challenging`,
-		`12# = Really Hard`,
-		`15# = Very Unlikely`,
-		`18# = Nearly Impossible`,
+		`9# = Demanding`,
+		`12# = Strenuous`,
+		`15# = Grueling`,
+		`18# = Extreme`,
 	]
 })
 
