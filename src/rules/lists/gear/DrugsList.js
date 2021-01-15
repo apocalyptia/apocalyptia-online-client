@@ -5,14 +5,17 @@ import Painkiller from 'rules/gear/equipment/drugs/Painkiller.js'
 import Sedative from 'rules/gear/equipment/drugs/Sedative.js'
 import Stimulant from 'rules/gear/equipment/drugs/Stimulant.js'
 
-export default [
-	Alcohol,
-	Antibiotic,
-	Hallucinogen,
-	Painkiller,
-	Sedative,
-	Stimulant,
-]
+export default {
+	name: `Drugs`,
+	list: [
+		Alcohol,
+		Antibiotic,
+		Hallucinogen,
+		Painkiller,
+		Sedative,
+		Stimulant,
+	]
+}
 
 
 // OLD Damage ResistanceUGS

@@ -9,15 +9,18 @@ import Thermometer from 'rules/gear/equipment/medical/Thermometer.js'
 import TransfusionKit from 'rules/gear/equipment/medical/TransfusionKit.js'
 import WaterFilter from 'rules/gear/equipment/medical/WaterFilter.js'
 
-export default [
-	Bandage,
-	Crutch,
-	EMTBag,
-	FirstAidKit,
-	PressureCuff,
-	Stethoscope,
-	SurgeryKit,
-	Thermometer,
-	TransfusionKit,
-	WaterFilter,
-]
+export default {
+	name: `Medical`,
+	list: [
+		Bandage,
+		Crutch,
+		EMTBag,
+		FirstAidKit,
+		PressureCuff,
+		Stethoscope,
+		SurgeryKit,
+		Thermometer,
+		TransfusionKit,
+		WaterFilter,
+	]
+}

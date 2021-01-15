@@ -14,20 +14,23 @@ import TapeMeasure from 'rules/gear/equipment/tools/TapeMeasure.js'
 import ToolBag from 'rules/gear/equipment/tools/ToolBag.js'
 import WireSaw from 'rules/gear/equipment/tools/WireSaw.js'
 
-export default [
-	BobbyPin,
-	BoltCutters,
-	DuctTape,
-	GlassCutter,
-	GunCleaningKit,
-	Hacksaw,
-	Lockpick,
-	MagnifyingGlass,
-	MeasuringCup,
-	Multitool,
-	SprayPaint,
-	SwissArmyKnife,
-	TapeMeasure,
-	ToolBag,
-	WireSaw,
-]
+export default {
+	name: `Tools`,
+	list: [
+		BobbyPin,
+		BoltCutters,
+		DuctTape,
+		GlassCutter,
+		GunCleaningKit,
+		Hacksaw,
+		Lockpick,
+		MagnifyingGlass,
+		MeasuringCup,
+		Multitool,
+		SprayPaint,
+		SwissArmyKnife,
+		TapeMeasure,
+		ToolBag,
+		WireSaw,
+	]
+}

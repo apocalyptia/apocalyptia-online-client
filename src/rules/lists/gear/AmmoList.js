@@ -8,17 +8,20 @@ import Ammo762List from 'rules/lists/gear/Ammo762List.js'
 import Ammo308List from 'rules/lists/gear/Ammo308List.js'
 import Ammo12gList from 'rules/lists/gear/Ammo12gList.js'
 
-export default [
-	...AmmoArrowList,
-	...Ammo22List,
-	...Ammo9mmList,
-	...Ammo357List,
-	...Ammo45List,
-	...Ammo556List,
-	...Ammo762List,
-	...Ammo308List,
-	...Ammo12gList,
-]
+export default {
+	name: `Ammo`,
+	list: [
+		...AmmoArrowList,
+		...Ammo22List,
+		...Ammo9mmList,
+		...Ammo357List,
+		...Ammo45List,
+		...Ammo556List,
+		...Ammo762List,
+		...Ammo308List,
+		...Ammo12gList,
+	]
+}
 
 
 // OLD AMMO

@@ -5,14 +5,17 @@ import SmokeGrenade from 'rules/gear/weapons/bombs/SmokeGrenade.js'
 import TeargasGrenade from 'rules/gear/weapons/bombs/TeargasGrenade.js'
 import Thermite from 'rules/gear/weapons/bombs/Thermite.js'
 
-export default [
-	FlashbangGrenade,
-	FragGrenade,
-	MolotovCocktail,
-	SmokeGrenade,
-	TeargasGrenade,
-	Thermite,
-]
+export default {
+	name: `Bombs`,
+	list: [
+		FlashbangGrenade,
+		FragGrenade,
+		MolotovCocktail,
+		SmokeGrenade,
+		TeargasGrenade,
+		Thermite,
+	]
+}
 
 
 

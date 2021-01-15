@@ -25,35 +25,37 @@ import SpringfieldM1A from 'rules/gear/weapons/ranged//SpringfieldM1A.js'
 import StoegerCoachgun from 'rules/gear/weapons/ranged//StoegerCoachgun.js'
 import WASRAK47 from 'rules/gear/weapons/ranged//WASRAK47.js'
 
-export default [
-	ArmaliteAR15,
-	BarnettCrossbow,
-	BenelliM4,
-	BrowningABolt,
-	ColtPython,
-	CZUpland,
-	Glock19,
-	HKMP5,
-	HenryGoldenBoy,
-	HoytCompoundBow,
-	Kimber1911,
-	MAC10,
-	Marlin1894C,
-	Mossberg500,
-	NorincoSKS,
-	RecurveBow,
-	Remington700,
-	Remington870,
-	Ruger1022,
-	RugerMkIII,
-	SW686Snubnose,
-	SWMPShield,
-	SavageMkII,
-	SpringfieldM1A,
-	StoegerCoachgun,
-	WASRAK47
-]
-
+export default {
+	name: `Ranged`,
+	list: [
+		ArmaliteAR15,
+		BarnettCrossbow,
+		BenelliM4,
+		BrowningABolt,
+		ColtPython,
+		CZUpland,
+		Glock19,
+		HKMP5,
+		HenryGoldenBoy,
+		HoytCompoundBow,
+		Kimber1911,
+		MAC10,
+		Marlin1894C,
+		Mossberg500,
+		NorincoSKS,
+		RecurveBow,
+		Remington700,
+		Remington870,
+		Ruger1022,
+		RugerMkIII,
+		SW686Snubnose,
+		SWMPShield,
+		SavageMkII,
+		SpringfieldM1A,
+		StoegerCoachgun,
+		WASRAK47
+	]
+}
 
 
 // RARE RANGED

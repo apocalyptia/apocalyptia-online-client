@@ -23,5 +23,5 @@ export default [
     PropertiesList,
     SkillsList,
     StatusList,
-    TraitsList
+    TraitsList,
 ]

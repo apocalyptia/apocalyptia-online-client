@@ -12,21 +12,24 @@ import Sledgehammer from 'rules/gear/weapons/melee//Sledgehammer.js'
 import Spear from 'rules/gear/weapons/melee//Spear.js'
 import Staff from 'rules/gear/weapons/melee//Staff.js'
 
-export default [
-	Ax,
-	BaseballBat,
-	BrassKnuckles,
-	Club,
-	Crowbar,
-	Hammer,
-	Hatchet,
-	Knife,
-	Machete,
-	RiotShield,
-	Sledgehammer,
-	Spear,
-	Staff,
-]
+export default {
+	name: `Melee`,
+	list: [
+		Ax,
+		BaseballBat,
+		BrassKnuckles,
+		Club,
+		Crowbar,
+		Hammer,
+		Hatchet,
+		Knife,
+		Machete,
+		RiotShield,
+		Sledgehammer,
+		Spear,
+		Staff,
+	]
+}
 
 
 // RARE MELEE

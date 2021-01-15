@@ -13,6 +13,7 @@ make narrator dashboard
 make game group functionality
 write the combat system methods (based on lambda functions)
 make game group chat
+get Amazon affiliate program set up and find links for all gear items
 
 ---------------------------------------------------------------------------------------------------
 
@@ -39,6 +40,7 @@ Gear.js:
 Manual:
 	Put Expand/Collapse All button on rules.
 	Painkiller required for a night's sleep to Recover?
+	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche
 
 Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
@@ -115,8 +117,3 @@ utility programs: calculator, stopwatch, countdown timer, sketchpad, notepad
 
 
 ---------------------------------------------------------------------------------------------------
-
-Svelte Modules that could use some code decoupling:
-NavBar.svelte
-CharacterControls.svelte
-/routes/character/creator/index.svelte

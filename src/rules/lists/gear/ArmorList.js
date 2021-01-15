@@ -14,23 +14,26 @@ import PlateCarrier from 'rules/gear/armor/PlateCarrier.js'
 import WinterCoat from 'rules/gear/armor/WinterCoat.js'
 import WorkGloves from 'rules/gear/armor/WorkGloves.js'
 
-export default [
-	AthleticHelmet,
-	AthleticPads,
-	CombatHelmet,
-	Coveralls,
-	FirefighterSuit,
-	FlakJacket,
-	GhillieSuit,
-	HikingBoots,
-	KevlarVest,
-	LeatherJacket,
-	MotorcycleHelmet,
-	HazmatSuit,
-	PlateCarrier,
-	WinterCoat,
-	WorkGloves,
-]
+export default {
+	name: `Armor`,
+	list: [
+		AthleticHelmet,
+		AthleticPads,
+		CombatHelmet,
+		Coveralls,
+		FirefighterSuit,
+		FlakJacket,
+		GhillieSuit,
+		HikingBoots,
+		KevlarVest,
+		LeatherJacket,
+		MotorcycleHelmet,
+		HazmatSuit,
+		PlateCarrier,
+		WinterCoat,
+		WorkGloves,
+	]
+}
 
 
 

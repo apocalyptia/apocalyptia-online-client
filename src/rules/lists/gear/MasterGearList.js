@@ -16,78 +16,78 @@ export default [
         name: 'Master Gear List',
         value: undefined,
         list: [
-            ...AccessoryList,
-            ...AmmoList,
-            ...ArmorList,
-            ...BombList,
-            ...DocumentList,
-            ...DrugsList,
-            ...ElectronicsList,
-            ...EquipmentList,
-            ...MedicalList,
-            ...MeleeWeaponList,
-            ...RangedWeaponList,
-            ...StorageList
+            ...AccessoryList.list,
+            ...AmmoList.list,
+            ...ArmorList.list,
+            ...BombList.list,
+            ...DocumentList.list,
+            ...DrugsList.list,
+            ...ElectronicsList.list,
+            ...EquipmentList.list,
+            ...MedicalList.list,
+            ...MeleeWeaponList.list,
+            ...RangedWeaponList.list,
+            ...StorageList.list
         ]
     },
     {
         name: 'Accessory',
         value: undefined,
-        list: AccessoryList
+        list: AccessoryList.list
     },
     {
         name: 'Ammo',
         value: undefined,
-        list: AmmoList
+        list: AmmoList.list
     },
     {
         name: 'Armor',
         value: undefined,
-        list: ArmorList
+        list: ArmorList.list
     },
     {
         name: 'Bomb',
         value: undefined,
-        list: BombList
+        list: BombList.list
     },
     {
         name: 'Document',
         value: undefined,
-        list: DocumentList
+        list: DocumentList.list
     },
     {
         name: 'Drug',
         value: undefined,
-        list: DrugsList
+        list: DrugsList.list
     },
     {
         name: 'Electronics',
         value: undefined,
-        list: ElectronicsList
+        list: ElectronicsList.list
     },
     {
         name: 'Equipment',
         value: undefined,
-        list: EquipmentList
+        list: EquipmentList.list
     },
     {
         name: 'Medical',
         value: undefined,
-        list: MedicalList
+        list: MedicalList.list
     },
     {
         name: 'Melee',
         value: undefined,
-        list: MeleeWeaponList
+        list: MeleeWeaponList.list
     },
     {
         name: 'Ranged',
         value: undefined,
-        list: RangedWeaponList
+        list: RangedWeaponList.list
     },
     {
         name: 'Storage',
         value: undefined,
-        list: StorageList
+        list: StorageList.list
     },
 ]

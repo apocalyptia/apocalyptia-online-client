@@ -18,24 +18,27 @@ import ToolBelt from 'rules/gear/equipment/storage/ToolBelt.js'
 import TrenchCoat from 'rules/gear/equipment/storage/TrenchCoat.js'
 import WaterBottle from 'rules/gear/equipment/storage/WaterBottle.js'
 
-export default [
-	Backpack,
-	Bandoleer,
-	BDUJacket,
-	CargoPants,
-	Canteen,
-	ConcealedHolster,
-	Cooler,
-	DuffelBag,
-	FuelCan,
-	Hoody,
-	HydrationPack,
-	Lockbox,
-	MessengerBag,
-	PlasticJug,
-	Purse,
-	Speedloader,
-	ToolBelt,
-	TrenchCoat,
-	WaterBottle,
-]
+export default {
+	name: `Storage`,
+	list: [
+		Backpack,
+		Bandoleer,
+		BDUJacket,
+		CargoPants,
+		Canteen,
+		ConcealedHolster,
+		Cooler,
+		DuffelBag,
+		FuelCan,
+		Hoody,
+		HydrationPack,
+		Lockbox,
+		MessengerBag,
+		PlasticJug,
+		Purse,
+		Speedloader,
+		ToolBelt,
+		TrenchCoat,
+		WaterBottle,
+	]
+}

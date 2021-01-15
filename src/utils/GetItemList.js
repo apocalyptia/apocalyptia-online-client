@@ -5,9 +5,9 @@ import MeleeList from 'rules/lists/gear/MeleeWeaponList.js'
 import RangedList from 'rules/lists/gear/RangedWeaponList.js'
 
 export default (category) => {
-	if (category == 'melee') return [...MeleeList]
-	else if (category == 'ranged') return [...RangedList]
-	else if (category == 'ammo') return [...AmmoList]
-	else if (category == 'armor') return [...ArmorList]
-	else if (category == 'equipment') return [...EquipmentList]
+	if (category == 'melee') return MeleeList.list
+	else if (category == 'ranged') return RangedList.list
+	else if (category == 'ammo') return AmmoList.list
+	else if (category == 'armor') return ArmorList.list
+	else if (category == 'equipment') return EquipmentList.list
 }

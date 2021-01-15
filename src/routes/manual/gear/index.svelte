@@ -7,11 +7,11 @@
 
 	let searchTerm = ''
 
-	let ruleList = GearList.list.sort((a, b) => (a.name > b.name)).flat()
+	$: ruleList = GearList
 
 	const handleSearch = event => {
 		searchTerm = event.detail
-		ruleList = SearchEngine(searchTerm, GearList.list)
+		ruleList = SearchEngine(searchTerm, GearList.map(r => [...r.list]).flat())
 	}
 </script>
 
@@ -20,5 +20,5 @@
 	<title>Apocalyptia Online - Manual - Gear</title>
 </svelte:head>
 <ManualHeader chapter={'Gear'} on:search={e => handleSearch(e)} />
-<ManualBody {ruleList} />
+<ManualBody chapter={'Gear'} ruleList={searchTerm.length ? ruleList : GearList} />
 <BackButton path={'/manual'} />

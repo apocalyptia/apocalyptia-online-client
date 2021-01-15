@@ -13,22 +13,25 @@ import RCCar from 'rules/gear/equipment/electronics/RCCar.js'
 import SolarLamp from 'rules/gear/equipment/electronics/SolarLamp.js'
 import StunGun from 'rules/gear/equipment/electronics/StunGun.js'
 
-export default [
-	Cellphone,
-	EmergencyRadio,
-	Flashlight,
-	GeigerCounter,
-	HandRadio,
-	Headlamp,
-	Lantern,
-	Megaphone,
-	Multimeter,
-	NightvisionGoggles,
-	QuadcopterDrone,
-	RCCar,
-	SolarLamp,
-	StunGun,
-]
+export default {
+	name: `Electronics`,
+	list: [
+		Cellphone,
+		EmergencyRadio,
+		Flashlight,
+		GeigerCounter,
+		HandRadio,
+		Headlamp,
+		Lantern,
+		Megaphone,
+		Multimeter,
+		NightvisionGoggles,
+		QuadcopterDrone,
+		RCCar,
+		SolarLamp,
+		StunGun,
+	]
+}
 
 
 // OLD ELECTRONICS

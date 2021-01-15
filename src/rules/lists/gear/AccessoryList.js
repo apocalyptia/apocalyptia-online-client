@@ -8,14 +8,17 @@ import Scope from 'rules/gear/weapons/accessories//Scope.js'
 import SinglePointSling from 'rules/gear/weapons/accessories//SinglePointSling.js'
 import Suppressor from 'rules/gear/weapons/accessories//Suppressor.js'
 
-export default [
-	Bayonet,
-	Bipod,
-	DrumMagazine,
-	Foregrip,
-	Holosight,
-	Laser,
-	Scope,
-	SinglePointSling,
-	Suppressor,
-]
+export default {
+	name: `Accessories`,
+	list: [
+		Bayonet,
+		Bipod,
+		DrumMagazine,
+		Foregrip,
+		Holosight,
+		Laser,
+		Scope,
+		SinglePointSling,
+		Suppressor,
+	]
+}
