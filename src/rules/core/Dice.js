@@ -3,7 +3,7 @@ import Rule from 'classes/Rule.js'
 const Dice = new Rule({
 	name: `Dice`,
 	desc: [
-		`When you want your character to do something difficult, tell your Narrator what you would like to try.`
+		`When you want your character to do something difficult, tell your Narrator what you would like to try.`,
 		`They will tell you which Trait or Skill is most important for the situation.`,
 		`You then roll one six-sided die ("1d6") and add the appropriate Trait or Skill score to the die result.`,
 		`Many factors may further modify the final Result, such as special equipment that grants a bonus or unfavorable circumstances which impose a penalty.`,
