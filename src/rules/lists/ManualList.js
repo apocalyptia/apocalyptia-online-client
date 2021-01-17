@@ -11,17 +11,20 @@ import SkillsList from 'rules/lists/SkillsList.js'
 import StatusList from 'rules/lists/StatusList.js'
 import TraitsList from 'rules/lists/TraitsList.js'
 
-export default [
-    AbilitiesList,
-    CombatList,
-	CoreList,
-	DiseasesList,
-	GearList,
-	HazardsList,
-    ManeuversList,
-    NeedsList,
-    PropertiesList,
-    SkillsList,
-    StatusList,
-    TraitsList,
-]
+export default {
+	name: `Manual`,
+	list: [
+		AbilitiesList,
+		CombatList,
+		CoreList,
+		DiseasesList,
+		GearList,
+		HazardsList,
+		ManeuversList,
+		NeedsList,
+		PropertiesList,
+		SkillsList,
+		StatusList,
+		TraitsList,
+	]
+}

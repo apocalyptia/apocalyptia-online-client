@@ -10,7 +10,7 @@
 	const sendEvent = _ => dispatch('search', searchTerm)
 </script>
 
-
+$
 <div class='manual-header-section'>
 	<div class='rules-name'>{chapter}</div>
 	<input type='text'

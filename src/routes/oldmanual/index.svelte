@@ -1,4 +1,4 @@
-.s<script>
+<script>
 	import BackButton from 'components/buttons/BackButton.svelte'
 	import ManualBody from 'components/manual/ManualBody.svelte'
 	import ManualHeader from 'components/manual/ManualHeader.svelte'

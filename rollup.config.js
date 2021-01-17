@@ -20,7 +20,6 @@ const onwarn = (warning, onwarn) =>
 	const aliases = alias({
 		resolve: ['.*'],
 		entries: [
-			{ find: 'character',		replacement: 'src/routes/character' },
 			{ find: 'classes',			replacement: 'src/classes' },
 			{ find: 'components',		replacement: 'src/components' },
 			{ find: 'database',			replacement: 'src/database' },
