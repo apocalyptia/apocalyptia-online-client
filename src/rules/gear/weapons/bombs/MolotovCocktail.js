@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import Blast from 'rules/gear/attributes/Blast.js'
-import FireDamage from 'rules/gear/attributes/FireDamage.js'
+import Gear from '$classes/Gear.js'
+import Blast from '$rules/gear/attributes/Blast.js'
+import FireDamage from '$rules/gear/attributes/FireDamage.js'
 
 const MolotovCocktail = new Gear({
 	id: ``,

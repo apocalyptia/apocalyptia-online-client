@@ -1,5 +1,5 @@
-import Ability from 'classes/Ability.js'
-import TraitsList from 'rules/lists/TraitsList.js'
+import Ability from '$classes/Ability.js'
+import TraitsList from '$rules/lists/TraitsList.js'
 
 const SelfImprovement = new Ability({
 	id: ``,

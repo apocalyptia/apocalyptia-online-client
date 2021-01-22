@@ -1,4 +1,0 @@
-
-[build]
-  command = "npm audit fix && npm run build"
-  functions = "./functions"

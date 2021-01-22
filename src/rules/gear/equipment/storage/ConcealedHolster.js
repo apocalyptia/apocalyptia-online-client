@@ -1,4 +1,4 @@
-import Gear from 'classes/Gear.js'
+import Gear from '$classes/Gear.js'
 
 const ConcealedHolster = new Gear({
 	id: ``,

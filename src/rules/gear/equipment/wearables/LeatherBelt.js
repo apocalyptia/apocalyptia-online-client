@@ -1,4 +1,4 @@
-import Gear from 'classes/Gear.js'
+import Gear from '$classes/Gear.js'
 
 const LeatherBelt = new Gear({
 	id: ``,

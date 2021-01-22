@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import Camo from 'rules/gear/attributes/Camo.js'
+import Gear from '$classes/Gear.js'
+import Camo from '$rules/gear/attributes/Camo.js'
 
 const FlakJacket = new Gear({
 	id: ``,

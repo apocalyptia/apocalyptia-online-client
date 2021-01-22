@@ -1,5 +1,5 @@
-import Ability from 'classes/Ability.js'
-import WeaponList from 'rules/lists/gear/WeaponList.js'
+import Ability from '$classes/Ability.js'
+import WeaponList from '$rules/lists/gear/WeaponList.js'
 
 const WeaponTraining = new Ability({
 	id: ``,

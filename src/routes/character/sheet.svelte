@@ -1,9 +1,10 @@
 <script>
-	import BackButton from 'components/buttons/BackButton.svelte'
-	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
-	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
-	import { characterStore } from 'stores/characterStore.js'
+	import BackButton from '$components/buttons/BackButton.svelte'
+	import CharacterSheet from '$components/character/sheet/CharacterSheet.svelte'
+	import DeleteCharacter from '$database/characters/DeleteCharacter.js'
+	import SaveAndDeleteButtonRow from '$components/character/creator/SaveAndDeleteButtonRow.svelte'
+	import SaveCharacter from '$database/characters/SaveCharacter.js'
+	import characterStore from '$stores/characterStore.js'
 	import { onDestroy } from 'svelte'
 
 	onDestroy(_ => SaveCharacter($characterStore))
@@ -15,13 +16,9 @@
 </svelte:head>
 <div class='sheet page-body'>
 	<CharacterSheet mode={'edit'} />
-	<div class='btn-row'>
-		<button class='small-cntr-btn' on:click={_ => SaveCharacter($characterStore)}>
-			<a href='/'>Save</a>
-		</button>
-		<button class='small-cntr-btn' on:click={_ => DeleteCharacter($characterStore.meta.name)}>
-			<a href='/'>Delete</a>
-		</button>
-	</div>
+	<SaveAndDeleteButtonRow
+		saveFunc={_ => SaveCharacter($characterStore)}
+		deleteFunc={_ => DeleteCharacter($characterStore)}
+	/>
 </div>
 <BackButton path={'character'} />

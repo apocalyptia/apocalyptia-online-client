@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import AgilitySkillsList from 'rules/lists/skills/AgilitySkillsList.js'
+import Rule from '$classes/Rule.js'
+import AgilitySkillsList from '$rules/lists/skills/AgilitySkillsList.js'
 
 const Agility = new Rule({
 	name: `Agility`,

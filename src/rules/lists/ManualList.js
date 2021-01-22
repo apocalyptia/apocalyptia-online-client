@@ -1,15 +1,14 @@
-import AbilitiesList from 'rules/lists/AbilitiesList.js'
-import CombatList from 'rules/lists/CombatList.js'
-import CoreList from 'rules/lists/CoreList.js'
-import DiseasesList from 'rules/lists/DiseasesList.js'
-import GearList from 'rules/lists/GearList.js'
-import HazardsList from 'rules/lists/HazardsList.js'
-import ManeuversList from 'rules/lists/ManeuversList.js'
-import NeedsList from 'rules/lists/NeedsList.js'
-import PropertiesList from 'rules/lists/PropertiesList.js'
-import SkillsList from 'rules/lists/SkillsList.js'
-import StatusList from 'rules/lists/StatusList.js'
-import TraitsList from 'rules/lists/TraitsList.js'
+import AbilitiesList from '$rules/lists/AbilitiesList.js'
+import CombatList from '$rules/lists/CombatList.js'
+import CoreList from '$rules/lists/CoreList.js'
+import GearList from '$rules/lists/GearList.js'
+import HazardsList from '$rules/lists/HazardsList.js'
+import ManeuversList from '$rules/lists/ManeuversList.js'
+import NeedsList from '$rules/lists/NeedsList.js'
+import PropertiesList from '$rules/lists/PropertiesList.js'
+import SkillsList from '$rules/lists/SkillsList.js'
+import StatusList from '$rules/lists/StatusList.js'
+import TraitsList from '$rules/lists/TraitsList.js'
 
 export default {
 	name: `Manual`,
@@ -17,7 +16,6 @@ export default {
 		AbilitiesList,
 		CombatList,
 		CoreList,
-		DiseasesList,
 		GearList,
 		HazardsList,
 		ManeuversList,

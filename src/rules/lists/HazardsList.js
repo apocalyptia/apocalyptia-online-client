@@ -1,6 +1,7 @@
-import Burning from 'rules/status/Burning.js'
-import Falling from 'rules/status/Falling.js'
-import FriendlyFire from 'rules/status/FriendlyFire.js'
+import Burning from '$rules/hazards/Burning.js'
+import DiseasesList from '$rules/lists/DiseasesList.js'
+import Falling from '$rules/hazards/Falling.js'
+import FriendlyFire from '$rules/hazards/FriendlyFire.js'
 
 export default {
 	name: `Hazards`,
@@ -8,5 +9,6 @@ export default {
 		Burning,
 		Falling,
 		FriendlyFire,
+		DiseasesList,
 	]
 }

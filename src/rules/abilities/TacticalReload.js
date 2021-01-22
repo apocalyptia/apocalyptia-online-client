@@ -1,4 +1,4 @@
-import Ability from 'classes/Ability.js'
+import Ability from '$classes/Ability.js'
 
 const TacticalReload = new Ability({
 	id: ``,

@@ -1,0 +1,1 @@
+const FAUNADB_SERVER_SECRET = 'fnADvKYNaWACANaavlxsjsMhU7d5Q85xiliFHAzD'

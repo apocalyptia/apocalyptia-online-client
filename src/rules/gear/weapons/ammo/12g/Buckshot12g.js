@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import Scatter from 'rules/gear/attributes/Scatter.js'
+import Gear from '$classes/Gear.js'
+import Scatter from '$rules/gear/attributes/Scatter.js'
 
 const Buckshot12g = new Gear({
 	id: ``,

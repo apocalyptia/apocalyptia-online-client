@@ -1,6 +1,6 @@
-import Creation from 'rules/Creation.js'
-import RandomRoll from 'rules/random/RandomRoll.js'
-import Skills from 'rules/Skills.js'
+import Creation from '$rules/Creation.js'
+import RandomRoll from '$rules/random/RandomRoll.js'
+import Skills from '$rules/Skills.js'
 
 export default (c) => {
     c = Creation.resetSkills(c)

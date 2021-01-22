@@ -1,5 +1,5 @@
-import PropSort from 'utils/PropSort.js'
-import SkillsList from 'rules/lists/SkillsList.js'
+import PropSort from '$utils/PropSort.js'
+import SkillsList from '$rules/lists/SkillsList.js'
 
 const specs = Object.values(SkillsList.list)
 					.map((s) => Object.values(s.specs))

@@ -1,4 +1,4 @@
-import Player from 'classes/Player.js'
+import Player from '$classes/Player.js'
 import { writable } from 'svelte/store'
 
-export const playerStore = writable(new Player())
+export default writable(new Player())

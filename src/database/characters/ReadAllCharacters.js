@@ -1,4 +1,4 @@
-import DecompressCharacter from 'database/characters/DecompressCharacter.js'
+import DecompressCharacter from '$database/characters/DecompressCharacter.js'
 
 export default _ => {
 	if (window.localStorage.length) {

@@ -1,13 +1,13 @@
-import Ability from 'classes/Ability.js'
-import PropSort from 'utils/PropSort.js'
-import XP12AbilitiesList from 'rules/lists/abilities/XP12AbilitiesList.js'
-import XP15AbilitiesList from 'rules/lists/abilities/XP15AbilitiesList.js'
-import XP18AbilitiesList from 'rules/lists/abilities/XP18AbilitiesList.js'
-import XP24AbilitiesList from 'rules/lists/abilities/XP24AbilitiesList.js'
-import XP30AbilitiesList from 'rules/lists/abilities/XP30AbilitiesList.js'
-import XP3AbilitiesList from 'rules/lists/abilities/XP3AbilitiesList.js'
-import XP6AbilitiesList from 'rules/lists/abilities/XP6AbilitiesList.js'
-import XP9AbilitiesList from 'rules/lists/abilities/XP9AbilitiesList.js'
+import Ability from '$classes/Ability.js'
+import PropSort from '$utils/PropSort.js'
+import XP12AbilitiesList from '$rules/lists/abilities/XP12AbilitiesList.js'
+import XP15AbilitiesList from '$rules/lists/abilities/XP15AbilitiesList.js'
+import XP18AbilitiesList from '$rules/lists/abilities/XP18AbilitiesList.js'
+import XP24AbilitiesList from '$rules/lists/abilities/XP24AbilitiesList.js'
+import XP30AbilitiesList from '$rules/lists/abilities/XP30AbilitiesList.js'
+import XP3AbilitiesList from '$rules/lists/abilities/XP3AbilitiesList.js'
+import XP6AbilitiesList from '$rules/lists/abilities/XP6AbilitiesList.js'
+import XP9AbilitiesList from '$rules/lists/abilities/XP9AbilitiesList.js'
 
 const abilityArray = [
 	...XP3AbilitiesList,

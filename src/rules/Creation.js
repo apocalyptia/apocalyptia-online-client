@@ -1,5 +1,5 @@
-import AbilitiesList from 'rules/lists/AbilitiesList.js'
-import PropertiesList from 'rules/lists/PropertiesList.js'
+import AbilitiesList from '$rules/lists/AbilitiesList.js'
+import PropertiesList from '$rules/lists/PropertiesList.js'
 
 export default {
 	name: `Creation`,

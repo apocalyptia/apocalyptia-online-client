@@ -1,8 +1,8 @@
 <script>
-	import BackButton from 'components/buttons/BackButton.svelte'
-	import DiceRoller from 'components/roller/DiceRoller.svelte'
-	import ItemGenerator from 'components/roller/ItemGenerator.svelte'
-	import MasterGearList from 'rules/lists/gear/MasterGearList.js'
+	import BackButton from '$components/buttons/BackButton.svelte'
+	import DiceRoller from '$components/roller/DiceRoller.svelte'
+	import ItemGenerator from '$components/roller/ItemGenerator.svelte'
+	import MasterGearList from '$rules/lists/gear/MasterGearList.js'
 </script>
 
 

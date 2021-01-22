@@ -1,4 +1,4 @@
-import Game from 'classes/Game.js'
+import Game from '$classes/Game.js'
 import { writable } from 'svelte/store'
 
-export const gameStore = writable(new Game())
+export default writable(new Game())

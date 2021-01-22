@@ -1,7 +1,7 @@
 export default class Rule {
 	constructor({
 		desc=[],
-		formula,
+		formula=null,
 		id = null,
 		name=``,
 		type=`Rule`,

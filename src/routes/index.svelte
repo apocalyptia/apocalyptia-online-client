@@ -1,10 +1,10 @@
 <script>
-	import MainMenu from 'components/landing/MainMenu.svelte'
-	import UserLogin from 'components/landing/UserLogin.svelte'
+	import MainMenu from '$components/landing/MainMenu.svelte'
+	// import UserLogin from '$components/landing/UserLogin.svelte'
 	// import { onMount } from 'svelte'
-	import { playerStore } from 'stores/playerStore.js'
+	// import playerStore from '$stores/playerStore.js'
 	
-	let userBase
+	// let userBase
 
 	// onMount(async _ => {
 	// 	userBase = await fetch('https://sdk.userbase.com/2/userbase.js').then(thing => {

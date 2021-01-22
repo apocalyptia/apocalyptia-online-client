@@ -1,4 +1,4 @@
-import DrawHexagon from 'utils/drawing/DrawHexagon.js'
+import DrawHexagon from '$utils/drawing/DrawHexagon.js'
 
 export default (ctx, width, height) => {
 	// let i, j

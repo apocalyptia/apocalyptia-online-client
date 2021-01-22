@@ -8,8 +8,8 @@
 </svelte:head>
 <div class='page-header'>
 	<h1>{chapter}</h1>
-	{#if step + 1 < 7}
-		<span>Step {step+1}/7</span>
+	{#if step < 6}
+		<span>Step {step}/6</span>
 	{/if}
 </div>
 

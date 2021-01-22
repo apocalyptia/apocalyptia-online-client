@@ -1,13 +1,10 @@
 <script>
-	import AddButton from 'components/buttons/AddButton.svelte'
-	import AddItemModal from 'components/character/sheet/AddItemModal.svelte'
-	import Capitalize from 'utils/Capitalize.js'
-	import GearItem from 'components/character/sheet/GearItem.svelte'
-	import { characterStore } from 'stores/characterStore.js'
+	import AddButton from '$components/buttons/AddButton.svelte'
+	import AddItemModal from '$components/character/sheet/AddItemModal.svelte'
+	import GearList from '$rules/lists/GearList.js'
+	import GearItem from '$components/character/sheet/GearItem.svelte'
 
 	export let mode, category
-
-	$: inventory = $characterStore.gear[category].inventory
 
 	let modalVisible = false
 
@@ -16,10 +13,10 @@
 
 
 <details class='gear-category' close>
-	<summary>{Capitalize(category)}</summary>
+	<summary>{category.name}</summary>
 	<div class='gear-category-card'>
 		<div class='gear-item-list'>
-			{#each inventory as item, index}
+			{#each category.inventory as item, index}
 				<GearItem {mode} {category} {item} {index} />
 			{/each}
 		</div>

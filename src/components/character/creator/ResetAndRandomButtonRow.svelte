@@ -9,3 +9,10 @@
     {/if}
 	<button class='small-cntr-btn' on:click={random}>Random</button>
 </div>
+
+
+<style>
+	button {
+		height: var(--square);
+	}
+</style>

@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import Blind from 'rules/status/Blind.js'
+import Gear from '$classes/Gear.js'
+import Blind from '$rules/status/Blind.js'
 
 const SmokeGrenade = new Gear({
 	id: ``,

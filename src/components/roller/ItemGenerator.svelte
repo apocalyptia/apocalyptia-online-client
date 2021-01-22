@@ -1,6 +1,6 @@
 <script>
-	import GearBlock from 'components/widgets/GearBlock.svelte'
-	import RandomRoll from 'rules/random/RandomRoll.js'
+	import GearBlock from '$components/widgets/GearBlock.svelte'
+	import RandomRoll from '$rules/random/RandomRoll.js'
 
 	export let category
 

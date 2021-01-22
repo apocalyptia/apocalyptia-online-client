@@ -1,6 +1,6 @@
-import AbilitiesList from 'rules/lists/AbilitiesList.js'
-import Creation from 'rules/Creation.js'
-import RandomRoll from 'rules/random/RandomRoll.js'
+import AbilitiesList from '$rules/lists/AbilitiesList.js'
+import Creation from '$rules/Creation.js'
+import RandomRoll from '$rules/random/RandomRoll.js'
 
 export default (c) => {
     AbilitiesList.reset()

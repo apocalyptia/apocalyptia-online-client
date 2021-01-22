@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
-import Rapid from 'rules/gear/attributes/Rapid.js'
+import Gear from '$classes/Gear.js'
+import TwoHanded from '$rules/gear/attributes/TwoHanded.js'
+import Rapid from '$rules/gear/attributes/Rapid.js'
 
 const Glock19 = new Gear({
 	id: ``,

@@ -1,6 +1,6 @@
 <script>
-    import BackButton from 'components/buttons/BackButton.svelte'
-    import { playerStore } from 'stores/playerStore.js'
+    import BackButton from '$components/buttons/BackButton.svelte'
+    import playerStore from '$stores/playerStore.js'
 </script>
 
 
@@ -9,9 +9,9 @@
 </svelte:head>
 <div class='cntr-card'>
     {#if $playerStore.currentCharacter}
-        <a href='character/sheet' class='link-btn'>Character Sheet</a>
+        <a href='/character/sheet' class='link-btn'>Character Sheet</a>
     {/if}
-	<a href='character/new' class='link-btn'>New Character</a>
-	<a href='character/load' class='link-btn'>Load Character</a>
+	<a href='/character/new' class='link-btn'>New Character</a>
+	<a href='/character/load' class='link-btn'>Load Character</a>
 </div>
 <BackButton path={'/'} />

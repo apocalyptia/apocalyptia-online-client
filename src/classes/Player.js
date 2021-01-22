@@ -1,8 +1,8 @@
-import CreateCharacter from 'database/characters/CreateCharacter.js'
-import DeleteCharacter from 'database/characters/DeleteCharacter.js'
-import ReadAllCharacters from 'database/characters/ReadAllCharacters.js'
-import ReadCharacter from 'database/characters/ReadCharacter.js'
-import UpdateCharacter from 'database/characters/UpdateCharacter.js'
+import CreateCharacter from '$database/characters/CreateCharacter.js'
+import DeleteCharacter from '$database/characters/DeleteCharacter.js'
+import ReadAllCharacters from '$database/characters/ReadAllCharacters.js'
+import ReadCharacter from '$database/characters/ReadCharacter.js'
+import UpdateCharacter from '$database/characters/UpdateCharacter.js'
 
 export default class Player {
 	constructor() {

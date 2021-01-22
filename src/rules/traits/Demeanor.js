@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import DemeanorSkillsList from 'rules/lists/skills/ConstitutionSkillsList.js'
+import Rule from '$classes/Rule.js'
+import DemeanorSkillsList from '$rules/lists/skills/ConstitutionSkillsList.js'
 
 const Demeanor = new Rule({
 	name: `Demeanor`,

@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import Melee from 'rules/skills/Melee.js'
+import Rule from '$classes/Rule.js'
+import Melee from '$rules/skills/Melee.js'
 
 const Block = new Rule({
 	name: Melee.specs.block.name,

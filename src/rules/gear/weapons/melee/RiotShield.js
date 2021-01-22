@@ -1,7 +1,7 @@
-import Gear from 'classes/Gear.js'
-import OneHanded from 'rules/gear/attributes/OneHanded.js'
-import Blunt from 'rules/gear/attributes/Blunt.js'
-import Shield from 'rules/gear/attributes/Shield.js'
+import Gear from '$classes/Gear.js'
+import OneHanded from '$rules/gear/attributes/OneHanded.js'
+import Blunt from '$rules/gear/attributes/Blunt.js'
+import Shield from '$rules/gear/attributes/Shield.js'
 
 const RiotShield = new Gear({
 	id: ``,

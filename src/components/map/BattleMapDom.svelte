@@ -1,5 +1,5 @@
 <script>
-	import { mapStore } from 'stores/mapStoreDOM.js'
+	import mapStore from '$stores/mapStoreDOM.js'
 	import { onMount } from 'svelte'
 
 	onMount(_ => $mapStore = $mapStore.fillContents())

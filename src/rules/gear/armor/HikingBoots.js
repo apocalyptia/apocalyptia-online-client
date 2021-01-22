@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import ColdResistance from 'rules/gear/attributes/ColdResistance.js'
-import FireResistance from 'rules/gear/attributes/FireResistance.js'
+import Gear from '$classes/Gear.js'
+import ColdResistance from '$rules/gear/attributes/ColdResistance.js'
+import FireResistance from '$rules/gear/attributes/FireResistance.js'
 
 const HikingBoots = new Gear({
 	id: ``,

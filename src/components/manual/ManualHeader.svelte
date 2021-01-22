@@ -10,7 +10,7 @@
 	const sendEvent = _ => dispatch('search', searchTerm)
 </script>
 
-$
+
 <div class='manual-header-section'>
 	<div class='rules-name'>{chapter}</div>
 	<input type='text'
@@ -42,10 +42,10 @@ $
 		font-weight: bold;
 	}
 	.search-bar {
-		min-width: 100px;
+		max-width: 300px;
 		padding: var(--s25) 1ch;
 		text-align: left;
-		width: 45%;
+		width: 50vw;
 	}
 	.search-bar::placeholder {
 		color: var(--sec-color);

@@ -1,7 +1,7 @@
-import Gear from 'classes/Gear.js'
-import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
-import Rapid from 'rules/gear/attributes/Rapid.js'
-import Scatter from 'rules/gear/attributes/Scatter.js'
+import Gear from '$classes/Gear.js'
+import TwoHanded from '$rules/gear/attributes/TwoHanded.js'
+import Rapid from '$rules/gear/attributes/Rapid.js'
+import Scatter from '$rules/gear/attributes/Scatter.js'
 
 const StoegerCoachgun = new Gear({
 	id: ``,

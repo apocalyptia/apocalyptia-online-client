@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import Match from 'rules/gear/attributes/Match.js'
+import Gear from '$classes/Gear.js'
+import Match from '$rules/gear/attributes/Match.js'
 
 const Match556 = new Gear({
 	id: ``,

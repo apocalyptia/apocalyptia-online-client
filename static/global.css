@@ -322,11 +322,16 @@ button {
 	text-align: center;
 }
 button:active,
-button:focus,
 button:hover {
 	animation: haze 1s infinite;
 	background-color: var(--pri-color-trans);
 	color: var(--sec-color);
+	font-weight: bold;
+	background-size: 100% 2px, 3px 100%;
+	z-index: 12000;
+}
+button:focus {
+	animation: haze 1s infinite;
 	font-weight: bold;
 	background-size: 100% 2px, 3px 100%;
 	z-index: 12000;
@@ -612,22 +617,15 @@ textarea:invalid {
 .add-section {
 	padding-top: 0;
 }
-/* TINY */
-@media only screen and (max-width: 400px) {
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
 	.sheet-card-body {
 		display: block;
 	}
 }
-/* MOBILE */
-@media only screen and (min-width: 400px) and (max-width: 640px) {
-	.sheet-card-body {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		justify-content: space-evenly;
-	}
-}
 /* DESKTOP */
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 600px) {
 	.sheet-card-body {
 		display: flex;
 		justify-content: space-evenly;

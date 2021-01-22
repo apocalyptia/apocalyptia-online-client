@@ -1,4 +1,4 @@
-import Rule from 'classes/Rule.js'
+import Rule from '$classes/Rule.js'
 
 const Falling = new Rule({
 	name: `Falling`,
@@ -10,7 +10,7 @@ const Falling = new Rule({
 		`On a Botch, you go Prone and get Stunned for d6 rounds.`,
 		`Falling objects deal BDMG equal to their Size.`,
 	],
-	type: `Status`
+	type: `Hazard`
 })
 
 export default Falling

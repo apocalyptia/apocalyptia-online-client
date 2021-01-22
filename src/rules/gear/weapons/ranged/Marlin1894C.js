@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
+import Gear from '$classes/Gear.js'
+import TwoHanded from '$rules/gear/attributes/TwoHanded.js'
 
 const Marlin1894C = new Gear({
 	id: ``,

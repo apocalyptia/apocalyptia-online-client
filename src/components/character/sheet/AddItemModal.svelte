@@ -1,6 +1,6 @@
 <script>
-	import GetItemList from 'utils/GetItemList.js'
-	import { characterStore } from 'stores/characterStore.js'
+	import GetItemList from '$utils/GetItemList.js'
+	import characterStore from '$stores/characterStore.js'
 	import { createEventDispatcher, onDestroy } from 'svelte'
 
 	export let category

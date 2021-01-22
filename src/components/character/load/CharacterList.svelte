@@ -1,7 +1,7 @@
 <script>
-	import TrashButton from 'components/buttons/TrashButton.svelte'
-	import { characterStore } from 'stores/characterStore.js'
-	import { playerStore } from 'stores/playerStore.js'
+	import TrashButton from '$components/buttons/TrashButton.svelte'
+	import characterStore from '$stores/characterStore.js'
+	import playerStore from '$stores/playerStore.js'
 
 	const deleteCharacter = _ => {
 		$playerStore = $playerStore.deleteCharacter(selectedCharacter)

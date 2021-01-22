@@ -1,6 +1,6 @@
-import Ability from 'classes/Ability.js'
-import SkillsList from 'rules/lists/SkillsList.js'
-import TraitsList from 'rules/lists/TraitsList.js'
+import Ability from '$classes/Ability.js'
+import SkillsList from '$rules/lists/SkillsList.js'
+import TraitsList from '$rules/lists/TraitsList.js'
 
 const Unorthodox = new Ability({
 	id: ``,

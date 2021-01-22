@@ -1,4 +1,4 @@
-import Rule from 'classes/Rule.js'
+import Rule from '$classes/Rule.js'
 
 const Pedestrians = new Rule({
 	name: `Pedestrians`, 

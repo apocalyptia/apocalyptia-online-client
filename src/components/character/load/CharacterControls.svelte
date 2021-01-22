@@ -1,7 +1,7 @@
 <script>
-	import BackupCharacter from 'database/characters/BackupCharacter.js'
-	import { characterStore } from 'stores/characterStore.js'
-	import { playerStore } from 'stores/playerStore.js'
+	import BackupCharacter from '$database/characters/BackupCharacter.js'
+	import characterStore from '$stores/characterStore.js'
+	import playerStore from '$stores/playerStore.js'
 
 	const deleteCharacter = _ => {
 		$playerStore = $playerStore.deleteCharacter(selectedCharacter)

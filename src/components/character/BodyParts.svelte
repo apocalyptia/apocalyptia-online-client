@@ -1,6 +1,6 @@
 <script>
-	import AdjustUIColor from 'utils/ui/AdjustUIColor.js'
-	import { characterStore } from 'stores/characterStore.js'
+	import AdjustUIColor from '$utils/ui/AdjustUIColor.js'
+	import characterStore from '$stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	export let mode = 'readonly'

@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import Acrobatics from 'rules/skills/Acrobatics.js'
+import Rule from '$classes/Rule.js'
+import Acrobatics from '$rules/skills/Acrobatics.js'
 
 const Dodge = new Rule({
 	name: Acrobatics.specs.dodge.name,
