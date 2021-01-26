@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------------------------
+
+------ DEV PATH ------
+
+finish integrating database (faunadb) with client app
+*** Need to figure out netlify lambda function paths
+*** Need to figure out query commands
+
+finish user auth features (recovery, account settings)
+apply ability mods to character (see list below)
+create sorting options for all list pages
+make narrator dashboard
+make game group functionality
+write the combat system methods (based on lambda functions)
+make game group chat
+get Amazon affiliate program set up and find links for all gear items
+
+---------------------------------------------------------------------------------------------------
+
+------ TODO LIST ------
+
+Code Cleanup:
+	Decouple script code in NavBar, CharacterControls, and Character Creator index into separate modules.
+	Add top-level Rules file 'text' properties as static props on their corresponding Class files.
+	Multilingual (undefined) error still persists.
+
+UX/UI:
+	Make some CSS effects to reflect character's current Psyche.
+	Figure out what to do about Tables.
+	Make a sidenav menu for table of contents in Rules section.
+	Probably also a sidenav for character sheet.
+
+Gear.js:
+	Storage: Unit conversions still need work.
+	make Consumable functionality for Gear objects
+	add fishing line
+	add metal cup
+	add firelog
+	add trauma sheers
+	add antiseptic of some kind
+
+Manual:
+	Put Expand/Collapse All button on rules.
+	Painkiller required for a night's sleep to Recover?
+	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche
+
+Markup:
+	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
+
+Creator:
+	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
+
+---------------------------------------------------------------------------------------------------
+
+------ BRAINSTORMING ------
+
+- Bonus XP each session? Some is given by Narrator. Some points are allocated by vote by the Team. Some of these are auto-calculated by the system like badges (most damage dealt, move successes, etc)?
+
+Abilities:
+	Some kind of CQB Ability allowing you to split Rapid attacks between two targets.
+
+Combat:
+	Actions:
+		Grappling: What about Submissions? Both Grabbed?
+		Work on this more. Finish making separate Grappling-related Maneuvers where relevant. Make advanced Maneuvers conditional by Status more than relying on this staged approach. Add a static bonus (+3) or make opponent Defenseless when they are Grabbed. Defenseless fits an established pattern better I think. Maybe replace other bonuses with Defenseless effect? Some things should stack together though.
+		'When you have Succeeded at a Grab, you get a bonus to any ATK made against the grappled opponent equal to your MATK roll - their DEF. If they attempt to escape but fail, readjust your bonus to be your most recent Grapple roll to maintain the grab - their failed escape roll. As an action while grappling, you may attempt to improve your grip and position by making another Melee vs Melee roll with your Success bonus. The result is your new Grapple Difficulty for the enemy to escape. If you fail, the enemy has moved 1 step up on the grapple scale toward escape. A grappled enemy must succeed on a grapple check to move 1 step up the grapple scale. A success while grabbed means escape. A fail readjusts the grapple bonus to be the difference between your roll and the attacker. When you succeed while grabbed, you may forego escape to use your roll to reverse the grapple and grab the attacker instead.'
+
+Character:
+	Character Sheet:
+		Combine Health with Armor somehow.
+
+Figure out a quick Jury-Rig version of Build.
+
+---------------------------------------------------------------------------------------------------
+
+
+Abilities that modify Character stats:
+Discipline
+Fleet Footed
+Fortunate
+Healthy
+Practice
+Self Improvement
+Situational Awareness
+Specialize
+Unorthodox
+Weapon Training
+
+
+---------------------------------------------------------------------------------------------------
+
+TODO List: FEATURES
+
+campaign invitations
+public and private chat logs
+extra generator
+regional and area map editor
+dynamic lighting
+fog of war
+field of view
+visual special effects
+item passing and trading (can make promises)
+social media sharing
+user forum
+developer blog
+video conferencing
+team information
+base management
+user accounts
+sound effects library and player
+audio/video playlist
+automatic roll calculations
+push notifications
+calendar access
+vehicle building, customization, and maintenance
+first person mode
+rules bookmarking
+utility programs: calculator, stopwatch, countdown timer, sketchpad, notepad
+
+
+---------------------------------------------------------------------------------------------------

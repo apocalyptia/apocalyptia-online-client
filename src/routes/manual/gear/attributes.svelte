@@ -1,5 +1,5 @@
 <script>
-	import AmmoList from '$rules/lists/gear/ammo/AmmoList.js'
+	import AttributesList from '$rules/lists/gear/attributes/AttributesList.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
@@ -7,18 +7,18 @@
 
 	let searchTerm = ''
 
-	let ruleList = AmmoList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = AttributesList.list.sort((a, b) => (a.name > b.name)).flat()
 
 	const handleSearch = event => {
 		searchTerm = event.detail
-		ruleList = SearchEngine(searchTerm, AmmoList.list)
+		ruleList = SearchEngine(searchTerm, AttributesList)
 	}
 </script>
 
 
 <svelte:head>
-	<title>Apocalyptia Online - Manual - Ammo</title>
+	<title>Apocalyptia Online - Manual - Attributes</title>
 </svelte:head>
-<ManualHeader chapter={'Ammo'} on:search={e => handleSearch(e)} />
+<ManualHeader chapter={'Attributes'} on:search={e => handleSearch(e)} />
 <ManualBody {ruleList} />
 <BackButton path={'/manual/gear'} />

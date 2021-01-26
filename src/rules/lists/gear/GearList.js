@@ -1,6 +1,7 @@
 import AccessoryList from '$rules/lists/gear/AccessoryList.js'
-import AmmoList from '$rules/lists/gear/AmmoList.js'
+import AmmoList from '$rules/lists/gear/ammo/AmmoList.js'
 import ArmorList from '$rules/lists/gear/ArmorList.js'
+import AttributesList from '$rules/lists/gear/attributes/AttributesList.js'
 import BombList from '$rules/lists/gear/BombList.js'
 import DocumentList from '$rules/lists/gear/DocumentList.js'
 import DrugsList from '$rules/lists/gear/DrugsList.js'
@@ -13,7 +14,6 @@ import ResourcesList from '$rules/lists/gear/ResourcesList.js'
 import StorageList from '$rules/lists/gear/StorageList.js'
 import ToolsList from '$rules/lists/gear/ToolsList.js'
 import WearablesList from '$rules/lists/gear/WearablesList.js'
-// import VehicleList from '$rules/lists/gear/VehiclesList.js'
 import PropSort from '$utils/PropSort.js'
 
 export default {
@@ -22,6 +22,7 @@ export default {
 		AccessoryList,
 		AmmoList,
 		ArmorList,
+		AttributesList,
 		BombList,
 		DocumentList,
 		DrugsList,
@@ -34,6 +35,5 @@ export default {
 		StorageList,
 		ToolsList,
 		WearablesList,
-		// VehicleList,
 	].sort((a, b) => PropSort(a, b, `name`))
 }

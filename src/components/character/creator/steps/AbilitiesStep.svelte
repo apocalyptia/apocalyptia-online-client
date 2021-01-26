@@ -1,6 +1,6 @@
 <script>
 	import Abilities from '$rules/Abilities.js'
-	import AbilitiesList from '$rules/lists/AbilitiesList.js'
+	import AbilitiesList from '$rules/lists/abilities/AbilitiesList.js'
 	import AbilityGroup from '$components/character/creator/abilities/AbilityGroup.svelte'
 	import Creation from '$rules/Creation.js'
 	import CurrentAbilities from '$components/character/creator/abilities/CurrentAbilities.svelte'

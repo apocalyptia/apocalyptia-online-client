@@ -1,16 +1,17 @@
 <script>
 	import MainMenu from '$components/landing/MainMenu.svelte'
+	// import userbase from 'userbase-js-node'
 	// import UserLogin from '$components/landing/UserLogin.svelte'
-	// import { onMount } from 'svelte'
 	// import playerStore from '$stores/playerStore.js'
-	
-	// let userBase
+	// import { onMount } from 'svelte'
 
 	// onMount(async _ => {
-	// 	userBase = await fetch('https://sdk.userbase.com/2/userbase.js').then(thing => {
-	// 		console.log('thing = ', thing)
+	// 	await userbase.init({
+	// 		appId: '1a86b92f-6b82-413c-9a31-2615a80bd4f8',
+	// 		allowServerSideEncryption: true
 	// 	})
-		// userBase.init({ appId: $playerStore.appId })
+	// 	.then(session => console.log(`Session: ${session}`))
+	// 	.catch(err => console.error(`Error: ${err}`))
 	// })
 </script>
 

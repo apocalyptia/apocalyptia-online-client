@@ -3,7 +3,7 @@
 	import BattleMap from '$components/map/BattleMapDom.svelte'
 	import MapCreator from '$components/map/MapCreator.svelte'
 	import BackButton from '$components/buttons/BackButton.svelte'
-	import mapStore from '$stores/mapStoreDOM.js'
+	import mapStore from '$stores/mapStore.js'
 </script>
 
 

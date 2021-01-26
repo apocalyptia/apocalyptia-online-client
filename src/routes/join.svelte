@@ -2,15 +2,15 @@
 	import Login from '$utils/auth/Login.js'
 	import playerStore from '$stores/playerStore.js'
 
-	let name, email, password, confirm
+	let username, email, password, confirm
 </script>
 
 
 <div class='cntr-card'>
 	<form>
-		<div class='name'>
-			<label for='name'>Name</label>
-			<input id='name' type='text' bind:value={name} />
+		<div class='username'>
+			<label for='username'>Username</label>
+			<input id='username' type='text' bind:value={username} />
 		</div>
 		<div class='email'>
 			<label for='email'>Email</label>
@@ -34,7 +34,7 @@
 
 
 <style>
-	.name,
+	.username,
 	.email,
 	.password,
 	.confirm {

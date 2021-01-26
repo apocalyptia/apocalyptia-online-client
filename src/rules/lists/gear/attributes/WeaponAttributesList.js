@@ -12,18 +12,21 @@ import Scatter from '$rules/gear/attributes/Scatter.js'
 import ShortBarrel from '$rules/gear/attributes/ShortBarrel.js'
 import Slow from '$rules/gear/attributes/Slow.js'
 
-export default [
-	OneHanded,
-	TwoHanded,
-	Auto,
-	Blast,
-	Blunt,
-	Chop,
-	FireDamage,
-	Pierce,
-	Rapid,
-	Shield,
-	Scatter,
-	ShortBarrel,
-	Slow,
-]
+export default {
+	name: `Weapon Attributes`,
+	list: [
+		OneHanded,
+		TwoHanded,
+		Auto,
+		Blast,
+		Blunt,
+		Chop,
+		FireDamage,
+		Pierce,
+		Rapid,
+		Shield,
+		Scatter,
+		ShortBarrel,
+		Slow,
+	]
+}

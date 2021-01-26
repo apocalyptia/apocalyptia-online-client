@@ -10,26 +10,25 @@ export default class Player {
 		this.email = ''
 		this.password = ''
 		this.loggedIn = false
-		this.appId = '1bc25997-0847-4317-bb7a-27c8eb265609'
-		this.currentCharacter = null
+		this.currentCharacterIndex = null
 		this.characterList = []
 	}
 	newCharacter(character) {
 		CreateCharacter(character)
 		this.characterList.push(character)
-		this.currentCharacter = this.characterList.length - 1
+		this.currentCharacterIndex = this.characterList.length - 1
 		return this
 	}
 	deleteCharacter(characterName) {
 		DeleteCharacter(characterName)
 		this.characterList = this.characterList.filter(c => c.description.name.value != characterName)
-		if (this.characterList.length) this.currentCharacter = 0
-		else this.currentCharacter = null
+		if (this.characterList.length) this.currentCharacterIndex = 0
+		else this.currentCharacterIndex = null
 		return this
 	}
 	loadCharacter(characterName) {
 		this.characterList.push(ReadCharacter(characterName))
-		this.currentCharacter = this.characterList.length - 1
+		this.currentCharacterIndex = this.characterList.length - 1
 		return this
 	}
 	loadAllCharacters() {
@@ -38,7 +37,7 @@ export default class Player {
 	}
 	updateCharacter(character) {
 		this.characterList.push(character)
-		this.currentCharacter = this.characterList.length - 1
+		this.currentCharacterIndex = this.characterList.length - 1
 		UpdateCharacter(character)
 		return this
 	}

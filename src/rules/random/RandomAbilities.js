@@ -1,4 +1,4 @@
-import AbilitiesList from '$rules/lists/AbilitiesList.js'
+import AbilitiesList from '$rules/lists/abilities/AbilitiesList.js'
 import Creation from '$rules/Creation.js'
 import RandomRoll from '$rules/random/RandomRoll.js'
 

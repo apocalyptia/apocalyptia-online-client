@@ -2,12 +2,12 @@
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
-	import GearList from '$rules/lists/GearList.js'
+	import GearList from '$rules/lists/gear/GearList.js'
 	import SearchEngine from '$utils/search/SearchEngine.js'
 
 	let searchTerm = ''
 
-	$: ruleList = GearList
+	$: ruleList = GearList.list
 
 	const handleSearch = event => {
 		searchTerm = event.detail

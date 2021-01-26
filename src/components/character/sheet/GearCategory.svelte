@@ -1,7 +1,6 @@
 <script>
 	import AddButton from '$components/buttons/AddButton.svelte'
 	import AddItemModal from '$components/character/sheet/AddItemModal.svelte'
-	import GearList from '$rules/lists/GearList.js'
 	import GearItem from '$components/character/sheet/GearItem.svelte'
 
 	export let mode, category
