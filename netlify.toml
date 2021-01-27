@@ -1,4 +1,5 @@
 
 [build]
   command = "npm audit fix && npm run build"
-  functions = "./functions"
+  publish = "build/"
+  functions = "functions/"

@@ -21,7 +21,6 @@ get Amazon affiliate program set up and find links for all gear items
 
 Code Cleanup:
 	Decouple script code in NavBar, CharacterControls, and Character Creator index into separate modules.
-	Add top-level Rules file 'text' properties as static props on their corresponding Class files.
 	Multilingual (undefined) error still persists.
 
 UX/UI:
@@ -40,6 +39,7 @@ Gear.js:
 	add antiseptic of some kind
 
 Manual:
+	Search is broken for all sub-pages.
 	Put Expand/Collapse All button on rules.
 	Painkiller required for a night's sleep to Recover?
 	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche
