@@ -1,8 +1,17 @@
+import Alphabetize from '$utils/Alphabetize.js'
+
 export default (searchTerm, searchList) => {
 
-	const mappedList = searchList.list.map(r => [...r.list]).flat()
+	const mappedList = []
 
-	const sortedRulesList = mappedList.sort((a, b) => a.name > b.name).flat()
+	const addSublists = (rule) => {
+		if (rule.hasOwnProperty('list')) addSublists(rule.list)
+		else mappedList.push(rule)
+	}
+
+	addSublists(searchList)
+
+	const sortedRulesList = Alphabetize(mappedList)
 
 	let ruleList = sortedRulesList
 

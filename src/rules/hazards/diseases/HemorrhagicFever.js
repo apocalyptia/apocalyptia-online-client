@@ -1,9 +1,7 @@
 import Disease from '$classes/Disease.js'
 
 const HemorrhagicFever = new Disease({
-	id: ``,
 	name: `Hemorrhagic Fever`,
-	desc: [],
 	transmission: `Body Fluids`,
 	virulence: `Constitution 12#`,
 	diagnose: `Medicine 12#`,

@@ -1,9 +1,7 @@
 import Disease from '$classes/Disease.js'
 
 const Rabies = new Disease({
-	id: ``,
 	name: `Rabies`,
-	desc: [],
 	transmission: `Body fluids`,
 	virulence: `Constitution 15#`,
 	diagnose: `Medicine 6#`,

@@ -1,4 +1,5 @@
 import AccessoryList from '$rules/lists/gear/AccessoryList.js'
+import Alphabetize from '$utils/Alphabetize.js'
 import AmmoList from '$rules/lists/gear/ammo/AmmoList.js'
 import ArmorList from '$rules/lists/gear/ArmorList.js'
 import AttributesList from '$rules/lists/gear/attributes/AttributesList.js'
@@ -14,11 +15,10 @@ import ResourcesList from '$rules/lists/gear/ResourcesList.js'
 import StorageList from '$rules/lists/gear/StorageList.js'
 import ToolsList from '$rules/lists/gear/ToolsList.js'
 import WearablesList from '$rules/lists/gear/WearablesList.js'
-import PropSort from '$utils/PropSort.js'
 
 export default {
 	name: `Gear`,
-	list: [
+	list: Alphabetize([
 		AccessoryList,
 		AmmoList,
 		ArmorList,
@@ -35,5 +35,5 @@ export default {
 		StorageList,
 		ToolsList,
 		WearablesList,
-	].sort((a, b) => PropSort(a, b, `name`))
+	])
 }

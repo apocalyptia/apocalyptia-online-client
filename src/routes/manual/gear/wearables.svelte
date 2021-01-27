@@ -1,13 +1,14 @@
 <script>
-	import WearablesList from '$rules/lists/gear/WearablesList.js'
+	import Alphabetize from '$utils/Alphabetize.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
 	import SearchEngine from '$utils/search/SearchEngine.js'
+	import WearablesList from '$rules/lists/gear/WearablesList.js'
 
 	let searchTerm = ''
 
-	let ruleList = WearablesList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = Alphabetize(WearablesList.list)
 
 	const handleSearch = event => {
 		searchTerm = event.detail

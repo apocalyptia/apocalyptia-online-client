@@ -1,9 +1,7 @@
 import Disease from '$classes/Disease.js'
 
 const Smallpox = new Disease({
-	id: ``,
 	name: `Smallpox`,
-	desc: [],
 	transmission: `Air, 3yds`,
 	virulence: `Constitution 15#`,
 	diagnose: `Medicine 6#`,

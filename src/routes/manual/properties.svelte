@@ -1,4 +1,5 @@
 <script>
+	import Alphabetize from '$utils/Alphabetize.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
@@ -7,7 +8,7 @@
 
 	let searchTerm = ''
 
-	let ruleList = PropertiesList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = Alphabetize(PropertiesList.list)
 
 	const handleSearch = event => {
 		searchTerm = event.detail

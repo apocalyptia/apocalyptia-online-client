@@ -1,5 +1,5 @@
 import Ability from '$classes/Ability.js'
-import PropSort from '$utils/PropSort.js'
+import Alphabetize from '$utils/Alphabetize.js'
 import XP12AbilitiesList from '$rules/lists/abilities/XP12AbilitiesList.js'
 import XP15AbilitiesList from '$rules/lists/abilities/XP15AbilitiesList.js'
 import XP18AbilitiesList from '$rules/lists/abilities/XP18AbilitiesList.js'
@@ -49,13 +49,12 @@ const listBuilder = (list) => {
 			newList.push(newAbility)
 		}
 	}
-	newList.sort((a, b) => PropSort(a, b, 'name'))
-	return newList
+	return Alphabetize(newList)
 }
 
 export default {
 	name: `Abilities`,
-	list: abilityArray.sort((a, b) => PropSort(a, b, 'name')),
+	list: Alphabetize(abilityArray),
 	groups: [
 		{
 			name: 3,

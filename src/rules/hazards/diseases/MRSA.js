@@ -1,9 +1,7 @@
 import Disease from '$classes/Disease.js'
 
 const MRSA = new Disease({
-	id: ``,
 	name: `MRSA`,
-	desc: [],
 	transmission: `Touch`,
 	virulence: `Constitution 12#`,
 	diagnose: `Medicine 18#`,

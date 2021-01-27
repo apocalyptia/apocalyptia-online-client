@@ -6,29 +6,17 @@
 
 
 <div class='manual-page page-body'>
-	{#if chapter == 'Manual'}
+	{#if chapter == 'Manual' && ruleList.length}
 		{#each ruleList as c}
 			<div class='manual-btn'>
 				<a href={`/manual/${c.name.toLowerCase()}`} class='link-btn'>{c.name}</a>
 			</div>
 		{/each}
-	{:else if chapter == 'Gear'}
+	{:else if chapter == 'Gear' && ruleList.length}
 		{#each ruleList as g}
 			<div class='manual-btn'>
 				<a href={`/manual/gear/${g.name.toLowerCase()}`} class='link-btn'>{g.name}</a>
 			</div>
-		{/each}
-	{:else if chapter == 'Hazards'}
-		{#each ruleList as h}
-			{#if h.type && h.type == 'Hazard'}
-				<div class='manual-btn'>
-					<ManualRule rule={h} />
-				</div>
-			{:else}
-				<div class='manual-btn'>
-					<a href={`/manual/hazards/diseases`} class='link-btn'>Diseases</a>
-				</div>
-			{/if}
 		{/each}
 	{:else if ruleList.length}
 		{#each ruleList as r}

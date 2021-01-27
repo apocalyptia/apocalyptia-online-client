@@ -1,10 +1,11 @@
-import PropSort from '$utils/PropSort.js'
+import Alphabetize from '$utils/Alphabetize.js'
 import SkillsList from '$rules/lists/SkillsList.js'
 
-const specs = Object.values(SkillsList.list)
+let specs = Object.values(SkillsList.list)
 					.map((s) => Object.values(s.specs))
 					.reduce((a, b) => a.concat(b), [])
-					.sort((a, b) => PropSort(a, b, `name`))
+
+specs = Alphabetize(specs)
 
 const startingPoints = (c) => c.traits.brains.score * 6
 

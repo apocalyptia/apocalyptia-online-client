@@ -1,13 +1,14 @@
 <script>
-	import StorageList from '$rules/lists/gear/StorageList.js'
+	import Alphabetize from '$utils/Alphabetize.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
 	import SearchEngine from '$utils/search/SearchEngine.js'
+	import StorageList from '$rules/lists/gear/StorageList.js'
 
 	let searchTerm = ''
 
-	let ruleList = StorageList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = Alphabetize(StorageList.list)
 
 	const handleSearch = event => {
 		searchTerm = event.detail

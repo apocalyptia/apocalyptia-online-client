@@ -1,13 +1,14 @@
 <script>
+	import Alphabetize from '$utils/Alphabetize.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
+	import DiseasesList from '$rules/lists/DiseasesList.js'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
-	import DiseasesList from '$rules/lists/DiseasesList.js'
 	import SearchEngine from '$utils/search/SearchEngine.js'
 
 	let searchTerm = ''
 
-	let ruleList = DiseasesList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = Alphabetize(DiseasesList.list)
 
 	const handleSearch = event => {
 		searchTerm = event.detail

@@ -39,7 +39,7 @@ Gear.js:
 	add antiseptic of some kind
 
 Manual:
-	Search is broken for all sub-pages.
+	Improve search functionality.
 	Put Expand/Collapse All button on rules.
 	Painkiller required for a night's sleep to Recover?
 	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche

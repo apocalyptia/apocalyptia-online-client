@@ -1,13 +1,14 @@
 <script>
-	import ToolsList from '$rules/lists/gear/ToolsList.js'
+	import Alphabetize from '$utils/Alphabetize.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
 	import ManualHeader from '$components/manual/ManualHeader.svelte'
 	import SearchEngine from '$utils/search/SearchEngine.js'
+	import ToolsList from '$rules/lists/gear/ToolsList.js'
 
 	let searchTerm = ''
 
-	let ruleList = ToolsList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = Alphabetize(ToolsList.list)
 
 	const handleSearch = event => {
 		searchTerm = event.detail

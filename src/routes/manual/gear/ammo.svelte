@@ -1,4 +1,5 @@
 <script>
+	import Alphabetize from '$utils/Alphabetize.js'
 	import AmmoList from '$rules/lists/gear/ammo/AmmoList.js'
 	import BackButton from '$components/buttons/BackButton.svelte'
 	import ManualBody from '$components/manual/ManualBody.svelte'
@@ -7,7 +8,7 @@
 
 	let searchTerm = ''
 
-	let ruleList = AmmoList.list.sort((a, b) => (a.name > b.name)).flat()
+	let ruleList = Alphabetize(AmmoList.list)
 
 	const handleSearch = event => {
 		searchTerm = event.detail
