@@ -30,4 +30,7 @@ export default class Ability extends Rule {
 		this.selection = selection
 		this.notes = notes
 	}
+	static text = [
+		`Abilities are Character upgrades purchased with XP.`
+	]
 }

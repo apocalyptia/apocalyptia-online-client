@@ -1,5 +1,5 @@
 <script>
-	import Abilities from '$rules/Abilities.js'
+	import Ability from '$classes/Ability.js'
 	import AbilitiesList from '$rules/lists/abilities/AbilitiesList.js'
 	import AbilityGroup from '$components/character/creator/abilities/AbilityGroup.svelte'
 	import Creation from '$rules/Creation.js'
@@ -19,7 +19,7 @@
 
 <div class='abilities-step-page'>
 	<PageHeader chapter={'Abilities'} step={$characterStore.meta.step} />
-	<ExplanationBlock rule={Abilities} />
+	<ExplanationBlock rule={Ability} />
 	<PointsRemaining points={remainingXP} />
 	{#if $characterStore.abilities.length}
 		<div class='section-card'>
