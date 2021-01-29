@@ -53,7 +53,9 @@
 	}
 	.current-abilities-title {
 		font-size: var(--s125);
+		font-weight: bold;
 		text-align: center;
+		text-decoration: underline;
 		width: 100%;
 	}
 	.current-abilities-header,

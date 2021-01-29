@@ -88,6 +88,9 @@
 									min='0'
 									bind:value={item.qty}
 								/>
+							{:else if mode == 'readonly' && item.type == 'Ammo'}
+								<span class='prop-name'>{prop.name}</span>: 
+								<span type='number' class='item-qty'>{item.qty}</span>
 							{/if}
 						{:else}
 							<span class='prop-name'>{prop.name}</span>: 

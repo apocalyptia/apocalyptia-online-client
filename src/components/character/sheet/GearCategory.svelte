@@ -19,7 +19,7 @@
 				<GearItem {mode} {category} {item} {index} />
 			{/each}
 		</div>
-		{#if mode != 'readonly'}
+		{#if mode == 'edit'}
 			<div class='add-section'>
 				<AddButton on:click={toggleAddItemModal} />
 				{#if modalVisible}

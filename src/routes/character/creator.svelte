@@ -43,7 +43,7 @@
 <div id='character-creator' class='creator-page page-body'>
 	<svelte:component this={creationSteps[$characterStore.meta.step]} />
 </div>
-<NavBar {proceedConditions} />
+<NavBar {proceedConditions} limit={creationSteps.length - 1} />
 
 
 <style>

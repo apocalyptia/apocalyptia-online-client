@@ -4,18 +4,13 @@
 	import characterStore from '$stores/characterStore.js'
 
 	export let mode, category, item, index = 0
-
-	const trashItem = _ => {
-		$characterStore.gear[category].inventory.splice(index, 1)
-		$characterStore = $characterStore
-	}
 </script>
 
 
 <div class='gear-item'>
 	<GearBlock {item} {mode} />
 	{#if mode != 'readonly'}
-		<TrashButton on:click={trashItem} />
+		<TrashButton {category} {index} />
 	{/if}
 </div>
 

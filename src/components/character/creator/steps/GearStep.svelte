@@ -39,12 +39,12 @@
 					{#if category.name == 'Equipment'}
 						{#each category.inventory as equipment (equipment.name)}
 							<div class='item'>
-								<GearBlock item={equipment} mode={'edit'} />
+								<GearBlock item={equipment} mode={'readonly'} />
 							</div>
 						{/each}
 					{:else}
 						<div class='item'>
-							<GearBlock item={category.inventory[0]} mode={'edit'} />
+							<GearBlock item={category.inventory[0]} mode={'readonly'} />
 						</div>
 					{/if}
 				</div>
