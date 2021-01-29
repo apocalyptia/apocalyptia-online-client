@@ -6,17 +6,28 @@
 
 
 <div class='title-bar'>
-	<a href='/' class='link-btn title-link {$playerStore.loggedIn ? 'part-width' : 'full-width'}'>
-		<span class='app-title'>Apocalyptia Online</span>
+	<a href='/' class='link-btn title-link part-width'>
+		<div class='app-title'>Apocalyptia Online</div>
+		<div class='sub'>v.28-01-21</div>
 	</a>
-	{#if $playerStore.loggedIn}
+	<!-- {#if $playerStore.loggedIn} -->
 		<MenuButton />
 		<UserMenu />
-	{/if}
+	<!-- {/if} -->
 </div>
 
 
 <style>
+	.sub {
+		border: 1px solid crimson;
+		color: crimson;
+		font-size: var(--s50);
+		left: 0;
+		padding: 2px;
+		position: absolute;
+		top: calc(var(--square) + 1px);
+		width: 80px;
+	}
 	.title-bar {
 		display: flex;
 		height: var(--square);
@@ -27,6 +38,7 @@
 		z-index: 9;
 	}
 	.title-link {
+		display: block;
 		padding: var(--std-padding);
 	}
 	.full-width {
