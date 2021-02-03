@@ -8,6 +8,9 @@
 		<div class='scanline'>
 			<div class="console">
 				<div class="program">
+					<version>
+						v.02-02-21
+					</version>
 					<header>
 						<TitleBar />
 					</header>
@@ -79,5 +82,16 @@
 
 	main {
 		z-index: 6;
+	}
+
+	version {
+		border: 1px solid crimson;
+		color: crimson;
+		font-size: var(--s50);
+		left: 0;
+		padding: 2px;
+		position: absolute;
+		top: calc(var(--square) + 1px);
+		width: 80px;
 	}
 </style>
