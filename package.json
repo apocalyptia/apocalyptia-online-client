@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"refresh": "rm -r node_modules && rm -r .svelte && npm i",
-		"build": "svelte-kit build",
+		"build": "npm update && npm audit fix && svelte-kit build",
 		"start": "svelte-kit start"
 	},
 	"devDependencies": {
