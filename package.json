@@ -4,8 +4,9 @@
 	"repository": "https://github.com/apocalyptia/apocalyptia-online",
 	"version": "0.0.6",
 	"scripts": {
+		"adapt": "svelte-kit adapt",
+		"build": "svelte-kit build",
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build && svelte-kit adapt",
 		"start": "svelte-kit start"
 	},
 	"devDependencies": {
