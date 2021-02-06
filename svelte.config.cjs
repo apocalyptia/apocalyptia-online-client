@@ -3,4 +3,4 @@ module.exports = {
 		adapter: '@sveltejs/adapter-netlify',
 		target: '#svelte'
 	}
-};
+}

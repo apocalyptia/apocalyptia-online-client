@@ -5,8 +5,7 @@
 	"version": "0.0.6",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"refresh": "rm -r node_modules && rm -r .svelte && npm i",
-		"build": "npm update && npm audit fix && svelte-kit adapt",
+		"build": "svelte-kit build && svelte-kit adapt",
 		"start": "svelte-kit start"
 	},
 	"devDependencies": {
