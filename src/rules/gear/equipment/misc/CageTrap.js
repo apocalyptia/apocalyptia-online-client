@@ -7,7 +7,7 @@ const CageTrap = new Gear({
 		`+3 Survival(Forage).`,
 		`Takes 1day.`,
 	],
-	sz: 6
+	sz: 5
 })
 
 export default CageTrap

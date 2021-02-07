@@ -8,7 +8,7 @@ const Stethoscope = new Gear({
 		`+1 Medicine.`,
 		`Perception(Hear) 6# through doors.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default Stethoscope

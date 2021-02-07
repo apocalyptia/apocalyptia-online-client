@@ -4,7 +4,7 @@ import FireResistance from '$rules/gear/attributes/FireResistance.js'
 const WorkGloves = new Gear({
 	id: ``,
 	name: `Work Gloves`,
-	sz: 1,
+	sz: 0,
 	attr: [
 		FireResistance,
 	],

@@ -7,7 +7,7 @@ const Suppressor = new Gear({
 	desc: [
 		`Firing a Gun does not break Concealment.`,
 	],
-	sz: 0
+	sz: 1
 })
 
 export default Suppressor

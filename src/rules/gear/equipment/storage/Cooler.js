@@ -6,7 +6,7 @@ const Cooler = new Gear({
 	desc: [
 		`Preserves Hunted or Foraged Food for 6 days.`,
 	],
-	sz: 4
+	sz: 5
 })
 Cooler.slots = 30
 

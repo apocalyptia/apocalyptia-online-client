@@ -6,7 +6,7 @@ const WireSaw = new Gear({
 	desc: [
 		`1 Damage/round of sawing to wood or bone.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default WireSaw

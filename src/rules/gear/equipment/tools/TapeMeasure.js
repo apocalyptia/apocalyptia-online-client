@@ -7,7 +7,7 @@ const TapeMeasure = new Gear({
 		`+1 Build.`,
 		`10yd long wind-up metal tape.`,
 	],
-	sz: 2
+	sz: 1
 })
 
 export default TapeMeasure

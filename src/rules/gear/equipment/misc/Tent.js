@@ -8,7 +8,7 @@ const Tent = new Gear({
 		`5min setup/take-down.`,
 		`Cold Resistance +3hrs.`,
 	],
-	sz: 6
+	sz: 4
 })
 
 export default Tent

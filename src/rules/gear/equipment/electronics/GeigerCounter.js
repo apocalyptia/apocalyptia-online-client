@@ -7,7 +7,7 @@ const GeigerCounter = new Gear({
 	desc: [
 		`Science 6# to detect Radiation in 1yd.`,
 	],
-	sz: 2
+	sz: 1
 })
 GeigerCounter.dur = 28800
 

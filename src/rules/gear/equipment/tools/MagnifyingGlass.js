@@ -6,7 +6,7 @@ const MagnifyingGlass = new Gear({
 	desc: [
 		`+6 Perception(See) to inspect tiny details.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default MagnifyingGlass

@@ -5,7 +5,7 @@ import ColdResistance from '$rules/gear/attributes/ColdResistance.js'
 const GhillieSuit = new Gear({
 	id: ``,
 	name: `Ghillie Suit`,
-	sz: 4,
+	sz: 3,
 	attr: [
 		Camo,
 		ColdResistance,

@@ -7,7 +7,7 @@ const Lifejacket = new Gear({
 		`+6 Athletics(Swim).`,
 		`Prevents drowning.`,
 	],
-	sz: 2
+	sz: 3
 })
 
 export default Lifejacket

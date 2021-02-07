@@ -6,7 +6,7 @@ const FishingPole = new Gear({
 	desc: [
 		`+1 Survival(Forage) at river, lake, or ocean.`,
 	],
-	sz: 2
+	sz: 1
 })
 
 export default FishingPole

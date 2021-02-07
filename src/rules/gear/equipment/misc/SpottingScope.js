@@ -6,7 +6,7 @@ const SpottingScope = new Gear({
 	desc: [
 		`+6 Perception(See) at 100+yds.`,
 	],
-	sz: 2
+	sz: 1
 })
 
 export default SpottingScope

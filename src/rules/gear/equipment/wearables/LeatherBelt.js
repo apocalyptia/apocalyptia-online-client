@@ -8,7 +8,7 @@ const LeatherBelt = new Gear({
 		`Stops Limb Bleeding.`,
 		`Holds 50Sz.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default LeatherBelt

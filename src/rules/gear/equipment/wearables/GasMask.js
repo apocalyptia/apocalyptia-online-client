@@ -8,7 +8,7 @@ const GasMask = new Gear({
 		`Mask.`,
 		`-1 Perception.`,
 	],
-	sz: 1
+	sz: 2
 })
 
 export default GasMask

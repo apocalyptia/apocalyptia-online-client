@@ -8,7 +8,7 @@ const Skateboard = new Gear({
 		`Speed x3.`,
 		`Fail:Prone.`,
 	],
-	sz: 3
+	sz: 2
 })
 
 export default Skateboard

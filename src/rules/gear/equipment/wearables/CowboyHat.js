@@ -6,7 +6,7 @@ const CowboyHat = new Gear({
 	desc: [
 		`Reduce Visibility(Rain and Sun) penalty by 3.`,
 	],
-	sz: 0
+	sz: 1
 })
 
 export default CowboyHat

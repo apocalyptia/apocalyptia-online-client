@@ -7,7 +7,7 @@ const ThermalUnderwear = new Gear({
 		`Cold Resistance.`,
 		`Can use as 6 Bandages.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default ThermalUnderwear

@@ -4,7 +4,7 @@ import Camo from '$rules/gear/attributes/Camo.js'
 const FlakJacket = new Gear({
 	id: ``,
 	name: `Flak Jacket`,
-	sz: 4,
+	sz: 3,
 	attr: [
 		Camo,
 	],

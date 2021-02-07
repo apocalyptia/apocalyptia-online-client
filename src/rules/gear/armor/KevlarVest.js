@@ -5,7 +5,7 @@ import FireResistance from '$rules/gear/attributes/FireResistance.js'
 const KevlarVest = new Gear({
 	id: ``,
 	name: `Kevlar Vest`,
-	sz: 4,
+	sz: 3,
 	attr: [
 		ColdResistance,
 		FireResistance,

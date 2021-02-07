@@ -7,7 +7,7 @@ const SleepingBag = new Gear({
 		`Insulated bag for up to 2 people.`,
 		`Cold Resistance +3hrs.`,
 	],
-	sz: 3
+	sz: 2
 })
 
 export default SleepingBag

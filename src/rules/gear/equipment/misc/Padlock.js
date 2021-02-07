@@ -7,7 +7,7 @@ const Padlock = new Gear({
 		`2 Damage Resistance.`,
 		`Larceny(Disable) 9#.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default Padlock

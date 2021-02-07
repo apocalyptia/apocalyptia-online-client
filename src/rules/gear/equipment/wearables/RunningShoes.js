@@ -6,7 +6,7 @@ const RunningShoes = new Gear({
 	desc: [
 		`+1 mile of Jogging distance.`,
 	],
-	sz: 2
+	sz: 1
 })
 
 export default RunningShoes

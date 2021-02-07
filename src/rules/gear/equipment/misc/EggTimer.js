@@ -7,7 +7,7 @@ const EggTimer = new Gear({
 		`Set up to 60mins.`,
 		`Loud ringing for 1min.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default EggTimer

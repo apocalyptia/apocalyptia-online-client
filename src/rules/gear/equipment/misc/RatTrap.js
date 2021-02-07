@@ -7,7 +7,7 @@ const RatTrap = new Gear({
 		`+1 Survival(Forage).`,
 		`Takes 1day.`,
 	],
-	sz: 1
+	sz: 0
 })
 
 export default RatTrap

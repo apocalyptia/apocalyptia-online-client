@@ -7,7 +7,7 @@ const Cellphone = new Gear({
 	desc: [
 		`1yd light, camera, remote control.`,
 	],
-	sz: 1
+	sz: 0
 })
 Cellphone.dur = 3600
 

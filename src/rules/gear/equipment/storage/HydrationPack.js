@@ -6,7 +6,7 @@ const HydrationPack = new Gear({
 	desc: [
 		`Holds 4 units (2gal) of liquid.`,
 	],
-	sz: 1
+	sz: 0
 })
 HydrationPack.slots = 4
 

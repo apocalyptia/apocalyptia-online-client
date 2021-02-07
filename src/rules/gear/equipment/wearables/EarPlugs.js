@@ -7,7 +7,7 @@ const EarPlugs = new Gear({
 		`No Deafness from noise.`,
 		`-3 Perception(Hear).`,
 	],
-	sz: 9
+	sz: 0
 })
 
 export default EarPlugs
