@@ -4,7 +4,7 @@ const Sedative = new Gear({
 	id: ``,
 	name: `Sedative`,
 	desc: [
-		`Demeanor#6/round to take any action.`,
+		`Demeanor #6 per round to take any action.`,
 	],
 	sz: 0,
 	type: `Drug`
