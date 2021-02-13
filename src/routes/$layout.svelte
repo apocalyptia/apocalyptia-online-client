@@ -1,6 +1,5 @@
 <script>
 	import TitleBar from '$components/widgets/TitleBar.svelte'
-	import Version from '$utils/Version.js'
 </script>
 
 
@@ -9,9 +8,6 @@
 		<div class='scanline'>
 			<div class="console">
 				<div class="program">
-					<version>
-						{Version}
-					</version>
 					<header>
 						<TitleBar />
 					</header>
@@ -83,15 +79,5 @@
 
 	main {
 		z-index: 6;
-	}
-
-	version {
-		border: 1px solid crimson;
-		color: crimson;
-		font-size: var(--s50);
-		left: 0;
-		padding: 2px;
-		position: absolute;
-		top: calc(var(--square) + 1px);
 	}
 </style>
