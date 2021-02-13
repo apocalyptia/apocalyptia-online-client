@@ -93,6 +93,5 @@
 		padding: 2px;
 		position: absolute;
 		top: calc(var(--square) + 1px);
-		width: 13ch;
 	}
 </style>
