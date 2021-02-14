@@ -1,6 +1,6 @@
-import Gear from '$classes/Gear.js'
-import OneHanded from '$rules/gear/attributes/OneHanded.js'
-import Pierce from '$rules/gear/attributes/Pierce.js'
+import Gear from 'classes/Gear.js'
+import OneHanded from 'rules/gear/attributes/OneHanded.js'
+import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const Spear = new Gear({
 	id: ``,

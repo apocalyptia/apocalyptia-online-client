@@ -1,5 +1,5 @@
-import Gear from '$classes/Gear.js'
-import OneHanded from '$rules/gear/attributes/OneHanded.js'
+import Gear from 'classes/Gear.js'
+import OneHanded from 'rules/gear/attributes/OneHanded.js'
 
 const Crowbar = new Gear({
 	id: ``,

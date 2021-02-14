@@ -1,6 +1,6 @@
 <script>
-	import AbilityModal from '$components/character/creator/abilities/AbilityModal.svelte'
-	import ToggleVisible from '$utils/ui/ToggleVisible.js'
+	import AbilityModal from 'components/character/creator/abilities/AbilityModal.svelte'
+	import ToggleVisible from 'utils/ui/ToggleVisible.js'
 
 	export let ability, MasterAbilityList
 </script>

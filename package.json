@@ -2,21 +2,25 @@
 	"name": "apocalyptia-online-client",
 	"description": "A post-apocalyptic multiplayer roleplaying game about the end of the world.",
 	"repository": "https://github.com/apocalyptia/apocalyptia-online",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"scripts": {
-		"adapt": "svelte-kit adapt",
-		"build": "svelte-kit build",
-		"dev": "svelte-kit dev",
-		"start": "svelte-kit start"
+		"build": "rollup -c",
+		"dev": "rollup -c -w",
+		"start": "sirv public --single"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-node": "^1.0.0-next.1",
-		"@sveltejs/kit": "^1.0.0-next.31",
-		"@sveltejs/snowpack-config": "^1.0.0-next.2",
-		"svelte": "^3.32.1"
+		"@rollup/plugin-alias": "^3.1.2",
+		"@rollup/plugin-commonjs": "^17.0.0",
+		"@rollup/plugin-node-resolve": "^11.0.0",
+		"rollup": "^2.3.4",
+		"rollup-plugin-css-only": "^3.1.0",
+		"rollup-plugin-livereload": "^2.0.0",
+		"rollup-plugin-svelte": "^7.0.0",
+		"rollup-plugin-terser": "^7.0.0",
+		"svelte": "^3.0.0"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.0",
-		"userbase-js-node": "0.0.0"
+		"page": "^1.11.6",
+		"sirv-cli": "^1.0.0"
 	}
 }

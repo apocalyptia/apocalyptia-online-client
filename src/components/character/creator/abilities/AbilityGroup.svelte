@@ -1,5 +1,5 @@
 <script>
-	import AbilityCard from '$components/character/creator/abilities/AbilityCard.svelte'
+	import AbilityCard from 'components/character/creator/abilities/AbilityCard.svelte'
 
 	export let group, MasterAbilityList
 </script>

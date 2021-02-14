@@ -1,10 +1,10 @@
 <script>
-	import CharacterSheet from '$components/character/sheet/CharacterSheet.svelte'
-	import DeleteCharacter from '$database/characters/DeleteCharacter.js'
-	import PageHeader from '$components/character/creator/PageHeader.svelte'
-	import SaveCharacter from '$database/characters/SaveCharacter.js'
-	import SaveAndDeleteButtonRow from '$components/character/creator/SaveAndDeleteButtonRow.svelte'
-	import characterStore from '$stores/characterStore.js'
+	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
+	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import SaveCharacter from 'database/characters/SaveCharacter.js'
+	import SaveAndDeleteButtonRow from 'components/character/creator/SaveAndDeleteButtonRow.svelte'
+	import characterStore from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'
 
 	// onDestroy(_ => SaveCharacter($characterStore))

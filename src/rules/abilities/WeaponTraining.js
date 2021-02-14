@@ -1,5 +1,5 @@
-import Ability from '$classes/Ability.js'
-import WeaponList from '$rules/lists/gear/WeaponList.js'
+import Ability from 'classes/Ability.js'
+import WeaponsList from 'rules/lists/gear/WeaponsList.js'
 
 const WeaponTraining = new Ability({
 	id: ``,
@@ -9,7 +9,7 @@ const WeaponTraining = new Ability({
 	],
 	max: 1,
 	xp: 3,
-	opts: WeaponList
+	opts: WeaponsList
 })
 
 export default WeaponTraining

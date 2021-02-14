@@ -1,5 +1,5 @@
-import Rule from '$classes/Rule.js'
-import Chase from '$rules/combat/Chase.js'
+import Rule from 'classes/Rule.js'
+import Chase from 'rules/combat/Chase.js'
 
 const Movement = new Rule({
 	name: `Movement`, 

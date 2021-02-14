@@ -1,6 +1,6 @@
-import Gear from '$classes/Gear.js'
-import Camo from '$rules/gear/attributes/Camo.js'
-import ColdResistance from '$rules/gear/attributes/ColdResistance.js'
+import Gear from 'classes/Gear.js'
+import Camo from 'rules/gear/attributes/Camo.js'
+import ColdResistance from 'rules/gear/attributes/ColdResistance.js'
 
 const GhillieSuit = new Gear({
 	id: ``,

@@ -1,4 +1,4 @@
-import Descriptor from '$rules/description/Descriptor.js'
+import Descriptor from 'rules/description/Descriptor.js'
 
 const Name = new Descriptor({
 	name: `Name`,

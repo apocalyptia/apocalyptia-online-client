@@ -1,4 +1,4 @@
-import d6Roll from '$rules/random/d6Roll.js'
+import d6Roll from 'rules/random/d6Roll.js'
 
 export default _ => {
 	let result = 6

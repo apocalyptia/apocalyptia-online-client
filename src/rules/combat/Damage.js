@@ -1,8 +1,8 @@
-import Rule from '$classes/Rule.js'
-import DamageResistance from '$rules/combat/DamageResistance.js'
-import FireDamage from '$rules/combat/FireDamage.js'
-import Pain from '$rules/combat/Pain.js'
-import Recovery from '$rules/combat/Recovery.js'
+import Rule from 'classes/Rule.js'
+import DamageResistance from 'rules/combat/DamageResistance.js'
+import FireDamage from 'rules/combat/FireDamage.js'
+import Pain from 'rules/combat/Pain.js'
+import Recovery from 'rules/combat/Recovery.js'
 
 const Damage = new Rule({
 	name: `Damage`, 

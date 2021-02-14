@@ -1,7 +1,7 @@
 <script>
-	import BackupCharacter from '$database/characters/BackupCharacter.js'
-	import characterStore from '$stores/characterStore.js'
-	import playerStore from '$stores/playerStore.js'
+	import BackupCharacter from 'database/characters/BackupCharacter.js'
+	import characterStore from 'stores/characterStore.js'
+	import playerStore from 'stores/playerStore.js'
 
 	const deleteCharacter = _ => {
 		$playerStore = $playerStore.deleteCharacter(selectedCharacter)
@@ -12,12 +12,12 @@
 	const loadCharacter = _ => {
 		$playerStore = $playerStore.loadCharacter(selectedCharacter)
 		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
-		window.location.href = 'character/sheet'
+		window.location.href = '/sheet'
 	}
 
 	const backupCharacter = _ => BackupCharacter($characterStore)
 
-	const newCharacter = _ => window.location.href = 'character/new'
+	const newCharacter = _ => window.location.href = '/new'
 </script>
 
 

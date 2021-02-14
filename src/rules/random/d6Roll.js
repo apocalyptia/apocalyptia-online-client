@@ -1,4 +1,4 @@
-import d6 from '$rules/random/d6.js'
+import d6 from 'rules/random/d6.js'
 
 export default () => {
 	const rolls = [d6()]

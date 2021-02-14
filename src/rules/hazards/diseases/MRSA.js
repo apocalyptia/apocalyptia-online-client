@@ -1,4 +1,4 @@
-import Disease from '$classes/Disease.js'
+import Disease from 'classes/Disease.js'
 
 const MRSA = new Disease({
 	name: `MRSA`,

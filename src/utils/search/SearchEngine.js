@@ -1,4 +1,4 @@
-import Alphabetize from '$utils/Alphabetize.js'
+import Alphabetize from 'utils/Alphabetize.js'
 
 export default (searchTerm, searchList) => {
 

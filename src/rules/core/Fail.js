@@ -1,4 +1,4 @@
-import Rule from '$classes/Rule.js'
+import Rule from 'classes/Rule.js'
 
 const Fail = new Rule({
 	name: `Fail`,

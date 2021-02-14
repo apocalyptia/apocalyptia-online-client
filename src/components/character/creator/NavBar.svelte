@@ -1,5 +1,5 @@
 <script>
-	import characterStore from '$stores/characterStore.js'
+	import characterStore from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
 	export let proceedConditions
@@ -16,7 +16,7 @@
 		document.getElementById('character-creator').scrollTo(0, 0)
 		$characterStore.meta.step--
 		if ($characterStore.meta.step < 0) {
-			window.location.href = '/character/new'
+			window.location.href = '/new'
 		}
 	}
 

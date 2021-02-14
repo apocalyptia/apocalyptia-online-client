@@ -1,5 +1,5 @@
 <script>
-	import menuStore from '$stores/menuStore.js'
+	import menuStore from 'stores/menuStore.js'
 </script>
 
 

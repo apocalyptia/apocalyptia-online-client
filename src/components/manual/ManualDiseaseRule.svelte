@@ -1,5 +1,5 @@
 <script>
-	import Capitalize from '$utils/Capitalize.js'
+	import Capitalize from 'utils/Capitalize.js'
 	import { onMount } from 'svelte'
 
 	export let rule

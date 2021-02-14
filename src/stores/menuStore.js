@@ -15,10 +15,10 @@ export default writable({
 			'name': 'Roller',
 			'url': '/roller'
 		},
-		{
-			'name': 'Campaign',
-			'url': '/campaign'
-		}
+		// {
+		// 	'name': 'Campaign',
+		// 	'url': '/campaign'
+		// }
 	],
     toggle() {
         this.open = !this.open

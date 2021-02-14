@@ -1,6 +1,6 @@
 <script>
-	import Creation from '$rules/Creation.js'
-	import characterStore from '$stores/characterStore.js'
+	import Creation from 'rules/Creation.js'
+	import characterStore from 'stores/characterStore.js'
 
 	export let ability
 </script>

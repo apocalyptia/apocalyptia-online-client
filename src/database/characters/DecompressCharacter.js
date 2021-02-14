@@ -1,5 +1,5 @@
-import Character from '$classes/Character.js'
-import Creation from '$rules/Creation.js'
+import Character from 'classes/Character.js'
+import Creation from 'rules/Creation.js'
 
 export default (c) => {
 

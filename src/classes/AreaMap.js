@@ -75,7 +75,7 @@ export class AreaMapDOM {
 
 
 
-// import DrawGrid from '$utils/canvas/DrawGrid.js'
+// import DrawGrid from 'utils/canvas/DrawGrid.js'
 //
 // class AreaMapCanvas {
 // 	constructor(

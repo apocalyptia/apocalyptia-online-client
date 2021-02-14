@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher, onDestroy } from 'svelte'
-	import AbilityModalList from '$components/character/creator/abilities/AbilityModalList.svelte'
+	import AbilityModalList from 'components/character/creator/abilities/AbilityModalList.svelte'
 
 	export let ability, MasterAbilityList
 

@@ -1,10 +1,10 @@
-import Ability from '$classes/Ability.js'
-import Build from '$rules/skills/Build.js'
-import Larceny from '$rules/skills/Larceny.js'
-import Medicine from '$rules/skills/Medicine.js'
-import Science from '$rules/skills/Science.js'
-import Survival from '$rules/skills/Survival.js'
-import Tame from '$rules/skills/Tame.js'
+import Ability from 'classes/Ability.js'
+import Build from 'rules/skills/Build.js'
+import Larceny from 'rules/skills/Larceny.js'
+import Medicine from 'rules/skills/Medicine.js'
+import Science from 'rules/skills/Science.js'
+import Survival from 'rules/skills/Survival.js'
+import Tame from 'rules/skills/Tame.js'
 
 const EfficientWork = new Ability({
 	id: ``,

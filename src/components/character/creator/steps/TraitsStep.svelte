@@ -1,14 +1,14 @@
 <script>
-	import Creation from '$rules/Creation.js'
-	import ExplanationBlock from '$components/character/creator/ExplanationBlock.svelte'
-	import PageHeader from '$components/character/creator/PageHeader.svelte'
-	import PointsRemaining from '$components/character/creator/PointsRemaining.svelte'
-	import RandomTraits from '$rules/random/RandomTraits.js'
-	import ResetAndRandomButtonRow from '$components/character/creator/ResetAndRandomButtonRow.svelte'
-	import Slider from '$components/widgets/Slider.svelte'
-	import Traits from '$rules/Traits.js'
-	import TraitsList from '$rules/lists/TraitsList.js'
-	import characterStore from '$stores/characterStore.js'
+	import Creation from 'rules/Creation.js'
+	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
+	import RandomTraits from 'rules/random/RandomTraits.js'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import Slider from 'components/widgets/Slider.svelte'
+	import Traits from 'rules/Traits.js'
+	import TraitsList from 'rules/lists/TraitsList.js'
+	import characterStore from 'stores/characterStore.js'
 
 	$: remaining = Traits.remaining($characterStore)
 </script>

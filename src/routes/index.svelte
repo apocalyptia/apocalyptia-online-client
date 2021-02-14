@@ -1,8 +1,8 @@
 <script>
-	import MainMenu from '$components/landing/MainMenu.svelte'
+	import MainMenu from 'components/landing/MainMenu.svelte'
 	// import userbase from 'userbase-js-node'
-	// import UserLogin from '$components/landing/UserLogin.svelte'
-	// import playerStore from '$stores/playerStore.js'
+	// import UserLogin from 'components/landing/UserLogin.svelte'
+	// import playerStore from 'stores/playerStore.js'
 	// import { onMount } from 'svelte'
 
 	// onMount(async _ => {

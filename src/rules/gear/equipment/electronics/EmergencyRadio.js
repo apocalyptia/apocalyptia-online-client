@@ -1,4 +1,4 @@
-import Gear from '$classes/Gear.js'
+import Gear from 'classes/Gear.js'
 
 const EmergencyRadio = new Gear({
 	id: ``,

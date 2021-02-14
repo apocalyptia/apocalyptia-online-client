@@ -1,7 +1,6 @@
 <script>
-	import MenuButton from '$components/buttons/MenuButton.svelte'
-	import UserMenu from '$components/widgets/UserMenu.svelte'
-	import playerStore from '$stores/playerStore.js'
+	import MenuButton from 'components/buttons/MenuButton.svelte'
+	import UserMenu from 'components/widgets/UserMenu.svelte'
 </script>
 
 
@@ -9,10 +8,8 @@
 	<a href='/' class='link-btn title-link part-width'>
 		<div class='app-title'>Apocalyptia Online</div>
 	</a>
-	<!-- {#if $playerStore.loggedIn} -->
-		<MenuButton />
-		<UserMenu />
-	<!-- {/if} -->
+	<MenuButton />
+	<UserMenu />
 </div>
 
 
@@ -29,9 +26,6 @@
 	.title-link {
 		display: block;
 		padding: var(--std-padding);
-	}
-	.full-width {
-		width: 100vw;
 	}
 	.part-width {
 		width: calc(100vw - var(--square));

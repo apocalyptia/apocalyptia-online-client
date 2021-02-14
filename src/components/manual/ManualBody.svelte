@@ -1,5 +1,5 @@
 <script>
-	import ManualRule from '$components/manual/ManualRule.svelte'
+	import ManualRule from 'components/manual/ManualRule.svelte'
 
 	export let chapter='', ruleList=[]
 </script>

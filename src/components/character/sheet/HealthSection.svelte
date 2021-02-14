@@ -1,5 +1,5 @@
 <script>
-	import BodyParts from '$components/character/BodyParts.svelte'
+	import BodyParts from 'components/character/BodyParts.svelte'
 
 	export let mode = 'edit'
 </script>

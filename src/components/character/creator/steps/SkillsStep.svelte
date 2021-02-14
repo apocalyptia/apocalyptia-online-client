@@ -1,14 +1,14 @@
 <script>
-	import Creation from '$rules/Creation.js'
-	import ExplanationBlock from '$components/character/creator/ExplanationBlock.svelte'
-	import PageHeader from '$components/character/creator/PageHeader.svelte'
-	import PointsRemaining from '$components/character/creator/PointsRemaining.svelte'
-	import RandomSkills from '$rules/random/RandomSkills.js'
-	import ResetAndRandomButtonRow from '$components/character/creator/ResetAndRandomButtonRow.svelte'
-	import Skills from '$rules/Skills.js'
-	import SkillsList from '$rules/lists/SkillsList.js'
-	import Slider from '$components/widgets/Slider.svelte'
-	import characterStore from '$stores/characterStore.js'
+	import Creation from 'rules/Creation.js'
+	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
+	import RandomSkills from 'rules/random/RandomSkills.js'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import Skills from 'rules/Skills.js'
+	import SkillsList from 'rules/lists/SkillsList.js'
+	import Slider from 'components/widgets/Slider.svelte'
+	import characterStore from 'stores/characterStore.js'
 
 	$: remaining = Skills.remaining($characterStore)
 </script>

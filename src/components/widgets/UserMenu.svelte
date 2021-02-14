@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition'
-	import menuStore from '$stores/menuStore.js'
-	import ShadowBackground from '$components/widgets/ShadowBackground.svelte'
+	import menuStore from 'stores/menuStore.js'
+	import ShadowBackground from 'components/widgets/ShadowBackground.svelte'
 </script>
 
 

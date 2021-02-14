@@ -1,5 +1,5 @@
-import Rule from '$classes/Rule.js'
-import Table from '$classes/Table.js'
+import Rule from 'classes/Rule.js'
+import Table from 'classes/Table.js'
 
 const Cover = new Rule({
 	name: `Cover`, 

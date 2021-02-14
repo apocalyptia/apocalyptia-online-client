@@ -1,5 +1,5 @@
-import Gear from '$classes/Gear.js'
-import Pierce from '$rules/gear/attributes/Pierce.js'
+import Gear from 'classes/Gear.js'
+import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const ArmorPiercing556 = new Gear({
 	id: ``,

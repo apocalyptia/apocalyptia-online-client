@@ -1,5 +1,5 @@
-import Ambidextrous from '$rules/abilities/Ambidextrous.js'
-import Assassin from '$rules/abilities/Assassin.js'
+import Ambidextrous from 'rules/abilities/Ambidextrous.js'
+import Assassin from 'rules/abilities/Assassin.js'
 
 export default [
 	Ambidextrous,

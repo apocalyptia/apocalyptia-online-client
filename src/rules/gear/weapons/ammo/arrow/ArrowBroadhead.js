@@ -1,6 +1,6 @@
-import Gear from '$classes/Gear.js'
-import Broadhead from '$rules/gear/attributes/Broadhead.js'
-import Pierce from '$rules/gear/attributes/Pierce.js'
+import Gear from 'classes/Gear.js'
+import Broadhead from 'rules/gear/attributes/Broadhead.js'
+import Pierce from 'rules/gear/attributes/Pierce.js'
 
 const ArrowBroadhead = new Gear({
 	id: ``,

@@ -1,6 +1,6 @@
 <script>
-	import Login from '$utils/auth/Login.js'
-	import playerStore from '$stores/playerStore.js'
+	import Login from 'utils/auth/Login.js'
+	import playerStore from 'stores/playerStore.js'
 
 	let email, password
 </script>

@@ -1,4 +1,4 @@
-import RandomRoll from '$rules/random/RandomRoll.js'
+import RandomRoll from 'rules/random/RandomRoll.js'
 
 export default (c) => {
 	let hair = [

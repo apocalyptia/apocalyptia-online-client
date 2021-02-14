@@ -1,6 +1,6 @@
 <script>
-	import characterStore from '$stores/characterStore.js'
-	import GearCategory from '$components/character/sheet/GearCategory.svelte'
+	import characterStore from 'stores/characterStore.js'
+	import GearCategory from 'components/character/sheet/GearCategory.svelte'
 
 	export let mode = 'readonly'
 </script>

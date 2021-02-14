@@ -1,5 +1,5 @@
 <script>
-	import d6Roll from '$rules/random/d6Roll.js'
+	import d6Roll from 'rules/random/d6Roll.js'
 
 	const diceRoller = _ => {
 		let rollCount = Math.ceil(Math.random() * 37) + 2

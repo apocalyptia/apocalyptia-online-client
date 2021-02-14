@@ -1,5 +1,5 @@
 <script>
-	import DieRoller from '$rules/random/DieRoller'
+	import DieRoller from 'rules/random/DieRoller'
 	import { fade } from 'svelte/transition'
 
 	/*

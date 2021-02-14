@@ -1,16 +1,16 @@
 <script>
-	import Creation from '$rules/Creation.js'
-	import PageHeader from '$components/character/creator/PageHeader.svelte'
-	import RandomAge from '$rules/random/RandomAge.js'
-	import RandomDescription from '$rules/random/RandomDescription.js'
-	import RandomHair from '$rules/random/RandomHair.js'
-	import RandomHeight from '$rules/random/RandomHeight.js'
-	import RandomName from '$rules/random/RandomName.js'
-	import RandomSex from '$rules/random/RandomSex.js'
-	import RandomSkin from '$rules/random/RandomSkin.js'
-	import RandomWeight from '$rules/random/RandomWeight.js'
-	import ResetAndRandomButtonRow from '$components/character/creator/ResetAndRandomButtonRow.svelte'
-	import characterStore from '$stores/characterStore.js'
+	import Creation from 'rules/Creation.js'
+	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import RandomAge from 'rules/random/RandomAge.js'
+	import RandomDescription from 'rules/random/RandomDescription.js'
+	import RandomHair from 'rules/random/RandomHair.js'
+	import RandomHeight from 'rules/random/RandomHeight.js'
+	import RandomName from 'rules/random/RandomName.js'
+	import RandomSex from 'rules/random/RandomSex.js'
+	import RandomSkin from 'rules/random/RandomSkin.js'
+	import RandomWeight from 'rules/random/RandomWeight.js'
+	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import characterStore from 'stores/characterStore.js'
 </script>
 
 

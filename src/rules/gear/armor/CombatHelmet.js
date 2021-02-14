@@ -1,6 +1,6 @@
-import Gear from '$classes/Gear.js'
-import Camo from '$rules/gear/attributes/Camo.js'
-import FireResistance from '$rules/gear/attributes/FireResistance.js'
+import Gear from 'classes/Gear.js'
+import Camo from 'rules/gear/attributes/Camo.js'
+import FireResistance from 'rules/gear/attributes/FireResistance.js'
 
 const CombatHelmet = new Gear({
 	id: ``,

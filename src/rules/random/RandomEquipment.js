@@ -1,5 +1,5 @@
-import RandomRoll from '$rules/random/RandomRoll.js'
-import EquipmentList from '$rules/lists/gear/EquipmentList.js'
+import RandomRoll from 'rules/random/RandomRoll.js'
+import EquipmentList from 'rules/lists/gear/EquipmentList.js'
 
 export default (c, n) => {
     let equipment = []
