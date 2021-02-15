@@ -39,6 +39,7 @@
 									max={parseInt(6)}
 									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
 									on:input={event => $characterStore = Skills.assign($characterStore, event.target)}
+									indicator=true
 								/>
 							</div>
 						{/each}

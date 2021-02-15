@@ -1,14 +1,14 @@
 <script>
-	import Character from 'classes/Character.js'
-	import NavBar from 'components/character/creator/NavBar.svelte'
-	import Skills from 'rules/Skills.js'
-	import Traits from 'rules/Traits.js'
 	import AbilitiesStep from 'components/character/creator/steps/AbilitiesStep.svelte'
+	import Character from 'classes/Character.js'
 	import DescriptionStep from 'components/character/creator/steps/DescriptionStep.svelte'
 	import FinalizeStep from 'components/character/creator/steps/FinalizeStep.svelte'
 	import GearStep from 'components/character/creator/steps/GearStep.svelte'
+	import NavBar from 'components/character/creator/NavBar.svelte'
 	import PropertiesStep from 'components/character/creator/steps/PropertiesStep.svelte'
+	import Skills from 'rules/Skills.js'
 	import SkillsStep from 'components/character/creator/steps/SkillsStep.svelte'
+	import Traits from 'rules/Traits.js'
 	import TraitsStep from 'components/character/creator/steps/TraitsStep.svelte'
 	import characterStore from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
@@ -37,17 +37,12 @@
 			(step == 5 && gearArray.some(g => g.inventory.length == 0))
 		)
 	}
+
+	$: limit = creationSteps.length - 1
 </script>
 
 
-<div id='character-creator' class='creator-page page-body'>
-	<svelte:component this={creationSteps[$characterStore.meta.step]} />
+<div id='character-creator' class='page-body'>
+	<svelte:component this={creationSteps[$characterStore.meta.step]}	/>
 </div>
-<NavBar {proceedConditions} limit={creationSteps.length - 1} />
-
-
-<style>
-	.creator-page {
-		padding-bottom: calc(var(--square) + var(--std-padding));
-	}
-</style>
+<NavBar {proceedConditions} {limit} />

@@ -1,5 +1,6 @@
 import Gear from 'classes/Gear.js'
 import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
+import Rapid from 'rules/gear/attributes/Rapid.js'
 
 const SWMPShield = new Gear({
 	id: ``,
@@ -8,6 +9,7 @@ const SWMPShield = new Gear({
 	sz: 1,
 	attr: [
 		TwoHanded,
+		Rapid
 	]
 })
 SWMPShield.dmg = 1

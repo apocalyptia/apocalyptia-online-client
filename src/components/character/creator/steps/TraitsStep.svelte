@@ -30,6 +30,7 @@
 							max={parseInt(Traits.maxPoints)}
 							bind:value={$characterStore.traits[trait.name.toLowerCase()].score}
 							on:input={(event) => $characterStore = Traits.assign($characterStore, event.target)}
+							indicator=true
 						/>
 					</div>
 				</div>

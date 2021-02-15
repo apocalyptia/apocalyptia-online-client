@@ -1,16 +1,19 @@
 <script>
 	import characterStore from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
+import { add_classes } from 'svelte/internal'
 
-	export let proceedConditions
-
-	export let limit
+	export let proceedConditions, limit
 
 	let backButton = `&lt;`
 
 	let nextButton = `&gt;`
 
 	let canProceed = false
+
+	const home = _ => {
+		window.location.href = '/'
+	}
 
 	const back = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)
@@ -41,13 +44,13 @@
 
 
 <div class='nav-bar'>
-	<button on:click={back} class='back-btn btn-box square-btn'>
+	<button on:click={back} class='back-btn btn-box'>
 		<div class='btn-icon'>{@html backButton}</div>
 	</button>
-	<a href='/' class='home-btn link-btn'>
-		Home
-	</a>
-	<button on:click={next} class='next-btn btn-box square-btn {canProceed ? '' : 'crimson-btn' }'>
+	<button on:click={home} class='home-btn btn-box'>
+		<div class='btn-icon'></div>
+	</button>
+	<button on:click={next} class='next-btn btn-box {canProceed ? '' : 'crimson-btn' }'>
 		<div class='btn-icon'>{@html nextButton}</div>
 	</button>
 </div>
@@ -55,18 +58,24 @@
 
 <style>
 	.nav-bar {
-		bottom: 0;
 		display: flex;
-		justify-content: space-between;
-		position: absolute;
 		width: 100vw;
+		position: absolute;
+		bottom: 0;
 		z-index: 6;
 	}
-	.home-btn {
-		font-size: var(--s150);
+	.nav-bar button {
 		height: var(--square);
-		max-width: calc(var(--square) * 2);
-		min-width: calc(var(--square) * 2);
-		width: calc(var(--square) * 2);
+		width: 33.3%;
+	}
+	.home-btn {
+		background-image: url('/icons/light-line-home-door.png');
+		background-position: 50%;
+		background-repeat: no-repeat;
+		height: 100%;
+		width: 100%;
+	}
+	.home-btn:hover {
+		background-image: url('/icons/dark-line-home-door.png');
 	}
 </style>

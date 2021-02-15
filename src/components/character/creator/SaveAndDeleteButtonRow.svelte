@@ -11,10 +11,3 @@
 		<a href='/'>Delete</a>
 	</button>
 </div>
-
-
-<style>
-	button {
-		height: var(--square);
-	}
-</style>

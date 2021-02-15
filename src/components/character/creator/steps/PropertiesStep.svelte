@@ -3,11 +3,11 @@
 	import Creation from 'rules/Creation.js'
 	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
+	import Properties from 'rules/Properties.js'
 	import PropertiesBlock from 'components/character/creator/properties/PropertiesBlock.svelte'
 	import PropertiesFormulae from 'components/character/creator/properties/PropertiesFormulae.svelte'
-	import Properties from 'rules/Properties.js'
-	import { beforeUpdate } from 'svelte'
 	import characterStore from 'stores/characterStore.js'
+	import { beforeUpdate } from 'svelte'
 
 	beforeUpdate(_ => $characterStore = Creation.setProperties($characterStore))
 </script>

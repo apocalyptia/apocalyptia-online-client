@@ -50,6 +50,17 @@ Markup:
 Creator:
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 
+
+Notes:
+Characters aren't saving right.
+Bring back Point-Blank bonus +3.
+Need to iron out this whole simo init thing.
+Bring back bonus to attack a Prone target.
+Talking takes an action?
+Simplify Grapple more.
+Clarify Location and attack rolls.
+
+
 ---------------------------------------------------------------------------------------------------
 
 ------ BRAINSTORMING ------
