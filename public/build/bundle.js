@@ -4643,8 +4643,7 @@ var app = (function () {
     	c.Go = char.gear.ammo.inventory;
     	c.Ge = char.gear.equipment.inventory;
 
-    	return c
-
+    	return JSON.stringify(c)
     };
 
     const subscriber_queue = [];
@@ -4706,9 +4705,7 @@ var app = (function () {
     var SaveCharacter = _ => {
     	let character;
     	characterStore.subscribe(c => character = c);
-    	console.log(character);
-    	console.log(JSON.stringify(CompressCharacter(character)));
-    	window.localStorage.setItem(character.meta.id, JSON.stringify(CompressCharacter(character)));
+    	window.localStorage.setItem(character.meta.id, CompressCharacter(character));
     };
 
     var UpdateCharacter = (character) => {

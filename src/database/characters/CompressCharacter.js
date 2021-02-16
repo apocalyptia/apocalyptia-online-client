@@ -57,3 +57,4 @@ export default (char) => {
 	c.Ge = char.gear.equipment.inventory
 
 	return JSON.stringify(c)
+}
