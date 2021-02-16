@@ -1,5 +1,10 @@
 .DS_Store
-node_modules
 /.svelte
 /build
+/build/*
 /functions
+bundle.css
+bundle.js
+bundle.map.css
+bundle.map.js
+node_modules
