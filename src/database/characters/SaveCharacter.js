@@ -1,3 +1,4 @@
-export default (key, character) => {
-	window.localStorage.setItem(key, character)
+export default (character) => {
+	console.log(character)
+	// window.localStorage.setItem(key, character)
 }

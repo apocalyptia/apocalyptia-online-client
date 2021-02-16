@@ -1,4 +1,4 @@
-import Alphabetize from 'utils/Alphabetize.js'
+import Alphabetize from 'utils/sorting/Alphabetize.js'
 import SkillsList from 'rules/lists/SkillsList.js'
 
 let specs = Object.values(SkillsList.list)

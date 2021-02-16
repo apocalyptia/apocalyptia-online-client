@@ -1,9 +1,9 @@
 import Rule from 'classes/Rule.js'
 
-const XP = new Rule({
-	name: `XP`,
+const Experience = new Rule({
+	name: `Experience`,
 	desc: [
-		`Experience (XP) = Brains x 3`,
+		`Experience Points (XP) = Brains x 3`,
 		`XP represents how much you have learned up to now.`,
 		`You get additional XP = Intellect for each game session you survive.`,
 		`You also get +1 XP every time you roll a Botch.`,
@@ -20,4 +20,4 @@ const XP = new Rule({
 	type: `Property`
 })
 
-export default XP
+export default Experience

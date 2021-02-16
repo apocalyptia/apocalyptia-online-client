@@ -1,7 +1,9 @@
+import UUID from 'utils/UUID.js'
+
 export default class Character {
 	constructor() {
 		this.meta = {
-			id: null,
+			id: UUID(),
 			user: null,
 			created: null,
 			modified: null,

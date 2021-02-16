@@ -1,5 +1,5 @@
 import AccessoriesList from 'rules/lists/gear/AccessoriesList.js'
-import Alphabetize from 'utils/Alphabetize.js'
+import Alphabetize from 'utils/sorting/Alphabetize.js'
 import AmmoList from 'rules/lists/gear/ammo/AmmoList.js'
 import ArmorList from 'rules/lists/gear/ArmorList.js'
 import AttributesList from 'rules/lists/gear/attributes/AttributesList.js'

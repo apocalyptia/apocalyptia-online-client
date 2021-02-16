@@ -1,5 +1,5 @@
 import Ability from 'classes/Ability.js'
-import Alphabetize from 'utils/Alphabetize.js'
+import Alphabetize from 'utils/sorting/Alphabetize.js'
 import XP12AbilitiesList from 'rules/lists/abilities/XP12AbilitiesList.js'
 import XP15AbilitiesList from 'rules/lists/abilities/XP15AbilitiesList.js'
 import XP18AbilitiesList from 'rules/lists/abilities/XP18AbilitiesList.js'

@@ -4,9 +4,9 @@ const Prone = new Rule({
 	name: `Prone`,
 	desc: [
 		`You may drop Prone at any time for free on your turn or as part of a Dodge action.`,
+		`The benefits are that you get a +3 bonus to Ranged and Stealth, and enemies beyond 10yrds take a -3 Ranged Attack penalty to hit you.`,
+		`The drawbacks are that your Speed is 1yrd and you take a -3 penalty to Dodge.`,
 		`Standing up takes 1 Action.`,
-		`The benefits of being Prone are that you get +3 Ranged and +3 Stealth, and attackers take a -3 Ranged penalty to hit you.`,
-		`The drawbacks of being Prone are that your Speed drops to 1yrd and attackers get a +3 Melee bonus to hit you.`,
 	],
 	type: `Status`
 })

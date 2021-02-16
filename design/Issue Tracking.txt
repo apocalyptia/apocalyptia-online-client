@@ -41,24 +41,14 @@ Gear.js:
 Manual:
 	Improve search functionality.
 	Put Expand/Collapse All button on rules.
-	Painkiller required for a night's sleep to Recover?
 	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche
 
 Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
+	Characters aren't saving right.
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
-
-
-Notes:
-Characters aren't saving right.
-Bring back Point-Blank bonus +3.
-Need to iron out this whole simo init thing.
-Bring back bonus to attack a Prone target.
-Talking takes an action?
-Simplify Grapple more.
-Clarify Location and attack rolls.
 
 
 ---------------------------------------------------------------------------------------------------

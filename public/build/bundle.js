@@ -5986,24 +5986,38 @@ var app = (function () {
 
     };
 
-    var SaveCharacter = (key, character) => {
-    	window.localStorage.setItem(key, character);
+    var SaveCharacter = (character) => {
+    	console.log(character);
+    	// window.localStorage.setItem(key, character)
     };
 
     var CreateCharacter = (character) => {
     	const compressedCharacter = CompressCharacter(character);
-    	const jsonStringifiedCharacter = JSON.stringify(compressedCharacter);
-    	SaveCharacter(character.description.name.value, jsonStringifiedCharacter);
+    	JSON.stringify(compressedCharacter);
+    	SaveCharacter(character.description.name.value);
     };
 
     var DeleteCharacter = (name) => {
     	window.localStorage.removeItem(name);
     };
 
+    var UUID = _ => {
+    	const characters = 'abcdefghijklmnopqrstuvwzyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    	let uuid = '??????-??????-??????-??????-??????-??????';
+    	uuid = uuid.split('');
+    	for (let i = 0; i < uuid.length; i++) {
+    		if (uuid[i] == '?') {
+    			uuid[i] = characters[Math.floor(Math.random() * characters.length)];
+    		}
+    	}
+    	uuid = uuid.join('');
+    	return uuid
+    };
+
     class Character {
     	constructor() {
     		this.meta = {
-    			id: null,
+    			id: UUID(),
     			user: null,
     			created: null,
     			modified: null,
@@ -6283,6 +6297,26 @@ var app = (function () {
     	type: `Property`
     });
 
+    const Experience = new Rule({
+    	name: `Experience`,
+    	desc: [
+    		`Experience Points (XP) = Brains x 3`,
+    		`XP represents how much you have learned up to now.`,
+    		`You get additional XP = Intellect for each game session you survive.`,
+    		`You also get +1 XP every time you roll a Botch.`,
+    		`The Narrator may choose to give bonus XP.`,
+    		`You may spend XP to buy Abilities to improve your Character.`,
+    		`You may also spend 1XP per round to regain 1 Luck Point.`,
+    	],
+    	formula: (c) => {
+    		c.properties.xp.score = c.traits.brains.score * 3;
+    		if (c.properties.xp.current == null) {
+    			c.properties.xp.current = c.traits.brains.score * 3;
+    		}
+    	},
+    	type: `Property`
+    });
+
     const Health = new Rule({
     	name: `Health`,
     	desc: [
@@ -6369,38 +6403,18 @@ var app = (function () {
     	type: `Property`
     });
 
-    const XP = new Rule({
-    	name: `XP`,
-    	desc: [
-    		`Experience (XP) = Brains x 3`,
-    		`XP represents how much you have learned up to now.`,
-    		`You get additional XP = Intellect for each game session you survive.`,
-    		`You also get +1 XP every time you roll a Botch.`,
-    		`The Narrator may choose to give bonus XP.`,
-    		`You may spend XP to buy Abilities to improve your Character.`,
-    		`You may also spend 1XP per round to regain 1 Luck Point.`,
-    	],
-    	formula: (c) => {
-    		c.properties.xp.score = c.traits.brains.score * 3;
-    		if (c.properties.xp.current == null) {
-    			c.properties.xp.current = c.traits.brains.score * 3;
-    		}
-    	},
-    	type: `Property`
-    });
-
     var PropertiesList = {
     	name: `Properties`,
     	list: [
     		Block,
     		Carry,
     		Dodge,
+    		Experience,
     		Health,
     		Intellect,
     		Luck,
     		Psyche,
     		Speed,
-    		XP,
     	]
     };
 
@@ -6534,8 +6548,8 @@ var app = (function () {
 
     var UpdateCharacter = (character) => {
     	const compressedCharacter = CompressCharacter(character);
-    	const jsonStringifiedCharacter = JSON.stringify(compressedCharacter);
-    	SaveCharacter(character.description.name.value, jsonStringifiedCharacter);
+    	JSON.stringify(compressedCharacter);
+    	SaveCharacter(character.description.name.value);
     };
 
     class Player {
@@ -6808,6 +6822,8 @@ var app = (function () {
     		`There are two types of Attacks: Melee and Ranged.`,
     		`Spend an Action on your turn to roll [d6 + Melee or Ranged] vs the target's Defense.`,
     		`Rolling a 6 on the die is an Explosion, which is then re-rolled and added cumulatively to the Attack total.`,
+    		`Melee Attacks can be Called Shots to any Location on the target's body at no penalty.`,
+    		`Ranged Attacks must roll a random Location unless the Called Shot Maneuver is declared.`,
     	]
     });
 
@@ -12460,8 +12476,8 @@ var app = (function () {
 
     	resetandrandombuttonrow = new ResetAndRandomButtonRow({
     			props: {
-    				reset: /*func*/ ctx[15],
-    				random: /*func_1*/ ctx[16]
+    				reset: /*characterReset*/ ctx[8],
+    				random: /*randomDescription*/ ctx[9]
     			},
     			$$inline: true
     		});
@@ -12541,80 +12557,80 @@ var app = (function () {
     			t35 = space();
     			create_component(resetandrandombuttonrow.$$.fragment);
     			attr_dev(span0, "class", "svelte-12iho9v");
-    			add_location(span0, file$i, 21, 4, 936);
+    			add_location(span0, file$i, 69, 4, 2225);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "svelte-12iho9v");
-    			add_location(input0, file$i, 22, 4, 959);
+    			add_location(input0, file$i, 70, 4, 2248);
     			attr_dev(button0, "class", "svelte-12iho9v");
-    			add_location(button0, file$i, 23, 4, 1035);
+    			add_location(button0, file$i, 74, 4, 2365);
     			attr_dev(div0, "class", "character-container svelte-12iho9v");
-    			add_location(div0, file$i, 20, 3, 898);
+    			add_location(div0, file$i, 68, 3, 2187);
     			attr_dev(div1, "class", "block-row svelte-12iho9v");
-    			add_location(div1, file$i, 19, 2, 871);
+    			add_location(div1, file$i, 67, 2, 2160);
     			attr_dev(span1, "class", "svelte-12iho9v");
-    			add_location(span1, file$i, 28, 4, 1225);
+    			add_location(span1, file$i, 79, 4, 2492);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "class", "svelte-12iho9v");
-    			add_location(input1, file$i, 29, 4, 1247);
+    			add_location(input1, file$i, 80, 4, 2514);
     			attr_dev(button1, "class", "svelte-12iho9v");
-    			add_location(button1, file$i, 30, 4, 1322);
+    			add_location(button1, file$i, 84, 4, 2630);
     			attr_dev(div2, "class", "item-container svelte-12iho9v");
-    			add_location(div2, file$i, 27, 3, 1192);
+    			add_location(div2, file$i, 78, 3, 2459);
     			attr_dev(span2, "class", "svelte-12iho9v");
-    			add_location(span2, file$i, 33, 4, 1460);
+    			add_location(span2, file$i, 87, 4, 2721);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "class", "svelte-12iho9v");
-    			add_location(input2, file$i, 34, 4, 1482);
+    			add_location(input2, file$i, 88, 4, 2743);
     			attr_dev(button2, "class", "svelte-12iho9v");
-    			add_location(button2, file$i, 35, 4, 1557);
+    			add_location(button2, file$i, 92, 4, 2859);
     			attr_dev(div3, "class", "item-container svelte-12iho9v");
-    			add_location(div3, file$i, 32, 3, 1427);
+    			add_location(div3, file$i, 86, 3, 2688);
     			attr_dev(div4, "class", "block-row svelte-12iho9v");
-    			add_location(div4, file$i, 26, 2, 1165);
+    			add_location(div4, file$i, 77, 2, 2432);
     			attr_dev(span3, "class", "svelte-12iho9v");
-    			add_location(span3, file$i, 40, 4, 1730);
+    			add_location(span3, file$i, 97, 4, 2985);
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "class", "svelte-12iho9v");
-    			add_location(input3, file$i, 41, 4, 1755);
+    			add_location(input3, file$i, 98, 4, 3010);
     			attr_dev(button3, "class", "svelte-12iho9v");
-    			add_location(button3, file$i, 42, 4, 1833);
+    			add_location(button3, file$i, 102, 4, 3129);
     			attr_dev(div5, "class", "item-container svelte-12iho9v");
-    			add_location(div5, file$i, 39, 3, 1697);
+    			add_location(div5, file$i, 96, 3, 2952);
     			attr_dev(span4, "class", "svelte-12iho9v");
-    			add_location(span4, file$i, 45, 4, 1992);
+    			add_location(span4, file$i, 105, 4, 3223);
     			attr_dev(input4, "type", "text");
     			attr_dev(input4, "class", "svelte-12iho9v");
-    			add_location(input4, file$i, 46, 4, 2017);
+    			add_location(input4, file$i, 106, 4, 3248);
     			attr_dev(button4, "class", "svelte-12iho9v");
-    			add_location(button4, file$i, 47, 4, 2095);
+    			add_location(button4, file$i, 110, 4, 3367);
     			attr_dev(div6, "class", "item-container svelte-12iho9v");
-    			add_location(div6, file$i, 44, 3, 1959);
+    			add_location(div6, file$i, 104, 3, 3190);
     			attr_dev(div7, "class", "block-row svelte-12iho9v");
-    			add_location(div7, file$i, 38, 2, 1670);
+    			add_location(div7, file$i, 95, 2, 2925);
     			attr_dev(span5, "class", "svelte-12iho9v");
-    			add_location(span5, file$i, 52, 4, 2289);
+    			add_location(span5, file$i, 115, 4, 3496);
     			attr_dev(input5, "type", "text");
     			attr_dev(input5, "class", "svelte-12iho9v");
-    			add_location(input5, file$i, 53, 4, 2312);
+    			add_location(input5, file$i, 116, 4, 3519);
     			attr_dev(button5, "class", "svelte-12iho9v");
-    			add_location(button5, file$i, 54, 4, 2388);
+    			add_location(button5, file$i, 120, 4, 3636);
     			attr_dev(div8, "class", "item-container svelte-12iho9v");
-    			add_location(div8, file$i, 51, 3, 2256);
+    			add_location(div8, file$i, 114, 3, 3463);
     			attr_dev(span6, "class", "svelte-12iho9v");
-    			add_location(span6, file$i, 57, 4, 2528);
+    			add_location(span6, file$i, 123, 4, 3728);
     			attr_dev(input6, "type", "text");
     			attr_dev(input6, "class", "svelte-12iho9v");
-    			add_location(input6, file$i, 58, 4, 2551);
+    			add_location(input6, file$i, 124, 4, 3751);
     			attr_dev(button6, "class", "svelte-12iho9v");
-    			add_location(button6, file$i, 59, 4, 2627);
+    			add_location(button6, file$i, 128, 4, 3868);
     			attr_dev(div9, "class", "item-container svelte-12iho9v");
-    			add_location(div9, file$i, 56, 3, 2495);
+    			add_location(div9, file$i, 122, 3, 3695);
     			attr_dev(div10, "class", "block-row svelte-12iho9v");
-    			add_location(div10, file$i, 50, 2, 2229);
+    			add_location(div10, file$i, 113, 2, 3436);
     			attr_dev(div11, "class", "section-card");
-    			add_location(div11, file$i, 18, 1, 842);
+    			add_location(div11, file$i, 66, 1, 2131);
     			attr_dev(div12, "class", "description-step-page");
-    			add_location(div12, file$i, 16, 0, 732);
+    			add_location(div12, file$i, 64, 0, 2021);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12689,20 +12705,27 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[1]),
-    					listen_dev(button0, "click", /*click_handler*/ ctx[2], false, false, false),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[3]),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[4], false, false, false),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[5]),
-    					listen_dev(button2, "click", /*click_handler_2*/ ctx[6], false, false, false),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[7]),
-    					listen_dev(button3, "click", /*click_handler_3*/ ctx[8], false, false, false),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[9]),
-    					listen_dev(button4, "click", /*click_handler_4*/ ctx[10], false, false, false),
-    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[11]),
-    					listen_dev(button5, "click", /*click_handler_5*/ ctx[12], false, false, false),
-    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[13]),
-    					listen_dev(button6, "click", /*click_handler_6*/ ctx[14], false, false, false)
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[11]),
+    					listen_dev(input0, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button0, "click", /*randomName*/ ctx[1], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[12]),
+    					listen_dev(input1, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button1, "click", /*randomAge*/ ctx[2], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[13]),
+    					listen_dev(input2, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button2, "click", /*randomSex*/ ctx[3], false, false, false),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[14]),
+    					listen_dev(input3, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button3, "click", /*randomHeight*/ ctx[4], false, false, false),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[15]),
+    					listen_dev(input4, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button4, "click", /*randomWeight*/ ctx[5], false, false, false),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[16]),
+    					listen_dev(input5, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button5, "click", /*randomSkin*/ ctx[6], false, false, false),
+    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[17]),
+    					listen_dev(input6, "change", /*saveCharacter*/ ctx[10], false, false, false),
+    					listen_dev(button6, "click", /*randomHair*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
@@ -12740,11 +12763,6 @@ var app = (function () {
     			if (dirty & /*$characterStore*/ 1 && input6.value !== /*$characterStore*/ ctx[0].description.hair.value) {
     				set_input_value(input6, /*$characterStore*/ ctx[0].description.hair.value);
     			}
-
-    			const resetandrandombuttonrow_changes = {};
-    			if (dirty & /*$characterStore*/ 1) resetandrandombuttonrow_changes.reset = /*func*/ ctx[15];
-    			if (dirty & /*$characterStore*/ 1) resetandrandombuttonrow_changes.random = /*func_1*/ ctx[16];
-    			resetandrandombuttonrow.$set(resetandrandombuttonrow_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -12783,6 +12801,53 @@ var app = (function () {
     	component_subscribe($$self, characterStore, $$value => $$invalidate(0, $characterStore = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("DescriptionStep", slots, []);
+
+    	const randomName = _ => {
+    		set_store_value(characterStore, $characterStore.description.name.value = RandomName($characterStore), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomAge = _ => {
+    		set_store_value(characterStore, $characterStore.description.age.value = RandomAge(), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomSex = _ => {
+    		set_store_value(characterStore, $characterStore.description.sex.value = RandomSex(), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomHeight = _ => {
+    		set_store_value(characterStore, $characterStore.description.height.value = RandomHeight($characterStore), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomWeight = _ => {
+    		set_store_value(characterStore, $characterStore.description.weight.value = RandomWeight($characterStore), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomSkin = _ => {
+    		set_store_value(characterStore, $characterStore.description.skin.value = RandomSkin(), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomHair = _ => {
+    		set_store_value(characterStore, $characterStore.description.hair.value = RandomHair($characterStore), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const characterReset = _ => {
+    		set_store_value(characterStore, $characterStore = Creation.resetDescription($characterStore), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const randomDescription = _ => {
+    		set_store_value(characterStore, $characterStore = RandomDescription($characterStore), $characterStore);
+    		SaveCharacter($characterStore);
+    	};
+
+    	const saveCharacter = _ => SaveCharacter($characterStore);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -12794,51 +12859,35 @@ var app = (function () {
     		characterStore.set($characterStore);
     	}
 
-    	const click_handler = _ => set_store_value(characterStore, $characterStore.description.name.value = RandomName($characterStore), $characterStore);
-
     	function input1_input_handler() {
     		$characterStore.description.age.value = this.value;
     		characterStore.set($characterStore);
     	}
-
-    	const click_handler_1 = _ => set_store_value(characterStore, $characterStore.description.age.value = RandomAge(), $characterStore);
 
     	function input2_input_handler() {
     		$characterStore.description.sex.value = this.value;
     		characterStore.set($characterStore);
     	}
 
-    	const click_handler_2 = _ => set_store_value(characterStore, $characterStore.description.sex.value = RandomSex(), $characterStore);
-
     	function input3_input_handler() {
     		$characterStore.description.height.value = this.value;
     		characterStore.set($characterStore);
     	}
-
-    	const click_handler_3 = _ => set_store_value(characterStore, $characterStore.description.height.value = RandomHeight($characterStore), $characterStore);
 
     	function input4_input_handler() {
     		$characterStore.description.weight.value = this.value;
     		characterStore.set($characterStore);
     	}
 
-    	const click_handler_4 = _ => set_store_value(characterStore, $characterStore.description.weight.value = RandomWeight($characterStore), $characterStore);
-
     	function input5_input_handler() {
     		$characterStore.description.skin.value = this.value;
     		characterStore.set($characterStore);
     	}
 
-    	const click_handler_5 = _ => set_store_value(characterStore, $characterStore.description.skin.value = RandomSkin(), $characterStore);
-
     	function input6_input_handler() {
     		$characterStore.description.hair.value = this.value;
     		characterStore.set($characterStore);
     	}
-
-    	const click_handler_6 = _ => set_store_value(characterStore, $characterStore.description.hair.value = RandomHair($characterStore), $characterStore);
-    	const func = _ => set_store_value(characterStore, $characterStore = Creation.resetDescription($characterStore), $characterStore);
-    	const func_1 = _ => set_store_value(characterStore, $characterStore = RandomDescription($characterStore), $characterStore);
 
     	$$self.$capture_state = () => ({
     		Creation,
@@ -12852,28 +12901,40 @@ var app = (function () {
     		RandomSkin,
     		RandomWeight,
     		ResetAndRandomButtonRow,
+    		SaveCharacter,
     		characterStore,
+    		randomName,
+    		randomAge,
+    		randomSex,
+    		randomHeight,
+    		randomWeight,
+    		randomSkin,
+    		randomHair,
+    		characterReset,
+    		randomDescription,
+    		saveCharacter,
     		$characterStore
     	});
 
     	return [
     		$characterStore,
+    		randomName,
+    		randomAge,
+    		randomSex,
+    		randomHeight,
+    		randomWeight,
+    		randomSkin,
+    		randomHair,
+    		characterReset,
+    		randomDescription,
+    		saveCharacter,
     		input0_input_handler,
-    		click_handler,
     		input1_input_handler,
-    		click_handler_1,
     		input2_input_handler,
-    		click_handler_2,
     		input3_input_handler,
-    		click_handler_3,
     		input4_input_handler,
-    		click_handler_4,
     		input5_input_handler,
-    		click_handler_5,
-    		input6_input_handler,
-    		click_handler_6,
-    		func,
-    		func_1
+    		input6_input_handler
     	];
     }
 
@@ -26604,9 +26665,9 @@ var app = (function () {
     			t1 = text(": ");
     			t2 = text(t2_value);
     			attr_dev(span, "class", "prop-name svelte-etkyiw");
-    			add_location(span, file$Q, 32, 6, 585);
+    			add_location(span, file$Q, 32, 6, 590);
     			attr_dev(p, "class", "svelte-etkyiw");
-    			add_location(p, file$Q, 32, 3, 582);
+    			add_location(p, file$Q, 32, 3, 587);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -26666,10 +26727,10 @@ var app = (function () {
 
     			t3 = space();
     			attr_dev(span, "class", "prop-name svelte-etkyiw");
-    			add_location(span, file$Q, 25, 6, 437);
+    			add_location(span, file$Q, 25, 6, 442);
     			attr_dev(p, "class", "svelte-etkyiw");
-    			add_location(p, file$Q, 25, 3, 434);
-    			add_location(ul, file$Q, 26, 3, 485);
+    			add_location(p, file$Q, 25, 3, 439);
+    			add_location(ul, file$Q, 26, 3, 490);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -26739,7 +26800,7 @@ var app = (function () {
     			li = element("li");
     			t = text(t_value);
     			attr_dev(li, "class", "svelte-etkyiw");
-    			add_location(li, file$Q, 28, 4, 530);
+    			add_location(li, file$Q, 28, 4, 535);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -26834,7 +26895,7 @@ var app = (function () {
     			}
 
     			attr_dev(div, "class", "disease-section");
-    			add_location(div, file$Q, 22, 0, 344);
+    			add_location(div, file$Q, 22, 0, 349);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -29932,7 +29993,6 @@ var app = (function () {
     const CalledShot = new Rule({
     	name: `Called Shot`, 
     	desc: [
-    		`Attacks target the Torso by default.`,
     		`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`,
     	]
     });
@@ -29963,39 +30023,39 @@ var app = (function () {
     		new CalledShotTarget({
     			roll: 6,
     			name: `Head`,
-    			penalty: -6,
+    			penalty: `-6 Ranged`,
     			health: `Constitution`,
-    			effect: `Stun 1 round`
+    			effect: `Stun 1 round.`
     		}),
     		new CalledShotTarget({
     			roll: 5,
     			name: `R Arm`,
-    			penalty: -3,
-    			effect: `Let go of anything held with this hand`
+    			penalty: `-3 Ranged`,
+    			effect: `Let go of anything held with this hand.`
     		}),
     		new CalledShotTarget({
     			roll: 4,
     			name: `L Arm`,
-    			penalty: -3,
-    			effect: `Let go of anything held with this hand`
+    			penalty: `-3 Ranged`,
+    			effect: `Let go of anything held with this hand.`
     		}),
     		new CalledShotTarget({
     			roll: 3,
     			name: `Torso`,
-    			penalty: 0,
-    			effect: `None`
+    			penalty: `No penalty.`,
+    			effect: `None.`
     		}),
     		new CalledShotTarget({
     			roll: 2,
     			name: `L Leg`,
-    			penalty: -1,
-    			effect: `Fall Prone`
+    			penalty: `-1 Ranged`,
+    			effect: `Fall Prone.`
     		}),
     		new CalledShotTarget({
     			roll: 1,
     			name: `R Leg`,
-    			penalty: -1,
-    			effect: `Fall Prone`
+    			penalty: `-1 Ranged`,
+    			effect: `Fall Prone.`
     		}),
     	],
     	widths: [5, 15, 20, 50]
@@ -30383,9 +30443,9 @@ var app = (function () {
     	name: `Prone`,
     	desc: [
     		`You may drop Prone at any time for free on your turn or as part of a Dodge action.`,
+    		`The benefits are that you get a +3 bonus to Ranged and Stealth, and enemies beyond 10yrds take a -3 Ranged Attack penalty to hit you.`,
+    		`The drawbacks are that your Speed is 1yrd and you take a -3 penalty to Dodge.`,
     		`Standing up takes 1 Action.`,
-    		`The benefits of being Prone are that you get +3 Ranged and +3 Stealth, and attackers take a -3 Ranged penalty to hit you.`,
-    		`The drawbacks of being Prone are that your Speed drops to 1yrd and attackers get a +3 Melee bonus to hit you.`,
     	],
     	type: `Status`
     });
@@ -30393,8 +30453,9 @@ var app = (function () {
     const Range = new Rule({
     	name: `Range`, 
     	desc: [
-    		`Ranged Attacks take a -1 penalty per additional Range increment.`,
-    		`Maximum Range is 10 Range increments.`,
+    		`Ranged Attacks made at Point-Blank Range (3yrds or less) get a +3 bonus.`,
+    		`Ranged Attacks made beyond the weapon's ideal range take a -1 penalty per additional Range increment.`,
+    		`A weapon's maximum effective Range is 10 Range increments.`,
     		`Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range].`,
     	],
     	type: `Status`
@@ -31549,33 +31610,33 @@ var app = (function () {
     	{ name: 'Join',				path: '/join',						component: Join },
     	{ name: 'Login',			path: '/login',						component: Login_1 },
     	{ name: 'Manual',			path: '/manual',					component: Manual,			list: [...ManualList.list] },
-    	{ name: 'Abilities',		path: '/manual/abilities',			component: Manual,			list: [...AbilitiesList.list] },
-    	{ name: 'Combat',			path: '/manual/combat',				component: Manual,			list: [...CombatList.list] },
-    	{ name: 'Core',				path: '/manual/core',				component: Manual,			list: [...CoreList.list] },
-    	{ name: 'Gear',				path: '/manual/gear',				component: Manual,			list: [...GearList.list] },
-    	{ name: 'Accessories',		path: '/manual/gear/accessories',	component: Manual,			list: [...AccessoriesList.list] },
-    	{ name: 'Ammo',				path: '/manual/gear/ammo',			component: Manual,			list: [...AmmoList.list] },
-    	{ name: 'Armor',			path: '/manual/gear/armor',			component: Manual,			list: [...ArmorList.list] },
-    	{ name: 'Attributes',		path: '/manual/gear/attributes',	component: Manual,			list: [...AttributesList.list] },
-    	{ name: 'Bombs',			path: '/manual/gear/bombs',			component: Manual,			list: [...BombsList.list] },
-    	{ name: 'Documents',		path: '/manual/gear/documents',		component: Manual,			list: [...DocumentsList.list] },
-    	{ name: 'Drugs',			path: '/manual/gear/drugs',			component: Manual,			list: [...DrugsList.list] },
-    	{ name: 'Electronics',		path: '/manual/gear/electronics',	component: Manual,			list: [...ElectronicsList.list] },
-    	{ name: 'Equipment',		path: '/manual/gear/equipment',		component: Manual,			list: [...EquipmentList.list] },
-    	{ name: 'Medical',			path: '/manual/gear/medical',		component: Manual,			list: [...MedicalList.list] },
-    	{ name: 'Melee',			path: '/manual/gear/melee',			component: Manual,			list: [...MeleeWeaponsList.list] },
-    	{ name: 'Miscellaneous',	path: '/manual/gear/miscellaneous',	component: Manual,			list: [...MiscellaneousList.list] },
-    	{ name: 'Ranged',			path: '/manual/gear/ranged',		component: Manual,			list: [...RangedWeaponsList.list] },
-    	{ name: 'Storage',			path: '/manual/gear/storage',		component: Manual,			list: [...StorageList.list] },
-    	{ name: 'Tools',			path: '/manual/gear/tools',			component: Manual,			list: [...ToolsList.list] },
-    	{ name: 'Wearables',		path: '/manual/gear/wearables',		component: Manual,			list: [...WearablesList.list] },
-    	{ name: 'Hazards',			path: '/manual/hazards',			component: Manual,			list: [...HazardsList.list] },
-    	{ name: 'Maneuvers',		path: '/manual/maneuvers',			component: Manual,			list: [...ManeuversList.list] },
-    	{ name: 'Needs',			path: '/manual/needs',				component: Manual,			list: [...NeedsList.list] },
-    	{ name: 'Properties',		path: '/manual/properties',			component: Manual,			list: [...PropertiesList.list] },
-    	{ name: 'Skills',			path: '/manual/skills',				component: Manual,			list: [...SkillsList.list] },
-    	{ name: 'Status',			path: '/manual/status',				component: Manual,			list: [...StatusList.list] },
-    	{ name: 'Traits',			path: '/manual/traits',				component: Manual,			list: [...TraitsList.list] },
+    		{ name: 'Abilities',		path: '/manual/abilities',			component: Manual,			list: [...AbilitiesList.list] },
+    		{ name: 'Combat',			path: '/manual/combat',				component: Manual,			list: [...CombatList.list] },
+    		{ name: 'Core',				path: '/manual/core',				component: Manual,			list: [...CoreList.list] },
+    		{ name: 'Gear',				path: '/manual/gear',				component: Manual,			list: [...GearList.list] },
+    			{ name: 'Accessories',		path: '/manual/gear/accessories',	component: Manual,			list: [...AccessoriesList.list] },
+    			{ name: 'Ammo',				path: '/manual/gear/ammo',			component: Manual,			list: [...AmmoList.list] },
+    			{ name: 'Armor',			path: '/manual/gear/armor',			component: Manual,			list: [...ArmorList.list] },
+    			{ name: 'Attributes',		path: '/manual/gear/attributes',	component: Manual,			list: [...AttributesList.list] },
+    			{ name: 'Bombs',			path: '/manual/gear/bombs',			component: Manual,			list: [...BombsList.list] },
+    			{ name: 'Documents',		path: '/manual/gear/documents',		component: Manual,			list: [...DocumentsList.list] },
+    			{ name: 'Drugs',			path: '/manual/gear/drugs',			component: Manual,			list: [...DrugsList.list] },
+    			{ name: 'Electronics',		path: '/manual/gear/electronics',	component: Manual,			list: [...ElectronicsList.list] },
+    			{ name: 'Equipment',		path: '/manual/gear/equipment',		component: Manual,			list: [...EquipmentList.list] },
+    			{ name: 'Medical',			path: '/manual/gear/medical',		component: Manual,			list: [...MedicalList.list] },
+    			{ name: 'Melee',			path: '/manual/gear/melee',			component: Manual,			list: [...MeleeWeaponsList.list] },
+    			{ name: 'Miscellaneous',	path: '/manual/gear/miscellaneous',	component: Manual,			list: [...MiscellaneousList.list] },
+    			{ name: 'Ranged',			path: '/manual/gear/ranged',		component: Manual,			list: [...RangedWeaponsList.list] },
+    			{ name: 'Storage',			path: '/manual/gear/storage',		component: Manual,			list: [...StorageList.list] },
+    			{ name: 'Tools',			path: '/manual/gear/tools',			component: Manual,			list: [...ToolsList.list] },
+    			{ name: 'Wearables',		path: '/manual/gear/wearables',		component: Manual,			list: [...WearablesList.list] },
+    		{ name: 'Hazards',			path: '/manual/hazards',			component: Manual,			list: [...HazardsList.list] },
+    		{ name: 'Maneuvers',		path: '/manual/maneuvers',			component: Manual,			list: [...ManeuversList.list] },
+    		{ name: 'Needs',			path: '/manual/needs',				component: Manual,			list: [...NeedsList.list] },
+    		{ name: 'Properties',		path: '/manual/properties',			component: Manual,			list: [...PropertiesList.list] },
+    		{ name: 'Skills',			path: '/manual/skills',				component: Manual,			list: [...SkillsList.list] },
+    		{ name: 'Status',			path: '/manual/status',				component: Manual,			list: [...StatusList.list] },
+    		{ name: 'Traits',			path: '/manual/traits',				component: Manual,			list: [...TraitsList.list] },
     	{ name: 'Roller',			path: '/roller',					component: Roller },
     ];
 

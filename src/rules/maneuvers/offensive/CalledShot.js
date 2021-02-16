@@ -4,7 +4,6 @@ import Table from 'classes/Table.js'
 const CalledShot = new Rule({
 	name: `Called Shot`, 
 	desc: [
-		`Attacks target the Torso by default.`,
 		`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`,
 	]
 })
@@ -35,39 +34,39 @@ CalledShot.table = new Table({
 		new CalledShotTarget({
 			roll: 6,
 			name: `Head`,
-			penalty: -6,
+			penalty: `-6 Ranged`,
 			health: `Constitution`,
-			effect: `Stun 1 round`
+			effect: `Stun 1 round.`
 		}),
 		new CalledShotTarget({
 			roll: 5,
 			name: `R Arm`,
-			penalty: -3,
-			effect: `Let go of anything held with this hand`
+			penalty: `-3 Ranged`,
+			effect: `Let go of anything held with this hand.`
 		}),
 		new CalledShotTarget({
 			roll: 4,
 			name: `L Arm`,
-			penalty: -3,
-			effect: `Let go of anything held with this hand`
+			penalty: `-3 Ranged`,
+			effect: `Let go of anything held with this hand.`
 		}),
 		new CalledShotTarget({
 			roll: 3,
 			name: `Torso`,
-			penalty: 0,
-			effect: `None`
+			penalty: `No penalty.`,
+			effect: `None.`
 		}),
 		new CalledShotTarget({
 			roll: 2,
 			name: `L Leg`,
-			penalty: -1,
-			effect: `Fall Prone`
+			penalty: `-1 Ranged`,
+			effect: `Fall Prone.`
 		}),
 		new CalledShotTarget({
 			roll: 1,
 			name: `R Leg`,
-			penalty: -1,
-			effect: `Fall Prone`
+			penalty: `-1 Ranged`,
+			effect: `Fall Prone.`
 		}),
 	],
 	widths: [5, 15, 20, 50]
