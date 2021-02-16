@@ -3,11 +3,6 @@
 :root {
 
 	/* Global Units */
-	--s1: 1px;
-	--s2: 2px;
-	--s3: 3px;
-	--s4: 4px;
-	--s5: 5px;
 	--s10: calc(var(--s100) * .1);
 	--s15: calc(var(--s100) * .15);
 	--s20: calc(var(--s100) * .2);

@@ -5,9 +5,7 @@
 	import SaveAndDeleteButtonRow from 'components/character/creator/SaveAndDeleteButtonRow.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
-	import { onDestroy, onMount } from 'svelte'
-
-	onMount(_ => console.log($characterStore))
+	import { onDestroy } from 'svelte'
 
 	onDestroy(_ => SaveCharacter())
 </script>
@@ -20,7 +18,7 @@
 	</div>
 	<SaveAndDeleteButtonRow
 		saveFunc={_ => SaveCharacter()}
-		deleteFunc={_ => DeleteCharacter($characterStore.meta.name)}
+		deleteFunc={_ => DeleteCharacter($characterStore.meta.id)}
 	/>
 </div>
 
