@@ -7,8 +7,6 @@
 
 	export let page
 
-	console.log(page)
-
 	let searchTerm = ''
 
 	let ruleList = Alphabetize(page.list)

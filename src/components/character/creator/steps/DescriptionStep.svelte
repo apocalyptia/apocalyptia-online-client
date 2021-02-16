@@ -15,50 +15,48 @@
 
 	const randomName = _ => {
 		$characterStore.description.name.value = RandomName($characterStore)
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomAge = _ => {
 		$characterStore.description.age.value = RandomAge()
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomSex = _ => {
 		$characterStore.description.sex.value = RandomSex()
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomHeight = _ => {
 		$characterStore.description.height.value = RandomHeight($characterStore)
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomWeight = _ => {
 		$characterStore.description.weight.value = RandomWeight($characterStore)
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomSkin = _ => {
 		$characterStore.description.skin.value = RandomSkin()
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomHair = _ => {
 		$characterStore.description.hair.value = RandomHair($characterStore)
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const characterReset = _ => {
 		$characterStore = Creation.resetDescription($characterStore)
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
 
 	const randomDescription = _ => {
 		$characterStore = RandomDescription($characterStore)
-		SaveCharacter($characterStore)
+		SaveCharacter()
 	}
-
-	const saveCharacter = _ => SaveCharacter($characterStore)
 </script>
 
 
@@ -70,7 +68,7 @@
 				<span>Name:</span>
 				<input type='text'
 					bind:value={$characterStore.description.name.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomName}>Random</button>
 			</div>
@@ -80,7 +78,7 @@
 				<span>Age:</span>
 				<input type='text'
 					bind:value={$characterStore.description.age.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomAge}>Random</button>
 			</div>
@@ -88,7 +86,7 @@
 				<span>Sex:</span>
 				<input type='text'
 					bind:value={$characterStore.description.sex.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomSex}>Random</button>
 			</div>
@@ -98,7 +96,7 @@
 				<span>Height:</span>
 				<input type='text'
 					bind:value={$characterStore.description.height.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomHeight}>Random</button>
 			</div>
@@ -106,7 +104,7 @@
 				<span>Weight:</span>
 				<input type='text'
 					bind:value={$characterStore.description.weight.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomWeight}>Random</button>
 			</div>
@@ -116,7 +114,7 @@
 				<span>Skin:</span>
 				<input type='text'
 					bind:value={$characterStore.description.skin.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomSkin}>Random</button>
 			</div>
@@ -124,7 +122,7 @@
 				<span>Hair:</span>
 				<input type='text'
 					bind:value={$characterStore.description.hair.value}
-					on:change={saveCharacter}
+					on:change={SaveCharacter}
 				>
 				<button on:click={randomHair}>Random</button>
 			</div>

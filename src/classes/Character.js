@@ -241,5 +241,6 @@ export default class Character {
 				inventory: []
 			},
 		}
+		console.log(this.meta.id)
 	}
 }

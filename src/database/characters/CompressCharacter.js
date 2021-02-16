@@ -56,6 +56,4 @@ export default (char) => {
 	c.Go = char.gear.ammo.inventory
 	c.Ge = char.gear.equipment.inventory
 
-	return c
-
-}
+	return JSON.stringify(c)

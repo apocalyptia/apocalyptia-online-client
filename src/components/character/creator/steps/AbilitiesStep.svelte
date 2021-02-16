@@ -9,11 +9,23 @@
 	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
 	import RandomAbilities from 'rules/random/RandomAbilities.js'
 	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
+	import playerStore from 'stores/playerStore.js'
 
 	let MasterAbilityList = AbilitiesList.masterList
 
 	$: remainingXP = $characterStore.properties.xp.current
+
+	const resetAbilities = _ => {
+		$characterStore = Creation.resetAbilities($characterStore)
+		SaveCharacter()
+	}
+
+	const randomAbilities = _ => {
+		$characterStore = RandomAbilities($characterStore)
+		SaveCharacter()
+	}
 </script>
 
 
@@ -31,10 +43,7 @@
 			<AbilityGroup {group} {MasterAbilityList}/>
 		{/each}
 	</div>
-	<ResetAndRandomButtonRow
-		reset={_ => $characterStore = Creation.resetAbilities($characterStore)}
-		random={_ => $characterStore = RandomAbilities($characterStore)}
-	/>
+	<ResetAndRandomButtonRow reset={resetAbilities} random={randomAbilities} />
 </div>
 
 

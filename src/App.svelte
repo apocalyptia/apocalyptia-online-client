@@ -1,16 +1,29 @@
 <script>
-	import TitleBar from 'components/widgets/TitleBar.svelte'
 	import Error from 'components/widgets/Error.svelte'
-	import router from 'page'
 	import Pages from './Pages.js'
+	import TitleBar from 'components/widgets/TitleBar.svelte'
+	import characterStore from 'stores/characterStore.js'
+	import playerStore from 'stores/playerStore.js'
+	import router from 'page'
+	import { onMount } from 'svelte'
+
 
 	let page
 
 	for (let i = 0; i < Pages.length; i++) {
-		router(Pages[i].path, () => page = Pages[i])
+		router(Pages[i].path, _ => page = Pages[i])
 	}
-	router('*', () => page = { component: Error })
+	router('*', _ => page = { component: Error })
 	router.start()
+
+	// onMount(async _ => {
+	// 	await userbase.init({
+	// 		appId: '1a86b92f-6b82-413c-9a31-2615a80bd4f8',
+	// 		allowServerSideEncryption: true
+	// 	})
+	// 	.then(session => console.log(`Session: ${session}`))
+	// 	.catch(err => console.error(`Error: ${err}`))
+	// })
 </script>
 
 

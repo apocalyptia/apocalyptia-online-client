@@ -1,8 +1,14 @@
 <script>
 	import Creation from 'rules/Creation.js'
+	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 
 	$: abilities = $characterStore.abilities
+
+	const updateAbilities = _ => {
+		$characterStore = Creation.updateAbilities($characterStore)
+		SaveCharacter()
+	}
 </script>
 
 
@@ -33,7 +39,7 @@
 						<select
 							class='taken-number'
 							bind:value={ability.taken}
-							on:blur={_ => $characterStore = Creation.updateAbilities($characterStore)}
+							on:blur={updateAbilities}
 						>
 							{#each Array(ability.max+1) as _, i}
 								<option value={i}>{i}</option>

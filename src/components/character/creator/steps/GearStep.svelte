@@ -4,6 +4,7 @@
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import RandomStartingGear from 'rules/random/RandomStartingGear.js'
 	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
@@ -17,6 +18,16 @@
 		`1d6 rounds of Ammo`,
 		`Random items = Luck`,
 	]
+
+	const resetGear = _ => {
+		$characterStore = Creation.resetGear($characterStore)
+		SaveCharacter()
+	}
+
+	const randomGear = _ => {
+		$characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)
+		SaveCharacter()
+	}
 
 	beforeUpdate(_ => {
 		gearedUp = Object.values($characterStore.gear).every(g => g.inventory.length)
@@ -51,10 +62,7 @@
 			</details>
 		{/each}
 	{:else}
-		<ResetAndRandomButtonRow
-			reset={_ => $characterStore = Creation.resetGear($characterStore)}
-			random={_ => $characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)}
-		/>
+		<ResetAndRandomButtonRow reset={resetGear} random={randomGear} />
 	{/if}
 </div>
 
