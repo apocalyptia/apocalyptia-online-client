@@ -3,6 +3,14 @@ import PropertiesList from 'rules/lists/PropertiesList.js'
 
 export default {
 	name: `Creation`,
+	startingGearExplanation: [
+		`You start with some random Gear:`,
+		`One piece of Armor`,
+		`One Melee weapon`,
+		`One Ranged weapon`,
+		`1d6 rounds of Ammo`,
+		`Random items = Luck`,
+	],
 	resetDescription(c) {
 		for (let d in c.description) c.description[d].value = ``
 		return c

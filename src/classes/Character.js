@@ -1,9 +1,7 @@
-import UUID from 'utils/UUID.js'
-
 export default class Character {
 	constructor() {
 		this.meta = {
-			id: UUID(),
+			id: null,
 			user: null,
 			created: null,
 			modified: null,
@@ -241,6 +239,5 @@ export default class Character {
 				inventory: []
 			},
 		}
-		console.log(this.meta.id)
 	}
 }

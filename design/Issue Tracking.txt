@@ -22,6 +22,8 @@ get Amazon affiliate program set up and find links for all gear items
 Code Cleanup:
 	Decouple script code in NavBar, CharacterControls, and Character Creator index into separate modules.
 	Multilingual (undefined) error still persists.
+	Make Creator steps into individual forms.
+	Use semantic html tags wherever possible.
 
 UX/UI:
 	Make some CSS effects to reflect character's current Psyche.

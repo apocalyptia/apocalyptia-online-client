@@ -16,7 +16,7 @@
     <summary>
         {rule.name}{typeof rule == "Skill" ? " Skill" : "" }
     </summary>
-    <div class='rule-body'>
+    <article class='rule-body'>
         {#if rule instanceof Gear }
             <div class='gear-rule'>
                 <GearBlock item={rule} mode={'manual'} />
@@ -37,5 +37,5 @@
                 <ManualRuleSpecialization {rule} />
             {/if}
         {/if}
-    </div>
+		</article>
 </details>

@@ -2,12 +2,12 @@
 	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
 	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
-	import SaveAndDeleteButtonRow from 'components/character/creator/SaveAndDeleteButtonRow.svelte'
+	import SaveAndDeleteButtonRow from 'components/buttons/SaveAndDeleteButtonRow.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
-	import { onDestroy } from 'svelte'
+	import { beforeUpdate } from 'svelte'
 
-	onDestroy(_ => SaveCharacter())
+	beforeUpdate(_ => SaveCharacter())
 </script>
 
 

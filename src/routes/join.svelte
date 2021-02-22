@@ -2,7 +2,15 @@
 	import Login from 'utils/auth/Login.js'
 	import playerStore from 'stores/playerStore.js'
 
-	let username, email, password, confirm
+	let username, email, password, confirm, error = false
+
+	const handleSignUp = (e) => {
+		e.preventDefault()
+
+		userbase.signUp({ username, password, rememberMe: 'none' })
+			.then(user => alert('You signed up!'))
+			.catch(e => error = true)
+	}
 </script>
 
 
@@ -30,6 +38,11 @@
 			</button>
 		</div>
 	</form>
+	{#if error}
+		<div>
+			<h1>Somethin's done fucked up!</h1>
+		</div>
+	{/if}
 </div>
 
 

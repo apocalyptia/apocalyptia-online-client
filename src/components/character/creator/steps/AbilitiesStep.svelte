@@ -8,10 +8,10 @@
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
 	import RandomAbilities from 'rules/random/RandomAbilities.js'
-	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
-	import playerStore from 'stores/playerStore.js'
+	import { afterUpdate } from 'svelte'
 
 	let MasterAbilityList = AbilitiesList.masterList
 
@@ -19,13 +19,13 @@
 
 	const resetAbilities = _ => {
 		$characterStore = Creation.resetAbilities($characterStore)
-		SaveCharacter()
 	}
 
 	const randomAbilities = _ => {
 		$characterStore = RandomAbilities($characterStore)
-		SaveCharacter()
 	}
+
+	afterUpdate(_ => SaveCharacter())
 </script>
 
 

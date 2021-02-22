@@ -2,9 +2,9 @@
 	import Error from 'components/widgets/Error.svelte'
 	import Pages from './Pages.js'
 	import TitleBar from 'components/widgets/TitleBar.svelte'
-	import characterStore from 'stores/characterStore.js'
 	import playerStore from 'stores/playerStore.js'
 	import router from 'page'
+	import MakeID from 'utils/MakeID.js'
 	import { onMount } from 'svelte'
 
 
@@ -16,14 +16,15 @@
 	router('*', _ => page = { component: Error })
 	router.start()
 
-	// onMount(async _ => {
-	// 	await userbase.init({
-	// 		appId: '1a86b92f-6b82-413c-9a31-2615a80bd4f8',
-	// 		allowServerSideEncryption: true
-	// 	})
-	// 	.then(session => console.log(`Session: ${session}`))
-	// 	.catch(err => console.error(`Error: ${err}`))
-	// })
+	onMount(async _ => {
+		await userbase.init({
+			appId: '1a86b92f-6b82-413c-9a31-2615a80bd4f8',
+			allowServerSideEncryption: true
+		})
+		.then(session => console.log(`Session: ${session}`))
+		.catch(err => console.error(`Error: ${err}`))
+		console.log('MakeID = ', MakeID())
+	})
 </script>
 
 

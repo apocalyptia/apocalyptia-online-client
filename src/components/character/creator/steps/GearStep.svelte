@@ -3,42 +3,33 @@
 	import GearBlock from 'components/widgets/GearBlock.svelte'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import RandomStartingGear from 'rules/random/RandomStartingGear.js'
-	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
-	import { beforeUpdate } from 'svelte'
+	import { afterUpdate, beforeUpdate } from 'svelte'
 
 	let gearedUp = false
 
-	const startingGearExplanation = [
-		`You start with some random Gear:`,
-		`One piece of Armor`,
-		`One Melee weapon`,
-		`One Ranged weapon`,
-		`1d6 rounds of Ammo`,
-		`Random items = Luck`,
-	]
-
 	const resetGear = _ => {
 		$characterStore = Creation.resetGear($characterStore)
-		SaveCharacter()
 	}
 
 	const randomGear = _ => {
 		$characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)
-		SaveCharacter()
 	}
 
 	beforeUpdate(_ => {
 		gearedUp = Object.values($characterStore.gear).every(g => g.inventory.length)
 	})
+
+	afterUpdate(_ => SaveCharacter())
 </script>
 
 
 <div class='gear-step-page'>
 	<PageHeader chapter={'Gear'} step={$characterStore.meta.step} />
 	<div class='explanation'>
-		{#each startingGearExplanation as gearLine}
+		{#each Creation.startingGearExplanation as gearLine}
 			<p>{gearLine}</p>
 		{/each}
 	</div>

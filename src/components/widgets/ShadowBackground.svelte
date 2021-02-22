@@ -1,22 +1,27 @@
 <script>
-    import { fade } from 'svelte/transition'
+	import { fade } from 'svelte/transition'
 
-    export let active = false
+	export let active = false
+
+	const toggleActive = _ => active = !active
 </script>
 
 
-<div transition:fade class='{active ? "shadow" : "invisible"}' />
+<div class='{active ? "shadow" : "invisible"}'
+	transition:fade
+	on:click={toggleActive}
+/>
 
 
 <style>
-    .shadow {
-		background: rgba(0, 0, 0, .66);
+	.shadow {
+		background: rgba(0, 0, 0, .666);
+		height: 100vh;
 		left: 0;
 		position: absolute;
 		top: 0;
+		width: 100vw;
 		z-index: 10;
-        bottom: 0;
-        right: 0;
 	}
 	.invisible {
 		display: none;

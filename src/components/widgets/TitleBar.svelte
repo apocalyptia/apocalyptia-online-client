@@ -4,17 +4,17 @@
 </script>
 
 
-<div class='title-bar'>
-	<a href='/' class='link-btn title-link part-width'>
-		<div class='app-title'>Apocalyptia Online</div>
+<header>
+	<a href='/' class='link-btn'>
+		<h1>Apocalyptia Online</h1>
 	</a>
 	<MenuButton />
 	<UserMenu />
-</div>
+</header>
 
 
 <style>
-	.title-bar {
+	header {
 		display: flex;
 		height: var(--square);
 		position: fixed;
@@ -23,11 +23,9 @@
 		width: 100vw;
 		z-index: 9;
 	}
-	.title-link {
+	a {
 		display: block;
 		padding: var(--std-padding);
-	}
-	.part-width {
 		width: calc(100vw - var(--square));
 	}
 </style>

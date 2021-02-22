@@ -9,54 +9,12 @@
 	import RandomSex from 'rules/random/RandomSex.js'
 	import RandomSkin from 'rules/random/RandomSkin.js'
 	import RandomWeight from 'rules/random/RandomWeight.js'
-	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
+	import { afterUpdate } from 'svelte'
 
-	const randomName = _ => {
-		$characterStore.description.name.value = RandomName($characterStore)
-		SaveCharacter()
-	}
-
-	const randomAge = _ => {
-		$characterStore.description.age.value = RandomAge()
-		SaveCharacter()
-	}
-
-	const randomSex = _ => {
-		$characterStore.description.sex.value = RandomSex()
-		SaveCharacter()
-	}
-
-	const randomHeight = _ => {
-		$characterStore.description.height.value = RandomHeight($characterStore)
-		SaveCharacter()
-	}
-
-	const randomWeight = _ => {
-		$characterStore.description.weight.value = RandomWeight($characterStore)
-		SaveCharacter()
-	}
-
-	const randomSkin = _ => {
-		$characterStore.description.skin.value = RandomSkin()
-		SaveCharacter()
-	}
-
-	const randomHair = _ => {
-		$characterStore.description.hair.value = RandomHair($characterStore)
-		SaveCharacter()
-	}
-
-	const characterReset = _ => {
-		$characterStore = Creation.resetDescription($characterStore)
-		SaveCharacter()
-	}
-
-	const randomDescription = _ => {
-		$characterStore = RandomDescription($characterStore)
-		SaveCharacter()
-	}
+	afterUpdate(_ => SaveCharacter())
 </script>
 
 
@@ -66,69 +24,51 @@
 		<div class='block-row'>
 			<div class='character-container'>
 				<span>Name:</span>
-				<input type='text'
-					bind:value={$characterStore.description.name.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomName}>Random</button>
+				<input type='text' bind:value={$characterStore.description.name.value}>
+				<button on:click={_ => $characterStore.description.name.value = RandomName($characterStore)}>Random</button>
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Age:</span>
-				<input type='text'
-					bind:value={$characterStore.description.age.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomAge}>Random</button>
+				<input type='text' bind:value={$characterStore.description.age.value}>
+				<button on:click={_ => $characterStore.description.age.value = RandomAge()}>Random</button>
 			</div>
 			<div class='item-container'>
 				<span>Sex:</span>
-				<input type='text'
-					bind:value={$characterStore.description.sex.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomSex}>Random</button>
+				<input type='text' bind:value={$characterStore.description.sex.value}>
+				<button on:click={_ => $characterStore.description.sex.value = RandomSex()}>Random</button>
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Height:</span>
-				<input type='text'
-					bind:value={$characterStore.description.height.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomHeight}>Random</button>
+				<input type='text' bind:value={$characterStore.description.height.value}>
+				<button on:click={_ => $characterStore.description.height.value = RandomHeight($characterStore)}>Random</button>
 			</div>
 			<div class='item-container'>
 				<span>Weight:</span>
-				<input type='text'
-					bind:value={$characterStore.description.weight.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomWeight}>Random</button>
+				<input type='text' bind:value={$characterStore.description.weight.value}>
+				<button on:click={_ => $characterStore.description.weight.value = RandomWeight($characterStore)}>Random</button>
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Skin:</span>
-				<input type='text'
-					bind:value={$characterStore.description.skin.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomSkin}>Random</button>
+				<input type='text' bind:value={$characterStore.description.skin.value}>
+				<button on:click={_ => $characterStore.description.skin.value = RandomSkin()}>Random</button>
 			</div>
 			<div class='item-container'>
 				<span>Hair:</span>
-				<input type='text'
-					bind:value={$characterStore.description.hair.value}
-					on:change={SaveCharacter}
-				>
-				<button on:click={randomHair}>Random</button>
+				<input type='text' bind:value={$characterStore.description.hair.value}>
+				<button on:click={_ => $characterStore.description.hair.value = RandomHair($characterStore)}>Random</button>
 			</div>
 		</div>
 	</div>
-	<ResetAndRandomButtonRow reset={characterReset} random={randomDescription} />
+	<ResetAndRandomButtonRow
+		reset={_ => $characterStore = Creation.resetDescription($characterStore)}
+		random={_ => $characterStore = RandomDescription($characterStore)}
+	/>
 </div>
 
 

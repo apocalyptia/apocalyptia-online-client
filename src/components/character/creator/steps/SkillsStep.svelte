@@ -4,29 +4,17 @@
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
 	import RandomSkills from 'rules/random/RandomSkills.js'
-	import ResetAndRandomButtonRow from 'components/character/creator/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import Skills from 'rules/Skills.js'
 	import SkillsList from 'rules/lists/SkillsList.js'
 	import Slider from 'components/widgets/Slider.svelte'
 	import characterStore from 'stores/characterStore.js'
+	import { afterUpdate } from 'svelte'
 
 	$: remaining = Skills.remaining($characterStore)
 
-	const changeSkill = (event) => {
-		$characterStore = Skills.assign($characterStore, event.target)
-		SaveCharacter()
-	}
-
-	const resetSkills = _ => {
-		$characterStore = Creation.resetSkills($characterStore)
-		SaveCharacter()
-	}
-
-	const randomSkills = _ => {
-		$characterStore = RandomSkills($characterStore)
-		SaveCharacter()
-	}
+	afterUpdate(_ => SaveCharacter())
 </script>
 
 
@@ -54,8 +42,7 @@
 									min={parseInt(0)}
 									max={parseInt(6)}
 									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
-									on:input={event => changeSkill(event)}
-									on:change={saveCharacter}
+									on:input={event => $characterStore = Skills.assign($characterStore, event.target)}
 									indicator=true
 								/>
 							</div>
@@ -64,7 +51,10 @@
 				</details>
 			</div>
 		{/each}
-	<ResetAndRandomButtonRow reset={resetSkills} random={randomSkills} />
+	<ResetAndRandomButtonRow
+		reset={_ => $characterStore = Creation.resetSkills($characterStore)}
+		random={_ => $characterStore = RandomSkills($characterStore)}
+	/>
 </div>
 
 

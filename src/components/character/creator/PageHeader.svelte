@@ -6,23 +6,18 @@
 <svelte:head>
 	<title>Apocalyptia Online - Character Creator - {chapter}</title>
 </svelte:head>
-<div class='page-header'>
+<hgroup>
 	<h1>{chapter}</h1>
 	{#if step < 6}
-		<span>Step {step}/6</span>
+		<h2>Step {step}/6</h2>
 	{/if}
-</div>
+</hgroup>
 
 
 <style>
-    .page-header {
-        display: flex;
-        justify-content: space-between;
-    }
-    h1 {
-        display: inline;
-    }
-    span {
-        font-size: var(--s125);
-    }
+	hgroup {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
 </style>

@@ -107,7 +107,7 @@ table {
 *:focus {
 	outline-color: var(--pri-color);
 	outline-style: double;
-	outline-width: 3px;
+	outline-width: 5px;
 	z-index: 3;
 }
 
@@ -286,12 +286,10 @@ a {
 	color: var(--pri-color);
 	text-decoration: none;
 }
-a:hover,
-a:focus {
+a:hover {
 	box-shadow: var(--pri-box-shadow);
 }
 a:active,
-a:focus,
 a:hover {
 	animation: haze 1s infinite;
 	background-color: var(--pri-color-trans);
@@ -320,22 +318,12 @@ button:active,
 button:hover {
 	animation: haze 1s infinite;
 	background-color: var(--pri-color-trans);
+	border-color: var(--pri-color);
 	color: var(--sec-color);
 	font-weight: bold;
 	background-size: 100% 2px, 3px 100%;
 	z-index: 12000;
 }
-button:focus {
-	animation: haze 1s infinite;
-	font-weight: bold;
-	background-size: 100% 2px, 3px 100%;
-	z-index: 12000;
-}
-button:disabled {
-	border-color: var(--sec-color-trans);
-	color: var(--sec-color-trans);		
-}
-button:focus,
 button:hover {
 	box-shadow: var(--pri-box-shadow);
 }
@@ -377,16 +365,15 @@ button:invalid {
 	justify-content: center;
 	text-align: center;
 }
-.crimson-btn:active,
-.crimson-btn:focus,
-.crimson-btn:hover {
-	background-color: var(--ter-color-semi);
-	box-shadow: var(--ter-box-shadow);
-	color: var(--sec-color);
+.crimson-btn:focus {	
+	outline-color: var(--ter-color);
 }
 .crimson-btn:active,
-.crimson-btn:focus {
-	outline: 3px double var(--ter-color-trans);
+.crimson-btn:hover {
+	background-color: var(--ter-color-semi);
+	border-color: var(--ter-color);
+	box-shadow: var(--ter-box-shadow);
+	color: var(--sec-color);
 }
 .green-btn {
 	background-color: var(--sec-color-trans);
@@ -395,7 +382,6 @@ button:invalid {
 	font-weight: bold;
 }
 .green-btn:active,
-.green-btn:focus,
 .green-btn:hover {
 	background-color: var(--pri-color-trans);
 	color: var(--sec-color);
@@ -412,7 +398,6 @@ button:invalid {
 	text-align: center;
 }
 .link-btn:active,
-.link-btn:focus,
 .link-btn:hover {
 	background-color: var(--pri-color-trans);
 	color: var(--sec-color);
@@ -480,10 +465,6 @@ input:disabled {
 	border-color: var(--sec-color);
 	color: var(--sec-color);
 }
-input:focus,
-input:hover {
-	box-shadow: var(--pri-box-shadow);
-}
 input[type="number"] {
 	-moz-appearance: textfield;
 	width: 100px;
@@ -522,11 +503,8 @@ select {
 	text-align: center;
 }
 select:active,
-select:focus,
 select:hover {
 	background-color: var(--pri-color-trans);
-	border-color: var(--pri-color);
-	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
 }
 select:disabled {
@@ -551,10 +529,8 @@ textarea {
 	text-align: center;
 }
 textarea:active,
-textarea:focus,
 textarea:hover {
 	background-color: var(--pri-color-trans);
-	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
 }
 textarea:disabled {

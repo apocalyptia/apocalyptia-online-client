@@ -1,12 +1,12 @@
 <script>
-	import AbilitiesSection from 'components/character/sheet/AbilitiesSection.svelte'
-	import DescriptionSection from 'components/character/sheet/DescriptionSection.svelte'
-	import GearSection from 'components/character/sheet/GearSection.svelte'
-	import HealthSection from 'components/character/sheet/HealthSection.svelte'
-	import NotesSection from 'components/character/sheet/NotesSection.svelte'
-	import PropertiesSection from 'components/character/sheet/PropertiesSection.svelte'
-	import SkillsSection from 'components/character/sheet/SkillsSection.svelte'
-	import TraitsSection from 'components/character/sheet/TraitsSection.svelte'
+	import AbilitiesSection from 'components/character/sheet/sections/AbilitiesSection.svelte'
+	import DescriptionSection from 'components/character/sheet/sections/DescriptionSection.svelte'
+	import GearSection from 'components/character/sheet/sections/GearSection.svelte'
+	import HealthSection from 'components/character/sheet/sections/HealthSection.svelte'
+	import NotesSection from 'components/character/sheet/sections/NotesSection.svelte'
+	import PropertiesSection from 'components/character/sheet/sections/PropertiesSection.svelte'
+	import SkillsSection from 'components/character/sheet/sections/SkillsSection.svelte'
+	import TraitsSection from 'components/character/sheet/sections/TraitsSection.svelte'
 
 	export let mode
 </script>
