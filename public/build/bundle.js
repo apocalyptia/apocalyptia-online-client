@@ -8163,11 +8163,11 @@ var app = (function () {
     			img = element("img");
     			if (img.src !== (img_src_value = "/icons/dice.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = "Random " + /*type*/ ctx[0]);
-    			attr_dev(img, "class", "svelte-1uwbotb");
+    			attr_dev(img, "class", "svelte-1bkhqvl");
     			add_location(img, file$e, 7, 2, 100);
-    			attr_dev(div, "class", "dice-icon-box svelte-1uwbotb");
+    			attr_dev(div, "class", "dice-icon-box svelte-1bkhqvl");
     			add_location(div, file$e, 6, 1, 70);
-    			attr_dev(button, "class", "svelte-1uwbotb");
+    			attr_dev(button, "class", "svelte-1bkhqvl");
     			add_location(button, file$e, 5, 0, 44);
     		},
     		l: function claim(nodes) {

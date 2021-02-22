@@ -13,11 +13,12 @@
 <style>
 	button {
 		height: var(--square);
-		padding: var(--std-padding);
+		padding: 0;
 		width: var(--square);
 	}
 	.dice-icon-box {
 		height: 100%;
+		padding: var(--std-padding);
 		width: 100%;
 	}
 	.dice-icon-box:hover {
