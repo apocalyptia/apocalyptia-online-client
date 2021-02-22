@@ -3,8 +3,7 @@
 
 	export let limit, canProceed
 
-	const next = _ => {
-		proceedStatus()
+	$: next = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if (canProceed) $characterStore.meta.step++
 		if ($characterStore.meta.step > limit) {
@@ -20,7 +19,7 @@
 
 
 <button on:click={next} class='next-btn btn-box {canProceed ? '' : 'crimson-btn' }'>
-	<div class='btn-icon'>{nextButton()}</div>
+	<div class='btn-icon'>{@html nextButton()}</div>
 </button>
 
 

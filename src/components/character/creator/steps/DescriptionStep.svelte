@@ -1,5 +1,6 @@
 <script>
 	import Creation from 'rules/Creation.js'
+	import DiceButton from 'components/buttons/DiceButton.svelte'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import RandomAge from 'rules/random/RandomAge.js'
 	import RandomDescription from 'rules/random/RandomDescription.js'
@@ -25,43 +26,50 @@
 			<div class='character-container'>
 				<span>Name:</span>
 				<input type='text' bind:value={$characterStore.description.name.value}>
-				<button on:click={_ => $characterStore.description.name.value = RandomName($characterStore)}>Random</button>
+				<DiceButton type='Name'
+					func={_ => $characterStore.description.name.value = RandomName($characterStore)} />
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Age:</span>
 				<input type='text' bind:value={$characterStore.description.age.value}>
-				<button on:click={_ => $characterStore.description.age.value = RandomAge()}>Random</button>
+				<DiceButton type='Age'
+					func={_ => $characterStore.description.age.value = RandomAge()} />
 			</div>
 			<div class='item-container'>
 				<span>Sex:</span>
 				<input type='text' bind:value={$characterStore.description.sex.value}>
-				<button on:click={_ => $characterStore.description.sex.value = RandomSex()}>Random</button>
+				<DiceButton type='Sex'
+					func={_ => $characterStore.description.sex.value = RandomSex()} />
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Height:</span>
 				<input type='text' bind:value={$characterStore.description.height.value}>
-				<button on:click={_ => $characterStore.description.height.value = RandomHeight($characterStore)}>Random</button>
+				<DiceButton type='Height'
+					func={_ => $characterStore.description.height.value = RandomHeight($characterStore)} />
 			</div>
 			<div class='item-container'>
 				<span>Weight:</span>
 				<input type='text' bind:value={$characterStore.description.weight.value}>
-				<button on:click={_ => $characterStore.description.weight.value = RandomWeight($characterStore)}>Random</button>
+				<DiceButton type='Weight'
+					func={_ => $characterStore.description.weight.value = RandomWeight($characterStore)} />
 			</div>
 		</div>
 		<div class='block-row'>
 			<div class='item-container'>
 				<span>Skin:</span>
 				<input type='text' bind:value={$characterStore.description.skin.value}>
-				<button on:click={_ => $characterStore.description.skin.value = RandomSkin()}>Random</button>
+				<DiceButton type='Skin'
+					func={_ => $characterStore.description.skin.value = RandomSkin()} />
 			</div>
 			<div class='item-container'>
 				<span>Hair:</span>
 				<input type='text' bind:value={$characterStore.description.hair.value}>
-				<button on:click={_ => $characterStore.description.hair.value = RandomHair($characterStore)}>Random</button>
+				<DiceButton type='Hair'
+					func={_ => $characterStore.description.hair.value = RandomHair($characterStore)} />
 			</div>
 		</div>
 	</div>
@@ -82,9 +90,7 @@
 	div[class*='-container'] > span {
 		text-align: right;
 	}
-	div[class*='-container'] > span,
-	.character-container > button,
-	.item-container > button {
+	div[class*='-container'] > span {
 		flex: 1;
 	}
 	div[class*='-container'] > input {
@@ -102,6 +108,6 @@
 	}
 	.character-container > input[type='text'],
 	.item-container input[type='text'] {
-		flex: 1;
+		flex: 2;
 	}
 </style>

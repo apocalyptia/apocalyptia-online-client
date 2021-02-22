@@ -5,7 +5,7 @@ export default class Character {
 			user: null,
 			created: null,
 			modified: null,
-			notes: null,
+			notes: ``,
 			status: [],
 			step: 0,
 			coordinates: {

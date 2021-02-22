@@ -4,7 +4,7 @@
 
 
 <section>
-	<details class='sheet-details'>
+	<details class='sheet-details' open>
 		<summary class='sheet-card-title'>
 			Traits
 		</summary>

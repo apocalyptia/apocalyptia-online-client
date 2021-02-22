@@ -1,5 +1,6 @@
 <script>
 	import d6Roll from 'rules/random/d6Roll.js'
+	import DiceButton from 'components/buttons/DiceButton.svelte'
 
 	const diceRoller = _ => {
 		let rollCount = Math.ceil(Math.random() * 37) + 2
@@ -23,7 +24,7 @@
 <div class='item-category'>
 	<div class='category-header'>
 		<div class='category-name'>d6 Roll</div>
-		<button on:click={diceRoller}>Random</button>
+		<DiceButton func={diceRoller} type='Roll' />
 	</div>
 	<div class='item-content'>
 		<p class='roll'>Die Roll{factors.roll > 1 ? 's' : ''}: {factors.roll}</p>

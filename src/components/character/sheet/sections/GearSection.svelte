@@ -7,7 +7,7 @@
 
 
 <section>
-	<details class='sheet-details'>
+	<details class='sheet-details' open>
 		<summary class='sheet-card-title'>Gear</summary>
 		<div class='gear-category-list'>
 			{#each Object.values($characterStore.gear) as category}

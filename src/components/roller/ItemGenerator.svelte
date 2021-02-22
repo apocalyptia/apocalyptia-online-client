@@ -1,4 +1,5 @@
 <script>
+	import DiceButton from 'components/buttons/DiceButton.svelte'
 	import GearBlock from 'components/widgets/GearBlock.svelte'
 	import RandomRoll from 'rules/random/RandomRoll.js'
 
@@ -13,7 +14,7 @@
 <div class='item-category'>
 	<div class='category-header'>
 		<div class='category-name'>{category.name}</div>
-		<button on:click={_ => randomItem()}>Random</button>
+		<DiceButton func={randomItem} type={category.name} />
 	</div>
 	{#if item}
 		<div class='item-content'>

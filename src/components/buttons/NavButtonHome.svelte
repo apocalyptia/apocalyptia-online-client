@@ -7,7 +7,7 @@
 
 <button on:click={home} class='home-btn btn-box'>
 	<div class='home-icon-box'>
-		<img class='home-icon' src='/icons/home.png' alt='Home Icon'>
+		<img src='/icons/home.png' alt='Home Icon'>
 	</div>
 </button>
 
@@ -25,7 +25,7 @@
 	.home-icon-box:hover {
 		filter: brightness(0%) grayscale(100%);
 	}
-	.home-icon {
+	img {
 		height: 100%;
 		transform: scale(1, 1);
 	}
