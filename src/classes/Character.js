@@ -17,32 +17,32 @@ export default class Character {
 			}
 		}
 		this.description = {
-			age: {
-				name: `Age`,
-				value: null
-			},
 			name: {
 				name: `Name`,
 				value: null
 			},
-			hair: {
-				name: `Hair`,
-				value: null
-			},
-			height: {
-				name: `Height`,
+			age: {
+				name: `Age`,
 				value: null
 			},
 			sex: {
 				name: `Sex`,
 				value: null
 			},
-			skin: {
-				name: `Skin`,
+			height: {
+				name: `Height`,
 				value: null
 			},
 			weight: {
 				name: `Weight`,
+				value: null
+			},
+			skin: {
+				name: `Skin`,
+				value: null
+			},
+			hair: {
+				name: `Hair`,
 				value: null
 			}
 		}
