@@ -131,13 +131,14 @@
 
 <style>
 	input[type='number'] {
-		width: 6ch;
+		width: 4ch;
 	}
 	.body-parts-section {
 		display: flex;
 		font-size: var(--s100);
 		justify-content: center;
 		max-width: 100%;
+		overflow: auto;
 	}
 	div[class*='column'] {
 		display: block;

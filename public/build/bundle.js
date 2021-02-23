@@ -16902,7 +16902,7 @@ var app = (function () {
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = "-" + /*$characterStore*/ ctx[1].health.head.score);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[1].health.head.score);
-    			attr_dev(input, "class", "svelte-1d1sq46");
+    			attr_dev(input, "class", "svelte-ezgoxc");
     			add_location(input, file$p, 21, 5, 533);
     		},
     		m: function mount(target, anchor) {
@@ -16994,7 +16994,7 @@ var app = (function () {
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = "-" + /*$characterStore*/ ctx[1].health.leftArm.score);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[1].health.leftArm.score);
-    			attr_dev(input, "class", "svelte-1d1sq46");
+    			attr_dev(input, "class", "svelte-ezgoxc");
     			add_location(input, file$p, 38, 5, 1075);
     		},
     		m: function mount(target, anchor) {
@@ -17082,7 +17082,7 @@ var app = (function () {
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = "-" + /*$characterStore*/ ctx[1].health.leftLeg.score);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[1].health.leftLeg.score);
-    			attr_dev(input, "class", "svelte-1d1sq46");
+    			attr_dev(input, "class", "svelte-ezgoxc");
     			add_location(input, file$p, 54, 5, 1577);
     		},
     		m: function mount(target, anchor) {
@@ -17170,7 +17170,7 @@ var app = (function () {
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = "-" + /*$characterStore*/ ctx[1].health.torso.score);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[1].health.torso.score);
-    			attr_dev(input, "class", "svelte-1d1sq46");
+    			attr_dev(input, "class", "svelte-ezgoxc");
     			add_location(input, file$p, 86, 5, 2493);
     		},
     		m: function mount(target, anchor) {
@@ -17262,7 +17262,7 @@ var app = (function () {
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = "-" + /*$characterStore*/ ctx[1].health.rightArm.score);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[1].health.rightArm.score);
-    			attr_dev(input, "class", "svelte-1d1sq46");
+    			attr_dev(input, "class", "svelte-ezgoxc");
     			add_location(input, file$p, 103, 5, 3042);
     		},
     		m: function mount(target, anchor) {
@@ -17350,7 +17350,7 @@ var app = (function () {
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = "-" + /*$characterStore*/ ctx[1].health.rightLeg.score);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[1].health.rightLeg.score);
-    			attr_dev(input, "class", "svelte-1d1sq46");
+    			attr_dev(input, "class", "svelte-ezgoxc");
     			add_location(input, file$p, 119, 5, 3551);
     		},
     		m: function mount(target, anchor) {
@@ -17628,65 +17628,65 @@ var app = (function () {
     			t34 = text(t34_value);
     			attr_dev(div0, "class", "body-part-name");
     			add_location(div0, file$p, 14, 3, 333);
-    			attr_dev(div1, "class", "body-part-numbers svelte-1d1sq46");
+    			attr_dev(div1, "class", "body-part-numbers svelte-ezgoxc");
     			add_location(div1, file$p, 17, 3, 414);
-    			attr_dev(div2, "class", "head-label svelte-1d1sq46");
+    			attr_dev(div2, "class", "head-label svelte-ezgoxc");
     			add_location(div2, file$p, 13, 2, 305);
     			attr_dev(div3, "class", "body-part-name");
     			add_location(div3, file$p, 31, 3, 869);
-    			attr_dev(div4, "class", "body-part-numbers svelte-1d1sq46");
+    			attr_dev(div4, "class", "body-part-numbers svelte-ezgoxc");
     			add_location(div4, file$p, 34, 3, 953);
-    			attr_dev(div5, "class", "left-arm-label svelte-1d1sq46");
+    			attr_dev(div5, "class", "left-arm-label svelte-ezgoxc");
     			add_location(div5, file$p, 30, 2, 837);
     			attr_dev(div6, "class", "body-part-name");
     			add_location(div6, file$p, 47, 3, 1371);
-    			attr_dev(div7, "class", "body-part-numbers svelte-1d1sq46");
+    			attr_dev(div7, "class", "body-part-numbers svelte-ezgoxc");
     			add_location(div7, file$p, 50, 3, 1455);
-    			attr_dev(div8, "class", "left-leg-label svelte-1d1sq46");
+    			attr_dev(div8, "class", "left-leg-label svelte-ezgoxc");
     			add_location(div8, file$p, 46, 2, 1339);
-    			attr_dev(div9, "class", "left-column svelte-1d1sq46");
+    			attr_dev(div9, "class", "left-column svelte-ezgoxc");
     			add_location(div9, file$p, 12, 1, 277);
-    			attr_dev(div10, "class", "head body-part svelte-1d1sq46");
+    			attr_dev(div10, "class", "head body-part svelte-ezgoxc");
     			add_location(div10, file$p, 65, 3, 1906);
-    			attr_dev(div11, "class", "head-level svelte-1d1sq46");
+    			attr_dev(div11, "class", "head-level svelte-ezgoxc");
     			add_location(div11, file$p, 64, 2, 1878);
-    			attr_dev(div12, "class", "left-arm arm body-part svelte-1d1sq46");
+    			attr_dev(div12, "class", "left-arm arm body-part svelte-ezgoxc");
     			add_location(div12, file$p, 68, 3, 1977);
-    			attr_dev(div13, "class", "torso body-part svelte-1d1sq46");
+    			attr_dev(div13, "class", "torso body-part svelte-ezgoxc");
     			add_location(div13, file$p, 69, 3, 2019);
-    			attr_dev(div14, "class", "right-arm arm body-part svelte-1d1sq46");
+    			attr_dev(div14, "class", "right-arm arm body-part svelte-ezgoxc");
     			add_location(div14, file$p, 70, 3, 2054);
-    			attr_dev(div15, "class", "torso-level svelte-1d1sq46");
+    			attr_dev(div15, "class", "torso-level svelte-ezgoxc");
     			add_location(div15, file$p, 67, 2, 1948);
-    			attr_dev(div16, "class", "left-leg leg body-part svelte-1d1sq46");
+    			attr_dev(div16, "class", "left-leg leg body-part svelte-ezgoxc");
     			add_location(div16, file$p, 73, 3, 2133);
-    			attr_dev(div17, "class", "right-leg leg body-part svelte-1d1sq46");
+    			attr_dev(div17, "class", "right-leg leg body-part svelte-ezgoxc");
     			add_location(div17, file$p, 74, 3, 2175);
-    			attr_dev(div18, "class", "legs-level svelte-1d1sq46");
+    			attr_dev(div18, "class", "legs-level svelte-ezgoxc");
     			add_location(div18, file$p, 72, 2, 2105);
-    			attr_dev(div19, "class", "center-column svelte-1d1sq46");
+    			attr_dev(div19, "class", "center-column svelte-ezgoxc");
     			add_location(div19, file$p, 63, 1, 1848);
     			attr_dev(div20, "class", "body-part-name");
     			add_location(div20, file$p, 79, 3, 2291);
-    			attr_dev(div21, "class", "body-part-numbers svelte-1d1sq46");
+    			attr_dev(div21, "class", "body-part-numbers svelte-ezgoxc");
     			add_location(div21, file$p, 82, 3, 2373);
-    			attr_dev(div22, "class", "torso-label svelte-1d1sq46");
+    			attr_dev(div22, "class", "torso-label svelte-ezgoxc");
     			add_location(div22, file$p, 78, 2, 2262);
     			attr_dev(div23, "class", "body-part-name");
     			add_location(div23, file$p, 96, 3, 2834);
-    			attr_dev(div24, "class", "body-part-numbers svelte-1d1sq46");
+    			attr_dev(div24, "class", "body-part-numbers svelte-ezgoxc");
     			add_location(div24, file$p, 99, 3, 2919);
-    			attr_dev(div25, "class", "right-arm-label svelte-1d1sq46");
+    			attr_dev(div25, "class", "right-arm-label svelte-ezgoxc");
     			add_location(div25, file$p, 95, 2, 2801);
     			attr_dev(div26, "class", "body-part-name");
     			add_location(div26, file$p, 112, 3, 3343);
-    			attr_dev(div27, "class", "body-part-numbers svelte-1d1sq46");
+    			attr_dev(div27, "class", "body-part-numbers svelte-ezgoxc");
     			add_location(div27, file$p, 115, 3, 3428);
-    			attr_dev(div28, "class", "right-leg-label svelte-1d1sq46");
+    			attr_dev(div28, "class", "right-leg-label svelte-ezgoxc");
     			add_location(div28, file$p, 111, 2, 3310);
-    			attr_dev(div29, "class", "right-column svelte-1d1sq46");
+    			attr_dev(div29, "class", "right-column svelte-ezgoxc");
     			add_location(div29, file$p, 77, 1, 2233);
-    			attr_dev(div30, "class", "body-parts-section svelte-1d1sq46");
+    			attr_dev(div30, "class", "body-parts-section svelte-ezgoxc");
     			add_location(div30, file$p, 11, 0, 243);
     		},
     		l: function claim(nodes) {
