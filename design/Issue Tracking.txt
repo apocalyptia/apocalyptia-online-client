@@ -30,7 +30,6 @@ UX/UI:
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.
 	Probably also a sidenav for character sheet.
-	Fix character sheet sections to be responsive.
 
 Gear.js:
 	Storage: Unit conversions still need work.
@@ -96,31 +95,31 @@ Weapon Training
 
 TODO List: FEATURES
 
-campaign invitations
-public and private chat logs
-extra generator
-regional and area map editor
-dynamic lighting
-fog of war
-field of view
-visual special effects
-item passing and trading (can make promises)
-social media sharing
-user forum
-developer blog
-video conferencing
-team information
-base management
-user accounts
-sound effects library and player
 audio/video playlist
 automatic roll calculations
-push notifications
+base management
 calendar access
-vehicle building, customization, and maintenance
+campaign invitations
+developer blog
+dynamic lighting
+extra generator
+field of view
 first person mode
+fog of war
+item passing and trading (can make promises)
+public and private chat logs
+push notifications
+regional and area map editor
 rules bookmarking
+social media sharing
+sound effects library and player
+team information
+user accounts
+user forum
 utility programs: calculator, stopwatch, countdown timer, sketchpad, notepad
+vehicle building, customization, and maintenance
+video conferencing
+visual special effects
 
 
 ---------------------------------------------------------------------------------------------------
