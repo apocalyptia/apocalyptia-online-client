@@ -30,6 +30,7 @@ UX/UI:
 	Figure out what to do about Tables.
 	Make a sidenav menu for table of contents in Rules section.
 	Probably also a sidenav for character sheet.
+	Fix character sheet sections to be responsive.
 
 Gear.js:
 	Storage: Unit conversions still need work.
@@ -71,6 +72,7 @@ Combat:
 Character:
 	Character Sheet:
 		Combine Health with Armor somehow.
+		Make + item button do something.
 
 Figure out a quick Jury-Rig version of Build.
 
