@@ -22,7 +22,7 @@ Socialize.specs = {
 		name: `Therapy`,
 		desc: [
 			`Heal 1 Trauma`,
-			`Cannot be performed again on the same day.`,
+			`Cannot be performed again on the same target for one week.`,
 			`d6 Trauma on a Botch.`,
 		]
 	})

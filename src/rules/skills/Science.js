@@ -14,7 +14,9 @@ Science.specs = {
 		id: `4f241948-5289-43e5-bc1f-77a04420b6bf`,
 		name: `Chemistry`,
 		desc: [
-			`(# x 10mins) Use [d6 + # Chemicals].`,
+			`Mix Chemicals to make Bombs, Drugs, Medicine, etc.`,
+			`Time required is [Mix # x 10] minutes.`,
+			`Requires the use of [d6 + Mix #] Chemicals.`,
 		]
 	}),
 	technology: new Rule({
