@@ -6,7 +6,7 @@
 
 ? weapon damage creates a wound (which starts bleeding) and sets difficulty to seal wound ?
 
-? kill spots = brain, cervical spine, heart
+? kill spots = brain, cervical spine, heart, lungs
 
 ? Lung wounds also cause suffocation
 
@@ -22,7 +22,7 @@
 
 dmg applied is a wound w/ a bleeding rate that == DMG. what is that formula?
 
-6Lt = full
+5Lt = full
 4Lt = problems
 2.5Lt = unconscious
 

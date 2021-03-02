@@ -1,25 +1,23 @@
 <script>
+	import Creation from 'rules/Creation.js'
+	import CreationStepsList from 'rules/lists/CreationStepsList.js'
 	import characterStore from 'stores/characterStore.js'
+	import { beforeUpdate } from 'svelte'
 
-	export let limit, canProceed
+	beforeUpdate(_ => $characterStore.meta.proceed = Creation.proceedCheck($characterStore))
 
 	$: next = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)
-		if (canProceed) $characterStore.meta.step++
-		if ($characterStore.meta.step > limit) {
+		if ($characterStore.meta.proceed) $characterStore.meta.step++
+		if ($characterStore.meta.step == CreationStepsList.length) {
 			window.location.href = '/'
 		}
-	}
-
-	$: nextButton = _ => {
-		if (canProceed) return `&gt;`
-		else return `X`
 	}
 </script>
 
 
-<button on:click={next} class='next-btn btn-box {canProceed ? '' : 'crimson-btn' }'>
-	<div class='btn-icon'>{@html nextButton()}</div>
+<button on:click={next} class='next-btn btn-box {$characterStore.meta.proceed ? '' : 'crimson-btn' }'>
+	<div class='btn-icon'>{@html $characterStore.meta.proceed ? `&gt;` : `X`}</div>
 </button>
 
 

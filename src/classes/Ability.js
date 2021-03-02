@@ -13,7 +13,7 @@ export default class Ability extends Rule {
 		taken=0,
 		type=`Ability`,
 		visible,
-		xp
+		experience
 	}) {
 		super({
 			id,
@@ -24,7 +24,7 @@ export default class Ability extends Rule {
 			type
 		})
 		this.max = max
-		this.xp = xp
+		this.experience = experience
 		this.taken = taken
 		this.opts = opts
 		this.selection = selection

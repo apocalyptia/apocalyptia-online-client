@@ -18,7 +18,7 @@ export default {
 }
 
 
-// OLD Damage ResistanceUGS
+// OLD AbsorptionUGS
 // new Drug(`Chloroform`,		  15, true,   `Liquid. C#12 or Unconscious. Takes d6 rounds.`,	   0)
 // new Drug(`Cyanide`,			 18, true,   `Pill. d6 Torso DMG/round for 5 rounds.`,				0)
 // new Drug(`Epinephrine`,		 15, true,   `Injection. Resuscitate within C+3mins.`,		  0)

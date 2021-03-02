@@ -4,7 +4,7 @@ const Padlock = new Gear({
 	id: ``,
 	name: `Padlock`,
 	desc: [
-		`2 Damage Resistance.`,
+		`2 Absorption.`,
 		`Larceny(Disable) 9#.`,
 	],
 	sz: 0

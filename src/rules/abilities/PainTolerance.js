@@ -1,8 +1,8 @@
 import Ability from 'classes/Ability.js'
 
-const Endurance = new Ability({
+const PainTolerance = new Ability({
 	id: ``,
-	name: `Endurance`,
+	name: `Pain Tolerance`,
 	desc: [
 		`Ignore 1 Pain penalty.`,
 	],
@@ -10,4 +10,4 @@ const Endurance = new Ability({
 	xp: 9
 })
 
-export default Endurance
+export default PainTolerance

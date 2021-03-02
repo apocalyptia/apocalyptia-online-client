@@ -10,19 +10,13 @@
 
 	let gearedUp = false
 
-	const resetGear = _ => {
-		$characterStore = Creation.resetGear($characterStore)
-	}
+	beforeUpdate(_ => gearedUp = Object.values($characterStore.gear).every(g => g.inventory.length))
 
-	const randomGear = _ => {
-		$characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)
-	}
-
-	beforeUpdate(_ => {
-		gearedUp = Object.values($characterStore.gear).every(g => g.inventory.length)
+	afterUpdate(_ => {
+		Creation.proceedCheck($characterStore)
+		$characterStore = $characterStore
+		SaveCharacter()
 	})
-
-	afterUpdate(_ => SaveCharacter())
 </script>
 
 
@@ -53,7 +47,9 @@
 			</details>
 		{/each}
 	{:else}
-		<ResetAndRandomButtonRow reset={resetGear} random={randomGear} />
+		<ResetAndRandomButtonRow
+			reset={_ => $characterStore = $characterStore.resetGear()}
+			random={_ => $characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)} />
 	{/if}
 </div>
 

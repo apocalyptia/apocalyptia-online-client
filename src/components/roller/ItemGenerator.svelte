@@ -43,7 +43,4 @@
 	.item-content {
 		padding-top: var(--std-padding);
 	}
-	button {
-		flex: 1;
-	}
 </style>

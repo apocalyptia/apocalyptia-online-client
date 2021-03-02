@@ -9,7 +9,7 @@
     {/each}
     {#if rule.type == 'Ability'}
         <p><span class='bold'>Max:</span> {rule.max}</p>
-        <p><span class='bold'>XP:</span> {rule.xp}</p>
+        <p><span class='bold'>XP:</span> {rule.experience}</p>
     {/if}
 </div>
 

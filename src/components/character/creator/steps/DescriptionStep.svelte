@@ -10,6 +10,11 @@
 	import { afterUpdate } from 'svelte'
 
 	afterUpdate(_ => SaveCharacter())
+
+	const updateDesc = _ => {
+		Creation.proceedCheck($characterStore)
+		$characterStore = $characterStore
+	}
 </script>
 
 
@@ -17,18 +22,22 @@
 	<PageHeader chapter={'Description'} step={$characterStore.meta.step} />
 	<div class='section-card'>
 		{#each Object.values($characterStore.description) as desc}
-			<div class='desc-container'>
-				<span class='desc-label'>{desc.name}:</span>
-				<input type='text' bind:value={desc.value}>
-				<DiceButton
-					type={desc.name}
-					func={_ => $characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc)}
-				/>
-			</div>
+			{#if desc.name != 'Player'}
+				<div class='desc-container'>
+					<span class='desc-label'>{desc.name}:</span>
+					<input class='desc-value' type='text' bind:value={desc.value} on:input={updateDesc}>
+					<div class='dice-container'>
+						<DiceButton
+							type={desc.name}
+							func={_ => $characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc)}
+						/>
+					</div>
+				</div>
+			{/if}
 		{/each}
 	</div>
 	<ResetAndRandomButtonRow
-		reset={_ => $characterStore = Creation.resetDescription($characterStore)}
+		reset={_ => $characterStore = $characterStore.resetDescription()}
 		random={_ => $characterStore = RandomDescription($characterStore)}
 	/>
 </div>
@@ -38,7 +47,7 @@
 	.desc-container {
 		align-items: center;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		margin: var(--s50) 0;
 		max-width: 100%;
 		width: 100%;
@@ -47,9 +56,15 @@
 		text-align: right;
 		flex: 1;
 	}
-	input[type='text'] {
+	.desc-value {
 		flex: 2;
-		margin-left: var(--s33);
-		margin-right: var(--s33);
+	}
+	.player-value {
+		flex: 3;
+	}
+	.dice-container {
+		display: flex;
+		flex: 1;
+		justify-content: space-around;
 	}
 </style>

@@ -1,12 +1,11 @@
 <script>
-	import Creation from 'rules/Creation.js'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 
 	export let ability
 
 	const updateAbilities = _ => {
-		$characterStore = Creation.updateAbilities($characterStore)
+		$characterStore = $characterStore.updateAbilities()
 		SaveCharacter()
 	}
 </script>

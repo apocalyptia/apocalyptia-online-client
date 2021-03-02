@@ -4,7 +4,7 @@ const FireResistance = new Rule({
 	id: ``,
 	name: `Fire Resistance`,
 	desc: [
-		`Armor Damage Resistance reduces Fire Damage.`,
+		`Armor Absorption reduces Fire Damage.`,
 	]
 })
 

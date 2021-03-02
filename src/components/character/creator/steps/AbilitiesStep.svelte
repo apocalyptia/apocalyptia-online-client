@@ -13,19 +13,15 @@
 	import characterStore from 'stores/characterStore.js'
 	import { afterUpdate } from 'svelte'
 
+	afterUpdate(_ => {
+		Creation.proceedCheck($characterStore)
+		$characterStore = $characterStore
+		SaveCharacter()
+	})
+
+	$: remainingXP = $characterStore.properties.experience.current
+
 	let MasterAbilityList = AbilitiesList.masterList
-
-	$: remainingXP = $characterStore.properties.xp.current
-
-	const resetAbilities = _ => {
-		$characterStore = Creation.resetAbilities($characterStore)
-	}
-
-	const randomAbilities = _ => {
-		$characterStore = RandomAbilities($characterStore)
-	}
-
-	afterUpdate(_ => SaveCharacter())
 </script>
 
 
@@ -43,7 +39,10 @@
 			<AbilityGroup {group} {MasterAbilityList}/>
 		{/each}
 	</div>
-	<ResetAndRandomButtonRow reset={resetAbilities} random={randomAbilities} />
+	<ResetAndRandomButtonRow
+		reset={_ => $characterStore = $characterStore.resetAbilities()}
+		random={_ => $characterStore = RandomAbilities($characterStore)}
+	/>
 </div>
 
 

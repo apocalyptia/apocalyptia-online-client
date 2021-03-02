@@ -1,12 +1,11 @@
 <script>
-	import Creation from 'rules/Creation.js'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 
 	$: abilities = $characterStore.abilities
 
 	const updateAbilities = _ => {
-		$characterStore = Creation.updateAbilities($characterStore)
+		$characterStore = $characterStore.updateAbilities()
 		SaveCharacter()
 	}
 </script>
@@ -33,7 +32,7 @@
 							}
 						{/if}
 					</span>
-					<span class='s-col'>{ability.xp}</span>
+					<span class='s-col'>{ability.experience}</span>
 					<span class='s-col'>{ability.max}</span>
 					<span class='s-col'>
 						<select

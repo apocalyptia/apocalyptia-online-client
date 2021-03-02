@@ -51,7 +51,7 @@
 			abv: 'slots'
 		},
 		{
-			name: 'Damage Resistance',
+			name: 'Absorption',
 			abv: 'dr'
 		},
 		{

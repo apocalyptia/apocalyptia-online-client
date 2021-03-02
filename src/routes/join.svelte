@@ -7,9 +7,9 @@
 	const handleSignUp = (e) => {
 		e.preventDefault()
 
-		userbase.signUp({ username, password, rememberMe: 'none' })
-			.then(user => alert('You signed up!'))
-			.catch(e => error = true)
+		// userbase.signUp({ username, password, rememberMe: 'none' })
+		// 	.then(user => alert('You signed up!'))
+		// 	.catch(e => error = true)
 	}
 </script>
 

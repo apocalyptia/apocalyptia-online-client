@@ -12,7 +12,7 @@ export default (c) => {
 	char.meta.notes = c.Mn
 	char.meta.status = c.St
 	char.meta.step = c.Sp
-	char.meta.coordinates.map = c.Cm
+	char.meta.coordinates.m = c.Cm
 	char.meta.coordinates.f = c.Cf
 	char.meta.coordinates.x = c.Cx
 	char.meta.coordinates.y = c.Cy
@@ -52,12 +52,12 @@ export default (c) => {
 	char.health.torso.current = c.tO
 	char.health.leftLeg.current = c.lL
 	char.health.rightLeg.current = c.rL
-	char.abilities = c.Ab
-	char.gear.armor.inventory = c.Ga
-	char.gear.melee.inventory = c.Gm
-	char.gear.ranged.inventory = c.Gr
-	char.gear.ammo.inventory = c.Go
-	char.gear.equipment.inventory = c.Ge
+	char.abilities = [...c.Ab]
+	char.gear.armor.inventory = [...c.Ga]
+	char.gear.melee.inventory = [...c.Gm]
+	char.gear.ranged.inventory = [...c.Gr]
+	char.gear.ammo.inventory = [...c.Go]
+	char.gear.equipment.inventory = [...c.Ge]
 
 	char = Creation.setProperties(char)
 

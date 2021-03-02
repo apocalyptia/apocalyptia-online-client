@@ -4,7 +4,7 @@ const Shield = new Rule({
 	id: ``,
 	name: `Shield`,
 	desc: [
-		`Damage Resistance = Size when used as Cover.`,
+		`Absorption = Size when used as Cover.`,
 		`Bonus to Block = Size.`,
 	]
 })

@@ -1,8 +1,8 @@
 import Ability from 'classes/Ability.js'
 
-const Discipline = new Ability({
+const Focus = new Ability({
 	id: ``,
-	name: `Discipline`,
+	name: `Focus`,
 	desc: [
 		`+1 Psyche.`,
 	],
@@ -10,4 +10,4 @@ const Discipline = new Ability({
 	xp: 24
 })
 
-export default Discipline
+export default Focus

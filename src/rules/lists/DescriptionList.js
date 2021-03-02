@@ -10,7 +10,6 @@ import Weight from 'rules/description/Weight.js'
 export default {
 	name: `Description`,
 	list: [
-		Player,
 		Name,
 		Age,
 		Sex,

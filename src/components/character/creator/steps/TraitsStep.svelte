@@ -15,6 +15,11 @@
 	$: remaining = Traits.remaining($characterStore)
 
 	afterUpdate(_ => SaveCharacter())
+
+	const updateTrait = (event) => {
+		$characterStore = Traits.assign($characterStore, event.target)
+		Creation.proceedCheck($characterStore)
+	}
 </script>
 
 
@@ -33,7 +38,7 @@
 							min={parseInt(1)}
 							max={parseInt(Traits.maxPoints)}
 							bind:value={$characterStore.traits[trait.name.toLowerCase()].score}
-							on:input={(event) => $characterStore = Traits.assign($characterStore, event.target)}
+							on:input={(event) => updateTrait(event)}
 							indicator=true
 						/>
 					</div>
@@ -42,7 +47,7 @@
 		{/each}
 	</div>
 	<ResetAndRandomButtonRow
-		reset={_ => $characterStore = Creation.resetTraits($characterStore)}
+		reset={_ => $characterStore = $characterStore.resetTraits()}
 		random={_ => $characterStore = RandomTraits($characterStore)}
 	/>
 </div>

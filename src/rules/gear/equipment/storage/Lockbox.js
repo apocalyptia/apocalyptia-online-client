@@ -4,7 +4,7 @@ const Lockbox = new Gear({
 	id: ``,
 	name: `Lockbox`,
 	desc: [
-		`2 Damage Resistance.`,
+		`2 Absorption.`,
 		`Fire Resistance.`,
 		`Larceny(Disable) 9#.`,
 	],

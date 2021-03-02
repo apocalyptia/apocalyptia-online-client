@@ -1,219 +1,95 @@
+import AbilitiesList from 'rules/lists/abilities/AbilitiesList.js'
+import DescriptionList from 'rules/lists/DescriptionList.js'
+import TraitsList from 'rules/lists/TraitsList.js'
+import SkillsList from 'rules/lists/SkillsList.js'
+import PropertiesList from 'rules/lists/PropertiesList.js'
+
 export default class Character {
 	constructor() {
 		this.meta = {
-			id: null,
-			user: null,
-			created: null,
-			modified: null,
+			id: ``,
+			user: ``,
+			created: ``,
+			modified: ``,
 			notes: ``,
 			status: [],
 			step: 0,
+			proceed: false,
 			coordinates: {
-				map: null,
-				f: null,
+				m: ``,
+				f: 0,
 				x: 0,
 				y: 0,
 				z: 0
 			}
 		}
-		this.description = {
-			name: {
-				name: `Name`,
-				value: null
-			},
-			age: {
-				name: `Age`,
-				value: null
-			},
-			sex: {
-				name: `Sex`,
-				value: null
-			},
-			height: {
-				name: `Height`,
-				value: null
-			},
-			weight: {
-				name: `Weight`,
-				value: null
-			},
-			skin: {
-				name: `Skin`,
-				value: null
-			},
-			hair: {
-				name: `Hair`,
-				value: null
+		this.description = {}
+		for (let desc of DescriptionList.list) {
+			this.description[desc.name.toLowerCase()] = {
+				name: desc.name,
+				value: ``
 			}
 		}
-		this.traits = {
-			agility: {
-				name: `Agility`,
-				score: 1
-			},
-			brains: {
-				name: `Brains`,
-				score: 1
-			},
-			constitution: {
-				name: `Constitution`,
-				score: 1
-			},
-			demeanor: {
-				name: `Demeanor`,
+		this.traits = {}
+		for (let trait of TraitsList.list) {
+			this.traits[trait.name.toLowerCase()] = {
+				name: trait.name,
 				score: 1
 			}
 		}
-		this.skills = {
-			acrobatics: {
-				name: `Acrobatics`,
+		this.skills = {}
+		for (let skill of SkillsList.list) {
+			this.skills[skill.name.toLowerCase()] = {
+				name: skill.name,
+				parent: skill.parent,
 				score: 0,
-				parent: `Agility`
-			},
-			larceny: {
-				name: `Larceny`,
-				score: 0,
-				parent: `Agility`
-			},
-			ranged: {
-				name: `Ranged`,
-				score: 0,
-				parent: `Agility`
-			},
-			stealth: {
-				name: `Stealth`,
-				score: 0,
-				parent: `Agility`
-			},
-			medicine: {
-				name: `Medicine`,
-				score: 0,
-				parent: `Brains`
-			},
-			perception: {
-				name: `Perception`,
-				score: 0,
-				parent: `Brains`
-			},
-			science: {
-				name: `Science`,
-				score: 0,
-				parent: `Brains`
-			},
-			survival: {
-				name: `Survival`,
-				score: 0,
-				parent: `Brains`
-			},
-			athletics: {
-				name: `Athletics`,
-				score: 0,
-				parent: `Constitution`
-			},
-			build: {
-				name: `Build`,
-				score: 0,
-				parent: `Constitution`
-			},
-			drive: {
-				name: `Drive`,
-				score: 0,
-				parent: `Constitution`
-			},
-			melee: {
-				name: `Melee`,
-				score: 0,
-				parent: `Constitution`
-			},
-			leadership: {
-				name: `Leadership`,
-				score: 0,
-				parent: `Demeanor`
-			},
-			perform: {
-				name: `Perform`,
-				score: 0,
-				parent: `Demeanor`
-			},
-			socialize: {
-				name: `Socialize`,
-				score: 0,
-				parent: `Demeanor`
-			},
-			tame: {
-				name: `Tame`,
-				score: 0,
-				parent: `Demeanor`
+				specs: {}
+			}
+			for (let spec in skill.specs) {
+				this.skills[skill.name.toLowerCase()].specs[spec] = {
+					name: spec.name,
+					score: 0
+				}
 			}
 		}
-		this.properties = {
-			block: {
-				name: `Block`,
-				score: 0
-			},
-			carry: {
-				name: `Carry`,
-				score: 6,
-				current: null
-			},
-			dodge: {
-				name: `Dodge`,
-				score: 0
-			},
-			xp: {
-				name: `XP`,
-				score: 3,
-				current: null
-			},
-			intellect: {
-				name: `Intellect`,
-				score: 1
-			},
-			luck: {
-				name: `Luck`,
-				score: 1,
-				current: null
-			},
-			psyche: {
-				name: `Psyche`,
-				score: 3,
-				current: null
-			},
-			speed: {
-				name: `Speed`,
-				score: 3
+		this.properties = {}
+		for (let prop of PropertiesList.list) {
+			this.properties[prop.name.toLowerCase()] = {
+				name: prop.name,
+				score: 0,
+				current: 0
 			}
 		}
 		this.health = {
 			head: {
 				name: `Head`,
 				score: 3,
-				current: null
+				current: 3
 			},
 			rightArm: {
 				name: `Right Arm`,
 				score: 3,
-				current: null
+				current: 3
 			},
 			leftArm: {
 				name: `Left Arm`,
 				score: 3,
-				current: null
+				current: 3
 			},
 			torso: {
 				name: `Torso`,
 				score: 6,
-				current: null
+				current: 6
 			},
 			leftLeg: {
 				name: `Left Leg`,
 				score: 3,
-				current: null
+				current: 3
 			},
 			rightLeg: {
 				name: `Right Leg`,
 				score: 3,
-				current: null
+				current: 3
 			},
 		}
 		this.abilities = []
@@ -238,6 +114,55 @@ export default class Character {
 				name: `Equipment`,
 				inventory: []
 			},
+		}
+		this.resetDescription = _ => {
+			for (let d in this.description) {
+				if (this.description[d].name != `Player`) this.description[d].value = ``
+			}
+			return this
+		}
+		this.resetTraits = _ => {
+			for (let t in this.traits) this.traits[t].score = 1
+			return this
+		}
+		this.resetSkills = _ => {
+			for (let s in this.skills) this.skills[s].score = 0
+			return this
+		}
+		this.resetAbilities = _ => {
+			AbilitiesList.masterList.forEach(a => a.taken = 0)
+			return this.updateAbilities()
+		}
+		this.resetGear = _ => {
+			for (let g in this.gear) this.gear[g].inventory = []
+			return this
+		}
+		this.updateAbilities = _ => {
+			this.abilities = [...AbilitiesList.masterList.filter(a => a.taken)]
+			this.properties.experience.current = this.properties.experience.score
+			if (this.abilities.length) {
+				this.abilities.forEach(a => this.properties.experience.current -= (a.taken * a.experience))
+			}
+			return this
+		}
+		this.applyAbilities = _ => {
+			for (let a in this.abilities) this.abilities[a].formula(this)
+		}
+		this.setProperties = _ => {
+			for (let p of PropertiesList.list) {
+				p.formula(this)
+			}
+			for (let prop in this.properties) {
+				this.properties[prop].current = this.properties[prop].score
+			}
+			return this
+		}
+		this.finalize = (userId) => {
+			if (!this.created) this.created = new Date()
+			this.meta.user = userId
+			this.meta.step = this.limit
+			this.meta.modified = new Date()
+			return this
 		}
 	}
 }

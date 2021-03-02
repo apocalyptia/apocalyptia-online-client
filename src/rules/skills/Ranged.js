@@ -14,7 +14,7 @@ Ranged.specs = {
 		id: `f6a049f5-bc9e-48d2-b0d3-2df479cc7c6e`,
 		name: `Shoot`,
 		desc: [
-			`Roll vs target's Dodge or Block (with a Shield).`,
+			`Roll vs target's Defense.`,
 		]
 	}),
 	throw: new Rule({

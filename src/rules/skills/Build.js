@@ -18,7 +18,7 @@ Build.specs = {
 			`Each Customization can only be applied once on per item.`,
 			`Each item can have up to 3 unique Customizations.`,
 			`Weapons: +1 Ranged Attack, +1 Melee Damage, or a new Weapon Attribute.`,
-			`Armor: +1 Damage Resistance or a new Armor Attribute.`,
+			`Armor: +1 Absorption or a new Armor Attribute.`,
 		]
 	}),
 	repair: new Rule({

@@ -1,5 +1,3 @@
-import { null_to_empty } from "svelte/internal"
-
 export default class Campaign {
 	constructor() {
 		this.created = null

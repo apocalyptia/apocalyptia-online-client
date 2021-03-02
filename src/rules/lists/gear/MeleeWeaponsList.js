@@ -45,7 +45,7 @@ export default {
 // / new Gear(`Net`, 0, 2, `+6 Grab.`, 3),
 // / new Gear(`Rapier`, 3, 1, `Pierce. Rapid.`, 2),
 // / new Gear(`Scythe`, 6, 2, `Chop. Pierce.`, 4),
-// / new Gear(`Sign Shield`, 2, 1, `+3 Block. Cover 6 Damage Resistance.`, 4),
+// / new Gear(`Sign Shield`, 2, 1, `+3 Block. Cover 6 Absorption.`, 4),
 // / new Gear(`Switchblade`, 1, 1, `Pierce. Rapid.`, 0),
 // / new Gear(`Trench Knife`, 2, 1, `Blunt Punch. Pierce. Rapid.`, 1),
 // / new Gear(`Whip`, 0, 1, `Blunt. +1 Disarm. +1 Grab. Range:3.`, 1),

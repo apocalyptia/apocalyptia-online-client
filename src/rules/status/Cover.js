@@ -4,8 +4,8 @@ import Table from 'classes/Table.js'
 const Cover = new Rule({
 	name: `Cover`, 
 	desc: [
-		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Damage Resistance.`,
-		`If the weapon's base Damage is greater than the Material's Damage Resistance, then the Material Damage Resistance acts as Damage Reduction.`,
+		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Absorption.`,
+		`If the weapon's base Damage is greater than the Material's Absorption, then the Material Absorption acts as Damage Reduction.`,
 		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
 		`You can lean in and out of Cover to Attack as part of an Action.`,
 		`Doing so opens you up to a Called Shot against an exposed Body Part if an opponent is waiting for you to lean out of Cover.`,
@@ -25,7 +25,7 @@ class CoverType {
 
 Cover.table = new Table({
 	name: `Cover Table`,
-	headers: [`Material`, `Damage Resistance`],
+	headers: [`Material`, `Absorption`],
 	contents: [
 		new CoverType({ material: 'Drywall', dr: 1 }),
 		new CoverType({ material: 'Glass', dr: 1 }),

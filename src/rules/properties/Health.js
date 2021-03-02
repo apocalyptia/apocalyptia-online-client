@@ -8,20 +8,10 @@ const Health = new Rule({
 		`Health is a measure of how much Damage your body can withstand.`,
 	],
 	formula: (c) => {
-		Object.values(c.health).forEach((h) => {
-			if (h.name == `Torso`) {
-				h.score = c.traits.constitution.score * 2
-				if (h.current == null) {
-					h.current = c.traits.constitution.score * 2
-				}
-			}
-			else {
-				h.score = c.traits.constitution.score
-				if (h.current == null) {
-					h.current = c.traits.constitution.score
-				}
-			}
-		})
+		for (let location in c.health) {
+			if (c.health[location].name == `Torso`) c.health[location].score = c.traits.constitution.score * 2
+			else c.health[location].score = c.traits.constitution.score
+		}
 	},
 	type: `Property`
 })

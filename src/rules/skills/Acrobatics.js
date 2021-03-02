@@ -14,8 +14,7 @@ Acrobatics.specs = {
 		id: `a7451f3a-9970-431a-8304-f36ae046e85b`,
 		name: `Dodge`,
 		desc: [
-			`Roll Acrobatics(Dodge) vs [Melee or Ranged] for active Defense.`,
-			`Reflexive Dodge is your Dodge score with no roll.`,
+			`Roll vs a Melee or Ranged Attack to spend one Action attempting to actively evade that Attack.`,
 		]
 	}),
 	jump: new Rule({

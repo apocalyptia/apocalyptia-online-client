@@ -14,8 +14,8 @@ Melee.specs = {
 		id: `ad9c0c5a-f399-4f81-ba33-6242b17fc5e6`,
 		name: `Block`,
 		desc: [
-			`Roll vs [Melee or Ranged (if you have a Shield)] for active Defense.`,
-			`Reflexive Block is your Block score with no roll.`,
+			`Roll vs a Melee Attack to spend one Action attempting to actively deflect that Attack.`,
+			`You may roll against Ranged Attacks as well in the same way if you are holding a Shield.`,
 		]
 	}),
 	strike: new Rule({
@@ -23,7 +23,6 @@ Melee.specs = {
 		name: `Strike`,
 		desc: [
 			`Roll vs target's Defense.`,
-			`Damage = [weapon Damage + Success].`,
 		]
 	})
 }

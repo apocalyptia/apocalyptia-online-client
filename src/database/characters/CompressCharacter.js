@@ -9,7 +9,7 @@ export default (char) => {
 	c.Mn = char.meta.notes
 	c.St = char.meta.status
 	c.Sp = char.meta.step
-	c.Cm = char.meta.coordinates.map
+	c.Cm = char.meta.coordinates.m
 	c.Cf = char.meta.coordinates.f
 	c.Cx = char.meta.coordinates.x
 	c.Cy = char.meta.coordinates.y
@@ -49,12 +49,12 @@ export default (char) => {
 	c.tO = char.health.torso.current
 	c.lL = char.health.leftLeg.current
 	c.rL = char.health.rightLeg.current
-	c.Ab = char.abilities
-	c.Ga = char.gear.armor.inventory
-	c.Gm = char.gear.melee.inventory
-	c.Gr = char.gear.ranged.inventory
-	c.Go = char.gear.ammo.inventory
-	c.Ge = char.gear.equipment.inventory
+	c.Ab = [...char.abilities]
+	c.Ga = [...char.gear.armor.inventory]
+	c.Gm = [...char.gear.melee.inventory]
+	c.Gr = [...char.gear.ranged.inventory]
+	c.Go = [...char.gear.ammo.inventory]
+	c.Ge = [...char.gear.equipment.inventory]
 
 	return JSON.stringify(c)
 }

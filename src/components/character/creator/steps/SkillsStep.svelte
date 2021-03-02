@@ -15,6 +15,11 @@
 	$: remaining = Skills.remaining($characterStore)
 
 	afterUpdate(_ => SaveCharacter())
+
+	const updateSkill = (event) => {
+		$characterStore = Skills.assign($characterStore, event.target)
+		Creation.proceedCheck($characterStore)
+	}
 </script>
 
 
@@ -42,7 +47,7 @@
 									min={parseInt(0)}
 									max={parseInt(6)}
 									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
-									on:input={event => $characterStore = Skills.assign($characterStore, event.target)}
+									on:input={event => updateSkill(event)}
 									indicator=true
 								/>
 							</div>
@@ -52,7 +57,7 @@
 			</div>
 		{/each}
 	<ResetAndRandomButtonRow
-		reset={_ => $characterStore = Creation.resetSkills($characterStore)}
+		reset={_ => $characterStore = $characterStore.resetSkills($characterStore)}
 		random={_ => $characterStore = RandomSkills($characterStore)}
 	/>
 </div>

@@ -49,6 +49,7 @@ Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
+	RandomAbilities.js is broken now for some reason.
 	Characters aren't saving right.
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 
@@ -79,10 +80,10 @@ Figure out a quick Jury-Rig version of Build.
 
 
 Abilities that modify Character stats:
-Discipline
 Fleet Footed
 Fortunate
 Healthy
+Pain Tolerance
 Practice
 Self Improvement
 Situational Awareness

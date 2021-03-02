@@ -50,9 +50,6 @@
 		font-size: var(--s125);
 		font-weight: bold;
 	}
-	button {
-		flex: 1;
-	}
 	.item-content {
 		padding-top: var(--std-margin);
 	}

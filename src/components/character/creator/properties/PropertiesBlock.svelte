@@ -1,45 +1,25 @@
 <script>
+	import PropertiesList from 'rules/lists/PropertiesList.js'
     import characterStore from 'stores/characterStore.js'
+
+	const propertyListHalves = [
+		PropertiesList.list.slice(0, (PropertiesList.list.length / 2)),
+		PropertiesList.list.slice(PropertiesList.list.length / 2, PropertiesList.list.length)
+	]
 </script>
 
 
 <div class='section-card properties-list'>
-	<div class='prop-block'>
-		<div class='prop-item'>
-			{$characterStore.properties.speed.name}: 
-			{$characterStore.properties.speed.score}
+	{#each propertyListHalves as halfProp}
+		<div class='prop-block'>
+			{#each halfProp as p}
+				<div class='prop-item'>
+					{$characterStore.properties[p.name.toLowerCase()].name}: 
+					{$characterStore.properties[p.name.toLowerCase()].score}
+				</div>
+			{/each}
 		</div>
-		<div class='prop-item'>
-			{$characterStore.properties.xp.name}: 
-			{$characterStore.properties.xp.score}
-		</div>
-		<div class='prop-item'>
-			{$characterStore.properties.carry.name}:
-			{$characterStore.properties.carry.score}
-		</div>
-		<div class='prop-item'>
-			{$characterStore.properties.psyche.name}: 
-			{$characterStore.properties.psyche.score}
-		</div>
-	</div>
-	<div class='prop-block'>
-		<div class='prop-item'>
-			{$characterStore.properties.dodge.name}: 
-			{$characterStore.properties.dodge.score}
-		</div>
-		<div class='prop-item'>
-			{$characterStore.properties.intellect.name}: 
-			{$characterStore.properties.intellect.score}
-		</div>
-		<div class='prop-item'>
-			{$characterStore.properties.block.name}: 
-			{$characterStore.properties.block.score}
-		</div>
-		<div class='prop-item'>
-			{$characterStore.properties.luck.name}: 
-			{$characterStore.properties.luck.score}
-		</div>
-	</div>
+	{/each}
 </div>
 
 

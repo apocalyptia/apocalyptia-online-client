@@ -7,9 +7,7 @@ const Speed = new Rule({
 		`This is also the number of yards you can Walk as 1 Action.`,
 		`When traveling long distances overland, you can March at [Speed / 2] mph for up to [Constitution x 3] hrs per day.`,
 	],
-	formula: (c) => {
-		c.properties.speed.score = c.traits.agility.score * 3
-	},
+	formula: (c) => c.properties.speed.score = c.traits.agility.score * 3,
 	type: `Property`
 })
 
