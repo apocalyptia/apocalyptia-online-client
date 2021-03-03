@@ -8,8 +8,8 @@ import RandomWeight from 'rules/random/RandomWeight.js'
 import characterStore from 'stores/characterStore.js'
 import { get } from 'svelte/store'
 
-export default (desc) => {
-	switch (desc.name) {
+export default (name) => {
+	switch (name) {
 		case 'Name': return RandomName(get(characterStore))
 		case 'Age': return RandomAge(get(characterStore))
 		case 'Sex': return RandomSex(get(characterStore))

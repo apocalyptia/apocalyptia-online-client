@@ -28,17 +28,15 @@
 
 
 <div class='screen'>
-	<div class='lines'>
-		<div class='scanline'>
-			<div class="console">
-				<div class="program">
-					<header>
-						<TitleBar />
-					</header>
-					<main>
-						<svelte:component this={page.component} {page} />
-					</main>
-				</div>
+	<div class='scanline'>
+		<div class="console">
+			<div class="program">
+				<header>
+					<TitleBar />
+				</header>
+				<main>
+					<svelte:component this={page.component} {page} />
+				</main>
 			</div>
 		</div>
 	</div>
@@ -56,17 +54,11 @@
 		background: radial-gradient(#222 40%, #1a1a1a 60%, #0a0a0a 100%);
 		z-index: 0;
 	}
-	.lines {
-		background-repeat: repeat-y;
-		background-size: 100% var(--s25);
-		background-color: linear-gradient(var(--sec-color) 50%, #232 50%);
-		z-index: 12;
-	}
 
 	.scanline {
 		background-color: transparent;
 		overflow-y: auto;
-		z-index: 3;
+		z-index: 3000;
 	}
 	.scanline:before {
 		animation: hline 7s linear infinite;
@@ -76,7 +68,7 @@
 		left: 0;
 		position: absolute;
 		right: 0;
-		z-index: 3;
+		z-index: 3000;
 	}
 	@keyframes hline {
 		0%  { top: 0; }

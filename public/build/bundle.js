@@ -4104,31 +4104,36 @@ var app = (function () {
     });
 
     var RandomWeight = (c) => {
-        let feet = parseInt(c.description.height.value.slice(
-            0,
-            c.description.height.value.indexOf('ft')
-        ));
+    	if (c.description.height.value) {
+    		let feet = parseInt(c.description.height.value.slice(
+    			0,
+    			c.description.height.value.indexOf('ft')
+    		));
 
-        let inches = parseInt(c.description.height.value.slice(
-            c.description.height.value.indexOf(' '),
-            c.description.height.value.indexOf('in')
-        ));
+    		let inches = parseInt(c.description.height.value.slice(
+    			c.description.height.value.indexOf(' '),
+    			c.description.height.value.indexOf('in')
+    		));
 
-        let totalInches = (feet * 12) + inches;
+    		let totalInches = (feet * 12) + inches;
 
-        let totalPounds;
+    		let totalPounds = 0;
 
-    	if (c.description.sex.value == `Male`) {
-    		totalPounds = Math.ceil((Math.random() * 30) + (totalInches * 2.25));
-    	}
-    	else if (c.description.sex.value == `Female`) {
-    		totalPounds = Math.ceil((Math.random() * 20) + (totalInches * 2));
+    		if (c.description.sex.value == `Male`) {
+    			totalPounds = Math.ceil((Math.random() * 30) + (totalInches * 2.25));
+    		}
+    		else if (c.description.sex.value == `Female`) {
+    			totalPounds = Math.ceil((Math.random() * 20) + (totalInches * 2));
+    		}
+    		else {
+    			totalPounds = Math.ceil((Math.random() * 25) + (totalInches * 2.125));
+    		}
+
+    		return `${totalPounds}lbs`
     	}
     	else {
-    		totalPounds = Math.ceil((Math.random() * 25) + (totalInches * 2.125));
-        }
-
-    	return `${totalPounds}lbs`
+    		return `${Math.ceil((Math.random() * 25) + (65 * 2.125))}lbs`
+    	}
     };
 
     const Weight = new Descriptor({
@@ -10663,8 +10668,8 @@ var app = (function () {
         return c
     };
 
-    var RandomDescriptionSwitch = (desc) => {
-    	switch (desc.name) {
+    var RandomDescriptionSwitch = (name) => {
+    	switch (name) {
     		case 'Name': return RandomName(get_store_value(characterStore))
     		case 'Age': return RandomAge(get_store_value(characterStore))
     		case 'Sex': return RandomSex(get_store_value(characterStore))
@@ -10728,14 +10733,14 @@ var app = (function () {
     			create_component(dicebutton.$$.fragment);
     			t4 = space();
     			attr_dev(span, "class", "desc-label svelte-12b4fub");
-    			add_location(span, file$R, 30, 5, 1140);
+    			add_location(span, file$R, 30, 5, 1145);
     			attr_dev(input, "class", "desc-value svelte-12b4fub");
     			attr_dev(input, "type", "text");
-    			add_location(input, file$R, 31, 5, 1190);
+    			add_location(input, file$R, 31, 5, 1195);
     			attr_dev(div0, "class", "dice-container svelte-12b4fub");
-    			add_location(div0, file$R, 32, 5, 1280);
+    			add_location(div0, file$R, 32, 5, 1285);
     			attr_dev(div1, "class", "desc-container svelte-12b4fub");
-    			add_location(div1, file$R, 29, 4, 1106);
+    			add_location(div1, file$R, 29, 4, 1111);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -10917,9 +10922,9 @@ var app = (function () {
     			t1 = space();
     			create_component(resetandrandombuttonrow.$$.fragment);
     			attr_dev(div0, "class", "section-card");
-    			add_location(div0, file$R, 26, 1, 983);
+    			add_location(div0, file$R, 26, 1, 988);
     			attr_dev(div1, "class", "description-step-page");
-    			add_location(div1, file$R, 24, 0, 873);
+    			add_location(div1, file$R, 24, 0, 878);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11031,7 +11036,7 @@ var app = (function () {
     	};
 
     	const randomDescription = desc => {
-    		set_store_value(characterStore, $characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc), $characterStore);
+    		set_store_value(characterStore, $characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc.name), $characterStore);
     	};
 
     	const writable_props = [];
@@ -31750,7 +31755,6 @@ var app = (function () {
     const file = "src/App.svelte";
 
     function create_fragment(ctx) {
-    	let div4;
     	let div3;
     	let div2;
     	let div1;
@@ -31777,7 +31781,6 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div4 = element("div");
     			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
@@ -31787,27 +31790,24 @@ var app = (function () {
     			t = space();
     			main = element("main");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			attr_dev(header, "class", "svelte-1u6yiow");
-    			add_location(header, file, 34, 5, 868);
-    			attr_dev(main, "class", "svelte-1u6yiow");
-    			add_location(main, file, 37, 5, 916);
-    			attr_dev(div0, "class", "program svelte-1u6yiow");
-    			add_location(div0, file, 33, 4, 841);
-    			attr_dev(div1, "class", "console svelte-1u6yiow");
-    			add_location(div1, file, 32, 3, 815);
-    			attr_dev(div2, "class", "scanline svelte-1u6yiow");
-    			add_location(div2, file, 31, 2, 789);
-    			attr_dev(div3, "class", "lines svelte-1u6yiow");
-    			add_location(div3, file, 30, 1, 767);
-    			attr_dev(div4, "class", "screen svelte-1u6yiow");
-    			add_location(div4, file, 29, 0, 745);
+    			attr_dev(header, "class", "svelte-1xfbxae");
+    			add_location(header, file, 33, 4, 843);
+    			attr_dev(main, "class", "svelte-1xfbxae");
+    			add_location(main, file, 36, 4, 888);
+    			attr_dev(div0, "class", "program svelte-1xfbxae");
+    			add_location(div0, file, 32, 3, 817);
+    			attr_dev(div1, "class", "console svelte-1xfbxae");
+    			add_location(div1, file, 31, 2, 792);
+    			attr_dev(div2, "class", "scanline svelte-1xfbxae");
+    			add_location(div2, file, 30, 1, 767);
+    			attr_dev(div3, "class", "screen svelte-1xfbxae");
+    			add_location(div3, file, 29, 0, 745);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div4, anchor);
-    			append_dev(div4, div3);
+    			insert_dev(target, div3, anchor);
     			append_dev(div3, div2);
     			append_dev(div2, div1);
     			append_dev(div1, div0);
@@ -31862,7 +31862,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(div3);
     			destroy_component(titlebar);
     			if (switch_instance) destroy_component(switch_instance);
     		}

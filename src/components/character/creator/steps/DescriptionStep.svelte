@@ -17,7 +17,7 @@
 	}
 
 	const randomDescription = (desc) => {
-		$characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc)
+		$characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc.name)
 	}
 </script>
 
