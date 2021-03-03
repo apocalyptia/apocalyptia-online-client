@@ -9,19 +9,23 @@
 	import { afterUpdate, onMount } from 'svelte'
 
 	afterUpdate(_ => {
-		Creation.proceedStatus($characterStore)
+		Creation.proceedCheck($characterStore)
 		$characterStore = $characterStore
 		SaveCharacter()
 	})
 
-	onMount(_ => $characterStore.description.player.value = $characterStore.meta.user)
+	onMount(_ => {
+		$characterStore.description.player = {
+			"value": $characterStore.meta.user
+		}
+	})
 </script>
 
 
 <div class='finalize-page'>
 	<PageHeader chapter={'Finalize'} step={$characterStore.meta.step} />
 	<div class='sheet-content'>
-		<CharacterSheet mode={'readonly'} />
+		<CharacterSheet mode={'edit'} />
 	</div>
 	<SaveAndDeleteButtonRow
 		saveFunc={_ => SaveCharacter()}

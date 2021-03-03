@@ -7,7 +7,7 @@ const SituationalAwareness = new Ability({
 		`+1 to Reflexive Defenses.`,
 	],
 	max: 1,
-	xp: 9
+	experience: 9
 })
 
 export default SituationalAwareness

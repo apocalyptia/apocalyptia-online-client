@@ -7,7 +7,7 @@ const Sidestep = new Ability({
 		`Free Dodge Action once per round.`,
 	],
 	max: 1,
-	xp: 12
+	experience: 12
 })
 
 export default Sidestep

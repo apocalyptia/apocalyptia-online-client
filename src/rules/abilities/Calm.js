@@ -7,7 +7,7 @@ const Focus = new Ability({
 		`+1 Psyche.`,
 	],
 	max: 3,
-	xp: 24
+	experience: 24
 })
 
 export default Focus

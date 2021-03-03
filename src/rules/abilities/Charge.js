@@ -8,7 +8,7 @@ const Charge = new Ability({
 		`Ignore Prone effect from Leg Damage.`,
 	],
 	max: 1,
-	xp: 15
+	experience: 15
 })
 
 export default Charge

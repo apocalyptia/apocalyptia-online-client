@@ -7,7 +7,7 @@ const FastDraw = new Ability({
 		`Free item draw once per round.`,
 	],
 	max: 1,
-	xp: 6
+	experience: 6
 })
 
 export default FastDraw

@@ -9,7 +9,7 @@ const Unorthodox = new Ability({
 		`Pick a new parent Trait for a Skill.`,
 	],
 	max: 1,
-	xp: 9,
+	experience: 9,
 	opts: (function() {
 		const uList = []
 		TraitsList.list.forEach((trait) => {

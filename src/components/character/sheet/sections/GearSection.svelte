@@ -6,20 +6,6 @@
 </script>
 
 
-<section>
-	<details class='sheet-details' open>
-		<summary class='sheet-card-title'>Gear</summary>
-		<div class='gear-category-list'>
-			{#each Object.values($characterStore.gear) as category}
-				<GearCategory {mode} {category} />
-			{/each}
-		</div>
-	</details>
-</section>
-
-
-<style>
-	.gear-category-list {
-		padding: var(--std-padding);
-	}
-</style>
+{#each Object.values($characterStore.gear) as category}
+	<GearCategory {mode} {category} />
+{/each}

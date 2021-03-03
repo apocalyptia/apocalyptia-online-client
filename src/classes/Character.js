@@ -139,10 +139,16 @@ export default class Character {
 		}
 		this.updateAbilities = _ => {
 			this.abilities = [...AbilitiesList.masterList.filter(a => a.taken)]
-			this.properties.experience.current = this.properties.experience.score
-			if (this.abilities.length) {
-				this.abilities.forEach(a => this.properties.experience.current -= (a.taken * a.experience))
-			}
+			console.log(`Current XP Pre-Reduce = ${this.properties.experience.current}`)
+			this.properties.experience.current = this.abilities.reduce((sum, a) => {
+				console.log(`sum = ${sum}`)
+				console.log(`a.taken = ${a.taken}`)
+				console.log(`a.experience = ${a.experience}`)
+				console.log(`a.taken * a.experience = ${a.taken * a.experience}`)
+				console.log(`sum - (a.taken * a.experience) = ${sum - (a.taken * a.experience)}`)
+				return sum - (a.taken * a.experience)
+			}, this.properties.experience.score)
+			console.log(`Current XP Post-Reduce = ${this.properties.experience.current}`)
 			return this
 		}
 		this.applyAbilities = _ => {

@@ -1,28 +1,21 @@
 <script>
 	import characterStore from 'stores/characterStore.js'
+
+	export const mode = 'readonly'
 </script>
 
 
-<section>
-	<details class='sheet-details' open>
-		<summary class='sheet-card-title'>
-			Traits
-		</summary>
-		<div class='sheet-card'>
-			<div class='sheet-card-body'>
-				{#each Object.values($characterStore.traits) as trait}
-					<div class='sheet-card-block'>
-						<div class='sheet-card-item'>
-							<span class='trait-name'>
-								{trait.name}: {trait.score}
-							</span>
-						</div>
-					</div>
-				{/each}
+<div class='sheet-card-body'>
+	{#each Object.values($characterStore.traits) as trait}
+		<div class='sheet-card-block'>
+			<div class='sheet-card-item'>
+				<span class='trait-name'>
+					{trait.name}: {trait.score}
+				</span>
 			</div>
 		</div>
-	</details>
-</section>
+	{/each}
+</div>
 
 
 <style>

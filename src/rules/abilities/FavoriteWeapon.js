@@ -8,7 +8,7 @@ const FavoriteWeapon = new Ability({
 		`Any Botch with a specified weapon type is reduced in severity to a normal Fail.`,
 	],
 	max: 1,
-	xp: 3,
+	experience: 3,
 	opts: WeaponsList
 })
 

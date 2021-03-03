@@ -5,20 +5,11 @@
 </script>
 
 
-<section>
-	<details class='sheet-details' open>
-		<summary class='sheet-card-title'>
-			Notes
-		</summary>
-		<div class='sheet-card'>
-			{#if mode == 'edit'}
-				<textarea class='sheet-notes-block' wrap='soft' bind:value={$characterStore.meta.notes} />
-			{:else}
-				<div class='sheet-notes-block'>{$characterStore.meta.notes}</div>
-			{/if}
-		</div>
-	</details>
-</section>
+{#if mode == 'readonly'}
+	<div class='sheet-notes-block'>{$characterStore.meta.notes}</div>
+{:else}
+	<textarea class='sheet-notes-block' wrap='soft' bind:value={$characterStore.meta.notes} />
+{/if}
 
 
 <style>

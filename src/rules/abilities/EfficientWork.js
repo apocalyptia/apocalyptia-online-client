@@ -13,7 +13,7 @@ const EfficientWork = new Ability({
 		`[Time / 2] for one of the following Skills (minimum 1 action): Build, Larceny, Medicine, Science, Survival, or Tame.`
 	],
 	max: 1,
-	xp: 6,
+	experience: 6,
 	opts: [
 		Build,
 		Larceny,

@@ -8,7 +8,7 @@ const SelfImprovement = new Ability({
 		`+1 to a Trait (max 6).`,
 	],
 	max: 1,
-	xp: 30,
+	experience: 30,
 	opts: TraitsList.list
 })
 

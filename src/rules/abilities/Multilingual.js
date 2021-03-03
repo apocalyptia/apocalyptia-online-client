@@ -8,7 +8,7 @@ const Multilingual = new Ability({
 		`Learn a new form of communication.`,
 	],
 	max: 1,
-	xp: 6,
+	experience: 6,
 	opts: LanguageList
 })
 

@@ -1,33 +1,29 @@
 <script>
 	import characterStore from 'stores/characterStore.js'
+
+	export const mode = 'readonly'
 </script>
 
 
-<section>
-	<details class='sheet-details' open>
-		<summary class='sheet-card-title'>
-			Abilities
-		</summary>
-		<div class='sheet-card'>
-			<div class='card-table'>
-				<div class='card-table-header'>
-					<span class='l-col'>Name</span>
-					<span class='s-col'>XP</span>
-					<span class='s-col'>Max</span>
-					<span class='s-col'>Taken</span>
-				</div>
-				{#each $characterStore.abilities as ability}
-					<div class='card-table-row'>
-						<span class='l-col'>{ability.name}{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}</span>
-						<span class='s-col'>{ability.experience}</span>
-						<span class='s-col'>{ability.max}</span>
-						<span class='s-col'>{ability.taken}</span>
-					</div>
-				{/each}
-			</div>
+<div class='card-table'>
+	<div class='card-table-header'>
+		<span class='l-col'>Name</span>
+		<span class='s-col'>XP</span>
+		<span class='s-col'>Max</span>
+		<span class='s-col'>Taken</span>
+	</div>
+	{#each $characterStore.abilities as ability}
+		<div class='card-table-row'>
+			<span class='l-col'>
+				{ability.name}
+				{ability.opts[0] ? ` (${ability.opts[0].name})` : ``}
+			</span>
+			<span class='s-col'>{ability.experience}</span>
+			<span class='s-col'>{ability.max}</span>
+			<span class='s-col'>{ability.taken}</span>
 		</div>
-	</details>
-</section>
+	{/each}
+</div>
 
 
 <style>

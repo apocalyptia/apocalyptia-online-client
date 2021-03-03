@@ -7,7 +7,7 @@ const VehicleOperation = new Ability({
 		`Proficiently operate a class of vehicle.`,
 	],
 	max: 1,
-	xp: 6
+	experience: 6
 })
 // TODO: Need to add VehicleList when it is made
 

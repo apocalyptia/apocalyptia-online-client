@@ -1,33 +1,26 @@
 <script>
 	import characterStore from 'stores/characterStore.js'
+
+	export const mode = 'readonly'
 </script>
 
 
-<section>
-	<details class='sheet-details' open>
-		<summary class='sheet-card-title'>
-			Skills
-		</summary>
-		<div class='sheet-card'>
-			<div class='sheet-card-body'>
-				{#each Object.values($characterStore.traits) as trait}
-					<div class='sheet-card-block'>
-						<div class='parent-trait'>
-							{trait.name}
-						</div>
-						{#each Object.values($characterStore.skills) as skill}
-							{#if trait.name == skill.parent}
-								<div class='sheet-card-item'>
-									{skill.name}: {skill.score}
-								</div>
-							{/if}
-						{/each}
-					</div>
-				{/each}
+<div class='sheet-card-body'>
+	{#each Object.values($characterStore.traits) as trait}
+		<div class='sheet-card-block'>
+			<div class='parent-trait'>
+				{trait.name}
 			</div>
+			{#each Object.values($characterStore.skills) as skill}
+				{#if trait.name == skill.parent}
+					<div class='sheet-card-item'>
+						{skill.name}: {skill.score}
+					</div>
+				{/if}
+			{/each}
 		</div>
-	</details>
-</section>
+	{/each}
+</div>
 
 
 <style>

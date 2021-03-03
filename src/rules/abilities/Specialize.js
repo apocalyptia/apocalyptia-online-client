@@ -8,7 +8,7 @@ const Specialize = new Ability({
 		`+1 to a Skill Specialty.`,
 	],
 	max: 1,
-	xp: 3,
+	experience: 3,
 	opts: Skills.specs
 })
 

@@ -2,8 +2,6 @@
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 
-	$: abilities = $characterStore.abilities
-
 	const updateAbilities = _ => {
 		$characterStore = $characterStore.updateAbilities()
 		SaveCharacter()
@@ -21,7 +19,7 @@
 			<span class='s-col'>Taken</span>
 		</div>
 		<div class='current-abilities-list'>
-			{#each abilities as ability}
+			{#each $characterStore.abilities as ability}
 				<div class='current-ability-row'>
 					<span class='l-col'>
 						{ability.name}

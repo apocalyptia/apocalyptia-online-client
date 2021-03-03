@@ -7,7 +7,7 @@ const Ambidextrous = new Ability({
 		`Off-hand penalty is -1 instead of -3.`,
 	],
 	max: 1,
-	xp: 18
+	experience: 18
 })
 
 export default Ambidextrous

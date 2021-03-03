@@ -7,7 +7,7 @@ const PainTolerance = new Ability({
 		`Ignore 1 Pain penalty.`,
 	],
 	max: 3,
-	xp: 9
+	experience: 9
 })
 
 export default PainTolerance

@@ -7,7 +7,7 @@ const Parry = new Ability({
 		`Free Block Action once per round.`,
 	],
 	max: 1,
-	xp: 12
+	experience: 12
 })
 
 export default Parry

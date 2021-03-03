@@ -7,7 +7,7 @@ const Fortunate = new Ability({
 		`+1 Luck.`,
 	],
 	max: 1,
-	xp: 9
+	experience: 9
 })
 
 export default Fortunate

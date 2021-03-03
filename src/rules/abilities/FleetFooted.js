@@ -7,7 +7,7 @@ const FleetFooted = new Ability({
 		`+1 Speed.`,
 	],
 	max: 3,
-	xp: 6
+	experience: 6
 })
 
 export default FleetFooted

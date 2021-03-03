@@ -73,6 +73,7 @@ Character:
 	Character Sheet:
 		Combine Health with Armor somehow.
 		Make + item button do something.
+		Refactor DescriptionSection.svelte to be an each list
 
 Figure out a quick Jury-Rig version of Build.
 

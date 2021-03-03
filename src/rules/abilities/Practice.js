@@ -8,7 +8,7 @@ const Practice = new Ability({
 		`+1 to a Skill (up to the parent Trait).`,
 	],
 	max: 1,
-	xp: 6,
+	experience: 6,
 	opts: SkillsList.list
 })
 

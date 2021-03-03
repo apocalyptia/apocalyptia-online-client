@@ -7,7 +7,7 @@ const Healthy = new Ability({
 		`+1 Health for each Body Part.`,
 	],
 	max: 3,
-	xp: 24
+	experience: 24
 })
 
 export default Healthy

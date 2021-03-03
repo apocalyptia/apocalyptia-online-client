@@ -11,8 +11,8 @@
 
 <div class='options-section'>
 	{#if options}
-		{#each optionList as ability}
-			<AbilityModalItem {ability} />
+		{#each optionList as option}
+			<AbilityModalItem ability={option} />
 		{/each}
 	{:else}
 		<AbilityModalItem {ability} />

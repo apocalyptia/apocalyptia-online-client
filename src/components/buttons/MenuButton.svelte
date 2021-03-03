@@ -6,27 +6,19 @@
 <button class='btn-box square-btn'
     on:click={_ => $menuStore = $menuStore.toggle()}
 >
-	<div class='menu-icon-box'>
-		<img class='menu-icon' src='/icons/menu.png' alt='Menu Icon'>
-	</div>
+	<div class='menu-icon-box'>-</div>
 </button>
 
 
 <style>
+	.btn-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
 	.menu-icon-box {
-		position: fixed;
-		right: 0;
-		top: 0;
+		font-size: var(--s200);
 		z-index: 3;
-		height: var(--square);
-		width: var(--square);
-		padding: var(--std-padding);
-	}
-	.menu-icon-box:hover {
-		filter: brightness(0%) grayscale(100%);
-	}
-	.menu-icon {
-		height: 100%;
-		transform: scale(1, 1);
+		padding-top: var(--s25);
 	}
 </style>

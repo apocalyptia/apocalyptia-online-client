@@ -7,7 +7,7 @@ const Assassin = new Ability({
 		`+3 Damage for Attacks made while Concealed.`,
 	],
 	max: 1,
-	xp: 18
+	experience: 18
 })
 
 export default Assassin

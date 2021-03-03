@@ -15,6 +15,10 @@
 		Creation.proceedCheck($characterStore)
 		$characterStore = $characterStore
 	}
+
+	const randomDescription = (desc) => {
+		$characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc)
+	}
 </script>
 
 
@@ -27,10 +31,7 @@
 					<span class='desc-label'>{desc.name}:</span>
 					<input class='desc-value' type='text' bind:value={desc.value} on:input={updateDesc}>
 					<div class='dice-container'>
-						<DiceButton
-							type={desc.name}
-							func={_ => $characterStore.description[desc.name.toLowerCase()].value = RandomDescriptionSwitch(desc)}
-						/>
+						<DiceButton func={_ => randomDescription(desc)} />
 					</div>
 				</div>
 			{/if}
@@ -58,9 +59,6 @@
 	}
 	.desc-value {
 		flex: 2;
-	}
-	.player-value {
-		flex: 3;
 	}
 	.dice-container {
 		display: flex;

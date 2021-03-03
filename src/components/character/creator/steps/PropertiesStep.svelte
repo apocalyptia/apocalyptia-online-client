@@ -1,5 +1,5 @@
 <script>
-	import BodyParts from 'components/character/BodyParts.svelte'
+	import HealthSection from 'components/character/sheet/sections/HealthSection.svelte'
 	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import Properties from 'rules/Properties.js'
@@ -22,6 +22,6 @@
 	<PropertiesFormulae />
 	<PropertiesBlock />
 	<div class='section-card'>
-		<BodyParts mode={'readonly'} />
+		<HealthSection mode={'readonly'} />
 	</div>
 </div>

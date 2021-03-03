@@ -8,7 +8,7 @@ const FirmGrip = new Ability({
 		`Ignore Drop effect from Arm Damage.`,
 	],
 	max: 1,
-	xp: 15
+	experience: 15
 })
 
 export default FirmGrip

@@ -7,7 +7,7 @@ const HardHeaded = new Ability({
 		`Ignore Stun effect from Head Damage.`,
 	],
 	max: 1,
-	xp: 15
+	experience: 15
 })
 
 export default HardHeaded

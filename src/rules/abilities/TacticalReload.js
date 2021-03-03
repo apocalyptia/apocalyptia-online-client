@@ -7,7 +7,7 @@ const TacticalReload = new Ability({
 		`Free Reload once per round.`,
 	],
 	max: 1,
-	xp: 3
+	experience: 3
 })
 
 export default TacticalReload

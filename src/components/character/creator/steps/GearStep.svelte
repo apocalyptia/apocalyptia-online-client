@@ -1,4 +1,5 @@
 <script>
+	import AbilitiesList from 'rules/lists/abilities/AbilitiesList.js'
 	import Creation from 'rules/Creation.js'
 	import GearBlock from 'components/widgets/GearBlock.svelte'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
@@ -7,6 +8,9 @@
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { afterUpdate, beforeUpdate } from 'svelte'
+
+	console.log('Gear Step Abilities List')
+	console.log(AbilitiesList.masterList.filter(a => a.taken))
 
 	let gearedUp = false
 

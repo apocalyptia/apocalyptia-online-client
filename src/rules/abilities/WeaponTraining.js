@@ -8,7 +8,7 @@ const WeaponTraining = new Ability({
 		`+1 Attack with a specified weapon type.`,
 	],
 	max: 1,
-	xp: 3,
+	experience: 3,
 	opts: WeaponsList
 })
 

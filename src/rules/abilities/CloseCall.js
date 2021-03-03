@@ -7,7 +7,7 @@ const CloseCall = new Ability({
 		`Spend this Ability to survive an otherwise lethal encounter.`,
 	],
 	max: 1,
-	xp: 30
+	experience: 30
 })
 
 export default CloseCall

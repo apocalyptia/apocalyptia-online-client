@@ -1,4 +1,4 @@
-import Creation from 'rules/Creation.js'
+import CreationStepsList from 'rules/lists/CreationStepsList.js'
 import RandomAbilities from 'rules/random/RandomAbilities.js'
 import RandomDescription from 'rules/random/RandomDescription.js'
 import RandomSkills from 'rules/random/RandomSkills.js'
@@ -12,6 +12,6 @@ export default (c) => {
     c = c.setProperties()
     c = RandomAbilities(c)
     c = RandomStartingGear(c, c.properties.luck.score)
-	c.meta.status.step = 6
+	c.meta.step = CreationStepsList.length - 1
     return c
 }

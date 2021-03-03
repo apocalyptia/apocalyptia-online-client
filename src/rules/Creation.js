@@ -18,7 +18,8 @@ export default {
 			(c.meta.step == 2 && Skills.remaining(c) == 0) ||
 			(c.meta.step == 3) ||
 			(c.meta.step == 4 && c.properties.experience.current >= 0) ||
-			(c.meta.step == 5 && Object.values(c.gear).every(g => g.inventory.length))
+			(c.meta.step == 5 && Object.values(c.gear).every(g => g.inventory.length)) ||
+			(c.meta.step == 6)
 		)
 	},
 }
