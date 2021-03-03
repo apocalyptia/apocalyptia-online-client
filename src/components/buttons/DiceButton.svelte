@@ -1,10 +1,24 @@
 <script>
-	export let func, face
+	import d6 from 'rules/random/d6.js'
+
+	export let func
+
+	let face = 6
+
+	const runFunc = _ => {
+		let rollCount = Math.ceil(Math.random() * 12) + 12
+		const setIntervalId = setInterval(_ => {
+			const result = func()
+			if (typeof result == 'number') face = result
+			else face = d6()
+			if (rollCount-- == 0) clearInterval(setIntervalId)
+		}, 50)
+	}
 </script>
 
 
-<button class='btn-box square-btn' on:click={func}>
-	<div class='dice-icon-box'>{face || 6}</div>
+<button class='btn-box square-btn' on:click={runFunc}>
+	<div class='dice-icon-box'>{face}</div>
 </button>
 
 

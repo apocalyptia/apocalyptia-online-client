@@ -5,14 +5,11 @@
 	let roll = [6], mod = 0, total = 0
 
 	const rollResult = _ => {
-		let rollCount = Math.ceil(Math.random() * 12) + 12
-		const setIntervalId = setInterval(_ => {
-			roll = d6Roll()
-			if (roll[0] == 1 && roll[1] == 1) total = 'Botched!'
-			else total = roll.reduce((acc, num) => acc + num, 0) + mod
-			if (roll[0] == 6) total = `Exploded! ${total}`
-			if (rollCount-- == 0) clearInterval(setIntervalId)
-		}, 50)
+		roll = d6Roll()
+		if (roll[0] == 1 && roll[1] == 1) total = 'Botched!'
+		else total = roll.reduce((acc, num) => acc + num, 0) + mod
+		if (roll[0] == 6) total = `Exploded! ${total}`
+		return roll[roll.length - 1]
 	}
 </script>
 
@@ -20,7 +17,7 @@
 <div class='item-category'>
 	<div class='category-header'>
 		<div class='category-name'>d6 Roll</div>
-		<DiceButton func={rollResult} face={roll[roll.length - 1]} />
+		<DiceButton func={rollResult} />
 	</div>
 	<div class='item-content'>
 		<p class='roll'>Dice Roll: {roll}</p>

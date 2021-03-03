@@ -14,7 +14,7 @@
 <div class='item-category'>
 	<div class='category-header'>
 		<div class='category-name'>{category.name}</div>
-		<DiceButton func={randomItem} type={category.name} />
+		<DiceButton func={randomItem} />
 	</div>
 	{#if item}
 		<div class='item-content'>
