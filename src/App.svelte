@@ -53,7 +53,7 @@
 		display: none;
 	}
 	.screen {
-		background: radial-gradient(var(--sec-color-trans) 40%, #121 60%, #010 100%);
+		background: radial-gradient(#222 40%, #1a1a1a 60%, #0a0a0a 100%);
 		z-index: 0;
 	}
 	.lines {

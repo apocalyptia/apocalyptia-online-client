@@ -6,6 +6,13 @@
 
 	export let mode = 'readonly'
 
+	const adjustHealth = _ => {
+		Object.values($characterStore.health).forEach(loc => {
+			if (loc.current > loc.score) loc.current = loc.score
+		})
+		AdjustUIColor($characterStore)
+	}
+
 	onMount(_ => AdjustUIColor($characterStore))
 </script>
 
@@ -21,10 +28,10 @@
 					{$characterStore.health.head.score}
 				{:else}
 					<input type='number'
-						bind:value='{$characterStore.health.head.current}'
-						min='-{$characterStore.health.head.score}'
-						max='{$characterStore.health.head.score}'
-						on:change={_=>AdjustUIColor($characterStore)}
+						bind:value={$characterStore.health.head.current}
+						min={$characterStore.health.head.score * -1}
+						max={$characterStore.health.head.score}
+						on:change={adjustHealth}
 					/>
 				{/if} / {$characterStore.health.head.score}
 			</div>
@@ -38,9 +45,10 @@
 					{$characterStore.health.leftArm.score}
 				{:else}
 					<input type='number'
-						bind:value='{$characterStore.health.leftArm.current}'
-						min='-{$characterStore.health.leftArm.score}'
-						max='{$characterStore.health.leftArm.score}'
+						bind:value={$characterStore.health.leftArm.current}
+						min={$characterStore.health.leftArm.score * -1}
+						max={$characterStore.health.leftArm.score}
+						on:change={adjustHealth}
 					/>
 				{/if} / {$characterStore.health.leftArm.score}
 			</div>
@@ -54,9 +62,10 @@
 					{$characterStore.health.leftLeg.score}
 				{:else}
 					<input type='number'
-						bind:value='{$characterStore.health.leftLeg.current}'
-						min='-{$characterStore.health.leftLeg.score}'
-						max='{$characterStore.health.leftLeg.score}'
+						bind:value={$characterStore.health.leftLeg.current}
+						min={$characterStore.health.leftLeg.score * -1}
+						max={$characterStore.health.leftLeg.score}
+						on:change={adjustHealth}
 					/>
 				{/if} / {$characterStore.health.leftLeg.score}
 			</div>
@@ -75,10 +84,10 @@
 					{$characterStore.health.torso.score}
 				{:else}
 					<input type='number'
-						bind:value='{$characterStore.health.torso.current}'
-						min='-{$characterStore.health.torso.score}'
-						max='{$characterStore.health.torso.score}'
-						on:change={_=>AdjustUIColor($characterStore)}
+						bind:value={$characterStore.health.torso.current}
+						min={$characterStore.health.torso.score * -1}
+						max={$characterStore.health.torso.score}
+						on:change={adjustHealth}
 					/>
 				{/if} / {$characterStore.health.torso.score}
 			</div>
@@ -92,9 +101,10 @@
 					{$characterStore.health.rightArm.score}
 				{:else}
 					<input type='number'
-						bind:value='{$characterStore.health.rightArm.current}'
-						min='-{$characterStore.health.rightArm.score}'
-						max='{$characterStore.health.rightArm.score}'
+						bind:value={$characterStore.health.rightArm.current}
+						min={$characterStore.health.rightArm.score * -1}
+						max={$characterStore.health.rightArm.score}
+						on:change={adjustHealth}
 					/>
 				{/if} / {$characterStore.health.rightArm.score}
 			</div>
@@ -108,9 +118,10 @@
 					{$characterStore.health.rightLeg.score}
 				{:else}
 					<input type='number'
-						bind:value='{$characterStore.health.rightLeg.current}'
-						min='-{$characterStore.health.rightLeg.score}'
-						max='{$characterStore.health.rightLeg.score}'
+						bind:value={$characterStore.health.rightLeg.current}
+						min={$characterStore.health.rightLeg.score * -1}
+						max={$characterStore.health.rightLeg.score}
+						on:change={adjustHealth}
 					/>
 				{/if} / {$characterStore.health.rightLeg.score}
 			</div>
