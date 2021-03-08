@@ -52,7 +52,7 @@
 		{/each}
 	{:else}
 		<ResetAndRandomButtonRow
-			reset={_ => $characterStore = $characterStore.resetGear()}
+			reset={''}
 			random={_ => $characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score)} />
 	{/if}
 </div>
