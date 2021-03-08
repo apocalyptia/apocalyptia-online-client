@@ -5,14 +5,10 @@
 	import characterStore from 'stores/characterStore.js'
 	import playerStore from 'stores/playerStore.js'
 
-	const newCharacter = _ => {
-		$characterStore = new Character()
-	}
+	const newCharacter = _ => $characterStore = new Character()
 
     const randomCharacter = _ => {
 		$characterStore = RandomCharacter(new Character())
-		console.log('new character!')
-		console.log($characterStore.meta.step)
 		$playerStore = $playerStore.newCharacter($characterStore)
     }
 </script>
