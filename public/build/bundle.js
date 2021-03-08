@@ -2890,7 +2890,7 @@ var app = (function () {
     					name: list[i].name,
     					desc: list[i].desc,
     					max: list[i].max,
-    					experience: list[i].xp,
+    					experience: list[i].experience,
     					taken: list[i].taken,
     					opts: [
     						list[i].opts[o],
@@ -2904,7 +2904,7 @@ var app = (function () {
     				name: list[i].name,
     				desc: list[i].desc,
     				max: list[i].max,
-    				experience: list[i].xp,
+    				experience: list[i].experience,
     				taken: list[i].taken
     			});
     			newList.push(newAbility);
