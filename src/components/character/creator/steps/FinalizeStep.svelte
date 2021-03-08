@@ -25,7 +25,7 @@
 <div class='finalize-page'>
 	<PageHeader chapter={'Finalize'} step={$characterStore.meta.step} />
 	<div class='sheet-content'>
-		<CharacterSheet mode={'edit'} />
+		<CharacterSheet mode={'readonly'} />
 	</div>
 	<SaveAndDeleteButtonRow
 		saveFunc={_ => SaveCharacter()}
