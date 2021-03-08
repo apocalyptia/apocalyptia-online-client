@@ -29,7 +29,7 @@ const listBuilder = (list) => {
 					name: list[i].name,
 					desc: list[i].desc,
 					max: list[i].max,
-					experience: list[i].XP,
+					experience: list[i].xp,
 					taken: list[i].taken,
 					opts: [
 						list[i].opts[o],
@@ -43,7 +43,7 @@ const listBuilder = (list) => {
 				name: list[i].name,
 				desc: list[i].desc,
 				max: list[i].max,
-				experience: list[i].XP,
+				experience: list[i].xp,
 				taken: list[i].taken
 			})
 			newList.push(newAbility)

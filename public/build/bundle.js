@@ -2890,7 +2890,7 @@ var app = (function () {
     					name: list[i].name,
     					desc: list[i].desc,
     					max: list[i].max,
-    					experience: list[i].XP,
+    					experience: list[i].xp,
     					taken: list[i].taken,
     					opts: [
     						list[i].opts[o],
@@ -2904,7 +2904,7 @@ var app = (function () {
     				name: list[i].name,
     				desc: list[i].desc,
     				max: list[i].max,
-    				experience: list[i].XP,
+    				experience: list[i].xp,
     				taken: list[i].taken
     			});
     			newList.push(newAbility);
@@ -7530,13 +7530,9 @@ var app = (function () {
     }
 
     var RandomAbilities = (c) => {
-    	console.log('Random Abilities');
-    	console.log(AbilitiesList.masterList.filter(a => a.taken));
         AbilitiesList.reset();
         c = c.updateAbilities();
         while (c.properties.experience.current) {
-    		console.log(c.properties.experience.current);
-    		console.log(c.abilities);
             const remainingAbilities = AbilitiesList.masterList.filter(r => {
                 return (
     				r.experience <= c.properties.experience.current &&
@@ -7551,8 +7547,6 @@ var app = (function () {
             }
             else break
         }
-    	console.log(c.properties.experience.current);
-    	console.log(c.abilities);
         return c
     };
 
@@ -19897,26 +19891,26 @@ var app = (function () {
 
     function get_each_context$g(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[3] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$7(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[7] = list[i];
+    	child_ctx[6] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
     // (30:2) {#each Creation.startingGearExplanation as gearLine}
     function create_each_block_2$2(ctx) {
     	let p;
-    	let t_value = /*gearLine*/ ctx[10] + "";
+    	let t_value = /*gearLine*/ ctx[9] + "";
     	let t;
 
     	const block = {
@@ -19952,10 +19946,7 @@ var app = (function () {
     	let current;
 
     	resetandrandombuttonrow = new ResetAndRandomButtonRow({
-    			props: {
-    				reset: /*func*/ ctx[2],
-    				random: /*func_1*/ ctx[3]
-    			},
+    			props: { reset: "", random: /*func*/ ctx[2] },
     			$$inline: true
     		});
 
@@ -19969,8 +19960,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const resetandrandombuttonrow_changes = {};
-    			if (dirty & /*$characterStore*/ 2) resetandrandombuttonrow_changes.reset = /*func*/ ctx[2];
-    			if (dirty & /*$characterStore*/ 2) resetandrandombuttonrow_changes.random = /*func_1*/ ctx[3];
+    			if (dirty & /*$characterStore*/ 2) resetandrandombuttonrow_changes.random = /*func*/ ctx[2];
     			resetandrandombuttonrow.$set(resetandrandombuttonrow_changes);
     		},
     		i: function intro(local) {
@@ -20006,7 +19996,7 @@ var app = (function () {
     	let current;
     	let each_value = Object.values(/*$characterStore*/ ctx[1].gear);
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*category*/ ctx[4].name;
+    	const get_key = ctx => /*category*/ ctx[3].name;
     	validate_each_keys(ctx, each_value, get_each_context$g, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -20085,7 +20075,7 @@ var app = (function () {
 
     	gearblock = new GearBlock({
     			props: {
-    				item: /*category*/ ctx[4].inventory[0],
+    				item: /*category*/ ctx[3].inventory[0],
     				mode: "readonly"
     			},
     			$$inline: true
@@ -20105,7 +20095,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const gearblock_changes = {};
-    			if (dirty & /*$characterStore*/ 2) gearblock_changes.item = /*category*/ ctx[4].inventory[0];
+    			if (dirty & /*$characterStore*/ 2) gearblock_changes.item = /*category*/ ctx[3].inventory[0];
     			gearblock.$set(gearblock_changes);
     		},
     		i: function intro(local) {
@@ -20140,9 +20130,9 @@ var app = (function () {
     	let each_1_lookup = new Map();
     	let each_1_anchor;
     	let current;
-    	let each_value_1 = /*category*/ ctx[4].inventory;
+    	let each_value_1 = /*category*/ ctx[3].inventory;
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*equipment*/ ctx[7].name;
+    	const get_key = ctx => /*equipment*/ ctx[6].name;
     	validate_each_keys(ctx, each_value_1, get_each_context_1$7, get_key);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -20169,7 +20159,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*Object, $characterStore*/ 2) {
-    				each_value_1 = /*category*/ ctx[4].inventory;
+    				each_value_1 = /*category*/ ctx[3].inventory;
     				validate_each_argument(each_value_1);
     				group_outros();
     				validate_each_keys(ctx, each_value_1, get_each_context_1$7, get_key);
@@ -20222,7 +20212,7 @@ var app = (function () {
 
     	gearblock = new GearBlock({
     			props: {
-    				item: /*equipment*/ ctx[7],
+    				item: /*equipment*/ ctx[6],
     				mode: "readonly"
     			},
     			$$inline: true
@@ -20248,7 +20238,7 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			const gearblock_changes = {};
-    			if (dirty & /*$characterStore*/ 2) gearblock_changes.item = /*equipment*/ ctx[7];
+    			if (dirty & /*$characterStore*/ 2) gearblock_changes.item = /*equipment*/ ctx[6];
     			gearblock.$set(gearblock_changes);
     		},
     		i: function intro(local) {
@@ -20281,7 +20271,7 @@ var app = (function () {
     function create_each_block$g(key_1, ctx) {
     	let details;
     	let summary;
-    	let t0_value = /*category*/ ctx[4].name + "";
+    	let t0_value = /*category*/ ctx[3].name + "";
     	let t0;
     	let t1;
     	let div;
@@ -20293,7 +20283,7 @@ var app = (function () {
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*category*/ ctx[4].name == "Equipment") return 0;
+    		if (/*category*/ ctx[3].name == "Equipment") return 0;
     		return 1;
     	}
 
@@ -20330,7 +20320,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*$characterStore*/ 2) && t0_value !== (t0_value = /*category*/ ctx[4].name + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*$characterStore*/ 2) && t0_value !== (t0_value = /*category*/ ctx[3].name + "")) set_data_dev(t0, t0_value);
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type_1(ctx);
 
@@ -20563,8 +20553,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<GearStep> was created with unknown prop '${key}'`);
     	});
 
-    	const func = _ => set_store_value(characterStore, $characterStore = $characterStore.resetGear(), $characterStore);
-    	const func_1 = _ => set_store_value(characterStore, $characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score), $characterStore);
+    	const func = _ => set_store_value(characterStore, $characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score), $characterStore);
 
     	$$self.$capture_state = () => ({
     		AbilitiesList,
@@ -20589,7 +20578,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [gearedUp, $characterStore, func, func_1];
+    	return [gearedUp, $characterStore, func];
     }
 
     class GearStep extends SvelteComponentDev {
