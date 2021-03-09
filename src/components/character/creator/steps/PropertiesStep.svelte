@@ -7,10 +7,11 @@
 	import PropertiesFormulae from 'components/character/creator/properties/PropertiesFormulae.svelte'
 	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
-	import { afterUpdate } from 'svelte'
+	import { onMount } from 'svelte'
 
-	afterUpdate(_ => {
-		$characterStore = $characterStore.setProperties()
+	onMount(_ => {
+		$characterStore = $characterStore.updateProperties()
+		$characterStore = $characterStore.resetHealth()
 		SaveCharacter()
 	})
 </script>

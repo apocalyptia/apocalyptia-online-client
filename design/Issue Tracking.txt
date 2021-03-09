@@ -49,7 +49,7 @@ Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
-	RandomAbilities.js is broken now for some reason.
+	Random Abilities and Gear are not persisting to the Finalize step.
 	Characters aren't saving right.
 	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 

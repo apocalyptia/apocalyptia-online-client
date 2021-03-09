@@ -59,7 +59,7 @@ export default (c) => {
 	char.gear.ammo.inventory = [...c.Go]
 	char.gear.equipment.inventory = [...c.Ge]
 
-	char = Creation.setProperties(char)
+	char = Creation.updateProperties(char)
 
 	return char
 

@@ -12,6 +12,7 @@ const Health = new Rule({
 			if (c.health[location].name == `Torso`) c.health[location].score = c.traits.constitution.score * 2
 			else c.health[location].score = c.traits.constitution.score
 		}
+		return c
 	},
 	type: `Property`
 })

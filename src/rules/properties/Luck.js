@@ -11,7 +11,10 @@ const Luck = new Rule({
 		`• Take an extra Action on your turn.`,
 		`• Give a Luck point to a Comrade.`,
 	],
-	formula: (c) => c.properties.luck.score = Math.floor((c.traits.agility.score + c.traits.demeanor.score) / 2),
+	formula: (c) => {
+		c.properties.luck.score = Math.floor((c.traits.agility.score + c.traits.demeanor.score) / 2)
+		return c
+	},
 	type: `Property`
 })
 

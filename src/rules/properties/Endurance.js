@@ -9,7 +9,10 @@ const Endurance = new Rule({
 		`This is also the maximum amount of total Size you can move with comfortably.`,
 		`1 Pain per Size carried beyond your current Endurance.`,
 	],
-	formula: (c) => c.properties.endurance.score = c.traits.constitution.score * 3,
+	formula: (c) => {
+		c.properties.endurance.score = c.traits.constitution.score * 3
+		return c
+	},
 	type: `Property`
 })
 

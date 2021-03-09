@@ -6,7 +6,10 @@ const Intellect = new Rule({
 		`Intellect = (Brains + Demeanor) / 2`,
 		`Intellect is the amount of XP that is earned automatically for each game session that you survive.`,
 	],
-	formula: (c) => c.properties.intellect.score = Math.floor((c.traits.brains.score + c.traits.demeanor.score) / 2),
+	formula: (c) => {
+		c.properties.intellect.score = Math.floor((c.traits.brains.score + c.traits.demeanor.score) / 2)
+		return c
+	},
 	type: `Property`
 })
 

@@ -11,7 +11,10 @@ const Experience = new Rule({
 		`You may spend XP to buy Abilities to improve your Character.`,
 		`You may also spend 1XP per round to regain 1 Luck Point.`,
 	],
-	formula: (c) => c.properties.experience.score = c.traits.brains.score * 3,
+	formula: (c) => {
+		c.properties.experience.score = c.traits.brains.score * 3
+		return c
+	},
 	type: `Property`
 })
 
