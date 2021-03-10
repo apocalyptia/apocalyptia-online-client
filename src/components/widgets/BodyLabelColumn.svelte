@@ -12,7 +12,10 @@
 		AdjustUIColor($characterStore)
 	}
 
-	onMount(_ => $characterStore = $characterStore.updateProperties())
+	onMount(_ => {
+		$characterStore.updateProperties($characterStore)
+		$characterStore = $characterStore
+	})
 </script>
 
 

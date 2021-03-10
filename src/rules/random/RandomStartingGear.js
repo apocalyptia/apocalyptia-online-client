@@ -5,7 +5,7 @@ import RandomArmor from 'rules/random/RandomArmor.js'
 import RandomEquipment from 'rules/random/RandomEquipment.js'
 
 export default (c, n) => {
-    c = c.resetGear()
+    c.resetGear(c)
     c = RandomMeleeWeapon(c)
     c = RandomRangedWeapon(c)
     c = RandomWeaponAmmo(c)

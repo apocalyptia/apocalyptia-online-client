@@ -8,7 +8,8 @@
 	const newCharacter = _ => $characterStore = new Character()
 
     const randomCharacter = _ => {
-		$characterStore = RandomCharacter(new Character())
+		const character = new Character()
+		$characterStore = RandomCharacter(character)
 		$playerStore = $playerStore.newCharacter($characterStore)
     }
 </script>

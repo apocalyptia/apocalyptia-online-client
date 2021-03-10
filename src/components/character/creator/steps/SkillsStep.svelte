@@ -5,7 +5,6 @@
 	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
 	import RandomSkills from 'rules/random/RandomSkills.js'
 	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import Skills from 'rules/Skills.js'
 	import SkillsList from 'rules/lists/SkillsList.js'
 	import Slider from 'components/widgets/Slider.svelte'
@@ -14,7 +13,7 @@
 
 	$: remaining = Skills.remaining($characterStore)
 
-	afterUpdate(_ => SaveCharacter())
+	afterUpdate(_ => $characterStore.save())
 
 	const updateSkill = (event) => {
 		$characterStore = Skills.assign($characterStore, event.target)

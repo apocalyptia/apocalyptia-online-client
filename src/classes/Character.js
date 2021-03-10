@@ -13,6 +13,7 @@ import ResetHealth from 'classes/methods/ResetHealth.js'
 import ResetProperties from 'classes/methods/ResetProperties.js'
 import ResetSkills from 'classes/methods/ResetSkills.js'
 import ResetTraits from 'classes/methods/ResetTraits.js'
+import SaveCharacter from 'database/characters/SaveCharacter.js'
 import UpdateAbilities from 'classes/methods/UpdateAbilities.js'
 import UpdateProperties from 'classes/methods/UpdateProperties.js'
 
@@ -35,11 +36,7 @@ export default class Character {
 		this.resetTraits = _ => ResetTraits(this)
 		this.updateAbilities = _ => UpdateAbilities(this)
 		this.updateProperties = _ => UpdateProperties(this)
-		this.applyAbilities = _ => {
-			for (let a in this.abilities) {
-				this.abilities[a].formula(this)
-			}
-		}
 		this.finalize = (userId) => FinalizeCharacter(this, userId)
+		this.save = _ => SaveCharacter(this)
 	}
 }

@@ -5,14 +5,14 @@
 	import Properties from 'rules/Properties.js'
 	import PropertiesBlock from 'components/character/creator/properties/PropertiesBlock.svelte'
 	import PropertiesFormulae from 'components/character/creator/properties/PropertiesFormulae.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(_ => {
-		$characterStore = $characterStore.updateProperties()
-		$characterStore = $characterStore.resetHealth()
-		SaveCharacter()
+		$characterStore.updateProperties($characterStore)
+		$characterStore.resetHealth($characterStore)
+		$characterStore = $characterStore
+		$characterStore.save()
 	})
 </script>
 

@@ -9,7 +9,7 @@ export default (c) => {
     c = RandomDescription(c)
     c = RandomTraits(c)
     c = RandomSkills(c)
-    c = c.updateProperties()
+    c.updateProperties(c)
     c = RandomAbilities(c)
     c = RandomStartingGear(c, c.properties.luck.score)
 	c.meta.step = CreationStepsList.length - 1

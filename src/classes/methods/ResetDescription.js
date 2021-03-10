@@ -4,5 +4,4 @@ export default (c) => {
 			c.description[d].value = ``
 		}
 	}
-	return c
 }

@@ -5,5 +5,7 @@ export default (c) => {
 	c.properties.experience.current = c.abilities.reduce((sum, a) => {
 		return sum - (a.taken * a.experience)
 	}, c.properties.experience.score)
-	return c.resetGear()
+	for (let a in c.abilities) {
+		if (a.formula != null) a.formula(c)
+	}
 }

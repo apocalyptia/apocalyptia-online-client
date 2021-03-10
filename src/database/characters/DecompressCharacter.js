@@ -44,6 +44,15 @@ export default (c) => {
 	char.skills.perform.score = c.pr
 	char.skills.socialize.score = c.so
 	char.skills.tame.score = c.ta
+	char.abilities = [...c.Ab]
+	char.gear.armor.inventory = [...c.Ga]
+	char.gear.melee.inventory = [...c.Gm]
+	char.gear.ranged.inventory = [...c.Gr]
+	char.gear.ammo.inventory = [...c.Go]
+	char.gear.equipment.inventory = [...c.Ge]
+
+	char = char.updateProperties()
+
 	char.properties.luck.current = c.Pl
 	char.properties.psyche.current = c.Pp
 	char.health.head.current = c.hD
@@ -52,14 +61,6 @@ export default (c) => {
 	char.health.torso.current = c.tO
 	char.health.leftLeg.current = c.lL
 	char.health.rightLeg.current = c.rL
-	char.abilities = [...c.Ab]
-	char.gear.armor.inventory = [...c.Ga]
-	char.gear.melee.inventory = [...c.Gm]
-	char.gear.ranged.inventory = [...c.Gr]
-	char.gear.ammo.inventory = [...c.Go]
-	char.gear.equipment.inventory = [...c.Ge]
-
-	char = Creation.updateProperties(char)
 
 	return char
 

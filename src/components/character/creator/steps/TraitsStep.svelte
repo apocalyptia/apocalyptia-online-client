@@ -5,7 +5,6 @@
 	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
 	import RandomTraits from 'rules/random/RandomTraits.js'
 	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import Slider from 'components/widgets/Slider.svelte'
 	import Traits from 'rules/Traits.js'
 	import TraitsList from 'rules/lists/TraitsList.js'
@@ -14,7 +13,7 @@
 
 	$: remaining = Traits.remaining($characterStore)
 
-	afterUpdate(_ => SaveCharacter())
+	afterUpdate(_ => $characterStore.save())
 
 	const updateTrait = (event) => {
 		$characterStore = Traits.assign($characterStore, event.target)

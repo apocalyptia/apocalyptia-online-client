@@ -9,14 +9,13 @@
 	import PointsRemaining from 'components/character/creator/PointsRemaining.svelte'
 	import RandomAbilities from 'rules/random/RandomAbilities.js'
 	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { afterUpdate } from 'svelte'
 
 	afterUpdate(_ => {
 		Creation.proceedCheck($characterStore)
 		$characterStore = $characterStore
-		SaveCharacter()
+		$characterStore.save()
 	})
 
 	$: remainingXP = $characterStore.properties.experience.current

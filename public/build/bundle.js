@@ -4468,7 +4468,8 @@ var app = (function () {
     	for (let a of AbilitiesList.masterList) {
     		a.taken = 0;
     	}
-    	return c.updateAbilities()
+    	c.updateAbilities(c);
+    	c.resetGear(c);
     };
 
     var ResetDescription = (c) => {
@@ -4477,14 +4478,12 @@ var app = (function () {
     			c.description[d].value = ``;
     		}
     	}
-    	return c
     };
 
     var ResetGear = (c) => {
     	for (let g in c.gear) {
     		c.gear[g].inventory = [];
     	}
-    	return c
     };
 
     var ResetHealth = (c) => {
@@ -4499,7 +4498,7 @@ var app = (function () {
     		}
     		c.health[h];
     	}
-    	return c.resetAbilities()
+    	c.resetAbilities(c);
     };
 
     var ResetProperties = (c) => {
@@ -4507,21 +4506,87 @@ var app = (function () {
     		c.properties[p].score = 0;
     		c.properties[p].current = 0;
     	}
-    	return c.updateProperties()
+    	c.updateProperties(c);
+    	c.resetHealth(c);
     };
 
     var ResetSkills = (c) => {
     	for (let s in c.skills) {
     		c.skills[s].score = 0;
     	}
-    	return c.updateProperties()
+    	c.resetProperties(c);
     };
 
     var ResetTraits = (c) => {
     	for (let t in c.traits) {
     		c.traits[t].score = 1;
     	}
-    	return c.resetSkills()
+    	c.resetSkills();
+    };
+
+    var CompressCharacter = (char) => {
+
+    	let c = {};
+
+    	c.Mi = char.meta.id;
+    	c.Mu = char.meta.user;
+    	c.Mc = char.meta.created;
+    	c.Mm = char.meta.modified;
+    	c.Mn = char.meta.notes;
+    	c.St = char.meta.status;
+    	c.Sp = char.meta.step;
+    	c.Cm = char.meta.coordinates.m;
+    	c.Cf = char.meta.coordinates.f;
+    	c.Cx = char.meta.coordinates.x;
+    	c.Cy = char.meta.coordinates.y;
+    	c.Cz = char.meta.coordinates.z;
+    	c.Da = char.description.age.value;
+    	c.Dn = char.description.name.value;
+    	c.Dh = char.description.hair.value;
+    	c.De = char.description.height.value;
+    	c.Ds = char.description.sex.value;
+    	c.Dk = char.description.skin.value;
+    	c.Dw = char.description.weight.value;
+    	c.Ta = char.traits.agility.score;
+    	c.Tb = char.traits.brains.score;
+    	c.Tc = char.traits.constitution.score;
+    	c.Td = char.traits.demeanor.score;
+    	c.ac = char.skills.acrobatics.score;
+    	c.la = char.skills.larceny.score;
+    	c.ra = char.skills.ranged.score;
+    	c.st = char.skills.stealth.score;
+    	c.md = char.skills.medicine.score;
+    	c.pe = char.skills.perception.score;
+    	c.sc = char.skills.science.score;
+    	c.su = char.skills.survival.score;
+    	c.at = char.skills.athletics.score;
+    	c.bu = char.skills.build.score;
+    	c.dr = char.skills.drive.score;
+    	c.me = char.skills.melee.score;
+    	c.le = char.skills.leadership.score;
+    	c.pr = char.skills.perform.score;
+    	c.so = char.skills.socialize.score;
+    	c.ta = char.skills.tame.score;
+    	c.Pl = char.properties.luck.current;
+    	c.Pp = char.properties.psyche.current;
+    	c.hD = char.health.head.current;
+    	c.rA = char.health.rightArm.current;
+    	c.lA = char.health.leftArm.current;
+    	c.tO = char.health.torso.current;
+    	c.lL = char.health.leftLeg.current;
+    	c.rL = char.health.rightLeg.current;
+    	c.Ab = [...char.abilities];
+    	c.Ga = [...char.gear.armor.inventory];
+    	c.Gm = [...char.gear.melee.inventory];
+    	c.Gr = [...char.gear.ranged.inventory];
+    	c.Go = [...char.gear.ammo.inventory];
+    	c.Ge = [...char.gear.equipment.inventory];
+
+    	return JSON.stringify(c)
+    };
+
+    var SaveCharacter = (c) => {
+    	window.localStorage.setItem(c.description.name.value, CompressCharacter(c));
     };
 
     var UpdateAbilities = (c) => {
@@ -4529,7 +4594,9 @@ var app = (function () {
     	c.properties.experience.current = c.abilities.reduce((sum, a) => {
     		return sum - (a.taken * a.experience)
     	}, c.properties.experience.score);
-    	return c.resetGear()
+    	for (let a in c.abilities) {
+    		if (a.formula != null) a.formula(c);
+    	}
     };
 
     var UpdateProperties = (c) => {
@@ -4539,7 +4606,6 @@ var app = (function () {
     	for (let prop in c.properties) {
     		c.properties[prop].current = c.properties[prop].score;
     	}
-    	return c.resetHealth()
     };
 
     class Character$1 {
@@ -4561,12 +4627,8 @@ var app = (function () {
     		this.resetTraits = _ => ResetTraits(this);
     		this.updateAbilities = _ => UpdateAbilities(this);
     		this.updateProperties = _ => UpdateProperties(this);
-    		this.applyAbilities = _ => {
-    			for (let a in this.abilities) {
-    				this.abilities[a].formula(this);
-    			}
-    		};
     		this.finalize = (userId) => FinalizeCharacter(this, userId);
+    		this.save = _ => SaveCharacter(this);
     	}
     }
 
@@ -4671,6 +4733,15 @@ var app = (function () {
     	char.skills.perform.score = c.pr;
     	char.skills.socialize.score = c.so;
     	char.skills.tame.score = c.ta;
+    	char.abilities = [...c.Ab];
+    	char.gear.armor.inventory = [...c.Ga];
+    	char.gear.melee.inventory = [...c.Gm];
+    	char.gear.ranged.inventory = [...c.Gr];
+    	char.gear.ammo.inventory = [...c.Go];
+    	char.gear.equipment.inventory = [...c.Ge];
+
+    	char = char.updateProperties();
+
     	char.properties.luck.current = c.Pl;
     	char.properties.psyche.current = c.Pp;
     	char.health.head.current = c.hD;
@@ -4679,14 +4750,6 @@ var app = (function () {
     	char.health.torso.current = c.tO;
     	char.health.leftLeg.current = c.lL;
     	char.health.rightLeg.current = c.rL;
-    	char.abilities = [...c.Ab];
-    	char.gear.armor.inventory = [...c.Ga];
-    	char.gear.melee.inventory = [...c.Gm];
-    	char.gear.ranged.inventory = [...c.Gr];
-    	char.gear.ammo.inventory = [...c.Go];
-    	char.gear.equipment.inventory = [...c.Ge];
-
-    	char = Creation.updateProperties(char);
 
     	return char
 
@@ -4710,66 +4773,51 @@ var app = (function () {
     	return decompressedCharacter
     };
 
-    var CompressCharacter = (char) => {
-
-    	let c = {};
-
-    	c.Mi = char.meta.id;
-    	c.Mu = char.meta.user;
-    	c.Mc = char.meta.created;
-    	c.Mm = char.meta.modified;
-    	c.Mn = char.meta.notes;
-    	c.St = char.meta.status;
-    	c.Sp = char.meta.step;
-    	c.Cm = char.meta.coordinates.m;
-    	c.Cf = char.meta.coordinates.f;
-    	c.Cx = char.meta.coordinates.x;
-    	c.Cy = char.meta.coordinates.y;
-    	c.Cz = char.meta.coordinates.z;
-    	c.Da = char.description.age.value;
-    	c.Dn = char.description.name.value;
-    	c.Dh = char.description.hair.value;
-    	c.De = char.description.height.value;
-    	c.Ds = char.description.sex.value;
-    	c.Dk = char.description.skin.value;
-    	c.Dw = char.description.weight.value;
-    	c.Ta = char.traits.agility.score;
-    	c.Tb = char.traits.brains.score;
-    	c.Tc = char.traits.constitution.score;
-    	c.Td = char.traits.demeanor.score;
-    	c.ac = char.skills.acrobatics.score;
-    	c.la = char.skills.larceny.score;
-    	c.ra = char.skills.ranged.score;
-    	c.st = char.skills.stealth.score;
-    	c.md = char.skills.medicine.score;
-    	c.pe = char.skills.perception.score;
-    	c.sc = char.skills.science.score;
-    	c.su = char.skills.survival.score;
-    	c.at = char.skills.athletics.score;
-    	c.bu = char.skills.build.score;
-    	c.dr = char.skills.drive.score;
-    	c.me = char.skills.melee.score;
-    	c.le = char.skills.leadership.score;
-    	c.pr = char.skills.perform.score;
-    	c.so = char.skills.socialize.score;
-    	c.ta = char.skills.tame.score;
-    	c.Pl = char.properties.luck.current;
-    	c.Pp = char.properties.psyche.current;
-    	c.hD = char.health.head.current;
-    	c.rA = char.health.rightArm.current;
-    	c.lA = char.health.leftArm.current;
-    	c.tO = char.health.torso.current;
-    	c.lL = char.health.leftLeg.current;
-    	c.rL = char.health.rightLeg.current;
-    	c.Ab = [...char.abilities];
-    	c.Ga = [...char.gear.armor.inventory];
-    	c.Gm = [...char.gear.melee.inventory];
-    	c.Gr = [...char.gear.ranged.inventory];
-    	c.Go = [...char.gear.ammo.inventory];
-    	c.Ge = [...char.gear.equipment.inventory];
-
-    	return JSON.stringify(c)
+    var UpdateCharacter = (character) => {
+    	character.save();
     };
+
+    // import CreateCharacter from 'database/characters/CreateCharacter.js'
+
+    class Player {
+    	constructor() {
+    		this.name = '';
+    		this.email = '';
+    		this.password = '';
+    		this.loggedIn = false;
+    		this.currentCharacter = false;
+    		this.currentCharacterIndex = -1;
+    		this.characterList = [];
+    	}
+    	newCharacter(character) {
+    		// CreateCharacter(character)
+    		this.characterList.push(character);
+    		this.currentCharacterIndex = this.characterList.length - 1;
+    		return this
+    	}
+    	deleteCharacter() {
+    		DeleteCharacter(this.characterList[this.currentCharacterIndex]);
+    		this.characterList = this.characterList.filter(c => c.description.name.value != characterName);
+    		if (this.characterList.length) this.currentCharacterIndex = 0;
+    		else this.currentCharacterIndex = null;
+    		return this
+    	}
+    	loadCharacter(characterName) {
+    		this.characterList.push(ReadCharacter(characterName));
+    		this.currentCharacterIndex = this.characterList.length - 1;
+    		return this
+    	}
+    	loadAllCharacters() {
+    		this.characterList = ReadAllCharacters();
+    		return this
+    	}
+    	updateCharacter(character) {
+    		this.characterList.push(character);
+    		this.currentCharacterIndex = this.characterList.length - 1;
+    		UpdateCharacter(character);
+    		return this
+    	}
+    }
 
     const subscriber_queue = [];
     /**
@@ -4821,64 +4869,6 @@ var app = (function () {
             };
         }
         return { set, update, subscribe };
-    }
-
-    const character = new Character$1();
-
-    var characterStore = writable(character);
-
-    var SaveCharacter = _ => {
-    	let character;
-    	characterStore.subscribe(c => character = c);
-    	window.localStorage.setItem(character.meta.id, CompressCharacter(character));
-    };
-
-    var UpdateCharacter = (character) => {
-    	const compressedCharacter = CompressCharacter(character);
-    	JSON.stringify(compressedCharacter);
-    	SaveCharacter(character.description.name.value);
-    };
-
-    // import CreateCharacter from 'database/characters/CreateCharacter.js'
-
-    class Player {
-    	constructor() {
-    		this.name = '';
-    		this.email = '';
-    		this.password = '';
-    		this.loggedIn = false;
-    		this.currentCharacter = false;
-    		this.currentCharacterIndex = -1;
-    		this.characterList = [];
-    	}
-    	newCharacter(character) {
-    		// CreateCharacter(character)
-    		this.characterList.push(character);
-    		this.currentCharacterIndex = this.characterList.length - 1;
-    		return this
-    	}
-    	deleteCharacter() {
-    		DeleteCharacter(this.characterList[this.currentCharacterIndex]);
-    		this.characterList = this.characterList.filter(c => c.description.name.value != characterName);
-    		if (this.characterList.length) this.currentCharacterIndex = 0;
-    		else this.currentCharacterIndex = null;
-    		return this
-    	}
-    	loadCharacter(characterName) {
-    		this.characterList.push(ReadCharacter(characterName));
-    		this.currentCharacterIndex = this.characterList.length - 1;
-    		return this
-    	}
-    	loadAllCharacters() {
-    		this.characterList = ReadAllCharacters();
-    		return this
-    	}
-    	updateCharacter(character) {
-    		this.characterList.push(character);
-    		this.currentCharacterIndex = this.characterList.length - 1;
-    		UpdateCharacter(character);
-    		return this
-    	}
     }
 
     var playerStore = writable(new Player());
@@ -5328,6 +5318,10 @@ var app = (function () {
     	]
     };
 
+    const character = new Character$1();
+
+    var characterStore = writable(character);
+
     /* src/components/character/creator/abilities/AbilityModalItem.svelte generated by Svelte v3.35.0 */
     const file$12 = "src/components/character/creator/abilities/AbilityModalItem.svelte";
 
@@ -5338,7 +5332,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (23:3) {#each Array(ability.max+1) as _, i}
+    // (22:3) {#each Array(ability.max+1) as _, i}
     function create_each_block$x(ctx) {
     	let option;
     	let t;
@@ -5349,7 +5343,7 @@ var app = (function () {
     			t = text(/*i*/ ctx[6]);
     			option.__value = /*i*/ ctx[6];
     			option.value = option.__value;
-    			add_location(option, file$12, 23, 4, 578);
+    			add_location(option, file$12, 22, 4, 516);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -5365,7 +5359,7 @@ var app = (function () {
     		block,
     		id: create_each_block$x.name,
     		type: "each",
-    		source: "(23:3) {#each Array(ability.max+1) as _, i}",
+    		source: "(22:3) {#each Array(ability.max+1) as _, i}",
     		ctx
     	});
 
@@ -5411,15 +5405,15 @@ var app = (function () {
     			}
 
     			attr_dev(span0, "class", "ability-name-label svelte-7mnekp");
-    			add_location(span0, file$12, 13, 1, 303);
+    			add_location(span0, file$12, 12, 1, 241);
     			attr_dev(select, "name", select_name_value = /*ability*/ ctx[0].name);
     			attr_dev(select, "class", "svelte-7mnekp");
     			if (/*ability*/ ctx[0].taken === void 0) add_render_callback(() => /*select_change_handler*/ ctx[2].call(select));
-    			add_location(select, file$12, 17, 2, 440);
+    			add_location(select, file$12, 16, 2, 378);
     			attr_dev(span1, "class", "taken-label svelte-7mnekp");
-    			add_location(span1, file$12, 16, 1, 405);
+    			add_location(span1, file$12, 15, 1, 343);
     			attr_dev(div, "class", "ability-selection svelte-7mnekp");
-    			add_location(div, file$12, 12, 0, 270);
+    			add_location(div, file$12, 11, 0, 208);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5515,8 +5509,8 @@ var app = (function () {
     	let { ability } = $$props;
 
     	const updateAbilities = _ => {
-    		set_store_value(characterStore, $characterStore = $characterStore.updateAbilities(), $characterStore);
-    		SaveCharacter();
+    		$characterStore.updateAbilities($characterStore);
+    		$characterStore.save();
     	};
 
     	const writable_props = ["ability"];
@@ -5535,7 +5529,6 @@ var app = (function () {
     	};
 
     	$$self.$capture_state = () => ({
-    		SaveCharacter,
     		characterStore,
     		ability,
     		updateAbilities,
@@ -6741,7 +6734,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (26:6) {#if ability.opts[0]}
+    // (25:6) {#if ability.opts[0]}
     function create_if_block$n(ctx) {
     	let html_tag;
 
@@ -6775,14 +6768,14 @@ var app = (function () {
     		block,
     		id: create_if_block$n.name,
     		type: "if",
-    		source: "(26:6) {#if ability.opts[0]}",
+    		source: "(25:6) {#if ability.opts[0]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:7) {#each Array(ability.max+1) as _, i}
+    // (40:7) {#each Array(ability.max+1) as _, i}
     function create_each_block_1$b(ctx) {
     	let option;
     	let t;
@@ -6793,7 +6786,7 @@ var app = (function () {
     			t = text(/*i*/ ctx[8]);
     			option.__value = /*i*/ ctx[8];
     			option.value = option.__value;
-    			add_location(option, file$Z, 41, 8, 1215);
+    			add_location(option, file$Z, 40, 8, 1153);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -6809,14 +6802,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$b.name,
     		type: "each",
-    		source: "(41:7) {#each Array(ability.max+1) as _, i}",
+    		source: "(40:7) {#each Array(ability.max+1) as _, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:3) {#each $characterStore.abilities as ability}
+    // (21:3) {#each $characterStore.abilities as ability}
     function create_each_block$u(ctx) {
     	let div;
     	let span0;
@@ -6873,18 +6866,18 @@ var app = (function () {
 
     			t7 = space();
     			attr_dev(span0, "class", "l-col svelte-hazq5t");
-    			add_location(span0, file$Z, 23, 5, 703);
+    			add_location(span0, file$Z, 22, 5, 641);
     			attr_dev(span1, "class", "s-col svelte-hazq5t");
-    			add_location(span1, file$Z, 32, 5, 926);
+    			add_location(span1, file$Z, 31, 5, 864);
     			attr_dev(span2, "class", "s-col svelte-hazq5t");
-    			add_location(span2, file$Z, 33, 5, 979);
+    			add_location(span2, file$Z, 32, 5, 917);
     			attr_dev(select, "class", "taken-number");
     			if (/*ability*/ ctx[3].taken === void 0) add_render_callback(select_change_handler);
-    			add_location(select, file$Z, 35, 6, 1052);
+    			add_location(select, file$Z, 34, 6, 990);
     			attr_dev(span3, "class", "s-col svelte-hazq5t");
-    			add_location(span3, file$Z, 34, 5, 1025);
+    			add_location(span3, file$Z, 33, 5, 963);
     			attr_dev(div, "class", "current-ability-row svelte-hazq5t");
-    			add_location(div, file$Z, 22, 4, 664);
+    			add_location(div, file$Z, 21, 4, 602);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6979,7 +6972,7 @@ var app = (function () {
     		block,
     		id: create_each_block$u.name,
     		type: "each",
-    		source: "(22:3) {#each $characterStore.abilities as ability}",
+    		source: "(21:3) {#each $characterStore.abilities as ability}",
     		ctx
     	});
 
@@ -7036,23 +7029,23 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "current-abilities-title svelte-hazq5t");
-    			add_location(div0, file$Z, 12, 1, 283);
+    			add_location(div0, file$Z, 11, 1, 221);
     			attr_dev(span0, "class", "l-col svelte-hazq5t");
-    			add_location(span0, file$Z, 15, 3, 429);
+    			add_location(span0, file$Z, 14, 3, 367);
     			attr_dev(span1, "class", "s-col svelte-hazq5t");
-    			add_location(span1, file$Z, 16, 3, 464);
+    			add_location(span1, file$Z, 15, 3, 402);
     			attr_dev(span2, "class", "s-col svelte-hazq5t");
-    			add_location(span2, file$Z, 17, 3, 497);
+    			add_location(span2, file$Z, 16, 3, 435);
     			attr_dev(span3, "class", "s-col svelte-hazq5t");
-    			add_location(span3, file$Z, 18, 3, 531);
+    			add_location(span3, file$Z, 17, 3, 469);
     			attr_dev(div1, "class", "current-abilities-header svelte-hazq5t");
-    			add_location(div1, file$Z, 14, 2, 387);
+    			add_location(div1, file$Z, 13, 2, 325);
     			attr_dev(div2, "class", "current-abilities-list");
-    			add_location(div2, file$Z, 20, 2, 575);
+    			add_location(div2, file$Z, 19, 2, 513);
     			attr_dev(div3, "class", "current-abilities-section");
-    			add_location(div3, file$Z, 13, 1, 345);
+    			add_location(div3, file$Z, 12, 1, 283);
     			attr_dev(div4, "class", "current-abilities svelte-hazq5t");
-    			add_location(div4, file$Z, 11, 0, 250);
+    			add_location(div4, file$Z, 10, 0, 188);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7129,8 +7122,8 @@ var app = (function () {
     	validate_slots("CurrentAbilities", slots, []);
 
     	const updateAbilities = _ => {
-    		set_store_value(characterStore, $characterStore = $characterStore.updateAbilities(), $characterStore);
-    		SaveCharacter();
+    		$characterStore.updateAbilities($characterStore);
+    		$characterStore.save();
     	};
 
     	const writable_props = [];
@@ -7145,7 +7138,6 @@ var app = (function () {
     	}
 
     	$$self.$capture_state = () => ({
-    		SaveCharacter,
     		characterStore,
     		updateAbilities,
     		$characterStore
@@ -7644,8 +7636,8 @@ var app = (function () {
 
     var RandomAbilities = (c) => {
         AbilitiesList.reset();
-        c = c.updateAbilities();
-        while (c.properties.experience.current) {
+        c.updateAbilities(c);
+        while (c.properties.experience.current > 0) {
             const remainingAbilities = AbilitiesList.masterList.filter(r => {
                 return (
     				r.experience <= c.properties.experience.current &&
@@ -7656,7 +7648,7 @@ var app = (function () {
                 const a = RandomRoll(remainingAbilities);
                 a.taken++;
                 c.abilities.push(a);
-                c = c.updateAbilities();
+                c.updateAbilities(c);
             }
             else break
         }
@@ -7875,7 +7867,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (32:1) {#if $characterStore.abilities.length}
+    // (31:1) {#if $characterStore.abilities.length}
     function create_if_block$k(ctx) {
     	let div;
     	let currentabilities;
@@ -7887,7 +7879,7 @@ var app = (function () {
     			div = element("div");
     			create_component(currentabilities.$$.fragment);
     			attr_dev(div, "class", "section-card");
-    			add_location(div, file$U, 32, 2, 1369);
+    			add_location(div, file$U, 31, 2, 1310);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7913,14 +7905,14 @@ var app = (function () {
     		block,
     		id: create_if_block$k.name,
     		type: "if",
-    		source: "(32:1) {#if $characterStore.abilities.length}",
+    		source: "(31:1) {#if $characterStore.abilities.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:2) {#each AbilitiesList.groups as group}
+    // (37:2) {#each AbilitiesList.groups as group}
     function create_each_block$s(ctx) {
     	let abilitygroup;
     	let current;
@@ -7960,7 +7952,7 @@ var app = (function () {
     		block,
     		id: create_each_block$s.name,
     		type: "each",
-    		source: "(38:2) {#each AbilitiesList.groups as group}",
+    		source: "(37:2) {#each AbilitiesList.groups as group}",
     		ctx
     	});
 
@@ -8037,9 +8029,9 @@ var app = (function () {
     			t4 = space();
     			create_component(resetandrandombuttonrow.$$.fragment);
     			attr_dev(div0, "class", "abilities-list svelte-1147wm9");
-    			add_location(div0, file$U, 36, 1, 1437);
+    			add_location(div0, file$U, 35, 1, 1378);
     			attr_dev(div1, "class", "abilities-step-page");
-    			add_location(div1, file$U, 27, 0, 1143);
+    			add_location(div1, file$U, 26, 0, 1084);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8187,7 +8179,7 @@ var app = (function () {
     	afterUpdate(_ => {
     		Creation.proceedCheck($characterStore);
     		characterStore.set($characterStore);
-    		SaveCharacter();
+    		$characterStore.save();
     	});
 
     	let MasterAbilityList = AbilitiesList.masterList;
@@ -8211,7 +8203,6 @@ var app = (function () {
     		PointsRemaining,
     		RandomAbilities,
     		ResetAndRandomButtonRow,
-    		SaveCharacter,
     		characterStore,
     		afterUpdate,
     		MasterAbilityList,
@@ -10800,7 +10791,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (29:3) {#if desc.name != 'Player'}
+    // (28:3) {#if desc.name != 'Player'}
     function create_if_block$j(ctx) {
     	let div1;
     	let span;
@@ -10840,14 +10831,14 @@ var app = (function () {
     			create_component(dicebutton.$$.fragment);
     			t4 = space();
     			attr_dev(span, "class", "desc-label svelte-12b4fub");
-    			add_location(span, file$S, 30, 5, 1145);
+    			add_location(span, file$S, 29, 5, 1086);
     			attr_dev(input, "class", "desc-value svelte-12b4fub");
     			attr_dev(input, "type", "text");
-    			add_location(input, file$S, 31, 5, 1195);
+    			add_location(input, file$S, 30, 5, 1136);
     			attr_dev(div0, "class", "dice-container svelte-12b4fub");
-    			add_location(div0, file$S, 32, 5, 1285);
+    			add_location(div0, file$S, 31, 5, 1226);
     			attr_dev(div1, "class", "desc-container svelte-12b4fub");
-    			add_location(div1, file$S, 29, 4, 1111);
+    			add_location(div1, file$S, 28, 4, 1052);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -10905,14 +10896,14 @@ var app = (function () {
     		block,
     		id: create_if_block$j.name,
     		type: "if",
-    		source: "(29:3) {#if desc.name != 'Player'}",
+    		source: "(28:3) {#if desc.name != 'Player'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:2) {#each Object.values($characterStore.description) as desc}
+    // (27:2) {#each Object.values($characterStore.description) as desc}
     function create_each_block$r(ctx) {
     	let if_block_anchor;
     	let current;
@@ -10971,7 +10962,7 @@ var app = (function () {
     		block,
     		id: create_each_block$r.name,
     		type: "each",
-    		source: "(28:2) {#each Object.values($characterStore.description) as desc}",
+    		source: "(27:2) {#each Object.values($characterStore.description) as desc}",
     		ctx
     	});
 
@@ -11029,9 +11020,9 @@ var app = (function () {
     			t1 = space();
     			create_component(resetandrandombuttonrow.$$.fragment);
     			attr_dev(div0, "class", "section-card");
-    			add_location(div0, file$S, 26, 1, 988);
+    			add_location(div0, file$S, 25, 1, 929);
     			attr_dev(div1, "class", "description-step-page");
-    			add_location(div1, file$S, 24, 0, 878);
+    			add_location(div1, file$S, 23, 0, 819);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11135,7 +11126,7 @@ var app = (function () {
     	component_subscribe($$self, characterStore, $$value => $$invalidate(0, $characterStore = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("DescriptionStep", slots, []);
-    	afterUpdate(_ => SaveCharacter());
+    	afterUpdate(_ => $characterStore.save());
 
     	const updateDesc = _ => {
     		Creation.proceedCheck($characterStore);
@@ -11167,7 +11158,6 @@ var app = (function () {
     		RandomDescription,
     		RandomDescriptionSwitch,
     		ResetAndRandomButtonRow,
-    		SaveCharacter,
     		characterStore,
     		afterUpdate,
     		updateDesc,
@@ -16966,7 +16956,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (27:3) {:else}
+    // (30:3) {:else}
     function create_else_block$7(ctx) {
     	let input;
     	let input_min_value;
@@ -16985,7 +16975,7 @@ var app = (function () {
     			attr_dev(input, "min", input_min_value = /*$characterStore*/ ctx[2].health[/*location*/ ctx[5]].score * -1);
     			attr_dev(input, "max", input_max_value = /*$characterStore*/ ctx[2].health[/*location*/ ctx[5]].score);
     			attr_dev(input, "class", "svelte-1tsq6uw");
-    			add_location(input, file$J, 27, 4, 704);
+    			add_location(input, file$J, 30, 4, 744);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, input, anchor);
@@ -17026,14 +17016,14 @@ var app = (function () {
     		block,
     		id: create_else_block$7.name,
     		type: "else",
-    		source: "(27:3) {:else}",
+    		source: "(30:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (25:3) {#if mode == 'readonly'}
+    // (28:3) {#if mode == 'readonly'}
     function create_if_block$e(ctx) {
     	let t_value = /*$characterStore*/ ctx[2].health[/*location*/ ctx[5]].score + "";
     	let t;
@@ -17057,14 +17047,14 @@ var app = (function () {
     		block,
     		id: create_if_block$e.name,
     		type: "if",
-    		source: "(25:3) {#if mode == 'readonly'}",
+    		source: "(28:3) {#if mode == 'readonly'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (19:0) {#each side as location}
+    // (22:0) {#each side as location}
     function create_each_block$l(ctx) {
     	let div2;
     	let div0;
@@ -17098,11 +17088,11 @@ var app = (function () {
     			t3 = text(t3_value);
     			t4 = space();
     			attr_dev(div0, "class", "body-part-name");
-    			add_location(div0, file$J, 20, 2, 501);
+    			add_location(div0, file$J, 23, 2, 541);
     			attr_dev(div1, "class", "body-part-numbers svelte-1tsq6uw");
-    			add_location(div1, file$J, 23, 2, 584);
+    			add_location(div1, file$J, 26, 2, 624);
     			attr_dev(div2, "class", div2_class_value = "" + (/*location*/ ctx[5] + "-label" + " svelte-1tsq6uw"));
-    			add_location(div2, file$J, 19, 1, 468);
+    			add_location(div2, file$J, 22, 1, 508);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -17146,7 +17136,7 @@ var app = (function () {
     		block,
     		id: create_each_block$l.name,
     		type: "each",
-    		source: "(19:0) {#each side as location}",
+    		source: "(22:0) {#each side as location}",
     		ctx
     	});
 
@@ -17241,7 +17231,11 @@ var app = (function () {
     		AdjustUIColor($characterStore);
     	};
 
-    	onMount(_ => set_store_value(characterStore, $characterStore = $characterStore.updateProperties(), $characterStore));
+    	onMount(_ => {
+    		$characterStore.updateProperties($characterStore);
+    		characterStore.set($characterStore);
+    	});
+
     	const writable_props = ["side", "mode"];
 
     	Object_1$6.keys($$props).forEach(key => {
@@ -19285,9 +19279,9 @@ var app = (function () {
     			t1 = space();
     			create_component(saveanddeletebuttonrow.$$.fragment);
     			attr_dev(div0, "class", "sheet-content svelte-zcv0gr");
-    			add_location(div0, file$A, 26, 1, 863);
+    			add_location(div0, file$A, 25, 1, 804);
     			attr_dev(div1, "class", "finalize-page");
-    			add_location(div1, file$A, 24, 0, 764);
+    			add_location(div1, file$A, 23, 0, 705);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19307,6 +19301,7 @@ var app = (function () {
     			if (dirty & /*$characterStore*/ 1) pageheader_changes.step = /*$characterStore*/ ctx[0].meta.step;
     			pageheader.$set(pageheader_changes);
     			const saveanddeletebuttonrow_changes = {};
+    			if (dirty & /*$characterStore*/ 1) saveanddeletebuttonrow_changes.saveFunc = /*func*/ ctx[1];
     			if (dirty & /*$characterStore*/ 1) saveanddeletebuttonrow_changes.deleteFunc = /*func_1*/ ctx[2];
     			saveanddeletebuttonrow.$set(saveanddeletebuttonrow_changes);
     		},
@@ -19352,7 +19347,7 @@ var app = (function () {
     	afterUpdate(_ => {
     		Creation.proceedCheck($characterStore);
     		characterStore.set($characterStore);
-    		SaveCharacter();
+    		$characterStore.save();
     	});
 
     	onMount(_ => {
@@ -19365,7 +19360,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<FinalizeStep> was created with unknown prop '${key}'`);
     	});
 
-    	const func = _ => SaveCharacter();
+    	const func = _ => $characterStore.save();
     	const func_1 = _ => DeleteCharacter($characterStore.meta.id);
 
     	$$self.$capture_state = () => ({
@@ -19374,7 +19369,6 @@ var app = (function () {
     		DeleteCharacter,
     		PageHeader,
     		SaveAndDeleteButtonRow,
-    		SaveCharacter,
     		characterStore,
     		afterUpdate,
     		onMount,
@@ -19451,7 +19445,7 @@ var app = (function () {
     };
 
     var RandomStartingGear = (c, n) => {
-        c = c.resetGear();
+        c.resetGear(c);
         c = RandomMeleeWeapon(c);
         c = RandomRangedWeapon(c);
         c = RandomWeaponAmmo(c);
@@ -19462,7 +19456,7 @@ var app = (function () {
 
     /* src/components/character/creator/steps/GearStep.svelte generated by Svelte v3.35.0 */
 
-    const { Object: Object_1$3, console: console_1 } = globals;
+    const { Object: Object_1$3 } = globals;
     const file$z = "src/components/character/creator/steps/GearStep.svelte";
 
     function get_each_context$g(ctx, list, i) {
@@ -19483,7 +19477,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (30:2) {#each Creation.startingGearExplanation as gearLine}
+    // (26:2) {#each Creation.startingGearExplanation as gearLine}
     function create_each_block_2$2(ctx) {
     	let p;
     	let t_value = /*gearLine*/ ctx[9] + "";
@@ -19493,7 +19487,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			add_location(p, file$z, 30, 3, 1120);
+    			add_location(p, file$z, 26, 3, 959);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -19509,14 +19503,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2$2.name,
     		type: "each",
-    		source: "(30:2) {#each Creation.startingGearExplanation as gearLine}",
+    		source: "(26:2) {#each Creation.startingGearExplanation as gearLine}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (53:1) {:else}
+    // (49:1) {:else}
     function create_else_block_1(ctx) {
     	let resetandrandombuttonrow;
     	let current;
@@ -19557,14 +19551,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(53:1) {:else}",
+    		source: "(49:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:1) {#if gearedUp}
+    // (30:1) {#if gearedUp}
     function create_if_block$a(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
@@ -19636,14 +19630,14 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(34:1) {#if gearedUp}",
+    		source: "(30:1) {#if gearedUp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:5) {:else}
+    // (41:5) {:else}
     function create_else_block$4(ctx) {
     	let div;
     	let gearblock;
@@ -19662,7 +19656,7 @@ var app = (function () {
     			div = element("div");
     			create_component(gearblock.$$.fragment);
     			attr_dev(div, "class", "item svelte-1l68c9k");
-    			add_location(div, file$z, 45, 6, 1565);
+    			add_location(div, file$z, 41, 6, 1404);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19693,14 +19687,14 @@ var app = (function () {
     		block,
     		id: create_else_block$4.name,
     		type: "else",
-    		source: "(45:5) {:else}",
+    		source: "(41:5) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:5) {#if category.name == 'Equipment'}
+    // (35:5) {#if category.name == 'Equipment'}
     function create_if_block_1$3(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
@@ -19772,14 +19766,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(39:5) {#if category.name == 'Equipment'}",
+    		source: "(35:5) {#if category.name == 'Equipment'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:6) {#each category.inventory as equipment (equipment.name)}
+    // (36:6) {#each category.inventory as equipment (equipment.name)}
     function create_each_block_1$7(key_1, ctx) {
     	let div;
     	let gearblock;
@@ -19802,7 +19796,7 @@ var app = (function () {
     			create_component(gearblock.$$.fragment);
     			t = space();
     			attr_dev(div, "class", "item svelte-1l68c9k");
-    			add_location(div, file$z, 40, 7, 1442);
+    			add_location(div, file$z, 36, 7, 1281);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -19836,14 +19830,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$7.name,
     		type: "each",
-    		source: "(40:6) {#each category.inventory as equipment (equipment.name)}",
+    		source: "(36:6) {#each category.inventory as equipment (equipment.name)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:2) {#each Object.values($characterStore.gear) as category (category.name)}
+    // (31:2) {#each Object.values($characterStore.gear) as category (category.name)}
     function create_each_block$g(key_1, ctx) {
     	let details;
     	let summary;
@@ -19877,11 +19871,11 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t2 = space();
-    			add_location(summary, file$z, 36, 4, 1263);
+    			add_location(summary, file$z, 32, 4, 1102);
     			attr_dev(div, "class", "details-content svelte-1l68c9k");
-    			add_location(div, file$z, 37, 4, 1302);
+    			add_location(div, file$z, 33, 4, 1141);
     			attr_dev(details, "class", "svelte-1l68c9k");
-    			add_location(details, file$z, 35, 3, 1249);
+    			add_location(details, file$z, 31, 3, 1088);
     			this.first = details;
     		},
     		m: function mount(target, anchor) {
@@ -19942,7 +19936,7 @@ var app = (function () {
     		block,
     		id: create_each_block$g.name,
     		type: "each",
-    		source: "(35:2) {#each Object.values($characterStore.gear) as category (category.name)}",
+    		source: "(31:2) {#each Object.values($characterStore.gear) as category (category.name)}",
     		ctx
     	});
 
@@ -20000,9 +19994,9 @@ var app = (function () {
     			t1 = space();
     			if_block.c();
     			attr_dev(div0, "class", "explanation");
-    			add_location(div0, file$z, 28, 1, 1036);
+    			add_location(div0, file$z, 24, 1, 875);
     			attr_dev(div1, "class", "gear-step-page");
-    			add_location(div1, file$z, 26, 0, 940);
+    			add_location(div1, file$z, 22, 0, 779);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20112,21 +20106,19 @@ var app = (function () {
     	component_subscribe($$self, characterStore, $$value => $$invalidate(1, $characterStore = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("GearStep", slots, []);
-    	console.log("Gear Step Abilities List");
-    	console.log(AbilitiesList.masterList.filter(a => a.taken));
     	let gearedUp = false;
     	beforeUpdate(_ => $$invalidate(0, gearedUp = Object.values($characterStore.gear).every(g => g.inventory.length)));
 
     	afterUpdate(_ => {
     		Creation.proceedCheck($characterStore);
     		characterStore.set($characterStore);
-    		SaveCharacter();
+    		$characterStore.save();
     	});
 
     	const writable_props = [];
 
     	Object_1$3.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<GearStep> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<GearStep> was created with unknown prop '${key}'`);
     	});
 
     	const func = _ => set_store_value(characterStore, $characterStore = RandomStartingGear($characterStore, $characterStore.properties.luck.score), $characterStore);
@@ -20138,7 +20130,6 @@ var app = (function () {
     		PageHeader,
     		RandomStartingGear,
     		ResetAndRandomButtonRow,
-    		SaveCharacter,
     		characterStore,
     		afterUpdate,
     		beforeUpdate,
@@ -20732,9 +20723,9 @@ var app = (function () {
     			div0 = element("div");
     			create_component(healthsection.$$.fragment);
     			attr_dev(div0, "class", "section-card");
-    			add_location(div0, file$w, 24, 1, 997);
+    			add_location(div0, file$w, 24, 1, 968);
     			attr_dev(div1, "class", "properties-step-page");
-    			add_location(div1, file$w, 19, 0, 804);
+    			add_location(div1, file$w, 19, 0, 775);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20804,9 +20795,10 @@ var app = (function () {
     	validate_slots("PropertiesStep", slots, []);
 
     	onMount(_ => {
-    		set_store_value(characterStore, $characterStore = $characterStore.updateProperties(), $characterStore);
-    		set_store_value(characterStore, $characterStore = $characterStore.resetHealth(), $characterStore);
-    		SaveCharacter();
+    		$characterStore.updateProperties($characterStore);
+    		$characterStore.resetHealth($characterStore);
+    		characterStore.set($characterStore);
+    		$characterStore.save();
     	});
 
     	const writable_props = [];
@@ -20822,7 +20814,6 @@ var app = (function () {
     		Properties,
     		PropertiesBlock,
     		PropertiesFormulae,
-    		SaveCharacter,
     		characterStore,
     		onMount,
     		$characterStore
@@ -21406,7 +21397,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (42:6) {#each group.list as skill}
+    // (41:6) {#each group.list as skill}
     function create_each_block_1$4(ctx) {
     	let div1;
     	let div0;
@@ -21444,9 +21435,9 @@ var app = (function () {
     			t1 = space();
     			create_component(slider.$$.fragment);
     			attr_dev(div0, "class", "stat-label");
-    			add_location(div0, file$u, 43, 8, 1594);
+    			add_location(div0, file$u, 42, 8, 1535);
     			attr_dev(div1, "class", "stat-range svelte-5yjlyb");
-    			add_location(div1, file$u, 42, 7, 1561);
+    			add_location(div1, file$u, 41, 7, 1502);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -21487,14 +21478,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$4.name,
     		type: "each",
-    		source: "(42:6) {#each group.list as skill}",
+    		source: "(41:6) {#each group.list as skill}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:2) {#each SkillsList.groups as group}
+    // (29:2) {#each SkillsList.groups as group}
     function create_each_block$c(ctx) {
     	let div2;
     	let details;
@@ -21543,16 +21534,16 @@ var app = (function () {
     			}
 
     			attr_dev(span, "class", "group-label svelte-5yjlyb");
-    			add_location(span, file$u, 33, 6, 1283);
-    			add_location(summary, file$u, 32, 5, 1267);
+    			add_location(span, file$u, 32, 6, 1224);
+    			add_location(summary, file$u, 31, 5, 1208);
     			attr_dev(div0, "class", "max-score svelte-5yjlyb");
-    			add_location(div0, file$u, 38, 6, 1408);
+    			add_location(div0, file$u, 37, 6, 1349);
     			attr_dev(div1, "class", "details-content");
-    			add_location(div1, file$u, 37, 5, 1372);
+    			add_location(div1, file$u, 36, 5, 1313);
     			attr_dev(details, "class", "skills-details");
-    			add_location(details, file$u, 31, 4, 1229);
+    			add_location(details, file$u, 30, 4, 1170);
     			attr_dev(div2, "class", "item-block svelte-5yjlyb");
-    			add_location(div2, file$u, 30, 3, 1200);
+    			add_location(div2, file$u, 29, 3, 1141);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -21633,7 +21624,7 @@ var app = (function () {
     		block,
     		id: create_each_block$c.name,
     		type: "each",
-    		source: "(30:2) {#each SkillsList.groups as group}",
+    		source: "(29:2) {#each SkillsList.groups as group}",
     		ctx
     	});
 
@@ -21704,7 +21695,7 @@ var app = (function () {
     			t3 = space();
     			create_component(resetandrandombuttonrow.$$.fragment);
     			attr_dev(div, "class", "skills-step-page");
-    			add_location(div, file$u, 25, 0, 985);
+    			add_location(div, file$u, 24, 0, 926);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21821,7 +21812,7 @@ var app = (function () {
     	component_subscribe($$self, characterStore, $$value => $$invalidate(0, $characterStore = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("SkillsStep", slots, []);
-    	afterUpdate(_ => SaveCharacter());
+    	afterUpdate(_ => $characterStore.save());
 
     	const updateSkill = event => {
     		set_store_value(characterStore, $characterStore = Skills.assign($characterStore, event.target), $characterStore);
@@ -21852,7 +21843,6 @@ var app = (function () {
     		PointsRemaining,
     		RandomSkills,
     		ResetAndRandomButtonRow,
-    		SaveCharacter,
     		Skills,
     		SkillsList,
     		Slider,
@@ -21922,7 +21912,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (31:2) {#each TraitsList.list as trait}
+    // (30:2) {#each TraitsList.list as trait}
     function create_each_block$b(ctx) {
     	let div3;
     	let div2;
@@ -21966,13 +21956,13 @@ var app = (function () {
     			create_component(slider.$$.fragment);
     			t2 = space();
     			attr_dev(div0, "class", "stat-label");
-    			add_location(div0, file$t, 33, 5, 1290);
+    			add_location(div0, file$t, 32, 5, 1231);
     			attr_dev(div1, "class", "stat-column");
-    			add_location(div1, file$t, 34, 5, 1338);
+    			add_location(div1, file$t, 33, 5, 1279);
     			attr_dev(div2, "class", "trait-selection svelte-1tw289x");
-    			add_location(div2, file$t, 32, 4, 1255);
+    			add_location(div2, file$t, 31, 4, 1196);
     			attr_dev(div3, "class", "item-block");
-    			add_location(div3, file$t, 31, 3, 1226);
+    			add_location(div3, file$t, 30, 3, 1167);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -22016,7 +22006,7 @@ var app = (function () {
     		block,
     		id: create_each_block$b.name,
     		type: "each",
-    		source: "(31:2) {#each TraitsList.list as trait}",
+    		source: "(30:2) {#each TraitsList.list as trait}",
     		ctx
     	});
 
@@ -22089,9 +22079,9 @@ var app = (function () {
     			t3 = space();
     			create_component(resetandrandombuttonrow.$$.fragment);
     			attr_dev(div0, "class", "section-card");
-    			add_location(div0, file$t, 29, 1, 1161);
+    			add_location(div0, file$t, 28, 1, 1102);
     			attr_dev(div1, "class", "traits-step-page");
-    			add_location(div1, file$t, 25, 0, 985);
+    			add_location(div1, file$t, 24, 0, 926);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -22209,7 +22199,7 @@ var app = (function () {
     	component_subscribe($$self, characterStore, $$value => $$invalidate(0, $characterStore = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("TraitsStep", slots, []);
-    	afterUpdate(_ => SaveCharacter());
+    	afterUpdate(_ => $characterStore.save());
 
     	const updateTrait = event => {
     		set_store_value(characterStore, $characterStore = Traits.assign($characterStore, event.target), $characterStore);
@@ -22240,7 +22230,6 @@ var app = (function () {
     		PointsRemaining,
     		RandomTraits,
     		ResetAndRandomButtonRow,
-    		SaveCharacter,
     		Slider,
     		Traits,
     		TraitsList,
@@ -28405,7 +28394,7 @@ var app = (function () {
         c = RandomDescription(c);
         c = RandomTraits(c);
         c = RandomSkills(c);
-        c = c.updateProperties();
+        c.updateProperties(c);
         c = RandomAbilities(c);
         c = RandomStartingGear(c, c.properties.luck.score);
     	c.meta.step = CreationStepsList.length - 1;
@@ -28446,12 +28435,12 @@ var app = (function () {
     			document.title = "Apocalyptia Online - New Character";
     			attr_dev(a0, "href", "/creator");
     			attr_dev(a0, "class", "link-btn");
-    			add_location(a0, file$9, 20, 4, 628);
+    			add_location(a0, file$9, 21, 4, 658);
     			attr_dev(a1, "href", "/creator");
     			attr_dev(a1, "class", "link-btn");
-    			add_location(a1, file$9, 21, 4, 702);
+    			add_location(a1, file$9, 22, 4, 732);
     			attr_dev(div, "class", "cntr-card");
-    			add_location(div, file$9, 19, 0, 600);
+    			add_location(div, file$9, 20, 0, 630);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -28518,7 +28507,8 @@ var app = (function () {
     	const newCharacter = _ => set_store_value(characterStore, $characterStore = new Character$1(), $characterStore);
 
     	const randomCharacter = _ => {
-    		set_store_value(characterStore, $characterStore = RandomCharacter(new Character$1()), $characterStore);
+    		const character = new Character$1();
+    		set_store_value(characterStore, $characterStore = RandomCharacter(character), $characterStore);
     		set_store_value(playerStore, $playerStore = $playerStore.newCharacter($characterStore), $playerStore);
     	};
 
@@ -29332,8 +29322,8 @@ var app = (function () {
 
     	saveanddeletebuttonrow = new SaveAndDeleteButtonRow({
     			props: {
-    				saveFunc: SaveCharacter,
-    				deleteFunc: /*func*/ ctx[1]
+    				saveFunc: /*func*/ ctx[1],
+    				deleteFunc: /*func_1*/ ctx[2]
     			},
     			$$inline: true
     		});
@@ -29354,7 +29344,7 @@ var app = (function () {
     			create_component(backbutton.$$.fragment);
     			document.title = "Apocalyptia Online - Character Sheet";
     			attr_dev(div, "class", "sheet page-body");
-    			add_location(div, file$5, 16, 0, 593);
+    			add_location(div, file$5, 15, 0, 534);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -29371,7 +29361,8 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			const saveanddeletebuttonrow_changes = {};
-    			if (dirty & /*$characterStore*/ 1) saveanddeletebuttonrow_changes.deleteFunc = /*func*/ ctx[1];
+    			if (dirty & /*$characterStore*/ 1) saveanddeletebuttonrow_changes.saveFunc = /*func*/ ctx[1];
+    			if (dirty & /*$characterStore*/ 1) saveanddeletebuttonrow_changes.deleteFunc = /*func_1*/ ctx[2];
     			saveanddeletebuttonrow.$set(saveanddeletebuttonrow_changes);
     		},
     		i: function intro(local) {
@@ -29414,27 +29405,27 @@ var app = (function () {
     	component_subscribe($$self, characterStore, $$value => $$invalidate(0, $characterStore = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Sheet", slots, []);
-    	onDestroy(_ => SaveCharacter());
+    	onDestroy(_ => $characterStore.save());
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Sheet> was created with unknown prop '${key}'`);
     	});
 
-    	const func = _ => DeleteCharacter($characterStore.id);
+    	const func = _ => $characterStore.save();
+    	const func_1 = _ => DeleteCharacter($characterStore.id);
 
     	$$self.$capture_state = () => ({
     		BackButton,
     		CharacterSheet,
     		DeleteCharacter,
     		SaveAndDeleteButtonRow,
-    		SaveCharacter,
     		characterStore,
     		onDestroy,
     		$characterStore
     	});
 
-    	return [$characterStore, func];
+    	return [$characterStore, func, func_1];
     }
 
     class Sheet extends SvelteComponentDev {

@@ -4,14 +4,13 @@
 	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
 	import PageHeader from 'components/character/creator/PageHeader.svelte'
 	import SaveAndDeleteButtonRow from 'components/buttons/SaveAndDeleteButtonRow.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { afterUpdate, onMount } from 'svelte'
 
 	afterUpdate(_ => {
 		Creation.proceedCheck($characterStore)
 		$characterStore = $characterStore
-		SaveCharacter()
+		$characterStore.save()
 	})
 
 	onMount(_ => {
@@ -28,7 +27,7 @@
 		<CharacterSheet mode={'readonly'} />
 	</div>
 	<SaveAndDeleteButtonRow
-		saveFunc={_ => SaveCharacter()}
+		saveFunc={_ => $characterStore.save()}
 		deleteFunc={_ => DeleteCharacter($characterStore.meta.id)}
 	/>
 </div>

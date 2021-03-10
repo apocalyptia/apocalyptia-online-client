@@ -5,11 +5,10 @@
 	import RandomDescription from 'rules/random/RandomDescription.js'
 	import RandomDescriptionSwitch from 'rules/random/RandomDescriptionSwitch.js'
 	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { afterUpdate } from 'svelte'
 
-	afterUpdate(_ => SaveCharacter())
+	afterUpdate(_ => $characterStore.save())
 
 	const updateDesc = _ => {
 		Creation.proceedCheck($characterStore)

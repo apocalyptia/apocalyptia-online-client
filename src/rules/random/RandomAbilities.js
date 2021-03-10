@@ -3,8 +3,8 @@ import RandomRoll from 'rules/random/RandomRoll.js'
 
 export default (c) => {
     AbilitiesList.reset()
-    c = c.updateAbilities()
-    while (c.properties.experience.current) {
+    c.updateAbilities(c)
+    while (c.properties.experience.current > 0) {
         const remainingAbilities = AbilitiesList.masterList.filter(r => {
             return (
 				r.experience <= c.properties.experience.current &&
@@ -15,7 +15,7 @@ export default (c) => {
             const a = RandomRoll(remainingAbilities)
             a.taken++
             c.abilities.push(a)
-            c = c.updateAbilities()
+            c.updateAbilities(c)
         }
         else break
     }

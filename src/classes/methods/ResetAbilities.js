@@ -4,5 +4,6 @@ export default (c) => {
 	for (let a of AbilitiesList.masterList) {
 		a.taken = 0
 	}
-	return c.updateAbilities()
+	c.updateAbilities(c)
+	c.resetGear(c)
 }

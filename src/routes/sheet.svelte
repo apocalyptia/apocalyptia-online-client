@@ -3,11 +3,10 @@
 	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
 	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
 	import SaveAndDeleteButtonRow from 'components/buttons/SaveAndDeleteButtonRow.svelte'
-	import SaveCharacter from 'database/characters/SaveCharacter.js'
 	import characterStore from 'stores/characterStore.js'
 	import { onDestroy } from 'svelte'
 
-	onDestroy(_ => SaveCharacter())
+	onDestroy(_ => $characterStore.save())
 </script>
 
 
@@ -17,7 +16,7 @@
 <div class='sheet page-body'>
 	<CharacterSheet mode={'edit'} />
 	<SaveAndDeleteButtonRow
-		saveFunc={SaveCharacter}
+		saveFunc={_ => $characterStore.save()}
 		deleteFunc={_ => DeleteCharacter($characterStore.id)}
 	/>
 </div>

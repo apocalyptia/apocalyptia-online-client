@@ -3,5 +3,6 @@ export default (c) => {
 		c.properties[p].score = 0
 		c.properties[p].current = 0
 	}
-	return c.updateProperties()
+	c.updateProperties(c)
+	c.resetHealth(c)
 }

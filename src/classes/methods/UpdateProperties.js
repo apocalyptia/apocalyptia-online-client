@@ -7,5 +7,4 @@ export default (c) => {
 	for (let prop in c.properties) {
 		c.properties[prop].current = c.properties[prop].score
 	}
-	return c.resetHealth()
 }

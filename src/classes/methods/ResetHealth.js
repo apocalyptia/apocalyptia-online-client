@@ -10,5 +10,5 @@ export default (c) => {
 		}
 		c.health[h]
 	}
-	return c.resetAbilities()
+	c.resetAbilities(c)
 }
