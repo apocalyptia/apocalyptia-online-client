@@ -16924,8 +16924,8 @@ var app = (function () {
     	let pG = (health < 1) ? (1.5 * health) * 255 : 255;
     	let pB = 0;
 
-    	let sR = (health < 1) ? (1.5 - health) * 30 : 15;
-    	let sG = (health < 1) ? (1.5 * health) * 30 : 30;
+    	let sR = (health < 1) ? (1.5 - health) * 25 : 15;
+    	let sG = (health < 1) ? (1.5 * health) * 25 : 25;
     	let sB = 15;
 
     	if ((headCurrent < 1) || (torsoCurrent < 1)) {
@@ -24044,7 +24044,7 @@ var app = (function () {
     var ResetUIColor = _ => {
     	document.documentElement.style.setProperty(`--pri-color`, `rgba(0,255,0,1)`);
     	document.documentElement.style.setProperty(`--pri-color-trans`, `rgba(0,255,0,.25)`);
-    	document.documentElement.style.setProperty(`--sec-color`, `rgba(15,30,15,1)`);
+    	document.documentElement.style.setProperty(`--sec-color`, `rgba(15,25,15,1)`);
     	document.documentElement.style.setProperty(`--sec-color-trans`, `rgba(15,30,15,.25)`);
     };
 
@@ -31239,17 +31239,17 @@ var app = (function () {
     			t = space();
     			main = element("main");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			attr_dev(header, "class", "svelte-1xfbxae");
+    			attr_dev(header, "class", "svelte-e3fxer");
     			add_location(header, file, 33, 4, 843);
-    			attr_dev(main, "class", "svelte-1xfbxae");
+    			attr_dev(main, "class", "svelte-e3fxer");
     			add_location(main, file, 36, 4, 888);
-    			attr_dev(div0, "class", "program svelte-1xfbxae");
+    			attr_dev(div0, "class", "program svelte-e3fxer");
     			add_location(div0, file, 32, 3, 817);
-    			attr_dev(div1, "class", "console svelte-1xfbxae");
+    			attr_dev(div1, "class", "console svelte-e3fxer");
     			add_location(div1, file, 31, 2, 792);
-    			attr_dev(div2, "class", "scanline svelte-1xfbxae");
+    			attr_dev(div2, "class", "scanline svelte-e3fxer");
     			add_location(div2, file, 30, 1, 767);
-    			attr_dev(div3, "class", "screen svelte-1xfbxae");
+    			attr_dev(div3, "class", "screen svelte-e3fxer");
     			add_location(div3, file, 29, 0, 745);
     		},
     		l: function claim(nodes) {

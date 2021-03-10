@@ -38,7 +38,7 @@
 	--pri-color-trans: rgba(0, 255, 0, .5);
 	--pri-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
 	--sec-color: rgba(15, 30, 15, .85);
-	--sec-color-trans: rgba(15, 30, 15, .5);
+	--sec-color-trans: rgba(15, 25, 15, .5);
 	--ter-color: rgba(220, 20, 60, .85);
 	--ter-color-semi: rgba(220, 20, 60, .5);
 	--ter-color-trans: rgba(220, 20, 60, .15);
@@ -136,7 +136,6 @@ main {
 	top: 0;
 }
 body {
-	background-color: #222;
 	color: var(--pri-color);
 	font-size: var(--s100);
 	height: 100%;

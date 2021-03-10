@@ -13,8 +13,8 @@ export default (character) => {
 	let pG = (health < 1) ? (1.5 * health) * 255 : 255
 	let pB = 0
 
-	let sR = (health < 1) ? (1.5 - health) * 30 : 15
-	let sG = (health < 1) ? (1.5 * health) * 30 : 30
+	let sR = (health < 1) ? (1.5 - health) * 25 : 15
+	let sG = (health < 1) ? (1.5 * health) * 25 : 25
 	let sB = 15
 
 	if ((headCurrent < 1) || (torsoCurrent < 1)) {

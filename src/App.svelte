@@ -51,7 +51,7 @@
 		display: none;
 	}
 	.screen {
-		background: radial-gradient(#222 40%, #1a1a1a 60%, #0a0a0a 100%);
+		background: radial-gradient(#000 40%, #0b0b0b 60%, #000 100%);
 		z-index: 0;
 	}
 
