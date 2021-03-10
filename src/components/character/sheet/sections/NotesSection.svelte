@@ -1,15 +1,9 @@
 <script>
 	import characterStore from 'stores/characterStore.js'
-
-	export let mode = 'edit'
 </script>
 
 
-{#if mode == 'readonly'}
-	<div class='sheet-notes-block'>{$characterStore.meta.notes}</div>
-{:else}
-	<textarea class='sheet-notes-block' wrap='soft' bind:value={$characterStore.meta.notes} />
-{/if}
+<textarea class='sheet-notes-block' wrap='soft' bind:value={$characterStore.meta.notes} />
 
 
 <style>

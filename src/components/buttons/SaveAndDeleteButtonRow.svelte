@@ -17,4 +17,8 @@
 	button {
 		height: var(--square);
 	}
+	a {
+		height: 100%;
+		width: 100%;
+	}
 </style>

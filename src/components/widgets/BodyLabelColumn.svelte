@@ -19,50 +19,40 @@
 </script>
 
 
-{#each side as location}
-	<div class='{location}-label'>
-		<div class='body-part-name'>
-			{$characterStore.health[location].name}
+<div class='column'>
+	{#each side as location}
+		<div class='{location}-label'>
+			<div class='body-part-name'>
+				{$characterStore.health[location].name}
+			</div>
+			<div class='body-part-numbers'>
+				{#if mode == 'readonly'}
+					{$characterStore.health[location].score}
+				{:else}
+					<input type='number'
+						bind:value={$characterStore.health[location].current}
+						min={$characterStore.health[location].score * -1}
+						max={$characterStore.health[location].score}
+						on:change={adjustHealth}
+					/>
+				{/if} / {$characterStore.health[location].score}
+			</div>
 		</div>
-		<div class='body-part-numbers'>
-			{#if mode == 'readonly'}
-				{$characterStore.health[location].score}
-			{:else}
-				<input type='number'
-					bind:value={$characterStore.health[location].current}
-					min={$characterStore.health[location].score * -1}
-					max={$characterStore.health[location].score}
-					on:change={adjustHealth}
-				/>
-			{/if} / {$characterStore.health[location].score}
-		</div>
-	</div>
-{/each}
+	{/each}
+</div>
 
 
 <style>
-	input[type='number'] {
-		width: 4ch;
-	}
-	div[class*='-label'] {
-		display: inline-block;
-		height: 10px;
-		position: relative;
-		width: 100%;
-	}
-	.head-label,
-	.torso-label {
-		top: 0;
-	}
-	.leftArm-label,
-	.rightArm-label {
-		top: 6vh;
-	}
-	.leftLeg-label,
-	.rightLeg-label {
-		top: 12vh;
+	.column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		height: 100%;
 	}
 	.body-part-numbers {
 		margin: 5px;
+	}
+	input[type='number'] {
+		width: 4ch;
 	}
 </style>

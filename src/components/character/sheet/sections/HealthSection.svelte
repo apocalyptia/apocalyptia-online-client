@@ -40,10 +40,6 @@
 	.body-parts-section {
 		display: flex;
 		justify-content: space-around;
-		max-width: 100%;
-	}
-	div[class*='column'] {
-		display: block;
 	}
 	.left-column {
 		text-align: left;
