@@ -15,7 +15,6 @@
 	afterUpdate(_ => {
 		Creation.proceedCheck($characterStore)
 		$characterStore = $characterStore
-		$characterStore.save()
 	})
 
 	$: remainingXP = $characterStore.properties.experience.current

@@ -13,7 +13,7 @@ export default (c) => {
         })
         if (remainingAbilities.length) {
             const a = RandomRoll(remainingAbilities)
-            a.taken++
+            a.qty++
             c.abilities.push(a)
             c.updateAbilities(c)
         }

@@ -1,16 +1,22 @@
 <script>
-	import { fade } from 'svelte/transition'
-	import menuStore from 'stores/menuStore.js'
+	// import LogOut from 'utils/auth/LogOut.js'
+	import MenuItems from 'components/widgets/MenuItems.svelte'
 	import ShadowBackground from 'components/widgets/ShadowBackground.svelte'
+	import menuStore from 'stores/menuStore.js'
+	// import playerStore from 'stores/playerStore.js'
+	import { fade } from 'svelte/transition'
+
+	// const logOut = _ => $playerStore = LogOut()
 </script>
 
 
 <div on:click={_ => $menuStore = $menuStore.toggle()}>
 	{#if $menuStore.open}
 		<nav class='user-menu' transition:fade>
-			{#each $menuStore.links as link}
-				<a href={link.url} class='link-btn'>{link.name}</a>
-			{/each}
+			<MenuItems borders={false} />
+			<!-- <a href={'/'} class='link-btn borderless' on:click={logOut}>
+				Log Out
+			</a> -->
 		</nav>
 	{/if}
 	<ShadowBackground active={$menuStore.open} />
@@ -18,6 +24,10 @@
 
 
 <style>
+	/* .borderless {
+		border: none;
+		height: calc(var(--square) * 1.5);
+	} */
 	.user-menu {
 		background: var(--sec-color);
 		border: 1px solid var(--pri-color);
@@ -27,9 +37,5 @@
 		width: 50vw;
 		min-width: 200px;
 		z-index: 1000;
-	}
-	a {
-		border: none;
-		height: calc(var(--square) * 1.5);
 	}
 </style>

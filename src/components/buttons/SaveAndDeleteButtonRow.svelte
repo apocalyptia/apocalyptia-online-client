@@ -4,21 +4,22 @@
 
 
 <div class='btn-row'>
-	<button class='small-cntr-btn' on:click={saveFunc}>
-		<a href='/'>Save</a>
-	</button>
-	<button class='small-cntr-btn' on:click={deleteFunc}>
-		<a href='/'>Delete</a>
-	</button>
+	<a href='/'>
+		<button class='small-cntr-btn' on:click={deleteFunc}>
+			Delete
+		</button>
+	</a>
+	<a href='/'>
+		<button class='small-cntr-btn' on:click={saveFunc}>
+			Save
+		</button>
+	</a>
 </div>
 
 
 <style>
 	button {
 		height: var(--square);
-	}
-	a {
-		height: 100%;
-		width: 100%;
+		width: 30vw;
 	}
 </style>

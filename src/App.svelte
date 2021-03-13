@@ -1,15 +1,13 @@
 <script>
 	import Error from 'components/widgets/Error.svelte'
-	import Pages from './Pages.js'
+	import Pages from 'utils/routing/Pages.js'
 	import TitleBar from 'components/widgets/TitleBar.svelte'
 	import router from 'page'
 	// import MakeID from 'utils/MakeID.js'
-	// import { onMount } from 'svelte'
-
 
 	let page
 
-	for (let i = 0; i < Pages.length; i++) {
+	for (let i = 0, len = Pages.length; i < len; i++) {
 		router(Pages[i].path, _ => page = Pages[i])
 	}
 	router('*', _ => page = { component: Error })
@@ -51,7 +49,7 @@
 		display: none;
 	}
 	.screen {
-		background: radial-gradient(#000 40%, #0b0b0b 60%, #000 100%);
+		background: radial-gradient(#222 40%, #191919 70%, #111 85%, #000 100%);
 		z-index: 0;
 	}
 
@@ -76,7 +74,7 @@
 	}
 
 	.console {
-		background: linear-gradient(var(--pri-color-trans) 0%, rgba(15, 30, 15, .015) 20%);
+		background: linear-gradient(var(--pri-color-trans) 0%, var(--sec-color-trans) 20%);
 		background-repeat: repeat-y;
 		background-size: 100% 3px;
 		z-index: 4;

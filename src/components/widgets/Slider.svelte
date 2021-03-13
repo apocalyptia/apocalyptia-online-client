@@ -6,6 +6,12 @@
 				step=1,
 				indicator=false,
 				func=null
+
+	console.log(typeof indicator)
+	value = parseInt(value)
+	min = parseInt(min)
+	max = parseInt(max)
+	step = parseInt(step)
 </script>
 
 
@@ -16,15 +22,19 @@
 		bind:value={value}
 		on:input={func ? func() : ''}
 	>
-	{#if indicator}
+	{#if indicator == 'true'}
 		<div class='range-indicator'>
 			{#if min}
 				{#each Array(max) as _, i}
-					<span class='range-number'>{i+1}</span>
+					<span class='range-number'>
+						{i % step == 0 ? i+1 : ''}
+					</span>
 				{/each}
 			{:else}
 				{#each Array(max+1) as _, i}
-					<span class='range-number'>{i}</span>
+					<span class='range-number'>
+						{i % step == 0 ? i+1 : ''}
+					</span>
 				{/each}
 			{/if}
 		</div>

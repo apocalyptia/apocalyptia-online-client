@@ -22,7 +22,7 @@ const abilityArray = [
 
 const listBuilder = (list) => {
 	const newList = []
-	for (let i = 0; i < list.length; ++i) {
+	for (let i = 0, len = list.length; i < len; ++i) {
 		if (list[i].opts[0]) {
 			for (let o = 0; o < list[i].opts.length; ++o) {
 				const newAbility = new Ability({
@@ -30,7 +30,7 @@ const listBuilder = (list) => {
 					desc: list[i].desc,
 					max: list[i].max,
 					experience: list[i].experience,
-					taken: list[i].taken,
+					qty: list[i].qty,
 					opts: [
 						list[i].opts[o],
 					],
@@ -44,7 +44,7 @@ const listBuilder = (list) => {
 				desc: list[i].desc,
 				max: list[i].max,
 				experience: list[i].experience,
-				taken: list[i].taken
+				qty: list[i].qty
 			})
 			newList.push(newAbility)
 		}
@@ -99,8 +99,8 @@ export default {
 	],
 	masterList: listBuilder(abilityArray),
 	reset() {
-		for (let i = 0; i < this.masterList.length; i++) {
-			this.masterList[i].taken = 0
+		for (let i = 0, len = this.masterList.length; i < len; i++) {
+			this.masterList[i].qty = 0
 		}
 	}
 }

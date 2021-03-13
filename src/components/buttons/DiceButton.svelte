@@ -1,5 +1,6 @@
 <script>
 	import d6 from 'rules/random/d6.js'
+	import { fade } from 'svelte/transition'
 
 	export let func
 

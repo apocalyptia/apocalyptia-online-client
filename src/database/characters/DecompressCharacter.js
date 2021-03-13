@@ -1,5 +1,4 @@
 import Character from 'classes/Character.js'
-import Creation from 'rules/Creation.js'
 
 export default (c) => {
 
@@ -10,8 +9,8 @@ export default (c) => {
 	char.meta.created = c.Mc
 	char.meta.modified = c.Mm
 	char.meta.notes = c.Mn
-	char.meta.status = c.St
-	char.meta.step = c.Sp
+	char.meta.status = c.Sa
+	char.meta.step = c.Se
 	char.meta.coordinates.m = c.Cm
 	char.meta.coordinates.f = c.Cf
 	char.meta.coordinates.x = c.Cx
@@ -44,14 +43,14 @@ export default (c) => {
 	char.skills.perform.score = c.pr
 	char.skills.socialize.score = c.so
 	char.skills.tame.score = c.ta
-	char.abilities = [...c.Ab]
-	char.gear.armor.inventory = [...c.Ga]
-	char.gear.melee.inventory = [...c.Gm]
-	char.gear.ranged.inventory = [...c.Gr]
-	char.gear.ammo.inventory = [...c.Go]
-	char.gear.equipment.inventory = [...c.Ge]
+	char.abilities = c.Ab
+	char.gear.armor.inventory = c.Ga
+	char.gear.melee.inventory = c.Gm
+	char.gear.ranged.inventory = c.Gr
+	char.gear.ammo.inventory = c.Go
+	char.gear.equipment.inventory = c.Ge
 
-	char = char.updateProperties()
+	char.updateProperties()
 
 	char.properties.luck.current = c.Pl
 	char.properties.psyche.current = c.Pp

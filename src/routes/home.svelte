@@ -1,5 +1,13 @@
 <script>
-	import MainMenu from 'components/landing/MainMenu.svelte'
+	import MainMenu from 'components/home/MainMenu.svelte'
+	// import UserLogin from 'components/home/UserLogin.svelte'
+	// import playerStore from 'stores/playerStore.js'
 </script>
 
-<MainMenu />
+
+
+<!-- {#if $playerStore.loggedIn} -->
+	<MainMenu />
+<!-- {:else}
+	<UserLogin />
+{/if} -->

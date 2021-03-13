@@ -9,11 +9,8 @@
 	import SkillsList from 'rules/lists/SkillsList.js'
 	import Slider from 'components/widgets/Slider.svelte'
 	import characterStore from 'stores/characterStore.js'
-	import { afterUpdate } from 'svelte'
 
 	$: remaining = Skills.remaining($characterStore)
-
-	afterUpdate(_ => $characterStore.save())
 
 	const updateSkill = (event) => {
 		$characterStore = Skills.assign($characterStore, event.target)

@@ -10,7 +10,7 @@ export default class Ability extends Rule {
 		notes=``,
 		opts=[],
 		selection=0,
-		taken=0,
+		qty=0,
 		type=`Ability`,
 		visible,
 		experience
@@ -25,7 +25,7 @@ export default class Ability extends Rule {
 		})
 		this.max = max
 		this.experience = experience
-		this.taken = taken
+		this.qty = qty
 		this.opts = opts
 		this.selection = selection
 		this.notes = notes

@@ -1,8 +1,9 @@
 <script>
+	import BackButton from 'components/buttons/BackButton.svelte'
 	import Login from 'utils/auth/Login.js'
 	import playerStore from 'stores/playerStore.js'
 
-	let email, password
+	let email = ``, password = ``
 </script>
 
 
@@ -10,19 +11,22 @@
 	<form>
 		<div class='email'>
 			<label for='email'>Email</label>
-			<input id='email' type='text' bind:value={email} />
+			<input id='email' type='text' required bind:value={email} />
 		</div>
 		<div class='password'>
 			<label for='password'>Password</label>
-			<input id='password' type='text' bind:value={password} />
+			<input id='password' type='password' required bind:value={password} />
 		</div>
 		<div class='login'>
-			<button type='button' on:click={_ => $playerStore = Login($playerStore, email, password)}>
-				<a href='/'>Login</a>
-			</button>
+			<a href='/'>
+				<button type='submit' on:click={_ => $playerStore = Login($playerStore, email, password)}>
+					Login
+				</button>
+			</a>
 		</div>
 	</form>
 </div>
+<BackButton path={'/'} />
 
 
 <style>

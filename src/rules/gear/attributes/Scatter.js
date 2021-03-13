@@ -4,8 +4,7 @@ const Scatter = new Rule({
 	id: ``,
 	name: `Scatter`,
 	desc: [
-		`Ignore Range penalties.`,
-		`-1 Damage per extended Range.`,
+		`Range penalties apply to Damage instead of Attack.`,
 		`-1 Penetration.`
 	]
 })

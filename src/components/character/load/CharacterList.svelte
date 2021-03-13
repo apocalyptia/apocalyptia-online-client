@@ -1,29 +1,29 @@
 <script>
 	import TrashButton from 'components/buttons/TrashButton.svelte'
-	import characterStore from 'stores/characterStore.js'
 	import playerStore from 'stores/playerStore.js'
 
-	const deleteCharacter = _ => {
-		$playerStore = $playerStore.deleteCharacter(selectedCharacter)
-		$playerStore.characterList = $playerStore.characterList.filter(c => c.description.name.value != selectedCharacter)
-		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
+	export let selectedCharacter
+
+	const selectCharacter = (event) => {
+		selectedCharacter = event.target.textContent
 	}
 
-	const selectCharacter = e => selectedCharacter = e.target.textContent
+	$: characterList = $playerStore.characterList.map(c => {
+		return JSON.parse(c)
+	})
 </script>
 
 
 <div class='character-storage-list-window'>
-	{#if $playerStore.characterList}
+	{#if characterList.length}
 		<div class='character-storage-list'>
-			{#each $playerStore.characterList as c}
+			{#each characterList as c, i}
 				<div class='stored-character'>
-					<button
-						class='character-name'
+					<button class='character-name'
 						on:click={(event) => selectCharacter(event)}>
-						{c.description.name.value}
+						{i}: {JSON.parse(c).description.name.value}
 					</button>
-					<TrashButton on:click={deleteCharacter} />
+					<TrashButton on:click={_ => $playerStore.deleteCharacter(selectedCharacter)} />
 				</div>
 			{/each}
 		</div>

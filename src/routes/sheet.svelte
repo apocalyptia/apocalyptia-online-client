@@ -1,12 +1,9 @@
 <script>
 	import BackButton from 'components/buttons/BackButton.svelte'
 	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
-	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
 	import SaveAndDeleteButtonRow from 'components/buttons/SaveAndDeleteButtonRow.svelte'
 	import characterStore from 'stores/characterStore.js'
-	import { onDestroy } from 'svelte'
-
-	onDestroy(_ => $characterStore.save())
+	import playerStore from 'stores/playerStore.js'
 </script>
 
 
@@ -16,8 +13,8 @@
 <div class='sheet page-body'>
 	<CharacterSheet mode={'edit'} />
 	<SaveAndDeleteButtonRow
-		saveFunc={_ => $characterStore.save()}
-		deleteFunc={_ => DeleteCharacter($characterStore.id)}
+		saveFunc={_ => $playerStore.saveCharacter($characterStore)}
+		deleteFunc={_ => $playerStore.deleteCharacter($characterStore.description.name.value)}
 	/>
 </div>
 <BackButton path={'character'} />

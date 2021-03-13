@@ -3,7 +3,6 @@
 
 	const updateAbilities = _ => {
 		$characterStore.updateAbilities($characterStore)
-		$characterStore.save()
 	}
 </script>
 
@@ -34,7 +33,7 @@
 					<span class='s-col'>
 						<select
 							class='taken-number'
-							bind:value={ability.taken}
+							bind:value={ability.qty}
 							on:blur={updateAbilities}
 						>
 							{#each Array(ability.max+1) as _, i}

@@ -18,7 +18,11 @@ export default writable({
 		// {
 		// 	'name': 'Campaign',
 		// 	'url': '/campaign'
-		// }
+		// },
+		{
+			'name': 'Map',
+			'url': '/map'
+		}
 	],
     toggle() {
         this.open = !this.open

@@ -12,7 +12,6 @@
 		$characterStore.updateProperties($characterStore)
 		$characterStore.resetHealth($characterStore)
 		$characterStore = $characterStore
-		$characterStore.save()
 	})
 </script>
 

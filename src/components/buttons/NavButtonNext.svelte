@@ -2,6 +2,7 @@
 	import Creation from 'rules/Creation.js'
 	import CreationStepsList from 'rules/lists/CreationStepsList.js'
 	import characterStore from 'stores/characterStore.js'
+	import playerStore from 'stores/playerStore.js'
 	import { beforeUpdate } from 'svelte'
 
 	beforeUpdate(_ => $characterStore.meta.proceed = Creation.proceedCheck($characterStore))
@@ -10,6 +11,7 @@
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if ($characterStore.meta.proceed) $characterStore.meta.step++
 		if ($characterStore.meta.step == CreationStepsList.length) {
+			$playerStore.saveCharacter($characterStore)
 			window.location.href = '/'
 		}
 	}

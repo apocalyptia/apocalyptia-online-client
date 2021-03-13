@@ -1,5 +1,14 @@
 export default (char) => {
 
+	const compressionMapping = (category) => {
+		return category.map(item => {
+			return {
+				'i': item.id,
+				'q': item.qty
+			}
+		})
+	}
+
 	let c = {}
 
 	c.Mi = char.meta.id
@@ -7,8 +16,8 @@ export default (char) => {
 	c.Mc = char.meta.created
 	c.Mm = char.meta.modified
 	c.Mn = char.meta.notes
-	c.St = char.meta.status
-	c.Sp = char.meta.step
+	c.Sa = char.meta.status
+	c.Se = char.meta.step
 	c.Cm = char.meta.coordinates.m
 	c.Cf = char.meta.coordinates.f
 	c.Cx = char.meta.coordinates.x
@@ -49,12 +58,12 @@ export default (char) => {
 	c.tO = char.health.torso.current
 	c.lL = char.health.leftLeg.current
 	c.rL = char.health.rightLeg.current
-	c.Ab = [...char.abilities]
-	c.Ga = [...char.gear.armor.inventory]
-	c.Gm = [...char.gear.melee.inventory]
-	c.Gr = [...char.gear.ranged.inventory]
-	c.Go = [...char.gear.ammo.inventory]
-	c.Ge = [...char.gear.equipment.inventory]
+	c.Ab = compressionMapping(char.abilities)
+	c.Ga = compressionMapping(char.gear.armor.inventory)
+	c.Gm = compressionMapping(char.gear.melee.inventory)
+	c.Gr = compressionMapping(char.gear.ranged.inventory)
+	c.Go = compressionMapping(char.gear.ammo.inventory)
+	c.Ge = compressionMapping(char.gear.equipment.inventory)
 
 	return JSON.stringify(c)
 }

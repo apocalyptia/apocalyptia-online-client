@@ -9,11 +9,8 @@
 	import Traits from 'rules/Traits.js'
 	import TraitsList from 'rules/lists/TraitsList.js'
 	import characterStore from 'stores/characterStore.js'
-	import { afterUpdate } from 'svelte'
 
 	$: remaining = Traits.remaining($characterStore)
-
-	afterUpdate(_ => $characterStore.save())
 
 	const updateTrait = (event) => {
 		$characterStore = Traits.assign($characterStore, event.target)

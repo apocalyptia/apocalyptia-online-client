@@ -1,8 +1,8 @@
-// import CreateCharacter from 'database/characters/CreateCharacter.js'
-import DeleteCharacter from 'database/characters/DeleteCharacter.js'
-import ReadAllCharacters from 'database/characters/ReadAllCharacters.js'
-import ReadCharacter from 'database/characters/ReadCharacter.js'
-import UpdateCharacter from 'database/characters/UpdateCharacter.js'
+import NewCharacter from 'classes/methods/player/NewCharacter.js'
+import DeleteCharacter from 'classes/methods/player/DeleteCharacter.js'
+import LoadCharacter from 'classes/methods/player/LoadCharacter.js'
+import UpdateCharacter from 'classes/methods/player/UpdateCharacter.js'
+import SaveCharacter from 'classes/methods/player/SaveCharacter.js'
 
 export default class Player {
 	constructor() {
@@ -10,36 +10,12 @@ export default class Player {
 		this.email = ''
 		this.password = ''
 		this.loggedIn = false
-		this.currentCharacter = false
-		this.currentCharacterIndex = -1
+		this.characterIndex = -1
 		this.characterList = []
-	}
-	newCharacter(character) {
-		// CreateCharacter(character)
-		this.characterList.push(character)
-		this.currentCharacterIndex = this.characterList.length - 1
-		return this
-	}
-	deleteCharacter() {
-		DeleteCharacter(this.characterList[this.currentCharacterIndex])
-		this.characterList = this.characterList.filter(c => c.description.name.value != characterName)
-		if (this.characterList.length) this.currentCharacterIndex = 0
-		else this.currentCharacterIndex = null
-		return this
-	}
-	loadCharacter(characterName) {
-		this.characterList.push(ReadCharacter(characterName))
-		this.currentCharacterIndex = this.characterList.length - 1
-		return this
-	}
-	loadAllCharacters() {
-		this.characterList = ReadAllCharacters()
-		return this
-	}
-	updateCharacter(character) {
-		this.characterList.push(character)
-		this.currentCharacterIndex = this.characterList.length - 1
-		UpdateCharacter(character)
-		return this
+		this.newCharacter = (character) => NewCharacter(this, character)
+		this.deleteCharacter = (characterName) => DeleteCharacter(this, characterName)
+		this.loadCharacter = (characterName) => LoadCharacter(this, characterName)
+		this.updateCharacter = _ => UpdateCharacter(this)
+		this.saveCharacter = (character) => SaveCharacter(this, character)
 	}
 }

@@ -1,53 +1,39 @@
 <script>
-	import Login from 'utils/auth/Login.js'
+	import BackButton from 'components/buttons/BackButton.svelte'
+	import Join from 'utils/auth/Join.js'
 	import playerStore from 'stores/playerStore.js'
 
-	let username, email, password, confirm, error = false
-
-	const handleSignUp = (e) => {
-		e.preventDefault()
-
-		// userbase.signUp({ username, password, rememberMe: 'none' })
-		// 	.then(user => alert('You signed up!'))
-		// 	.catch(e => error = true)
-	}
+	let email = ``, password = ``, confirm = ``
 </script>
 
 
 <div class='cntr-card'>
 	<form>
-		<div class='username'>
-			<label for='username'>Username</label>
-			<input id='username' type='text' required bind:value={username} />
-		</div>
 		<div class='email'>
 			<label for='email'>Email</label>
 			<input id='email' type='text' required bind:value={email} />
 		</div>
 		<div class='password'>
 			<label for='password'>Password</label>
-			<input id='password' type='text' required bind:value={password} />
+			<input id='password' type='password' required bind:value={password} />
 		</div>
 		<div class='confirm'>
 			<label for='confirm'>Confirm Password</label>
-			<input id='confirm' type='text' required bind:value={confirm} />
+			<input id='confirm' type='password' required bind:value={confirm} />
 		</div>
 		<div class='join'>
-			<button type='button' on:click={_ => $playerStore = Login($playerStore, email, password)}>
-				<a href='/'>Join</a>
-			</button>
+			<a href='/'>
+				<button type='submit' on:click={_ => $playerStore = Join($playerStore, email, password, confirm)}>
+					Join
+				</button>
+			</a>
 		</div>
 	</form>
-	{#if error}
-		<div>
-			<h1>Somethin's done fucked up!</h1>
-		</div>
-	{/if}
 </div>
+<BackButton path={'/'} />
 
 
 <style>
-	.username,
 	.email,
 	.password,
 	.confirm {

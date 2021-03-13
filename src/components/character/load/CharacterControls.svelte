@@ -3,46 +3,57 @@
 	import characterStore from 'stores/characterStore.js'
 	import playerStore from 'stores/playerStore.js'
 
-	const deleteCharacter = _ => {
-		$playerStore = $playerStore.deleteCharacter(selectedCharacter)
-		$playerStore.characterList = $playerStore.characterList.filter(c => c.description.name.value != selectedCharacter)
-		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
-	}
+	export let selectedCharacter
 
 	const loadCharacter = _ => {
-		$playerStore = $playerStore.loadCharacter(selectedCharacter)
-		$characterStore = $playerStore.characterList[$playerStore.currentCharacter]
+		$playerStore.loadCharacter(selectedCharacter)
 		window.location.href = '/sheet'
 	}
 
 	const backupCharacter = _ => BackupCharacter($characterStore)
 
 	const newCharacter = _ => window.location.href = '/new'
+
+	const deleteCharacter = _ => $playerStore.deleteCharacter(selectedCharacter)
 </script>
 
 
 <div class='controls'>
-	<button class='small-cntr-btn' on:click={loadCharacter}>Load</button>
-	<button
-		class='small-cntr-btn'
-		on:click={backupCharacter}>Backup</button>
-	<button class='small-cntr-btn' on:click={newCharacter}>New</button>
-	<button
-		class='small-cntr-btn'
-		on:click={deleteCharacter}>Delete</button>
+	<div class='top-row'>
+		<button class='small-cntr-btn' on:click={loadCharacter}>
+			Load
+		</button>
+		<button class='small-cntr-btn' on:click={backupCharacter}>
+			Backup
+		</button>
+	</div>
+	<div class='bottom-row'>
+		<button class='small-cntr-btn' on:click={newCharacter}>
+			New
+		</button>
+		<button class='small-cntr-btn' on:click={deleteCharacter}>
+			Delete
+		</button>
+	</div>
 </div>
 
 
 <style>
 	.controls {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
 		padding-top: var(--std-padding);
 		width: 100%;
 	}
-	.small-cntr-btn {
-		width: 50%;
-		min-width: 50%;
+	div[class*='-row'] {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+	}
+	.bottom-row {
+		margin-top: var(--std-margin);
+	}
+	button {
+		height: var(--square);
+		max-width: calc(var(--square) * 5);
+		width: 25vw;
 	}
 </style>

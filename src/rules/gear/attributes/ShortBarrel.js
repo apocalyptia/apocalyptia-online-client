@@ -4,7 +4,7 @@ const ShortBarrel = new Rule({
 	id: ``,
 	name: `Short-Barrel`,
 	desc: [
-		`[Range / 2] and [Size / 2].`,
+		`[Range / 2] and [Size / 2] (round up).`,
 	]
 })
 

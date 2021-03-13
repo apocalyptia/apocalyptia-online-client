@@ -5,11 +5,13 @@
 	import characterStore from 'stores/characterStore.js'
 	import playerStore from 'stores/playerStore.js'
 
-	const newCharacter = _ => $characterStore = new Character()
+	const newCharacter = _ => {
+		$characterStore = new Character()
+		$playerStore.newCharacter($characterStore)
+	}
 
     const randomCharacter = _ => {
-		const character = new Character()
-		$characterStore = RandomCharacter(character)
+		$characterStore = RandomCharacter(new Character())
 		$playerStore = $playerStore.newCharacter($characterStore)
     }
 </script>
