@@ -5,7 +5,7 @@ export default class AreaMapCanvas {
 		canvas = null,
 		context = null,
 		contents = [],
-		magnification = 1,
+		magnification = 1.0,
 		gridSize = 20,
 		defaultSquare = 50,
 		currentSquare = 50,

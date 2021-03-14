@@ -7,11 +7,10 @@
 				indicator=false,
 				func=null
 
-	console.log(typeof indicator)
-	value = parseInt(value)
-	min = parseInt(min)
-	max = parseInt(max)
-	step = parseInt(step)
+	value = parseFloat(value)
+	min = parseFloat(min)
+	max = parseFloat(max)
+	step = parseFloat(step)
 </script>
 
 

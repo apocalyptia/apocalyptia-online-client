@@ -1,5 +1,4 @@
 <script>
-	import mapStore from 'stores/mapStore.js'
 	import * as THREE from 'three'
 	import { OrbitControls } from 'utils/threejs/OrbitControls.js'
 	import { onMount } from 'svelte'
@@ -28,16 +27,10 @@
 		requestAnimationFrame(animate)
 	}
 
-	onMount(_ => {
-		init()
-		$mapStore = $mapStore.fillContents()
-	})
+	onMount(_ => init())
 </script>
 
 
-<svelte:head>
-	<title>Apocalyptia Online - Map</title>
-</svelte:head>
 <div class='page-body'>
 	<canvas bind:this={canvas} />
 </div>
@@ -45,9 +38,9 @@
 
 <style>
 	.page-body {
-		padding: 0;
+		padding: 0
 	}
 	canvas {
-		opacity: 0.75;
+		opacity: 0.5
 	}
 </style>
