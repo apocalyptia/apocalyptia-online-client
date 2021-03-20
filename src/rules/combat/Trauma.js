@@ -1,6 +1,6 @@
-import Rule from 'classes/Rule.js'
-import Pain from 'rules/combat/subrules/Pain.js'
-import Recovery from 'rules/combat/subrules/Recovery.js'
+import Rule from '/src/classes/Rule.js'
+import Pain from '/src/rules/combat/subrules/Pain.js'
+import Recovery from '/src/rules/combat/subrules/Recovery.js'
 
 const Trauma = new Rule({
 	name: `Trauma`, 

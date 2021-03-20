@@ -1,8 +1,8 @@
-import Rule from 'classes/Rule.js'
-import Absorption from 'rules/combat/subrules/Absorption.js'
-import FireDamage from 'rules/combat/subrules/FireDamage.js'
-import Pain from 'rules/combat/subrules/Pain.js'
-import Recovery from 'rules/combat/subrules/Recovery.js'
+import Rule from '/src/classes/Rule.js'
+import Absorption from '/src/rules/combat/subrules/Absorption.js'
+import FireDamage from '/src/rules/combat/subrules/FireDamage.js'
+import Pain from '/src/rules/combat/subrules/Pain.js'
+import Recovery from '/src/rules/combat/subrules/Recovery.js'
 
 const Damage = new Rule({
 	name: `Damage`, 

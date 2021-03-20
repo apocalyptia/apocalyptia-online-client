@@ -1,7 +1,7 @@
 <script>
-	import CreationStepsList from 'rules/lists/CreationStepsList.js'
-	import NavBar from 'components/character/creator/NavBar.svelte'
-	import characterStore from 'stores/characterStore.js'
+	import CreationStepsList from '/src/rules/lists/CreationStepsList.js'
+	import NavBar from '/src/components/character/creator/NavBar.svelte'
+	import characterStore from '/src/stores/characterStore.js'
 </script>
 
 

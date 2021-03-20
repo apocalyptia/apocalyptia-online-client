@@ -1,7 +1,7 @@
-import Gear from 'classes/Gear.js'
-import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
-import Chop from 'rules/gear/attributes/Chop.js'
-import Slow from 'rules/gear/attributes/Slow.js'
+import Gear from '/src/classes/Gear.js'
+import TwoHanded from '/src/rules/gear/attributes/TwoHanded.js'
+import Chop from '/src/rules/gear/attributes/Chop.js'
+import Slow from '/src/rules/gear/attributes/Slow.js'
 
 const Ax = new Gear({
 	id: ``,

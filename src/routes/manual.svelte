@@ -1,5 +1,5 @@
 <script>
-	import ManualPage from 'components/manual/ManualPage.svelte'
+	import ManualPage from '/src/components/manual/ManualPage.svelte'
 
 	export let page
 </script>

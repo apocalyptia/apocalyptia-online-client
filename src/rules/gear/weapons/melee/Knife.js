@@ -1,7 +1,7 @@
-import Gear from 'classes/Gear.js'
-import OneHanded from 'rules/gear/attributes/OneHanded.js'
-import Pierce from 'rules/gear/attributes/Pierce.js'
-import Rapid from 'rules/gear/attributes/Rapid.js'
+import Gear from '/src/classes/Gear.js'
+import OneHanded from '/src/rules/gear/attributes/OneHanded.js'
+import Pierce from '/src/rules/gear/attributes/Pierce.js'
+import Rapid from '/src/rules/gear/attributes/Rapid.js'
 
 const Knife = new Gear({
 	id: ``,

@@ -1,4 +1,4 @@
-import Rule from 'classes/Rule.js'
+import Rule from '/src/classes/Rule.js'
 
 const Restrained = new Rule({
 	name: `Restrained`,

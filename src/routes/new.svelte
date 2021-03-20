@@ -1,9 +1,9 @@
 <script>
-    import BackButton from 'components/buttons/BackButton.svelte'
-    import Character from 'classes/Character.js'
-	import RandomCharacter from 'rules/random/RandomCharacter.js'
-	import characterStore from 'stores/characterStore.js'
-	import playerStore from 'stores/playerStore.js'
+    import BackButton from '/src/components/buttons/BackButton.svelte'
+    import Character from '/src/classes/Character.js'
+	import RandomCharacter from '/src/rules/random/RandomCharacter.js'
+	import characterStore from '/src/stores/characterStore.js'
+	import playerStore from '/src/stores/playerStore.js'
 
 	const newCharacter = _ => {
 		$characterStore = new Character()

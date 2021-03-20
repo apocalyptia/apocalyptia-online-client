@@ -1,5 +1,5 @@
 <script>
-	import PropertiesList from 'rules/lists/PropertiesList.js'
+	import PropertiesList from '/src/rules/lists/PropertiesList.js'
 </script>
 
 

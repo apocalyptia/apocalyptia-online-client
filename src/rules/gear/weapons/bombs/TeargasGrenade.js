@@ -1,7 +1,7 @@
-import Gear from 'classes/Gear.js'
-import Blind from 'rules/status/Blind.js'
-import Stun from 'rules/status/Stun.js'
-import Asphyxiation from 'rules/needs/Asphyxiation.js'
+import Gear from '/src/classes/Gear.js'
+import Blind from '/src/rules/status/Blind.js'
+import Stun from '/src/rules/status/Stun.js'
+import Asphyxiation from '/src/rules/needs/Asphyxiation.js'
 
 const TeargasGrenade = new Gear({
 	id: ``,

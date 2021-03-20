@@ -1,11 +1,11 @@
 <script>
-	import AbilitiesList from 'rules/lists/abilities/AbilitiesList.js'
-	import Creation from 'rules/Creation.js'
-	import GearBlock from 'components/widgets/GearBlock.svelte'
-	import PageHeader from 'components/character/creator/PageHeader.svelte'
-	import RandomStartingGear from 'rules/random/RandomStartingGear.js'
-	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
-	import characterStore from 'stores/characterStore.js'
+	import AbilitiesList from '/src/rules/lists/abilities/AbilitiesList.js'
+	import Creation from '/src/rules/Creation.js'
+	import GearBlock from '/src/components/widgets/GearBlock.svelte'
+	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
+	import RandomStartingGear from '/src/rules/random/RandomStartingGear.js'
+	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
+	import characterStore from '/src/stores/characterStore.js'
 	import { afterUpdate, beforeUpdate } from 'svelte'
 
 	let gearedUp = false

@@ -1,7 +1,7 @@
-import Medicine from 'rules/skills/Medicine.js'
-import Perception from 'rules/skills/Perception.js'
-import Science from 'rules/skills/Science.js'
-import Survival from 'rules/skills/Survival.js'
+import Medicine from '/src/rules/skills/Medicine.js'
+import Perception from '/src/rules/skills/Perception.js'
+import Science from '/src/rules/skills/Science.js'
+import Survival from '/src/rules/skills/Survival.js'
 
 export default [
 	Medicine,

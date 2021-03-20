@@ -1,12 +1,12 @@
-import Ammo12gList from 'rules/lists/gear/ammo/Ammo12gList.js'
-import Ammo22List from 'rules/lists/gear/ammo/Ammo22List.js'
-import Ammo308List from 'rules/lists/gear/ammo/Ammo308List.js'
-import Ammo357List from 'rules/lists/gear/ammo/Ammo357List.js'
-import Ammo45List from 'rules/lists/gear/ammo/Ammo45List.js'
-import Ammo556List from 'rules/lists/gear/ammo/Ammo556List.js'
-import Ammo762List from 'rules/lists/gear/ammo/Ammo762List.js'
-import Ammo9mmList from 'rules/lists/gear/ammo/Ammo9mmList.js'
-import AmmoArrowList from 'rules/lists/gear/ammo/AmmoArrowList.js'
+import Ammo12gList from '/src/rules/lists/gear/ammo/Ammo12gList.js'
+import Ammo22List from '/src/rules/lists/gear/ammo/Ammo22List.js'
+import Ammo308List from '/src/rules/lists/gear/ammo/Ammo308List.js'
+import Ammo357List from '/src/rules/lists/gear/ammo/Ammo357List.js'
+import Ammo45List from '/src/rules/lists/gear/ammo/Ammo45List.js'
+import Ammo556List from '/src/rules/lists/gear/ammo/Ammo556List.js'
+import Ammo762List from '/src/rules/lists/gear/ammo/Ammo762List.js'
+import Ammo9mmList from '/src/rules/lists/gear/ammo/Ammo9mmList.js'
+import AmmoArrowList from '/src/rules/lists/gear/ammo/AmmoArrowList.js'
 
 export default {
 	name: `Ammo`,

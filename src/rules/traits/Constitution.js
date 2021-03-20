@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import ConstitutionSkillsList from 'rules/lists/skills/ConstitutionSkillsList.js'
+import Rule from '/src/classes/Rule.js'
+import ConstitutionSkillsList from '/src/rules/lists/skills/ConstitutionSkillsList.js'
 
 const Constitution = new Rule({
 	name: `Constitution`,

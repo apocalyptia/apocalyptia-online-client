@@ -1,5 +1,5 @@
-import RandomRoll from 'rules/random/RandomRoll.js'
-import MeleeWeaponsList from 'rules/lists/gear/MeleeWeaponsList.js'
+import RandomRoll from '/src/rules/random/RandomRoll.js'
+import MeleeWeaponsList from '/src/rules/lists/gear/MeleeWeaponsList.js'
 
 export default (c) => {
     let randomMeleeWeapon = RandomRoll(MeleeWeaponsList.list)

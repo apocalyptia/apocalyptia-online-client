@@ -1,4 +1,4 @@
-import DrawGrid from 'utils/canvas/DrawGrid.js'
+import DrawGrid from '/src/utils/canvas/DrawGrid.js'
 
 export default class AreaMapCanvas {
 	constructor(

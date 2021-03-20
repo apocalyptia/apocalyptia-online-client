@@ -1,6 +1,6 @@
 <script>
-    import BackButton from 'components/buttons/BackButton.svelte'
-    import playerStore from 'stores/playerStore.js'
+    import BackButton from '/src/components/buttons/BackButton.svelte'
+    import playerStore from '/src/stores/playerStore.js'
 </script>
 
 

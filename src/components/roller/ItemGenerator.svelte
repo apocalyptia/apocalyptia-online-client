@@ -1,7 +1,7 @@
 <script>
-	import DiceButton from 'components/buttons/DiceButton.svelte'
-	import GearBlock from 'components/widgets/GearBlock.svelte'
-	import RandomRoll from 'rules/random/RandomRoll.js'
+	import DiceButton from '/src/components/buttons/DiceButton.svelte'
+	import GearBlock from '/src/components/widgets/GearBlock.svelte'
+	import RandomRoll from '/src/rules/random/RandomRoll.js'
 
 	export let category
 

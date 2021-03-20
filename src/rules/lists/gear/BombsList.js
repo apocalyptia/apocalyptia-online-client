@@ -1,9 +1,9 @@
-import FlashbangGrenade from 'rules/gear/weapons/bombs/FlashbangGrenade.js'
-import FragGrenade from 'rules/gear/weapons/bombs/FragGrenade.js'
-import MolotovCocktail from 'rules/gear/weapons/bombs/MolotovCocktail.js'
-import SmokeGrenade from 'rules/gear/weapons/bombs/SmokeGrenade.js'
-import TeargasGrenade from 'rules/gear/weapons/bombs/TeargasGrenade.js'
-import Thermite from 'rules/gear/weapons/bombs/Thermite.js'
+import FlashbangGrenade from '/src/rules/gear/weapons/bombs/FlashbangGrenade.js'
+import FragGrenade from '/src/rules/gear/weapons/bombs/FragGrenade.js'
+import MolotovCocktail from '/src/rules/gear/weapons/bombs/MolotovCocktail.js'
+import SmokeGrenade from '/src/rules/gear/weapons/bombs/SmokeGrenade.js'
+import TeargasGrenade from '/src/rules/gear/weapons/bombs/TeargasGrenade.js'
+import Thermite from '/src/rules/gear/weapons/bombs/Thermite.js'
 
 export default {
 	name: `Bombs`,

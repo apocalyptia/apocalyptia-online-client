@@ -1,6 +1,6 @@
-import Charge from 'rules/abilities/Charge.js'
-import FirmGrip from 'rules/abilities/FirmGrip.js'
-import HardHeaded from 'rules/abilities/HardHeaded.js'
+import Charge from '/src/rules/abilities/Charge.js'
+import FirmGrip from '/src/rules/abilities/FirmGrip.js'
+import HardHeaded from '/src/rules/abilities/HardHeaded.js'
 
 export default [
 	Charge,

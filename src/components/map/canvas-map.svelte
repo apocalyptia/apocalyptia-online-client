@@ -1,6 +1,6 @@
 <script>
-	import Slider from 'components/widgets/Slider.svelte'
-	import mapStore from 'stores/mapStore.js'
+	import Slider from '/src/components/widgets/Slider.svelte'
+	import mapStore from '/src/stores/mapStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(_ => $mapStore = $mapStore.fillContents())

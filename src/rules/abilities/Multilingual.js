@@ -1,5 +1,5 @@
-import Ability from 'classes/Ability.js'
-import LanguageList from 'rules/lists/LanguageList.js'
+import Ability from '/src/classes/Ability.js'
+import LanguageList from '/src/rules/lists/LanguageList.js'
 
 const Multilingual = new Ability({
 	id: ``,

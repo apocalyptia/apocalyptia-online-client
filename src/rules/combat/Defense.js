@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import ReflexiveDefense from 'rules/combat/subrules/ReflexiveDefense.js'
+import Rule from '/src/classes/Rule.js'
+import ReflexiveDefense from '/src/rules/combat/subrules/ReflexiveDefense.js'
 
 const Defense = new Rule({
 	name: `Defense`, 

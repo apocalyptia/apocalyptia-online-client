@@ -1,10 +1,10 @@
-import Rule from 'classes/Rule.js'
-import Conditions from 'rules/combat/subrules/vehicles/Conditions.js'
-import Occupants from 'rules/combat/subrules/vehicles/Occupants.js'
-import Pedestrians from 'rules/combat/subrules/vehicles/Pedestrians.js'
-import Tires from 'rules/combat/subrules/vehicles/Tires.js'
-import Wreck from 'rules/combat/subrules/vehicles/Wreck.js'
-import Burning from 'rules/combat/subrules/vehicles/Burning.js'
+import Rule from '/src/classes/Rule.js'
+import Conditions from '/src/rules/combat/subrules/vehicles/Conditions.js'
+import Occupants from '/src/rules/combat/subrules/vehicles/Occupants.js'
+import Pedestrians from '/src/rules/combat/subrules/vehicles/Pedestrians.js'
+import Tires from '/src/rules/combat/subrules/vehicles/Tires.js'
+import Wreck from '/src/rules/combat/subrules/vehicles/Wreck.js'
+import Burning from '/src/rules/combat/subrules/vehicles/Burning.js'
 
 const Vehicles = new Rule({
 	name: `Vehicles`, 

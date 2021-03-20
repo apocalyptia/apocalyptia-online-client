@@ -1,8 +1,8 @@
-import RandomMeleeWeapon from 'rules/random/RandomMeleeWeapon.js'
-import RandomRangedWeapon from 'rules/random/RandomRangedWeapon.js'
-import RandomWeaponAmmo from 'rules/random/RandomWeaponAmmo.js'
-import RandomArmor from 'rules/random/RandomArmor.js'
-import RandomEquipment from 'rules/random/RandomEquipment.js'
+import RandomMeleeWeapon from '/src/rules/random/RandomMeleeWeapon.js'
+import RandomRangedWeapon from '/src/rules/random/RandomRangedWeapon.js'
+import RandomWeaponAmmo from '/src/rules/random/RandomWeaponAmmo.js'
+import RandomArmor from '/src/rules/random/RandomArmor.js'
+import RandomEquipment from '/src/rules/random/RandomEquipment.js'
 
 export default (c, n) => {
     c.resetGear(c)

@@ -1,4 +1,4 @@
-import AbilitiesList from 'rules/lists/abilities/AbilitiesList.js'
+import AbilitiesList from '/src/rules/lists/abilities/AbilitiesList.js'
 
 export default (c) => {
 	c.abilities = [...AbilitiesList.masterList.filter(a => a.qty)]

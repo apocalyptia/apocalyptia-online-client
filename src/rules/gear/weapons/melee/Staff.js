@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
-import Blunt from 'rules/gear/attributes/Blunt.js'
+import Gear from '/src/classes/Gear.js'
+import TwoHanded from '/src/rules/gear/attributes/TwoHanded.js'
+import Blunt from '/src/rules/gear/attributes/Blunt.js'
 
 const Staff = new Gear({
 	id: ``,

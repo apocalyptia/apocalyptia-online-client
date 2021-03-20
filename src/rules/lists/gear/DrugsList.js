@@ -1,9 +1,9 @@
-import Alcohol from 'rules/gear/equipment/drugs/Alcohol.js'
-import Antibiotic from 'rules/gear/equipment/drugs/Antibiotic.js'
-import Hallucinogen from 'rules/gear/equipment/drugs/Hallucinogen.js'
-import Painkiller from 'rules/gear/equipment/drugs/Painkiller.js'
-import Sedative from 'rules/gear/equipment/drugs/Sedative.js'
-import Stimulant from 'rules/gear/equipment/drugs/Stimulant.js'
+import Alcohol from '/src/rules/gear/equipment/drugs/Alcohol.js'
+import Antibiotic from '/src/rules/gear/equipment/drugs/Antibiotic.js'
+import Hallucinogen from '/src/rules/gear/equipment/drugs/Hallucinogen.js'
+import Painkiller from '/src/rules/gear/equipment/drugs/Painkiller.js'
+import Sedative from '/src/rules/gear/equipment/drugs/Sedative.js'
+import Stimulant from '/src/rules/gear/equipment/drugs/Stimulant.js'
 
 export default {
 	name: `Drugs`,

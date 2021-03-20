@@ -1,8 +1,8 @@
-import NewCharacter from 'classes/methods/player/NewCharacter.js'
-import DeleteCharacter from 'classes/methods/player/DeleteCharacter.js'
-import LoadCharacter from 'classes/methods/player/LoadCharacter.js'
-import UpdateCharacter from 'classes/methods/player/UpdateCharacter.js'
-import SaveCharacter from 'classes/methods/player/SaveCharacter.js'
+import NewCharacter from '/src/classes/methods/player/NewCharacter.js'
+import DeleteCharacter from '/src/classes/methods/player/DeleteCharacter.js'
+import LoadCharacter from '/src/classes/methods/player/LoadCharacter.js'
+import UpdateCharacter from '/src/classes/methods/player/UpdateCharacter.js'
+import SaveCharacter from '/src/classes/methods/player/SaveCharacter.js'
 
 export default class Player {
 	constructor() {

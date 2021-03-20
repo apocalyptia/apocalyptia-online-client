@@ -1,7 +1,7 @@
-import Leadership from 'rules/skills/Leadership.js'
-import Perform from 'rules/skills/Perform.js'
-import Socialize from 'rules/skills/Socialize.js'
-import Tame from 'rules/skills/Tame.js'
+import Leadership from '/src/rules/skills/Leadership.js'
+import Perform from '/src/rules/skills/Perform.js'
+import Socialize from '/src/rules/skills/Socialize.js'
+import Tame from '/src/rules/skills/Tame.js'
 
 export default [
 	Leadership,

@@ -1,8 +1,8 @@
 <script>
-	import Creation from 'rules/Creation.js'
-	import CreationStepsList from 'rules/lists/CreationStepsList.js'
-	import characterStore from 'stores/characterStore.js'
-	import playerStore from 'stores/playerStore.js'
+	import Creation from '/src/rules/Creation.js'
+	import CreationStepsList from '/src/rules/lists/CreationStepsList.js'
+	import characterStore from '/src/stores/characterStore.js'
+	import playerStore from '/src/stores/playerStore.js'
 	import { beforeUpdate } from 'svelte'
 
 	beforeUpdate(_ => $characterStore.meta.proceed = Creation.proceedCheck($characterStore))

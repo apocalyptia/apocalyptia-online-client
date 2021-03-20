@@ -1,9 +1,9 @@
-import EfficientWork from 'rules/abilities/EfficientWork.js'
-import FastDraw from 'rules/abilities/FastDraw.js'
-import FleetFooted from 'rules/abilities/FleetFooted.js'
-import Multilingual from 'rules/abilities/Multilingual.js'
-import Practice from 'rules/abilities/Practice.js'
-import VehicleOperation from 'rules/abilities/VehicleOperation.js'
+import EfficientWork from '/src/rules/abilities/EfficientWork.js'
+import FastDraw from '/src/rules/abilities/FastDraw.js'
+import FleetFooted from '/src/rules/abilities/FleetFooted.js'
+import Multilingual from '/src/rules/abilities/Multilingual.js'
+import Practice from '/src/rules/abilities/Practice.js'
+import VehicleOperation from '/src/rules/abilities/VehicleOperation.js'
 
 export default [
 	EfficientWork,

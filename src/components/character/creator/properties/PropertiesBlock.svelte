@@ -1,6 +1,6 @@
 <script>
-	import PropertiesList from 'rules/lists/PropertiesList.js'
-    import characterStore from 'stores/characterStore.js'
+	import PropertiesList from '/src/rules/lists/PropertiesList.js'
+    import characterStore from '/src/stores/characterStore.js'
 
 	const propertyListHalves = [
 		PropertiesList.list.slice(0, (PropertiesList.list.length / 2)),

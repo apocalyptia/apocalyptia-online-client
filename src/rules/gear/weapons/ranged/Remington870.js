@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import TwoHanded from 'rules/gear/attributes/TwoHanded.js'
-import Scatter from 'rules/gear/attributes/Scatter.js'
+import Gear from '/src/classes/Gear.js'
+import TwoHanded from '/src/rules/gear/attributes/TwoHanded.js'
+import Scatter from '/src/rules/gear/attributes/Scatter.js'
 
 const Remington870 = new Gear({
 	id: ``,

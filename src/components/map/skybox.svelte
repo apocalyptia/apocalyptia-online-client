@@ -1,6 +1,6 @@
 <script>
 	import * as THREE from 'three'
-	import { OrbitControls } from 'utils/threejs/OrbitControls.js'
+	import { OrbitControls } from '/src/utils/threejs/OrbitControls.js'
 	import { onMount } from 'svelte'
 
 	let canvas, scene, camera, renderer, controls

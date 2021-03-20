@@ -1,9 +1,9 @@
 <script>
-	import BackButton from 'components/buttons/BackButton.svelte'
-	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
-	import SaveAndDeleteButtonRow from 'components/buttons/SaveAndDeleteButtonRow.svelte'
-	import characterStore from 'stores/characterStore.js'
-	import playerStore from 'stores/playerStore.js'
+	import BackButton from '/src/components/buttons/BackButton.svelte'
+	import CharacterSheet from '/src/components/character/sheet/CharacterSheet.svelte'
+	import SaveAndDeleteButtonRow from '/src/components/buttons/SaveAndDeleteButtonRow.svelte'
+	import characterStore from '/src/stores/characterStore.js'
+	import playerStore from '/src/stores/playerStore.js'
 </script>
 
 

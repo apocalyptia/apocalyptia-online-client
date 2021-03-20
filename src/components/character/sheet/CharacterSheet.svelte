@@ -1,5 +1,5 @@
 <script>
-	import SheetSectionsList from 'rules/lists/SheetSectionsList.js'
+	import SheetSectionsList from '/src/rules/lists/SheetSectionsList.js'
 
 	export let mode
 </script>

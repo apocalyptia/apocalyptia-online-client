@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import HollowPoint from 'rules/gear/attributes/HollowPoint.js'
+import Gear from '/src/classes/Gear.js'
+import HollowPoint from '/src/rules/gear/attributes/HollowPoint.js'
 
 const HollowPoint762 = new Gear({
 	id: ``,

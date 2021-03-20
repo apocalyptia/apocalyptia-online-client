@@ -1,5 +1,5 @@
 <script>
-	import characterStore from 'stores/characterStore.js'
+	import characterStore from '/src/stores/characterStore.js'
 
 	const previous = _ => {
 		document.getElementById('character-creator').scrollTo(0, 0)

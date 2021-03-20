@@ -1,9 +1,9 @@
 <script>
-	import Alphabetize from 'utils/sorting/Alphabetize.js'
-	import BackButton from 'components/buttons/BackButton.svelte'
-	import ManualBody from 'components/manual/ManualBody.svelte'
-	import ManualHeader from 'components/manual/ManualHeader.svelte'
-	import SearchEngine from 'utils/searching/SearchEngine.js'
+	import Alphabetize from '/src/utils/sorting/Alphabetize.js'
+	import BackButton from '/src/components/buttons/BackButton.svelte'
+	import ManualBody from '/src/components/manual/ManualBody.svelte'
+	import ManualHeader from '/src/components/manual/ManualHeader.svelte'
+	import SearchEngine from '/src/utils/searching/SearchEngine.js'
 
 	export let page
 

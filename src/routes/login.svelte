@@ -1,7 +1,7 @@
 <script>
-	import BackButton from 'components/buttons/BackButton.svelte'
-	import Login from 'utils/auth/Login.js'
-	import playerStore from 'stores/playerStore.js'
+	import BackButton from '/src/components/buttons/BackButton.svelte'
+	import Login from '/src/utils/auth/Login.js'
+	import playerStore from '/src/stores/playerStore.js'
 
 	let email = ``, password = ``
 </script>

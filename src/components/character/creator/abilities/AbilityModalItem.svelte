@@ -1,5 +1,5 @@
 <script>
-	import characterStore from 'stores/characterStore.js'
+	import characterStore from '/src/stores/characterStore.js'
 
 	export let ability
 

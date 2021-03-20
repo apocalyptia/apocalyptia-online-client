@@ -1,4 +1,4 @@
-import DescriptionList from 'rules/lists/DescriptionList.js'
+import DescriptionList from '/src/rules/lists/DescriptionList.js'
 
 export default (c) => {
 	c.description = {}

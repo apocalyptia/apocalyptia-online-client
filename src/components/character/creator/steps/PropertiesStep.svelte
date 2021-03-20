@@ -1,11 +1,11 @@
 <script>
-	import HealthSection from 'components/character/sheet/sections/HealthSection.svelte'
-	import ExplanationBlock from 'components/character/creator/ExplanationBlock.svelte'
-	import PageHeader from 'components/character/creator/PageHeader.svelte'
-	import Properties from 'rules/Properties.js'
-	import PropertiesBlock from 'components/character/creator/properties/PropertiesBlock.svelte'
-	import PropertiesFormulae from 'components/character/creator/properties/PropertiesFormulae.svelte'
-	import characterStore from 'stores/characterStore.js'
+	import HealthSection from '/src/components/character/sheet/sections/HealthSection.svelte'
+	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
+	import Properties from '/src/rules/Properties.js'
+	import PropertiesBlock from '/src/components/character/creator/properties/PropertiesBlock.svelte'
+	import PropertiesFormulae from '/src/components/character/creator/properties/PropertiesFormulae.svelte'
+	import characterStore from '/src/stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(_ => {

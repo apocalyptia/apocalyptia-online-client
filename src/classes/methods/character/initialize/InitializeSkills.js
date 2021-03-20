@@ -1,4 +1,4 @@
-import SkillsList from 'rules/lists/SkillsList.js'
+import SkillsList from '/src/rules/lists/SkillsList.js'
 
 export default (c) => {
 	c.skills = {}

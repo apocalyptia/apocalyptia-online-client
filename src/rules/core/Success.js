@@ -1,6 +1,6 @@
-import Rule from 'classes/Rule.js'
-import Cooperation from 'rules/core/subrules/Cooperation.js'
-import RoteActions from 'rules/core/subrules/RoteActions.js'
+import Rule from '/src/classes/Rule.js'
+import Cooperation from '/src/rules/core/subrules/Cooperation.js'
+import RoteActions from '/src/rules/core/subrules/RoteActions.js'
 
 const Success = new Rule({
 	name: `Success`,

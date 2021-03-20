@@ -1,7 +1,7 @@
 <script>
-	import MenuButton from 'components/buttons/MenuButton.svelte'
-	import UserMenu from 'components/widgets/UserMenu.svelte'
-	// import playerStore from 'stores/playerStore.js'	
+	import MenuButton from '/src/components/buttons/MenuButton.svelte'
+	import UserMenu from '/src/components/widgets/UserMenu.svelte'
+	// import playerStore from '/src/stores/playerStore.js'	
 </script>
 
 

@@ -1,17 +1,8 @@
 <script>
-	import Error from 'components/widgets/Error.svelte'
-	import Pages from 'utils/routing/Pages.js'
-	import TitleBar from 'components/widgets/TitleBar.svelte'
-	import router from 'page'
-	// import MakeID from 'utils/MakeID.js'
+	import TitleBar from '/src/components/widgets/TitleBar.svelte'
+	// import MakeID from '/src/utils/MakeID.js'
 
-	let page
 
-	for (let i = 0, len = Pages.length; i < len; i++) {
-		router(Pages[i].path, _ => page = Pages[i])
-	}
-	router('*', _ => page = { component: Error })
-	router.start()
 
 	// onMount(async _ => {
 		// await userbase.init({
@@ -33,7 +24,7 @@
 					<TitleBar />
 				</header>
 				<main>
-					<svelte:component this={page.component} {page} />
+					<slot></slot>
 				</main>
 			</div>
 		</div>

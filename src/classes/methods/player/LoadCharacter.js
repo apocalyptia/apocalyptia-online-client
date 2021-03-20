@@ -1,6 +1,6 @@
-// import ReadCharacter from 'database/characters/ReadCharacter.js'
-import DecompressCharacter from 'database/characters/DecompressCharacter.js'
-import characterStore from 'stores/characterStore.js'
+// import ReadCharacter from '/src/database/characters/ReadCharacter.js'
+import DecompressCharacter from '/src/database/characters/DecompressCharacter.js'
+import characterStore from '/src/stores/characterStore.js'
 import { get } from 'svelte/store'
 
 export default (player, characterName) => {

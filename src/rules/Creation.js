@@ -1,5 +1,5 @@
-import Skills from 'rules/Skills.js'
-import Traits from 'rules/Traits.js'
+import Skills from '/src/rules/Skills.js'
+import Traits from '/src/rules/Traits.js'
 
 export default {
 	name: `Creation`,

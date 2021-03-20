@@ -1,7 +1,7 @@
-import Acrobatics from 'rules/skills/Acrobatics.js'
-import Larceny from 'rules/skills/Larceny.js'
-import Ranged from 'rules/skills/Ranged.js'
-import Stealth from 'rules/skills/Stealth.js'
+import Acrobatics from '/src/rules/skills/Acrobatics.js'
+import Larceny from '/src/rules/skills/Larceny.js'
+import Ranged from '/src/rules/skills/Ranged.js'
+import Stealth from '/src/rules/skills/Stealth.js'
 
 export default [
 	Acrobatics,

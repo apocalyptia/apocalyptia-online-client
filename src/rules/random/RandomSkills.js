@@ -1,5 +1,5 @@
-import RandomRoll from 'rules/random/RandomRoll.js'
-import Skills from 'rules/Skills.js'
+import RandomRoll from '/src/rules/random/RandomRoll.js'
+import Skills from '/src/rules/Skills.js'
 
 export default (c) => {
     c.resetSkills()

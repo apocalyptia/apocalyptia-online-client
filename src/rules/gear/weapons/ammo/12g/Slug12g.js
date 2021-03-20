@@ -1,5 +1,5 @@
-import Gear from 'classes/Gear.js'
-import Slug from 'rules/gear/attributes/Slug.js'
+import Gear from '/src/classes/Gear.js'
+import Slug from '/src/rules/gear/attributes/Slug.js'
 
 const Slug12g = new Gear({
 	id: ``,

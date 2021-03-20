@@ -1,4 +1,4 @@
-import Disease from 'classes/Disease.js'
+import Disease from '/src/classes/Disease.js'
 
 const Cholera = new Disease({
 	name: `Cholera`,

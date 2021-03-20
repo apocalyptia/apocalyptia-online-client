@@ -1,12 +1,12 @@
 <script>
-    import Gear from 'classes/Gear.js'
-	import GearBlock from 'components/widgets/GearBlock.svelte'
-	import Disease from 'classes/Disease.js'
-	import ManualDiseaseRule from 'components/manual/ManualDiseaseRule.svelte'
-    import ManualRuleDescription from 'components/manual/ManualRuleDescription.svelte'
-    import ManualRuleSpecialization from 'components/manual/ManualRuleSpecialization.svelte'
-    import ManualRuleTable from 'components/manual/ManualRuleTable.svelte'
-    import ManualSubRule from 'components/manual/ManualSubRule.svelte'
+    import Gear from '/src/classes/Gear.js'
+	import GearBlock from '/src/components/widgets/GearBlock.svelte'
+	import Disease from '/src/classes/Disease.js'
+	import ManualDiseaseRule from '/src/components/manual/ManualDiseaseRule.svelte'
+    import ManualRuleDescription from '/src/components/manual/ManualRuleDescription.svelte'
+    import ManualRuleSpecialization from '/src/components/manual/ManualRuleSpecialization.svelte'
+    import ManualRuleTable from '/src/components/manual/ManualRuleTable.svelte'
+    import ManualSubRule from '/src/components/manual/ManualSubRule.svelte'
 
 	export let rule
 </script>

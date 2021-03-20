@@ -1,6 +1,6 @@
 <script>
-	import TrashButton from 'components/buttons/TrashButton.svelte'
-	import playerStore from 'stores/playerStore.js'
+	import TrashButton from '/src/components/buttons/TrashButton.svelte'
+	import playerStore from '/src/stores/playerStore.js'
 
 	export let selectedCharacter
 

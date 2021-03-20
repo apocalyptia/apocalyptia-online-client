@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import Impermeable from 'rules/gear/attributes/Impermeable.js'
-import Mask from 'rules/gear/attributes/Mask.js'
+import Gear from '/src/classes/Gear.js'
+import Impermeable from '/src/rules/gear/attributes/Impermeable.js'
+import Mask from '/src/rules/gear/attributes/Mask.js'
 
 const HazmatSuit = new Gear({
 	id: ``,

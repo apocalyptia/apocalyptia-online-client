@@ -1,4 +1,4 @@
-import PropertiesList from 'rules/lists/PropertiesList.js'
+import PropertiesList from '/src/rules/lists/PropertiesList.js'
 
 export default (c) => {
 	for (let p of PropertiesList.list) {

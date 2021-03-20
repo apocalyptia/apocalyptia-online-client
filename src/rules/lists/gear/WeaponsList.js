@@ -1,5 +1,5 @@
-import MeleeWeaponsList from 'rules/lists/gear/MeleeWeaponsList.js'
-import RangedWeaponsList from 'rules/lists/gear/RangedWeaponsList.js'
+import MeleeWeaponsList from '/src/rules/lists/gear/MeleeWeaponsList.js'
+import RangedWeaponsList from '/src/rules/lists/gear/RangedWeaponsList.js'
 
 export default {
 	name: `Weapons`,

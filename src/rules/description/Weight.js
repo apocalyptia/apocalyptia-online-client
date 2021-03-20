@@ -1,5 +1,5 @@
-import Descriptor from 'rules/description/Descriptor.js'
-import RandomWeight from 'rules/random/RandomWeight.js'
+import Descriptor from '/src/rules/description/Descriptor.js'
+import RandomWeight from '/src/rules/random/RandomWeight.js'
 
 const Weight = new Descriptor({
 	name: `Weight`,

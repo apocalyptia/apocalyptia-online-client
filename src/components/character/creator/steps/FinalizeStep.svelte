@@ -1,11 +1,11 @@
 <script>
-	import Creation from 'rules/Creation.js'
-	import CharacterSheet from 'components/character/sheet/CharacterSheet.svelte'
-	import DeleteCharacter from 'database/characters/DeleteCharacter.js'
-	import PageHeader from 'components/character/creator/PageHeader.svelte'
-	import SaveAndDeleteButtonRow from 'components/buttons/SaveAndDeleteButtonRow.svelte'
-	import characterStore from 'stores/characterStore.js'
-	import playerStore from 'stores/playerStore.js'
+	import Creation from '/src/rules/Creation.js'
+	import CharacterSheet from '/src/components/character/sheet/CharacterSheet.svelte'
+	import DeleteCharacter from '/src/database/characters/DeleteCharacter.js'
+	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
+	import SaveAndDeleteButtonRow from '/src/components/buttons/SaveAndDeleteButtonRow.svelte'
+	import characterStore from '/src/stores/characterStore.js'
+	import playerStore from '/src/stores/playerStore.js'
 	import { afterUpdate, onMount } from 'svelte'
 
 	const saveCharacter = _ => {

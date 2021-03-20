@@ -1,5 +1,5 @@
 <script>
-	import AbilityModalItem from 'components/character/creator/abilities/AbilityModalItem.svelte'
+	import AbilityModalItem from '/src/components/character/creator/abilities/AbilityModalItem.svelte'
 
 	export let ability, MasterAbilityList, options
 

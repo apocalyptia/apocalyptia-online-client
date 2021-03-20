@@ -1,5 +1,5 @@
-import Rule from 'classes/Rule.js'
-import Table from 'classes/Table.js'
+import Rule from '/src/classes/Rule.js'
+import Table from '/src/classes/Table.js'
 
 const CalledShot = new Rule({
 	name: `Called Shot`, 

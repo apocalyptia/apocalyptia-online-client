@@ -1,6 +1,6 @@
-import Gear from 'classes/Gear.js'
-import ColdResistance from 'rules/gear/attributes/ColdResistance.js'
-import FireResistance from 'rules/gear/attributes/FireResistance.js'
+import Gear from '/src/classes/Gear.js'
+import ColdResistance from '/src/rules/gear/attributes/ColdResistance.js'
+import FireResistance from '/src/rules/gear/attributes/FireResistance.js'
 
 const KevlarVest = new Gear({
 	id: ``,

@@ -1,5 +1,5 @@
 <script>
-	import BackButton from 'components/buttons/BackButton.svelte'
+	import BackButton from '/src/components/buttons/BackButton.svelte'
 </script>
 
 <div class="e404">

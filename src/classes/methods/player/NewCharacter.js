@@ -1,4 +1,4 @@
-import CompressCharacter from 'database/characters/CompressCharacter.js'
+import CompressCharacter from '/src/database/characters/CompressCharacter.js'
 
 export default (player, character) => {
 	player.characterList.push(CompressCharacter(character))

@@ -1,5 +1,5 @@
-import Ability from 'classes/Ability.js'
-import Skills from 'rules/Skills.js'
+import Ability from '/src/classes/Ability.js'
+import Skills from '/src/rules/Skills.js'
 
 const Specialize = new Ability({
 	id: ``,

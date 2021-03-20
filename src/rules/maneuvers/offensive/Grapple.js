@@ -1,8 +1,8 @@
-import Rule from 'classes/Rule.js'
-import Grab from 'rules/maneuvers/offensive/Grab.js'
-import Hostage from 'rules/maneuvers/offensive/Hostage.js'
-import Tackle from 'rules/maneuvers/offensive/Tackle.js'
-import Throw from 'rules/maneuvers/offensive/Throw.js'
+import Rule from '/src/classes/Rule.js'
+import Grab from '/src/rules/maneuvers/offensive/Grab.js'
+import Hostage from '/src/rules/maneuvers/offensive/Hostage.js'
+import Tackle from '/src/rules/maneuvers/offensive/Tackle.js'
+import Throw from '/src/rules/maneuvers/offensive/Throw.js'
 
 const Grapple = new Rule({
 	name: `Grapple`,

@@ -1,5 +1,5 @@
 <script>
-	import MenuItems from 'components/widgets/MenuItems.svelte'
+	import MenuItems from '/src/components/widgets/MenuItems.svelte'
 </script>
 
 

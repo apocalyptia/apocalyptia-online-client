@@ -1,9 +1,9 @@
-import CreationStepsList from 'rules/lists/CreationStepsList.js'
-import RandomAbilities from 'rules/random/RandomAbilities.js'
-import RandomDescription from 'rules/random/RandomDescription.js'
-import RandomSkills from 'rules/random/RandomSkills.js'
-import RandomStartingGear from 'rules/random/RandomStartingGear.js'
-import RandomTraits from 'rules/random/RandomTraits.js'
+import CreationStepsList from '/src/rules/lists/CreationStepsList.js'
+import RandomAbilities from '/src/rules/random/RandomAbilities.js'
+import RandomDescription from '/src/rules/random/RandomDescription.js'
+import RandomSkills from '/src/rules/random/RandomSkills.js'
+import RandomStartingGear from '/src/rules/random/RandomStartingGear.js'
+import RandomTraits from '/src/rules/random/RandomTraits.js'
 
 export default (c) => {
     c = RandomDescription(c)

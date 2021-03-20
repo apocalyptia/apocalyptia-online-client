@@ -1,4 +1,4 @@
-import AbilitiesList from 'rules/lists/abilities/AbilitiesList.js'
+import AbilitiesList from '/src/rules/lists/abilities/AbilitiesList.js'
 
 export default (c) => {
 	for (let a of AbilitiesList.masterList) {

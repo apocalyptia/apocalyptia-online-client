@@ -1,4 +1,4 @@
-import Character from 'classes/Character.js'
+import Character from '/src/classes/Character.js'
 import { writable } from 'svelte/store'
 
 const character = new Character()

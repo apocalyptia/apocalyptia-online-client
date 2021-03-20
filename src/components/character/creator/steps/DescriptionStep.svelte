@@ -1,11 +1,11 @@
 <script>
-	import Creation from 'rules/Creation.js'
-	import DiceButton from 'components/buttons/DiceButton.svelte'
-	import PageHeader from 'components/character/creator/PageHeader.svelte'
-	import RandomDescription from 'rules/random/RandomDescription.js'
-	import RandomDescriptionSwitch from 'rules/random/RandomDescriptionSwitch.js'
-	import ResetAndRandomButtonRow from 'components/buttons/ResetAndRandomButtonRow.svelte'
-	import characterStore from 'stores/characterStore.js'
+	import Creation from '/src/rules/Creation.js'
+	import DiceButton from '/src/components/buttons/DiceButton.svelte'
+	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
+	import RandomDescription from '/src/rules/random/RandomDescription.js'
+	import RandomDescriptionSwitch from '/src/rules/random/RandomDescriptionSwitch.js'
+	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
+	import characterStore from '/src/stores/characterStore.js'
 
 	const updateDesc = _ => {
 		Creation.proceedCheck($characterStore)

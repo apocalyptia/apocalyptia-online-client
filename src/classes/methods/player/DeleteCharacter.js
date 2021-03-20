@@ -1,6 +1,6 @@
-// import DeleteCharacter from 'database/characters/DeleteCharacter.js'
-import DecompressCharacter from 'database/characters/DecompressCharacter.js'
-import characterStore from 'stores/characterStore.js'
+// import DeleteCharacter from '/src/database/characters/DeleteCharacter.js'
+import DecompressCharacter from '/src/database/characters/DecompressCharacter.js'
+import characterStore from '/src/stores/characterStore.js'
 import { get } from 'svelte/store'
 
 export default (player, characterName) => {

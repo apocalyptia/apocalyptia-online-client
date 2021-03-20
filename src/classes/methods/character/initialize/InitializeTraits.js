@@ -1,4 +1,4 @@
-import TraitsList from 'rules/lists/TraitsList.js'
+import TraitsList from '/src/rules/lists/TraitsList.js'
 
 export default (c) => {
 	c.traits = {}

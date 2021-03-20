@@ -1,7 +1,7 @@
-import Broadhead from 'rules/gear/attributes/Broadhead.js'
-import HollowPoint from 'rules/gear/attributes/HollowPoint.js'
-import Match from 'rules/gear/attributes/Match.js'
-import Slug from 'rules/gear/attributes/Slug.js'
+import Broadhead from '/src/rules/gear/attributes/Broadhead.js'
+import HollowPoint from '/src/rules/gear/attributes/HollowPoint.js'
+import Match from '/src/rules/gear/attributes/Match.js'
+import Slug from '/src/rules/gear/attributes/Slug.js'
 
 export default {
 	name: `Ammo Attributes`,

@@ -1,5 +1,5 @@
-import Alphabetize from 'utils/sorting/Alphabetize.js'
-import SkillsList from 'rules/lists/SkillsList.js'
+import Alphabetize from '/src/utils/sorting/Alphabetize.js'
+import SkillsList from '/src/rules/lists/SkillsList.js'
 
 let specs = Object.values(SkillsList.list)
 					.map((s) => Object.values(s.specs))

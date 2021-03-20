@@ -1,5 +1,5 @@
-import RandomRoll from 'rules/random/RandomRoll.js'
-import Traits from 'rules/Traits.js'
+import RandomRoll from '/src/rules/random/RandomRoll.js'
+import Traits from '/src/rules/Traits.js'
 
 export default (c) => {
     c.resetTraits()
