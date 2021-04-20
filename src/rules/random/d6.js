@@ -1,1 +1,0 @@
-export default _ => Math.ceil(Math.random() * 6)

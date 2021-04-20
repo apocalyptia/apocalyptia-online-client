@@ -8,8 +8,8 @@ export default (c) => {
 			name: `Melee Weapons`,
 			inventory: []
 		},
-		ranged: {
-			name: `Ranged Weapons`,
+		projectile: {
+			name: `Projectile Weapons`,
 			inventory: []
 		},
 		ammo: {

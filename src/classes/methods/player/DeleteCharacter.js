@@ -1,5 +1,5 @@
-// import DeleteCharacter from '/src/database/characters/DeleteCharacter.js'
-import DecompressCharacter from '/src/database/characters/DecompressCharacter.js'
+// import DeleteCharacter from '/src/utils/database/characters/DeleteCharacter.js'
+import DecompressCharacter from '/src/utils/database/characters/DecompressCharacter.js'
 import characterStore from '/src/stores/characterStore.js'
 import { get } from 'svelte/store'
 

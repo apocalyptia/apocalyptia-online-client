@@ -1,5 +1,5 @@
-import CompressCharacter from '/src/database/characters/CompressCharacter.js'
-import DecompressCharacter from '/src/database/characters/DecompressCharacter.js'
+import CompressCharacter from '/src/utils/database/characters/CompressCharacter.js'
+import DecompressCharacter from '/src/utils/database/characters/DecompressCharacter.js'
 
 export default (player, character) => {
 	if (!player.characterList.some(c => {

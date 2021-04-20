@@ -1,5 +1,5 @@
 <script>
-	import BackupCharacter from '/src/database/characters/BackupCharacter.js'
+	import BackupCharacter from '/src/utils/database/characters/BackupCharacter.js'
 	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 

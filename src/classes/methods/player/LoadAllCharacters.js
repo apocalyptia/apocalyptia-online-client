@@ -1,4 +1,4 @@
-import ReadAllCharacters from '/src/database/characters/ReadAllCharacters.js'
+import ReadAllCharacters from '/src/utils/database/characters/ReadAllCharacters.js'
 
 export default (p) => {
 	p.characterList = ReadAllCharacters()

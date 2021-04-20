@@ -1,4 +1,4 @@
-import UpdateCharacter from '/src/database/characters/UpdateCharacter.js'
+import UpdateCharacter from '/src/utils/database/characters/UpdateCharacter.js'
 
 export default (p, c) => {
 	p.characterList.push(c)

@@ -1,18 +1,5 @@
 <script>
 	import TitleBar from '/src/components/widgets/TitleBar.svelte'
-	// import MakeID from '/src/utils/MakeID.js'
-
-
-
-	// onMount(async _ => {
-		// await userbase.init({
-		// 	appId: '1a86b92f-6b82-413c-9a31-2615a80bd4f8',
-		// 	allowServerSideEncryption: true
-		// })
-		// .then(session => console.log(`Session: ${session}`))
-		// .catch(err => console.error(`Error: ${err}`))
-		// console.log('MakeID = ', MakeID())
-	// })
 </script>
 
 

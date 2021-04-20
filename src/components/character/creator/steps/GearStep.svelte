@@ -1,5 +1,4 @@
 <script>
-	import AbilitiesList from '/src/rules/lists/abilities/AbilitiesList.js'
 	import Creation from '/src/rules/Creation.js'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
