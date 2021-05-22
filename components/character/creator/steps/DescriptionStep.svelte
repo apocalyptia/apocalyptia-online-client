@@ -1,0 +1,78 @@
+<script>
+	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
+	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
+	import characterStore from '/src/stores/characterStore.js'
+
+	const resetDescription = () => {
+		$characterStore.resetDescription()
+		$characterStore = $characterStore
+	}
+
+	const randomDescription = (type) => {
+		$characterStore.randomDescription(type)
+		$characterStore = $characterStore
+	}
+
+	const canProceed = () => {
+		$characterStore.canProceed()
+		$characterStore = $characterStore
+	}
+</script>
+
+
+<div class='description-step-page'>
+	<fieldset>
+		<PageHeader chapter={'Description'} step={$characterStore.step}/>
+		<div class='section-card'>
+			{#each Object.values($characterStore.description) as desc}
+				{#if desc.name != 'Player'}
+					<div class='desc-container'>
+						<span class='desc-label'>{desc.name}:</span>
+						<input type='text'
+							class='desc-value'
+							bind:value={desc.value}
+							on:input={() => canProceed()}
+						>
+						<div class='random-container'>
+							<button class='random-button' 
+								on:click={() => randomDescription(desc.name)}>
+								Random
+							</button>
+						</div>
+					</div>
+				{/if}
+			{/each}
+		</div>
+		<ResetAndRandomButtonRow
+			reset={() => resetDescription()}
+			random={() => randomDescription('All')}
+		/>
+	</fieldset>
+</div>
+
+
+<style>
+	.desc-container {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin: var(--s50) 0;
+		max-width: 100%;
+		width: 100%;
+	}
+	.desc-label {
+		text-align: right;
+		flex: 1;
+	}
+	.desc-value {
+		flex: 2;
+	}
+	.random-container {
+		display: flex;
+		flex: 1;
+		justify-content: space-around;
+	}
+	.random-button {
+		min-width: 80%;
+	}
+</style>
