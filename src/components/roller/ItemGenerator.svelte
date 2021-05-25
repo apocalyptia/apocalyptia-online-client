@@ -6,8 +6,6 @@
 
 	export let category
 
-	console.log(category)
-
 	let item = ''
 
 	const randomItem = () => item = RandomRoll(Object.values(category[1]))

@@ -10,8 +10,6 @@
 			.flatMap(g => Object.values(g)
 			.flatMap(i => i))
 	]
-
-	console.log(masterGearList[1])
 </script>
 
 
