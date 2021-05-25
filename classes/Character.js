@@ -19,11 +19,15 @@ import RandomSex from '/src/utils/random/description/RandomSex.js'
 import RandomSkin from '/src/utils/random/description/RandomSkin.js'
 import RandomWeight from '/src/utils/random/description/RandomWeight.js'
 import runFormula from '/src/utils/api/runFormula.js'
+import rulesStore from '/src/stores/rulesStore.js'
+import { get } from 'svelte/store'
 
+const rules = get(rulesStore)
 
 export default class Character {
-	constructor(rules) {
-		this.meta = InitializeMeta(rules)
+	constructor() {
+	
+		this.meta = InitializeMeta()
 		this.description = InitializeDescription(rules)
 		this.traits = InitializeTraits(rules)
 		this.skills = InitializeSkills(rules)
@@ -31,14 +35,14 @@ export default class Character {
 		this.abilities = []
 		this.gear = InitializeGear()
 
-		this.stepLimit = rules.creation.steps.length - 1,
-		this.maxTraits = rules.creation.maxTraits,
+		this.stepLimit = Object.keys(rules.list.creation).length - 1,
+		this.maxTraits = parseInt(rules.list.creation.traits.max),
 		this.proceed = false,
-		this.startingSkillsMultiplier = rules.creation.startingSkillsMultiplier,
-		this.startingTraits = rules.creation.startingTraits,
+		this.startingSkillsMultiplier = parseInt(rules.list.creation.skills.startingMultiplier),
+		this.startingTraits = parseInt(rules.list.creation.traits.starting),
 		this.step = 0,
-		this.traitsRemaining = rules.creation.startingTraits,
-		this.skillsRemaining = parseInt(rules.creation.startingSkillsMultiplier),
+		this.traitsRemaining = parseInt(rules.list.creation.traits.starting),
+		this.skillsRemaining = parseInt(rules.list.creation.skills.startingMultiplier),
 		this.canProceed = () => {
 			switch (this.step) {
 				case 0:
@@ -331,6 +335,5 @@ export default class Character {
 			this.meta.modified = new Date()
 		}
 
-		console.log(this)
 	}
 }

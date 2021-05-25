@@ -17,4 +17,4 @@
 		deleteFunc={() => $playerStore.deleteCharacter($characterStore.description.name.value)}
 	/>
 </div>
-<BackButton path={'character'} />
+<BackButton path={'/character'} />

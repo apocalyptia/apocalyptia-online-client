@@ -16,9 +16,9 @@ const equipmentList = [
 ]
 
 export default (category) => {
-	if (category === 'melee') return Object.values(rules.gear.melee)
-	else if (category === 'projectile') return Object.values(rules.gear.projectile)
-	else if (category === 'ammo') return Object.values(rules.gear.ammo)
-	else if (category === 'armor') return Object.values(rules.gear.armor)
+	if (category === 'melee') return Object.values(rules.list.gear.melee)
+	else if (category === 'projectile') return Object.values(rules.list.gear.projectile)
+	else if (category === 'ammo') return Object.values(rules.list.gear.ammo)
+	else if (category === 'armor') return Object.values(rules.list.gear.armor)
 	else if (category === 'equipment') return equipmentList
 }

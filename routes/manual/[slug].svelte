@@ -20,7 +20,7 @@
 
 
 <script>
-	import ManualStore from '/src/stores/rulesStore.js'
+	import rulesStore from '/src/stores/rulesStore.js'
 
 	const { slug } = params
 
@@ -34,7 +34,7 @@
 	{#if titles === null}
 		<p>Loading...</p>
 	{:else}
-		{#each titles as title}
+		{#each Object.keys($rulesStore[titles]) as title}
 			<div class='manual-btn'>
 				<a href={`/manual/${title.toLowerCase()}`} class='link-btn'>{title}</a>
 			</div>

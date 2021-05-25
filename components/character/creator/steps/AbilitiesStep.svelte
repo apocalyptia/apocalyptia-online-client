@@ -23,7 +23,7 @@
 <div class='abilities-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Abilities'} step={$characterStore.step} />
-		<ExplanationBlock rule={$rulesStore.creation.explanations.abilities} />
+		<ExplanationBlock rule={$rulesStore.list.creation.abilities.desc} />
 		<PointsRemaining points={$characterStore.properties.experience.current} />
 		{#if $characterStore.abilities.length}
 			<div class='section-card'>

@@ -9,7 +9,7 @@
 	$: next = () => {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if ($characterStore.proceed) $characterStore.step++
-		if ($characterStore.step === $rulesStore.creation.steps.length + 1) {
+		if ($characterStore.step === Object.keys($rulesStore.list.creation).length + 1) {
 			$playerStore.saveCharacter($characterStore)
 			window.location.href = '/'
 		}

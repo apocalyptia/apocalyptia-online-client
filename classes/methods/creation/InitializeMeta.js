@@ -6,6 +6,7 @@ export default () => {
 		modified: ``,
 		notes: ``,
 		status: [],
+		step: 0,
 		coordinates: {
 			m: ``,
 			f: 0,

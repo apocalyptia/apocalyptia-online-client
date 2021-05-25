@@ -1,6 +1,6 @@
 export default (rules, username='test') => {
 	const description = {}
-	for (const desc of rules.creation.description.list) {
+	for (const desc of rules.list.creation.description.list) {
 		const descKey = desc.name.toLowerCase()
 		description[descKey] = desc
 	}

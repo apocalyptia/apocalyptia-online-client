@@ -1,6 +1,5 @@
 <script>
-	import { PropertyBinding } from 'three';
-import rulesStore from '/src/stores/rulesStore.js'
+	import rulesStore from '/src/stores/rulesStore.js'
 </script>
 
 

@@ -21,7 +21,7 @@
 <div class='gear-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Gear'} step={$characterStore.step} />
-		<ExplanationBlock rule={$rulesStore.creation.explanations.startingGear} />
+		<ExplanationBlock rule={$rulesStore.list.creation.gear.desc} />
 		{#if $characterStore.proceed}
 			<div class='section-card'>
 				{#each Object.values($characterStore.gear) as category (category.name)}

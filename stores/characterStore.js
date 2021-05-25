@@ -1,9 +1,6 @@
 import Character from '/src/classes/Character.js'
-import rulesStore from '/src/stores/rulesStore.js'
-import { get, writable } from 'svelte/store'
+import { writable } from 'svelte/store'
 
-const rules = get(rulesStore)
-
-const character = new Character(rules)
+const character = new Character()
 
 export default writable(character)

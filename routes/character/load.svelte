@@ -24,4 +24,4 @@
 	<CharacterList {selectedCharacter} />
 	<CharacterControls {selectedCharacter} />
 </div>
-<BackButton path={'character'} />
+<BackButton path={'/character'} />

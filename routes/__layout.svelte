@@ -1,18 +1,5 @@
 <script>
 	import TitleBar from '/src/components/widgets/TitleBar.svelte'
-	import getRules from '/src/utils/api/getRules'
-	import rulesStore from '/src/stores/rulesStore.js'
-	import { onMount } from 'svelte'
-
-	onMount(async () => {
-		if ($rulesStore.loading) {
-			await getRules().then(res => {
-				$rulesStore.creation = res.creation
-				$rulesStore.list = res.list
-				$rulesStore.loading = false
-			})
-		}
-	})
 </script>
 
 
@@ -24,7 +11,7 @@
 					<TitleBar />
 				</header>
 				<main>
-					<slot></slot>
+					<slot />
 				</main>
 			</div>
 		</div>

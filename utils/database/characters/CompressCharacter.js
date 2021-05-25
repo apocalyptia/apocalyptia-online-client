@@ -2,10 +2,17 @@ export default (char) => {
 
 	const compressionMapping = (category) => {
 		return category.map(item => {
-			return {
-				'i': item.id,
+			const compressedItem = {
+				'n': item.name,
 				'q': item.qty
 			}
+			if (
+				('mods' in item) &&
+				item.mods.length
+			) {
+				compressedItem.m = [ ...item.mods ]
+			}
+			return compressedItem
 		})
 	}
 

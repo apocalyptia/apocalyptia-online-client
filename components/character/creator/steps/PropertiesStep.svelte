@@ -18,7 +18,7 @@
 <div class='properties-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />
-		<ExplanationBlock rule={$rulesStore.creation.explanations.properties} />
+		<ExplanationBlock rule={$rulesStore.list.creation.properties.desc} />
 		<PropertiesBlock />
 		<PropertiesFormulae />
 		<div class='section-card'>
