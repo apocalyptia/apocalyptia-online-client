@@ -4,8 +4,8 @@ export default async (
 	item='',
 	key=''
 ) => {
-	// let url = `http://50.116.45.55/rules`
-	let url = `http://localhost:3000/rules`
+	let url = `http://50.116.45.55/rules`
+	// let url = `http://localhost:3000/rules`
 	if (chapter) {
 		url += `/${chapter}`
 		if (section) {
