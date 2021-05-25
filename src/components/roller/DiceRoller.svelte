@@ -1,8 +1,10 @@
 <script>
-	import d6Roll from '/src/rules/random/d6Roll.js'
+	import d6Roll from '/src/utils/random/dice/d6Roll.js'
 	import DiceButton from '/src/components/buttons/DiceButton.svelte'
 
-	let roll = [6], mod = 0, total = 0
+	let roll = [6]
+	let mod = 0
+	let total = 0
 
 	const rollResult = () => {
 		roll = d6Roll()

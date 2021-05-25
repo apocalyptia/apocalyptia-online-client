@@ -1,19 +1,20 @@
 <script>
+	import Capitalize from '/src/utils/text/Capitalize.js'
 	import DiceButton from '/src/components/buttons/DiceButton.svelte'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
-	import RandomRoll from '/src/rules/random/RandomRoll.js'
+	import RandomRoll from '/src/utils/random/dice/RandomRoll.js'
 
 	export let category
 
 	let item = ''
 
-	const randomItem = () => item = RandomRoll(category.list)
+	const randomItem = () => item = RandomRoll(Object.values(category[1]))
 </script>
 
 
 <div class='item-category'>
 	<div class='category-header'>
-		<div class='category-name'>{category.name}</div>
+		<div class='category-name'>{Capitalize(category[0])}</div>
 		<DiceButton func={randomItem} />
 	</div>
 	{#if item}

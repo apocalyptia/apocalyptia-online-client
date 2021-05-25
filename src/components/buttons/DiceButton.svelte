@@ -1,5 +1,5 @@
 <script>
-	import d6 from '/src/utils/random/d6.js'
+	import d6 from '/src/utils/random/dice/d6.js'
 
 	export let func
 
