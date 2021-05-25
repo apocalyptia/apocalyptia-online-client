@@ -19,15 +19,9 @@ get Amazon affiliate program set up and find links for all gear items
 
 ------ TODO LIST ------
 
-Code Cleanup:
-	Decouple script code in NavBar, CharacterControls, and Character Creator index into separate modules.
-	Multilingual (undefined) error still persists.
-	Make Creator steps into individual forms.
-	Use semantic html tags wherever possible.
-
 UX/UI:
 	Make some CSS effects to reflect character's current Psyche.
-	Figure out what to do about Tables.
+	Figure out what to do about Tables. (dialog window?)
 	Make a sidenav menu for table of contents in Rules section.
 	Probably also a sidenav for character sheet.
 
@@ -41,7 +35,6 @@ Gear.js:
 	add antiseptic of some kind
 
 Manual:
-	Improve search functionality.
 	Put Expand/Collapse All button on rules.
 	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche
 
@@ -49,9 +42,7 @@ Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
 Creator:
-	Random Abilities and Gear are not persisting to the Finalize step.
 	Characters aren't saving right.
-	List Skill (Specialty) and list alpha by Skill. <= Problem here is that the ability becomes part of the character object.
 
 
 ---------------------------------------------------------------------------------------------------
@@ -125,75 +116,3 @@ visual special effects
 
 
 ---------------------------------------------------------------------------------------------------
-
-
-Components that Need Lists:
-
-classes/methods/character/initialize/InitializeDescription.js
-classes/methods/character/initialize/InitializeProperties.js
-classes/methods/character/initialize/InitializeSkills.js
-classes/methods/character/initialize/InitializeTraits.js
-classes/methods/character/reset/ResetAbilities.js
-classes/methods/character/update/UpdateAbilities.js
-classes/methods/character/update/UpdateProperties.js
-components/buttons/NavButtonNext.svelte
-components/character/creator/abilities/AbilityCard.svelte
-components/character/creator/abilities/AbilityGroup.svelte
-components/character/creator/abilities/AbilityModal.svelte
-components/character/creator/abilities/AbilityModalList.svelte
-components/character/creator/properties/PropertiesBlock.svelte
-components/character/creator/properties/PropertiesFormulae.svelte
-components/character/creator/steps/AbilitiesStep.svelte
-components/character/creator/steps/SkillsStep.svelte
-components/character/creator/steps/TraitsStep.svelte
-components/character/load/CharacterList.svelte
-components/character/sheet/CharacterSheet.svelte
-components/character/sheet/gear/AddItemModal.svelte
-components/character/sheet/sections/PropertiesSection.svelte
-routes/creator.svelte
-routes/roller.svelte
-utils/GetItemList.js
-
-
-Lists:
-
-AbilitiesList
-AccessoriesList
-AmmoList
-ArmorList
-AttributesList
-BombsList
-CombatList
-CoreList
-CreationStepsList
-DescriptionList
-DocumentsList
-DrugsList
-ElectronicsList
-EquipmentList
-GearList
-GetItemList
-HazardsList
-ManeuversList
-ManualList
-MasterGearList
-MedicalList
-MeleeWeaponsList
-MiscellaneousList
-NeedsList
-ProjectileWeaponsList
-PropertiesList
-SheetSectionsList
-SkillsList
-StatusList
-StorageList
-ToolsList
-TraitsList
-WearablesList
-
-
-Lists that Should be Converted to Stores:
-
-ManualList
-AbilitiesList.masterList
-export let MasterAbilityList
