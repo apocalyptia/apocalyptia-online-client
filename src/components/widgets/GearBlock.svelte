@@ -69,7 +69,7 @@
 <div class='gear-block'>
 	{#if item}
 		{#if mode != 'manual'}
-			<p class='item-name'>{item.name}</p>
+			<h4 class='item-name'>{item.name}</h4>
 		{/if}
 		<div class='item-details'>
 			{#if item.desc}

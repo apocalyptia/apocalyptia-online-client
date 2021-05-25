@@ -6,6 +6,8 @@
 
 	export let category
 
+	console.log(category)
+
 	let item = ''
 
 	const randomItem = () => item = RandomRoll(Object.values(category[1]))
@@ -14,7 +16,9 @@
 
 <div class='item-category'>
 	<div class='category-header'>
-		<div class='category-name'>{Capitalize(category[0])}</div>
+		<div class='category-name'>
+			<h3>{Capitalize(category[0])}</h3>
+		</div>
 		<DiceButton func={randomItem} />
 	</div>
 	{#if item}
@@ -38,8 +42,6 @@
 		align-items: center;
 		display: flex;
 		flex: 3;
-		font-size: var(--s125);
-		font-weight: bold;
 	}
 	.item-content {
 		padding-top: var(--std-padding);
