@@ -11,7 +11,6 @@
     const randomCharacter = () => {
 		$characterStore = new Character()
 		$characterStore.randomCharacter()
-		$creationStore.step = $creationStore.numberOfSteps
     }
 </script>
 
