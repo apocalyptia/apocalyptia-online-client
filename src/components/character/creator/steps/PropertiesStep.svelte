@@ -1,11 +1,11 @@
 <script>
+	import Creation from '/src/rules/Creation.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import HealthSection from '/src/components/character/sheet/sections/HealthSection.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PropertiesBlock from '/src/components/character/creator/properties/PropertiesBlock.svelte'
 	import PropertiesFormulae from '/src/components/character/creator/properties/PropertiesFormulae.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import rulesStore from '/src/stores/rulesStore'
 	import { onMount } from 'svelte'
 
 	onMount(() => {
@@ -18,7 +18,7 @@
 <div class='properties-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />
-		<ExplanationBlock rule={$rulesStore.list.creation.properties.desc} />
+		<ExplanationBlock rule={Creation.properties.desc} />
 		<PropertiesBlock />
 		<PropertiesFormulae />
 		<div class='section-card'>

@@ -1,5 +1,5 @@
 <script>
-	import rulesStore from '/src/stores/rulesStore.js'
+	import Properties from '/src/rules/Properties.js'
 </script>
 
 
@@ -7,7 +7,7 @@
 	<summary>Properties Formulae</summary>
 	<div class='formulae-card'>
 		<ul>
-			{#each Object.values($rulesStore.list.properties) as property}
+			{#each Object.values(Properties) as property}
 				{#if property.name === 'Health'}
 					<li>Health: {property.desc[0]}</li>
 					<li>Health: {property.desc[1]}</li>

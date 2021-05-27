@@ -1,9 +1,13 @@
+import Abilities from '/src/rules/Abilities.js'
+import Creation from '/src/rules/Creation.js'
+import Gear from '/src/rules/Gear.js'
 import InitializeDescription from '/src/classes/methods/creation/InitializeDescription.js'
 import InitializeGear from '/src/classes/methods/creation/InitializeGear.js'
 import InitializeMeta from '/src/classes/methods/creation/InitializeMeta.js'
 import InitializeProperties from '/src/classes/methods/creation/InitializeProperties.js'
 import InitializeSkills from '/src/classes/methods/creation/InitializeSkills.js'
 import InitializeTraits from '/src/classes/methods/creation/InitializeTraits.js'
+import Properties from '/src/rules/Properties.js'
 import RandomAge from '/src/utils/random/description/RandomAge.js'
 import RandomAmmo from '/src/utils/random/gear/RandomAmmo.js'
 import RandomArmor from '/src/utils/random/gear/RandomArmor.js'
@@ -18,33 +22,28 @@ import RandomRoll from '/src/utils/random/dice/RandomRoll.js'
 import RandomSex from '/src/utils/random/description/RandomSex.js'
 import RandomSkin from '/src/utils/random/description/RandomSkin.js'
 import RandomWeight from '/src/utils/random/description/RandomWeight.js'
-import runFormula from '/src/utils/api/runFormula.js'
-import rulesStore from '/src/stores/rulesStore.js'
-import { get } from 'svelte/store'
-
-const rules = get(rulesStore)
+import runFormula from '/src/utils/runFormula.js'
 
 export default class Character {
 	constructor() {
 	
 		this.meta = InitializeMeta()
-		this.description = InitializeDescription(rules)
-		this.traits = InitializeTraits(rules)
-		this.skills = InitializeSkills(rules)
-		this.properties = InitializeProperties(rules)
+		this.description = InitializeDescription()
+		this.traits = InitializeTraits()
+		this.skills = InitializeSkills()
+		this.properties = InitializeProperties()
 		this.abilities = []
 		this.gear = InitializeGear()
 
-		this.stepLimit = Object.keys(rules.list.creation).length - 1,
-		this.maxTraits = parseInt(rules.list.creation.traits.max),
+		this.maxTraits = parseInt(Creation.traits.max),
 		this.proceed = false,
-		this.startingSkillsMultiplier = parseInt(rules.list.creation.skills.startingMultiplier),
-		this.startingTraits = parseInt(rules.list.creation.traits.starting),
-		this.step = 0,
-		this.traitsRemaining = parseInt(rules.list.creation.traits.starting),
-		this.skillsRemaining = parseInt(rules.list.creation.skills.startingMultiplier),
-		this.canProceed = () => {
-			switch (this.step) {
+		this.skillsRemaining = parseInt(Creation.skills.startingMultiplier),
+		this.startingSkillsMultiplier = parseInt(Creation.skills.startingMultiplier),
+		this.startingTraits = parseInt(Creation.traits.starting),
+		this.traitsRemaining = parseInt(Creation.traits.starting),
+
+		this.canProceed = (step) => {
+			switch (step) {
 				case 0:
 					this.proceed = true
 					return this.remainingTraits() === 0
@@ -73,14 +72,11 @@ export default class Character {
 		},
 		this.remainingSkills = () => {
 			const spentSkillPoints = Object.values(this.skills).map(s => s.score).reduce((sum, s) => sum + s, 0)
-			this.startingSkills = this.traits.brains.score * parseInt(this.startingSkillsMultiplier)
+			this.startingSkills = this.traits.brains.score * this.startingSkillsMultiplier
 			const remainingSkills = this.startingSkills - spentSkillPoints
 			this.skillsRemaining = remainingSkills
 			return remainingSkills
 		},
-		this.remainingExperience = () => {
-			return
-		}
 
 		this.resetGear = () => {
 			for (const g in this.gear) {
@@ -152,7 +148,7 @@ export default class Character {
 						this.properties.health.locations[l].score = runFormula(
 							this,
 							'traits',
-							rules.list.properties.health.locations[l].formula
+							Properties.health.locations[l].formula
 						)
 						this.properties.health.locations[l].current = this.properties.health.locations[l].score
 					}
@@ -160,7 +156,7 @@ export default class Character {
 					this.properties[p].score = runFormula(
 						this,
 						'traits',
-						rules.list.properties[p].formula
+						Properties[p].formula
 					)
 					this.properties[p].current = this.properties[p].score
 				}
@@ -181,7 +177,6 @@ export default class Character {
 				this.skills[skillKey].score--
 				this.remainingSkills()
 			}
-			this.proceed = this.canProceed()
 		},
 		this.updateTrait = (trait) => {
 			const traitKey = trait.name.toLowerCase()
@@ -194,10 +189,9 @@ export default class Character {
 			this.resetSkills()
 			this.updateProperties()
 			this.remainingSkills()
-			this.proceed = this.canProceed()
 		}
 
-		this.randomDescription = (category) => {
+		this.randomDescription = (category='All') => {
 			switch (category) {
 				case 'Age':
 					this.description.age.value = RandomAge()
@@ -243,7 +237,6 @@ export default class Character {
 						this.description.skin.value
 					)
 			}
-			this.proceed = this.canProceed()
 		},
 		this.randomTraits = () => {
 			this.resetTraits()
@@ -276,7 +269,7 @@ export default class Character {
 		this.randomAbilities = () => {
 			this.resetAbilities()
 			while (this.properties.experience.current > 0) {
-				const remainingAbilities = Object.values(rules.list.abilities).filter(r => {
+				const remainingAbilities = Object.values(Abilities).filter(r => {
 					return (
 						!this.abilities.some(a => a.name === r.name) &&
 						r.experience <= this.properties.experience.current						
@@ -309,24 +302,23 @@ export default class Character {
 					numberOfItems: this.properties.luck.current
 				})
 			]
-			const food = rules.list.gear.resources.food
+			const food = Gear.resources.food
 			food.qty = 1
 			this.gear.equipment.inventory.push(food)
-			const waterBottle = rules.list.gear.storage.waterbottle
+			const waterBottle = Gear.storage.waterbottle
 			waterBottle.qty = 1
 			this.gear.equipment.inventory.push(waterBottle)
-			const water = rules.list.gear.resources.water
+			const water = Gear.resources.water
 			water.qty = 1
 			this.gear.equipment.inventory.push(water)
 		},
 		this.randomCharacter = () => {
-			this.randomDescription()
 			this.randomTraits()
 			this.randomSkills()
 			this.updateProperties()
 			this.randomAbilities()
 			this.randomGear()
-			this.step = this.stepLimit
+			this.randomDescription()
 		}
 
 		this.finalize = (userId) => {

@@ -1,24 +1,21 @@
-import rulesStore from '/src/stores/rulesStore.js'
-import { get } from 'svelte/store'
-
-const rules = get(rulesStore)
+import Gear from '/src/rules/Gear.js'
 
 const equipmentList = [
-	...Object.values(rules.list.gear.accessories),
-	...Object.values(rules.list.gear.documents),
-	...Object.values(rules.list.gear.drugs),
-	...Object.values(rules.list.gear.electronics),
-	...Object.values(rules.list.gear.medical),
-	...Object.values(rules.list.gear.miscellaneous),
-	...Object.values(rules.list.gear.storage),
-	...Object.values(rules.list.gear.tools),
-	...Object.values(rules.list.gear.wearables),
+	...Object.values(Gear.accessories),
+	...Object.values(Gear.documents),
+	...Object.values(Gear.drugs),
+	...Object.values(Gear.electronics),
+	...Object.values(Gear.medical),
+	...Object.values(Gear.miscellaneous),
+	...Object.values(Gear.storage),
+	...Object.values(Gear.tools),
+	...Object.values(Gear.wearables),
 ]
 
 export default (category) => {
-	if (category === 'melee') return Object.values(rules.list.gear.melee)
-	else if (category === 'projectile') return Object.values(rules.list.gear.projectile)
-	else if (category === 'ammo') return Object.values(rules.list.gear.ammo)
-	else if (category === 'armor') return Object.values(rules.list.gear.armor)
+	if (category === 'melee') return Object.values(Gear.melee)
+	else if (category === 'projectile') return Object.values(Gear.projectile)
+	else if (category === 'ammo') return Object.values(Gear.ammo)
+	else if (category === 'armor') return Object.values(Gear.armor)
 	else if (category === 'equipment') return equipmentList
 }

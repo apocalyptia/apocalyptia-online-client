@@ -1,23 +1,21 @@
 import RandomRoll from '/src/utils/random/dice/RandomRoll.js'
-import rulesStore from '/src/stores/rulesStore.js'
-import { get } from 'svelte/store'
+import Gear from '/src/rules/Gear.js'
 
 export default ({ category='', numberOfItems=1 }) => {
-	const rules = get(rulesStore)
 	let randomEquipmentList = []
 	if (category) {
-		randomEquipmentList = [...Object.values(rules.list.gear[category.toLowerCase()])]
+		randomEquipmentList = [...Object.values(Gear[category.toLowerCase()])]
 	} else {
 		randomEquipmentList = [
-			...Object.values(rules.list.gear.accessories),
-			...Object.values(rules.list.gear.documents),
-			...Object.values(rules.list.gear.drugs),
-			...Object.values(rules.list.gear.electronics),
-			...Object.values(rules.list.gear.medical),
-			...Object.values(rules.list.gear.miscellaneous),
-			...Object.values(rules.list.gear.storage),
-			...Object.values(rules.list.gear.tools),
-			...Object.values(rules.list.gear.wearables),
+			...Object.values(Gear.accessories),
+			...Object.values(Gear.documents),
+			...Object.values(Gear.drugs),
+			...Object.values(Gear.electronics),
+			...Object.values(Gear.medical),
+			...Object.values(Gear.miscellaneous),
+			...Object.values(Gear.storage),
+			...Object.values(Gear.tools),
+			...Object.values(Gear.wearables),
 		]
 	}
     let randomEquipment = []

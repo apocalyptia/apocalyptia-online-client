@@ -1,12 +1,12 @@
 <script>
-	import characterStore from '/src/stores/characterStore.js'
+	import creationStore from '/src/stores/creationStore.js'
+	import { goto } from '$app/navigation'
 
 	const previous = () => {
 		document.getElementById('character-creator').scrollTo(0, 0)
-		$characterStore.step--
-		if ($characterStore.step < 0) {
-			$characterStore.step = 0
-			window.location.href = '/new'
+		$creationStore.step--
+		if ($creationStore.checkMin()) {
+			goto(`/character/new`)
 		}
 	}
 

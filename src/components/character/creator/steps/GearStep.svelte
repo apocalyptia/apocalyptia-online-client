@@ -1,10 +1,10 @@
 <script>
+	import Creation from '/src/rules/Creation.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import rulesStore from '/src/stores/rulesStore'
 
 	const resetGear = () => {
 		$characterStore.resetGear()
@@ -21,7 +21,7 @@
 <div class='gear-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Gear'} step={$characterStore.step} />
-		<ExplanationBlock rule={$rulesStore.list.creation.gear.desc} />
+		<ExplanationBlock rule={Creation.gear.desc} />
 		{#if $characterStore.proceed}
 			<div class='section-card'>
 				{#each Object.values($characterStore.gear) as category (category.name)}

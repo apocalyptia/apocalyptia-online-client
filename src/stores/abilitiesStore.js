@@ -1,9 +1,7 @@
-import rulesStore from '/src/stores/rulesStore.js'
-import { get, writable } from 'svelte/store'
+import Abilities from '/src/rules/Abilities.js'
+import { writable } from 'svelte/store'
 
-const rules = get(rulesStore)
-
-const abilityList = Object.values(rules.list.abilities)
+const abilityList = Object.values(Abilities)
 
 const xpCosts = abilityList.map(a => a.experience)
 

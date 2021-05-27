@@ -1,11 +1,11 @@
 <script>
+	import Creation from '/src/rules/Creation.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PointsRemaining from '/src/components/character/creator/PointsRemaining.svelte'
 	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
 	import Slider from '/src/components/widgets/Slider.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import rulesStore from '/src/stores/rulesStore.js'
 	import { onMount } from 'svelte'
 
 	const skillGroups = Object.values($characterStore.traits).map(t => {
@@ -41,7 +41,7 @@
 <div class='skills-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Skills'} step={$characterStore.step} />
-		<ExplanationBlock rule={$rulesStore.list.creation.skills.desc} />
+		<ExplanationBlock rule={Creation.skills.desc} />
 		<PointsRemaining points={$characterStore.skillsRemaining} />
 			{#each skillGroups as group}
 				<div class='item-block'>

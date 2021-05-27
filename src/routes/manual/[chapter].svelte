@@ -20,11 +20,9 @@
 
 
 <script>
-	import rulesStore from '/src/stores/rulesStore.js'
+	import Rules from '/src/rules/Rules.js'
 
 	const { slug } = params
-
-	console.log(slug)
 
 	$: titles = null
 </script>
@@ -34,7 +32,7 @@
 	{#if titles === null}
 		<p>Loading...</p>
 	{:else}
-		{#each Object.keys($rulesStore[titles]) as title}
+		{#each Object.keys(Rules[titles]) as title}
 			<div class='manual-btn'>
 				<a href={`/manual/${title.toLowerCase()}`} class='link-btn'>{title}</a>
 			</div>

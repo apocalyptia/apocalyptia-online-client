@@ -1,14 +1,12 @@
 <script>
 	import BackButton from '/src/components/buttons/BackButton.svelte'
 	import DiceRoller from '/src/components/roller/DiceRoller.svelte'
+	import Gear from '/src/rules/Gear.js'
 	import ItemGenerator from '/src/components/roller/ItemGenerator.svelte'
-	import rulesStore from '/src/stores/rulesStore.js'
 
 	const masterGearList = [
 		'Master Gear List',
-		Object.values($rulesStore.list.gear)
-			.flatMap(g => Object.values(g)
-			.flatMap(i => i))
+		Object.values(Gear).flatMap(g => Object.values(g).flatMap(i => i))
 	]
 </script>
 
@@ -23,7 +21,7 @@
 		<summary><h2>Gear</h2></summary>
 		<div class='gear-category-list'>
 			<ItemGenerator category={masterGearList} />
-			{#each Object.entries($rulesStore.list.gear) as category}
+			{#each Object.entries(Gear) as category}
 				<ItemGenerator {category} />
 			{/each}
 		</div>

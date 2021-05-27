@@ -1,10 +1,8 @@
 import RandomRoll from '/src/utils/random/dice/RandomRoll.js'
-import rulesStore from '/src/stores/rulesStore.js'
-import { get } from 'svelte/store'
+import Gear from '/src/rules/Gear.js'
 
 export default () => {
-	const rules = get(rulesStore)
-	const randomProjectileWeapon = RandomRoll(Object.values(rules.list.gear.projectile))
+	const randomProjectileWeapon = RandomRoll(Object.values(Gear.projectile))
 	randomProjectileWeapon.qty = 1
 	return randomProjectileWeapon
 }

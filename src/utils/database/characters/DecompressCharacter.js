@@ -1,10 +1,8 @@
 import Character from '/src/classes/Character.js'
-import rulesStore from '/src/stores/rulesStore.js'
-import { get } from 'svelte/store'
 
 export default (c) => {
 
-	let char = new Character(get(rulesStore))
+	let char = new Character()
 
 	char.meta.id = c.Mi
 	char.meta.user = c.Mu
