@@ -3,7 +3,9 @@
 
 	export let active = false
 
-	const toggleActive = () => active = !active
+	function toggleActive() {
+		active = !active
+	}
 </script>
 
 

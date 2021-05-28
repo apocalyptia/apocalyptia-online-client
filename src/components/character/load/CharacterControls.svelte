@@ -5,16 +5,22 @@
 
 	export let selectedCharacter
 
-	const loadCharacter = () => {
+	function loadCharacter() {
 		$playerStore.loadCharacter(selectedCharacter)
 		window.location.href = '/sheet'
 	}
 
-	const backupCharacter = () => BackupCharacter($characterStore)
+	function backupCharacter() {
+		BackupCharacter($characterStore)
+	}
 
-	const newCharacter = () => window.location.href = '/new'
+	function newCharacter() {
+		window.location.href = '/new'
+	}
 
-	const deleteCharacter = () => $playerStore.deleteCharacter(selectedCharacter)
+	function deleteCharacter() {
+		$playerStore.deleteCharacter(selectedCharacter)
+	}
 </script>
 
 

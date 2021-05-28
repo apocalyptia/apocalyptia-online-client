@@ -1,5 +1,5 @@
 <script>
-	const home = () => {
+	function home() {
 		window.location.href = '/'
 	}
 </script>

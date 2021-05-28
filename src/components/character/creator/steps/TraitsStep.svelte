@@ -7,17 +7,17 @@
 	import Slider from '/src/components/widgets/Slider.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 
-	const randomTraits = () => {
+	function randomTraits() {
 		$characterStore.randomTraits()
 		$characterStore = $characterStore
 	}
 
-	const resetTraits = () => {
+	function resetTraits() {
 		$characterStore.resetTraits()
 		$characterStore = $characterStore
 	}
 
-	const updateTrait = (trait) => {
+	function updateTrait(trait) {
 		$characterStore.updateTrait(trait)
 		$characterStore = $characterStore
 	}

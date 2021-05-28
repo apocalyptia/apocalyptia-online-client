@@ -1,6 +1,6 @@
 export default (char) => {
 
-	const compressionMapping = (category) => {
+	function compressionMapping(category) {
 		return category.map(item => {
 			const compressedItem = {
 				'n': item.name,

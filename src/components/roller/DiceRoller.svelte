@@ -6,7 +6,7 @@
 	let mod = 0
 	let total = 0
 
-	const rollResult = () => {
+	function rollResult() {
 		roll = d6Roll()
 		if (roll[0] === 1 && roll[1] === 1) total = 'Botched!'
 		else total = roll.reduce((acc, num) => acc + num, 0) + mod

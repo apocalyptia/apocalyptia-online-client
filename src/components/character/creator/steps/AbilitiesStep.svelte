@@ -8,12 +8,12 @@
 	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 
-	const randomAbilities = () => {
+	function randomAbilities() {
 		$characterStore.randomAbilities()
 		$characterStore = $characterStore
 	}
 
-	const resetAbilities = () => {
+	function resetAbilities() {
 		$characterStore.resetAbilities()
 		$characterStore = $characterStore
 	}

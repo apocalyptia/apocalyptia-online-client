@@ -1,6 +1,8 @@
 <script>
 	import Capitalize from '/src/utils/text/Capitalize.js'
 	import Rules from '/src/rules/Rules.js'
+
+	console.log(Rules)
 </script>
 
 

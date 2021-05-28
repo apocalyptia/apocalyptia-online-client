@@ -6,13 +6,14 @@
 	import creationStore from '/src/stores/creationStore.js'
 	// import playerStore from '/src/stores/playerStore.js'
 	import { afterUpdate, onMount } from 'svelte'
+	import { goto } from '$app/navigation'
 
-	const saveCharacter = () => {
+	function saveCharacter() {
 		// $playerStore.saveCharacter($characterStore)
-		window.location.href = `/sheet`
+		goto(`/character/sheet`)
 	}
 
-	const deleteCharacter = () => {
+	function deleteCharacter() {
 		// $playerStore.deleteCharacter($characterStore.description.name.value)
 	}
 

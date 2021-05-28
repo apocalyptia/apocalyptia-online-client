@@ -2,12 +2,12 @@
 	import abilitiesStore from '/src/stores/abilitiesStore.js'
 	import characterStore from '/src/stores/characterStore.js'
 
-	const updateAbilities = (ability) => {
+	function updateAbilities(ability) {
 		$characterStore.updateAbilities(ability)
 		$characterStore = $characterStore
 	}
 
-	const filterList = () => {
+	function filterList() {
 		if (filterCost) {
 			visibleList = $abilitiesStore.list.filter(a => a.experience === filterCost)
 		} else {

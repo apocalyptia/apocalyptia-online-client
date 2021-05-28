@@ -8,7 +8,7 @@
 		$characterStore.proceed = $characterStore.canProceed($creationStore.step)
 	})
 
-	const next = () => {
+	function next() {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if ($characterStore.proceed) {
 			$creationStore.step++

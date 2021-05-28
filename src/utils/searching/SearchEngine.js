@@ -4,7 +4,7 @@ export default (searchTerm, searchList) => {
 
 	const mappedList = []
 
-	const addSublists = (rule) => {
+	function addSublists(rule) {
 		if (rule.hasOwnProperty('list')) addSublists(rule.list)
 		else mappedList.push(rule)
 	}

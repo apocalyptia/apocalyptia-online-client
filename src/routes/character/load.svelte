@@ -9,8 +9,12 @@
 	import { beforeUpdate } from 'svelte'
 
 	beforeUpdate(() => {
-		if ($playerStore.characterList.length) AdjustUIColor($characterStore)
-		else ResetUIColor()
+		if ($playerStore.characterList.length) {
+			AdjustUIColor($characterStore)
+		}
+		else {
+			ResetUIColor()
+		}
 	})
 
 	$: selectedCharacter = ``

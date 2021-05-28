@@ -4,9 +4,13 @@
 
 	onMount(() => $mapStore = $mapStore.fillContents())
 
-	const zoomMap = (zoom) => {
-		if ($mapStore.magnification > 0.25 && zoom === 'out') $mapStore.magnification -= 0.25
-		else if ($mapStore.magnification < 3 && zoom === 'in') $mapStore.magnification += 0.25
+	function zoomMap(zoom) {
+		if ($mapStore.magnification > 0.25 && zoom === 'out') {
+			$mapStore.magnification -= 0.25
+		}
+		else if ($mapStore.magnification < 3 && zoom === 'in') {
+			$mapStore.magnification += 0.25
+		}
 		$mapStore.currentSquare = Math.round($mapStore.startingSquare * $mapStore.magnification)
 		document.documentElement.style.setProperty(`--cell-size`, `${$mapStore.currentSquare}px`)
 		let mapFrame = document.querySelector('.map-frame')

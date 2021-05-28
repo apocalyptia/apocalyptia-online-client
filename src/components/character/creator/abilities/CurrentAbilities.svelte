@@ -1,7 +1,7 @@
 <script>
 	import characterStore from '/src/stores/characterStore.js'
 
-	const updateAbilities = (ability) => {
+	function updateAbilities(ability) {
 		$characterStore.updateAbilities(ability)
 		$characterStore = $characterStore
 	}

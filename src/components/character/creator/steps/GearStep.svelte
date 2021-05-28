@@ -6,12 +6,12 @@
 	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 
-	const resetGear = () => {
+	function resetGear() {
 		$characterStore.resetGear()
 		$characterStore = $characterStore
 	}
 
-	const randomGear = () => {
+	function randomGear() {
 		$characterStore.randomGear()
 		$characterStore = $characterStore
 	}

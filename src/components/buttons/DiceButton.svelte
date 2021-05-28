@@ -5,7 +5,7 @@
 
 	let face = 6
 
-	const runFunc = () => {
+	function runFunc() {
 		let rollCount = Math.ceil(Math.random() * 12) + 12
 		const setIntervalId = setInterval(() => {
 			const result = func()

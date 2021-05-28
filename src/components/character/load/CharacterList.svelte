@@ -4,7 +4,7 @@
 
 	export let selectedCharacter
 
-	const selectCharacter = (event) => {
+	function selectCharacter(event) {
 		selectedCharacter = event.target.textContent
 	}
 

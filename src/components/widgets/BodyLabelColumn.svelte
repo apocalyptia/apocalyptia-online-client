@@ -4,7 +4,7 @@
 
 	export let side, mode
 
-	const adjustHealth = () => {
+	function adjustHealth() {
 		Object.values($characterStore.properties.health.locations).forEach(loc => {
 			if (loc.current > loc.score) loc.current = loc.score
 		})

@@ -1,6 +1,6 @@
 <script context="module">
 	export async function load({ page, fetch, session, context }) {
-		const url = `/chapter/${page.params.slug}`
+		const url = `/manual/${page.params.chapter}`
 		const res = await fetch(url)
 
 		if (res.ok) {
@@ -23,6 +23,9 @@
 	import Rules from '/src/rules/Rules.js'
 
 	const { slug } = params
+
+	console.log('slug = ', slug)
+	console.log('params = ', params)
 
 	$: titles = null
 </script>

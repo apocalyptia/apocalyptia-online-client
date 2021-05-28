@@ -3,7 +3,7 @@
 
 	export let category, index
 
-	const trashItem = () => {
+	function trashItem() {
 		$characterStore.gear[category.name.toLowerCase()].inventory.splice(index, 1)
 		$characterStore = $characterStore
 	}

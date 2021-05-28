@@ -8,7 +8,9 @@
 
 	let item = ''
 
-	const randomItem = () => item = RandomRoll(Object.values(category[1]))
+	function randomItem() {
+		item = RandomRoll(Object.values(category[1]))
+	}
 </script>
 
 

@@ -7,7 +7,9 @@
 
 	const dispatch = createEventDispatcher()
 
-	const sendEvent = () => dispatch('search', searchTerm)
+	function sendEvent() {
+		dispatch('search', searchTerm)
+	}
 </script>
 
 

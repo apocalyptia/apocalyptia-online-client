@@ -2,7 +2,7 @@
 	import creationStore from '/src/stores/creationStore.js'
 	import { goto } from '$app/navigation'
 
-	const previous = () => {
+	function previous() {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		$creationStore.step--
 		if ($creationStore.checkMin()) {

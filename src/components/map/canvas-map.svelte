@@ -12,7 +12,7 @@
 	let xRotation = 0
 	let zRotation = 0
 
-	const zoomMap = (zoom) => {
+	function zoomMap(zoom) {
 		if ($mapStore.magnification > 0.25 && zoom === 'out') {
 			$mapStore.magnification -= 0.25
 		}
@@ -27,11 +27,11 @@
 		mapFrame.scrollBy((mapFrame.offsetWidth / 4), (mapFrame.offsetHeight / 4))
 	}
 
-	const changePerspective = () => {
+	function changePerspective() {
 		document.getElementById('div1').style.perspectiveOrigin = perspective
 	}
 
-	const rotate3D = () => {
+	function rotate3D() {
 		document.getElementById('div2').style.transform = `rotateX(${xRotation}deg) rotateZ(${zRotation}deg)`
 	}
 </script>

@@ -4,17 +4,17 @@
 	import characterStore from '/src/stores/characterStore.js'
 	import creationStore from '/src/stores/creationStore.js'
 
-	const resetDescription = () => {
+	function resetDescription() {
 		$characterStore.resetDescription()
 		$characterStore = $characterStore
 	}
 
-	const randomDescription = (type) => {
+	function randomDescription(type) {
 		$characterStore.randomDescription(type)
 		$characterStore = $characterStore
 	}
 
-	const canProceed = () => {
+	function canProceed() {
 		$characterStore.canProceed($creationStore.step)
 		$characterStore = $characterStore
 	}

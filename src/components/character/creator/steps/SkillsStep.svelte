@@ -16,17 +16,17 @@
 		}
 	})
 
-	const randomSkills = () => {
+	function randomSkills() {
 		$characterStore.randomSkills()
 		$characterStore = $characterStore
 	}
 
-	const resetSkills = () => {
+	function resetSkills() {
 		$characterStore.resetSkills()
 		$characterStore = $characterStore
 	}
 
-	const updateSkill = (skill) => {
+	function updateSkill(skill) {
 		$characterStore.updateSkill(skill)
 		$characterStore = $characterStore
 	}

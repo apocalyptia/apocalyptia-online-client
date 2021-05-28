@@ -4,11 +4,11 @@
 	import mapStore from '/src/stores/mapStore.js'
 	import { afterUpdate, onMount } from 'svelte'
 
-	onMount(() => {
-		document.querySelector('.canvas-frame').addEventListener('scroll', log)
-	})
+	onMount(() => document.querySelector('.canvas-frame').addEventListener('scroll', log))
 
-	const log = (e) => console.log(e)
+	function log(e) {
+		console.log(e)
+	}
 
 	afterUpdate(() => {
 		$mapStore = $mapStore.redraw()

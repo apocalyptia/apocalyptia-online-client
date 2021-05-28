@@ -4,11 +4,11 @@
 	import characterStore from '/src/stores/characterStore.js'
 	import creationStore from '/src/stores/creationStore.js'
 
-	const newCharacter = () => {
+	function newCharacter() {
 		$characterStore = new Character()
 	}
 
-    const randomCharacter = () => {
+    function randomCharacter() {
 		$characterStore = new Character()
 		$characterStore.randomCharacter()
     }
