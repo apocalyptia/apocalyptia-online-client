@@ -1,4 +1,4 @@
-export default (node, { speed = 50 }) => {
+function typewriter(node, { speed = 50 }) {
 	const text = node.textContent
 	const duration = text.length * speed
 	return {
@@ -9,3 +9,5 @@ export default (node, { speed = 50 }) => {
 		}
 	}
 }
+
+export default typewriter
