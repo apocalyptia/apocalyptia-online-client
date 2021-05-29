@@ -474,6 +474,9 @@ button:invalid {
 	min-width: var(--square);
 	width: var(--square);
 }
+.manual-btn {
+	margin-bottom: var(--std-margin);
+}
 
 /* Details */
 details {

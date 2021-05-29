@@ -1,5 +1,4 @@
 <script>
-	import BackButton from '/src/components/buttons/BackButton.svelte'
 	import DiceRoller from '/src/components/roller/DiceRoller.svelte'
 	import Gear from '/src/rules/Gear.js'
 	import ItemGenerator from '/src/components/roller/ItemGenerator.svelte'
@@ -27,7 +26,6 @@
 		</div>
 	</details>
 </div>
-<BackButton path={'/'} />
 
 
 <style>

@@ -1,5 +1,4 @@
 <script>
-	import BackButton from '/src/components/buttons/BackButton.svelte'
 	import Join from '/src/utils/auth/Join.js'
 	import playerStore from '/src/stores/playerStore.js'
 
@@ -30,7 +29,6 @@
 		</div>
 	</form>
 </div>
-<BackButton path={'/'} />
 
 
 <style>

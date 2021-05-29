@@ -1,6 +1,6 @@
 import Character from '/src/classes/Character.js'
 import { writable } from 'svelte/store'
 
-const character = new Character()
+const newCharacter = new Character()
 
-export default writable(character)
+export default writable(newCharacter)

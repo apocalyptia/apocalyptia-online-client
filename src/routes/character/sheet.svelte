@@ -1,5 +1,4 @@
 <script>
-	import BackButton from '/src/components/buttons/BackButton.svelte'
 	import CharacterSheet from '/src/components/character/sheet/CharacterSheet.svelte'
 	import SaveAndDeleteButtonRow from '/src/components/buttons/SaveAndDeleteButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
@@ -9,9 +8,9 @@
 
 	onMount(_ => {
 		console.log($characterStore)
-		// if ($characterStore.meta.created === ``) {
-		// 	goto('/character')
-		// }
+		if ($characterStore.meta.created === ``) {
+			goto('/character')
+		}
 	})
 </script>
 
@@ -26,4 +25,3 @@
 		deleteFunc={() => $playerStore.deleteCharacter($characterStore.description.name.value)}
 	/>
 </div>
-<BackButton path={'/character'} />

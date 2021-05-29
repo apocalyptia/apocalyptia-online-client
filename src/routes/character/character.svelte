@@ -1,6 +1,5 @@
 <script>
-    import BackButton from '/src/components/buttons/BackButton.svelte'
-    // import playerStore from '/src/stores/playerStore.js'
+	// import playerStore from '/src/stores/playerStore.js'
 </script>
 
 
@@ -15,4 +14,3 @@
 		<a href='/character/load' class='link-btn'>Load Character</a>
 	<!-- {/if} -->
 </div>
-<BackButton path={'/'} />

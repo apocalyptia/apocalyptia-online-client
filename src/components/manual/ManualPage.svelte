@@ -1,6 +1,5 @@
 <script>
 	import Alphabetize from '/src/utils/sorting/Alphabetize.js'
-	import BackButton from '/src/components/buttons/BackButton.svelte'
 	import ManualBody from '/src/components/manual/ManualBody.svelte'
 	import ManualHeader from '/src/components/manual/ManualHeader.svelte'
 	import SearchEngine from '/src/utils/searching/SearchEngine.js'
@@ -28,7 +27,4 @@
 <ManualBody
 	chapter={page.name}
 	ruleList={searchTerm.length ? ruleList : page.list}
-/>
-<BackButton
-	path={page.path.slice(0, page.path.length - page.name.length)}
 />

@@ -1,6 +1,5 @@
 <script>
 	import AdjustUIColor from '/src/utils/ui/AdjustUIColor.js'
-	import BackButton from '/src/components/buttons/BackButton.svelte'
 	import CharacterControls from '/src/components/character/load/CharacterControls.svelte'
 	import CharacterList from '/src/components/character/load/CharacterList.svelte'
 	import ResetUIColor from '/src/utils/ui/ResetUIColor.js'
@@ -28,4 +27,3 @@
 	<CharacterList {selectedCharacter} />
 	<CharacterControls {selectedCharacter} />
 </div>
-<BackButton path={'/character'} />

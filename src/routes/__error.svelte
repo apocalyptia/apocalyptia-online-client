@@ -1,12 +1,7 @@
-<script>
-	import BackButton from '/src/components/buttons/BackButton.svelte'
-</script>
-
 <div class="e404">
 	<h1>404</h1>
 	<p>Page not found.</p>
 </div>
-<BackButton path={'../'}/>
 
 
 <style>
