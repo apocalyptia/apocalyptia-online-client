@@ -1,5 +1,5 @@
 <script>
-	import BackupCharacter from '/src/utils/database/characters/BackupCharacter.js'
+	import backupCharacter from '/src/utils/database/characters/backupCharacter.js'
 	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 
@@ -11,7 +11,7 @@
 	}
 
 	function backupCharacter() {
-		BackupCharacter($characterStore)
+		backupCharacter($characterStore)
 	}
 
 	function newCharacter() {

@@ -1,18 +1,18 @@
 <script>
-	import Alphabetize from '/src/utils/sorting/Alphabetize.js'
+	import alphabetize from '/src/utils/sorting/alphabetize.js'
 	import ManualBody from '/src/components/manual/ManualBody.svelte'
 	import ManualHeader from '/src/components/manual/ManualHeader.svelte'
-	import SearchEngine from '/src/utils/searching/SearchEngine.js'
+	import searchEngine from '/src/utils/searching/searchEngine.js'
 
 	export let page
 
 	let searchTerm = ''
 
-	let ruleList = Alphabetize(page.list)
+	let ruleList = alphabetize(page.list)
 
-	const handleSearch = event => {
+	function handleSearch(event) {
 		searchTerm = event.detail
-		ruleList = SearchEngine(searchTerm, Alphabetize(page.list))
+		ruleList = searchEngine(searchTerm, alphabetize(page.list))
 	}
 </script>
 

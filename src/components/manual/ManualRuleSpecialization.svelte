@@ -1,14 +1,16 @@
 <script>
     export let rule
+
+	console.log('spec rule = ', rule)
 </script>
 
 
 <div class='spec-section'>
 	{#each Object.values(rule.specs) as spec}
 		<div class='sub-name'>
-			{spethis.name}
+			{spec.name}
 		</div>
-		{#each spethis.desc as desc}
+		{#each spec.desc as desc}
 			<p class='spec-desc'>
 				{desc}
 			</p>

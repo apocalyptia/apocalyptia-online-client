@@ -1,39 +1,39 @@
 import Abilities from '/src/rules/Abilities.js'
 import Creation from '/src/rules/Creation.js'
 import Gear from '/src/rules/Gear.js'
-import InitializeDescription from '/src/classes/methods/creation/InitializeDescription.js'
-import InitializeGear from '/src/classes/methods/creation/InitializeGear.js'
-import InitializeMeta from '/src/classes/methods/creation/InitializeMeta.js'
-import InitializeProperties from '/src/classes/methods/creation/InitializeProperties.js'
-import InitializeSkills from '/src/classes/methods/creation/InitializeSkills.js'
-import InitializeTraits from '/src/classes/methods/creation/InitializeTraits.js'
+import initializeDescription from '/src/classes/methods/creation/initializeDescription.js'
+import initializeGear from '/src/classes/methods/creation/initializeGear.js'
+import initializeMeta from '/src/classes/methods/creation/initializeMeta.js'
+import initializeProperties from '/src/classes/methods/creation/initializeProperties.js'
+import initializeSkills from '/src/classes/methods/creation/initializeSkills.js'
+import initializeTraits from '/src/classes/methods/creation/initializeTraits.js'
 import Properties from '/src/rules/Properties.js'
-import RandomAge from '/src/utils/random/description/RandomAge.js'
-import RandomAmmo from '/src/utils/random/gear/RandomAmmo.js'
-import RandomArmor from '/src/utils/random/gear/RandomArmor.js'
-import RandomEquipment from '/src/utils/random/gear/RandomEquipment.js'
-import RandomHair from '/src/utils/random/description/RandomHair.js'
-import RandomHeight from '/src/utils/random/description/RandomHeight.js'
-import RandomMeleeWeapon from '/src/utils/random/gear/RandomMeleeWeapon.js'
-import RandomName from '/src/utils/random/description/RandomName.js'
-import RandomNumber from '/src/utils/random/dice/RandomNumber.js'
-import RandomProjectileWeapon from '/src/utils/random/gear/RandomProjectileWeapon.js'
-import RandomRoll from '/src/utils/random/dice/RandomRoll.js'
-import RandomSex from '/src/utils/random/description/RandomSex.js'
-import RandomSkin from '/src/utils/random/description/RandomSkin.js'
-import RandomWeight from '/src/utils/random/description/RandomWeight.js'
+import randomAge from '/src/utils/random/description/randomAge.js'
+import randomAmmo from '/src/utils/random/gear/randomAmmo.js'
+import randomArmor from '/src/utils/random/gear/randomArmor.js'
+import randomEquipment from '/src/utils/random/gear/randomEquipment.js'
+import randomHair from '/src/utils/random/description/randomHair.js'
+import randomHeight from '/src/utils/random/description/randomHeight.js'
+import randomMeleeWeapon from '/src/utils/random/gear/randomMeleeWeapon.js'
+import randomName from '/src/utils/random/description/randomName.js'
+import randomNumber from '/src/utils/random/dice/randomNumber.js'
+import randomProjectileWeapon from '/src/utils/random/gear/randomProjectileWeapon.js'
+import randomRoll from '/src/utils/random/dice/randomRoll.js'
+import randomSex from '/src/utils/random/description/randomSex.js'
+import randomSkin from '/src/utils/random/description/randomSkin.js'
+import randomWeight from '/src/utils/random/description/randomWeight.js'
 import runFormula from '/src/utils/runFormula.js'
 
 export default class Character {
 	constructor() {
 	
-		this.meta = InitializeMeta()
-		this.description = InitializeDescription()
-		this.traits = InitializeTraits()
-		this.skills = InitializeSkills()
-		this.properties = InitializeProperties()
+		this.meta = initializeMeta()
+		this.description = initializeDescription()
+		this.traits = initializeTraits()
+		this.skills = initializeSkills()
+		this.properties = initializeProperties()
 		this.abilities = []
-		this.gear = InitializeGear()
+		this.gear = initializeGear()
 
 		this.maxTraits = parseInt(Creation.traits.max),
 		this.proceed = false,
@@ -194,44 +194,44 @@ export default class Character {
 		this.randomDescription = (category='All') => {
 			switch (category) {
 				case 'Age':
-					this.description.age.value = RandomAge()
+					this.description.age.value = randomAge()
 					break
 				case 'Hair':
-					this.description.hair.value = RandomHair(
+					this.description.hair.value = randomHair(
 						this.description.age.value,
 						this.description.sex.value,
 						this.description.skin.value
 					)
 					break
 				case 'Height':
-					this.description.height.value = RandomHeight(this.description.sex.value)
+					this.description.height.value = randomHeight(this.description.sex.value)
 					break
 				case 'Name':
-					this.description.name.value = RandomName(this.description.sex.value)
+					this.description.name.value = randomName(this.description.sex.value)
 					break
 				case 'Sex':
-					this.description.sex.value = RandomSex()
+					this.description.sex.value = randomSex()
 					break
 				case 'Skin':
-					this.description.skin.value = RandomSkin()
+					this.description.skin.value = randomSkin()
 					break
 				case 'Weight':
-					this.description.weight.value = RandomWeight(
+					this.description.weight.value = randomWeight(
 						this.description.height.value,
 						this.description.sex.value
 					)
 					break
 				case 'All':
-					this.description.age.value = RandomAge()
-					this.description.sex.value = RandomSex()
-					this.description.skin.value = RandomSkin()
-					this.description.name.value = RandomName(this.description.sex.value)
-					this.description.height.value = RandomHeight(this.description.sex.value)
-					this.description.weight.value = RandomWeight(
+					this.description.age.value = randomAge()
+					this.description.sex.value = randomSex()
+					this.description.skin.value = randomSkin()
+					this.description.name.value = randomName(this.description.sex.value)
+					this.description.height.value = randomHeight(this.description.sex.value)
+					this.description.weight.value = randomWeight(
 						this.description.height.value,
 						this.description.sex.value
 					)
-					this.description.hair.value = RandomHair(
+					this.description.hair.value = randomHair(
 						this.description.age.value,
 						this.description.sex.value,
 						this.description.skin.value
@@ -241,7 +241,7 @@ export default class Character {
 		this.randomTraits = () => {
 			this.resetTraits()
 			while(this.traitsRemaining) {
-				const traitName = RandomRoll(Object.keys(this.traits))
+				const traitName = randomRoll(Object.keys(this.traits))
 				if (this.traits[traitName].score < this.maxTraits) {
 					this.traits[traitName].score++
 				}
@@ -254,7 +254,7 @@ export default class Character {
 		this.randomSkills = () => {
 			this.resetSkills()
 			while(this.skillsRemaining) {
-				const skillName = RandomRoll(Object.keys(this.skills))
+				const skillName = randomRoll(Object.keys(this.skills))
 				const parentKey = this.skills[skillName].parent.toLowerCase()
 				const parentScore = this.traits[parentKey].score
 				if (this.skills[skillName].score < parentScore) {
@@ -276,10 +276,10 @@ export default class Character {
 					)
 				})
 				if (remainingAbilities.length) {
-					const randomAbility = RandomRoll(remainingAbilities)
+					const randomAbility = randomRoll(remainingAbilities)
 					randomAbility.qty = 1
 					if (randomAbility.options.length) {
-						randomAbility.selection = RandomNumber(randomAbility.options.length)
+						randomAbility.selection = randomNumber(randomAbility.options.length)
 					}
 					this.updateAbilities(randomAbility)
 				}
@@ -288,17 +288,17 @@ export default class Character {
 		},
 		this.randomGear = () => {
 			this.resetGear()
-			this.gear.armor.inventory.push(RandomArmor())
-			this.gear.melee.inventory.push(RandomMeleeWeapon())
-			this.gear.projectile.inventory.push(RandomProjectileWeapon())
+			this.gear.armor.inventory.push(randomArmor())
+			this.gear.melee.inventory.push(randomMeleeWeapon())
+			this.gear.projectile.inventory.push(randomProjectileWeapon())
 			this.gear.ammo.inventory.push(
-				RandomAmmo({
+				randomAmmo({
 					caliber: this.gear.projectile.inventory[0].cal,
 					max: 6
 				})
 			)
 			this.gear.equipment.inventory = [
-				...RandomEquipment({
+				...randomEquipment({
 					numberOfItems: this.properties.luck.current
 				})
 			]

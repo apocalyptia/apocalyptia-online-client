@@ -1,4 +1,4 @@
-export default [
+const LanguageList = [
 	'Arabic',
 	'Bengali',
 	'Chinese',
@@ -24,3 +24,5 @@ export default [
 	'Turkish',
 	'Vietnamese'
 ]
+
+export default LanguageList

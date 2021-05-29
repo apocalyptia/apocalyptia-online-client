@@ -9,7 +9,7 @@
 	{#if chapter === 'Manual' && ruleList.length}
 		{#each ruleList as c}
 			<div class='manual-btn'>
-				<a href={`/manual/${this.name.toLowerCase()}`} class='link-btn'>{this.name}</a>
+				<a href={`/manual/${c.name.toLowerCase()}`} class='link-btn'>{c.name}</a>
 			</div>
 		{/each}
 	{:else if chapter === 'Gear' && ruleList.length}

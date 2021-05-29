@@ -1,5 +1,5 @@
 <script >
-	import Capitalize from '/src/utils/text/Capitalize.js'
+	import capitalize from '/src/utils/text/capitalize.js'
 	import Rules from '/src/rules/Rules.js'
 	import urlFormat from '/src/utils/text/urlFormat.js'
 </script>
@@ -9,7 +9,7 @@
 	{#each Object.keys(Rules) as chapter}
 		<div class='manual-btn'>
 			<a href={urlFormat(`/manual/${chapter}`)} class='link-btn'>
-				{Capitalize(chapter)}
+				{capitalize(chapter)}
 			</a>
 		</div>
 	{/each}

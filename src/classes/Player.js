@@ -1,8 +1,8 @@
-import NewCharacter from '/src/classes/methods/player/NewCharacter.js'
-import DeleteCharacter from '/src/classes/methods/player/DeleteCharacter.js'
-import LoadCharacter from '/src/classes/methods/player/LoadCharacter.js'
-import UpdateCharacter from '/src/classes/methods/player/UpdateCharacter.js'
-import SaveCharacter from '/src/classes/methods/player/SaveCharacter.js'
+import newCharacter from '/src/classes/methods/player/newCharacter.js'
+import deleteCharacter from '/src/classes/methods/player/deleteCharacter.js'
+import loadCharacter from '/src/classes/methods/player/loadCharacter.js'
+import updateCharacter from '/src/classes/methods/player/updateCharacter.js'
+import saveCharacter from '/src/classes/methods/player/saveCharacter.js'
 
 export default class Player {
 	constructor() {
@@ -12,10 +12,10 @@ export default class Player {
 		this.loggedIn = false
 		this.characterIndex = -1
 		this.characterList = []
-		this.newCharacter = (character) => NewCharacter(this, character)
-		this.deleteCharacter = (characterName) => DeleteCharacter(this, characterName)
-		this.loadCharacter = (characterName) => LoadCharacter(this, characterName)
-		this.updateCharacter = () => UpdateCharacter(this)
-		this.saveCharacter = (character) => SaveCharacter(this, character)
+		this.newCharacter = (character) => newCharacter(this, character)
+		this.deleteCharacter = (characterName) => deleteCharacter(this, characterName)
+		this.loadCharacter = (characterName) => loadCharacter(this, characterName)
+		this.updateCharacter = () => updateCharacter(this)
+		this.saveCharacter = (character) => saveCharacter(this, character)
 	}
 }

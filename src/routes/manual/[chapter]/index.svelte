@@ -12,7 +12,7 @@
 
 <script>
 	import Rules from '/src/rules/Rules.js'
-	import Capitalize from '/src/utils/text/Capitalize.js'
+	import capitalize from '/src/utils/text/capitalize.js'
 	import urlFormat from '/src/utils/text/urlFormat.js'
 
 	export let chapter, section
@@ -26,7 +26,7 @@
 		<div class='manual-btn'>
 			{#if chapter === 'gear'}
 				<a href={urlFormat(`/manual/${chapter}/${section}`)} class='link-btn'>
-					{Capitalize(section)}
+					{capitalize(section)}
 				</a>
 			{:else}
 				<a href={urlFormat(`/manual/${chapter}/${section}`)} class='link-btn'>

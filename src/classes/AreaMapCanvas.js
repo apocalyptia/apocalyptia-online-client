@@ -1,4 +1,4 @@
-import DrawGrid from '/src/utils/canvas/DrawGrid.js'
+import drawGrid from '/src/utils/canvas/drawGrid.js'
 
 export default class AreaMapCanvas {
 	constructor(
@@ -26,7 +26,7 @@ export default class AreaMapCanvas {
 			this.context = this.canvas.getContext('2d') || null
 			this.canvas.width = this.pixelSize() || null
 			this.canvas.height = this.pixelSize() || null
-			if (canvas) DrawGrid(this)
+			if (canvas) drawGrid(this)
 			this.fillContents()
 			return this
 		}
@@ -51,7 +51,7 @@ export default class AreaMapCanvas {
 			return this
 		}
 		this.redraw = () => {
-			DrawGrid(this)
+			drawGrid(this)
 			for (let r = 0; r < this.gridSize; r++) {
 				for (let c = 0; c < this.gridSize; c++) {
 					this.contents[r][c].x = c * this.currentSquare

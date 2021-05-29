@@ -1,5 +1,5 @@
 <script>
-	import AdjustUIColor from '/src/utils/ui/AdjustUIColor.js'
+	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
 	import BodyLabelColumn from '/src/components/widgets/BodyLabelColumn.svelte'
 	import HumanBody from '/src/components/widgets/HumanBody.svelte'
 	import characterStore from '/src/stores/characterStore.js'
@@ -19,7 +19,7 @@
 		'rightLeg'
 	]
 
-	onMount(() => AdjustUIColor($characterStore))
+	onMount(() => adjustUIColor($characterStore))
 </script>
 
 

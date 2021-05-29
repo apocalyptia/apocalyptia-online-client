@@ -1,5 +1,5 @@
 <script>
-	import AdjustUIColor from '/src/utils/ui/AdjustUIColor.js'
+	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
 	import characterStore from '/src/stores/characterStore.js'
 
 	export let side, mode
@@ -8,7 +8,7 @@
 		Object.values($characterStore.properties.health.locations).forEach(loc => {
 			if (loc.current > loc.score) loc.current = loc.score
 		})
-		AdjustUIColor($characterStore)
+		adjustUIColor($characterStore)
 	}
 </script>
 

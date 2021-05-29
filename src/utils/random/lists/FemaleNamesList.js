@@ -1,4 +1,4 @@
-export default [
+const FemaleNamesList = [
 	'Aaliyah',
 	'Abagail',
 	'Abbey',
@@ -1177,3 +1177,5 @@ export default [
 	'Zoey',
 	'Zoie',
 ]
+
+export default FemaleNamesList

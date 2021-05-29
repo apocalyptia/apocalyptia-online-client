@@ -1,3 +1,7 @@
-import RandomNumber from './RandomNumber.js'
+import randomNumber from './randomNumber.js'
 
-export default () => RandomNumber(6)
+function d6() {
+	return randomNumber(6)
+}
+
+export default d6

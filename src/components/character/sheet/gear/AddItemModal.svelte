@@ -1,11 +1,11 @@
 <script>
-	import GetItemList from '/src/utils/GetItemList.js'
+	import getItemList from '/src/utils/getItemList.js'
 	import characterStore from '/src/stores/characterStore.js'
 	import { createEventDispatcher, onDestroy } from 'svelte'
 
 	export let category
 
-	let itemList = GetItemList(category)
+	let itemList = getItemList(category)
 
 	let selectedItem = itemList[0]
 

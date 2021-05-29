@@ -1,0 +1,33 @@
+import alphabetize from '/src/utils/sorting/alphabetize.js'
+
+function searchEngine(searchTerm, searchList) {
+
+	const mappedList = []
+
+	function addSublists(rule) {
+		if (rule.hasOwnProperty('list')) addSublists(rule.list)
+		else mappedList.push(rule)
+	}
+
+	addSublists(searchList)
+
+	const sortedRulesList = alphabetize(mappedList)
+
+	let ruleList = sortedRulesList
+
+	if (searchTerm.length) {
+		ruleList = ruleList.filter(r => !r.hasOwnProperty('list'))
+		ruleList = sortedRulesList.filter(r => {
+			return r.name.toLocaleLowerCase()
+						.startsWith(searchTerm.toLocaleLowerCase())
+		})
+		if (!ruleList.length) {
+			ruleList = sortedRulesList.filter(r => {
+				return r.name.toLocaleLowerCase()
+							.includes(searchTerm.toLocaleLowerCase())
+			})
+		}
+	}
+
+	return ruleList
+}

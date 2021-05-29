@@ -1,5 +1,5 @@
 <script>
-	import Capitalize from '/src/utils/text/Capitalize.js'
+	import capitalize from '/src/utils/text/capitalize.js'
 	import { onMount } from 'svelte'
 
 	export let rule
@@ -30,7 +30,7 @@
 			{/each}
 			</ul>
 		{:else}
-			<p><span class='prop-name'>{Capitalize(prop)}</span>: {rule[prop]}</p>
+			<p><span class='prop-name'>{capitalize(prop)}</span>: {rule[prop]}</p>
 		{/if}
 	{/each}
 </div>

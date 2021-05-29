@@ -1,4 +1,4 @@
-export default [
+const MaleNamesList = [
 	'Aaden',
 	'Aarav',
 	'Aaron',
@@ -1132,3 +1132,5 @@ export default [
 	'Zayne',
 	'Zechariah',
 ]
+
+export default MaleNamesList
