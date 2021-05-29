@@ -13,7 +13,7 @@
 <svelte:head>
 	<title>Apocalyptia Online - Roller</title>
 </svelte:head>
-<div class='roller-body page-body'>
+<div class='page-body'>
 	<h1>Roller</h1>
 	<DiceRoller />
 	<details>

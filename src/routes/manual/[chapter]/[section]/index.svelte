@@ -12,7 +12,7 @@
 
 
 <script>
-	import ManualRuleArticle from '/src/components/manual/ManualRuleArticle.svelte'
+	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
 	import Rules from '/src/rules/Rules.js'
 	import swapOrder from '/src/utils/text/swapOrder.js'
 	import urlFormat from '/src/utils/text/urlFormat.js'
@@ -31,6 +31,6 @@
 			</div>
 		{/each}
 	{:else}
-		<ManualRuleArticle rule={Rules[chapter][section]} />
+		<ManualArticle rule={Rules[chapter][section]} />
 	{/if}
 </div>

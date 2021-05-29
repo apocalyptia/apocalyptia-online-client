@@ -2,10 +2,10 @@
 	import Gear from '/src/classes/Gear.js'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import Disease from '/src/classes/Disease.js'
-	import ManualDiseaseRule from '/src/components/manual/ManualDiseaseRule.svelte'
-	import ManualRuleDescription from '/src/components/manual/ManualRuleDescription.svelte'
-	import ManualRuleSpecialization from '/src/components/manual/ManualRuleSpecialization.svelte'
-	import ManualRuleTable from '/src/components/manual/ManualRuleTable.svelte'
+	import ManualDisease from '/src/components/manual/ManualDisease.svelte'
+	import ManualDescription from '/src/components/manual/ManualDescription.svelte'
+	import ManualSpecialization from '/src/components/manual/ManualSpecialization.svelte'
+	import ManualTable from '/src/components/manual/ManualTable.svelte'
 	import ManualSubRule from '/src/components/manual/ManualSubRule.svelte'
 
 	export let rule
@@ -20,19 +20,19 @@
 				<GearBlock item={rule} mode={'manual'} />
 			</div>
 		{:else if rule instanceof Disease}
-			<ManualDiseaseRule {rule} />
+			<ManualDisease {rule} />
 		{:else if rule.desc != undefined}
-			<ManualRuleDescription {rule} />
+			<ManualDescription {rule} />
 			{#if rule.subrules}
 				{#each rule.subrules as subrule}
 					<ManualSubRule {subrule} />
 				{/each}
 			{/if}
 			{#if rule.table != undefined}
-				<ManualRuleTable {rule} />
+				<ManualTable {rule} />
 			{/if}
 			{#if rule.specs}
-				<ManualRuleSpecialization {rule} />
+				<ManualSpecialization {rule} />
 			{/if}
 		{/if}
 	</article>

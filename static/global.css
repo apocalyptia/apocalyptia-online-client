@@ -324,10 +324,7 @@ tr {
 td,
 th {
 	border: var(--std-border) solid var(--pri-color);
-	flex: 1;
-	overflow-wrap: normal;
 	padding: var(--s50);
-	word-wrap: break-word;
 }
 
 

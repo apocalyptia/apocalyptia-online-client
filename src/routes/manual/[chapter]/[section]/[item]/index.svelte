@@ -13,7 +13,7 @@
 
 
 <script>
-	import ManualRuleArticle from '/src/components/manual/ManualRuleArticle.svelte'
+	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
 	import Rules from '/src/rules/Rules.js'
 
 	export let chapter, section, item
@@ -23,5 +23,5 @@
 
 
 <div class='page-body'>
-	<ManualRuleArticle {rule} />
+	<ManualArticle {rule} />
 </div>

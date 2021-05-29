@@ -1,5 +1,5 @@
 <script>
-	import ManualRuleArticle from '/src/components/manual/ManualRuleArticle.svelte'
+	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
 
 	export let rule
 </script>
@@ -9,5 +9,5 @@
 	<summary>
 		{rule.name}{typeof rule === "Skill" ? " Skill" : "" }
 	</summary>
-	<ManualRuleArticle {rule} />
+	<ManualArticle {rule} />
 </details>

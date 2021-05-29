@@ -1,6 +1,6 @@
 <script >
-	import capitalize from '/src/utils/text/capitalize.js'
 	import Rules from '/src/rules/Rules.js'
+	import capitalize from '/src/utils/text/capitalize.js'
 	import urlFormat from '/src/utils/text/urlFormat.js'
 </script>
 
