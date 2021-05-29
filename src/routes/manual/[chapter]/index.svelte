@@ -15,9 +15,7 @@
 	import capitalize from '/src/utils/text/capitalize.js'
 	import urlFormat from '/src/utils/text/urlFormat.js'
 
-	export let chapter, section
-
-	console.log('[chapter] chapter/section = ', chapter,'/',section)
+	export let chapter
 </script>
 
 

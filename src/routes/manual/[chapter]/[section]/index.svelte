@@ -20,7 +20,7 @@
 </script>
 
 
-<div class='page-body' context='module'>
+<div class='page-body'>
 	{#if chapter === 'gear'}
 		{#each Object.values(Rules[chapter][section]) as item}
 			<div class='manual-btn'>
