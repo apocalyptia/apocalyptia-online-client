@@ -7,7 +7,6 @@
 	import { goto } from '$app/navigation'
 
 	onMount(_ => {
-		console.log($characterStore)
 		if ($characterStore.meta.created === ``) {
 			goto('/character')
 		}

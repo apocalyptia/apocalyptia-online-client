@@ -1,7 +1,5 @@
 <script>
     export let rule
-
-	console.log('spec rule = ', rule)
 </script>
 
 

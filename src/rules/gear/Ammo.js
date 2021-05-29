@@ -25,7 +25,7 @@ import Standard9mm from './ammo/Standard9mm.js'
 
 const Ammo = {
 	armorpiercing308: ArmorPiercing308,
-	armorpiercing556: ArmorPiercing556,
+	armorpiercing556mm: ArmorPiercing556,
 	arrowbroadhead: ArrowBroadhead,
 	buckshot12g: Buckshot12g,
 	hollowpoint9mm: HollowPoint9mm,
@@ -34,20 +34,20 @@ const Ammo = {
 	hollowpoint308: HollowPoint308,
 	hollowpoint357: HollowPoint357,
 	hollowpoint556: HollowPoint556,
-	hollowpoint762: HollowPoint762,
+	hollowpoint762mm: HollowPoint762,
 	match9mm: Match9mm,
 	match22: Match22,
 	match45: Match45,
 	match308: Match308,
-	match556: Match556,
+	match556mm: Match556,
 	slug12g: Slug12g,
 	standard9mm: Standard9mm,
 	standard22: Standard22,
 	standard45: Standard45,
 	standard308: Standard308,
 	standard357: Standard357,
-	standard556: Standard556,
-	standard762: Standard762
+	standard556mm: Standard556,
+	standard762mm: Standard762
 }
 
 export default Ammo

@@ -1,5 +1,5 @@
 function urlFormat(word) {
-	return word.replace(/\.\s+/g, '').toLowerCase()
+	return word.toLowerCase().split(' ').join('').replace('.', '')
 }
 
-export default urlFormat(word)
+export default urlFormat

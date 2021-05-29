@@ -7,4 +7,4 @@ function randomArmor() {
     return randomArmor
 }
 
-randomArmor
+export default randomArmor

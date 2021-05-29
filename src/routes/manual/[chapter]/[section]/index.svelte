@@ -14,6 +14,7 @@
 <script>
 	import ManualRuleArticle from '/src/components/manual/ManualRuleArticle.svelte'
 	import Rules from '/src/rules/Rules.js'
+	import swapOrder from '/src/utils/text/swapOrder.js'
 	import urlFormat from '/src/utils/text/urlFormat.js'
 
 	export let chapter, section
@@ -24,7 +25,7 @@
 	{#if chapter === 'gear'}
 		{#each Object.values(Rules[chapter][section]) as item}
 			<div class='manual-btn'>
-				<a href={urlFormat(`/manual/${chapter}/${section}/${item.name}`)} class='link-btn'>
+				<a href={urlFormat(`/manual/${chapter}/${section}/${section === 'ammo' ? swapOrder(item.name) : item.name}`)} class='link-btn'>
 					{item.name}
 				</a>
 			</div>

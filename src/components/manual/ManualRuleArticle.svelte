@@ -12,26 +12,28 @@
 </script>
 
 
-<article class='rule-body'>
-	<h1>{rule.name}</h1>
-	{#if rule instanceof Gear }
-		<div class='gear-rule'>
-			<GearBlock item={rule} mode={'manual'} />
-		</div>
-	{:else if rule instanceof Disease}
-		<ManualDiseaseRule {rule} />
-	{:else if rule.desc != undefined}
-		<ManualRuleDescription {rule} />
-		{#if rule.subrules}
-			{#each rule.subrules as subrule}
-				<ManualSubRule {subrule} />
-			{/each}
+<div class='section-card'>
+	<article class='rule-body'>
+		<h1>{rule.name}</h1>
+		{#if rule instanceof Gear }
+			<div class='gear-rule'>
+				<GearBlock item={rule} mode={'manual'} />
+			</div>
+		{:else if rule instanceof Disease}
+			<ManualDiseaseRule {rule} />
+		{:else if rule.desc != undefined}
+			<ManualRuleDescription {rule} />
+			{#if rule.subrules}
+				{#each rule.subrules as subrule}
+					<ManualSubRule {subrule} />
+				{/each}
+			{/if}
+			{#if rule.table != undefined}
+				<ManualRuleTable {rule} />
+			{/if}
+			{#if rule.specs}
+				<ManualRuleSpecialization {rule} />
+			{/if}
 		{/if}
-		{#if rule.table != undefined}
-			<ManualRuleTable {rule} />
-		{/if}
-		{#if rule.specs}
-			<ManualRuleSpecialization {rule} />
-		{/if}
-	{/if}
-</article>
+	</article>
+</div>
