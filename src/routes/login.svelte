@@ -1,9 +1,10 @@
 <script>
-	import Login from '/src/utils/auth/Login.js'
+	import login from '/src/utils/auth/login.js'
 	import playerStore from '/src/stores/playerStore.js'
 
-	let email = ``,
-		password = ``
+	let email = ``
+
+	let password = ``
 </script>
 
 <div class="cntr-card">
@@ -18,7 +19,7 @@
 		</div>
 		<div class="login">
 			<a href="/">
-				<button type="submit" on:click={() => ($playerStore = Login($playerStore, email, password))}> Login </button>
+				<button type="submit" on:click={() => ($playerStore = login($playerStore, email, password))}> Login </button>
 			</a>
 		</div>
 	</form>

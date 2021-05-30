@@ -33,7 +33,6 @@ export default class Character {
 		this.properties = initializeProperties()
 		this.abilities = []
 		this.gear = initializeGear()
-
 		;(this.maxTraits = parseInt(Creation.traits.max)),
 			(this.proceed = false),
 			(this.skillsRemaining = parseInt(Creation.skills.startingMultiplier)),
@@ -130,7 +129,6 @@ export default class Character {
 				this.remainingTraits()
 				this.resetSkills()
 			})
-
 		;(this.updateAbilities = (ability) => {
 			if (ability) {
 				this.abilities.push(ability)
@@ -183,7 +181,6 @@ export default class Character {
 				this.updateProperties()
 				this.remainingSkills()
 			})
-
 		;(this.randomDescription = (category = 'All') => {
 			switch (category) {
 				case 'Age':
