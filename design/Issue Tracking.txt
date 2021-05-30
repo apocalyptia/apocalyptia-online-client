@@ -1,5 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 
+
 ------ DEV PATH ------
 
 finish integrating database (faunadb) with client app
@@ -15,14 +16,15 @@ write the combat system methods (based on lambda functions)
 make game group chat
 get Amazon affiliate program set up and find links for all gear items
 
+
 ---------------------------------------------------------------------------------------------------
+
 
 ------ TODO LIST ------
 
 UX/UI:
 	Make some CSS effects to reflect character's current Psyche.
-	Figure out what to do about Tables. (dialog window?)
-	Make a sidenav menu for table of contents in Rules section.
+	Make a sidenav menu with icons as a table of contents in Rules section.
 	Probably also a sidenav for character sheet.
 
 Gear.js:
@@ -35,7 +37,6 @@ Gear.js:
 	add antiseptic of some kind
 
 Manual:
-	Put Expand/Collapse All button on rules.
 	Finish integrating Narrator sections: Bases, Environment, Factions, Missions, Preparation, Scenarios, Difficulties, Psyche
 
 Markup:
@@ -46,6 +47,7 @@ Creator:
 
 
 ---------------------------------------------------------------------------------------------------
+
 
 ------ BRAINSTORMING ------
 
@@ -68,6 +70,7 @@ Character:
 
 Figure out a quick Jury-Rig version of Build.
 
+
 ---------------------------------------------------------------------------------------------------
 
 
@@ -85,6 +88,7 @@ Weapon Training
 
 
 ---------------------------------------------------------------------------------------------------
+
 
 TODO List: FEATURES
 
