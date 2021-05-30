@@ -1,16 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import Pierce from '../attributes/Pierce.js' 
+import Gear from '../../../classes/Gear.js'
+import Pierce from '../attributes/Pierce.js'
 
 const ArmorPiercing308 = new Gear({
 	name: `.308 Armor Piercing`,
 	type: `Ammo`,
-	desc: [
-		`Battlefield ammunition.`,
-	],
+	desc: [`Battlefield ammunition.`],
 	sz: 0.02,
-	attr: [
-		Pierce,
-	]
+	attr: [Pierce]
 })
 ArmorPiercing308.cal = `.308`
 

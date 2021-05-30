@@ -1,4 +1,4 @@
-<script context='module'>
+<script context="module">
 	export async function load({ page }) {
 		const { chapter, section, item } = page.params
 		return {
@@ -10,7 +10,6 @@
 		}
 	}
 </script>
-
 
 <script>
 	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
@@ -26,7 +25,6 @@
 	console.log('Rules[chapter][section][item] = ', Rules[chapter][section][item])
 </script>
 
-
-<div class='page-body'>
+<div class="page-body">
 	<ManualArticle {rule} />
 </div>

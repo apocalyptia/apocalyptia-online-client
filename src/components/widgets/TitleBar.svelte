@@ -1,20 +1,18 @@
 <script>
 	import MenuButton from '/src/components/buttons/MenuButton.svelte'
 	import UserMenu from '/src/components/widgets/UserMenu.svelte'
-	// import playerStore from '/src/stores/playerStore.js'	
+	// import playerStore from '/src/stores/playerStore.js'
 </script>
 
-
 <header>
-	<a href='/' class='link-btn'>
+	<a href="/" class="link-btn">
 		<h1>Apocalyptia Online</h1>
 	</a>
 	<!-- {#if $playerStore.loggedIn} -->
-		<MenuButton />
-		<UserMenu />
+	<MenuButton />
+	<UserMenu />
 	<!-- {/if} -->
 </header>
-
 
 <style>
 	header {
@@ -29,6 +27,6 @@
 	a {
 		display: block;
 		padding: var(--std-padding);
-		width: 100%
+		width: 100%;
 	}
 </style>

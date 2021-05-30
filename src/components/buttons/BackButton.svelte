@@ -1,12 +1,10 @@
 <script>
-    export let path = '/'
+	export let path = '/'
 </script>
 
-
-<a href={path} class='back-btn btn-box green-btn'>
-	<button class='back-btn btn-icon square-btn'>&lt;</button>
+<a href={path} class="back-btn btn-box green-btn">
+	<button class="back-btn btn-icon square-btn">&lt;</button>
 </a>
-
 
 <style>
 	.back-btn {

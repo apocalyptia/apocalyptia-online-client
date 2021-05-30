@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Stimulant = new Gear({
 	name: `Stimulant`,
-	desc: [
-		`Ignore Exhaustion penalties for 6hrs.`,
-	],
+	desc: [`Ignore Exhaustion penalties for 6hrs.`],
 	sz: 0,
 	type: `Drug`
 })

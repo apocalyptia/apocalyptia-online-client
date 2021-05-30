@@ -1,13 +1,11 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
 
 const SavageMkII = new Gear({
 	name: `Savage Mk.II Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,
-	attr: [
-		TwoHanded,
-	]
+	attr: [TwoHanded]
 })
 SavageMkII.dmg = 1
 SavageMkII.rng = 40

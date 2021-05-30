@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Chalk = new Gear({
 	name: `Chalk`,
-	desc: [
-		`Used to temporarily write on any surface.`,
-	],
+	desc: [`Used to temporarily write on any surface.`],
 	sz: 0
 })
 

@@ -1,4 +1,4 @@
-import Descriptor from '../../classes/Descriptor.js' 
+import Descriptor from '../../classes/Descriptor.js'
 
 const Skin = new Descriptor({
 	name: `Skin`,

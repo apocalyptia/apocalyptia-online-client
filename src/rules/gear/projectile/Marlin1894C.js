@@ -1,5 +1,5 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
 
 const Marlin1894C = new Gear({
 	name: `Marlin 1894C Rifle`,
@@ -7,9 +7,7 @@ const Marlin1894C = new Gear({
 	sz: 3,
 	dmg: 2,
 	rng: 30,
-	attr: [
-		TwoHanded,
-	],
+	attr: [TwoHanded],
 	cap: 9,
 	cal: `.357`
 })

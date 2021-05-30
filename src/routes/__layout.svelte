@@ -2,9 +2,8 @@
 	import TitleBar from '/src/components/widgets/TitleBar.svelte'
 </script>
 
-
-<div class='screen'>
-	<div class='scanline'>
+<div class="screen">
+	<div class="scanline">
 		<div class="console">
 			<div class="program">
 				<header>
@@ -17,7 +16,6 @@
 		</div>
 	</div>
 </div>
-
 
 <style>
 	header {
@@ -47,8 +45,12 @@
 		z-index: 3000;
 	}
 	@keyframes hline {
-		0%  { top: 0; }
-		20% { top: 100vh; }
+		0% {
+			top: 0;
+		}
+		20% {
+			top: 100vh;
+		}
 	}
 
 	.console {
@@ -57,16 +59,24 @@
 		background-size: 100% 3px;
 		z-index: 4;
 	}
-	
+
 	.program {
 		animation: wobble 30s linear infinite;
 		z-index: 5;
 	}
 	@keyframes wobble {
-		0.0% { transform: skew(25deg); }
-		0.1% { transform: skew(0deg); }
-		0.2% { transform: skew(-25deg); }
-		0.3% { transform: skew(0deg); }
+		0.0% {
+			transform: skew(25deg);
+		}
+		0.1% {
+			transform: skew(0deg);
+		}
+		0.2% {
+			transform: skew(-25deg);
+		}
+		0.3% {
+			transform: skew(0deg);
+		}
 	}
 
 	main {

@@ -1,10 +1,10 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Pedestrians = new Rule({
-	name: `Pedestrians`, 
+	name: `Pedestrians`,
 	desc: [
 		`Hitting a pedestrian does Damage = [vehicle Absorption].`,
-		`-1 Absorption after hitting pedestrians = [vehicle Absorption].`,
+		`-1 Absorption after hitting pedestrians = [vehicle Absorption].`
 	]
 })
 

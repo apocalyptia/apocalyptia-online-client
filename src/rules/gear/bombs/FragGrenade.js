@@ -1,18 +1,13 @@
-import Gear from '../../../classes/Gear.js' 
-import Blast from '../attributes/Blast.js' 
-import Pierce from '../attributes/Pierce.js' 
+import Gear from '../../../classes/Gear.js'
+import Blast from '../attributes/Blast.js'
+import Pierce from '../attributes/Pierce.js'
 
 const FragGrenade = new Gear({
 	name: `Frag Grenade`,
 	type: `Bomb`,
-	desc: [
-		`Explosive fragmentation grenade.`,
-	],
+	desc: [`Explosive fragmentation grenade.`],
 	sz: 1,
-	attr: [
-		Blast,
-		Pierce,
-	]
+	attr: [Blast, Pierce]
 })
 FragGrenade.dmg = `3d6`
 FragGrenade.rng = 15

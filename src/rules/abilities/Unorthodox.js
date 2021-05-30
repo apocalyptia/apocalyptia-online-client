@@ -1,12 +1,10 @@
-import Ability from '../../classes/Ability.js' 
-import Skills from '../Skills.js' 
-import Traits from '../Traits.js' 
+import Ability from '../../classes/Ability.js'
+import Skills from '../Skills.js'
+import Traits from '../Traits.js'
 
 const Unorthodox = new Ability({
 	name: `Unorthodox`,
-	desc: [
-		`Pick a new parent Trait for a Skill.`,
-	],
+	desc: [`Pick a new parent Trait for a Skill.`],
 	max: 1,
 	experience: 9,
 	options: (() => {

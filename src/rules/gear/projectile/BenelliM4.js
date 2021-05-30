@@ -1,17 +1,13 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
-import Rapid from '../attributes/Rapid.js' 
-import Scatter from '../attributes/Scatter.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
+import Rapid from '../attributes/Rapid.js'
+import Scatter from '../attributes/Scatter.js'
 
 const BenelliM4 = new Gear({
 	name: `Benelli M4 Shotgun`,
 	type: `Projectile Weapon`,
 	sz: 4,
-	attr: [
-		TwoHanded,
-		Rapid,
-		Scatter,
-	]
+	attr: [TwoHanded, Rapid, Scatter]
 })
 BenelliM4.dmg = 5
 BenelliM4.rng = 15

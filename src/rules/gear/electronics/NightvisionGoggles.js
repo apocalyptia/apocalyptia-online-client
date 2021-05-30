@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const NightvisionGoggles = new Gear({
 	name: `Nightvision Goggles`,
 	type: `Electronics`,
-	desc: [
-		`Ignore Visibility penalties in darkness.`,
-	],
+	desc: [`Ignore Visibility penalties in darkness.`],
 	sz: 1
 })
 NightvisionGoggles.dur = 43200

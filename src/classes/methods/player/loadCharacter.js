@@ -5,7 +5,7 @@ import { get } from 'svelte/store'
 
 export default (player, characterName) => {
 	if (player.characterList.length) {
-		player.characterIndex = player.characterList.findIndex(c => {
+		player.characterIndex = player.characterList.findIndex((c) => {
 			const char = decompressCharacter(c)
 			return char.description.name.value === characterName
 		})

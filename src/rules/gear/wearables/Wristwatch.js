@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Wristwatch = new Gear({
 	name: `Wristwatch`,
-	desc: [
-		`Tells time and +1 Survival(Navigate).`,
-	],
+	desc: [`Tells time and +1 Survival(Navigate).`],
 	sz: 0
 })
 

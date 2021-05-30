@@ -4,8 +4,9 @@ export default async () => {
 			headers: { 'Content-Type': 'application/json' },
 			method: 'DELETE',
 			body: JSON.stringify('')
-		}).then(res => res.json())
+		}).then((res) => res.json())
 		console.log(data)
+	} catch (err) {
+		console.log('something went wrong', err)
 	}
-	catch (err) { console.log('something went wrong', err) }
 }

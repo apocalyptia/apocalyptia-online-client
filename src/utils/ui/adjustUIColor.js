@@ -9,18 +9,18 @@ function adjustUIColor(character) {
 
 	const health = current / max
 
-	let pR = (health < 1) ? (1.5 - health) * 255 : 0
-	let pG = (health < 1) ? (1.5 * health) * 255 : 255
+	let pR = health < 1 ? (1.5 - health) * 255 : 0
+	let pG = health < 1 ? 1.5 * health * 255 : 255
 	let pB = 0
 
-	let sR = (health < 1) ? (1.5 - health) * 25 : 15
-	let sG = (health < 1) ? (1.5 * health) * 25 : 25
+	let sR = health < 1 ? (1.5 - health) * 25 : 15
+	let sG = health < 1 ? 1.5 * health * 25 : 25
 	let sB = 15
 
-	if ((headCurrent < 1) || (torsoCurrent < 1)) {
-		pR = (health * 64) + 192
-		pG = (health * 64) + 192
-		pB = (health * 64) + 192
+	if (headCurrent < 1 || torsoCurrent < 1) {
+		pR = health * 64 + 192
+		pG = health * 64 + 192
+		pB = health * 64 + 192
 		sR = 0
 		sG = 0
 		sB = 0

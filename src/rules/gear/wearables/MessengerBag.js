@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const MessengerBag = new Gear({
 	name: `Messenger Bag`,
-	desc: [
-		`1 round to access.`,
-	],
+	desc: [`1 round to access.`],
 	sz: 1
 })
 MessengerBag.slots = 4

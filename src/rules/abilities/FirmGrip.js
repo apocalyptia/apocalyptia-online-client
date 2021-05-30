@@ -1,11 +1,8 @@
-import Ability from '../../classes/Ability.js' 
+import Ability from '../../classes/Ability.js'
 
 const FirmGrip = new Ability({
 	name: `Firm Grip`,
-	desc: [
-		`Ignore penalty to use 2h weapons in 1h, up to Size = Constitution.`,
-		`Ignore Drop effect from Arm Damage.`,
-	],
+	desc: [`Ignore penalty to use 2h weapons in 1h, up to Size = Constitution.`, `Ignore Drop effect from Arm Damage.`],
 	max: 1,
 	experience: 15
 })

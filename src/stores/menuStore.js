@@ -4,30 +4,30 @@ const menu = {
 	open: false,
 	links: [
 		{
-			'name': 'Character',
-			'url': '/character'
+			name: 'Character',
+			url: '/character'
 		},
 		{
-			'name': 'Manual',
-			'url': '/manual'
+			name: 'Manual',
+			url: '/manual'
 		},
 		{
-			'name': 'Roller',
-			'url': '/roller'
+			name: 'Roller',
+			url: '/roller'
 		},
 		// {
 		// 	'name': 'Campaign',
 		// 	'url': '/campaign'
 		// },
 		{
-			'name': 'Map',
-			'url': '/map'
+			name: 'Map',
+			url: '/map'
 		}
 	],
-    toggle() {
-        this.open = !this.open
-        return this
-    }
+	toggle() {
+		this.open = !this.open
+		return this
+	}
 }
 
 export default writable(menu)

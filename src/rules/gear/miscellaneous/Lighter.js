@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Lighter = new Gear({
 	name: `Lighter`,
-	desc: [
-		`Makes a small fire.`,
-		`1yd radius light.`,
-	],
+	desc: [`Makes a small fire.`, `1yd radius light.`],
 	sz: 0
 })
 

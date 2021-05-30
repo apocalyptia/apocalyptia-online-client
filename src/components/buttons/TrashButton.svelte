@@ -9,7 +9,6 @@
 	}
 </script>
 
-
-<button class='btn-box trash-btn crimson-btn square-btn' on:click={trashItem}>
-	<div class='btn-icon'>X</div>
+<button class="btn-box trash-btn crimson-btn square-btn" on:click={trashItem}>
+	<div class="btn-icon">X</div>
 </button>

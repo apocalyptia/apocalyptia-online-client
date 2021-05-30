@@ -6,7 +6,8 @@ export default (map, click) => {
 				map.contents[r][c].y <= click.y &&
 				map.contents[r][c].w >= click.x &&
 				map.contents[r][c].h >= click.y
-			) return { r, c }
+			)
+				return { r, c }
 		}
 	}
 }

@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Poncho = new Gear({
 	name: `Poncho`,
-	desc: [
-		`Cold Resistance.`,
-		`Waterproof.`,
-	],
+	desc: [`Cold Resistance.`, `Waterproof.`],
 	sz: 0
 })
 

@@ -1,4 +1,4 @@
-import Property from '../../classes/Property.js' 
+import Property from '../../classes/Property.js'
 
 const locations = {
 	head: {
@@ -32,7 +32,7 @@ const Health = new Property({
 	desc: [
 		`Head, Arms, and Legs = ${locations.head.formula}`,
 		`Torso = ${locations.torso.formula}`,
-		`Health is a measure of how much Damage your body can withstand.`,
+		`Health is a measure of how much Damage your body can withstand.`
 	],
 	type: `Property`
 })

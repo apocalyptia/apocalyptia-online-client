@@ -1,16 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import Blind from '../../status/Blind.js' 
+import Gear from '../../../classes/Gear.js'
+import Blind from '../../status/Blind.js'
 
 const SmokeGrenade = new Gear({
 	name: `Smoke Grenade`,
 	type: `Bomb`,
-	desc: [
-		`Visibility denial grenade.`,
-	],
+	desc: [`Visibility denial grenade.`],
 	sz: 1,
-	attr: [
-		Blind,
-	]
+	attr: [Blind]
 })
 SmokeGrenade.dmg = 0
 SmokeGrenade.rng = `1yd/rnd`

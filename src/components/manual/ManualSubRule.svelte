@@ -1,20 +1,18 @@
 <script>
-    export let subrule
+	export let subrule
 </script>
 
-
-<details class='subrule-details'>
-	<summary class='sub-name'>{subrule.name}</summary>
-	<div class='subrule-body'>
+<details class="subrule-details">
+	<summary class="sub-name">{subrule.name}</summary>
+	<div class="subrule-body">
 		{#each subrule.desc as sub_desc}
 			<p>{sub_desc}</p>
 		{/each}
 	</div>
 </details>
 
-
 <style>
-    .subrule-details {
+	.subrule-details {
 		margin: var(--s100);
 	}
 	.sub-name {

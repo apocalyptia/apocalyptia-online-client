@@ -1,11 +1,9 @@
-import Skill from '../../classes/Skill.js' 
-import Specialty from '../../classes/Specialty.js' 
+import Skill from '../../classes/Skill.js'
+import Specialty from '../../classes/Specialty.js'
 
 const Medicine = new Skill({
 	name: `Medicine`,
-	desc: [
-		`Diagnosing and treating wounds and Diseases.`,
-	],
+	desc: [`Diagnosing and treating wounds and Diseases.`],
 	type: `Skill`,
 	parent: `Brains`,
 	diff: `Damage`,
@@ -16,7 +14,7 @@ const Medicine = new Skill({
 			desc: [
 				`Stop a person from Bleeding for a number of hours equal to your roll.`,
 				`Inflict an additional 1 Damage on a Botch.`,
-				`Takes 1 round per Damage.`,
+				`Takes 1 round per Damage.`
 			]
 		}),
 		surgery: new Specialty({
@@ -25,7 +23,7 @@ const Medicine = new Skill({
 			desc: [
 				`Stop a person from Bleeding as long as they do not take any more Damage.`,
 				`Inflict an additional d6 Damage on a Botch.`,
-				`Takes [Damage x 20] minutes.`,
+				`Takes [Damage x 20] minutes.`
 			]
 		})
 	}

@@ -1,4 +1,4 @@
-import Property from '../../classes/Property.js' 
+import Property from '../../classes/Property.js'
 
 const formula = `( Brains + Constitution ) / 2`
 

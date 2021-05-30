@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const HolyBook = new Gear({
 	name: `Holy Book`,
-	desc: [
-		`-1 Psyche`,
-	],
+	desc: [`-1 Psyche`],
 	sz: 1,
 	type: `Document`
 })

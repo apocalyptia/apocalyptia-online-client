@@ -8,19 +8,17 @@
 		selectedCharacter = event.target.textContent
 	}
 
-	$: characterList = $playerStore.characterList.map(c => {
+	$: characterList = $playerStore.characterList.map((c) => {
 		return JSON.parse(c)
 	})
 </script>
 
-
-<div class='character-storage-list-window'>
+<div class="character-storage-list-window">
 	{#if characterList.length}
-		<div class='character-storage-list'>
+		<div class="character-storage-list">
 			{#each characterList as c, i}
-				<div class='stored-character'>
-					<button class='character-name'
-						on:click={(event) => selectCharacter(event)}>
+				<div class="stored-character">
+					<button class="character-name" on:click={(event) => selectCharacter(event)}>
 						{i}: {JSON.parse(c).description.name.value}
 					</button>
 					<TrashButton on:click={() => $playerStore.deleteCharacter(selectedCharacter)} />
@@ -29,7 +27,6 @@
 		</div>
 	{/if}
 </div>
-
 
 <style>
 	.character-storage-list-window {

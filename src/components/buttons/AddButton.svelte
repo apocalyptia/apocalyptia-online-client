@@ -1,7 +1,6 @@
-<button class='btn-box add-btn green-btn square-btn'>
-	<div class='btn-icon'>+</div>
+<button class="btn-box add-btn green-btn square-btn">
+	<div class="btn-icon">+</div>
 </button>
-
 
 <style>
 	.add-btn {

@@ -1,10 +1,8 @@
-import Rule from '../../../classes/Rule.js' 
+import Rule from '../../../classes/Rule.js'
 
 const Camo = new Rule({
 	name: `Camo`,
-	desc: [
-		`+1 Stealth per Body Part when in a given Biome.`,
-	]
+	desc: [`+1 Stealth per Body Part when in a given Biome.`]
 })
 
 export default Camo

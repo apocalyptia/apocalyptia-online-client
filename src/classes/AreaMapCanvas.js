@@ -9,7 +9,7 @@ export default class AreaMapCanvas {
 		gridSize = 20,
 		defaultSquare = 50,
 		currentSquare = 50,
-		dashPattern = [2,2],
+		dashPattern = [2, 2],
 		color = 'rgb(0,255,0)'
 	) {
 		this.canvas = canvas
@@ -35,17 +35,15 @@ export default class AreaMapCanvas {
 			for (let r = 0; r < this.gridSize; r++) {
 				this.contents.push([])
 				for (let c = 0; c < this.gridSize; c++) {
-					this.contents[r].push(
-						[
-							{
-								x: c * this.currentSquare,
-								y: r * this.currentSquare,
-								w: this.currentSquare,
-								h: this.currentSquare,
-								m: false
-							}
-						]
-					)
+					this.contents[r].push([
+						{
+							x: c * this.currentSquare,
+							y: r * this.currentSquare,
+							w: this.currentSquare,
+							h: this.currentSquare,
+							m: false
+						}
+					])
 				}
 			}
 			return this
@@ -64,7 +62,7 @@ export default class AreaMapCanvas {
 			return this
 		}
 		this.mark = (r, c) => {
-			this.contents[r][c].m =! this.contents[r][c].m
+			this.contents[r][c].m = !this.contents[r][c].m
 			return this
 		}
 	}

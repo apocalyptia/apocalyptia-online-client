@@ -1,6 +1,6 @@
 import Creation from '/src/rules/Creation.js'
 
-export default (username='test') => {
+export default (username = 'test') => {
 	const description = {}
 	for (const desc of Creation.description.list) {
 		const descKey = desc.name.toLowerCase()

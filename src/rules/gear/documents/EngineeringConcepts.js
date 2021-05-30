@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const EngineeringConcepts = new Gear({
 	name: `Engineering Concepts`,
-	desc: [
-		`+1 Build`,
-	],
+	desc: [`+1 Build`],
 	sz: 1,
 	type: `Document`
 })

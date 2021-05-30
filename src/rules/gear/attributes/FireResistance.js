@@ -1,10 +1,8 @@
-import Rule from '../../../classes/Rule.js' 
+import Rule from '../../../classes/Rule.js'
 
 const FireResistance = new Rule({
 	name: `Fire Resistance`,
-	desc: [
-		`Armor Absorption reduces Fire Damage.`,
-	]
+	desc: [`Armor Absorption reduces Fire Damage.`]
 })
 
 export default FireResistance

@@ -1,8 +1,8 @@
-import Rule from '../../classes/Rule.js' 
-import Chase from './subrules/Chase.js' 
+import Rule from '../../classes/Rule.js'
+import Chase from './subrules/Chase.js'
 
 const Movement = new Rule({
-	name: `Movement`, 
+	name: `Movement`,
 	desc: [
 		`On your turn, you have an amount of Speed equal to your [Agility x3].`,
 		`You can spend Speed to move in any of the ways listed below in any combination.`,
@@ -12,11 +12,9 @@ const Movement = new Rule({
 		` 3) Climb = 1yd / 3 Speed.`,
 		` 4) Swim = 1yd / 6 Speed. Unstable.`,
 		` 5) Stand up = 1 Speed.`,
-		` 6) Drop Prone = 0 Speed.`,
+		` 6) Drop Prone = 0 Speed.`
 	]
 })
-Movement.subrules = [
-	Chase,
-]
+Movement.subrules = [Chase]
 
 export default Movement

@@ -1,13 +1,11 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
 
 const RecurveBow = new Gear({
 	name: `Recurve Bow`,
 	type: `Projectile Weapon`,
 	sz: 2,
-	attr: [
-		TwoHanded,
-	]
+	attr: [TwoHanded]
 })
 RecurveBow.dmg = 1
 RecurveBow.rng = 10

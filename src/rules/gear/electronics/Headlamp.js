@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Headlamp = new Gear({
 	name: `Headlamp`,
 	type: `Electronics`,
-	desc: [
-		`3yd light. Hands free.`,
-	],
+	desc: [`3yd light. Hands free.`],
 	sz: 0
 })
 Headlamp.dur = 3600

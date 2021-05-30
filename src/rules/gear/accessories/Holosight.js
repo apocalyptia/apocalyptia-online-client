@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Holosight = new Gear({
 	name: `Holosight`,
 	type: `Accessory`,
-	desc: [
-		`+1 to Projectile Attacks.`,
-	],
+	desc: [`+1 to Projectile Attacks.`],
 	sz: 0
 })
 Holosight.dur = 28800

@@ -1,13 +1,11 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
 
 const BarnettCrossbow = new Gear({
 	name: `Barnett Crossbow`,
 	type: `Projectile Weapon`,
 	sz: 3,
-	attr: [
-		TwoHanded,
-	]
+	attr: [TwoHanded]
 })
 BarnettCrossbow.dmg = 3
 BarnettCrossbow.rng = 15

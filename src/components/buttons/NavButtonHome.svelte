@@ -4,11 +4,9 @@
 	}
 </script>
 
-
-<button on:click={home} class='home-btn btn-box'>
-	<div class='home-icon-box'>Home</div>
+<button on:click={home} class="home-btn btn-box">
+	<div class="home-icon-box">Home</div>
 </button>
-
 
 <style>
 	button {

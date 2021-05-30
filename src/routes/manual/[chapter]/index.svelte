@@ -1,4 +1,4 @@
-<script context='module'>
+<script context="module">
 	export async function load({ page }) {
 		const { chapter } = page.params
 		return {
@@ -9,7 +9,6 @@
 	}
 </script>
 
-
 <script>
 	import Rules from '/src/rules/Rules.js'
 	import capitalize from '/src/utils/text/capitalize.js'
@@ -18,16 +17,15 @@
 	export let chapter
 </script>
 
-
-<div class='page-body'>
+<div class="page-body">
 	{#each Object.keys(Rules[chapter]) as section}
-		<div class='manual-btn'>
+		<div class="manual-btn">
 			{#if chapter === 'gear'}
-				<a href={urlFormat(`/manual/${chapter}/${section}`)} class='link-btn'>
+				<a href={urlFormat(`/manual/${chapter}/${section}`)} class="link-btn">
 					{capitalize(section)}
 				</a>
 			{:else}
-				<a href={urlFormat(`/manual/${chapter}/${section}`)} class='link-btn'>
+				<a href={urlFormat(`/manual/${chapter}/${section}`)} class="link-btn">
 					{Rules[chapter][section].name}
 				</a>
 			{/if}

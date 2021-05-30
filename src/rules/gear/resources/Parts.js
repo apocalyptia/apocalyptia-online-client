@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Parts = new Gear({
 	name: `Parts`,
 	type: `Resource`,
-	desc: [
-		`Scrap used for Build and Science(Tech).`,
-	],
+	desc: [`Scrap used for Build and Science(Tech).`],
 	sz: 1
 })
 

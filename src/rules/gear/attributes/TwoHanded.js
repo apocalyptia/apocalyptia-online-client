@@ -1,11 +1,8 @@
-import Rule from '../../../classes/Rule.js' 
+import Rule from '../../../classes/Rule.js'
 
 const TwoHanded = new Rule({
 	name: `2h`,
-	desc: [
-		`Normally used two-handed.`,
-		`Can be used one-handed at a penalty = Size.`,
-	]
+	desc: [`Normally used two-handed.`, `Can be used one-handed at a penalty = Size.`]
 })
 
 export default TwoHanded

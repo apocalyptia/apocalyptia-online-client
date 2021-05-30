@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Notebook = new Gear({
 	name: `Notebook`,
-	desc: [
-		`100 pages of paper with a wire binding.`,
-	],
+	desc: [`100 pages of paper with a wire binding.`],
 	sz: 1
 })
 

@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Dice = new Rule({
 	name: `Dice`,
@@ -9,7 +9,7 @@ const Dice = new Rule({
 		`Many factors may further modify the final Result, such as special equipment that grants a bonus or unfavorable circumstances which impose a penalty.`,
 		`It is the Narrator's job to decide which modifiers will affect your roll and what their magnitude will be.`,
 		`If you feel that your Narrator is not taking some relevant modifiers into consideration, you should make your case briefly before rolling and then defer to their judgment (at least until the session is over).`,
-		`[d6 Roll + Trait or Skill Score ± Modifiers] = Result`,
+		`[d6 Roll + Trait or Skill Score ± Modifiers] = Result`
 	]
 })
 

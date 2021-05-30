@@ -5,11 +5,10 @@
 </script>
 
 {#each $menuStore.links as link}
-	<a href={link.url} class='link-btn {borders ? "" : "borderless"}'>
+	<a href={link.url} class="link-btn {borders ? '' : 'borderless'}">
 		{link.name}
 	</a>
 {/each}
-
 
 <style>
 	.borderless {

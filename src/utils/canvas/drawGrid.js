@@ -1,8 +1,7 @@
 export default (map) => {
-
 	// Clear canvas
 	map.context.beginPath()
-	map.context.fillRect(0, 0, map.canvas.width,map.canvas.height)
+	map.context.fillRect(0, 0, map.canvas.width, map.canvas.height)
 	map.context.stroke()
 
 	// Resize canvas to current map magnification
@@ -16,7 +15,7 @@ export default (map) => {
 
 	// Draw rows
 	for (let r = 0; r < map.gridSize; r++) {
-		const rPoint = (r * map.currentSquare)
+		const rPoint = r * map.currentSquare
 		map.context.beginPath()
 		map.context.moveTo(0, rPoint)
 		map.context.lineTo(map.pixelSize(), rPoint)
@@ -39,5 +38,4 @@ export default (map) => {
 	map.context.moveTo(map.pixelSize(), 0)
 	map.context.lineTo(map.pixelSize(), map.pixelSize())
 	map.context.stroke()
-
 }

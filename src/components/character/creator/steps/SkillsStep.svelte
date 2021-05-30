@@ -8,10 +8,10 @@
 	import characterStore from '/src/stores/characterStore.js'
 	import { onMount } from 'svelte'
 
-	const skillGroups = Object.values($characterStore.traits).map(t => {
+	const skillGroups = Object.values($characterStore.traits).map((t) => {
 		return {
 			name: t.name,
-			list: Object.values($characterStore.skills).filter(s => s.parent === t.name),
+			list: Object.values($characterStore.skills).filter((s) => s.parent === t.name),
 			max: t.score
 		}
 	})
@@ -37,47 +37,42 @@
 	})
 </script>
 
-
-<div class='skills-step-page'>
+<div class="skills-step-page">
 	<fieldset>
 		<PageHeader chapter={'Skills'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.skills.desc} />
 		<PointsRemaining points={$characterStore.skillsRemaining} />
-			{#each skillGroups as group}
-				<div class='item-block'>
-					<details class='skills-details'>
-						<summary>
-							<h2>{group.name} Skills</h2>
-						</summary>
-						<div class='details-content'>
-							<div class='max-score'>
-								Max Score: {group.max}
-							</div>
-							{#each group.list as skill}
-								<div class='stat-range'>
-									<h3>{skill.name}</h3>
-									<Slider
-										name={skill.name}
-										type={'skill'}
-										min=0
-										max={$characterStore.maxTraits}
-										bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
-										func={() => updateSkill(skill)}
-										indicator=true
-									/>
-								</div>
-							{/each}
+		{#each skillGroups as group}
+			<div class="item-block">
+				<details class="skills-details">
+					<summary>
+						<h2>{group.name} Skills</h2>
+					</summary>
+					<div class="details-content">
+						<div class="max-score">
+							Max Score: {group.max}
 						</div>
-					</details>
-				</div>
-			{/each}
-			<ResetAndRandomButtonRow
-				reset={() => resetSkills()}
-				random={() => randomSkills()}
-			/>
+						{#each group.list as skill}
+							<div class="stat-range">
+								<h3>{skill.name}</h3>
+								<Slider
+									name={skill.name}
+									type={'skill'}
+									min="0"
+									max={$characterStore.maxTraits}
+									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
+									func={() => updateSkill(skill)}
+									indicator="true"
+								/>
+							</div>
+						{/each}
+					</div>
+				</details>
+			</div>
+		{/each}
+		<ResetAndRandomButtonRow reset={() => resetSkills()} random={() => randomSkills()} />
 	</fieldset>
 </div>
-
 
 <style>
 	.item-block {

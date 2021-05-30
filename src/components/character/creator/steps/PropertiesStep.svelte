@@ -14,14 +14,13 @@
 	})
 </script>
 
-
-<div class='properties-step-page'>
+<div class="properties-step-page">
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.properties.desc} />
 		<PropertiesBlock />
 		<PropertiesFormulae />
-		<div class='section-card'>
+		<div class="section-card">
 			<h2>Health</h2>
 			<HealthSection mode={'readonly'} />
 		</div>

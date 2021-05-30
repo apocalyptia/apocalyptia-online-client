@@ -1,10 +1,8 @@
-import Rule from '../../../classes/Rule.js' 
+import Rule from '../../../classes/Rule.js'
 
 const Slow = new Rule({
 	name: `Slow`,
-	desc: [
-		`Penalty to Speed = Size.`,
-	]
+	desc: [`Penalty to Speed = Size.`]
 })
 
 export default Slow

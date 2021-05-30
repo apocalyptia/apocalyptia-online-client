@@ -5,7 +5,7 @@ import { get } from 'svelte/store'
 
 export default (player, characterName) => {
 	if (player.characterList.length) {
-		player.characterList = player.characterList.filter(c => {
+		player.characterList = player.characterList.filter((c) => {
 			const char = decompressCharacter(c)
 			char.description.name.value != characterName
 		})
@@ -13,8 +13,7 @@ export default (player, characterName) => {
 		let character = get(characterStore)
 		if (player.characterList.length) {
 			character = decompressCharacter(player.characterList[player.characterIndex])
-		}
-		else {
+		} else {
 			character = null
 		}
 		window.localStorage.setItem(player.email, JSON.stringify(player))

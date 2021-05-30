@@ -2,9 +2,7 @@
 	import characterStore from '/src/stores/characterStore.js'
 </script>
 
-
-<textarea class='sheet-notes-block' wrap='soft' bind:value={$characterStore.meta.notes} />
-
+<textarea class="sheet-notes-block" wrap="soft" bind:value={$characterStore.meta.notes} />
 
 <style>
 	.sheet-notes-block {

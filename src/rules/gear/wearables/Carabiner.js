@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Carabiner = new Gear({
 	name: `Carabiner`,
-	desc: [
-		`+1 Athletics(Climb and Rappel).`,
-		`Holds 50Sz.`,
-	],
+	desc: [`+1 Athletics(Climb and Rappel).`, `Holds 50Sz.`],
 	sz: 0
 })
 

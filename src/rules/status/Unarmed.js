@@ -1,10 +1,10 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Unarmed = new Rule({
 	name: `Unarmed`,
 	desc: [
 		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2] (always round down).`,
-		`Absorption is not depleted.`,
+		`Absorption is not depleted.`
 	],
 	type: `Status`
 })

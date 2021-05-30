@@ -1,4 +1,4 @@
-import Ability from '../../classes/Ability.js' 
+import Ability from '../../classes/Ability.js'
 
 const EfficientWork = new Ability({
 	name: `Efficient Work`,
@@ -8,14 +8,7 @@ const EfficientWork = new Ability({
 	],
 	max: 1,
 	experience: 6,
-	options: [
-		`Build`,
-		`Larceny`,
-		`Medicine`,
-		`Science`,
-		`Survival`,
-		`Tame`
-	]
+	options: [`Build`, `Larceny`, `Medicine`, `Science`, `Survival`, `Tame`]
 })
 
 export default EfficientWork

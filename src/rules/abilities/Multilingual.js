@@ -1,14 +1,12 @@
-import Ability from '../../classes/Ability.js' 
-import LanguageList from '../lists/LanguageList.js' 
+import Ability from '../../classes/Ability.js'
+import LanguageList from '../lists/LanguageList.js'
 
 const Multilingual = new Ability({
 	name: `Multilingual`,
-	desc: [
-		`Learn a new form of communication.`,
-	],
+	desc: [`Learn a new form of communication.`],
 	max: 1,
 	experience: 6,
-	options: [ ...LanguageList ]
+	options: [...LanguageList]
 })
 
 export default Multilingual

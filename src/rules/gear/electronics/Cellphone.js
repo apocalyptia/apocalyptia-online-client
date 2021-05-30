@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Cellphone = new Gear({
 	name: `Cellphone`,
 	type: `Electronics`,
-	desc: [
-		`1yd light, camera, remote control.`,
-	],
+	desc: [`1yd light, camera, remote control.`],
 	sz: 0
 })
 Cellphone.dur = 3600

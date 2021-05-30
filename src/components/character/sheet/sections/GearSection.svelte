@@ -5,7 +5,6 @@
 	export let mode = 'readonly'
 </script>
 
-
 {#each Object.values($characterStore.gear) as category}
 	<GearCategory {mode} {category} />
 {/each}

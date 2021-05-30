@@ -3,7 +3,6 @@
 
 // export default writable(new AreaMapDOM())
 
-
 import AreaMapCanvas from '/src/classes/AreaMapCanvas.js'
 import { writable } from 'svelte/store'
 

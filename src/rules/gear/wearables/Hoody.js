@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Hoody = new Gear({
 	name: `Hoody`,
-	desc: [
-		`Cold Resistance.`,
-	],
+	desc: [`Cold Resistance.`],
 	sz: 0
 })
 Hoody.slots = 2

@@ -19,14 +19,11 @@
 	}
 </script>
 
-
-<button on:click={next}
-	class='next-btn btn-box { $characterStore.proceed ? `` : `crimson-btn` }'>
-	<div class='btn-icon'>
-		{ @html $characterStore.proceed ? `&gt;` : `X` }
+<button on:click={next} class="next-btn btn-box {$characterStore.proceed ? `` : `crimson-btn`}">
+	<div class="btn-icon">
+		{@html $characterStore.proceed ? `&gt;` : `X`}
 	</div>
 </button>
-
 
 <style>
 	button {

@@ -1,21 +1,14 @@
-import Rule from '../../classes/Rule.js' 
-import Table from '../../classes/Table.js' 
+import Rule from '../../classes/Rule.js'
+import Table from '../../classes/Table.js'
 
 const CalledShot = new Rule({
-	name: `Called Shot`, 
-	desc: [
-		`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`,
-	],
+	name: `Called Shot`,
+	desc: [`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
 	type: `Offensive`
 })
 
 class CalledShotTarget {
-	constructor({
-		roll,
-		name,
-		penalty,
-		effect
-	}) {
+	constructor({ roll, name, penalty, effect }) {
 		this.roll = roll
 		this.name = name
 		this.penalty = penalty
@@ -25,12 +18,7 @@ class CalledShotTarget {
 
 CalledShot.table = new Table({
 	name: `Called Shot Table`,
-	headers: [
-		`d6`,
-		`Part`,
-		`Penalty`,
-		`Effect`,
-	],
+	headers: [`d6`, `Part`, `Penalty`, `Effect`],
 	contents: [
 		new CalledShotTarget({
 			roll: 6,
@@ -68,7 +56,7 @@ CalledShot.table = new Table({
 			name: `R Leg`,
 			penalty: `-1 Projectile`,
 			effect: `Fall Prone.`
-		}),
+		})
 	],
 	widths: [5, 15, 20, 50]
 })

@@ -10,28 +10,18 @@
 	import creationStore from '/src/stores/creationStore.js'
 	import { onMount } from 'svelte'
 
-	const creationSteps = [
-		TraitsStep,
-		SkillsStep,
-		PropertiesStep,
-		AbilitiesStep,
-		GearStep,
-		DescriptionStep,
-		FinalizeStep
-	]
+	const creationSteps = [TraitsStep, SkillsStep, PropertiesStep, AbilitiesStep, GearStep, DescriptionStep, FinalizeStep]
 
-	onMount(_ => {
+	onMount((_) => {
 		$creationStore.step = 0
 		$creationStore.numberOfSteps = creationSteps.length - 1
 	})
 </script>
 
-
-<div id='character-creator' class='page-body'>
+<div id="character-creator" class="page-body">
 	<svelte:component this={creationSteps[$creationStore.step]} />
 </div>
 <NavBar />
-
 
 <style>
 	#character-creator {

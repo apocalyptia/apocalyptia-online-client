@@ -1,4 +1,4 @@
-import Rule from '../../../classes/Rule.js' 
+import Rule from '../../../classes/Rule.js'
 
 const Auto = new Rule({
 	name: `Auto`,
@@ -6,7 +6,7 @@ const Auto = new Rule({
 		`Choose either Burst or Spray.`,
 		`Burst: +3 Projectile Attack vs one target.`,
 		`Spray: 3yd Blast Attack.`,
-		`Uses 10 bullets.`,
+		`Uses 10 bullets.`
 	]
 })
 

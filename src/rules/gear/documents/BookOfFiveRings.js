@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const BookOfFiveRings = new Gear({
 	name: `Tao of Jeet Kune Do`,
-	desc: [
-		`+1 Melee`,
-	],
+	desc: [`+1 Melee`],
 	sz: 1,
 	type: `Document`
 })

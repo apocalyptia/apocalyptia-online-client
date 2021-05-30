@@ -3,7 +3,7 @@
 	import mapStore from '/src/stores/mapStore.js'
 	import { onMount } from 'svelte'
 
-	onMount(() => $mapStore = $mapStore.fillContents())
+	onMount(() => ($mapStore = $mapStore.fillContents()))
 
 	let xPerspective = 50
 	let yPerspective = 50
@@ -15,8 +15,7 @@
 	function zoomMap(zoom) {
 		if ($mapStore.magnification > 0.25 && zoom === 'out') {
 			$mapStore.magnification -= 0.25
-		}
-		else if ($mapStore.magnification < 3 && zoom === 'in') {
+		} else if ($mapStore.magnification < 3 && zoom === 'in') {
 			$mapStore.magnification += 0.25
 		}
 		$mapStore.currentSquare = Math.round($mapStore.startingSquare * $mapStore.magnification)
@@ -24,7 +23,7 @@
 		let mapFrame = document.querySelector('.map-frame')
 		console.log(mapFrame.offsetHeight)
 		console.log(mapFrame.offsetWidth)
-		mapFrame.scrollBy((mapFrame.offsetWidth / 4), (mapFrame.offsetHeight / 4))
+		mapFrame.scrollBy(mapFrame.offsetWidth / 4, mapFrame.offsetHeight / 4)
 	}
 
 	function changePerspective() {
@@ -36,22 +35,25 @@
 	}
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
 <div class="map-frame">
-	<div id='guy' class='guy'></div>
-	<div id="div1" class="map-grid"
+	<div id="guy" class="guy" />
+	<div
+		id="div1"
+		class="map-grid"
 		style="height: {$mapStore.pixelSize()}px; width: {$mapStore.pixelSize()}px; perspectiveOrigin: {perspective};"
-		on:scroll={console.log(document.querySelector('.map-frame').offsetHeight)}>
-		<div id="div2" class='map-box'>
+		on:scroll={console.log(document.querySelector('.map-frame').offsetHeight)}
+	>
+		<div id="div2" class="map-box">
 			{#each $mapStore.contents as row, ri}
 				<div class="grid-row">
 					{#each row as col, ci}
-						<div class="grid-cell {$mapStore.contents[ri][ci].m ? 'red' : ''}"
-							on:click={() => $mapStore = $mapStore.mark(ri, ci)}>
-						</div>
+						<div
+							class="grid-cell {$mapStore.contents[ri][ci].m ? 'red' : ''}"
+							on:click={() => ($mapStore = $mapStore.mark(ri, ci))}
+						/>
 					{/each}
 				</div>
 			{/each}
@@ -61,46 +63,30 @@
 <div class="view-control-box">
 	<div>X-Perspective: {xPerspective}</div>
 	<Slider
-		name='X-perspective'
-		min=0
-		max=100
-		step=1
+		name="X-perspective"
+		min="0"
+		max="100"
+		step="1"
 		bind:value={xPerspective}
 		func={changePerspective}
-		indicator=false
+		indicator="false"
 	/>
-	<br>
+	<br />
 	<div>Y-Perspective: {yPerspective}</div>
 	<Slider
-		name='Y-perspective'
-		min=0
-		max=100
-		step=1
+		name="Y-perspective"
+		min="0"
+		max="100"
+		step="1"
 		bind:value={yPerspective}
 		func={changePerspective}
-		indicator=false
+		indicator="false"
 	/>
-	<br>
+	<br />
 	<div>X-Axis: {xRotation}</div>
-	<Slider
-		name='X-axis'
-		min=0
-		max=89
-		step=1
-		bind:value={xRotation}
-		func={rotate3D}
-		indicator=false
-	/>
+	<Slider name="X-axis" min="0" max="89" step="1" bind:value={xRotation} func={rotate3D} indicator="false" />
 	<div>Z-Axis: {zRotation}</div>
-	<Slider
-		name='Z-axis'
-		min='-180'
-		max=180
-		step=1
-		bind:value={zRotation}
-		func={rotate3D}
-		indicator=false
-	/>
+	<Slider name="Z-axis" min="-180" max="180" step="1" bind:value={zRotation} func={rotate3D} indicator="false" />
 	<div class="zoom-indicator">
 		Zoom {$mapStore.magnification * 100}%
 	</div>
@@ -109,7 +95,6 @@
 		<button on:click={() => zoomMap('out')}>-</button>
 	</div>
 </div>
-
 
 <style>
 	#div2 {

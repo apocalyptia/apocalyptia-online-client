@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Hypothermia = new Rule({
 	name: `Hypothermia`,
@@ -6,7 +6,7 @@ const Hypothermia = new Rule({
 		`Body temperature must be maintained to avoid Hypothermia.`,
 		`1 Pain per hour of Hypothermia.`,
 		`Reduce penalty by 1 per hour of warmth.`,
-		`Hypothermia for hours = [Constitution] is lethal.`,
+		`Hypothermia for hours = [Constitution] is lethal.`
 	]
 })
 

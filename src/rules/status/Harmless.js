@@ -1,10 +1,8 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Harmless = new Rule({
 	name: `Harmless`,
-	desc: [
-		`You cannot Attack.`,
-	],
+	desc: [`You cannot Attack.`],
 	type: `Status`
 })
 

@@ -4,10 +4,8 @@
 	import MainMenu from '/src/components/home/MainMenu.svelte'
 </script>
 
-
-
 <!-- {#if $playerStore.loggedIn} -->
-	<MainMenu />
+<MainMenu />
 <!-- {:else}
 	<UserLogin />
 {/if} -->

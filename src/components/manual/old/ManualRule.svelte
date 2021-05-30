@@ -4,10 +4,9 @@
 	export let rule
 </script>
 
-
 <details bind:open={rule.visible}>
 	<summary>
-		{rule.name}{typeof rule === "Skill" ? " Skill" : "" }
+		{rule.name}{typeof rule === 'Skill' ? ' Skill' : ''}
 	</summary>
 	<ManualArticle {rule} />
 </details>

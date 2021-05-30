@@ -1,15 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
-import Rapid from '../attributes/Rapid.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
+import Rapid from '../attributes/Rapid.js'
 
 const NorincoSKS = new Gear({
 	name: `Norinco SKS Rifle`,
 	type: `Projectile Weapon`,
 	sz: 4,
-	attr: [
-		TwoHanded,
-		Rapid,
-	]
+	attr: [TwoHanded, Rapid]
 })
 NorincoSKS.dmg = 4
 NorincoSKS.rng = 50

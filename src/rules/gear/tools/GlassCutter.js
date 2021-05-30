@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const GlassCutter = new Gear({
 	name: `Glass Cutter`,
-	desc: [
-		`Cuts glass quietly.`,
-	],
+	desc: [`Cuts glass quietly.`],
 	sz: 0
 })
 

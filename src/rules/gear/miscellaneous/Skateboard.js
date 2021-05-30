@@ -1,12 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Skateboard = new Gear({
 	name: `Skateboard`,
-	desc: [
-		`Athletics 6#.`,
-		`Speed x3.`,
-		`Fail:Prone.`,
-	],
+	desc: [`Athletics 6#.`, `Speed x3.`, `Fail:Prone.`],
 	sz: 2
 })
 

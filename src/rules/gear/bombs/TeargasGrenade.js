@@ -1,20 +1,14 @@
-import Gear from '../../../classes/Gear.js' 
-import Blind from '../../status/Blind.js' 
-import Stun from '../../status/Stun.js' 
-import Asphyxiation from '../../needs/Asphyxiation.js' 
+import Gear from '../../../classes/Gear.js'
+import Blind from '../../status/Blind.js'
+import Stun from '../../status/Stun.js'
+import Asphyxiation from '../../needs/Asphyxiation.js'
 
 const TeargasGrenade = new Gear({
 	name: `Teargas Grenade`,
 	type: `Bomb`,
-	desc: [
-		`Chemical irritant grenade.`,
-	],
+	desc: [`Chemical irritant grenade.`],
 	sz: 1,
-	attr: [
-		Blind,
-		Stun,
-		Asphyxiation,
-	]
+	attr: [Blind, Stun, Asphyxiation]
 })
 TeargasGrenade.dmg = 1
 TeargasGrenade.rng = `1yd/rnd`

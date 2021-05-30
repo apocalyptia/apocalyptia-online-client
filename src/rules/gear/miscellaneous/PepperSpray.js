@@ -1,4 +1,4 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const PepperSpray = new Gear({
 	name: `Pepper Spray`,
@@ -9,7 +9,7 @@ const PepperSpray = new Gear({
 		`Takes 1 round for Pain to start.`,
 		`Pain lasts for d6x5 minutes.`,
 		`3 uses.`,
-		`Toxin.`,
+		`Toxin.`
 	],
 	sz: 0
 })

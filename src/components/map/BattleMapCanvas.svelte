@@ -18,27 +18,28 @@
 	})
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
-<div class='canvas-frame'>
+<div class="canvas-frame">
 	<svelte:component this={Canvas} />
 </div>
-<div class='slide-container'>
-	-<Slider min=.1 max=2 step=.1
+<div class="slide-container">
+	-<Slider
+		min=".1"
+		max="2"
+		step=".1"
 		bind:value={$mapStore.magnification}
-		func={() => $mapStore = $mapStore.redraw()}
+		func={() => ($mapStore = $mapStore.redraw())}
 	/>+
 </div>
-
 
 <style>
 	.canvas-frame {
 		border: 3px solid var(--pri-color);
 		bottom: 0;
 		left: 0;
-		opacity: .6;
+		opacity: 0.6;
 		overflow: scroll;
 		position: absolute;
 		right: 0;

@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Difficulty = new Rule({
 	name: `Difficulty`,
@@ -12,7 +12,7 @@ const Difficulty = new Rule({
 		`9# = Demanding`,
 		`12# = Strenuous`,
 		`15# = Grueling`,
-		`18# = Extreme`,
+		`18# = Extreme`
 	]
 })
 

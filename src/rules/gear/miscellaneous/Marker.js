@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Marker = new Gear({
 	name: `Marker`,
-	desc: [
-		`Used to permanently write on any surface.`,
-	],
+	desc: [`Used to permanently write on any surface.`],
 	sz: 0
 })
 

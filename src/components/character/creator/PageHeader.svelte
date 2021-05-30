@@ -2,7 +2,6 @@
 	export let chapter, step
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Character Creator - {chapter}</title>
 </svelte:head>
@@ -12,7 +11,6 @@
 		Step {step}/6
 	{/if}
 </hgroup>
-
 
 <style>
 	hgroup {

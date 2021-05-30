@@ -1,17 +1,13 @@
-import Gear from '../../../classes/Gear.js' 
-import OneHanded from '../attributes/OneHanded.js' 
-import Pierce from '../attributes/Pierce.js' 
-import Rapid from '../attributes/Rapid.js' 
+import Gear from '../../../classes/Gear.js'
+import OneHanded from '../attributes/OneHanded.js'
+import Pierce from '../attributes/Pierce.js'
+import Rapid from '../attributes/Rapid.js'
 
 const Knife = new Gear({
 	name: `Knife`,
 	type: `Melee Weapon`,
 	sz: 1,
-	attr: [
-		OneHanded,
-		Pierce,
-		Rapid,
-	]
+	attr: [OneHanded, Pierce, Rapid]
 })
 Knife.dmg = 1
 Knife.rng = 1

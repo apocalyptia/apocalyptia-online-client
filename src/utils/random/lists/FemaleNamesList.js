@@ -1175,7 +1175,7 @@ const FemaleNamesList = [
 	'Zion',
 	'Zoe',
 	'Zoey',
-	'Zoie',
+	'Zoie'
 ]
 
 export default FemaleNamesList

@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Antibiotic = new Gear({
 	name: `Antibiotic`,
-	desc: [
-		`Prevents infection in Recovery for 1 day.`,
-	],
+	desc: [`Prevents infection in Recovery for 1 day.`],
 	sz: 0,
 	type: `Drug`
 })

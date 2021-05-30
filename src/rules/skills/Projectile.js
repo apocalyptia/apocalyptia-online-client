@@ -1,11 +1,9 @@
-import Skill from '../../classes/Skill.js' 
-import Specialty from '../../classes/Specialty.js' 
+import Skill from '../../classes/Skill.js'
+import Specialty from '../../classes/Specialty.js'
 
 const Projectile = new Skill({
 	name: `Projectile`,
-	desc: [
-		`Projectile combat.`,
-	],
+	desc: [`Projectile combat.`],
 	type: `Skill`,
 	parent: `Agility`,
 	diff: `Defense`,
@@ -13,17 +11,12 @@ const Projectile = new Skill({
 		shoot: new Specialty({
 			name: `Shoot`,
 			type: `Specialty`,
-			desc: [
-				`Roll vs target's Defense.`,
-			]
+			desc: [`Roll vs target's Defense.`]
 		}),
 		throw: new Specialty({
 			name: `Throw`,
 			type: `Specialty`,
-			desc: [
-				`Roll vs target's Defense.`,
-				`Range is [Constitution x 3yds].`,
-			]
+			desc: [`Roll vs target's Defense.`, `Range is [Constitution x 3yds].`]
 		})
 	}
 })

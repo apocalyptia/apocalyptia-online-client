@@ -23,26 +23,16 @@
 	}
 </script>
 
-
-<div class='controls'>
-	<div class='top-row'>
-		<button class='small-cntr-btn' on:click={loadCharacter}>
-			Load
-		</button>
-		<button class='small-cntr-btn' on:click={backupCharacter}>
-			Backup
-		</button>
+<div class="controls">
+	<div class="top-row">
+		<button class="small-cntr-btn" on:click={loadCharacter}> Load </button>
+		<button class="small-cntr-btn" on:click={backupCharacter}> Backup </button>
 	</div>
-	<div class='bottom-row'>
-		<button class='small-cntr-btn' on:click={newCharacter}>
-			New
-		</button>
-		<button class='small-cntr-btn' on:click={deleteCharacter}>
-			Delete
-		</button>
+	<div class="bottom-row">
+		<button class="small-cntr-btn" on:click={newCharacter}> New </button>
+		<button class="small-cntr-btn" on:click={deleteCharacter}> Delete </button>
 	</div>
 </div>
-
 
 <style>
 	.controls {

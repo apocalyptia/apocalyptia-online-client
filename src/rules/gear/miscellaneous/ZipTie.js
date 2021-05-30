@@ -1,4 +1,4 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const ZipTie = new Gear({
 	name: `Zip Tie`,
@@ -6,7 +6,7 @@ const ZipTie = new Gear({
 		`Place on Arms behind target's back to make them Harmless.`,
 		`Place on Legs to make target Immobilized.`,
 		`Constitution or Acrobatics 12# to escape.`,
-		`Use for +1 Build.`,
+		`Use for +1 Build.`
 	],
 	sz: 0
 })

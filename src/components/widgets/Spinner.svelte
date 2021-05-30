@@ -1,11 +1,5 @@
 <div>
-	<svg
-		class="spinner"
-		height="50"
-		style="animation-duration:1000ms;"
-		viewbox="0 0 32 32"
-		width="50"
-	>
+	<svg class="spinner" height="50" style="animation-duration:1000ms;" viewbox="0 0 32 32" width="50">
 		<circle
 			cx="16"
 			cy="16"
@@ -20,7 +14,6 @@
 	</svg>
 </div>
 
-
 <style>
 	.spinner {
 		animation-iteration-count: infinite;
@@ -29,7 +22,11 @@
 		transition-property: transform;
 	}
 	@keyframes spin {
-		from { transform: rotate(0deg); }
-		to { transform: rotate(360deg); }
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
 	}
 </style>

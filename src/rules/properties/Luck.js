@@ -1,4 +1,4 @@
-import Property from '../../classes/Property.js' 
+import Property from '../../classes/Property.js'
 
 const formula = `( Agility + Demeanor ) / 2`
 
@@ -12,7 +12,7 @@ const Luck = new Property({
 		`You regain 1 spent Luck Point at dawn each day.`,
 		`• Re-roll the last die you rolled with a +6 bonus.`,
 		`• Take an extra Action on your turn.`,
-		`• Give a Luck point to a Comrade.`,
+		`• Give a Luck point to a Comrade.`
 	],
 	type: `Property`
 })

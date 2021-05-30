@@ -10,8 +10,7 @@
 	beforeUpdate(() => {
 		if ($playerStore.characterList.length) {
 			adjustUIColor($characterStore)
-		}
-		else {
+		} else {
 			resetUIColor()
 		}
 	})
@@ -19,11 +18,10 @@
 	$: selectedCharacter = ``
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Load Character</title>
 </svelte:head>
-<div class='cntr-card'>
+<div class="cntr-card">
 	<CharacterList {selectedCharacter} />
 	<CharacterControls {selectedCharacter} />
 </div>

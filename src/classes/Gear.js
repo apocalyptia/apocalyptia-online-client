@@ -1,15 +1,7 @@
-import Rule from './Rule.js' 
+import Rule from './Rule.js'
 
 export default class Gear extends Rule {
-	constructor({
-		attr=[],
-		desc,
-		id,
-		name,
-		qty=0,
-		sz=0,
-		type=`Gear`
-	}) {
+	constructor({ attr = [], desc, id, name, qty = 0, sz = 0, type = `Gear` }) {
 		super({
 			desc,
 			id,

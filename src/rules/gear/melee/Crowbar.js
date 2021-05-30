@@ -1,13 +1,11 @@
-import Gear from '../../../classes/Gear.js' 
-import OneHanded from '../attributes/OneHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import OneHanded from '../attributes/OneHanded.js'
 
 const Crowbar = new Gear({
 	name: `Crowbar`,
 	type: `Melee Weapon`,
 	sz: 3,
-	attr: [
-		OneHanded,
-	]
+	attr: [OneHanded]
 })
 Crowbar.dmg = 3
 Crowbar.rng = 2

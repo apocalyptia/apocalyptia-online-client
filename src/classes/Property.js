@@ -1,18 +1,12 @@
-import Rule from './Rule.js' 
+import Rule from './Rule.js'
 
 export default class Property extends Rule {
-	constructor({
-		desc=[],
-		formula=[],
-		name=``,
-		type=`Property`,
-		visible=false
-	}) {
+	constructor({ desc = [], formula = [], name = ``, type = `Property`, visible = false }) {
 		super({
 			desc,
 			name,
 			type,
-			visible,
+			visible
 		})
 		this.desc = desc
 		this.formula = formula

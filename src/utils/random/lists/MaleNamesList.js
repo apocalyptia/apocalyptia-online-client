@@ -1130,7 +1130,7 @@ const MaleNamesList = [
 	'Zavier',
 	'Zayden',
 	'Zayne',
-	'Zechariah',
+	'Zechariah'
 ]
 
 export default MaleNamesList

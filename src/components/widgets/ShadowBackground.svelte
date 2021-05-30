@@ -8,16 +8,11 @@
 	}
 </script>
 
-
-<div class='{active ? "shadow" : "invisible"}'
-	transition:fade
-	on:click={toggleActive}
-/>
-
+<div class={active ? 'shadow' : 'invisible'} transition:fade on:click={toggleActive} />
 
 <style>
 	.shadow {
-		background: rgba(0, 0, 0, .666);
+		background: rgba(0, 0, 0, 0.666);
 		height: 100vh;
 		left: 0;
 		position: absolute;

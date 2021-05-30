@@ -61,64 +61,58 @@
 		{
 			name: 'Size',
 			abv: 'sz'
-		},
+		}
 	]
 </script>
 
-
-<div class='gear-block'>
+<div class="gear-block">
 	{#if item}
 		{#if mode != 'manual'}
-			<h4 class='item-name'>{item.name}</h4>
+			<h4 class="item-name">{item.name}</h4>
 		{/if}
-		<div class='item-details'>
+		<div class="item-details">
 			{#if item.desc}
 				{#each item.desc as desc}
-					<p class='gear-desc'>{desc}</p>
+					<p class="gear-desc">{desc}</p>
 				{/each}
 			{/if}
 			{#each itemProps as prop}
 				{#if item[prop.abv] != undefined && item[prop.abv].toString().length}
-					<p class='gear-prop'>
+					<p class="gear-prop">
 						{#if prop.name === 'Quantity'}
 							{#if mode === 'edit'}
-								<span class='prop-name'>{prop.name}</span>: 
-								<input type='number'
-									class='item-qty'
-									min='0'
-									bind:value={item.qty}
-								/>
+								<span class="prop-name">{prop.name}</span>:
+								<input type="number" class="item-qty" min="0" bind:value={item.qty} />
 							{:else if mode === 'readonly' && item.type === 'Ammo'}
-								<span class='prop-name'>{prop.name}</span>: 
-								<span type='number' class='item-qty'>{item.qty}</span>
+								<span class="prop-name">{prop.name}</span>:
+								<span type="number" class="item-qty">{item.qty}</span>
 							{/if}
 						{:else}
-							<span class='prop-name'>{prop.name}</span>: 
+							<span class="prop-name">{prop.name}</span>:
 							{item[prop.abv]}
 						{/if}
 					</p>
 				{/if}
 			{/each}
 			{#if item && item.hasOwnProperty('attr') && item.attr.length > 0}
-				<p class='gear-attr'><u>Attributes</u>:</p>
-				<div class='attributes'>
+				<p class="gear-attr"><u>Attributes</u>:</p>
+				<div class="attributes">
 					{#each item.attr as attr}
-						<div class='attr-type'>
+						<div class="attr-type">
 							{attr.name}:
 							{#each attr.desc as line}
-								<p class='attr-desc'>{line}</p>
+								<p class="attr-desc">{line}</p>
 							{/each}
 						</div>
 					{/each}
 				</div>
 			{/if}
 			{#if item.table}
-				<svelte:component this={item.table}/>
+				<svelte:component this={item.table} />
 			{/if}
 		</div>
 	{/if}
 </div>
-
 
 <style>
 	.item-name {

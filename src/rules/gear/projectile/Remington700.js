@@ -1,13 +1,11 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
 
 const Remington700 = new Gear({
 	name: `Remington 700 Rifle`,
 	type: `Projectile Weapon`,
 	sz: 4,
-	attr: [
-		TwoHanded,
-	]
+	attr: [TwoHanded]
 })
 Remington700.dmg = 6
 Remington700.rng = 100

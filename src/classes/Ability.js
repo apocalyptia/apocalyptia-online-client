@@ -1,23 +1,23 @@
-import Rule from './Rule.js' 
+import Rule from './Rule.js'
 
 export default class Ability extends Rule {
 	constructor({
 		desc,
 		experience,
-		formula=null,
-		max=1,
+		formula = null,
+		max = 1,
 		name,
-		notes=``,
-		options=[],
-		selection=null,
-		type=`Ability`,
-		visible,
+		notes = ``,
+		options = [],
+		selection = null,
+		type = `Ability`,
+		visible
 	}) {
 		super({
 			desc,
 			name,
 			type,
-			visible,
+			visible
 		})
 		this.experience = experience
 		this.formula = formula

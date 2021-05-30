@@ -1,11 +1,8 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Stun = new Rule({
 	name: `Stun`,
-	desc: [
-		`Defenseless, Harmless, and Immobilized.`,
-		`You fall Prone if Stunned for longer than 1 round.`,
-	],
+	desc: [`Defenseless, Harmless, and Immobilized.`, `You fall Prone if Stunned for longer than 1 round.`],
 	type: `Status`
 })
 

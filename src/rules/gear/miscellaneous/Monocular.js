@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Monocular = new Gear({
 	name: `Monocular`,
-	desc: [
-		`+1 Perception(See) at 25+yds.`,
-	],
+	desc: [`+1 Perception(See) at 25+yds.`],
 	sz: 1
 })
 

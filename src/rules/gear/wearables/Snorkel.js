@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Snorkel = new Gear({
 	name: `Snorkel`,
-	desc: [
-		`Breathe while just beneath water's surface.`,
-	],
+	desc: [`Breathe while just beneath water's surface.`],
 	sz: 1
 })
 

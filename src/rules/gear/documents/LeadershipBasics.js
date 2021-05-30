@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const LeadershipBasics = new Gear({
 	name: `Leadership Basics`,
-	desc: [
-		`+1 Leadership`,
-	],
+	desc: [`+1 Leadership`],
 	sz: 1,
 	type: `Document`
 })

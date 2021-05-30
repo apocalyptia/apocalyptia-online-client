@@ -1,15 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
-import Rapid from '../attributes/Rapid.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
+import Rapid from '../attributes/Rapid.js'
 
 const SpringfieldM1A = new Gear({
 	name: `Springfield M1A Rifle`,
 	type: `Projectile Weapon`,
 	sz: 4,
-	attr: [
-		TwoHanded,
-		Rapid,
-	]
+	attr: [TwoHanded, Rapid]
 })
 SpringfieldM1A.dmg = 6
 SpringfieldM1A.rng = 80

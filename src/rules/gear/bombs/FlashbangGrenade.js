@@ -1,18 +1,13 @@
-import Gear from '../../../classes/Gear.js' 
-import Blind from '../../status/Blind.js' 
-import Stun from '../../status/Stun.js' 
+import Gear from '../../../classes/Gear.js'
+import Blind from '../../status/Blind.js'
+import Stun from '../../status/Stun.js'
 
 const FlashbangGrenade = new Gear({
 	name: `Flashbang Grenade`,
 	type: `Bomb`,
-	desc: [
-		`Stun grenade.`,
-	],
+	desc: [`Stun grenade.`],
 	sz: 1,
-	attr: [
-		Blind,
-		Stun,
-	]
+	attr: [Blind, Stun]
 })
 FlashbangGrenade.dmg = 0
 FlashbangGrenade.rng = 6

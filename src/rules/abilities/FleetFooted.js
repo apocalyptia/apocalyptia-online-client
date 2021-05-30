@@ -1,10 +1,8 @@
-import Ability from '../../classes/Ability.js' 
+import Ability from '../../classes/Ability.js'
 
 const FleetFooted = new Ability({
 	name: `Fleet Footed`,
-	desc: [
-		`+1 Speed.`,
-	],
+	desc: [`+1 Speed.`],
 	max: 3,
 	experience: 6
 })

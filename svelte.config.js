@@ -9,6 +9,6 @@ const config = {
 		// adapter: node()
 		adapter: netlify()
 	}
-};
+}
 
-export default config;
+export default config

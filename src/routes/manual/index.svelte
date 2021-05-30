@@ -1,4 +1,4 @@
-<script >
+<script>
 	import Rules from '/src/rules/Rules.js'
 	import capitalize from '/src/utils/text/capitalize.js'
 	import searchEngine from '/src/utils/searching/searchEngine.js'
@@ -11,7 +11,7 @@
 	function searchRules() {
 		manualMenuList = searchEngine($searchStore)
 		if (manualMenuList.length === 0) {
-			manualMenuList = Object.keys(Rules).map(rule => {
+			manualMenuList = Object.keys(Rules).map((rule) => {
 				return {
 					name: capitalize(rule)
 				}
@@ -19,28 +19,21 @@
 		}
 	}
 
-	onMount(_ => searchRules($searchStore))
+	onMount((_) => searchRules($searchStore))
 </script>
 
-
-<div class='manual-header-section'>
-	<input type='text'
-		class='search-bar'
-		placeholder='Search'
-		bind:value='{$searchStore}'
-		on:keyup={() => searchRules()}
-	/>
+<div class="manual-header-section">
+	<input type="text" class="search-bar" placeholder="Search" bind:value={$searchStore} on:keyup={() => searchRules()} />
 </div>
-<div class='page-body'>
+<div class="page-body">
 	{#each manualMenuList as link}
-		<div class='manual-btn'>
-			<a href={$searchStore.length ? link.url : urlFormat(`/manual/${link.name}`)} class='link-btn'>
+		<div class="manual-btn">
+			<a href={$searchStore.length ? link.url : urlFormat(`/manual/${link.name}`)} class="link-btn">
 				{link.name}
 			</a>
 		</div>
 	{/each}
 </div>
-
 
 <style>
 	.manual-header-section {

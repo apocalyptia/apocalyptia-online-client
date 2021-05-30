@@ -16,11 +16,9 @@
 	}
 </script>
 
-
-<button class='btn-box square-btn' on:click={runFunc}>
-	<div class='dice-icon-box'>{face}</div>
+<button class="btn-box square-btn" on:click={runFunc}>
+	<div class="dice-icon-box">{face}</div>
 </button>
-
 
 <style>
 	.dice-icon-box {

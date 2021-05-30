@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Foregrip = new Gear({
 	name: `Foregrip`,
 	type: `Accessory`,
-	desc: [
-		`-1 Size requirement for 2h Gun.`,
-	],
+	desc: [`-1 Size requirement for 2h Gun.`],
 	sz: 0
 })
 

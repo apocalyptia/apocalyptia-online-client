@@ -1,12 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const LeatherBelt = new Gear({
 	name: `Leather Belt`,
-	desc: [
-		`1yd strap.`,
-		`Stops Limb Bleeding.`,
-		`Holds 50Sz.`,
-	],
+	desc: [`1yd strap.`, `Stops Limb Bleeding.`, `Holds 50Sz.`],
 	sz: 0
 })
 

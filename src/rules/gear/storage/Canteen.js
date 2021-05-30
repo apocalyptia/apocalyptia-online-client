@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Canteen = new Gear({
 	name: `Canteen`,
-	desc: [
-		`Holds 1 unit (.5gal) of liquid.`,
-		`Metal.`,
-	],
+	desc: [`Holds 1 unit (.5gal) of liquid.`, `Metal.`],
 	sz: 1
 })
 Canteen.slots = 1

@@ -1,11 +1,8 @@
-import Rule from '../../classes/Rule.js' 
+import Rule from '../../classes/Rule.js'
 
 const Distract = new Rule({
 	name: `Distract`,
-	desc: [
-		`Roll [Perform vs Perception].`,
-		`Stun target for 1 round.`,
-	],
+	desc: [`Roll [Perform vs Perception].`, `Stun target for 1 round.`],
 	type: `Social`
 })
 

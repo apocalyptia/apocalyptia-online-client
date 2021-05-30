@@ -9,7 +9,7 @@
 
 	function filterList() {
 		if (filterCost) {
-			visibleList = $abilitiesStore.list.filter(a => a.experience === filterCost)
+			visibleList = $abilitiesStore.list.filter((a) => a.experience === filterCost)
 		} else {
 			visibleList = $abilitiesStore.list
 		}
@@ -20,60 +20,52 @@
 	let visibleList = $abilitiesStore.list
 </script>
 
-
-<div class='organizer-bar'>
-	<span class='xp-filter'>
+<div class="organizer-bar">
+	<span class="xp-filter">
 		XP Cost:
 		<!-- svelte-ignore a11y-no-onchange -->
-		<select class='xp-cost-selector'
-			bind:value={filterCost}
-			on:change={filterList}
-		>
+		<select class="xp-cost-selector" bind:value={filterCost} on:change={filterList}>
 			<option value={0}>-</option>
 			{#each $abilitiesStore.xpCosts as xpCost}
 				<option value={xpCost}>{xpCost}</option>
 			{/each}
 		</select>
 	</span>
-	<span class='taken-header'>Taken</span>
+	<span class="taken-header">Taken</span>
 </div>
-<div class='abilities-list'>
+<div class="abilities-list">
 	{#each visibleList as ability}
-		<div class='ability-list-item'>
-			<details class='ability-card'>
-				<summary class='ability-titlebar'>
-					<h4 class='ability-title'>{ability.name}</h4>
-					<span class='ability-controls'>
+		<div class="ability-list-item">
+			<details class="ability-card">
+				<summary class="ability-titlebar">
+					<h4 class="ability-title">{ability.name}</h4>
+					<span class="ability-controls">
 						<!-- svelte-ignore a11y-no-onchange -->
-						<select name={ability.name}
+						<select
+							name={ability.name}
 							bind:value={ability.qty}
 							on:change={() => updateAbilities(ability)}
 							disabled={ability.experience > $characterStore.properties.experience.current}
 						>
-							{#each Array(ability.max+1) as _, takenNum}
-								<option
-									value={takenNum}
-									selected={takenNum === ability.qty}
-								>
+							{#each Array(ability.max + 1) as _, takenNum}
+								<option value={takenNum} selected={takenNum === ability.qty}>
 									{takenNum}
 								</option>
 							{/each}
 						</select>
 					</span>
 				</summary>
-				<div class='ability-description'>
+				<div class="ability-description">
 					{#if ability.options.length}
 						<!-- svelte-ignore a11y-no-onchange -->
-						<select name='skill-options'
-							class='skill-options-selector'
+						<select
+							name="skill-options"
+							class="skill-options-selector"
 							bind:value={ability.selection}
 							on:change={() => updateAbilities(ability)}
 						>
 							{#each ability.options as optionName, selectionNum}
-								<option 
-									value={selectionNum}
-									selected ={selectionNum === ability.selection}
-								>
+								<option value={selectionNum} selected={selectionNum === ability.selection}>
 									{optionName}
 								</option>
 							{/each}
@@ -82,12 +74,12 @@
 					{#each ability.desc as desc}
 						<p>{desc}</p>
 					{/each}
-					<hr>
-					<p class='ability-footer'>
-						<span class='ability-experience'>
+					<hr />
+					<p class="ability-footer">
+						<span class="ability-experience">
 							Cost: {ability.experience} XP
 						</span>
-						<span class='ability-max'>
+						<span class="ability-max">
 							Max: {ability.max}
 						</span>
 					</p>
@@ -96,7 +88,6 @@
 		</div>
 	{/each}
 </div>
-
 
 <style>
 	.organizer-bar {

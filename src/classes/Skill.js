@@ -1,20 +1,12 @@
-import Rule from './Rule.js' 
+import Rule from './Rule.js'
 
 export default class Skill extends Rule {
-	constructor({
-		desc=[],
-		diff=null,
-		name=``,
-		parent=``,
-		specs={},
-		type=`Skill`,
-		visible=false
-	}) {
+	constructor({ desc = [], diff = null, name = ``, parent = ``, specs = {}, type = `Skill`, visible = false }) {
 		super({
 			desc,
 			name,
 			type,
-			visible,
+			visible
 		})
 		this.desc = desc
 		this.diff = diff

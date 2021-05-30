@@ -1,15 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
-import Scatter from '../attributes/Scatter.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
+import Scatter from '../attributes/Scatter.js'
 
 const Remington870 = new Gear({
 	name: `Remington 870 Shotgun`,
 	type: `Projectile Weapon`,
 	sz: 4,
-	attr: [
-		TwoHanded,
-		Scatter,
-	]
+	attr: [TwoHanded, Scatter]
 })
 Remington870.dmg = 5
 Remington870.rng = 15

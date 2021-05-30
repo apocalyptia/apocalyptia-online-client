@@ -1,13 +1,11 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
 
 const HenryGoldenBoy = new Gear({
 	name: `Henry Golden Boy Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,
-	attr: [
-		TwoHanded,
-	]
+	attr: [TwoHanded]
 })
 HenryGoldenBoy.dmg = 0
 HenryGoldenBoy.rng = 30

@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const EarPlugs = new Gear({
 	name: `Ear Plugs`,
-	desc: [
-		`No Deafness from noise.`,
-		`-3 Perception(Hear).`,
-	],
+	desc: [`No Deafness from noise.`, `-3 Perception(Hear).`],
 	sz: 0
 })
 

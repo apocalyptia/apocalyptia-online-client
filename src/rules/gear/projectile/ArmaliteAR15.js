@@ -1,15 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import TwoHanded from '../attributes/TwoHanded.js' 
-import Rapid from '../attributes/Rapid.js' 
+import Gear from '../../../classes/Gear.js'
+import TwoHanded from '../attributes/TwoHanded.js'
+import Rapid from '../attributes/Rapid.js'
 
 const ArmaliteAR15 = new Gear({
 	name: `Armalite AR-15 Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,
-	attr: [
-		TwoHanded,
-		Rapid,
-	]
+	attr: [TwoHanded, Rapid]
 })
 ArmaliteAR15.dmg = 3
 ArmaliteAR15.rng = 50

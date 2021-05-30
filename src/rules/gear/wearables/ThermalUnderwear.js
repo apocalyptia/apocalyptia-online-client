@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const ThermalUnderwear = new Gear({
 	name: `Thermal Underwear`,
-	desc: [
-		`Cold Resistance.`,
-		`Can use as 6 Bandages.`,
-	],
+	desc: [`Cold Resistance.`, `Can use as 6 Bandages.`],
 	sz: 0
 })
 

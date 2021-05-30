@@ -1,16 +1,12 @@
-import Gear from '../../../classes/Gear.js' 
-import Match from '../attributes/Match.js' 
+import Gear from '../../../classes/Gear.js'
+import Match from '../attributes/Match.js'
 
 const Match556 = new Gear({
 	name: `5.56mm Match`,
 	type: `Ammo`,
-	desc: [
-		`Competition-grade ammunition.`,
-	],
+	desc: [`Competition-grade ammunition.`],
 	sz: 0.02,
-	attr: [
-		Match,
-	]
+	attr: [Match]
 })
 Match556.cal = `5.56`
 

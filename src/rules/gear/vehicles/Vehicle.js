@@ -1,4 +1,3 @@
-
 // class Vehicle extends Gear {
 // 	constructor(name, speed, dr, handling, mpg, fuel, seats, cargo, description='', sz='') {
 // 		super(name, description, sz)

@@ -43,15 +43,13 @@ export class AreaMapDOM {
 		for (let r = 0; r < this.gridSize; r++) {
 			this.contents.push([])
 			for (let c = 0; c < this.gridSize; c++) {
-				this.contents[r].push(
-					[
-						{
-							x: c * this.currentCellSize,
-							y: r * this.currentCellSize,
-							m: false
-						}
-					]
-				)
+				this.contents[r].push([
+					{
+						x: c * this.currentCellSize,
+						y: r * this.currentCellSize,
+						m: false
+					}
+				])
 			}
 		}
 		return this
@@ -66,7 +64,7 @@ export class AreaMapDOM {
 		}
 	}
 	mark(r, c) {
-		this.contents[r][c].m =! this.contents[r][c].m
+		this.contents[r][c].m = !this.contents[r][c].m
 		return this
 	}
 }

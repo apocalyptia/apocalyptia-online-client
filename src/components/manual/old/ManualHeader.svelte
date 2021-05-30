@@ -12,20 +12,19 @@
 	}
 </script>
 
-
-<div class='manual-header-section'>
-	<div class='rules-name'>{chapter}</div>
-	<input type='text'
-		class='search-bar'
-		placeholder='Search'
-		bind:value='{searchTerm}'
+<div class="manual-header-section">
+	<div class="rules-name">{chapter}</div>
+	<input
+		type="text"
+		class="search-bar"
+		placeholder="Search"
+		bind:value={searchTerm}
 		on:keyup={() => sendEvent(searchTerm)}
 	/>
 </div>
 
-
 <style>
-    .manual-header-section {
+	.manual-header-section {
 		align-items: center;
 		background-color: var(--sec-color-trans);
 		border: 1px solid var(--pri-color);

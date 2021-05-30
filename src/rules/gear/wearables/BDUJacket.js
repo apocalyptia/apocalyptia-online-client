@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const BDUJacket = new Gear({
 	name: `BDU Jacket`,
-	desc: [
-		`Camo.`,
-	],
+	desc: [`Camo.`],
 	sz: 0
 })
 BDUJacket.slots = 4

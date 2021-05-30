@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Hammock = new Gear({
 	name: `Hammock`,
-	desc: [
-		`Suspended sleeping device for 1 person.`,
-	],
+	desc: [`Suspended sleeping device for 1 person.`],
 	sz: 1
 })
 

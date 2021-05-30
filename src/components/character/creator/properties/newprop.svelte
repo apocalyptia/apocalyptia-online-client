@@ -1,22 +1,20 @@
 <script>
-    import characterStore from '/src/stores/characterStore.js'
+	import characterStore from '/src/stores/characterStore.js'
 
-	const propertiesList = Object.keys($characterStore.properties).filter(p => p != 'health')
+	const propertiesList = Object.keys($characterStore.properties).filter((p) => p != 'health')
 </script>
 
-
-<div class='section-card properties-list'>
+<div class="section-card properties-list">
 	{#each propertiesList as prop}
-		<p class='prop-item'>
-			{$characterStore.properties[prop].name}: 
+		<p class="prop-item">
+			{$characterStore.properties[prop].name}:
 			{$characterStore.properties[prop].score}
 		</p>
 	{/each}
 </div>
 
-
 <style>
-    .properties-list {
+	.properties-list {
 		align-items: center;
 		display: flex;
 		flex-direction: column;

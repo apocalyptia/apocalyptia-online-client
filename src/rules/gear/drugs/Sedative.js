@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Sedative = new Gear({
 	name: `Sedative`,
-	desc: [
-		`Demeanor #6 per round to take any action.`,
-	],
+	desc: [`Demeanor #6 per round to take any action.`],
 	sz: 0,
 	type: `Drug`
 })

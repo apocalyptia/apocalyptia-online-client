@@ -1,10 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const MusicalInstrument = new Gear({
 	name: `Musical Instrument`,
-	desc: [
-		`+1 Entertain(Distract and Inspire).`,
-	],
+	desc: [`+1 Entertain(Distract and Inspire).`],
 	sz: 1
 })
 

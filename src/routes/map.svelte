@@ -9,16 +9,16 @@
 	function init() {
 		scene = new THREE.Scene()
 		camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000)
-		camera.position.set(-900,-200,-900)
+		camera.position.set(-900, -200, -900)
 		renderer = new THREE.WebGLRenderer({
-			antialias:true,
+			antialias: true,
 			alpha: true,
 			canvas
 		})
 		renderer.setSize(window.innerWidth, window.innerHeight)
 		scene.background = new THREE.CubeTextureLoader()
-									.setPath("textures/skybox/arid/")
-									.load(["lf.jpg", "rt.jpg", "up.jpg", "dn.jpg", "ft.jpg", "bk.jpg"])
+			.setPath('textures/skybox/arid/')
+			.load(['lf.jpg', 'rt.jpg', 'up.jpg', 'dn.jpg', 'ft.jpg', 'bk.jpg'])
 
 		controls = new OrbitControls(camera, canvas)
 		controls.enabled = true
@@ -38,14 +38,12 @@
 	})
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
-<div class='page-body'>
+<div class="page-body">
 	<canvas bind:this={canvas} />
 </div>
-
 
 <style>
 	.page-body {

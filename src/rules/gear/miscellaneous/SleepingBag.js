@@ -1,11 +1,8 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const SleepingBag = new Gear({
 	name: `Sleeping Bag`,
-	desc: [
-		`Insulated bag for up to 2 people.`,
-		`Cold Resistance +3hrs.`,
-	],
+	desc: [`Insulated bag for up to 2 people.`, `Cold Resistance +3hrs.`],
 	sz: 2
 })
 

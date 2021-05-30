@@ -2,17 +2,18 @@
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import TrashButton from '/src/components/buttons/TrashButton.svelte'
 
-	export let mode, category, item, index = 0
+	export let mode,
+		category,
+		item,
+		index = 0
 </script>
 
-
-<div class='gear-item'>
+<div class="gear-item">
 	<GearBlock {item} {mode} />
 	{#if mode != 'readonly'}
 		<TrashButton {category} {index} />
 	{/if}
 </div>
-
 
 <style>
 	.gear-item {

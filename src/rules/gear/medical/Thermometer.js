@@ -1,12 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const Thermometer = new Gear({
 	name: `Thermometer`,
 	type: `Medical`,
-	desc: [
-		`+1 Medicine.`,
-		`Accurately reads temperature.`,
-	],
+	desc: [`+1 Medicine.`, `Accurately reads temperature.`],
 	sz: 0
 })
 

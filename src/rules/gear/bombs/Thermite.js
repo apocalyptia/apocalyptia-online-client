@@ -1,18 +1,13 @@
-import Gear from '../../../classes/Gear.js' 
-import Blast from '../attributes/Blast.js' 
-import FireDamage from '../attributes/FireDamage.js' 
+import Gear from '../../../classes/Gear.js'
+import Blast from '../attributes/Blast.js'
+import FireDamage from '../attributes/FireDamage.js'
 
 const Thermite = new Gear({
 	name: `Thermite`,
 	type: `Bomb`,
-	desc: [
-		`High-temperature incendiary bomb.`,
-	],
+	desc: [`High-temperature incendiary bomb.`],
 	sz: 1,
-	attr: [
-		Blast,
-		FireDamage,
-	]
+	attr: [Blast, FireDamage]
 })
 Thermite.dmg = `6d6`
 Thermite.rng = 1

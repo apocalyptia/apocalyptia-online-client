@@ -1,11 +1,9 @@
-import Gear from '../../../classes/Gear.js' 
+import Gear from '../../../classes/Gear.js'
 
 const ArrowTarget = new Gear({
 	name: `Target Arrow`,
 	type: `Ammo`,
-	desc: [
-		`Practice arrow.`,
-	],
+	desc: [`Practice arrow.`],
 	sz: 0.1
 })
 ArrowTarget.cal = `Arrow`

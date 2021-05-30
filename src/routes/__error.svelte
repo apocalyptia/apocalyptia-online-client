@@ -3,7 +3,6 @@
 	<p>Page not found.</p>
 </div>
 
-
 <style>
 	.e404 {
 		align-items: center;

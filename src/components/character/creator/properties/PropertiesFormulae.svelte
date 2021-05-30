@@ -2,10 +2,9 @@
 	import Properties from '/src/rules/Properties.js'
 </script>
 
-
-<details class='formulae-details'>
+<details class="formulae-details">
 	<summary>Properties Formulae</summary>
-	<div class='formulae-card'>
+	<div class="formulae-card">
 		<ul>
 			{#each Object.values(Properties) as property}
 				{#if property.name === 'Health'}
@@ -13,14 +12,14 @@
 					<li>Health: {property.desc[1]}</li>
 				{:else}
 					<li>
-						<h4>{property.name}</h4> = {property.formula}
+						<h4>{property.name}</h4>
+						= {property.formula}
 					</li>
 				{/if}
 			{/each}
 		</ul>
 	</div>
 </details>
-
 
 <style>
 	.formulae-details {
