@@ -10,10 +10,6 @@
 		window.location.href = '/sheet'
 	}
 
-	function backupCharacter() {
-		backupCharacter($characterStore)
-	}
-
 	function newCharacter() {
 		window.location.href = '/new'
 	}
@@ -26,7 +22,7 @@
 <div class="controls">
 	<div class="top-row">
 		<button class="small-cntr-btn" on:click={loadCharacter}> Load </button>
-		<button class="small-cntr-btn" on:click={backupCharacter}> Backup </button>
+		<button class="small-cntr-btn" on:click={() => backupCharacter($characterStore)}> Backup </button>
 	</div>
 	<div class="bottom-row">
 		<button class="small-cntr-btn" on:click={newCharacter}> New </button>

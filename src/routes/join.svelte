@@ -1,5 +1,5 @@
 <script>
-	import Join from '/src/utils/auth/Join.js'
+	import join from '/src/utils/auth/join.js'
 	import playerStore from '/src/stores/playerStore.js'
 
 	let email = ``,
@@ -23,7 +23,7 @@
 		</div>
 		<div class="join">
 			<a href="/">
-				<button type="submit" on:click={() => ($playerStore = Join($playerStore, email, password, confirm))}>
+				<button type="submit" on:click={() => ($playerStore = join($playerStore, email, password, confirm))}>
 					Join
 				</button>
 			</a>
