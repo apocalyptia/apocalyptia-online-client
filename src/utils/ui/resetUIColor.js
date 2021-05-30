@@ -5,4 +5,4 @@ function resetUIColor() {
 	document.documentElement.style.setProperty(`--sec-color-trans`, `rgba(15,30,15,.25)`)
 }
 
-export default resetUIColor()
+export default resetUIColor

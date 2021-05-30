@@ -7,4 +7,4 @@ function randomMeleeWeapon() {
 	return randomMeleeWeapon
 }
 
-export default randomMeleeWeapon()
+export default randomMeleeWeapon

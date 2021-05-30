@@ -1,4 +1,4 @@
-export default (char) => {
+function compressCharacter(char) {
 	function compressionMapping(category) {
 		return category.map((item) => {
 			const compressedItem = {
@@ -70,3 +70,5 @@ export default (char) => {
 
 	return JSON.stringify(c)
 }
+
+export default compressCharacter

@@ -1,6 +1,6 @@
 import decompressCharacter from '/src/utils/database/characters/decompressCharacter.js'
 
-export default () => {
+function readAllCharacters() {
 	if (window.localStorage.length) {
 		return Object.keys(window.localStorage).map((c) => {
 			const storedCharacter = window.localStorage.getItem(c)
@@ -10,3 +10,5 @@ export default () => {
 	}
 	return []
 }
+
+export default readAllCharacters

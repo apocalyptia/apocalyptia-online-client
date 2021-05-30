@@ -1,4 +1,4 @@
-export default (playerStore, email, password, confirm) => {
+function join(playerStore, email, password, confirm) {
 	if (email && password && password === confirm) {
 		playerStore.email = email
 		playerStore.password = password
@@ -13,3 +13,5 @@ export default (playerStore, email, password, confirm) => {
 	} else alert('Error: Invalid login information.')
 	return playerStore
 }
+
+export default join

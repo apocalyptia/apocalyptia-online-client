@@ -1,6 +1,6 @@
 import Character from '/src/classes/Character.js'
 
-export default (c) => {
+function decompressCharacter(c) {
 	let char = new Character()
 
 	char.meta.id = c.Mi
@@ -62,3 +62,5 @@ export default (c) => {
 
 	return char
 }
+
+export default decompressCharacter
