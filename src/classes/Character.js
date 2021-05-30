@@ -26,13 +26,13 @@ import runFormula from '/src/utils/runFormula.js'
 
 export default class Character {
 	constructor() {
-		this.meta = initializeMeta()
-		this.description = initializeDescription()
-		this.traits = initializeTraits()
-		this.skills = initializeSkills()
-		this.properties = initializeProperties()
-		this.abilities = []
-		this.gear = initializeGear()
+		this.meta = initializeMeta(),
+		this.description = initializeDescription(),
+		this.traits = initializeTraits(),
+		this.skills = initializeSkills(),
+		this.properties = initializeProperties(),
+		this.abilities = [],
+		this.gear = initializeGear(),
 		this.maxTraits = parseInt(Creation.traits.max),
 		this.proceed = false,
 		this.skillsRemaining = parseInt(Creation.skills.startingMultiplier),
@@ -129,7 +129,7 @@ export default class Character {
 			}
 			this.remainingTraits()
 			this.resetSkills()
-		}
+		},
 		this.updateAbilities = (ability) => {
 			if (ability) {
 				this.abilities.push(ability)
@@ -181,7 +181,7 @@ export default class Character {
 			this.resetSkills()
 			this.updateProperties()
 			this.remainingSkills()
-		}
+		},
 		this.randomDescription = (category = 'All') => {
 			switch (category) {
 				case 'Age':
@@ -300,7 +300,7 @@ export default class Character {
 			this.randomAbilities()
 			this.randomGear()
 			this.randomDescription()
-		}
+		},
 		this.finalize = (userId) => {
 			 if(!this.meta.created) this.meta.created = new Date()
 			this.meta.user = userId
