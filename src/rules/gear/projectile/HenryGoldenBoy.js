@@ -10,6 +10,6 @@ const HenryGoldenBoy = new Projectile({
 HenryGoldenBoy.dmg = 0
 HenryGoldenBoy.rng = 30
 HenryGoldenBoy.cap = 16
-HenryGoldenBoy.cal = `.22`
+HenryGoldenBoy.cal = `.22LR`
 
 export default HenryGoldenBoy

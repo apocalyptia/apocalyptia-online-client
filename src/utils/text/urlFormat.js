@@ -1,5 +1,10 @@
 function urlFormat(word) {
-	return word.toLowerCase().split(' ').join('').replace('.', '').replace("'", "").trim()
+	return word.toLowerCase()
+				.replace('.', '')
+				.replace("'", "")
+				.trim()
+				.split(' ')
+				.join('')
 }
 
 export default urlFormat

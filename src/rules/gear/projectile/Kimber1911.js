@@ -11,6 +11,6 @@ const Kimber1911 = new Projectile({
 Kimber1911.dmg = 1
 Kimber1911.rng = 15
 Kimber1911.cap = 7
-Kimber1911.cal = `.45`
+Kimber1911.cal = `.45ACP`
 
 export default Kimber1911

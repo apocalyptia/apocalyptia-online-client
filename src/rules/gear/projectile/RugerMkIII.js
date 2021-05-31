@@ -11,6 +11,6 @@ const RugerMkIII = new Projectile({
 RugerMkIII.dmg = 1
 RugerMkIII.rng = 15
 RugerMkIII.cap = 10
-RugerMkIII.cal = `.22`
+RugerMkIII.cal = `.22LR`
 
 export default RugerMkIII

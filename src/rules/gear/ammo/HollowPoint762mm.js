@@ -1,13 +1,13 @@
 import Ammo from '/src/classes/gear/Ammo.js'
 import HollowPoint from '../attributes/HollowPoint.js'
 
-const HollowPoint45 = new Ammo({
-	name: `.45 Hollow Point`,
+const HollowPoint762mm = new Ammo({
+	name: `7.62mm Hollow Point`,
 	type: `Ammo`,
 	desc: [`Self-defense ammunition.`],
-	sz: 0.01,
+	sz: 0.02,
 	attr: [HollowPoint]
 })
-HollowPoint45.cal = `.45`
+HollowPoint762mm.cal = `7.62mm`
 
-export default HollowPoint45
+export default HollowPoint762mm

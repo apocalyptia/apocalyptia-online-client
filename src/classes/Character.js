@@ -292,7 +292,6 @@ export default class Character {
 			const water = Gear.resources.water
 			water.qty = 1
 			this.gear.equipment.inventory.push(water)
-			console.log(this.gear)
 		},
 		this.randomCharacter = () => {
 			this.randomTraits()

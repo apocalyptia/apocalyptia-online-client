@@ -11,6 +11,6 @@ const Ruger1022 = new Projectile({
 Ruger1022.dmg = 1
 Ruger1022.rng = 30
 Ruger1022.cap = 10
-Ruger1022.cal = `.22`
+Ruger1022.cal = `.22LR`
 
 export default Ruger1022

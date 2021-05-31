@@ -12,6 +12,6 @@ const MAC10 = new Projectile({
 MAC10.dmg = 1
 MAC10.rng = 20
 MAC10.cap = 30
-MAC10.cal = `.45`
+MAC10.cal = `.45ACP`
 
 export default MAC10

@@ -1,13 +1,13 @@
 import Ammo from '/src/classes/gear/Ammo.js'
 import Match from '../attributes/Match.js'
 
-const Match556 = new Ammo({
-	name: `5.56mm Match`,
+const Match45ACP = new Ammo({
+	name: `.45ACP Match`,
 	type: `Ammo`,
 	desc: [`Competition-grade ammunition.`],
-	sz: 0.02,
+	sz: 0.01,
 	attr: [Match]
 })
-Match556.cal = `5.56`
+Match45ACP.cal = `.45ACP`
 
-export default Match556
+export default Match45ACP

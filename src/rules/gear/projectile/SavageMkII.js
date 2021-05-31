@@ -10,6 +10,6 @@ const SavageMkII = new Projectile({
 SavageMkII.dmg = 1
 SavageMkII.rng = 40
 SavageMkII.cap = 10
-SavageMkII.cal = `.22`
+SavageMkII.cal = `.22LR`
 
 export default SavageMkII
