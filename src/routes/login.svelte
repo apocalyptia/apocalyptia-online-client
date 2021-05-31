@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import login from '/src/utils/auth/login.js'
 	import playerStore from '/src/stores/playerStore.js'
 
@@ -34,4 +34,4 @@
 	.password {
 		margin-bottom: var(--std-margin);
 	}
-</style>
+</style> -->

@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import join from '/src/utils/auth/join.js'
 	import playerStore from '/src/stores/playerStore.js'
 
@@ -37,4 +37,4 @@
 	.confirm {
 		margin-bottom: var(--std-margin);
 	}
-</style>
+</style> -->

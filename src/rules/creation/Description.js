@@ -10,9 +10,12 @@ import Weight from '/src/rules/description/Weight.js'
 
 const Description = new Creation({
 	name: `Description`,
-	list: [Player, Name, Age, Sex, Height, Weight, Skin, Hair],
+	desc: [
+		`These are your characters physical and demographic characteristics.`
+	],
 	step: 5,
 	type: `Creation`
 })
+Description.list = [Player, Name, Age, Sex, Height, Weight, Skin, Hair]
 
 export default Description

@@ -3,9 +3,9 @@
 
 // export default writable(new AreaMapDOM())
 
-// import AreaMapCanvas from '/src/classes/AreaMapCanvas.js'
-// import { writable } from 'svelte/store'
+import AreaMapCanvas from '/src/classes/AreaMapCanvas.js'
+import { writable } from 'svelte/store'
 
-// const areaMapCanvas = new AreaMapCanvas()
+const areaMapCanvas = new AreaMapCanvas()
 
-// export default writable(areaMapCanvas)
+export default writable(areaMapCanvas)
