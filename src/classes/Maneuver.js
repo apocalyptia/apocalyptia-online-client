@@ -6,16 +6,14 @@ export default class Maneuver extends Rule {
 		mode = ``,
 		name,
 		type = `Maneuver`,
-		url,
-		visible
+		url
 	}) {
 		url = `/maneuver/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 		this.mode = mode
 	}

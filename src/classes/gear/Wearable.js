@@ -9,20 +9,18 @@ export default class Wearable extends Gear {
 		qty,
 		sz,
 		type = `Wearable`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/wearables/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

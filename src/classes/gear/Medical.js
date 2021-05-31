@@ -9,20 +9,18 @@ export default class Medical extends Gear {
 		qty,
 		sz,
 		type = `Medical`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/medical/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

@@ -1,13 +1,13 @@
 import Abilities from '/src/rules/Abilities.js'
 import Creation from '/src/rules/Creation.js'
 import Gear from '/src/rules/Gear.js'
+import Properties from '/src/rules/Properties.js'
 import initializeDescription from '/src/classes/methods/creation/initializeDescription.js'
 import initializeGear from '/src/classes/methods/creation/initializeGear.js'
 import initializeMeta from '/src/classes/methods/creation/initializeMeta.js'
 import initializeProperties from '/src/classes/methods/creation/initializeProperties.js'
 import initializeSkills from '/src/classes/methods/creation/initializeSkills.js'
 import initializeTraits from '/src/classes/methods/creation/initializeTraits.js'
-import Properties from '/src/rules/Properties.js'
 import randomAge from '/src/utils/random/description/randomAge.js'
 import randomAmmo from '/src/utils/random/gear/randomAmmo.js'
 import randomArmor from '/src/utils/random/gear/randomArmor.js'
@@ -292,6 +292,7 @@ export default class Character {
 			const water = Gear.resources.water
 			water.qty = 1
 			this.gear.equipment.inventory.push(water)
+			console.log(this.gear)
 		},
 		this.randomCharacter = () => {
 			this.randomTraits()

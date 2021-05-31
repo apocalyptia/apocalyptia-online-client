@@ -9,20 +9,18 @@ export default class Bomb extends Gear {
 		qty,
 		sz,
 		type = `Bomb`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/bombs/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

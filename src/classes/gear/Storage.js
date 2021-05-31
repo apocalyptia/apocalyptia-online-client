@@ -9,20 +9,18 @@ export default class Storage extends Gear {
 		qty,
 		sz,
 		type = `Storage`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/storage/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

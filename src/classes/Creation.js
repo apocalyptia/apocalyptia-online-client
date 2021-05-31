@@ -6,16 +6,14 @@ export default class Creation extends Rule {
 		name,
 		step,
 		type = `Creation`,
-		url,
-		visible
+		url
 	}) {
 		url = `/creation/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 		this.step = step
 	}

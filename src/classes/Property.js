@@ -6,15 +6,13 @@ export default class Property extends Rule {
 		formula = [],
 		name,
 		type = `Property`,
-		url,
-		visible
+		url
 	}) {
 		url = `/properties/${name}`
 		super({
 			desc,
 			name,
 			type,
-			visible,
 			url
 		})
 		this.formula = formula

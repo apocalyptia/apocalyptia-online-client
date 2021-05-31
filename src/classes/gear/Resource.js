@@ -9,20 +9,18 @@ export default class Resource extends Gear {
 		qty,
 		sz,
 		type = `Resource`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/resources/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

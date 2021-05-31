@@ -9,20 +9,18 @@ export default class Melee extends Gear {
 		qty,
 		sz,
 		type = `Melee`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/melee/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

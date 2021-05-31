@@ -9,20 +9,18 @@ export default class Projectile extends Gear {
 		qty,
 		sz,
 		type = `Projectile`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/projectile/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

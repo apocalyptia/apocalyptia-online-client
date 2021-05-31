@@ -5,16 +5,14 @@ export default class Combat extends Rule {
 		desc,
 		name,
 		type = `Combat`,
-		url,
-		visible
+		url
 	}) {
 		url = `/combat/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 	}
 }

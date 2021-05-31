@@ -11,15 +11,13 @@ export default class Ability extends Rule {
 		options = [],
 		selection = null,
 		type = `Ability`,
-		url,
-		visible
+		url
 	}) {
 		url = `/abilities/${name}`
 		super({
 			desc,
 			name,
 			type,
-			visible,
 			url
 		})
 		this.experience = experience

@@ -5,16 +5,14 @@ export default class Need extends Rule {
 		desc,
 		name,
 		type = `Need`,
-		url,
-		visible
+		url
 	}) {
 		url = `/need/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 	}
 }

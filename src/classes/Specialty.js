@@ -6,14 +6,12 @@ export default class Specialty extends Rule {
 		diff = null,
 		name,
 		parent = ``,
-		type = `Specialty`,
-		visible
+		type = `Specialty`
 	}) {
 		super({
 			desc,
 			name,
-			type,
-			visible
+			type
 		})
 		this.diff = diff
 		this.parent = parent

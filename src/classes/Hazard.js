@@ -5,16 +5,14 @@ export default class Hazard extends Rule {
 		desc,
 		name,
 		type = `Hazard`,
-		url,
-		visible
+		url
 	}) {
 		url = `/hazard/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 	}
 }

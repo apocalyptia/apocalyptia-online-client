@@ -6,14 +6,12 @@ export default class Rule {
 		id = ``,
 		name = ``,
 		type = `Rule`,
-		url = ``,
-		visible = false
+		url = ``
 	}) {
 		this.desc = desc
 		this.id = id
 		this.name = name
 		this.type = type
-		this.visible = visible
 		this.url = urlFormat(`/manual${url}`)
 	}
 }

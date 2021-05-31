@@ -4,7 +4,7 @@
 	export let rule
 </script>
 
-<details bind:open={rule.visible}>
+<details>
 	<summary>
 		{rule.name}{typeof rule === 'Skill' ? ' Skill' : ''}
 	</summary>

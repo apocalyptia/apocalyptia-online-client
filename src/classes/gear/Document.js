@@ -9,20 +9,18 @@ export default class Document extends Gear {
 		qty,
 		sz,
 		type = `Document`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/documents/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

@@ -6,8 +6,7 @@ export default class Attribute extends Rule {
 		id,
 		name,
 		type = `Attribute`,
-		url,
-		visible
+		url
 	}) {
 		url = `/attributes/${name}`
 		super({
@@ -15,8 +14,7 @@ export default class Attribute extends Rule {
 			id,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 	}
 }

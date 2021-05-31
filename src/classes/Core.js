@@ -5,16 +5,14 @@ export default class Core extends Rule {
 		desc,
 		name,
 		type = `Core`,
-		url,
-		visible
+		url
 	}) {
 		url = `/core/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 	}
 }

@@ -6,16 +6,14 @@ export default class Trait extends Rule {
 		name,
 		skills = [],
 		type = `Trait`,
-		url,
-		visible
+		url
 	}) {
 		url = `/traits/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 		this.skills = skills
 	}

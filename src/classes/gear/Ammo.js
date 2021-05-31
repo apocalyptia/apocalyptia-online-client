@@ -10,20 +10,18 @@ export default class Ammo extends Gear {
 		qty,
 		sz,
 		type = `Ammo`,
-		url,
-		visible
+		url
 	}) {
 		url = `/ammo/${swapOrder(name)}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visible
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

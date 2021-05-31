@@ -9,20 +9,18 @@ export default class Tool extends Gear {
 		qty,
 		sz,
 		type = `Tool`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/tools/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

@@ -8,16 +8,14 @@ export default class Skill extends Rule {
 		parent = ``,
 		specs = {},
 		type = `Skill`,
-		url,
-		visible
+		url
 	}) {
 		url = `/skills/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 		this.diff = diff
 		this.parent = parent

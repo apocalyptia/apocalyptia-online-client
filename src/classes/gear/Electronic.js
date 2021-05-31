@@ -9,20 +9,18 @@ export default class Electronic extends Gear {
 		qty,
 		sz,
 		type = `Electronic`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/electronics/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }

@@ -9,8 +9,7 @@ export default class Gear extends Rule {
 		qty = 0,
 		sz = 0,
 		type = `Gear`,
-		url,
-		visible
+		url
 	}) {
 		url = `/gear${url}`
 		super({
@@ -18,8 +17,7 @@ export default class Gear extends Rule {
 			id,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 		this.attr = attr
 		this.qty = qty

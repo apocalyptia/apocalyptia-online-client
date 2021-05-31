@@ -5,16 +5,14 @@ export default class Status extends Rule {
 		desc,
 		name,
 		type = `Status`,
-		url,
-		visible
+		url
 	}) {
 		url = `/status/${name}`
 		super({
 			desc,
 			name,
 			type,
-			url,
-			visible
+			url
 		})
 	}
 }

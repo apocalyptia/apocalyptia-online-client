@@ -9,20 +9,18 @@ export default class Armor extends Gear {
 		qty,
 		sz,
 		type = `Armor`,
-		url,
-		visibility
+		url
 	}) {
 		url = `/armor/${name}`
 		super({
+			attr,
 			desc,
 			id,
 			name,
+			qty,
+			sz,
 			type,
-			url,
-			visibility
+			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
 	}
 }
