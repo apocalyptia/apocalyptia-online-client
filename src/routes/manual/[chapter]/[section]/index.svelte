@@ -18,9 +18,6 @@
 	import Rules from '/src/rules/Rules.js'
 
 	export let chapter, section
-
-	console.log('chapter = ', chapter)
-	console.log('section = ', section)
 </script>
 
 

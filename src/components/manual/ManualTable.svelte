@@ -10,11 +10,7 @@
 	onMount((_) => {
 		tableContents = [rule.table.headers, ...Object.values(rule.table.contents).map((c) => Object.values(c))]
 
-		console.log(tableContents)
-
 		columnWidths = new Array(rule.table.headers.length).fill(0)
-
-		console.log(columnWidths)
 
 		const offset = 4
 
@@ -22,7 +18,6 @@
 			for (let c in tableContents[r]) {
 				if (columnWidths[c] < tableContents[r][c].toString().length) {
 					columnWidths[c] = tableContents[r][c].toString().length + offset
-					console.log(columnWidths)
 				}
 			}
 		}

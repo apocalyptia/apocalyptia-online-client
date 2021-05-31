@@ -5,7 +5,6 @@
 // 			method: 'POST',
 // 			body: JSON.stringify('')
 // 		}).then((res) => res.json())
-// 		console.log(data)
 // 	} catch (err) {
 // 		console.log('something went wrong', err)
 // 	}

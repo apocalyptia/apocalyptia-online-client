@@ -8,8 +8,6 @@ function join(playerStore, email, password, confirm) {
 			playerStore = JSON.parse(window.localStorage.getItem(email))
 		}
 		playerStore.loggedIn = true
-		console.log(`Joined as ${email}!`)
-		console.log(playerStore)
 	} else alert('Error: Invalid login information.')
 	return playerStore
 }

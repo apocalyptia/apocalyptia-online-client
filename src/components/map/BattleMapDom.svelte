@@ -13,8 +13,6 @@
 		$mapStore.currentSquare = Math.round($mapStore.startingSquare * $mapStore.magnification)
 		document.documentElement.style.setProperty(`--cell-size`, `${$mapStore.currentSquare}px`)
 		let mapFrame = document.querySelector('.map-frame')
-		// console.log(mapFrame.offsetHeight)
-		// console.log(mapFrame.offsetWidth)
 		// mapFrame.scrollBy((mapFrame.offsetWidth / 4), (mapFrame.offsetHeight / 4))
 	}
 </script>

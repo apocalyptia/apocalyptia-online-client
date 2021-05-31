@@ -13,8 +13,6 @@
 	afterUpdate(() => {
 		$mapStore = $mapStore.redraw()
 		const frame = document.querySelector('.canvas-frame')
-		console.log(frame.scrollLeft)
-		console.log(frame.scrollRight)
 	})
 </script>
 
