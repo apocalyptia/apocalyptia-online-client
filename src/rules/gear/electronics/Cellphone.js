@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const Cellphone = new Gear({
+const Cellphone = new Electronic({
 	name: `Cellphone`,
 	type: `Electronics`,
 	desc: [`1yd light, camera, remote control.`],

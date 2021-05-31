@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Pinned = new Rule({
+const Pinned = new Status({
 	name: `Pinned`,
 	desc: [
 		`Pinned is the third and final step of Grappling.`,

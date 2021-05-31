@@ -9,7 +9,7 @@ import EquipmentList from './gear/EquipmentList.js'
 import GearList from './GearList.js'
 import MedicalList from './gear/MedicalList.js'
 import MeleeWeaponsList from './gear/MeleeWeaponsList.js'
-import MiscellaneousList from './gear/MiscellaneousList.js'
+import MiscList from './gear/MiscList.js'
 import ProjectileWeaponsList from './gear/ProjectileWeaponsList.js'
 import StorageList from './gear/StorageList.js'
 import ToolsList from './gear/ToolsList.js'
@@ -72,9 +72,9 @@ export default [
 		list: MeleeWeaponsList.list
 	},
 	{
-		name: `Miscellaneous`,
+		name: `Misc`,
 		value: undefined,
-		list: MiscellaneousList.list
+		list: MiscList.list
 	},
 	{
 		name: `Projectile`,

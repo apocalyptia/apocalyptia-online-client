@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const RCCar = new Gear({
+const RCCar = new Electronic({
 	name: `RC Car`,
 	type: `Electronics`,
 	desc: [`Science 3# to use.`, `45yd Speed.`],

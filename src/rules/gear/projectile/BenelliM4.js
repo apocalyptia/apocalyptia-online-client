@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 import Scatter from '../attributes/Scatter.js'
 
-const BenelliM4 = new Gear({
+const BenelliM4 = new Projectile({
 	name: `Benelli M4 Shotgun`,
 	type: `Projectile Weapon`,
 	sz: 4,

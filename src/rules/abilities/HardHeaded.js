@@ -1,4 +1,4 @@
-import Ability from '../../classes/Ability.js'
+import Ability from '/src/classes/Ability.js'
 
 const HardHeaded = new Ability({
 	name: `Hard Headed`,

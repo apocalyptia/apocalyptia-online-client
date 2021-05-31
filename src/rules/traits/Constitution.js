@@ -1,10 +1,11 @@
-import Rule from '../../classes/Rule.js'
+import Trait from '../../classes/Trait.js'
 import Skills from '../Skills.js'
 
-const constitutionSkills = Object.values(Skills).filter((skill) => skill.parent === 'Agility')
+const constitutionSkills = Object.values(Skills).filter((skill) => skill.parent === 'Constitution')
 
-const Constitution = new Rule({
+const Constitution = new Trait({
 	name: `Constitution`,
+	skills: [ ...constitutionSkills ],
 	desc: [
 		`Constitution is a Character’s talent for physical power and durability.`,
 		`High Constitution indicates good health, high stamina, and strong muscles.`,

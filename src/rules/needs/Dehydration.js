@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Need from '/src/classes/Need.js'
 
-const Dehydration = new Rule({
+const Dehydration = new Need({
 	name: `Dehydration`,
 	desc: [
 		`1 Water per day is required.`,

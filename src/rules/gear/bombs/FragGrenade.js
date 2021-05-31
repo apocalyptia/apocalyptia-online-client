@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Bomb from '/src/classes/gear/Bomb.js'
 import Blast from '../attributes/Blast.js'
 import Pierce from '../attributes/Pierce.js'
 
-const FragGrenade = new Gear({
+const FragGrenade = new Bomb({
 	name: `Frag Grenade`,
 	type: `Bomb`,
 	desc: [`Explosive fragmentation grenade.`],

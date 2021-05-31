@@ -1,8 +1,8 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 import Pain from './subrules/Pain.js'
 import Recovery from './subrules/Recovery.js'
 
-const Trauma = new Rule({
+const Trauma = new Combat({
 	name: `Trauma`,
 	desc: [
 		`Trauma temporarily reduces Psyche.`,

@@ -18,11 +18,6 @@
 	export let chapter, section, item
 
 	const rule = Rules[chapter][section][item]
-
-	console.log('chapter = ', chapter)
-	console.log('section = ', section)
-	console.log('item = ', item)
-	console.log('Rules[chapter][section][item] = ', Rules[chapter][section][item])
 </script>
 
 <div class="page-body">

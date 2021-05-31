@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const HandRadio = new Gear({
+const HandRadio = new Electronic({
 	name: `Hand Radio`,
 	type: `Electronics`,
 	desc: [`9-channel 2-way radio.`, `3 mile range.`],

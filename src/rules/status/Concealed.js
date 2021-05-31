@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Concealed = new Rule({
+const Concealed = new Status({
 	name: `Concealed`,
 	desc: [
 		`If an opponent cannot see you, they are considered to be Blind to you.`,

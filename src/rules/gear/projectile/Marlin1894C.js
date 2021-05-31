@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const Marlin1894C = new Gear({
+const Marlin1894C = new Projectile({
 	name: `Marlin 1894C Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,

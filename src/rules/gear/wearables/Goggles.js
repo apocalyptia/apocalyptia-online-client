@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const Goggles = new Gear({
+const Goggles = new Wearable({
 	name: `Goggles`,
 	desc: [`+3 Constitution to resist toxins in eyes.`],
 	sz: 1

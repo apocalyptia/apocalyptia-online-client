@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Chop = new Rule({
+const Chop = new Attribute({
 	name: `Chop`,
 	desc: [`+1 Damage to Body Parts with no Armor.`]
 })

@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Bomb from '/src/classes/gear/Bomb.js'
 import Blind from '../../status/Blind.js'
 import Stun from '../../status/Stun.js'
 
-const FlashbangGrenade = new Gear({
+const FlashbangGrenade = new Bomb({
 	name: `Flashbang Grenade`,
 	type: `Bomb`,
 	desc: [`Stun grenade.`],

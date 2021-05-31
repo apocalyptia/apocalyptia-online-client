@@ -1,10 +1,11 @@
-import Rule from '../../classes/Rule.js'
+import Trait from '../../classes/Trait.js'
 import Skills from '../Skills.js'
 
-const demeanorSkills = Object.values(Skills).filter((skill) => skill.parent === 'Agility')
+const demeanorSkills = Object.values(Skills).filter((skill) => skill.parent === 'Demeanor')
 
-const Demeanor = new Rule({
+const Demeanor = new Trait({
 	name: `Demeanor`,
+	skills: [ ...demeanorSkills ],
 	desc: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
 		`High Demeanor indicates charisma, self-motivation, and confidence.`,

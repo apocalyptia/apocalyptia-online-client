@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Tool from '/src/classes/gear/Tool.js'
 
-const TapeMeasure = new Gear({
+const TapeMeasure = new Tool({
 	name: `Tape Measure`,
 	desc: [`+1 Build.`, `10yd long wind-up metal tape.`],
 	sz: 1

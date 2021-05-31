@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Tires = new Rule({
+const Tires = new Combat({
 	name: `Tires`,
 	desc: [
 		`Roll [-3 Attack vs Drive(Stunt)] to destroy a tire.`,

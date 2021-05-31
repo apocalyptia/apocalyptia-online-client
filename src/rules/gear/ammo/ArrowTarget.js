@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 
-const ArrowTarget = new Gear({
+const ArrowTarget = new Ammo({
 	name: `Target Arrow`,
 	type: `Ammo`,
 	desc: [`Practice arrow.`],

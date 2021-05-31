@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Slug = new Rule({
+const Slug = new Attribute({
 	name: `Slug`,
 	desc: [`Range x2.`]
 })

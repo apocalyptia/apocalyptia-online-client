@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Melee from '/src/classes/gear/Melee.js'
 import OneHanded from '../attributes/OneHanded.js'
 import Blunt from '../attributes/Blunt.js'
 import Shield from '../attributes/Shield.js'
 
-const RiotShield = new Gear({
+const RiotShield = new Melee({
 	name: `Riot Shield`,
 	type: `Melee Weapon`,
 	sz: 4,

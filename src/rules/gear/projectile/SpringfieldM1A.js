@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const SpringfieldM1A = new Gear({
+const SpringfieldM1A = new Projectile({
 	name: `Springfield M1A Rifle`,
 	type: `Projectile Weapon`,
 	sz: 4,

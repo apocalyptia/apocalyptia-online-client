@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const BaseballCap = new Gear({
+const BaseballCap = new Wearable({
 	name: `Baseball Cap`,
 	desc: [`Reduce Visibility(Rain and Sun) penalty by 1.`],
 	sz: 0

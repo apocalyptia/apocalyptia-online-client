@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Camo = new Rule({
+const Camo = new Attribute({
 	name: `Camo`,
 	desc: [`+1 Stealth per Body Part when in a given Biome.`]
 })

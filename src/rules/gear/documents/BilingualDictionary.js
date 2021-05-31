@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const BilingualDictionary = new Gear({
+const BilingualDictionary = new Document({
 	name: `Bilingual Dictionary`,
 	desc: [`Multilingual Ability`],
 	sz: 1,

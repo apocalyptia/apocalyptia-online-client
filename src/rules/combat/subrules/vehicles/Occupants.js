@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Occupants = new Rule({
+const Occupants = new Combat({
 	name: `Occupants`,
 	desc: [
 		`Passengers in a moving vehicle are Unstable.`,

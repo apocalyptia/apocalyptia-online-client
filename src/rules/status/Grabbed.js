@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Grabbed = new Rule({
+const Grabbed = new Status({
 	name: `Grabbed`,
 	desc: [`A Grabbed opponent is considered to be Immobilized.`],
 	type: `Status`

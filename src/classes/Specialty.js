@@ -1,17 +1,21 @@
-import Rule from './Rule.js'
+import Rule from '/src/classes/Rule.js'
 
 export default class Specialty extends Rule {
-	constructor({ desc = [], diff = null, name = ``, type = `Specialty`, visible = false }) {
+	constructor({
+		desc,
+		diff = null,
+		name,
+		parent = ``,
+		type = `Specialty`,
+		visible
+	}) {
 		super({
 			desc,
 			name,
 			type,
 			visible
 		})
-		this.desc = desc
 		this.diff = diff
-		this.name = name
-		this.type = type
-		this.visible = visible
+		this.parent = parent
 	}
 }

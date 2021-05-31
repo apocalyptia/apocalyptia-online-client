@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const RecurveBow = new Gear({
+const RecurveBow = new Projectile({
 	name: `Recurve Bow`,
 	type: `Projectile Weapon`,
 	sz: 2,

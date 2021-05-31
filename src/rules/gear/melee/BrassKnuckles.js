@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Melee from '/src/classes/gear/Melee.js'
 import OneHanded from '../attributes/OneHanded.js'
 import Blunt from '../attributes/Blunt.js'
 
-const BrassKnuckles = new Gear({
+const BrassKnuckles = new Melee({
 	name: `Brass Knuckles`,
 	type: `Melee Weapon`,
 	sz: 1,

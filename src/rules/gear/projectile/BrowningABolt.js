@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const BrowningABolt = new Gear({
+const BrowningABolt = new Projectile({
 	name: `Browning A-Bolt Rifle`,
 	type: `Projectile Weapon`,
 	sz: 4,

@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Medical from '/src/classes/gear/Medical.js'
 
-const Crutch = new Gear({
+const Crutch = new Medical({
 	name: `Crutch`,
 	type: `Medical`,
 	desc: [`Halves Leg Damage Pain penalty to Speed.`],

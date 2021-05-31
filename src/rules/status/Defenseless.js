@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Defenseless = new Rule({
+const Defenseless = new Status({
 	name: `Defenseless`,
 	desc: [
 		`You must use a Reflexive Defense.`,

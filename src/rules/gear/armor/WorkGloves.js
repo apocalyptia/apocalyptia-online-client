@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 import FireResistance from '../../gear/attributes/FireResistance.js'
 
-const WorkGloves = new Gear({
+const WorkGloves = new Armor({
 	name: `Work Gloves`,
 	sz: 0,
 	attr: [FireResistance],

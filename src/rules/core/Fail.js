@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const Fail = new Rule({
+const Fail = new Core({
 	name: `Fail`,
 	desc: [`Your roll is a Fail when the Result is less than the Difficulty.`]
 })

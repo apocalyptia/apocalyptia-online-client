@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Tool from '/src/classes/gear/Tool.js'
 
-const MeasuringCup = new Gear({
+const MeasuringCup = new Tool({
 	name: `Measuring Cup`,
 	desc: [`+3 Science(Chemistry).`, `Marked glass cup.`],
 	sz: 1

@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Accessory from '/src/classes/gear/Accessory.js'
 
-const Suppressor = new Gear({
+const Suppressor = new Accessory({
 	name: `Suppressor`,
 	type: `Accessory`,
 	desc: [`Firing a Gun does not break Concealment.`],

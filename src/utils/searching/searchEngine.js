@@ -4,51 +4,29 @@ import capitalize from '/src/utils/text/capitalize.js'
 import swapOrder from '/src/utils/text/swapOrder.js'
 import urlFormat from '/src/utils/text/urlFormat.js'
 
-function searchEngine(searchTerm = '') {
-	let displayList = []
+function searchEngine({
+	term = '',
+	list = Rules
+}) {
+	let resultsList = []
 
-	if (searchTerm.length) {
-		const chapterList = Object.entries(Rules).map((chapter) => {
+	if (term.length) {
+		const candidateList = Object.entries(list).flatMap((rule) => {
 			return {
-				name: capitalize(chapter[0]),
-				content: chapter[1],
-				url: urlFormat(`/manual/${chapter[0]}`)
+				name: rule[1].name || capitalize(rule[0]),
+				url: rule[1].url || urlFormat(`/manual/${rule[0]}`)
 			}
 		})
 
-		const resultsList = alphabetize(
-			chapterList
-				.flatMap((chapter) => {
-					return Object.entries(chapter.content).flatMap((section) => {
-						if (section[1].hasOwnProperty('name')) {
-							section[1].url = urlFormat(`/manual/${chapter.name}/${section[1].name}`)
-							return section[1]
-						} else {
-							return Object.values(section[1]).flatMap((item) => {
-								item.url = urlFormat(
-									`/manual/${chapter.name}/${section[0]}/${section[0] === 'ammo' ? swapOrder(item.name) : item.name}`
-								)
-								console.log(item.url)
-								return item
-							})
-						}
-					})
-				})
-				.concat(chapterList)
-		)
-
-		displayList = resultsList.filter((r) => {
-			return r.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+		resultsList = candidateList.filter((r) => {
+			return r.name.toLowerCase().startsWith(term.toLowerCase()) || 
+					r.name.toLowerCase().includes(term.toLowerCase())
 		})
 
-		if (!displayList.length) {
-			displayList = resultsList.filter((r) => {
-				return r.name.toLowerCase().includes(searchTerm.toLowerCase())
-			})
-		}
+		resultsList.sort((a, b) => a.name - b.name)
 	}
 
-	return displayList
+	return resultsList
 }
 
 export default searchEngine

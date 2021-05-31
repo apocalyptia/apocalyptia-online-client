@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Interrogate = new Rule({
+const Interrogate = new Maneuver({
 	name: `Interrogate`,
 	desc: [
 		`Roll [Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence.`,

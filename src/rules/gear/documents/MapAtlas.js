@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const MapAtlas = new Gear({
+const MapAtlas = new Document({
 	name: `Map (Atlas)`,
 	desc: [`+1 Survival(Navigate)`],
 	sz: 1,

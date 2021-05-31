@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Medical from '/src/classes/gear/Medical.js'
 
-const PressureCuff = new Gear({
+const PressureCuff = new Medical({
 	name: `Pressure Cuff`,
 	type: `Medical`,
 	desc: [`+1 Medicine.`],

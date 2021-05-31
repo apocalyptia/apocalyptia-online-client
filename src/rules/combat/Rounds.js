@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Rounds = new Rule({
+const Rounds = new Combat({
 	name: `Rounds`,
 	desc: [
 		`Combat time occurs in 3-second “rounds”.`,

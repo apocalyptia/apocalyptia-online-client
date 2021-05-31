@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Accessory from '/src/classes/gear/Accessory.js'
 
-const Scope = new Gear({
+const Scope = new Accessory({
 	name: `Scope`,
 	type: `Accessory`,
 	desc: [`+3 to Aimed Projectile Attacks and Perception(See).`],

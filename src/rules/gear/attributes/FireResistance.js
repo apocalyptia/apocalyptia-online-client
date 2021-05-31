@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const FireResistance = new Rule({
+const FireResistance = new Attribute({
 	name: `Fire Resistance`,
 	desc: [`Armor Absorption reduces Fire Damage.`]
 })

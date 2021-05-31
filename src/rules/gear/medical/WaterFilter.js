@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Medical from '/src/classes/gear/Medical.js'
 
-const WaterFilter = new Gear({
+const WaterFilter = new Medical({
 	name: `Water Filter`,
 	type: `Medical`,
 	desc: [`Purifies 1 Water ration (.5gal) per minute.`],

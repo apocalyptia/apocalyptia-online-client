@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const ClassicNovel = new Gear({
+const ClassicNovel = new Document({
 	name: `Classic Novel`,
 	desc: [`+1 Psyche`],
 	sz: 1,

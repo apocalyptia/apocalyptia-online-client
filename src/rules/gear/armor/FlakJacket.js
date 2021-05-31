@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 import Camo from '../../gear/attributes/Camo.js'
 
-const FlakJacket = new Gear({
+const FlakJacket = new Armor({
 	name: `Flak Jacket`,
 	sz: 3,
 	attr: [Camo],

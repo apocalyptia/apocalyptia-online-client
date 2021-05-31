@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const ColtPython = new Gear({
+const ColtPython = new Projectile({
 	name: `Colt Python Revolver`,
 	type: `Projectile Weapon`,
 	sz: 1,

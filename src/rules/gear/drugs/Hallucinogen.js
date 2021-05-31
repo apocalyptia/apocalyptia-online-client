@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Drug from '/src/classes/gear/Drug.js'
 
-const Hallucinogen = new Gear({
+const Hallucinogen = new Drug({
 	name: `Hallucinogen`,
 	desc: [`+1 Perform and Tame, -3 to all other rolls, and -1 Psyche.`],
 	sz: 0,

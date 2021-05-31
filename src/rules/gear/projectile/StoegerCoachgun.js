@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 import Scatter from '../attributes/Scatter.js'
 
-const StoegerCoachgun = new Gear({
+const StoegerCoachgun = new Projectile({
 	name: `Stoeger Coach Shotgun`,
 	type: `Projectile Weapon`,
 	sz: 3,

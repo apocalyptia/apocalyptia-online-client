@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Bomb from '/src/classes/gear/Bomb.js'
 import Blast from '../attributes/Blast.js'
 import FireDamage from '../attributes/FireDamage.js'
 
-const MolotovCocktail = new Gear({
+const MolotovCocktail = new Bomb({
 	name: `Molotov Cocktail`,
 	type: `Bomb`,
 	desc: [`Glass bottle of fuel with rag wick.`],

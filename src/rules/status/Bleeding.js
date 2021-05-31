@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Bleeding = new Rule({
+const Bleeding = new Status({
 	name: `Bleeding`,
 	desc: [
 		`You begin Bleeding whenever you take Damage that isn't Blunt.`,

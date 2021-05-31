@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const Lantern = new Gear({
+const Lantern = new Electronic({
 	name: `Lantern`,
 	type: `Electronics`,
 	desc: [`3yd light radius.`],

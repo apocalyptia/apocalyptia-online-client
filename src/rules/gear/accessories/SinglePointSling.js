@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Accessory from '/src/classes/gear/Accessory.js'
 
-const SinglePointSling = new Gear({
+const SinglePointSling = new Accessory({
 	name: `Single-Point Sling`,
 	type: `Accessory`,
 	desc: [`Draw or stow a 2h Gun without using an Action.`],

@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Melee from '/src/classes/gear/Melee.js'
 import OneHanded from '../attributes/OneHanded.js'
 import Blunt from '../attributes/Blunt.js'
 
-const Club = new Gear({
+const Club = new Melee({
 	name: `Club`,
 	type: `Melee Weapon`,
 	sz: 2,

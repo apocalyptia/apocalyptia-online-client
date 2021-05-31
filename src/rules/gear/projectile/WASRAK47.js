@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const WASRAK47 = new Gear({
+const WASRAK47 = new Projectile({
 	name: `WASR AK-47 Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,

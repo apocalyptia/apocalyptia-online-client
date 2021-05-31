@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Prone = new Rule({
+const Prone = new Status({
 	name: `Prone`,
 	desc: [
 		`You may drop Prone at any time for free on your turn or as part of a Dodge action.`,

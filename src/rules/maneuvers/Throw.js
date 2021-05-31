@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Throw = new Rule({
+const Throw = new Maneuver({
 	name: `Throw`,
 	desc: [
 		`Throw a Grabbed or Restrained enemy up to [Constitution] yds.`,

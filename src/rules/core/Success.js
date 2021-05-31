@@ -1,8 +1,8 @@
-import Rule from '../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 import Cooperation from './subrules/Cooperation.js'
 import RoteActions from './subrules/RoteActions.js'
 
-const Success = new Rule({
+const Success = new Core({
 	name: `Success`,
 	desc: [
 		`Your roll is a Success when if the Result is greater than or equal to the Difficulty.`,

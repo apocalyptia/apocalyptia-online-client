@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Actions = new Rule({
+const Actions = new Combat({
 	name: `Actions`,
 	desc: [
 		`You get 3 Actions per round starting on your turn.`,

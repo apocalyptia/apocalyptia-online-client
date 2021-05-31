@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Attack = new Rule({
+const Attack = new Combat({
 	name: `Attack`,
 	desc: [
 		`There are two types of Attacks: Melee and Projectile.`,

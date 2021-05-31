@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const Multimeter = new Gear({
+const Multimeter = new Electronic({
 	name: `Multimeter`,
 	type: `Electronics`,
 	desc: [`+3 Science(Technology).`, `Detects voltage, battery life, and closed circuits.`],

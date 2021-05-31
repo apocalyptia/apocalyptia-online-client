@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const QuadcopterDrone = new Gear({
+const QuadcopterDrone = new Electronic({
 	name: `Quadcopter Drone`,
 	type: `Electronics`,
 	desc: [`Science 6# to use.`, `Onboard camera.`, `90yd Speed.`],

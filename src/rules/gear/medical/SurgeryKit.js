@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Medical from '/src/classes/gear/Medical.js'
 
-const SurgeryKit = new Gear({
+const SurgeryKit = new Medical({
 	name: `Surgery Kit`,
 	type: `Medical`,
 	desc: [`+3 Medicine(Surgery).`],

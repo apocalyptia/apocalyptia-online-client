@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Tackle = new Rule({
+const Tackle = new Maneuver({
 	name: `Tackle`,
 	desc: [
 		`Spend 2 Actions and make a Grapple Attack roll to move up to your Speed and Pin an enemy.`,

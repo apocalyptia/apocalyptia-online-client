@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Drug from '/src/classes/gear/Drug.js'
 
-const Stimulant = new Gear({
+const Stimulant = new Drug({
 	name: `Stimulant`,
 	desc: [`Ignore Exhaustion penalties for 6hrs.`],
 	sz: 0,

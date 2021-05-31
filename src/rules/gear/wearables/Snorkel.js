@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const Snorkel = new Gear({
+const Snorkel = new Wearable({
 	name: `Snorkel`,
 	desc: [`Breathe while just beneath water's surface.`],
 	sz: 1

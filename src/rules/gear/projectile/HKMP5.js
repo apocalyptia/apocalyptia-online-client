@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Auto from '../attributes/Auto.js'
 import Rapid from '../attributes/Rapid.js'
 
-const HKMP5 = new Gear({
+const HKMP5 = new Projectile({
 	name: `H&K MP5 SMG`,
 	type: `Projectile Weapon`,
 	sz: 3,

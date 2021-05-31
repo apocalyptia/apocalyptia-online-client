@@ -1,25 +1,28 @@
-import Rule from './Rule.js'
+import Rule from '/src/classes/Rule.js'
 
 export default class Disease extends Rule {
 	constructor({
 		desc,
+		diagnose,
+		duration,
+		effects = [],
 		id,
 		name,
-		type = `Disease`,
-		transmission,
-		virulence,
-		diagnose,
 		onset,
-		duration,
 		symptoms = [],
-		effects = [],
-		treatment = []
+		transmission,
+		treatment = [],
+		type = `Disease`,
+		url = ``,
+		virulence
 	}) {
+		url = `/diseases/${name}`
 		super({
 			desc,
 			id,
 			name,
-			type
+			type,
+			url
 		})
 		this.transmission = transmission
 		this.virulence = virulence

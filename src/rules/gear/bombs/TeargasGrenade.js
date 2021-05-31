@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Bomb from '/src/classes/gear/Bomb.js'
 import Blind from '../../status/Blind.js'
 import Stun from '../../status/Stun.js'
 import Asphyxiation from '../../needs/Asphyxiation.js'
 
-const TeargasGrenade = new Gear({
+const TeargasGrenade = new Bomb({
 	name: `Teargas Grenade`,
 	type: `Bomb`,
 	desc: [`Chemical irritant grenade.`],

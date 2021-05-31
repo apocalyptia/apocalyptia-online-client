@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Bomb from '/src/classes/gear/Bomb.js'
 import Blind from '../../status/Blind.js'
 
-const SmokeGrenade = new Gear({
+const SmokeGrenade = new Bomb({
 	name: `Smoke Grenade`,
 	type: `Bomb`,
 	desc: [`Visibility denial grenade.`],

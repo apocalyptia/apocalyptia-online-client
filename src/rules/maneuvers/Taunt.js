@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Taunt = new Rule({
+const Taunt = new Maneuver({
 	name: `Taunt`,
 	desc: [
 		`Roll [Leadership vs Demeanor].`,

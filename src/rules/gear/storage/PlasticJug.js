@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Storage from '/src/classes/gear/Storage.js'
 
-const PlasticJug = new Gear({
+const PlasticJug = new Storage({
 	name: `Plastic Jug`,
 	desc: [`Holds 2 units (1gal).`],
 	sz: 1

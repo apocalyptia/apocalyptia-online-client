@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const Difficulty = new Rule({
+const Difficulty = new Core({
 	name: `Difficulty`,
 	desc: [
 		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success.`,

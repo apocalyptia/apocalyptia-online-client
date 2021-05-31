@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const StandupComedy = new Gear({
+const StandupComedy = new Document({
 	name: `Stand-up Comedy`,
 	desc: [`+1 Entertain`],
 	sz: 1,

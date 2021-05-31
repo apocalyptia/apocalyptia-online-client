@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Range = new Rule({
+const Range = new Status({
 	name: `Range`,
 	desc: [
 		`Projectile Attacks made at Point-Blank Range (3yrds or less) get a +3 bonus.`,

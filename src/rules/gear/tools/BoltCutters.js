@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Tool from '/src/classes/gear/Tool.js'
 
-const BoltCutters = new Gear({
+const BoltCutters = new Tool({
 	name: `Bolt Cutters`,
 	desc: [`C9# to cut metal (Handcuffs, Padlocks, etc).`],
 	sz: 3

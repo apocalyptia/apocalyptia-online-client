@@ -1,7 +1,7 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 import ReflexiveDefense from './subrules/ReflexiveDefense.js'
 
-const Defense = new Rule({
+const Defense = new Combat({
 	name: `Defense`,
 	desc: [
 		`Spend an Action on your enemy's turn to use either type of Defense: Block or Dodge.`,

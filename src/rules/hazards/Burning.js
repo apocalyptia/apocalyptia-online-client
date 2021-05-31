@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Hazard from '/src/classes/Hazard.js'
 
-const Burning = new Rule({
+const Burning = new Hazard({
 	name: `Burning`,
 	desc: [
 		`1 Fire Damage per round.`,

@@ -1,4 +1,4 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 import Conditions from './combat/subrules/vehicles/Conditions.js'
 import Occupants from './combat/subrules/vehicles/Occupants.js'
 import Pedestrians from './combat/subrules/vehicles/Pedestrians.js'
@@ -6,7 +6,7 @@ import Tires from './combat/subrules/vehicles/Tires.js'
 import Wreck from './combat/subrules/vehicles/Wreck.js'
 import Burning from './combat/subrules/vehicles/Burning.js'
 
-const Vehicles = new Rule({
+const Vehicles = new Combat({
 	name: `Vehicles`,
 	desc: [
 		`Roll [Drive(Ram) vs Drive(Stunt)] to hit an enemy vehicle.`,

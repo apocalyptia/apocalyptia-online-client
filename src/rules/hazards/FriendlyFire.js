@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Hazard from '/src/classes/Hazard.js'
 
-const FriendlyFire = new Rule({
+const FriendlyFire = new Hazard({
 	name: `Friendly Fire`,
 	desc: [
 		`-3 Projectile against targets within 1yd of your ally.`,

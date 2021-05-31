@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const ReflexiveDefense = new Rule({
+const ReflexiveDefense = new Combat({
 	name: `Reflexive Defense`,
 	desc: [
 		`Reflexive Defenses are your default Defenses when you do not spend an Action to actively roll Defense.`,

@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const NonLethalForce = new Rule({
+const NonLethalForce = new Maneuver({
 	name: `Non-Lethal Force`,
 	desc: [
 		`Declare that you are using this Maneuver before rolling a Melee Attack.`,

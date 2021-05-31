@@ -1,10 +1,11 @@
-import Rule from '../../classes/Rule.js'
+import Trait from '../../classes/Trait.js'
 import Skills from '../Skills.js'
 
 const agilitySkills = Object.values(Skills).filter((skill) => skill.parent === 'Agility')
 
-const Agility = new Rule({
+const Agility = new Trait({
 	name: `Agility`,
+	skills: [ ...agilitySkills ],
 	desc: [
 		`Agility is a Character’s talent for physical coordination.`,
 		`High Agility indicates balance, flexibility, and fine motor skill.`,

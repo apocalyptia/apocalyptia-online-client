@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 
-const Standard556 = new Gear({
+const Standard556 = new Ammo({
 	name: `5.56mm Standard`,
 	type: `Ammo`,
 	desc: [`Basic ammunition.`],

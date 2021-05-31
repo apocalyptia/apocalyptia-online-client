@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Hostage = new Rule({
+const Hostage = new Maneuver({
 	name: `Hostage`,
 	desc: [
 		`Use a Grabbed or Restrained enemy as Cover.`,

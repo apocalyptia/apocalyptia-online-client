@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 
-const LeatherJacket = new Gear({
+const LeatherJacket = new Armor({
 	name: `Leather Jacket`,
 	sz: 2,
 	type: `Armor`

@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Pedestrians = new Rule({
+const Pedestrians = new Combat({
 	name: `Pedestrians`,
 	desc: [
 		`Hitting a pedestrian does Damage = [vehicle Absorption].`,

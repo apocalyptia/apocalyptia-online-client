@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const Megaphone = new Gear({
+const Megaphone = new Electronic({
 	name: `Megaphone`,
 	type: `Electronics`,
 	desc: [`+1 Leadership when speaking to a crowd.`],

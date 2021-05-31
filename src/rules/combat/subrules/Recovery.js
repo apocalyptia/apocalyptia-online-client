@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Recovery = new Rule({
+const Recovery = new Combat({
 	name: `Recovery`,
 	desc: [
 		`After 3 days of rest, you have a chance to recover a little bit.`,

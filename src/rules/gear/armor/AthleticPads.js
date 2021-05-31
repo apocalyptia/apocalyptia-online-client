@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 
-const AthleticPads = new Gear({
+const AthleticPads = new Armor({
 	name: `Athletic Pads`,
 	sz: 2,
 	type: `Armor`

@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Tool from '/src/classes/gear/Tool.js'
 
-const ToolBag = new Gear({
+const ToolBag = new Tool({
 	name: `Tool Bag`,
 	desc: [`+3 Build.`, `Pliers, wrenches, level, etc.`],
 	sz: 3

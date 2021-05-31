@@ -1,4 +1,4 @@
-import Rule from './Rule.js'
+import Rule from '/src/classes/Rule.js'
 
 export default class Ability extends Rule {
 	constructor({
@@ -11,13 +11,16 @@ export default class Ability extends Rule {
 		options = [],
 		selection = null,
 		type = `Ability`,
+		url,
 		visible
 	}) {
+		url = `/abilities/${name}`
 		super({
 			desc,
 			name,
 			type,
-			visible
+			visible,
+			url
 		})
 		this.experience = experience
 		this.formula = formula

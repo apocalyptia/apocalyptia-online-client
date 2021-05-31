@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const SW686Snubnose = new Gear({
+const SW686Snubnose = new Projectile({
 	name: `S&W 686 Snubnose Revolver`,
 	type: `Projectile Weapon`,
 	sz: 1,

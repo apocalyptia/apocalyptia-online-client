@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Hazard from '/src/classes/Hazard.js'
 
-const Radiation = new Rule({
+const Radiation = new Hazard({
 	name: `Radiation`,
 	desc: [
 		`Permanently reduces Constitution by 1 per year, month, week, day, hour, or minute depending on dosage.`,

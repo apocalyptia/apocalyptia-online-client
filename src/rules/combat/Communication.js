@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Communication = new Rule({
+const Communication = new Combat({
 	name: `Communication`,
 	desc: [`You can speak or shout up to 6 words per round.`]
 })

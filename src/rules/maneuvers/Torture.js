@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Torture = new Rule({
+const Torture = new Maneuver({
 	name: `Torture`,
 	desc: [
 		`Torture sessions can last as long as the torturer wants them to.`,

@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const Wristwatch = new Gear({
+const Wristwatch = new Wearable({
 	name: `Wristwatch`,
 	desc: [`Tells time and +1 Survival(Navigate).`],
 	sz: 0

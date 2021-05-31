@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Drug from '/src/classes/gear/Drug.js'
 
-const Painkiller = new Gear({
+const Painkiller = new Drug({
 	name: `Painkiller`,
 	desc: [`Ignore 1 Pain penalty.`],
 	sz: 0,

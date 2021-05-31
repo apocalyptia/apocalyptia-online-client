@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Restrained = new Rule({
+const Restrained = new Status({
 	name: `Restrained`,
 	desc: [
 		`Restrained is the second step of Grappling.`,

@@ -6,7 +6,7 @@
 // 	...Object.values(Gear.drugs),
 // 	...Object.values(Gear.electronics),
 // 	...Object.values(Gear.medical),
-// 	...Object.values(Gear.miscellaneous),
+// 	...Object.values(Gear.misc),
 // 	...Object.values(Gear.storage),
 // 	...Object.values(Gear.tools),
 // 	...Object.values(Gear.wearables)

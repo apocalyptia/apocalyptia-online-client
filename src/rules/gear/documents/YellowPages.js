@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const YellowPages = new Gear({
+const YellowPages = new Document({
 	name: `Yellow Pages`,
 	desc: [`+1 Scavenging in a given Region.`],
 	sz: 1,

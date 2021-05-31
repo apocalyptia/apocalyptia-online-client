@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const HoytCompoundBow = new Gear({
+const HoytCompoundBow = new Projectile({
 	name: `Hoyt Compound Bow`,
 	type: `Projectile Weapon`,
 	sz: 3,

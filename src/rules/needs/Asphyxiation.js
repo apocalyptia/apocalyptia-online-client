@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Need from '/src/classes/Need.js'
 
-const Asphyxiation = new Rule({
+const Asphyxiation = new Need({
 	name: `Asphyxiation`,
 	desc: [
 		`Constant air supply is required to avoid Asphyxiation.`,

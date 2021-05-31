@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 import Match from '../attributes/Match.js'
 
-const Match556 = new Gear({
+const Match556 = new Ammo({
 	name: `5.56mm Match`,
 	type: `Ammo`,
 	desc: [`Competition-grade ammunition.`],

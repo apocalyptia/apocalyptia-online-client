@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const Sunglasses = new Gear({
+const Sunglasses = new Wearable({
 	name: `Sunglasses`,
 	desc: [`No Visibility(Sun) penalty.`, `+1 Constitution vs light.`],
 	sz: 0

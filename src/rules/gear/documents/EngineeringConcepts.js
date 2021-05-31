@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const EngineeringConcepts = new Gear({
+const EngineeringConcepts = new Document({
 	name: `Engineering Concepts`,
 	desc: [`+1 Build`],
 	sz: 1,

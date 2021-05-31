@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const BodyInBalance = new Gear({
+const BodyInBalance = new Document({
 	name: `Body in Balance`,
 	desc: [`+1 Athletics`],
 	sz: 1,

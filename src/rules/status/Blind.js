@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Blind = new Rule({
+const Blind = new Status({
 	name: `Blind`,
 	desc: [
 		`You are considered to be Defenseless.`,

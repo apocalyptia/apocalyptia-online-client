@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const BarnettCrossbow = new Gear({
+const BarnettCrossbow = new Projectile({
 	name: `Barnett Crossbow`,
 	type: `Projectile Weapon`,
 	sz: 3,

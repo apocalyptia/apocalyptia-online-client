@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Negotiate = new Rule({
+const Negotiate = new Maneuver({
 	name: `Negotiate`,
 	desc: [
 		`If opposed parties are willing to talk out their differences, each side start with a list of demands.`,

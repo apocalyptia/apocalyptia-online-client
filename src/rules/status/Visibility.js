@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Visibility = new Rule({
+const Visibility = new Status({
 	name: `Visibility`,
 	desc: [
 		`-1 to -6 to all rolls involving seeing, including Attack and Defense.`,

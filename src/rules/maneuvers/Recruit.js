@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Recruit = new Rule({
+const Recruit = new Maneuver({
 	name: `Recruit`,
 	desc: [
 		`Roll [Socialize vs Demeanor] to convince someone to join your side.`,

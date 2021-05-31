@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Slow = new Rule({
+const Slow = new Attribute({
 	name: `Slow`,
 	desc: [`Penalty to Speed = Size.`]
 })

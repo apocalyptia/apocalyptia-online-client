@@ -8,7 +8,7 @@ import Drugs from './gear/Drugs.js'
 import Electronics from './gear/Electronics.js'
 import Medical from './gear/Medical.js'
 import Melee from './gear/Melee.js'
-import Miscellaneous from './gear/Miscellaneous.js'
+import Misc from './gear/Misc.js'
 import Projectile from './gear/Projectile.js'
 import Resources from './gear/Resources.js'
 import Storage from './gear/Storage.js'
@@ -26,7 +26,7 @@ const Gear = {
 	electronics: Electronics,
 	medical: Medical,
 	melee: Melee,
-	miscellaneous: Miscellaneous,
+	misc: Misc,
 	projectile: Projectile,
 	resources: Resources,
 	storage: Storage,

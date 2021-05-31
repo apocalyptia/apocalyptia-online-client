@@ -1,6 +1,5 @@
 import Ambidextrous from './abilities/Ambidextrous.js'
 import Assassin from './abilities/Assassin.js'
-import Calm from './abilities/Calm.js'
 import Charge from './abilities/Charge.js'
 import CloseCall from './abilities/CloseCall.js'
 import EfficientWork from './abilities/EfficientWork.js'
@@ -8,6 +7,7 @@ import FastDraw from './abilities/FastDraw.js'
 import FavoriteWeapon from './abilities/FavoriteWeapon.js'
 import FirmGrip from './abilities/FirmGrip.js'
 import FleetFooted from './abilities/FleetFooted.js'
+import Focus from './abilities/Focus.js'
 import Fortunate from './abilities/Fortunate.js'
 import FreeRunning from './abilities/FreeRunning.js'
 import HardHeaded from './abilities/HardHeaded.js'
@@ -32,7 +32,6 @@ import Wrestling from './abilities/Wrestling.js'
 const Abilities = {
 	ambidextrous: Ambidextrous,
 	assassin: Assassin,
-	calm: Calm,
 	charge: Charge,
 	closecall: CloseCall,
 	efficientwork: EfficientWork,
@@ -40,6 +39,7 @@ const Abilities = {
 	favoriteweapon: FavoriteWeapon,
 	firmgrip: FirmGrip,
 	fleetfooted: FleetFooted,
+	focus: Focus,
 	fortunate: Fortunate,
 	freerunning: FreeRunning,
 	hardheaded: HardHeaded,

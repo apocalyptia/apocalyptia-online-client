@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Unconscious = new Rule({
+const Unconscious = new Status({
 	name: `Unconscious`,
 	desc: [
 		`Unaware and unable to do anything.`,

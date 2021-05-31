@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const PersonalDefense = new Gear({
+const PersonalDefense = new Document({
 	name: `Personal Defense`,
 	desc: [`+1 Projectile`],
 	sz: 1,

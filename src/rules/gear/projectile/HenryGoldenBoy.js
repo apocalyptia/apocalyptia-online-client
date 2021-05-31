@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 
-const HenryGoldenBoy = new Gear({
+const HenryGoldenBoy = new Projectile({
 	name: `Henry Golden Boy Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,

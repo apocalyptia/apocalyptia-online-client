@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const BookOfNinja = new Gear({
+const BookOfNinja = new Document({
 	name: `Book of Ninja`,
 	desc: [`+1 Stealth`],
 	sz: 1,

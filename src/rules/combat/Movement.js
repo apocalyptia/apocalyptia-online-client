@@ -1,7 +1,7 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 import Chase from './subrules/Chase.js'
 
-const Movement = new Rule({
+const Movement = new Combat({
 	name: `Movement`,
 	desc: [
 		`On your turn, you have an amount of Speed equal to your [Agility x3].`,

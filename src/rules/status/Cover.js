@@ -1,7 +1,7 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 import Table from '../../classes/Table.js'
 
-const Cover = new Rule({
+const Cover = new Status({
 	name: `Cover`,
 	desc: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Absorption.`,

@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Status from '/src/classes/Status.js'
 
-const Unarmed = new Rule({
+const Unarmed = new Status({
 	name: `Unarmed`,
 	desc: [
 		`Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2] (always round down).`,

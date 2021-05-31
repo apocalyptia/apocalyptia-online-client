@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const Botch = new Rule({
+const Botch = new Core({
 	name: `Botch`,
 	desc: [
 		`A Botch is when you have failed very very badly at a Trait, Skill, or Property roll.`,

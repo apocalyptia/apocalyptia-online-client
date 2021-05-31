@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Scatter from '../attributes/Scatter.js'
 
-const Remington870 = new Gear({
+const Remington870 = new Projectile({
 	name: `Remington 870 Shotgun`,
 	type: `Projectile Weapon`,
 	sz: 4,

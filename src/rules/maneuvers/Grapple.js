@@ -1,10 +1,10 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 import Grab from './Grab.js'
 import Hostage from './Hostage.js'
 import Tackle from './Tackle.js'
 import Throw from './Throw.js'
 
-const Grapple = new Rule({
+const Grapple = new Maneuver({
 	name: `Grapple`,
 	desc: [
 		`There are three steps to Grappling:`,

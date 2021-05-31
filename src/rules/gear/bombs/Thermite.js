@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Bomb from '/src/classes/gear/Bomb.js'
 import Blast from '../attributes/Blast.js'
 import FireDamage from '../attributes/FireDamage.js'
 
-const Thermite = new Gear({
+const Thermite = new Bomb({
 	name: `Thermite`,
 	type: `Bomb`,
 	desc: [`High-temperature incendiary bomb.`],

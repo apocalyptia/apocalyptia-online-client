@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Grab = new Rule({
+const Grab = new Maneuver({
 	name: `Grab`,
 	desc: [`Roll [Melee(Unarmed) vs DEF] to impose the 'Grabbed' Status.`],
 	type: `Offensive`

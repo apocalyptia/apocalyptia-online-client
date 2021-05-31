@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Pain = new Rule({
+const Pain = new Combat({
 	name: `Pain`,
 	desc: [
 		`Damage, Trauma, and a few other effects can cause Pain penalties.`,

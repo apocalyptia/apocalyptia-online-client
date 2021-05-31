@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const Poncho = new Gear({
+const Poncho = new Wearable({
 	name: `Poncho`,
 	desc: [`Cold Resistance.`, `Waterproof.`],
 	sz: 0

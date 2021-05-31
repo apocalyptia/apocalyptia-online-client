@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Protect = new Rule({
+const Protect = new Maneuver({
 	name: `Protect`,
 	desc: [
 		`You become the new target of all Attacks targeting someone you choose within 1yd of you for 1 round.`,

@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Auto = new Rule({
+const Auto = new Attribute({
 	name: `Auto`,
 	desc: [
 		`Choose either Burst or Spray.`,

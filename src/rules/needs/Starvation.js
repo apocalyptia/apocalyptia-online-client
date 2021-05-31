@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Need from '/src/classes/Need.js'
 
-const Starvation = new Rule({
+const Starvation = new Need({
 	name: `Starvation`,
 	desc: [
 		`1 Food per day is normally optimal.`,

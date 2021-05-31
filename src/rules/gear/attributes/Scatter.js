@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Scatter = new Rule({
+const Scatter = new Attribute({
 	name: `Scatter`,
 	desc: [`Range penalties apply to Damage instead of Attack.`, `-1 Penetration.`]
 })

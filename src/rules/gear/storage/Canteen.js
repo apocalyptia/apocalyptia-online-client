@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Storage from '/src/classes/gear/Storage.js'
 
-const Canteen = new Gear({
+const Canteen = new Storage({
 	name: `Canteen`,
 	desc: [`Holds 1 unit (.5gal) of liquid.`, `Metal.`],
 	sz: 1

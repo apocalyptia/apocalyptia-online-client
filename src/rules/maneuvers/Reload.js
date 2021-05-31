@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Reload = new Rule({
+const Reload = new Maneuver({
 	name: `Reload`,
 	desc: [`Replace a magazine or a single piece of ammunition (depending on the weapon) in a Projectile weapon.`],
 	type: `Offensive`

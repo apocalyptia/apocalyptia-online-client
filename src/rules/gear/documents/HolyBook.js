@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const HolyBook = new Gear({
+const HolyBook = new Document({
 	name: `Holy Book`,
 	desc: [`-1 Psyche`],
 	sz: 1,

@@ -1,10 +1,10 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 import Absorption from './subrules/Absorption.js'
 import FireDamage from './subrules/FireDamage.js'
 import Pain from './subrules/Pain.js'
 import Recovery from './subrules/Recovery.js'
 
-const Damage = new Rule({
+const Damage = new Combat({
 	name: `Damage`,
 	desc: [
 		`Damage temporarily reduces Health.`,

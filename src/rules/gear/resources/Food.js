@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Resource from '/src/classes/gear/Resource.js'
 
-const Food = new Gear({
+const Food = new Resource({
 	name: `Food`,
 	type: `Resource`,
 	desc: [`1 unit Needed per day to prevent Starvation.`],

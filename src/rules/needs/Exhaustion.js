@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Need from '/src/classes/Need.js'
 
-const Exhaustion = new Rule({
+const Exhaustion = new Need({
 	name: `Exhaustion`,
 	desc: [
 		`8 hours of sleep per day is required.`,

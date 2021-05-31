@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 import ColdResistance from '../../gear/attributes/ColdResistance.js'
 import FireResistance from '../../gear/attributes/FireResistance.js'
 
-const HikingBoots = new Gear({
+const HikingBoots = new Armor({
 	name: `Hiking Boots`,
 	sz: 2,
 	attr: [ColdResistance, FireResistance],

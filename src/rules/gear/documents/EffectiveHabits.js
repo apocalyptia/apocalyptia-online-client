@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Document from '/src/classes/gear/Document.js'
 
-const EffectiveHabits = new Gear({
+const EffectiveHabits = new Document({
 	name: `Effective Habits`,
 	desc: [`+1 to any one Skill`],
 	sz: 1,

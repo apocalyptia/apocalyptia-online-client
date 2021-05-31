@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Tool from '/src/classes/gear/Tool.js'
 
-const GlassCutter = new Gear({
+const GlassCutter = new Tool({
 	name: `Glass Cutter`,
 	desc: [`Cuts glass quietly.`],
 	sz: 0

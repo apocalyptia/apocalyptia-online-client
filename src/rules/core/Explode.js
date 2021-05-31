@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const Explode = new Rule({
+const Explode = new Core({
 	name: `Explode`,
 	desc: [
 		`An Exploding die offers the possibility of doing extraordinarily well at a Trait, Skill, or Property roll.`,

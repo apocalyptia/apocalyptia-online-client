@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 import Slug from '../attributes/Slug.js'
 
-const Slug12g = new Gear({
+const Slug12g = new Ammo({
 	name: `12g Slug`,
 	type: `Ammo`,
 	desc: [`Single-projectile ammunition.`],

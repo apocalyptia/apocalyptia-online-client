@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const Kimber1911 = new Gear({
+const Kimber1911 = new Projectile({
 	name: `Kimber 1911 Pistol`,
 	type: `Projectile Weapon`,
 	sz: 1,

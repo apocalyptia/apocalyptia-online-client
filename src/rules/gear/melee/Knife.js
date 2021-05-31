@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Melee from '/src/classes/gear/Melee.js'
 import OneHanded from '../attributes/OneHanded.js'
 import Pierce from '../attributes/Pierce.js'
 import Rapid from '../attributes/Rapid.js'
 
-const Knife = new Gear({
+const Knife = new Melee({
 	name: `Knife`,
 	type: `Melee Weapon`,
 	sz: 1,

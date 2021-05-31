@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Need from '/src/classes/Need.js'
 
-const Hypothermia = new Rule({
+const Hypothermia = new Need({
 	name: `Hypothermia`,
 	desc: [
 		`Body temperature must be maintained to avoid Hypothermia.`,

@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Push = new Rule({
+const Push = new Maneuver({
 	name: `Push`,
 	desc: [
 		`Roll [Constitution vs Constitution] to push an enemy in front of you.`,

@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const DuffelBag = new Gear({
+const DuffelBag = new Wearable({
 	name: `Duffel Bag`,
 	desc: [`2 rounds to access.`],
 	sz: 3

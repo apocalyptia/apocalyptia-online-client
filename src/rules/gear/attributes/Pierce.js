@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Pierce = new Rule({
+const Pierce = new Attribute({
 	name: `Pierce`,
 	desc: [`+1 Penetration`]
 })

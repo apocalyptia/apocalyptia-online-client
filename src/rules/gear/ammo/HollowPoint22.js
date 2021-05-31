@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 import HollowPoint from '../attributes/HollowPoint.js'
 
-const HollowPoint22 = new Gear({
+const HollowPoint22 = new Ammo({
 	name: `.22 Hollow Point`,
 	type: `Ammo`,
 	desc: [`Self-defense ammunition.`],

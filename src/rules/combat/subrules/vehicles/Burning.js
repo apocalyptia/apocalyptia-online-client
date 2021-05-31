@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Burning = new Rule({
+const Burning = new Combat({
 	name: `Burning`,
 	desc: [
 		`If the Vehicle is at 0 Absorption, it bursts into flames doing 1 Fire Damage per round to all Occupants.`,

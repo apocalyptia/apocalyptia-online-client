@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Broadhead = new Rule({
+const Broadhead = new Attribute({
 	name: `Broadhead`,
 	desc: [`+1 Damage.`]
 })

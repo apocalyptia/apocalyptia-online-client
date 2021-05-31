@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const Ruger1022 = new Gear({
+const Ruger1022 = new Projectile({
 	name: `Ruger 10/22 Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,

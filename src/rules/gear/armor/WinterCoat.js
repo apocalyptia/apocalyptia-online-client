@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 import ColdResistance from '../../gear/attributes/ColdResistance.js'
 
-const WinterCoat = new Gear({
+const WinterCoat = new Armor({
 	name: `Winter Coat`,
 	sz: 2,
 	attr: [ColdResistance],

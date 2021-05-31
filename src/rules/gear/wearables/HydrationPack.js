@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const HydrationPack = new Gear({
+const HydrationPack = new Wearable({
 	name: `Hydration Pack`,
 	desc: [`Holds 4 units (2gal) of liquid.`],
 	sz: 0

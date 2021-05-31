@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const Blunt = new Rule({
+const Blunt = new Attribute({
 	name: `Blunt`,
 	desc: [`Does not cause Bleeding.`]
 })

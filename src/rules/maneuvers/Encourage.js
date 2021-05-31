@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Encourage = new Rule({
+const Encourage = new Maneuver({
 	name: `Encourage`,
 	desc: [
 		`Roll [Leadership vs groups’ total Demeanor scores].`,

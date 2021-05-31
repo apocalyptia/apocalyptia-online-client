@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const ConcealedHolster = new Gear({
+const ConcealedHolster = new Wearable({
 	name: `Concealed Holster`,
 	desc: [`Perception 12# to spot a Size 1 Gun.`],
 	sz: 0

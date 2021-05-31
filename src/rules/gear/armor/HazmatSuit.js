@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Armor from '/src/classes/gear/Armor.js'
 import Impermeable from '../../gear/attributes/Impermeable.js'
 import Mask from '../../gear/attributes/Mask.js'
 
-const HazmatSuit = new Gear({
+const HazmatSuit = new Armor({
 	name: `Hazmat Suit`,
 	sz: 2,
 	attr: [Impermeable, Mask],

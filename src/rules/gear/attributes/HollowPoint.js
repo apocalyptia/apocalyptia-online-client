@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Attribute from '/src/classes/gear/Attribute.js'
 
-const HollowPoint = new Rule({
+const HollowPoint = new Attribute({
 	name: `Hollow Point`,
 	desc: [`+1 Damage.`, `-1 Penetration.`]
 })

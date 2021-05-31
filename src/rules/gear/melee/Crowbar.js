@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Melee from '/src/classes/gear/Melee.js'
 import OneHanded from '../attributes/OneHanded.js'
 
-const Crowbar = new Gear({
+const Crowbar = new Melee({
 	name: `Crowbar`,
 	type: `Melee Weapon`,
 	sz: 3,

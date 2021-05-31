@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const SolarLamp = new Gear({
+const SolarLamp = new Electronic({
 	name: `Solar Lamp`,
 	type: `Electronics`,
 	desc: [`1yd light radius.`, `1 day charge.`],

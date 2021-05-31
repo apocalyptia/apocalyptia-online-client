@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Medical from '/src/classes/gear/Medical.js'
 
-const Stethoscope = new Gear({
+const Stethoscope = new Medical({
 	name: `Stethoscope`,
 	type: `Medical`,
 	desc: [`+1 Medicine.`, `Perception(Hear) 6# through doors.`],

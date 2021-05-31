@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const Bandoleer = new Gear({
+const Bandoleer = new Wearable({
 	name: `Bandoleer`,
 	desc: [`Holds 50 bullets of any caliber.`],
 	sz: 0

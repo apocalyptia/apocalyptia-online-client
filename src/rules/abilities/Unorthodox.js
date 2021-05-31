@@ -1,4 +1,4 @@
-import Ability from '../../classes/Ability.js'
+import Ability from '/src/classes/Ability.js'
 import Skills from '../Skills.js'
 import Traits from '../Traits.js'
 

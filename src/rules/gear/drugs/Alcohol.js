@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Drug from '/src/classes/gear/Drug.js'
 
-const Alcohol = new Gear({
+const Alcohol = new Drug({
 	name: `Alcohol`,
 	desc: [`Can be used as an Antibiotic or Fuel.`, `C9# or Unstable.`],
 	sz: 1,

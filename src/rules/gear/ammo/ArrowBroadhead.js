@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 import Broadhead from '../attributes/Broadhead.js'
 import Pierce from '../attributes/Pierce.js'
 
-const ArrowBroadhead = new Gear({
+const ArrowBroadhead = new Ammo({
 	name: `Broadhead Arrow`,
 	type: `Ammo`,
 	desc: [`Hunting arrow.`],

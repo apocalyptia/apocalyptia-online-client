@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const ArmaliteAR15 = new Gear({
+const ArmaliteAR15 = new Projectile({
 	name: `Armalite AR-15 Rifle`,
 	type: `Projectile Weapon`,
 	sz: 3,

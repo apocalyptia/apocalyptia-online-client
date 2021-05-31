@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 import Scatter from '../attributes/Scatter.js'
 
-const CZUpland = new Gear({
+const CZUpland = new Projectile({
 	name: `CZ Upland Shotgun`,
 	type: `Projectile Weapon`,
 	sz: 4,

@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const Glock19 = new Gear({
+const Glock19 = new Projectile({
 	name: `Glock 19 Pistol`,
 	type: `Projectile Weapon`,
 	sz: 1,

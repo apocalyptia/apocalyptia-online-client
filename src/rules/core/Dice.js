@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const Dice = new Rule({
+const Dice = new Core({
 	name: `Dice`,
 	desc: [
 		`When you want your character to do something difficult, tell your Narrator what you would like to try.`,

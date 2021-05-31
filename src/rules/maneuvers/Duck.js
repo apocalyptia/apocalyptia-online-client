@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Maneuver from '/src/classes/Maneuver.js'
 
-const Duck = new Rule({
+const Duck = new Maneuver({
 	name: `Duck`,
 	desc: [
 		`You may roll [Dodge vs Attack] to move up to your Speed to get behind Cover.`,

@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const Cooperation = new Rule({
+const Cooperation = new Core({
 	name: `Cooperation`,
 	desc: [
 		`If Characters want to help each other perform a task, one of them makes the roll and the rest add their Scores together as a Modifier to the main Character’s Result.`,

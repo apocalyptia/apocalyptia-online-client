@@ -1,7 +1,7 @@
-import Gear from '../../../classes/Gear.js'
+import Ammo from '/src/classes/gear/Ammo.js'
 import Pierce from '../attributes/Pierce.js'
 
-const ArmorPiercing556 = new Gear({
+const ArmorPiercing556 = new Ammo({
 	name: `5.56mm Armor Piercing`,
 	type: `Ammo`,
 	desc: [`Battlefield ammunition.`],

@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const FireDamage = new Rule({
+const FireDamage = new Combat({
 	name: `Fire Damage`,
 	desc: [
 		`Each round you take Fire Damage, 1 point is permanent and never heals.`,

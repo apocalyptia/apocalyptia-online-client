@@ -1,9 +1,9 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Auto from '../attributes/Auto.js'
 import Rapid from '../attributes/Rapid.js'
 
-const MAC10 = new Gear({
+const MAC10 = new Projectile({
 	name: `MAC-10 SMG`,
 	type: `Projectile Weapon`,
 	sz: 2,

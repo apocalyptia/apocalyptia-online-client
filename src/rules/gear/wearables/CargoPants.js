@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const CargoPants = new Gear({
+const CargoPants = new Wearable({
 	name: `Cargo Pants`,
 	desc: [`Camo.`],
 	sz: 1

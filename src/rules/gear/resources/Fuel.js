@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Resource from '/src/classes/gear/Resource.js'
 
-const Fuel = new Gear({
+const Fuel = new Resource({
 	name: `Fuel`,
 	type: `Resource`,
 	desc: [`Flammable liquid. Used to power Vehicles and make explosives.`],

@@ -1,6 +1,6 @@
-import Rule from '../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Conditions = new Rule({
+const Conditions = new Combat({
 	name: `Conditions`,
 	desc: [
 		`-1 Absorption and -1 Handling.`,

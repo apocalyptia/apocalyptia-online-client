@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Core from '/src/classes/Core.js'
 
-const RoteActions = new Rule({
+const RoteActions = new Core({
 	name: `Rote Actions`,
 	desc: [
 		`If the roll is unopposed and your [(Score + Modifiers) >= #] before the roll and you can take your time, you Succeed automatically.`

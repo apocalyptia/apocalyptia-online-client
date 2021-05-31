@@ -1,8 +1,8 @@
-import Gear from '../../../classes/Gear.js'
+import Projectile from '/src/classes/gear/Projectile.js'
 import TwoHanded from '../attributes/TwoHanded.js'
 import Rapid from '../attributes/Rapid.js'
 
-const SWMPShield = new Gear({
+const SWMPShield = new Projectile({
 	name: `S&W M&P Shield Pistol`,
 	type: `Projectile Weapon`,
 	sz: 1,

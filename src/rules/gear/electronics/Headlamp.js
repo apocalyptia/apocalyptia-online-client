@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Electronic from '/src/classes/gear/Electronic.js'
 
-const Headlamp = new Gear({
+const Headlamp = new Electronic({
 	name: `Headlamp`,
 	type: `Electronics`,
 	desc: [`3yd light. Hands free.`],

@@ -1,6 +1,6 @@
-import Gear from '../../../classes/Gear.js'
+import Wearable from '/src/classes/gear/Wearable.js'
 
-const EarPlugs = new Gear({
+const EarPlugs = new Wearable({
 	name: `Ear Plugs`,
 	desc: [`No Deafness from noise.`, `-3 Perception(Hear).`],
 	sz: 0

@@ -1,6 +1,6 @@
-import Rule from '../../../classes/Rule.js'
+import Combat from '/src/classes/Combat.js'
 
-const Absorption = new Rule({
+const Absorption = new Combat({
 	name: `Absorption`,
 	desc: [
 		`Every piece of Armor offers some amount of Absorption.`,
