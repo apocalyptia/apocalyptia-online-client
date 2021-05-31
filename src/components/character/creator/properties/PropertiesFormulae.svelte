@@ -8,8 +8,10 @@
 		<ul>
 			{#each Object.values(Properties) as property}
 				{#if property.name === 'Health'}
-					<li>Health: {property.desc[0]}</li>
-					<li>Health: {property.desc[1]}</li>
+					<li>
+						<h4>Health</h4>
+						 = {property.desc[0]}, {property.desc[1]}
+					</li>
 				{:else}
 					<li>
 						<h4>{property.name}</h4>

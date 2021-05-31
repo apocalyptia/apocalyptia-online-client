@@ -1,7 +1,7 @@
 <script>
 	import Creation from '/src/rules/Creation.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
-	import HealthSection from '/src/components/character/sheet/sections/HealthSection.svelte'
+	import HealthProperty from '/src/components/character/creator/properties/HealthProperty.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PropertiesBlock from '/src/components/character/creator/properties/PropertiesBlock.svelte'
 	import PropertiesFormulae from '/src/components/character/creator/properties/PropertiesFormulae.svelte'
@@ -20,9 +20,6 @@
 		<ExplanationBlock rule={Creation.properties.desc} />
 		<PropertiesBlock />
 		<PropertiesFormulae />
-		<div class="section-card">
-			<h2>Health</h2>
-			<HealthSection mode={'readonly'} />
-		</div>
+		<HealthProperty />
 	</fieldset>
 </div>
