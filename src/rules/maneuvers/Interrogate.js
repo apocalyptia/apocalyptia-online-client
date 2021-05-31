@@ -9,7 +9,7 @@ const Interrogate = new Maneuver({
 		`If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts.`,
 		`After Fails = [Demeanor], the interrogator gives up or the subject cracks and tells everything they know.`
 	],
-	type: `Social`
+	mode: `Social`
 })
 
 export default Interrogate

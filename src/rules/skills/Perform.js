@@ -11,7 +11,7 @@ const Perform = new Skill({
 		distract: new Specialty({
 			name: `Distract`,
 			type: `Specialty`,
-			desc: [`Target is Defenseless for 1 round.`]
+			desc: [`Target is Defenseless for 1 Round.`]
 		}),
 		deceive: new Specialty({
 			name: `Deceive`,

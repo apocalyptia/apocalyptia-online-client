@@ -8,7 +8,7 @@ const Hostage = new Maneuver({
 		`If the Damage is enough to kill the Grappled enemy, any excess Damage passes through to you.`,
 		`This does not make you Concealed.`
 	],
-	type: `Offensive`
+	mode: `Offensive`
 })
 
 export default Hostage

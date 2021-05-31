@@ -2,7 +2,7 @@ import Ability from '/src/classes/Ability.js'
 
 const Wrestling = new Ability({
 	name: `Wrestling`,
-	desc: [`Free Grapple Action once per round.`],
+	desc: [`Free Grapple Action once per Round.`],
 	max: 1,
 	experience: 12
 })

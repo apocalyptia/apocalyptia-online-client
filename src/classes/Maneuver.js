@@ -3,6 +3,7 @@ import Rule from '/src/classes/Rule.js'
 export default class Maneuver extends Rule {
 	constructor({
 		desc,
+		mode = ``,
 		name,
 		type = `Maneuver`,
 		url,
@@ -16,5 +17,6 @@ export default class Maneuver extends Rule {
 			url,
 			visible
 		})
+		this.mode = mode
 	}
 }

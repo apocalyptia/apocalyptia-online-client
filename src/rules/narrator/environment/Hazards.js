@@ -4,28 +4,28 @@
 
 	<button id='ElectricityHazardBtn' class='Btn'>ELECTRICITY</button>
 	<div id='ElectricityHazardSec' class='Sec3'>
-		<p>The power of an electric shock depends on the source. Stun Guns, for example, only Stun for 1 round if the target Fails a C9# roll. Potentially lethal sources are as follows:</p>
+		<p>The power of an electric shock depends on the source. Stun Guns, for example, only Stun for 1 Round if the target Fails a C9# roll. Potentially lethal sources are as follows:</p>
 		<button id='ElectricitySourcesHazardBtn' class='Btn'>ELECTRICITY SOURCES</button>
 		<div id='ElectricitySourcesHazardSec' class='Sec4'>
 			<button id='ElectricFenceHazardBtn' class='Btn'>ELECTRIC FENCE</button>
 			<div id='ElectricFenceHazardSec' class='Sec5'>
-				<p>1BDMG/round</p>
+				<p>1BDMG/Round</p>
 			</div>
 			<button id='WallOutletHazardBtn' class='Btn'>WALL OUTLET</button>
 			<div id='WallOutletHazardSec' class='Sec5'>
-				<p>d6BDMG/round, Stun</p>
+				<p>d6BDMG/Round, Stun</p>
 			</div>
 			<button id='IndustrialMachineryHazardBtn' class='Btn'>INDUSTRIAL MACHINERY</button>
 			<div id='IndustrialMachineryHazardSec' class='Sec5'>
-				<p>d6 Damage/round, Stun</p>
+				<p>d6 Damage/Round, Stun</p>
 			</div>
 			<button id='PoleTransformerHazardBtn' class='Btn'>POLE TRANSFORMER</button>
 			<div id='PoleTransformerHazardSec' class='Sec5'>
-				<p>d6FDMG/round, Stun</p>
+				<p>d6FDMG/Round, Stun</p>
 			</div>
 			<button id='TransmissionLinesHazardBtn' class='Btn'>TRANSMISSION LINES</button>
 			<div id='TransmissionLinesHazardSec' class='Sec5'>
-				<p>d6x2FDMG/round, Stun</p>
+				<p>d6x2FDMG/Round, Stun</p>
 			</div>
 			<button id='LightningStrikeHazardBtn' class='Btn'>LIGHTNING STRIKE</button>
 			<div id='LightningStrikeHazardSec' class='Sec5'>
@@ -45,7 +45,7 @@
 			</div>
 			<button id='CampFireHazardBtn' class='Btn'>CAMP FIRE</button>
 			<div id='CampFireHazardSec' class='Sec5'>
-				<p>1FDMG/round</p>
+				<p>1FDMG/Round</p>
 			</div>
 			<button id='RoadFlareHazardBtn' class='Btn'>ROAD FLARE</button>
 			<div id='RoadFlareHazardSec' class='Sec5'>
@@ -53,27 +53,27 @@
 			</div>
 			<button id='Flare12gHazardBtn' class='Btn'>12G FLARE</button>
 			<div id='Flare12gHazardSec' class='Sec5'>
-				<p>3FDMG/round for 3 rounds</p>
+				<p>3FDMG/Round for 3 rounds</p>
 			</div>
 			<button id='MolotovHazardBtn' class='Btn'>MOLOTOV</button>
 			<div id='MolotovHazardSec' class='Sec5'>
-				<p>d6FDMG/round in 3yd Blast, 1FDMG/round for 1min</p>
+				<p>d6FDMG/Round in 3yd Blast, 1FDMG/Round for 1min</p>
 			</div>
 			<button id='FuelHazardBtn' class='Btn'>FUEL</button>
 			<div id='FuelHazardSec' class='Sec5'>
-				<p>1FDMG/round on 1yd/gal for 1min/gal</p>
+				<p>1FDMG/Round on 1yd/gal for 1min/gal</p>
 			</div>
 			<button id='BurningVehicleHazardBtn' class='Btn'>BURNING VEHICLE</button>
 			<div id='BurningVehicleHazardSec' class='Sec5'>
-				<p>d6FDMG/round for 1min/gal of Fuel</p>
+				<p>d6FDMG/Round for 1min/gal of Fuel</p>
 			</div>
 			<button id='BurningBuildingHazardBtn' class='Btn'>BURNING BUILDING</button>
 			<div id='BurningBuildingHazardSec' class='Sec5'>
-				<p>d6FDMG/round for 30min/floor + Asphyxiation</p>
+				<p>d6FDMG/Round for 30min/floor + Asphyxiation</p>
 			</div>
 			<button id='ThermiteHazardBtn' class='Btn'>THERMITE</button>
 			<div id='ThermiteHazardSec' class='Sec5'>
-				<p>d6x6FDMG/round in 1yd Blast for 6 rounds</p>
+				<p>d6x6FDMG/Round in 1yd Blast for 6 rounds</p>
 			</div>
 			<button id='WildfireHazardBtn' class='Btn'>WILDFIRE</button>
 			<div id='WildfireHazardSec' class='Sec5'>

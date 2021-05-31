@@ -5,7 +5,7 @@ const Asphyxiation = new Need({
 	desc: [
 		`Constant air supply is required to avoid Asphyxiation.`,
 		`1 Pain per minute without air.`,
-		`This penalty is reduced by 1 per minute with air.`,
+		`Pain penalties from Asphyxiation are reduced by 1 per minute with air.`,
 		`Going without air for a number of minutes = [Constitution] is lethal.`
 	]
 })

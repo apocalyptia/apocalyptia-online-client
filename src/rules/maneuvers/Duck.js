@@ -9,7 +9,7 @@ const Duck = new Maneuver({
 		`If the Attack still hits, the Cover Material’s Absorption reduces the Damage.`,
 		`You will keep the benefits of Cover as long as it remains between you and the opponent.`
 	],
-	type: `Defensive`
+	mode: `Defensive`
 })
 
 export default Duck

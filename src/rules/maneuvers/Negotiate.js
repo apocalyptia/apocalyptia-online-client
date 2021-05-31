@@ -9,7 +9,7 @@ const Negotiate = new Maneuver({
 		`Success means you get your demand and the opposed negotiator concedes.`,
 		`Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`
 	],
-	type: `Social`
+	mode: `Social`
 })
 
 export default Negotiate

@@ -7,9 +7,9 @@ const Endurance = new Property({
 	formula: formula,
 	desc: [
 		`Endurance = ${formula}`,
-		`Taking any number of Actions in a round (up to a maximum of 3 Actions) costs 1 Endurance for the round.`,
-		`For every round in which you do not take any Actions, you regain Endurance equal to your Fitness score.`,
-		`This is also the maximum amount of total Size you can move with comfortably.`,
+		`Taking an Action costs 1 Endurance.`,
+		`For every Round in which you do not take any Actions, you regain Endurance equal to your Fitness score.`,
+		`Endurance is also the maximum amount of total Size you can carry comfortably.`,
 		`1 Pain per Size carried beyond your current Endurance.`
 	],
 	type: `Property`

@@ -11,7 +11,7 @@ const Torture = new Maneuver({
 		`Success means you take 1 Trauma and the captive's spirit is broken, meaning that they will do or say whatever they think will stop further torture until they are freed.`,
 		`Failure means you take 1d6 Trauma from inflicting torture on another human being and the captive continues to resist.`
 	],
-	type: `Social`
+	mode: `Social`
 })
 
 export default Torture

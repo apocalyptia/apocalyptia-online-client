@@ -2,7 +2,7 @@ import Drug from '/src/classes/gear/Drug.js'
 
 const Sedative = new Drug({
 	name: `Sedative`,
-	desc: [`Demeanor #6 per round to take any action.`],
+	desc: [`Demeanor #6 per Round to take any Action.`],
 	sz: 0,
 	type: `Drug`
 })

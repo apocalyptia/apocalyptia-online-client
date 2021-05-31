@@ -7,8 +7,8 @@ const Speed = new Property({
 	formula: formula,
 	desc: [
 		`Speed = ${formula}`,
-		`This is also the number of yards you can Walk as 1 Action.`,
-		`When traveling long distances overland, you can March at [Speed / 2] mph for up to [Constitution x 3] hrs per day.`
+		`This determines the distance you can travel as a Movement Action.`,
+		`When traveling long distances overland, you can March at [Speed / 2] mph for up to your Endurance in hours per day.`,
 	],
 	type: `Property`
 })

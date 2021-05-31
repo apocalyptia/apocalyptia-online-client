@@ -7,7 +7,7 @@ const Fitness = new Property({
 	formula: formula,
 	desc: [
 		`Fitness = ${formula}`,
-		`This is the rate at which Endurance is regained during rounds where you do not take any Actions.`
+		`This is the rate at which Endurance is regained during Rounds where you do not take any Actions.`
 	],
 	type: `Property`
 })

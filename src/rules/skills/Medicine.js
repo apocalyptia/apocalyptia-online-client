@@ -14,7 +14,7 @@ const Medicine = new Skill({
 			desc: [
 				`Stop a person from Bleeding for a number of hours equal to your roll.`,
 				`Inflict an additional 1 Damage on a Botch.`,
-				`Takes 1 round per Damage.`
+				`Takes 1 Round per Damage.`
 			]
 		}),
 		surgery: new Specialty({

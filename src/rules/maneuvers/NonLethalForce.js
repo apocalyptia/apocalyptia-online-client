@@ -6,7 +6,7 @@ const NonLethalForce = new Maneuver({
 		`Declare that you are using this Maneuver before rolling a Melee Attack.`,
 		`On a Success, you do half Damage.`
 	],
-	type: `Offensive`
+	mode: `Offensive`
 })
 
 export default NonLethalForce

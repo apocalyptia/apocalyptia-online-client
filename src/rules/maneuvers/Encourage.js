@@ -7,7 +7,7 @@ const Encourage = new Maneuver({
 		`The group gets a bonus = [your Demeanor] for one specific roll each.`,
 		`A Botch is -1 to all rolls.`
 	],
-	type: `Social`
+	mode: `Social`
 })
 
 export default Encourage

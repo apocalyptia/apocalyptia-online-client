@@ -4,7 +4,7 @@ import Table from '../../classes/Table.js'
 const CalledShot = new Maneuver({
 	name: `Called Shot`,
 	desc: [`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
-	type: `Offensive`
+	mode: `Offensive`
 })
 
 class CalledShotTarget {
@@ -25,7 +25,7 @@ CalledShot.table = new Table({
 			name: `Head`,
 			penalty: `-6 Projectile`,
 			health: `Constitution`,
-			effect: `Stun 1 round.`
+			effect: `Stun 1 Round.`
 		}),
 		new CalledShotTarget({
 			roll: 5,

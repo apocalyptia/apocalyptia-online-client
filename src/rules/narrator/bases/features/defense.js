@@ -26,7 +26,7 @@
 			</div>
 			<button id='ElectricFenceFeaturesBtn' class='Btn'>ELECTRIC FENCE</button>
 			<div id='ElectricFenceFeaturesSec' class='Sec5'>
-				<p>Notes: -500Whrs. 1BDMG/round. 30yds long. C9# to let go.</p>
+				<p>Notes: -500Whrs. 1BDMG/Round. 30yds long. C9# to let go.</p>
 				<p>Science: 6#</p>
 				<p>Parts: 6</p>
 			</div>

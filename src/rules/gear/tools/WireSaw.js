@@ -2,7 +2,7 @@ import Tool from '/src/classes/gear/Tool.js'
 
 const WireSaw = new Tool({
 	name: `Wire Saw`,
-	desc: [`1 Damage/round of sawing to wood or bone.`],
+	desc: [`1 Damage/Round of sawing to wood or bone.`],
 	sz: 0
 })
 

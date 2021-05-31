@@ -7,7 +7,7 @@ const Recruit = new Maneuver({
 		`If they are someone’s follower, roll [Leadership vs Leadership].`,
 		`Attitude and other contextual modifiers should be applied at the Narrator's discretion.`
 	],
-	type: `Social`
+	mode: `Social`
 })
 
 export default Recruit
