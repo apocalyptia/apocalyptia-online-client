@@ -6,4 +6,4 @@
 
 
 <ManualSearchbar />
-<ManualPage list={Rules} url={'/manual'} />
+<ManualPage list={Rules} />

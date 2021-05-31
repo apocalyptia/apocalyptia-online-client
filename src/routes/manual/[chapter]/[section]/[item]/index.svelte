@@ -16,10 +16,8 @@
 	import Rules from '/src/rules/Rules.js'
 
 	export let chapter, section, item
-
-	const rule = Rules[chapter][section][item]
 </script>
 
 <div class="page-body">
-	<ManualArticle {rule} />
+	<ManualArticle rule={Rules[chapter][section][item]} />
 </div>

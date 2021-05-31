@@ -1,7 +1,5 @@
 import Rules from '/src/rules/Rules.js'
-import alphabetize from '/src/utils/sorting/alphabetize.js'
 import capitalize from '/src/utils/text/capitalize.js'
-import swapOrder from '/src/utils/text/swapOrder.js'
 import urlFormat from '/src/utils/text/urlFormat.js'
 
 function searchEngine({
@@ -11,19 +9,32 @@ function searchEngine({
 	let resultsList = []
 
 	if (term.length) {
-		const candidateList = Object.entries(list).flatMap((rule) => {
-			return {
-				name: rule[1].name || capitalize(rule[0]),
-				url: rule[1].url || urlFormat(`/manual/${rule[0]}`)
+		resultsList = Object.entries(list).map((rule) => {
+			let result = {}
+			if (rule[1].name !== undefined) {
+				result.name = rule[1].name
 			}
+			else {
+				result.name = capitalize(rule[0])
+			}
+			if (rule[1].url !== undefined) {
+				result.url = rule[1].url
+			}
+			else if (Object.values(rule[1])[0].url !== undefined) {
+				result.url = Object.values(rule[1])[0].url.slice(
+					0, Object.values(rule[1])[0].url.lastIndexOf('/')
+				)
+			}
+			else {
+				result.url = urlFormat(`/manual/${rule[0]}`)
+			}
+			return result
 		})
-
-		resultsList = candidateList.filter((r) => {
+		.filter((r) => {
 			return r.name.toLowerCase().startsWith(term.toLowerCase()) || 
 					r.name.toLowerCase().includes(term.toLowerCase())
 		})
-
-		resultsList.sort((a, b) => a.name - b.name)
+		.sort((a, b) => a.name - b.name)
 	}
 
 	return resultsList

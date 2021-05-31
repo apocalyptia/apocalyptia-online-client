@@ -2,11 +2,10 @@
 	import searchStore from '/src/stores/searchStore.js'
 	import { onMount } from 'svelte'
 
-	export let list, url
+	export let list
 
 	onMount(() => {
 		$searchStore.list = list
-		$searchStore.baseUrl = url
 		$searchStore.results = $searchStore.defaultResults()
 		$searchStore = $searchStore
 	})

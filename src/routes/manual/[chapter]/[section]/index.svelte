@@ -23,7 +23,7 @@
 
 {#if chapter === 'gear'}
 	<ManualSearchbar />
-	<ManualPage list={Rules[chapter][section]} url={`/manual/${chapter}/${section}`} />
+	<ManualPage list={Rules[chapter][section]} />
 {:else}
 	<div class='page-body'>
 		<ManualArticle rule={Rules[chapter][section]} />

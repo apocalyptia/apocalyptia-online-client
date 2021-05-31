@@ -20,4 +20,4 @@
 
 
 <ManualSearchbar />
-<ManualPage list={Rules[chapter]} url={`/manual/${chapter}`} />
+<ManualPage list={Rules[chapter]} />
