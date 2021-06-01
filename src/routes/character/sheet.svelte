@@ -20,6 +20,6 @@
 	<CharacterSheet mode={'edit'} />
 	<SaveAndDeleteButtonRow
 		saveFunc={() => $playerStore.saveCharacter($characterStore)}
-		deleteFunc={() => $playerStore.deleteCharacter($characterStore.description.name.value)}
+		deleteFunc={() => $playerStore.deleteCharacter($characterStore)}
 	/>
 </div>

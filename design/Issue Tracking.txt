@@ -42,8 +42,8 @@ Manual:
 Markup:
 	Add <abbr> tag to all abbreviations. ex: <abbr title="Constitution">C</abbr>
 
-Creator:
-	Characters aren't saving right.
+Character:
+	Figure out how to track Pain and tag each point with a source since they go away at different rates.
 
 
 ---------------------------------------------------------------------------------------------------

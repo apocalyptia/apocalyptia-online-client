@@ -1,16 +1,20 @@
+function compressionMapping(category) {
+	return category.map((item) => {
+		const compressedItem = {
+			n: item.name,
+			q: item.qty
+		}
+		if ('mods' in item && item.mods.length) {
+			compressedItem.m = [...item.mods]
+		}
+		if ('selection' in item && item.selection !== null) {
+			compressedItem.s = item.selection
+		}
+		return compressedItem
+	})
+}
+
 function compressCharacter(char) {
-	function compressionMapping(category) {
-		return category.map((item) => {
-			const compressedItem = {
-				n: item.name,
-				q: item.qty
-			}
-			if ('mods' in item && item.mods.length) {
-				compressedItem.m = [...item.mods]
-			}
-			return compressedItem
-		})
-	}
 
 	let c = {}
 
@@ -33,6 +37,7 @@ function compressCharacter(char) {
 	c.Ds = char.description.sex.value
 	c.Dk = char.description.skin.value
 	c.Dw = char.description.weight.value
+	c.Dp = char.description.player.value
 	c.Ta = char.traits.agility.score
 	c.Tb = char.traits.brains.score
 	c.Tc = char.traits.constitution.score
@@ -59,6 +64,7 @@ function compressCharacter(char) {
 	c.rA = char.properties.health.locations.rightArm.current
 	c.rL = char.properties.health.locations.rightLeg.current
 	c.tO = char.properties.health.locations.torso.current
+	c.Pe = char.properties.endurance.current
 	c.Pl = char.properties.luck.current
 	c.Pp = char.properties.psyche.current
 	c.Ab = compressionMapping(char.abilities)

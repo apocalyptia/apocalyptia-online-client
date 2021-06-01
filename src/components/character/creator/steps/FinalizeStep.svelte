@@ -5,10 +5,11 @@
 	import characterStore from '/src/stores/characterStore.js'
 	import creationStore from '/src/stores/creationStore.js'
 	import playerStore from '/src/stores/playerStore.js'
-	import { afterUpdate, onMount } from 'svelte'
+	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
 
 	function saveCharacter() {
+		$characterStore.finalize()
 		$playerStore.saveCharacter($characterStore)
 		goto(`/character/sheet`)
 	}
@@ -17,10 +18,6 @@
 		$playerStore.deleteCharacter($characterStore)
 		goto('/')
 	}
-
-	afterUpdate(() => {
-		$characterStore.proceed = $characterStore.canProceed($creationStore.step)
-	})
 
 	onMount(() => {
 		$characterStore.description.player = {

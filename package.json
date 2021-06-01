@@ -1,8 +1,8 @@
 {
 	"name": "apocalyptia-online-client",
-	"description": "A post-apocalyptic multiplayer roleplaying game about the end of the world.",
+	"description": "A post-apocalyptic online multiplayer roleplaying game about the end of the world.",
 	"repository": "https://github.com/apocalyptia/apocalyptia-online",
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"scripts": {
 		"dev": "svelte-kit dev -p 3010",
 		"build": "svelte-kit build",
@@ -15,7 +15,8 @@
 		"svelte": "^3.34.0"
 	},
 	"dependencies": {
-		"three": "^0.126.1"
+		"three": "^0.126.1",
+		"uuid": "^8.3.2"
 	},
 	"type": "module"
 }

@@ -1,5 +1,15 @@
 <script>
 	import TitleBar from '/src/components/widgets/TitleBar.svelte'
+	import characterStore from '/src/stores/characterStore.js'
+	import playerStore from '/src/stores/playerStore.js'
+	import { onMount } from 'svelte'
+
+	onMount(() => {
+		$playerStore.defaultCharacter()
+		if ($playerStore.currentCharacter !== null) {
+			$characterStore = $playerStore.currentCharacter
+		}
+	})
 </script>
 
 <div class="screen">

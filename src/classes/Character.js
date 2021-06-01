@@ -301,8 +301,10 @@ export default class Character {
 			this.randomGear()
 			this.randomDescription()
 		},
-		this.finalize = (userId) => {
-			 if(!this.meta.created) this.meta.created = new Date()
+		this.finalize = (userId = ``) => {
+			 if (!this.meta.created) {
+				 this.meta.created = new Date()
+			 }
 			this.meta.user = userId
 			this.meta.modified = new Date()
 		}

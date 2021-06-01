@@ -1,6 +1,64 @@
 import Character from '/src/classes/Character.js'
+import Abilities from '/src/rules/Abilities.js'
+import Melee from '/src/rules/gear/Melee.js'
+import Projectile from '/src/rules/gear/Projectile.js'
+import Ammo from '/src/rules/gear/Ammo.js'
+import Armor from '/src/rules/gear/Armor.js'
+import Equipment from '/src/rules/gear/Equipment.js'
+
+function decompressionMapping(category, type) {
+	let ruleList = []
+	switch (type) {
+		case 'ability':
+			ruleList = Object.values(Abilities)
+			break
+		case 'melee':
+			ruleList = Object.values(Melee)
+			break
+		case 'projectile':
+			ruleList = Object.values(Projectile)
+			break
+		case 'ammo':
+			ruleList = Object.values(Ammo)
+			break
+		case 'armor':
+			ruleList = Object.values(Armor)
+			break
+		case 'equipment':
+			ruleList = Object.values(Equipment).flat()
+			break
+	}
+	const decompList = category.map((item) => {
+		const decompressedItem = {
+			name: item.n,
+			qty: item.q 
+		}
+		if ('m' in item && item.m.length) {
+			decompressedItem.mods = [...item.m]
+		}
+		if ('s' in item && item.s !== null) {
+			decompressedItem.selection = item.s
+		}
+		return decompressedItem
+	})
+	return decompList.map((item) => {
+		const ruleItem = ruleList.find((rule) => rule.name === item.name)
+		if (ruleItem !== undefined) {
+			ruleItem.qty = item.qty
+			if ('mods' in ruleItem && item.m.length) {
+				ruleItem.mods = [...item.m]
+			}
+			if ('selection' in ruleItem && item.s !== null) {
+				ruleItem.selection = item.s
+			}
+		}
+		return ruleItem
+	})
+}
 
 function decompressCharacter(c) {
+	c = JSON.parse(c)
+
 	let char = new Character()
 
 	char.meta.id = c.Mi
@@ -22,6 +80,7 @@ function decompressCharacter(c) {
 	char.description.sex.value = c.Ds
 	char.description.skin.value = c.Dk
 	char.description.weight.value = c.Dw
+	char.description.player.value = c.Dp
 	char.traits.agility.score = c.Ta
 	char.traits.brains.score = c.Tb
 	char.traits.constitution.score = c.Tc
@@ -42,12 +101,12 @@ function decompressCharacter(c) {
 	char.skills.perform.score = c.pr
 	char.skills.socialize.score = c.so
 	char.skills.tame.score = c.ta
-	char.abilities = c.Ab
-	char.gear.armor.inventory = c.Ga
-	char.gear.melee.inventory = c.Gm
-	char.gear.projectile.inventory = c.Gr
-	char.gear.ammo.inventory = c.Go
-	char.gear.equipment.inventory = c.Ge
+	char.abilities = decompressionMapping(c.Ab, 'ability')
+	char.gear.armor.inventory = decompressionMapping(c.Ga, 'armor')
+	char.gear.melee.inventory = decompressionMapping(c.Gm, 'melee')
+	char.gear.projectile.inventory = decompressionMapping(c.Gr, 'projectile')
+	char.gear.ammo.inventory = decompressionMapping(c.Go, 'ammo')
+	char.gear.equipment.inventory = decompressionMapping(c.Ge, 'equipment')
 
 	char.updateProperties()
 
@@ -57,6 +116,7 @@ function decompressCharacter(c) {
 	char.properties.health.locations.rightArm.current = c.rA
 	char.properties.health.locations.rightLeg.current = c.rL
 	char.properties.health.locations.torso.current = c.tO
+	char.properties.endurance.current = c.Pe
 	char.properties.luck.current = c.Pl
 	char.properties.psyche.current = c.Pp
 

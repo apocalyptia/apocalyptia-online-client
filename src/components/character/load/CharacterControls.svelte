@@ -1,17 +1,19 @@
 <script>
-	// import backupCharacter from '/src/utils/database/characters/backupCharacter.js'
-	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 
 	export let selectedCharacter
 
 	function loadCharacter() {
 		$playerStore.loadCharacter(selectedCharacter)
-		window.location.href = '/sheet'
+		window.location.href = '/character/sheet'
 	}
 
 	function newCharacter() {
-		window.location.href = '/new'
+		window.location.href = '/character/new'
+	}
+
+	function backupCharacter() {
+		$playerStore.backupCharacter()
 	}
 
 	function deleteCharacter() {
@@ -22,7 +24,7 @@
 <div class="controls">
 	<div class="top-row">
 		<button class="small-cntr-btn" on:click={loadCharacter}> Load </button>
-		<!-- <button class="small-cntr-btn" on:click={() => backupCharacter($characterStore)}> Backup </button> -->
+		<button class="small-cntr-btn" on:click={backupCharacter}> Backup </button>
 	</div>
 	<div class="bottom-row">
 		<button class="small-cntr-btn" on:click={newCharacter}> New </button>

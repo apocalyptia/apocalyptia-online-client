@@ -6,7 +6,7 @@
 	import PropertiesStep from '/src/components/character/creator/steps/PropertiesStep.svelte'
 	import SkillsStep from '/src/components/character/creator/steps/SkillsStep.svelte'
 	import TraitsStep from '/src/components/character/creator/steps/TraitsStep.svelte'
-	import NavBar from '/src/components/character/creator/NavBar.svelte'
+	import NavBar from '/src/components/character/creator/navbar/NavBar.svelte'
 	import creationStore from '/src/stores/creationStore.js'
 	import { onMount } from 'svelte'
 
@@ -18,10 +18,12 @@
 	})
 </script>
 
+
 <div id="character-creator" class="page-body">
 	<svelte:component this={creationSteps[$creationStore.step]} />
 </div>
 <NavBar />
+
 
 <style>
 	#character-creator {

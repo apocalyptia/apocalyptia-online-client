@@ -1,6 +1,7 @@
 <script>
 	import characterStore from '/src/stores/characterStore.js'
 	import creationStore from '/src/stores/creationStore.js'
+	import playerStore from '/src/stores/playerStore.js'
 	import { beforeUpdate } from 'svelte'
 	import { goto } from '$app/navigation'
 
@@ -13,6 +14,7 @@
 		if ($characterStore.proceed) {
 			$creationStore.step++
 			if ($creationStore.checkMax()) {
+				$playerStore.saveCharacter($characterStore)
 				goto(`/`)
 			}
 		}
