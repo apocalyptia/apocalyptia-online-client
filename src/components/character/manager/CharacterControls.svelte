@@ -1,15 +1,16 @@
 <script>
+	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
-
-	export let selectedCharacter
+	import { goto } from '$app/navigation'
 
 	function loadCharacter() {
-		$playerStore.loadCharacter(selectedCharacter)
-		window.location.href = '/character/sheet'
+		$characterStore = $playerStore.loadCharacter($playerStore.selectedCharacter)
+		console.log($characterStore.description.name.value)
+		goto('/character/sheet')
 	}
 
 	function newCharacter() {
-		window.location.href = '/character/new'
+		goto('/character/new')
 	}
 
 	function backupCharacter() {
@@ -17,7 +18,7 @@
 	}
 
 	function deleteCharacter() {
-		$playerStore.deleteCharacter(selectedCharacter)
+		$playerStore.deleteCharacter($playerStore.selectedCharacter)
 	}
 </script>
 

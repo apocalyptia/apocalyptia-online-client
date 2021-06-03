@@ -1,30 +1,39 @@
 <script>
-	import TrashButton from '/src/components/buttons/TrashButton.svelte'
 	import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 
-	export let selectedCharacter
+	let characterList = []
 
-	function selectCharacter(event) {
-		selectedCharacter = event.target.textContent
+	function selectCharacter(character) {
+		$playerStore.selectedCharacter = character.meta.id
+	}
+
+	function deleteCharacter(character) {
+		$playerStore.deleteCharacter(character)
+		$playerStore = $playerStore
 	}
 
 	onMount(() => {
-		$playerStore.readCharacters()
-		$playerStore = $playerStore
+		characterList = $playerStore.readCharacters()
+		console.log('character list on mount = ', characterList)
 	})
 </script>
 
 <div class="character-storage-list-window">
-	{#if $playerStore.characterList.length}
+	{#if characterList.length}
 		<div class="character-storage-list">
-			{#each $playerStore.characterList as c, i}
+			<!-- {#each characterList as character, i (character.meta.id)}
 				<div class="stored-character">
-					<button class="character-name" on:click={(event) => selectCharacter(event)}>
-						{i}: {c.description.name.value}
+					<button class="character-name" on:click={() => selectCharacter(character)}>
+						{i}: {character.description.name.value}
 					</button>
-					<TrashButton on:click={() => $playerStore.deleteCharacter(selectedCharacter)} />
+					<button class="btn-box trash-btn crimson-btn square-btn" on:click={() => deleteCharacter(character)}>
+						<div class="btn-icon">X</div>
+					</button>					
 				</div>
+			{/each} -->
+			{#each characterList as c}
+				<p>{c.description.name.value}</p>
 			{/each}
 		</div>
 	{/if}

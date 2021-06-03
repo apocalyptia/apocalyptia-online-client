@@ -9,58 +9,53 @@ export default class Player {
 		this.email = ``
 		this.password = ``
 		this.loggedIn = false
-		this.currentCharacter = null
-		this.characterList = []
+		this.selectedCharacter = null
 
 		this.defaultCharacter = () => {
 			const firstKey = window.localStorage.key(0)
 			const firstCharacter = window.localStorage.getItem(firstKey)
-			if (firstCharacter !== null) {
-				this.currentCharacter = decompressCharacter(firstCharacter)
+			if (firstCharacter) {
+				const decompressedCharacter = decompressCharacter(firstCharacter)
+				this.selectedCharacter = decompressCharacter
+				return decompressCharacter
 			}
 		}
 		this.deleteCharacter = (character) => {
-			if (this.characterList.length) {
-				window.localStorage.removeItem(character.meta.id)
-				this.characterList = this.characterList.filter((c) => c.meta.id !== character.meta.id)
-			}
-			if (this.currentCharacter.meta.id === character.meta.id) {
-				if (this.characterList.length) {
-					this.currentCharacter = this.characterList[this.characterList.length - 1]
-				}
-				else {
-					this.currentCharacter = null
-				}
-			}
+			window.localStorage.removeItem(character.meta.id)
 		}
 		this.loadCharacter = (characterId) => {
-			const loadedCharacter = window.localStorage.getItem(characterId)
-			if (loadedCharacter !== null) {
-				this.currentCharacter = decompressCharacter(loadedCharacter)
-				this.characterList.push(this.currentCharacter)
+			const character = window.localStorage.getItem(characterId)
+			if (character) {
+				const decompressedCharacter = decompressCharacter(character)
+				return decompressedCharacter
 			}
-		}
-		this.newCharacter = (character) => {
-			window.localStorage.setItem(character.meta.id, compressCharacter(character))
-			this.currentCharacter = this.loadCharacter(character.meta.id)
-			this.characterList.push(this.currentCharacter)
-		}
-		this.readCharacters = () => {
-			if (window.localStorage.length) {
-				this.characterList = Object.keys(window.localStorage).map((c) => decompressCharacter(window.localStorage.getItem(c)))
+			else {
+				return null
 			}
 		}
 		this.saveCharacter = (character) => {
-			const characterIndex = this.characterList.findIndex((c) => c.meta.id === character.meta.id)
-			if (characterIndex >= 0) {
-				this.characterList[characterIndex] = character
-				window.localStorage.setItem(character.meta.id, compressCharacter(character))
-			}
-			else {
-				this.newCharacter(character)
-			}
+			window.localStorage.setItem(character.meta.id, compressCharacter(character))
 		}
-		this.backupCharacter = (character) => {
+		this.readCharacters = () => {
+			const characterKeys = Object.keys(window.localStorage)
+			const list = []
+			let l = ''
+			characterKeys.forEach(k => {
+				console.log('key = ', k)
+				l = this.loadCharacter(k)
+				console.log('loaded character = ', l.description.name.value)
+				list.push(this.loadCharacter(k))
+				console.log('character in list = ', list[list.length - 1].description.name.value)
+				console.log('list.length = ', list.length)
+				console.log('-----------------------------')
+			})
+			list.forEach(c => console.log('character name in completed list = ', c.description.name.value))
+			return list
+		}
+		this.backupCharacter = (character = null) => {
+			if (character === null) {
+				character = this.selectedCharacter
+			}
 			const characterBlob = new Blob([compressCharacter(character)], { type: `text/plain` })
 			const url = window.URL.createObjectURL(characterBlob)
 			const a = document.createElement(`a`)

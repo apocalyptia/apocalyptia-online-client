@@ -16,6 +16,7 @@
 
 	function deleteCharacter() {
 		$playerStore.deleteCharacter($characterStore)
+		$characterStore = null
 		goto('/')
 	}
 
@@ -32,7 +33,7 @@
 		<div class="sheet-content">
 			<CharacterSheet mode={'readonly'} />
 		</div>
-		<SaveAndDeleteButtonRow saveFunc={() => saveCharacter()} deleteFunc={() => deleteCharacter()} />
+		<SaveAndDeleteButtonRow saveFunc={saveCharacter} deleteFunc={deleteCharacter} />
 	</fieldset>
 </div>
 
