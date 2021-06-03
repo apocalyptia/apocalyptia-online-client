@@ -37,32 +37,32 @@
 	})
 </script>
 
-<div class="skills-step-page">
+<div class='skills-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Skills'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.skills.desc} />
 		<PointsRemaining points={$characterStore.skillsRemaining} />
 		{#each skillGroups as group}
-			<div class="item-block">
-				<details class="skills-details">
+			<div class='item-block'>
+				<details class='skills-details'>
 					<summary>
 						<h2>{group.name} Skills</h2>
 					</summary>
-					<div class="details-content">
-						<div class="max-score">
+					<div class='details-content'>
+						<div class='max-score'>
 							Max Score: {group.max}
 						</div>
 						{#each group.list as skill}
-							<div class="stat-range">
+							<div class='stat-range'>
 								<h3>{skill.name}</h3>
 								<Slider
 									name={skill.name}
 									type={'skill'}
-									min="0"
+									min='0'
 									max={$characterStore.maxTraits}
 									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
 									func={() => updateSkill(skill)}
-									indicator="true"
+									indicator='true'
 								/>
 							</div>
 						{/each}

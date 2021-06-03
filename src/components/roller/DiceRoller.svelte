@@ -15,15 +15,15 @@
 	}
 </script>
 
-<div class="item-category">
-	<div class="category-header">
-		<div class="category-name">d6 Roll</div>
+<div class='item-category'>
+	<div class='category-header'>
+		<div class='category-name'>d6 Roll</div>
 		<DiceButton func={rollResult} />
 	</div>
-	<div class="item-content">
-		<p class="roll">Dice Roll: {roll}</p>
-		<p>Modifier: <input type="number" class="mod" bind:value={mod} /></p>
-		<p class="result">Result: <span class="total">{total}</span></p>
+	<div class='item-content'>
+		<p class='roll'>Dice Roll: {roll}</p>
+		<p>Modifier: <input type='number' class='mod' bind:value={mod} /></p>
+		<p class='result'>Result: <span class='total'>{total}</span></p>
 	</div>
 </div>
 

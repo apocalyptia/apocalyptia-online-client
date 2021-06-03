@@ -19,17 +19,17 @@
 	}
 </script>
 
-<div class="abilities-step-page">
+<div class='abilities-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Abilities'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.abilities.desc} />
 		<PointsRemaining points={$characterStore.properties.experience.current} />
 		{#if $characterStore.abilities.length}
-			<div class="section-card">
+			<div class='section-card'>
 				<CurrentAbilities />
 			</div>
 		{/if}
-		<div class="section-card">
+		<div class='section-card'>
 			<AbilitiesList />
 		</div>
 		<ResetAndRandomButtonRow reset={() => resetAbilities()} random={() => randomAbilities()} />

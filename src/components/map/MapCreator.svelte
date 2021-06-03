@@ -5,17 +5,17 @@
 <svelte:head>
 	<title>Apocalyptia Online - Map Creator</title>
 </svelte:head>
-<div class="map-page">
-	<div class="cntr-card map-creator-menu">
-		<div class="menu-row">
+<div class='map-page'>
+	<div class='cntr-card map-creator-menu'>
+		<div class='menu-row'>
 			Columns:
-			<input type="number" min="1" max="1000" bind:value={$mapStore.cols} />
+			<input type='number' min='1' max='1000' bind:value={$mapStore.cols} />
 		</div>
-		<div class="menu-row">
+		<div class='menu-row'>
 			Rows:
-			<input type="number" min="1" max="1000" bind:value={$mapStore.rows} />
+			<input type='number' min='1' max='1000' bind:value={$mapStore.rows} />
 		</div>
-		<div class="btn-row">
+		<div class='btn-row'>
 			<button on:click={() => ($mapStore = $mapStore.create())}> Create Map </button>
 		</div>
 	</div>

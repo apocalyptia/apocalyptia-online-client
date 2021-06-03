@@ -24,9 +24,9 @@
 	})
 </script>
 
-<div class="rule-table">
+<div class='rule-table'>
 	<table>
-		<tr class="table-header">
+		<tr class='table-header'>
 			{#each rule.table.headers as header, h}
 				<td
 					style={`

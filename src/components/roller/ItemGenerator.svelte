@@ -13,15 +13,15 @@
 	}
 </script>
 
-<div class="item-category">
-	<div class="category-header">
-		<div class="category-name">
+<div class='item-category'>
+	<div class='category-header'>
+		<div class='category-name'>
 			<h3>{capitalize(category[0])}</h3>
 		</div>
 		<DiceButton func={randomItem} />
 	</div>
 	{#if item}
-		<div class="item-content">
+		<div class='item-content'>
 			<GearBlock {item} mode={'roller'} />
 		</div>
 	{/if}

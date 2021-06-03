@@ -5,7 +5,7 @@
 </script>
 
 
-<div class="nav-bar">
+<div class='nav-bar'>
 	<NavButtonPrevious />
 	<NavButtonHome />
 	<NavButtonNext />

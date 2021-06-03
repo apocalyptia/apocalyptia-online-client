@@ -2,12 +2,12 @@
 	export let saveFunc, deleteFunc
 </script>
 
-<div class="btn-row">
-	<a href="/">
-		<button class="small-cntr-btn" on:click={deleteFunc}> Delete </button>
+<div class='btn-row'>
+	<a href='/'>
+		<button class='small-cntr-btn' on:click={deleteFunc}> Delete </button>
 	</a>
-	<a href="/">
-		<button class="small-cntr-btn" on:click={saveFunc}> Save </button>
+	<a href='/'>
+		<button class='small-cntr-btn' on:click={saveFunc}> Save </button>
 	</a>
 </div>
 

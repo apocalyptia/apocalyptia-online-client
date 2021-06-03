@@ -19,16 +19,16 @@
 	})
 </script>
 
-<div class="character-storage-list-window">
+<div class='character-storage-list-window'>
 	{#if characterList.length}
-		<div class="character-storage-list">
+		<div class='character-storage-list'>
 			<!-- {#each characterList as character, i (character.meta.id)}
-				<div class="stored-character">
-					<button class="character-name" on:click={() => selectCharacter(character)}>
+				<div class='stored-character'>
+					<button class='character-name' on:click={() => selectCharacter(character)}>
 						{i}: {character.description.name.value}
 					</button>
-					<button class="btn-box trash-btn crimson-btn square-btn" on:click={() => deleteCharacter(character)}>
-						<div class="btn-icon">X</div>
+					<button class='btn-box trash-btn crimson-btn square-btn' on:click={() => deleteCharacter(character)}>
+						<div class='btn-icon'>X</div>
 					</button>					
 				</div>
 			{/each} -->

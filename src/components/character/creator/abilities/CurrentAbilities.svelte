@@ -7,25 +7,25 @@
 	}
 </script>
 
-<div class="current-abilities">
-	<div class="current-abilities-title">Current Abilities</div>
-	<div class="current-abilities-section">
-		<div class="current-abilities-header">
-			<span class="l-col">Name</span>
-			<span class="s-col">XP</span>
-			<span class="s-col">Max</span>
-			<span class="s-col">Taken</span>
+<div class='current-abilities'>
+	<div class='current-abilities-title'>Current Abilities</div>
+	<div class='current-abilities-section'>
+		<div class='current-abilities-header'>
+			<span class='l-col'>Name</span>
+			<span class='s-col'>XP</span>
+			<span class='s-col'>Max</span>
+			<span class='s-col'>Taken</span>
 		</div>
-		<div class="current-abilities-list">
+		<div class='current-abilities-list'>
 			{#each $characterStore.abilities as ability}
-				<div class="current-ability-row">
-					<span class="l-col">
+				<div class='current-ability-row'>
+					<span class='l-col'>
 						{ability.name}{#if ability.options && ability.options.length}:
 							<br />
 							<!-- svelte-ignore a11y-no-onchange -->
 							<select
-								name="skill-options"
-								class="skill-options-selector"
+								name='skill-options'
+								class='skill-options-selector'
 								bind:value={ability.selection}
 								on:change={() => updateAbilities(ability)}
 							>
@@ -37,11 +37,11 @@
 							</select>
 						{/if}
 					</span>
-					<span class="s-col">{ability.experience}</span>
-					<span class="s-col">{ability.max}</span>
-					<span class="s-col">
+					<span class='s-col'>{ability.experience}</span>
+					<span class='s-col'>{ability.max}</span>
+					<span class='s-col'>
 						<!-- svelte-ignore a11y-no-onchange -->
-						<select class="taken-number" bind:value={ability.qty} on:change={() => updateAbilities(ability)}>
+						<select class='taken-number' bind:value={ability.qty} on:change={() => updateAbilities(ability)}>
 							{#each Array(ability.max + 1) as _, takenNum}
 								<option value={takenNum} selected={takenNum === ability.qty}>
 									{takenNum}

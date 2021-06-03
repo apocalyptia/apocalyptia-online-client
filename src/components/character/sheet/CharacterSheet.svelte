@@ -46,11 +46,11 @@
 	export let mode
 </script>
 
-<div class="character-sheet">
+<div class='character-sheet'>
 	{#each sheetSectionsList as sheetSection}
-		<section class="{sheetSection.name.toLowerCase()}-section">
+		<section class='{sheetSection.name.toLowerCase()}-section'>
 			<h2>{sheetSection.name}</h2>
-			<div class="sheet-card">
+			<div class='sheet-card'>
 				<svelte:component this={sheetSection.content} {mode} />
 			</div>
 		</section>

@@ -5,7 +5,7 @@
 </script>
 
 <header>
-	<a href="/" class="link-btn">
+	<a href='/' class='link-btn'>
 		<h1>Apocalyptia Online</h1>
 	</a>
 	<!-- {#if $playerStore.loggedIn} -->

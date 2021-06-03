@@ -16,8 +16,8 @@ export default class Player {
 			const firstCharacter = window.localStorage.getItem(firstKey)
 			if (firstCharacter) {
 				const decompressedCharacter = decompressCharacter(firstCharacter)
-				this.selectedCharacter = decompressCharacter
-				return decompressCharacter
+				this.selectedCharacter = decompressedCharacter
+				return decompressedCharacter
 			}
 		}
 		this.deleteCharacter = (character) => {
@@ -56,13 +56,15 @@ export default class Player {
 			if (character === null) {
 				character = this.selectedCharacter
 			}
-			const characterBlob = new Blob([compressCharacter(character)], { type: `text/plain` })
-			const url = window.URL.createObjectURL(characterBlob)
-			const a = document.createElement(`a`)
-			a.href = url
-			a.download = character.description.name.value
-			a.click()
-			window.URL.revokeObjectURL(url)
+			if (character) {
+				const characterBlob = new Blob([compressCharacter(character)], { type: `text/plain` })
+				const url = window.URL.createObjectURL(characterBlob)
+				const a = document.createElement(`a`)
+				a.href = url
+				a.download = character.description.name.value
+				a.click()
+				window.URL.revokeObjectURL(url)
+			}
 		}
 	}
 }

@@ -17,25 +17,25 @@
 	}
 </script>
 
-<div class="gear-step-page">
+<div class='gear-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Gear'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.gear.desc} />
 		{#if $characterStore.proceed}
-			<div class="section-card">
+			<div class='section-card'>
 				{#each Object.values($characterStore.gear) as category (category.name)}
-					<div class="gear-list-details">
+					<div class='gear-list-details'>
 						<details>
 							<summary>{category.name}</summary>
-							<div class="details-content">
+							<div class='details-content'>
 								{#if category.name === 'Equipment'}
 									{#each category.inventory as equipment (equipment.name)}
-										<div class="item">
+										<div class='item'>
 											<GearBlock item={equipment} mode={'readonly'} />
 										</div>
 									{/each}
 								{:else}
-									<div class="item">
+									<div class='item'>
 										<GearBlock item={category.inventory[0]} mode={'readonly'} />
 									</div>
 								{/if}

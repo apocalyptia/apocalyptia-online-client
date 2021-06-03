@@ -12,10 +12,10 @@
 	})
 </script>
 
-<div class="screen">
-	<div class="scanline">
-		<div class="console">
-			<div class="program">
+<div class='screen'>
+	<div class='scanline'>
+		<div class='console'>
+			<div class='program'>
 				<header>
 					<TitleBar />
 				</header>

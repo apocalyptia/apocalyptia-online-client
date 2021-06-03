@@ -4,9 +4,9 @@
 	const propertiesList = Object.keys($characterStore.properties).filter((p) => p != 'health')
 </script>
 
-<div class="section-card properties-list">
+<div class='section-card properties-list'>
 	{#each propertiesList as prop}
-		<p class="prop-item">
+		<p class='prop-item'>
 			{$characterStore.properties[prop].name}:
 			{$characterStore.properties[prop].score}
 		</p>

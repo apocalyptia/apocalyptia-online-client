@@ -9,12 +9,12 @@
 <svelte:head>
 	<title>Apocalyptia Online - Roller</title>
 </svelte:head>
-<div class="page-body">
+<div class='page-body'>
 	<h1>Roller</h1>
 	<DiceRoller />
 	<details>
 		<summary><h2>Gear</h2></summary>
-		<div class="gear-category-list">
+		<div class='gear-category-list'>
 			<ItemGenerator category={masterGearList} />
 			{#each Object.entries(Gear) as category}
 				<ItemGenerator {category} />

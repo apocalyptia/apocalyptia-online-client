@@ -18,7 +18,7 @@
 <svelte:head>
 	<title>Apocalyptia Online - Load Character</title>
 </svelte:head>
-<div class="cntr-card">
+<div class='cntr-card'>
 	<CharacterList />
 	<CharacterControls />
 </div>

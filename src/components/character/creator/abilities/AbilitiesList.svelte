@@ -20,26 +20,26 @@
 	let visibleList = $abilitiesStore.list
 </script>
 
-<div class="organizer-bar">
-	<span class="xp-filter">
+<div class='organizer-bar'>
+	<span class='xp-filter'>
 		XP Cost:
 		<!-- svelte-ignore a11y-no-onchange -->
-		<select class="xp-cost-selector" bind:value={filterCost} on:change={filterList}>
+		<select class='xp-cost-selector' bind:value={filterCost} on:change={filterList}>
 			<option value={0}>-</option>
 			{#each $abilitiesStore.xpCosts as xpCost}
 				<option value={xpCost}>{xpCost}</option>
 			{/each}
 		</select>
 	</span>
-	<span class="taken-header">Taken</span>
+	<span class='taken-header'>Taken</span>
 </div>
-<div class="abilities-list">
+<div class='abilities-list'>
 	{#each visibleList as ability}
-		<div class="ability-list-item">
-			<details class="ability-card">
-				<summary class="ability-titlebar">
-					<h4 class="ability-title">{ability.name}</h4>
-					<span class="ability-controls">
+		<div class='ability-list-item'>
+			<details class='ability-card'>
+				<summary class='ability-titlebar'>
+					<h4 class='ability-title'>{ability.name}</h4>
+					<span class='ability-controls'>
 						<!-- svelte-ignore a11y-no-onchange -->
 						<select
 							name={ability.name}
@@ -55,12 +55,12 @@
 						</select>
 					</span>
 				</summary>
-				<div class="ability-description">
+				<div class='ability-description'>
 					{#if ability.options.length}
 						<!-- svelte-ignore a11y-no-onchange -->
 						<select
-							name="skill-options"
-							class="skill-options-selector"
+							name='skill-options'
+							class='skill-options-selector'
 							bind:value={ability.selection}
 							on:change={() => updateAbilities(ability)}
 						>
@@ -75,11 +75,11 @@
 						<p>{desc}</p>
 					{/each}
 					<hr />
-					<p class="ability-footer">
-						<span class="ability-experience">
+					<p class='ability-footer'>
+						<span class='ability-experience'>
 							Cost: {ability.experience} XP
 						</span>
-						<span class="ability-max">
+						<span class='ability-max'>
 							Max: {ability.max}
 						</span>
 					</p>

@@ -12,7 +12,7 @@
 
 <style>
 	.shadow {
-		background: rgba(0, 0, 0, 0.666);
+		background: rgba(0, 0, 0, 0.333);
 		height: 100vh;
 		left: 0;
 		position: absolute;

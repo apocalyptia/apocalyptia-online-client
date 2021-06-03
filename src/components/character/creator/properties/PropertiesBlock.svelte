@@ -8,20 +8,20 @@
 	const rightColumn = propertiesList.slice(propertiesList.length / 2, propertiesList.length)
 </script>
 
-<div class="properties-list">
-	<div class="prop-block">
+<div class='properties-list'>
+	<div class='prop-block'>
 		{#each leftColumn as leftProp}
-			<div class="prop-item">
+			<div class='prop-item'>
 				<h4>{$characterStore.properties[leftProp].name}</h4>
 				:
 				{$characterStore.properties[leftProp].score}
 			</div>
 		{/each}
 	</div>
-	<div class="divider" />
-	<div class="prop-block">
+	<div class='divider' />
+	<div class='prop-block'>
 		{#each rightColumn as rightProp}
-			<div class="prop-item">
+			<div class='prop-item'>
 				<h4>{$characterStore.properties[rightProp].name}</h4>
 				:
 				{$characterStore.properties[rightProp].score}

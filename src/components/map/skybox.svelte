@@ -30,7 +30,7 @@
 	onMount(() => init())
 </script>
 
-<div class="page-body">
+<div class='page-body'>
 	<canvas bind:this={canvas} />
 </div>
 

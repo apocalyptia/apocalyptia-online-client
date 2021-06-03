@@ -7,19 +7,19 @@
 	let password = ``
 </script>
 
-<div class="cntr-card">
+<div class='cntr-card'>
 	<form>
-		<div class="email">
-			<label for="email">Email</label>
-			<input id="email" type="text" required bind:value={email} />
+		<div class='email'>
+			<label for='email'>Email</label>
+			<input id='email' type='text' required bind:value={email} />
 		</div>
-		<div class="password">
-			<label for="password">Password</label>
-			<input id="password" type="password" required bind:value={password} />
+		<div class='password'>
+			<label for='password'>Password</label>
+			<input id='password' type='password' required bind:value={password} />
 		</div>
-		<div class="login">
-			<a href="/">
-				<button type="submit" on:click={() => ($playerStore = login($playerStore, email, password))}> Login </button>
+		<div class='login'>
+			<a href='/'>
+				<button type='submit' on:click={() => ($playerStore = login($playerStore, email, password))}> Login </button>
 			</a>
 		</div>
 	</form>

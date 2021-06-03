@@ -10,10 +10,10 @@
 	const rightColumn = propertiesList.slice(propertiesList.length / 2, propertiesList.length)
 </script>
 
-<div class="sheet-card-body">
-	<div class="prop-block">
+<div class='sheet-card-body'>
+	<div class='prop-block'>
 		{#each leftColumn as leftProp}
-			<div class="prop-item">
+			<div class='prop-item'>
 				<h4>{$characterStore.properties[leftProp].name}</h4>
 				:
 				{#if $characterStore.properties[leftProp].hasOwnProperty('current')}
@@ -21,10 +21,10 @@
 						{$characterStore.properties[leftProp].current}
 					{:else}
 						<input
-							type="number"
-							class="current-value"
+							type='number'
+							class='current-value'
 							bind:value={$characterStore.properties[leftProp].current}
-							min="0"
+							min='0'
 							max={$characterStore.properties[leftProp].score}
 						/>
 					{/if} /
@@ -33,10 +33,10 @@
 			</div>
 		{/each}
 	</div>
-	<div class="divider" />
-	<div class="prop-block">
+	<div class='divider' />
+	<div class='prop-block'>
 		{#each rightColumn as rightProp}
-			<div class="prop-item">
+			<div class='prop-item'>
 				<h4>{$characterStore.properties[rightProp].name}</h4>
 				:
 				{#if $characterStore.properties[rightProp].hasOwnProperty('current')}
@@ -44,10 +44,10 @@
 						{$characterStore.properties[rightProp].current}
 					{:else}
 						<input
-							type="number"
-							class="current-value"
+							type='number'
+							class='current-value'
 							bind:value={$characterStore.properties[rightProp].current}
-							min="0"
+							min='0'
 							max={$characterStore.properties[rightProp].score}
 						/>
 					{/if} /

@@ -16,10 +16,10 @@
 </script>
 
 
-<div class="manual-header-section">
+<div class='manual-header-section'>
 	<div class='search-bar-container'>
-		<input type="text" class="search-bar"
-			placeholder="Search"
+		<input type='text' class='search-bar'
+			placeholder='Search'
 			bind:value={$searchStore.term}
 			on:keyup={runSearch}
 		/>

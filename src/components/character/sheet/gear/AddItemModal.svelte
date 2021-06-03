@@ -28,18 +28,18 @@
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
-<div class="modal-background" on:click={() => dispatch('close')} />
-<div class="modal" role="dialog" aria-modal="true">
-	<div class="item-selection">
-		<select class="item-selector" bind:value={selectedItem}>
+<div class='modal-background' on:click={() => dispatch('close')} />
+<div class='modal' role='dialog' aria-modal='true'>
+	<div class='item-selection'>
+		<select class='item-selector' bind:value={selectedItem}>
 			{#each itemList as item}
 				<option value={item}>{item.name}</option>
 			{/each}
 		</select>
 	</div>
-	<div class="btn-row">
-		<button class="small-cntr-btn" on:click={() => add()}>Add</button>
-		<button class="small-cntr-btn" on:click={() => dispatch('close')}>Close</button>
+	<div class='btn-row'>
+		<button class='small-cntr-btn' on:click={() => add()}>Add</button>
+		<button class='small-cntr-btn' on:click={() => dispatch('close')}>Close</button>
 	</div>
 </div>
 

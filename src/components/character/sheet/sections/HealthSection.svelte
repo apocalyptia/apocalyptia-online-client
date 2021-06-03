@@ -14,14 +14,14 @@
 	onMount(() => adjustUIColor($characterStore))
 </script>
 
-<div class="body-parts-section">
-	<div class="left-column">
+<div class='body-parts-section'>
+	<div class='left-column'>
 		<BodyLabelColumn side={leftColumn} {mode} />
 	</div>
-	<div class="center-column">
+	<div class='center-column'>
 		<HumanBody />
 	</div>
-	<div class="right-column">
+	<div class='right-column'>
 		<BodyLabelColumn side={rightColumn} {mode} />
 	</div>
 </div>

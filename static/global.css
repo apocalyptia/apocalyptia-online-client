@@ -341,7 +341,7 @@ a:hover {
 a:active,
 a:hover {
 	animation: haze 1s infinite;
-	background-color: var(--pri-color-trans);
+	/* background-color: var(--pri-color-trans); */
 	color: var(--sec-color);
 	font-weight: bold;
 	background-size: 100% 2px, 3px 100%;
@@ -375,6 +375,17 @@ button:hover {
 }
 button:hover {
 	box-shadow: var(--pri-box-shadow);
+}
+button:disabled {
+	background-color: var(--ter-color-trans);
+	border: var(--std-border) solid var(--ter-color);
+	color: var(--ter-color);
+}
+button:disabled:hover {
+	background-color: var(--ter-color-semi);
+	border-color: var(--ter-color);
+	box-shadow: var(--ter-box-shadow);
+	color: var(--sec-color);
 }
 button:invalid {
 	-webkit-text-fill-color: var(--ter-color);
@@ -422,17 +433,6 @@ button:invalid {
 	background-color: var(--ter-color-semi);
 	border-color: var(--ter-color);
 	box-shadow: var(--ter-box-shadow);
-	color: var(--sec-color);
-}
-.green-btn {
-	background-color: var(--sec-color-trans);
-	border: var(--std-border) solid var(--pri-color);
-	color: var(--pri-color);
-	font-weight: bold;
-}
-.green-btn:active,
-.green-btn:hover {
-	background-color: var(--pri-color-trans);
 	color: var(--sec-color);
 }
 .link-btn {

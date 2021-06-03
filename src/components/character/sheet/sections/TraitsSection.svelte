@@ -4,11 +4,11 @@
 	export const mode = 'readonly'
 </script>
 
-<div class="sheet-card-body">
+<div class='sheet-card-body'>
 	{#each Object.values($characterStore.traits) as trait}
-		<div class="sheet-card-block">
-			<div class="sheet-card-item">
-				<span class="trait-name">
+		<div class='sheet-card-block'>
+			<div class='sheet-card-item'>
+				<span class='trait-name'>
 					{trait.name}: {trait.score}
 				</span>
 			</div>

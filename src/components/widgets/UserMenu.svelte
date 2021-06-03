@@ -11,7 +11,7 @@
 
 <div on:click={() => ($menuStore = $menuStore.toggle())}>
 	{#if $menuStore.open}
-		<nav class="user-menu" transition:fade>
+		<nav class='user-menu' transition:fade>
 			<MenuItems borders={false} />
 			<!-- <a href={'/'} class='link-btn borderless' on:click={logOut}>
 				Log Out

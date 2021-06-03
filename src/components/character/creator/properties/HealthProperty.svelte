@@ -3,7 +3,7 @@
 </script>
 
 
-<div class="section-card">
+<div class='section-card'>
 	<h2>Health</h2>
 	<HealthSection mode={'readonly'} />
 </div>

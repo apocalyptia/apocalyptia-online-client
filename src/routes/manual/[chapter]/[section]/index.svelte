@@ -1,4 +1,4 @@
-<script context="module">
+<script context='module'>
 	export async function load({ page }) {
 		const { chapter, section } = page.params
 		return {

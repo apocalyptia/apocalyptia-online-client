@@ -41,7 +41,7 @@
 <svelte:head>
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
-<div class="page-body">
+<div class='page-body'>
 	<canvas bind:this={canvas} />
 </div>
 
