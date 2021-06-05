@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const BrowningABolt = new Projectile({
-	name: `Browning A-Bolt Rifle`,
-	type: `Projectile Weapon`,
-	sz: 4,
-	attr: [TwoHanded]
+	accuracy: 1,
+	attributes: [],
+	caliber: `5.56mm`,
+	capacity: 5,
+	category: `Rifle`,
+	damage: 3,
+	hands: 2,
+	name: `Browning A-Bolt`,
+	rate: 1,
+	range: 60,
+	specialty: `Firearm`,
+	size: 4,
+	type: `Projectile Weapon`
 })
-BrowningABolt.dmg = 3
-BrowningABolt.rng = 60
-BrowningABolt.cap = 5
-BrowningABolt.cal = `5.56`
 
 export default BrowningABolt

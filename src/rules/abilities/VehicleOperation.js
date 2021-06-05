@@ -2,7 +2,7 @@ import Ability from '/src/classes/Ability.js'
 
 const VehicleOperation = new Ability({
 	name: `Vehicle Operation`,
-	desc: [`Proficiently operate a class of vehicle.`],
+	description: [`Proficiently operate a class of vehicle.`],
 	max: 1,
 	experience: 6
 })

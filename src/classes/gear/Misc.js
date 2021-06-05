@@ -2,23 +2,23 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Misc extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		size,
 		type = `Misc`,
 		url
 	}) {
 		url = `/misc/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})

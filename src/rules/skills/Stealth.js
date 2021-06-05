@@ -3,20 +3,20 @@ import Specialty from '../../classes/Specialty.js'
 
 const Stealth = new Skill({
 	name: `Stealth`,
-	desc: [`Conceal your presence.`],
+	description: [`Conceal your presence.`],
 	type: `Skill`,
 	parent: `Agility`,
-	diff: `Perception`,
-	specs: {
+	difficulty: `Perception`,
+	specialties: {
 		hide: new Specialty({
 			name: `Hide`,
 			type: `Specialty`,
-			desc: [`Stay motionless and Concealed`, `+3 if Prone.`]
+			description: [`Stay motionless and Concealed`, `+3 if Prone.`]
 		}),
 		sneak: new Specialty({
 			name: `Sneak`,
 			type: `Specialty`,
-			desc: [`Move Walk Speed while Concealed.`]
+			description: [`Move Walk Speed while Concealed.`]
 		})
 	}
 })

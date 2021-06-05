@@ -3,20 +3,23 @@ import Specialty from '../../classes/Specialty.js'
 
 const Projectile = new Skill({
 	name: `Projectile`,
-	desc: [`Projectile combat.`],
+	description: [`Projectile combat.`],
 	type: `Skill`,
 	parent: `Agility`,
-	diff: `Defense`,
-	specs: {
-		shoot: new Specialty({
-			name: `Shoot`,
+	difficulty: `Defense`,
+	specialties: {
+		firearm: new Specialty({
+			name: `Firearm`,
 			type: `Specialty`,
-			desc: [`Roll vs target's Defense.`]
+			description: [`Roll vs target's Defense to attempt a basic Projectile Attack with a gun.`]
 		}),
-		throw: new Specialty({
-			name: `Throw`,
+		traditional: new Specialty({
+			name: `Traditional`,
 			type: `Specialty`,
-			desc: [`Roll vs target's Defense.`, `Range is [Constitution x 3yds].`]
+			description: [
+				`Roll vs target's Defense to attempt a basic Projectile Attack with any type of bow, thrown weapon, or any other muscle-powered Projectile.`,
+				`Any Melee weapon can be a thrown weapon with a base Range of [(Constitution x 3) - Weapon Size] yards.`
+			]
 		})
 	}
 })

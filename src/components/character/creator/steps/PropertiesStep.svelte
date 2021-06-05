@@ -17,7 +17,7 @@
 <div class='properties-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.properties.desc} />
+		<ExplanationBlock rule={Creation.properties.description} />
 		<PropertiesBlock />
 		<PropertiesFormulae />
 		<HealthProperty />

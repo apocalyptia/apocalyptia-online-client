@@ -6,11 +6,11 @@ function randomAmmo({ caliber = '', max = 6 }) {
 	const ammoList = Object.values(Gear.ammo)
 	let randomAmmo
 	if (caliber) {
-		randomAmmo = randomRoll(ammoList.filter((a) => a.cal === caliber))
+		randomAmmo = randomRoll(ammoList.filter((a) => a.caliber === caliber))
 	} else {
 		randomAmmo = randomRoll(ammoList)
 	}
-	randomAmmo.qty = randomNumber(max)
+	randomAmmo.quantity = randomNumber(max)
 	return randomAmmo
 }
 

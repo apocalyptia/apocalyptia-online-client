@@ -2,8 +2,8 @@ import Document from '/src/classes/gear/Document.js'
 
 const HomeSecurity = new Document({
 	name: `Home Security`,
-	desc: [`+1 Larceny`],
-	sz: 1,
+	description: [`+1 Larceny`],
+	size: 1,
 	type: `Document`
 })
 

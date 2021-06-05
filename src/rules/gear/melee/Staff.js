@@ -1,14 +1,16 @@
 import Melee from '/src/classes/gear/Melee.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 import Blunt from '../attributes/Blunt.js'
 
 const Staff = new Melee({
+	accuracy: 0,
+	attributes: [Blunt],
+	damage: 2,
+	hands: 2,
 	name: `Staff`,
-	type: `Melee Weapon`,
-	sz: 3,
-	attr: [TwoHanded, Blunt]
+	penetration: 0,
+	range: 3,
+	size: 3,
+	type: `Melee Weapon`
 })
-Staff.dmg = 2
-Staff.rng = 3
 
 export default Staff

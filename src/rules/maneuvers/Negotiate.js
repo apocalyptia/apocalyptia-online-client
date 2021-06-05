@@ -2,7 +2,7 @@ import Maneuver from '/src/classes/Maneuver.js'
 
 const Negotiate = new Maneuver({
 	name: `Negotiate`,
-	desc: [
+	description: [
 		`If opposed parties are willing to talk out their differences, each side start with a list of demands.`,
 		`Roll [Socialize vs Socialize] once per demand.`,
 		`Attitude and situational modifiers should be applied by the Narrator.`,

@@ -1,15 +1,15 @@
 import Melee from '/src/classes/gear/Melee.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Chop from '../attributes/Chop.js'
-import Slow from '../attributes/Slow.js'
 
 const Ax = new Melee({
+	accuracy: -1,
+	attributes: [],
+	damage: 4,
+	hands: 2,
 	name: `Ax`,
-	type: `Melee Weapon`,
-	sz: 4,
-	attr: [TwoHanded, Chop, Slow]
+	penetration: -1,
+	range: 2,
+	size: 4,
+	type: `Melee Weapon`
 })
-Ax.dmg = 4
-Ax.rng = 2
 
 export default Ax

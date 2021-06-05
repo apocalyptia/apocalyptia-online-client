@@ -3,20 +3,20 @@ import Specialty from '../../classes/Specialty.js'
 
 const Perception = new Skill({
 	name: `Perception`,
-	desc: [`Processing sensory input.`],
+	description: [`Processing sensory input.`],
 	type: `Skill`,
 	parent: `Brains`,
-	diff: `varies`,
-	specs: {
+	difficulty: `varies`,
+	specialties: {
 		search: new Specialty({
 			name: `Search`,
 			type: `Specialty`,
-			desc: [`Roll vs [Stealth (or Survival if tracking)].`]
+			description: [`Roll vs [Stealth (or Survival if tracking)].`]
 		}),
 		intuition: new Specialty({
 			name: `Intuition`,
 			type: `Specialty`,
-			desc: [`Roll vs [Socialize or Perform].`]
+			description: [`Roll vs [Socialize or Perform].`]
 		})
 	}
 })

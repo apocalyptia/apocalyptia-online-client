@@ -1,16 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Rapid from '../attributes/Rapid.js'
 
 const SpringfieldM1A = new Projectile({
-	name: `Springfield M1A Rifle`,
-	type: `Projectile Weapon`,
-	sz: 4,
-	attr: [TwoHanded, Rapid]
+	accuracy: 0,
+	attributes: [],
+	caliber: `.308`,
+	capacity: 20,
+	category: `Rifle`,
+	damage: 6,
+	hands: 2,
+	name: `Springfield M1A`,
+	rate: 2,
+	range: 80,
+	specialty: `Firearm`,
+	size: 4,
+	type: `Projectile Weapon`
 })
-SpringfieldM1A.dmg = 6
-SpringfieldM1A.rng = 80
-SpringfieldM1A.cap = 20
-SpringfieldM1A.cal = `.308`
 
 export default SpringfieldM1A

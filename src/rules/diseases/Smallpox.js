@@ -2,7 +2,7 @@ import Disease from '../../classes/Disease.js'
 
 const Smallpox = new Disease({
 	name: `Smallpox`,
-	transmission: `Air, 3yds`,
+	transmission: `Air, 3 yards`,
 	virulence: `Constitution 15#`,
 	diagnose: `Medicine 6#`,
 	onset: `d6 weeks`,

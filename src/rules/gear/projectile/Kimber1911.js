@@ -1,16 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Rapid from '../attributes/Rapid.js'
 
 const Kimber1911 = new Projectile({
-	name: `Kimber 1911 Pistol`,
-	type: `Projectile Weapon`,
-	sz: 1,
-	attr: [TwoHanded, Rapid]
+	accuracy: 0,
+	attributes: [],
+	caliber: `.45ACP`,
+	capacity: 7,
+	category: `Pistol`,
+	damage: 1,
+	hands: 2,
+	name: `Kimber 1911`,
+	rate: 2,
+	range: 15,
+	specialty: `Firearm`,
+	size: 1,
+	type: `Projectile Weapon`
 })
-Kimber1911.dmg = 1
-Kimber1911.rng = 15
-Kimber1911.cap = 7
-Kimber1911.cal = `.45ACP`
 
 export default Kimber1911

@@ -2,25 +2,31 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Melee extends Gear {
 	constructor({
-		attr,
-		desc,
+		accuracy = 0,
+		attributes,
+		description,
+		damage,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		range,
+		size,
 		type = `Melee`,
 		url
 	}) {
 		url = `/melee/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.accuracy = accuracy
+		this.damage = damage
+		this.range = range
 	}
 }

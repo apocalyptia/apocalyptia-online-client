@@ -24,13 +24,13 @@
 	<fieldset>
 		<PageHeader chapter={'Description'} step={$characterStore.step} />
 		<div class='section-card'>
-			{#each Object.values($characterStore.description) as desc}
-				{#if desc.name != 'Player'}
-					<div class='desc-container'>
-						<span class='desc-label'>{desc.name}:</span>
-						<input type='text' class='desc-value' bind:value={desc.value} on:input={() => canProceed()} />
+			{#each Object.values($characterStore.description) as description}
+				{#if description.name != 'Player'}
+					<div class='description-container'>
+						<span class='description-label'>{description.name}:</span>
+						<input type='text' class='description-value' bind:value={description.value} on:input={() => canProceed()} />
 						<div class='random-container'>
-							<button class='random-button' on:click={() => randomDescription(desc.name)}> Random </button>
+							<button class='random-button' on:click={() => randomDescription(description.name)}> Random </button>
 						</div>
 					</div>
 				{/if}
@@ -41,7 +41,7 @@
 </div>
 
 <style>
-	.desc-container {
+	.description-container {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
@@ -49,11 +49,11 @@
 		max-width: 100%;
 		width: 100%;
 	}
-	.desc-label {
+	.description-label {
 		text-align: right;
 		flex: 1;
 	}
-	.desc-value {
+	.description-value {
 		flex: 2;
 	}
 	.random-container {

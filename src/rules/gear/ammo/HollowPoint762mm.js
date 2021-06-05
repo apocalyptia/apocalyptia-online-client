@@ -1,13 +1,15 @@
 import Ammo from '/src/classes/gear/Ammo.js'
-import HollowPoint from '../attributes/HollowPoint.js'
 
 const HollowPoint762mm = new Ammo({
+	accuracy: 0,
+	attributes: [],
+	caliber: `7.62mm`,
+	description: [`Self-defense ammunition.`],
+	damage: 1,
 	name: `7.62mm Hollow Point`,
-	type: `Ammo`,
-	desc: [`Self-defense ammunition.`],
-	sz: 0.02,
-	attr: [HollowPoint]
+	penetration: -1,
+	size: 0.02,
+	type: `Ammo`
 })
-HollowPoint762mm.cal = `7.62mm`
 
 export default HollowPoint762mm

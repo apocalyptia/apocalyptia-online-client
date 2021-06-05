@@ -6,7 +6,7 @@ const demeanorSkills = Object.values(Skills).filter((skill) => skill.parent === 
 const Demeanor = new Trait({
 	name: `Demeanor`,
 	skills: [ ...demeanorSkills ],
-	desc: [
+	description: [
 		`Demeanor is a Character’s talent for social exchanges and sheer force of will.`,
 		`High Demeanor indicates charisma, self-motivation, and confidence.`,
 		`This Trait is a factor in the Psyche and Luck Properties.`,

@@ -2,23 +2,23 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Medical extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		size,
 		type = `Medical`,
 		url
 	}) {
 		url = `/medical/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})

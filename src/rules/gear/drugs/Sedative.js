@@ -2,11 +2,11 @@ import Drug from '/src/classes/gear/Drug.js'
 
 const Sedative = new Drug({
 	name: `Sedative`,
-	desc: [`Demeanor #6 per Round to take any Action.`],
-	sz: 0,
-	type: `Drug`
+	description: [`Demeanor #6 per Round to take any Action.`],
+	size: 0,
+	type: `Drug`,
+	mix: 12,
+	overdose: true
 })
-Sedative.mix = 12
-Sedative.od = true
 
 export default Sedative

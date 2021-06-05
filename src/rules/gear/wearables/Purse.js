@@ -2,8 +2,8 @@ import Wearable from '/src/classes/gear/Wearable.js'
 
 const Purse = new Wearable({
 	name: `Purse`,
-	desc: [`1 Round to access.`],
-	sz: 1
+	description: [`1 Round to access.`],
+	size: 1
 })
 Purse.slots = 3
 

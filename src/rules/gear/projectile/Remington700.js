@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const Remington700 = new Projectile({
-	name: `Remington 700 Rifle`,
-	type: `Projectile Weapon`,
-	sz: 4,
-	attr: [TwoHanded]
+	accuracy: 1,
+	attributes: [],
+	caliber: `.308`,
+	capacity: 5,
+	category: `Rifle`,
+	damage: 6,
+	hands: 2,
+	name: `Remington 700`,
+	rate: 1,
+	range: 100,
+	specialty: `Firearm`,
+	size: 4,
+	type: `Projectile Weapon`
 })
-Remington700.dmg = 6
-Remington700.rng = 100
-Remington700.cap = 5
-Remington700.cal = `.308`
 
 export default Remington700

@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const SavageMkII = new Projectile({
-	name: `Savage Mk.II Rifle`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	attr: [TwoHanded]
+	accuracy: 1,
+	attributes: [],
+	caliber: `.22LR`,
+	capacity: 10,
+	category: `Rifle`,
+	damage: 1,
+	hands: 2,
+	name: `Savage Mk.II`,
+	rate: 1,
+	range: 40,
+	specialty: `Firearm`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-SavageMkII.dmg = 1
-SavageMkII.rng = 40
-SavageMkII.cap = 10
-SavageMkII.cal = `.22LR`
 
 export default SavageMkII

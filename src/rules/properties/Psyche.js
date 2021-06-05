@@ -5,7 +5,7 @@ const formula = `Demeanor x 3`
 const Psyche = new Property({
 	name: `Psyche`,
 	formula: formula,
-	desc: [
+	description: [
 		`Psyche = ${formula}`,
 		`Psyche is a measure of how much Trauma your mind can withstand.`,
 		`Each point of Psyche lost causes a -1 Pain penalty until healed.`,

@@ -40,7 +40,7 @@
 <div class='skills-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Skills'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.skills.desc} />
+		<ExplanationBlock rule={Creation.skills.description} />
 		<PointsRemaining points={$characterStore.skillsRemaining} />
 		{#each skillGroups as group}
 			<div class='item-block'>

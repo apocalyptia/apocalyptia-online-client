@@ -2,7 +2,7 @@ import Maneuver from '/src/classes/Maneuver.js'
 
 const Taunt = new Maneuver({
 	name: `Taunt`,
-	desc: [
+	description: [
 		`Roll [Leadership vs Demeanor].`,
 		`Provoke the enemy into exclusively attacking you.`,
 		`The degree of Success is a penalty to the loser’s next roll.`,

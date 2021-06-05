@@ -7,24 +7,44 @@
 			abv: 'type'
 		},
 		{
+			name: 'Accuracy',
+			abv: 'accuracy'
+		},
+		{
 			name: 'Damage',
-			abv: 'dmg'
+			abv: 'damage'
+		},
+		{
+			name: 'Penetration',
+			abv: 'penetration'
+		},
+		{
+			name: 'Rate',
+			abv: 'rate',
 		},
 		{
 			name: 'Range',
-			abv: 'rng'
+			abv: 'range'
 		},
 		{
-			name: 'Magazine',
-			abv: 'cap'
+			name: 'Capacity',
+			abv: 'capacity'
 		},
 		{
 			name: 'Caliber',
-			abv: 'cal'
+			abv: 'caliber'
+		},
+		{
+			name: 'Category',
+			abv: 'category'
+		},
+		{
+			name: 'Specialty',
+			abv: 'specialty'
 		},
 		{
 			name: 'Quantity',
-			abv: 'qty'
+			abv: 'quantity'
 		},
 		{
 			name: 'Fuse',
@@ -32,7 +52,7 @@
 		},
 		{
 			name: 'Duration',
-			abv: 'dur'
+			abv: 'duration'
 		},
 		{
 			name: 'Mix Difficulty',
@@ -40,11 +60,7 @@
 		},
 		{
 			name: 'Overdose Possible',
-			abv: 'od'
-		},
-		{
-			name: 'Hours',
-			abv: 'hrs'
+			abv: 'overdose'
 		},
 		{
 			name: 'Slots',
@@ -52,15 +68,15 @@
 		},
 		{
 			name: 'Absorption',
-			abv: 'dr'
+			abv: 'absorption'
 		},
 		{
-			name: 'Body Part',
-			abv: 'loc'
+			name: 'Location',
+			abv: 'location'
 		},
 		{
 			name: 'Size',
-			abv: 'sz'
+			abv: 'size'
 		}
 	]
 </script>
@@ -71,9 +87,9 @@
 			<h4 class='item-name'>{item.name}</h4>
 		{/if}
 		<div class='item-details'>
-			{#if item.desc}
-				{#each item.desc as desc}
-					<p class='gear-desc'>{desc}</p>
+			{#if item.description}
+				{#each item.description as description}
+					<p class='gear-description'>{description}</p>
 				{/each}
 			{/if}
 			{#each itemProps as prop}
@@ -82,10 +98,10 @@
 						{#if prop.name === 'Quantity'}
 							{#if mode === 'edit'}
 								<span class='prop-name'>{prop.name}</span>:
-								<input type='number' class='item-qty' min='0' bind:value={item.qty} />
+								<input type='number' class='item-quantity' min='0' bind:value={item.quantity} />
 							{:else if mode === 'readonly' && item.type === 'Ammo'}
 								<span class='prop-name'>{prop.name}</span>:
-								<span type='number' class='item-qty'>{item.qty}</span>
+								<span type='number' class='item-quantity'>{item.quantity}</span>
 							{/if}
 						{:else}
 							<span class='prop-name'>{prop.name}</span>:
@@ -94,14 +110,14 @@
 					</p>
 				{/if}
 			{/each}
-			{#if item && item.hasOwnProperty('attr') && item.attr.length > 0}
-				<p class='gear-attr'><u>Attributes</u>:</p>
+			{#if item && item.hasOwnProperty('attributes') && item.attributes.length > 0}
+				<p class='gear-attributes'><u>Attributes</u>:</p>
 				<div class='attributes'>
-					{#each item.attr as attr}
-						<div class='attr-type'>
-							{attr.name}:
-							{#each attr.desc as line}
-								<p class='attr-desc'>{line}</p>
+					{#each item.attributes as attributes}
+						<div class='attributes-type'>
+							{attributes.name}:
+							{#each attributes.description as line}
+								<p class='attributes-description'>{line}</p>
 							{/each}
 						</div>
 					{/each}
@@ -119,22 +135,22 @@
 		font-weight: bold;
 		text-decoration: underline;
 	}
-	.gear-desc,
+	.gear-description,
 	.gear-prop,
-	.gear-attr,
-	.attr-type {
+	.gear-attributes,
+	.attributes-type {
 		margin: var(--std-margin);
 	}
 	.prop-name {
 		text-decoration: underline;
 	}
-	.attr-type {
+	.attributes-type {
 		padding-left: var(--std-padding);
 	}
-	.attr-desc {
+	.attributes-description {
 		padding-left: calc(var(--std-padding) * 2);
 	}
-	.item-qty {
+	.item-quantity {
 		width: 20%;
 	}
 </style>

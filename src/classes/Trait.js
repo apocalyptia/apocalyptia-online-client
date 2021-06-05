@@ -2,7 +2,7 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Trait extends Rule {
 	constructor({
-		desc,
+		description,
 		name,
 		skills = [],
 		type = `Trait`,
@@ -10,7 +10,7 @@ export default class Trait extends Rule {
 	}) {
 		url = `/traits/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

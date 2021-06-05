@@ -10,7 +10,7 @@
 				{#if property.name === 'Health'}
 					<li>
 						<h4>Health</h4>
-						 = {property.desc[0]}, {property.desc[1]}
+						 = {property.description[0]}, {property.description[1]}
 					</li>
 				{:else}
 					<li>

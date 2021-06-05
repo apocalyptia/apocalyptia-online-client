@@ -8,7 +8,7 @@ export default () => {
 			name: skill.name,
 			parent: skill.parent,
 			score: 0,
-			specs: skill.specs
+			specialties: skill.specialties
 		}
 	}
 	return skills

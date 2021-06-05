@@ -2,7 +2,7 @@ import Creation from '/src/classes/Creation.js'
 
 const Gear = new Creation({
 	name: `Gear`,
-	desc: [
+	description: [
 		`You start with some random Gear:`,
 		`One piece of Armor`,
 		`One Melee weapon`,

@@ -6,7 +6,7 @@ const brainsSkills = Object.values(Skills).filter((skill) => skill.parent === 'B
 const Brains = new Trait({
 	name: `Brains`,
 	skills: [ ...brainsSkills ],
-	desc: [
+	description: [
 		`Brains is a Character’s talent for cognitive performance and abstract thought.`,
 		`High Brains indicates sharp memory, keen awareness, and studiousness.`,
 		`This Trait is a factor in the XP and Intellect Properties.`,

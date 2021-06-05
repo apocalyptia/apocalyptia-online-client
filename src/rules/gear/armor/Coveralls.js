@@ -4,11 +4,11 @@ import ColdResistance from '../../gear/attributes/ColdResistance.js'
 
 const Coveralls = new Armor({
 	name: `Coveralls`,
-	sz: 3,
-	attr: [Camo, ColdResistance],
-	type: `Armor`
+	size: 3,
+	attributes: [Camo, ColdResistance],
+	type: `Armor`,
+	absorption: 1,
+	location: `Arms, Torso, Legs`
 })
-Coveralls.dr = 1
-Coveralls.loc = `Arms, Torso, Legs`
 
 export default Coveralls

@@ -6,7 +6,7 @@ const agilitySkills = Object.values(Skills).filter((skill) => skill.parent === '
 const Agility = new Trait({
 	name: `Agility`,
 	skills: [ ...agilitySkills ],
-	desc: [
+	description: [
 		`Agility is a Character’s talent for physical coordination.`,
 		`High Agility indicates balance, flexibility, and fine motor skill.`,
 		`This Trait is a factor in the Speed and Dodge Properties.`,

@@ -4,14 +4,14 @@ import Blind from '../../status/Blind.js'
 const SmokeGrenade = new Bomb({
 	name: `Smoke Grenade`,
 	type: `Bomb`,
-	desc: [`Visibility denial grenade.`],
-	sz: 1,
-	attr: [Blind]
+	description: [`Visibility denial grenade.`],
+	size: 1,
+	attributes: [Blind],
+	damage: 0,
+	range: `1yd/rnd`,
+	fuse: 2,
+	duration: `1d6mins`,
+	mix: 6
 })
-SmokeGrenade.dmg = 0
-SmokeGrenade.rng = `1yd/rnd`
-SmokeGrenade.fuse = 2
-SmokeGrenade.dur = `1d6mins`
-SmokeGrenade.mix = 6
 
 export default SmokeGrenade

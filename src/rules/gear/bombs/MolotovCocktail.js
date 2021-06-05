@@ -5,14 +5,14 @@ import FireDamage from '../attributes/FireDamage.js'
 const MolotovCocktail = new Bomb({
 	name: `Molotov Cocktail`,
 	type: `Bomb`,
-	desc: [`Glass bottle of fuel with rag wick.`],
-	sz: 1,
-	attr: [Blast, FireDamage]
+	description: [`Glass bottle of fuel with rag wick.`],
+	size: 1,
+	attributes: [Blast, FireDamage],
+	damage: `1d6`,
+	range: 3,
+	fuse: 10,
+	duration: 20,
+	mix: 3
 })
-MolotovCocktail.dmg = `1d6`
-MolotovCocktail.rng = 3
-MolotovCocktail.fuse = 10
-MolotovCocktail.dur = 20
-MolotovCocktail.mix = 3
 
 export default MolotovCocktail

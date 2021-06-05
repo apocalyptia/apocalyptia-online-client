@@ -26,7 +26,7 @@
 <div class='traits-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Traits'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.traits.desc} />
+		<ExplanationBlock rule={Creation.traits.description} />
 		<PointsRemaining points={$characterStore.traitsRemaining} />
 		<div class='section-card'>
 			{#each Object.values($characterStore.traits) as trait}

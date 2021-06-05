@@ -2,8 +2,8 @@ import Wearable from '/src/classes/gear/Wearable.js'
 
 const ConcealedHolster = new Wearable({
 	name: `Concealed Holster`,
-	desc: [`Perception 12# to spot a Size 1 Gun.`],
-	sz: 0
+	description: [`Perception 12# to spot a Size 1 Gun.`],
+	size: 0
 })
 ConcealedHolster.slots = 1
 

@@ -2,25 +2,27 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Storage extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		size,
+		slots,
 		type = `Storage`,
 		url
 	}) {
 		url = `/storage/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.slots = slots
 	}
 }

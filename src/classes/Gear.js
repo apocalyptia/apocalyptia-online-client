@@ -2,25 +2,25 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Gear extends Rule {
 	constructor({
-		attr = [],
-		desc,
+		attributes = [],
+		description,
 		id,
 		name,
-		qty = 0,
-		sz = 0,
+		quantity = 0,
+		size = 0,
 		type = `Gear`,
 		url
 	}) {
 		url = `/gear${url}`
 		super({
-			desc,
+			description,
 			id,
 			name,
 			type,
 			url
 		})
-		this.attr = attr
-		this.qty = qty
-		this.sz = sz
+		this.attributes = attributes
+		this.quantity = quantity
+		this.size = size
 	}
 }

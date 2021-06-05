@@ -3,15 +3,15 @@ import Specialty from '../../classes/Specialty.js'
 
 const Build = new Skill({
 	name: `Build`,
-	desc: [`Make an item from [d6 + #] Parts.`],
+	description: [`Make an item from [d6 + #] Parts.`],
 	type: `Skill`,
 	parent: `Constitution`,
-	diff: `varies`,
-	specs: {
+	difficulty: `varies`,
+	specialties: {
 		customize: new Specialty({
 			name: `Customize`,
 			type: `Specialty`,
-			desc: [
+			description: [
 				`Customizations take a number of hours to complete equal to the Difficulty.`,
 				`Each Customization can only be applied once on per item.`,
 				`Each item can have up to 3 unique Customizations.`,
@@ -22,7 +22,7 @@ const Build = new Skill({
 		repair: new Specialty({
 			name: `Repair`,
 			type: `Specialty`,
-			desc: [
+			description: [
 				`Fixing a broken item takes a number of hours to complete equal to the Difficulty.`,
 				`+1 to the Build(Repair) roll when using Parts from the same kind of item.`
 			]

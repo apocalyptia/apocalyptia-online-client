@@ -1,14 +1,15 @@
 import Ammo from '/src/classes/gear/Ammo.js'
-import Broadhead from '../attributes/Broadhead.js'
-import Pierce from '../attributes/Pierce.js'
 
 const ArrowBroadhead = new Ammo({
+	accuracy: 0,
+	attributes: [],
+	caliber: `Arrow`,
+	description: [`Hunting arrow.`],
+	damage: 0,
 	name: `Broadhead Arrow`,
-	type: `Ammo`,
-	desc: [`Hunting arrow.`],
-	sz: 0.1,
-	attr: [Broadhead, Pierce]
+	penetration: 1,
+	size: 0.1,
+	type: `Ammo`
 })
-ArrowBroadhead.cal = `Arrow`
 
 export default ArrowBroadhead

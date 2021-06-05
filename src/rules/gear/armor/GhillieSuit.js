@@ -4,11 +4,11 @@ import ColdResistance from '../../gear/attributes/ColdResistance.js'
 
 const GhillieSuit = new Armor({
 	name: `Ghillie Suit`,
-	sz: 3,
-	attr: [Camo, ColdResistance],
-	type: `Armor`
+	size: 3,
+	attributes: [Camo, ColdResistance],
+	type: `Armor`,
+	absorption: 1,
+	location: `Head, Arms, Torso, Legs`
 })
-GhillieSuit.dr = 1
-GhillieSuit.loc = `Full Body`
 
 export default GhillieSuit

@@ -2,11 +2,11 @@ import Drug from '/src/classes/gear/Drug.js'
 
 const Hallucinogen = new Drug({
 	name: `Hallucinogen`,
-	desc: [`+1 Perform and Tame, -3 to all other rolls, and -1 Psyche.`],
-	sz: 0,
-	type: `Drug`
+	description: [`+1 Perform and Tame, -3 to all other rolls, and -1 Psyche.`],
+	size: 0,
+	type: `Drug`,
+	mix: 15,
+	overdose: false
 })
-Hallucinogen.mix = 15
-Hallucinogen.od = false
 
 export default Hallucinogen

@@ -1,13 +1,15 @@
 import Melee from '/src/classes/gear/Melee.js'
-import OneHanded from '../attributes/OneHanded.js'
 
 const Crowbar = new Melee({
+	accuracy: 0,
+	attributes: [],
+	damage: 3,
+	hands: 1,
 	name: `Crowbar`,
-	type: `Melee Weapon`,
-	sz: 3,
-	attr: [OneHanded]
+	penetration: 0,
+	range: 2,
+	size: 3,
+	type: `Melee Weapon`
 })
-Crowbar.dmg = 3
-Crowbar.rng = 2
 
 export default Crowbar

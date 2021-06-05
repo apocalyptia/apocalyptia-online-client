@@ -2,25 +2,29 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Armor extends Gear {
 	constructor({
-		attr,
-		desc,
+		absorption,
+		attributes,
+		description,
 		id,
+		location,
 		name,
-		qty,
-		sz,
+		quantity,
+		size,
 		type = `Armor`,
 		url
 	}) {
 		url = `/armor/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.absorption = absorption
+		this.location = location
 	}
 }

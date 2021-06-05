@@ -1,15 +1,15 @@
 import Melee from '/src/classes/gear/Melee.js'
-import OneHanded from '../attributes/OneHanded.js'
-import Pierce from '../attributes/Pierce.js'
-import Rapid from '../attributes/Rapid.js'
 
 const Knife = new Melee({
+	accuracy: 0,
+	attributes: [],
+	damage: 1,
+	hands: 1,
 	name: `Knife`,
-	type: `Melee Weapon`,
-	sz: 1,
-	attr: [OneHanded, Pierce, Rapid]
+	penetration: 1,
+	range: 1,
+	size: 1,
+	type: `Melee Weapon`
 })
-Knife.dmg = 1
-Knife.rng = 1
 
 export default Knife

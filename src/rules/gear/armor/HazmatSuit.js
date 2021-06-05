@@ -4,11 +4,11 @@ import Mask from '../../gear/attributes/Mask.js'
 
 const HazmatSuit = new Armor({
 	name: `Hazmat Suit`,
-	sz: 2,
-	attr: [Impermeable, Mask],
-	type: `Armor`
+	size: 2,
+	attributes: [Impermeable, Mask],
+	type: `Armor`,
+	absorption: 0,
+	location: `Head, Arms, Torso, Legs`
 })
-HazmatSuit.dr = 0
-HazmatSuit.loc = `Full Body`
 
 export default HazmatSuit

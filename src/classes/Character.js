@@ -91,7 +91,7 @@ export default class Character {
 		},
 		this.resetDescription = () => {
 			for (const d in this.description) {
-				if (this.description[d].name != `Player`) {
+				if (this.description[d].name !== `Player`) {
 					this.description[d].value = ``
 				}
 			}
@@ -157,7 +157,7 @@ export default class Character {
 				}
 			}
 			this.properties.experience.current = this.abilities.reduce((sum, a) => {
-				return sum - a.qty * a.experience
+				return sum - a.quantity * a.experience
 			}, this.properties.experience.score)
 		},
 		this.updateSkill = (skill) => {
@@ -259,7 +259,7 @@ export default class Character {
 				})
 				if (remainingAbilities.length) {
 					const randomAbility = randomRoll(remainingAbilities)
-					randomAbility.qty = 1
+					randomAbility.quantity = 1
 					if (randomAbility.options.length) {
 						randomAbility.selection = randomNumber(randomAbility.options.length)
 					}
@@ -274,7 +274,7 @@ export default class Character {
 			this.gear.projectile.inventory.push(randomProjectileWeapon())
 			this.gear.ammo.inventory.push(
 				randomAmmo({
-					caliber: this.gear.projectile.inventory[0].cal,
+					caliber: this.gear.projectile.inventory[0].caliber,
 					max: 6
 				})
 			)
@@ -284,13 +284,13 @@ export default class Character {
 				})
 			]
 			const food = Gear.resources.food
-			food.qty = 1
+			food.quantity = 1
 			this.gear.equipment.inventory.push(food)
 			const waterBottle = Gear.storage.waterbottle
-			waterBottle.qty = 1
+			waterBottle.quantity = 1
 			this.gear.equipment.inventory.push(waterBottle)
 			const water = Gear.resources.water
-			water.qty = 1
+			water.quantity = 1
 			this.gear.equipment.inventory.push(water)
 		},
 		this.randomCharacter = () => {

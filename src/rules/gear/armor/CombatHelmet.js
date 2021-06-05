@@ -4,11 +4,11 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 
 const CombatHelmet = new Armor({
 	name: `Combat Helmet`,
-	sz: 2,
-	attr: [Camo, FireResistance],
-	type: `Armor`
+	size: 2,
+	attributes: [Camo, FireResistance],
+	type: `Armor`,
+	absorption: 2,
+	location: `Head`
 })
-CombatHelmet.dr = 2
-CombatHelmet.loc = `Head`
 
 export default CombatHelmet

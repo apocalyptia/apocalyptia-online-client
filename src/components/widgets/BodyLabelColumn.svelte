@@ -5,8 +5,8 @@
 	export let side, mode
 
 	function adjustHealth() {
-		Object.values($characterStore.properties.health.locations).forEach((loc) => {
-			if (loc.current > loc.score) loc.current = loc.score
+		Object.values($characterStore.properties.health.locations).forEach((location) => {
+			if (location.current > location.score) location.current = location.score
 		})
 		adjustUIColor($characterStore)
 	}

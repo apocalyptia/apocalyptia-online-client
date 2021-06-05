@@ -3,11 +3,11 @@ import Camo from '../../gear/attributes/Camo.js'
 
 const FlakJacket = new Armor({
 	name: `Flak Jacket`,
-	sz: 3,
-	attr: [Camo],
-	type: `Armor`
+	size: 3,
+	attributes: [Camo],
+	type: `Armor`,
+	absorption: 2,
+	location: `Torso`
 })
-FlakJacket.dr = 2
-FlakJacket.loc = `Torso`
 
 export default FlakJacket

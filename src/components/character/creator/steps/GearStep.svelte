@@ -20,7 +20,7 @@
 <div class='gear-step-page'>
 	<fieldset>
 		<PageHeader chapter={'Gear'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.gear.desc} />
+		<ExplanationBlock rule={Creation.gear.description} />
 		{#if $characterStore.proceed}
 			<div class='section-card'>
 				{#each Object.values($characterStore.gear) as category (category.name)}

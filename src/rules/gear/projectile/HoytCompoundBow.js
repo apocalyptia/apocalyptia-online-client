@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const HoytCompoundBow = new Projectile({
+	accuracy: 0,
+	attributes: [],
+	caliber: `Arrow`,
+	capacity: 1,
+	category: `Archery`,
+	damage: 2,
+	hands: 2,
 	name: `Hoyt Compound Bow`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	attr: [TwoHanded]
+	rate: 1,
+	range: 15,
+	specialty: `Traditional`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-HoytCompoundBow.dmg = 2
-HoytCompoundBow.rng = 15
-HoytCompoundBow.cap = 1
-HoytCompoundBow.cal = `Arrow`
 
 export default HoytCompoundBow

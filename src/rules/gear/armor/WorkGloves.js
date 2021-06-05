@@ -3,11 +3,11 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 
 const WorkGloves = new Armor({
 	name: `Work Gloves`,
-	sz: 0,
-	attr: [FireResistance],
-	type: `Armor`
+	size: 0,
+	attributes: [FireResistance],
+	type: `Armor`,
+	absorption: 1,
+	location: `Arms`
 })
-WorkGloves.dr = 1
-WorkGloves.loc = `Arms`
 
 export default WorkGloves

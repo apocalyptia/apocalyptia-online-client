@@ -4,7 +4,7 @@ import Recovery from './subrules/Recovery.js'
 
 const Trauma = new Combat({
 	name: `Trauma`,
-	desc: [
+	description: [
 		`Trauma temporarily reduces Psyche.`,
 		`Each point of Trauma causes a -1 Pain penalty until healed.`,
 		`Any number of horrible events could potentially cause Trauma.`,

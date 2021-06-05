@@ -34,6 +34,7 @@ export default class Player {
 			}
 		}
 		this.saveCharacter = (character) => {
+			this.selectedCharacter = character
 			window.localStorage.setItem(character.meta.id, compressCharacter(character))
 		}
 		this.readCharacters = () => {

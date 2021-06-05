@@ -2,7 +2,7 @@ import Core from '/src/classes/Core.js'
 
 const Difficulty = new Core({
 	name: `Difficulty`,
-	desc: [
+	description: [
 		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success.`,
 		`If the roll is opposed, re-roll ties.`,
 		`Difficulties are indicated by the # symbol.`,

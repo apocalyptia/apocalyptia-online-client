@@ -2,23 +2,23 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Skill extends Rule {
 	constructor({
-		desc,
-		diff = null,
+		description,
+		difficulty = null,
 		name,
 		parent = ``,
-		specs = {},
+		specialties = {},
 		type = `Skill`,
 		url
 	}) {
 		url = `/skills/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url
 		})
-		this.diff = diff
+		this.difficulty = difficulty
 		this.parent = parent
-		this.specs = specs
+		this.specialties = specialties
 	}
 }

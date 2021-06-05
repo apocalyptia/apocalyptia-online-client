@@ -3,25 +3,32 @@ import swapOrder from '/src/utils/text/swapOrder.js'
 
 export default class Ammo extends Gear {
 	constructor({
-		attr,
-		desc,
+		accuracy = 0,
+		attributes,
+		caliber,
+		description,
 		id,
 		name,
-		qty,
-		sz,
+		penetration = 0,
+		quantity,
+		size,
 		type = `Ammo`,
 		url
 	}) {
 		url = `/ammo/${swapOrder(name)}`
 		super({
-			attr,
-			desc,
+			attributes,
+			caliber,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.accuracy = accuracy
+		this.caliber = caliber
+		this.penetration = penetration
 	}
 }

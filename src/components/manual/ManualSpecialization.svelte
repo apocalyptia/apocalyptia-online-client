@@ -2,14 +2,14 @@
 	export let rule
 </script>
 
-<div class='spec-section'>
-	{#each Object.values(rule.specs) as spec}
+<div class='specialty-section'>
+	{#each Object.values(rule.specialties) as specialty}
 		<div class='sub-name'>
-			{spec.name}
+			{specialty.name}
 		</div>
-		{#each spec.desc as desc}
-			<p class='spec-desc'>
-				{desc}
+		{#each specialty.description as description}
+			<p class='specialty-description'>
+				{description}
 			</p>
 		{/each}
 	{/each}
@@ -17,7 +17,7 @@
 
 <style>
 	.sub-name,
-	.spec-desc {
+	.specialty-description {
 		margin: var(--std-margin);
 	}
 	.sub-name {

@@ -6,7 +6,7 @@ const constitutionSkills = Object.values(Skills).filter((skill) => skill.parent 
 const Constitution = new Trait({
 	name: `Constitution`,
 	skills: [ ...constitutionSkills ],
-	desc: [
+	description: [
 		`Constitution is a Character’s talent for physical power and durability.`,
 		`High Constitution indicates good health, high stamina, and strong muscles.`,
 		`This Trait is a factor in the Health and Block Properties.`,

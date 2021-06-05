@@ -4,21 +4,21 @@ import Traits from '../Traits.js'
 
 const Unorthodox = new Ability({
 	name: `Unorthodox`,
-	desc: [`Pick a new parent Trait for a Skill.`],
+	description: [`Pick a new parent Trait for a Skill.`],
 	max: 1,
 	experience: 9,
 	options: (() => {
-		const uList = []
+		const unorthodoxList = []
 		for (const trait in Traits) {
 			for (const skill in Skills) {
-				const tname = Traits[trait].name
-				const sname = Skills[skill].name
-				if (skill.parent !== tname) {
-					uList.push(`${tname} - ${sname}`)
+				const traitName = Traits[trait].name
+				const skillName = Skills[skill].name
+				if (skill.parent !== traitName) {
+					unorthodoxList.push(`${traitName} - ${skillName}`)
 				}
 			}
 		}
-		return [...uList]
+		return [...unorthodoxList]
 	})()
 })
 

@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const HenryGoldenBoy = new Projectile({
-	name: `Henry Golden Boy Rifle`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	attr: [TwoHanded]
+	accuracy: 0,
+	attributes: [],
+	caliber: `.22LR`,
+	capacity: 16,
+	category: `Rifle`,
+	damage: 1,
+	hands: 2,
+	name: `Henry Golden Boy`,
+	rate: 1,
+	range: 1,
+	specialty: `Firearm`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-HenryGoldenBoy.dmg = 0
-HenryGoldenBoy.rng = 30
-HenryGoldenBoy.cap = 16
-HenryGoldenBoy.cal = `.22LR`
 
 export default HenryGoldenBoy

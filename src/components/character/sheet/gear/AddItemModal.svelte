@@ -20,7 +20,7 @@
 	if (previouslyFocused) onDestroy(() => previouslyFocused.focus())
 
 	function add() {
-		if (category === 'ammo') selectedItem.qty = 0
+		if (category === 'ammo') selectedItem.quantity = 0
 		$characterStore.gear[category].inventory.push(selectedItem)
 		$characterStore = $characterStore
 		dispatch('close')

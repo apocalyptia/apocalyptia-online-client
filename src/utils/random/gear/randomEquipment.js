@@ -23,9 +23,9 @@ function randomEquipment({ category = '', numberOfItems = 1 }) {
 		const randomItem = randomRoll(randomEquipmentList)
 		const existingItemIndex = randomEquipment.findIndex((item) => item.name === randomItem.name)
 		if (existingItemIndex > -1) {
-			randomEquipment[existingItemIndex].qty++
+			randomEquipment[existingItemIndex].quantity++
 		} else {
-			randomItem.qty = 1
+			randomItem.quantity = 1
 			randomEquipment.push(randomItem)
 		}
 	}

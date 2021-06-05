@@ -2,10 +2,10 @@ import Armor from '/src/classes/gear/Armor.js'
 
 const AthleticPads = new Armor({
 	name: `Athletic Pads`,
-	sz: 2,
-	type: `Armor`
+	size: 2,
+	type: `Armor`,
+	absorption: 1,
+	location: `Torso`
 })
-AthleticPads.dr = 1
-AthleticPads.loc = `Torso`
 
 export default AthleticPads

@@ -1,15 +1,16 @@
 import Melee from '/src/classes/gear/Melee.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 import Blunt from '../attributes/Blunt.js'
-import Slow from '../attributes/Slow.js'
 
 const Sledgehammer = new Melee({
+	accuracy: -1,
+	attributes: [Blunt],
+	damage: 4,
+	hands: 2,
 	name: `Sledgehammer`,
-	type: `Melee Weapon`,
-	sz: 5,
-	attr: [TwoHanded, Blunt, Slow]
+	penetration: 0,
+	range: 2,
+	size: 5,
+	type: `Melee Weapon`
 })
-Sledgehammer.dmg = 4
-Sledgehammer.rng = 2
 
 export default Sledgehammer

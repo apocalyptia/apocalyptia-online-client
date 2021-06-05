@@ -2,7 +2,7 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Creation extends Rule {
 	constructor({
-		desc,
+		description,
 		name,
 		step,
 		type = `Creation`,
@@ -10,7 +10,7 @@ export default class Creation extends Rule {
 	}) {
 		url = `/creation/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

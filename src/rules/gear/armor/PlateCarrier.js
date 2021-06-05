@@ -5,11 +5,11 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 
 const PlateCarrier = new Armor({
 	name: `Plate Carrier`,
-	sz: 3,
-	attr: [Camo, ColdResistance, FireResistance],
-	type: `Armor`
+	size: 3,
+	attributes: [Camo, ColdResistance, FireResistance],
+	type: `Armor`,
+	absorption: 3,
+	location: `Torso`
 })
-PlateCarrier.dr = 3
-PlateCarrier.loc = `Torso`
 
 export default PlateCarrier

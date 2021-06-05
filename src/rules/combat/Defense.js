@@ -1,17 +1,17 @@
 import Combat from '/src/classes/Combat.js'
+import ActiveDefense from './subrules/ActiveDefense.js'
 import ReflexiveDefense from './subrules/ReflexiveDefense.js'
 
 const Defense = new Combat({
 	name: `Defense`,
-	desc: [
-		`Set aside 1 or more of your Actions in a Round to use on either type of Defense: Block or Dodge.`,
-		`To Block, roll [d6 + Melee] vs Melee Attacks, or Projectile Attacks if using a Shield.`,
-		`To Dodge, roll [d6 + Acrobatics] vs Melee Attacks or Projectile Attacks.`,
-		`You choose which type of Defense you want to respond with when you are attacked.`,
-		`If you are not attacked in the Round, your Defense Actions are not required and so no Endurance is spent.`,
-		`Botching a Defense roll makes you fall Prone.`
+	description: [
+		`Defense sets the Difficulty for an Attack against you.`,
+		`There are two modes of Defense: Active and Reflexive.`,
+		`When you allocate your Actions for the Round, any unallocated Actions are assumed to be reserved to use on Active Defense rolls if needed.`,
+		`If you are targeted by an Attack, you may choose which type of valid Active Defense roll you would like to make in response (Block or Dodge).`,
+		`If you do not use an Action for active Defense, then you must chose which type of valid Reflexive Defense you will use (Deflection or Evasion).`
 	]
 })
-Defense.subrules = [ReflexiveDefense]
+Defense.subrules = [ActiveDefense, ReflexiveDefense]
 
 export default Defense

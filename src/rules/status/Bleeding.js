@@ -2,7 +2,7 @@ import Status from '/src/classes/Status.js'
 
 const Bleeding = new Status({
 	name: `Bleeding`,
-	desc: [
+	description: [
 		`You begin Bleeding whenever you take Damage that isn't Blunt.`,
 		`Bleeding Damage is dealt to the Torso, regardless of which Body Part took the initial Damage.`,
 		`If your Torso has positive Health, the rate of Bleeding is 1 Damage per minute.`,

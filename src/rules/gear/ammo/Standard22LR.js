@@ -1,11 +1,14 @@
 import Ammo from '/src/classes/gear/Ammo.js'
 
 const Standard22LR = new Ammo({
+	accuracy: 0,
+	caliber: `.22LR`,
+	description: [`Basic ammunition.`],
+	damage: 0,
 	name: `.22LR Standard`,
-	type: `Ammo`,
-	desc: [`Basic ammunition.`],
-	sz: 0.005
+	penetration: 0,
+	size: 0.005,
+	type: `Ammo`
 })
-Standard22LR.cal = `.22LR`
 
 export default Standard22LR

@@ -2,8 +2,8 @@ import Wearable from '/src/classes/gear/Wearable.js'
 
 const BaseballCap = new Wearable({
 	name: `Baseball Cap`,
-	desc: [`Reduce Visibility(Rain and Sun) penalty by 1.`],
-	sz: 0
+	description: [`Reduce Visibility(Rain and Sun) penalty by 1.`],
+	size: 0
 })
 
 export default BaseballCap

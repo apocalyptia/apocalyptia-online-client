@@ -41,9 +41,9 @@
 					<span class='s-col'>{ability.max}</span>
 					<span class='s-col'>
 						<!-- svelte-ignore a11y-no-onchange -->
-						<select class='taken-number' bind:value={ability.qty} on:change={() => updateAbilities(ability)}>
+						<select class='taken-number' bind:value={ability.quantity} on:change={() => updateAbilities(ability)}>
 							{#each Array(ability.max + 1) as _, takenNum}
-								<option value={takenNum} selected={takenNum === ability.qty}>
+								<option value={takenNum} selected={takenNum === ability.quantity}>
 									{takenNum}
 								</option>
 							{/each}

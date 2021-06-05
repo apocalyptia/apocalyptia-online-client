@@ -2,25 +2,29 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Drug extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
 		id,
+		mix,
 		name,
-		qty,
-		sz,
+		overdose,
+		quantity,
+		size,
 		type = `Drug`,
 		url
 	}) {
 		url = `/drugs/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.mix = mix
+		this.overdose = overdose
 	}
 }

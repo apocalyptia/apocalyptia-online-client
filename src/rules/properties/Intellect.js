@@ -5,7 +5,7 @@ const formula = `( Brains + Demeanor ) / 2`
 const Intellect = new Property({
 	name: `Intellect`,
 	formula: formula,
-	desc: [
+	description: [
 		`Intellect = ${formula}`,
 		`Intellect is the amount of Experience that is earned automatically for each game session that you survive.`
 	],

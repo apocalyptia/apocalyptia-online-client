@@ -2,14 +2,14 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Hazard extends Rule {
 	constructor({
-		desc,
+		description,
 		name,
 		type = `Hazard`,
 		url
 	}) {
 		url = `/hazard/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

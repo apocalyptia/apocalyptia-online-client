@@ -14,7 +14,7 @@
 			</div>
 			<button id='ChevaldeFriseFeaturesBtn' class='Btn'>CHEVAL-DE-FRISE</button>
 			<div id='ChevaldeFriseFeaturesSec' class='Sec5'>
-				<p>Notes: 3yds wide. Dodge 9# or 6DMG (Pierce) to pass.</p>
+				<p>Notes: 3 yards wide. Dodge 9# or 6DMG (Pierce) to pass.</p>
 				<p>Build: 3#</p>
 				<p>Parts: 3</p>
 			</div>
@@ -26,13 +26,13 @@
 			</div>
 			<button id='ElectricFenceFeaturesBtn' class='Btn'>ELECTRIC FENCE</button>
 			<div id='ElectricFenceFeaturesSec' class='Sec5'>
-				<p>Notes: -500Whrs. 1BDMG/Round. 30yds long. C9# to let go.</p>
+				<p>Notes: -500Whrs. 1BDMG/Round. 30 yards long. C9# to let go.</p>
 				<p>Science: 6#</p>
 				<p>Parts: 6</p>
 			</div>
 			<button id='FloodLightsFeaturesBtn' class='Btn'>FLOOD LIGHTS</button>
 			<div id='FloodLightsFeaturesSec' class='Sec5'>
-				<p>Notes: -100Whrs/night. No Visibility penalty. 10yds.</p>
+				<p>Notes: -100Whrs/night. No Visibility penalty. 10 yards.</p>
 				<p>Science: 9#</p>
 				<p>Parts: 9</p>
 			</div>
@@ -68,7 +68,7 @@
 			</div>
 			<button id='WatchTowerFeaturesBtn' class='Btn'>WATCH TOWER</button>
 			<div id='WatchTowerFeaturesSec' class='Sec5'>
-				<p>Notes: 6yds tall. Up to 3 people. Gives Overwatch.</p>
+				<p>Notes: 6 yards tall. Up to 3 people. Gives Overwatch.</p>
 				<p>Build: 15#</p>
 				<p>Parts: 15</p>
 			</div>

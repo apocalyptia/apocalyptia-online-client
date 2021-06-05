@@ -5,14 +5,14 @@ import Stun from '../../status/Stun.js'
 const FlashbangGrenade = new Bomb({
 	name: `Flashbang Grenade`,
 	type: `Bomb`,
-	desc: [`Stun grenade.`],
-	sz: 1,
-	attr: [Blind, Stun]
+	description: [`Stun grenade.`],
+	size: 1,
+	attributes: [Blind, Stun],
+	damage: 0,
+	range: 6,
+	fuse: 2,
+	duration: `1d6`,
+	mix: 9
 })
-FlashbangGrenade.dmg = 0
-FlashbangGrenade.rng = 6
-FlashbangGrenade.fuse = 2
-FlashbangGrenade.dur = `1d6`
-FlashbangGrenade.mix = 9
 
 export default FlashbangGrenade

@@ -2,7 +2,7 @@ import Disease from '../../classes/Disease.js'
 
 const Influenza = new Disease({
 	name: `Influenza`,
-	transmission: `Air, 10yds`,
+	transmission: `Air, 10 yards`,
 	virulence: `Constitution 12#`,
 	diagnose: `Medicine 3#`,
 	onset: `d6x2 days`,

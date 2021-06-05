@@ -43,12 +43,12 @@
 						<!-- svelte-ignore a11y-no-onchange -->
 						<select
 							name={ability.name}
-							bind:value={ability.qty}
+							bind:value={ability.quantity}
 							on:change={() => updateAbilities(ability)}
 							disabled={ability.experience > $characterStore.properties.experience.current}
 						>
 							{#each Array(ability.max + 1) as _, takenNum}
-								<option value={takenNum} selected={takenNum === ability.qty}>
+								<option value={takenNum} selected={takenNum === ability.quantity}>
 									{takenNum}
 								</option>
 							{/each}
@@ -71,8 +71,8 @@
 							{/each}
 						</select>
 					{/if}
-					{#each ability.desc as desc}
-						<p>{desc}</p>
+					{#each ability.description as description}
+						<p>{description}</p>
 					{/each}
 					<hr />
 					<p class='ability-footer'>

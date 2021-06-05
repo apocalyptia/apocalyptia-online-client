@@ -2,7 +2,7 @@ import Creation from '/src/classes/Creation.js'
 
 const Traits = new Creation({
 	name: `Traits`,
-	desc: [
+	description: [
 		`You get 14 Trait points.`,
 		`Traits can range from 1 to 6.`,
 		`Trait rolls are [d6 + Trait].`,

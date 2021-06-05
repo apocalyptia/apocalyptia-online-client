@@ -1,17 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Auto from '../attributes/Auto.js'
-import Rapid from '../attributes/Rapid.js'
 
 const HKMP5 = new Projectile({
-	name: `H&K MP5 SMG`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	attr: [TwoHanded, Auto, Rapid]
+	accuracy: 0,
+	attributes: [],
+	caliber: `9mm`,
+	capacity: 30,
+	category: `SMG`,
+	damage: 1,
+	hands: 2,
+	name: `H&K MP5`,
+	rate: 3,
+	range: 20,
+	specialty: `Firearm`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-HKMP5.dmg = 1
-HKMP5.rng = 20
-HKMP5.cap = 30
-HKMP5.cal = `9mm`
 
 export default HKMP5

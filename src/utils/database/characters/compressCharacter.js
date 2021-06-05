@@ -2,7 +2,7 @@ function compressionMapping(category) {
 	return category.map((item) => {
 		const compressedItem = {
 			n: item.name,
-			q: item.qty
+			q: item.quantity
 		}
 		if ('mods' in item && item.mods.length) {
 			compressedItem.m = [...item.mods]

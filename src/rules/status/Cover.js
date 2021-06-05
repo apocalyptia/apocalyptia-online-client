@@ -3,12 +3,11 @@ import Table from '../../classes/Table.js'
 
 const Cover = new Status({
 	name: `Cover`,
-	desc: [
+	description: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Absorption.`,
 		`If the weapon's base Damage is greater than the Material's Absorption, then the Material Absorption acts as Damage Reduction.`,
-		`All standard types of Cover except Glass make you Concealed while behind Cover.`,
-		`You can lean in and out of Cover to Attack as part of an Action.`,
-		`Doing so opens you up to a Called Shot against an exposed Body Part if an opponent is waiting for you to lean out of Cover.`
+		`Cover also Conceals the target unless the Cover Material is transparent.`,
+		`If you lean out of Cover to Attack, Material Absorption will only protect your Torso and Legs for that Round.`
 	],
 	type: `Status`
 })

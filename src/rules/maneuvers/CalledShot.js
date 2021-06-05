@@ -3,7 +3,7 @@ import Table from '../../classes/Table.js'
 
 const CalledShot = new Maneuver({
 	name: `Called Shot`,
-	desc: [`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
+	description: [`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
 	mode: `Offensive`
 })
 

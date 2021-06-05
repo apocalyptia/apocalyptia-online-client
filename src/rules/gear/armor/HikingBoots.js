@@ -4,11 +4,11 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 
 const HikingBoots = new Armor({
 	name: `Hiking Boots`,
-	sz: 2,
-	attr: [ColdResistance, FireResistance],
-	type: `Armor`
+	size: 2,
+	attributes: [ColdResistance, FireResistance],
+	type: `Armor`,
+	absorption: 1,
+	location: `Legs`
 })
-HikingBoots.dr = 1
-HikingBoots.loc = `Legs`
 
 export default HikingBoots

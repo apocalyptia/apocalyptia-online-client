@@ -19,7 +19,7 @@
 			</span>
 			<span class='s-col'>{ability.experience}</span>
 			<span class='s-col'>{ability.max}</span>
-			<span class='s-col'>{ability.qty}</span>
+			<span class='s-col'>{ability.quantity}</span>
 		</div>
 	{/each}
 </div>

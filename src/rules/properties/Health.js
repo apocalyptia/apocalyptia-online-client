@@ -29,7 +29,7 @@ const locations = {
 
 const Health = new Property({
 	name: `Health`,
-	desc: [
+	description: [
 		`Head, Arms, and Legs = ${locations.head.formula}`,
 		`Torso = ${locations.torso.formula}`,
 		`Health is a measure of how much Damage your body can withstand.`,

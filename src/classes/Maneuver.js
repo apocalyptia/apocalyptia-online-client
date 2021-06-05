@@ -2,7 +2,7 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Maneuver extends Rule {
 	constructor({
-		desc,
+		description,
 		mode = ``,
 		name,
 		type = `Maneuver`,
@@ -10,7 +10,7 @@ export default class Maneuver extends Rule {
 	}) {
 		url = `/maneuver/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

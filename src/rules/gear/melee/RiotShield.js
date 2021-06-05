@@ -1,15 +1,17 @@
 import Melee from '/src/classes/gear/Melee.js'
-import OneHanded from '../attributes/OneHanded.js'
 import Blunt from '../attributes/Blunt.js'
 import Shield from '../attributes/Shield.js'
 
 const RiotShield = new Melee({
+	accuracy: 1,
+	attributes: [Blunt, Shield],
+	damage: 0,
+	hands: 1,
 	name: `Riot Shield`,
-	type: `Melee Weapon`,
-	sz: 4,
-	attr: [OneHanded, Blunt, Shield]
+	penetration: 0,
+	range: 1,
+	size: 4,
+	type: `Melee Weapon`
 })
-RiotShield.dmg = 0
-RiotShield.rng = 1
 
 export default RiotShield

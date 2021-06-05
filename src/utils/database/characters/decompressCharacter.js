@@ -31,7 +31,7 @@ function decompressionMapping(category, type) {
 	const decompList = category.map((item) => {
 		const decompressedItem = {
 			name: item.n,
-			qty: item.q 
+			quantity: item.q 
 		}
 		if ('m' in item && item.m.length) {
 			decompressedItem.mods = [...item.m]
@@ -44,7 +44,7 @@ function decompressionMapping(category, type) {
 	return decompList.map((item) => {
 		const ruleItem = ruleList.find((rule) => rule.name === item.name)
 		if (ruleItem !== undefined) {
-			ruleItem.qty = item.qty
+			ruleItem.quantity = item.quantity
 			if ('mods' in ruleItem && item.m.length) {
 				ruleItem.mods = [...item.m]
 			}

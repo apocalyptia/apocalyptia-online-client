@@ -2,10 +2,10 @@ import Armor from '/src/classes/gear/Armor.js'
 
 const AthleticHelmet = new Armor({
 	name: `Athletic Helmet`,
-	sz: 2,
-	type: `Armor`
+	size: 2,
+	type: `Armor`,
+	absorption: 1,
+	location: `Head`
 })
-AthleticHelmet.dr = 1
-AthleticHelmet.loc = `Head`
 
 export default AthleticHelmet

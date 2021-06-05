@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const RecurveBow = new Projectile({
+	accuracy: 0,
+	attributes: [],
+	caliber: `Arrow`,
+	capacity: 1,
+	category: `Archery`,
+	damage: 1,
+	hands: 2,
 	name: `Recurve Bow`,
-	type: `Projectile Weapon`,
-	sz: 2,
-	attr: [TwoHanded]
+	rate: 1,
+	range: 10,
+	specialty: `Traditional`,
+	size: 2,
+	type: `Projectile Weapon`
 })
-RecurveBow.dmg = 1
-RecurveBow.rng = 10
-RecurveBow.cap = 1
-RecurveBow.cal = `Arrow`
 
 export default RecurveBow

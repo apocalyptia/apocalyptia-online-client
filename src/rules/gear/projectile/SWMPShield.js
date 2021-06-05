@@ -1,16 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Rapid from '../attributes/Rapid.js'
 
 const SWMPShield = new Projectile({
-	name: `S&W M&P Shield Pistol`,
-	type: `Projectile Weapon`,
-	sz: 1,
-	attr: [TwoHanded, Rapid]
+	accuracy: -1,
+	attributes: [],
+	caliber: `9mm`,
+	capacity: 7,
+	category: `Pistol`,
+	damage: 1,
+	hands: 2,
+	name: `S&W M&P Shield`,
+	rate: 2,
+	range: 5,
+	specialty: `Firearm`,
+	size: 1,
+	type: `Projectile Weapon`
 })
-SWMPShield.dmg = 1
-SWMPShield.rng = 5
-SWMPShield.cap = 7
-SWMPShield.cal = `9mm`
 
 export default SWMPShield

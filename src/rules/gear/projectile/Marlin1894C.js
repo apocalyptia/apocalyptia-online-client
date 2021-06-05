@@ -1,19 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const Marlin1894C = new Projectile({
-	name: `Marlin 1894C Rifle`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	dmg: 2,
-	rng: 30,
-	attr: [TwoHanded],
-	cap: 9,
-	cal: `.357`
+	accuracy: 0,
+	attributes: [],
+	caliber: `.357`,
+	capacity: 9,
+	category: `Rifle`,
+	damage: 2,
+	hands: 2,
+	name: `Marlin 1894C`,
+	rate: 1,
+	range: 30,
+	specialty: `Firearm`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-Marlin1894C.dmg = 2
-Marlin1894C.rng = 30
-Marlin1894C.cap = 9
-Marlin1894C.cal = `.357`
 
 export default Marlin1894C

@@ -2,7 +2,7 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Ability extends Rule {
 	constructor({
-		desc,
+		description,
 		experience,
 		formula = null,
 		max = 1,
@@ -15,7 +15,7 @@ export default class Ability extends Rule {
 	}) {
 		url = `/abilities/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

@@ -4,11 +4,11 @@ import Mask from '../../gear/attributes/Mask.js'
 
 const MotorcycleHelmet = new Armor({
 	name: `Motorcycle Helmet`,
-	sz: 2,
-	attr: [FireResistance, Mask],
-	type: `Armor`
+	size: 2,
+	attributes: [FireResistance, Mask],
+	type: `Armor`,
+	absorption: 1,
+	location: `Head`
 })
-MotorcycleHelmet.dr = 1
-MotorcycleHelmet.loc = `Head`
 
 export default MotorcycleHelmet

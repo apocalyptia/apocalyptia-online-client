@@ -2,25 +2,42 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Projectile extends Gear {
 	constructor({
-		attr,
-		desc,
+		accuracy = 0,
+		attributes,
+		caliber,
+		capacity,
+		category,
+		description,
+		damage,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		rate = 1,
+		range,
+		specialty,
+		size,
 		type = `Projectile`,
 		url
 	}) {
 		url = `/projectile/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			specialty,
+			size,
 			type,
 			url
 		})
+		this.accuracy = accuracy
+		this.caliber = caliber
+		this.capacity = capacity
+		this.category = category
+		this.damage = damage
+		this.rate = rate
+		this.range = range,
+		this.specialty = specialty
 	}
 }

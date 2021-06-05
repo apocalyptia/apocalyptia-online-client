@@ -2,7 +2,7 @@ import Creation from '/src/classes/Creation.js'
 
 const Skills = new Creation({
 	name: `Skills`,
-	desc: [
+	description: [
 		`You get Brains x 6 Skill points.`,
 		`Skills can range from 0 to 6.`,
 		`Skill rolls are [d6 + Skill].`,

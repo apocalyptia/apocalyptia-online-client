@@ -3,7 +3,7 @@ import Gear from '/src/rules/Gear.js'
 
 function randomArmor() {
 	const randomArmor = randomRoll(Object.values(Gear.armor))
-	randomArmor.qty = 1
+	randomArmor.quantity = 1
 	return randomArmor
 }
 

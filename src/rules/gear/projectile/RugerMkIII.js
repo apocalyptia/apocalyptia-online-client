@@ -1,16 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Rapid from '../attributes/Rapid.js'
 
 const RugerMkIII = new Projectile({
-	name: `Ruger Mk.III Pistol`,
-	type: `Projectile Weapon`,
-	sz: 1,
-	attr: [TwoHanded, Rapid]
+	accuracy: 1,
+	attributes: [],
+	caliber: `.22LR`,
+	capacity: 10,
+	category: `Pistol`,
+	damage: 1,
+	hands: 2,
+	name: `Ruger Mk.III`,
+	rate: 2,
+	range: 15,
+	specialty: `Firearm`,
+	size: 1,
+	type: `Projectile Weapon`
 })
-RugerMkIII.dmg = 1
-RugerMkIII.rng = 15
-RugerMkIII.cap = 10
-RugerMkIII.cal = `.22LR`
 
 export default RugerMkIII

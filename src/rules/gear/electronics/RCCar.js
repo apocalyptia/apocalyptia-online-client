@@ -3,9 +3,9 @@ import Electronic from '/src/classes/gear/Electronic.js'
 const RCCar = new Electronic({
 	name: `RC Car`,
 	type: `Electronics`,
-	desc: [`Science 3# to use.`, `45yd Speed.`],
-	sz: 3
+	description: [`Science 3# to use.`, `45yd Speed.`],
+	duration: 600,
+	size: 3
 })
-RCCar.dur = 600
 
 export default RCCar

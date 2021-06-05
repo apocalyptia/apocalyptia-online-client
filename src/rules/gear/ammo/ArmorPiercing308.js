@@ -1,13 +1,15 @@
 import Ammo from '/src/classes/gear/Ammo.js'
-import Pierce from '../attributes/Pierce.js'
 
 const ArmorPiercing308 = new Ammo({
+	accuracy: 0,
+	attributes: [],
+	caliber: `.308`,
+	description: [`Battlefield ammunition.`],
+	damage: 0,
 	name: `.308 Armor Piercing`,
-	type: `Ammo`,
-	desc: [`Battlefield ammunition.`],
-	sz: 0.02,
-	attr: [Pierce]
+	penetration: 1,
+	size: 0.02,
+	type: `Ammo`
 })
-ArmorPiercing308.cal = `.308`
 
 export default ArmorPiercing308

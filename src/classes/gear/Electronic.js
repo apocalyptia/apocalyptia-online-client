@@ -2,25 +2,27 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Electronic extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
+		duration,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		size,
 		type = `Electronic`,
 		url
 	}) {
 		url = `/electronics/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.duration = duration
 	}
 }

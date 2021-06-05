@@ -3,7 +3,7 @@
 		<p>The Team must move a considerable distance, out in the open, away from the relative safety of their Base and familiar surroundings. Use Marching Speed [Speed /2mph] of the slowest Team member to determine distance per hour. Use Survival(Navigate) 1/day vs Ecosystem # to stay on course.</p>
 		<button id='FormationsMissionBtn' class='Btn'>FORMATIONS</button>
 		<div id='FormationsMissionSec' class='Sec4'>
-			<p>When traveling on foot, formations may be called by Team leaders with a Team of at least four members. While in formation, Team members maintain a distance of about 15yds from each other. Every formation has inherent advantages and disadvantages that are applied to all Team members as long as they hold the formation. Whenever a Team member breaks formation, they are no longer effected by formation modifiers.</p>
+			<p>When traveling on foot, formations may be called by Team leaders with a Team of at least four members. While in formation, Team members maintain a distance of about 15 yards from each other. Every formation has inherent advantages and disadvantages that are applied to all Team members as long as they hold the formation. Whenever a Team member breaks formation, they are no longer effected by formation modifiers.</p>
 			<button id='LineMissionBtn' class='Btn'>LINE</button>
 			<div id='LineMissionSec' class='Sec5'>
 				<p>Bonus: +1 Perception</p>

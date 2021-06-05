@@ -5,7 +5,7 @@ const formula = `Brains x 3`
 const Experience = new Property({
 	name: `Experience`,
 	formula: formula,
-	desc: [
+	description: [
 		`Experience Points (XP) = ${formula}`,
 		`XP represents how much you have learned up to now.`,
 		`You get additional XP = Intellect for each game session you survive.`,

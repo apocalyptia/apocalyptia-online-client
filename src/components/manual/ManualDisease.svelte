@@ -7,7 +7,7 @@
 	let diseaseProps = []
 
 	onMount(() => {
-		const skippedProps = [`desc`, `formula`, `id`, `name`, `type`]
+		const skippedProps = [`description`, `formula`, `id`, `name`, `type`]
 		diseaseProps = Object.keys(rule).filter((prop) => !skippedProps.includes(prop))
 	})
 </script>

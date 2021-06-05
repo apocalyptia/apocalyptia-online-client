@@ -3,9 +3,9 @@ import Electronic from '/src/classes/gear/Electronic.js'
 const Headlamp = new Electronic({
 	name: `Headlamp`,
 	type: `Electronics`,
-	desc: [`3yd light. Hands free.`],
-	sz: 0
+	description: [`3yd light. Hands free.`],
+	duration: 3600,
+	size: 0
 })
-Headlamp.dur = 3600
 
 export default Headlamp

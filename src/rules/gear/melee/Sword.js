@@ -1,13 +1,15 @@
 import Melee from '/src/classes/gear/Melee.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const Sword = new Melee({
+	accuracy: 0,
+	attributes: [],
+	damage: 4,
+	hands: 2,
 	name: `Sword`,
-	type: `Melee Weapon`,
-	sz: 3,
-	attr: [TwoHanded]
+	penetration: 0,
+	range: 2,
+	size: 3,
+	type: `Melee Weapon`
 })
-Sword.dmg = 4
-Sword.rng = 2
 
 export default Sword

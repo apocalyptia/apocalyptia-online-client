@@ -5,7 +5,7 @@ const formula = `( Agility + Constitution ) / 2`
 const Fitness = new Property({
 	name: `Fitness`,
 	formula: formula,
-	desc: [
+	description: [
 		`Fitness = ${formula}`,
 		`This is the rate at which Endurance is regained during Rounds where you do not take any Actions.`
 	],

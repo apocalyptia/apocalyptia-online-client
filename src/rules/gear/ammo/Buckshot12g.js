@@ -2,12 +2,15 @@ import Ammo from '/src/classes/gear/Ammo.js'
 import Scatter from '../attributes/Scatter.js'
 
 const Buckshot12g = new Ammo({
+	accuracy: 0,
+	attributes: [Scatter],
+	caliber: `12g`,
+	description: [`Scatter-shot ammunition.`],
+	damage: 0,
 	name: `12g Buckshot`,
-	type: `Ammo`,
-	desc: [`Scatter-shot ammunition.`],
-	sz: 0.05,
-	attr: [Scatter]
+	penetration: 0,
+	size: 0.05,
+	type: `Ammo`
 })
-Buckshot12g.cal = `12g`
 
 export default Buckshot12g

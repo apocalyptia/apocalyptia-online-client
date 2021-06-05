@@ -2,7 +2,7 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Disease extends Rule {
 	constructor({
-		desc,
+		description,
 		diagnose,
 		duration,
 		effects = [],
@@ -18,7 +18,7 @@ export default class Disease extends Rule {
 	}) {
 		url = `/diseases/${name}`
 		super({
-			desc,
+			description,
 			id,
 			name,
 			type,

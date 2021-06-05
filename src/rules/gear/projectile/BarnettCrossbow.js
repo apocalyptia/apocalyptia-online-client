@@ -1,15 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
 
 const BarnettCrossbow = new Projectile({
+	accuracy: 0,
+	attributes: [],
+	caliber: `Arrow`,
+	capacity: 1,
+	category: `Archery`,
+	damage: 3,
+	hands: 2,
 	name: `Barnett Crossbow`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	attr: [TwoHanded]
+	rate: 1,
+	range: 15,
+	specialty: `Traditional`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-BarnettCrossbow.dmg = 3
-BarnettCrossbow.rng = 15
-BarnettCrossbow.cap = 1
-BarnettCrossbow.cal = `Arrow`
 
 export default BarnettCrossbow

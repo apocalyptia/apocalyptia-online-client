@@ -3,9 +3,9 @@ import Electronic from '/src/classes/gear/Electronic.js'
 const HandRadio = new Electronic({
 	name: `Hand Radio`,
 	type: `Electronics`,
-	desc: [`9-channel 2-way radio.`, `3 mile range.`],
-	sz: 1
+	description: [`9-channel 2-way radio.`, `3 mile range.`],
+	duration: 10800,
+	size: 1
 })
-HandRadio.dur = 10800
 
 export default HandRadio

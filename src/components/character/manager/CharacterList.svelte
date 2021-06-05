@@ -1,4 +1,5 @@
 <script>
+	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 
@@ -6,6 +7,7 @@
 
 	function selectCharacter(character) {
 		$playerStore.selectedCharacter = character.meta.id
+		$characterStore = character
 	}
 
 	function deleteCharacter(character) {
@@ -20,9 +22,12 @@
 </script>
 
 <div class='character-storage-list-window'>
+	<div class='current-character'>
+		Current Character: {$characterStore?.description?.name?.value || 'none'}
+	</div>
 	{#if characterList.length}
 		<div class='character-storage-list'>
-			<!-- {#each characterList as character, i (character.meta.id)}
+			{#each characterList as character, i (character.meta.id)}
 				<div class='stored-character'>
 					<button class='character-name' on:click={() => selectCharacter(character)}>
 						{i}: {character.description.name.value}
@@ -31,9 +36,6 @@
 						<div class='btn-icon'>X</div>
 					</button>					
 				</div>
-			{/each} -->
-			{#each characterList as c}
-				<p>{c.description.name.value}</p>
 			{/each}
 		</div>
 	{/if}
@@ -45,6 +47,12 @@
 		height: 50vh;
 		overflow-y: scroll;
 		width: 100%;
+	}
+	.current-character {
+		align-items: center;
+		display: flex;
+		height: var(--square);
+		padding: var(--std-padding);
 	}
 	.stored-character {
 		display: flex;

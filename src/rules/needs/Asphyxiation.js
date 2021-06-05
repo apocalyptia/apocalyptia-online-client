@@ -2,7 +2,7 @@ import Need from '/src/classes/Need.js'
 
 const Asphyxiation = new Need({
 	name: `Asphyxiation`,
-	desc: [
+	description: [
 		`Constant air supply is required to avoid Asphyxiation.`,
 		`1 Pain per minute without air.`,
 		`Pain penalties from Asphyxiation are reduced by 1 per minute with air.`,

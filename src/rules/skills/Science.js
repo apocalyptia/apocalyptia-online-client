@@ -3,15 +3,15 @@ import Specialty from '../../classes/Specialty.js'
 
 const Science = new Skill({
 	name: `Science`,
-	desc: [`Knowledge of physical laws.`],
+	description: [`Knowledge of physical laws.`],
 	type: `Skill`,
 	parent: `Brains`,
-	diff: `varies`,
-	specs: {
+	difficulty: `varies`,
+	specialties: {
 		chemistry: new Specialty({
 			name: `Chemistry`,
 			type: `Specialty`,
-			desc: [
+			description: [
 				`Mix Chemicals to make Bombs, Drugs, Medicine, etc.`,
 				`Time required is [Mix # x 10] minutes.`,
 				`Requires the use of [d6 + Mix #] Chemicals.`
@@ -20,7 +20,7 @@ const Science = new Skill({
 		technology: new Specialty({
 			name: `Technology`,
 			type: `Specialty`,
-			desc: [`(varies) Make or use electronic devices.`]
+			description: [`(varies) Make or use electronic devices.`]
 		})
 	}
 })

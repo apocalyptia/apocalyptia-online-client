@@ -2,7 +2,7 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Property extends Rule {
 	constructor({
-		desc,
+		description,
 		formula = [],
 		name,
 		type = `Property`,
@@ -10,7 +10,7 @@ export default class Property extends Rule {
 	}) {
 		url = `/properties/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

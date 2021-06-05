@@ -6,14 +6,14 @@ import Asphyxiation from '../../needs/Asphyxiation.js'
 const TeargasGrenade = new Bomb({
 	name: `Teargas Grenade`,
 	type: `Bomb`,
-	desc: [`Chemical irritant grenade.`],
-	sz: 1,
-	attr: [Blind, Stun, Asphyxiation]
+	description: [`Chemical irritant grenade.`],
+	size: 1,
+	attributes: [Blind, Stun, Asphyxiation],
+	damage: 1,
+	range: `1yd/rnd`,
+	fuse: 2,
+	duration: `1d6mins`,
+	mix: 15
 })
-TeargasGrenade.dmg = 1
-TeargasGrenade.rng = `1yd/rnd`
-TeargasGrenade.fuse = 2
-TeargasGrenade.dur = `1d6mins`
-TeargasGrenade.mix = 15
 
 export default TeargasGrenade

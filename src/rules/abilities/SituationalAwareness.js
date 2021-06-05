@@ -2,7 +2,7 @@ import Ability from '/src/classes/Ability.js'
 
 const SituationalAwareness = new Ability({
 	name: `Situational Awareness`,
-	desc: [`+1 to Reflexive Defenses.`],
+	description: [`+1 to Reflexive Defenses.`],
 	max: 1,
 	experience: 9
 })

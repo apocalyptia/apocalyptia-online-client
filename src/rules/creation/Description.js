@@ -10,7 +10,7 @@ import Weight from '/src/rules/description/Weight.js'
 
 const Description = new Creation({
 	name: `Description`,
-	desc: [
+	description: [
 		`These are your characters physical and demographic characteristics.`
 	],
 	step: 5,

@@ -20,7 +20,7 @@
 			</div>
 		{:else if rule instanceof Disease}
 			<ManualDisease {rule} />
-		{:else if rule.desc != undefined}
+		{:else if rule.description != undefined}
 			<ManualDescription {rule} />
 			{#if rule.subrules}
 				{#each rule.subrules as subrule}
@@ -30,7 +30,7 @@
 			{#if rule.table != undefined}
 				<ManualTable {rule} />
 			{/if}
-			{#if rule.specs}
+			{#if rule.specialties}
 				<ManualSpecialization {rule} />
 			{/if}
 		{/if}

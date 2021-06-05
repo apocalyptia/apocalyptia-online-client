@@ -2,7 +2,7 @@ import Maneuver from '/src/classes/Maneuver.js'
 
 const Torture = new Maneuver({
 	name: `Torture`,
-	desc: [
+	description: [
 		`Torture sessions can last as long as the torturer wants them to.`,
 		`Roll [Medicine vs the captive's Constitution] and select one or more Body Parts on the captive.`,
 		`Success means the captive takes 1d6 Trauma and 1 Damage for each selected Body Part.`,

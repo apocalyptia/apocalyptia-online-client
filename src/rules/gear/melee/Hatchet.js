@@ -1,14 +1,15 @@
 import Melee from '/src/classes/gear/Melee.js'
-import OneHanded from '../attributes/OneHanded.js'
-import Chop from '../attributes/Chop.js'
 
 const Hatchet = new Melee({
+	accuracy: 0,
+	attributes: [],
+	damage: 2,
+	hands: 1,
 	name: `Hatchet`,
-	type: `Melee Weapon`,
-	sz: 2,
-	attr: [OneHanded, Chop]
+	penetration: -1,
+	range: 1,
+	size: 2,
+	type: `Melee Weapon`
 })
-Hatchet.dmg = 2
-Hatchet.rng = 1
 
 export default Hatchet

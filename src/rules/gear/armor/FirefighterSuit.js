@@ -5,11 +5,11 @@ import Mask from '../../gear/attributes/Mask.js'
 
 const FirefighterSuit = new Armor({
 	name: `Firefighter Suit`,
-	sz: 5,
-	attr: [ColdResistance, FireResistance, Mask],
-	type: `Armor`
+	size: 5,
+	attributes: [ColdResistance, FireResistance, Mask],
+	type: `Armor`,
+	absorption: 1,
+	location: `Head, Arms, Torso, Legs`
 })
-FirefighterSuit.dr = 1
-FirefighterSuit.loc = `Full Body`
 
 export default FirefighterSuit

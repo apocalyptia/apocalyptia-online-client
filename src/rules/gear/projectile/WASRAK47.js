@@ -1,16 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Rapid from '../attributes/Rapid.js'
 
 const WASRAK47 = new Projectile({
-	name: `WASR AK-47 Rifle`,
-	type: `Projectile Weapon`,
-	sz: 3,
-	attr: [TwoHanded, Rapid]
+	accuracy: 0,
+	attributes: [],
+	caliber: `7.62mm`,
+	capacity: 30,
+	category: `Rifle`,
+	damage: 4,
+	hands: 2,
+	name: `WASR AK-47`,
+	rate: 2,
+	range: 30,
+	specialty: `Firearm`,
+	size: 3,
+	type: `Projectile Weapon`
 })
-WASRAK47.dmg = 4
-WASRAK47.rng = 30
-WASRAK47.cap = 30
-WASRAK47.cal = `7.62`
 
 export default WASRAK47

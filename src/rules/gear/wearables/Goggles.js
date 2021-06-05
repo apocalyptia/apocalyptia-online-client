@@ -2,8 +2,8 @@ import Wearable from '/src/classes/gear/Wearable.js'
 
 const Goggles = new Wearable({
 	name: `Goggles`,
-	desc: [`+3 Constitution to resist toxins in eyes.`],
-	sz: 1
+	description: [`+3 Constitution to resist toxins in eyes.`],
+	size: 1
 })
 
 export default Goggles

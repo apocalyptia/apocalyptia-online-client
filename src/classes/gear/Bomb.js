@@ -2,25 +2,35 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Bomb extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
+		damage,
+		duration,
+		fuse,
 		id,
+		mix,
 		name,
-		qty,
-		sz,
+		quantity,
+		range,
+		size,
 		type = `Bomb`,
 		url
 	}) {
 		url = `/bombs/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})
+		this.damage = damage
+		this.duration = duration
+		this.fuse = fuse
+		this.mix = mix
+		this.range = range
 	}
 }

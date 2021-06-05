@@ -2,14 +2,14 @@ import Rule from '/src/classes/Rule.js'
 
 export default class Core extends Rule {
 	constructor({
-		desc,
+		description,
 		name,
 		type = `Core`,
 		url
 	}) {
 		url = `/core/${name}`
 		super({
-			desc,
+			description,
 			name,
 			type,
 			url

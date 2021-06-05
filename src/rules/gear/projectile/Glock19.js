@@ -1,16 +1,19 @@
 import Projectile from '/src/classes/gear/Projectile.js'
-import TwoHanded from '../attributes/TwoHanded.js'
-import Rapid from '../attributes/Rapid.js'
 
 const Glock19 = new Projectile({
-	name: `Glock 19 Pistol`,
-	type: `Projectile Weapon`,
-	sz: 1,
-	attr: [TwoHanded, Rapid]
+	accuracy: 0,
+	attributes: [],
+	caliber: `9mm`,
+	capacity: 17,
+	category: `Pistol`,
+	damage: 1,
+	hands: 2,
+	name: `Glock 19`,
+	rate: 2,
+	range: 10,
+	specialty: `Firearm`,
+	size: 1,
+	type: `Projectile Weapon`
 })
-Glock19.dmg = 1
-Glock19.rng = 10
-Glock19.cap = 17
-Glock19.cal = `9mm`
 
 export default Glock19

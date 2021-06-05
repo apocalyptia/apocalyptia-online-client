@@ -2,11 +2,11 @@ import Drug from '/src/classes/gear/Drug.js'
 
 const Stimulant = new Drug({
 	name: `Stimulant`,
-	desc: [`Ignore Exhaustion penalties for 6hrs.`],
-	sz: 0,
-	type: `Drug`
+	description: [`Ignore Exhaustion penalties for 6hrs.`],
+	size: 0,
+	type: `Drug`,
+	mix: 9,
+	overdose: true
 })
-Stimulant.mix = 9
-Stimulant.od = true
 
 export default Stimulant

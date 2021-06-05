@@ -1,11 +1,15 @@
 import Ammo from '/src/classes/gear/Ammo.js'
 
 const Standard762mm = new Ammo({
+	accuracy: 0,
+	attributes: [],
+	caliber: `7.62mm`,
+	description: [`Basic ammunition.`],
+	damage: 0,
 	name: `7.62mm Standard`,
-	type: `Ammo`,
-	desc: [`Basic ammunition.`],
-	sz: 0.02
+	penetration: 0,
+	size: 0.02,
+	type: `Ammo`
 })
-Standard762mm.cal = `7.62mm`
 
 export default Standard762mm

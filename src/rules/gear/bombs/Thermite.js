@@ -5,14 +5,15 @@ import FireDamage from '../attributes/FireDamage.js'
 const Thermite = new Bomb({
 	name: `Thermite`,
 	type: `Bomb`,
-	desc: [`High-temperature incendiary bomb.`],
-	sz: 1,
-	attr: [Blast, FireDamage]
+	description: [`High-temperature incendiary bomb.`],
+	size: 1,
+	attributes: [Blast, FireDamage],
+	damage: `6d6`,
+	range: 1,
+	fuse: 2,
+	duration: 6,
+	mix: 6
 })
-Thermite.dmg = `6d6`
-Thermite.rng = 1
-Thermite.fuse = 2
-Thermite.dur = 6
-Thermite.mix = 6
+
 
 export default Thermite

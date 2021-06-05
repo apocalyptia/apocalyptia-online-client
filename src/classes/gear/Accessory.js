@@ -2,23 +2,23 @@ import Gear from '/src/classes/Gear.js'
 
 export default class Accessory extends Gear {
 	constructor({
-		attr,
-		desc,
+		attributes,
+		description,
 		id,
 		name,
-		qty,
-		sz,
+		quantity,
+		size,
 		type = `Accessory`,
 		url
 	}) {
 		url = `/accessories/${name}`
 		super({
-			attr,
-			desc,
+			attributes,
+			description,
 			id,
 			name,
-			qty,
-			sz,
+			quantity,
+			size,
 			type,
 			url
 		})

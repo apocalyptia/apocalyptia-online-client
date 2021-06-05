@@ -2,7 +2,7 @@ import Maneuver from '/src/classes/Maneuver.js'
 
 const Interrogate = new Maneuver({
 	name: `Interrogate`,
-	desc: [
+	description: [
 		`Roll [Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence.`,
 		`Each roll takes d6 mins of conversation.`,
 		`If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly).`,

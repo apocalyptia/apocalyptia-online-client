@@ -1,14 +1,16 @@
 import Melee from '/src/classes/gear/Melee.js'
-import OneHanded from '../attributes/OneHanded.js'
 import Blunt from '../attributes/Blunt.js'
 
 const Club = new Melee({
+	accuracy: 0,
+	attributes: [Blunt],
+	damage: 2,
+	hands: 1,
 	name: `Club`,
-	type: `Melee Weapon`,
-	sz: 2,
-	attr: [OneHanded, Blunt]
+	penetration: 0,
+	range: 2,
+	size: 2,
+	type: `Melee Weapon`
 })
-Club.dmg = 2
-Club.rng = 2
 
 export default Club
