@@ -133,6 +133,7 @@
 <style>
 	.item-name {
 		font-weight: bold;
+		padding-left: var(--std-padding);
 		text-decoration: underline;
 	}
 	.gear-description,

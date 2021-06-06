@@ -1,4 +1,5 @@
 <!-- <script>
+	import CenterCard from '/src/components/widgets/CenterCard.svelte'
 	import login from '/src/utils/auth/login.js'
 	import playerStore from '/src/stores/playerStore.js'
 
@@ -7,7 +8,7 @@
 	let password = ``
 </script>
 
-<div class='cntr-card'>
+<CenterCard>
 	<form>
 		<div class='email'>
 			<label for='email'>Email</label>
@@ -23,15 +24,17 @@
 			</a>
 		</div>
 	</form>
-</div>
+</CenterCard>
 
 <style>
 	button,
 	input {
 		max-width: 50vw;
 	}
-	.email,
-	.password {
+	form * {
 		margin-bottom: var(--std-margin);
+	}
+	form *:last-child {
+		margin-bottom: 0;
 	}
 </style> -->

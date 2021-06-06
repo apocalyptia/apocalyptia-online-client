@@ -1,18 +1,18 @@
 <script>
-	import menuStore from '/src/stores/menuStore.js'
-
-	export let borders
+	export let links
 </script>
 
-{#each $menuStore.links as link}
-	<a href={link.url} class="link-btn {borders ? '' : 'borderless'}">
+{#each links as link}
+	<a href={link.url} class="link-btn">
 		{link.name}
 	</a>
 {/each}
 
 <style>
-	.borderless {
-		border: none;
-		height: calc(var(--square) * 1.5);
+	a {
+		margin-bottom: var(--std-margin);
+	}
+	a:last-child {
+		margin-bottom: 0;
 	}
 </style>

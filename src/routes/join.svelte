@@ -1,4 +1,5 @@
 <!-- <script>
+	import CenterCard from '/src/components/widgets/CenterCard.svelte'
 	import join from '/src/utils/auth/join.js'
 	import playerStore from '/src/stores/playerStore.js'
 
@@ -7,7 +8,7 @@
 		confirm = ``
 </script>
 
-<div class='cntr-card'>
+<CenterCard>
 	<form>
 		<div class='email'>
 			<label for='email'>Email</label>
@@ -29,12 +30,13 @@
 			</a>
 		</div>
 	</form>
-</div>
+</CenterCard>
 
 <style>
-	.email,
-	.password,
-	.confirm {
+	form * {
 		margin-bottom: var(--std-margin);
+	}
+	form *:last-child {
+		margin-bottom: 0;
 	}
 </style> -->

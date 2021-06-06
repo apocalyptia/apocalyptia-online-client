@@ -6,31 +6,40 @@
 
 	export let category
 
-	let item = ''
+	$: items = []
+	
+	$: quantity = 1
 
 	function randomItem() {
-		item = randomRoll(Object.values(category[1]))
+		items = []
+		for (let i = 0; i < quantity; i++) {
+			items.push(randomRoll(Object.values(category[1])))
+		}
 	}
 </script>
 
-<div class='item-category'>
-	<div class='category-header'>
+
+<details class='item-category' open={items.length}>
+	<summary class='category-header'>
 		<div class='category-name'>
 			<h3>{capitalize(category[0])}</h3>
 		</div>
-		<DiceButton func={randomItem} />
-	</div>
-	{#if item}
-		<div class='item-content'>
-			<GearBlock {item} mode={'roller'} />
-		</div>
+		<input type='number' min=1 step=1 class='item-quantity' bind:value={quantity}>
+		<DiceButton func={randomItem}/>
+	</summary>
+	{#if items.length}
+		{#each items as item}
+			<hr>
+			<div class='item-content'>
+				<GearBlock {item} mode={'roller'}/>
+			</div>
+		{/each}
 	{/if}
-</div>
+</details>
+
 
 <style>
 	.item-category {
-		border: var(--std-border) var(--pri-color) solid;
-		padding: var(--std-padding);
 		margin-bottom: var(--std-margin);
 	}
 	.category-header {
@@ -41,7 +50,12 @@
 		display: flex;
 		flex: 3;
 	}
+	.item-quantity {
+		margin-right: var(--std-margin);
+		width: 3ch;
+	}
 	.item-content {
 		padding-top: var(--std-padding);
+		text-align: left;
 	}
 </style>

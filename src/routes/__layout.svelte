@@ -1,13 +1,13 @@
 <script>
-	import TitleBar from '/src/components/widgets/TitleBar.svelte'
+	import TitleBar from '/src/components/titlebar/TitleBar.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(() => {
-		$playerStore.defaultCharacter()
-		if ($playerStore.currentCharacter !== null) {
-			$characterStore = $playerStore.currentCharacter
+		$playerStore.default()
+		if ($playerStore.selected !== null) {
+			$characterStore = $playerStore.selected
 		}
 	})
 </script>

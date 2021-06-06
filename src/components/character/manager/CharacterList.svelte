@@ -1,45 +1,26 @@
 <script>
+	import CharacterRow from '/src/components/character/manager/CharacterRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 
-	let characterList = []
-
-	function selectCharacter(character) {
-		$playerStore.selectedCharacter = character.meta.id
-		$characterStore = character
-	}
-
-	function deleteCharacter(character) {
-		$playerStore.deleteCharacter(character)
-		$playerStore = $playerStore
-	}
-
-	onMount(() => {
-		characterList = $playerStore.readCharacters()
-		console.log('character list on mount = ', characterList)
-	})
+	onMount(() => $playerStore.read())
 </script>
+
 
 <div class='character-storage-list-window'>
 	<div class='current-character'>
-		Current Character: {$characterStore?.description?.name?.value || 'none'}
+		Current: {$characterStore.description.name.value || 'none'}
 	</div>
-	{#if characterList.length}
+	{#if $playerStore.list.length}
 		<div class='character-storage-list'>
-			{#each characterList as character, i (character.meta.id)}
-				<div class='stored-character'>
-					<button class='character-name' on:click={() => selectCharacter(character)}>
-						{i}: {character.description.name.value}
-					</button>
-					<button class='btn-box trash-btn crimson-btn square-btn' on:click={() => deleteCharacter(character)}>
-						<div class='btn-icon'>X</div>
-					</button>					
-				</div>
+			{#each $playerStore.list as character, index (character.meta.id)}
+				<CharacterRow {character} {index} />
 			{/each}
 		</div>
 	{/if}
 </div>
+
 
 <style>
 	.character-storage-list-window {
@@ -51,30 +32,10 @@
 	.current-character {
 		align-items: center;
 		display: flex;
+		font-weight: bold;
 		height: var(--square);
-		padding: var(--std-padding);
-	}
-	.stored-character {
-		display: flex;
-		height: var(--square);
-		justify-content: space-between;
-		width: 100%;
-	}
-	.character-name {
-		align-items: center;
-		border-bottom: 1px solid var(--pri-color);
-		display: flex;
-		height: var(--square);
-		padding-left: var(--s100);
-		text-align: left;
-		width: 100%;
-	}
-	.character-name:hover {
-		background-color: var(--pri-color-trans);
-		color: var(--sec-color);
-	}
-	.stored-character:focus {
-		background-color: var(--pri-color-trans);
-		color: var(--sec-color);
+		overflow-x: hidden;
+		padding-left: var(--std-padding);
+		border-bottom: var(--std-border-width) solid var(--pri-color);
 	}
 </style>

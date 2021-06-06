@@ -1,33 +1,22 @@
 <script>
-	import DiceRoller from '/src/components/roller/DiceRoller.svelte'
-	import Gear from '/src/rules/Gear.js'
-	import ItemGenerator from '/src/components/roller/ItemGenerator.svelte'
-
-	const masterGearList = ['Master Gear List', Object.values(Gear).flatMap((g) => Object.values(g).flatMap((i) => i))]
+	import CenterCard from '/src/components/widgets/CenterCard.svelte'
 </script>
+
 
 <svelte:head>
 	<title>Apocalyptia Online - Roller</title>
 </svelte:head>
-<div class='page-body'>
-	<h1>Roller</h1>
-	<DiceRoller />
-	<details>
-		<summary><h2>Gear</h2></summary>
-		<div class='gear-category-list'>
-			<ItemGenerator category={masterGearList} />
-			{#each Object.entries(Gear) as category}
-				<ItemGenerator {category} />
-			{/each}
-		</div>
-	</details>
-</div>
+<CenterCard title={'Rollers'}>
+	<a href='/roller/d6' class='link-btn'> d6 </a>
+	<a href='/roller/loot' class='link-btn'> Loot </a>
+</CenterCard>
+
 
 <style>
-	h1 {
+	a {
 		margin-bottom: var(--std-margin);
 	}
-	.gear-category-list {
-		padding: var(--std-padding);
+	a:last-child {
+		margin-bottom: 0;
 	}
 </style>

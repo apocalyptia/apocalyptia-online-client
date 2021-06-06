@@ -1,24 +1,28 @@
 <script>
-	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
+	import CenterCard from '/src/components/widgets/CenterCard.svelte'
 	import CharacterControls from '/src/components/character/manager/CharacterControls.svelte'
 	import CharacterList from '/src/components/character/manager/CharacterList.svelte'
+	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
+	import playerStore from '/src/stores/playerStore.js'
 	import resetUIColor from '/src/utils/ui/resetUIColor.js'
-	import characterStore from '/src/stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
+	console.log('### playerStore.selected = ', $playerStore.selected)
+
 	beforeUpdate(() => {
-		if ($characterStore) {
-			adjustUIColor($characterStore)
+		if ($playerStore.selected !== null) {
+			adjustUIColor($playerStore.selected)
 		} else {
 			resetUIColor()
 		}
 	})
 </script>
 
+
 <svelte:head>
-	<title>Apocalyptia Online - Load Character</title>
+	<title>Apocalyptia Online - Character Manager</title>
 </svelte:head>
-<div class='cntr-card'>
+<CenterCard title={'Character Manager'}>
 	<CharacterList />
 	<CharacterControls />
-</div>
+</CenterCard>

@@ -10,14 +10,14 @@
 
 	function saveCharacter() {
 		$characterStore.finalize()
-		$playerStore.saveCharacter($characterStore)
+		$playerStore.save($characterStore)
 		goto(`/character/sheet`)
 	}
 
 	function deleteCharacter() {
-		$playerStore.deleteCharacter($characterStore)
-		$characterStore = null
 		goto('/')
+		$playerStore.delete($characterStore)
+		$characterStore = $characterStore
 	}
 
 	onMount(() => {

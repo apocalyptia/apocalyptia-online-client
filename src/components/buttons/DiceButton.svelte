@@ -5,7 +5,7 @@
 
 	let face = 6
 
-	function runFunc() {
+	function rollAnimation() {
 		let rollCount = Math.ceil(Math.random() * 12) + 12
 		const setIntervalId = setInterval(() => {
 			const result = func()
@@ -16,7 +16,7 @@
 	}
 </script>
 
-<button class='btn-box square-btn' on:click={runFunc}>
+<button class='btn-box square-btn' on:click={rollAnimation}>
 	<div class='dice-icon-box'>{face}</div>
 </button>
 

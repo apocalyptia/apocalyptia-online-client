@@ -1,6 +1,8 @@
+import Character from '/src/classes/Character.js'
 import compressCharacter from '/src/utils/database/characters/compressCharacter.js'
 import decompressCharacter from '/src/utils/database/characters/decompressCharacter.js'
-
+import characterStore from '/src/stores/characterStore.js'
+import { get } from 'svelte/store'
 
 export default class Player {
 	constructor() {
@@ -8,61 +10,47 @@ export default class Player {
 		this.name = ``
 		this.email = ``
 		this.password = ``
+		this.list = []
 		this.loggedIn = false
-		this.selectedCharacter = null
+		this.selected = null
 
-		this.defaultCharacter = () => {
-			const firstKey = window.localStorage.key(0)
-			const firstCharacter = window.localStorage.getItem(firstKey)
-			if (firstCharacter) {
-				const decompressedCharacter = decompressCharacter(firstCharacter)
-				this.selectedCharacter = decompressedCharacter
-				return decompressedCharacter
+		this.default = () => {
+			this.read()
+			this.selected = this.list[0] || null
+		}
+		this.delete = (character) => {
+			if (character.meta.id === get(characterStore).meta.id) {
+				characterStore.set(new Character())
 			}
-		}
-		this.deleteCharacter = (character) => {
 			window.localStorage.removeItem(character.meta.id)
+			this.read()
 		}
-		this.loadCharacter = (characterId) => {
-			const character = window.localStorage.getItem(characterId)
-			if (character) {
-				const decompressedCharacter = decompressCharacter(character)
-				return decompressedCharacter
+		this.load = ({ id, character }) => {
+			if (id || character) {
+				return decompressCharacter(window.localStorage.getItem(id || character.meta.id))
 			}
 			else {
 				return null
 			}
 		}
-		this.saveCharacter = (character) => {
-			this.selectedCharacter = character
+		this.save = (character) => {
+			this.selected = character
 			window.localStorage.setItem(character.meta.id, compressCharacter(character))
+			this.read()
 		}
-		this.readCharacters = () => {
-			const characterKeys = Object.keys(window.localStorage)
-			const list = []
-			let l = ''
-			characterKeys.forEach(k => {
-				console.log('key = ', k)
-				l = this.loadCharacter(k)
-				console.log('loaded character = ', l.description.name.value)
-				list.push(this.loadCharacter(k))
-				console.log('character in list = ', list[list.length - 1].description.name.value)
-				console.log('list.length = ', list.length)
-				console.log('-----------------------------')
-			})
-			list.forEach(c => console.log('character name in completed list = ', c.description.name.value))
-			return list
+		this.read = () => {
+			this.list = Object.keys(window.localStorage).map((key) => this.load({ id: key }))
 		}
-		this.backupCharacter = (character = null) => {
-			if (character === null) {
-				character = this.selectedCharacter
-			}
-			if (character) {
-				const characterBlob = new Blob([compressCharacter(character)], { type: `text/plain` })
-				const url = window.URL.createObjectURL(characterBlob)
+		this.backup = () => {
+			if (this.selected) {
+				const blob = new Blob(
+					[ compressCharacter(this.selected) ],
+					{ type: `text/plain` }
+				)
+				const url = window.URL.createObjectURL(blob)
 				const a = document.createElement(`a`)
 				a.href = url
-				a.download = character.description.name.value
+				a.download = this.selected.description.name.value
 				a.click()
 				window.URL.revokeObjectURL(url)
 			}

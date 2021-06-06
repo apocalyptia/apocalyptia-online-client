@@ -11,15 +11,25 @@
 			goto('/character')
 		}
 	})
+
+	function saveCharacter() {
+		$characterStore.finalize()
+		$playerStore.save($characterStore)
+		goto(`/character/sheet`)
+	}
+
+	function deleteCharacter() {
+		goto('/')
+		$playerStore.delete($characterStore)
+		$characterStore = $characterStore
+	}
 </script>
+
 
 <svelte:head>
 	<title>Apocalyptia Online - Character Sheet</title>
 </svelte:head>
 <div class='sheet page-body'>
 	<CharacterSheet mode={'edit'} />
-	<SaveAndDeleteButtonRow
-		saveFunc={() => $playerStore.saveCharacter($characterStore)}
-		deleteFunc={() => $playerStore.deleteCharacter($characterStore)}
-	/>
+	<SaveAndDeleteButtonRow saveFunc={saveCharacter} deleteFunc={deleteCharacter} />
 </div>

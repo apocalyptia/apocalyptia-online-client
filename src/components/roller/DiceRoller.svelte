@@ -15,43 +15,37 @@
 	}
 </script>
 
-<div class='item-category'>
-	<div class='category-header'>
-		<div class='category-name'>d6 Roll</div>
-		<DiceButton func={rollResult} />
-	</div>
-	<div class='item-content'>
-		<p class='roll'>Dice Roll: {roll}</p>
-		<p>Modifier: <input type='number' class='mod' bind:value={mod} /></p>
-		<p class='result'>Result: <span class='total'>{total}</span></p>
-	</div>
+
+<div class='modifier'>Modifier: <input type='number' class='mod' bind:value={mod} /></div>
+<div class='result'>Result: {total}</div>
+<div class='button'>
+	<DiceButton func={rollResult} />
 </div>
 
+
 <style>
-	.item-category {
-		border: var(--std-border) var(--pri-color) solid;
-		padding: var(--std-padding);
-		margin-bottom: var(--std-margin);
-	}
-	.category-header {
+	.modifier {
 		display: flex;
-	}
-	.category-name {
+		justify-content: center;
 		align-items: center;
-		display: flex;
-		flex: 3;
-		font-size: var(--s125);
+		font-size: var(--s110);
 		font-weight: bold;
-	}
-	.item-content {
-		padding-top: var(--std-margin);
-	}
-	.result {
-		font-size: var(--s150);
-		font-weight: bold;
+		margin: var(--std-margin);
 	}
 	.mod {
-		margin: var(--std-margin) 0;
 		width: 6ch;
+	}
+	.result {
+		font-size: var(--s110);
+		font-weight: bold;
+		margin: var(--std-margin);
+		padding-bottom: var(--std-padding);
+		padding-top: var(--std-padding);
+	}
+	.button {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		margin: var(--std-margin);
 	}
 </style>
