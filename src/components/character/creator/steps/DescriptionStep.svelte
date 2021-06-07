@@ -1,6 +1,6 @@
 <script>
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 	import creationStore from '/src/stores/creationStore.js'
 

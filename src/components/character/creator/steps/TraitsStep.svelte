@@ -3,7 +3,7 @@
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PointsRemaining from '/src/components/character/creator/PointsRemaining.svelte'
-	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import Slider from '/src/components/widgets/Slider.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 

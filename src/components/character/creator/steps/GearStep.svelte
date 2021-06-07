@@ -3,7 +3,7 @@
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import ResetAndRandomButtonRow from '/src/components/buttons/ResetAndRandomButtonRow.svelte'
+	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 
 	function resetGear() {
