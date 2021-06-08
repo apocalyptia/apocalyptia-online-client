@@ -5,8 +5,10 @@
 
 <div class='center-card'>
 	{#if title}
-		<div class='title'>
-			<h2>{title}</h2>
+		<div class='titlebar'>
+			<div class='title'>
+				<h2>{title}</h2>
+			</div>
 			{#if title !== 'Main Menu'}
 				<a href='/' class='close'>X</a>
 			{/if}
@@ -33,10 +35,9 @@
 		transform: translate(-50%, -50%);
 		width: 90vw;
 	}
-	.title {
+	.titlebar {
 		align-items: center;
-		background-color: var(--pri-color-trans);
-		/* border: 1px solid var(--pri-color); */
+		
 		color: var(--sec-color);
 		display: flex;
 		font-size: var(--s125);
@@ -45,24 +46,31 @@
 		margin-left: 3px;
 		margin-right: 3px;
 		margin-top: 3px;
+		
+	}
+	.title {
+		background-color: var(--pri-color-trans);
 		padding: calc(var(--std-padding) / 2);
+		width: 100%;
 	}
 	.close {
-		position: absolute;
-		padding: calc(var(--std-padding) / 2) var(--std-padding);
-		right: 0;
+		background-color: var(--pri-color-semi);
 		border-left: 2px solid var(--sec-color);
+		border-right: 2px solid var(--sec-color);
 		color: var(--sec-color);
+		padding: calc(var(--std-padding) / 2) var(--std-padding);
+		position: absolute;
+		right: 0;
 	}
 	.close:hover {
-		color: var(--pri-color);
 		background-color: var(--sec-color);
-		border: 1px solid var(--pri-color);
+		box-shadow: none;
+		color: var(--pri-color);
 	}
 	.contents {
-		overflow-y: scroll;
-		padding: var(--std-padding);
 		border: 1px solid var(--pri-color);
 		margin: 3px;
+		overflow-y: scroll;
+		padding: var(--std-padding);
 	}
 </style>

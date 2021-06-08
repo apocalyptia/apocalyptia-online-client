@@ -7,10 +7,12 @@
 	}
 </script>
 
+
 <div class='controls'>
 	<a href='/character/new' class='small-cntr-btn link-btn'> New </a>
 	<button class='small-cntr-btn link-btn' disabled={$playerStore.selectedCharacter === null} on:click={backupCharacter}> Backup </button>
 </div>
+
 
 <style>
 	.controls {

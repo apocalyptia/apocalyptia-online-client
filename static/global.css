@@ -312,6 +312,7 @@ th {
 
 /* Anchor */
 a {
+	background-color: var(--sec-color-trans);
 	color: var(--pri-color);
 	text-decoration: none;
 }
