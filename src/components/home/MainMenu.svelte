@@ -4,6 +4,7 @@
 	import menuStore from '/src/stores/menuStore.js'
 </script>
 
+
 <CenterCard title={'Main Menu'}>
 	<MenuItems links={$menuStore.links} />
 </CenterCard>

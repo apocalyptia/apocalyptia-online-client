@@ -1,30 +1,36 @@
-<!-- <script>
+<script>
 	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import login from '/src/utils/auth/login.js'
 	import playerStore from '/src/stores/playerStore.js'
+	import { goto } from '$app/navigation'
 
 	let email = ``
 
 	let password = ``
+
+	async function playerLogin() {
+		await $playerStore.login(email, password)
+	}
 </script>
+
 
 <CenterCard>
 	<form>
 		<div class='email'>
 			<label for='email'>Email</label>
-			<input id='email' type='text' required bind:value={email} />
+			<input id='email' type='text' required autocomplete='email' bind:value={email} />
 		</div>
 		<div class='password'>
 			<label for='password'>Password</label>
-			<input id='password' type='password' required bind:value={password} />
+			<input id='password' type='password' required autocomplete='current-password' bind:value={password} />
 		</div>
-		<div class='login'>
-			<a href='/'>
-				<button type='submit' on:click={() => ($playerStore = login($playerStore, email, password))}> Login </button>
-			</a>
+		<div class='btn-row'>
+			<button type='submit' class='link-btn' on:click={playerLogin}>
+				Login
+			</button>
 		</div>
 	</form>
 </CenterCard>
+
 
 <style>
 	button,
@@ -37,4 +43,4 @@
 	form *:last-child {
 		margin-bottom: 0;
 	}
-</style> -->
+</style>

@@ -2,11 +2,13 @@
 	export let links
 </script>
 
+
 {#each links as link}
 	<a href={link.url} class="link-btn">
 		{link.name}
 	</a>
 {/each}
+
 
 <style>
 	a {

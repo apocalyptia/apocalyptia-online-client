@@ -509,7 +509,8 @@ input[type="password"] {
 	min-width: 40%;
 }
 input[type="text"]:hover,
-input[type="number"]:hover {
+input[type="number"]:hover,
+input[type="password"]:hover {
 	color: var(--pri-color-trans);
 	background-color: var(--sec-color-trans);
 }
