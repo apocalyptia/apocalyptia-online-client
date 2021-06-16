@@ -90,6 +90,9 @@
 </div>
 
 <style>
+	hr {
+		margin: var(--std-margin) 0;
+	}
 	.organizer-bar {
 		align-items: center;
 		display: flex;
