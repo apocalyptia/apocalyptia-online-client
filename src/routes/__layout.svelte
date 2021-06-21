@@ -5,8 +5,8 @@
 	import { onMount } from 'svelte'
 
 	onMount(() => {
-		$playerStore.default()
 		if ($playerStore.selected !== null) {
+			$playerStore.default()
 			$characterStore = $playerStore.selected
 		}
 	})

@@ -7,8 +7,8 @@ function compressionMapping(category) {
 		if ('mods' in item && item.mods.length) {
 			compressedItem.m = [...item.mods]
 		}
-		if ('selection' in item && item.selection !== null) {
-			compressedItem.s = item.selection
+		if ('selectedOption' in item) {
+			compressedItem.s = item.selected
 		}
 		return compressedItem
 	})

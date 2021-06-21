@@ -6,19 +6,19 @@
 
 <div class='sheet-card-body'>
 	{#each Object.values($characterStore.traits) as trait}
-		<div class='sheet-card-block'>
-			<div class='sheet-card-item'>
-				<span class='trait-name'>
-					{trait.name}: {trait.score}
-				</span>
-			</div>
+		<div class='sheet-card-item'>
+			<h3>{trait.name}: {trait.score}</h3>
 		</div>
 	{/each}
 </div>
 
 <style>
-	.trait-name {
-		font-size: var(--s110);
-		font-weight: bold;
+	.sheet-card-body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.sheet-card-item {
+		display: inline-block;
 	}
 </style>

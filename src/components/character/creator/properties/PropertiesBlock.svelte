@@ -45,8 +45,13 @@
 		align-items: space-between;
 		display: flex;
 		flex-direction: column;
-		height: calc(var(--s100) * 8);
 		justify-content: space-between;
 		width: 50%;
+	}
+	.prop-block div {
+		margin-bottom: var(--std-margin);
+	}
+	.prop-block:last-child {
+		margin-bottom: 0;
 	}
 </style>

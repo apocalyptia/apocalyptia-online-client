@@ -17,6 +17,7 @@
 	function deleteCharacter() {
 		goto('/')
 		$playerStore.delete($characterStore)
+		$characterStore.reset()
 		$characterStore = $characterStore
 	}
 

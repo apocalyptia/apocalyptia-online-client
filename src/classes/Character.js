@@ -79,6 +79,14 @@ export default class Character {
 			this.skillsRemaining = remainingSkills
 			return remainingSkills
 		},
+		this.remainingAbilities = () => {
+			return Object.values(Abilities).filter((r) => {
+				return (
+					!this.abilities.some((a) => a.name === r.name) &&
+					r.experience <= this.properties.experience.current
+				)
+			})
+		}
 		this.resetGear = () => {
 			for (const g in this.gear) {
 				this.gear[g].inventory = []
@@ -130,7 +138,22 @@ export default class Character {
 			this.remainingTraits()
 			this.resetSkills()
 		},
-		this.updateAbilities = (ability) => {
+		this.reset = () => {
+			this.meta = initializeMeta()
+			this.description = initializeDescription()
+			this.traits = initializeTraits()
+			this.skills = initializeSkills()
+			this.properties = initializeProperties()
+			this.abilities = []
+			this.gear = initializeGear()
+			this.maxTraits = parseInt(Creation.traits.max)
+			this.proceed = false
+			this.skillsRemaining = parseInt(Creation.skills.startingMultiplier)
+			this.startingSkillsMultiplier = parseInt(Creation.skills.startingMultiplier)
+			this.startingTraits = parseInt(Creation.traits.starting)
+			this.traitsRemaining = parseInt(Creation.traits.starting)
+		}
+		this.addAbility = (ability) => {
 			if (ability) {
 				this.abilities.push(ability)
 				this.updateProperties()
@@ -156,9 +179,12 @@ export default class Character {
 					this.properties[p].current = this.properties[p].score
 				}
 			}
-			this.properties.experience.current = this.abilities.reduce((sum, a) => {
-				return sum - a.quantity * a.experience
-			}, this.properties.experience.score)
+			this.properties.experience.current = this.properties.experience.score
+			if (this.abilities.length) {
+				for (const a of this.abilities) {
+					this.properties.experience.current -= (a.experience * a.quantity)
+				}
+			}
 		},
 		this.updateSkill = (skill) => {
 			const skillKey = skill.name.toLowerCase()
@@ -254,17 +280,18 @@ export default class Character {
 		this.randomAbilities = () => {
 			this.resetAbilities()
 			while (this.properties.experience.current > 0) {
-				const remainingAbilities = Object.values(Abilities).filter((r) => {
-					return !this.abilities.some((a) => a.name === r.name) && r.experience <= this.properties.experience.current
-				})
-				if (remainingAbilities.length) {
-					const randomAbility = randomRoll(remainingAbilities)
+				const remainingAbilitiesList = this.remainingAbilities()
+				if (remainingAbilitiesList.length) {
+					const randomAbility = randomRoll(remainingAbilitiesList)
 					randomAbility.quantity = 1
 					if (randomAbility.options.length) {
-						randomAbility.selection = randomNumber(randomAbility.options.length)
+						randomAbility.selectedOption = randomNumber(randomAbility.options.length) - 1
 					}
-					this.updateAbilities(randomAbility)
-				} else break
+					this.addAbility(randomAbility)
+				}
+				else {
+					break
+				}
 			}
 		},
 		this.randomGear = () => {
@@ -296,7 +323,6 @@ export default class Character {
 		this.randomCharacter = () => {
 			this.randomTraits()
 			this.randomSkills()
-			this.updateProperties()
 			this.randomAbilities()
 			this.randomGear()
 			this.randomDescription()

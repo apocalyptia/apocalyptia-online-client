@@ -8,15 +8,17 @@
 	{#each Object.values($characterStore.traits) as trait}
 		<div class='sheet-card-block'>
 			<div class='parent-trait'>
-				{trait.name}
+				<h3>{trait.name}</h3>
 			</div>
-			{#each Object.values($characterStore.skills) as skill}
-				{#if trait.name === skill.parent}
-					<div class='sheet-card-item'>
-						{skill.name}: {skill.score}
-					</div>
-				{/if}
-			{/each}
+			<div class='skill-row'>
+				{#each Object.values($characterStore.skills) as skill}
+					{#if trait.name === skill.parent}
+						<div class='sheet-card-item'>
+							<h4>{skill.name}:</h4> {skill.score}
+						</div>
+					{/if}
+				{/each}
+			</div>
 		</div>
 	{/each}
 </div>
@@ -31,5 +33,13 @@
 		font-weight: bold;
 		margin: var(--std-margin);
 		text-align: center;
+	}
+	.skill-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.sheet-card-item {
+		display: inline-block;
 	}
 </style>

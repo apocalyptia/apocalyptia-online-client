@@ -37,7 +37,7 @@ function decompressionMapping(category, type) {
 			decompressedItem.mods = [...item.m]
 		}
 		if ('s' in item && item.s !== null) {
-			decompressedItem.selection = item.s
+			decompressedItem.selected = item.s
 		}
 		return decompressedItem
 	})
@@ -48,8 +48,8 @@ function decompressionMapping(category, type) {
 			if ('mods' in ruleItem && item.m.length) {
 				ruleItem.mods = [...item.m]
 			}
-			if ('selection' in ruleItem && item.s !== null) {
-				ruleItem.selection = item.s
+			if ('selectedOption' in ruleItem) {
+				ruleItem.selected = item.s
 			}
 		}
 		return ruleItem

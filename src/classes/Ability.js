@@ -9,7 +9,7 @@ export default class Ability extends Rule {
 		name,
 		notes = ``,
 		options = [],
-		selection = null,
+		selectedOption = 0,
 		type = `Ability`,
 		url
 	}) {
@@ -25,6 +25,6 @@ export default class Ability extends Rule {
 		this.max = max
 		this.notes = notes
 		this.options = options
-		this.selection = selection
+		this.selectedOption = selectedOption
 	}
 }

@@ -44,6 +44,7 @@
 	}
 	.body-part-name {
 		display: block;
+		text-align: center;
 	}
 	.body-part-numbers {
 		margin: 5px;

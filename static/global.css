@@ -51,7 +51,7 @@
 	--std-input-size: var(--s200);
 	--std-margin: var(--s75);
 	--std-padding: var(--s75);
-	--max-width: 800px;
+	--max-width: 900px;
 
 }
 
@@ -472,9 +472,6 @@ summary:hover {
 	background-color: var(--pri-color-trans);
 	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color);
-}		
-summary::-webkit-details-marker {
-	display: none;
 }
 
 /* Inputs */

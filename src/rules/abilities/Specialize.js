@@ -6,11 +6,9 @@ const Specialize = new Ability({
 	description: [`+1 to a Skill Specialty.`],
 	max: 1,
 	experience: 3,
-	options: Object.values(Skills)
-		.map((skill) => {
-			return Object.values(skill.specialties).map((specialty) => specialty.name)
-		})
-		.flat()
+	options: [
+		...Object.values(Skills).map((skill) => Object.values(skill.specialties).map((specialty) => specialty.name)).flat()
+	]
 })
 
 export default Specialize

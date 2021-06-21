@@ -14,8 +14,7 @@
 	{#each $characterStore.abilities as ability}
 		<div class='card-table-row'>
 			<span class='l-col'>
-				{ability.name}
-				{ability.options[0] ? ` (${ability.options[0].name})` : ``}
+				{ability.name}{ability.selectedOption ? ` (${ability.options[ability.selectedOption]})` : ``}
 			</span>
 			<span class='s-col'>{ability.experience}</span>
 			<span class='s-col'>{ability.max}</span>
