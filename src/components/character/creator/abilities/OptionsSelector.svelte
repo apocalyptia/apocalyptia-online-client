@@ -1,7 +1,5 @@
 <script>
 	export let ability
-
-	console.log(ability.selectedOption)
 </script>
 
 <!-- svelte-ignore a11y-no-onchange -->

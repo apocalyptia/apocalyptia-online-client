@@ -29,7 +29,6 @@
 		$characterStore.abilities = $abilitiesStore.visibleList.filter(a => a.quantity)
 		$characterStore.updateProperties()
 		$characterStore = $characterStore
-		console.log($characterStore.abilities)
 	})
 </script>
 
