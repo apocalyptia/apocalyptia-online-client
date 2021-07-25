@@ -13,6 +13,10 @@ module.exports = {
 		node: true,
 	},
 	rules: {
-		'function-paren-newline': ['error', { minItems: 3 }],
+		'function-paren-newline': 'multiline',
+		'function-call-spacing': 'never',
+		'function-call-argument-newline': 'consistent',
+		'quotes': 'backtick',
+		'space-before-function-parentheses': 'never',
 	},
 }
