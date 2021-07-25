@@ -4,19 +4,19 @@
 	export let ability
 </script>
 
-<div class='ability-card'>
+<div class="ability-card">
 	{#if ability.options.length}
-		<OptionsSelector bind:ability={ability} />
+		<OptionsSelector bind:ability />
 	{/if}
 	{#each ability.description as description}
 		<p>{description}</p>
 	{/each}
 	<hr />
-	<p class='ability-footer'>
-		<span class='ability-experience'>
+	<p class="ability-footer">
+		<span class="ability-experience">
 			Cost: {ability.experience} XP
 		</span>
-		<span class='ability-max'>
+		<span class="ability-max">
 			Max: {ability.max}
 		</span>
 	</p>

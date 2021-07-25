@@ -14,7 +14,7 @@
 	})
 </script>
 
-<div class='properties-step-page'>
+<div class="properties-step-page">
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.properties.description} />

@@ -48,10 +48,7 @@
 			{#each $mapStore.contents as row, ri}
 				<div class="grid-row">
 					{#each row as col, ci}
-						<div
-							class="grid-cell {$mapStore.contents[ri][ci].m ? 'red' : ''}"
-							on:click={() => ($mapStore = $mapStore.mark(ri, ci))}
-						/>
+						<div class="grid-cell {$mapStore.contents[ri][ci].m ? 'red' : ''}" on:click={() => ($mapStore = $mapStore.mark(ri, ci))} />
 					{/each}
 				</div>
 			{/each}
@@ -60,26 +57,10 @@
 </div>
 <div class="view-control-box">
 	<div>X-Perspective: {xPerspective}</div>
-	<Slider
-		name="X-perspective"
-		min="0"
-		max="100"
-		step="1"
-		bind:value={xPerspective}
-		func={changePerspective}
-		indicator="false"
-	/>
+	<Slider name="X-perspective" min="0" max="100" step="1" bind:value={xPerspective} func={changePerspective} indicator="false" />
 	<br />
 	<div>Y-Perspective: {yPerspective}</div>
-	<Slider
-		name="Y-perspective"
-		min="0"
-		max="100"
-		step="1"
-		bind:value={yPerspective}
-		func={changePerspective}
-		indicator="false"
-	/>
+	<Slider name="Y-perspective" min="0" max="100" step="1" bind:value={yPerspective} func={changePerspective} indicator="false" />
 	<br />
 	<div>X-Axis: {xRotation}</div>
 	<Slider name="X-axis" min="0" max="89" step="1" bind:value={xRotation} func={rotate3D} indicator="false" />

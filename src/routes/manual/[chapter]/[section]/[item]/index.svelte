@@ -1,12 +1,12 @@
-<script context='module'>
+<script context="module">
 	export async function load({ page }) {
 		const { chapter, section, item } = page.params
 		return {
 			props: {
 				chapter,
 				section,
-				item
-			}
+				item,
+			},
 		}
 	}
 </script>
@@ -18,6 +18,6 @@
 	export let chapter, section, item
 </script>
 
-<div class='page-body'>
+<div class="page-body">
 	<ManualArticle rule={Rules[chapter][section][item]} />
 </div>

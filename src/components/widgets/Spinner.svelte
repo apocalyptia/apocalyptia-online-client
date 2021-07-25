@@ -1,16 +1,6 @@
 <div>
-	<svg class='spinner' height='50' style='animation-duration:1000ms;' viewbox='0 0 32 32' width='50'>
-		<circle
-			cx='16'
-			cy='16'
-			fill='none'
-			r='10'
-			role='presentation'
-			stroke-dasharray='{Math.PI * 12}, 100'
-			stroke-linecap='square'
-			stroke-width='2'
-			stroke='lime'
-		/>
+	<svg class="spinner" height="50" style="animation-duration:1000ms;" viewbox="0 0 32 32" width="50">
+		<circle cx="16" cy="16" fill="none" r="10" role="presentation" stroke-dasharray="{Math.PI * 12}, 100" stroke-linecap="square" stroke-width="2" stroke="lime" />
 	</svg>
 </div>
 

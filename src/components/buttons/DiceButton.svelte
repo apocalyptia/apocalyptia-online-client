@@ -16,8 +16,8 @@
 	}
 </script>
 
-<button class='btn-box square-btn' on:click={rollAnimation}>
-	<div class='dice-icon-box'>{face}</div>
+<button class="btn-box square-btn" on:click={rollAnimation}>
+	<div class="dice-icon-box">{face}</div>
 </button>
 
 <style>

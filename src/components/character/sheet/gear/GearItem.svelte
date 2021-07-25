@@ -8,7 +8,7 @@
 		index = 0
 </script>
 
-<div class='gear-item'>
+<div class="gear-item">
 	<GearBlock {item} {mode} />
 	{#if mode != 'readonly'}
 		<TrashButton {category} {index} />

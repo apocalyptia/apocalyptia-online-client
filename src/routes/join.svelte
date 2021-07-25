@@ -14,8 +14,7 @@
 	function checkPassword() {
 		if (password !== confirm) {
 			match = false
-		}
-		else {
+		} else {
 			match = true
 		}
 	}
@@ -26,36 +25,31 @@
 				$playerStore.loggedIn = true
 				goto('/')
 			})
-		}
-		else {
+		} else {
 			alert('Error: Passwords do not match!')
 		}
 	}
 </script>
 
-
 <CenterCard title={'Registration'}>
 	<form>
-		<div class='email'>
-			<label for='email'>Email</label>
-			<input id='email' type='text' required autocomplete='email' bind:value={email} />
+		<div class="email">
+			<label for="email">Email</label>
+			<input id="email" type="text" required autocomplete="email" bind:value={email} />
 		</div>
-		<div class='password'>
-			<label for='password'>Password</label>
-			<input id='password' type='password' required autocomplete='new-password' bind:value={password} />
+		<div class="password">
+			<label for="password">Password</label>
+			<input id="password" type="password" required autocomplete="new-password" bind:value={password} />
 		</div>
-		<div class='confirm'>
-			<label for='confirm'>Confirm Password</label>
-			<input id='confirm' type='password' required autocomplete='current-password' bind:value={confirm} on:keyup={checkPassword} />
+		<div class="confirm">
+			<label for="confirm">Confirm Password</label>
+			<input id="confirm" type="password" required autocomplete="current-password" bind:value={confirm} on:keyup={checkPassword} />
 		</div>
-		<div class='btn-row'>
-			<button type='submit' class='link-btn' disabled={match === false} on:click={playerRegistration}>
-				Join
-			</button>
+		<div class="btn-row">
+			<button type="submit" class="link-btn" disabled={match === false} on:click={playerRegistration}> Join </button>
 		</div>
 	</form>
 </CenterCard>
-
 
 <style>
 	form * {

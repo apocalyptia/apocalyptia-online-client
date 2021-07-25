@@ -4,19 +4,19 @@
 	const itemProps = [
 		{
 			name: 'Type',
-			abv: 'type'
+			abv: 'type',
 		},
 		{
 			name: 'Accuracy',
-			abv: 'accuracy'
+			abv: 'accuracy',
 		},
 		{
 			name: 'Damage',
-			abv: 'damage'
+			abv: 'damage',
 		},
 		{
 			name: 'Penetration',
-			abv: 'penetration'
+			abv: 'penetration',
 		},
 		{
 			name: 'Rate',
@@ -24,100 +24,100 @@
 		},
 		{
 			name: 'Range',
-			abv: 'range'
+			abv: 'range',
 		},
 		{
 			name: 'Capacity',
-			abv: 'capacity'
+			abv: 'capacity',
 		},
 		{
 			name: 'Caliber',
-			abv: 'caliber'
+			abv: 'caliber',
 		},
 		{
 			name: 'Category',
-			abv: 'category'
+			abv: 'category',
 		},
 		{
 			name: 'Specialty',
-			abv: 'specialty'
+			abv: 'specialty',
 		},
 		{
 			name: 'Quantity',
-			abv: 'quantity'
+			abv: 'quantity',
 		},
 		{
 			name: 'Fuse',
-			abv: 'fuse'
+			abv: 'fuse',
 		},
 		{
 			name: 'Duration',
-			abv: 'duration'
+			abv: 'duration',
 		},
 		{
 			name: 'Mix Difficulty',
-			abv: 'mix'
+			abv: 'mix',
 		},
 		{
 			name: 'Overdose Possible',
-			abv: 'overdose'
+			abv: 'overdose',
 		},
 		{
 			name: 'Slots',
-			abv: 'slots'
+			abv: 'slots',
 		},
 		{
 			name: 'Absorption',
-			abv: 'absorption'
+			abv: 'absorption',
 		},
 		{
 			name: 'Location',
-			abv: 'location'
+			abv: 'location',
 		},
 		{
 			name: 'Size',
-			abv: 'size'
-		}
+			abv: 'size',
+		},
 	]
 </script>
 
-<div class='gear-block'>
+<div class="gear-block">
 	{#if item}
 		{#if mode != 'manual'}
-			<h4 class='item-name'>{item.name}</h4>
+			<h4 class="item-name">{item.name}</h4>
 		{/if}
-		<div class='item-details'>
+		<div class="item-details">
 			{#if item.description}
 				{#each item.description as description}
-					<p class='gear-description'>{description}</p>
+					<p class="gear-description">{description}</p>
 				{/each}
 			{/if}
 			{#each itemProps as prop}
 				{#if item[prop.abv] != undefined && item[prop.abv].toString().length}
-					<p class='gear-prop'>
+					<p class="gear-prop">
 						{#if prop.name === 'Quantity'}
 							{#if mode === 'edit'}
-								<span class='prop-name'>{prop.name}</span>:
-								<input type='number' class='item-quantity' min='0' bind:value={item.quantity} />
+								<span class="prop-name">{prop.name}</span>:
+								<input type="number" class="item-quantity" min="0" bind:value={item.quantity} />
 							{:else if mode === 'readonly' && item.type === 'Ammo'}
-								<span class='prop-name'>{prop.name}</span>:
-								<span type='number' class='item-quantity'>{item.quantity}</span>
+								<span class="prop-name">{prop.name}</span>:
+								<span type="number" class="item-quantity">{item.quantity}</span>
 							{/if}
 						{:else}
-							<span class='prop-name'>{prop.name}</span>:
+							<span class="prop-name">{prop.name}</span>:
 							{item[prop.abv]}
 						{/if}
 					</p>
 				{/if}
 			{/each}
 			{#if item && item.hasOwnProperty('attributes') && item.attributes.length > 0}
-				<p class='gear-attributes'><u>Attributes</u>:</p>
-				<div class='attributes'>
+				<p class="gear-attributes"><u>Attributes</u>:</p>
+				<div class="attributes">
 					{#each item.attributes as attributes}
-						<div class='attributes-type'>
+						<div class="attributes-type">
 							{attributes.name}:
 							{#each attributes.description as line}
-								<p class='attributes-description'>{line}</p>
+								<p class="attributes-description">{line}</p>
 							{/each}
 						</div>
 					{/each}

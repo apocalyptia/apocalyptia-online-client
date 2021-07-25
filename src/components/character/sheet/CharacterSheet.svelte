@@ -11,46 +11,46 @@
 	const sheetSectionsList = [
 		{
 			name: 'Description',
-			content: DescriptionSection
+			content: DescriptionSection,
 		},
 		{
 			name: 'Traits',
-			content: TraitsSection
+			content: TraitsSection,
 		},
 		{
 			name: 'Skills',
-			content: SkillsSection
+			content: SkillsSection,
 		},
 		{
 			name: 'Properties',
-			content: PropertiesSection
+			content: PropertiesSection,
 		},
 		{
 			name: 'Health',
-			content: HealthSection
+			content: HealthSection,
 		},
 		{
 			name: 'Abilities',
-			content: AbilitiesSection
+			content: AbilitiesSection,
 		},
 		{
 			name: 'Gear',
-			content: GearSection
+			content: GearSection,
 		},
 		{
 			name: 'Notes',
-			content: NotesSection
-		}
+			content: NotesSection,
+		},
 	]
 
 	export let mode
 </script>
 
-<div class='character-sheet'>
+<div class="character-sheet">
 	{#each sheetSectionsList as sheetSection}
-		<section class='{sheetSection.name.toLowerCase()}-section'>
+		<section class="{sheetSection.name.toLowerCase()}-section">
 			<h2>{sheetSection.name}</h2>
-			<div class='sheet-card'>
+			<div class="sheet-card">
 				<svelte:component this={sheetSection.content} {mode} />
 			</div>
 		</section>

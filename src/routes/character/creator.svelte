@@ -12,18 +12,16 @@
 
 	const creationSteps = [TraitsStep, SkillsStep, PropertiesStep, AbilitiesStep, GearStep, DescriptionStep, FinalizeStep]
 
-	onMount((_) => {
+	onMount(() => {
 		$creationStore.step = 0
 		$creationStore.numberOfSteps = creationSteps.length - 1
 	})
 </script>
 
-
-<div id='character-creator' class='page-body'>
+<div id="character-creator" class="page-body">
 	<svelte:component this={creationSteps[$creationStore.step]} />
 </div>
 <NavBar />
-
 
 <style>
 	#character-creator {

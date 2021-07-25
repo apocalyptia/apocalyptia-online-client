@@ -13,8 +13,8 @@
 	let previousButton = `&lt;`
 </script>
 
-<button on:click={previous} class='previous-btn btn-box'>
-	<div class='btn-icon'>{@html previousButton}</div>
+<button on:click={previous} class="previous-btn btn-box">
+	<div class="btn-icon">{@html previousButton}</div>
 </button>
 
 <style>

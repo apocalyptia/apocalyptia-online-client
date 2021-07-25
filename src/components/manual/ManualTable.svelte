@@ -7,7 +7,7 @@
 
 	let columnWidths = []
 
-	onMount((_) => {
+	onMount(() => {
 		tableContents = [rule.table.headers, ...Object.values(rule.table.contents).map((c) => Object.values(c))]
 
 		columnWidths = new Array(rule.table.headers.length).fill(0)
@@ -24,9 +24,9 @@
 	})
 </script>
 
-<div class='rule-table'>
+<div class="rule-table">
 	<table>
-		<tr class='table-header'>
+		<tr class="table-header">
 			{#each rule.table.headers as header, h}
 				<td
 					style={`

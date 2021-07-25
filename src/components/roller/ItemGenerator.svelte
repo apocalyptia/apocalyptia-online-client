@@ -7,7 +7,7 @@
 	export let category
 
 	$: items = []
-	
+
 	$: quantity = 1
 
 	function randomItem() {
@@ -18,25 +18,23 @@
 	}
 </script>
 
-
-<details class='item-category' open={items.length}>
-	<summary class='category-header'>
-		<div class='category-name'>
+<details class="item-category" open={items.length}>
+	<summary class="category-header">
+		<div class="category-name">
 			<h3>{capitalize(category[0])}</h3>
 		</div>
-		<input type='number' min=1 step=1 class='item-quantity' bind:value={quantity}>
-		<DiceButton func={randomItem}/>
+		<input type="number" min="1" step="1" class="item-quantity" bind:value={quantity} />
+		<DiceButton func={randomItem} />
 	</summary>
 	{#if items.length}
 		{#each items as item}
-			<hr>
-			<div class='item-content'>
-				<GearBlock {item} mode={'roller'}/>
+			<hr />
+			<div class="item-content">
+				<GearBlock {item} mode={'roller'} />
 			</div>
 		{/each}
 	{/if}
 </details>
-
 
 <style>
 	.item-category {

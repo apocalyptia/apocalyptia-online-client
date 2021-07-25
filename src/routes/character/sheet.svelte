@@ -6,7 +6,7 @@
 	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
 
-	onMount((_) => {
+	onMount(() => {
 		if ($characterStore.meta.created === ``) {
 			goto('/character')
 		}
@@ -25,11 +25,10 @@
 	}
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Character Sheet</title>
 </svelte:head>
-<div class='sheet page-body'>
+<div class="sheet page-body">
 	<CharacterSheet mode={'edit'} />
 	<SaveAndDeleteButtonRow saveFunc={saveCharacter} deleteFunc={deleteCharacter} />
 </div>

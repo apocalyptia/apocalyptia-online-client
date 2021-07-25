@@ -20,17 +20,17 @@
 	}
 </script>
 
-<div class='description-step-page'>
+<div class="description-step-page">
 	<fieldset>
 		<PageHeader chapter={'Description'} step={$characterStore.step} />
-		<div class='section-card'>
+		<div class="section-card">
 			{#each Object.values($characterStore.description) as description}
 				{#if description.name != 'Player'}
-					<div class='description-container'>
-						<span class='description-label'>{description.name}:</span>
-						<input type='text' class='description-value' bind:value={description.value} on:input={() => canProceed()} />
-						<div class='random-container'>
-							<button class='random-button' on:click={() => randomDescription(description.name)}> Random </button>
+					<div class="description-container">
+						<span class="description-label">{description.name}:</span>
+						<input type="text" class="description-value" bind:value={description.value} on:input={() => canProceed()} />
+						<div class="random-container">
+							<button class="random-button" on:click={() => randomDescription(description.name)}> Random </button>
 						</div>
 					</div>
 				{/if}

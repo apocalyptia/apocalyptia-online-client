@@ -2,13 +2,13 @@
 	export let rule
 </script>
 
-<div class='specialty-section'>
+<div class="specialty-section">
 	{#each Object.values(rule.specialties) as specialty}
-		<div class='sub-name'>
+		<div class="sub-name">
 			{specialty.name}
 		</div>
 		{#each specialty.description as description}
-			<p class='specialty-description'>
+			<p class="specialty-description">
 				{description}
 			</p>
 		{/each}

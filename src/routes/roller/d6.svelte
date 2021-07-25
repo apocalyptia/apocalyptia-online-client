@@ -3,7 +3,6 @@
 	import DiceRoller from '/src/components/roller/DiceRoller.svelte'
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - d6</title>
 </svelte:head>

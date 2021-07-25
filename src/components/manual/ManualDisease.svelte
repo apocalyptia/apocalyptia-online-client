@@ -12,17 +12,17 @@
 	})
 </script>
 
-<div class='disease-section'>
+<div class="disease-section">
 	{#each diseaseProps as prop}
 		{#if prop === 'symptoms'}
-			<p><span class='prop-name'>Symptoms</span>:</p>
+			<p><span class="prop-name">Symptoms</span>:</p>
 			<ul>
 				{#each rule.symptoms as symptom}
 					<li>{symptom}</li>
 				{/each}
 			</ul>
 		{:else}
-			<p><span class='prop-name'>{capitalize(prop)}</span>: {rule[prop]}</p>
+			<p><span class="prop-name">{capitalize(prop)}</span>: {rule[prop]}</p>
 		{/if}
 	{/each}
 </div>

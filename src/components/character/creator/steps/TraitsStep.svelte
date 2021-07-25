@@ -23,28 +23,20 @@
 	}
 </script>
 
-<div class='traits-step-page'>
+<div class="traits-step-page">
 	<fieldset>
 		<PageHeader chapter={'Traits'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.traits.description} />
 		<PointsRemaining points={$characterStore.traitsRemaining} />
-		<div class='section-card'>
+		<div class="section-card">
 			{#each Object.values($characterStore.traits) as trait}
-				<div class='item-block'>
-					<div class='trait-selection'>
+				<div class="item-block">
+					<div class="trait-selection">
 						<h2>
 							{trait.name}
 							<h2>
-								<div class='stat-column'>
-									<Slider
-										name={trait.name}
-										type={'trait'}
-										min='1'
-										max={$characterStore.maxTraits}
-										bind:value={trait.score}
-										func={() => updateTrait(trait)}
-										indicator='true'
-									/>
+								<div class="stat-column">
+									<Slider name={trait.name} type={'trait'} min="1" max={$characterStore.maxTraits} bind:value={trait.score} func={() => updateTrait(trait)} indicator="true" />
 								</div>
 							</h2>
 						</h2>

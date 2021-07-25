@@ -1,14 +1,13 @@
-<script context='module'>
+<script context="module">
 	export async function load({ page }) {
 		const { chapter } = page.params
 		return {
 			props: {
-				chapter
-			}
+				chapter,
+			},
 		}
 	}
 </script>
-
 
 <script>
 	import ManualSearchbar from '/src/components/manual/ManualSearchbar.svelte'
@@ -17,7 +16,6 @@
 
 	export let chapter
 </script>
-
 
 <ManualSearchbar />
 <ManualPage list={Rules[chapter]} />

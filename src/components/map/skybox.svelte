@@ -11,9 +11,7 @@
 		camera.position.set(-900, -200, -900)
 		renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas })
 		renderer.setSize(window.innerWidth, window.innerHeight)
-		scene.background = new THREE.CubeTextureLoader()
-			.setPath('textures/skybox/arid/')
-			.load(['lf.jpg', 'rt.jpg', 'up.jpg', 'dn.jpg', 'ft.jpg', 'bk.jpg'])
+		scene.background = new THREE.CubeTextureLoader().setPath('textures/skybox/arid/').load(['lf.jpg', 'rt.jpg', 'up.jpg', 'dn.jpg', 'ft.jpg', 'bk.jpg'])
 
 		controls = new OrbitControls(camera, canvas)
 		controls.enabled = true
@@ -30,7 +28,7 @@
 	onMount(() => init())
 </script>
 
-<div class='page-body'>
+<div class="page-body">
 	<canvas bind:this={canvas} />
 </div>
 

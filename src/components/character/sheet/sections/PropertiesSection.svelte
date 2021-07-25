@@ -5,31 +5,22 @@
 
 	const propertiesList = Object.keys($characterStore.properties).filter((p) => p != 'health')
 
-	const columns = [
-		propertiesList.slice(0, propertiesList.length / 2),
-		propertiesList.slice(propertiesList.length / 2, propertiesList.length)
-	]
+	const columns = [propertiesList.slice(0, propertiesList.length / 2), propertiesList.slice(propertiesList.length / 2, propertiesList.length)]
 </script>
 
-<div class='sheet-card-body'>
+<div class="sheet-card-body">
 	{#each columns as column}
-		<div class='prop-column'>
+		<div class="prop-column">
 			{#each column as prop}
-				<div class='prop-item'>
-					<label class='prop-label' for={$characterStore.properties[prop].name}>
+				<div class="prop-item">
+					<label class="prop-label" for={$characterStore.properties[prop].name}>
 						<h4>{$characterStore.properties[prop].name}</h4>
 					</label>
-					<div id={$characterStore.properties[prop].name} class='prop-value'>
+					<div id={$characterStore.properties[prop].name} class="prop-value">
 						{#if mode === 'readonly'}
 							{$characterStore.properties[prop].current}
 						{:else}
-							<input
-								type='number'
-								class='current-value'
-								bind:value={$characterStore.properties[prop].current}
-								min='0'
-								max={$characterStore.properties[prop].score}
-							/>
+							<input type="number" class="current-value" bind:value={$characterStore.properties[prop].current} min="0" max={$characterStore.properties[prop].score} />
 						{/if} /
 						{$characterStore.properties[prop].score}
 					</div>

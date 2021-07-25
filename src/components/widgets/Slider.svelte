@@ -14,19 +14,19 @@
 	step = parseFloat(step)
 </script>
 
-<div class='range-block'>
-	<input type='range' {name} {min} {max} {step} bind:value on:input={func ? func() : ''} />
+<div class="range-block">
+	<input type="range" {name} {min} {max} {step} bind:value on:input={func ? func() : ''} />
 	{#if indicator === 'true'}
-		<div class='range-indicator'>
+		<div class="range-indicator">
 			{#if type === 'trait'}
 				{#each Array(max) as _, i}
-					<span class='range-number'>
+					<span class="range-number">
 						{i % step === 0 ? i + 1 : ''}
 					</span>
 				{/each}
 			{:else if type === 'skill'}
 				{#each Array(max + 1) as _, i}
-					<span class='range-number'>
+					<span class="range-number">
 						{i % step === 0 ? i : ''}
 					</span>
 				{/each}

@@ -16,15 +16,13 @@
 	}
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - New Character</title>
 </svelte:head>
 <CenterCard title={'New Character'}>
-	<a href='/character/creator' class='link-btn' on:click={newCharacter}> Build </a>
-	<a href='/character/sheet' class='link-btn' on:click={randomCharacter}> Random </a>
+	<a href="/character/creator" class="link-btn" on:click={newCharacter}> Build </a>
+	<a href="/character/sheet" class="link-btn" on:click={randomCharacter}> Random </a>
 </CenterCard>
-
 
 <style>
 	a {

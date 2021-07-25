@@ -18,7 +18,6 @@
 	})
 </script>
 
-
 <svelte:head>
 	<title>Apocalyptia Online - Character Manager</title>
 </svelte:head>

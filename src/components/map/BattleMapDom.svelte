@@ -21,18 +21,11 @@
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
 <div class="map-frame">
-	<div
-		class="map-grid"
-		style="height: {$mapStore.pixelSize()}px; width: {$mapStore.pixelSize()}px;"
-		on:scroll={console.log(document.querySelector('.map-frame').offsetHeight)}
-	>
+	<div class="map-grid" style="height: {$mapStore.pixelSize()}px; width: {$mapStore.pixelSize()}px;" on:scroll={console.log(document.querySelector('.map-frame').offsetHeight)}>
 		{#each $mapStore.contents as row, ri}
 			<div class="grid-row">
 				{#each row as col, ci}
-					<div
-						class="grid-cell {$mapStore.contents[ri][ci].m ? 'red' : ''}"
-						on:click={() => ($mapStore = $mapStore.mark(ri, ci))}
-					/>
+					<div class="grid-cell {$mapStore.contents[ri][ci].m ? 'red' : ''}" on:click={() => ($mapStore = $mapStore.mark(ri, ci))} />
 				{/each}
 			</div>
 		{/each}

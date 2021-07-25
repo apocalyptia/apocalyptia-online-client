@@ -23,15 +23,15 @@
 
 	onMount(() => {
 		$characterStore.description.player = {
-			value: $characterStore.meta.user
+			value: $characterStore.meta.user,
 		}
 	})
 </script>
 
-<div class='finalize-page'>
+<div class="finalize-page">
 	<fieldset>
 		<PageHeader chapter={'Finalize'} step={$creationStore.step} />
-		<div class='sheet-content'>
+		<div class="sheet-content">
 			<CharacterSheet mode={'readonly'} />
 		</div>
 		<SaveAndDeleteButtonRow saveFunc={saveCharacter} deleteFunc={deleteCharacter} />

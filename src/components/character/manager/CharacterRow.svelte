@@ -22,16 +22,14 @@
 	}
 </script>
 
-
-<div class='stored-character'>
-	<button class='character-name' on:click={selectCharacter}>
+<div class="stored-character">
+	<button class="character-name" on:click={selectCharacter}>
 		{index}: {character.description.name.value}
 	</button>
-	<button class='btn-box trash-btn crimson-btn square-btn' on:click={deleteCharacter}>
-		<div class='btn-icon'>X</div>
-	</button>					
+	<button class="btn-box trash-btn crimson-btn square-btn" on:click={deleteCharacter}>
+		<div class="btn-icon">X</div>
+	</button>
 </div>
-
 
 <style>
 	.stored-character {

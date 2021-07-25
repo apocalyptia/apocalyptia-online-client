@@ -12,15 +12,9 @@
 	}
 </script>
 
-<div class='manual-header-section'>
-	<div class='rules-name'>{chapter}</div>
-	<input
-		type='text'
-		class='search-bar'
-		placeholder='Search'
-		bind:value={searchTerm}
-		on:keyup={() => sendEvent(searchTerm)}
-	/>
+<div class="manual-header-section">
+	<div class="rules-name">{chapter}</div>
+	<input type="text" class="search-bar" placeholder="Search" bind:value={searchTerm} on:keyup={() => sendEvent(searchTerm)} />
 </div>
 
 <style>

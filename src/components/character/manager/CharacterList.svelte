@@ -7,20 +7,18 @@
 	onMount(() => $playerStore.read())
 </script>
 
-
-<div class='character-storage-list-window'>
-	<div class='current-character'>
+<div class="character-storage-list-window">
+	<div class="current-character">
 		Current: {$characterStore.description.name.value || 'none'}
 	</div>
 	{#if $playerStore.list.length}
-		<div class='character-storage-list'>
+		<div class="character-storage-list">
 			{#each $playerStore.list as character, index (character.meta.id)}
 				<CharacterRow {character} {index} />
 			{/each}
 		</div>
 	{/if}
 </div>
-
 
 <style>
 	.character-storage-list-window {

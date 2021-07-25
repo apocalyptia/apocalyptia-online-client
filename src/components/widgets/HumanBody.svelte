@@ -1,14 +1,14 @@
-<div class='head-level'>
-	<div class='head body-part' />
+<div class="head-level">
+	<div class="head body-part" />
 </div>
-<div class='torso-level'>
-	<div class='left-arm arm body-part' />
-	<div class='torso body-part' />
-	<div class='right-arm arm body-part' />
+<div class="torso-level">
+	<div class="left-arm arm body-part" />
+	<div class="torso body-part" />
+	<div class="right-arm arm body-part" />
 </div>
-<div class='legs-level'>
-	<div class='left-leg leg body-part' />
-	<div class='right-leg leg body-part' />
+<div class="legs-level">
+	<div class="left-leg leg body-part" />
+	<div class="right-leg leg body-part" />
 </div>
 
 <style>

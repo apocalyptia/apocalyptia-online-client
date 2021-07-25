@@ -4,17 +4,18 @@
 	export const mode = 'readonly'
 </script>
 
-<div class='sheet-card-body'>
+<div class="sheet-card-body">
 	{#each Object.values($characterStore.traits) as trait}
-		<div class='sheet-card-block'>
-			<div class='parent-trait'>
+		<div class="sheet-card-block">
+			<div class="parent-trait">
 				<h3>{trait.name}</h3>
 			</div>
-			<div class='skill-row'>
+			<div class="skill-row">
 				{#each Object.values($characterStore.skills) as skill}
 					{#if trait.name === skill.parent}
-						<div class='sheet-card-item'>
-							<h4>{skill.name}:</h4> {skill.score}
+						<div class="sheet-card-item">
+							<h4>{skill.name}:</h4>
+							{skill.score}
 						</div>
 					{/if}
 				{/each}

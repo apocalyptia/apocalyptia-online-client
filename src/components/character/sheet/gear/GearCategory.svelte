@@ -12,16 +12,16 @@
 	}
 </script>
 
-<details class='gear-category' close>
+<details class="gear-category" close>
 	<summary>{category.name}</summary>
-	<div class='gear-category-card'>
-		<div class='gear-item-list'>
+	<div class="gear-category-card">
+		<div class="gear-item-list">
 			{#each category.inventory as item, index}
 				<GearItem {mode} {category} {item} {index} />
 			{/each}
 		</div>
 		{#if mode === 'edit'}
-			<div class='add-section'>
+			<div class="add-section">
 				<AddButton on:click={toggleAddItemModal} />
 				{#if modalVisible}
 					<AddItemModal on:close={toggleAddItemModal} {category} />

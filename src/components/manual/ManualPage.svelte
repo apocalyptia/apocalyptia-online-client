@@ -11,21 +11,19 @@
 	})
 </script>
 
-
-<div class='page-body'>
+<div class="page-body">
 	{#if $searchStore.term.length && $searchStore.results.length === 0}
 		<p>No search results found.</p>
 	{:else}
 		{#each $searchStore.results as link}
-			<div class='manual-btn'>
-				<a href={link.url} class='link-btn'>
+			<div class="manual-btn">
+				<a href={link.url} class="link-btn">
 					{link.name}
 				</a>
 			</div>
 		{/each}
 	{/if}
 </div>
-
 
 <style>
 	.page-body {

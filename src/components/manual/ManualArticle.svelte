@@ -11,11 +11,11 @@
 	export let rule
 </script>
 
-<div class='section-card'>
-	<article class='rule-body'>
+<div class="section-card">
+	<article class="rule-body">
 		<h1>{rule.name}</h1>
 		{#if rule instanceof Gear}
-			<div class='gear-rule'>
+			<div class="gear-rule">
 				<GearBlock item={rule} mode={'manual'} />
 			</div>
 		{:else if rule instanceof Disease}

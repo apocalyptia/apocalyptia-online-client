@@ -2,23 +2,21 @@
 	export let title = ''
 </script>
 
-
-<div class='center-card'>
+<div class="center-card">
 	{#if title}
-		<div class='titlebar'>
-			<div class='title'>
+		<div class="titlebar">
+			<div class="title">
 				<h2>{title}</h2>
 			</div>
 			{#if title !== 'Main Menu'}
-				<a href='/' class='close'>X</a>
+				<a href="/" class="close">X</a>
 			{/if}
 		</div>
 	{/if}
-	<div class='contents'>
-		<slot/>
+	<div class="contents">
+		<slot />
 	</div>
 </div>
-
 
 <style>
 	.center-card {
@@ -37,7 +35,6 @@
 	}
 	.titlebar {
 		align-items: center;
-		
 		color: var(--sec-color);
 		display: flex;
 		font-size: var(--s125);
@@ -46,7 +43,6 @@
 		margin-left: 3px;
 		margin-right: 3px;
 		margin-top: 3px;
-		
 	}
 	.title {
 		background-color: var(--pri-color-trans);
@@ -64,8 +60,11 @@
 	}
 	.close:hover {
 		background-color: var(--sec-color);
+		border: 1px solid var(--pri-color);
 		box-shadow: none;
 		color: var(--pri-color);
+		margin: 3px;
+		padding: calc((var(--std-padding) / 2) - 1px) calc(var(--std-padding) - 1px);
 	}
 	.contents {
 		border: 1px solid var(--pri-color);

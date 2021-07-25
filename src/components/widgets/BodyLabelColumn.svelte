@@ -12,18 +12,18 @@
 	}
 </script>
 
-<div class='column'>
+<div class="column">
 	{#each side as location}
-		<div class='{location}-label'>
-			<h4 class='body-part-name'>
+		<div class="{location}-label">
+			<h4 class="body-part-name">
 				{$characterStore.properties.health.locations[location].name}
 			</h4>
-			<div class='body-part-numbers'>
+			<div class="body-part-numbers">
 				{#if mode === 'readonly'}
 					{$characterStore.properties.health.locations[location].score}
 				{:else}
 					<input
-						type='number'
+						type="number"
 						bind:value={$characterStore.properties.health.locations[location].current}
 						min={$characterStore.properties.health.locations[location].score * -1}
 						max={$characterStore.properties.health.locations[location].score}

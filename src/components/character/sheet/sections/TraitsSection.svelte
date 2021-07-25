@@ -4,9 +4,9 @@
 	export const mode = 'readonly'
 </script>
 
-<div class='sheet-card-body'>
+<div class="sheet-card-body">
 	{#each Object.values($characterStore.traits) as trait}
-		<div class='sheet-card-item'>
+		<div class="sheet-card-item">
 			<h3>{trait.name}: {trait.score}</h3>
 		</div>
 	{/each}

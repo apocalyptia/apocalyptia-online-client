@@ -3,12 +3,8 @@
 	import Gear from '/src/rules/Gear.js'
 	import ItemGenerator from '/src/components/roller/ItemGenerator.svelte'
 
-	const masterGearList = [
-		'Master Gear List',
-		Object.values(Gear).flatMap((g) => Object.values(g).flatMap((i) => i))
-	]
+	const masterGearList = ['Master Gear List', Object.values(Gear).flatMap((g) => Object.values(g).flatMap((i) => i))]
 </script>
-
 
 <svelte:head>
 	<title>Apocalyptia Online - Loot</title>

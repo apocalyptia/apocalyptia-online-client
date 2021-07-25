@@ -6,19 +6,15 @@
 	import { fade } from 'svelte/transition'
 </script>
 
-
 <div on:click={() => ($menuStore = $menuStore.toggle())}>
 	{#if $menuStore.open}
-		<nav class='user-menu' transition:fade>
+		<nav class="user-menu" transition:fade>
 			<MenuItems links={$menuStore.links} />
-			<a href={'/'} class='link-btn' on:click={() => $playerStore.logout()}>
-				Log Out
-			</a>
+			<a href={'/'} class="link-btn" on:click={() => $playerStore.logout()}> Log Out </a>
 		</nav>
 	{/if}
 	<ShadowBackground active={$menuStore.open} />
 </div>
-
 
 <style>
 	.user-menu {

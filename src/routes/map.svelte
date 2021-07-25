@@ -12,15 +12,13 @@
 		renderer = new THREE.WebGLRenderer({
 			antialias: true,
 			alpha: true,
-			canvas
+			canvas,
 		})
 
-		scene.background = new THREE.CubeTextureLoader()
-			.setPath('textures/skybox/arid/')
-			.load(['lf.jpg', 'rt.jpg', 'up.jpg', 'dn.jpg', 'ft.jpg', 'bk.jpg'])
+		scene.background = new THREE.CubeTextureLoader().setPath('textures/skybox/arid/').load(['lf.jpg', 'rt.jpg', 'up.jpg', 'dn.jpg', 'ft.jpg', 'bk.jpg'])
 		camera.position.set(-900, 10, -900)
 		renderer.setSize(window.innerWidth, window.innerHeight)
-	
+
 		controls = new OrbitControls(camera, canvas)
 		controls.enabled = true
 		controls.minDistance = 700
@@ -29,7 +27,7 @@
 		const geo = new THREE.PlaneBufferGeometry(20000, 20000, 80, 8)
 		const mat = new THREE.MeshBasicMaterial({
 			color: 0x008800,
-			side: THREE.DoubleSide
+			side: THREE.DoubleSide,
 		})
 		mat.opacity = 0.1
 		const plane = new THREE.Mesh(geo, mat)
@@ -37,7 +35,7 @@
 		plane.rotateX(-Math.PI / 2)
 		plane.position.z = 10
 
-		scene.add(plane);
+		scene.add(plane)
 
 		animate()
 	}
@@ -56,7 +54,7 @@
 <svelte:head>
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
-<div class='page-body'>
+<div class="page-body">
 	<canvas bind:this={canvas} />
 </div>
 

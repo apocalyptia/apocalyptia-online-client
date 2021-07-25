@@ -4,19 +4,17 @@
 	import TakenSelector from '/src/components/character/creator/abilities/TakenSelector.svelte'
 </script>
 
-
 {#each $abilitiesStore.visibleList as ability}
-	<div class='ability-list-item'>
-		<details id={`details-${ability.name.replace(' ', '')}`} class='ability-card'>
-			<summary class='ability-titlebar'>
+	<div class="ability-list-item">
+		<details id={`details-${ability.name.replace(' ', '')}`} class="ability-card">
+			<summary class="ability-titlebar">
 				<h4>{ability.name}</h4>
-				<TakenSelector bind:ability={ability} />
+				<TakenSelector bind:ability />
 			</summary>
-			<AbilityCard bind:ability={ability} />
+			<AbilityCard bind:ability />
 		</details>
 	</div>
 {/each}
-
 
 <style>
 	.ability-card {

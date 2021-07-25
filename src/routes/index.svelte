@@ -4,9 +4,8 @@
 	import playerStore from '/src/stores/playerStore.js'
 </script>
 
-
 <!-- {#if $playerStore.loggedIn} -->
-	<MainMenu />
+<MainMenu />
 <!-- {:else}
 	<UserLogin />
 {/if} -->

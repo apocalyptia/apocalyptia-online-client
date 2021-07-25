@@ -2,8 +2,8 @@
 	import menuStore from '/src/stores/menuStore.js'
 </script>
 
-<button class='btn-box square-btn' on:click={() => ($menuStore = $menuStore.toggle())}>
-	<div class='menu-icon-box'>-</div>
+<button class="btn-box square-btn" on:click={() => ($menuStore = $menuStore.toggle())}>
+	<div class="menu-icon-box">-</div>
 </button>
 
 <style>

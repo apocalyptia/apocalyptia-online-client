@@ -26,13 +26,13 @@
 
 	afterUpdate(() => {
 		$characterStore.resetAbilities()
-		$characterStore.abilities = $abilitiesStore.visibleList.filter(a => a.quantity)
+		$characterStore.abilities = $abilitiesStore.visibleList.filter((a) => a.quantity)
 		$characterStore.updateProperties()
 		$characterStore = $characterStore
 	})
 </script>
 
-<div class='abilities-step-page'>
+<div class="abilities-step-page">
 	<fieldset>
 		<PageHeader chapter={'Abilities'} step={$characterStore.step} />
 		<ExplanationBlock rule={Creation.abilities.description} />
