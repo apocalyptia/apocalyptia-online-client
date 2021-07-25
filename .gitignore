@@ -1,6 +1,8 @@
 .DS_Store
 .env
+.netlify
 /.svelte-kit
 /build
 /functions
+/scripts/setupTypeScript.js
 node_modules
