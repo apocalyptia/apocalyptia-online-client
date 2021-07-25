@@ -9,7 +9,7 @@ const equipmentList = [
 	...Object.values(Gear.misc),
 	...Object.values(Gear.storage),
 	...Object.values(Gear.tools),
-	...Object.values(Gear.wearables)
+	...Object.values(Gear.wearables),
 ]
 
 function getItemList(category) {

@@ -31,7 +31,7 @@ function decompressionMapping(category, type) {
 	const decompList = category.map((item) => {
 		const decompressedItem = {
 			name: item.n,
-			quantity: item.q 
+			quantity: item.q,
 		}
 		if ('m' in item && item.m.length) {
 			decompressedItem.mods = [...item.m]

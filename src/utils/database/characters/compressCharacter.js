@@ -2,7 +2,7 @@ function compressionMapping(category) {
 	return category.map((item) => {
 		const compressedItem = {
 			n: item.name,
-			q: item.quantity
+			q: item.quantity,
 		}
 		if ('mods' in item && item.mods.length) {
 			compressedItem.m = [...item.mods]
@@ -15,7 +15,6 @@ function compressionMapping(category) {
 }
 
 function compressCharacter(char) {
-
 	let c = {}
 
 	c.Mi = char.meta.id

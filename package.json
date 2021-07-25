@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "svelte-kit build",
 		"cleanup": "prettier --write --plugin-search-dir=. . && prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"dev": "svelte-kit dev -p 3000",
+		"dev": "svelte-kit dev -p 3010",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore . --fix",
 		"preview": "svelte-kit preview"

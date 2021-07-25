@@ -5,15 +5,15 @@ const menu = {
 	links: [
 		{
 			name: 'Character',
-			url: '/character'
+			url: '/character',
 		},
 		{
 			name: 'Manual',
-			url: '/manual'
+			url: '/manual',
 		},
 		{
 			name: 'Roller',
-			url: '/roller'
+			url: '/roller',
 		},
 		// {
 		// 	'name': 'Campaign',
@@ -27,7 +27,7 @@ const menu = {
 	toggle() {
 		this.open = !this.open
 		return this
-	}
+	},
 }
 
 export default writable(menu)

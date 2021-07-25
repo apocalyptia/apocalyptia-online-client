@@ -22,7 +22,7 @@ const LanguageList = [
 	'Swahili',
 	'Thai',
 	'Turkish',
-	'Vietnamese'
+	'Vietnamese',
 ]
 
 export default LanguageList

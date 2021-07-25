@@ -27,12 +27,12 @@ packageJSON.devDependencies = Object.assign(packageJSON.devDependencies, {
 	'@rollup/plugin-typescript': '^6.0.0',
 	typescript: '^3.9.3',
 	tslib: '^2.0.0',
-	'@tsconfig/svelte': '^1.0.0'
+	'@tsconfig/svelte': '^1.0.0',
 })
 
 // Add script for checking
 packageJSON.scripts = Object.assign(packageJSON.scripts, {
-	validate: 'svelte-check'
+	validate: 'svelte-check',
 })
 
 // Write the package JSON
@@ -66,16 +66,10 @@ import typescript from '@rollup/plugin-typescript';`
 rollupConfig = rollupConfig.replace(`'src/main.js'`, `'src/main.ts'`)
 
 // Add preprocessor
-rollupConfig = rollupConfig.replace(
-	'compilerOptions:',
-	'preprocess: sveltePreprocess({ sourceMap: !production }),\n\t\t\tcompilerOptions:'
-)
+rollupConfig = rollupConfig.replace('compilerOptions:', 'preprocess: sveltePreprocess({ sourceMap: !production }),\n\t\t\tcompilerOptions:')
 
 // Add TypeScript
-rollupConfig = rollupConfig.replace(
-	'commonjs(),',
-	'commonjs(),\n\t\ttypescript({\n\t\t\tsourceMap: !production,\n\t\t\tinlineSources: !production\n\t\t}),'
-)
+rollupConfig = rollupConfig.replace('commonjs(),', 'commonjs(),\n\t\ttypescript({\n\t\t\tsourceMap: !production,\n\t\t\tinlineSources: !production\n\t\t}),')
 fs.writeFileSync(rollupConfigPath, rollupConfig)
 
 // Add TSConfig

@@ -15,7 +15,7 @@ function randomEquipment({ category = '', numberOfItems = 1 }) {
 			...Object.values(Gear.misc),
 			...Object.values(Gear.storage),
 			...Object.values(Gear.tools),
-			...Object.values(Gear.wearables)
+			...Object.values(Gear.wearables),
 		]
 	}
 	let randomEquipment = []

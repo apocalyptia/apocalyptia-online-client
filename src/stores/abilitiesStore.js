@@ -24,7 +24,7 @@ class AbilitiesStore {
 	}
 
 	close() {
-		this.displayList.forEach(a => {
+		this.displayList.forEach((a) => {
 			const ability = document.getElementById(`details-${a.name.replace(' ', '')}`)
 			if (ability && ability.hasAttribute('open')) {
 				ability.removeAttribute('open')
@@ -53,15 +53,14 @@ class AbilitiesStore {
 	filterList() {
 		this.close()
 		if (this.cost) {
-			this.visibleList = this.displayList.filter(a => a.experience === this.cost)
+			this.visibleList = this.displayList.filter((a) => a.experience === this.cost)
 		} else {
 			this.visibleList = [...this.displayList]
 		}
 		if (this.status === 'yes') {
-			this.visibleList = this.visibleList.filter(a => a.quantity > 0)
-		}
-		else if (this.status === 'no') {
-			this.visibleList = this.visibleList.filter(a => a.quantity === 0)
+			this.visibleList = this.visibleList.filter((a) => a.quantity > 0)
+		} else if (this.status === 'no') {
+			this.visibleList = this.visibleList.filter((a) => a.quantity === 0)
 		}
 		this.sortList()
 	}
