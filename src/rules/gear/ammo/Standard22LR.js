@@ -8,7 +8,7 @@ const Standard22LR = new Ammo({
 	name: `.22LR Standard`,
 	penetration: 0,
 	size: 0.005,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Standard22LR

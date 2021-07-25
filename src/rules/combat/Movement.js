@@ -13,8 +13,8 @@ const Movement = new Combat({
 		` 3) Climb = 1yd / 3 Speed.`,
 		` 4) Swim = 1yd / 6 Speed. Unstable.`,
 		` 5) Stand up = 3 Speed.`,
-		` 6) Drop Prone = 1 Speed.`
-	]
+		` 6) Drop Prone = 1 Speed.`,
+	],
 })
 Movement.subrules = [Chase]
 

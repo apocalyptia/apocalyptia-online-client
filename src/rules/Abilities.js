@@ -59,7 +59,7 @@ const Abilities = {
 	unorthodox: Unorthodox,
 	vehicleoperation: VehicleOperation,
 	weapontraining: WeaponTraining,
-	wrestling: Wrestling
+	wrestling: Wrestling,
 }
 
 export default Abilities

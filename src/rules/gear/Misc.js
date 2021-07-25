@@ -75,7 +75,7 @@ const Misc = {
 	tent: Tent,
 	whetstone: Whetstone,
 	whistle: Whistle,
-	ziptie: ZipTie
+	ziptie: ZipTie,
 }
 
 export default Misc

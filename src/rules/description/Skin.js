@@ -2,7 +2,7 @@ import Descriptor from '../../classes/Descriptor.js'
 
 const Skin = new Descriptor({
 	name: `Skin`,
-	value: ``
+	value: ``,
 })
 
 export default Skin

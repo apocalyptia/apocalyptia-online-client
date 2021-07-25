@@ -9,7 +9,7 @@ const ArmorPiercing308 = new Ammo({
 	name: `.308 Armor Piercing`,
 	penetration: 1,
 	size: 0.02,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default ArmorPiercing308

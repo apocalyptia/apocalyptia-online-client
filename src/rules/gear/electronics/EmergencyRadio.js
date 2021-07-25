@@ -5,7 +5,7 @@ const EmergencyRadio = new Electronic({
 	type: `Electronics`,
 	description: [`AM/FM/Shortwave.`, `1yd light.`],
 	duration: 7200,
-	size: 1
+	size: 1,
 })
 
 export default EmergencyRadio

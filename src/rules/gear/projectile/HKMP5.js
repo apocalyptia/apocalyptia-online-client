@@ -13,7 +13,7 @@ const HKMP5 = new Projectile({
 	range: 20,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default HKMP5

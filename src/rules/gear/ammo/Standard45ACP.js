@@ -8,7 +8,7 @@ const Standard45ACP = new Ammo({
 	name: `.45ACP Standard`,
 	penetration: 0,
 	size: 0.01,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Standard45ACP

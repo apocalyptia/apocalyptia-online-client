@@ -13,7 +13,7 @@ const TeargasGrenade = new Bomb({
 	range: `1yd/rnd`,
 	fuse: 2,
 	duration: `1d6mins`,
-	mix: 15
+	mix: 15,
 })
 
 export default TeargasGrenade

@@ -27,7 +27,7 @@ const Melee = {
 	sledgehammer: Sledgehammer,
 	spear: Spear,
 	staff: Staff,
-	sword: Sword
+	sword: Sword,
 }
 
 export default Melee

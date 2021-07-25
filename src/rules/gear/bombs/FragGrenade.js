@@ -11,7 +11,7 @@ const FragGrenade = new Bomb({
 	range: 15,
 	fuse: 2,
 	duration: 1,
-	mix: 9
+	mix: 9,
 })
 
 export default FragGrenade

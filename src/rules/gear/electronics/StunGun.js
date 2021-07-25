@@ -5,7 +5,7 @@ const StunGun = new Electronic({
 	type: `Electronics`,
 	description: [`Melee Attack.`, `C9# or Stun next Round.`],
 	duration: 120,
-	size: 1
+	size: 1,
 })
 
 export default StunGun

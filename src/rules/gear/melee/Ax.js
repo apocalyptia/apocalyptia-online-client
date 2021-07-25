@@ -9,7 +9,7 @@ const Ax = new Melee({
 	penetration: -1,
 	range: 2,
 	size: 4,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Ax

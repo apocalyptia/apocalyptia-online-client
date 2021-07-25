@@ -7,7 +7,7 @@ const WorkGloves = new Armor({
 	attributes: [FireResistance],
 	type: `Armor`,
 	absorption: 1,
-	location: `Arms`
+	location: `Arms`,
 })
 
 export default WorkGloves

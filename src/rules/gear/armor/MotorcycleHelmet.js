@@ -8,7 +8,7 @@ const MotorcycleHelmet = new Armor({
 	attributes: [FireResistance, Mask],
 	type: `Armor`,
 	absorption: 1,
-	location: `Head`
+	location: `Head`,
 })
 
 export default MotorcycleHelmet

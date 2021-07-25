@@ -2,7 +2,7 @@ import Descriptor from '../../classes/Descriptor.js'
 
 const Hair = new Descriptor({
 	name: `Hair`,
-	value: ``
+	value: ``,
 })
 
 export default Hair

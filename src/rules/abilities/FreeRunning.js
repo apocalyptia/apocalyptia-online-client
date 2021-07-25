@@ -4,7 +4,7 @@ const FreeRunning = new Ability({
 	name: `Free Running`,
 	description: [`Acrobatics 9# to Climb your Speed as a Movement Action.`],
 	max: 1,
-	experience: 9
+	experience: 9,
 })
 
 export default FreeRunning

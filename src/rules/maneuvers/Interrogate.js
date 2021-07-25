@@ -7,9 +7,9 @@ const Interrogate = new Maneuver({
 		`Each roll takes d6 mins of conversation.`,
 		`If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly).`,
 		`If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts.`,
-		`After Fails = [Demeanor], the interrogator gives up or the subject cracks and tells everything they know.`
+		`After Fails = [Demeanor], the interrogator gives up or the subject cracks and tells everything they know.`,
 	],
-	mode: `Social`
+	mode: `Social`,
 })
 
 export default Interrogate

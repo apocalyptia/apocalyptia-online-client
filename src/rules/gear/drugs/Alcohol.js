@@ -6,7 +6,7 @@ const Alcohol = new Drug({
 	size: 1,
 	type: `Drug`,
 	mix: 9,
-	overdose: true
+	overdose: true,
 })
 
 export default Alcohol

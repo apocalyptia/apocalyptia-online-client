@@ -8,7 +8,7 @@ const GhillieSuit = new Armor({
 	attributes: [Camo, ColdResistance],
 	type: `Armor`,
 	absorption: 1,
-	location: `Head, Arms, Torso, Legs`
+	location: `Head, Arms, Torso, Legs`,
 })
 
 export default GhillieSuit

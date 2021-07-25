@@ -12,7 +12,7 @@ const FlashbangGrenade = new Bomb({
 	range: 6,
 	fuse: 2,
 	duration: `1d6`,
-	mix: 9
+	mix: 9,
 })
 
 export default FlashbangGrenade

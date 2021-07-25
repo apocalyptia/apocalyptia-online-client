@@ -9,7 +9,7 @@ const ArrowBroadhead = new Ammo({
 	name: `Broadhead Arrow`,
 	penetration: 1,
 	size: 0.1,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default ArrowBroadhead

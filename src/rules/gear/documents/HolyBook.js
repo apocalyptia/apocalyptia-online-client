@@ -4,7 +4,7 @@ const HolyBook = new Document({
 	name: `Holy Book`,
 	description: [`-1 Psyche`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default HolyBook

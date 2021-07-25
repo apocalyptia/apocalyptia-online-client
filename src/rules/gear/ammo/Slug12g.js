@@ -10,7 +10,7 @@ const Slug12g = new Ammo({
 	name: `12g Slug`,
 	penetration: 0,
 	size: 0.05,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Slug12g

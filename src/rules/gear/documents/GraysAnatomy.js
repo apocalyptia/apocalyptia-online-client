@@ -4,7 +4,7 @@ const GraysAnatomy = new Document({
 	name: `Gray's Anatomy`,
 	description: [`+1 Medicine`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default GraysAnatomy

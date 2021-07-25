@@ -47,7 +47,7 @@ const Ammo = {
 	standard308: Standard308,
 	standard357: Standard357,
 	standard556mm: Standard556mm,
-	standard762mm: Standard762mm
+	standard762mm: Standard762mm,
 }
 
 export default Ammo

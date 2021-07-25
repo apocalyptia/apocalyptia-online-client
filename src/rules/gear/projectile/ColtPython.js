@@ -13,7 +13,7 @@ const ColtPython = new Projectile({
 	range: 10,
 	specialty: `Firearm`,
 	size: 1,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default ColtPython

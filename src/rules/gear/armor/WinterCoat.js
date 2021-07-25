@@ -7,7 +7,7 @@ const WinterCoat = new Armor({
 	attributes: [ColdResistance],
 	type: `Armor`,
 	absorption: 1,
-	location: `Arms, Torso`
+	location: `Arms, Torso`,
 })
 
 export default WinterCoat

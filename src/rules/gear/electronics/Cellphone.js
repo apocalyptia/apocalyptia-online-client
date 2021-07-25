@@ -5,7 +5,7 @@ const Cellphone = new Electronic({
 	type: `Electronics`,
 	description: [`1yd light, camera, remote control.`],
 	duration: 3600,
-	size: 0
+	size: 0,
 })
 
 export default Cellphone

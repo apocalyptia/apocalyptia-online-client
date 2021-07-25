@@ -10,7 +10,7 @@ const Sledgehammer = new Melee({
 	penetration: 0,
 	range: 2,
 	size: 5,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Sledgehammer

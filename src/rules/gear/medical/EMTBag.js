@@ -4,7 +4,7 @@ const EMTBag = new Medical({
 	name: `EMT Bag`,
 	type: `Medical`,
 	description: [`+3 Medicine(First-Aid).`, `30 uses.`],
-	size: 5
+	size: 5,
 })
 
 export default EMTBag

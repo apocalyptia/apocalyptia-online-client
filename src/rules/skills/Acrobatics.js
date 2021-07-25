@@ -11,14 +11,14 @@ const Acrobatics = new Skill({
 		dodge: new Specialty({
 			name: `Dodge`,
 			type: `Specialty`,
-			description: [`Roll vs a Melee or Projectile Attack to attempt to actively evade that Attack as an Action.`]
+			description: [`Roll vs a Melee or Projectile Attack to attempt to actively evade that Attack as an Action.`],
 		}),
 		jump: new Specialty({
 			name: `Jump`,
 			type: `Specialty`,
-			description: [`Running Jump distance is [Agility] yards.`, `Standing vertical Jump height is [Agility / 2] feet.`]
-		})
-	}
+			description: [`Running Jump distance is [Agility] yards.`, `Standing vertical Jump height is [Agility / 2] feet.`],
+		}),
+	},
 })
 
 export default Acrobatics

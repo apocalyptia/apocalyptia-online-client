@@ -4,7 +4,7 @@ const DogTricks = new Document({
 	name: `Dog Tricks`,
 	description: [`+1 Tame`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default DogTricks

@@ -9,7 +9,7 @@ const Machete = new Melee({
 	penetration: -1,
 	range: 2,
 	size: 2,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Machete

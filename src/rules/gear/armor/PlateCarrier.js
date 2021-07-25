@@ -9,7 +9,7 @@ const PlateCarrier = new Armor({
 	attributes: [Camo, ColdResistance, FireResistance],
 	type: `Armor`,
 	absorption: 3,
-	location: `Torso`
+	location: `Torso`,
 })
 
 export default PlateCarrier

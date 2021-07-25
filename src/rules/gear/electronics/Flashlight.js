@@ -5,7 +5,7 @@ const Flashlight = new Electronic({
 	type: `Electronics`,
 	description: [`10yd light. -3 Projectile Attack to Blind 1 Round.`],
 	duration: 3600,
-	size: 1
+	size: 1,
 })
 
 export default Flashlight

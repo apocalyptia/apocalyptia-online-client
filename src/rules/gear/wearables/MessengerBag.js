@@ -3,7 +3,7 @@ import Wearable from '/src/classes/gear/Wearable.js'
 const MessengerBag = new Wearable({
 	name: `Messenger Bag`,
 	description: [`1 Round to access.`],
-	size: 1
+	size: 1,
 })
 MessengerBag.slots = 4
 

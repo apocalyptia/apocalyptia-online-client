@@ -4,7 +4,7 @@ const Foregrip = new Accessory({
 	name: `Foregrip`,
 	type: `Accessory`,
 	description: [`-1 Size requirement for 2h Gun.`],
-	size: 0
+	size: 0,
 })
 
 export default Foregrip

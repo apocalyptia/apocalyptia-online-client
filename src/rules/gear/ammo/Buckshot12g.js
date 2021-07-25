@@ -10,7 +10,7 @@ const Buckshot12g = new Ammo({
 	name: `12g Buckshot`,
 	penetration: 0,
 	size: 0.05,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Buckshot12g

@@ -13,7 +13,7 @@ const HenryGoldenBoy = new Projectile({
 	range: 1,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default HenryGoldenBoy

@@ -17,7 +17,7 @@ const Accessories = {
 	laser: Laser,
 	scope: Scope,
 	singlepointsling: SinglePointSling,
-	suppressor: Suppressor
+	suppressor: Suppressor,
 }
 
 export default Accessories

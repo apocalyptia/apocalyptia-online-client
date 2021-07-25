@@ -13,7 +13,7 @@ const ArmaliteAR15 = new Projectile({
 	range: 50,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default ArmaliteAR15

@@ -13,7 +13,7 @@ const CZUpland = new Projectile({
 	range: 20,
 	specialty: `Firearm`,
 	size: 4,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default CZUpland

@@ -13,7 +13,7 @@ const BarnettCrossbow = new Projectile({
 	range: 15,
 	specialty: `Traditional`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default BarnettCrossbow

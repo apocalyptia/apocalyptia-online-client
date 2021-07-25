@@ -8,9 +8,9 @@ const Deflection = new Property({
 	description: [
 		`Deflection = ${formula}.`,
 		`This is your default Defense against Melee Attacks when you do not allocate an Action to make a Melee(Block) roll.`,
-		`Deflection does not require an Action or cost Endurance, though it is reduced by Pain penalties.`
+		`Deflection does not require an Action or cost Endurance, though it is reduced by Pain penalties.`,
 	],
-	type: `Property`
+	type: `Property`,
 })
 
 export default Deflection

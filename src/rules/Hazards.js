@@ -7,7 +7,7 @@ const Hazards = {
 	burning: Burning,
 	falling: Falling,
 	friendlyfire: FriendlyFire,
-	radiation: Radiation
+	radiation: Radiation,
 }
 
 export default Hazards

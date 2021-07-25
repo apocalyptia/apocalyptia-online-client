@@ -13,7 +13,7 @@ const RecurveBow = new Projectile({
 	range: 10,
 	specialty: `Traditional`,
 	size: 2,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default RecurveBow

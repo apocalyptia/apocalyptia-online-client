@@ -4,7 +4,7 @@ const Wrestling = new Ability({
 	name: `Wrestling`,
 	description: [`Free Grapple Action once per Round.`],
 	max: 1,
-	experience: 12
+	experience: 12,
 })
 
 export default Wrestling

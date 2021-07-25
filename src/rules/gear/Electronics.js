@@ -27,7 +27,7 @@ const Electronics = {
 	quadcopterdrone: QuadcopterDrone,
 	rccar: RCCar,
 	solarlamp: SolarLamp,
-	stungun: StunGun
+	stungun: StunGun,
 }
 
 export default Electronics

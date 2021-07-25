@@ -6,7 +6,7 @@ const Multilingual = new Ability({
 	description: [`Learn a new form of communication.`],
 	max: 1,
 	experience: 6,
-	options: [...LanguageList]
+	options: [...LanguageList],
 })
 
 export default Multilingual

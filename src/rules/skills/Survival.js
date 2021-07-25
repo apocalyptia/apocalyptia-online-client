@@ -11,14 +11,14 @@ const Survival = new Skill({
 		forage: new Specialty({
 			name: `Forage`,
 			type: `Specialty`,
-			description: [`(1hr) Provide 1 Need for 1 person.`]
+			description: [`(1hr) Provide 1 Need for 1 person.`],
 		}),
 		navigate: new Specialty({
 			name: `Navigate`,
 			type: `Specialty`,
-			description: [`(1min) Plot course`, `Roll vs [Perception] if tracked.`]
-		})
-	}
+			description: [`(1min) Plot course`, `Roll vs [Perception] if tracked.`],
+		}),
+	},
 })
 
 export default Survival

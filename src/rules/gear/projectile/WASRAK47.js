@@ -13,7 +13,7 @@ const WASRAK47 = new Projectile({
 	range: 30,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default WASRAK47

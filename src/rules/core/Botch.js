@@ -8,9 +8,8 @@ const Botch = new Core({
 		`If a 1 is rolled again, you Botch.`,
 		`If any other number is rolled, your d6 roll is counted as a normal 1.`,
 		`The Narrator has a great deal of latitude to be creative when determining the effects of Botching under various circumstances, but they should always be fair.`,
-		`Whenever a Character Botches, they get +1 XP because we learn the most from our greatest failures.`
-	]
+		`Whenever a Character Botches, they get +1 XP because we learn the most from our greatest failures.`,
+	],
 })
-
 
 export default Botch

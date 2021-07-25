@@ -5,7 +5,7 @@ const LeatherJacket = new Armor({
 	size: 2,
 	type: `Armor`,
 	absorption: 1,
-	location: `Arms, Torso`
+	location: `Arms, Torso`,
 })
 
 export default LeatherJacket

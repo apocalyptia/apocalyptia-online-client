@@ -6,7 +6,7 @@ const Hallucinogen = new Drug({
 	size: 0,
 	type: `Drug`,
 	mix: 15,
-	overdose: false
+	overdose: false,
 })
 
 export default Hallucinogen

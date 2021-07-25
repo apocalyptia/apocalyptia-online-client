@@ -4,7 +4,7 @@ const Chemicals = new Resource({
 	name: `Chemicals`,
 	type: `Resource`,
 	description: [`Substances used for Science(Chemistry).`],
-	size: 1
+	size: 1,
 })
 
 export default Chemicals

@@ -2,7 +2,7 @@ import Descriptor from '../../classes/Descriptor.js'
 
 const Player = new Descriptor({
 	name: `Player`,
-	value: ``
+	value: ``,
 })
 
 export default Player

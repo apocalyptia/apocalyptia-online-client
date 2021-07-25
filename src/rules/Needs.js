@@ -9,7 +9,7 @@ const Needs = {
 	dehydration: Dehydration,
 	exhaustion: Exhaustion,
 	hypothermia: Hypothermia,
-	starvation: Starvation
+	starvation: Starvation,
 }
 
 export default Needs

@@ -6,7 +6,7 @@ const Sedative = new Drug({
 	size: 0,
 	type: `Drug`,
 	mix: 12,
-	overdose: true
+	overdose: true,
 })
 
 export default Sedative

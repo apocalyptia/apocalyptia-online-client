@@ -5,7 +5,7 @@ const Lantern = new Electronic({
 	type: `Electronics`,
 	description: [`3yd light radius.`],
 	duration: 7200,
-	size: 2
+	size: 2,
 })
 
 export default Lantern

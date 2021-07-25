@@ -5,7 +5,7 @@ const AthleticPads = new Armor({
 	size: 2,
 	type: `Armor`,
 	absorption: 1,
-	location: `Torso`
+	location: `Torso`,
 })
 
 export default AthleticPads

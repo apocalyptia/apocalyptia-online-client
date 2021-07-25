@@ -10,8 +10,8 @@ const Dehydration = new Need({
 		`Climate Humidity modifies Water requirements as follows:`,
 		`Desert = 3/day.`,
 		`Mountain = 2/day.`,
-		`Tundra = 2/day.`
-	]
+		`Tundra = 2/day.`,
+	],
 })
 
 export default Dehydration

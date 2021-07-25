@@ -9,9 +9,9 @@ const PepperSpray = new Misc({
 		`Takes 1 Round for Pain to start.`,
 		`Pain lasts for d6x5 minutes.`,
 		`3 uses.`,
-		`Toxin.`
+		`Toxin.`,
 	],
-	size: 0
+	size: 0,
 })
 
 export default PepperSpray

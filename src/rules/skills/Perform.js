@@ -11,14 +11,14 @@ const Perform = new Skill({
 		distract: new Specialty({
 			name: `Distract`,
 			type: `Specialty`,
-			description: [`Target is Defenseless for 1 Round.`]
+			description: [`Target is Defenseless for 1 Round.`],
 		}),
 		deceive: new Specialty({
 			name: `Deceive`,
 			type: `Specialty`,
-			description: [`Target believes your plausible falsehood.`]
-		})
-	}
+			description: [`Target believes your plausible falsehood.`],
+		}),
+	},
 })
 
 export default Perform

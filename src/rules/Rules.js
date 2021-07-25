@@ -25,7 +25,7 @@ const Rules = {
 	properties: Properties,
 	skills: Skills,
 	status: Status,
-	traits: Traits
+	traits: Traits,
 }
 
 export default Rules

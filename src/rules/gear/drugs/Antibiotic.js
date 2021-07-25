@@ -6,7 +6,7 @@ const Antibiotic = new Drug({
 	size: 0,
 	type: `Drug`,
 	mix: 12,
-	overdose: false
+	overdose: false,
 })
 
 export default Antibiotic

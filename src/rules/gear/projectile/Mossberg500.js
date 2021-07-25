@@ -13,7 +13,7 @@ const Mossberg500 = new Projectile({
 	range: 10,
 	specialty: `Firearm`,
 	size: 2,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default Mossberg500

@@ -10,7 +10,7 @@ const Staff = new Melee({
 	penetration: 0,
 	range: 3,
 	size: 3,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Staff

@@ -4,7 +4,7 @@ const HowToWinFriends = new Document({
 	name: `How to Win Friends`,
 	description: [`+1 Socialize`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default HowToWinFriends

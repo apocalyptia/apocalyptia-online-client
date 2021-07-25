@@ -15,7 +15,7 @@ const Combat = {
 	attack: Attack,
 	defense: Defense,
 	damage: Damage,
-	trauma: Trauma
+	trauma: Trauma,
 	// vehicles: Vehicles
 }
 

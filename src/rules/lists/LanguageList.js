@@ -16,5 +16,5 @@ export default [
 	'Russian',
 	'Sign Language',
 	'Spanish',
-	'Vietnamese'
+	'Vietnamese',
 ]

@@ -21,7 +21,7 @@ const Properties = {
 	intellect: Intellect,
 	luck: Luck,
 	psyche: Psyche,
-	speed: Speed
+	speed: Speed,
 }
 
 export default Properties

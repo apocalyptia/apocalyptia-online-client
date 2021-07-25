@@ -4,7 +4,7 @@ const BookOfNinja = new Document({
 	name: `Book of Ninja`,
 	description: [`+1 Stealth`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default BookOfNinja

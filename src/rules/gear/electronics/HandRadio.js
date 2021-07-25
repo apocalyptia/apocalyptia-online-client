@@ -5,7 +5,7 @@ const HandRadio = new Electronic({
 	type: `Electronics`,
 	description: [`9-channel 2-way radio.`, `3 mile range.`],
 	duration: 10800,
-	size: 1
+	size: 1,
 })
 
 export default HandRadio

@@ -4,7 +4,7 @@ const ClassicNovel = new Document({
 	name: `Classic Novel`,
 	description: [`+1 Psyche`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default ClassicNovel

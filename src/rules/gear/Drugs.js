@@ -11,7 +11,7 @@ const Drugs = {
 	hallucinogen: Hallucinogen,
 	painkiller: Painkiller,
 	sedative: Sedative,
-	stimulant: Stimulant
+	stimulant: Stimulant,
 }
 
 export default Drugs

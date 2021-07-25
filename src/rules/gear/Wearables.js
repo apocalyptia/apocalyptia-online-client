@@ -69,7 +69,7 @@ const Wearables = {
 	thermalunderwear: ThermalUnderwear,
 	toolbelt: ToolBelt,
 	trenchcoat: TrenchCoat,
-	wristwatch: Wristwatch
+	wristwatch: Wristwatch,
 }
 
 export default Wearables

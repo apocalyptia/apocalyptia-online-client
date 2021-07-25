@@ -9,7 +9,7 @@ const Match22LR = new Ammo({
 	name: `.22LR Match`,
 	penetration: 0,
 	size: 0.005,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Match22LR

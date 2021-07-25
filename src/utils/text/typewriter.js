@@ -6,7 +6,7 @@ function typewriter(node, { speed = 50 }) {
 		tick: (t) => {
 			const i = Math.floor(text.length * t)
 			node.textContent = text.slice(0, i)
-		}
+		},
 	}
 }
 

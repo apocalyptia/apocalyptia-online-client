@@ -19,81 +19,81 @@ export default [
 	{
 		name: `Master Gear List`,
 		value: undefined,
-		list: GearList.list
+		list: GearList.list,
 	},
 	{
 		name: `Accessory`,
 		value: undefined,
-		list: AccessoriesList.list
+		list: AccessoriesList.list,
 	},
 	{
 		name: `Ammo`,
 		value: undefined,
-		list: AmmoList.list
+		list: AmmoList.list,
 	},
 	{
 		name: `Armor`,
 		value: undefined,
-		list: ArmorList.list
+		list: ArmorList.list,
 	},
 	{
 		name: `Bomb`,
 		value: undefined,
-		list: BombsList.list
+		list: BombsList.list,
 	},
 	{
 		name: `Document`,
 		value: undefined,
-		list: DocumentsList.list
+		list: DocumentsList.list,
 	},
 	{
 		name: `Drug`,
 		value: undefined,
-		list: DrugsList.list
+		list: DrugsList.list,
 	},
 	{
 		name: `Electronics`,
 		value: undefined,
-		list: ElectronicsList.list
+		list: ElectronicsList.list,
 	},
 	{
 		name: `Equipment`,
 		value: undefined,
-		list: EquipmentList.list
+		list: EquipmentList.list,
 	},
 	{
 		name: `Medical`,
 		value: undefined,
-		list: MedicalList.list
+		list: MedicalList.list,
 	},
 	{
 		name: `Melee`,
 		value: undefined,
-		list: MeleeWeaponsList.list
+		list: MeleeWeaponsList.list,
 	},
 	{
 		name: `Misc`,
 		value: undefined,
-		list: MiscList.list
+		list: MiscList.list,
 	},
 	{
 		name: `Projectile`,
 		value: undefined,
-		list: ProjectileWeaponsList.list
+		list: ProjectileWeaponsList.list,
 	},
 	{
 		name: `Storage`,
 		value: undefined,
-		list: StorageList.list
+		list: StorageList.list,
 	},
 	{
 		name: `Tools`,
 		value: undefined,
-		list: ToolsList.list
+		list: ToolsList.list,
 	},
 	{
 		name: `Wearables`,
 		value: undefined,
-		list: WearablesList.list
-	}
+		list: WearablesList.list,
+	},
 ]

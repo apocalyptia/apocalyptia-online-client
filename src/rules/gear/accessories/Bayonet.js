@@ -4,7 +4,7 @@ const Bayonet = new Accessory({
 	name: `Bayonet`,
 	type: `Accessory`,
 	description: [`Counts as a Knife.`, `+1 Damage and Pierce for Melee Attacks.`],
-	size: 1
+	size: 1,
 })
 
 export default Bayonet

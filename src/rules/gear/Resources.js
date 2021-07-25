@@ -9,7 +9,7 @@ const Resources = {
 	food: Food,
 	fuel: Fuel,
 	parts: Parts,
-	water: Water
+	water: Water,
 }
 
 export default Resources

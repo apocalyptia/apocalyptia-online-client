@@ -13,7 +13,7 @@ const Ruger1022 = new Projectile({
 	range: 30,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default Ruger1022

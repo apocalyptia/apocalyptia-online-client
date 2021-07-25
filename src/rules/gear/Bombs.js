@@ -11,7 +11,7 @@ const Bombs = {
 	molotovcocktail: MolotovCocktail,
 	smokegrenade: SmokeGrenade,
 	teargasgrenade: TeargasGrenade,
-	thermite: Thermite
+	thermite: Thermite,
 }
 
 export default Bombs

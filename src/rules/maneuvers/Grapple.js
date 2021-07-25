@@ -15,9 +15,9 @@ const Grapple = new Maneuver({
 		`With a Successful Grapple roll, that combatant may alter the current Grapple step by 1.`,
 		`With each new Grapple roll, the difference between the combatants' results is a modifier to the Attacker's next Grapple roll.`,
 		`Each Round the Attacker must choose to either allocate 1 Action just to retain the Grapple, make another Grapple roll, or let go.`,
-		`When the Defender reduces the Grapple step to 0 they escape.`
+		`When the Defender reduces the Grapple step to 0 they escape.`,
 	],
-	mode: `Offensive`
+	mode: `Offensive`,
 })
 
 Grapple.subrules = [Grab, Hostage, Tackle, Throw]

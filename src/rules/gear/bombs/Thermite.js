@@ -12,8 +12,7 @@ const Thermite = new Bomb({
 	range: 1,
 	fuse: 2,
 	duration: 6,
-	mix: 6
+	mix: 6,
 })
-
 
 export default Thermite

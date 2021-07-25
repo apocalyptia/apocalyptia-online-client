@@ -4,7 +4,7 @@ import Table from '../../classes/Table.js'
 const CalledShot = new Maneuver({
 	name: `Called Shot`,
 	description: [`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
-	mode: `Offensive`
+	mode: `Offensive`,
 })
 
 class CalledShotTarget {
@@ -25,40 +25,40 @@ CalledShot.table = new Table({
 			name: `Head`,
 			penalty: `-6 Projectile`,
 			health: `Constitution`,
-			effect: `Stun 1 Round.`
+			effect: `Stun 1 Round.`,
 		}),
 		new CalledShotTarget({
 			roll: 5,
 			name: `R Arm`,
 			penalty: `-3 Projectile`,
-			effect: `Let go of anything held with this hand.`
+			effect: `Let go of anything held with this hand.`,
 		}),
 		new CalledShotTarget({
 			roll: 4,
 			name: `L Arm`,
 			penalty: `-3 Projectile`,
-			effect: `Let go of anything held with this hand.`
+			effect: `Let go of anything held with this hand.`,
 		}),
 		new CalledShotTarget({
 			roll: 3,
 			name: `Torso`,
 			penalty: `No penalty.`,
-			effect: `None.`
+			effect: `None.`,
 		}),
 		new CalledShotTarget({
 			roll: 2,
 			name: `L Leg`,
 			penalty: `-1 Projectile`,
-			effect: `Fall Prone.`
+			effect: `Fall Prone.`,
 		}),
 		new CalledShotTarget({
 			roll: 1,
 			name: `R Leg`,
 			penalty: `-1 Projectile`,
-			effect: `Fall Prone.`
-		})
+			effect: `Fall Prone.`,
+		}),
 	],
-	widths: [5, 15, 20, 50]
+	widths: [5, 15, 20, 50],
 })
 
 export default CalledShot

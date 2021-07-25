@@ -9,7 +9,7 @@ const HollowPoint762mm = new Ammo({
 	name: `7.62mm Hollow Point`,
 	penetration: -1,
 	size: 0.02,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default HollowPoint762mm

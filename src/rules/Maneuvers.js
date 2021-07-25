@@ -47,7 +47,7 @@ const Maneuvers = {
 	taunt: Taunt,
 	throw: Throw,
 	torture: Torture,
-	trip: Trip
+	trip: Trip,
 }
 
 export default Maneuvers

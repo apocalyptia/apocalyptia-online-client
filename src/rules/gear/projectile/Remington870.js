@@ -13,7 +13,7 @@ const Remington870 = new Projectile({
 	range: 15,
 	specialty: `Firearm`,
 	size: 4,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default Remington870

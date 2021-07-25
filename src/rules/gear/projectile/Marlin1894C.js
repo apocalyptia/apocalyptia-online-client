@@ -13,7 +13,7 @@ const Marlin1894C = new Projectile({
 	range: 30,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default Marlin1894C

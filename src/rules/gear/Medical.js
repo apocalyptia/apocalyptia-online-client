@@ -19,7 +19,7 @@ const Medical = {
 	surgerykit: SurgeryKit,
 	thermometer: Thermometer,
 	transfusionkit: TransfusionKit,
-	waterfilter: WaterFilter
+	waterfilter: WaterFilter,
 }
 
 export default Medical

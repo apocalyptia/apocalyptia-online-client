@@ -8,7 +8,7 @@ const ArrowTarget = new Ammo({
 	name: `Target Arrow`,
 	penetration: 0,
 	size: 0.1,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default ArrowTarget

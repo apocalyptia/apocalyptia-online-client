@@ -37,7 +37,7 @@ const Status = {
 	unarmed: Unarmed,
 	unconscious: Unconscious,
 	unstable: Unstable,
-	visibility: Visibility
+	visibility: Visibility,
 }
 
 export default Status

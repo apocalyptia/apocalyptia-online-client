@@ -7,7 +7,7 @@ const FlakJacket = new Armor({
 	attributes: [Camo],
 	type: `Armor`,
 	absorption: 2,
-	location: `Torso`
+	location: `Torso`,
 })
 
 export default FlakJacket

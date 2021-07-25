@@ -11,14 +11,14 @@ const Drive = new Skill({
 		ram: new Specialty({
 			name: `Ram`,
 			type: `Specialty`,
-			description: [`Roll vs [Drive(Stunt)] to Attack with a vehicle.`]
+			description: [`Roll vs [Drive(Stunt)] to Attack with a vehicle.`],
 		}),
 		stunt: new Specialty({
 			name: `Stunt`,
 			type: `Specialty`,
-			description: [`Roll vs [Drive(Ram)] for Defense with a vehicle.`]
-		})
-	}
+			description: [`Roll vs [Drive(Ram)] for Defense with a vehicle.`],
+		}),
+	},
 })
 
 export default Drive

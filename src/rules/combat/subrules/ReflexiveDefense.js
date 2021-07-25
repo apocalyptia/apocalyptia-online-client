@@ -10,8 +10,8 @@ const ReflexiveDefense = new Combat({
 		`Evasion is equal to your Acrobatics(Dodge) score, and it is used as your default Defense against all Projectile Attacks.`,
 		`You may choose to use Evasion against Melee Attacks as well.`,
 		`Reflexive Defenses do not cost any Endurance to use.`,
-		`Reflexive Defenses are reduced by Pain penalties, to a minimum of 0.`
-	]
+		`Reflexive Defenses are reduced by Pain penalties, to a minimum of 0.`,
+	],
 })
 
 export default ReflexiveDefense

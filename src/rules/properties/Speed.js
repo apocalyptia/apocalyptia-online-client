@@ -11,7 +11,7 @@ const Speed = new Property({
 		`The distance you can move for the Round depends on your Speed and the type(s) of Movement you are making (see Movement).`,
 		`When traveling long distances overland, you can March at [Speed / 2] mph for up to your Endurance in hours per day.`,
 	],
-	type: `Property`
+	type: `Property`,
 })
 
 export default Speed

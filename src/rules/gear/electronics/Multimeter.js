@@ -5,7 +5,7 @@ const Multimeter = new Electronic({
 	type: `Electronics`,
 	description: [`+3 Science(Technology).`, `Detects voltage, battery life, and closed circuits.`],
 	duration: 57600,
-	size: 1
+	size: 1,
 })
 
 export default Multimeter

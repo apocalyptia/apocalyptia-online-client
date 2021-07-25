@@ -5,7 +5,7 @@ const GeigerCounter = new Electronic({
 	type: `Electronics`,
 	description: [`Science 6# to detect Radiation in 1yd.`],
 	duration: 28800,
-	size: 1
+	size: 1,
 })
 
 export default GeigerCounter

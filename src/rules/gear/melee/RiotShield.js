@@ -11,7 +11,7 @@ const RiotShield = new Melee({
 	penetration: 0,
 	range: 1,
 	size: 4,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default RiotShield

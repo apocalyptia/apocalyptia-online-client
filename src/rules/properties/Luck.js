@@ -13,9 +13,9 @@ const Luck = new Property({
 		`You regain 1 spent Luck Point per day after getting 8 hours of sleep.`,
 		`• Re-roll your last roll and add a Luck roll [d6 + current Luck points] to the result as a bonus.`,
 		`• Take an extra Action this Round (up to 4 Actions) without having to spend any Endurance.`,
-		`• Give a Luck point to one of your Comrades.`
+		`• Give a Luck point to one of your Comrades.`,
 	],
-	type: `Property`
+	type: `Property`,
 })
 
 export default Luck

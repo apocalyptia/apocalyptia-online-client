@@ -13,7 +13,7 @@ const NorincoSKS = new Projectile({
 	range: 50,
 	specialty: `Firearm`,
 	size: 4,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default NorincoSKS

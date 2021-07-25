@@ -9,7 +9,7 @@ const Hatchet = new Melee({
 	penetration: -1,
 	range: 1,
 	size: 2,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Hatchet

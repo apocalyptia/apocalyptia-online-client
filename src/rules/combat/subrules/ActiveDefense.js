@@ -9,7 +9,7 @@ const ActiveDefense = new Combat({
 		`A Dodge roll [d6 + Acrobatics(Dodge)] can be made vs either a Melee Attack or a Projectile(Traditional) Attack.`,
 		`Using an Action to make an Active Defense roll costs 1 Endurance.`,
 		`Botching an Active Defense roll means you fall Prone.`,
-	]
+	],
 })
 
 export default ActiveDefense

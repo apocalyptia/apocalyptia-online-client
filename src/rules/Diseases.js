@@ -11,7 +11,7 @@ const Diseases = {
 	influenza: Influenza,
 	mrsa: MRSA,
 	rabies: Rabies,
-	smallpox: Smallpox
+	smallpox: Smallpox,
 }
 
 export default Diseases

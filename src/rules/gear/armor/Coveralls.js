@@ -8,7 +8,7 @@ const Coveralls = new Armor({
 	attributes: [Camo, ColdResistance],
 	type: `Armor`,
 	absorption: 1,
-	location: `Arms, Torso, Legs`
+	location: `Arms, Torso, Legs`,
 })
 
 export default Coveralls

@@ -9,7 +9,7 @@ const Knife = new Melee({
 	penetration: 1,
 	range: 1,
 	size: 1,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Knife

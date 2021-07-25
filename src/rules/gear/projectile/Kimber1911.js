@@ -13,7 +13,7 @@ const Kimber1911 = new Projectile({
 	range: 15,
 	specialty: `Firearm`,
 	size: 1,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default Kimber1911

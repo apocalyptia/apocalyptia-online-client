@@ -2,7 +2,7 @@ import Descriptor from '../../classes/Descriptor.js'
 
 const Height = new Descriptor({
 	name: `Height`,
-	value: ``
+	value: ``,
 })
 
 export default Height

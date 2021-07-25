@@ -11,7 +11,7 @@ const SmokeGrenade = new Bomb({
 	range: `1yd/rnd`,
 	fuse: 2,
 	duration: `1d6mins`,
-	mix: 6
+	mix: 6,
 })
 
 export default SmokeGrenade

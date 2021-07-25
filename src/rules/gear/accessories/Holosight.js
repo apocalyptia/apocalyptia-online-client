@@ -4,7 +4,7 @@ const Holosight = new Accessory({
 	name: `Holosight`,
 	type: `Accessory`,
 	description: [`+1 to Projectile Attacks.`],
-	size: 0
+	size: 0,
 })
 Holosight.duration = 28800
 

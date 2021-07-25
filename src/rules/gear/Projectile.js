@@ -51,7 +51,7 @@ const Projectile = {
 	stoegercoachgun: StoegerCoachgun,
 	sw686snubnose: SW686Snubnose,
 	swmpshield: SWMPShield,
-	wasrak47: WASRAK47
+	wasrak47: WASRAK47,
 }
 
 export default Projectile

@@ -6,7 +6,7 @@ const SelfImprovement = new Ability({
 	description: [`+1 to a Trait (max 6).`],
 	max: 1,
 	experience: 30,
-	options: [ ...Object.values(Traits).map((trait) => trait.name) ]
+	options: [...Object.values(Traits).map((trait) => trait.name)],
 })
 
 export default SelfImprovement

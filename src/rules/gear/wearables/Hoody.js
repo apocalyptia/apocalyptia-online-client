@@ -3,7 +3,7 @@ import Wearable from '/src/classes/gear/Wearable.js'
 const Hoody = new Wearable({
 	name: `Hoody`,
 	description: [`Cold Resistance.`],
-	size: 0
+	size: 0,
 })
 Hoody.slots = 2
 

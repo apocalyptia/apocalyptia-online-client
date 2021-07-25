@@ -4,7 +4,7 @@ const DefensiveDriving = new Document({
 	name: `Defensive Driving`,
 	description: [`+1 Drive`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default DefensiveDriving

@@ -6,7 +6,7 @@ export default () => {
 		properties[prop] = {
 			name: Properties[prop].name,
 			score: 0,
-			current: 0
+			current: 0,
 		}
 		if (prop === 'health') {
 			properties.health.locations = {}
@@ -14,7 +14,7 @@ export default () => {
 				properties.health.locations[loc] = {
 					name: Properties.health.locations[loc].name,
 					score: 0,
-					current: 0
+					current: 0,
 				}
 			}
 		}

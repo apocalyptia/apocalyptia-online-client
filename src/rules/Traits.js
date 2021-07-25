@@ -7,7 +7,7 @@ const Traits = {
 	agility: Agility,
 	brains: Brains,
 	constitution: Constitution,
-	demeanor: Demeanor
+	demeanor: Demeanor,
 }
 
 export default Traits

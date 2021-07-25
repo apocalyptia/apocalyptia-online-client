@@ -3,7 +3,7 @@ import Wearable from '/src/classes/gear/Wearable.js'
 const HydrationPack = new Wearable({
 	name: `Hydration Pack`,
 	description: [`Holds 4 units (2gal) of liquid.`],
-	size: 0
+	size: 0,
 })
 HydrationPack.slots = 4
 

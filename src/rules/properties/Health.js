@@ -3,28 +3,28 @@ import Property from '../../classes/Property.js'
 const locations = {
 	head: {
 		name: `Head`,
-		formula: `Constitution`
+		formula: `Constitution`,
 	},
 	rightArm: {
 		name: `Right Arm`,
-		formula: `Constitution`
+		formula: `Constitution`,
 	},
 	leftArm: {
 		name: `Left Arm`,
-		formula: `Constitution`
+		formula: `Constitution`,
 	},
 	torso: {
 		name: `Torso`,
-		formula: `Constitution x 2`
+		formula: `Constitution x 2`,
 	},
 	leftLeg: {
 		name: `Left Leg`,
-		formula: `Constitution`
+		formula: `Constitution`,
 	},
 	rightLeg: {
 		name: `Right Leg`,
-		formula: `Constitution`
-	}
+		formula: `Constitution`,
+	},
 }
 
 const Health = new Property({
@@ -40,7 +40,7 @@ const Health = new Property({
 		`You die when Head or Torso Health drops to the negative of their scores.`,
 		`You lose the limb permanently when Arm or Leg Health drops to the negative of their scores.`,
 	],
-	type: `Property`
+	type: `Property`,
 })
 Health.locations = locations
 

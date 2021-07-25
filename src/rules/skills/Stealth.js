@@ -11,14 +11,14 @@ const Stealth = new Skill({
 		hide: new Specialty({
 			name: `Hide`,
 			type: `Specialty`,
-			description: [`Stay motionless and Concealed`, `+3 if Prone.`]
+			description: [`Stay motionless and Concealed`, `+3 if Prone.`],
 		}),
 		sneak: new Specialty({
 			name: `Sneak`,
 			type: `Specialty`,
-			description: [`Move Walk Speed while Concealed.`]
-		})
-	}
+			description: [`Move Walk Speed while Concealed.`],
+		}),
+	},
 })
 
 export default Stealth

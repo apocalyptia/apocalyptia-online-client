@@ -13,7 +13,7 @@ const Creation = {
 	abilities: Abilities,
 	gear: Gear,
 	description: Description,
-	finalize: Finalize
+	finalize: Finalize,
 }
 
 export default Creation

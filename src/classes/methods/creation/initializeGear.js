@@ -2,23 +2,23 @@ export default () => {
 	return {
 		armor: {
 			name: `Armor`,
-			inventory: []
+			inventory: [],
 		},
 		melee: {
 			name: `Melee Weapons`,
-			inventory: []
+			inventory: [],
 		},
 		projectile: {
 			name: `Projectile Weapons`,
-			inventory: []
+			inventory: [],
 		},
 		ammo: {
 			name: `Ammo`,
-			inventory: []
+			inventory: [],
 		},
 		equipment: {
 			name: `Equipment`,
-			inventory: []
-		}
+			inventory: [],
+		},
 	}
 }

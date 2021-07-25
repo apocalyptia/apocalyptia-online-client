@@ -10,7 +10,7 @@ const BrassKnuckles = new Melee({
 	penetration: 0,
 	range: 1,
 	size: 1,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default BrassKnuckles

@@ -24,10 +24,10 @@ const Rabies = new Disease({
 		`Delirium`,
 		`Paralysis`,
 		`Stupor`,
-		`Coma`
+		`Coma`,
 	],
 	effects: `Take 1 Head DMG every day while infection lasts. Natural Recovery is halted during infection.`,
-	treatment: `Amputation of exposed Body Part within d6 minutes prevents infection of the entire body. No further Treatment. Contagion: Luck 3# 1/day.`
+	treatment: `Amputation of exposed Body Part within d6 minutes prevents infection of the entire body. No further Treatment. Contagion: Luck 3# 1/day.`,
 })
 
 export default Rabies

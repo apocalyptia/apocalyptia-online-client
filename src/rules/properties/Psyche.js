@@ -12,7 +12,7 @@ const Psyche = new Property({
 		`When Psyche drops to 0, you lose all hope and seek out death at the earliest opportunity.`,
 		`Someone must protect you from yourself until you have Recovered at least 1 Psyche.`,
 	],
-	type: `Property`
+	type: `Property`,
 })
 
 export default Psyche

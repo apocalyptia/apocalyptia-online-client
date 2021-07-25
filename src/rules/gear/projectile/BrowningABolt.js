@@ -13,7 +13,7 @@ const BrowningABolt = new Projectile({
 	range: 60,
 	specialty: `Firearm`,
 	size: 4,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default BrowningABolt

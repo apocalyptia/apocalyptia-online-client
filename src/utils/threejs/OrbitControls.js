@@ -9,10 +9,7 @@ import { EventDispatcher, MOUSE, Quaternion, Spherical, TOUCH, Vector2, Vector3 
 
 var OrbitControls = function (object, domElement) {
 	if (domElement === undefined) console.warn('THREE.OrbitControls: The second parameter "domElement" is now mandatory.')
-	if (domElement === document)
-		console.error(
-			'THREE.OrbitControls: "document" should not be used as the target "domElement". Please use "renderer.domElement" instead.'
-		)
+	if (domElement === document) console.error('THREE.OrbitControls: "document" should not be used as the target "domElement". Please use "renderer.domElement" instead.')
 
 	this.object = object
 	this.domElement = domElement
@@ -170,8 +167,7 @@ var OrbitControls = function (object, domElement) {
 				if (min <= max) {
 					spherical.theta = Math.max(min, Math.min(max, spherical.theta))
 				} else {
-					spherical.theta =
-						spherical.theta > (min + max) / 2 ? Math.max(min, spherical.theta) : Math.min(max, spherical.theta)
+					spherical.theta = spherical.theta > (min + max) / 2 ? Math.max(min, spherical.theta) : Math.min(max, spherical.theta)
 				}
 			}
 
@@ -219,11 +215,7 @@ var OrbitControls = function (object, domElement) {
 			// min(camera displacement, camera rotation in radians)^2 > EPS
 			// using small-angle approximation cos(x/2) = 1 - x^2 / 8
 
-			if (
-				zoomChanged ||
-				lastPosition.distanceToSquared(scope.object.position) > EPS ||
-				8 * (1 - lastQuaternion.dot(scope.object.quaternion)) > EPS
-			) {
+			if (zoomChanged || lastPosition.distanceToSquared(scope.object.position) > EPS || 8 * (1 - lastQuaternion.dot(scope.object.quaternion)) > EPS) {
 				scope.dispatchEvent(changeEvent)
 
 				lastPosition.copy(scope.object.position)
@@ -275,7 +267,7 @@ var OrbitControls = function (object, domElement) {
 		TOUCH_ROTATE: 3,
 		TOUCH_PAN: 4,
 		TOUCH_DOLLY_PAN: 5,
-		TOUCH_DOLLY_ROTATE: 6
+		TOUCH_DOLLY_ROTATE: 6,
 	}
 
 	var state = STATE.NONE
@@ -367,14 +359,8 @@ var OrbitControls = function (object, domElement) {
 				panUp((2 * deltaY * targetDistance) / element.clientHeight, scope.object.matrix)
 			} else if (scope.object.isOrthographicCamera) {
 				// orthographic
-				panLeft(
-					(deltaX * (scope.object.right - scope.object.left)) / scope.object.zoom / element.clientWidth,
-					scope.object.matrix
-				)
-				panUp(
-					(deltaY * (scope.object.top - scope.object.bottom)) / scope.object.zoom / element.clientHeight,
-					scope.object.matrix
-				)
+				panLeft((deltaX * (scope.object.right - scope.object.left)) / scope.object.zoom / element.clientWidth, scope.object.matrix)
+				panUp((deltaY * (scope.object.top - scope.object.bottom)) / scope.object.zoom / element.clientHeight, scope.object.matrix)
 			} else {
 				// camera neither orthographic nor perspective
 				console.warn('WARNING: OrbitControls.js encountered an unknown camera type - pan disabled.')
@@ -796,8 +782,7 @@ var OrbitControls = function (object, domElement) {
 	}
 
 	function onMouseWheel(event) {
-		if (scope.enabled === false || scope.enableZoom === false || (state !== STATE.NONE && state !== STATE.ROTATE))
-			return
+		if (scope.enabled === false || scope.enableZoom === false || (state !== STATE.NONE && state !== STATE.ROTATE)) return
 
 		event.preventDefault()
 		event.stopPropagation()

@@ -4,7 +4,7 @@ const HowYogaWorks = new Document({
 	name: `How Yoga Works`,
 	description: [`+1 Acrobatics`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default HowYogaWorks

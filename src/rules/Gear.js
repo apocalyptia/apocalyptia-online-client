@@ -31,7 +31,7 @@ const Gear = {
 	resources: Resources,
 	storage: Storage,
 	tools: Tools,
-	wearables: Wearables
+	wearables: Wearables,
 }
 
 export default Gear

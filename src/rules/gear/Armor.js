@@ -29,7 +29,7 @@ const Armor = {
 	motorcyclehelmet: MotorcycleHelmet,
 	platecarrier: PlateCarrier,
 	wintercoat: WinterCoat,
-	workgloves: WorkGloves
+	workgloves: WorkGloves,
 }
 
 export default Armor

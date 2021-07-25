@@ -8,7 +8,7 @@ const CombatHelmet = new Armor({
 	attributes: [Camo, FireResistance],
 	type: `Armor`,
 	absorption: 2,
-	location: `Head`
+	location: `Head`,
 })
 
 export default CombatHelmet

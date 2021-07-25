@@ -7,9 +7,9 @@ const Negotiate = new Maneuver({
 		`Roll [Socialize vs Socialize] once per demand.`,
 		`Attitude and situational modifiers should be applied by the Narrator.`,
 		`Success means you get your demand and the opposed negotiator concedes.`,
-		`Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`
+		`Either side can choose to concede a demand without rolling. Some desires may be non-negotiable.`,
 	],
-	mode: `Social`
+	mode: `Social`,
 })
 
 export default Negotiate

@@ -5,7 +5,7 @@ const NightvisionGoggles = new Electronic({
 	type: `Electronics`,
 	description: [`Ignore Visibility penalties in darkness.`],
 	duration: 43200,
-	size: 1
+	size: 1,
 })
 
 export default NightvisionGoggles

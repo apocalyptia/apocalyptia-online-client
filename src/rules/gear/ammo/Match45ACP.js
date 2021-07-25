@@ -9,7 +9,7 @@ const Match45ACP = new Ammo({
 	name: `.45ACP Match`,
 	penetration: 0,
 	size: 0.01,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Match45ACP

@@ -31,7 +31,7 @@ const Skills = {
 	socialize: Socialize,
 	stealth: Stealth,
 	survival: Survival,
-	tame: Tame
+	tame: Tame,
 }
 
 export default Skills

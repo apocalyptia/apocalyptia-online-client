@@ -5,7 +5,7 @@ const AthleticHelmet = new Armor({
 	size: 2,
 	type: `Armor`,
 	absorption: 1,
-	location: `Head`
+	location: `Head`,
 })
 
 export default AthleticHelmet

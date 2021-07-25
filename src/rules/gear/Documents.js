@@ -47,7 +47,7 @@ const Documents = {
 	sassurvivalguide: SASSurvivalGuide,
 	standupcomedy: StandupComedy,
 	yellowpages: YellowPages,
-	zenmind: ZenMind
+	zenmind: ZenMind,
 }
 
 export default Documents

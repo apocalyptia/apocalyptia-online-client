@@ -8,9 +8,9 @@ const Evasion = new Property({
 	description: [
 		`Evasion = ${formula}.`,
 		`This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics(Dodge) roll.`,
-		`Evasion does not require an Action or cost Endurance, though it is reduced by Pain penalties.`
+		`Evasion does not require an Action or cost Endurance, though it is reduced by Pain penalties.`,
 	],
-	type: `Property`
+	type: `Property`,
 })
 
 export default Evasion

@@ -5,9 +5,9 @@ const Recruit = new Maneuver({
 	description: [
 		`Roll [Socialize vs Demeanor] to convince someone to join your side.`,
 		`If they are someone’s follower, roll [Leadership vs Leadership].`,
-		`Attitude and other contextual modifiers should be applied at the Narrator's discretion.`
+		`Attitude and other contextual modifiers should be applied at the Narrator's discretion.`,
 	],
-	mode: `Social`
+	mode: `Social`,
 })
 
 export default Recruit

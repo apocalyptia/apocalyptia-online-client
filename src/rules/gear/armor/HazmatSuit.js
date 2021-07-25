@@ -8,7 +8,7 @@ const HazmatSuit = new Armor({
 	attributes: [Impermeable, Mask],
 	type: `Armor`,
 	absorption: 0,
-	location: `Head, Arms, Torso, Legs`
+	location: `Head, Arms, Torso, Legs`,
 })
 
 export default HazmatSuit

@@ -19,7 +19,7 @@ const Unorthodox = new Ability({
 			}
 		}
 		return [...unorthodoxList]
-	})()
+	})(),
 })
 
 export default Unorthodox

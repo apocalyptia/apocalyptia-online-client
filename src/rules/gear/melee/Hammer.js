@@ -10,7 +10,7 @@ const Hammer = new Melee({
 	penetration: 0,
 	range: 1,
 	size: 2,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Hammer

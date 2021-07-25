@@ -6,7 +6,7 @@ export default () => {
 		const traitKey = trait.name.toLowerCase()
 		traits[traitKey] = {
 			name: trait.name,
-			score: 1
+			score: 1,
 		}
 	}
 	return traits

@@ -12,8 +12,8 @@ const Difficulty = new Core({
 		`9# = Demanding`,
 		`12# = Strenuous`,
 		`15# = Grueling`,
-		`18# = Extreme`
-	]
+		`18# = Extreme`,
+	],
 })
 
 export default Difficulty

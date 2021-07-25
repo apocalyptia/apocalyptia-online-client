@@ -13,7 +13,7 @@ const Storage = {
 	lockbox: Lockbox,
 	plasticjug: PlasticJug,
 	speedloader: Speedloader,
-	waterbottle: WaterBottle
+	waterbottle: WaterBottle,
 }
 
 export default Storage

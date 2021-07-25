@@ -4,7 +4,7 @@ const MapAtlas = new Document({
 	name: `Map (Atlas)`,
 	description: [`+1 Survival(Navigate)`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default MapAtlas

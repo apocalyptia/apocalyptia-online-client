@@ -9,7 +9,7 @@ const Match9mm = new Ammo({
 	name: `9mm Match`,
 	penetration: 0,
 	size: 0.01,
-	type: `Ammo`
+	type: `Ammo`,
 })
 
 export default Match9mm

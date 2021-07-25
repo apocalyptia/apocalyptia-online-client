@@ -6,7 +6,7 @@ const Practice = new Ability({
 	description: [`+1 to a Skill (up to the parent Trait).`],
 	max: 1,
 	experience: 6,
-	options: [ ...Object.values(Skills).map((skill) => skill.name) ]
+	options: [...Object.values(Skills).map((skill) => skill.name)],
 })
 
 export default Practice

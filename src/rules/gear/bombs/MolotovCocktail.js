@@ -12,7 +12,7 @@ const MolotovCocktail = new Bomb({
 	range: 3,
 	fuse: 10,
 	duration: 20,
-	mix: 3
+	mix: 3,
 })
 
 export default MolotovCocktail

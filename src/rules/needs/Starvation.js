@@ -7,8 +7,8 @@ const Starvation = new Need({
 		`1 Pain per day for the first 3 days without Food.`,
 		`After that, the Pain reduces to 1 until you eat.`,
 		`Pain penalties from Starvation go away after you eat Food.`,
-		`Starvation for weeks = [Constitution] is lethal.`
-	]
+		`Starvation for weeks = [Constitution] is lethal.`,
+	],
 })
 
 export default Starvation

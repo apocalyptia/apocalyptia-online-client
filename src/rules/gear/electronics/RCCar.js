@@ -5,7 +5,7 @@ const RCCar = new Electronic({
 	type: `Electronics`,
 	description: [`Science 3# to use.`, `45yd Speed.`],
 	duration: 600,
-	size: 3
+	size: 3,
 })
 
 export default RCCar

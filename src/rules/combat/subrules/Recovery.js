@@ -7,8 +7,8 @@ const Recovery = new Combat({
 		`Roll to recover both physically (Health) and mentally (Psyche) for this period of rest.`,
 		`Roll [Constitution vs total Damage] to heal 1 Health on a random Damaged Body Part.`,
 		`Roll [Demeanor vs total Trauma] to heal 1 Psyche.`,
-		`On a Failed roll you take 1 additional Damage or Trauma, depending on what you were rolling to Recover.`
-	]
+		`On a Failed roll you take 1 additional Damage or Trauma, depending on what you were rolling to Recover.`,
+	],
 })
 
 export default Recovery

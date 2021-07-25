@@ -4,7 +4,7 @@ const ZenMind = new Document({
 	name: `Zen Mind`,
 	description: [`+1 Perception`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default ZenMind

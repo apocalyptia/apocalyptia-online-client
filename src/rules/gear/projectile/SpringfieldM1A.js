@@ -13,7 +13,7 @@ const SpringfieldM1A = new Projectile({
 	range: 80,
 	specialty: `Firearm`,
 	size: 4,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default SpringfieldM1A

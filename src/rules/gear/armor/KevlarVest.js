@@ -8,7 +8,7 @@ const KevlarVest = new Armor({
 	attributes: [ColdResistance, FireResistance],
 	type: `Armor`,
 	absorption: 2,
-	location: `Torso`
+	location: `Torso`,
 })
 
 export default KevlarVest

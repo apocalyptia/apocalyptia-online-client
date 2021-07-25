@@ -13,7 +13,7 @@ const SavageMkII = new Projectile({
 	range: 40,
 	specialty: `Firearm`,
 	size: 3,
-	type: `Projectile Weapon`
+	type: `Projectile Weapon`,
 })
 
 export default SavageMkII

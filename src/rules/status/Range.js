@@ -7,9 +7,9 @@ const Range = new Status({
 		`Projectile Attacks targeting beyond the weapon's Range take a -1 Attack penalty per additional Range increment.`,
 		`Projectile(Firearm) weapons have a maximum effective Range equal to x10 the base weapon Range.`,
 		`Projectile(Traditional) weapons have a maximum effective Range equal to x5 the base weapon Range.`,
-		`Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range].`
+		`Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range].`,
 	],
-	type: `Status`
+	type: `Status`,
 })
 
 export default Range

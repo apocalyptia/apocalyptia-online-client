@@ -10,7 +10,7 @@ const Club = new Melee({
 	penetration: 0,
 	range: 2,
 	size: 2,
-	type: `Melee Weapon`
+	type: `Melee Weapon`,
 })
 
 export default Club

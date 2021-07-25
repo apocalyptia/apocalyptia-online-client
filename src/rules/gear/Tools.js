@@ -29,7 +29,7 @@ const Tools = {
 	swissarmykknife: SwissArmyKnife,
 	tapemeasure: TapeMeasure,
 	toolbag: ToolBag,
-	wiresaw: WireSaw
+	wiresaw: WireSaw,
 }
 
 export default Tools

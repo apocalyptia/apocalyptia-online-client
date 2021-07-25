@@ -4,7 +4,7 @@ const HomeSecurity = new Document({
 	name: `Home Security`,
 	description: [`+1 Larceny`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default HomeSecurity

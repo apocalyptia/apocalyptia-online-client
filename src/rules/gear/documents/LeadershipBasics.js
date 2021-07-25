@@ -4,7 +4,7 @@ const LeadershipBasics = new Document({
 	name: `Leadership Basics`,
 	description: [`+1 Leadership`],
 	size: 1,
-	type: `Document`
+	type: `Document`,
 })
 
 export default LeadershipBasics

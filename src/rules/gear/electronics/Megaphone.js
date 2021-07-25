@@ -5,7 +5,7 @@ const Megaphone = new Electronic({
 	type: `Electronics`,
 	description: [`+1 Leadership when speaking to a crowd.`],
 	duration: 14400,
-	size: 2
+	size: 2,
 })
 
 export default Megaphone

@@ -8,7 +8,7 @@ const HikingBoots = new Armor({
 	attributes: [ColdResistance, FireResistance],
 	type: `Armor`,
 	absorption: 1,
-	location: `Legs`
+	location: `Legs`,
 })
 
 export default HikingBoots

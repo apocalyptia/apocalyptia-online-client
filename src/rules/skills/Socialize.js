@@ -11,14 +11,14 @@ const Socialize = new Skill({
 		persuade: new Specialty({
 			name: `Persuade`,
 			type: `Specialty`,
-			description: [`(d6mins) Target seriously considers your opinion.`]
+			description: [`(d6mins) Target seriously considers your opinion.`],
 		}),
 		therapy: new Specialty({
 			name: `Therapy`,
 			type: `Specialty`,
-			description: [`Heal 1 Trauma`, `Cannot be performed again on the same target for one week.`, `d6 Trauma on a Botch.`]
-		})
-	}
+			description: [`Heal 1 Trauma`, `Cannot be performed again on the same target for one week.`, `d6 Trauma on a Botch.`],
+		}),
+	},
 })
 
 export default Socialize

@@ -11,7 +11,7 @@ const Core = {
 	success: Success,
 	fail: Fail,
 	explode: Explode,
-	botch: Botch
+	botch: Botch,
 }
 
 export default Core

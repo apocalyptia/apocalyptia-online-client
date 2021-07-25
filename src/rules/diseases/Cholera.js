@@ -9,7 +9,7 @@ const Cholera = new Disease({
 	duration: `d6x3 days`,
 	symptoms: [`Abdominal pain`, `Nausea`, `Vomiting`, `Diarrhea`, `Dehydration`],
 	effects: `Dehydration requires 6 rations of Water/day. 1 Pain/day.`,
-	treatment: `Dehydration requires 6 rations of purified Water/day to avoid death. Antibiotics reduces Duration by 1 day per dose.`
+	treatment: `Dehydration requires 6 rations of purified Water/day to avoid death. Antibiotics reduces Duration by 1 day per dose.`,
 })
 
 export default Cholera
