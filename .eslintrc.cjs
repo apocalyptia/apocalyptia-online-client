@@ -13,10 +13,23 @@ module.exports = {
 		node: true,
 	},
 	rules: {
-		'function-paren-newline': 'multiline',
+		'array-bracket-newline': {
+			multiline: true,
+			minItems: 3,
+		},
+		'array-element-newline': {
+			multiline: true,
+			minItems: 3,
+		},
+		'comma-dangle': 'always-multiline',
+		'function-call-argument-newline': 'always',
 		'function-call-spacing': 'never',
-		'function-call-argument-newline': 'consistent',
+		'function-paren-newline': 'multiline',
 		'quotes': 'backtick',
 		'space-before-function-parentheses': 'never',
+		'object-curly-newline': 'always',
+		'object-property-newline': {
+			allowAllPropertiesOnSameLine: false,
+		},
 	},
 }
