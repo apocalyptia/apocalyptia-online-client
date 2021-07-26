@@ -5,20 +5,12 @@
 	"version": "0.1.0",
 	"scripts": {
 		"build": "svelte-kit build",
-		"cleanup": "prettier --write --plugin-search-dir=. . && prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"dev": "svelte-kit dev -p 3010",
-		"format": "prettier --write --plugin-search-dir=. .",
-		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore . --fix",
 		"preview": "svelte-kit preview"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "next",
 		"@sveltejs/kit": "next",
-		"eslint": "^7.31.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^3.2.0",
-		"prettier": "^2.3.2",
-		"prettier-plugin-svelte": "^2.3.1",
 		"svelte": "^3.34.0"
 	},
 	"dependencies": {
