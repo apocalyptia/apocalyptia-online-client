@@ -29,10 +29,10 @@
 
 <style>
 	p {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	li {
-		margin-left: calc(var(--std-margin) * 2);
+		margin-left: calc(var(--margin) * 2);
 	}
 	.prop-name {
 		font-weight: bold;

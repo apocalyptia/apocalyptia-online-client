@@ -48,7 +48,7 @@
 <style>
 	.section-card {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		padding: 0;
 	}
 	.header {
@@ -58,6 +58,6 @@
 	}
 	.organizer-row {
 		display: block;
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 </style>

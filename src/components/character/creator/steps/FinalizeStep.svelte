@@ -9,7 +9,7 @@
 	import { goto } from '$app/navigation'
 
 	function saveCharacter() {
-		$characterStore.finalize()
+		$characterStore.finalizeCharacter()
 		$playerStore.save($characterStore)
 		goto(`/character/sheet`)
 	}
@@ -17,7 +17,7 @@
 	function deleteCharacter() {
 		goto('/')
 		$playerStore.delete($characterStore)
-		$characterStore.reset()
+		$characterStore.resetCharacter()
 		$characterStore = $characterStore
 	}
 
@@ -40,6 +40,6 @@
 
 <style>
 	.sheet-content {
-		padding-top: var(--std-padding);
+		padding-top: var(--padding);
 	}
 </style>

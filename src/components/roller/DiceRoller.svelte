@@ -28,7 +28,7 @@
 		align-items: center;
 		font-size: var(--s110);
 		font-weight: bold;
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	.mod {
 		width: 6ch;
@@ -36,14 +36,14 @@
 	.result {
 		font-size: var(--s110);
 		font-weight: bold;
-		margin: var(--std-margin);
-		padding-bottom: var(--std-padding);
-		padding-top: var(--std-padding);
+		margin: var(--margin);
+		padding-bottom: var(--padding);
+		padding-top: var(--padding);
 	}
 	.button {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 </style>

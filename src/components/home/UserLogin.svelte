@@ -9,7 +9,7 @@
 
 <style>
 	a {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 	a:last-child {
 		margin-bottom: 0;

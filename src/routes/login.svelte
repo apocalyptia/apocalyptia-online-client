@@ -34,7 +34,7 @@
 		max-width: 50vw;
 	}
 	form * {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 	form *:last-child {
 		margin-bottom: 0;

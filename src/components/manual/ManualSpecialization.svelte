@@ -18,7 +18,7 @@
 <style>
 	.sub-name,
 	.specialty-description {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	.sub-name {
 		text-decoration: underline;

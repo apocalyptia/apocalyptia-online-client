@@ -16,7 +16,7 @@
 	.controls {
 		display: flex;
 		justify-content: space-around;
-		padding-top: var(--std-padding);
+		padding-top: var(--padding);
 		width: 100%;
 	}
 	button {

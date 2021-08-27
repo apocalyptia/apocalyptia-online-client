@@ -50,6 +50,6 @@
 
 <style>
 	.trait-selection {
-		padding: var(--std-padding) 0;
+		padding: var(--padding) 0;
 	}
 </style>

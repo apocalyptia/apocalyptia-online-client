@@ -10,5 +10,5 @@
 </script>
 
 <button class="btn-box trash-btn crimson-btn square-btn">
-	<div class="btn-icon">X</div>
+	<div class="btn-icon">x</div>
 </button>

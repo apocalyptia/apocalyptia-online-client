@@ -13,7 +13,7 @@
 
 <style>
 	p {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	.subrule-details {
 		margin: var(--s100);

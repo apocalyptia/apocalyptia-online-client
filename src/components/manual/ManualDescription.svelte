@@ -14,7 +14,7 @@
 
 <style>
 	p {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	.bold {
 		font-weight: bold;

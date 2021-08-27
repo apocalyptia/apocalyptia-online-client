@@ -40,7 +40,7 @@
 		align-items: baseline;
 		display: flex;
 		justify-content: space-between;
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	.card-table-header {
 		font-weight: bold;

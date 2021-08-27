@@ -3,13 +3,7 @@
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-
-	function resetGear() {
-		$characterStore.resetGear()
-		$characterStore = $characterStore
-	}
 
 	function randomGear() {
 		$characterStore.randomGear()
@@ -45,19 +39,24 @@
 				{/each}
 			</div>
 		{:else}
-			<ResetAndRandomButtonRow reset={() => resetGear()} random={() => randomGear()} />
+		<div class='btn-row'>
+			<button class="small-cntr-btn" on:click={randomGear}>Random</button>
+		</div>
 		{/if}
 	</fieldset>
 </div>
 
 <style>
 	.gear-list-details {
-		margin: var(--std-margin) 0;
+		margin: var(--margin) 0;
 	}
 	.details-content {
 		display: block;
 	}
 	.item {
-		padding: var(--std-padding);
+		padding: var(--padding);
+	}
+	.small-cntr-btn {
+		height: var(--square);
 	}
 </style>

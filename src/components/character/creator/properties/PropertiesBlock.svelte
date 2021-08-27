@@ -34,12 +34,12 @@
 	.properties-list {
 		display: flex;
 		justify-content: space-between;
-		padding-bottom: var(--std-padding);
-		padding-top: var(--std-padding);
+		padding-bottom: var(--padding);
+		padding-top: var(--padding);
 		text-align: left;
 	}
 	.divider {
-		width: var(--std-padding);
+		width: var(--padding);
 	}
 	.prop-block {
 		align-items: space-between;
@@ -49,7 +49,7 @@
 		width: 50%;
 	}
 	.prop-block div {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 	.prop-block:last-child {
 		margin-bottom: 0;

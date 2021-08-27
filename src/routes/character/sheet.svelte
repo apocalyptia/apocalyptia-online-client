@@ -9,11 +9,15 @@
 	onMount(() => {
 		if ($characterStore.meta.created === ``) {
 			goto('/character')
+		} else if ($characterStore.description.player === undefined) {
+			$characterStore.description.player.player = {
+				value: $characterStore.meta.user,
+			}
 		}
 	})
 
 	function saveCharacter() {
-		$characterStore.finalize()
+		$characterStore.finalizeCharacter()
 		$playerStore.save($characterStore)
 		goto(`/character/sheet`)
 	}

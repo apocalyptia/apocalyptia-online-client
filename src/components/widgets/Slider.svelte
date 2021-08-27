@@ -53,7 +53,7 @@
 		background-color: var(--pri-color-trans);
 		border-radius: var(--radius);
 		border: 1px solid var(--sec-color);
-		height: var(--std-input-size);
+		height: var(--input-size);
 		width: var(--s100);
 	}
 	input[type='range']::-webkit-slider-thumb {
@@ -61,7 +61,7 @@
 		background-color: var(--pri-color-trans);
 		border-radius: var(--radius);
 		border: 1px solid var(--sec-color);
-		height: var(--std-input-size);
+		height: var(--input-size);
 		width: var(--s100);
 	}
 	input[type='range']:hover::-moz-range-thumb {

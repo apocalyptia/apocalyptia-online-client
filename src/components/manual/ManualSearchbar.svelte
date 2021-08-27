@@ -38,7 +38,7 @@
 	}
 	.search-bar-container {
 		display: flex;
-		margin: 0 var(--std-margin);
+		margin: 0 var(--margin);
 		width: var(--max-width);
 	}
 	.search-bar {
@@ -56,8 +56,8 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-around;
-		right: var(--std-padding);
-		width: var(--std-input-size);
+		right: var(--padding);
+		width: var(--input-size);
 		z-index: 3;
 	}
 </style>

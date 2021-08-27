@@ -1,4 +1,4 @@
-import d6Roll from './d6Roll.mjs'
+import d6Roll from './d6Roll.js'
 
 function dieRoller() {
 	let result = 6

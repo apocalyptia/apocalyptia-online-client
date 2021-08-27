@@ -13,7 +13,7 @@
 
 <style>
 	.skill-options-selector {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 		width: 100%;
 	}
 </style>

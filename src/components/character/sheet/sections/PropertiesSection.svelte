@@ -46,7 +46,7 @@
 		width: 48%;
 	}
 	.prop-column div {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 	.prop-column div:last-child {
 		margin-bottom: 0;
@@ -54,11 +54,11 @@
 	.prop-item {
 		border: 1px dotted;
 		display: block;
-		padding: var(--std-padding);
+		padding: var(--padding);
 		text-align: center;
 	}
 	.prop-label {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 		width: 100%;
 	}
 </style>

@@ -31,12 +31,12 @@
 
 <style>
 	p {
-		padding: var(--std-padding);
+		padding: var(--padding);
 	}
 	.manual-page {
 		top: calc(var(--square) * 2);
 	}
 	.manual-btn {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 </style>

@@ -76,14 +76,14 @@
 
 <style>
 	.item-block {
-		margin: var(--std-margin) 0;
+		margin: var(--margin) 0;
 	}
 	.max-score {
 		font-weight: bold;
-		margin-top: var(--std-margin);
+		margin-top: var(--margin);
 		text-align: center;
 	}
 	.stat-range {
-		padding: var(--std-padding);
+		padding: var(--padding);
 	}
 </style>

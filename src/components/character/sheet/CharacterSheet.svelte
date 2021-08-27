@@ -59,7 +59,7 @@
 
 <style>
 	section {
-		padding-top: var(--std-padding);
+		padding-top: var(--padding);
 	}
 	h2 {
 		text-align: center;

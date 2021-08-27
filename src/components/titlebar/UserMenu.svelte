@@ -21,7 +21,7 @@
 		background: var(--sec-color);
 		border: 1px solid var(--pri-color);
 		min-width: 200px;
-		padding: var(--std-padding);
+		padding: var(--padding);
 		position: absolute;
 		right: 0;
 		top: calc(1px + var(--square));

@@ -1,5 +1,5 @@
 import Character from '/src/classes/Character.js'
-import { GoTrue } from 'gotrue-js'
+import GoTrue from 'gotrue-js'
 import characterStore from '/src/stores/characterStore.js'
 import compressCharacter from '/src/utils/database/characters/compressCharacter.js'
 import decompressCharacter from '/src/utils/database/characters/decompressCharacter.js'

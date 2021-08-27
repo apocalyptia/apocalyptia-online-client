@@ -10,7 +10,15 @@
 	import creationStore from '/src/stores/creationStore.js'
 	import { onMount } from 'svelte'
 
-	const creationSteps = [TraitsStep, SkillsStep, PropertiesStep, AbilitiesStep, GearStep, DescriptionStep, FinalizeStep]
+	const creationSteps = [
+		TraitsStep,
+		SkillsStep,
+		PropertiesStep,
+		AbilitiesStep,
+		GearStep,
+		DescriptionStep,
+		FinalizeStep
+	]
 
 	onMount(() => {
 		$creationStore.step = 0

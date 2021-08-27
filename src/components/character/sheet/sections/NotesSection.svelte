@@ -9,7 +9,7 @@
 		color: var(--pri-color);
 		height: var(--s1000);
 		overflow: auto;
-		padding: var(--std-padding);
+		padding: var(--padding);
 		resize: none;
 		text-align: left;
 		width: 100%;

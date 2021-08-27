@@ -23,7 +23,7 @@
 
 <button on:click={next} class="next-btn btn-box" disabled={$characterStore.proceed === false}>
 	<div class="btn-icon">
-		{@html $characterStore.proceed ? `&gt;` : `X`}
+		{@html $characterStore.proceed ? `&gt;` : `x`}
 	</div>
 </button>
 

@@ -32,7 +32,7 @@
 	.parent-trait {
 		font-size: var(--s110);
 		font-weight: bold;
-		margin: var(--std-margin);
+		margin: var(--margin);
 		text-align: center;
 	}
 	.skill-row {

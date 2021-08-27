@@ -38,7 +38,7 @@
 
 <style>
 	.item-category {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 	.category-header {
 		display: flex;
@@ -49,11 +49,11 @@
 		flex: 3;
 	}
 	.item-quantity {
-		margin-right: var(--std-margin);
+		margin-right: var(--margin);
 		width: 3ch;
 	}
 	.item-content {
-		padding-top: var(--std-padding);
+		padding-top: var(--padding);
 		text-align: left;
 	}
 </style>

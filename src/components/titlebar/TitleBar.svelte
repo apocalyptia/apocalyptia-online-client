@@ -26,7 +26,7 @@
 	}
 	a {
 		display: block;
-		padding: var(--std-padding);
+		padding: var(--padding);
 		width: 100%;
 	}
 </style>

@@ -39,6 +39,6 @@
 		margin-bottom: var(--s100);
 	}
 	.gear-category-card {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 </style>

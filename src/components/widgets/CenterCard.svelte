@@ -46,7 +46,7 @@
 	}
 	.title {
 		background-color: var(--pri-color-trans);
-		padding: calc(var(--std-padding) / 2);
+		padding: calc(var(--padding) / 2);
 		width: 100%;
 	}
 	.close {
@@ -54,7 +54,7 @@
 		border-left: 2px solid var(--sec-color);
 		border-right: 2px solid var(--sec-color);
 		color: var(--sec-color);
-		padding: calc(var(--std-padding) / 2) var(--std-padding);
+		padding: calc(var(--padding) / 2) var(--padding);
 		position: absolute;
 		right: 0;
 	}
@@ -64,12 +64,12 @@
 		box-shadow: none;
 		color: var(--pri-color);
 		margin: 3px;
-		padding: calc((var(--std-padding) / 2) - 1px) calc(var(--std-padding) - 1px);
+		padding: calc((var(--padding) / 2) - 1px) calc(var(--padding) - 1px);
 	}
 	.contents {
 		border: 1px solid var(--pri-color);
 		margin: 3px;
 		overflow-y: scroll;
-		padding: var(--std-padding);
+		padding: var(--padding);
 	}
 </style>

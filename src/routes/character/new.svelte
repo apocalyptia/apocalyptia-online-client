@@ -11,7 +11,7 @@
 	function randomCharacter() {
 		$characterStore = new Character()
 		$characterStore.randomCharacter()
-		$characterStore.finalize()
+		$characterStore.finalizeCharacter()
 		$playerStore.save($characterStore)
 	}
 </script>
@@ -26,7 +26,7 @@
 
 <style>
 	a {
-		margin-bottom: var(--std-margin);
+		margin-bottom: var(--margin);
 	}
 	a:last-child {
 		margin-bottom: 0;

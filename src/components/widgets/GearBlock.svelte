@@ -133,23 +133,23 @@
 <style>
 	.item-name {
 		font-weight: bold;
-		padding-left: var(--std-padding);
+		padding-left: var(--padding);
 		text-decoration: underline;
 	}
 	.gear-description,
 	.gear-prop,
 	.gear-attributes,
 	.attributes-type {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 	.prop-name {
 		text-decoration: underline;
 	}
 	.attributes-type {
-		padding-left: var(--std-padding);
+		padding-left: var(--padding);
 	}
 	.attributes-description {
-		padding-left: calc(var(--std-padding) * 2);
+		padding-left: calc(var(--padding) * 2);
 	}
 	.item-quantity {
 		width: 20%;

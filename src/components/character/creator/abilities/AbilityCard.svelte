@@ -24,10 +24,10 @@
 
 <style>
 	hr {
-		margin: var(--std-margin) 0;
+		margin: var(--margin) 0;
 	}
 	.ability-card {
-		padding: var(--std-padding);
+		padding: var(--padding);
 	}
 	.ability-footer {
 		display: flex;

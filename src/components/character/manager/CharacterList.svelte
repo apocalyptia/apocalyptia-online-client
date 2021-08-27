@@ -33,7 +33,7 @@
 		font-weight: bold;
 		height: var(--square);
 		overflow-x: hidden;
-		padding-left: var(--std-padding);
+		padding-left: var(--padding);
 		border-bottom: var(--std-border-width) solid var(--pri-color);
 	}
 </style>

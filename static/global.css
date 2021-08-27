@@ -36,21 +36,23 @@
 	--crt-blue: rgba(0,0,127,0.5);
 	--pri-color: rgba(0, 255, 0, .9);
 	--pri-color-trans: rgba(0, 255, 0, .5);
-	--pri-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--pri-color-trans);
+	--pri-box-shadow: 0 0 var(--margin) calc(var(--margin)/2) var(--pri-color-trans);
 	--sec-color: rgba(15, 30, 15, .85);
 	--sec-color-trans: rgba(15, 25, 15, .5);
 	--ter-color: rgba(220, 20, 60, .85);
 	--ter-color-semi: rgba(220, 20, 60, .5);
 	--ter-color-trans: rgba(220, 20, 60, .15);
-	--ter-box-shadow: 0 0 var(--std-margin) calc(var(--std-margin)/2) var(--ter-color-semi);
+	--ter-box-shadow: 0 0 var(--margin) calc(var(--margin)/2) var(--ter-color-semi);
 	--screen-background: #121;
 
 	/* Global Layout */
 	--square: var(--s300);
 	--std-border-width: 1px;
-	--std-input-size: var(--s200);
-	--std-margin: var(--s75);
-	--std-padding: var(--s75);
+	--input-size: var(--s200);
+	--dotted-border: var(--std-border-width) dotted var(--pri-color);
+	--solid-border: var(--std-border-width) solid var(--pri-color);
+	--margin: var(--s75);
+	--padding: var(--s75);
 	--max-width: 900px;
 
 }
@@ -192,8 +194,8 @@ main {
 	flex-direction: column;
 	left: 0;
 	overflow: scroll;
-	padding: var(--std-padding);
-	padding-bottom: calc(var(--square) + var(--std-padding));
+	padding: var(--padding);
+	padding-bottom: calc(var(--square) + var(--padding));
 	position: absolute;
 	right: 0;
 	top: var(--square);
@@ -207,9 +209,9 @@ form {
 	width: 100%;
 }
 fieldset {
-	border: var(--std-border-width) dotted var(--pri-color);
+	border: var(--dotted-border);
 	min-width: 100%;
-	padding: var(--std-padding);
+	padding: var(--padding);
 	width: 100%;
 }
 .flex-block {
@@ -227,11 +229,11 @@ hr {
 
 /* Section Card */
 .section-card {
-	border: var(--std-border-width) dotted var(--pri-color);
+	border: var(--dotted-border);
 	display: block;
-	margin-bottom: var(--std-margin);
-	margin-top: var(--std-margin);
-	padding: var(--std-padding);
+	margin-bottom: var(--margin);
+	margin-top: var(--margin);
+	padding: var(--padding);
 }
 .section-card .stat-label {
 	font-weight: bold;
@@ -268,7 +270,7 @@ p {
 	text-shadow: 0 0 5px var(--ter-color-trans);
 }
 .explanation {
-	margin: var(--std-margin);
+	margin: var(--margin);
 }
 .remaining {
 	text-align: center;;
@@ -277,13 +279,13 @@ p {
 /* Lists */
 ul {
 	list-style-type: square;
-	padding-left: var(--std-padding);
+	padding-left: var(--padding);
 }
 li {
 	margin: var(--s50);
 }
 .list {
-	margin-top: var(--std-margin);
+	margin-top: var(--margin);
 }
 
 /* Table */
@@ -298,12 +300,12 @@ tr {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	height: var(--std-input-size);
+	height: var(--input-size);
 	min-width: 100%;
 }
 td,
 th {
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	padding: var(--s50);
 }
 
@@ -331,14 +333,14 @@ a:hover {
 /* Buttons */
 button {
 	background-color: var(--sec-color-trans);
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	border-radius: var(--radius);
 	color: var(--pri-color);
 	cursor: pointer;
 	font-family: TTY;
 	font-size: var(--s100);
 	font-weight: bold;
-	height: var(--std-input-size);
+	height: var(--input-size);
 	padding-left: 1ch;
 	padding-right: 1ch;
 	text-align: center;
@@ -375,7 +377,7 @@ button:invalid {
 }
 .btn-box {
 	align-items: center;
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -449,12 +451,12 @@ button:invalid {
 	width: var(--square);
 }
 .manual-btn {
-	margin-bottom: var(--std-margin);
+	margin-bottom: var(--margin);
 }
 
 /* Details */
 details {
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	border-radius: var(--radius);
 }
 summary {
@@ -478,13 +480,13 @@ summary:hover {
 input {
 	background-color: var(--pri-color-trans);
 	border-radius: var(--radius);
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	color: var(--sec-color);
 	cursor: pointer;
 	font-family: TTY;
 	font-size: var(--s100);
 	font-weight: bold;
-	height: var(--std-input-size);
+	height: var(--input-size);
 	text-align: center;
 }
 input:disabled {
@@ -519,13 +521,13 @@ input[type="password"]:hover {
 /* Select */
 select {
 	background-color: var(--sec-color-trans);
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	border-radius: var(--radius);
 	color: var(--pri-color);
 	cursor: pointer;
 	font-size: var(--s100);
 	font-weight: 200;
-	height: var(--std-input-size);
+	height: var(--input-size);
 	min-width: 4ch;
 	text-align: center;
 }
@@ -548,7 +550,7 @@ select:invalid {
 /* Text Area */
 textarea {
 	background-color: transparent;
-	border: var(--std-border-width) solid var(--pri-color);
+	border: var(--solid-border);
 	border-radius: var(--radius);
 	color: var(--pri-color);
 	cursor: pointer;
@@ -575,20 +577,21 @@ textarea:invalid {
 /* ----- CHARACTER SHEETS ----- */
 
 .sheet-card {
-	border: var(--std-border-width) dotted var(--pri-color);
+	border: var(--dotted-border);
 	display: block;
-	margin: var(--std-margin);
-	padding: var(--std-padding);
+	margin-bottom: var(--margin);
+	margin-top: var(--margin);
+	padding: var(--padding);
 }
 .sheet-details {
-	margin-bottom: var(--std-margin);
+	margin-bottom: var(--margin);
 }
 .sheet-card-title {
 	font-weight: bold;
 	font-size: var(--s110);
 }
 .sheet-card-item {
-	margin: var(--std-margin);
+	margin: var(--margin);
 }
 .sheet-card-table {
 	display: block;
@@ -598,7 +601,7 @@ textarea:invalid {
 	align-items: baseline;
 	display: flex;
 	justify-content: space-between;
-	margin: var(--std-margin);
+	margin: var(--margin);
 }
 .sheet-card-table-header {
 	font-weight: bold;

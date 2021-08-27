@@ -38,9 +38,9 @@
 		top: 0;
 	}
 	.slide-container {
-		bottom: var(--std-margin);
+		bottom: var(--margin);
 		display: flex;
-		right: var(--std-margin);
+		right: var(--margin);
 		position: fixed;
 		width: 75vw;
 	}

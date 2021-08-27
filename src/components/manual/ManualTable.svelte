@@ -57,7 +57,7 @@
 
 <style>
 	.rule-table {
-		margin: var(--std-margin);
+		margin: var(--margin);
 		overflow-x: scroll;
 		border: 1px solid;
 		display: flex;

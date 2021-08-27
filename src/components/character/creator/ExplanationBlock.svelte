@@ -10,6 +10,6 @@
 
 <style>
 	.explanation {
-		margin: var(--std-margin) 0;
+		margin: var(--margin) 0;
 	}
 </style>

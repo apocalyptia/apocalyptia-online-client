@@ -24,11 +24,11 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
-		margin: var(--std-margin) 0;
+		margin: var(--margin) 0;
 	}
 	.ability-titlebar {
 		display: flex;
 		justify-content: space-between;
-		padding: var(--std-padding);
+		padding: var(--padding);
 	}
 </style>

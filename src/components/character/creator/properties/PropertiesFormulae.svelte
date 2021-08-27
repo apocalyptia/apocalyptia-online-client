@@ -25,9 +25,9 @@
 
 <style>
 	.formulae-details {
-		margin: var(--std-margin) 0;
+		margin: var(--margin) 0;
 	}
 	li {
-		margin: var(--std-margin);
+		margin: var(--margin);
 	}
 </style>
