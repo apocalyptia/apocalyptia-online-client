@@ -4,6 +4,7 @@
 	</svg>
 </div>
 
+
 <style>
 	.spinner {
 		animation-iteration-count: infinite;

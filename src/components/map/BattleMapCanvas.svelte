@@ -26,6 +26,7 @@
 	-<Slider min=".1" max="2" step=".1" bind:value={$mapStore.magnification} func={() => ($mapStore = $mapStore.redraw())} />+
 </div>
 
+
 <style>
 	.canvas-frame {
 		border: 3px solid var(--pri-color);

@@ -20,6 +20,7 @@
 	}
 </script>
 
+
 <div class="description-step-page">
 	<fieldset>
 		<PageHeader chapter={'Description'} step={$characterStore.step} />
@@ -39,6 +40,7 @@
 		<ResetAndRandomButtonRow reset={() => resetDescription()} random={() => randomDescription('All')} />
 	</fieldset>
 </div>
+
 
 <style>
 	.description-container {

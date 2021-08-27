@@ -4,6 +4,7 @@
 	export let ability
 </script>
 
+
 <div class="ability-card">
 	{#if ability.options.length}
 		<OptionsSelector bind:ability />
@@ -21,6 +22,7 @@
 		</span>
 	</p>
 </div>
+
 
 <style>
 	hr {

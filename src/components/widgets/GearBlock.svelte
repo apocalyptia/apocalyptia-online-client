@@ -81,6 +81,7 @@
 	]
 </script>
 
+
 <div class="gear-block">
 	{#if item}
 		{#if mode != 'manual'}
@@ -129,6 +130,7 @@
 		</div>
 	{/if}
 </div>
+
 
 <style>
 	.item-name {

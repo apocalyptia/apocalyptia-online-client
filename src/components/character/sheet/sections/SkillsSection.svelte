@@ -4,6 +4,7 @@
 	export const mode = 'readonly'
 </script>
 
+
 <div class="sheet-card-body">
 	{#each Object.values($characterStore.traits) as trait}
 		<div class="sheet-card-block">
@@ -23,6 +24,7 @@
 		</div>
 	{/each}
 </div>
+
 
 <style>
 	.sheet-card-block {

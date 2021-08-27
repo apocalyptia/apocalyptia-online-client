@@ -5,6 +5,7 @@
 		ruleList = []
 </script>
 
+
 <div class="manual-page page-body">
 	{#if chapter === 'Manual' && ruleList.length}
 		{#each ruleList as c}
@@ -28,6 +29,7 @@
 		<p>No results.</p>
 	{/if}
 </div>
+
 
 <style>
 	p {

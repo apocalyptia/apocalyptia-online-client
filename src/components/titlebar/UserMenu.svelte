@@ -6,6 +6,7 @@
 	import { fade } from 'svelte/transition'
 </script>
 
+
 <div on:click={() => ($menuStore = $menuStore.toggle())}>
 	{#if $menuStore.open}
 		<nav class="user-menu" transition:fade>
@@ -15,6 +16,7 @@
 	{/if}
 	<ShadowBackground active={$menuStore.open} />
 </div>
+
 
 <style>
 	.user-menu {

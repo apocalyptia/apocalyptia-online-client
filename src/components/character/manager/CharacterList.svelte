@@ -7,6 +7,7 @@
 	onMount(() => $playerStore.read())
 </script>
 
+
 <div class="character-storage-list-window">
 	<div class="current-character">
 		Current: {$characterStore.description.name.value || 'none'}
@@ -19,6 +20,7 @@
 		</div>
 	{/if}
 </div>
+
 
 <style>
 	.character-storage-list-window {

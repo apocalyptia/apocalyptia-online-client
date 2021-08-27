@@ -11,6 +11,7 @@
 	}
 </script>
 
+
 <div class="gear-step-page">
 	<fieldset>
 		<PageHeader chapter={'Gear'} step={$characterStore.step} />
@@ -45,6 +46,7 @@
 		{/if}
 	</fieldset>
 </div>
+
 
 <style>
 	.gear-list-details {

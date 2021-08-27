@@ -11,6 +11,7 @@
 	})
 </script>
 
+
 <div class="page-body">
 	{#if $searchStore.term.length && $searchStore.results.length === 0}
 		<p>No search results found.</p>
@@ -24,6 +25,7 @@
 		{/each}
 	{/if}
 </div>
+
 
 <style>
 	.page-body {

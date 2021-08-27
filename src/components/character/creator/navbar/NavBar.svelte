@@ -4,11 +4,13 @@
 	import NavButtonPrevious from '/src/components/character/creator/navbar/NavButtonPrevious.svelte'
 </script>
 
+
 <div class="nav-bar">
 	<NavButtonPrevious />
 	<NavButtonHome />
 	<NavButtonNext />
 </div>
+
 
 <style>
 	.nav-bar {

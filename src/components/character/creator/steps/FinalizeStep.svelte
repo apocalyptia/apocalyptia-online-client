@@ -28,6 +28,7 @@
 	})
 </script>
 
+
 <div class="finalize-page">
 	<fieldset>
 		<PageHeader chapter={'Finalize'} step={$creationStore.step} />
@@ -37,6 +38,7 @@
 		<SaveAndDeleteButtonRow saveFunc={saveCharacter} deleteFunc={deleteCharacter} />
 	</fieldset>
 </div>
+
 
 <style>
 	.sheet-content {

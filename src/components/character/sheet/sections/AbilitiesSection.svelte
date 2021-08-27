@@ -4,6 +4,7 @@
 	export const mode = 'readonly'
 </script>
 
+
 <div class="card-table">
 	<div class="card-table-header">
 		<span class="l-col">Name</span>
@@ -22,6 +23,7 @@
 		</div>
 	{/each}
 </div>
+
 
 <style>
 	.s-col {

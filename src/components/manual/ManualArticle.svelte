@@ -11,6 +11,7 @@
 	export let rule
 </script>
 
+
 <div class="section-card">
 	<article class="rule-body">
 		<h1>{rule.name}</h1>

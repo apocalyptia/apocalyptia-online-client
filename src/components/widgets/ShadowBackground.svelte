@@ -8,6 +8,7 @@
 	}
 </script>
 
+
 <div class={active ? 'shadow' : 'invisible'} transition:fade on:click={toggleActive} />
 
 <style>

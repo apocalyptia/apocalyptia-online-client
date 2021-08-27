@@ -23,6 +23,7 @@
 	}
 </script>
 
+
 <div class="traits-step-page">
 	<fieldset>
 		<PageHeader chapter={'Traits'} step={$characterStore.step} />
@@ -47,6 +48,7 @@
 		<ResetAndRandomButtonRow reset={() => resetTraits()} random={() => randomTraits()} />
 	</fieldset>
 </div>
+
 
 <style>
 	.trait-selection {

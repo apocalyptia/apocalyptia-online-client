@@ -12,6 +12,7 @@
 	}
 </script>
 
+
 <div class="column">
 	{#each side as location}
 		<div class="{location}-label">
@@ -34,6 +35,7 @@
 		</div>
 	{/each}
 </div>
+
 
 <style>
 	.column {

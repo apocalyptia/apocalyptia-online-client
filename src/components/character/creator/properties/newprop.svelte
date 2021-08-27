@@ -4,6 +4,7 @@
 	const propertiesList = Object.keys($characterStore.properties).filter((p) => p != 'health')
 </script>
 
+
 <div class="section-card properties-list">
 	{#each propertiesList as prop}
 		<p class="prop-item">
@@ -12,6 +13,7 @@
 		</p>
 	{/each}
 </div>
+
 
 <style>
 	.properties-list {

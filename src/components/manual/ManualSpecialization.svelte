@@ -2,6 +2,7 @@
 	export let rule
 </script>
 
+
 <div class="specialty-section">
 	{#each Object.values(rule.specialties) as specialty}
 		<div class="sub-name">
@@ -14,6 +15,7 @@
 		{/each}
 	{/each}
 </div>
+
 
 <style>
 	.sub-name,

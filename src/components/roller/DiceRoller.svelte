@@ -15,11 +15,13 @@
 	}
 </script>
 
+
 <div class="modifier">Modifier: <input type="number" class="mod" bind:value={mod} /></div>
 <div class="result">Result: {total}</div>
 <div class="button">
 	<DiceButton func={rollResult} />
 </div>
+
 
 <style>
 	.modifier {

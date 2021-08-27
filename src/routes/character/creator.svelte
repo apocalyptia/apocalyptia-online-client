@@ -26,6 +26,7 @@
 	})
 </script>
 
+
 <div id="character-creator" class="page-body">
 	<svelte:component this={creationSteps[$creationStore.step]} />
 </div>

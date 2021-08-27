@@ -2,11 +2,13 @@
 	export let rule
 </script>
 
+
 <div class="explanation">
 	{#each rule as line}
 		<p>{line}</p>
 	{/each}
 </div>
+
 
 <style>
 	.explanation {

@@ -14,6 +14,7 @@
 	onMount(() => adjustUIColor($characterStore))
 </script>
 
+
 <div class="body-parts-section">
 	<div class="left-column">
 		<BodyLabelColumn side={leftColumn} {mode} />
@@ -25,6 +26,7 @@
 		<BodyLabelColumn side={rightColumn} {mode} />
 	</div>
 </div>
+
 
 <style>
 	.body-parts-section {

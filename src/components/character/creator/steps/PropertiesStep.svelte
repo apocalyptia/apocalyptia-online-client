@@ -14,6 +14,7 @@
 	})
 </script>
 
+
 <div class="properties-step-page">
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />

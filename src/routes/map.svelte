@@ -58,6 +58,7 @@
 	<canvas bind:this={canvas} />
 </div>
 
+
 <style>
 	.page-body {
 		padding: 0;

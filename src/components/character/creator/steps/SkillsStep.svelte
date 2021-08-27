@@ -37,6 +37,7 @@
 	})
 </script>
 
+
 <div class="skills-step-page">
 	<fieldset>
 		<PageHeader chapter={'Skills'} step={$characterStore.step} />
@@ -73,6 +74,7 @@
 		<ResetAndRandomButtonRow reset={() => resetSkills()} random={() => randomSkills()} />
 	</fieldset>
 </div>
+
 
 <style>
 	.item-block {

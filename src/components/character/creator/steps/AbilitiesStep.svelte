@@ -32,6 +32,7 @@
 	})
 </script>
 
+
 <div class="abilities-step-page">
 	<fieldset>
 		<PageHeader chapter={'Abilities'} step={$characterStore.step} />

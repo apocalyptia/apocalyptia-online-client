@@ -46,6 +46,7 @@
 	export let mode
 </script>
 
+
 <div class="character-sheet">
 	{#each sheetSectionsList as sheetSection}
 		<section class="{sheetSection.name.toLowerCase()}-section">
@@ -56,6 +57,7 @@
 		</section>
 	{/each}
 </div>
+
 
 <style>
 	section {

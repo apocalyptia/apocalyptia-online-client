@@ -2,6 +2,7 @@
 	export let rule
 </script>
 
+
 <div class="description-section">
 	{#each rule.description as description}
 		<p>{description}</p>
@@ -11,6 +12,7 @@
 		<p><span class="bold">XP:</span> {rule.experience}</p>
 	{/if}
 </div>
+
 
 <style>
 	p {

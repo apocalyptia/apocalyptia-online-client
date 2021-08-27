@@ -22,6 +22,7 @@
 	}
 </script>
 
+
 <div class="stored-character">
 	<button class="character-name" on:click={selectCharacter}>
 		{index}: {character.description.name.value}
@@ -30,6 +31,7 @@
 		<div class="btn-icon">X</div>
 	</button>
 </div>
+
 
 <style>
 	.stored-character {

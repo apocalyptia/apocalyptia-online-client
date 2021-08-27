@@ -4,6 +4,7 @@
 	export let mode = 'readonly'
 </script>
 
+
 <div class="sheet-card-body">
 	<div class="sheet-card-full-block">
 		<div class="sheet-card-item">
@@ -70,6 +71,7 @@
 		</div>
 	</div>
 </div>
+
 
 <style>
 	.sheet-card-item {

@@ -2,6 +2,7 @@
 	export let title = ''
 </script>
 
+
 <div class="center-card">
 	{#if title}
 		<div class="titlebar">
@@ -17,6 +18,7 @@
 		<slot />
 	</div>
 </div>
+
 
 <style>
 	.center-card {

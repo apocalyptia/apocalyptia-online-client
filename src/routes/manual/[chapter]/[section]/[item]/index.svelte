@@ -18,6 +18,7 @@
 	export let chapter, section, item
 </script>
 
+
 <div class="page-body">
 	<ManualArticle rule={Rules[chapter][section][item]} />
 </div>

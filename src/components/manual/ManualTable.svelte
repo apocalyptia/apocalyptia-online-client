@@ -24,6 +24,7 @@
 	})
 </script>
 
+
 <div class="rule-table">
 	<table>
 		<tr class="table-header">
@@ -54,6 +55,7 @@
 		{/each}
 	</table>
 </div>
+
 
 <style>
 	.rule-table {

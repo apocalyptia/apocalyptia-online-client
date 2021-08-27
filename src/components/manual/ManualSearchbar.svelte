@@ -15,12 +15,14 @@
 	onMount(() => clearSearch())
 </script>
 
+
 <div class="manual-header-section">
 	<div class="search-bar-container">
 		<input type="text" class="search-bar" placeholder="Search" bind:value={$searchStore.term} on:keyup={runSearch} />
 		<button class="clear-button" on:click={clearSearch}> X </button>
 	</div>
 </div>
+
 
 <style>
 	.manual-header-section {

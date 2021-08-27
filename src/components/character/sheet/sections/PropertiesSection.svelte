@@ -8,6 +8,7 @@
 	const columns = [propertiesList.slice(0, propertiesList.length / 2), propertiesList.slice(propertiesList.length / 2, propertiesList.length)]
 </script>
 
+
 <div class="sheet-card-body">
 	{#each columns as column}
 		<div class="prop-column">
@@ -29,6 +30,7 @@
 		</div>
 	{/each}
 </div>
+
 
 <style>
 	.sheet-card-body {

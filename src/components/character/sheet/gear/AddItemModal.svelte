@@ -43,6 +43,7 @@
 	</div>
 </div>
 
+
 <style>
 	.modal-background {
 		background-color: rgba(0, 0, 0, 0.7);

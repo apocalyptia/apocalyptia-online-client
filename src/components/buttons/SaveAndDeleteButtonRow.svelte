@@ -2,6 +2,7 @@
 	export let saveFunc, deleteFunc
 </script>
 
+
 <div class="btn-row">
 	<a href="/">
 		<button class="small-cntr-btn" on:click={deleteFunc}> Delete </button>
@@ -10,6 +11,7 @@
 		<button class="small-cntr-btn" on:click={saveFunc}> Save </button>
 	</a>
 </div>
+
 
 <style>
 	button {

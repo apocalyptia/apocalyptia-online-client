@@ -8,6 +8,7 @@
 	const rightColumn = propertiesList.slice(propertiesList.length / 2, propertiesList.length)
 </script>
 
+
 <div class="properties-list">
 	<div class="prop-block">
 		{#each leftColumn as leftProp}
@@ -29,6 +30,7 @@
 		{/each}
 	</div>
 </div>
+
 
 <style>
 	.properties-list {

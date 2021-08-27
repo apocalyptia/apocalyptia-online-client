@@ -14,6 +14,7 @@
 	step = parseFloat(step)
 </script>
 
+
 <div class="range-block">
 	<input type="range" {name} {min} {max} {step} bind:value on:input={func ? func() : ''} />
 	{#if indicator === 'true'}
@@ -34,6 +35,7 @@
 		</div>
 	{/if}
 </div>
+
 
 <style>
 	.range-block {

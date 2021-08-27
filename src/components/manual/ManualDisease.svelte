@@ -12,6 +12,7 @@
 	})
 </script>
 
+
 <div class="disease-section">
 	{#each diseaseProps as prop}
 		{#if prop === 'symptoms'}
@@ -26,6 +27,7 @@
 		{/if}
 	{/each}
 </div>
+
 
 <style>
 	p {
