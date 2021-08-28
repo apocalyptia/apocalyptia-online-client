@@ -29,6 +29,7 @@
 
 <style>
 	.page-body {
+		position: absolute;
 		top: calc(var(--square) * 2);
 	}
 </style>

@@ -14,7 +14,7 @@
 
 <style>
 	.nav-bar {
-		bottom: 2px;
+		bottom: 0;
 		display: flex;
 		height: var(--square);
 		position: absolute;

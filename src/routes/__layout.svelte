@@ -31,7 +31,13 @@
 
 <style>
 	header {
+		display: flex;
 		height: var(--square);
+		position: fixed;
+		top: 0;
+		transition: top 0.3s linear;
+		width: 100vw;
+		z-index: 9;
 	}
 	.screen {
 		background: radial-gradient(#222 40%, #191919 70%, #111 85%, #000 100%);
