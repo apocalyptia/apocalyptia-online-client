@@ -1,7 +1,6 @@
 <script>
 	import AbilitiesStep from '/src/components/character/creator/steps/AbilitiesStep.svelte'
 	import DescriptionStep from '/src/components/character/creator/steps/DescriptionStep.svelte'
-	import FinalizeStep from '/src/components/character/creator/steps/FinalizeStep.svelte'
 	import GearStep from '/src/components/character/creator/steps/GearStep.svelte'
 	import PropertiesStep from '/src/components/character/creator/steps/PropertiesStep.svelte'
 	import SkillsStep from '/src/components/character/creator/steps/SkillsStep.svelte'
@@ -10,25 +9,24 @@
 	import creationStore from '/src/stores/creationStore.js'
 	import { onMount } from 'svelte'
 
-	const creationSteps = [
+	const CreationProcess = [
 		TraitsStep,
 		SkillsStep,
 		PropertiesStep,
 		AbilitiesStep,
 		GearStep,
 		DescriptionStep,
-		FinalizeStep
 	]
 
 	onMount(() => {
 		$creationStore.step = 0
-		$creationStore.numberOfSteps = creationSteps.length - 1
+		$creationStore.numberOfSteps = CreationProcess.length - 1
 	})
 </script>
 
 
 <div id="character-creator" class="page-body">
-	<svelte:component this={creationSteps[$creationStore.step]} />
+	<svelte:component this={CreationProcess[$creationStore.step]} />
 </div>
 <NavBar />
 

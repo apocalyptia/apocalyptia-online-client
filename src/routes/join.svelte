@@ -21,7 +21,7 @@
 
 	async function playerRegistration() {
 		if (match) {
-			await $playerStore.auth.join(email, password).then(() => {
+			await $playerStore.authenticateUser.join(email, password).then(() => {
 				$playerStore.loggedIn = true
 				goto('/')
 			})

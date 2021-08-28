@@ -6,7 +6,7 @@
 
 	onMount(() => {
 		if ($playerStore.selected !== null) {
-			$playerStore.default()
+			$playerStore.initializePlayer()
 			$characterStore = $playerStore.selected
 		}
 	})

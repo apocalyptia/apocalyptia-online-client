@@ -18,8 +18,12 @@ const Grapple = new Maneuver({
 		`When the Defender reduces the Grapple step to 0 they escape.`,
 	],
 	mode: `Offensive`,
+	subrules: [
+		Grab,
+		Hostage,
+		Tackle,
+		Throw
+	]
 })
-
-Grapple.subrules = [Grab, Hostage, Tackle, Throw]
 
 export default Grapple

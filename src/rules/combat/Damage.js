@@ -12,7 +12,12 @@ const Damage = new Combat({
 		`Successful Attacks do Damage = [(Attack total - target's Defense) + Weapon Damage] - Armor Absorption.`,
 		`If Damage from one Attack before Armor Absorption is subtracted is greater than your Constitution, you fall Prone.`,
 	],
+	subrules: [
+		Absorption,
+		FireDamage,
+		Pain,
+		Recovery
+	]
 })
-Damage.subrules = [Absorption, FireDamage, Pain, Recovery]
 
 export default Damage

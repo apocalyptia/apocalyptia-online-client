@@ -8,7 +8,7 @@ export default class Maneuver extends Rule {
 		type = `Maneuver`,
 		url
 	}) {
-		url = `/maneuver/${name}`
+		url = `/maneuvers/${name}`
 		super({
 			description,
 			name,

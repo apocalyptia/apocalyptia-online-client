@@ -9,6 +9,7 @@
 	}
 </script>
 
+
 <script>
 	import ManualSearchbar from '/src/components/manual/ManualSearchbar.svelte'
 	import ManualPage from '/src/components/manual/ManualPage.svelte'
@@ -16,6 +17,7 @@
 
 	export let chapter
 </script>
+
 
 <ManualSearchbar />
 <ManualPage list={Rules[chapter]} />

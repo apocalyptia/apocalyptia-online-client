@@ -8,7 +8,7 @@
 	let password = ``
 
 	async function playerLogin() {
-		await $playerStore.login(email, password)
+		await $playerStore.userLogin(email, password)
 	}
 </script>
 

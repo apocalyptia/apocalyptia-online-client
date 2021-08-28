@@ -7,7 +7,7 @@ import Movement from './combat/Movement.js'
 import Rounds from './combat/Rounds.js'
 import Trauma from './combat/Trauma.js'
 
-const Combat = {
+export default {
 	rounds: Rounds,
 	actions: Actions,
 	communication: Communication,
@@ -18,5 +18,3 @@ const Combat = {
 	trauma: Trauma,
 	// vehicles: Vehicles
 }
-
-export default Combat

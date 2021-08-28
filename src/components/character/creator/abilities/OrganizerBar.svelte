@@ -19,7 +19,7 @@
 		<div class="organizer-row">
 			XP: <select bind:value={$abilitiesStore.cost} on:change={filterList}>
 				<option value={0}>All</option>
-				{#each $abilitiesStore.xpCosts as xpCost}
+				{#each [...$abilitiesStore.xpCosts] as xpCost}
 					<option value={xpCost}>{xpCost}</option>
 				{/each}
 			</select>

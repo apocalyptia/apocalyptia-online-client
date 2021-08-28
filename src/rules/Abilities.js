@@ -29,7 +29,7 @@ import VehicleOperation from './abilities/VehicleOperation.js'
 import WeaponTraining from './abilities/WeaponTraining.js'
 import Wrestling from './abilities/Wrestling.js'
 
-const Abilities = {
+export default {
 	ambidextrous: Ambidextrous,
 	assassin: Assassin,
 	charge: Charge,
@@ -61,5 +61,3 @@ const Abilities = {
 	weapontraining: WeaponTraining,
 	wrestling: Wrestling,
 }
-
-export default Abilities

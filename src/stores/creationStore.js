@@ -1,20 +1,6 @@
+import CreationStore from '/src/classes/stores/CreationStore.js'
 import { writable } from 'svelte/store'
 
-const creationStore = {
-	numberOfSteps: 7,
-	step: 0,
-	checkMax: function () {
-		if (this.step === this.numberOfSteps + 1) {
-			return true
-		}
-		return false
-	},
-	checkMin: function () {
-		if (this.step < 0) {
-			return true
-		}
-		return false
-	},
-}
+const creationStore = new CreationStore()
 
 export default writable(creationStore)

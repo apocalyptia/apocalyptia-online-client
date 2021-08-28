@@ -5,7 +5,7 @@ import Explode from './core/Explode.js'
 import Fail from './core/Fail.js'
 import Success from './core/Success.js'
 
-const Core = {
+export default {
 	dice: Dice,
 	difficulty: Difficulty,
 	success: Success,
@@ -13,5 +13,3 @@ const Core = {
 	explode: Explode,
 	botch: Botch,
 }
-
-export default Core

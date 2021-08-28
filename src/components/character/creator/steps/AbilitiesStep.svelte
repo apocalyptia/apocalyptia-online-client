@@ -1,6 +1,6 @@
 <script>
 	import AbilitiesList from '/src/components/character/creator/abilities/AbilitiesList.svelte'
-	import Creation from '/src/rules/Creation.js'
+	import CreationProcess from '/src/rules/CreationProcess.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import OrganizerBar from '/src/components/character/creator/abilities/OrganizerBar.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
@@ -36,7 +36,7 @@
 <div class="abilities-step-page">
 	<fieldset>
 		<PageHeader chapter={'Abilities'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.abilities.description} />
+		<ExplanationBlock rule={CreationProcess.abilities.description} />
 		<PointsRemaining points={$characterStore.properties.experience.current} />
 		<OrganizerBar />
 		<AbilitiesList />

@@ -15,7 +15,7 @@ import Storage from './gear/Storage.js'
 import Tools from './gear/Tools.js'
 import Wearables from './gear/Wearables.js'
 
-const Gear = {
+export default {
 	accessories: Accessories,
 	ammo: Ammo,
 	armor: Armor,
@@ -33,5 +33,3 @@ const Gear = {
 	tools: Tools,
 	wearables: Wearables,
 }
-
-export default Gear

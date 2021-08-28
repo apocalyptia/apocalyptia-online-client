@@ -1,17 +1,19 @@
 import Rule from '/src/classes/Rule.js'
 
-export default class Creation extends Rule {
+export default class CreationStep extends Rule {
 	constructor({
 		description,
 		name,
 		step,
-		type = `Creation`,
+		subrules,
+		type = `CreationStep`,
 		url
 	}) {
 		url = `/creation/${name}`
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

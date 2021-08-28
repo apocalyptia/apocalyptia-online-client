@@ -11,6 +11,7 @@
 	}
 </script>
 
+
 <script>
 	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
 	import Rules from '/src/rules/Rules.js'

@@ -18,7 +18,7 @@ import Unconscious from './status/Unconscious.js'
 import Unstable from './status/Unstable.js'
 import Visibility from './status/Visibility.js'
 
-const Status = {
+export default {
 	bleeding: Bleeding,
 	blind: Blind,
 	concealed: Concealed,
@@ -39,5 +39,3 @@ const Status = {
 	unstable: Unstable,
 	visibility: Visibility,
 }
-
-export default Status

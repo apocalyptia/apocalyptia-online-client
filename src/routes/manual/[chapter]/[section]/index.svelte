@@ -10,6 +10,7 @@
 	}
 </script>
 
+
 <script>
 	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
 	import ManualPage from '/src/components/manual/ManualPage.svelte'
@@ -18,6 +19,7 @@
 
 	export let chapter, section
 </script>
+
 
 {#if chapter === 'gear'}
 	<ManualSearchbar />

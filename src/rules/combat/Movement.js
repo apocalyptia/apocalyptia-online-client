@@ -15,7 +15,9 @@ const Movement = new Combat({
 		` 5) Stand up = 3 Speed.`,
 		` 6) Drop Prone = 1 Speed.`,
 	],
+	subrules: [
+		Chase
+	]
 })
-Movement.subrules = [Chase]
 
 export default Movement

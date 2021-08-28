@@ -3,11 +3,9 @@ import Falling from './hazards/Falling.js'
 import FriendlyFire from './hazards/FriendlyFire.js'
 import Radiation from './hazards/Radiation.js'
 
-const Hazards = {
+export default {
 	burning: Burning,
 	falling: Falling,
 	friendlyfire: FriendlyFire,
 	radiation: Radiation,
 }
-
-export default Hazards

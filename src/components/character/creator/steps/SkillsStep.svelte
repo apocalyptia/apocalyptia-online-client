@@ -1,5 +1,5 @@
 <script>
-	import Creation from '/src/rules/Creation.js'
+	import CreationProcess from '/src/rules/CreationProcess.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PointsRemaining from '/src/components/character/creator/PointsRemaining.svelte'
@@ -41,7 +41,7 @@
 <div class="skills-step-page">
 	<fieldset>
 		<PageHeader chapter={'Skills'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.skills.description} />
+		<ExplanationBlock rule={CreationProcess.skills.description} />
 		<PointsRemaining points={$characterStore.skillsRemaining} />
 		{#each skillGroups as group}
 			<div class="item-block">

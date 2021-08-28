@@ -1,18 +1,18 @@
 <script>
-	import Character from '/src/classes/Character.js'
+	import CharacterStore from '/src/classes/stores/CharacterStore.js'
 	import CenterCard from '/src/components/widgets/CenterCard.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 
 	function newCharacter() {
-		$characterStore = new Character()
+		$characterStore = new CharacterStore()
 	}
 
 	function randomCharacter() {
 		$characterStore = new Character()
 		$characterStore.randomCharacter()
 		$characterStore.finalizeCharacter()
-		$playerStore.save($characterStore)
+		$playerStore.saveCharacter($characterStore)
 	}
 </script>
 

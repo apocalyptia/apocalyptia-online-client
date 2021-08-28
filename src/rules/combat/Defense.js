@@ -11,7 +11,10 @@ const Defense = new Combat({
 		`If you are targeted by an Attack, you may choose which type of valid Active Defense roll you would like to make in response (Block or Dodge).`,
 		`If you do not use an Action for active Defense, then you must chose which type of valid Reflexive Defense you will use (Deflection or Evasion).`,
 	],
+	subrules: [
+		ActiveDefense,
+		ReflexiveDefense
+	]
 })
-Defense.subrules = [ActiveDefense, ReflexiveDefense]
 
 export default Defense

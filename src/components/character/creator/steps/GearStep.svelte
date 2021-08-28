@@ -1,5 +1,5 @@
 <script>
-	import Creation from '/src/rules/Creation.js'
+	import CreationProcess from '/src/rules/CreationProcess.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
@@ -15,7 +15,7 @@
 <div class="gear-step-page">
 	<fieldset>
 		<PageHeader chapter={'Gear'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.gear.description} />
+		<ExplanationBlock rule={CreationProcess.gear.description} />
 		{#if $characterStore.proceed}
 			<div class="section-card">
 				{#each Object.values($characterStore.gear) as category (category.name)}

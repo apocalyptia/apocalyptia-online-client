@@ -1,6 +1,6 @@
-import Creation from '/src/classes/Creation.js'
+import CreationStep from '/src/classes/CreationStep.js'
 
-const Gear = new Creation({
+const Gear = new CreationStep({
 	name: `Gear`,
 	description: [
 		`You start with some random Gear:`,
@@ -12,7 +12,7 @@ const Gear = new Creation({
 		`1 Food and 1 Water`
 	],
 	step: 4,
-	type: `Creation`
+	type: `CreationStep`
 })
 
 export default Gear

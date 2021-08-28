@@ -3,7 +3,7 @@
 
 	function backupCharacter() {
 		console.log('backup')
-		$playerStore.backup()
+		$playerStore.backupCharacter()
 	}
 </script>
 

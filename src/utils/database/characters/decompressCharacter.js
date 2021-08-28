@@ -1,4 +1,4 @@
-import Character from '/src/classes/Character.js'
+import CharacterStore from '/src/classes/stores/CharacterStore.js'
 import Abilities from '/src/rules/Abilities.js'
 import Melee from '/src/rules/gear/Melee.js'
 import Projectile from '/src/rules/gear/Projectile.js'
@@ -59,7 +59,7 @@ function decompressionMapping(category, type) {
 function decompressCharacter(c) {
 	c = JSON.parse(c)
 
-	let char = new Character()
+	let char = new CharacterStore()
 
 	char.meta.id = c.Mi
 	char.meta.user = c.Mu

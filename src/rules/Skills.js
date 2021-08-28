@@ -15,7 +15,7 @@ import Stealth from './skills/Stealth.js'
 import Survival from './skills/Survival.js'
 import Tame from './skills/Tame.js'
 
-const Skills = {
+export default {
 	acrobatics: Acrobatics,
 	athletics: Athletics,
 	build: Build,
@@ -33,5 +33,3 @@ const Skills = {
 	survival: Survival,
 	tame: Tame,
 }
-
-export default Skills

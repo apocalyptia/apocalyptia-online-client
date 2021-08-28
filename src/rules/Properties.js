@@ -10,7 +10,7 @@ import Luck from './properties/Luck.js'
 import Psyche from './properties/Psyche.js'
 import Speed from './properties/Speed.js'
 
-const Properties = {
+export default {
 	deflection: Deflection,
 	discipline: Discipline,
 	endurance: Endurance,
@@ -23,5 +23,3 @@ const Properties = {
 	psyche: Psyche,
 	speed: Speed,
 }
-
-export default Properties

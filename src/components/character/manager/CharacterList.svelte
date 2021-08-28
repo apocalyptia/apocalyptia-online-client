@@ -4,7 +4,7 @@
 	import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 
-	onMount(() => $playerStore.read())
+	onMount(() => $playerStore.readCharacter())
 </script>
 
 

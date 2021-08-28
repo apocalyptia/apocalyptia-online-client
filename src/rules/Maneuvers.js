@@ -23,7 +23,7 @@ import Throw from './maneuvers/Throw.js'
 import Torture from './maneuvers/Torture.js'
 import Trip from './maneuvers/Trip.js'
 
-const Maneuvers = {
+export default {
 	aim: Aim,
 	calledshot: CalledShot,
 	disarm: Disarm,
@@ -49,5 +49,3 @@ const Maneuvers = {
 	torture: Torture,
 	trip: Trip,
 }
-
-export default Maneuvers

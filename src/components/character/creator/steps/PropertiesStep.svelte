@@ -1,5 +1,5 @@
 <script>
-	import Creation from '/src/rules/Creation.js'
+	import CreationProcess from '/src/rules/CreationProcess.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import HealthProperty from '/src/components/character/creator/properties/HealthProperty.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
@@ -18,7 +18,7 @@
 <div class="properties-step-page">
 	<fieldset>
 		<PageHeader chapter={'Properties'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.properties.description} />
+		<ExplanationBlock rule={CreationProcess.properties.description} />
 		<PropertiesBlock />
 		<PropertiesFormulae />
 		<HealthProperty />

@@ -4,5 +4,6 @@
 	import Rules from '/src/rules/Rules.js'
 </script>
 
+
 <ManualSearchbar />
 <ManualPage list={Rules} />

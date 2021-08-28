@@ -18,13 +18,13 @@
 
 	function saveCharacter() {
 		$characterStore.finalizeCharacter()
-		$playerStore.save($characterStore)
+		$playerStore.saveCharacter($characterStore)
 		goto(`/character/sheet`)
 	}
 
 	function deleteCharacter() {
 		goto('/')
-		$playerStore.delete($characterStore)
+		$playerStore.deleteCharacter($characterStore)
 		$characterStore = $characterStore
 	}
 </script>

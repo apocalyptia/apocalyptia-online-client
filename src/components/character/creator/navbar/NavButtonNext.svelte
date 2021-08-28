@@ -15,7 +15,7 @@
 			$creationStore.step++
 			if ($creationStore.checkMax()) {
 				$playerStore.saveCharacter($characterStore)
-				goto(`/`)
+				goto(`/character/sheet`)
 			}
 		}
 	}

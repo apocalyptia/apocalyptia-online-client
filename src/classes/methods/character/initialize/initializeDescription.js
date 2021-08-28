@@ -1,8 +1,8 @@
-import Creation from '/src/rules/Creation.js'
+import CreationProcess from '/src/rules/CreationProcess.js'
 
 export default (username = 'test') => {
 	const newDescription = {}
-	for (const description of Creation.description.list) {
+	for (const description of CreationProcess.description.list) {
 		const descriptionKey = description.name.toLowerCase()
 		newDescription[descriptionKey] = description
 	}

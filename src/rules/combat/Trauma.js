@@ -12,7 +12,10 @@ const Trauma = new Combat({
 		`Major Trauma can occur 1d6 or more points at a time.`,
 		`Players and Narrators should talk together to determine how traumatic particular events may be to the Character.`,
 	],
+	subrules: [
+		Pain,
+		Recovery
+	]
 })
-Trauma.subrules = [Pain, Recovery]
 
 export default Trauma

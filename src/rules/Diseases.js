@@ -5,7 +5,7 @@ import MRSA from './diseases/MRSA.js'
 import Rabies from './diseases/Rabies.js'
 import Smallpox from './diseases/Smallpox.js'
 
-const Diseases = {
+export default {
 	cholera: Cholera,
 	hemorrhagicfever: HemorrhagicFever,
 	influenza: Influenza,
@@ -13,5 +13,3 @@ const Diseases = {
 	rabies: Rabies,
 	smallpox: Smallpox,
 }
-
-export default Diseases

@@ -1,7 +1,7 @@
 import Abilities from './Abilities.js'
 import Combat from './Combat.js'
 import Core from './Core.js'
-import Creation from './Creation.js'
+import CreationProcess from './CreationProcess.js'
 import Diseases from './Diseases.js'
 import Gear from './Gear.js'
 import Hazards from './Hazards.js'
@@ -12,11 +12,11 @@ import Skills from './Skills.js'
 import Status from './Status.js'
 import Traits from './Traits.js'
 
-const Rules = {
+export default {
 	abilities: Abilities,
 	combat: Combat,
 	core: Core,
-	creation: Creation,
+	creation: CreationProcess,
 	diseases: Diseases,
 	gear: Gear,
 	hazards: Hazards,
@@ -27,5 +27,3 @@ const Rules = {
 	status: Status,
 	traits: Traits,
 }
-
-export default Rules

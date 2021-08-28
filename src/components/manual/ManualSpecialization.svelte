@@ -8,11 +8,13 @@
 		<div class="sub-name">
 			{specialty.name}
 		</div>
-		{#each specialty.description as description}
-			<p class="specialty-description">
-				{description}
-			</p>
-		{/each}
+		{#if specialty.description}
+			{#each specialty.description as description}
+				<p class="specialty-description">
+					{description}
+				</p>
+			{/each}
+		{/if}
 	{/each}
 </div>
 

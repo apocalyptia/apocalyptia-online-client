@@ -1,5 +1,5 @@
 <script>
-	import Creation from '/src/rules/Creation.js'
+	import CreationProcess from '/src/rules/CreationProcess.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PointsRemaining from '/src/components/character/creator/PointsRemaining.svelte'
@@ -27,7 +27,7 @@
 <div class="traits-step-page">
 	<fieldset>
 		<PageHeader chapter={'Traits'} step={$characterStore.step} />
-		<ExplanationBlock rule={Creation.traits.description} />
+		<ExplanationBlock rule={CreationProcess.traits.description} />
 		<PointsRemaining points={$characterStore.traitsRemaining} />
 		<div class="section-card">
 			{#each Object.values($characterStore.traits) as trait}
