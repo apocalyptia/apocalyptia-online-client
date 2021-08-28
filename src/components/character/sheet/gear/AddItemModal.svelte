@@ -64,7 +64,6 @@
 		overflow: scroll;
 		padding: var(--s200);
 		position: fixed;
-		scrollbar-width: none;
 		top: 50vh;
 		transform: translate(-50%, -50%);
 		width: 80vw;
@@ -75,8 +74,5 @@
 	}
 	.item-selector {
 		width: 60%;
-	}
-	::-webkit-scrollbar {
-		display: none;
 	}
 </style>
