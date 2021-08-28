@@ -6,6 +6,7 @@ export default class Skill extends Rule {
 		difficulty = null,
 		name,
 		parent = ``,
+		subrules,
 		specialties = {},
 		type = `Skill`,
 		url
@@ -14,6 +15,7 @@ export default class Skill extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

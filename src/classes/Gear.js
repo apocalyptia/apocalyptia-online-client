@@ -8,6 +8,7 @@ export default class Gear extends Rule {
 		name,
 		quantity = 0,
 		size = 0,
+		subrules,
 		type = `Gear`,
 		url
 	}) {
@@ -16,6 +17,7 @@ export default class Gear extends Rule {
 			description,
 			id,
 			name,
+			subrules,
 			type,
 			url
 		})

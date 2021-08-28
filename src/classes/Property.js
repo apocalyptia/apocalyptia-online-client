@@ -5,6 +5,7 @@ export default class Property extends Rule {
 		description,
 		formula = [],
 		name,
+		subrules,
 		type = `Property`,
 		url
 	}) {
@@ -12,6 +13,7 @@ export default class Property extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

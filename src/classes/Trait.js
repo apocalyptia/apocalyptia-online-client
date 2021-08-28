@@ -5,6 +5,7 @@ export default class Trait extends Rule {
 		description,
 		name,
 		skills = [],
+		subrules,
 		type = `Trait`,
 		url
 	}) {
@@ -12,6 +13,7 @@ export default class Trait extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

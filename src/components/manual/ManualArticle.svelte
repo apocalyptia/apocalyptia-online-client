@@ -6,7 +6,6 @@
 	import ManualDescription from '/src/components/manual/ManualDescription.svelte'
 	import ManualSpecialization from '/src/components/manual/ManualSpecialization.svelte'
 	import ManualTable from '/src/components/manual/ManualTable.svelte'
-	import ManualSubRule from '/src/components/manual/ManualSubRule.svelte'
 
 	export let rule
 </script>
@@ -21,14 +20,9 @@
 			</div>
 		{:else if rule instanceof Disease}
 			<ManualDisease {rule} />
-		{:else if rule.description !== undefined}
+		{:else if rule.description}
 			<ManualDescription {rule} />
-			{#if rule.subrules}
-				{#each rule.subrules as subrule}
-					<ManualSubRule {subrule} />
-				{/each}
-			{/if}
-			{#if rule.table !== undefined}
+			{#if rule.table}
 				<ManualTable {rule} />
 			{/if}
 			{#if rule.specialties}

@@ -4,6 +4,7 @@ export default class Hazard extends Rule {
 	constructor({
 		description,
 		name,
+		subrules,
 		type = `Hazard`,
 		url
 	}) {
@@ -11,6 +12,7 @@ export default class Hazard extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

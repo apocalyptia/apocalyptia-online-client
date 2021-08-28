@@ -4,6 +4,7 @@ export default class Core extends Rule {
 	constructor({
 		description,
 		name,
+		subrules,
 		type = `Core`,
 		url
 	}) {
@@ -11,6 +12,7 @@ export default class Core extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

@@ -10,6 +10,7 @@ export default class Ability extends Rule {
 		notes = ``,
 		options = [],
 		selectedOption = 0,
+		subrules,
 		type = `Ability`,
 		url
 	}) {
@@ -17,6 +18,7 @@ export default class Ability extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

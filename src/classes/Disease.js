@@ -9,6 +9,7 @@ export default class Disease extends Rule {
 		id,
 		name,
 		onset,
+		subrules,
 		symptoms = [],
 		transmission,
 		treatment = [],
@@ -21,6 +22,7 @@ export default class Disease extends Rule {
 			description,
 			id,
 			name,
+			subrules,
 			type,
 			url
 		})

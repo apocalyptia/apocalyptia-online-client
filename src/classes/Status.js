@@ -4,6 +4,7 @@ export default class Status extends Rule {
 	constructor({
 		description,
 		name,
+		subrules,
 		type = `Status`,
 		url
 	}) {
@@ -11,6 +12,7 @@ export default class Status extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

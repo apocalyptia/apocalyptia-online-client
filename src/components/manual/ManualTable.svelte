@@ -29,11 +29,7 @@
 	<table>
 		<tr class="table-header">
 			{#each rule.table.headers as header, h}
-				<td
-					style={`
-							width: ${columnWidths[h]}ch;
-						`}
-				>
+				<td style={`width: ${columnWidths[h]}ch;`}>
 					{header}
 				</td>
 			{/each}
@@ -41,13 +37,7 @@
 		{#each rule.table.contents as row, r}
 			<tr>
 				{#each Object.values(row) as col, c}
-					<td
-						class={col.toString().length === 1 ? 'center' : ''}
-						style={`
-								width: ${columnWidths[c]}ch;
-							`}
-					>
-						<!-- {columnWidths[i]} -->
+					<td class={col.toString().length === 1 ? 'center' : ''} style={`width: ${columnWidths[c]}ch;`}>
 						{col}
 					</td>
 				{/each}

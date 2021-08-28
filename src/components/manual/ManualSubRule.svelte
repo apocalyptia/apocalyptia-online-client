@@ -2,14 +2,16 @@
 	export let subrule
 </script>
 
+
 <details class="subrule-details">
 	<summary class="sub-name">{subrule.name}</summary>
 	<div class="subrule-body">
-		{#each subrule.description as sub_desc}
-			<p>{sub_desc}</p>
+		{#each subrule.description as description}
+			<p>{description}</p>
 		{/each}
 	</div>
 </details>
+
 
 <style>
 	p {

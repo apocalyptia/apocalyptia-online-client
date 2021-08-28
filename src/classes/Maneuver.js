@@ -5,6 +5,7 @@ export default class Maneuver extends Rule {
 		description,
 		mode = ``,
 		name,
+		subrules,
 		type = `Maneuver`,
 		url
 	}) {
@@ -12,6 +13,7 @@ export default class Maneuver extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})

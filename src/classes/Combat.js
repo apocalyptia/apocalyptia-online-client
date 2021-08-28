@@ -4,6 +4,7 @@ export default class Combat extends Rule {
 	constructor({
 		description,
 		name,
+		subrules,
 		type = `Combat`,
 		url
 	}) {
@@ -11,6 +12,7 @@ export default class Combat extends Rule {
 		super({
 			description,
 			name,
+			subrules,
 			type,
 			url
 		})
