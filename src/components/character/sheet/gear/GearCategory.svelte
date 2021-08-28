@@ -33,7 +33,7 @@
 
 <style>
 	.gear-category {
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		box-sizing: border-box;
 		display: block;
 		margin-bottom: var(--s100);

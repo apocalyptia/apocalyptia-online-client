@@ -22,7 +22,7 @@
 
 <style>
 	.center-card {
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		box-shadow: var(--s50) var(--s50) 2px var(--sec-color-trans);
 		display: flex;
 		flex-direction: column;
@@ -62,14 +62,14 @@
 	}
 	.close:hover {
 		background-color: var(--sec-color);
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		box-shadow: none;
 		color: var(--pri-color);
 		margin: 3px;
 		padding: calc((var(--padding) / 2) - 1px) calc(var(--padding) - 1px);
 	}
 	.contents {
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		margin: 3px;
 		overflow-y: scroll;
 		padding: var(--padding);

@@ -28,7 +28,7 @@
 	.manual-header-section {
 		align-items: center;
 		background-color: var(--sec-color-trans);
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		display: flex;
 		height: var(--square);
 		justify-content: space-around;

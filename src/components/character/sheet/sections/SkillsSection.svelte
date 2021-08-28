@@ -28,7 +28,7 @@
 
 <style>
 	.sheet-card-block {
-		border: 1px dotted var(--pri-color);
+		border: var(--dotted-border);
 		width: 100%;
 	}
 	.parent-trait {

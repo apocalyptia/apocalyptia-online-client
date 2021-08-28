@@ -24,7 +24,7 @@
 
 <style>
 	.character-storage-list-window {
-		border: 2px solid var(--pri-color);
+		border: var(--solid-border);
 		height: 50vh;
 		overflow-y: scroll;
 		width: 100%;

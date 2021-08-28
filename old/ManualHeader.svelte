@@ -22,7 +22,7 @@
 <style>
 	.manual-header-section {
 		align-items: center;
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		display: flex;
 		height: var(--square);
 		justify-content: space-between;

@@ -316,7 +316,7 @@ button:active,
 button:hover {
 	animation: haze 1s infinite;
 	background-color: var(--pri-color-trans);
-	border: 1px solid var(--pri-color);
+	border: var(--solid-border);
 	color: var(--sec-color);
 	font-weight: bold;
 	background-size: 100% 2px, 3px 100%;

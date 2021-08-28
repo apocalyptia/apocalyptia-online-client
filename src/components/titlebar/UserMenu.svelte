@@ -21,7 +21,7 @@
 <style>
 	.user-menu {
 		background: var(--sec-color);
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		min-width: 200px;
 		padding: var(--padding);
 		position: absolute;

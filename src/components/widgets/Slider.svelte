@@ -69,12 +69,12 @@
 	input[type='range']:hover::-moz-range-thumb {
 		-moz-appearance: none;
 		background: var(--sec-color);
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 	}
 	input[type='range']:hover::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		background: var(--sec-color);
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 	}
 	.range-indicator {
 		display: flex;

@@ -19,7 +19,7 @@
 
 <style>
 	.gear-item {
-		border: 1px solid var(--pri-color);
+		border: var(--solid-border);
 		box-sizing: border-box;
 		display: flex;
 		justify-content: space-between;
