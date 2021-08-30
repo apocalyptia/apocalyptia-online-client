@@ -1,7 +1,7 @@
 import Combat from '/src/classes/Combat.js'
 
-const Rounds = new Combat({
-	name: `Rounds`,
+const Round = new Combat({
+	name: `Round`,
 	description: [
 		`During time-critical situations such as combat, Character Actions take place in 3-second “Rounds”.`,
 		`Players have 60 seconds to allocate their Character's Actions for the Round.`,
@@ -10,4 +10,4 @@ const Rounds = new Combat({
 	],
 })
 
-export default Rounds
+export default Round

@@ -4,11 +4,11 @@ import Communication from './combat/Communication.js'
 import Damage from './combat/Damage.js'
 import Defense from './combat/Defense.js'
 import Movement from './combat/Movement.js'
-import Rounds from './combat/Rounds.js'
+import Round from './combat/Round.js'
 import Trauma from './combat/Trauma.js'
 
 export default {
-	rounds: Rounds,
+	round: Round,
 	actions: Actions,
 	communication: Communication,
 	movement: Movement,

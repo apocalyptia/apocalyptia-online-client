@@ -12,7 +12,7 @@ export default function rulesSearch(searchKey) {
 					if (secondTier?.subrules?.length) {
 						for (let i in secondTier.subrules) {
 							if (secondTier.subrules[i].name.toLowerCase() === searchKey) {
-								return secondTier.subrules[i]
+								return secondTier
 							}
 						}
 					}

@@ -11,7 +11,7 @@ const Athletics = new Skill({
 		climb: new Specialty({
 			name: `Climb`,
 			type: `Specialty`,
-			description: [`Move along vertical surfaces at [ Walk Speed / 2].`],
+			description: [`Move along vertical surfaces at [ Walk Speed / 2 ].`],
 		}),
 		swim: new Specialty({
 			name: `Swim`,

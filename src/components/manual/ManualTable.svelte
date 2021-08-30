@@ -1,27 +1,12 @@
 <script>
-	import { onMount } from 'svelte'
+	// import linkTerms from '/src/utils/text/linkTerms.js'
 
 	export let rule
 
-	let tableContents = []
-
-	let columnWidths = []
-
-	onMount(() => {
-		tableContents = [rule.table.headers, ...Object.values(rule.table.contents).map((c) => Object.values(c)) ]
-
-		columnWidths = new Array(rule.table.headers.length).fill(0)
-
-		const offset = 4
-
-		for (let r in tableContents) {
-			for (let c in tableContents[r]) {
-				if (columnWidths[c] < tableContents[r][c].toString().length) {
-					columnWidths[c] = tableContents[r][c].toString().length + offset
-				}
-			}
-		}
-	})
+	// rule.table.contents.forEach(row => {
+	// 	row.penalty = linkTerms([row.penalty])[0]
+	// 	row.effect = linkTerms([row.effect])[0]
+	// })
 </script>
 
 
@@ -29,7 +14,7 @@
 	<table>
 		<tr class="table-header">
 			{#each rule.table.headers as header, h}
-				<td style={`width: ${columnWidths[h]}ch;`}>
+				<td style={`width: ${rule.table.widths[h]}ch;`}>
 					{header}
 				</td>
 			{/each}
@@ -37,8 +22,8 @@
 		{#each rule.table.contents as row, r}
 			<tr>
 				{#each Object.values(row) as col, c}
-					<td class={col.toString().length === 1 ? 'center' : ''} style={`width: ${columnWidths[c]}ch;`}>
-						{col}
+					<td class={col.toString().length === 1 ? 'center' : ''} style={`width: ${rule.table.widths[c]}ch;`}>
+						{@html col}
 					</td>
 				{/each}
 			</tr>

@@ -5,7 +5,9 @@
 
 	export let rule
 
-	onMount(() => rule.description = linkTerms(rule.description))
+	rule.description = linkTerms(rule.description)
+
+	onMount(() => console.log('onMount event!'))
 </script>
 
 
@@ -13,11 +15,11 @@
 	{#each rule.description as description}
 		<p>{@html description}</p>
 	{/each}
-	<!-- {#if rule.subrules.length}
+	{#if rule.subrules.length}
 		{#each rule.subrules as subrule}
 			<ManualSubRule {subrule} />
 		{/each}
-	{/if} -->
+	{/if}
 	{#if rule.type === 'Ability'}
 		<p><span class="bold">Max:</span> {rule.max}</p>
 		<p><span class="bold">XP:</span> {rule.experience}</p>

@@ -67,7 +67,7 @@ const rules = {
         },
         "efficientwork": {
             "description": [
-                "[ Time / 2] for one of the following Skills (minimum 1 Action):",
+                "[ Time / 2 ] for one of the following Skills (minimum 1 Action):",
                 "Build, Larceny, Medicine, Science, Survival, or Tame."
             ],
             "id": "",
@@ -771,8 +771,8 @@ const rules = {
                 "There are two types of Attacks: Melee and Projectile.",
                 "Use an Action to roll [ d6 + Melee or Projectile ] vs the target's Defense.",
                 "Rolling a 6 on the die is an Explosion, which is then re-rolled and added cumulatively to the Attack total.",
-                "Melee Attacks can be Called Shots to any Location on the target's body at no penalty.",
-                "Projectile Attacks must roll a random Location unless the Called Shot Maneuver is declared."
+                "Melee Attacks can be Called-Shots to any Location on the target's body at no penalty.",
+                "Projectile Attacks must roll a random Location unless the Called-Shot Maneuver is declared."
             ],
             "id": "",
             "name": "Attack",
@@ -798,7 +798,7 @@ const rules = {
             "description": [
                 "Damage temporarily reduces Health.",
                 "Each point of Damage causes a -1 Pain penalty until healed.",
-                "Successful Attacks do Damage = [(Attack total - target's Defense) + Weapon Damage] - Armor Absorption.",
+                "Successful Attacks do Damage = [( Attack total - target's Defense ) + Weapon Damage ] - Armor Absorption.",
                 "If Damage from one Attack before Armor Absorption is subtracted is greater than your Constitution, you fall Prone."
             ],
             "id": "",
@@ -1268,7 +1268,7 @@ const rules = {
             "laser": {
                 "description": [
                     "+1 to Projectile Attacks.",
-                    "Make a Called Shot Projectile Attack at the Head to Blind for d6 rounds."
+                    "Make a Called-Shot Projectile Attack at the Head to Blind for d6 rounds."
                 ],
                 "id": "",
                 "name": "Laser",
@@ -2185,7 +2185,7 @@ const rules = {
             "blast": {
                 "description": [
                     "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                    "[ Damage / 2] on a miss (minimum 1)."
+                    "[ Damage / 2 ] on a miss (minimum 1)."
                 ],
                 "id": "",
                 "name": "Blast",
@@ -2288,7 +2288,7 @@ const rules = {
             },
             "shortbarrel": {
                 "description": [
-                    "[ Range / 2] and [ Size / 2] (Round up)."
+                    "[ Range / 2 ] and [ Size / 2 ] (Round up)."
                 ],
                 "id": "",
                 "name": "Short-Barrel",
@@ -2364,7 +2364,7 @@ const rules = {
                     {
                         "description": [
                             "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                            "[ Damage / 2] on a miss (minimum 1)."
+                            "[ Damage / 2 ] on a miss (minimum 1)."
                         ],
                         "id": "",
                         "name": "Blast",
@@ -2394,7 +2394,7 @@ const rules = {
                     {
                         "description": [
                             "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                            "[ Damage / 2] on a miss (minimum 1)."
+                            "[ Damage / 2 ] on a miss (minimum 1)."
                         ],
                         "id": "",
                         "name": "Blast",
@@ -2522,7 +2522,7 @@ const rules = {
                     {
                         "description": [
                             "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                            "[ Damage / 2] on a miss (minimum 1)."
+                            "[ Damage / 2 ] on a miss (minimum 1)."
                         ],
                         "id": "",
                         "name": "Blast",
@@ -3937,7 +3937,7 @@ const rules = {
                 "description": [
                     "+3 Projectile with this weapon.",
                     "Range:1.",
-                    "Successful Called Shot: Head causes 6 Pain.",
+                    "Successful Called-Shot: Head causes 6 Pain.",
                     "Takes 1 Round for Pain to start.",
                     "Pain lasts for d6x5 minutes.",
                     "3 uses.",
@@ -4929,7 +4929,7 @@ const rules = {
             },
             "spraypaint": {
                 "description": [
-                    "Projectile Attack, Called Shot: Head.",
+                    "Projectile Attack, Called-Shot: Head.",
                     "Blind d6 rounds.",
                     "10 uses."
                 ],
@@ -5561,16 +5561,16 @@ const rules = {
         },
         "calledshot": {
             "description": [
-                "A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part."
+                "A Called-Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part."
             ],
             "id": "",
-            "name": "Called Shot",
+            "name": "Called-Shot",
             "subrules": [],
             "type": "Maneuver",
             "url": "/manual/maneuvers/calledshot",
             "mode": "Offensive",
             "table": {
-                "name": "Called Shot Table",
+                "name": "Called-Shot Table",
                 "headers": [
                     "d6",
                     "Part",
@@ -5824,7 +5824,7 @@ const rules = {
         },
         "shove": {
             "description": [
-                "Roll [ Melee vs Constitution] to shove an enemy up to [ Constitution / 2] yards away from you, knocking them Prone. No Damage."
+                "Roll [ Melee vs Constitution] to shove an enemy up to [ Constitution / 2 ] yards away from you, knocking them Prone. No Damage."
             ],
             "id": "",
             "name": "Shove",
@@ -5835,7 +5835,7 @@ const rules = {
         },
         "sneak": {
             "description": [
-                "Roll [ Stealth vs Perception] to move Concealed at [ Speed / 2]."
+                "Roll [ Stealth vs Perception] to move Concealed at [ Speed / 2 ]."
             ],
             "id": "",
             "name": "Sneak",
@@ -6127,11 +6127,11 @@ const rules = {
         "luck": {
             "description": [
                 "Luck = ( Agility + Demeanor ) / 2",
-                "Luck rolls [ d6 + current Luck points] are made to determine your fate in matters of pure chance.",
+                "Luck rolls [ d6 + current Luck points ] are made to determine your fate in matters of pure chance.",
                 "You may spend 1 Luck Point per Round for one of the three effects listed below.",
                 "Spending a Luck Point does not require the use of an Action.",
                 "You regain 1 spent Luck Point per day after getting 8 hours of sleep.",
-                "• Re-roll your last roll and add a Luck roll [ d6 + current Luck points] to the result as a bonus.",
+                "• Re-roll your last roll and add a Luck roll [ d6 + current Luck points ] to the result as a bonus.",
                 "• Take an extra Action this Round (up to 4 Actions) without having to spend any Endurance.",
                 "• Give a Luck point to one of your Comrades."
             ],
@@ -6162,7 +6162,7 @@ const rules = {
                 "Speed = Agility x 3",
                 "Spend Speed as part of a Movement Action to change your location.",
                 "The distance you can move for the Round depends on your Speed and the type(s) of Movement you are making (see Movement).",
-                "When traveling long distances overland, you can March at [ Speed / 2] mph for up to your Endurance in hours per day."
+                "When traveling long distances overland, you can March at [ Speed / 2 ] mph for up to your Endurance in hours per day."
             ],
             "id": "",
             "name": "Speed",
@@ -6200,7 +6200,7 @@ const rules = {
                 "jump": {
                     "description": [
                         "Running Jump distance is [ Agility] yards.",
-                        "Standing vertical Jump height is [ Agility / 2] feet."
+                        "Standing vertical Jump height is [ Agility / 2 ] feet."
                     ],
                     "id": "",
                     "name": "Jump",
@@ -6226,7 +6226,7 @@ const rules = {
             "specialties": {
                 "climb": {
                     "description": [
-                        "Move along vertical surfaces at [ Walk Speed / 2]."
+                        "Move along vertical surfaces at [ Walk Speed / 2 ]."
                     ],
                     "id": "",
                     "name": "Climb",
@@ -7025,7 +7025,7 @@ const rules = {
         },
         "unarmed": {
             "description": [
-                "Successful Unarmed Attacks do Damage = [(Attack - Defense) / 2] (always Round down).",
+                "Successful Unarmed Attacks do Damage = [( Attack - Defense ) / 2 ] (always Round down).",
                 "Absorption is not depleted."
             ],
             "id": "",
@@ -7109,7 +7109,7 @@ const rules = {
                         "jump": {
                             "description": [
                                 "Running Jump distance is [ Agility] yards.",
-                                "Standing vertical Jump height is [ Agility / 2] feet."
+                                "Standing vertical Jump height is [ Agility / 2 ] feet."
                             ],
                             "id": "",
                             "name": "Jump",
@@ -7440,7 +7440,7 @@ const rules = {
                     "specialties": {
                         "climb": {
                             "description": [
-                                "Move along vertical surfaces at [ Walk Speed / 2]."
+                                "Move along vertical surfaces at [ Walk Speed / 2 ]."
                             ],
                             "id": "",
                             "name": "Climb",

@@ -3,7 +3,7 @@
 		<p>Roll C# = total DMG to naturally heal 1HP on a random wounded Body Part after a day’s rest. Failure does 1 Torso DMG from infection. Amputating a limb stops infection DMG. FDMG heals 1HP/wk, but the last FDMG is permanent.</p>
 		<button id='PsychologyPreparationBtn' class='Btn'>PSYCHOLOGY</button>
 		<div id='PsychologyPreparationSec' class='Sec4'>
-			<p>Medicine (Psychology) # = 12 - patient Psyche and the patient gets +1 Psyche (1: -1 Psyche) 1/week.</p>
+			<p>Medicine (Psychology) # = 12 - patient Psyche and the patient gets +1 Psyche (1: -1 Psyche ) 1/week.</p>
 		</div>
 		<button id='SurgeryPreparationBtn' class='Btn'>SURGERY</button>
 		<div id='SurgeryPreparationSec' class='Sec4'>

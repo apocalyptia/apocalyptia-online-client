@@ -32,7 +32,7 @@ Cover.table = new Table({
 		new CoverType({ material: 'Concrete', dr: 4 }),
 		new CoverType({ material: 'Steel', dr: 5 }),
 	],
-	widths: [50, 50],
+	widths: [15, 15],
 })
 
 export default Cover

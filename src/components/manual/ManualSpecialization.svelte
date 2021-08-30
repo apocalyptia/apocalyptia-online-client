@@ -13,7 +13,7 @@
 		{#if specialty.description}
 			{#each linkTerms(specialty.description) as description}
 				<p class="specialty-description">
-					s{@html description}
+					{@html description}
 				</p>
 			{/each}
 		{/if}

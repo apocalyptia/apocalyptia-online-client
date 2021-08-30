@@ -16,7 +16,7 @@ const Acrobatics = new Skill({
 		jump: new Specialty({
 			name: `Jump`,
 			type: `Specialty`,
-			description: [`Running Jump distance is [ Agility] yards.`, `Standing vertical Jump height is [ Agility / 2] feet.`],
+			description: [`Running Jump distance is [ Agility] yards.`, `Standing vertical Jump height is [ Agility / 2 ] feet.`],
 		}),
 	},
 })

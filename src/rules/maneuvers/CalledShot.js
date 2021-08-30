@@ -2,8 +2,8 @@ import Maneuver from '/src/classes/Maneuver.js'
 import Table from '../../classes/Table.js'
 
 const CalledShot = new Maneuver({
-	name: `Called Shot`,
-	description: [`A Called Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
+	name: `Called-Shot`,
+	description: [`A Called-Shot is an Attack targeting the Head, Arms, or Legs with added effects depending on the Body Part.`],
 	mode: `Offensive`,
 })
 
@@ -17,7 +17,7 @@ class CalledShotTarget {
 }
 
 CalledShot.table = new Table({
-	name: `Called Shot Table`,
+	name: `Called-Shot Table`,
 	headers: [`d6`, `Part`, `Penalty`, `Effect`],
 	contents: [
 		new CalledShotTarget({
@@ -58,7 +58,7 @@ CalledShot.table = new Table({
 			effect: `Fall Prone.`,
 		}),
 	],
-	widths: [5, 15, 20, 50],
+	widths: [5, 10, 20, 50],
 })
 
 export default CalledShot

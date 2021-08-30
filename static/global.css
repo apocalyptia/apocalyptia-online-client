@@ -296,22 +296,7 @@ a:hover {
 	background-size: 100% 2px, 3px 100%;
 	z-index: 12000;
 }
-	/* .text-link {
-		background-color: none !important;
-		text-decoration: underline !important;
-	}
-	.text-link:hover {
-		background-color: none;
-		box-shadow: none !important;
-	}
-	.text-link:active {
-		animation: none !important;
-		background-color: none;
-		color: var(--pri-color) !important;
-		font-weight: bold !important;
-		background-size: none !important;
-		z-index: 12000 !important;
-	} */
+
 
 /* Buttons */
 button {
