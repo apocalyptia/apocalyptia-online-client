@@ -22,6 +22,7 @@
 		$abilitiesStore = $abilitiesStore
 		$characterStore.resetAbilities()
 		$characterStore = $characterStore
+		console.log($characterStore.abilities)
 	}
 
 	afterUpdate(() => {
@@ -38,7 +39,10 @@
 		<PageHeader chapter={'Abilities'} step={$characterStore.step} />
 		<ExplanationBlock rule={CreationProcess.abilities.description} />
 		<PointsRemaining points={$characterStore.properties.experience.current} />
+		<br>
+		<hr>
 		<OrganizerBar />
+		<hr>
 		<AbilitiesList />
 		<ResetAndRandomButtonRow reset={() => resetAbilities()} random={() => randomAbilities()} />
 	</fieldset>

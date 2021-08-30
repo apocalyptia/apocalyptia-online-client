@@ -12,12 +12,16 @@
 	}
 </script>
 
+
 <!-- svelte-ignore a11y-no-onchange -->
-<div class="section-card">
-	<div class="filter-section">
-		<div class="header organizer-row">Filter</div>
+<div class="organizer-details">
+	<div class="filter-section organizer-column">
+		<div class="organizer-header">
+			Filter
+		</div>
 		<div class="organizer-row">
-			XP: <select bind:value={$abilitiesStore.cost} on:change={filterList}>
+			<span>XP:</span>
+			<select bind:value={$abilitiesStore.cost} on:change={filterList}>
 				<option value={0}>All</option>
 				{#each [...$abilitiesStore.xpCosts] as xpCost}
 					<option value={xpCost}>{xpCost}</option>
@@ -25,17 +29,21 @@
 			</select>
 		</div>
 		<div class="organizer-row">
-			Taken: <select bind:value={$abilitiesStore.status} on:change={filterList}>
+			<span>Taken:</span>
+			<select bind:value={$abilitiesStore.status} on:change={filterList}>
 				<option value="all">All</option>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
 			</select>
 		</div>
 	</div>
-	<div class="sort-section">
-		<div class="header organizer-row">Sort</div>
+	<div class="sort-section organizer-column">
+		<div class="organizer-header">
+			Sort
+		</div>
 		<div class="organizer-row">
-			By: <select class="xp-cost-selector" bind:value={$abilitiesStore.order} on:change={sortList}>
+			<span>By:</span>
+			<select class="xp-cost-selector" bind:value={$abilitiesStore.order} on:change={sortList}>
 				<option value="alpha" selected>A-Z</option>
 				<option value="zeta">Z-A</option>
 				<option value="xphigh">XP ^</option>
@@ -47,18 +55,22 @@
 
 
 <style>
-	.section-card {
+	.organizer-details {
 		display: flex;
 		justify-content: space-around;
 		padding: 0;
 	}
-	.header {
+	.organizer-header {
+		display: flex;
 		font-weight: bold;
-		text-align: center;
+		justify-content: center;
+		margin: var(--margin);
 		text-decoration: underline;
 	}
 	.organizer-row {
-		display: block;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 		margin: var(--margin);
 	}
 </style>

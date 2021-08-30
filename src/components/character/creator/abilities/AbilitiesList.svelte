@@ -4,6 +4,7 @@
 	import TakenSelector from '/src/components/character/creator/abilities/TakenSelector.svelte'
 </script>
 
+
 {#each $abilitiesStore.visibleList as ability}
 	<div class="ability-list-item">
 		<details id={`details-${ability.name.replace(' ', '')}`} class="ability-card">
@@ -15,6 +16,7 @@
 		</details>
 	</div>
 {/each}
+
 
 <style>
 	.ability-card {
