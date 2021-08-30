@@ -3,7 +3,7 @@ import Specialty from '../../classes/Specialty.js'
 
 const Build = new Skill({
 	name: `Build`,
-	description: [`Make an item from [d6 + #] Parts.`],
+	description: [`Make an item from [ d6 + #] Parts.`],
 	type: `Skill`,
 	parent: `Constitution`,
 	difficulty: `varies`,
@@ -22,7 +22,7 @@ const Build = new Skill({
 		repair: new Specialty({
 			name: `Repair`,
 			type: `Specialty`,
-			description: [`Fixing a broken item takes a number of hours to complete equal to the Difficulty.`, `+1 to the Build(Repair) roll when using Parts from the same kind of item.`],
+			description: [`Fixing a broken item takes a number of hours to complete equal to the Difficulty.`, `+1 to the Build (Repair) roll when using Parts from the same kind of item.`],
 		}),
 	},
 })

@@ -3,7 +3,7 @@ import Scatter from '../attributes/Scatter.js'
 
 const Buckshot12g = new Ammo({
 	accuracy: 0,
-	attributes: [Scatter],
+	attributes: [ Scatter],
 	caliber: `12g`,
 	description: [`Scatter-shot ammunition.`],
 	damage: 0,

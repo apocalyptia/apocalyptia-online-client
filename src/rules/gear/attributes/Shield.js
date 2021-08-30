@@ -5,7 +5,7 @@ const Shield = new Attribute({
 	description: [
 		`Absorption = Size when used as Cover.`,
 		`Bonus to Block = Size.`,
-		`Allows Melee(Block) and Deflect to be used vs Projectile(Firearm) Attacks.`
+		`Allows Melee (Block) and Deflect to be used vs Projectile (Firearm) Attacks.`
 	]
 })
 

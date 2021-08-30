@@ -1,6 +1,6 @@
 <button id='ClimateEnvironmentBtn' class='Btn'>CLIMATE</button>
 	<div id='ClimateEnvironmentSec' class='Sec3'>
-		<p>Every Ecosystem has base temperature, humidity, Terrain, Survival(Forage/Navigate) and Hunting Difficulties.</p>
+		<p>Every Ecosystem has base temperature, humidity, Terrain, Survival (Forage/Navigate) and Hunting Difficulties.</p>
 		<div id='ClimateEnvironmentTable' class='tableDiv'>
 			<div class='rowDiv'>
 				<button class='cellDiv cen'>Ecosystem</button>

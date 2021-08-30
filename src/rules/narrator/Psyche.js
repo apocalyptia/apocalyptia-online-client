@@ -33,7 +33,7 @@
 			<li>Bath and grooming or similar use of a Luxury Item (+1/week)</li>
 			<li>Beautiful day (see WEATHER)</li>
 			<li>Completing a long Mission successfully</li>
-			<li>Counseling with Medicine(Psychology) # = 12 – Psyche (+1/week)</li>
+			<li>Counseling with Medicine (Psychology) # = 12 – Psyche (+1/week)</li>
 			<li>Creating a work of artistic expression (+1/week)</li>
 			<li>Having a Pet (+1/month)</li>
 			<li>Healing a Comrade to full Health (+1/week)</li>
@@ -49,7 +49,7 @@
 	</div>
 	<button id='MentalBreakdownBtn' class='Btn'>MENTAL BREAKDOWN</button>
 	<div id='MentalBreakdownSec' class='Sec3'>
-		<p>Whenever a Character loses their last point of Psyche, the Narrator should secretly roll on the MENTAL BREAKDOWN table below. The Character involuntarily experiences or performs the Effect within d6hrs. Each Comrade may roll Perception or Medicine(Psychology) to sense that something is wrong before the Effect happens. Success gives a Comrade a chance to intervene.</p>
+		<p>Whenever a Character loses their last point of Psyche, the Narrator should secretly roll on the MENTAL BREAKDOWN table below. The Character involuntarily experiences or performs the Effect within d6hrs. Each Comrade may roll Perception or Medicine (Psychology) to sense that something is wrong before the Effect happens. Success gives a Comrade a chance to intervene.</p>
 		<p>The Effect lasts for 1 day. The Player then makes a D6# roll to recover 1 Psyche. On a Fail, roll another MENTAL BREAKDOWN.</p>
 		<div id='MentalBreakdownTable' class='tableDiv'>
 			<div class='rowDiv'>

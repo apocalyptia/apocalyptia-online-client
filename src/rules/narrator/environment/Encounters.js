@@ -9,7 +9,7 @@
 	</div>
 	<button id='ProximityAndNumberBtn' class='Btn'>PROXIMITY AND NUMBER</button>
 	<div id='ProximityAndNumberSec' class='Sec3'>
-		<p>Each ENCOUNTER has a listed Proximity multiplier (1-100) and a Number of Extras to roll. Roll [d6 x Proximity] for the distance in yards between the Team and the Extra(s). Roll Number to see how many of the Extra(s) appear. Notes give a brief description of the Extras' typical behavior. The Narrator may secretly compare each side's highest Perception vs the lowest Stealth to see which side becomes aware of the other first. If a Character is actively sneaking, they may remain hidden when the rest of the Team is spotted.</p>
+		<p>Each ENCOUNTER has a listed Proximity multiplier (1-100) and a Number of Extras to roll. Roll [ d6 x Proximity] for the distance in yards between the Team and the Extra(s). Roll Number to see how many of the Extra(s) appear. Notes give a brief description of the Extras' typical behavior. The Narrator may secretly compare each side's highest Perception vs the lowest Stealth to see which side becomes aware of the other first. If a Character is actively sneaking, they may remain hidden when the rest of the Team is spotted.</p>
 	</div>
 	<button id='RuralEncountersBtn' class='Btn'>RURAL ENCOUNTERS</button>
 	<div id='RuralEncountersSec' class='Sec3'>

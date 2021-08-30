@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const ArmaliteAR15 = new Projectile({
+const ArmaliteAR15 = new Projectile ({
 	accuracy: 1,
 	attributes: [],
 	caliber: `5.56mm`,

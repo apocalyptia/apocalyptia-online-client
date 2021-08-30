@@ -4,7 +4,7 @@ import ColdResistance from '../../gear/attributes/ColdResistance.js'
 const WinterCoat = new Armor({
 	name: `Winter Coat`,
 	size: 2,
-	attributes: [ColdResistance],
+	attributes: [ ColdResistance],
 	type: `Armor`,
 	absorption: 1,
 	location: `Arms, Torso`,

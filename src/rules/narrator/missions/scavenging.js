@@ -12,11 +12,11 @@
 		</div>
 		<button id='ForagingMissionBtn' class='Btn'>FORAGING</button>
 		<div id='ForagingMissionSec' class='Sec4'>
-			<p>Roll Survival(Forage) for that Ecosystem. Takes 1hr. Success is 1 Food or Water, or d6 Bandages or Wood. A Botch results in d6 Torso DMG from Food or Water poisoning or injury sustained while traveling to forage.</p>
+			<p>Roll Survival (Forage) for that Ecosystem. Takes 1hr. Success is 1 Food or Water, or d6 Bandages or Wood. A Botch results in d6 Torso DMG from Food or Water poisoning or injury sustained while traveling to forage.</p>
 		</div>
 		<button id='HuntingMissionBtn' class='Btn'>HUNTING</button>
 		<div id='HuntingMissionSec' class='Sec4'>
-			<p>Roll Survival(Forage) for that Ecosystem. Takes 1hr. Success is 1 Food or Water, or d6 Bandages or Wood. A Botch results in d6 Torso DMG from Food or Water poisoning or injury sustained while traveling to forage.</p>
+			<p>Roll Survival (Forage) for that Ecosystem. Takes 1hr. Success is 1 Food or Water, or d6 Bandages or Wood. A Botch results in d6 Torso DMG from Food or Water poisoning or injury sustained while traveling to forage.</p>
 		</div>
 		<button id='ForagingAndHuntingMissionBtn' class='Btn'>FORAGING AND HUNTING DIFFICULTY</button>
 		<div id='ForagingAndHuntingMissionSec' class='Sec4'>
@@ -59,6 +59,6 @@
 		</div>
 		<button id='SalvageMissionBtn' class='Btn'>SALVAGE</button>
 		<div id='SalvageMissionSec' class='Sec4'>
-			<p>Roll Survival(Forage) for that Ecosystem. Takes 1hr. Success is 1 Food or Water, or d6 Bandages or Wood. A Botch results in d6 Torso DMG from Food or Water poisoning or injury sustained while traveling to forage.</p>
+			<p>Roll Survival (Forage) for that Ecosystem. Takes 1hr. Success is 1 Food or Water, or d6 Bandages or Wood. A Botch results in d6 Torso DMG from Food or Water poisoning or injury sustained while traveling to forage.</p>
 		</div>
 	</div>

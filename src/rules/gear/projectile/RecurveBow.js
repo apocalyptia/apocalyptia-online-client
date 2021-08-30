@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const RecurveBow = new Projectile({
+const RecurveBow = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `Arrow`,

@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const MAC10 = new Projectile({
+const MAC10 = new Projectile ({
 	accuracy: -1,
 	attributes: [],
 	caliber: `.45ACP`,

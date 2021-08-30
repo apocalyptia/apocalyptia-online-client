@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const HKMP5 = new Projectile({
+const HKMP5 = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `9mm`,

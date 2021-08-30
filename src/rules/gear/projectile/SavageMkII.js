@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const SavageMkII = new Projectile({
+const SavageMkII = new Projectile ({
 	accuracy: 1,
 	attributes: [],
 	caliber: `.22LR`,

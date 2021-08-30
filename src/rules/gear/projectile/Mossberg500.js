@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const Mossberg500 = new Projectile({
+const Mossberg500 = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `12g`,

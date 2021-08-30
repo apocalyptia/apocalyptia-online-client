@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const HoytCompoundBow = new Projectile({
+const HoytCompoundBow = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `Arrow`,

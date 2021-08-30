@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const Kimber1911 = new Projectile({
+const Kimber1911 = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `.45ACP`,

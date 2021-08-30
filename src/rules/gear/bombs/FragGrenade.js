@@ -6,7 +6,7 @@ const FragGrenade = new Bomb({
 	type: `Bomb`,
 	description: [`Explosive fragmentation grenade.`],
 	size: 1,
-	attributes: [Blast],
+	attributes: [ Blast],
 	damage: `3d6`,
 	range: 15,
 	fuse: 2,

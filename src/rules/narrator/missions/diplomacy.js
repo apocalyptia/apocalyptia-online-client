@@ -54,13 +54,13 @@
 		<div id='InterrogationMissionSec' class='Sec4'>
 			<p>Getting information out of someone who has no motivation to assist you, or who actively resists questioning, is usually accomplished with one of the three following rolls vs Demeanor. These methods each require a d6 minutes. Failed rolls can be tried again at -3 per Failure that day. After a total number of Failures = your Demeanor, you give up from frustration.</p>
 			<ul>
-				<li>Coercion: Leadership(Taunt). Brandishing a weapon adds the greater of DMG or Size as a bonus.</li>
+				<li>Coercion: Leadership (Taunt). Brandishing a weapon adds the greater of DMG or Size as a bonus.</li>
 				<li>Deception: Entertain(Lie).</li>
 				<li>Reasoning: Brains.</li>
 			</ul>
 		</div>
 		<button id='TortureMissionBtn' class='Btn'>TORTURE</button>
 		<div id='TortureMissionSec' class='Sec4'>
-			<p>The torturer rolls Medicine vs Constitution 1/hr to give the prisoner d6 Pain for 1hr. Failure does a d6 Torso DMG. Roll Demeanor vs Demeanor 1/day. Failure causes -1 Psyche. At 0 Psyche, either the torturer gives up or the prisoner is broken and can be controlled by Leadership, Medicine(Psychology), or Tame, # = Demeanor.</p>
+			<p>The torturer rolls Medicine vs Constitution 1/hr to give the prisoner d6 Pain for 1hr. Failure does a d6 Torso DMG. Roll Demeanor vs Demeanor 1/day. Failure causes -1 Psyche. At 0 Psyche, either the torturer gives up or the prisoner is broken and can be controlled by Leadership, Medicine (Psychology), or Tame, # = Demeanor.</p>
 		</div>
 	</div>

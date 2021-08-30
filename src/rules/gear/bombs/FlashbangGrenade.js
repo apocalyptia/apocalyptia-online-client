@@ -7,7 +7,7 @@ const FlashbangGrenade = new Bomb({
 	type: `Bomb`,
 	description: [`Stun grenade.`],
 	size: 1,
-	attributes: [Blind, Stun],
+	attributes: [ Blind, Stun],
 	damage: 0,
 	range: 6,
 	fuse: 2,

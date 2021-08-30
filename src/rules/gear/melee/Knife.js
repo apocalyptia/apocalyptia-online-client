@@ -1,6 +1,6 @@
 import Melee from '/src/classes/gear/Melee.js'
 
-const Knife = new Melee({
+const Knife = new Melee ({
 	accuracy: 0,
 	attributes: [],
 	damage: 1,

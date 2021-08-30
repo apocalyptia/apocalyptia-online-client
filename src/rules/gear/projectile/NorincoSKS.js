@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const NorincoSKS = new Projectile({
+const NorincoSKS = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `7.62mm`,

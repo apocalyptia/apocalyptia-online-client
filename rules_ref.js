@@ -67,7 +67,7 @@ const rules = {
         },
         "efficientwork": {
             "description": [
-                "[Time / 2] for one of the following Skills (minimum 1 Action):",
+                "[ Time / 2] for one of the following Skills (minimum 1 Action):",
                 "Build, Larceny, Medicine, Science, Survival, or Tame."
             ],
             "id": "",
@@ -769,7 +769,7 @@ const rules = {
         "attack": {
             "description": [
                 "There are two types of Attacks: Melee and Projectile.",
-                "Use an Action to roll [d6 + Melee or Projectile] vs the target's Defense.",
+                "Use an Action to roll [ d6 + Melee or Projectile ] vs the target's Defense.",
                 "Rolling a 6 on the die is an Explosion, which is then re-rolled and added cumulatively to the Attack total.",
                 "Melee Attacks can be Called Shots to any Location on the target's body at no penalty.",
                 "Projectile Attacks must roll a random Location unless the Called Shot Maneuver is declared."
@@ -832,7 +832,7 @@ const rules = {
                 "Many factors may further modify the final Result, such as special equipment that grants a bonus or unfavorable circumstances which impose a penalty.",
                 "It is the Narrator's job to decide which modifiers will affect your roll and what their magnitude will be.",
                 "If you feel that your Narrator is not taking some relevant modifiers into consideration, you should make your case briefly before rolling and then defer to their judgment (at least until the session is over).",
-                "[d6 Roll + Trait or Skill Score ± Modifiers] = Result"
+                "[ d6 Roll + Trait or Skill Score ± Modifiers] = Result"
             ],
             "id": "",
             "name": "Dice",
@@ -912,7 +912,7 @@ const rules = {
             "description": [
                 "You get 14 Trait points.",
                 "Traits can range from 1 to 6.",
-                "Trait rolls are [d6 + Trait].",
+                "Trait rolls are [ d6 + Trait].",
                 "Trait scores set the upper limit for their Skills."
             ],
             "id": "",
@@ -928,7 +928,7 @@ const rules = {
             "description": [
                 "You get Brains x 6 Skill points.",
                 "Skills can range from 0 to 6.",
-                "Skill rolls are [d6 + Skill].",
+                "Skill rolls are [ d6 + Skill].",
                 "Trait scores set the upper limit for their Skills."
             ],
             "id": "",
@@ -1282,7 +1282,7 @@ const rules = {
             },
             "scope": {
                 "description": [
-                    "+3 to Aimed Projectile Attacks and Perception(See)."
+                    "+3 to Aimed Projectile Attacks and Perception (See)."
                 ],
                 "id": "",
                 "name": "Scope",
@@ -2184,8 +2184,8 @@ const rules = {
             },
             "blast": {
                 "description": [
-                    "Roll [d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                    "[Damage / 2] on a miss (minimum 1)."
+                    "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                    "[ Damage / 2] on a miss (minimum 1)."
                 ],
                 "id": "",
                 "name": "Blast",
@@ -2278,7 +2278,7 @@ const rules = {
                 "description": [
                     "Absorption = Size when used as Cover.",
                     "Bonus to Block = Size.",
-                    "Allows Melee(Block) and Deflect to be used vs Projectile(Firearm) Attacks."
+                    "Allows Melee (Block) and Deflect to be used vs Projectile (Firearm) Attacks."
                 ],
                 "id": "",
                 "name": "Shield",
@@ -2288,7 +2288,7 @@ const rules = {
             },
             "shortbarrel": {
                 "description": [
-                    "[Range / 2] and [Size / 2] (Round up)."
+                    "[ Range / 2] and [ Size / 2] (Round up)."
                 ],
                 "id": "",
                 "name": "Short-Barrel",
@@ -2363,8 +2363,8 @@ const rules = {
                 "attributes": [
                     {
                         "description": [
-                            "Roll [d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                            "[Damage / 2] on a miss (minimum 1)."
+                            "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                            "[ Damage / 2] on a miss (minimum 1)."
                         ],
                         "id": "",
                         "name": "Blast",
@@ -2393,8 +2393,8 @@ const rules = {
                 "attributes": [
                     {
                         "description": [
-                            "Roll [d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                            "[Damage / 2] on a miss (minimum 1)."
+                            "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                            "[ Damage / 2] on a miss (minimum 1)."
                         ],
                         "id": "",
                         "name": "Blast",
@@ -2492,7 +2492,7 @@ const rules = {
                             "Constant air supply is required to avoid Asphyxiation.",
                             "1 Pain per minute without air.",
                             "Pain penalties from Asphyxiation are reduced by 1 per minute with air.",
-                            "Going without air for a number of minutes = [Constitution] is lethal."
+                            "Going without air for a number of minutes = [ Constitution] is lethal."
                         ],
                         "id": "",
                         "name": "Asphyxiation",
@@ -2521,8 +2521,8 @@ const rules = {
                 "attributes": [
                     {
                         "description": [
-                            "Roll [d6 vs Reflexive Dodge] against everyone in the Blast radius.",
-                            "[Damage / 2] on a miss (minimum 1)."
+                            "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                            "[ Damage / 2] on a miss (minimum 1)."
                         ],
                         "id": "",
                         "name": "Blast",
@@ -2761,7 +2761,7 @@ const rules = {
             },
             "mapatlas": {
                 "description": [
-                    "+1 Survival(Navigate)"
+                    "+1 Survival (Navigate)"
                 ],
                 "id": "",
                 "name": "Map (Atlas)",
@@ -2774,7 +2774,7 @@ const rules = {
             },
             "maplocal": {
                 "description": [
-                    "+1 Survival(Navigate) in a given Region."
+                    "+1 Survival (Navigate) in a given Region."
                 ],
                 "id": "",
                 "name": "Map (Local)",
@@ -2787,7 +2787,7 @@ const rules = {
             },
             "maptopographic": {
                 "description": [
-                    "+3 Survival(Navigate) in a given Region."
+                    "+3 Survival (Navigate) in a given Region."
                 ],
                 "id": "",
                 "name": "Map (Topographic)",
@@ -3074,7 +3074,7 @@ const rules = {
             },
             "multimeter": {
                 "description": [
-                    "+3 Science(Technology).",
+                    "+3 Science (Technology).",
                     "Detects voltage, battery life, and closed circuits."
                 ],
                 "id": "",
@@ -3166,7 +3166,7 @@ const rules = {
         "medical": {
             "bandage": {
                 "description": [
-                    "+1 Medicine(First-Aid).",
+                    "+1 Medicine (First-Aid).",
                     "1 use."
                 ],
                 "id": "",
@@ -3193,7 +3193,7 @@ const rules = {
             },
             "emtbag": {
                 "description": [
-                    "+3 Medicine(First-Aid).",
+                    "+3 Medicine (First-Aid).",
                     "30 uses."
                 ],
                 "id": "",
@@ -3207,7 +3207,7 @@ const rules = {
             },
             "firstaidkit": {
                 "description": [
-                    "+1 Medicine(First-Aid).",
+                    "+1 Medicine (First-Aid).",
                     "5 uses."
                 ],
                 "id": "",
@@ -3235,7 +3235,7 @@ const rules = {
             "stethoscope": {
                 "description": [
                     "+1 Medicine.",
-                    "Perception(Hear) 6# through doors."
+                    "Perception (Hear) 6# through doors."
                 ],
                 "id": "",
                 "name": "Stethoscope",
@@ -3248,7 +3248,7 @@ const rules = {
             },
             "surgerykit": {
                 "description": [
-                    "+3 Medicine(Surgery)."
+                    "+3 Medicine (Surgery)."
                 ],
                 "id": "",
                 "name": "Surgery Kit",
@@ -3495,7 +3495,7 @@ const rules = {
                         "description": [
                             "Absorption = Size when used as Cover.",
                             "Bonus to Block = Size.",
-                            "Allows Melee(Block) and Deflect to be used vs Projectile(Firearm) Attacks."
+                            "Allows Melee (Block) and Deflect to be used vs Projectile (Firearm) Attacks."
                         ],
                         "id": "",
                         "name": "Shield",
@@ -3620,7 +3620,7 @@ const rules = {
             },
             "binoculars": {
                 "description": [
-                    "+3 Perception(See) at 50+ yards."
+                    "+3 Perception (See) at 50+ yards."
                 ],
                 "id": "",
                 "name": "Binoculars",
@@ -3633,7 +3633,7 @@ const rules = {
             },
             "cagetrap": {
                 "description": [
-                    "+3 Survival(Forage).",
+                    "+3 Survival (Forage).",
                     "Takes 1day."
                 ],
                 "id": "",
@@ -3687,7 +3687,7 @@ const rules = {
             },
             "compass": {
                 "description": [
-                    "+3 Survival(Navigate).",
+                    "+3 Survival (Navigate).",
                     "Always points North."
                 ],
                 "id": "",
@@ -3715,7 +3715,7 @@ const rules = {
             },
             "firestick": {
                 "description": [
-                    "+3 Survival(Camp).",
+                    "+3 Survival (Camp).",
                     "Magnesium rod and steel."
                 ],
                 "id": "",
@@ -3729,7 +3729,7 @@ const rules = {
             },
             "fishingpole": {
                 "description": [
-                    "+1 Survival(Forage) at river, lake, or ocean."
+                    "+1 Survival (Forage) at river, lake, or ocean."
                 ],
                 "id": "",
                 "name": "Fishing Pole",
@@ -3757,7 +3757,7 @@ const rules = {
             },
             "grapplinghook": {
                 "description": [
-                    "+3 Athletics(Climb and Rappel).",
+                    "+3 Athletics (Climb and Rappel).",
                     "Holds 100Sz."
                 ],
                 "id": "",
@@ -3840,7 +3840,7 @@ const rules = {
             },
             "matchbook": {
                 "description": [
-                    "+1 Survival(Camp).",
+                    "+1 Survival (Camp).",
                     "1yd light radius, 3 rounds."
                 ],
                 "id": "",
@@ -3854,7 +3854,7 @@ const rules = {
             },
             "monocular": {
                 "description": [
-                    "+1 Perception(See) at 25+ yards."
+                    "+1 Perception (See) at 25+ yards."
                 ],
                 "id": "",
                 "name": "Monocular",
@@ -3908,7 +3908,7 @@ const rules = {
             "padlock": {
                 "description": [
                     "2 Absorption.",
-                    "Larceny(Disable) 9#."
+                    "Larceny (Disable) 9#."
                 ],
                 "id": "",
                 "name": "Padlock",
@@ -3954,7 +3954,7 @@ const rules = {
             },
             "pocketmirror": {
                 "description": [
-                    "Perception(See) 6# to see from behind Cover."
+                    "Perception (See) 6# to see from behind Cover."
                 ],
                 "id": "",
                 "name": "Pocket Mirror",
@@ -3967,7 +3967,7 @@ const rules = {
             },
             "rattrap": {
                 "description": [
-                    "+1 Survival(Forage).",
+                    "+1 Survival (Forage).",
                     "Takes 1day."
                 ],
                 "id": "",
@@ -4039,7 +4039,7 @@ const rules = {
             },
             "spottingscope": {
                 "description": [
-                    "+6 Perception(See) at 100+ yards."
+                    "+6 Perception (See) at 100+ yards."
                 ],
                 "id": "",
                 "name": "Spotting Scope",
@@ -4096,7 +4096,7 @@ const rules = {
             },
             "whistle": {
                 "description": [
-                    "+1 Tame(Train).",
+                    "+1 Tame (Train).",
                     "Loud shriek 500yd radius."
                 ],
                 "id": "",
@@ -4624,7 +4624,7 @@ const rules = {
         "resources": {
             "chemicals": {
                 "description": [
-                    "Substances used for Science(Chemistry)."
+                    "Substances used for Science (Chemistry)."
                 ],
                 "id": "",
                 "name": "Chemicals",
@@ -4663,7 +4663,7 @@ const rules = {
             },
             "parts": {
                 "description": [
-                    "Scrap used for Build and Science(Tech)."
+                    "Scrap used for Build and Science (Tech)."
                 ],
                 "id": "",
                 "name": "Parts",
@@ -4737,7 +4737,7 @@ const rules = {
                 "description": [
                     "2 Absorption.",
                     "Fire Resistance.",
-                    "Larceny(Disable) 9#."
+                    "Larceny (Disable) 9#."
                 ],
                 "id": "",
                 "name": "Lockbox",
@@ -4795,7 +4795,7 @@ const rules = {
         "tools": {
             "bobbypin": {
                 "description": [
-                    "Allows Larceny(Disable) roll on key locks."
+                    "Allows Larceny (Disable) roll on key locks."
                 ],
                 "id": "",
                 "name": "Bobby Pin",
@@ -4875,7 +4875,7 @@ const rules = {
             },
             "lockpicks": {
                 "description": [
-                    "+3 Larceny(Disable) key locks.",
+                    "+3 Larceny (Disable) key locks.",
                     "6 picks."
                 ],
                 "id": "",
@@ -4889,7 +4889,7 @@ const rules = {
             },
             "magnifyingglass": {
                 "description": [
-                    "+6 Perception(See) to inspect tiny details."
+                    "+6 Perception (See) to inspect tiny details."
                 ],
                 "id": "",
                 "name": "Magnifying Glass",
@@ -4902,7 +4902,7 @@ const rules = {
             },
             "measuringcup": {
                 "description": [
-                    "+3 Science(Chemistry).",
+                    "+3 Science (Chemistry).",
                     "Marked glass cup."
                 ],
                 "id": "",
@@ -4916,7 +4916,7 @@ const rules = {
             },
             "multitool": {
                 "description": [
-                    "+1 Larceny(Disable), Build, Science(Tech)."
+                    "+1 Larceny (Disable), Build, Science (Tech)."
                 ],
                 "id": "",
                 "name": "Multi-tool",
@@ -5084,7 +5084,7 @@ const rules = {
             },
             "carabiner": {
                 "description": [
-                    "+1 Athletics(Climb and Rappel).",
+                    "+1 Athletics (Climb and Rappel).",
                     "Holds 50Sz."
                 ],
                 "id": "",
@@ -5183,7 +5183,7 @@ const rules = {
             "earplugs": {
                 "description": [
                     "No Deafness from noise.",
-                    "-3 Perception(Hear)."
+                    "-3 Perception (Hear)."
                 ],
                 "id": "",
                 "name": "Ear Plugs",
@@ -5196,7 +5196,7 @@ const rules = {
             },
             "flippers": {
                 "description": [
-                    "+3 Athletics(Swim).",
+                    "+3 Athletics (Swim).",
                     "-6 walking Speed."
                 ],
                 "id": "",
@@ -5241,7 +5241,7 @@ const rules = {
                     "Restrained if placed on Arms.",
                     "Speed = 1 if placed on Legs.",
                     "A15# to escape.",
-                    "Larceny(Disable) 12#."
+                    "Larceny (Disable) 12#."
                 ],
                 "id": "",
                 "name": "Handcuffs",
@@ -5297,7 +5297,7 @@ const rules = {
             },
             "lifejacket": {
                 "description": [
-                    "+6 Athletics(Swim).",
+                    "+6 Athletics (Swim).",
                     "Prevents drowning."
                 ],
                 "id": "",
@@ -5482,7 +5482,7 @@ const rules = {
             },
             "wristwatch": {
                 "description": [
-                    "Tells time and +1 Survival(Navigate)."
+                    "Tells time and +1 Survival (Navigate)."
                 ],
                 "id": "",
                 "name": "Wristwatch",
@@ -5512,7 +5512,7 @@ const rules = {
                 "1 Blunt Damage per 2 yards.",
                 "Each point of Falling Damage is inflicted on a random Body Part.",
                 "Excess Damage left over after that Body Part is destroyed must be applied to another random Body Part until either no Damage remains or all Body Parts are destroyed.",
-                "Roll [Acrobatics # = yards] to halve Falling Damage.",
+                "Roll [ Acrobatics # = yards] to halve Falling Damage.",
                 "On a Botch, you go Prone and get Stunned for d6 rounds.",
                 "Falling objects deal BDMG equal to their Size."
             ],
@@ -5625,7 +5625,7 @@ const rules = {
         },
         "disarm": {
             "description": [
-                "Roll [Melee vs Melee (+ Constitution if the weapon is used two-handed)].",
+                "Roll [ Melee vs Melee (+ Constitution if the weapon is used two-handed) ].",
                 "The weapon flies d6 yards away in a random direction or the Attacker may choose to grab the weapon if they have an empty hand."
             ],
             "id": "",
@@ -5637,7 +5637,7 @@ const rules = {
         },
         "distract": {
             "description": [
-                "Roll [Perform vs Perception].",
+                "Roll [ Perform vs Perception].",
                 "Stun target for 1 Round."
             ],
             "id": "",
@@ -5649,8 +5649,8 @@ const rules = {
         },
         "duck": {
             "description": [
-                "You may roll [Dodge vs Attack] to move up to your Speed to get behind Cover.",
-                "This is the only way to Dodge a Projectile(Firearm) Attack.",
+                "You may roll [ Dodge vs Attack] to move up to your Speed to get behind Cover.",
+                "This is the only way to Dodge a Projectile (Firearm) Attack.",
                 "As part of this Dodge, you may elect to go Prone.",
                 "If the Attack still hits, the Cover Material’s Absorption reduces the Damage.",
                 "You will keep the benefits of Cover as long as it remains between you and the opponent."
@@ -5664,7 +5664,7 @@ const rules = {
         },
         "encourage": {
             "description": [
-                "Roll [Leadership vs groups’ total Demeanor scores].",
+                "Roll [ Leadership vs groups’ total Demeanor scores].",
                 "The group gets a bonus = [your Demeanor] for one specific roll each.",
                 "A Botch is -1 to all rolls."
             ],
@@ -5677,7 +5677,7 @@ const rules = {
         },
         "grab": {
             "description": [
-                "Roll [Melee(Unarmed) vs DEF] to impose the 'Grabbed' Status."
+                "Roll [ Melee (Unarmed) vs DEF] to impose the 'Grabbed' Status."
             ],
             "id": "",
             "name": "Grab",
@@ -5692,7 +5692,7 @@ const rules = {
                 "1) Grab",
                 "2) Restrain",
                 "3) Pin",
-                "To Grapple an opponent, you must have at least one free hand and make a Melee(Unarmed) Attack roll, which does no Damage.",
+                "To Grapple an opponent, you must have at least one free hand and make a Melee (Unarmed) Attack roll, which does no Damage.",
                 "With a Successful Grapple roll, that combatant may alter the current Grapple step by 1.",
                 "With each new Grapple roll, the difference between the combatants' results is a modifier to the Attacker's next Grapple roll.",
                 "Each Round the Attacker must choose to either allocate 1 Action just to retain the Grapple, make another Grapple roll, or let go.",
@@ -5707,7 +5707,7 @@ const rules = {
         },
         "hide": {
             "description": [
-                "Roll [Stealth vs Perception] to be Concealed.",
+                "Roll [ Stealth vs Perception] to be Concealed.",
                 "Your Speed is 0.",
                 "+3 Stealth if Prone."
             ],
@@ -5734,11 +5734,11 @@ const rules = {
         },
         "interrogate": {
             "description": [
-                "Roll [Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence.",
+                "Roll [ Leadership vs Demeanor] to get information out of a subject who does not want to help, but without resorting to violence.",
                 "Each roll takes d6 mins of conversation.",
                 "If the interrogator Succeeds, the subject gives up a fact (wittingly or unwittingly).",
                 "If the subject Succeeds, they become hardened against further questioning, imposing a -1 penalty on subsequent attempts.",
-                "After Fails = [Demeanor], the interrogator gives up or the subject cracks and tells everything they know."
+                "After Fails = [ Demeanor], the interrogator gives up or the subject cracks and tells everything they know."
             ],
             "id": "",
             "name": "Interrogate",
@@ -5750,7 +5750,7 @@ const rules = {
         "negotiate": {
             "description": [
                 "If opposed parties are willing to talk out their differences, each side start with a list of demands.",
-                "Roll [Socialize vs Socialize] once per demand.",
+                "Roll [ Socialize vs Socialize] once per demand.",
                 "Attitude and situational modifiers should be applied by the Narrator.",
                 "Success means you get your demand and the opposed negotiator concedes.",
                 "Either side can choose to concede a demand without rolling. Some desires may be non-negotiable."
@@ -5788,7 +5788,7 @@ const rules = {
         },
         "push": {
             "description": [
-                "Roll [Constitution vs Constitution] to push an enemy in front of you.",
+                "Roll [ Constitution vs Constitution] to push an enemy in front of you.",
                 "While Pushing, your Speed is equal to the lesser of your normal Speed or your Constitution. No Damage."
             ],
             "id": "",
@@ -5800,8 +5800,8 @@ const rules = {
         },
         "recruit": {
             "description": [
-                "Roll [Socialize vs Demeanor] to convince someone to join your side.",
-                "If they are someone’s follower, roll [Leadership vs Leadership].",
+                "Roll [ Socialize vs Demeanor] to convince someone to join your side.",
+                "If they are someone’s follower, roll [ Leadership vs Leadership].",
                 "Attitude and other contextual modifiers should be applied at the Narrator's discretion."
             ],
             "id": "",
@@ -5824,7 +5824,7 @@ const rules = {
         },
         "shove": {
             "description": [
-                "Roll [Melee vs Constitution] to shove an enemy up to [Constitution / 2] yards away from you, knocking them Prone. No Damage."
+                "Roll [ Melee vs Constitution] to shove an enemy up to [ Constitution / 2] yards away from you, knocking them Prone. No Damage."
             ],
             "id": "",
             "name": "Shove",
@@ -5835,7 +5835,7 @@ const rules = {
         },
         "sneak": {
             "description": [
-                "Roll [Stealth vs Perception] to move Concealed at [Speed / 2]."
+                "Roll [ Stealth vs Perception] to move Concealed at [ Speed / 2]."
             ],
             "id": "",
             "name": "Sneak",
@@ -5858,7 +5858,7 @@ const rules = {
         },
         "taunt": {
             "description": [
-                "Roll [Leadership vs Demeanor].",
+                "Roll [ Leadership vs Demeanor].",
                 "Provoke the enemy into exclusively attacking you.",
                 "The degree of Success is a penalty to the loser’s next roll.",
                 "The enemy is Stunned for 1 Round if [penalty > enemy’s Demeanor]."
@@ -5872,7 +5872,7 @@ const rules = {
         },
         "throw": {
             "description": [
-                "Throw a Grabbed or Restrained enemy up to [Constitution] yards.",
+                "Throw a Grabbed or Restrained enemy up to [ Constitution] yards.",
                 "The target takes 1 point of Blunt Damage to a random Body Part and land Prone."
             ],
             "id": "",
@@ -5885,10 +5885,10 @@ const rules = {
         "torture": {
             "description": [
                 "Torture sessions can last as long as the torturer wants them to.",
-                "Roll [Medicine vs the captive's Constitution] and select one or more Body Parts on the captive.",
+                "Roll [ Medicine vs the captive's Constitution] and select one or more Body Parts on the captive.",
                 "Success means the captive takes 1d6 Trauma and 1 Damage for each selected Body Part.",
                 "Failure means the captive takes 1d6 Trauma and 1d6 Damage for each selected Body Part.",
-                "Roll [Demeanor vs Demeanor] at the end of each torture session.",
+                "Roll [ Demeanor vs Demeanor] at the end of each torture session.",
                 "Success means you take 1 Trauma and the captive's spirit is broken, meaning that they will do or say whatever they think will stop further torture until they are freed.",
                 "Failure means you take 1d6 Trauma from inflicting torture on another human being and the captive continues to resist."
             ],
@@ -5901,7 +5901,7 @@ const rules = {
         },
         "trip": {
             "description": [
-                "Roll [Melee vs Agility] to knock an enemy Prone. 1 Damage."
+                "Roll [ Melee vs Agility] to knock an enemy Prone. 1 Damage."
             ],
             "id": "",
             "name": "Trip",
@@ -5917,7 +5917,7 @@ const rules = {
                 "Constant air supply is required to avoid Asphyxiation.",
                 "1 Pain per minute without air.",
                 "Pain penalties from Asphyxiation are reduced by 1 per minute with air.",
-                "Going without air for a number of minutes = [Constitution] is lethal."
+                "Going without air for a number of minutes = [ Constitution] is lethal."
             ],
             "id": "",
             "name": "Asphyxiation",
@@ -5930,7 +5930,7 @@ const rules = {
                 "1 Water per day is required.",
                 "1 Pain per day without Water.",
                 "Pain penalties from Dehydration are reduced by 1 per day with Water.",
-                "Dehydration for days = [Constitution] is lethal.",
+                "Dehydration for days = [ Constitution] is lethal.",
                 "Climate Humidity modifies Water requirements as follows:",
                 "Desert = 3/day.",
                 "Mountain = 2/day.",
@@ -5960,7 +5960,7 @@ const rules = {
                 "Body temperature must be maintained to avoid Hypothermia.",
                 "1 Pain per hour of Hypothermia.",
                 "Pain penalties from Hypothermia are reduced by 1 per hour of warmth.",
-                "Hypothermia for hours = [Constitution] is lethal."
+                "Hypothermia for hours = [ Constitution] is lethal."
             ],
             "id": "",
             "name": "Hypothermia",
@@ -5974,7 +5974,7 @@ const rules = {
                 "1 Pain per day for the first 3 days without Food.",
                 "After that, the Pain reduces to 1 until you eat.",
                 "Pain penalties from Starvation go away after you eat Food.",
-                "Starvation for weeks = [Constitution] is lethal."
+                "Starvation for weeks = [ Constitution] is lethal."
             ],
             "id": "",
             "name": "Starvation",
@@ -5987,7 +5987,7 @@ const rules = {
         "deflection": {
             "description": [
                 "Deflection = ( Brains + Constitution ) / 2.",
-                "This is your default Defense against Melee Attacks when you do not allocate an Action to make a Melee(Block) roll.",
+                "This is your default Defense against Melee Attacks when you do not allocate an Action to make a Melee (Block) roll.",
                 "Deflection does not require an Action or cost Endurance, though it is reduced by Pain penalties."
             ],
             "id": "",
@@ -6028,7 +6028,7 @@ const rules = {
         "evasion": {
             "description": [
                 "Evasion = ( Agility + Brains ) / 2.",
-                "This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics(Dodge) roll.",
+                "This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics (Dodge) roll.",
                 "Evasion does not require an Action or cost Endurance, though it is reduced by Pain penalties."
             ],
             "id": "",
@@ -6127,11 +6127,11 @@ const rules = {
         "luck": {
             "description": [
                 "Luck = ( Agility + Demeanor ) / 2",
-                "Luck rolls [d6 + current Luck points] are made to determine your fate in matters of pure chance.",
+                "Luck rolls [ d6 + current Luck points] are made to determine your fate in matters of pure chance.",
                 "You may spend 1 Luck Point per Round for one of the three effects listed below.",
                 "Spending a Luck Point does not require the use of an Action.",
                 "You regain 1 spent Luck Point per day after getting 8 hours of sleep.",
-                "• Re-roll your last roll and add a Luck roll [d6 + current Luck points] to the result as a bonus.",
+                "• Re-roll your last roll and add a Luck roll [ d6 + current Luck points] to the result as a bonus.",
                 "• Take an extra Action this Round (up to 4 Actions) without having to spend any Endurance.",
                 "• Give a Luck point to one of your Comrades."
             ],
@@ -6162,7 +6162,7 @@ const rules = {
                 "Speed = Agility x 3",
                 "Spend Speed as part of a Movement Action to change your location.",
                 "The distance you can move for the Round depends on your Speed and the type(s) of Movement you are making (see Movement).",
-                "When traveling long distances overland, you can March at [Speed / 2] mph for up to your Endurance in hours per day."
+                "When traveling long distances overland, you can March at [ Speed / 2] mph for up to your Endurance in hours per day."
             ],
             "id": "",
             "name": "Speed",
@@ -6199,8 +6199,8 @@ const rules = {
                 },
                 "jump": {
                     "description": [
-                        "Running Jump distance is [Agility] yards.",
-                        "Standing vertical Jump height is [Agility / 2] feet."
+                        "Running Jump distance is [ Agility] yards.",
+                        "Standing vertical Jump height is [ Agility / 2] feet."
                     ],
                     "id": "",
                     "name": "Jump",
@@ -6226,7 +6226,7 @@ const rules = {
             "specialties": {
                 "climb": {
                     "description": [
-                        "Move along vertical surfaces at [Walk Speed / 2]."
+                        "Move along vertical surfaces at [ Walk Speed / 2]."
                     ],
                     "id": "",
                     "name": "Climb",
@@ -6238,7 +6238,7 @@ const rules = {
                 },
                 "swim": {
                     "description": [
-                        "Move in water at [Speed / 4]."
+                        "Move in water at [ Speed / 4]."
                     ],
                     "id": "",
                     "name": "Swim",
@@ -6252,7 +6252,7 @@ const rules = {
         },
         "build": {
             "description": [
-                "Make an item from [d6 + #] Parts."
+                "Make an item from [ d6 + #] Parts."
             ],
             "id": "",
             "name": "Build",
@@ -6281,7 +6281,7 @@ const rules = {
                 "repair": {
                     "description": [
                         "Fixing a broken item takes a number of hours to complete equal to the Difficulty.",
-                        "+1 to the Build(Repair) roll when using Parts from the same kind of item."
+                        "+1 to the Build (Repair) roll when using Parts from the same kind of item."
                     ],
                     "id": "",
                     "name": "Repair",
@@ -6307,7 +6307,7 @@ const rules = {
             "specialties": {
                 "ram": {
                     "description": [
-                        "Roll vs [Drive(Stunt)] to Attack with a vehicle."
+                        "Roll vs [ Drive (Stunt) ] to Attack with a vehicle."
                     ],
                     "id": "",
                     "name": "Ram",
@@ -6319,7 +6319,7 @@ const rules = {
                 },
                 "stunt": {
                     "description": [
-                        "Roll vs [Drive(Ram)] for Defense with a vehicle."
+                        "Roll vs [ Drive (Ram) ] for Defense with a vehicle."
                     ],
                     "id": "",
                     "name": "Stunt",
@@ -6357,7 +6357,7 @@ const rules = {
                 },
                 "trick": {
                     "description": [
-                        "Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand."
+                        "Roll vs [ Perception] to pick pockets, hide items, or some other sleight-of-hand."
                     ],
                     "id": "",
                     "name": "Trick",
@@ -6440,7 +6440,7 @@ const rules = {
                     "description": [
                         "Stop a person from Bleeding as long as they do not take any more Damage.",
                         "Inflict an additional d6 Damage on a Botch.",
-                        "Takes [Damage x 20] minutes."
+                        "Takes [ Damage x 20] minutes."
                     ],
                     "id": "",
                     "name": "Surgery",
@@ -6505,7 +6505,7 @@ const rules = {
             "specialties": {
                 "search": {
                     "description": [
-                        "Roll vs [Stealth (or Survival if tracking)]."
+                        "Roll vs [ Stealth (or Survival if tracking) ]."
                     ],
                     "id": "",
                     "name": "Search",
@@ -6517,7 +6517,7 @@ const rules = {
                 },
                 "intuition": {
                     "description": [
-                        "Roll vs [Socialize or Perform]."
+                        "Roll vs [ Socialize or Perform]."
                     ],
                     "id": "",
                     "name": "Intuition",
@@ -6621,8 +6621,8 @@ const rules = {
                 "chemistry": {
                     "description": [
                         "Mix Chemicals to make Bombs, Drugs, Medicine, etc.",
-                        "Time required is [Mix # x 10] minutes.",
-                        "Requires the use of [d6 + Mix #] Chemicals."
+                        "Time required is [ Mix # x 10] minutes.",
+                        "Requires the use of [ d6 + Mix #] Chemicals."
                     ],
                     "id": "",
                     "name": "Chemistry",
@@ -6752,7 +6752,7 @@ const rules = {
                 "navigate": {
                     "description": [
                         "(1min) Plot course",
-                        "Roll vs [Perception] if tracked."
+                        "Roll vs [ Perception] if tracked."
                     ],
                     "id": "",
                     "name": "Navigate",
@@ -6991,8 +6991,8 @@ const rules = {
             "description": [
                 "Projectile Attacks made at Point-Blank Range (3yrds or less) get a +3 bonus.",
                 "Projectile Attacks targeting beyond the weapon's Range take a -1 Attack penalty per additional Range increment.",
-                "Projectile(Firearm) weapons have a maximum effective Range equal to x10 the base weapon Range.",
-                "Projectile(Traditional) weapons have a maximum effective Range equal to x5 the base weapon Range.",
+                "Projectile (Firearm) weapons have a maximum effective Range equal to x10 the base weapon Range.",
+                "Projectile (Traditional) weapons have a maximum effective Range equal to x5 the base weapon Range.",
                 "Melee Attacks take a modifier against Melee weapons that have a different Range = [your weapon’s Range - enemy weapon’s Range]."
             ],
             "id": "",
@@ -7108,8 +7108,8 @@ const rules = {
                         },
                         "jump": {
                             "description": [
-                                "Running Jump distance is [Agility] yards.",
-                                "Standing vertical Jump height is [Agility / 2] feet."
+                                "Running Jump distance is [ Agility] yards.",
+                                "Standing vertical Jump height is [ Agility / 2] feet."
                             ],
                             "id": "",
                             "name": "Jump",
@@ -7147,7 +7147,7 @@ const rules = {
                         },
                         "trick": {
                             "description": [
-                                "Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand."
+                                "Roll vs [ Perception] to pick pockets, hide items, or some other sleight-of-hand."
                             ],
                             "id": "",
                             "name": "Trick",
@@ -7282,7 +7282,7 @@ const rules = {
                             "description": [
                                 "Stop a person from Bleeding as long as they do not take any more Damage.",
                                 "Inflict an additional d6 Damage on a Botch.",
-                                "Takes [Damage x 20] minutes."
+                                "Takes [ Damage x 20] minutes."
                             ],
                             "id": "",
                             "name": "Surgery",
@@ -7308,7 +7308,7 @@ const rules = {
                     "specialties": {
                         "search": {
                             "description": [
-                                "Roll vs [Stealth (or Survival if tracking)]."
+                                "Roll vs [ Stealth (or Survival if tracking) ]."
                             ],
                             "id": "",
                             "name": "Search",
@@ -7320,7 +7320,7 @@ const rules = {
                         },
                         "intuition": {
                             "description": [
-                                "Roll vs [Socialize or Perform]."
+                                "Roll vs [ Socialize or Perform]."
                             ],
                             "id": "",
                             "name": "Intuition",
@@ -7347,8 +7347,8 @@ const rules = {
                         "chemistry": {
                             "description": [
                                 "Mix Chemicals to make Bombs, Drugs, Medicine, etc.",
-                                "Time required is [Mix # x 10] minutes.",
-                                "Requires the use of [d6 + Mix #] Chemicals."
+                                "Time required is [ Mix # x 10] minutes.",
+                                "Requires the use of [ d6 + Mix #] Chemicals."
                             ],
                             "id": "",
                             "name": "Chemistry",
@@ -7399,7 +7399,7 @@ const rules = {
                         "navigate": {
                             "description": [
                                 "(1min) Plot course",
-                                "Roll vs [Perception] if tracked."
+                                "Roll vs [ Perception] if tracked."
                             ],
                             "id": "",
                             "name": "Navigate",
@@ -7440,7 +7440,7 @@ const rules = {
                     "specialties": {
                         "climb": {
                             "description": [
-                                "Move along vertical surfaces at [Walk Speed / 2]."
+                                "Move along vertical surfaces at [ Walk Speed / 2]."
                             ],
                             "id": "",
                             "name": "Climb",
@@ -7452,7 +7452,7 @@ const rules = {
                         },
                         "swim": {
                             "description": [
-                                "Move in water at [Speed / 4]."
+                                "Move in water at [ Speed / 4]."
                             ],
                             "id": "",
                             "name": "Swim",
@@ -7466,7 +7466,7 @@ const rules = {
                 },
                 {
                     "description": [
-                        "Make an item from [d6 + #] Parts."
+                        "Make an item from [ d6 + #] Parts."
                     ],
                     "id": "",
                     "name": "Build",
@@ -7495,7 +7495,7 @@ const rules = {
                         "repair": {
                             "description": [
                                 "Fixing a broken item takes a number of hours to complete equal to the Difficulty.",
-                                "+1 to the Build(Repair) roll when using Parts from the same kind of item."
+                                "+1 to the Build (Repair) roll when using Parts from the same kind of item."
                             ],
                             "id": "",
                             "name": "Repair",
@@ -7521,7 +7521,7 @@ const rules = {
                     "specialties": {
                         "ram": {
                             "description": [
-                                "Roll vs [Drive(Stunt)] to Attack with a vehicle."
+                                "Roll vs [ Drive (Stunt) ] to Attack with a vehicle."
                             ],
                             "id": "",
                             "name": "Ram",
@@ -7533,7 +7533,7 @@ const rules = {
                         },
                         "stunt": {
                             "description": [
-                                "Roll vs [Drive(Ram)] for Defense with a vehicle."
+                                "Roll vs [ Drive (Ram) ] for Defense with a vehicle."
                             ],
                             "id": "",
                             "name": "Stunt",

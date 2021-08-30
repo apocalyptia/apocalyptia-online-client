@@ -5,7 +5,7 @@ import Mask from '../../gear/attributes/Mask.js'
 const MotorcycleHelmet = new Armor({
 	name: `Motorcycle Helmet`,
 	size: 2,
-	attributes: [FireResistance, Mask],
+	attributes: [ FireResistance, Mask],
 	type: `Armor`,
 	absorption: 1,
 	location: `Head`,

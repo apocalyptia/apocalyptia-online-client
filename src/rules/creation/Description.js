@@ -14,6 +14,6 @@ const Description = new CreationStep({
 	step: 5,
 	type: `CreationStep`,
 })
-Description.list = [Player, Name, Age, Sex, Height, Weight, Skin, Hair]
+Description.list = [ Player, Name, Age, Sex, Height, Weight, Skin, Hair]
 
 export default Description

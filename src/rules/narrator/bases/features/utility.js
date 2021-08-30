@@ -62,7 +62,7 @@
 			</div>
 			<button id='StableFeaturesBtn' class='Btn'>STABLE</button>
 			<div id='StableFeaturesSec' class='Sec5'>
-				<p>Notes: Protects and hides horses. +3 Tame(Train).</p>
+				<p>Notes: Protects and hides horses. +3 Tame (Train).</p>
 				<p>Build: 15#</p>
 				<p>Parts: 15</p>
 			</div>

@@ -5,7 +5,7 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 const KevlarVest = new Armor({
 	name: `Kevlar Vest`,
 	size: 3,
-	attributes: [ColdResistance, FireResistance],
+	attributes: [ ColdResistance, FireResistance],
 	type: `Armor`,
 	absorption: 2,
 	location: `Torso`,

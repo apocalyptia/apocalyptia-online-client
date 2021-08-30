@@ -2,7 +2,7 @@ import Document from '/src/classes/gear/Document.js'
 
 const MapAtlas = new Document({
 	name: `Map (Atlas)`,
-	description: [`+1 Survival(Navigate)`],
+	description: [`+1 Survival (Navigate)`],
 	size: 1,
 	type: `Document`,
 })

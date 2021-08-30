@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const Marlin1894C = new Projectile({
+const Marlin1894C = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `.357`,

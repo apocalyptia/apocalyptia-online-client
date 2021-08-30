@@ -6,7 +6,7 @@ import Mask from '../../gear/attributes/Mask.js'
 const FirefighterSuit = new Armor({
 	name: `Firefighter Suit`,
 	size: 5,
-	attributes: [ColdResistance, FireResistance, Mask],
+	attributes: [ ColdResistance, FireResistance, Mask],
 	type: `Armor`,
 	absorption: 1,
 	location: `Head, Arms, Torso, Legs`,

@@ -7,7 +7,7 @@ const FavoriteWeapon = new Ability({
 	description: [`Any Botch with a specified weapon type is reduced in severity to a normal Fail.`],
 	max: 1,
 	experience: 3,
-	options: [...Object.values(Melee).map((melee) => melee.name), ...Object.values(Projectile).map((projectile) => projectile.name)],
+	options: [...Object.values(Melee).map((melee) => melee.name), ...Object.values(Projectile).map((projectile) => projectile.name) ],
 })
 
 export default FavoriteWeapon

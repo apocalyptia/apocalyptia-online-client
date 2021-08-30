@@ -5,7 +5,7 @@
 
 	const propertiesList = Object.keys($characterStore.properties).filter((p) => p != 'health')
 
-	const columns = [propertiesList.slice(0, propertiesList.length / 2), propertiesList.slice(propertiesList.length / 2, propertiesList.length)]
+	const columns = [propertiesList.slice(0, propertiesList.length / 2), propertiesList.slice(propertiesList.length / 2, propertiesList.length) ]
 </script>
 
 

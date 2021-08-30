@@ -61,7 +61,7 @@
 									type={'skill'}
 									min="0"
 									max={$characterStore.maxTraits}
-									bind:value={$characterStore.skills[skill.name.toLowerCase()].score}
+									bind:value={$characterStore.skills[skill.name.toLowerCase() ].score}
 									func={() => updateSkill(skill)}
 									indicator="true"
 								/>

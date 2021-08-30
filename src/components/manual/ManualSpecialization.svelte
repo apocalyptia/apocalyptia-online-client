@@ -1,4 +1,6 @@
 <script>
+	import linkTerms from '/src/utils/text/linkTerms.js'
+
 	export let rule
 </script>
 
@@ -9,9 +11,9 @@
 			{specialty.name}
 		</div>
 		{#if specialty.description}
-			{#each specialty.description as description}
+			{#each linkTerms(specialty.description) as description}
 				<p class="specialty-description">
-					{description}
+					s{@html description}
 				</p>
 			{/each}
 		{/if}

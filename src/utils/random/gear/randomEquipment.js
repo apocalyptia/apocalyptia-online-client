@@ -4,7 +4,7 @@ import Gear from '/src/rules/Gear.js'
 function randomEquipment({ category = '', numberOfItems = 1 }) {
 	let randomEquipmentList = []
 	if (category) {
-		randomEquipmentList = [...Object.values(Gear[category.toLowerCase()])]
+		randomEquipmentList = [...Object.values(Gear[category.toLowerCase() ]) ]
 	} else {
 		randomEquipmentList = [
 			...Object.values(Gear.accessories),

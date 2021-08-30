@@ -2,7 +2,7 @@ import Maneuver from '/src/classes/Maneuver.js'
 
 const Distract = new Maneuver({
 	name: `Distract`,
-	description: [`Roll [Perform vs Perception].`, `Stun target for 1 Round.`],
+	description: [`Roll [ Perform vs Perception].`, `Stun target for 1 Round.`],
 	mode: `Social`,
 })
 

@@ -5,7 +5,7 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 const HikingBoots = new Armor({
 	name: `Hiking Boots`,
 	size: 2,
-	attributes: [ColdResistance, FireResistance],
+	attributes: [ ColdResistance, FireResistance],
 	type: `Armor`,
 	absorption: 1,
 	location: `Legs`,

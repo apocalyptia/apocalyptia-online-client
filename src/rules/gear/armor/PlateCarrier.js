@@ -6,7 +6,7 @@ import FireResistance from '../../gear/attributes/FireResistance.js'
 const PlateCarrier = new Armor({
 	name: `Plate Carrier`,
 	size: 3,
-	attributes: [Camo, ColdResistance, FireResistance],
+	attributes: [ Camo, ColdResistance, FireResistance],
 	type: `Armor`,
 	absorption: 3,
 	location: `Torso`,

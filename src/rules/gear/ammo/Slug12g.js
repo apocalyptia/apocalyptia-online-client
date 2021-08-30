@@ -3,7 +3,7 @@ import Slug from '../attributes/Slug.js'
 
 const Slug12g = new Ammo({
 	accuracy: 0,
-	attributes: [Slug],
+	attributes: [ Slug],
 	caliber: `12g`,
 	description: [`Single-projectile ammunition.`],
 	damage: 0,

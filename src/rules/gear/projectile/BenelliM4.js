@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const BenelliM4 = new Projectile({
+const BenelliM4 = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `12g`,

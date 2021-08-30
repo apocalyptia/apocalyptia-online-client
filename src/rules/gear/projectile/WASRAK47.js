@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const WASRAK47 = new Projectile({
+const WASRAK47 = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `7.62mm`,

@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const SWMPShield = new Projectile({
+const SWMPShield = new Projectile ({
 	accuracy: -1,
 	attributes: [],
 	caliber: `9mm`,

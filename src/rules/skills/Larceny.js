@@ -16,7 +16,7 @@ const Larceny = new Skill({
 		trick: new Specialty({
 			name: `Trick`,
 			type: `Specialty`,
-			description: [`Roll vs [Perception] to pick pockets, hide items, or some other sleight-of-hand.`],
+			description: [`Roll vs [ Perception] to pick pockets, hide items, or some other sleight-of-hand.`],
 		}),
 	},
 })

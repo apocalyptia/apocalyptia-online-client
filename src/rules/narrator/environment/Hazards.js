@@ -84,7 +84,7 @@
 
 	<button id='HypothermiaHazardBtn' class='Btn'>HYPOTHERMIA</button>
 	<div id='HypothermiaHazardSec' class='Sec3'>
-		<p>-Prevent Hypothermia by making fire and shelter with Survival(Camping) 6# or using a Wood Stove for 1 Wood/hr, or using electric Heaters for 1000Whrs/day. Insulation halves Wood or Power consumption. Blizzards, Hail/Sleet, and Snow cause Hypothermia.</p>
+		<p>-Prevent Hypothermia by making fire and shelter with Survival (Camping) 6# or using a Wood Stove for 1 Wood/hr, or using electric Heaters for 1000Whrs/day. Insulation halves Wood or Power consumption. Blizzards, Hail/Sleet, and Snow cause Hypothermia.</p>
 	</div>
 
 	<button id='RadiationHazardBtn' class='Btn'>RADIATION</button>

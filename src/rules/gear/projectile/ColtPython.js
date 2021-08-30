@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const ColtPython = new Projectile({
+const ColtPython = new Projectile ({
 	accuracy: 1,
 	attributes: [],
 	caliber: `.357`,

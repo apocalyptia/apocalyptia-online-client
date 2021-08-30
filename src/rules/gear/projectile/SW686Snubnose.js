@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const SW686Snubnose = new Projectile({
+const SW686Snubnose = new Projectile ({
 	accuracy: -1,
 	attributes: [],
 	caliber: `.357`,

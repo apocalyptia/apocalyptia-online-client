@@ -8,7 +8,7 @@ const TeargasGrenade = new Bomb({
 	type: `Bomb`,
 	description: [`Chemical irritant grenade.`],
 	size: 1,
-	attributes: [Blind, Stun, Asphyxiation],
+	attributes: [ Blind, Stun, Asphyxiation],
 	damage: 1,
 	range: `1yd/rnd`,
 	fuse: 2,

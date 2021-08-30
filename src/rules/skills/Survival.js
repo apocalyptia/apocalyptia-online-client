@@ -16,7 +16,7 @@ const Survival = new Skill({
 		navigate: new Specialty({
 			name: `Navigate`,
 			type: `Specialty`,
-			description: [`(1min) Plot course`, `Roll vs [Perception] if tracked.`],
+			description: [`(1min) Plot course`, `Roll vs [ Perception] if tracked.`],
 		}),
 	},
 })

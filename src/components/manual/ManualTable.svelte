@@ -8,7 +8,7 @@
 	let columnWidths = []
 
 	onMount(() => {
-		tableContents = [rule.table.headers, ...Object.values(rule.table.contents).map((c) => Object.values(c))]
+		tableContents = [rule.table.headers, ...Object.values(rule.table.contents).map((c) => Object.values(c)) ]
 
 		columnWidths = new Array(rule.table.headers.length).fill(0)
 

@@ -6,7 +6,7 @@ const SmokeGrenade = new Bomb({
 	type: `Bomb`,
 	description: [`Visibility denial grenade.`],
 	size: 1,
-	attributes: [Blind],
+	attributes: [ Blind],
 	damage: 0,
 	range: `1yd/rnd`,
 	fuse: 2,

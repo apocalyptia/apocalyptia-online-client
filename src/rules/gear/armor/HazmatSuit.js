@@ -5,7 +5,7 @@ import Mask from '../../gear/attributes/Mask.js'
 const HazmatSuit = new Armor({
 	name: `Hazmat Suit`,
 	size: 2,
-	attributes: [Impermeable, Mask],
+	attributes: [ Impermeable, Mask],
 	type: `Armor`,
 	absorption: 0,
 	location: `Head, Arms, Torso, Legs`,

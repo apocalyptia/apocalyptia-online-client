@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const BarnettCrossbow = new Projectile({
+const BarnettCrossbow = new Projectile ({
 	accuracy: 0,
 	attributes: [],
 	caliber: `Arrow`,

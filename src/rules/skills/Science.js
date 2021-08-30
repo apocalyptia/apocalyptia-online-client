@@ -13,8 +13,8 @@ const Science = new Skill({
 			type: `Specialty`,
 			description: [
 				`Mix Chemicals to make Bombs, Drugs, Medicine, etc.`,
-				`Time required is [Mix # x 10] minutes.`,
-				`Requires the use of [d6 + Mix #] Chemicals.`
+				`Time required is [ Mix # x 10] minutes.`,
+				`Requires the use of [ d6 + Mix #] Chemicals.`
 			]
 		}),
 		technology: new Specialty({

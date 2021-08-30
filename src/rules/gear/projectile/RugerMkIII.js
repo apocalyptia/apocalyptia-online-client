@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const RugerMkIII = new Projectile({
+const RugerMkIII = new Projectile ({
 	accuracy: 1,
 	attributes: [],
 	caliber: `.22LR`,

@@ -1,6 +1,6 @@
 import Melee from '/src/classes/gear/Melee.js'
 
-const Crowbar = new Melee({
+const Crowbar = new Melee ({
 	accuracy: 0,
 	attributes: [],
 	damage: 3,

@@ -1,6 +1,6 @@
 import Projectile from '/src/classes/gear/Projectile.js'
 
-const CZUpland = new Projectile({
+const CZUpland = new Projectile ({
 	accuracy: 1,
 	attributes: [],
 	caliber: `12g`,

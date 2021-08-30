@@ -1,9 +1,9 @@
 import Melee from '/src/classes/gear/Melee.js'
 import Blunt from '../attributes/Blunt.js'
 
-const BrassKnuckles = new Melee({
+const BrassKnuckles = new Melee ({
 	accuracy: 0,
-	attributes: [Blunt],
+	attributes: [ Blunt],
 	damage: 1,
 	hands: 1,
 	name: `Brass Knuckles`,

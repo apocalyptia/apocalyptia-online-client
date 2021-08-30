@@ -22,19 +22,19 @@
 		</div>
 		<button id='ResolveTraitBtn' class='Btn'>RESOLVE</button>
 		<div id='ResolveTraitSec' class='Sec4'>
-			<p>Dedication to the cause. [Demeanor x Population].</p>
+			<p>Dedication to the cause. [ Demeanor x Population].</p>
 		</div>
 		<button id='IntelTraitBtn' class='Btn'>INTEL</button>
 		<div id='IntelTraitSec' class='Sec4'>
-			<p>Info gathering capability. [Brains x Population].</p>
+			<p>Info gathering capability. [ Brains x Population].</p>
 		</div>
 		<button id='StrengthTraitBtn' class='Btn'>STRENGTH</button>
 		<div id='StrengthTraitSec' class='Sec4'>
-			<p>Use of violent power. [Constitution x Population].</p>
+			<p>Use of violent power. [ Constitution x Population].</p>
 		</div>
 		<button id='MobilityTraitBtn' class='Btn'>MOBILITY</button>
 		<div id='MobilityTraitSec' class='Sec4'>
-			<p>Rapid deployment of troops. [Agility x Population].</p>
+			<p>Rapid deployment of troops. [ Agility x Population].</p>
 		</div>
 	</div>
 	

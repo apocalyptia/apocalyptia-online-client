@@ -7,7 +7,7 @@ const Thermite = new Bomb({
 	type: `Bomb`,
 	description: [`High-temperature incendiary bomb.`],
 	size: 1,
-	attributes: [Blast, FireDamage],
+	attributes: [ Blast, FireDamage],
 	damage: `6d6`,
 	range: 1,
 	fuse: 2,

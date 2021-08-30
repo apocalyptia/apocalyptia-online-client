@@ -408,7 +408,7 @@
 		</div>
 		<button id='SettlementCreationStep4Btn' class='Btn'>STEP 4: RESOURCES</button>
 		<div id='SettlementCreationStep4Sec' class='Sec4'>
-			<p>Next, roll [d6 x (d6x10)] once for each major RESOURCE (Water, Food, Parts, Chemicals, Fuel, Energy, Ammo), to see how much of that Resource the Settlement has on hand for trade or consumption. The most important Resources are Food and Water, since the people requires one of each per day per point of Population.</p>
+			<p>Next, roll [ d6 x (d6x10) ] once for each major RESOURCE (Water, Food, Parts, Chemicals, Fuel, Energy, Ammo), to see how much of that Resource the Settlement has on hand for trade or consumption. The most important Resources are Food and Water, since the people requires one of each per day per point of Population.</p>
 			<p>For rolling Ammo amounts, divide the total rolled evenly between each caliber. The Ammo will be of the basic starting AMMO type (FMJ, Birdshot, Target) for each caliber.</p>
 			<p>If your group prefers a faster simpler method to manage Resources, roll below to get a qualitative measure for each RESOURCE. In this case, the Narrator can simply inform the Players when a given Resource level increases or decreases for whatever reason.</p>
 			<button id='SettlementResourcesBtn' class='Btn'>RESOURCES</button>

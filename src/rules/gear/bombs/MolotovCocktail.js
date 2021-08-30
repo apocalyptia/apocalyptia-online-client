@@ -7,7 +7,7 @@ const MolotovCocktail = new Bomb({
 	type: `Bomb`,
 	description: [`Glass bottle of fuel with rag wick.`],
 	size: 1,
-	attributes: [Blast, FireDamage],
+	attributes: [ Blast, FireDamage],
 	damage: `1d6`,
 	range: 3,
 	fuse: 10,
