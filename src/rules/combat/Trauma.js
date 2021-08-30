@@ -1,6 +1,4 @@
 import Combat from '/src/classes/Combat.js'
-import Pain from './subrules/Pain.js'
-import Recovery from './subrules/Recovery.js'
 
 const Trauma = new Combat({
 	name: `Trauma`,
@@ -11,10 +9,7 @@ const Trauma = new Combat({
 		`Minor Trauma generally occurs 1 point at a time.`,
 		`Major Trauma can occur 1d6 or more points at a time.`,
 		`Players and Narrators should talk together to determine how traumatic particular events may be to the Character.`,
-	],
-	subrules: [
-		Pain,
-		Recovery
+		`Trauma can be healed during Recovery.`
 	]
 })
 

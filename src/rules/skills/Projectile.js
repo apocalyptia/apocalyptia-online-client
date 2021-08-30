@@ -18,7 +18,7 @@ const Projectile = new Skill({
 			type: `Specialty`,
 			description: [
 				`Roll vs target's Defense to attempt a basic Projectile Attack with any type of bow, thrown weapon, or any other muscle-powered Projectile.`,
-				`Any Melee weapon can be a thrown weapon with a base Range of [(Constitution x 3) - Weapon Size] yards.`,
+				`Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3) - Weapon Size] yards.`,
 			],
 		}),
 	},

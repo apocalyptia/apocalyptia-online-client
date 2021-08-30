@@ -16,7 +16,7 @@ const Perception = new Skill({
 		intuition: new Specialty({
 			name: `Intuition`,
 			type: `Specialty`,
-			description: [`Roll vs [ Socialize or Perform].`],
+			description: [`Roll vs [ Socialize or Perform ].`],
 		}),
 	},
 })

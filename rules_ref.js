@@ -715,7 +715,7 @@ const rules = {
     "combat": {
         "rounds": {
             "description": [
-                "During time-critical situations such as combat, Character Actions take place in 3-second “Rounds”.",
+                "During time-critical situations such as combat, Character Actions take place in 3-second Rounds.",
                 "Players have 60 seconds to allocate their Character's Actions for the Round.",
                 "Any unallocated Actions may be used as active Defense rolls, provided that the Character has enough Endurance to spend on those rolls.",
                 "All consequences of things that happened during a Round go into effect at the end of the Round."
@@ -785,8 +785,8 @@ const rules = {
                 "Defense sets the Difficulty for an Attack against you.",
                 "There are two modes of Defense: Active and Reflexive.",
                 "When you allocate your Actions for the Round, any unallocated Actions are assumed to be reserved to use on Active Defense rolls if needed.",
-                "If you are targeted by an Attack, you may choose which type of valid Active Defense roll you would like to make in response (Block or Dodge).",
-                "If you do not use an Action for active Defense, then you must chose which type of valid Reflexive Defense you will use (Deflection or Evasion)."
+                "If you are targeted by an Attack, you may choose which type of valid Active Defense roll you would like to make in response ( Block or Dodge ).",
+                "If you do not use an Action for active Defense, then you must chose which type of valid Reflexive Defense you will use (Deflection or Evasion )."
             ],
             "id": "",
             "name": "Defense",
@@ -798,7 +798,7 @@ const rules = {
             "description": [
                 "Damage temporarily reduces Health.",
                 "Each point of Damage causes a -1 Pain penalty until healed.",
-                "Successful Attacks do Damage = [( Attack total - target's Defense ) + Weapon Damage ] - Armor Absorption.",
+                "Successful Attacks do Damage = [ ( Attack total - target's Defense ) + Weapon Damage ] - Armor Absorption.",
                 "If Damage from one Attack before Armor Absorption is subtracted is greater than your Constitution, you fall Prone."
             ],
             "id": "",
@@ -832,7 +832,7 @@ const rules = {
                 "Many factors may further modify the final Result, such as special equipment that grants a bonus or unfavorable circumstances which impose a penalty.",
                 "It is the Narrator's job to decide which modifiers will affect your roll and what their magnitude will be.",
                 "If you feel that your Narrator is not taking some relevant modifiers into consideration, you should make your case briefly before rolling and then defer to their judgment (at least until the session is over).",
-                "[ d6 Roll + Trait or Skill Score ± Modifiers] = Result"
+                "[ d6 Roll + Trait or Skill score ± Modifiers ] = Result"
             ],
             "id": "",
             "name": "Dice",
@@ -928,7 +928,7 @@ const rules = {
             "description": [
                 "You get Brains x 6 Skill points.",
                 "Skills can range from 0 to 6.",
-                "Skill rolls are [ d6 + Skill].",
+                "Skill rolls are [ d6 + Skill ].",
                 "Trait scores set the upper limit for their Skills."
             ],
             "id": "",
@@ -2278,7 +2278,7 @@ const rules = {
                 "description": [
                     "Absorption = Size when used as Cover.",
                     "Bonus to Block = Size.",
-                    "Allows Melee (Block) and Deflect to be used vs Projectile (Firearm) Attacks."
+                    "Allows Melee ( Block ) and Deflect to be used vs Projectile (Firearm) Attacks."
                 ],
                 "id": "",
                 "name": "Shield",
@@ -3495,7 +3495,7 @@ const rules = {
                         "description": [
                             "Absorption = Size when used as Cover.",
                             "Bonus to Block = Size.",
-                            "Allows Melee (Block) and Deflect to be used vs Projectile (Firearm) Attacks."
+                            "Allows Melee ( Block ) and Deflect to be used vs Projectile (Firearm) Attacks."
                         ],
                         "id": "",
                         "name": "Shield",
@@ -5637,7 +5637,7 @@ const rules = {
         },
         "distract": {
             "description": [
-                "Roll [ Perform vs Perception].",
+                "Roll [ Perform vs Perception ].",
                 "Stun target for 1 Round."
             ],
             "id": "",
@@ -5707,7 +5707,7 @@ const rules = {
         },
         "hide": {
             "description": [
-                "Roll [ Stealth vs Perception] to be Concealed.",
+                "Roll [ Stealth vs Perception ] to be Concealed.",
                 "Your Speed is 0.",
                 "+3 Stealth if Prone."
             ],
@@ -5835,7 +5835,7 @@ const rules = {
         },
         "sneak": {
             "description": [
-                "Roll [ Stealth vs Perception] to move Concealed at [ Speed / 2 ]."
+                "Roll [ Stealth vs Perception ] to move Concealed at [ Speed / 2 ]."
             ],
             "id": "",
             "name": "Sneak",
@@ -5901,7 +5901,7 @@ const rules = {
         },
         "trip": {
             "description": [
-                "Roll [ Melee vs Agility] to knock an enemy Prone. 1 Damage."
+                "Roll [ Melee vs Agility ] to knock an enemy Prone. 1 Damage."
             ],
             "id": "",
             "name": "Trip",
@@ -5987,7 +5987,7 @@ const rules = {
         "deflection": {
             "description": [
                 "Deflection = ( Brains + Constitution ) / 2.",
-                "This is your default Defense against Melee Attacks when you do not allocate an Action to make a Melee (Block) roll.",
+                "This is your default Defense against Melee Attacks when you do not allocate an Action to make a Melee ( Block ) roll.",
                 "Deflection does not require an Action or cost Endurance, though it is reduced by Pain penalties."
             ],
             "id": "",
@@ -6028,7 +6028,7 @@ const rules = {
         "evasion": {
             "description": [
                 "Evasion = ( Agility + Brains ) / 2.",
-                "This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics (Dodge) roll.",
+                "This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics (Dodge ) roll.",
                 "Evasion does not require an Action or cost Endurance, though it is reduced by Pain penalties."
             ],
             "id": "",
@@ -6161,7 +6161,7 @@ const rules = {
             "description": [
                 "Speed = Agility x 3",
                 "Spend Speed as part of a Movement Action to change your location.",
-                "The distance you can move for the Round depends on your Speed and the type(s) of Movement you are making (see Movement).",
+                "The distance you can move for the Round depends on your Speed and the type(s) of Movement you are making.",
                 "When traveling long distances overland, you can March at [ Speed / 2 ] mph for up to your Endurance in hours per day."
             ],
             "id": "",
@@ -6199,7 +6199,7 @@ const rules = {
                 },
                 "jump": {
                     "description": [
-                        "Running Jump distance is [ Agility] yards.",
+                        "Running Jump distance is [ Agility ] yards.",
                         "Standing vertical Jump height is [ Agility / 2 ] feet."
                     ],
                     "id": "",
@@ -6252,7 +6252,7 @@ const rules = {
         },
         "build": {
             "description": [
-                "Make an item from [ d6 + #] Parts."
+                "Make an item from [ d6 + # ] Parts."
             ],
             "id": "",
             "name": "Build",
@@ -6357,7 +6357,7 @@ const rules = {
                 },
                 "trick": {
                     "description": [
-                        "Roll vs [ Perception] to pick pockets, hide items, or some other sleight-of-hand."
+                        "Roll vs [ Perception ] to pick pockets, hide items, or some other sleight-of-hand."
                     ],
                     "id": "",
                     "name": "Trick",
@@ -6517,7 +6517,7 @@ const rules = {
                 },
                 "intuition": {
                     "description": [
-                        "Roll vs [ Socialize or Perform]."
+                        "Roll vs [ Socialize or Perform ]."
                     ],
                     "id": "",
                     "name": "Intuition",
@@ -6594,7 +6594,7 @@ const rules = {
                 "traditional": {
                     "description": [
                         "Roll vs target's Defense to attempt a basic Projectile Attack with any type of bow, thrown weapon, or any other muscle-powered Projectile.",
-                        "Any Melee weapon can be a thrown weapon with a base Range of [(Constitution x 3) - Weapon Size] yards."
+                        "Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3) - Weapon Size] yards."
                     ],
                     "id": "",
                     "name": "Traditional",
@@ -6622,7 +6622,7 @@ const rules = {
                     "description": [
                         "Mix Chemicals to make Bombs, Drugs, Medicine, etc.",
                         "Time required is [ Mix # x 10] minutes.",
-                        "Requires the use of [ d6 + Mix #] Chemicals."
+                        "Requires the use of [ d6 + Mix # ] Chemicals."
                     ],
                     "id": "",
                     "name": "Chemistry",
@@ -6752,7 +6752,7 @@ const rules = {
                 "navigate": {
                     "description": [
                         "(1min) Plot course",
-                        "Roll vs [ Perception] if tracked."
+                        "Roll vs [ Perception ] if tracked."
                     ],
                     "id": "",
                     "name": "Navigate",
@@ -7025,7 +7025,7 @@ const rules = {
         },
         "unarmed": {
             "description": [
-                "Successful Unarmed Attacks do Damage = [( Attack - Defense ) / 2 ] (always Round down).",
+                "Successful Unarmed Attacks do Damage = [ ( Attack - Defense ) / 2 ] (always Round down).",
                 "Absorption is not depleted."
             ],
             "id": "",
@@ -7108,7 +7108,7 @@ const rules = {
                         },
                         "jump": {
                             "description": [
-                                "Running Jump distance is [ Agility] yards.",
+                                "Running Jump distance is [ Agility ] yards.",
                                 "Standing vertical Jump height is [ Agility / 2 ] feet."
                             ],
                             "id": "",
@@ -7147,7 +7147,7 @@ const rules = {
                         },
                         "trick": {
                             "description": [
-                                "Roll vs [ Perception] to pick pockets, hide items, or some other sleight-of-hand."
+                                "Roll vs [ Perception ] to pick pockets, hide items, or some other sleight-of-hand."
                             ],
                             "id": "",
                             "name": "Trick",
@@ -7186,7 +7186,7 @@ const rules = {
                         "traditional": {
                             "description": [
                                 "Roll vs target's Defense to attempt a basic Projectile Attack with any type of bow, thrown weapon, or any other muscle-powered Projectile.",
-                                "Any Melee weapon can be a thrown weapon with a base Range of [(Constitution x 3) - Weapon Size] yards."
+                                "Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3) - Weapon Size] yards."
                             ],
                             "id": "",
                             "name": "Traditional",
@@ -7320,7 +7320,7 @@ const rules = {
                         },
                         "intuition": {
                             "description": [
-                                "Roll vs [ Socialize or Perform]."
+                                "Roll vs [ Socialize or Perform ]."
                             ],
                             "id": "",
                             "name": "Intuition",
@@ -7348,7 +7348,7 @@ const rules = {
                             "description": [
                                 "Mix Chemicals to make Bombs, Drugs, Medicine, etc.",
                                 "Time required is [ Mix # x 10] minutes.",
-                                "Requires the use of [ d6 + Mix #] Chemicals."
+                                "Requires the use of [ d6 + Mix # ] Chemicals."
                             ],
                             "id": "",
                             "name": "Chemistry",
@@ -7399,7 +7399,7 @@ const rules = {
                         "navigate": {
                             "description": [
                                 "(1min) Plot course",
-                                "Roll vs [ Perception] if tracked."
+                                "Roll vs [ Perception ] if tracked."
                             ],
                             "id": "",
                             "name": "Navigate",
@@ -7466,7 +7466,7 @@ const rules = {
                 },
                 {
                     "description": [
-                        "Make an item from [ d6 + #] Parts."
+                        "Make an item from [ d6 + # ] Parts."
                     ],
                     "id": "",
                     "name": "Build",

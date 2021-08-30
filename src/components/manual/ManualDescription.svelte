@@ -1,13 +1,7 @@
 <script>
 	import ManualSubRule from '/src/components/manual/ManualSubRule.svelte'
-	import linkTerms from '/src/utils/text/linkTerms.js'
-	import { onMount } from 'svelte'
 
 	export let rule
-
-	rule.description = linkTerms(rule.description)
-
-	onMount(() => console.log('onMount event!'))
 </script>
 
 

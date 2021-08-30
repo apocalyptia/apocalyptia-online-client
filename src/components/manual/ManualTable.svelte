@@ -1,12 +1,5 @@
 <script>
-	// import linkTerms from '/src/utils/text/linkTerms.js'
-
 	export let rule
-
-	// rule.table.contents.forEach(row => {
-	// 	row.penalty = linkTerms([row.penalty])[0]
-	// 	row.effect = linkTerms([row.effect])[0]
-	// })
 </script>
 
 

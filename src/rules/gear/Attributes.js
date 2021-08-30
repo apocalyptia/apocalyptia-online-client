@@ -3,7 +3,7 @@ import Blast from './attributes/Blast.js'
 import Blunt from './attributes/Blunt.js'
 import Camo from './attributes/Camo.js'
 import ColdResistance from './attributes/ColdResistance.js'
-import FireDamage from './attributes/FireDamage.js'
+import Fire from './attributes/Fire.js'
 import FireResistance from './attributes/FireResistance.js'
 import Impermeable from './attributes/Impermeable.js'
 import Mask from './attributes/Mask.js'
@@ -18,7 +18,7 @@ const Attributes = {
 	blunt: Blunt,
 	camo: Camo,
 	coldresistance: ColdResistance,
-	firedamage: FireDamage,
+	firedamage: Fire,
 	fireresistance: FireResistance,
 	impermeable: Impermeable,
 	mask: Mask,

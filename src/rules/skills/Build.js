@@ -3,7 +3,7 @@ import Specialty from '../../classes/Specialty.js'
 
 const Build = new Skill({
 	name: `Build`,
-	description: [`Make an item from [ d6 + #] Parts.`],
+	description: [`Make an item from [ d6 + # ] Parts.`],
 	type: `Skill`,
 	parent: `Constitution`,
 	difficulty: `varies`,

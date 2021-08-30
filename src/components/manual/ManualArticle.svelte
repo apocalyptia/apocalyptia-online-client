@@ -6,8 +6,21 @@
 	import ManualDescription from '/src/components/manual/ManualDescription.svelte'
 	import ManualSpecialization from '/src/components/manual/ManualSpecialization.svelte'
 	import ManualTable from '/src/components/manual/ManualTable.svelte'
+	import linkTerms from '/src/utils/text/linkTerms.js'
+	import { onMount } from 'svelte'
 
 	export let rule
+
+	onMount(() => {
+		if (rule.description) {
+			rule.description = linkTerms(rule.description)
+		}
+		if (rule.specialties) {
+			for (let specialty of Object.values(rule.specialties)) {
+				specialty.description = linkTerms(specialty.description)
+			}
+		}
+	})
 </script>
 
 

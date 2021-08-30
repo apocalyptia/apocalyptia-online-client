@@ -1,13 +1,13 @@
 import Bomb from '/src/classes/gear/Bomb.js'
 import Blast from '../attributes/Blast.js'
-import FireDamage from '../attributes/FireDamage.js'
+import Fire from '../attributes/Fire.js'
 
 const Thermite = new Bomb({
 	name: `Thermite`,
 	type: `Bomb`,
 	description: [`High-temperature incendiary bomb.`],
 	size: 1,
-	attributes: [ Blast, FireDamage ],
+	attributes: [ Blast, Fire ],
 	damage: `6d6`,
 	range: 1,
 	fuse: 2,

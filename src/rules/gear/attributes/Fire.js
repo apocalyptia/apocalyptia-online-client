@@ -1,8 +1,8 @@
 import Attribute from '/src/classes/gear/Attribute.js'
 
-const FireDamage = new Attribute({
-	name: `Fire Damage`,
+const Fire = new Attribute({
+	name: `Fire`,
 	description: [`Fire Damage can only be prevented with Fire Resistant Armor.`],
 })
 
-export default FireDamage
+export default Fire

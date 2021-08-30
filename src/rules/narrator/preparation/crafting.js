@@ -2,7 +2,7 @@
 	<div id='CraftingPreparationSec' class='Sec3'>
 		<p>Use Build to make, modify, or fix anything. When items break, what remains is usable Parts = item Size. Using Parts from an identical item gives a +1 to Build (Repair).</p>
 		<p>Making d6 units of basic AMMO (FMJ, Birdshot, Target Arrow) costs d6 Parts. Special AMMO costs +1 Part each. Bullets also require d6 Chemicals and a Reloading Press.</p>
-		<p>BOMBS and DRUGS can be made with Science (Chemistry). See the BOMBS and DRUGS tables in Ch:6 for the Mix #. Mixing requires [ d6 + #] Chemicals and takes 10mins/1#.</p>
+		<p>BOMBS and DRUGS can be made with Science (Chemistry). See the BOMBS and DRUGS tables in Ch:6 for the Mix #. Mixing requires [ d6 + # ] Chemicals and takes 10mins/1#.</p>
 		<div id='CraftingPreparationTable' class='tableDiv'>
 			<div class='rowDiv'>
 				<button class='cellDiv cen'></button>
