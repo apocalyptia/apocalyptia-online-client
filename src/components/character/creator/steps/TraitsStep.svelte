@@ -6,6 +6,7 @@
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import Slider from '/src/components/widgets/Slider.svelte'
 	import characterStore from '/src/stores/characterStore.js'
+	import creationStore from '/src/stores/creationStore.js'
 
 	function randomTraits() {
 		$characterStore.randomTraits()
@@ -26,7 +27,7 @@
 
 <div class="traits-step-page">
 	<fieldset>
-		<PageHeader chapter={'Traits'} step={$characterStore.step} />
+		<PageHeader chapter={'Traits'} step={$creationStore.step} />
 		<ExplanationBlock rule={CreationProcess.traits.description} />
 		<PointsRemaining points={$characterStore.traitsRemaining} />
 		<div class="section-card">
@@ -35,11 +36,9 @@
 					<div class="trait-selection">
 						<h2>
 							{trait.name}
-							<h2>
-								<div class="stat-column">
-									<Slider name={trait.name} type={'trait'} min="1" max={$characterStore.maxTraits} bind:value={trait.score} func={() => updateTrait(trait)} indicator="true" />
-								</div>
-							</h2>
+							<div class="stat-column">
+								<Slider name={trait.name} type={'trait'} min="1" max={$characterStore.maxTraits} bind:value={trait.score} func={() => updateTrait(trait)} indicator="true" />
+							</div>
 						</h2>
 					</div>
 				</div>

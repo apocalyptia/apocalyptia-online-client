@@ -5,25 +5,27 @@
 	import { beforeUpdate } from 'svelte'
 	import { goto } from '$app/navigation'
 
-	beforeUpdate(() => {
-		$characterStore.proceed = $characterStore.canProceed($creationStore.step)
-	})
-
 	function next() {
 		document.getElementById('character-creator').scrollTo(0, 0)
-		if ($characterStore.proceed) {
+		if ($creationStore.proceed) {
 			$creationStore.step++
+			$creationStore = $creationStore
 			if ($creationStore.checkMax()) {
 				$playerStore.saveCharacter($characterStore)
 				goto(`/character/sheet`)
 			}
 		}
 	}
+
+	beforeUpdate(() => {
+		$creationStore.canProceed($characterStore)
+		$creationStore = $creationStore
+	})
 </script>
 
-<button on:click={next} class="next-btn btn-box" disabled={$characterStore.proceed === false}>
+<button on:click={next} class="next-btn btn-box" disabled={$creationStore.proceed === false}>
 	<div class="btn-icon">
-		{@html $characterStore.proceed ? `&gt;` : `x`}
+		{@html $creationStore.proceed ? `&gt;` : `x`}
 	</div>
 </button>
 

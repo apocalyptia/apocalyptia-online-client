@@ -15,15 +15,15 @@
 	}
 
 	function canProceed() {
-		$characterStore.canProceed($creationStore.step)
-		$characterStore = $characterStore
+		$creationStore.canProceed($characterStore)
+		$creationStore = $creationStore
 	}
 </script>
 
 
 <div class="description-step-page">
 	<fieldset>
-		<PageHeader chapter={'Description'} step={$characterStore.step} />
+		<PageHeader chapter={'Description'} step={$creationStore.step} />
 		<div class="section-card">
 			{#each Object.values($characterStore.description) as description}
 				{#if description.name != 'Player'}

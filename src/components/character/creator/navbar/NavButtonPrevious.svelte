@@ -5,6 +5,7 @@
 	function previous() {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		$creationStore.step--
+		$creationStore = $creationStore
 		if ($creationStore.checkMin()) {
 			goto(`/character/new`)
 		}

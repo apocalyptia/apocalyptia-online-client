@@ -1,6 +1,5 @@
 import CreationProcess from '/src/rules/CreationProcess.js'
 import addAbility from '/src/classes/methods/character/add/addAbility.js'
-import canProceed from '/src/classes/methods/character/canProceed.js'
 import finalizeCharacter from '/src/classes/methods/character/finalizeCharacter.js'
 import initializeDescription from '/src/classes/methods/character/initialize/initializeDescription.js'
 import initializeGear from '/src/classes/methods/character/initialize/initializeGear.js'
@@ -38,12 +37,10 @@ export default class Character {
 		this.abilities = [],
 		this.gear = initializeGear(),
 		this.maxTraits = parseInt(CreationProcess.traits.max),
-		this.proceed = false,
 		this.skillsRemaining = parseInt(CreationProcess.skills.startingMultiplier),
 		this.startingSkillsMultiplier = parseInt(CreationProcess.skills.startingMultiplier),
 		this.startingTraits = parseInt(CreationProcess.traits.starting),
 		this.traitsRemaining = parseInt(CreationProcess.traits.starting)
-		this.canProceed = canProceed
 		this.remainingTraits = remainingTraits
 		this.remainingSkills = remainingSkills
 		this.remainingAbilities = remainingAbilities

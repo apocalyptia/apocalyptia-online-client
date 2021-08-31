@@ -4,6 +4,7 @@
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import characterStore from '/src/stores/characterStore.js'
+	import creationStore from '/src/stores/creationStore.js'
 
 	function randomGear() {
 		$characterStore.randomGear()
@@ -14,9 +15,9 @@
 
 <div class="gear-step-page">
 	<fieldset>
-		<PageHeader chapter={'Gear'} step={$characterStore.step} />
+		<PageHeader chapter={'Gear'} step={$creationStore.step} />
 		<ExplanationBlock rule={CreationProcess.gear.description} />
-		{#if $characterStore.proceed}
+		{#if $creationStore.proceed}
 			<div class="section-card">
 				{#each Object.values($characterStore.gear) as category (category.name)}
 					<div class="gear-list-details">

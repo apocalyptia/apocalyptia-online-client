@@ -6,6 +6,7 @@
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import Slider from '/src/components/widgets/Slider.svelte'
 	import characterStore from '/src/stores/characterStore.js'
+	import creationStore from '/src/stores/creationStore.js'
 	import { onMount } from 'svelte'
 
 	const skillGroups = Object.values($characterStore.traits).map((t) => {
@@ -40,7 +41,7 @@
 
 <div class="skills-step-page">
 	<fieldset>
-		<PageHeader chapter={'Skills'} step={$characterStore.step} />
+		<PageHeader chapter={'Skills'} step={$creationStore.step} />
 		<ExplanationBlock rule={CreationProcess.skills.description} />
 		<PointsRemaining points={$characterStore.skillsRemaining} />
 		{#each skillGroups as group}
