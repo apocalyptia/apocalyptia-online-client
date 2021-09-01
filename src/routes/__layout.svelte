@@ -60,14 +60,14 @@
 	@keyframes hline {
 		0% {
 			background: none;
-			top: 0;
+			bottom: 95vh;
 		}
 		15% {
 			background: var(--pri-color-trans);
 		}
 		30% {
 			background: none;
-			top: 99vh;
+			bottom: 0;
 		}
 	}
 	.console {
