@@ -1,10 +1,11 @@
 import decompressCharacter from '/src/utils/database/characters/decompressCharacter.js'
 
-export default function({ id, character }) {
-	if (id || character) {
-		return decompressCharacter(window.localStorage.getItem(id || character.meta.id))
+export default function({ id='', character='' }) {
+	let loadedCharacter = null
+	if (id) {
+		loadedCharacter = decompressCharacter(window.localStorage.getItem(id))
+	} else if (character) {
+		loadedCharacter = decompressCharacter(window.localStorage.getItem(character.meta.id))
 	}
-	else {
-		return null
-	}
+	return loadedCharacter
 }

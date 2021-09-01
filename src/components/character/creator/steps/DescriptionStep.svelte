@@ -23,7 +23,7 @@
 
 <div class="description-step-page">
 	<fieldset>
-		<PageHeader chapter={'Description'} step={$creationStore.step} />
+		<PageHeader chapter={'Description'} />
 		<div class="section-card">
 			{#each Object.values($characterStore.description) as description}
 				{#if description.name != 'Player'}

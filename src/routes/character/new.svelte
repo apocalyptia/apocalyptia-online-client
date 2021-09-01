@@ -9,8 +9,8 @@
 	}
 
 	function randomCharacter() {
-		$characterStore = new Character()
-		$characterStore.randomCharacter()
+		$characterStore = new CharacterStore()
+		$characterStore.randomCharacter() // TODO: Needs work!
 		$characterStore.finalizeCharacter()
 		$playerStore.saveCharacter($characterStore)
 	}
@@ -21,7 +21,7 @@
 </svelte:head>
 <CenterCard title={'New Character'}>
 	<a href="/character/creator" class="link-btn" on:click={newCharacter}> Build </a>
-	<a href="/character/sheet" class="link-btn" on:click={randomCharacter}> Random </a>
+	<!-- <a href="/character/sheet" class="link-btn" on:click={randomCharacter}> Random </a> -->
 </CenterCard>
 
 <style>

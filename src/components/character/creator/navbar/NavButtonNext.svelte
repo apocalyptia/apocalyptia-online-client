@@ -9,11 +9,12 @@
 		document.getElementById('character-creator').scrollTo(0, 0)
 		if ($creationStore.proceed) {
 			$creationStore.step++
-			$creationStore = $creationStore
 			if ($creationStore.checkMax()) {
+				$characterStore.finalizeCharacter()
 				$playerStore.saveCharacter($characterStore)
 				goto(`/character/sheet`)
 			}
+			$creationStore = $creationStore
 		}
 	}
 
@@ -23,13 +24,11 @@
 	})
 </script>
 
-
 <button on:click={next} class="next-btn btn-box" disabled={$creationStore.proceed === false}>
 	<div class="btn-icon">
 		{@html $creationStore.proceed ? `&gt;` : `x`}
 	</div>
 </button>
-
 
 <style>
 	button {

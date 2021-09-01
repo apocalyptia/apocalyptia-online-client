@@ -15,7 +15,7 @@
 
 <div class="gear-step-page">
 	<fieldset>
-		<PageHeader chapter={'Gear'} step={$creationStore.step} />
+		<PageHeader chapter={'Gear'} />
 		<ExplanationBlock rule={CreationProcess.gear.description} />
 		{#if $creationStore.proceed}
 			<div class="section-card">

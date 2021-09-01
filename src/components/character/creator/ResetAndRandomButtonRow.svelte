@@ -1,6 +1,5 @@
 <script>
-	export let reset = '',
-		random
+	export let reset = '',random
 </script>
 
 

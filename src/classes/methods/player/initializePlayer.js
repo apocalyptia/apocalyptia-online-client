@@ -1,4 +1,4 @@
 export default function() {
-	this.readCharacter()
+	this.readCharacters()
 	this.selected = this.list[0] || null
 }

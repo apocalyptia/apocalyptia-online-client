@@ -1,20 +1,10 @@
 <script>
 	import CharacterSheet from '/src/components/character/sheet/CharacterSheet.svelte'
+	import CharacterStore from '/src/classes/stores/CharacterStore.js'
 	import SaveAndDeleteButtonRow from '/src/components/buttons/SaveAndDeleteButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 	import playerStore from '/src/stores/playerStore.js'
-	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
-
-	onMount(() => {
-		if ($characterStore.meta.created === ``) {
-			goto('/character')
-		} else if ($characterStore.description.player === undefined) {
-			$characterStore.description.player.player = {
-				value: $characterStore.meta.user,
-			}
-		}
-	})
 
 	function saveCharacter() {
 		$characterStore.finalizeCharacter()
@@ -25,7 +15,8 @@
 	function deleteCharacter() {
 		goto('/')
 		$playerStore.deleteCharacter($characterStore)
-		$characterStore = $characterStore
+		$playerStore = $playerStore
+		$characterStore = new CharacterStore()
 	}
 </script>
 

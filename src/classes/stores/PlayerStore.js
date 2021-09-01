@@ -4,7 +4,7 @@ import loadCharacter from '/src/classes/methods/player/loadCharacter.js'
 import authenticateUser from '/src/classes/methods/player/authenticateUser.js'
 import backupCharacter from '/src/classes/methods/player/backupCharacter.js'
 import joinGame from '/src/classes/methods/player/joinGame.js'
-import readCharacter from '/src/classes/methods/player/readCharacter.js'
+import readCharacters from '/src/classes/methods/player/readCharacters.js'
 import saveCharacter from '/src/classes/methods/player/saveCharacter.js'
 import userLogin from '/src/classes/methods/player/userLogin.js'
 import userLogout from '/src/classes/methods/player/userLogout.js'
@@ -21,8 +21,8 @@ export default class Player {
 		this.initializePlayer = initializePlayer
 		this.deleteCharacter = deleteCharacter
 		this.loadCharacter = loadCharacter
-		this.saveCharacter = saveCharacter			
-		this.readCharacter = readCharacter 
+		this.saveCharacter = saveCharacter		
+		this.readCharacters = readCharacters 
 		this.backupCharacter = backupCharacter
 		this.authenticateUser = authenticateUser
 		this.joinGame = joinGame

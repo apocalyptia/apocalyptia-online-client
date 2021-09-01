@@ -8,7 +8,6 @@
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import abilitiesStore from '/src/stores/abilitiesStore.js'
 	import characterStore from '/src/stores/characterStore.js'
-	import creationStore from '/src/stores/creationStore.js'
 	import { afterUpdate } from 'svelte'
 
 	function randomAbilities() {
@@ -37,7 +36,7 @@
 
 <div class="abilities-step-page">
 	<fieldset>
-		<PageHeader chapter={'Abilities'} step={$creationStore.step} />
+		<PageHeader chapter={'Abilities'} />
 		<ExplanationBlock rule={CreationProcess.abilities.description} />
 		<PointsRemaining points={$characterStore.properties.experience.current} />
 		<br>

@@ -1,5 +1,7 @@
 <script>
-	export let chapter, step
+	import creationStore from '/src/stores/creationStore.js'
+
+	export let chapter
 </script>
 
 <svelte:head>
@@ -7,9 +9,7 @@
 </svelte:head>
 <hgroup>
 	<h1>{chapter}</h1>
-	{#if step < 6}
-		Step {step}/6
-	{/if}
+	Step {$creationStore.step + 1} / 6
 </hgroup>
 
 <style>
