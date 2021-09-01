@@ -6,7 +6,7 @@ const Hypothermia = new Need({
 		`Body temperature must be maintained to avoid Hypothermia.`,
 		`1 Pain per hour of Hypothermia.`,
 		`Pain penalties from Hypothermia are reduced by 1 per hour of warmth.`,
-		`Hypothermia for hours = [ Constitution] is lethal.`,
+		`Hypothermia for hours = [ Constitution ] is lethal.`,
 	],
 })
 

@@ -23,7 +23,7 @@ const Medicine = new Skill({
 			description: [
 				`Stop a person from Bleeding as long as they do not take any more Damage.`,
 				`Inflict an additional d6 Damage on a Botch.`,
-				`Takes [ Damage x 20] minutes.`
+				`Takes [ Damage x 20 ] minutes.`
 			]
 		})
 	}

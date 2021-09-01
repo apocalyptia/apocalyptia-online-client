@@ -23,11 +23,13 @@
 	})
 </script>
 
+
 <button on:click={next} class="next-btn btn-box" disabled={$creationStore.proceed === false}>
 	<div class="btn-icon">
 		{@html $creationStore.proceed ? `&gt;` : `x`}
 	</div>
 </button>
+
 
 <style>
 	button {

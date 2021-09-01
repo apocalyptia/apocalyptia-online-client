@@ -16,7 +16,7 @@ const Tame = new Skill({
 		train: new Specialty({
 			name: `Train`,
 			type: `Specialty`,
-			description: [`(1wk) Animals learn commands = [its Brains x 2].`],
+			description: [`(1wk) Animals learn commands = [ its Brains x 2 ].`],
 		}),
 	},
 })

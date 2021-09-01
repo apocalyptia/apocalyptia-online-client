@@ -14,14 +14,14 @@ const Leadership = new Skill({
 		encourage: new Specialty({
 			name: `Encourage`,
 			type: `Specialty`,
-			description: [`Roll vs [total target(s) Demeanor].`, `Target(s) get a bonus = [your Demeanor] to one roll you choose.`]
+			description: [`Roll vs [ total target(s) Demeanor ].`, `Target(s) get a bonus = [ your Demeanor ] to one roll you choose.`]
 		}),
 		intimidate: new Specialty({
 			name: `Intimidate`,
 			type: `Specialty`,
 			description: [
-				`Roll vs [total target(s) Demeanor].`,
-				`Target(s) take a penalty = [your Demeanor] to any roll except one you choose.`
+				`Roll vs [ total target(s) Demeanor ].`,
+				`Target(s) take a penalty = [ your Demeanor ] to any roll except one you choose.`
 			]
 		})
 	}

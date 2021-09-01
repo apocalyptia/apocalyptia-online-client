@@ -9,7 +9,7 @@ const Traits = new CreationStep({
 	description: [
 		`You get ${startingTraits} Trait points.`,
 		`Traits can range from 1 to ${maxTraits}.`,
-		`Trait rolls are [ d6 + Trait].`,
+		`Trait rolls are [ d6 + Trait ].`,
 		`Trait scores set the upper limit for their Skills.`
 	],
 	step: 0,

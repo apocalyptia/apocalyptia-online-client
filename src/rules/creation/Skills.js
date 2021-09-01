@@ -7,7 +7,7 @@ const maxSkills = 6
 const Skills = new CreationStep({
 	name: `Skills`,
 	description: [
-		`You get Brains x ${skillMultiplier} Skill points.`,
+		`You get [ Brains x ${skillMultiplier} ] Skill points.`,
 		`Skills can range from 0 to ${maxSkills}.`,
 		`Skill rolls are [ d6 + Skill ].`,
 		`Trait scores set the upper limit for their Skills.`

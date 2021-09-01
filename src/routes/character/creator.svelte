@@ -1,5 +1,4 @@
 <script>
-
 	import NavBar from '/src/components/character/creator/navbar/NavBar.svelte'
 	import creationStore from '/src/stores/creationStore.js'
 	import { onMount } from 'svelte'
@@ -12,6 +11,7 @@
 	<svelte:component this={$creationStore.process[$creationStore.step]} />
 </div>
 <NavBar />
+
 
 <style>
 	#character-creator {

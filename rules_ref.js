@@ -2184,7 +2184,7 @@ const rules = {
             },
             "blast": {
                 "description": [
-                    "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                    "Roll [ d6 vs Reflexive Dodge ] against everyone in the Blast radius.",
                     "[ Damage / 2 ] on a miss (minimum 1)."
                 ],
                 "id": "",
@@ -2363,7 +2363,7 @@ const rules = {
                 "attributes": [
                     {
                         "description": [
-                            "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                            "Roll [ d6 vs Reflexive Dodge ] against everyone in the Blast radius.",
                             "[ Damage / 2 ] on a miss (minimum 1)."
                         ],
                         "id": "",
@@ -2393,7 +2393,7 @@ const rules = {
                 "attributes": [
                     {
                         "description": [
-                            "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                            "Roll [ d6 vs Reflexive Dodge ] against everyone in the Blast radius.",
                             "[ Damage / 2 ] on a miss (minimum 1)."
                         ],
                         "id": "",
@@ -2521,7 +2521,7 @@ const rules = {
                 "attributes": [
                     {
                         "description": [
-                            "Roll [ d6 vs Reflexive Dodge] against everyone in the Blast radius.",
+                            "Roll [ d6 vs Reflexive Dodge ] against everyone in the Blast radius.",
                             "[ Damage / 2 ] on a miss (minimum 1)."
                         ],
                         "id": "",
@@ -6028,7 +6028,7 @@ const rules = {
         "evasion": {
             "description": [
                 "Evasion = ( Agility + Brains ) / 2.",
-                "This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics (Dodge ) roll.",
+                "This is your default Defense against Projectile Attacks when you do not allocate an Action to make an Acrobatics ( Dodge ) roll.",
                 "Evasion does not require an Action or cost Endurance, though it is reduced by Pain penalties."
             ],
             "id": "",
@@ -6594,7 +6594,7 @@ const rules = {
                 "traditional": {
                     "description": [
                         "Roll vs target's Defense to attempt a basic Projectile Attack with any type of bow, thrown weapon, or any other muscle-powered Projectile.",
-                        "Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3) - Weapon Size] yards."
+                        "Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3 ) - Weapon Size] yards."
                     ],
                     "id": "",
                     "name": "Traditional",
@@ -7186,7 +7186,7 @@ const rules = {
                         "traditional": {
                             "description": [
                                 "Roll vs target's Defense to attempt a basic Projectile Attack with any type of bow, thrown weapon, or any other muscle-powered Projectile.",
-                                "Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3) - Weapon Size] yards."
+                                "Any Melee weapon can be a thrown weapon with a base Range of [ (Constitution x 3 ) - Weapon Size] yards."
                             ],
                             "id": "",
                             "name": "Traditional",
