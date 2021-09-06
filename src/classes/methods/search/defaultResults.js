@@ -16,6 +16,7 @@ export default function() {
 		} else {
 			result.url = urlFormat(`/manual/${rule[0]}`)
 		}
+		console.log(result)
 		return result
 	})
 }

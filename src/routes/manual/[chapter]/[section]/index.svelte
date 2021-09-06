@@ -19,9 +19,12 @@
 	import linkRuleDescriptions from '/src/utils/text/linkRuleDescriptions.js'
 
 	export let chapter, section
+
+	console.log(Rules)
 </script>
 
 
+<h1>/s</h1>
 {#if chapter === 'gear'}
 	<ManualSearchbar />
 	<ManualPage list={Rules[chapter][section]} />

@@ -22,5 +22,6 @@
 
 
 <div class="page-body">
+	<h1>/i</h1>
 	<ManualArticle rule={linkRuleDescriptions(Rules[chapter][section][item])} />
 </div>

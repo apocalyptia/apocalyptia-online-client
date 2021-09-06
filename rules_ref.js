@@ -6074,10 +6074,10 @@ const rules = {
                 "Health is a measure of how much Damage your body can withstand.",
                 "Each point of Health lost causes a -1 Pain penalty until healed.",
                 "When Head or Torso Health drops to 0, you fall unconscious.",
-                "When an Arm or a Leg's Health drops to 0, you lose the use of that limb.",
-                "Consciousness and limb functionality are at least partially restored once you have healed back to at least 1 Health on that Body Part.",
+                "When an Arm or a Leg's Health drops to 0, you lose the use of that Limb.",
+                "Consciousness and Limb functionality are at least partially restored once you have Recovered at least 1 Health on that Body Part.",
                 "You die when Head or Torso Health drops to the negative of their scores.",
-                "You lose the limb permanently when Arm or Leg Health drops to the negative of their scores."
+                "You lose the Limb permanently when Arm or Leg Health drops to the negative of their scores."
             ],
             "id": "",
             "name": "Health",
@@ -6847,7 +6847,7 @@ const rules = {
         "cover": {
             "description": [
                 "All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Absorption.",
-                "If the weapon's base Damage is greater than the Material's Absorption, then the Material Absorption acts as Damage Reduction.",
+                "If the weapon's base Damage is greater than the Material Absorption, then the Material Absorption acts like additional Armor Absorption.",
                 "Cover also Conceals the target unless the Cover Material is transparent.",
                 "If you lean out of Cover to Attack, Material Absorption will only protect your Torso and Legs for that Round."
             ],
@@ -7034,7 +7034,7 @@ const rules = {
             "type": "Status",
             "url": "/manual/status/unarmed"
         },
-        "unconscious": {
+        "Unconscious": {
             "description": [
                 "Unaware and unable to do anything.",
                 "You are considered to be Blind, Harmless, Immobilized, Prone, and have a Reflexive Defense of 0."

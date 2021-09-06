@@ -18,7 +18,7 @@ const Attributes = {
 	blunt: Blunt,
 	camo: Camo,
 	coldresistance: ColdResistance,
-	firedamage: Fire,
+	fire: Fire,
 	fireresistance: FireResistance,
 	impermeable: Impermeable,
 	mask: Mask,

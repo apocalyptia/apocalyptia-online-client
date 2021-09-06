@@ -5,7 +5,7 @@ const Cover = new Status({
 	name: `Cover`,
 	description: [
 		`All Damage is negated against targets that are behind Cover unless the weapon's base Damage exceeds the Material Absorption.`,
-		`If the weapon's base Damage is greater than the Material's Absorption, then the Material Absorption acts as Damage Reduction.`,
+		`If the weapon's base Damage is greater than the Material Absorption, then the Material Absorption acts like additional Armor Absorption.`,
 		`Cover also Conceals the target unless the Cover Material is transparent.`,
 		`If you lean out of Cover to Attack, Material Absorption will only protect your Torso and Legs for that Round.`,
 	],
