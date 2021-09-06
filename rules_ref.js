@@ -1282,7 +1282,7 @@ const rules = {
             },
             "scope": {
                 "description": [
-                    "+3 to Aimed Projectile Attacks and Perception (See)."
+                    "+3 to Aimed Projectile Attacks and Perception."
                 ],
                 "id": "",
                 "name": "Scope",
@@ -3235,7 +3235,7 @@ const rules = {
             "stethoscope": {
                 "description": [
                     "+1 Medicine.",
-                    "Perception (Hear) 6# through doors."
+                    "Perception 6# through doors."
                 ],
                 "id": "",
                 "name": "Stethoscope",
@@ -3620,7 +3620,7 @@ const rules = {
             },
             "binoculars": {
                 "description": [
-                    "+3 Perception (See) at 50+ yards."
+                    "+3 Perception at 50+ yards."
                 ],
                 "id": "",
                 "name": "Binoculars",
@@ -3854,7 +3854,7 @@ const rules = {
             },
             "monocular": {
                 "description": [
-                    "+1 Perception (See) at 25+ yards."
+                    "+1 Perception at 25+ yards."
                 ],
                 "id": "",
                 "name": "Monocular",
@@ -3954,7 +3954,7 @@ const rules = {
             },
             "pocketmirror": {
                 "description": [
-                    "Perception (See) 6# to see from behind Cover."
+                    "Perception 6# to see from behind Cover."
                 ],
                 "id": "",
                 "name": "Pocket Mirror",
@@ -4039,7 +4039,7 @@ const rules = {
             },
             "spottingscope": {
                 "description": [
-                    "+6 Perception (See) at 100+ yards."
+                    "+6 Perception at 100+ yards."
                 ],
                 "id": "",
                 "name": "Spotting Scope",
@@ -4889,7 +4889,7 @@ const rules = {
             },
             "magnifyingglass": {
                 "description": [
-                    "+6 Perception (See) to inspect tiny details."
+                    "+6 Perception to inspect tiny details."
                 ],
                 "id": "",
                 "name": "Magnifying Glass",
@@ -5183,7 +5183,7 @@ const rules = {
             "earplugs": {
                 "description": [
                     "No Deafness from noise.",
-                    "-3 Perception (Hear)."
+                    "-3 Perception."
                 ],
                 "id": "",
                 "name": "Ear Plugs",

@@ -90,7 +90,7 @@
 		<div class="item-details">
 			{#if item.description}
 				{#each item.description as description}
-					<p class="gear-description">{description}</p>
+					<p class="gear-description">{@html description}</p>
 				{/each}
 			{/if}
 			{#each itemProps as prop}
