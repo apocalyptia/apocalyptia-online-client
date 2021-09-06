@@ -920,7 +920,7 @@ const rules = {
             "subrules": [],
             "type": "CreationStep",
             "url": "/manual/creation/traits",
-            "step": 0,
+            "step": 1,
             "max": 6,
             "starting": 14
         },
@@ -951,7 +951,7 @@ const rules = {
             ],
             "type": "CreationStep",
             "url": "/manual/creation/skills",
-            "step": 1,
+            "step": 2,
             "startingMultiplier": 6
         },
         "properties": {
@@ -963,7 +963,7 @@ const rules = {
             "subrules": [],
             "type": "CreationStep",
             "url": "/manual/creation/properties",
-            "step": 2
+            "step": 3
         },
         "abilities": {
             "description": [
@@ -974,7 +974,7 @@ const rules = {
             "subrules": [],
             "type": "CreationStep",
             "url": "/manual/creation/abilities",
-            "step": 3
+            "step": 4
         },
         "gear": {
             "description": [
@@ -991,7 +991,7 @@ const rules = {
             "subrules": [],
             "type": "CreationStep",
             "url": "/manual/creation/gear",
-            "step": 4
+            "step": 5
         },
         "description": {
             "description": [
@@ -1002,7 +1002,7 @@ const rules = {
             "subrules": [],
             "type": "CreationStep",
             "url": "/manual/creation/description",
-            "step": 5,
+            "step": 6,
             "list": [
                 {
                     "name": "Player",
@@ -2498,7 +2498,7 @@ const rules = {
                         "name": "Asphyxiation",
                         "subrules": [],
                         "type": "Need",
-                        "url": "/manual/need/asphyxiation"
+                        "url": "/manual/needs/asphyxiation"
                     }
                 ],
                 "quantity": 0,
@@ -5505,7 +5505,7 @@ const rules = {
             "name": "Burning",
             "subrules": [],
             "type": "Hazard",
-            "url": "/manual/hazard/burning"
+            "url": "/manual/hazards/burning"
         },
         "falling": {
             "description": [
@@ -5520,7 +5520,7 @@ const rules = {
             "name": "Falling",
             "subrules": [],
             "type": "Hazard",
-            "url": "/manual/hazard/falling"
+            "url": "/manual/hazards/falling"
         },
         "friendlyfire": {
             "description": [
@@ -5531,7 +5531,7 @@ const rules = {
             "name": "Friendly Fire",
             "subrules": [],
             "type": "Hazard",
-            "url": "/manual/hazard/friendlyfire"
+            "url": "/manual/hazards/friendlyfire"
         },
         "radiation": {
             "description": [
@@ -5543,7 +5543,7 @@ const rules = {
             "name": "Radiation",
             "subrules": [],
             "type": "Hazard",
-            "url": "/manual/hazard/radiation"
+            "url": "/manual/hazards/radiation"
         }
     },
     "maneuvers": {
@@ -5923,7 +5923,7 @@ const rules = {
             "name": "Asphyxiation",
             "subrules": [],
             "type": "Need",
-            "url": "/manual/need/asphyxiation"
+            "url": "/manual/needs/asphyxiation"
         },
         "dehydration": {
             "description": [
@@ -5940,7 +5940,7 @@ const rules = {
             "name": "Dehydration",
             "subrules": [],
             "type": "Need",
-            "url": "/manual/need/dehydration"
+            "url": "/manual/needs/dehydration"
         },
         "exhaustion": {
             "description": [
@@ -5953,7 +5953,7 @@ const rules = {
             "name": "Exhaustion",
             "subrules": [],
             "type": "Need",
-            "url": "/manual/need/exhaustion"
+            "url": "/manual/needs/exhaustion"
         },
         "hypothermia": {
             "description": [
@@ -5966,7 +5966,7 @@ const rules = {
             "name": "Hypothermia",
             "subrules": [],
             "type": "Need",
-            "url": "/manual/need/hypothermia"
+            "url": "/manual/needs/hypothermia"
         },
         "starvation": {
             "description": [
@@ -5980,7 +5980,7 @@ const rules = {
             "name": "Starvation",
             "subrules": [],
             "type": "Need",
-            "url": "/manual/need/starvation"
+            "url": "/manual/needs/starvation"
         }
     },
     "properties": {

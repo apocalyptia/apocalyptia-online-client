@@ -7,4 +7,5 @@ export default function(userId = ``) {
 	}
 	this.meta.user = userId
 	this.meta.modified = new Date()
+	return this
 }

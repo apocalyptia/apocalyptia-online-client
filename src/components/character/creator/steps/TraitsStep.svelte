@@ -4,23 +4,21 @@
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import PointsRemaining from '/src/components/character/creator/PointsRemaining.svelte'
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
-	import Slider from '/src/components/widgets/Slider.svelte'
+	import TraitsSection from '/src/components/character/sheet/sections/TraitsSection.svelte'
 	import characterStore from '/src/stores/characterStore.js'
+	import { onMount } from 'svelte'
 
 	function randomTraits() {
-		$characterStore.randomTraits()
-		$characterStore = $characterStore
+		$characterStore = $characterStore.randomTraits()
+		$characterStore = $characterStore.creationCanProceed()
 	}
 
 	function resetTraits() {
-		$characterStore.resetTraits()
-		$characterStore = $characterStore
+		$characterStore = $characterStore.resetTraits()
+		$characterStore = $characterStore.creationCanProceed()
 	}
 
-	function updateTrait(trait) {
-		$characterStore.updateTrait(trait)
-		$characterStore = $characterStore
-	}
+	onMount(() => $characterStore = $characterStore.remainingTraits())
 </script>
 
 
@@ -28,28 +26,10 @@
 	<fieldset>
 		<PageHeader chapter={'Traits'} />
 		<ExplanationBlock rule={CreationProcess.traits.description} />
-		<PointsRemaining points={$characterStore.traitsRemaining} />
+		<PointsRemaining points={$characterStore.meta.traitsRemaining} />
 		<div class="section-card">
-			{#each Object.values($characterStore.traits) as trait}
-				<div class="item-block">
-					<div class="trait-selection">
-						<h2>
-							{trait.name}
-							<div class="stat-column">
-								<Slider name={trait.name} type={'trait'} min="1" max={$characterStore.maxTraits} bind:value={trait.score} func={() => updateTrait(trait)} indicator="true" />
-							</div>
-						</h2>
-					</div>
-				</div>
-			{/each}
+			<TraitsSection mode='write' />
 		</div>
 		<ResetAndRandomButtonRow reset={() => resetTraits()} random={() => randomTraits()} />
 	</fieldset>
 </div>
-
-
-<style>
-	.trait-selection {
-		padding: var(--padding) 0;
-	}
-</style>

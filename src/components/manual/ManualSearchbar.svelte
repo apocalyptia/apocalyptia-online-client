@@ -3,13 +3,12 @@
 	import { onMount } from 'svelte'
 
 	function runSearch() {
-		$searchStore.query()
-		$searchStore = $searchStore
+		$searchStore = $searchStore.query()
 	}
 
 	function clearSearch() {
 		$searchStore.term = ''
-		$searchStore.query()
+		$searchStore = $searchStore.query()
 	}
 
 	onMount(() => clearSearch())

@@ -11,4 +11,5 @@ export default function() {
 	this.sort = 'alpha'
 	this.cost = 0
 	this.status = 'all'
+	return this
 }

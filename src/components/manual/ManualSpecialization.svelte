@@ -25,6 +25,7 @@
 		margin: var(--margin);
 	}
 	.sub-name {
+		font-weight: bold;
 		text-decoration: underline;
 	}
 </style>

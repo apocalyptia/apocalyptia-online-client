@@ -14,8 +14,7 @@
 
 	function deleteCharacter() {
 		console.log('delete character: ', character.description.name.value)
-		$playerStore.deleteCharacter(character)
-		$playerStore = $playerStore
+		$playerStore = $playerStore.deleteCharacter(character)
 		if ($characterStore.meta.id === character.meta.id) {
 			$characterStore = null
 		}

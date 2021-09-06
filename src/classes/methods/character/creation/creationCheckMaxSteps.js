@@ -1,5 +1,5 @@
 export default function () {
-	if (this.step === this.numberOfSteps) {
+	if (this.meta.step > this.meta.numberOfSteps) {
 		return true
 	}
 	return false

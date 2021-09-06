@@ -3,15 +3,15 @@ import Core from '/src/classes/Core.js'
 const Difficulty = new Core({
 	name: `Difficulty`,
 	description: [
-		`The Result of your roll must be greater than or equal to the Difficulty number to be a Success.`,
-		`If the roll is opposed, re-roll ties.`,
-		`Difficulties are indicated by the # symbol.`,
-		`The Narrator or an opposing roll sets the # for your rolls.`,
-		`3# = Trivial`,
+		`Difficulty numbers are used to objectively measure how hard it is to accomplish some task.`,
+		`The Narrator determines what the Difficulty is to do things in the world, though many rules have suggested Difficulties listed already.`,
+		`Difficulty numbers are indicated by the # symbol.`,
+		`When the task is a contest of some kind against an adversary, the Results of both sides' rolls sets the Difficulty for each other (reroll ties).`,
+		`3# = Easy`,
 		`6# = Routine`,
-		`9# = Demanding`,
-		`12# = Strenuous`,
-		`15# = Grueling`,
+		`9# = Challenging`,
+		`12# = Hard`,
+		`15# = Very Hard`,
 		`18# = Extreme`,
 	],
 })

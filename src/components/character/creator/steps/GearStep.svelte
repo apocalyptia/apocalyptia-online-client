@@ -4,12 +4,14 @@
 	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import creationStore from '/src/stores/creationStore.js'
+	import { onMount } from 'svelte'
 
 	function randomGear() {
-		$characterStore.randomGear()
-		$characterStore = $characterStore
+		$characterStore = $characterStore.randomGear()
+		$characterStore = $characterStore.creationCanProceed()
 	}
+
+	onMount(() => $characterStore = $characterStore.creationCanProceed())
 </script>
 
 
@@ -17,7 +19,7 @@
 	<fieldset>
 		<PageHeader chapter={'Gear'} />
 		<ExplanationBlock rule={CreationProcess.gear.description} />
-		{#if $creationStore.proceed}
+		{#if $characterStore.meta.proceed}
 			<div class="section-card">
 				{#each Object.values($characterStore.gear) as category (category.name)}
 					<div class="gear-list-details">
@@ -41,9 +43,9 @@
 				{/each}
 			</div>
 		{:else}
-		<div class='btn-row'>
-			<button class="small-cntr-btn" on:click={randomGear}>Random</button>
-		</div>
+			<div class='btn-row'>
+				<button class="small-cntr-btn" on:click={randomGear}>Random</button>
+			</div>
 		{/if}
 	</fieldset>
 </div>

@@ -8,29 +8,28 @@
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import abilitiesStore from '/src/stores/abilitiesStore.js'
 	import characterStore from '/src/stores/characterStore.js'
-	import { afterUpdate } from 'svelte'
+	import { beforeUpdate } from 'svelte'
 
 	function randomAbilities() {
-		$abilitiesStore.reset()
-		$abilitiesStore = $abilitiesStore
-		$characterStore.randomAbilities()
-		$characterStore = $characterStore
+		$abilitiesStore = $abilitiesStore.reset()
+		$characterStore = $characterStore.randomAbilities()
 	}
 
 	function resetAbilities() {
-		$abilitiesStore.reset()
-		$abilitiesStore = $abilitiesStore
-		$characterStore.resetAbilities()
-		$characterStore = $characterStore
-		console.log($characterStore.abilities)
+		$abilitiesStore = $abilitiesStore.reset()
+		$characterStore = $characterStore.resetAbilities()
 	}
 
-	afterUpdate(() => {
-		$characterStore.resetAbilities()
-		$characterStore.abilities = $abilitiesStore.visibleList.filter((a) => a.quantity)
-		$characterStore.updateProperties()
-		$characterStore = $characterStore
-	})
+	function giveAbilitiesToCharacter() {
+		$characterStore = $characterStore.resetAbilities()
+		$abilitiesStore.visibleList.forEach(ability => {
+			if (ability.quantity) {
+				$characterStore = $characterStore.addAbility(ability)
+			}
+		})
+	}
+
+	beforeUpdate(() => giveAbilitiesToCharacter())
 </script>
 
 

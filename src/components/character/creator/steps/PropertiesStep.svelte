@@ -9,8 +9,7 @@
 	import { onMount } from 'svelte'
 
 	onMount(() => {
-		$characterStore.updateProperties()
-		$characterStore = $characterStore
+		$characterStore = $characterStore.updateProperties()
 	})
 </script>
 

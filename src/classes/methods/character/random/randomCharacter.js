@@ -4,4 +4,5 @@ export default function() {
 	this.randomAbilities()
 	this.randomGear()
 	this.randomDescription()
+	return this
 }

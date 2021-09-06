@@ -30,4 +30,5 @@ export default function() {
 	const water = Gear.resources.water
 	water.quantity = 1
 	this.gear.equipment.inventory.push(water)
+	return this
 }

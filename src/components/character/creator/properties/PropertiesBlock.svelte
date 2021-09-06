@@ -13,8 +13,7 @@
 	<div class="prop-block">
 		{#each leftColumn as leftProp}
 			<div class="prop-item">
-				<h4>{$characterStore.properties[leftProp].name}</h4>
-				:
+				<h4>{$characterStore.properties[leftProp].name}:</h4>
 				{$characterStore.properties[leftProp].score}
 			</div>
 		{/each}
@@ -23,8 +22,7 @@
 	<div class="prop-block">
 		{#each rightColumn as rightProp}
 			<div class="prop-item">
-				<h4>{$characterStore.properties[rightProp].name}</h4>
-				:
+				<h4>{$characterStore.properties[rightProp].name}:</h4>
 				{$characterStore.properties[rightProp].score}
 			</div>
 		{/each}

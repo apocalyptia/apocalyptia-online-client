@@ -7,7 +7,6 @@ const Radiation = new Hazard({
 		`Each lost point of Constitution also counts as a permanent Pain penalty.`,
 		`You die when Constitution drops to 0.`,
 	],
-	type: `Hazard`,
 })
 
 export default Radiation

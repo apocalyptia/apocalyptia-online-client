@@ -8,4 +8,5 @@ export default function() {
 	if (this.term.length === 0 && this.results.length === 0) {
 		this.results = this.defaultResults()
 	}
+	return this
 }

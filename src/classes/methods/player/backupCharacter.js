@@ -13,4 +13,5 @@ export default function() {
 		a.click()
 		window.URL.revokeObjectURL(url)
 	}
+	return this
 }

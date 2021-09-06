@@ -2,13 +2,11 @@
 	import abilitiesStore from '/src/stores/abilitiesStore.js'
 
 	function filterList() {
-		$abilitiesStore.filterList()
-		$abilitiesStore = $abilitiesStore
+		$abilitiesStore = $abilitiesStore.filterList()
 	}
 
 	function sortList() {
-		$abilitiesStore.sortList()
-		$abilitiesStore = $abilitiesStore
+		$abilitiesStore = $abilitiesStore.sortList()
 	}
 </script>
 

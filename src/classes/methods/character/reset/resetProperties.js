@@ -18,4 +18,5 @@ export default function() {
 	}
 	this.updateProperties()
 	this.resetAbilities()
+	return this
 }

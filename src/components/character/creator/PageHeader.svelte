@@ -1,16 +1,18 @@
 <script>
-	import creationStore from '/src/stores/creationStore.js'
+	import characterStore from '/src/stores/characterStore.js'
 
 	export let chapter
 </script>
+
 
 <svelte:head>
 	<title>Apocalyptia Online - Character Creator - {chapter}</title>
 </svelte:head>
 <hgroup>
 	<h1>{chapter}</h1>
-	Step {$creationStore.step + 1} / 6
+	Step {$characterStore.meta.step} / 6
 </hgroup>
+
 
 <style>
 	hgroup {

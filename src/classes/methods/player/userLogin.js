@@ -14,4 +14,5 @@ export default async function(email, password) {
 	else {
 		alert('Error: Invalid login information.')
 	}
+	return this
 }

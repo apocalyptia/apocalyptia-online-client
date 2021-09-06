@@ -8,7 +8,7 @@ export default class Need extends Rule {
 		type = `Need`,
 		url
 	}) {
-		url = `/need/${name}`
+		url = `/needs/${name}`
 		super({
 			description,
 			name,

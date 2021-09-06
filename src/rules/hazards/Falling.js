@@ -10,7 +10,6 @@ const Falling = new Hazard({
 		`On a Botch, you go Prone and get Stunned for d6 rounds.`,
 		`Falling objects deal BDMG equal to their Size.`,
 	],
-	type: `Hazard`,
 })
 
 export default Falling

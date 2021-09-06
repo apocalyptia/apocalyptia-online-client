@@ -6,7 +6,6 @@ const FriendlyFire = new Hazard({
 		`-3 Projectile against targets within 1yd of your ally.`,
 		`If the Projectile Attack Fails, re-roll the Projectile Attack vs the ally’s Reflexive Dodge.`
 	],
-	type: `Hazard`
 })
 
 export default FriendlyFire

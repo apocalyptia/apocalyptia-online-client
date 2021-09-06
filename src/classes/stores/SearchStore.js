@@ -7,7 +7,7 @@ export default class {
 		this.list = {}
 		this.baseUrl = ''
 		this.defaultResults = defaultResults
-		this.results = this.defaultResults()
+		this.results = []
 		this.query = query
 	}
 }

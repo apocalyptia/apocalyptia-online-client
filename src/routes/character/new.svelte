@@ -10,9 +10,9 @@
 
 	function randomCharacter() {
 		$characterStore = new CharacterStore()
-		$characterStore.randomCharacter() // TODO: Needs work!
-		$characterStore.finalizeCharacter()
-		$playerStore.saveCharacter($characterStore)
+		$characterStore = $characterStore.randomCharacter() // TODO: Needs work!
+		$characterStore = $characterStore.finalizeCharacter()
+		$playerStore = $playerStore.saveCharacter($characterStore)
 	}
 </script>
 

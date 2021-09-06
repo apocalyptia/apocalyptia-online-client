@@ -14,4 +14,5 @@ export default function() {
 			this.visibleList.sort((a, b) => b.experience - a.experience)
 			break
 	}
+	return this
 }

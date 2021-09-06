@@ -7,7 +7,9 @@
 
 {#each $abilitiesStore.visibleList as ability}
 	<div class="ability-list-item">
-		<details id={`details-${ability.name.replace(' ', '')}`} class="ability-card">
+		<details id={`details-${ability.name.replace(' ', '')}`}
+			class="ability-card" open={ability.quantity}
+		>
 			<summary class="ability-titlebar">
 				<h4>{ability.name}</h4>
 				<TakenSelector bind:ability />

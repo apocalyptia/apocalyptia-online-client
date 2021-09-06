@@ -11,7 +11,7 @@ import Weight from '/src/rules/description/Weight.js'
 const Description = new CreationStep({
 	name: `Description`,
 	description: [`These are your characters physical and demographic characteristics.`],
-	step: 5,
+	step: 6,
 	type: `CreationStep`,
 })
 Description.list = [ Player, Name, Age, Sex, Height, Weight, Skin, Hair]

@@ -14,10 +14,11 @@ export default function() {
 	this.properties = initializeProperties()
 	this.abilities = []
 	this.gear = initializeGear()
-	this.maxTraits = parseInt(CreationProcess.traits.max)
+	this.meta.maxTraits = parseInt(CreationProcess.traits.max)
 	this.proceed = false
-	this.skillsRemaining = parseInt(CreationProcess.skills.startingMultiplier)
-	this.startingSkillsMultiplier = parseInt(CreationProcess.skills.startingMultiplier)
-	this.startingTraits = parseInt(CreationProcess.traits.starting)
-	this.traitsRemaining = parseInt(CreationProcess.traits.starting)
+	this.meta.skillsRemaining = parseInt(CreationProcess.skills.startingMultiplier)
+	this.meta.startingSkillsMultiplier = parseInt(CreationProcess.skills.startingMultiplier)
+	this.meta.startingTraits = parseInt(CreationProcess.traits.starting)
+	this.meta.traitsRemaining = parseInt(CreationProcess.traits.starting)
+	return this
 }

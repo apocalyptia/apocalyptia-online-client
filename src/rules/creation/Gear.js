@@ -11,7 +11,7 @@ const Gear = new CreationStep({
 		`Random items = Luck`,
 		`1 Food and 1 Water`
 	],
-	step: 4,
+	step: 5,
 	type: `CreationStep`
 })
 

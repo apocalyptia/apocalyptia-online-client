@@ -12,7 +12,7 @@ const Traits = new CreationStep({
 		`Trait rolls are [ d6 + Trait ].`,
 		`Trait scores set the upper limit for their Skills.`
 	],
-	step: 0,
+	step: 1,
 	type: `CreationStep`
 })
 Traits.max = maxTraits

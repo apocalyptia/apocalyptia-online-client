@@ -7,7 +7,6 @@
 	onMount(() => {
 		$searchStore.list = list
 		$searchStore.results = $searchStore.defaultResults()
-		$searchStore = $searchStore
 	})
 </script>
 

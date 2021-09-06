@@ -3,22 +3,20 @@
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
 	import SaveAndDeleteButtonRow from '/src/components/buttons/SaveAndDeleteButtonRow.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import creationStore from '/src/stores/creationStore.js'
 	import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
 
 	function saveCharacter() {
-		$characterStore.finalizeCharacter()
-		$playerStore.saveCharacter($characterStore)
+		$characterStore = $characterStore.finalizeCharacter()
+		$playerStore = $playerStore.saveCharacter($characterStore)
 		goto(`/character/sheet`)
 	}
 
 	function deleteCharacter() {
 		goto('/')
-		$playerStore.deleteCharacter($characterStore)
-		$characterStore.resetCharacter()
-		$characterStore = $characterStore
+		$playerStore = $playerStore.deleteCharacter($characterStore)
+		$characterStore = $characterStore.resetCharacter()
 	}
 
 	onMount(() => {
@@ -31,7 +29,7 @@
 
 <div class="finalize-page">
 	<fieldset>
-		<PageHeader chapter={'Finalize'} step={$creationStore.step} />
+		<PageHeader chapter={'Finalize'} step={$characterStore.meta.step} />
 		<div class="sheet-content">
 			<CharacterSheet mode={'readonly'} />
 		</div>

@@ -6,12 +6,12 @@
 	onMount(() => {
 		// TODO: Needs work. playerStore.selected is true for Character Sheet btn even after last character is deleted.
 		if ($playerStore.selected === null) {
-			$playerStore.initializePlayer()
-			$playerStore = $playerStore
+			$playerStore = $playerStore.initializePlayer()
 		}
 		console.log($playerStore.selected)
 	})
 </script>
+
 
 <svelte:head>
 	<title>Apocalyptia Online - Character</title>
@@ -23,6 +23,7 @@
 	<a href="/character/new" class="link-btn">New Character</a>
 	<a href="/character/manager" class="link-btn">Character Manager</a>
 </CenterCard>
+
 
 <style>
 	a {

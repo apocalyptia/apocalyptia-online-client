@@ -28,7 +28,7 @@ const Skills = new CreationStep({
 			]
 		}
 	],
-	step: 1,
+	step: 2,
 	type: `CreationStep`,
 })
 Skills.startingMultiplier = skillMultiplier

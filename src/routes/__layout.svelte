@@ -1,14 +1,14 @@
 <script>
 	import TitleBar from '/src/components/titlebar/TitleBar.svelte'
-	import characterStore from '/src/stores/characterStore.js'
-	import playerStore from '/src/stores/playerStore.js'
+	// import characterStore from '/src/stores/characterStore.js'
+	// import playerStore from '/src/stores/playerStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(() => {
-		if ($playerStore.selected !== null) {
-			$playerStore.initializePlayer()
-			$characterStore = $playerStore.selected
-		}
+		// if ($playerStore.selected !== null) {
+		// 	$playerStore = $playerStore.initializePlayer()
+		// 	$characterStore = $playerStore.selected
+		// }
 	})
 </script>
 

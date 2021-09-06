@@ -7,15 +7,14 @@
 	import { goto } from '$app/navigation'
 
 	function saveCharacter() {
-		$characterStore.finalizeCharacter()
-		$playerStore.saveCharacter($characterStore)
+		$characterStore = $characterStore.finalizeCharacter()
+		$playerStore = $playerStore.saveCharacter($characterStore)
 		goto(`/character/sheet`)
 	}
 
 	function deleteCharacter() {
 		goto('/')
-		$playerStore.deleteCharacter($characterStore)
-		$playerStore = $playerStore
+		$playerStore = $playerStore.deleteCharacter($characterStore)
 		$characterStore = new CharacterStore()
 	}
 </script>

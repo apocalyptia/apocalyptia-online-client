@@ -3,4 +3,5 @@ export default function() {
 		this.skills[s].score = 0
 	}
 	this.remainingSkills()
+	return this
 }

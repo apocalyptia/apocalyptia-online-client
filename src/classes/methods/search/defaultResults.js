@@ -2,7 +2,7 @@ import capitalize from '/src/utils/text/capitalize.js'
 import urlFormat from '/src/utils/text/urlFormat.js'
 
 export default function() {
-	const resultsList = Object.entries(this.list).map((rule) => {
+	return Object.entries(this.list).map((rule) => {
 		let result = {}
 		if (rule[1].name !== undefined) {
 			result.name = rule[1].name
@@ -18,5 +18,4 @@ export default function() {
 		}
 		return result
 	})
-	return resultsList
 }

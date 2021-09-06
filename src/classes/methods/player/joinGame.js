@@ -8,4 +8,5 @@ export default function (email, password, confirm) {
 	else {
 		alert('Error: Invalid registration information.')
 	}
+	return this
 }

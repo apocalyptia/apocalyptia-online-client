@@ -8,7 +8,7 @@ export default class Hazard extends Rule {
 		type = `Hazard`,
 		url
 	}) {
-		url = `/hazard/${name}`
+		url = `/hazards/${name}`
 		super({
 			description,
 			name,

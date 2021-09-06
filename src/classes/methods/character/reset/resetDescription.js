@@ -4,4 +4,5 @@ export default function() {
 			this.description[d].value = ``
 		}
 	}
+	return this
 }

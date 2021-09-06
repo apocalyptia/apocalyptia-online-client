@@ -287,6 +287,7 @@ a {
 }
 a:hover {
 	box-shadow: var(--pri-box-shadow);
+	text-decoration: underline !important;
 }
 a:active,
 a:hover {
@@ -559,7 +560,7 @@ textarea:invalid {
 	font-size: var(--s110);
 }
 .sheet-card-item {
-	margin: var(--margin);
+	padding: var(--padding);
 }
 .sheet-card-table {
 	display: block;

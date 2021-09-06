@@ -11,4 +11,5 @@ export default function() {
 		this.visibleList = this.visibleList.filter((a) => a.quantity === 0)
 	}
 	this.sortList()
+	return this
 }

@@ -46,4 +46,5 @@ export default function(category = 'All') {
 				this.description.skin.value
 			)
 	}
+	return this
 }
