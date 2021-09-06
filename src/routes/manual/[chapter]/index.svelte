@@ -20,5 +20,4 @@
 
 
 <ManualSearchbar />
-<h1>/c</h1>
 <ManualPage list={Rules[chapter]} />

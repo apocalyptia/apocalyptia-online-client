@@ -8,7 +8,7 @@ export default class Attribute extends Rule {
 		type = `Attribute`,
 		url
 	}) {
-		url = `/attributes/${name}`
+		url = `/gear/attributes/${name}`
 		super({
 			description,
 			id,

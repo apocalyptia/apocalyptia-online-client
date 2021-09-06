@@ -7,7 +7,7 @@ export default class Rule {
 		name = ``,
 		subrules = [],
 		type = `Rule`,
-		url = ``
+		url = `/manual`
 	}) {
 		this.description = description
 		this.id = id

@@ -6,5 +6,4 @@
 
 
 <ManualSearchbar />
-<h1>/m</h1>
 <ManualPage list={Rules} />

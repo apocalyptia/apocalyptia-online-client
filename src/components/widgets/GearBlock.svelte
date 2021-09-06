@@ -118,7 +118,7 @@
 						<div class="attributes-type">
 							{attributes.name}:
 							{#each attributes.description as line}
-								<p class="attributes-description">{line}</p>
+								<p class="attributes-description">{@html line}</p>
 							{/each}
 						</div>
 					{/each}
