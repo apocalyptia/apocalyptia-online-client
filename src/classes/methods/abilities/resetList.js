@@ -5,11 +5,11 @@ export default function() {
 		ability.quantity = 0
 		ability.selectedOption = 0
 	})
-	this.displayList = Object.values(Abilities)
-	this.xpCosts = new Set(Object.values(Abilities).map((a) => a.experience))
-	this.visibleList = Object.values(Abilities)
+	this.completeList = Object.values(Abilities)
+	this.cost = 'all'
+	this.display = 'Hide'
 	this.sort = 'alpha'
-	this.cost = 0
 	this.status = 'all'
+	this.workingList = Object.values(Abilities)
 	return this
 }

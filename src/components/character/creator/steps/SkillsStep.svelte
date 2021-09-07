@@ -6,7 +6,7 @@
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import SkillsSection from '/src/components/character/sheet/sections/SkillsSection.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import { onMount } from 'svelte'
+	import { onMount, beforeUpdate } from 'svelte'
 
 	function randomSkills() {
 		$characterStore = $characterStore.randomSkills()
@@ -17,6 +17,8 @@
 	}
 
 	onMount(() => $characterStore = $characterStore.remainingSkills())
+
+	beforeUpdate(() => $characterStore = $characterStore.creationCanProceed())
 </script>
 
 

@@ -18,7 +18,6 @@
 			</div>
 		{/each}
 	</div>
-	<div class="divider" />
 	<div class="prop-block">
 		{#each rightColumn as rightProp}
 			<div class="prop-item">
@@ -33,20 +32,16 @@
 <style>
 	.properties-list {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		padding-bottom: var(--padding);
 		padding-top: var(--padding);
 		text-align: left;
-	}
-	.divider {
-		width: var(--padding);
 	}
 	.prop-block {
 		align-items: space-between;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 50%;
 	}
 	.prop-block div {
 		margin-bottom: var(--margin);

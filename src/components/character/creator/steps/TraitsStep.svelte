@@ -6,19 +6,19 @@
 	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
 	import TraitsSection from '/src/components/character/sheet/sections/TraitsSection.svelte'
 	import characterStore from '/src/stores/characterStore.js'
-	import { onMount } from 'svelte'
+	import { onMount, beforeUpdate } from 'svelte'
 
 	function randomTraits() {
 		$characterStore = $characterStore.randomTraits()
-		$characterStore = $characterStore.creationCanProceed()
 	}
 
 	function resetTraits() {
 		$characterStore = $characterStore.resetTraits()
-		$characterStore = $characterStore.creationCanProceed()
 	}
 
 	onMount(() => $characterStore = $characterStore.remainingTraits())
+
+	beforeUpdate(() => $characterStore = $characterStore.creationCanProceed())
 </script>
 
 

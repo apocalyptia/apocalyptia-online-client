@@ -1,17 +1,21 @@
 <script>
 	import CreationProcess from '/src/rules/CreationProcess.js'
 	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
-	import GearBlock from '/src/components/widgets/GearBlock.svelte'
 	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
+	import StartingGearList from '/src/components/character/creator/StartingGearList.svelte'
 	import characterStore from '/src/stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	function randomGear() {
 		$characterStore = $characterStore.randomGear()
 		$characterStore = $characterStore.creationCanProceed()
+		console.log($characterStore.gear.equipment.inventory)
 	}
 
-	onMount(() => $characterStore = $characterStore.creationCanProceed())
+	onMount(() => {
+		$characterStore = $characterStore.creationCanProceed()
+		console.log($characterStore.gear.equipment.inventory)
+	})
 </script>
 
 
@@ -19,29 +23,8 @@
 	<fieldset>
 		<PageHeader chapter={'Gear'} />
 		<ExplanationBlock rule={CreationProcess.gear.description} />
-		{#if $characterStore.meta.proceed}
-			<div class="section-card">
-				{#each Object.values($characterStore.gear) as category (category.name)}
-					<div class="gear-list-details">
-						<details>
-							<summary>{category.name}</summary>
-							<div class="details-content">
-								{#if category.name === 'Equipment'}
-									{#each category.inventory as equipment (equipment.name)}
-										<div class="item">
-											<GearBlock item={equipment} mode={'readonly'} />
-										</div>
-									{/each}
-								{:else}
-									<div class="item">
-										<GearBlock item={category.inventory[0]} mode={'readonly'} />
-									</div>
-								{/if}
-							</div>
-						</details>
-					</div>
-				{/each}
-			</div>
+		{#if $characterStore.gear.equipment.inventory.length}
+			<StartingGearList />
 		{:else}
 			<div class='btn-row'>
 				<button class="small-cntr-btn" on:click={randomGear}>Random</button>
@@ -52,15 +35,6 @@
 
 
 <style>
-	.gear-list-details {
-		margin: var(--margin) 0;
-	}
-	.details-content {
-		display: block;
-	}
-	.item {
-		padding: var(--padding);
-	}
 	.small-cntr-btn {
 		height: var(--square);
 	}

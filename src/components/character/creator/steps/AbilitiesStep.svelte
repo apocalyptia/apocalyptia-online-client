@@ -11,18 +11,18 @@
 	import { beforeUpdate } from 'svelte'
 
 	function randomAbilities() {
-		$abilitiesStore = $abilitiesStore.reset()
+		$abilitiesStore = $abilitiesStore.resetList()
 		$characterStore = $characterStore.randomAbilities()
 	}
 
 	function resetAbilities() {
-		$abilitiesStore = $abilitiesStore.reset()
+		$abilitiesStore = $abilitiesStore.resetList()
 		$characterStore = $characterStore.resetAbilities()
 	}
 
 	function giveAbilitiesToCharacter() {
 		$characterStore = $characterStore.resetAbilities()
-		$abilitiesStore.visibleList.forEach(ability => {
+		$abilitiesStore.workingList.forEach(ability => {
 			if (ability.quantity) {
 				$characterStore = $characterStore.addAbility(ability)
 			}

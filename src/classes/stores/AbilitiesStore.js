@@ -1,20 +1,23 @@
 import Abilities from '/src/rules/Abilities.js'
-import close from '/src/classes/methods/abilities/close.js'
 import filterList from '/src/classes/methods/abilities/filterList.js'
-import reset from '/src/classes/methods/abilities/reset.js'
+import resetList from '/src/classes/methods/abilities/resetList.js'
 import sortList from '/src/classes/methods/abilities/sortList.js'
+import toggleList from '/src/classes/methods/abilities/toggleList.js'
 
 export default class AbilitiesStore {
 	constructor() {
-		this.displayList = Object.values(Abilities)
-		this.xpCosts = new Set(Object.values(Abilities).map((a) => a.experience))
-		this.visibleList = Object.values(Abilities)
+		// properties
+		this.completeList = Object.values(Abilities)
+		this.cost = 'all'
+		this.display = 'Hide'
 		this.sort = 'alpha'
-		this.cost = 0
 		this.status = 'all'
-		this.close = close
+		this.workingList = Object.values(Abilities)
+
+		// methods
 		this.filterList = filterList
-		this.reset = reset
+		this.resetList = resetList
 		this.sortList = sortList
+		this.toggleList = toggleList
 	}
 }

@@ -1,12 +1,18 @@
 <script>
 	import abilitiesStore from '/src/stores/abilitiesStore.js'
+	import characterStore from '/src/stores/characterStore.js'
 
 	function filterList() {
-		$abilitiesStore = $abilitiesStore.filterList()
+		$abilitiesStore = $abilitiesStore.filterList($characterStore.properties.experience.current)
 	}
 
 	function sortList() {
 		$abilitiesStore = $abilitiesStore.sortList()
+	}
+
+	function toggleList() {
+		console.log($abilitiesStore.display)
+		$abilitiesStore = $abilitiesStore.toggleList()
 	}
 </script>
 
@@ -14,16 +20,20 @@
 <!-- svelte-ignore a11y-no-onchange -->
 <div class="organizer-details">
 	<div class="filter-section organizer-column">
-		<div class="organizer-header">
-			Filter
-		</div>
 		<div class="organizer-row">
 			<span>XP:</span>
 			<select bind:value={$abilitiesStore.cost} on:change={filterList}>
-				<option value={0}>All</option>
-				{#each [...$abilitiesStore.xpCosts] as xpCost}
-					<option value={xpCost}>{xpCost}</option>
-				{/each}
+				<option value={'all'}>All</option>
+				<option value={3}>3</option>
+				<option value={6}>6</option>
+				<option value={9}>9</option>
+				<option value={12}>12</option>
+				<option value={15}>15</option>
+				<option value={18}>18</option>
+				<option value={21}>21</option>
+				<option value={24}>24</option>
+				<option value={30}>30</option>
+				<option value={'valid'}>Valid</option>
 			</select>
 		</div>
 		<div class="organizer-row">
@@ -36,16 +46,20 @@
 		</div>
 	</div>
 	<div class="sort-section organizer-column">
-		<div class="organizer-header">
-			Sort
-		</div>
 		<div class="organizer-row">
-			<span>By:</span>
+			<span>Sort:</span>
 			<select class="xp-cost-selector" bind:value={$abilitiesStore.order} on:change={sortList}>
 				<option value="alpha" selected>A-Z</option>
 				<option value="zeta">Z-A</option>
 				<option value="xphigh">XP ^</option>
 				<option value="xplow">XP v</option>
+			</select>
+		</div>
+		<div class="organizer-row">
+			<span>Display:</span>
+			<select class="xp-cost-selector" bind:value={$abilitiesStore.display} on:change={toggleList}>
+				<option value="Hide">Hide</option>
+				<option value="Show">Show</option>
 			</select>
 		</div>
 	</div>
@@ -57,13 +71,6 @@
 		display: flex;
 		justify-content: space-around;
 		padding: 0;
-	}
-	.organizer-header {
-		display: flex;
-		font-weight: bold;
-		justify-content: center;
-		margin: var(--margin);
-		text-decoration: underline;
 	}
 	.organizer-row {
 		align-items: center;

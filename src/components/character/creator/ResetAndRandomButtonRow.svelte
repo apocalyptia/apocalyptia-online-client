@@ -12,6 +12,9 @@
 
 
 <style>
+	.btn-row {
+		margin-top: var(--margin);
+	}
 	button {
 		height: var(--square);
 	}
