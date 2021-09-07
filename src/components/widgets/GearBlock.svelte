@@ -94,7 +94,7 @@
 				{/each}
 			{/if}
 			{#each itemProps as prop}
-				{#if item[prop.abv] != undefined && item[prop.abv].toString().length}
+				{#if item[prop.abv] !== undefined && item[prop.abv].toString().length}
 					<p class="gear-prop">
 						{#if prop.name === 'Quantity'}
 							{#if mode === 'edit'}
@@ -104,6 +104,9 @@
 								<span class="prop-name">{prop.name}</span>:
 								<span type="number" class="item-quantity">{item.quantity}</span>
 							{/if}
+						{:else if prop.name === 'Accuracy' && item[prop.abv] >= 0}
+							<span class="prop-name">{prop.name}</span>:
+							+{item[prop.abv]}
 						{:else}
 							<span class="prop-name">{prop.name}</span>:
 							{item[prop.abv]}

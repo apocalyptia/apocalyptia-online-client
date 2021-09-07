@@ -9,13 +9,9 @@
 	function randomGear() {
 		$characterStore = $characterStore.randomGear()
 		$characterStore = $characterStore.creationCanProceed()
-		console.log($characterStore.gear.equipment.inventory)
 	}
 
-	onMount(() => {
-		$characterStore = $characterStore.creationCanProceed()
-		console.log($characterStore.gear.equipment.inventory)
-	})
+	onMount(() => $characterStore = $characterStore.creationCanProceed())
 </script>
 
 

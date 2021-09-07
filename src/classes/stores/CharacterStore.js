@@ -16,7 +16,7 @@ import remainingAbilities from '/src/classes/methods/character/remaining/remaini
 import remainingSkills from '/src/classes/methods/character/remaining/remainingSkills.js'
 import remainingTraits from '/src/classes/methods/character/remaining/remainingTraits.js'
 import resetAbilities from '/src/classes/methods/character/reset/resetAbilities.js'
-import resetChracter from '/src/classes/methods/character/reset/resetChracter.js'
+import resetCharacter from '/src/classes/methods/character/reset/resetCharacter.js'
 import resetDescription from '/src/classes/methods/character/reset/resetDescription.js'
 import resetGear from '/src/classes/methods/character/reset/resetGear.js'
 import resetProperties from '/src/classes/methods/character/reset/resetProperties.js'
@@ -44,26 +44,32 @@ export default class Character {
 		this.creationCanProceed = creationCanProceed
 		this.creationCheckMaxSteps = creationCheckMaxSteps
 		this.creationCheckMinSteps = creationCheckMinSteps
+
 		this.remainingTraits = remainingTraits
 		this.remainingSkills = remainingSkills
-		/* */ this.remainingAbilities = remainingAbilities
+		this.remainingAbilities = remainingAbilities
+
 		this.resetGear = resetGear
-		/* */ this.resetAbilities = resetAbilities
+		this.resetAbilities = resetAbilities
 		this.resetDescription = resetDescription
 		this.resetProperties = resetProperties
 		this.resetSkills = resetSkills
 		this.resetTraits = resetTraits
-		this.resetCharacter = resetChracter
-		/* */ this.addAbility = addAbility
+		this.resetCharacter = resetCharacter
+
+		this.addAbility = addAbility
+
 		this.updateProperties = updateProperties
 		this.updateSkill = updateSkill
 		this.updateTrait = updateTrait
+
 		this.randomDescription = randomDescription
 		this.randomTraits = randomTraits
 		this.randomSkills = randomSkills
-		/* */ this.randomAbilities = randomAbilities
+		this.randomAbilities = randomAbilities
 		this.randomGear = randomGear
 		this.randomCharacter = randomCharacter
+		
 		this.finalizeCharacter = finalizeCharacter
 	}
 }

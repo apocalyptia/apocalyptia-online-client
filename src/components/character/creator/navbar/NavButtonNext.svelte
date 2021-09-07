@@ -9,9 +9,9 @@
 			$characterStore.meta.step = $characterStore.meta.step + 1
 			if ($characterStore.creationCheckMaxSteps()) {
 				$characterStore = $characterStore.finalizeCharacter()
+				$playerStore = $playerStore.saveCharacter($characterStore)
 				goto(`/character/sheet`)
 			}
-			$playerStore = $playerStore.saveCharacter($characterStore)
 		}
 	}
 </script>
@@ -19,7 +19,7 @@
 
 <button on:click={next} class="next-btn btn-box" disabled={$characterStore.meta.proceed === false}>
 	<div class="btn-icon">
-		{@html $characterStore.meta.proceed ? `&gt;` : `x`}
+		{@html $characterStore.meta.proceed ? `&gt;` : `X`}
 	</div>
 </button>
 

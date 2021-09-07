@@ -14,6 +14,9 @@
 
 
 <style>
+	a {
+		text-decoration: none !important;
+	}
 	button {
 		height: var(--square);
 		width: 30vw;

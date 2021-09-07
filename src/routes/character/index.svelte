@@ -8,7 +8,6 @@
 		if ($playerStore.selected === null) {
 			$playerStore = $playerStore.initializePlayer()
 		}
-		console.log($playerStore.selected)
 	})
 </script>
 

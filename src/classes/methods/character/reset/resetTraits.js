@@ -4,5 +4,6 @@ export default function() {
 	}
 	this.remainingTraits()
 	this.resetSkills()
+	this.resetGear()
 	return this
 }

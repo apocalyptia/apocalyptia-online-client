@@ -10,11 +10,10 @@
 		}
 	}
 
-	let previousButton = `&lt;`
 </script>
 
 <button on:click={previous} class="previous-btn btn-box">
-	<div class="btn-icon">{@html previousButton}</div>
+	<div class="btn-icon">{@html `&lt;`}</div>
 </button>
 
 <style>

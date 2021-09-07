@@ -404,6 +404,7 @@ button:invalid {
 }
 .link-btn:hover {
 	font-weight: bold;
+	text-decoration: none !important;
 }
 .small-cntr-btn {
 	min-width: 30%;

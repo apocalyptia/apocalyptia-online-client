@@ -67,6 +67,7 @@
 		color: var(--pri-color);
 		margin: 3px;
 		padding: calc((var(--padding) / 2) - 1px) calc(var(--padding) - 1px);
+		text-decoration: none !important;
 	}
 	.contents {
 		border: var(--solid-border);

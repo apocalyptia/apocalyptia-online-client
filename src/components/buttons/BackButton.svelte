@@ -13,4 +13,7 @@
 		position: fixed;
 		z-index: 6;
 	}
+	.back-btn:hover {
+		text-decoration: none !important;
+	}
 </style>
