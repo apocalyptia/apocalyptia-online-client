@@ -14,11 +14,6 @@
 	$: currentZoom = Math.round($mapStore.magnification * 100)
 
 	function zoomMap() {
-		// if ($mapStore.magnification > 0.25 && zoom === 'out') {
-		// 	$mapStore.magnification -= 0.25
-		// } else if ($mapStore.magnification < 3 && zoom === 'in') {
-		// 	$mapStore.magnification += 0.25
-		// }
 		$mapStore.currentSquare = Math.round($mapStore.startingSquare * $mapStore.magnification)
 		document.documentElement.style.setProperty(`--cell-size`, `${$mapStore.currentSquare}px`)
 		let mapFrame = document.querySelector('.map-frame')
@@ -145,17 +140,5 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-evenly;
-	}
-	.zoom-indicator {
-		font-size: var(--s125);
-	}
-	.zoom-indicator,
-	.zoom-buttons {
-		display: flex;
-	}
-	button {
-		font-size: var(--s150);
-		height: var(--square);
-		width: var(--square);
 	}
 </style>
