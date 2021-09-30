@@ -15,6 +15,7 @@
 			name: t.name,
 			list: Object.values($characterStore.skills).filter((s) => s.parent === t.name),
 			max: t.score,
+			open: false
 		}
 	})
 </script>
@@ -41,8 +42,9 @@
 {:else}
 	{#each skillGroups as group}
 		<div class="item-block">
-			<details class="skills-details">
+			<details class="skills-details" bind:open={group.open}>
 				<summary>
+					<span>{group.open ? '-' : '+'}</span>
 					<h2>{group.name} Skills</h2>
 				</summary>
 				<div class="details-content">
@@ -87,6 +89,9 @@
 	}
 	.item-block {
 		margin: var(--margin) 0;
+	}
+	span {
+		margin-right: var(--margin);
 	}
 	.max-score {
 		font-weight: bold;

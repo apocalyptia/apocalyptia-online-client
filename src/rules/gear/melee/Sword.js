@@ -6,7 +6,7 @@ const Sword = new Melee ({
 	damage: 4,
 	hands: 2,
 	name: `Sword`,
-	penetration: 0,
+	penetration: 1,
 	range: 2,
 	size: 3,
 	type: `Melee Weapon`,

@@ -1,9 +1,14 @@
 <script>
 	import Properties from '/src/rules/Properties.js'
+
+	let isOpen = false
 </script>
 
-<details class="formulae-details">
-	<summary>Properties Formulae</summary>
+<details class="formulae-details" bind:open={isOpen}>
+	<summary>
+		<span>{isOpen ? '-' : '+'}</span>
+		<h2>Properties Formulae</h2>
+	</summary>
 	<div class="formulae-card">
 		<ul>
 			{#each Object.values(Properties) as property}
@@ -26,6 +31,9 @@
 <style>
 	.formulae-details {
 		margin: var(--margin) 0;
+	}
+	span {
+		margin-right: var(--margin);
 	}
 	li {
 		margin: var(--margin);

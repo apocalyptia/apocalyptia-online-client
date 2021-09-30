@@ -8,7 +8,7 @@ const Spear = new Melee ({
 	name: `Spear`,
 	penetration: 1,
 	range: 3,
-	size: 3,
+	size: 4,
 	type: `Melee Weapon`,
 })
 

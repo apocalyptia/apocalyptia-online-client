@@ -7,9 +7,9 @@
 
 {#each $abilitiesStore.workingList as ability}
 	<div class="ability-list-item">
-		<details id={`details-${ability.name.replace(' ', '')}`} class="ability-card" open={ability.quantity}>
+		<details id={`details-${ability.name.replace(' ', '')}`} class="ability-card" bind:open={ability.open}>
 			<summary class="ability-titlebar">
-				<h4>{ability.name}</h4>
+				<h4>{ability.open ? '-' : '+'} {ability.name}</h4>
 				<TakenSelector bind:ability />
 			</summary>
 			<AbilityCard bind:ability />

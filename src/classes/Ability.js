@@ -8,6 +8,7 @@ export default class Ability extends Rule {
 		max = 1,
 		name,
 		notes = ``,
+		open = false,
 		options = [],
 		selectedOption = 0,
 		subrules,
@@ -26,6 +27,7 @@ export default class Ability extends Rule {
 		this.formula = formula
 		this.max = max
 		this.notes = notes
+		this.open = open
 		this.options = options
 		this.selectedOption = selectedOption
 	}

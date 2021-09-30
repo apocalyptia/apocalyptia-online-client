@@ -1,5 +1,5 @@
 <script>
-	import Canvas from '/src/components/widgets/Canvas.svelte'
+	// import Canvas from '/src/components/widgets/Canvas.svelte'
 	import Slider from '/src/components/widgets/Slider.svelte'
 	import mapStore from '/src/stores/mapStore.js'
 	import { afterUpdate, onMount } from 'svelte'
@@ -20,7 +20,7 @@
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
 <div class="canvas-frame">
-	<svelte:component this={Canvas} />
+	<!-- <svelte:component this={Canvas} /> -->
 </div>
 <div class="slide-container">
 	-<Slider min=".1" max="2" step=".1" bind:value={$mapStore.magnification} func={() => ($mapStore = $mapStore.redraw())} />+

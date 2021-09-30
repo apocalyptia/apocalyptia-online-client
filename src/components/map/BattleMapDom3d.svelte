@@ -11,13 +11,14 @@
 
 	let xRotation = 0
 	let zRotation = 0
+	$: currentZoom = Math.round($mapStore.magnification * 100)
 
-	function zoomMap(zoom) {
-		if ($mapStore.magnification > 0.25 && zoom === 'out') {
-			$mapStore.magnification -= 0.25
-		} else if ($mapStore.magnification < 3 && zoom === 'in') {
-			$mapStore.magnification += 0.25
-		}
+	function zoomMap() {
+		// if ($mapStore.magnification > 0.25 && zoom === 'out') {
+		// 	$mapStore.magnification -= 0.25
+		// } else if ($mapStore.magnification < 3 && zoom === 'in') {
+		// 	$mapStore.magnification += 0.25
+		// }
 		$mapStore.currentSquare = Math.round($mapStore.startingSquare * $mapStore.magnification)
 		document.documentElement.style.setProperty(`--cell-size`, `${$mapStore.currentSquare}px`)
 		let mapFrame = document.querySelector('.map-frame')
@@ -56,22 +57,31 @@
 	</div>
 </div>
 <div class="view-control-box">
-	<div>X-Perspective: {xPerspective}</div>
-	<Slider name="X-perspective" min="0" max="100" step="1" bind:value={xPerspective} func={changePerspective} indicator="false" />
-	<br />
-	<div>Y-Perspective: {yPerspective}</div>
-	<Slider name="Y-perspective" min="0" max="100" step="1" bind:value={yPerspective} func={changePerspective} indicator="false" />
-	<br />
-	<div>X-Axis: {xRotation}</div>
-	<Slider name="X-axis" min="0" max="89" step="1" bind:value={xRotation} func={rotate3D} indicator="false" />
-	<div>Z-Axis: {zRotation}</div>
-	<Slider name="Z-axis" min="-180" max="180" step="1" bind:value={zRotation} func={rotate3D} indicator="false" />
-	<div class="zoom-indicator">
-		Zoom {$mapStore.magnification * 100}%
+	<div class="view-control-box-row">
+		<div>
+			<div>X-Pers: {xPerspective}</div>
+			<Slider name="X-perspective" min="0" max="100" step="1" bind:value={xPerspective} func={changePerspective} indicator="false" />
+		</div>
+		<div>
+			<div>Y-Pers: {yPerspective}</div>
+			<Slider name="Y-perspective" min="0" max="100" step="1" bind:value={yPerspective} func={changePerspective} indicator="false" />
+		</div>
 	</div>
-	<div class="zoom-buttons">
-		<button on:click={() => zoomMap('in')}>+</button>
-		<button on:click={() => zoomMap('out')}>-</button>
+	<div class="view-control-box-row">
+		<div>
+			<div>X-Axis: {xRotation}</div>
+			<Slider name="X-axis" min="0" max="89" step=".1" bind:value={xRotation} func={rotate3D} indicator="false" />
+		</div>
+		<div>
+			<div>Z-Axis: {zRotation}</div>
+			<Slider name="Z-axis" min="-180" max="180" step=".1" bind:value={zRotation} func={rotate3D} indicator="false" />
+		</div>
+	</div>
+	<div class="view-control-box-row">
+		<div>
+			<div>Zoom: {currentZoom}%</div>
+			<Slider name="Zoom" min=".1" max="3" step=".1" bind:value={$mapStore.magnification} func={zoomMap} indicator="false" />
+		</div>
 	</div>
 </div>
 
@@ -114,12 +124,12 @@
 		perspective: 200px; /* this is where the 3d lives */
 	}
 	.grid-row {
-		border-bottom: 1px dotted var(--pri-color-trans);
+		border-bottom: 1px dotted var(--pri-color);
 		display: flex;
 		height: var(--cell-size);
 	}
 	.grid-cell {
-		border-right: 1px dotted var(--pri-color-trans);
+		border-right: 1px dotted var(--pri-color);
 		height: var(--cell-size);
 		min-width: var(--cell-size);
 		max-width: var(--cell-size);
@@ -129,8 +139,14 @@
 		bottom: 20px;
 		position: fixed;
 		right: 30px;
+		width: 80%;
 	}
-	/* .zoom-indicator {
+	.view-control-box-row {
+		align-items: center;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.zoom-indicator {
 		font-size: var(--s125);
 	}
 	.zoom-indicator,
@@ -141,5 +157,5 @@
 		font-size: var(--s150);
 		height: var(--square);
 		width: var(--square);
-	} */
+	}
 </style>

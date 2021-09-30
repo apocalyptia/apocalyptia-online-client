@@ -19,10 +19,10 @@ const menu = {
 		// 	'name': 'Campaign',
 		// 	'url': '/campaign'
 		// },
-		// {
-		// 	name: 'Map',
-		// 	url: '/map'
-		// }
+		{
+			name: 'Map',
+			url: '/map'
+		}
 	],
 	toggle() {
 		this.open = !this.open
