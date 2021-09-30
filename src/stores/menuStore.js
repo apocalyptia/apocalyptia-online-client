@@ -20,8 +20,12 @@ const menu = {
 		// 	'url': '/campaign'
 		// },
 		{
-			name: 'Map',
+			name: 'Map Test',
 			url: '/map'
+		},
+		{
+			name: 'Skybox Test',
+			url: '/skybox'
 		}
 	],
 	toggle() {
