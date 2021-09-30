@@ -15,6 +15,7 @@
 	})
 </script>
 
+
 <svelte:head>
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
