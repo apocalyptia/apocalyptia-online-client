@@ -6,3 +6,4 @@
 /functions
 /scripts/setupTypeScript.js
 node_modules
+package-lock.json

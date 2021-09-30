@@ -12,7 +12,6 @@
 
 	afterUpdate(() => {
 		$mapStore = $mapStore.redraw()
-		const frame = document.querySelector('.canvas-frame')
 	})
 </script>
 

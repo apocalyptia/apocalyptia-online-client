@@ -215,6 +215,8 @@ export default function(term) {
 		'Rote Actions': 'core/success',
 		'Round': 'combat/round',
 		'Rounds': 'combat/round',
+		'Run': 'combat/movement',
+		'Running': 'combat/movement',
 		'Science': 'skills/science',
 		'Search': 'skills/perception',
 		'Self Improvement': 'abilities/selfimprovement',
