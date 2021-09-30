@@ -21,10 +21,10 @@
 
 	async function playerRegistration() {
 		if (match) {
-			await $playerStore.authenticateUser.join(email, password).then(() => {
-				$playerStore.loggedIn = true
-				goto('/')
-			})
+			// await $playerStore.authenticateUser.join(email, password).then(() => {
+			// 	$playerStore.loggedIn = true
+			// 	goto('/')
+			// })
 		} else {
 			alert('Error: Passwords do not match!')
 		}

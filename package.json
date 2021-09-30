@@ -14,7 +14,6 @@
 		"svelte": "^3.43.1"
 	},
 	"dependencies": {
-		"gotrue-js": "^0.9.29",
 		"three": "^0.126.1",
 		"uuid": "^8.3.2"
 	},
