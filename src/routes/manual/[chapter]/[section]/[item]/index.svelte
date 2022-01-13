@@ -1,6 +1,6 @@
 <script context="module">
-	export async function load({ page }) {
-		const { chapter, section, item } = page.params
+	export async function load({ params }) {
+		const { chapter, section, item } = params
 		return {
 			props: {
 				chapter,

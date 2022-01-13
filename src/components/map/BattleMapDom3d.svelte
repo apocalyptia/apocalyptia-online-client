@@ -33,7 +33,6 @@
 	<title>Apocalyptia Online - Map</title>
 </svelte:head>
 <div class="map-frame">
-	<div id="guy" class="guy" />
 	<div
 		id="div1"
 		class="map-grid"
@@ -86,15 +85,7 @@
 		position: absolute;
 		background-color: var(--sec-color-trans);
 	}
-	.guy {
-		position: relative;
-		height: 100px;
-		width: 50px;
-		background-color: gray;
-		top: 600;
-		left: 900;
-		z-index: 2;
-	}
+
 	.red {
 		background-color: red;
 	}
@@ -111,6 +102,7 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+		width: 100vw;
 	}
 	.map-grid {
 		background-color: black;
