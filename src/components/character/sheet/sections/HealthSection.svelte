@@ -1,8 +1,8 @@
 <script>
-	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
-	import BodyLabelColumn from '/src/components/widgets/BodyLabelColumn.svelte'
-	import HumanBody from '/src/components/widgets/HumanBody.svelte'
-	import characterStore from '/src/stores/characterStore.js'
+	import adjustUIColor from '$utils/ui/adjustUIColor.js'
+	import BodyLabelColumn from '$components/widgets/BodyLabelColumn.svelte'
+	import HumanBody from '$components/widgets/HumanBody.svelte'
+	import characterStore from '$stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	export let mode = 'readonly'

@@ -1,4 +1,4 @@
-import Misc from '/src/classes/gear/Misc.js'
+import Misc from '$classes/gear/Misc.js'
 
 const FishingPole = new Misc({
 	name: `Fishing Pole`,

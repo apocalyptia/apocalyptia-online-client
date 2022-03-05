@@ -9,11 +9,11 @@ import WaterBottle from './storage/WaterBottle.js'
 const Storage = {
 	canteen: Canteen,
 	cooler: Cooler,
-	fuelcan: FuelCan,
+	fuel_can: FuelCan,
 	lockbox: Lockbox,
-	plasticjug: PlasticJug,
+	plastic_jug: PlasticJug,
 	speedloader: Speedloader,
-	waterbottle: WaterBottle,
+	water_bottle: WaterBottle,
 }
 
 export default Storage

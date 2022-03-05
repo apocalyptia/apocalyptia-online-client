@@ -1,4 +1,4 @@
-import PlayerStore from '/src/classes/stores/PlayerStore.js'
+import PlayerStore from '$classes/stores/PlayerStore.js'
 import { writable } from 'svelte/store'
 
 const playerStore = new PlayerStore()

@@ -1,4 +1,4 @@
-import Rules from '/src/rules/Rules.js'
+import Rules from '$rules/Rules.js'
 
 export default function rulesSearch(searchKey) {
 	if (Rules[searchKey] !== undefined) {

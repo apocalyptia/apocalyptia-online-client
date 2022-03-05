@@ -1,7 +1,7 @@
 <script>
-	import AddButton from '/src/components/buttons/AddButton.svelte'
-	import AddItemModal from '/src/components/character/sheet/gear/AddItemModal.svelte'
-	import GearItem from '/src/components/character/sheet/gear/GearItem.svelte'
+	import AddButton from '$components/buttons/AddButton.svelte'
+	import AddItemModal from '$components/character/sheet/gear/AddItemModal.svelte'
+	import GearItem from '$components/character/sheet/gear/GearItem.svelte'
 
 	export let mode, category
 

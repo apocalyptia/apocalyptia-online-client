@@ -1,5 +1,5 @@
 <script>
-	import playerStore from '/src/stores/playerStore.js'
+	import playerStore from '$stores/playerStore.js'
 
 	function backupCharacter() {
 		console.log('backup')

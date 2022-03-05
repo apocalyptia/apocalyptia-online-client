@@ -1,17 +1,18 @@
 <script>
-	import Gear from '/src/classes/Gear.js'
-	import GearBlock from '/src/components/widgets/GearBlock.svelte'
-	import Disease from '/src/classes/Disease.js'
-	import ManualDisease from '/src/components/manual/ManualDisease.svelte'
-	import ManualDescription from '/src/components/manual/ManualDescription.svelte'
-	import ManualSpecialization from '/src/components/manual/ManualSpecialization.svelte'
-	import ManualTable from '/src/components/manual/ManualTable.svelte'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import Disease from '$classes/Disease.js'
+	import Gear from '$classes/Gear.js'
+	import GearBlock from '$components/widgets/GearBlock.svelte'
+	import ManualDescription from '$components/manual/ManualDescription.svelte'
+	import ManualDisease from '$components/manual/ManualDisease.svelte'
+	import ManualSpecialization from '$components/manual/ManualSpecialization.svelte'
+	import ManualTable from '$components/manual/ManualTable.svelte'
 
 	export let rule
 </script>
 
 
-<div class="section-card">
+<CenterCard title={rule.name}>
 	<article class="rule-body">
 		<h1>{rule.name}</h1>
 		{#if rule instanceof Gear}
@@ -30,4 +31,11 @@
 			{/if}
 		{/if}
 	</article>
-</div>
+</CenterCard>
+
+
+<style>
+	.rule-body {
+		text-align: left;
+	}
+</style>

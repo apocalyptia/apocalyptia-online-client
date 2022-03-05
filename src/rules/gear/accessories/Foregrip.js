@@ -1,4 +1,4 @@
-import Accessory from '/src/classes/gear/Accessory.js'
+import Accessory from '$classes/gear/Accessory.js'
 
 const Foregrip = new Accessory({
 	name: `Foregrip`,

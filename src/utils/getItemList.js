@@ -1,4 +1,4 @@
-import Gear from '/src/rules/Gear.js'
+import Gear from '$rules/Gear.js'
 
 const equipmentList = [
 	...Object.values(Gear.accessories),

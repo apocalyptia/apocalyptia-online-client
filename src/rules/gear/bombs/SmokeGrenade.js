@@ -1,4 +1,4 @@
-import Bomb from '/src/classes/gear/Bomb.js'
+import Bomb from '$classes/gear/Bomb.js'
 import Blind from '../../status/Blind.js'
 
 const SmokeGrenade = new Bomb({

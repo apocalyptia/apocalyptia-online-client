@@ -1,9 +1,9 @@
-import Gear from '/src/rules/Gear.js'
-import randomAmmo from '/src/utils/random/gear/randomAmmo.js'
-import randomArmor from '/src/utils/random/gear/randomArmor.js'
-import randomEquipment from '/src/utils/random/gear/randomEquipment.js'
-import randomMeleeWeapon from '/src/utils/random/gear/randomMeleeWeapon.js'
-import randomProjectileWeapon from '/src/utils/random/gear/randomProjectileWeapon.js'
+import Gear from '$rules/Gear.js'
+import randomAmmo from '$utils/random/gear/randomAmmo.js'
+import randomArmor from '$utils/random/gear/randomArmor.js'
+import randomEquipment from '$utils/random/gear/randomEquipment.js'
+import randomMeleeWeapon from '$utils/random/gear/randomMeleeWeapon.js'
+import randomProjectileWeapon from '$utils/random/gear/randomProjectileWeapon.js'
 
 export default function() {
 	this.resetGear()

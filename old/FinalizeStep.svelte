@@ -1,9 +1,9 @@
 <script>
-	import CharacterSheet from '/src/components/character/sheet/CharacterSheet.svelte'
-	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import SaveAndDeleteButtonRow from '/src/components/buttons/SaveAndDeleteButtonRow.svelte'
-	import characterStore from '/src/stores/characterStore.js'
-	import playerStore from '/src/stores/playerStore.js'
+	import CharacterSheet from '$components/character/sheet/CharacterSheet.svelte'
+	import PageHeader from '$components/character/creator/PageHeader.svelte'
+	import SaveAndDeleteButtonRow from '$components/buttons/SaveAndDeleteButtonRow.svelte'
+	import characterStore from '$stores/characterStore.js'
+	import playerStore from '$stores/playerStore.js'
 	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
 

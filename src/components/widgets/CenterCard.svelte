@@ -1,5 +1,14 @@
 <script>
-	export let title = ''
+	import getPageTitle from '$utils/getPageTitle.js'
+	import getParentURL from '$utils/getParentURL.js'
+	import { onMount } from 'svelte'
+
+	export let title = '', link = ''
+
+	onMount(() => {
+		if (!title) title = getPageTitle()
+		if (!link) link = getParentURL()
+	})
 </script>
 
 
@@ -10,7 +19,7 @@
 				<h2>{title}</h2>
 			</div>
 			{#if title !== 'Main Menu'}
-				<a href="/" class="close">X</a>
+				<a href={link || '/'} class="close">X</a>
 			{/if}
 		</div>
 	{/if}

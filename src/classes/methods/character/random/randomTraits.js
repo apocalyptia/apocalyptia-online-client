@@ -1,4 +1,4 @@
-import randomRoll from '/src/utils/random/dice/randomRoll.js'
+import randomRoll from '$utils/random/dice/randomRoll.js'
 
 export default function() {
 	this.resetTraits()

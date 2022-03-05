@@ -1,4 +1,4 @@
-import Tool from '/src/classes/gear/Tool.js'
+import Tool from '$classes/gear/Tool.js'
 
 const MagnifyingGlass = new Tool({
 	name: `Magnifying Glass`,

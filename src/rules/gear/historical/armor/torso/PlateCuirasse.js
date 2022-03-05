@@ -1,4 +1,4 @@
-import Armor from '/src/classes/gear/Armor.js'
+import Armor from '$classes/gear/Armor.js'
 
 const PlateCuirasse = new Armor({
 	name: `Plate Cuirasse`,

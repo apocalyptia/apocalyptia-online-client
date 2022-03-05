@@ -1,7 +1,7 @@
 <script>
-	import mapStore from '/src/stores/mapStore.js'
+	import mapStore from '$stores/mapStore.js'
 	import * as THREE from 'three'
-	import { OrbitControls } from '/src/utils/threejs/OrbitControls.js'
+	import { OrbitControls } from '$utils/threejs/OrbitControls.js'
 	import { onMount } from 'svelte'
 
 	let canvas, scene, camera, renderer, controls

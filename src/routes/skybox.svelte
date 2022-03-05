@@ -1,5 +1,5 @@
 <script>
-	import Skybox from '/src/components/map/Skybox.svelte'
+	import Skybox from '$components/map/Skybox.svelte'
 </script>
 
 

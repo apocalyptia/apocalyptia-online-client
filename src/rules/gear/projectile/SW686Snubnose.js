@@ -1,4 +1,4 @@
-import Projectile from '/src/classes/gear/Projectile.js'
+import Projectile from '$classes/gear/Projectile.js'
 
 const SW686Snubnose = new Projectile ({
 	accuracy: -1,

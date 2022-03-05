@@ -1,6 +1,6 @@
-import randomNumber from '/src/utils/random/dice/randomNumber.js'
-import randomRoll from '/src/utils/random/dice/randomRoll.js'
-import Gear from '/src/rules/Gear.js'
+import randomNumber from '$utils/random/dice/randomNumber.js'
+import randomRoll from '$utils/random/dice/randomRoll.js'
+import Gear from '$rules/Gear.js'
 
 function randomAmmo({ caliber = '', max = 6 }) {
 	const ammoList = Object.values(Gear.ammo)

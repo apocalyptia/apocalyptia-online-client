@@ -11,6 +11,5 @@
 		flex-direction: column;
 		height: 100vh;
 		justify-content: center;
-		width: 100vw;
 	}
 </style>

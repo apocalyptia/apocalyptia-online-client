@@ -15,15 +15,15 @@ import Sword from './melee/Sword.js'
 
 const Melee = {
 	ax: Ax,
-	baseballbat: BaseballBat,
-	brassknuckles: BrassKnuckles,
+	baseball_bat: BaseballBat,
+	brass_knuckles: BrassKnuckles,
 	club: Club,
 	crowbar: Crowbar,
 	hammer: Hammer,
 	hatchet: Hatchet,
 	knife: Knife,
 	machete: Machete,
-	riotshield: RiotShield,
+	riot_shield: RiotShield,
 	sledgehammer: Sledgehammer,
 	spear: Spear,
 	staff: Staff,

@@ -1,5 +1,5 @@
 <script>
-	import OptionsSelector from '/src/components/character/creator/abilities/OptionsSelector.svelte'
+	import OptionsSelector from '$components/character/creator/abilities/OptionsSelector.svelte'
 
 	export let ability
 </script>

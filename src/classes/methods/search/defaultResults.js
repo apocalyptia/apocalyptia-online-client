@@ -1,5 +1,5 @@
-import capitalize from '/src/utils/text/capitalize.js'
-import urlFormat from '/src/utils/text/urlFormat.js'
+import capitalize from '$utils/text/capitalize.js'
+import urlFormat from '$utils/text/urlFormat.js'
 
 const getName = (rule) => {
 	if (rule[1].name !== undefined) {

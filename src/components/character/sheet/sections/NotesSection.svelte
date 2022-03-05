@@ -1,5 +1,5 @@
 <script>
-	import characterStore from '/src/stores/characterStore.js'
+	import characterStore from '$stores/characterStore.js'
 </script>
 
 <textarea class="sheet-notes-block" wrap="soft" bind:value={$characterStore.meta.notes} />

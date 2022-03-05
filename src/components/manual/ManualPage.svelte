@@ -1,5 +1,6 @@
 <script>
-	import searchStore from '/src/stores/searchStore.js'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import searchStore from '$stores/searchStore.js'
 	import { onMount } from 'svelte'
 
 	export let list
@@ -12,23 +13,17 @@
 
 
 <div class="page-body">
-	{#if $searchStore.term.length && $searchStore.results.length === 0}
-		<p>No search results found.</p>
-	{:else}
-		{#each $searchStore.results as link}
-			<div class="manual-btn">
-				<a href={link.url} class="link-btn">
-					{link.name}
-				</a>
-			</div>
-		{/each}
-	{/if}
+	<CenterCard>
+		{#if $searchStore.term.length && $searchStore.results.length === 0}
+			<p>No search results found.</p>
+		{:else}
+			{#each $searchStore.results as link}
+				<div class="manual-btn">
+					<a href={link.url} class="link-btn">
+						{link.name}
+					</a>
+				</div>
+			{/each}
+		{/if}
+	</CenterCard>
 </div>
-
-
-<style>
-	.page-body {
-		position: absolute;
-		top: calc(var(--square) * 2);
-	}
-</style>

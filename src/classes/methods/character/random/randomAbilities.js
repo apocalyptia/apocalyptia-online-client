@@ -1,5 +1,5 @@
-import randomNumber from '/src/utils/random/dice/randomNumber.js'
-import randomRoll from '/src/utils/random/dice/randomRoll.js'
+import randomNumber from '$utils/random/dice/randomNumber.js'
+import randomRoll from '$utils/random/dice/randomRoll.js'
 
 export default function() {
 	this.resetAbilities()

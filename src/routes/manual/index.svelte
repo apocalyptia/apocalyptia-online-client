@@ -1,7 +1,7 @@
 <script>
-	import ManualSearchbar from '/src/components/manual/ManualSearchbar.svelte'
-	import ManualPage from '/src/components/manual/ManualPage.svelte'
-	import Rules from '/src/rules/Rules.js'
+	import ManualSearchbar from '$components/manual/ManualSearchbar.svelte'
+	import ManualPage from '$components/manual/ManualPage.svelte'
+	import Rules from '$rules/Rules.js'
 </script>
 
 

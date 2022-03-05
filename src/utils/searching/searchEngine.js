@@ -1,6 +1,6 @@
-import Rules from '/src/rules/Rules.js'
-import capitalize from '/src/utils/text/capitalize.js'
-import urlFormat from '/src/utils/text/urlFormat.js'
+import Rules from '$rules/Rules.js'
+import capitalize from '$utils/text/capitalize.js'
+import urlFormat from '$utils/text/urlFormat.js'
 
 function searchEngine({ term = '', list = Rules }) {
 	let resultsList = []

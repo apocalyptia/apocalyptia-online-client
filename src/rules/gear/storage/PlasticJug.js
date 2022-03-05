@@ -1,4 +1,4 @@
-import Storage from '/src/classes/gear/Storage.js'
+import Storage from '$classes/gear/Storage.js'
 
 const PlasticJug = new Storage({
 	name: `Plastic Jug`,

@@ -1,4 +1,4 @@
-import Skills from '/src/rules/Skills.js'
+import Skills from '$rules/Skills.js'
 
 export default () => {
 	const skills = {}

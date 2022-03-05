@@ -1,4 +1,4 @@
-import Projectile from '/src/classes/gear/Projectile.js'
+import Projectile from '$classes/gear/Projectile.js'
 
 const Marlin1894C = new Projectile ({
 	accuracy: 0,

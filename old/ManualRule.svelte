@@ -1,5 +1,5 @@
 <script>
-	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
+	import ManualArticle from '$components/manual/ManualArticle.svelte'
 
 	export let rule
 </script>

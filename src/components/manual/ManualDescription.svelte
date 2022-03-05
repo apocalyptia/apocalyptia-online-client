@@ -1,5 +1,5 @@
 <script>
-	import ManualSubRule from '/src/components/manual/ManualSubRule.svelte'
+	import ManualSubRule from '$components/manual/ManualSubRule.svelte'
 
 	export let rule
 </script>

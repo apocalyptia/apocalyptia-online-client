@@ -1,4 +1,4 @@
-import urlFormat from '/src/utils/text/urlFormat.js'
+import urlFormat from '$utils/text/urlFormat.js'
 
 export default class Rule {
 	constructor({

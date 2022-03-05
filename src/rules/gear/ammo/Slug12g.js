@@ -1,4 +1,4 @@
-import Ammo from '/src/classes/gear/Ammo.js'
+import Ammo from '$classes/gear/Ammo.js'
 import Slug from '../attributes/Slug.js'
 
 const Slug12g = new Ammo({

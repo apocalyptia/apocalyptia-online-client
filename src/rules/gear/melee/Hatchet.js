@@ -1,4 +1,4 @@
-import Melee from '/src/classes/gear/Melee.js'
+import Melee from '$classes/gear/Melee.js'
 
 const Hatchet = new Melee ({
 	accuracy: 0,

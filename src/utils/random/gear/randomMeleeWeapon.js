@@ -1,5 +1,5 @@
-import randomRoll from '/src/utils/random/dice/randomRoll.js'
-import Gear from '/src/rules/Gear.js'
+import randomRoll from '$utils/random/dice/randomRoll.js'
+import Gear from '$rules/Gear.js'
 
 function randomMeleeWeapon() {
 	const randomMeleeWeapon = randomRoll(Object.values(Gear.melee))

@@ -1,4 +1,4 @@
-import Attribute from '/src/classes/gear/Attribute.js'
+import Attribute from '$classes/gear/Attribute.js'
 
 const Scatter = new Attribute({
 	name: `Scatter`,

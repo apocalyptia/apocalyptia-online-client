@@ -1,6 +1,6 @@
 <script>
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import playerStore from '/src/stores/playerStore.js'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import playerStore from '$stores/playerStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(() => {

@@ -1,4 +1,4 @@
-import Maneuver from '/src/classes/Maneuver.js'
+import Maneuver from '$classes/Maneuver.js'
 import Table from '../../classes/Table.js'
 
 const CalledShot = new Maneuver({

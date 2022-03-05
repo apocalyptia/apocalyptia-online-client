@@ -1,10 +1,10 @@
-import CreationProcess from '/src/rules/CreationProcess.js'
-import initializeDescription from '/src/classes/methods/character/initialize/initializeDescription.js'
-import initializeGear from '/src/classes/methods/character/initialize/initializeGear.js'
-import initializeMeta from '/src/classes/methods/character/initialize/initializeMeta.js'
-import initializeProperties from '/src/classes/methods/character/initialize/initializeProperties.js'
-import initializeSkills from '/src/classes/methods/character/initialize/initializeSkills.js'
-import initializeTraits from '/src/classes/methods/character/initialize/initializeTraits.js'
+import CreationProcess from '$rules/CreationProcess.js'
+import initializeDescription from '$classes/methods/character/initialize/initializeDescription.js'
+import initializeGear from '$classes/methods/character/initialize/initializeGear.js'
+import initializeMeta from '$classes/methods/character/initialize/initializeMeta.js'
+import initializeProperties from '$classes/methods/character/initialize/initializeProperties.js'
+import initializeSkills from '$classes/methods/character/initialize/initializeSkills.js'
+import initializeTraits from '$classes/methods/character/initialize/initializeTraits.js'
 
 export default function() {
 	this.meta = initializeMeta()

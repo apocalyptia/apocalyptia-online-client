@@ -1,7 +1,7 @@
 <script>
-	import MainMenu from '/src/components/home/MainMenu.svelte'
-	// import UserLogin from '/src/components/home/UserLogin.svelte'
-	// import playerStore from '/src/stores/playerStore.js'
+	import MainMenu from '$components/home/MainMenu.svelte'
+	// import UserLogin from '$components/home/UserLogin.svelte'
+	// import playerStore from '$stores/playerStore.js'
 </script>
 
 <!-- {#if $playerStore.loggedIn} -->

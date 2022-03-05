@@ -1,4 +1,4 @@
-import CreationStep from '/src/classes/CreationStep.js'
+import CreationStep from '$classes/CreationStep.js'
 
 const Gear = new CreationStep({
 	name: `Gear`,

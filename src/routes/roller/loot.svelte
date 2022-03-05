@@ -1,7 +1,7 @@
 <script>
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import Gear from '/src/rules/Gear.js'
-	import ItemGenerator from '/src/components/roller/ItemGenerator.svelte'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import Gear from '$rules/Gear.js'
+	import ItemGenerator from '$components/roller/ItemGenerator.svelte'
 
 	const masterGearList = ['Master Gear List', Object.values(Gear).flatMap((g) => Object.values(g).flatMap((i) => i)) ]
 </script>

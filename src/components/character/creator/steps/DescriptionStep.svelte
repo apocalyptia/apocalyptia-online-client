@@ -1,7 +1,7 @@
 <script>
-	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
-	import characterStore from '/src/stores/characterStore.js'
+	import PageHeader from '$components/character/creator/PageHeader.svelte'
+	import ResetAndRandomButtonRow from '$components/character/creator/ResetAndRandomButtonRow.svelte'
+	import characterStore from '$stores/characterStore.js'
 	import { beforeUpdate } from 'svelte'
 
 	function resetDescription() {

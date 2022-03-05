@@ -1,0 +1,23 @@
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"$components": ["src/components"],
+			"$components/*": ["src/components/*"],
+			"$classes": ["src/classes"],
+			"$classes/*": ["src/classes/*"],
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"],
+			"$routes": ["src/routes"],
+			"$routes/*": ["src/routes/*"],
+			"$rules": ["src/rules"],
+			"$rules/*": ["src/rules/*"],
+			"$stores": ["src/stores"],
+			"$stores/*": ["src/stores/*"],
+			"$utils": ["src/utils"],
+			"$utils/*": ["src/utils/*"],
+		}
+	},
+	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
+}

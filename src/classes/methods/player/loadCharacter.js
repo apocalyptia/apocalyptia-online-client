@@ -1,4 +1,4 @@
-import decompressCharacter from '/src/utils/database/characters/decompressCharacter.js'
+import decompressCharacter from '$utils/database/characters/decompressCharacter.js'
 
 export default function({ id='', character='' }) {
 	let loadedCharacter = null

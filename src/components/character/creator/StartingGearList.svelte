@@ -1,6 +1,6 @@
 <script>
-	import characterStore from '/src/stores/characterStore.js'
-	import GearBlock from '/src/components/widgets/GearBlock.svelte'
+	import characterStore from '$stores/characterStore.js'
+	import GearBlock from '$components/widgets/GearBlock.svelte'
 
 	const gearList = Object.values($characterStore.gear)
 

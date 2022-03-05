@@ -15,19 +15,19 @@ import ToolBag from './tools/ToolBag.js'
 import WireSaw from './tools/WireSaw.js'
 
 const Tools = {
-	bobbypin: BobbyPin,
+	bobby_pin: BobbyPin,
 	boltcutters: BoltCutters,
-	ducttape: DuctTape,
-	glasscutter: GlassCutter,
-	guncleaningkit: GunCleaningKit,
+	duct_tape: DuctTape,
+	glass_cutter: GlassCutter,
+	gun_cleaning_kit: GunCleaningKit,
 	hacksaw: Hacksaw,
 	lockpicks: Lockpicks,
-	magnifyingglass: MagnifyingGlass,
-	measuringcup: MeasuringCup,
+	magnifying_glass: MagnifyingGlass,
+	measuring_cup: MeasuringCup,
 	multitool: Multitool,
-	spraypaint: SprayPaint,
-	swissarmykknife: SwissArmyKnife,
-	tapemeasure: TapeMeasure,
+	spray_paint: SprayPaint,
+	swiss_army_knife: SwissArmyKnife,
+	tape_measure: TapeMeasure,
 	toolbag: ToolBag,
 	wiresaw: WireSaw,
 }

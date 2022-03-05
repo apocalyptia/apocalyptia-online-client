@@ -1,10 +1,10 @@
-import randomAge from '/src/utils/random/description/randomAge.js'
-import randomHair from '/src/utils/random/description/randomHair.js'
-import randomHeight from '/src/utils/random/description/randomHeight.js'
-import randomName from '/src/utils/random/description/randomName.js'
-import randomSex from '/src/utils/random/description/randomSex.js'
-import randomSkin from '/src/utils/random/description/randomSkin.js'
-import randomWeight from '/src/utils/random/description/randomWeight.js'
+import randomAge from '$utils/random/description/randomAge.js'
+import randomHair from '$utils/random/description/randomHair.js'
+import randomHeight from '$utils/random/description/randomHeight.js'
+import randomName from '$utils/random/description/randomName.js'
+import randomSex from '$utils/random/description/randomSex.js'
+import randomSkin from '$utils/random/description/randomSkin.js'
+import randomWeight from '$utils/random/description/randomWeight.js'
 
 export default function(category = 'All') {
 	switch (category) {

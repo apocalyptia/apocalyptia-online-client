@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import CreationProcess from '/src/rules/CreationProcess.js'
+import CreationProcess from '$rules/CreationProcess.js'
 
 export default () => {
 	return {

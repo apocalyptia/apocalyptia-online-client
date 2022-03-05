@@ -1,4 +1,4 @@
-import Wearable from '/src/classes/gear/Wearable.js'
+import Wearable from '$classes/gear/Wearable.js'
 
 const GasMask = new Wearable({
 	name: `Gas Mask`,

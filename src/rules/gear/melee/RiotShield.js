@@ -1,4 +1,4 @@
-import Melee from '/src/classes/gear/Melee.js'
+import Melee from '$classes/gear/Melee.js'
 import Blunt from '../attributes/Blunt.js'
 import Shield from '../attributes/Shield.js'
 

@@ -1,4 +1,4 @@
-import Armor from '/src/classes/gear/Armor.js'
+import Armor from '$classes/gear/Armor.js'
 import Impermeable from '../../gear/attributes/Impermeable.js'
 import Mask from '../../gear/attributes/Mask.js'
 

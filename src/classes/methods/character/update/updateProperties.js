@@ -1,5 +1,5 @@
-import runFormula from '/src/utils/runFormula.js'
-import Properties from '/src/rules/Properties.js'
+import runFormula from '$utils/runFormula.js'
+import Properties from '$rules/Properties.js'
 
 export default function() {
 	for (const p in this.properties) {

@@ -1,5 +1,5 @@
-import Gear from '/src/classes/Gear.js'
-import swapOrder from '/src/utils/text/swapOrder.js'
+import Gear from '$classes/Gear.js'
+import swapOrder from '$utils/text/swapOrder.js'
 
 export default class Ammo extends Gear {
 	constructor({

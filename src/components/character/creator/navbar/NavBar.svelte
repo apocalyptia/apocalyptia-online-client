@@ -1,7 +1,7 @@
 <script>
-	import NavButtonHome from '/src/components/character/creator/navbar/NavButtonHome.svelte'
-	import NavButtonNext from '/src/components/character/creator/navbar/NavButtonNext.svelte'
-	import NavButtonPrevious from '/src/components/character/creator/navbar/NavButtonPrevious.svelte'
+	import NavButtonHome from '$components/character/creator/navbar/NavButtonHome.svelte'
+	import NavButtonNext from '$components/character/creator/navbar/NavButtonNext.svelte'
+	import NavButtonPrevious from '$components/character/creator/navbar/NavButtonPrevious.svelte'
 </script>
 
 

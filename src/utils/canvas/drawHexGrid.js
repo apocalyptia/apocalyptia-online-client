@@ -1,4 +1,4 @@
-// import drawHexagon from '/src/utils/drawing/drawHexagon.js'
+// import drawHexagon from '$utils/drawing/drawHexagon.js'
 
 // function drawHexGrid(ctx, width, height) {
 // 	let i, j

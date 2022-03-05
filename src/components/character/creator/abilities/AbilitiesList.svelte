@@ -1,7 +1,7 @@
 <script>
-	import abilitiesStore from '/src/stores/abilitiesStore.js'
-	import AbilityCard from '/src/components/character/creator/abilities/AbilityCard.svelte'
-	import TakenSelector from '/src/components/character/creator/abilities/TakenSelector.svelte'
+	import abilitiesStore from '$stores/abilitiesStore.js'
+	import AbilityCard from '$components/character/creator/abilities/AbilityCard.svelte'
+	import TakenSelector from '$components/character/creator/abilities/TakenSelector.svelte'
 </script>
 
 

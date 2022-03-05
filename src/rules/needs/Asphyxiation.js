@@ -1,4 +1,4 @@
-import Need from '/src/classes/Need.js'
+import Need from '$classes/Need.js'
 
 const Asphyxiation = new Need({
 	name: `Asphyxiation`,

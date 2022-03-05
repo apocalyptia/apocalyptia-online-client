@@ -1,11 +1,11 @@
 <script>
-	import CreationProcess from '/src/rules/CreationProcess.js'
-	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
-	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import PointsRemaining from '/src/components/character/creator/PointsRemaining.svelte'
-	import ResetAndRandomButtonRow from '/src/components/character/creator/ResetAndRandomButtonRow.svelte'
-	import TraitsSection from '/src/components/character/sheet/sections/TraitsSection.svelte'
-	import characterStore from '/src/stores/characterStore.js'
+	import CreationProcess from '$rules/CreationProcess.js'
+	import ExplanationBlock from '$components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from '$components/character/creator/PageHeader.svelte'
+	import PointsRemaining from '$components/character/creator/PointsRemaining.svelte'
+	import ResetAndRandomButtonRow from '$components/character/creator/ResetAndRandomButtonRow.svelte'
+	import TraitsSection from '$components/character/sheet/sections/TraitsSection.svelte'
+	import characterStore from '$stores/characterStore.js'
 	import { onMount, beforeUpdate } from 'svelte'
 
 	function randomTraits() {

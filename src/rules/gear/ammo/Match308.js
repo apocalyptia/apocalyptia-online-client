@@ -1,4 +1,4 @@
-import Ammo from '/src/classes/gear/Ammo.js'
+import Ammo from '$classes/gear/Ammo.js'
 
 const Match308 = new Ammo({
 	accuracy: 1,

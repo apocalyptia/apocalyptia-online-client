@@ -1,4 +1,4 @@
-import Core from '/src/classes/Core.js'
+import Core from '$classes/Core.js'
 import Cooperation from './subrules/Cooperation.js'
 import RoteActions from './subrules/RoteActions.js'
 

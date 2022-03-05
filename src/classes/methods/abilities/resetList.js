@@ -1,4 +1,4 @@
-import Abilities from '/src/rules/Abilities.js'
+import Abilities from '$rules/Abilities.js'
 
 export default function() {
 	Object.values(Abilities).forEach(ability => {

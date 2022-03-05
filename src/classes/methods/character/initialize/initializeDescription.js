@@ -1,4 +1,4 @@
-import CreationProcess from '/src/rules/CreationProcess.js'
+import CreationProcess from '$rules/CreationProcess.js'
 
 export default (username = 'test') => {
 	const newDescription = {}

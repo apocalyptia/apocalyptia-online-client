@@ -1,4 +1,4 @@
-import Combat from '/src/classes/Combat.js'
+import Combat from '$classes/Combat.js'
 import Chase from './subrules/Chase.js'
 
 const Movement = new Combat({

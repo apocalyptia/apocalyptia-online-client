@@ -1,7 +1,7 @@
 <script>
-	import TitleBar from '/src/components/titlebar/TitleBar.svelte'
-	// import characterStore from '/src/stores/characterStore.js'
-	// import playerStore from '/src/stores/playerStore.js'
+	import TitleBar from '$components/titlebar/TitleBar.svelte'
+	// import characterStore from '$stores/characterStore.js'
+	// import playerStore from '$stores/playerStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(() => {

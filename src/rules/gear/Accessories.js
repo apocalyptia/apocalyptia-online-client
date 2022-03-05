@@ -11,12 +11,12 @@ import Suppressor from './accessories/Suppressor.js'
 const Accessories = {
 	bayonet: Bayonet,
 	bipod: Bipod,
-	drummagazine: DrumMagazine,
+	drum_magazine: DrumMagazine,
 	foregrip: Foregrip,
 	holosight: Holosight,
 	laser: Laser,
 	scope: Scope,
-	singlepointsling: SinglePointSling,
+	singlepoint_sling: SinglePointSling,
 	suppressor: Suppressor,
 }
 

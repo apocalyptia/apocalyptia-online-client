@@ -1,4 +1,4 @@
-import Document from '/src/classes/gear/Document.js'
+import Document from '$classes/gear/Document.js'
 
 const MapTopographic = new Document({
 	name: `Map (Topographic)`,

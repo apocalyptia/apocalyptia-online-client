@@ -1,4 +1,4 @@
-import Rule from '/src/classes/Rule.js'
+import Rule from '$classes/Rule.js'
 
 export default class Maneuver extends Rule {
 	constructor({

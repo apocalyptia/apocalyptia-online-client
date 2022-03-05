@@ -1,4 +1,4 @@
-import Core from '/src/classes/Core.js'
+import Core from '$classes/Core.js'
 
 const Explode = new Core({
 	name: `Explode`,

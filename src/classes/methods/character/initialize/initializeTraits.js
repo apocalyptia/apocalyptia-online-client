@@ -1,4 +1,4 @@
-import Traits from '/src/rules/Traits.js'
+import Traits from '$rules/Traits.js'
 
 export default () => {
 	const traits = {}

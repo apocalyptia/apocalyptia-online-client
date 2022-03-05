@@ -1,6 +1,6 @@
 <script>
-	import d6Roll from '/src/utils/random/dice/d6Roll.js'
-	import DiceButton from '/src/components/buttons/DiceButton.svelte'
+	import d6Roll from '$utils/random/dice/d6Roll.js'
+	import DiceButton from '$components/buttons/DiceButton.svelte'
 
 	let roll = [6]
 	let mod = 0

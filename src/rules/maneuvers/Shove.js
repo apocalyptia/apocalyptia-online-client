@@ -1,4 +1,4 @@
-import Maneuver from '/src/classes/Maneuver.js'
+import Maneuver from '$classes/Maneuver.js'
 
 const Shove = new Maneuver({
 	name: `Shove`,

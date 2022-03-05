@@ -1,4 +1,4 @@
-import Tool from '/src/classes/gear/Tool.js'
+import Tool from '$classes/gear/Tool.js'
 
 const SwissArmyKnife = new Tool({
 	name: `Swiss Army Knife`,

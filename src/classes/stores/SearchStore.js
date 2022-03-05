@@ -1,5 +1,5 @@
-import query from '/src/classes/methods/search/query.js'
-import defaultResults from '/src/classes/methods/search/defaultResults.js'
+import query from '$classes/methods/search/query.js'
+import defaultResults from '$classes/methods/search/defaultResults.js'
 
 export default class {
 	constructor() {

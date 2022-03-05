@@ -1,6 +1,6 @@
 <script>
-	import abilitiesStore from '/src/stores/abilitiesStore.js'
-	import characterStore from '/src/stores/characterStore.js'
+	import abilitiesStore from '$stores/abilitiesStore.js'
+	import characterStore from '$stores/characterStore.js'
 
 	function filterList() {
 		$abilitiesStore = $abilitiesStore.filterList($characterStore.properties.experience.current)

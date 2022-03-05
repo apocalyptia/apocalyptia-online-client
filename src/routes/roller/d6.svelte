@@ -1,6 +1,6 @@
 <script>
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import DiceRoller from '/src/components/roller/DiceRoller.svelte'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import DiceRoller from '$components/roller/DiceRoller.svelte'
 </script>
 
 <svelte:head>

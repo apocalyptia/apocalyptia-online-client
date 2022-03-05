@@ -1,6 +1,6 @@
 <script>
-	import characterStore from '/src/stores/characterStore.js'
-	import playerStore from '/src/stores/playerStore.js'
+	import characterStore from '$stores/characterStore.js'
+	import playerStore from '$stores/playerStore.js'
 	import { goto } from '$app/navigation'
 
 	function next() {

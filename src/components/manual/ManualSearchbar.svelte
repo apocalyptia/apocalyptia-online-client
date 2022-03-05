@@ -1,5 +1,5 @@
 <script>
-	import searchStore from '/src/stores/searchStore.js'
+	import searchStore from '$stores/searchStore.js'
 	import { onMount } from 'svelte'
 
 	function runSearch() {

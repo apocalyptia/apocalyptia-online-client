@@ -1,4 +1,4 @@
-import Combat from '/src/classes/Combat.js'
+import Combat from '$classes/Combat.js'
 
 const Trauma = new Combat({
 	name: `Trauma`,

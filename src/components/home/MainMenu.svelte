@@ -1,7 +1,7 @@
 <script>
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import MenuItems from '/src/components/widgets/MenuItems.svelte'
-	import menuStore from '/src/stores/menuStore.js'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import MenuItems from '$components/widgets/MenuItems.svelte'
+	import menuStore from '$stores/menuStore.js'
 </script>
 
 <CenterCard title={'Main Menu'}>

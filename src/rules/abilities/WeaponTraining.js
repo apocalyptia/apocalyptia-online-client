@@ -1,4 +1,4 @@
-import Ability from '/src/classes/Ability.js'
+import Ability from '$classes/Ability.js'
 import Melee from '../gear/Melee.js'
 import Projectile from '../gear/Projectile.js'
 

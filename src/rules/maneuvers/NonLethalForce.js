@@ -1,4 +1,4 @@
-import Maneuver from '/src/classes/Maneuver.js'
+import Maneuver from '$classes/Maneuver.js'
 
 const NonLethalForce = new Maneuver({
 	name: `Non-Lethal Force`,

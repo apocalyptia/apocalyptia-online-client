@@ -1,11 +1,11 @@
 <script>
-	import CreationProcess from '/src/rules/CreationProcess.js'
-	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
-	import HealthProperty from '/src/components/character/creator/properties/HealthProperty.svelte'
-	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import PropertiesBlock from '/src/components/character/creator/properties/PropertiesBlock.svelte'
-	import PropertiesFormulae from '/src/components/character/creator/properties/PropertiesFormulae.svelte'
-	import characterStore from '/src/stores/characterStore.js'
+	import CreationProcess from '$rules/CreationProcess.js'
+	import ExplanationBlock from '$components/character/creator/ExplanationBlock.svelte'
+	import HealthProperty from '$components/character/creator/properties/HealthProperty.svelte'
+	import PageHeader from '$components/character/creator/PageHeader.svelte'
+	import PropertiesBlock from '$components/character/creator/properties/PropertiesBlock.svelte'
+	import PropertiesFormulae from '$components/character/creator/properties/PropertiesFormulae.svelte'
+	import characterStore from '$stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	onMount(() => {

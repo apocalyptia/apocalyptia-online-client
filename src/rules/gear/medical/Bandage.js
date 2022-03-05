@@ -1,4 +1,4 @@
-import Medical from '/src/classes/gear/Medical.js'
+import Medical from '$classes/gear/Medical.js'
 
 const Bandage = new Medical({
 	name: `Bandage`,

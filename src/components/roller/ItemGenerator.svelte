@@ -1,8 +1,8 @@
 <script>
-	import capitalize from '/src/utils/text/capitalize.js'
-	import DiceButton from '/src/components/buttons/DiceButton.svelte'
-	import GearBlock from '/src/components/widgets/GearBlock.svelte'
-	import randomRoll from '/src/utils/random/dice/randomRoll.js'
+	import capitalize from '$utils/text/capitalize.js'
+	import DiceButton from '$components/buttons/DiceButton.svelte'
+	import GearBlock from '$components/widgets/GearBlock.svelte'
+	import randomRoll from '$utils/random/dice/randomRoll.js'
 
 	export let category
 

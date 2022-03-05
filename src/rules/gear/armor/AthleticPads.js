@@ -1,4 +1,4 @@
-import Armor from '/src/classes/gear/Armor.js'
+import Armor from '$classes/gear/Armor.js'
 
 const AthleticPads = new Armor({
 	name: `Athletic Pads`,

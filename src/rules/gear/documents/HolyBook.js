@@ -1,4 +1,4 @@
-import Document from '/src/classes/gear/Document.js'
+import Document from '$classes/gear/Document.js'
 
 const HolyBook = new Document({
 	name: `Holy Book`,

@@ -1,4 +1,4 @@
-import Maneuver from '/src/classes/Maneuver.js'
+import Maneuver from '$classes/Maneuver.js'
 import Grab from './Grab.js'
 import Hostage from './Hostage.js'
 import Tackle from './Tackle.js'

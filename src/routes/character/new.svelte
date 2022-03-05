@@ -1,8 +1,8 @@
 <script>
-	import CharacterStore from '/src/classes/stores/CharacterStore.js'
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import characterStore from '/src/stores/characterStore.js'
-	import playerStore from '/src/stores/playerStore.js'
+	import CharacterStore from '$classes/stores/CharacterStore.js'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import characterStore from '$stores/characterStore.js'
+	import playerStore from '$stores/playerStore.js'
 
 	function newCharacter() {
 		$characterStore = new CharacterStore()

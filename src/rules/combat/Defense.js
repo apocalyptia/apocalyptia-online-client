@@ -1,4 +1,4 @@
-import Combat from '/src/classes/Combat.js'
+import Combat from '$classes/Combat.js'
 import ActiveDefenses from './subrules/ActiveDefenses.js'
 import ReflexiveDefenses from './subrules/ReflexiveDefenses.js'
 

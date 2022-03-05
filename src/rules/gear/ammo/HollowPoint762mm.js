@@ -1,4 +1,4 @@
-import Ammo from '/src/classes/gear/Ammo.js'
+import Ammo from '$classes/gear/Ammo.js'
 
 const HollowPoint762mm = new Ammo({
 	accuracy: 0,

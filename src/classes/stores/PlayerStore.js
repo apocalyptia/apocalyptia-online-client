@@ -1,13 +1,13 @@
-import initializePlayer from '/src/classes/methods/player/initializePlayer.js'
-import deleteCharacter from '/src/classes/methods/player/deleteCharacter.js'
-import loadCharacter from '/src/classes/methods/player/loadCharacter.js'
-// import authenticateUser from '/src/classes/methods/player/authenticateUser.js'
-import backupCharacter from '/src/classes/methods/player/backupCharacter.js'
-import joinGame from '/src/classes/methods/player/joinGame.js'
-import readCharacters from '/src/classes/methods/player/readCharacters.js'
-import saveCharacter from '/src/classes/methods/player/saveCharacter.js'
-import userLogin from '/src/classes/methods/player/userLogin.js'
-import userLogout from '/src/classes/methods/player/userLogout.js'
+import initializePlayer from '$classes/methods/player/initializePlayer.js'
+import deleteCharacter from '$classes/methods/player/deleteCharacter.js'
+import loadCharacter from '$classes/methods/player/loadCharacter.js'
+// import authenticateUser from '$classes/methods/player/authenticateUser.js'
+import backupCharacter from '$classes/methods/player/backupCharacter.js'
+import joinGame from '$classes/methods/player/joinGame.js'
+import readCharacters from '$classes/methods/player/readCharacters.js'
+import saveCharacter from '$classes/methods/player/saveCharacter.js'
+import userLogin from '$classes/methods/player/userLogin.js'
+import userLogout from '$classes/methods/player/userLogout.js'
 
 export default class Player {
 	constructor() {

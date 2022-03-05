@@ -1,4 +1,4 @@
-import Combat from '/src/classes/Combat.js'
+import Combat from '$classes/Combat.js'
 import Conditions from './combat/subrules/vehicles/Conditions.js'
 import Occupants from './combat/subrules/vehicles/Occupants.js'
 import Pedestrians from './combat/subrules/vehicles/Pedestrians.js'

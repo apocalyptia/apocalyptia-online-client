@@ -1,9 +1,9 @@
 <script>
-	import CreationProcess from '/src/rules/CreationProcess.js'
-	import ExplanationBlock from '/src/components/character/creator/ExplanationBlock.svelte'
-	import PageHeader from '/src/components/character/creator/PageHeader.svelte'
-	import StartingGearList from '/src/components/character/creator/StartingGearList.svelte'
-	import characterStore from '/src/stores/characterStore.js'
+	import CreationProcess from '$rules/CreationProcess.js'
+	import ExplanationBlock from '$components/character/creator/ExplanationBlock.svelte'
+	import PageHeader from '$components/character/creator/PageHeader.svelte'
+	import StartingGearList from '$components/character/creator/StartingGearList.svelte'
+	import characterStore from '$stores/characterStore.js'
 	import { onMount } from 'svelte'
 
 	function randomGear() {

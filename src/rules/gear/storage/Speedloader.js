@@ -1,4 +1,4 @@
-import Storage from '/src/classes/gear/Storage.js'
+import Storage from '$classes/gear/Storage.js'
 
 const Speedloader = new Storage({
 	name: `Speed-loader`,

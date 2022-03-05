@@ -1,4 +1,4 @@
-import Document from '/src/classes/gear/Document.js'
+import Document from '$classes/gear/Document.js'
 
 const BookOfFiveRings = new Document({
 	name: `Tao of Jeet Kune Do`,

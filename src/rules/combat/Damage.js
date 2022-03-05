@@ -1,4 +1,4 @@
-import Combat from '/src/classes/Combat.js'
+import Combat from '$classes/Combat.js'
 import Absorption from './subrules/Absorption.js'
 import Fire from './subrules/Fire.js'
 

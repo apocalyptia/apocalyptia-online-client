@@ -1,4 +1,4 @@
-import Melee from '/src/classes/gear/Melee.js'
+import Melee from '$classes/gear/Melee.js'
 import Blunt from '../attributes/Blunt.js'
 
 const BrassKnuckles = new Melee ({

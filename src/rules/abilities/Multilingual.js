@@ -1,4 +1,4 @@
-import Ability from '/src/classes/Ability.js'
+import Ability from '$classes/Ability.js'
 import LanguageList from '../lists/LanguageList.js'
 
 const Multilingual = new Ability({

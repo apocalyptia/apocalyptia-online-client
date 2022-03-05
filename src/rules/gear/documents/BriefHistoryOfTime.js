@@ -1,4 +1,4 @@
-import Document from '/src/classes/gear/Document.js'
+import Document from '$classes/gear/Document.js'
 
 const BriefHistoryOfTime = new Document({
 	name: `Brief History of Time`,

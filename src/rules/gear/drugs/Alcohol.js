@@ -1,4 +1,4 @@
-import Drug from '/src/classes/gear/Drug.js'
+import Drug from '$classes/gear/Drug.js'
 
 const Alcohol = new Drug({
 	name: `Alcohol`,

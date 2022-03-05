@@ -15,21 +15,21 @@ import WinterCoat from './armor/WinterCoat.js'
 import WorkGloves from './armor/WorkGloves.js'
 
 const Armor = {
-	athletichelmet: AthleticHelmet,
-	athleticpads: AthleticPads,
-	combathelmet: CombatHelmet,
+	athletic_helmet: AthleticHelmet,
+	athletic_pads: AthleticPads,
+	combat_helmet: CombatHelmet,
 	coveralls: Coveralls,
-	firefightersuit: FirefighterSuit,
-	flakjacket: FlakJacket,
-	ghilliesuit: GhillieSuit,
-	hazmatsuit: HazmatSuit,
-	hikingboots: HikingBoots,
-	kevlarvest: KevlarVest,
-	leatherjacket: LeatherJacket,
-	motorcyclehelmet: MotorcycleHelmet,
-	platecarrier: PlateCarrier,
-	wintercoat: WinterCoat,
-	workgloves: WorkGloves,
+	firefighter_suit: FirefighterSuit,
+	flak_jacket: FlakJacket,
+	ghillie_suit: GhillieSuit,
+	hazmat_suit: HazmatSuit,
+	hiking_boots: HikingBoots,
+	kevlar_vest: KevlarVest,
+	leather_jacket: LeatherJacket,
+	motorcycle_helmet: MotorcycleHelmet,
+	plate_carrier: PlateCarrier,
+	winter_coat: WinterCoat,
+	work_gloves: WorkGloves,
 }
 
 export default Armor

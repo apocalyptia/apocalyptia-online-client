@@ -1,4 +1,4 @@
-import Resource from '/src/classes/gear/Resource.js'
+import Resource from '$classes/gear/Resource.js'
 
 const Parts = new Resource({
 	name: `Parts`,

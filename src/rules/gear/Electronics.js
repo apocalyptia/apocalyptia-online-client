@@ -15,18 +15,18 @@ import StunGun from './electronics/StunGun.js'
 
 const Electronics = {
 	cellphone: Cellphone,
-	emergencyradio: EmergencyRadio,
+	emergency_radio: EmergencyRadio,
 	flashlight: Flashlight,
-	geigercounter: GeigerCounter,
-	handradio: HandRadio,
+	geiger_counter: GeigerCounter,
+	hand_radio: HandRadio,
 	headlamp: Headlamp,
 	lantern: Lantern,
 	megaphone: Megaphone,
 	multimeter: Multimeter,
-	nightvisiongoggles: NightvisionGoggles,
-	quadcopterdrone: QuadcopterDrone,
-	rccar: RCCar,
-	solarlamp: SolarLamp,
+	nightvision_goggles: NightvisionGoggles,
+	quadcopter_drone: QuadcopterDrone,
+	rc_car: RCCar,
+	solar_lamp: SolarLamp,
 	stungun: StunGun,
 }
 

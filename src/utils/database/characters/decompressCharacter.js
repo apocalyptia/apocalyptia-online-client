@@ -1,10 +1,10 @@
-import CharacterStore from '/src/classes/stores/CharacterStore.js'
-import Abilities from '/src/rules/Abilities.js'
-import Melee from '/src/rules/gear/Melee.js'
-import Projectile from '/src/rules/gear/Projectile.js'
-import Ammo from '/src/rules/gear/Ammo.js'
-import Armor from '/src/rules/gear/Armor.js'
-import Equipment from '/src/rules/gear/Equipment.js'
+import CharacterStore from '$classes/stores/CharacterStore.js'
+import Abilities from '$rules/Abilities.js'
+import Melee from '$rules/gear/Melee.js'
+import Projectile from '$rules/gear/Projectile.js'
+import Ammo from '$rules/gear/Ammo.js'
+import Armor from '$rules/gear/Armor.js'
+import Equipment from '$rules/gear/Equipment.js'
 
 function decompressionMapping(category, type) {
 	let ruleList = []

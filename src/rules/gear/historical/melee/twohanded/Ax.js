@@ -1,4 +1,4 @@
-import Melee from '/src/classes/gear/Melee.js'
+import Melee from '$classes/gear/Melee.js'
 
 const Ax = new Melee ({
 	accuracy: -1,

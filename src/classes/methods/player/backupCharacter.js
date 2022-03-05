@@ -1,4 +1,4 @@
-import compressCharacter from '/src/utils/database/characters/compressCharacter.js'
+import compressCharacter from '$utils/database/characters/compressCharacter.js'
 
 export default function() {
 	if (this.selected) {

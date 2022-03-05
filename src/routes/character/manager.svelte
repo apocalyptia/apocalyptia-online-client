@@ -1,10 +1,10 @@
 <script>
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
-	import CharacterControls from '/src/components/character/manager/CharacterControls.svelte'
-	import CharacterList from '/src/components/character/manager/CharacterList.svelte'
-	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
-	import playerStore from '/src/stores/playerStore.js'
-	import resetUIColor from '/src/utils/ui/resetUIColor.js'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
+	import CharacterControls from '$components/character/manager/CharacterControls.svelte'
+	import CharacterList from '$components/character/manager/CharacterList.svelte'
+	import adjustUIColor from '$utils/ui/adjustUIColor.js'
+	import playerStore from '$stores/playerStore.js'
+	import resetUIColor from '$utils/ui/resetUIColor.js'
 	import { beforeUpdate } from 'svelte'
 
 	console.log('### playerStore.selected = ', $playerStore.selected)

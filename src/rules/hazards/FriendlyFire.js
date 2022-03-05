@@ -1,4 +1,4 @@
-import Hazard from '/src/classes/Hazard.js'
+import Hazard from '$classes/Hazard.js'
 
 const FriendlyFire = new Hazard({
 	name: `Friendly Fire`,

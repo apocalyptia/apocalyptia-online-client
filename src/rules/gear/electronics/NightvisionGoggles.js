@@ -1,4 +1,4 @@
-import Electronic from '/src/classes/gear/Electronic.js'
+import Electronic from '$classes/gear/Electronic.js'
 
 const NightvisionGoggles = new Electronic({
 	name: `Nightvision Goggles`,

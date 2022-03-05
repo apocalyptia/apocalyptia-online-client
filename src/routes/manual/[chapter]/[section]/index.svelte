@@ -12,11 +12,11 @@
 
 
 <script>
-	import ManualArticle from '/src/components/manual/ManualArticle.svelte'
-	import ManualPage from '/src/components/manual/ManualPage.svelte'
-	import ManualSearchbar from '/src/components/manual/ManualSearchbar.svelte'
-	import Rules from '/src/rules/Rules.js'
-	import linkRuleDescriptions from '/src/utils/text/linkRuleDescriptions.js'
+	import ManualArticle from '$components/manual/ManualArticle.svelte'
+	import ManualPage from '$components/manual/ManualPage.svelte'
+	import ManualSearchbar from '$components/manual/ManualSearchbar.svelte'
+	import Rules from '$rules/Rules.js'
+	import linkRuleDescriptions from '$utils/text/linkRuleDescriptions.js'
 
 	export let chapter, section
 </script>

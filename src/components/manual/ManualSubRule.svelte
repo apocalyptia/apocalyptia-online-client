@@ -1,7 +1,7 @@
 <script>
-	import linkTerms from '/src/utils/text/linkTerms.js'
+	import linkTerms from '$utils/text/linkTerms.js'
 
-	export let subrule
+	export let subrule = {}
 
 	subrule.description = linkTerms(subrule.description)
 </script>

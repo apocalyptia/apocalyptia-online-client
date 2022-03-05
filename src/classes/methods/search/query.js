@@ -1,4 +1,4 @@
-import searchEngine from '/src/utils/searching/searchEngine.js'
+import searchEngine from '$utils/searching/searchEngine.js'
 
 export default function() {
 	this.results = searchEngine({

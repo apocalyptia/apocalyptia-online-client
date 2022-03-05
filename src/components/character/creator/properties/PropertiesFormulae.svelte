@@ -1,5 +1,5 @@
 <script>
-	import Properties from '/src/rules/Properties.js'
+	import Properties from '$rules/Properties.js'
 
 	let isOpen = false
 </script>

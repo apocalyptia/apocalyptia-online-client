@@ -1,4 +1,4 @@
-import Armor from '/src/classes/gear/Armor.js'
+import Armor from '$classes/gear/Armor.js'
 import Camo from '../../gear/attributes/Camo.js'
 
 const FlakJacket = new Armor({

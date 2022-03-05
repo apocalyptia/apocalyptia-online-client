@@ -1,6 +1,6 @@
 <script>
-	import GearBlock from '/src/components/widgets/GearBlock.svelte'
-	import TrashButton from '/src/components/buttons/TrashButton.svelte'
+	import GearBlock from '$components/widgets/GearBlock.svelte'
+	import TrashButton from '$components/buttons/TrashButton.svelte'
 
 	export let mode,
 		category,

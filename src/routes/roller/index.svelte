@@ -1,5 +1,5 @@
 <script>
-	import CenterCard from '/src/components/widgets/CenterCard.svelte'
+	import CenterCard from '$components/widgets/CenterCard.svelte'
 </script>
 
 <svelte:head>

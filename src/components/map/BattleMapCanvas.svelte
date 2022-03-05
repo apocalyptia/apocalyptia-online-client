@@ -1,7 +1,7 @@
 <script>
-	// import Canvas from '/src/components/widgets/Canvas.svelte'
-	import Slider from '/src/components/widgets/Slider.svelte'
-	import mapStore from '/src/stores/mapStore.js'
+	// import Canvas from '$components/widgets/Canvas.svelte'
+	import Slider from '$components/widgets/Slider.svelte'
+	import mapStore from '$stores/mapStore.js'
 	import { afterUpdate, onMount } from 'svelte'
 
 	onMount(() => document.querySelector('.canvas-frame').addEventListener('scroll', log))

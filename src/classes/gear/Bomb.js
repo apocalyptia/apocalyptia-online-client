@@ -1,4 +1,4 @@
-import Gear from '/src/classes/Gear.js'
+import Gear from '$classes/Gear.js'
 
 export default class Bomb extends Gear {
 	constructor({

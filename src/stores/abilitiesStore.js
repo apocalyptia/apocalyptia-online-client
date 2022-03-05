@@ -1,4 +1,4 @@
-import AbilitiesStore from '/src/classes/stores/AbilitiesStore.js'
+import AbilitiesStore from '$classes/stores/AbilitiesStore.js'
 import { writable } from 'svelte/store'
 
 const abilitiesStore = new AbilitiesStore()

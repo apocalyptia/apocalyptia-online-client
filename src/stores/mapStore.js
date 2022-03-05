@@ -1,5 +1,5 @@
-import AreaMapCanvas from '/src/classes/AreaMapCanvas.js'
-// import AreaMapDOM from '/src/classes/AreaMapDOM.js'
+import AreaMapCanvas from '$classes/AreaMapCanvas.js'
+// import AreaMapDOM from '$classes/AreaMapDOM.js'
 import { writable } from 'svelte/store'
 
 // const areaMap = new AreaMapDOM()

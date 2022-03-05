@@ -6,11 +6,11 @@ import TeargasGrenade from './bombs/TeargasGrenade.js'
 import Thermite from './bombs/Thermite.js'
 
 const Bombs = {
-	flashbandgrenade: FlashbangGrenade,
-	fraggrenade: FragGrenade,
-	molotovcocktail: MolotovCocktail,
-	smokegrenade: SmokeGrenade,
-	teargasgrenade: TeargasGrenade,
+	flashbang_grenade: FlashbangGrenade,
+	frag_grenade: FragGrenade,
+	molotov_cocktail: MolotovCocktail,
+	smoke_grenade: SmokeGrenade,
+	teargas_grenade: TeargasGrenade,
 	thermite: Thermite,
 }
 

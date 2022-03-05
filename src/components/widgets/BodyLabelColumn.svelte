@@ -1,6 +1,6 @@
 <script>
-	import adjustUIColor from '/src/utils/ui/adjustUIColor.js'
-	import characterStore from '/src/stores/characterStore.js'
+	import adjustUIColor from '$utils/ui/adjustUIColor.js'
+	import characterStore from '$stores/characterStore.js'
 
 	export let side, mode
 

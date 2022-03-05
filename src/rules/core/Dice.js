@@ -1,4 +1,4 @@
-import Core from '/src/classes/Core.js'
+import Core from '$classes/Core.js'
 
 const Dice = new Core({
 	name: `Dice`,

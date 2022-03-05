@@ -1,5 +1,5 @@
 <script>
-	import HealthSection from '/src/components/character/sheet/sections/HealthSection.svelte'
+	import HealthSection from '$components/character/sheet/sections/HealthSection.svelte'
 </script>
 
 

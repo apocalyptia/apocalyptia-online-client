@@ -1,5 +1,5 @@
 <script>
-	import menuStore from '/src/stores/menuStore.js'
+	import menuStore from '$stores/menuStore.js'
 </script>
 
 <button class="btn-box square-btn" on:click={() => ($menuStore = $menuStore.toggle())}>

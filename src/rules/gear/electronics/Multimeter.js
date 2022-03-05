@@ -1,4 +1,4 @@
-import Electronic from '/src/classes/gear/Electronic.js'
+import Electronic from '$classes/gear/Electronic.js'
 
 const Multimeter = new Electronic({
 	name: `Multimeter`,

@@ -1,8 +1,8 @@
 <script>
-	import alphabetize from '/src/utils/sorting/alphabetize.js'
-	import ManualBody from '/src/components/manual/ManualBody.svelte'
-	import ManualHeader from '/src/components/manual/ManualHeader.svelte'
-	import searchEngine from '/src/utils/searching/searchEngine.js'
+	import alphabetize from '$utils/sorting/alphabetize.js'
+	import ManualBody from '$components/manual/ManualBody.svelte'
+	import ManualHeader from '$components/manual/ManualHeader.svelte'
+	import searchEngine from '$utils/searching/searchEngine.js'
 
 	export let page
 

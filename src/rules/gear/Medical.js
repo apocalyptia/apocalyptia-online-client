@@ -13,13 +13,13 @@ const Medical = {
 	bandage: Bandage,
 	crutch: Crutch,
 	emtbag: EMTBag,
-	firstaidkit: FirstAidKit,
-	pressurecuff: PressureCuff,
+	firstaid_kit: FirstAidKit,
+	pressure_cuff: PressureCuff,
 	stethoscope: Stethoscope,
-	surgerykit: SurgeryKit,
+	surgery_kit: SurgeryKit,
 	thermometer: Thermometer,
-	transfusionkit: TransfusionKit,
-	waterfilter: WaterFilter,
+	transfusion_kit: TransfusionKit,
+	water_filter: WaterFilter,
 }
 
 export default Medical

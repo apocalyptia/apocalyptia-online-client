@@ -1,4 +1,4 @@
-import Status from '/src/classes/Status.js'
+import Status from '$classes/Status.js'
 
 const Concealed = new Status({
 	name: `Concealed`,
