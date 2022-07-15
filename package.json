@@ -11,7 +11,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "next",
 		"@sveltejs/kit": "next",
-		"svelte": "^3.43.1"
+		"svelte": "^3.49.0"
 	},
 	"dependencies": {
 		"three": "^0.126.1",
