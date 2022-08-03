@@ -299,6 +299,9 @@ a:hover {
 	background-size: 100% 2px, 3px 100%;
 	z-index: 12000;
 }
+.manual-article-link {
+	font-family: var(--plain-font);
+}
 .manual-article-link:hover {
 	animation: none;
 	background-color: var(--pri-color);
