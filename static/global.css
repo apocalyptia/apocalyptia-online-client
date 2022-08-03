@@ -34,7 +34,7 @@
 	--crt-red: rgba(127,0,0,0.5);
 	--crt-green: rgba(0,127,0,0.5);
 	--crt-blue: rgba(0,0,127,0.5);
-	--pri-color: rgba(0, 255, 0, .9);
+	--pri-color: rgba(0, 255, 0, 1);
 	--pri-color-trans: rgba(0, 255, 0, .5);
 	--pri-box-shadow: 0 0 var(--margin) calc(var(--margin)/2) var(--pri-color-trans);
 	--sec-color: rgba(15, 30, 15, .85);
@@ -54,6 +54,8 @@
 	--margin: var(--s75);
 	--padding: var(--s75);
 	--max-width: 900px;
+
+	--plain-font: Arial, Helvetica, sans-serif;
 
 }
 
@@ -151,6 +153,7 @@ main {
 body {
 	color: var(--pri-color);
 	font-size: var(--s100);
+	font-weight: bold;
 	height: 100%;
 }
 header {
@@ -230,6 +233,8 @@ legend {
 	margin-left: var(--s150);
 }
 p {
+	font-family: var(--plain-font);
+	font-weight: normal;
 	line-height: 1.5;
 }
 .error {
@@ -283,19 +288,23 @@ th {
 a {
 	background-color: var(--sec-color-trans);
 	color: var(--pri-color);
-	text-decoration: none;
 }
 a:hover {
 	box-shadow: var(--pri-box-shadow);
-	text-decoration: underline !important;
 }
 a:active,
 a:hover {
 	animation: haze 1s infinite;
 	color: var(--sec-color);
-	font-weight: bold;
 	background-size: 100% 2px, 3px 100%;
 	z-index: 12000;
+}
+.manual-article-link:hover {
+	animation: none;
+	background-color: var(--pri-color);
+	box-shadow: var(--pri-box-shadow);
+	color: var(--sec-color-trans);
+	font-family: var(--plain-font);
 }
 
 
@@ -404,7 +413,6 @@ button:invalid {
 }
 .link-btn:hover {
 	font-weight: bold;
-	text-decoration: none !important;
 }
 .small-cntr-btn {
 	min-width: 30%;

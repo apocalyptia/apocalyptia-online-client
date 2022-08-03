@@ -16,7 +16,7 @@ import WireSaw from './tools/WireSaw.js'
 
 const Tools = {
 	bobby_pin: BobbyPin,
-	boltcutters: BoltCutters,
+	bolt_cutters: BoltCutters,
 	duct_tape: DuctTape,
 	glass_cutter: GlassCutter,
 	gun_cleaning_kit: GunCleaningKit,
@@ -28,7 +28,7 @@ const Tools = {
 	spray_paint: SprayPaint,
 	swiss_army_knife: SwissArmyKnife,
 	tape_measure: TapeMeasure,
-	toolbag: ToolBag,
+	tool_bag: ToolBag,
 	wiresaw: WireSaw,
 }
 

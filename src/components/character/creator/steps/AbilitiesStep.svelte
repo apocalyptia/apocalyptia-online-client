@@ -23,9 +23,7 @@
 	function giveAbilitiesToCharacter() {
 		$characterStore = $characterStore.resetAbilities()
 		$abilitiesStore.workingList.forEach(ability => {
-			if (ability.quantity) {
-				$characterStore = $characterStore.addAbility(ability)
-			}
+			if (ability.quantity) $characterStore = $characterStore.addAbility(ability)
 		})
 	}
 

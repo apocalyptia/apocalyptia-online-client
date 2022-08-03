@@ -8,9 +8,7 @@
 	import characterStore from '$stores/characterStore.js'
 	import { onMount } from 'svelte'
 
-	onMount(() => {
-		$characterStore = $characterStore.updateProperties()
-	})
+	onMount(() => $characterStore = $characterStore.updateProperties())
 </script>
 
 

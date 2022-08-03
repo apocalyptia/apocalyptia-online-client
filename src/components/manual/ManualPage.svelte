@@ -27,3 +27,10 @@
 		{/if}
 	</CenterCard>
 </div>
+
+
+<style>
+	a {
+		text-decoration: none;
+	}
+</style>

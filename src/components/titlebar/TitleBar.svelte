@@ -18,6 +18,7 @@
 	a {
 		display: block;
 		padding: var(--padding);
+		text-decoration: none;
 		width: 100%;
 	}
 </style>

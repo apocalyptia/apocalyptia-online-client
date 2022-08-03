@@ -11,7 +11,6 @@
 	}
 
 	function toggleList() {
-		console.log($abilitiesStore.display)
 		$abilitiesStore = $abilitiesStore.toggleList()
 	}
 </script>

@@ -10,7 +10,6 @@
 
 	function randomDescription(type) {
 		$characterStore = $characterStore.randomDescription(type)
-
 	}
 
 	function canProceed() {

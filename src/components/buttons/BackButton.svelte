@@ -7,6 +7,9 @@
 </a>
 
 <style>
+	a {
+		text-decoration: none;
+	}
 	.back-btn {
 		bottom: 0;
 		left: 0;

@@ -5,9 +5,7 @@
 	function previous() {
 		document.getElementById('character-creator').scrollTo(0, 0)
 		$characterStore.meta.step = $characterStore.meta.step - 1
-		if ($characterStore.creationCheckMinSteps()) {
-			goto(`/character/new`)
-		}
+		if ($characterStore.creationCheckMinSteps()) goto(`/character/new`)
 	}
 
 </script>

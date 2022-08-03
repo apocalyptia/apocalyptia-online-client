@@ -30,6 +30,9 @@
 
 
 <style>
+	a {
+		text-decoration: none;
+	}
 	.center-card {
 		border: var(--solid-border);
 		box-shadow: var(--s50) var(--s50) 2px var(--sec-color-trans);

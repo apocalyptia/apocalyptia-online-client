@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-netlify'
-import path from 'path'
+import adapter from '@sveltejs/adapter-auto'
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,19 +8,15 @@ const config = {
 		files: {
 			assets: 'static',
 		},
-		vite: {
-			resolve: {
-				alias: {
-					'$components': path.resolve('./src/components'),
-					'$classes': path.resolve('./src/classes'),
-					'$routes': path.resolve('./src/routes'),
-					'$rules': path.resolve('./src/rules'),
-					'$stores': path.resolve('./src/stores'),
-					'$utils': path.resolve('./src/utils')
-				}
-			}
+		alias: {
+			$components: './src/components',
+			$classes: './src/classes',
+			$routes: './src/routes',
+			$rules: './src/rules',
+			$stores: './src/stores',
+			$utils: './src/utils'
 		}
-	},
+	}
 }
 
 export default config

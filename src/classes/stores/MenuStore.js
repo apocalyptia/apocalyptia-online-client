@@ -25,10 +25,10 @@ export default class MenuStore {
 				name: 'Map Test',
 				url: '/map'
 			},
-			{
-				name: 'Skybox Test',
-				url: '/skybox'
-			}
+			// {
+			// 	name: 'Skybox Test',
+			// 	url: '/skybox'
+			// }
 		],
 
 		this.toggle = function() {

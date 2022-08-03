@@ -5,9 +5,7 @@
 
 <div class="specialty-section">
 	{#each Object.values(rule.specialties) as specialty}
-		<div class="sub-name">
-			{specialty.name}
-		</div>
+		<h2>{specialty.name}</h2>
 		{#if specialty.description}
 			{#each specialty.description as description}
 				<p class="specialty-description">
@@ -20,11 +18,11 @@
 
 
 <style>
-	.sub-name,
+	h2,
 	.specialty-description {
 		margin: var(--margin);
 	}
-	.sub-name {
+	h2 {
 		font-weight: bold;
 		text-decoration: underline;
 	}

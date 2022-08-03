@@ -15,6 +15,9 @@
 
 
 <style>
+	a {
+		text-decoration: none;
+	}
 	.controls {
 		display: flex;
 		justify-content: space-around;

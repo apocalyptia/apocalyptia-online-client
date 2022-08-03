@@ -24,6 +24,6 @@ export default () => {
 			name: `Equipment`,
 			inventory: [],
 			open: false
-		},
+		}
 	}
 }

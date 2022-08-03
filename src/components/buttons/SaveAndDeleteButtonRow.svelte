@@ -15,7 +15,7 @@
 
 <style>
 	a {
-		text-decoration: none !important;
+		text-decoration: none;
 	}
 	button {
 		height: var(--square);

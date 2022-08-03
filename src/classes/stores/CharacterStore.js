@@ -38,38 +38,32 @@ export default class Character {
 		this.skills = initializeSkills(),
 		this.properties = initializeProperties(),
 		this.abilities = [],
-		this.gear = initializeGear(),
-
-		// methods
-		this.creationCanProceed = creationCanProceed
-		this.creationCheckMaxSteps = creationCheckMaxSteps
-		this.creationCheckMinSteps = creationCheckMinSteps
-
-		this.remainingTraits = remainingTraits
-		this.remainingSkills = remainingSkills
-		this.remainingAbilities = remainingAbilities
-
-		this.resetGear = resetGear
-		this.resetAbilities = resetAbilities
-		this.resetDescription = resetDescription
-		this.resetProperties = resetProperties
-		this.resetSkills = resetSkills
-		this.resetTraits = resetTraits
-		this.resetCharacter = resetCharacter
-
-		this.addAbility = addAbility
-
-		this.updateProperties = updateProperties
-		this.updateSkill = updateSkill
-		this.updateTrait = updateTrait
-
-		this.randomDescription = randomDescription
-		this.randomTraits = randomTraits
-		this.randomSkills = randomSkills
-		this.randomAbilities = randomAbilities
-		this.randomGear = randomGear
-		this.randomCharacter = randomCharacter
-		
-		this.finalizeCharacter = finalizeCharacter
+		this.gear = initializeGear()
 	}
+
+	// methods
+	creationCanProceed = creationCanProceed
+	creationCheckMaxSteps = creationCheckMaxSteps
+	creationCheckMinSteps = creationCheckMinSteps
+	remainingTraits = remainingTraits
+	remainingSkills = remainingSkills
+	remainingAbilities = remainingAbilities
+	resetGear = resetGear
+	resetAbilities = resetAbilities
+	resetDescription = resetDescription
+	resetProperties = resetProperties
+	resetSkills = resetSkills
+	resetTraits = resetTraits
+	resetCharacter = resetCharacter
+	addAbility = addAbility
+	updateProperties = updateProperties
+	updateSkill = updateSkill
+	updateTrait = updateTrait
+	randomDescription = randomDescription
+	randomTraits = randomTraits
+	randomSkills = randomSkills
+	randomAbilities = randomAbilities
+	randomGear = randomGear
+	randomCharacter = randomCharacter
+	finalizeCharacter = finalizeCharacter
 }

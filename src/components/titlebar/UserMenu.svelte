@@ -30,4 +30,7 @@
 		width: 50vw;
 		z-index: 1000;
 	}
+	a {
+		text-decoration: none;
+	}
 </style>

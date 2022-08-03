@@ -1,9 +1,10 @@
+!.env.example
 .DS_Store
 .env
+.env.*
 .netlify
 /.svelte-kit
 /build
-/functions
+/package
 /scripts/setupTypeScript.js
 node_modules
-package-lock.json

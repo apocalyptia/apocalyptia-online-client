@@ -24,7 +24,7 @@ export default function() {
 	const food = Gear.resources.food
 	food.quantity = 1
 	this.gear.equipment.inventory.push(food)
-	const waterBottle = Gear.storage.waterbottle
+	const waterBottle = Gear.storage.water_bottle
 	waterBottle.quantity = 1
 	this.gear.equipment.inventory.push(waterBottle)
 	const water = Gear.resources.water

@@ -8,7 +8,8 @@ export default class Storage extends Gear {
 		name,
 		quantity,
 		size,
-		slots,
+		slots = 1,
+		subrules,
 		type = `Storage`,
 		url
 	}) {
@@ -20,6 +21,7 @@ export default class Storage extends Gear {
 			name,
 			quantity,
 			size,
+			subrules,
 			type,
 			url
 		})

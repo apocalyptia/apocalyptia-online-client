@@ -1,7 +1,7 @@
 <script>
 	// import BattleMapDom3d from '$components/map/BattleMapDom3d.svelte'
 	// import BattleMapCanvas from '$components/map/BattleMapCanvas.svelte'
-	// import SvelteCubedMap from '$components/map/SvelteCubedMap'
+	import SvelteCubedMap from '$components/map/SvelteCubedMap.svelte'
 </script>
 
 
@@ -10,5 +10,5 @@
 </svelte:head>
 <div class="page-body">
 	<!-- <BattleMapDom3d /> -->
-	<!-- <SvelteCubedMap /> -->
+	<SvelteCubedMap />
 </div>

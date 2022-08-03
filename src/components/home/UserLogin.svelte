@@ -10,6 +10,7 @@
 <style>
 	a {
 		margin-bottom: var(--margin);
+		text-decoration: none;
 	}
 	a:last-child {
 		margin-bottom: 0;
