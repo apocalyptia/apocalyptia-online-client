@@ -21,7 +21,7 @@ import Trip from './maneuvers/Trip.js'
 
 export default {
 	aim: Aim,
-	calledshot: CalledShot,
+	called_shot: CalledShot,
 	disarm: Disarm,
 	distract: Distract,
 	duck: Duck,
@@ -30,7 +30,7 @@ export default {
 	hide: Hide,
 	interrogate: Interrogate,
 	negotiate: Negotiate,
-	nonlethalforce: NonLethalForce,
+	nonlethal_force: NonLethalForce,
 	protect: Protect,
 	push: Push,
 	recruit: Recruit,

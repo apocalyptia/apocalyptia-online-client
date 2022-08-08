@@ -10,23 +10,28 @@ import userLogin from '$classes/methods/player/userLogin.js'
 import userLogout from '$classes/methods/player/userLogout.js'
 
 export default class Player {
+
 	constructor() {
-		this.id = ``
-		this.name = ``
+
 		this.email = ``
-		this.password = ``
+		this.id = ``
 		this.list = []
 		this.loggedIn = false
+		this.name = ``
+		this.password = ``
 		this.selected = null
-		this.initializePlayer = initializePlayer
-		this.deleteCharacter = deleteCharacter
-		this.loadCharacter = loadCharacter
-		this.saveCharacter = saveCharacter		
-		this.readCharacters = readCharacters 
-		this.backupCharacter = backupCharacter
+
 		// this.authenticateUser = authenticateUser
+		this.backupCharacter = backupCharacter
+		this.deleteCharacter = deleteCharacter
+		this.initializePlayer = initializePlayer
 		this.joinGame = joinGame
+		this.loadCharacter = loadCharacter
+		this.readCharacters = readCharacters 
+		this.saveCharacter = saveCharacter		
 		this.userLogin = userLogin
 		this.userLogout = userLogout
+
 	}
+
 }

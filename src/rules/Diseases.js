@@ -7,7 +7,7 @@ import Smallpox from './diseases/Smallpox.js'
 
 export default {
 	cholera: Cholera,
-	hemorrhagicfever: HemorrhagicFever,
+	hemorrhagic_fever: HemorrhagicFever,
 	influenza: Influenza,
 	mrsa: MRSA,
 	rabies: Rabies,

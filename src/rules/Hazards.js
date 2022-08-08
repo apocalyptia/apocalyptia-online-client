@@ -6,6 +6,6 @@ import Radiation from './hazards/Radiation.js'
 export default {
 	burning: Burning,
 	falling: Falling,
-	friendlyfire: FriendlyFire,
+	friendly_fire: FriendlyFire,
 	radiation: Radiation,
 }
