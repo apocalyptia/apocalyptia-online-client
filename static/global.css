@@ -1,6 +1,20 @@
 /* ----- GLOBAL VARIABLES ----- */
 
+@font-face {
+	font-family: head;
+	src: url('./fonts/TTY.ttf');
+}
+
+@font-face {
+	font-family: body;
+	src: url('./fonts/Oxanium.ttf');
+}
+
 :root {
+
+	/* Global Fonts */
+	--head-font: head;
+	--body-font: body;
 
 	/* Global Units */
 	--s10: calc(var(--s100) * .1);
@@ -55,13 +69,6 @@
 	--padding: var(--s75);
 	--max-width: 900px;
 
-	--plain-font: Arial, Helvetica, sans-serif;
-
-}
-
-@font-face {
-	font-family: TTY;
-	src: url('./fonts/TTY.ttf');
 }
 
 
@@ -106,7 +113,7 @@ table {
 }
 * {
 	box-sizing: border-box;
-	font-family: TTY;
+	font-family: var(--head-font);
 	scrollbar-color: var(--pri-color) var(--sec-color-trans);
 	scrollbar-width: thin;
 }
@@ -131,7 +138,7 @@ table {
 
 html {
 	background-color: var(--screen-background);
-	font-family: TTY;
+	font-family: var(--head-font);
 }
 html,
 body,
@@ -233,7 +240,7 @@ legend {
 	margin-left: var(--s150);
 }
 p {
-	font-family: var(--plain-font);
+	font-family: var(--body-font);
 	font-weight: normal;
 	line-height: 1.5;
 }
@@ -300,14 +307,14 @@ a:hover {
 	z-index: 12000;
 }
 .manual-article-link {
-	font-family: var(--plain-font);
+	font-family: var(--body-font);
 }
 .manual-article-link:hover {
 	animation: none;
 	background-color: var(--pri-color);
 	box-shadow: var(--pri-box-shadow);
 	color: var(--sec-color-trans);
-	font-family: var(--plain-font);
+	font-family: var(--body-font);
 }
 
 
@@ -318,7 +325,7 @@ button {
 	border-radius: var(--radius);
 	color: var(--pri-color);
 	cursor: pointer;
-	font-family: TTY;
+	font-family: var(--head-font);
 	font-size: var(--s100);
 	font-weight: bold;
 	height: var(--input-size);
@@ -464,7 +471,7 @@ input {
 	border: var(--solid-border);
 	color: var(--sec-color);
 	cursor: pointer;
-	font-family: TTY;
+	font-family: var(--head-font);
 	font-size: var(--s100);
 	font-weight: bold;
 	height: var(--input-size);
@@ -496,7 +503,7 @@ input[type="password"]:hover {
 }
 ::-webkit-input-placeholder {
 	color: var(--sec-color-trans);
-	font-family: TTY;
+	font-family: var(--head-font);
 }
 
 /* Select */
