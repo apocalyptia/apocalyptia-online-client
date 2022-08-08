@@ -1,7 +1,6 @@
 <script>
 	import CenterCard from '$components/widgets/CenterCard.svelte'
 	import playerStore from '$stores/playerStore.js'
-	import { goto } from '$app/navigation'
 
 	let email = ``
 

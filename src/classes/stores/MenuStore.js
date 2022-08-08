@@ -17,18 +17,10 @@ export default class MenuStore {
 				name: 'Roller',
 				url: '/roller',
 			},
-			// {
-			// 	'name': 'Campaign',
-			// 	'url': '/campaign'
-			// },
 			{
-				name: 'Map Test',
-				url: '/map'
+				name: 'Map Tests',
+				url: '/maps'
 			},
-			// {
-			// 	name: 'Skybox Test',
-			// 	url: '/skybox'
-			// }
 		],
 
 		this.toggle = function() {
