@@ -136,6 +136,9 @@
 
 
 <style>
+	.gear-block * {
+		font-family: var(--body-font);
+	}
 	.item-name {
 		font-weight: bold;
 		padding-left: var(--padding);

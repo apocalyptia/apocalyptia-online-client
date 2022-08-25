@@ -6,6 +6,4 @@
 <svelte:head>
 	<title>Apocalyptia Online - ThreeJS</title>
 </svelte:head>
-<div class="page-body">
-	<MapThreeJs />
-</div>
+<MapThreeJs />

@@ -2,7 +2,7 @@
 	"name": "apocalyptia-online-client",
 	"description": "A post-apocalyptic online multiplayer roleplaying game about the end of the world.",
 	"repository": "https://github.com/apocalyptia/apocalyptia-online",
-	"version": "0.1.1",
+	"version": "0.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -21,6 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"supabase": "^1.1.6",
 		"three": "^0.143.0",
 		"uuid": "^8.3.2"
 	}

@@ -21,9 +21,9 @@ const getURL = (rule) => {
 
 export default function() {
 	return Object.entries(this.list).map((rule) => {
-		let result = {}
-		result.name = getName(rule)
-		result.url = getURL(rule)
-		return result
+		return {
+			name: getName(rule),
+			url: getURL(rule)
+		}
 	})
 }

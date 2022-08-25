@@ -10,7 +10,7 @@ function randomAmmo({ caliber = '', max = 6 }) {
 	} else {
 		randomAmmo = randomRoll(ammoList)
 	}
-	randomAmmo.quantity = randomNumber(max)
+	randomAmmo.quantity = randomNumber(max) + 1
 	return randomAmmo
 }
 

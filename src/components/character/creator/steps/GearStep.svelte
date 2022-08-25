@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte'
 
 	function randomGear() {
+		console.log($characterStore)
 		$characterStore = $characterStore.randomGear()
 		$characterStore = $characterStore.creationCanProceed()
 	}
